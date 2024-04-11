@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@storm-software/tsconfig/base.json",
+  "display": "Storm Software - Cyclone UI",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "references": []
+}

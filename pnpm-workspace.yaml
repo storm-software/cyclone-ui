@@ -1,0 +1,6 @@
+packages:
+  - "tools/**"
+  - "packages/**"
+  - "libs/**"
+  - "apps/**"
+  - "docs/**"

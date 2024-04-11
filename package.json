@@ -1,0 +1,151 @@
+{
+  "name": "@cyclone-ui/monorepo",
+  "version": "0.0.0",
+  "license": "Apache License 2.0",
+  "scripts": {
+    "adr": "pnpm log4brains adr new",
+    "adr-preview": "pnpm log4brains preview",
+    "prepare": "pnpm add lefthook -w && pnpm lefthook install",
+    "preinstall": "npx -y only-allow pnpm",
+    "install-csb": "corepack enable && pnpm install --frozen-lockfile",
+    "clean": "rimraf dist",
+    "prebuild": "pnpm clean",
+    "clean-tools": "rimraf dist/tools",
+    "clean-docs": "rimraf dist/docs",
+    "clean-apps": "rimraf dist/apps",
+    "clean-libs": "rimraf dist/libs",
+    "clean-storybook": "rimraf dist/storybook",
+    "build": "nx affected -t build --parallel=5",
+    "build-all": "nx run-many -t build --all --parallel=5",
+    "build-prod": "nx run-many -t build --all --prod --parallel=5",
+    "build-tools": "nx run-many -t build --projects=tools/* --parallel=5",
+    "build-docs": "nx run-many -t build --projects=docs/* --parallel=5",
+    "build-apps": "nx run-many -t build --projects=apps/* --parallel=5",
+    "build-libs": "nx run-many -t build --projects=libs/* --parallel=5",
+    "build-storybook": "storybook build -s public",
+    "nx": "nx",
+    "graph": "nx graph",
+    "lint": "pnpm storm-lint all --skip-cspell",
+    "start": "nx serve",
+    "storybook": "pnpm storybook dev -p 6006",
+    "format": "nx format:write",
+    "help": "nx help",
+    "dep-graph": "nx dep-graph",
+    "local-registry": "nx local-registry @cyclone-ui/cyclone-ui",
+    "e2e": "nx e2e",
+    "test": "nx test && pnpm test:storybook",
+    "test-storybook": "pnpm test-storybook",
+    "commit": "pnpm storm-git commit",
+    "readme-gen": "pnpm storm-git readme-gen --templates=\"docs/readme-templates\"",
+    "api-extractor": "pnpm storm-docs api-extractor --outputPath=\"docs/api-reference\" --clean",
+    "release": "pnpm storm-git release"
+  },
+  "private": true,
+  "dependencies": {
+    "@nx/devkit": "18.2.3",
+    "@nx/jest": "18.2.3",
+    "@nx/js": "18.2.3",
+    "@nx/next": "18.2.3",
+    "@nx/node": "18.2.3",
+    "@nx/react": "18.2.3",
+    "@nx/storybook": "18.2.3",
+    "@storm-software/git-tools": "latest",
+    "@storm-software/linting-tools": "latest",
+    "@storm-software/testing-tools": "latest",
+    "@storm-software/workspace-tools": "latest",
+    "@storybook/addons": "latest",
+    "@types/jest": "^29.5.8",
+    "@types/node": "20.8.10",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "bundlewatch": "latest",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "lefthook": "^1.6.9",
+    "lint-staged": "^15.0.2",
+    "log4brains": "^1.0.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.6",
+    "prettier-plugin-prisma": "^5.0.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "storybook": "latest",
+    "terser": "^5.24.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "~5.2.2",
+    "verdaccio": "^5.27.0"
+  },
+  "devDependencies": {
+    "@nx/workspace": "18.2.3",
+    "nx": "18.2.3"
+  },
+  "triggerEmptyDevReleaseByIncrementingThisNumber": 0,
+  "keywords": [
+    "cyclone-ui",
+    "storm",
+    "storm-stack",
+    "storm-ops",
+    "acidic",
+    "acidic-engine",
+    "nextjs",
+    "prisma",
+    "hasura",
+    "strapi",
+    "graphql",
+    "sullivanpj",
+    "monorepo"
+  ],
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "namespace": "@cyclone-ui",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git"
+  },
+  "packageManager": "pnpm@8.10.2",
+  "engines": {
+    "node": ">=20.11.0",
+    "pnpm": ">=8.10.2"
+  },
+  "prettier": "@storm-software/linting-tools/prettier/config.json",
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "dist/*/*.js",
+        "maxSize": "200kB"
+      }
+    ],
+    "ci": {
+      "trackBranches": [
+        "main",
+        "alpha",
+        "beta"
+      ]
+    }
+  },
+  "nextBundleAnalysis": {
+    "buildOutputDirectory": "dist/apps/web/app/.next"
+  },
+  "nx": {
+    "includedScripts": [
+      "lint",
+      "format"
+    ]
+  }
+}

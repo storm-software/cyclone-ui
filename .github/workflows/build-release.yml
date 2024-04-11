@@ -1,0 +1,25 @@
+name: "Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: override release tag
+        required: false
+  pull_request:
+    branches:
+      - "main"
+      - "next"
+      - "alpha"
+      - "beta"
+
+jobs:
+  release:
+    uses: storm-software/storm-ops/.github/workflows/release@main
+    with:
+      tag: ${{ env.TAG }}
+      stormBot: Stormie-Bot
+    secrets:
+      githubToken: ${{ github.token }}
+      npmToken: ${{ secrets.STORM_BOT_NPM_TOKEN }}
+      cargoToken: ${{ secrets.STORM_BOT_CARGO_TOKEN }}

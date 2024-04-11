@@ -1,0 +1,36 @@
+{
+  "projectName": "cyclone-ui",
+  "projectOwner": "storm-software",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": ["README.md"],
+  "imageSize": 100,
+  "contributorsPerLine": 5,
+  "linkToUsage": true,
+  "commitType": "docs",
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "sullivanpj",
+      "name": "Patrick Sullivan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99053093?v=4",
+      "profile": "http://www.sullypat.com/",
+      "contributions": ["design", "code", "tool", "doc", "test"]
+    },
+    {
+      "login": "tbenning",
+      "name": "Tyler Benning",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7265547?v=4",
+      "profile": "https://tylerbenning.com/",
+      "contributions": ["design"]
+    },
+    {
+      "login": "stormie-bot",
+      "name": "Stormie",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149802440?v=4",
+      "profile": "http://stormsoftware.com",
+      "contributions": ["maintenance"]
+    }
+  ]
+}

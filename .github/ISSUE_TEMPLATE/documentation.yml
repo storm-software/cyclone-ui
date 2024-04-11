@@ -1,0 +1,56 @@
+name: 📖 Documentation issue
+description: Help improve our docs.
+title: "[Documentation]: "
+labels: ["documentation"]
+assignees:
+  - sullivanpj
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help us improve the ⚡Storm Docs!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Documentation issue
+      description: Reason for this request
+      multiple: true
+      options:
+        - Reporting a typo
+        - Reporting a documentation bug
+        - Documentation improvement
+        - Documentation feedback
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Is there a specific documentation page you are reporting?
+      description: Enter the URL or documentation section here.
+      placeholder: Enter the URL or documentation section here.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Additional context or description
+      description: Provide any additional details here as needed.
+      placeholder: Provide any additional details here as needed.
+    validations:
+      required: false
+  - type: checkboxes
+    id: agreed
+    attributes:
+      label: Code of Conduct
+      description: By submitting this request, you agree to follow our [Code of Conduct](https://github.com/storm-software/cyclone-ui/blob/main/.github/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
