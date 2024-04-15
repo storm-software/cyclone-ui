@@ -1,0 +1,93 @@
+{
+  "name": "@cyclone-ui/cli",
+  "version": "0.0.1",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "apps/cli"
+  },
+  "private": false,
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": "./lib/index.js",
+  "bin": {
+    "cyclone": "./bin/run.js",
+    "cyclone-ui": "./bin/run.js"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "@oclif/core": "^3.26.2",
+    "@oclif/plugin-autocomplete": "^3.0.13",
+    "@oclif/plugin-help": "^6.0.20",
+    "@oclif/plugin-not-found": "^3.1.2",
+    "@oclif/plugin-plugins": "^5.0.7",
+    "@oclif/plugin-search": "^1.0.21",
+    "@oclif/plugin-update": "^4.2.4",
+    "@oclif/plugin-version": "^2.0.16",
+    "@oclif/plugin-warn-if-update-available": "^3.0.15",
+    "chroma-js": "^2.4.2",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^3.2.8",
+    "@types/fs-extra": "^11.0.4",
+    "eslint-config-oclif": "^5.1.1",
+    "eslint-config-oclif-typescript": "^3.1.3",
+    "eslint-config-prettier": "^9.0.0",
+    "oclif": "^4.7.0",
+    "ts-node": "^10.9.1"
+  },
+  "oclif": {
+    "bin": "cyclone",
+    "binAliases": [
+      "cyclone-ui"
+    ],
+    "scope": "cyclone-ui",
+    "dirname": "cyclone",
+    "theme": "theme.json",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-version",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-update",
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-search",
+      "@oclif/plugin-warn-if-update-available"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "theme": {
+        "description": "Manage the local UI theme configuration"
+      }
+    },
+    "commands": "./dist/commands",
+    "hooks": {
+      "init": [
+        {
+          "target": "./dist/hooks/init/init.js",
+          "identifier": "INIT_HOOK"
+        }
+      ]
+    },
+    "additionalHelpFlags": [
+      "-h"
+    ],
+    "additionalVersionFlags": [
+      "-v"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

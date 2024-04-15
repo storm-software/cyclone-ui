@@ -1,0 +1,54 @@
+{
+  "name": "cli",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/cli/src",
+  "targets": {
+    "refresh-manifests": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-tsc"],
+      "options": {
+        "command": "pnpm oclif manifest",
+        "cwd": "apps/cli"
+      }
+    },
+    "refresh-readme": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-tsc"],
+      "options": {
+        "command": "pnpm oclif readme",
+        "cwd": "apps/cli"
+      }
+    },
+
+    "build-tsc": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "inputs": ["{projectRoot}/*"],
+      "dependsOn": ["clean"],
+      "options": {
+        "commands": ["pnpm rimraf dist", "pnpm tsc -b ./tsconfig.json"],
+        "cwd": "apps/cli",
+        "parallel": false
+      }
+    },
+    "build": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "inputs": ["{projectRoot}/*"],
+      "dependsOn": ["refresh-readme", "refresh-manifests"],
+      "options": {
+        "commands": [
+          "pnpm exec make-dir dist/apps/cli",
+          "pnpm exec copyfiles -f LICENSE ./apps/cli/package.json ./apps/cli/oclif.manifest.json ./apps/cli/*.md ./dist/apps/cli",
+          "pnpm exec copyfiles -u 3 ./apps/cli/dist/**/*.js ./dist/apps/cli/dist"
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

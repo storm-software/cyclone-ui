@@ -5,7 +5,10 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cyclone-ui/cli": ["apps/cli/src/index.ts"],
+      "@cyclone-ui/cli/*": ["apps/cli/src/*"]
+    }
   },
   "references": []
 }

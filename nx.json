@@ -1,3 +1,30 @@
 {
-  "extends": "@storm-software/workspace-tools/config/nx.json"
+  "extends": "@storm-software/workspace-tools/config/nx.json",
+  "plugins": [
+    "@nx/eslint/plugin",
+    "@storm-software/workspace-tools/plugins/typescript",
+    {
+      "plugin": "@nx/react-native/plugin",
+      "options": {
+        "startTargetName": "start",
+        "podInstallTargetName": "pod-install",
+        "bundleTargetName": "bundle",
+        "runIosTargetName": "run-ios",
+        "runAndroidTargetName": "run-android",
+        "buildIosTargetName": "build-ios",
+        "buildAndroidTargetName": "build-android",
+        "syncDepsTargetName": "sync-deps",
+        "upgradeTargetname": "upgrade"
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "serveStaticTargetName": "serve-static"
+      }
+    }
+  ]
 }
