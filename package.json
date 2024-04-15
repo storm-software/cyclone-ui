@@ -80,7 +80,7 @@
     "@nx/devkit": "18.2.3",
     "@nx/jest": "18.2.3",
     "@nx/js": "18.2.3",
-    "@nx/node": "18.2.3",
+    "@nx/node": "18.2.4",
     "@nx/storybook": "18.2.3",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
