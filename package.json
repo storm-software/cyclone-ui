@@ -79,7 +79,7 @@
   "dependencies": {
     "@nx/devkit": "18.2.3",
     "@nx/jest": "18.2.3",
-    "@nx/js": "18.2.3",
+    "@nx/js": "18.3.2",
     "@nx/node": "18.2.3",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
@@ -121,7 +121,7 @@
     "react-i18next": "^14.1.0",
     "react-native": "0.73.2",
     "react-native-web": "^0.19.9",
-    "react-webpack5": "link:@storybook\\react-webpack5",
+    "react-webpack5": "link:@storybook\react-webpack5",
     "rimraf": "^5.0.5",
     "solito": "^4.2.2",
     "storybook": "7.6.10",
