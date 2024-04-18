@@ -142,7 +142,7 @@
     "@nx/react": "18.2.3",
     "@nx/react-native": "18.2.3",
     "@nx/rollup": "18.2.3",
-    "@nx/storybook": "18.2.3",
+    "@nx/storybook": "18.3.2",
     "@nx/vite": "18.2.3",
     "@nx/web": "18.2.3",
     "@nx/webpack": "18.2.3",
