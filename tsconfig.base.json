@@ -6,9 +6,17 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
+      "@cyclone-ui/button": ["packages/button/src/index.ts"],
+      "@cyclone-ui/button/*": ["packages/button/src/*"],
       "@cyclone-ui/cli": ["apps/cli/src/index.ts"],
-      "@cyclone-ui/cli/*": ["apps/cli/src/*"]
-    }
+      "@cyclone-ui/cli/*": ["apps/cli/src/*"],
+      "@cyclone-ui/config": ["packages/config/src/index.ts"],
+      "@cyclone-ui/config/*": ["packages/config/src/*"],
+      "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
+      "@cyclone-ui/themes/*": ["packages/themes/src/*"],
+      "app": ["packages/app/src/index.ts"]
+    },
+    "skipLibCheck": true
   },
   "references": []
 }

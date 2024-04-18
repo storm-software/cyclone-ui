@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "files": [
+    "../../.storm/themes/default-dark.json",
+    "../../.storm/themes/default-light.json"
+  ],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ],
+  "extends": "../../tsconfig.base.json"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "config",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/config/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/config/src/index.ts",
+        "outputPath": "dist/packages/config",
+        "tsConfig": "packages/config/tsconfig.json",
+        "project": "packages/config/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/config",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

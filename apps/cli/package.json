@@ -34,6 +34,7 @@
     "@oclif/plugin-update": "^4.2.4",
     "@oclif/plugin-version": "^2.0.16",
     "@oclif/plugin-warn-if-update-available": "^3.0.15",
+    "@storm-software/config-tools": "^1.39.1",
     "chroma-js": "^2.4.2",
     "fs-extra": "^11.2.0"
   },

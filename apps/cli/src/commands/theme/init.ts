@@ -1,10 +1,10 @@
 import {Args, Command, Flags} from '@oclif/core'
 import {loadStormConfig} from '@storm-software/config-tools'
 import {ColorPaletteType, ColorThemeType} from '../../libs/types.js'
-import {addPalette, getThemePath, initialTheme, setTheme} from '../../libs/themes.js'
-import {join} from 'node:path'
+import {addPalette, getThemeFilePath, getThemePath, initialTheme, setTheme} from '../../libs/themes.js'
+import {isFunction} from '../../libs/is-function.js'
 import {cancel, confirm, intro, isCancel, outro, spinner, text} from '@clack/prompts'
-import {exists} from 'fs-extra'
+import fs from 'fs-extra'
 
 /**
  * A command to generate design tokens based on the colors provided by the user.
@@ -46,6 +46,16 @@ export default class Init extends Command {
       deprecateAliases: false,
       noCacheDefault: false,
     }),
+    clean: Flags.boolean({
+      char: 'c',
+      summary: 'Clean output directory',
+      description: 'Remove all theme files from the output directory before generating new themes',
+      hidden: false,
+      default: false,
+      required: false,
+      deprecateAliases: false,
+      noCacheDefault: false,
+    }),
   }
 
   public static override summary = 'Cyclone UI - Initialize Themes'
@@ -70,16 +80,27 @@ export default class Init extends Command {
   public override async run(): Promise<void> {
     const {args, flags} = await this.parse(Init)
 
+    this.log(
+      `Using the following args: \n${Object.keys(args)
+        .map((key) => ` - ${key}=${isFunction(args[key]) ? '<function>' : JSON.stringify(args[key])}`)
+        .join('\n')}\n`,
+    )
+    this.log(
+      `Using the following flags: \n${Object.keys(flags)
+        .map((key) => ` - ${key}=${isFunction(flags[key]) ? '<function>' : JSON.stringify(flags[key])}`)
+        .join('\n')}\n\n`,
+    )
+
     intro('Cyclone UI - Initialize Themes')
 
-    let s = spinner()
-    s.start('Loading Storm configuration')
+    const s1 = spinner()
+    s1.start('Loading Storm configuration')
     const config = await loadStormConfig()
-    s.stop('Loaded Storm configuration')
+    s1.stop('Loaded Storm configuration')
 
     let output = flags.output
     if (!output) {
-      output = join(config.outputDirectory, 'themes')
+      output = config.outputDirectory
       if (!flags.skip) {
         const useConfigOutput = await confirm({
           message: `Should the output directory be set to ${output} (defaulted from ${config.configPath ? config.configPath : 'Storm configuration'} file)?`,
@@ -92,7 +113,7 @@ export default class Init extends Command {
         if (!useConfigOutput) {
           const promptInput = await text({
             message: 'Enter the themes output directory',
-            defaultValue: './.storm/themes',
+            defaultValue: './.storm',
           })
           if (isCancel(promptInput)) {
             cancel('Operation cancelled.')
@@ -107,38 +128,47 @@ export default class Init extends Command {
       }
     }
 
-    if (await exists(getThemePath(config.workspaceRoot, output, ColorThemeType.LIGHT, args.name))) {
-      this.error(
-        `The theme file ${getThemePath(config.workspaceRoot, output, ColorThemeType.LIGHT, args.name)} already exist! Please run "cyclone theme reset" then re-run "cyclone theme init"`,
-      )
-    }
+    try {
+      if (flags.clean) {
+        const s2 = spinner()
+        s2.start('Cleaning themes from output directory')
 
-    if (await exists(getThemePath(config.workspaceRoot, output, ColorThemeType.DARK, args.name))) {
-      this.error(
-        `The theme file ${getThemePath(config.workspaceRoot, output, ColorThemeType.DARK, args.name)} already exist! Please run "cyclone theme reset" then re-run "cyclone theme init"`,
-      )
-    }
+        await fs.remove(getThemePath(config.workspaceRoot, output))
 
-    s = spinner()
-    s.start('Writing themes to output directory')
+        s2.stop('Cleaned themes from output directory')
+      } else {
+        if (await fs.exists(getThemeFilePath(config.workspaceRoot, output, ColorThemeType.LIGHT, args.name))) {
+          this.error(
+            `The theme file ${getThemeFilePath(config.workspaceRoot, output, ColorThemeType.LIGHT, args.name)} already exist! Please run "cyclone theme reset" then re-run "cyclone theme init"`,
+          )
+        }
+
+        if (await fs.exists(getThemeFilePath(config.workspaceRoot, output, ColorThemeType.DARK, args.name))) {
+          this.error(
+            `The theme file ${getThemeFilePath(config.workspaceRoot, output, ColorThemeType.DARK, args.name)} already exist! Please run "cyclone theme reset" then re-run "cyclone theme init"`,
+          )
+        }
+      }
+    } catch {}
+
+    const s3 = spinner()
+    s3.start('Writing themes to output directory')
 
     let lightTheme = await initialTheme(config.colors, ColorThemeType.LIGHT)
-    for (const type of Object.keys(config.colors)) {
+    for (const type of Object.keys(config.colors).filter((type) => type !== 'dark' && type !== 'light')) {
       lightTheme = addPalette(lightTheme, config.colors[type], type as ColorPaletteType)
     }
     await setTheme(lightTheme, config.workspaceRoot, output, ColorThemeType.LIGHT, args.name)
 
     let darkTheme = await initialTheme(config.colors, ColorThemeType.DARK)
-    for (const type of Object.keys(config.colors)) {
+    for (const type of Object.keys(config.colors).filter((type) => type !== 'dark' && type !== 'light')) {
       darkTheme = addPalette(darkTheme, config.colors[type], type as ColorPaletteType)
     }
     await setTheme(darkTheme, config.workspaceRoot, output, ColorThemeType.DARK, args.name)
 
-    s.start('Wrote themes to output directory')
+    s3.stop('Wrote themes to output directory')
 
     outro('Theme configurations were successfully generated in the output directory')
-
-    this.exit()
   }
 
   public override async catch(error: Error): Promise<void> {

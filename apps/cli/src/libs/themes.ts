@@ -1,16 +1,19 @@
 import {join} from 'node:path'
 import {ColorPaletteType, ColorTheme, ColorThemeType} from './types.js'
-import {readJson, writeJson} from 'fs-extra/esm'
 import chroma from 'chroma-js'
-import {exists} from 'fs-extra'
+import fs from 'fs-extra'
 
-export const getThemePath = (
+export const getThemePath = (workspaceRoot: string, output: string): string => {
+  return join(workspaceRoot, output, 'themes')
+}
+
+export const getThemeFilePath = (
   workspaceRoot: string,
   output: string,
   themeType: ColorThemeType,
   name: string = 'default',
 ): string => {
-  return join(workspaceRoot, output, `${name}-${themeType}.json`)
+  return join(getThemePath(workspaceRoot, output), `${name}-${themeType}.json`)
 }
 
 export const getTheme = async (
@@ -19,12 +22,12 @@ export const getTheme = async (
   themeType: ColorThemeType,
   name: string = 'default',
 ): Promise<ColorTheme> => {
-  const themePath = getThemePath(workspaceRoot, output, themeType, name)
-  if (!exists(themePath)) {
+  const themePath = getThemeFilePath(workspaceRoot, output, themeType, name)
+  if (!(await fs.exists(themePath))) {
     throw new Error(`The theme file ${themePath} does not exist`)
   }
 
-  let theme = await readJson(themePath)
+  let theme = await fs.readJson(themePath)
   if (!theme?.base?.['0']) {
     throw new Error('The base color is required to generate the design tokens')
   }
@@ -67,5 +70,10 @@ export const setTheme = async (
   themeType: ColorThemeType,
   name: string = 'default',
 ) => {
-  await writeJson(getThemePath(workspaceRoot, output, themeType, name), theme)
+  const themePath = getThemePath(workspaceRoot, output)
+  if (!(await fs.pathExists(themePath))) {
+    await fs.mkdir(join(workspaceRoot, output, 'themes'), {recursive: true})
+  }
+
+  await fs.writeJson(getThemeFilePath(workspaceRoot, output, themeType, name), theme)
 }

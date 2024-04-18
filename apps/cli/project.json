@@ -4,6 +4,13 @@
   "projectType": "application",
   "sourceRoot": "apps/cli/src",
   "targets": {
+    "clean": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm rimraf dist/apps/cli"
+      }
+    },
     "refresh-manifests": {
       "cache": false,
       "executor": "nx:run-commands",
@@ -45,6 +52,7 @@
         "commands": [
           "pnpm exec make-dir dist/apps/cli",
           "pnpm exec copyfiles -f LICENSE ./apps/cli/package.json ./apps/cli/oclif.manifest.json ./apps/cli/*.md ./dist/apps/cli",
+          "pnpm exec copyfiles -f ./apps/cli/bin/* ./dist/apps/cli/bin",
           "pnpm exec copyfiles -u 3 ./apps/cli/dist/**/*.js ./dist/apps/cli/dist"
         ],
         "parallel": false

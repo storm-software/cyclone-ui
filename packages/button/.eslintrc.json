@@ -1,0 +1,24 @@
+{
+  "extends": ["../../.eslintrc.base.json"],
+  "ignorePatterns": ["!**/*", "storybook-static"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": [
+          "packages/button/tsconfig.*?.json",
+          "packages\\button\\tsconfig.storybook.json"
+        ]
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

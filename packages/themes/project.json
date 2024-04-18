@@ -1,0 +1,51 @@
+{
+  "name": "themes",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/themes/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/themes/src/index.ts",
+        "outputPath": "dist/packages/themes",
+        "tsConfig": "packages/themes/tsconfig.json",
+        "project": "packages/themes/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/themes",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          },
+          {
+            "input": ".storm/themes",
+            "glob": "*.json",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

@@ -7,7 +7,8 @@
     "rootDir": "src",
     "strict": false,
     "target": "es2022",
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+    "tsBuildInfoFile": "../../dist/apps/cli/tsconfig.tsbuildinfo"
   },
   "files": [],
   "include": ["./src/**/*"],

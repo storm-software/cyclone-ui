@@ -1,0 +1,14 @@
+{
+  "name": "@cyclone-ui/themes",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Shared configuration files used by Cyclone UI",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "dependencies": {
+    "@tamagui/theme-builder": "^1.94.4",
+    "zustand": "^4.5.2"
+  }
+}

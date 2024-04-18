@@ -1,0 +1,24 @@
+{
+  "test": "TestEN",
+  "common": {
+    "ok": "OK!",
+    "cancel": "Abbrechen",
+    "back": "Zurück"
+  },
+  "home": "Startseite",
+  "playground": "Spielwiese",
+  "errors": {
+    "invalidEmail": "Ungültige E-Mail-Adresse."
+  },
+  "icons": "Icons",
+  "close": "Schließen",
+  "welcomeScreen": {
+    "home": "HomeEN"
+  },
+  "overviewScreen": {
+    "headline": "Übersicht"
+  },
+  "mediaScreen": {
+    "headline": "Medien"
+  }
+}
