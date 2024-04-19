@@ -1,0 +1,39 @@
+{
+  "name": "@cyclone-ui/font-mona-sans",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A Cyclone UI package containing the Mono-Sans font and font-related utilities used in the design system",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/font-mona-sans"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./css/200.css": "./css/200.css",
+    "./css/500.css": "./css/500.css",
+    "./css/700.css": "./css/700.css",
+    "./css/800.css": "./css/800.css",
+    "./css/900.css": "./css/900.css",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@tamagui/core": "^1.94.5"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.94.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

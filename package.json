@@ -93,8 +93,8 @@
     "@tamagui/build": "^1.92.1",
     "@types/jest": "^29.5.8",
     "@types/node": "20.9.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
     "babel-loader": "^9.1.3",
     "bundlewatch": "latest",
     "copyfiles": "^2.4.1",
@@ -189,6 +189,7 @@
       "@cyclone-ui/button": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/config": "workspace:*",
+      "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*"

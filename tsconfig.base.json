@@ -14,7 +14,9 @@
       "@cyclone-ui/config/*": ["packages/config/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"],
-      "app": ["packages/app/src/index.ts"]
+      "app": ["packages/app/src/index.ts"],
+      "@cyclone-ui/font-mona-sans": ["packages/font-mona-sans/src/index.ts"],
+      "@cyclone-ui/font-mona-sans/*": ["packages/font-mona-sans/src/*"]
     },
     "skipLibCheck": true
   },
