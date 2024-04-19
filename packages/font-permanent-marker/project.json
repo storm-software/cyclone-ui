@@ -1,0 +1,39 @@
+{
+  "name": "font-permanent-marker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/font-permanent-marker/src",
+  "targets": {
+    "build-base": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec tamagui-build --clean --bundle",
+        "cwd": "packages/font-permanent-marker"
+      }
+    },
+    "build": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["build-base"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pnpm exec rimraf dist/packages/font-permanent-marker",
+          "make-dir dist/packages/font-permanent-marker",
+          "pnpm exec copyfiles -f LICENSE ./packages/font-permanent-marker/package.json ./packages/font-permanent-marker/*.md  ./dist/packages/font-permanent-marker",
+          "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/dist/**/*.js ./dist/packages/font-permanent-marker/dist",
+          "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/types/**/* ./dist/packages/font-permanent-marker/types",
+          "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/css/**/*.css ./dist/packages/font-permanent-marker/css",
+          "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/webfonts/**/* ./dist/packages/font-permanent-marker/webfonts"
+        ],
+        "parallel": false
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

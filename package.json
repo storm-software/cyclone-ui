@@ -193,7 +193,8 @@
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/font-space-grotesk": "workspace:*"
+      "@cyclone-ui/font-space-grotesk": "workspace:*",
+      "@cyclone-ui/font-permanent-marker": "workspace:*"
     }
   },
   "bundlewatch": {

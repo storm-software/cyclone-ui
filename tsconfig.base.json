@@ -30,6 +30,12 @@
       "@cyclone-ui/font-mona-sans/*": [
         "packages/font-mona-sans/src/*"
       ],
+      "@cyclone-ui/font-space-grotesk": [
+        "packages/font-space-grotesk/src/index.ts"
+      ],
+      "@cyclone-ui/font-space-grotesk/*": [
+        "packages/font-space-grotesk/src/*"
+      ],
       "@cyclone-ui/themes": [
         "packages/themes/src/index.ts"
       ],
@@ -39,11 +45,11 @@
       "app": [
         "packages/app/src/index.ts"
       ],
-      "@cyclone-ui/font-space-grotesk": [
-        "packages/font-space-grotesk/src/index.ts"
+      "@cyclone-ui/font-permanent-marker": [
+        "packages/font-permanent-marker/src/index.ts"
       ],
-      "@cyclone-ui/font-space-grotesk/*": [
-        "packages/font-space-grotesk/src/*"
+      "@cyclone-ui/font-permanent-marker/*": [
+        "packages/font-permanent-marker/src/*"
       ]
     },
     "skipLibCheck": true

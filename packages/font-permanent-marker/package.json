@@ -1,0 +1,36 @@
+{
+  "name": "@cyclone-ui/font-permanent-marker",
+  "version": "0.0.1",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/font-permanent-marker"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./css/400.css": "./css/400.css",
+    "./webfonts/permanent-marker-latin-400-normal.woff2": "./webfonts/permanent-marker-latin-400-normal.woff2",
+    "./webfonts/permanent-marker-latin-400-normal.woff": "./webfonts/permanent-marker-latin-400-normal.woff",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@tamagui/core": "^1.94.5"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.94.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

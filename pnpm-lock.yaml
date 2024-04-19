@@ -13,6 +13,7 @@ overrides:
   '@cyclone-ui/themes': workspace:*
   '@cyclone-ui/website': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
+  '@cyclone-ui/font-permanent-marker': workspace:*
 
 importers:
 
@@ -596,6 +597,16 @@ importers:
         version: 2.6.2
 
   packages/font-mona-sans:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+    devDependencies:
+      '@tamagui/build':
+        specifier: ^1.94.5
+        version: 1.94.5(typescript@5.2.2)
+
+  packages/font-permanent-marker:
     dependencies:
       '@tamagui/core':
         specifier: ^1.94.5
