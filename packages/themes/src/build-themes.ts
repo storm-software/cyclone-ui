@@ -24,7 +24,7 @@ export const formatPalettes = (
   return Object.keys(light).reduce(
     (ret: Record<string, string[]>, key: string) => {
       ret[`light_${key}`] = Object.values(
-        dark[key as ColorPaletteType]
+        light[key as ColorPaletteType]
       ) as string[];
 
       return ret;
@@ -99,9 +99,9 @@ export const buildThemes = (
         colorPress: -1,
         colorFocus: -2,
         borderColor: 5,
-        borderColorHover: 6,
-        borderColorFocus: 4,
-        borderColorPress: 5,
+        borderColorHover: -2,
+        borderColorFocus: -0,
+        borderColorPress: -1,
         placeholderColor: -4
       },
 

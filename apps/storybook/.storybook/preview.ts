@@ -12,7 +12,7 @@ const preview: Preview = {
       name: "Theme",
       title: "Theme",
       description: "Theme for your components",
-      defaultValue: "light",
+      defaultValue: "dark",
       toolbar: {
         icon: "paintbrush",
         dynamicTitle: true,

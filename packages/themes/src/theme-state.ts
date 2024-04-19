@@ -1,5 +1,5 @@
-import { create } from "zustand";
 import { shallow } from "zustand/shallow";
+import { createWithEqualityFn } from "zustand/traditional";
 
 type ThemeVars = "dark" | "light";
 type Theme = {
@@ -8,7 +8,7 @@ type Theme = {
   toggleTheme: () => void;
 };
 
-export const useThemeState = create<Theme>(set => ({
+export const useThemeState = createWithEqualityFn<Theme>(set => ({
   changeTheme: name => set({ name }),
   toggleTheme: () =>
     set(state => ({

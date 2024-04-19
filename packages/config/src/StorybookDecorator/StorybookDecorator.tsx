@@ -28,7 +28,7 @@ export const StorybookDecorator = (Story: any, args: any) => {
         disableInjectCSS={!process.env.STORYBOOK}
         defaultTheme={defaultTheme}>
         <YStack
-          backgroundColor={"$backgroundStrong"}
+          backgroundColor={"$background"}
           padding={"$4"}
           flexGrow={1}>
           <Story />

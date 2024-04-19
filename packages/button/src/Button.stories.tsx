@@ -18,8 +18,9 @@ export const Primary: Story = {
   }
 };
 
-export const Secondary: Story = {
+export const Outlined: Story = {
   args: {
-    children: "Button Text"
+    children: "Button Text",
+    variant: "outlined"
   }
 };
