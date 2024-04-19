@@ -1,0 +1,55 @@
+{
+  "name": "@cyclone-ui/font-space-grotesk",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A Cyclone UI package containing the Space Grotesk font and font-related utilities used in the design system",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/font-mona-sans"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./css/normal.css": "./css/normal.css",
+    "./webfonts/space-grotesk-latin-300-normal.woff2": "./webfonts/space-grotesk-latin-300-normal.woff2",
+    "./webfonts/space-grotesk-latin-300-normal.woff": "./webfonts/space-grotesk-latin-300-normal.woff",
+    "./webfonts/space-grotesk-latin-400-normal.woff2": "./webfonts/space-grotesk-latin-400-normal.woff2",
+    "./webfonts/space-grotesk-latin-400-normal.woff": "./webfonts/space-grotesk-latin-400-normal.woff",
+    "./webfonts/space-grotesk-latin-500-normal.woff2": "./webfonts/space-grotesk-latin-500-normal.woff2",
+    "./webfonts/space-grotesk-latin-500-normal.woff": "./webfonts/space-grotesk-latin-500-normal.woff",
+    "./webfonts/space-grotesk-latin-600-normal.woff2": "./webfonts/space-grotesk-latin-600-normal.woff2",
+    "./webfonts/space-grotesk-latin-600-normal.woff": "./webfonts/space-grotesk-latin-600-normal.woff",
+    "./webfonts/space-grotesk-latin-700-normal.woff2": "./webfonts/space-grotesk-latin-700-normal.woff2",
+    "./webfonts/space-grotesk-latin-700-normal.woff": "./webfonts/space-grotesk-latin-700-normal.woff",
+    "./webfonts/space-grotesk-latin-ext-300-normal.woff2": "./webfonts/space-grotesk-latin-ext-300-normal.woff2",
+    "./webfonts/space-grotesk-latin-ext-300-normal.woff": "./webfonts/space-grotesk-latin-ext-300-normal.woff",
+    "./webfonts/space-grotesk-latin-ext-400-normal.woff2": "./webfonts/space-grotesk-latin-ext-400-normal.woff2",
+    "./webfonts/space-grotesk-latin-ext-400-normal.woff": "./webfonts/space-grotesk-latin-ext-400-normal.woff",
+    "./webfonts/space-grotesk-latin-ext-500-normal.woff2": "./webfonts/space-grotesk-latin-ext-500-normal.woff2",
+    "./webfonts/space-grotesk-latin-ext-500-normal.woff": "./webfonts/space-grotesk-latin-ext-500-normal.woff",
+    "./webfonts/space-grotesk-latin-ext-600-normal.woff2": "./webfonts/space-grotesk-latin-ext-600-normal.woff2",
+    "./webfonts/space-grotesk-latin-ext-600-normal.woff": "./webfonts/space-grotesk-latin-ext-600-normal.woff",
+    "./webfonts/space-grotesk-latin-ext-700-normal.woff2": "./webfonts/space-grotesk-latin-ext-700-normal.woff2",
+    "./webfonts/space-grotesk-latin-ext-700-normal.woff": "./webfonts/space-grotesk-latin-ext-700-normal.woff",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@tamagui/core": "^1.94.5"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.94.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

@@ -192,7 +192,8 @@
       "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*"
+      "@cyclone-ui/website": "workspace:*",
+      "@cyclone-ui/font-space-grotesk": "workspace:*"
     }
   },
   "bundlewatch": {
