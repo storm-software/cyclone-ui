@@ -1,54 +1,29 @@
-import { createTamagui } from "tamagui";
-import { createInterFont } from "@tamagui/font-inter";
+import { createTamagui } from "@tamagui/core";
 import { shorthands } from "@tamagui/shorthands";
 import { tokens } from "@tamagui/themes";
 import { themes } from "@cyclone-ui/themes";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { animations } from "./animations";
+import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
+import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
+import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
 
-const headingFont = createInterFont({
-  size: {
-    6: 15
-  },
+const headingFont = createPermanentMarkerFont({
   transform: {
-    6: "uppercase",
-    7: "none"
+    6: "uppercase"
   },
   weight: {
-    6: "400",
-    7: "700"
+    6: "400"
   },
   color: {
     6: "$colorFocus",
     7: "$color"
-  },
-  letterSpacing: {
-    5: 2,
-    6: 1,
-    7: 0,
-    8: -1,
-    9: -2,
-    10: -3,
-    12: -4,
-    14: -5,
-    15: -6
-  },
-  face: {
-    700: { normal: "InterBold" }
   }
 });
 
-const bodyFont = createInterFont(
-  {
-    face: {
-      700: { normal: "InterBold" }
-    }
-  },
-  {
-    sizeSize: size => Math.round(size * 1.1),
-    sizeLineHeight: size => Math.round(size * 1.1 + (size > 20 ? 10 : 10))
-  }
-);
+const labelFont = createMonaSansFont({});
+
+const bodyFont = createSpaceGroteskFont({});
 
 export const config = createTamagui({
   animations,
@@ -57,6 +32,7 @@ export const config = createTamagui({
   shorthands,
   fonts: {
     heading: headingFont,
+    label: labelFont,
     body: bodyFont
   },
   tokens,

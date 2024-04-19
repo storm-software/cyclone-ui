@@ -194,7 +194,8 @@
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",
-      "@cyclone-ui/font-permanent-marker": "workspace:*"
+      "@cyclone-ui/font-permanent-marker": "workspace:*",
+      "@cyclone-ui/theme-provider": "workspace:*"
     }
   },
   "bundlewatch": {

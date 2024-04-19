@@ -8,6 +8,10 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/font-mona-sans"
   },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
   "type": "module",
   "exports": {
     "./package.json": "./package.json",

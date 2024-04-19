@@ -10,13 +10,13 @@
 import type { GenericFont } from "@tamagui/core";
 import { createFont, isWeb } from "@tamagui/core";
 
-export const createMonoSansFont = <A extends GenericFont<keyof typeof size>>(
+export const createMonaSansFont = <A extends GenericFont<keyof typeof size>>(
   font: Partial<A> = {}
 ): A => {
   return createFont({
     family: isWeb
-      ? "Mono Sans, Monaco, Consolas, Ubuntu Mono, monospace"
-      : "Mono Sans",
+      ? "Mona Sans, Monaco, Consolas, Ubuntu Mono, monospace"
+      : "Mona Sans",
     size,
     lineHeight: Object.fromEntries(
       Object.entries(size).map(([k, v]) => [k, v * 1.3])

@@ -98,8 +98,8 @@ export const buildThemes = (
         colorHover: -2,
         colorPress: -1,
         colorFocus: -2,
-        borderColor: 5,
-        borderColorHover: -2,
+        borderColor: -2,
+        borderColorHover: -1,
         borderColorFocus: -0,
         borderColorPress: -1,
         placeholderColor: -4

@@ -26,7 +26,6 @@
     "src/**/*.stories.tsx",
     "src/**/*.stories.mdx",
     ".storybook/*.js",
-    ".storybook/*.ts",
-    "../../packages/config/src/StorybookDecorator/StorybookDecorator.tsx"
+    ".storybook/*.ts"
   ]
 }

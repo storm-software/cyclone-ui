@@ -1,0 +1,44 @@
+{
+  "name": "theme-provider",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/theme-provider/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/theme-provider/src/index.ts",
+        "outputPath": "dist/packages/theme-provider",
+        "tsConfig": "packages/theme-provider/tsconfig.json",
+        "project": "packages/theme-provider/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/theme-provider",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "browser"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "lint": {},
+    "test": {}
+  }
+}

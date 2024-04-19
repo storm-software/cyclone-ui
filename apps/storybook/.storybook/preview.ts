@@ -4,7 +4,7 @@ import "@fontsource/inter/700.css";
 import "raf/polyfill";
 import { Preview } from "@storybook/react";
 import i18n from "./i18n";
-import { StorybookDecorator } from "../../../packages/config/src/StorybookDecorator/StorybookDecorator";
+import { StorybookDecorator } from "../src/StorybookDecorator";
 
 const preview: Preview = {
   globalTypes: {

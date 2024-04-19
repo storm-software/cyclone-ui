@@ -14,6 +14,7 @@ overrides:
   '@cyclone-ui/website': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/font-permanent-marker': workspace:*
+  '@cyclone-ui/theme-provider': workspace:*
 
 importers:
 
@@ -577,7 +578,7 @@ importers:
       '@tamagui/animations-react-native':
         specifier: ^1.94.5
         version: 1.94.5(react-native@0.73.2)(react@18.2.0)
-      '@tamagui/font-inter':
+      '@tamagui/core':
         specifier: ^1.94.5
         version: 1.94.5(react@18.2.0)
       '@tamagui/react-native-media-driver':
@@ -589,12 +590,13 @@ importers:
       '@tamagui/themes':
         specifier: ^1.94.5
         version: 1.94.5
-      tamagui:
-        specifier: ^1.94.5
-        version: 1.94.5(@types/react@18.2.75)(react-dom@18.2.0)(react-native-web@0.19.10)(react-native@0.73.2)(react@18.2.0)
       tslib:
         specifier: ^2.3.0
         version: 2.6.2
+    devDependencies:
+      '@tamagui/build':
+        specifier: ^1.94.5
+        version: 1.94.5(typescript@5.2.2)
 
   packages/font-mona-sans:
     dependencies:
@@ -617,6 +619,16 @@ importers:
         version: 1.94.5(typescript@5.2.2)
 
   packages/font-space-grotesk:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+    devDependencies:
+      '@tamagui/build':
+        specifier: ^1.94.5
+        version: 1.94.5(typescript@5.2.2)
+
+  packages/theme-provider:
     dependencies:
       '@tamagui/core':
         specifier: ^1.94.5
@@ -11566,14 +11578,6 @@ packages:
       '@tamagui/compose-refs': 1.94.5(react@18.2.0)
       '@tamagui/web': 1.94.5
       react: 18.2.0
-    dev: false
-
-  /@tamagui/font-inter@1.94.5(react@18.2.0):
-    resolution: {integrity: sha512-UjWiDlR3J1CiEcRcHYszqPr7nmGSvrHlfIMSshvJ+3Y/lsCaADUGTOyrNGKsXmYQHauux78Gm55MmlJueHcpSw==}
-    dependencies:
-      '@tamagui/core': 1.94.5(react@18.2.0)
-    transitivePeerDependencies:
-      - react
     dev: false
 
   /@tamagui/font-size@1.94.5(react@18.2.0):

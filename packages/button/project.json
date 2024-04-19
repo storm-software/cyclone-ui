@@ -25,6 +25,7 @@
           "pnpm exec rimraf dist/packages/button",
           "make-dir dist/packages/button",
           "pnpm exec copyfiles -f LICENSE ./packages/button/package.json ./packages/button/*.md ./dist/packages/button",
+          "pnpm exec copyfiles -u 3 ./packages/font-mona-sans/types/**/* ./dist/packages/font-mona-sans/types",
           "pnpm exec copyfiles -u 3 ./packages/button/dist/**/*.js ./dist/packages/button/dist"
         ],
         "parallel": false
