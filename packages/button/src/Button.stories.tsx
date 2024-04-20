@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Base: Story = {
   args: {
     children: "Button Text"
   }

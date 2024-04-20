@@ -1,9 +1,8 @@
 {
-  "name": "button",
+  "name": "input",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/button/src",
   "projectType": "library",
-  "tags": [],
+  "sourceRoot": "packages/input/src",
   "targets": {
     "build-base": {
       "cache": true,
@@ -12,7 +11,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "pnpm exec tamagui-build --clean",
-        "cwd": "packages/button"
+        "cwd": "packages/input"
       }
     },
     "build": {
@@ -22,11 +21,11 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "pnpm exec rimraf dist/packages/button",
-          "make-dir dist/packages/button",
-          "pnpm exec copyfiles -f LICENSE ./packages/button/package.json ./packages/button/*.md ./dist/packages/button",
-          "pnpm exec copyfiles -u 3 ./packages/button/types/**/* ./dist/packages/button/types",
-          "pnpm exec copyfiles -u 3 ./packages/button/dist/**/*.js ./dist/packages/button/dist"
+          "pnpm exec rimraf dist/packages/input",
+          "make-dir dist/packages/input",
+          "pnpm exec copyfiles -f LICENSE ./packages/input/package.json ./packages/input/*.md ./dist/packages/input",
+          "pnpm exec copyfiles -u 3 ./packages/input/types/**/* ./dist/packages/input/types",
+          "pnpm exec copyfiles -u 3 ./packages/input/dist/**/*.js ./dist/packages/input/dist"
         ],
         "parallel": false
       }

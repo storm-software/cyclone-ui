@@ -15,6 +15,7 @@ overrides:
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/font-permanent-marker': workspace:*
   '@cyclone-ui/theme-provider': workspace:*
+  '@cyclone-ui/input': workspace:*
 
 importers:
 
@@ -627,6 +628,46 @@ importers:
       '@tamagui/build':
         specifier: ^1.94.5
         version: 1.94.5(typescript@5.2.2)
+
+  packages/input:
+    dependencies:
+      '@tamagui/constants':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+      '@tamagui/focusable':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+      '@tamagui/get-button-sized':
+        specifier: ^1.94.5
+        version: 1.94.5(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/get-font-sized':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+      '@tamagui/get-token':
+        specifier: ^1.94.5
+        version: 1.94.5(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.94.5
+        version: 1.94.5(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.94.5
+        version: 1.94.5(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.94.5
+        version: 1.94.5
+    devDependencies:
+      '@tamagui/build':
+        specifier: ^1.94.5
+        version: 1.94.5(typescript@5.2.2)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
 
   packages/theme-provider:
     dependencies:
