@@ -51,13 +51,13 @@ oclif example Hello World CLI
 <!-- usage -->
 ```sh-session
 $ npm install -g @cyclone-ui/cli
-$ cyclone COMMAND
+$ cyclone-ui COMMAND
 running command...
-$ cyclone (--version|-v)
+$ cyclone-ui (--version|-v)
 @cyclone-ui/cli/0.0.1 win32-x64 node-v20.11.0
-$ cyclone --help [COMMAND]
+$ cyclone-ui --help [COMMAND]
 USAGE
-  $ cyclone COMMAND
+  $ cyclone-ui COMMAND
 ...
 ```
 <!-- usagestop -->
@@ -65,32 +65,29 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`cyclone autocomplete [SHELL]`](#cyclone-autocomplete-shell)
-* [`cyclone help [COMMAND]`](#cyclone-help-command)
-* [`cyclone plugins`](#cyclone-plugins)
-* [`cyclone plugins add PLUGIN`](#cyclone-plugins-add-plugin)
-* [`cyclone plugins:inspect PLUGIN...`](#cyclone-pluginsinspect-plugin)
-* [`cyclone plugins install PLUGIN`](#cyclone-plugins-install-plugin)
-* [`cyclone plugins link PATH`](#cyclone-plugins-link-path)
-* [`cyclone plugins remove [PLUGIN]`](#cyclone-plugins-remove-plugin)
-* [`cyclone plugins reset`](#cyclone-plugins-reset)
-* [`cyclone plugins uninstall [PLUGIN]`](#cyclone-plugins-uninstall-plugin)
-* [`cyclone plugins unlink [PLUGIN]`](#cyclone-plugins-unlink-plugin)
-* [`cyclone plugins update`](#cyclone-plugins-update)
-* [`cyclone search`](#cyclone-search)
-* [`cyclone theme clean NAME`](#cyclone-theme-clean-name)
-* [`cyclone theme init NAME`](#cyclone-theme-init-name)
-* [`cyclone theme set NAME`](#cyclone-theme-set-name)
-* [`cyclone update [CHANNEL]`](#cyclone-update-channel)
-* [`cyclone version`](#cyclone-version)
+* [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
+* [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
+* [`cyclone-ui plugins`](#cyclone-ui-plugins)
+* [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
+* [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
+* [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
+* [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
+* [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
+* [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
+* [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
+* [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
+* [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
+* [`cyclone-ui search`](#cyclone-ui-search)
+* [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
+* [`cyclone-ui version`](#cyclone-ui-version)
 
-## `cyclone autocomplete [SHELL]`
+## `cyclone-ui autocomplete [SHELL]`
 
 Display autocomplete installation instructions.
 
 ```
 USAGE
-  $ cyclone autocomplete [SHELL] [-r]
+  $ cyclone-ui autocomplete [SHELL] [-r]
 
 ARGUMENTS
   SHELL  (zsh|bash|powershell) Shell type
@@ -102,26 +99,26 @@ DESCRIPTION
   Display autocomplete installation instructions.
 
 EXAMPLES
-  $ cyclone autocomplete
+  $ cyclone-ui autocomplete
 
-  $ cyclone autocomplete bash
+  $ cyclone-ui autocomplete bash
 
-  $ cyclone autocomplete zsh
+  $ cyclone-ui autocomplete zsh
 
-  $ cyclone autocomplete powershell
+  $ cyclone-ui autocomplete powershell
 
-  $ cyclone autocomplete --refresh-cache
+  $ cyclone-ui autocomplete --refresh-cache
 ```
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.0.13/src/commands/autocomplete/index.ts)_
 
-## `cyclone help [COMMAND]`
+## `cyclone-ui help [COMMAND]`
 
-Display help for cyclone.
+Display help for cyclone-ui.
 
 ```
 USAGE
-  $ cyclone help [COMMAND...] [-n]
+  $ cyclone-ui help [COMMAND...] [-n]
 
 ARGUMENTS
   COMMAND...  Command to show help for.
@@ -130,18 +127,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for cyclone.
+  Display help for cyclone-ui.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.20/src/commands/help.ts)_
 
-## `cyclone plugins`
+## `cyclone-ui plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ cyclone plugins [--json] [--core]
+  $ cyclone-ui plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -153,18 +150,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ cyclone plugins
+  $ cyclone-ui plugins
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/index.ts)_
 
-## `cyclone plugins add PLUGIN`
+## `cyclone-ui plugins add PLUGIN`
 
-Installs a plugin into cyclone.
+Installs a plugin into cyclone-ui.
 
 ```
 USAGE
-  $ cyclone plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ cyclone-ui plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -179,39 +176,39 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into cyclone.
+  Installs a plugin into cyclone-ui.
 
-  Uses bundled npm executable to install plugins into C:\Users\patjo\AppData\Local\cyclone
+  Uses bundled npm executable to install plugins into C:\Users\patjo\AppData\Local\cyclone-ui
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the CYCLONE_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the CYCLONE_NPM_REGISTRY environment variable to set the npm registry.
+  Use the CYCLONE_UI_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the CYCLONE_UI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ cyclone plugins add
+  $ cyclone-ui plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ cyclone plugins add myplugin
+    $ cyclone-ui plugins add myplugin
 
   Install a plugin from a github url.
 
-    $ cyclone plugins add https://github.com/someuser/someplugin
+    $ cyclone-ui plugins add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ cyclone plugins add someuser/someplugin
+    $ cyclone-ui plugins add someuser/someplugin
 ```
 
-## `cyclone plugins:inspect PLUGIN...`
+## `cyclone-ui plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ cyclone plugins inspect PLUGIN...
+  $ cyclone-ui plugins inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -227,18 +224,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ cyclone plugins inspect myplugin
+  $ cyclone-ui plugins inspect myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/inspect.ts)_
 
-## `cyclone plugins install PLUGIN`
+## `cyclone-ui plugins install PLUGIN`
 
-Installs a plugin into cyclone.
+Installs a plugin into cyclone-ui.
 
 ```
 USAGE
-  $ cyclone plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ cyclone-ui plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -253,41 +250,41 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into cyclone.
+  Installs a plugin into cyclone-ui.
 
-  Uses bundled npm executable to install plugins into C:\Users\patjo\AppData\Local\cyclone
+  Uses bundled npm executable to install plugins into C:\Users\patjo\AppData\Local\cyclone-ui
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the CYCLONE_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the CYCLONE_NPM_REGISTRY environment variable to set the npm registry.
+  Use the CYCLONE_UI_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the CYCLONE_UI_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ cyclone plugins add
+  $ cyclone-ui plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ cyclone plugins install myplugin
+    $ cyclone-ui plugins install myplugin
 
   Install a plugin from a github url.
 
-    $ cyclone plugins install https://github.com/someuser/someplugin
+    $ cyclone-ui plugins install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ cyclone plugins install someuser/someplugin
+    $ cyclone-ui plugins install someuser/someplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/install.ts)_
 
-## `cyclone plugins link PATH`
+## `cyclone-ui plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ cyclone plugins link PATH [-h] [--install] [-v]
+  $ cyclone-ui plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -301,23 +298,23 @@ DESCRIPTION
   Links a plugin into the CLI for development.
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the
-  user-installed or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will
+  override the user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
-  $ cyclone plugins link myplugin
+  $ cyclone-ui plugins link myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/link.ts)_
 
-## `cyclone plugins remove [PLUGIN]`
+## `cyclone-ui plugins remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cyclone plugins remove [PLUGIN...] [-h] [-v]
+  $ cyclone-ui plugins remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -330,20 +327,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cyclone plugins unlink
-  $ cyclone plugins remove
+  $ cyclone-ui plugins unlink
+  $ cyclone-ui plugins remove
 
 EXAMPLES
-  $ cyclone plugins remove myplugin
+  $ cyclone-ui plugins remove myplugin
 ```
 
-## `cyclone plugins reset`
+## `cyclone-ui plugins reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ cyclone plugins reset [--hard] [--reinstall]
+  $ cyclone-ui plugins reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
@@ -352,13 +349,13 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/reset.ts)_
 
-## `cyclone plugins uninstall [PLUGIN]`
+## `cyclone-ui plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cyclone plugins uninstall [PLUGIN...] [-h] [-v]
+  $ cyclone-ui plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -371,22 +368,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cyclone plugins unlink
-  $ cyclone plugins remove
+  $ cyclone-ui plugins unlink
+  $ cyclone-ui plugins remove
 
 EXAMPLES
-  $ cyclone plugins uninstall myplugin
+  $ cyclone-ui plugins uninstall myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/uninstall.ts)_
 
-## `cyclone plugins unlink [PLUGIN]`
+## `cyclone-ui plugins unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ cyclone plugins unlink [PLUGIN...] [-h] [-v]
+  $ cyclone-ui plugins unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -399,20 +396,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ cyclone plugins unlink
-  $ cyclone plugins remove
+  $ cyclone-ui plugins unlink
+  $ cyclone-ui plugins remove
 
 EXAMPLES
-  $ cyclone plugins unlink myplugin
+  $ cyclone-ui plugins unlink myplugin
 ```
 
-## `cyclone plugins update`
+## `cyclone-ui plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ cyclone plugins update [-h] [-v]
+  $ cyclone-ui plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -424,13 +421,13 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.0.7/src/commands/plugins/update.ts)_
 
-## `cyclone search`
+## `cyclone-ui search`
 
 Search for a command.
 
 ```
 USAGE
-  $ cyclone search
+  $ cyclone-ui search
 
 DESCRIPTION
   Search for a command.
@@ -440,168 +437,13 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.0.21/src/commands/search.ts)_
 
-## `cyclone theme clean NAME`
+## `cyclone-ui update [CHANNEL]`
 
-Cyclone UI - Clean Themes
-
-```
-USAGE
-  $ cyclone theme clean NAME... [-o <value>] [-s]
-
-ARGUMENTS
-  NAME...  [default: default] The name of the specific theme to assign the design token to
-
-FLAGS
-  -o, --output=<directory>  [default: .storm] Output directory
-  -s, --skip                Skip confirmation prompts
-
-DESCRIPTION
-  Cyclone UI - Clean Themes
-
-  Clean the theme configuration for the client application based on the colors provided in the Storm configuration file
-
-EXAMPLES
-  Clean the themes using the output path from the Storm configuration file
-
-    $ cyclone theme clean clean
-
-  Clean the themes, and write the output to ./path/to/output
-
-    $ cyclone theme clean clean --output=./path/to/output
-
-  Clean the themes, write the output to ./path/to/output, and skip confirmation prompts
-
-    $ cyclone theme clean clean --output=./path/to/output --skip
-
-FLAG DESCRIPTIONS
-  -o, --output=<directory>  Output directory
-
-    The location to output the design token file
-
-  -s, --skip  Skip confirmation prompts
-
-    Skip all confirmation prompts and use the default values
-```
-
-_See code: [dist/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.0.1/dist/commands/theme/clean.js)_
-
-## `cyclone theme init NAME`
-
-Cyclone UI - Initialize Themes
+update the cyclone-ui CLI
 
 ```
 USAGE
-  $ cyclone theme init NAME... [-o <value>] [-s] [-c]
-
-ARGUMENTS
-  NAME...  [default: default] The name of the specific theme to assign the design token to
-
-FLAGS
-  -c, --clean               Clean output directory
-  -o, --output=<directory>  [default: .storm] Output directory
-  -s, --skip                Skip confirmation prompts
-
-DESCRIPTION
-  Cyclone UI - Initialize Themes
-
-  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file
-
-EXAMPLES
-  Initialize the themes using the output path from the Storm configuration file
-
-    $ cyclone theme init init
-
-  Initialize the themes, and write the output to ./path/to/output
-
-    $ cyclone theme init init --output=./path/to/output
-
-  Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts
-
-    $ cyclone theme init init --output=./path/to/output --skip
-
-FLAG DESCRIPTIONS
-  -c, --clean  Clean output directory
-
-    Remove all theme files from the output directory before generating new themes
-
-  -o, --output=<directory>  Output directory
-
-    The location to output the design token file
-
-  -s, --skip  Skip confirmation prompts
-
-    Skip all confirmation prompts and use the default values
-```
-
-_See code: [dist/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.0.1/dist/commands/theme/init.js)_
-
-## `cyclone theme set NAME`
-
-Cyclone UI - Initialize Themes
-
-```
-USAGE
-  $ cyclone theme set NAME... -p base|primary|secondary|tertiary|accent|success|info|warning|error [-o
-    <value>] [-t light|dark|both] [-c <value>]
-
-ARGUMENTS
-  NAME...  [default: default] The name of the specific theme to assign the design token to
-
-FLAGS
-  -c, --color=<color>       Color
-  -o, --output=<directory>  [default: .storm] Output directory
-  -p, --palette=<palette>   (required) [default: primary] Color Palette Type
-  -t, --type=<type>         [default: both] Theme Type
-
-DESCRIPTION
-  Cyclone UI - Initialize Themes
-
-  Generate themes for the client application based on the colors provided by the user
-
-EXAMPLES
-  Set default theme's primary color to red
-
-    $ cyclone theme set set --color red --palette primary
-
-  Set dark default theme's secondary color to blue
-
-    $ cyclone theme set set --color blue --palette secondary --type dark
-
-  Set light default theme's tertiary color to green and write the output to /path/to/output
-
-    $ cyclone theme set set --color green --palette tertiary --type light --output /path/to/output
-
-  Set dark custom theme's accent color to black and write the output to /path/to/output
-
-    $ cyclone theme set set custom --color black --palette accent --type dark --output /path/to/output
-
-FLAG DESCRIPTIONS
-  -c, --color=<color>  Color
-
-    The color to use for the design token
-
-  -o, --output=<directory>  Output directory
-
-    The location to output the design token file
-
-  -p, --palette=<palette>  Color Palette Type
-
-    The palette type of the color (primary, secondary, tertiary, etc.)
-
-  -t, --type=<type>  Theme Type
-
-    The name of the specific theme to assign the design token to
-```
-
-_See code: [dist/commands/theme/set.js](https://github.com/storm-software/cyclone-ui/blob/v0.0.1/dist/commands/theme/set.js)_
-
-## `cyclone update [CHANNEL]`
-
-update the cyclone CLI
-
-```
-USAGE
-  $ cyclone update [CHANNEL] [-a] [--force] [-i | -v <value>]
+  $ cyclone-ui update [CHANNEL] [-a] [--force] [-i | -v <value>]
 
 FLAGS
   -a, --available        See available versions.
@@ -610,33 +452,33 @@ FLAGS
       --force            Force a re-download of the requested version.
 
 DESCRIPTION
-  update the cyclone CLI
+  update the cyclone-ui CLI
 
 EXAMPLES
   Update to the stable channel:
 
-    $ cyclone update stable
+    $ cyclone-ui update stable
 
   Update to a specific version:
 
-    $ cyclone update --version 1.0.0
+    $ cyclone-ui update --version 1.0.0
 
   Interactively select version:
 
-    $ cyclone update --interactive
+    $ cyclone-ui update --interactive
 
   See available versions:
 
-    $ cyclone update --available
+    $ cyclone-ui update --available
 ```
 
 _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.2.4/src/commands/update.ts)_
 
-## `cyclone version`
+## `cyclone-ui version`
 
 ```
 USAGE
-  $ cyclone version [--json] [--verbose]
+  $ cyclone-ui version [--json] [--verbose]
 
 FLAGS
   --verbose  Show additional information about the CLI.

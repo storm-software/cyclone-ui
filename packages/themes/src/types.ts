@@ -42,3 +42,7 @@ export const ColorThemeType = {
 };
 
 export type ColorTheme = Record<ColorPaletteType, ColorPalette>;
+
+export type ColorPaletteTokens<
+  ColorKey extends ColorPaletteType = ColorPaletteType
+> = Record<`${ColorKey}${number}`, string>;

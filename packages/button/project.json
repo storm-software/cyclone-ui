@@ -11,7 +11,7 @@
       "dependsOn": ["^build"],
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm exec tamagui-build --clean",
+        "command": "pnpm exec tamagui-build --clean --bundle",
         "cwd": "packages/button"
       }
     },

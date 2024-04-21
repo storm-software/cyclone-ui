@@ -24,3 +24,123 @@ export const Outlined: Story = {
     variant: "outlined"
   }
 };
+
+export const Primary: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary"
+  }
+};
+
+export const PrimaryOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "outlined"
+  }
+};
+
+export const Secondary: Story = {
+  args: {
+    children: "Button Text",
+    theme: "secondary"
+  }
+};
+
+export const SecondaryOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "secondary",
+    variant: "outlined"
+  }
+};
+
+export const Tertiary: Story = {
+  args: {
+    children: "Button Text",
+    theme: "tertiary"
+  }
+};
+
+export const TertiaryOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "tertiary",
+    variant: "outlined"
+  }
+};
+
+export const Error: Story = {
+  args: {
+    children: "Button Text",
+    theme: "error"
+  }
+};
+
+export const ErrorOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "error",
+    variant: "outlined"
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning"
+  }
+};
+
+export const WarningOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning",
+    variant: "outlined"
+  }
+};
+
+export const Info: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info"
+  }
+};
+
+export const InfoOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "outlined"
+  }
+};
+
+export const Success: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success"
+  }
+};
+
+export const SuccessOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success",
+    variant: "outlined"
+  }
+};
+
+export const Accent: Story = {
+  args: {
+    children: "Button Text",
+    theme: "accent"
+  }
+};
+
+export const AccentOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "accent",
+    variant: "outlined"
+  }
+};

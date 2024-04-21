@@ -6,7 +6,6 @@ import type { ColorTokens, FontSizeTokens } from "tamagui";
 import {
   Label,
   Text,
-  Theme,
   View,
   XGroup,
   XStack,
@@ -93,8 +92,12 @@ const InputGroupFrame = styled(XGroup, {
           borderRadius: tokens.radius[val]
         };
       }
+    },
+    variant: {
+      outlined: {}
     }
   } as const,
+
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
   }
@@ -142,14 +145,14 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
 };
 
 const InputFrame = styled(InputBase, {
-  unstyled: true,
   context: InputContext
 });
 
-const InputImpl = InputFrame.styleable((props, ref) => {
+const InputImpl = InputFrame.styleable<{ required?: boolean }>((props, ref) => {
   const { setFocused } = FocusContext.useStyledContext();
   const { size } = InputContext.useStyledContext();
   const { ...rest } = props;
+
   return (
     <View flex={1}>
       <InputFrame
@@ -160,6 +163,7 @@ const InputImpl = InputFrame.styleable((props, ref) => {
         onBlur={() => setFocused(false)}
         size={size}
         {...rest}
+        variant="outlined"
       />
     </View>
   );
@@ -185,6 +189,9 @@ export const InputIconFrame = styled(View, {
           paddingHorizontal: tokens.space[val]
         };
       }
+    },
+    variant: {
+      outlined: {}
     }
   } as const
 });
@@ -246,6 +253,12 @@ export const InputContainerFrame = styled(View, {
     },
     gapScale: {
       ":number": {} as any
+    },
+    required: {
+      ":boolean": {} as any
+    },
+    variant: {
+      outlined: {}
     }
   } as const,
 
@@ -259,20 +272,29 @@ export const InputLabel = styled(Label, {
   variants: {
     size: {
       "...fontSize": getFontSized as any
+    },
+    variant: {
+      outlined: {}
     }
   } as const
 });
 
 const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
-  const { required } = InputContext.useStyledContext();
+  const { required, color } = InputContext.useStyledContext();
   const { children, ...rest } = props;
 
   return (
     <XStack gap="$1">
-      <InputLabel ref={forwardedRef} {...rest}>
+      <InputLabel ref={forwardedRef} color={color} {...rest}>
         {children}
       </InputLabel>
-      {required && <Text theme="error">*</Text>}
+      {required && (
+        <View position="relative">
+          <Text color="$red9" fontWeight="800" position="absolute" top={-4}>
+            *
+          </Text>
+        </View>
+      )}
     </XStack>
   );
 });
@@ -301,6 +323,7 @@ export const InputInfo = styled(Text, {
         const letterSpacing = font.letterSpacing?.[val];
         const textTransform = font.transform?.[val];
         const fontStyle = font.style?.[val];
+
         return {
           fontSize,
           lineHeight,
@@ -310,6 +333,9 @@ export const InputInfo = styled(Text, {
           fontStyle
         };
       }
+    },
+    variant: {
+      outlined: {}
     }
   } as const
 });
@@ -325,6 +351,9 @@ const InputXGroup = styled(XGroup, {
           borderRadius: radiusToken
         };
       }
+    },
+    variant: {
+      outlined: {}
     }
   } as const
 });

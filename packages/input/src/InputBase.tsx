@@ -47,6 +47,10 @@ export const InputBaseFrame = styled(
   TextInput,
   {
     name: "Input",
+    backgroundColor: "$background",
+    borderWidth: 1,
+    borderColor: "$borderColor",
+    animation: "lazy",
 
     variants: {
       unstyled: {
@@ -59,6 +63,34 @@ export const InputBaseFrame = styled(
 
       disabled: {
         true: {}
+      },
+
+      variant: {
+        outlined: {
+          backgroundColor: "transparent",
+          borderWidth: 3,
+          borderColor: "$borderColor",
+          color: "$borderColor",
+          fontWeight: "700",
+
+          hoverStyle: {
+            backgroundColor: "transparent",
+            borderColor: "$borderColorHover",
+            color: "$borderColorHover"
+          },
+
+          pressStyle: {
+            backgroundColor: "transparent",
+            borderColor: "$borderColorPress",
+            color: "$borderColorPress"
+          },
+
+          focusVisibleStyle: {
+            backgroundColor: "transparent",
+            borderColor: "$borderColorFocus",
+            color: "$borderColorFocus"
+          }
+        }
       }
     } as const,
 

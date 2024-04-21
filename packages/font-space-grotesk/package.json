@@ -15,7 +15,7 @@
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
-    "./css/normal.css": "./css/normal.css",
+    "./css/style.css": "./css/style.css",
     "./webfonts/space-grotesk-latin-300-normal.woff2": "./webfonts/space-grotesk-latin-300-normal.woff2",
     "./webfonts/space-grotesk-latin-300-normal.woff": "./webfonts/space-grotesk-latin-300-normal.woff",
     "./webfonts/space-grotesk-latin-400-normal.woff2": "./webfonts/space-grotesk-latin-400-normal.woff2",
@@ -48,9 +48,6 @@
   "types": "./types/index.d.ts",
   "dependencies": {
     "@tamagui/core": "^1.94.5"
-  },
-  "devDependencies": {
-    "@tamagui/build": "^1.94.5"
   },
   "publishConfig": {
     "access": "public"

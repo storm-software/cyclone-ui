@@ -7,13 +7,12 @@
  * @packageDocumentation
  */
 
-import darkThemeJson from "../../../.storm/themes/default-dark.json";
-import lightThemeJson from "../../../.storm/themes/default-light.json";
-
 export * from "./theme-state";
 export * from "./build-themes";
 export * from "./types";
 export * from "./themes";
-
-export const darkTheme = darkThemeJson;
-export const lightTheme = lightThemeJson;
+export * from "./tokens";
+export * from "./colors";
+export * from "./palettes";
+export * from "./shadows";
+export * from "./masks";

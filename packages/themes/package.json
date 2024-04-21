@@ -2,13 +2,37 @@
   "name": "@cyclone-ui/themes",
   "version": "0.0.1",
   "private": false,
-  "description": "Shared configuration files used by Cyclone UI",
+  "description": "Shared theme configuration files used by Cyclone UI",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/themes"
+  },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./default-light.json": "./default-light.json",
+    "./default-dark.json": "./default-dark.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "types": "./types/index.d.ts",
   "dependencies": {
+    "@tamagui/colors": "^1.94.5",
+    "@tamagui/create-theme": "^1.94.5",
     "@tamagui/theme-builder": "^1.94.5",
+    "@tamagui/web": "^1.94.5",
     "zustand": "^4.5.2"
-  }
+  },
+  "module:jsx": "dist/jsx"
 }

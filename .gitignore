@@ -6,6 +6,7 @@ tmp
 .tamagui
 /out-tsc
 tsconfig.tsbuildinfo
+.env.local
 
 # dependencies
 node_modules
@@ -50,7 +51,6 @@ Thumbs.db
 
 # Xcode
 #
-build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -70,7 +70,6 @@ ios/.xcode.env.local
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 local.properties
@@ -114,7 +113,6 @@ yarn-error.log
 # Next.js
 .next
 out
-
 
 storybook-static
 

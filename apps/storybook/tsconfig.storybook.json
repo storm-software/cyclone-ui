@@ -26,6 +26,8 @@
     "src/**/*.stories.tsx",
     "src/**/*.stories.mdx",
     ".storybook/*.js",
-    ".storybook/*.ts"
+    ".storybook/*.ts",
+    "../website/public/locales/en/common.json",
+    "../website/public/locales/de/common.json"
   ]
 }

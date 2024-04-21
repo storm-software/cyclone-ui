@@ -10,11 +10,6 @@
     "moduleResolution": "node16",
     "tsBuildInfoFile": "../../dist/apps/cli/tsconfig.tsbuildinfo"
   },
-  "files": [],
   "include": ["./src/**/*"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "ts-node": {
-    "esm": true
-  },
-  "composite": false
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

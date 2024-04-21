@@ -5,6 +5,11 @@ import type {
   FontSizeTokens,
   GetProps,
   SizeTokens,
+  StackStyleBase,
+  StaticConfigPublic,
+  TamaDefer,
+  TamaguiComponent,
+  TamaguiElement,
   ThemeableProps
 } from "@tamagui/web";
 import { styled, createStyledContext } from "@tamagui/web";
@@ -13,6 +18,7 @@ import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import type { FunctionComponent } from "react";
 import { useContext } from "react";
+import { RNTamaguiViewNonStyleProps } from "@tamagui/core";
 
 type ButtonVariant = "outlined";
 
@@ -67,7 +73,7 @@ export const ButtonContext = createStyledContext<
 >({
   color: undefined,
   ellipse: undefined,
-  fontFamily: undefined,
+  fontFamily: "$label",
   fontSize: undefined,
   fontStyle: undefined,
   fontWeight: undefined,
@@ -84,7 +90,6 @@ const ButtonFrame = styled(View, {
   backgroundColor: "$background",
   borderWidth: 1,
   borderColor: "$borderColor",
-  animation: "lazy",
   alignItems: "center",
   flexDirection: "row",
   tag: "button",
@@ -128,6 +133,7 @@ const ButtonFrame = styled(View, {
         borderWidth: 3,
         borderColor: "$borderColor",
         color: "$borderColor",
+        fontWeight: "700",
 
         hoverStyle: {
           backgroundColor: "transparent",
@@ -149,6 +155,21 @@ const ButtonFrame = styled(View, {
       }
     },
 
+    animated: {
+      true: {
+        animation: "fast",
+        pressStyle: {
+          scale: 0.96
+        }
+      },
+      false: {
+        animation: undefined,
+        pressStyle: {
+          scale: 1
+        }
+      }
+    },
+
     size: {
       "...size": getButtonSized,
       ":number": getButtonSized
@@ -162,7 +183,8 @@ const ButtonFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    animated: true
   }
 
   // variants: {
@@ -183,6 +205,7 @@ const ButtonText = styled(SizableText, {
   context: ButtonContext,
   color: "$color",
   userSelect: "none",
+  fontFamily: "$label",
 
   variants: {
     unstyled: {
@@ -230,7 +253,22 @@ const ButtonIcon = (props: {
   return getThemedIcon(children);
 };
 
-export const Button = withStaticProperties(ButtonFrame, {
+export type InputBaseFrameProps = GetProps<typeof ButtonFrame>;
+
+export const Button: TamaguiComponent<
+  TamaDefer,
+  TamaguiElement,
+  RNTamaguiViewNonStyleProps,
+  StackStyleBase,
+  {
+    size?: number | SizeTokens | undefined;
+    variant?: "outlined" | undefined;
+    disabled?: boolean | undefined;
+    unstyled?: boolean | undefined;
+    animated?: boolean | undefined;
+  },
+  StaticConfigPublic
+> = withStaticProperties(ButtonFrame, {
   Text: ButtonText,
   Icon: ButtonIcon,
   Props: ButtonContext.Provider

@@ -29,7 +29,6 @@
         "cwd": "apps/cli"
       }
     },
-
     "build-tsc": {
       "cache": false,
       "executor": "nx:run-commands",
@@ -37,8 +36,7 @@
       "inputs": ["{projectRoot}/*"],
       "dependsOn": ["clean"],
       "options": {
-        "commands": ["pnpm rimraf dist", "pnpm tsc -b ./tsconfig.json"],
-        "cwd": "apps/cli",
+        "commands": ["pnpm rimraf dist/apps/cli", "pnpm tsc -b ./apps/cli/tsconfig.json"],
         "parallel": false
       }
     },
@@ -58,5 +56,6 @@
         "parallel": false
       }
     }
-  }
+  },
+  "implicitDependencies": ["build"]
 }

@@ -90,7 +90,6 @@
     "@storm-software/tsconfig": "latest",
     "@storm-software/workspace-tools": "latest",
     "@storybook/icons": "^1.2.9",
-    "@tamagui/build": "^1.92.1",
     "@types/jest": "^29.5.8",
     "@types/node": "20.9.0",
     "@types/react": "^18.2.43",
@@ -121,11 +120,9 @@
     "react-i18next": "^14.1.0",
     "react-native": "0.73.2",
     "react-native-web": "^0.19.9",
-    "react-webpack5": "link:@storybook\\react-webpack5",
     "rimraf": "^5.0.5",
     "solito": "^4.2.2",
     "storybook": "7.6.10",
-    "tamagui": "^1.94.5",
     "terser": "^5.24.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
@@ -186,17 +183,18 @@
   },
   "pnpm": {
     "overrides": {
+      "@cyclone-ui/build": "workspace:*",
       "@cyclone-ui/button": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/config": "workspace:*",
       "@cyclone-ui/font-mona-sans": "workspace:*",
-      "@cyclone-ui/storybook": "workspace:*",
-      "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/font-space-grotesk": "workspace:*",
       "@cyclone-ui/font-permanent-marker": "workspace:*",
+      "@cyclone-ui/font-space-grotesk": "workspace:*",
+      "@cyclone-ui/input": "workspace:*",
+      "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/theme-provider": "workspace:*",
-      "@cyclone-ui/input": "workspace:*"
+      "@cyclone-ui/themes": "workspace:*",
+      "@cyclone-ui/website": "workspace:*"
     }
   },
   "bundlewatch": {

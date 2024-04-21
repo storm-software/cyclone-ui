@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# font-mona-sans
+# Cyclone UI Mona Sans Font Package
 
 A Cyclone UI package containing the Mono-Sans font and font-related utilities used in the design system
 

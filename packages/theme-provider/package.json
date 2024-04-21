@@ -28,8 +28,5 @@
   "dependencies": {
     "@tamagui/core": "^1.94.5"
   },
-  "devDependencies": {
-    "@tamagui/build": "^1.94.5"
-  },
   "module:jsx": "dist/jsx"
 }

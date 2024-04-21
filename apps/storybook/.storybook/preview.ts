@@ -1,6 +1,7 @@
 import "@tamagui/core/reset.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/700.css";
+import "../../../dist/packages/font-mona-sans/css/style.css";
+import "../../../dist/packages/font-permanent-marker/css/style.css";
+import "../../../dist/packages/font-space-grotesk/css/style.css";
 import "raf/polyfill";
 import { Preview } from "@storybook/react";
 import i18n from "./i18n";

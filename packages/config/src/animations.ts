@@ -7,12 +7,12 @@ export const animations = createAnimations({
     mass: 0.9,
     stiffness: 100
   },
-  lazy: {
+  slow: {
     type: "spring",
     damping: 20,
     stiffness: 60
   },
-  quick: {
+  fast: {
     type: "spring",
     damping: 20,
     mass: 1.2,

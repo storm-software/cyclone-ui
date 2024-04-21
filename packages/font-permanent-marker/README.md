@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# font-permanent-marker
+# Cyclone UI Permanent Marker Font Package
 
 A Cyclone UI package containing the Permanent Marker font and font-related utilities used in the design system
 

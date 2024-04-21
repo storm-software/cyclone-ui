@@ -1,7 +1,6 @@
 import { createTamagui } from "@tamagui/core";
 import { shorthands } from "@tamagui/shorthands";
-import { tokens } from "@tamagui/themes";
-import { themes } from "@cyclone-ui/themes";
+import { themes, tokens } from "@cyclone-ui/themes";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { animations } from "./animations";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
@@ -22,7 +21,6 @@ const headingFont = createPermanentMarkerFont({
 });
 
 const labelFont = createMonaSansFont({});
-
 const bodyFont = createSpaceGroteskFont({});
 
 export const config = createTamagui({

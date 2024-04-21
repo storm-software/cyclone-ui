@@ -1,0 +1,30 @@
+{
+  "name": "@cyclone-ui/build",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/build"
+  },
+  "type": "module",
+  "bin": {
+    "cyclone-ui-build": "./bin/build.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.5",
+    "chokidar": "^3.6.0",
+    "commander": "^12.0.0",
+    "esbuild": "^0.20.2",
+    "esbuild-plugin-es5": "^2.1.0",
+    "execa": "^8.0.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "lodash.debounce": "^4.0.8",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

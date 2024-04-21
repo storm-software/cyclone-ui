@@ -37,8 +37,6 @@
           "verbose": true
         }
       }
-    },
-    "lint": {},
-    "test": {}
+    }
   }
 }

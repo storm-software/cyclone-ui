@@ -1,10 +1,10 @@
-import {
-  createSoftenMask,
-  createThemeBuilder,
-  createStrengthenMask,
-  createInverseMask
-} from "@tamagui/theme-builder";
-import { ColorPaletteType, ColorTheme, ColorThemeType } from "./types";
+import { createThemeBuilder } from "@tamagui/theme-builder";
+import { ColorPaletteType, ColorTheme } from "./types";
+import { palettes } from "./palettes";
+import { templates, maskOptions } from "./templates";
+import { masks } from "./masks";
+import { shadows } from "./shadows";
+import { darkColors, lightColors } from "./tokens";
 
 export const formatPalettes = (
   dark: ColorTheme,
@@ -33,122 +33,90 @@ export const formatPalettes = (
   );
 };
 
-const colorsTemplate = {
-  color0: 0,
-  color1: 1,
-  color2: 2,
-  color3: 3,
-  color4: 4,
-  color5: 5,
-  color6: 6,
-  color7: 7,
-  color8: 8,
-  color9: 9,
-  color10: 10,
-  color11: 11,
-  color12: 12,
-  colorTransparent: -0
-};
+// const colorsTemplate = {
+//   color0: 0,
+//   color1: 1,
+//   color2: 2,
+//   color3: 3,
+//   color4: 4,
+//   color5: 5,
+//   color6: 6,
+//   color7: 7,
+//   color8: 8,
+//   color9: 9,
+//   color10: 10,
+//   color11: 11,
+//   color12: 12,
+//   colorTransparent: -0
+// };
 
-export const buildThemes = (
-  themes:
-    | Record<ColorThemeType, ColorTheme>[]
-    | Record<ColorThemeType, ColorTheme>
-) => {
-  let arrThemes = [];
-  if (!Array.isArray(themes)) {
-    arrThemes = [themes];
-  } else {
-    arrThemes = themes;
+const colorThemeDefinition = (colorName: string) => [
+  {
+    parent: "light",
+    palette: colorName,
+    template: "colorLight"
+  },
+  {
+    parent: "dark",
+    palette: colorName,
+    template: "base"
   }
+];
 
+export const buildThemes = () => {
   const themesBuilder = createThemeBuilder()
-    .addPalettes(
-      arrThemes.reduce(
-        (
-          ret: Record<string, string[]>,
-          theme: Record<ColorThemeType, ColorTheme>
-        ) => {
-          const palettes = formatPalettes(theme.dark, theme.light);
-          Object.keys(palettes).forEach(key => {
-            if (
-              palettes[key] ||
-              Array.isArray(palettes[key]) ||
-              palettes[key]!.length > 0
-            ) {
-              ret[key] = palettes[key] as string[];
-            }
-          });
-
-          return ret;
-        },
-        {} as Record<string, string[]>
-      )
-    )
-    .addTemplates({
-      base: {
-        ...colorsTemplate,
-        background: 0,
-        backgroundHover: 3,
-        backgroundPress: 4,
-        backgroundFocus: 5,
-        backgroundStrong: 1,
-        backgroundTransparent: 0,
-        color: -0,
-        colorHover: -2,
-        colorPress: -1,
-        colorFocus: -2,
-        borderColor: -2,
-        borderColorHover: -1,
-        borderColorFocus: -0,
-        borderColorPress: -1,
-        placeholderColor: -4
-      },
-
-      color: {
-        ...colorsTemplate,
-        background: 2,
-        backgroundHover: 3,
-        backgroundPress: 4,
-        backgroundFocus: 5,
-        backgroundStrong: 1,
-        backgroundTransparent: 0,
-        color: -0,
-        colorHover: -2,
-        colorPress: -1,
-        colorFocus: -2,
-        borderColor: 5,
-        borderColorHover: 6,
-        borderColorFocus: 4,
-        borderColorPress: 5,
-        placeholderColor: -4
-      }
-    })
-    .addMasks({
-      inverse: createInverseMask(),
-      soften: createSoftenMask(),
-      strengthen: createStrengthenMask()
-    })
+    .addPalettes(palettes)
+    .addTemplates(templates)
+    .addMasks(masks)
     .addThemes({
       light: {
         template: "base",
-        palette: "light_base"
+        palette: "light",
+        nonInheritedValues: {
+          ...lightColors,
+          ...shadows.light
+        }
       },
-
       dark: {
         template: "base",
-        palette: "dark_base"
+        palette: "dark",
+        nonInheritedValues: {
+          ...darkColors,
+          ...shadows.dark
+        }
       }
     })
     .addChildThemes({
-      inverse: {
-        mask: "inverse"
+      orange: colorThemeDefinition("orange"),
+      yellow: colorThemeDefinition("yellow"),
+      green: colorThemeDefinition("green"),
+      blue: colorThemeDefinition("blue"),
+      purple: colorThemeDefinition("purple"),
+      pink: colorThemeDefinition("pink"),
+      red: colorThemeDefinition("red"),
+      primary: colorThemeDefinition("primary"),
+      secondary: colorThemeDefinition("secondary"),
+      tertiary: colorThemeDefinition("tertiary"),
+      success: colorThemeDefinition("success"),
+      warning: colorThemeDefinition("warning"),
+      error: colorThemeDefinition("error"),
+      info: colorThemeDefinition("info"),
+      accent: colorThemeDefinition("accent")
+    })
+    .addChildThemes({
+      alt1: {
+        mask: "soften",
+        ...maskOptions.alt
       },
-      subtle: {
-        mask: "soften"
+      alt2: {
+        mask: "soften2",
+        ...maskOptions.alt
       },
-      strong: {
-        mask: "strengthen"
+      active: {
+        mask: "soften3",
+        skip: {
+          color: 1
+        }
       }
     });
 

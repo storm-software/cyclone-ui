@@ -20,6 +20,7 @@
     "./css/700.css": "./css/700.css",
     "./css/800.css": "./css/800.css",
     "./css/900.css": "./css/900.css",
+    "./css/style.css": "./css/style.css",
     ".": {
       "types": "./types/index.d.ts",
       "import": "./dist/esm/index.mjs",
@@ -32,9 +33,6 @@
   "types": "./types/index.d.ts",
   "dependencies": {
     "@tamagui/core": "^1.94.5"
-  },
-  "devDependencies": {
-    "@tamagui/build": "^1.94.5"
   },
   "publishConfig": {
     "access": "public"

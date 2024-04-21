@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
+    "@cyclone-ui/build": "workspace:*",
     "@oclif/core": "^3.26.2",
     "@oclif/plugin-autocomplete": "^3.0.13",
     "@oclif/plugin-help": "^6.0.20",
@@ -36,6 +37,7 @@
     "@oclif/plugin-warn-if-update-available": "^3.0.15",
     "@storm-software/config-tools": "^1.39.1",
     "chroma-js": "^2.4.2",
+    "execa": "^8.0.1",
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
@@ -49,12 +51,12 @@
     "ts-node": "^10.9.1"
   },
   "oclif": {
-    "bin": "cyclone",
+    "bin": "cyclone-ui",
     "binAliases": [
-      "cyclone-ui"
+      "cyclone"
     ],
     "scope": "cyclone-ui",
-    "dirname": "cyclone",
+    "dirname": "cyclone-ui",
     "theme": "theme.json",
     "plugins": [
       "@oclif/plugin-help",

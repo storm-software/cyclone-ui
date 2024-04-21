@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# font-space-grotesk
+# Cyclone UI Space Grotesk Font Package
 
 A Cyclone UI package containing the Space Grotesk font and font-related utilities used in the design system
 

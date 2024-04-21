@@ -1,5 +1,128 @@
 {
   "commands": {
+    "build": {
+      "aliases": [],
+      "args": {
+        "project": {
+          "description": "The path of the project to build relative to the workspace root",
+          "name": "project",
+          "noCacheDefault": false,
+          "required": true
+        }
+      },
+      "description": "Build the theme configuration for the client application based on the colors provided in the Storm configuration file",
+      "examples": [
+        {
+          "description": "Build the themes using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> build"
+        },
+        {
+          "description": "Build the themes, and write the output to ./path/to/output",
+          "command": "<%= config.bin %> <%= command.id %> build --output=./path/to/output"
+        },
+        {
+          "description": "Build the themes, write the output to ./path/to/output, and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> build --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "output": {
+          "aliases": [
+            "outDir",
+            "output-dir"
+          ],
+          "char": "o",
+          "deprecateAliases": false,
+          "description": "The location to output the design token file",
+          "env": "STORM_OUTPUT_DIRECTORY",
+          "hidden": false,
+          "name": "output",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Output directory",
+          "default": ".storm",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "root": {
+          "aliases": [
+            "root",
+            "workspaceRoot",
+            "workspace-root"
+          ],
+          "char": "r",
+          "deprecateAliases": false,
+          "description": "The bottom most directory that contains the entire workspace",
+          "env": "STORM_WORKSPACE_ROOT",
+          "hidden": false,
+          "name": "root",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Workspace Root directory",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "bundle": {
+          "char": "b",
+          "deprecateAliases": false,
+          "description": "Should the build process bundle the output files",
+          "hidden": false,
+          "name": "bundle",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Should Bundle",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "clean": {
+          "char": "c",
+          "deprecateAliases": false,
+          "description": "Should the output directory be cleaned before building",
+          "hidden": false,
+          "name": "clean",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Clean Output",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "skip": {
+          "aliases": [
+            "is-cli",
+            "is-cli-mode"
+          ],
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "build",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Cyclone UI - Build",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "commands",
+        "build.js"
+      ]
+    },
     "theme:clean": {
       "aliases": [],
       "args": {
