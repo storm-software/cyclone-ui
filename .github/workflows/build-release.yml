@@ -15,7 +15,7 @@ on:
 
 jobs:
   release:
-    uses: storm-software/storm-ops/.github/workflows/release@main
+    uses: storm-software/storm-ops/.github/workflows/release.yml@main
     with:
       tag: ${{ env.TAG }}
       stormBot: Stormie-Bot

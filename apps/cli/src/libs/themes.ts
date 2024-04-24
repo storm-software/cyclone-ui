@@ -2,6 +2,7 @@ import {join} from 'node:path'
 import {ColorPaletteType, ColorTheme, ColorThemeType} from './types.js'
 import chroma from 'chroma-js'
 import fs from 'fs-extra'
+import type {MultiThemeColorConfig, SingleThemeColorConfig} from '@storm-software/config'
 
 export const getThemePath = (workspaceRoot: string, output: string): string => {
   return join(workspaceRoot, output, 'themes')
@@ -76,4 +77,42 @@ export const setTheme = async (
   }
 
   await fs.writeJson(getThemeFilePath(workspaceRoot, output, themeType, name), theme)
+}
+
+export const writeSingleTheme = async (
+  colors: SingleThemeColorConfig,
+  workspaceRoot: string,
+  outputPath: string,
+  name: string,
+) => {
+  let lightTheme = await initialTheme(colors, ColorThemeType.LIGHT)
+  for (const type of Object.keys(colors).filter((type) => type !== 'dark' && type !== 'light')) {
+    lightTheme = addPalette(lightTheme, colors[type], type as ColorPaletteType)
+  }
+  await setTheme(lightTheme, workspaceRoot, outputPath, ColorThemeType.LIGHT, name)
+
+  let darkTheme = await initialTheme(colors, ColorThemeType.DARK)
+  for (const type of Object.keys(colors).filter((type) => type !== 'dark' && type !== 'light')) {
+    darkTheme = addPalette(darkTheme, colors[type], type as ColorPaletteType)
+  }
+  await setTheme(darkTheme, workspaceRoot, outputPath, ColorThemeType.DARK, name)
+}
+
+export const writeMultiTheme = async (
+  colors: MultiThemeColorConfig,
+  workspaceRoot: string,
+  outputPath: string,
+  name: string,
+) => {
+  let lightTheme = await initialTheme(colors.light, ColorThemeType.LIGHT)
+  for (const type of Object.keys(colors.light).filter((type) => type !== 'background' && type !== 'foreground')) {
+    lightTheme = addPalette(lightTheme, colors.light[type], type as ColorPaletteType)
+  }
+  await setTheme(lightTheme, workspaceRoot, outputPath, ColorThemeType.LIGHT, name)
+
+  let darkTheme = await initialTheme(colors.dark, ColorThemeType.DARK)
+  for (const type of Object.keys(colors.dark).filter((type) => type !== 'background' && type !== 'foreground')) {
+    darkTheme = addPalette(darkTheme, colors.dark[type], type as ColorPaletteType)
+  }
+  await setTheme(darkTheme, workspaceRoot, outputPath, ColorThemeType.DARK, name)
 }

@@ -37,7 +37,7 @@ importers:
         version: 0.7.3(@swc-node/register@1.8.0)(@swc/core@1.3.107)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.2.3)(postcss@8.4.38)(ts-node@10.9.1)(verdaccio@5.30.3)
       '@storm-software/config':
         specifier: latest
-        version: 1.11.3
+        version: 1.12.0
       '@storm-software/config-tools':
         specifier: latest
         version: 1.40.1(typescript@5.2.2)
@@ -402,7 +402,7 @@ importers:
         version: 0.7.3(@swc-node/register@1.8.0)(@swc/core@1.3.107)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.2.3)(postcss@8.4.38)(ts-node@10.9.1)(verdaccio@5.30.3)
       '@storm-software/config':
         specifier: latest
-        version: 1.11.3
+        version: 1.12.0
       '@storm-software/config-tools':
         specifier: latest
         version: 1.40.1(typescript@5.2.2)
@@ -645,7 +645,7 @@ importers:
         version: 7.24.4
       '@storm-software/config':
         specifier: latest
-        version: 1.11.3
+        version: 1.12.0
       '@storm-software/config-tools':
         specifier: latest
         version: 1.40.1(typescript@5.2.2)
@@ -9416,8 +9416,8 @@ packages:
       - typescript
     dev: false
 
-  /@storm-software/config@1.11.3:
-    resolution: {integrity: sha512-XAtyFZzYys0v/hCAE4Nf4KATakwfeJ/lNFChalDBloxFSyJVExMSU2P0sgB5piNE62khimv0Ha9tG/vyKmj5QA==}
+  /@storm-software/config@1.12.0:
+    resolution: {integrity: sha512-SAczLOk0Sey+9H/JKZfK/36QgNKabgZm3tBwat8MpwUkzLhVeTtXtVmFE86P9MiDBuM+pXABSyPXc7zt5XTcWg==}
     dependencies:
       zod: 3.22.4
     dev: false

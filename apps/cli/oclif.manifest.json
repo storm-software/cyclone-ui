@@ -3,9 +3,9 @@
     "build": {
       "aliases": [],
       "args": {
-        "project": {
+        "projectRoot": {
           "description": "The path of the project to build relative to the workspace root",
-          "name": "project",
+          "name": "projectRoot",
           "noCacheDefault": false,
           "required": true
         }
@@ -26,43 +26,40 @@
         }
       ],
       "flags": {
-        "output": {
+        "outputPath": {
           "aliases": [
+            "output",
             "outDir",
             "output-dir"
           ],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
-          "env": "STORM_OUTPUT_DIRECTORY",
           "hidden": false,
-          "name": "output",
+          "name": "outputPath",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",
-          "default": ".storm",
           "hasDynamicHelp": false,
           "helpValue": "<directory>",
           "multiple": false,
           "type": "option"
         },
-        "root": {
+        "tsconfig": {
           "aliases": [
-            "root",
-            "workspaceRoot",
-            "workspace-root"
+            "tsconfig",
+            "ts-config"
           ],
-          "char": "r",
+          "char": "t",
           "deprecateAliases": false,
-          "description": "The bottom most directory that contains the entire workspace",
-          "env": "STORM_WORKSPACE_ROOT",
+          "description": "The path to the tsconfig.json file for the project",
           "hidden": false,
-          "name": "root",
+          "name": "tsconfig",
           "noCacheDefault": false,
           "required": false,
-          "summary": "Workspace Root directory",
+          "summary": "tsconfig.json File",
           "hasDynamicHelp": false,
-          "helpValue": "<directory>",
+          "helpValue": "<file>",
           "multiple": false,
           "type": "option"
         },
@@ -227,7 +224,7 @@
         }
       ],
       "flags": {
-        "output": {
+        "outputPath": {
           "aliases": [
             "outDir",
             "output-dir"
@@ -237,7 +234,7 @@
           "description": "The location to output the design token file",
           "env": "STORM_OUTPUT_DIRECTORY",
           "hidden": false,
-          "name": "output",
+          "name": "outputPath",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",

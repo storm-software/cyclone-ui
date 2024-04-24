@@ -1,7 +1,7 @@
 import {Args, Command, Flags} from '@oclif/core'
 import {loadStormConfig} from '@storm-software/config-tools'
-import {ColorPaletteType, ColorThemeType} from '../../libs/types.js'
-import {addPalette, getThemeFilePath, getThemePath, initialTheme, setTheme} from '../../libs/themes.js'
+import {ColorThemeType} from '../../libs/types.js'
+import {getThemeFilePath, getThemePath, writeMultiTheme, writeSingleTheme} from '../../libs/themes.js'
 import {isFunction} from '../../libs/is-function.js'
 import {cancel, confirm, intro, isCancel, outro, spinner, text} from '@clack/prompts'
 import fs from 'fs-extra'
@@ -22,7 +22,7 @@ export default class Init extends Command {
   }
 
   public static override flags = {
-    output: Flags.directory({
+    outputPath: Flags.directory({
       char: 'o',
       summary: 'Output directory',
       description: 'The location to output the design token file',
@@ -98,7 +98,7 @@ export default class Init extends Command {
     const config = await loadStormConfig()
     s1.stop('Loaded Storm configuration')
 
-    let output = flags.output
+    let output = flags.outputPath
     if (!output) {
       output = config.outputDirectory
       if (!flags.skip) {
@@ -154,20 +154,17 @@ export default class Init extends Command {
     const s3 = spinner()
     s3.start('Writing themes to output directory')
 
-    let lightTheme = await initialTheme(config.colors, ColorThemeType.LIGHT)
-    for (const type of Object.keys(config.colors).filter((type) => type !== 'dark' && type !== 'light')) {
-      lightTheme = addPalette(lightTheme, config.colors[type], type as ColorPaletteType)
+    if (config.colors?.base && typeof config.colors?.base === 'object') {
+      for (const key of Object.keys(config.colors)) {
+        await writeMultiTheme(config.colors[key], config.workspaceRoot, output, key === 'base' ? args.name : key)
+      }
+    } else if (config.colors?.light && typeof config.colors?.light === 'object') {
+      await writeMultiTheme(config.colors, config.workspaceRoot, output, args.name)
+    } else {
+      await writeSingleTheme(config.colors, config.workspaceRoot, output, args.name)
     }
-    await setTheme(lightTheme, config.workspaceRoot, output, ColorThemeType.LIGHT, args.name)
-
-    let darkTheme = await initialTheme(config.colors, ColorThemeType.DARK)
-    for (const type of Object.keys(config.colors).filter((type) => type !== 'dark' && type !== 'light')) {
-      darkTheme = addPalette(darkTheme, config.colors[type], type as ColorPaletteType)
-    }
-    await setTheme(darkTheme, config.workspaceRoot, output, ColorThemeType.DARK, args.name)
 
     s3.stop('Wrote themes to output directory')
-
     outro('Theme configurations were successfully generated in the output directory')
   }
 
