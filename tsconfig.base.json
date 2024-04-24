@@ -7,8 +7,10 @@
     "baseUrl": ".",
     "skipLibCheck": true,
     "paths": {
-      "@cyclone-ui/button": ["packages/button/src/index.ts"],
-      "@cyclone-ui/button/*": ["packages/button/src/*"],
+      "@cyclone-ui/build": ["packages/build/src/index.ts"],
+      "@cyclone-ui/build/*": ["packages/build/src/*"],
+      "@cyclone-ui/button": ["components/button/src/index.ts"],
+      "@cyclone-ui/button/*": ["components/button/src/*"],
       "@cyclone-ui/cli": ["apps/cli/src/index.ts"],
       "@cyclone-ui/cli/*": ["apps/cli/src/*"],
       "@cyclone-ui/config": ["packages/config/src/index.ts"],
@@ -25,14 +27,14 @@
         "packages/font-space-grotesk/src/index.ts"
       ],
       "@cyclone-ui/font-space-grotesk/*": ["packages/font-space-grotesk/src/*"],
-      "@cyclone-ui/input": ["packages/input/src/index.ts"],
-      "@cyclone-ui/input/*": ["packages/input/src/*"],
+      "@cyclone-ui/input": ["components/input/src/index.ts"],
+      "@cyclone-ui/input/*": ["components/input/src/*"],
+      "@cyclone-ui/nx": ["apps/nx/src/index.ts"],
+      "@cyclone-ui/nx/*": ["apps/nx/src/*"],
       "@cyclone-ui/theme-provider": ["packages/theme-provider/src/index.ts"],
       "@cyclone-ui/theme-provider/*": ["packages/theme-provider/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
-      "@cyclone-ui/themes/*": ["packages/themes/src/*"],
-      "@cyclone-ui/build": ["packages/build/src/index.ts"],
-      "@cyclone-ui/build/*": ["packages/build/src/*"]
+      "@cyclone-ui/themes/*": ["packages/themes/src/*"]
     }
   },
   "references": []

@@ -78,7 +78,6 @@
   "prettier": "@storm-software/linting-tools/prettier/config.json",
   "dependencies": {
     "@nx/devkit": "18.2.3",
-    "@nx/jest": "18.2.3",
     "@nx/js": "18.2.3",
     "@nx/node": "18.2.3",
     "@storm-software/build-tools": "latest",
@@ -135,7 +134,9 @@
     "@babel/preset-react": "^7.14.5",
     "@expo/cli": "~0.16.5",
     "@nx/expo": "18.2.3",
+    "@nx/jest": "18.2.3",
     "@nx/next": "18.2.3",
+    "@nx/plugin": "18.2.3",
     "@nx/react": "18.2.3",
     "@nx/react-native": "18.2.3",
     "@nx/rollup": "18.2.3",
@@ -194,7 +195,8 @@
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/theme-provider": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*"
+      "@cyclone-ui/website": "workspace:*",
+      "@cyclone-ui/nx": "workspace:*"
     }
   },
   "bundlewatch": {

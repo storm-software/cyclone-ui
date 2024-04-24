@@ -5,73 +5,55 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    // "build": {
-    //   "executor": "@storm-software/workspace-tools:tsup-neutral",
-    //   "outputs": ["{options.outputPath}"],
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/themes/src/index.ts",
+        "outputPath": "dist/packages/themes",
+        "tsConfig": "packages/themes/tsconfig.json",
+        "project": "packages/themes/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/themes",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          },
+          {
+            "input": ".storm/themes",
+            "glob": "*.json",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    // "build-base": {
+    //   "cache": true,
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["^build"],
+    //   "executor": "nx:run-commands",
     //   "options": {
-    //     "entry": "packages/themes/src/index.ts",
-    //     "outputPath": "dist/packages/themes",
-    //     "tsConfig": "packages/themes/tsconfig.json",
-    //     "project": "packages/themes/package.json",
-    //     "defaultConfiguration": "production",
-    //     "assets": [
-    //       {
-    //         "input": "packages/themes",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": ".storm/themes",
-    //         "glob": "*.json",
-    //         "output": "/"
-    //       }
-    //     ],
-    //     "platform": "neutral"
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": false,
-    //       "verbose": false
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
+    //     "command": "pnpm exec tamagui-build --clean --bundle",
+    //     "cwd": "packages/themes"
     //   }
     // },
-
-    "build-base": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm exec tamagui-build --clean --bundle",
-        "cwd": "packages/themes"
-      }
-    },
-    "build": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["build-base"],
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "pnpm exec rimraf dist/packages/themes",
-          "make-dir dist/packages/themes",
-          "pnpm exec copyfiles -f LICENSE ./packages/themes/package.json ./packages/themes/*.md  ./dist/packages/themes",
-          "pnpm exec copyfiles -u 3 ./packages/themes/dist/**/*.js ./dist/packages/themes/dist",
-          "pnpm exec copyfiles -u 3 ./packages/themes/types/**/* ./dist/packages/themes/types",
-          "pnpm exec copyfiles -u 3 ./.storm/themes/**/* ./dist/packages/themes"
-        ],
-        "parallel": false
-      }
-    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

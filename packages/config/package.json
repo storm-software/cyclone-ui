@@ -26,14 +26,10 @@
   "module": "dist/esm",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@cyclone-ui/font-mona-sans": "workspace:*",
-    "@cyclone-ui/font-permanent-marker": "workspace:*",
-    "@cyclone-ui/font-space-grotesk": "workspace:*",
     "@tamagui/animations-react-native": "^1.94.5",
     "@tamagui/core": "^1.94.5",
     "@tamagui/react-native-media-driver": "^1.94.5",
     "@tamagui/shorthands": "^1.94.5",
-    "@tamagui/themes": "^1.94.5",
     "tslib": "^2.3.0"
   },
   "module:jsx": "dist/jsx"

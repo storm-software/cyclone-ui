@@ -1,72 +1,7 @@
 {
   "extends": "@storm-software/workspace-tools/config/nx.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "lint",
-          "format",
-          "build",
-          "test",
-          "e2e",
-          "docs",
-          "build-storybook"
-        ],
-        "parallel": 3
-      }
-    }
-  },
-  "targetDefaults": {
-    "lint": {
-      "cache": true,
-      "inputs": ["default"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^lint"]
-    },
-    "clean": {
-      "cache": false,
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm exec rimraf dist/{projectRoot}"
-      }
-    },
-    "build": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"]
-    },
-    "docs": {
-      "cache": true,
-      "inputs": ["defaultDocs", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build", "^docs"]
-    },
-    "test": {
-      "cache": true,
-      "inputs": ["defaultTesting", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build", "^test"]
-    },
-    "e2e": {
-      "cache": true,
-      "inputs": ["defaultTesting", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["test", "^e2e"]
-    },
-    "nx-release-publish": {
-      "cache": false,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["build", "^nx-release-publish"]
-    },
-    "@nx/rollup:rollup": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    }
-  },
   "release": {
-    "projects": ["packages/*", "apps/*"],
+    "projects": ["packages/*", "components/*", "apps/*"],
     "projectsRelationship": "independent",
     "releaseTagPattern": "{projectName}-v{version}",
     "changelog": {

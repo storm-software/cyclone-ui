@@ -1,0 +1,38 @@
+{
+  "name": "button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "components/button/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build-base": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm exec tamagui-build --clean --bundle",
+        "cwd": "components/button"
+      }
+    },
+    "build": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "dependsOn": ["build-base"],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pnpm exec rimraf dist/components/button",
+          "make-dir dist/components/button",
+          "pnpm exec copyfiles -f LICENSE ./components/button/package.json ./components/button/*.md ./dist/components/button",
+          "pnpm exec copyfiles -u 3 ./components/button/types/**/* ./dist/components/button/types",
+          "pnpm exec copyfiles -u 3 ./components/button/dist/**/*.js ./dist/components/button/dist"
+        ],
+        "parallel": false
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

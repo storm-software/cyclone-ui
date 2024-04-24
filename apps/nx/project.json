@@ -1,0 +1,84 @@
+{
+  "name": "nx",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nx/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["clean", "^build"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nx",
+        "tsConfig": "apps/nx/tsconfig.lib.json",
+        "project": "apps/nx/package.json",
+        "main": "apps/nx/index.ts",
+        "additionalEntryPoints": ["apps/nx/src/executors/build/executor.ts"],
+        "platform": "node",
+        "deleteOutputPath": true,
+        "bundle": true,
+        "thirdParty": true,
+        "skipTypeCheck": false,
+        "metafile": true,
+        "minify": false,
+        "format": ["cjs"],
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".js"
+          }
+        },
+        "external": [
+          "nx",
+          "@nx/devkit",
+          "esbuild",
+          "@swc/*",
+          "@cyclone-ui/build"
+        ],
+        "assets": [
+          {
+            "input": "apps/nx",
+            "glob": "**/files/**",
+            "output": "/"
+          },
+          {
+            "input": "apps/nx",
+            "glob": "**/files/**/.gitkeep",
+            "output": "/"
+          },
+          {
+            "input": "apps/nx",
+            "glob": "**/*.json",
+            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc.json"],
+            "output": "."
+          },
+          {
+            "input": "apps/nx",
+            "glob": "**/*.js",
+            "ignore": ["**/jest.config.js"],
+            "output": "."
+          },
+          {
+            "input": "apps/nx",
+            "glob": "**/*.d.ts",
+            "output": "."
+          },
+          {
+            "input": "apps/nx",
+            "glob": "*.md",
+            "output": "."
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

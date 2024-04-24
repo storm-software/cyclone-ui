@@ -4,30 +4,66 @@
   "sourceRoot": "packages/config/src",
   "projectType": "library",
   "targets": {
-    "build-base": {
-      "cache": true,
+    // "build-base": {
+    //   "cache": true,
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["^build"],
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "pnpm exec tamagui-build --clean --bundle",
+    //     "cwd": "packages/config"
+    //   }
+    // },
+    // "build": {
+    //   "cache": true,
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["build-base"],
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "commands": [
+    //       "pnpm exec rimraf dist/packages/config",
+    //       "make-dir dist/packages/config",
+    //       "pnpm exec copyfiles -f LICENSE ./packages/config/package.json ./packages/config/*.md  ./dist/packages/config",
+    //       "pnpm exec copyfiles -u 3 ./packages/config/dist/**/*.js ./dist/packages/config/dist",
+    //       "pnpm exec copyfiles -u 3 ./packages/config/types/**/* ./dist/packages/config/types"
+    //     ],
+    //     "parallel": false
+    //   }
+    // },
+
+    "build": {
+      "cache": false,
+      "executor": "@cyclone-ui/nx:build",
       "inputs": ["default", "^production"],
       "dependsOn": ["^build"],
-      "executor": "nx:run-commands",
+      "output": "{options.outputPath}",
       "options": {
-        "command": "pnpm exec tamagui-build --clean --bundle",
-        "cwd": "packages/config"
-      }
-    },
-    "build": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["build-base"],
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "pnpm exec rimraf dist/packages/config",
-          "make-dir dist/packages/config",
-          "pnpm exec copyfiles -f LICENSE ./packages/config/package.json ./packages/config/*.md  ./dist/packages/config",
-          "pnpm exec copyfiles -u 3 ./packages/config/dist/**/*.js ./dist/packages/config/dist",
-          "pnpm exec copyfiles -u 3 ./packages/config/types/**/* ./dist/packages/config/types"
-        ],
-        "parallel": false
+        "outputPath": "dist/packages/config",
+        "tsConfig": "packages/config/tsconfig.json",
+        "project": "packages/config/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/config",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
       }
     },
 

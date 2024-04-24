@@ -7,20 +7,22 @@ const { join } = require("path");
 const withTM = require("next-transpile-modules"); // pass the modules you would like to see transpiled
 const { i18n } = require("./next-i18next.config");
 
-const boolVals = {
-  true: true,
-  false: false
-};
-
 const disableExtraction =
-  boolVals[process.env["DISABLE_EXTRACTION"]] ??
+  {
+    true: true,
+    false: false
+  }[process.env["DISABLE_EXTRACTION"]] ??
   process.env.NODE_ENV === "development";
 
 if (disableExtraction) {
   console.log("Disabling static extraction in development mode for better HMR");
 }
 
-const extrasPlugins = ["@cyclone-ui/config", "@cyclone-ui/button"];
+const extrasPlugins = [
+  "@cyclone-ui/config",
+  "@cyclone-ui/button",
+  "@cyclone-ui/input"
+];
 
 const transpilePackages = [
   "solito",

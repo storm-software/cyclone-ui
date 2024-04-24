@@ -26,6 +26,7 @@
   },
   "main": "dist/cjs",
   "module": "dist/esm",
+  "source": "src",
   "types": "./types/index.d.ts",
   "dependencies": {
     "@tamagui/colors": "^1.94.5",

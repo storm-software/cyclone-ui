@@ -8,15 +8,15 @@ import { Command } from 'commander';
 import type { StormConfig } from '@storm-software/config';
 
 // @public (undocumented)
-const build: ({ project, root, output, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsProject, exclude }: BuildOptions) => Promise<void>;
+const build: ({ projectRoot, root, outputPath, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsConfig, exclude }: BuildOptions) => Promise<void>;
 export { build }
 export { build as build_alias_1 }
 
 // @public (undocumented)
 type BuildOptions = {
-    project: string;
+    projectRoot: string;
     root: string;
-    output: string;
+    outputPath: string;
     jsOnly?: boolean;
     skipTypes?: boolean;
     skipInitialTypes?: boolean;
@@ -31,7 +31,7 @@ type BuildOptions = {
     ignoreBaseUrl?: boolean;
     minify?: boolean;
     baseUrl?: string;
-    tsProject: string;
+    tsConfig: string;
     exclude?: string | RegExp;
 };
 export { BuildOptions }

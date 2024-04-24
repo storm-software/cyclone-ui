@@ -1,0 +1,42 @@
+{
+  "name": "@cyclone-ui/button",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Button component for Cyclone UI",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "source": "src/index.ts",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@tamagui/core": "^1.94.5",
+    "@tamagui/font-size": "^1.94.5",
+    "@tamagui/get-button-sized": "^1.94.5",
+    "@tamagui/helpers": "^1.94.5",
+    "@tamagui/helpers-tamagui": "^1.94.5",
+    "@tamagui/stacks": "^1.94.5",
+    "@tamagui/text": "^1.94.5",
+    "@tamagui/web": "^1.94.5",
+    "tamagui": "^1.94.5"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "module:jsx": "dist/jsx"
+}

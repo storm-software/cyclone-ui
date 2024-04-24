@@ -97,11 +97,11 @@ export const buildThemes = () => {
       primary: colorThemeDefinition("primary"),
       secondary: colorThemeDefinition("secondary"),
       tertiary: colorThemeDefinition("tertiary"),
+      accent: colorThemeDefinition("accent"),
       success: colorThemeDefinition("success"),
       warning: colorThemeDefinition("warning"),
       error: colorThemeDefinition("error"),
-      info: colorThemeDefinition("info"),
-      accent: colorThemeDefinition("accent")
+      info: colorThemeDefinition("info")
     })
     .addChildThemes({
       alt1: {

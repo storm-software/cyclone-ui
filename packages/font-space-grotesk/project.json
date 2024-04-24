@@ -4,34 +4,135 @@
   "projectType": "library",
   "sourceRoot": "packages/font-space-grotesk/src",
   "targets": {
-    "build-base": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm exec tamagui-build --clean --bundle",
-        "cwd": "packages/font-space-grotesk"
-      }
-    },
+    // "build-base": {
+    //   "cache": true,
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["^build"],
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "command": "pnpm exec tamagui-build --clean --bundle",
+    //     "cwd": "packages/font-space-grotesk"
+    //   }
+    // },
+    // "build": {
+    //   "cache": true,
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["build-base"],
+    //   "executor": "nx:run-commands",
+    //   "options": {
+    //     "commands": [
+    //       "pnpm exec rimraf dist/packages/font-space-grotesk",
+    //       "make-dir dist/packages/font-space-grotesk",
+    //       "pnpm exec copyfiles -f LICENSE ./packages/font-space-grotesk/package.json ./packages/font-space-grotesk/*.md  ./dist/packages/font-space-grotesk",
+    //       "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/dist/**/*.js ./dist/packages/font-space-grotesk/dist",
+    //       "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/types/**/* ./dist/packages/font-space-grotesk/types",
+    //       "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/css/**/*.css ./dist/packages/font-space-grotesk/css",
+    //       "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/webfonts/**/* ./dist/packages/font-space-grotesk/webfonts"
+    //     ],
+    //     "parallel": false
+    //   }
+    // },
+
+    // "build": {
+    //   "cache": true,
+    //   "executor": "@cyclone-ui/nx:build",
+    //   "inputs": ["default", "^production"],
+    //   "dependsOn": ["^build"],
+    //   "output": "{options.outputPath}",
+    //   "options": {
+    //     "outputPath": "dist/packages/font-space-grotesk",
+    //     "tsConfig": "packages/font-space-grotesk/tsconfig.json",
+    //     "project": "packages/font-space-grotesk/package.json",
+    //     "defaultConfiguration": "production",
+    //     "assets": [
+    //       {
+    //         "input": "packages/font-space-grotesk",
+    //         "glob": "*.md",
+    //         "output": "/"
+    //       },
+    //       {
+    //         "input": "packages/font-space-grotesk",
+    //         "glob": "css/*.css",
+    //         "output": "/"
+    //       },
+    //       {
+    //         "input": "packages/font-space-grotesk",
+    //         "glob": "ttf/*.ttf",
+    //         "output": "/"
+    //       },
+    //       {
+    //         "input": "packages/font-space-grotesk",
+    //         "glob": "webfonts/{*.woff,*.woff2}",
+    //         "output": "/"
+    //       },
+    //       {
+    //         "input": "",
+    //         "glob": "LICENSE",
+    //         "output": "/"
+    //       }
+    //     ]
+    //   },
+    //   "configurations": {
+    //     "production": {
+    //       "debug": false,
+    //       "verbose": false
+    //     },
+    //     "development": {
+    //       "debug": true,
+    //       "verbose": true
+    //     }
+    //   }
+    // },
+
     "build": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["build-base"],
-      "executor": "nx:run-commands",
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "commands": [
-          "pnpm exec rimraf dist/packages/font-space-grotesk",
-          "make-dir dist/packages/font-space-grotesk",
-          "pnpm exec copyfiles -f LICENSE ./packages/font-space-grotesk/package.json ./packages/font-space-grotesk/*.md  ./dist/packages/font-space-grotesk",
-          "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/dist/**/*.js ./dist/packages/font-space-grotesk/dist",
-          "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/types/**/* ./dist/packages/font-space-grotesk/types",
-          "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/css/**/*.css ./dist/packages/font-space-grotesk/css",
-          "pnpm exec copyfiles -u 3 ./packages/font-space-grotesk/webfonts/**/* ./dist/packages/font-space-grotesk/webfonts"
-        ],
-        "parallel": false
+        "entry": "packages/font-space-grotesk/src/index.ts",
+        "outputPath": "dist/packages/font-space-grotesk",
+        "tsConfig": "packages/font-space-grotesk/tsconfig.json",
+        "project": "packages/font-space-grotesk/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/font-space-grotesk",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          },
+          {
+            "input": "packages/font-space-grotesk",
+            "glob": "css/*.css",
+            "output": "/"
+          },
+          {
+            "input": "packages/font-space-grotesk",
+            "glob": "ttf/*.ttf",
+            "output": "/"
+          },
+          {
+            "input": "packages/font-space-grotesk",
+            "glob": "webfonts/{*.woff,*.woff2}",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
       }
     },
+
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

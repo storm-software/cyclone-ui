@@ -179,7 +179,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "build: ({ project, root, output, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsProject, exclude }: "
+              "text": "build: ({ projectRoot, root, outputPath, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsConfig, exclude }: "
             },
             {
               "kind": "Reference",
@@ -209,7 +209,7 @@
           "overloadIndex": 1,
           "parameters": [
             {
-              "parameterName": "{ project, root, output, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsProject, exclude }",
+              "parameterName": "{ projectRoot, root, outputPath, jsOnly, skipTypes, skipInitialTypes, skipJS, skipMjs, bundle, bundleNodeModules, clean, cleanBuildOnly, watch, declarationToRoot, ignoreBaseUrl, minify, baseUrl, tsConfig, exclude }",
               "parameterTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -230,7 +230,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    project: string;\n    root: string;\n    output: string;\n    jsOnly?: boolean;\n    skipTypes?: boolean;\n    skipInitialTypes?: boolean;\n    skipJS?: boolean;\n    skipMjs?: boolean;\n    bundle?: boolean;\n    bundleNodeModules?: boolean;\n    clean?: boolean;\n    cleanBuildOnly?: boolean;\n    watch?: boolean;\n    declarationToRoot?: boolean;\n    ignoreBaseUrl?: boolean;\n    minify?: boolean;\n    baseUrl?: string;\n    tsProject: string;\n    exclude?: string | "
+              "text": "{\n    projectRoot: string;\n    root: string;\n    outputPath: string;\n    jsOnly?: boolean;\n    skipTypes?: boolean;\n    skipInitialTypes?: boolean;\n    skipJS?: boolean;\n    skipMjs?: boolean;\n    bundle?: boolean;\n    bundleNodeModules?: boolean;\n    clean?: boolean;\n    cleanBuildOnly?: boolean;\n    watch?: boolean;\n    declarationToRoot?: boolean;\n    ignoreBaseUrl?: boolean;\n    minify?: boolean;\n    baseUrl?: string;\n    tsConfig: string;\n    exclude?: string | "
             },
             {
               "kind": "Reference",

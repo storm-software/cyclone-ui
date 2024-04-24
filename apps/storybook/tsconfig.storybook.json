@@ -28,6 +28,9 @@
     ".storybook/*.js",
     ".storybook/*.ts",
     "../website/public/locales/en/common.json",
-    "../website/public/locales/de/common.json"
+    "../website/public/locales/de/common.json",
+    "../../../packages/font-mona-sans/css/style.css",
+    "../../../packages/font-permanent-marker/css/style.css",
+    "../../../packages/font-space-grotesk/css/style.css"
   ]
 }

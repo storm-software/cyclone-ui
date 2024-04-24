@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "build",
+  "version": 2,
+  "title": "Cyclone UI Builder",
+  "description": "Run a build on the project using Tamagui build",
+  "type": "object",
+  "properties": {
+    "outputPath": {
+      "type": "string",
+      "description": "The output path of the generated files.",
+      "x-completion-type": "directory",
+      "x-priority": "important",
+      "default": "dist/{projectRoot}",
+      "alias": "output"
+    },
+    "tsConfig": {
+      "type": "string",
+      "description": "The path to the `tsconfig.json` file.",
+      "x-completion-type": "file",
+      "x-completion-glob": "tsconfig*.json",
+      "x-priority": "important",
+      "default": "{projectRoot}/tsconfig.json"
+    },
+    "external": {
+      "type": "array",
+      "description": "Mark one or more module as external. Can use * wildcards, such as *.png.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "includeSrc": {
+      "type": "boolean",
+      "description": "An indicator used to specify the inclusion of the source files in the output.",
+      "default": true
+    },
+    "bundle": {
+      "type": "boolean",
+      "description": "Whether to bundle the main entry point and additional entry points. Set to false to keep individual output files.",
+      "default": true
+    },
+    "watch": {
+      "type": "boolean",
+      "description": "Enable re-building when files change.",
+      "default": false
+    },
+    "assets": {
+      "type": "array",
+      "description": "List of static assets.",
+      "default": [],
+      "items": {
+        "$ref": "#/definitions/assetPattern"
+      }
+    },
+    "clean": {
+      "type": "boolean",
+      "description": "Remove previous output before build.",
+      "alias": "deleteOutputPath",
+      "default": true
+    },
+    "debug": {
+      "type": "boolean",
+      "description": "Should output be unminified with source mappings.",
+      "default": false
+    },
+    "minify": {
+      "type": "boolean",
+      "description": "Should the build process minify the output files?",
+      "default": true
+    },
+    "verbose": {
+      "type": "boolean",
+      "description": "Should write extra log outputs with details from the executor.",
+      "default": false
+    }
+  },
+  "required": ["tsConfig"],
+  "definitions": {
+    "assetPattern": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "glob": {
+              "type": "string",
+              "description": "The pattern to match."
+            },
+            "input": {
+              "type": "string",
+              "description": "The input directory path in which to apply `glob`. Defaults to the project root."
+            },
+            "output": {
+              "type": "string",
+              "description": "Relative path within the output folder."
+            },
+            "ignore": {
+              "description": "An array of globs to ignore.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": ["glob", "input", "output"]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

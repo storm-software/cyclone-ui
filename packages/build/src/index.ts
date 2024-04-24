@@ -7,4 +7,5 @@
  * @packageDocumentation
  */
 
-export * from "./build";
+export * from "./build/tamagui";
+export * from "./types";

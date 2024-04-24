@@ -5,7 +5,7 @@ import {
   writeSuccess
 } from "@storm-software/config-tools";
 import type { StormConfig } from "@storm-software/config";
-import { build } from "../build";
+import { build } from "../build/tamagui";
 import { join } from "node:path";
 
 export async function createProgram(config: StormConfig) {
@@ -32,18 +32,13 @@ export async function createProgram(config: StormConfig) {
       "The path to the root of the project to build. This path is defined relative to the workspace root."
     ).makeOptionMandatory();
 
-    const workspaceRootOption = new Option(
-      "--workspace-root <args>",
-      "The path to the root of the workspace. This path is defined relative to the workspace root."
-    ).default(root);
-
     const tsconfigOption = new Option(
       "--tsconfig <args>",
       "The path to the root of the project to build. This path is defined relative to the workspace root."
     );
 
-    const outputOption = new Option(
-      "--output <args>",
+    const outputPathOption = new Option(
+      "--output-path <args>",
       "The path to the root of the project to build. This path is defined relative to the workspace root"
     );
 
@@ -63,10 +58,8 @@ export async function createProgram(config: StormConfig) {
         "Run a TypeScript build using ESBuild, API-Extractor, and TSC (for type generation)."
       )
       .addOption(projectRootOption)
-      .addOption(workspaceRootOption)
       .addOption(tsconfigOption)
-      .addOption(outputOption)
-      .addOption(outputOption)
+      .addOption(outputPathOption)
       .addOption(bundleOption)
       .addOption(cleanOption)
       .action(buildAction(config));
@@ -85,19 +78,17 @@ const buildAction =
   (config: StormConfig) =>
   async (
     projectRoot: string,
-    workspaceRoot: string,
-    tsconfig?: string,
-    output?: string,
+    tsConfig?: string,
+    outputPath?: string,
     bundle?: boolean,
     clean?: boolean
   ) => {
     try {
       writeInfo("⚡ Building the Storm TypeScript package", config);
-      await build({
-        project: projectRoot,
-        tsProject: tsconfig ? tsconfig : join(projectRoot, "tsconfig.json"),
-        root: workspaceRoot,
-        output: output ? output : join("dist", projectRoot),
+      await build(config, {
+        projectRoot,
+        tsConfig: tsConfig ? tsConfig : join(projectRoot, "tsconfig.json"),
+        outputPath: outputPath ? outputPath : join("dist", projectRoot),
         bundle,
         clean
       });

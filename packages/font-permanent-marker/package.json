@@ -25,14 +25,10 @@
       "react-native": "./dist/cjs/index.native.js"
     }
   },
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "types": "./types/index.d.ts",
   "dependencies": {
     "@tamagui/core": "^1.94.5"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "module:jsx": "dist/jsx"
+  }
 }
