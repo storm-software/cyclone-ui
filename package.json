@@ -79,7 +79,7 @@
   "dependencies": {
     "@nx/devkit": "18.2.3",
     "@nx/js": "18.2.3",
-    "@nx/node": "18.2.3",
+    "@nx/node": "18.3.3",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
