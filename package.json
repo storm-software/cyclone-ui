@@ -172,7 +172,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "jsdom": "~22.1.0",
     "lefthook": "^1.6.9",
-    "nx": "18.2.3",
+    "nx": "18.3.4",
     "react-refresh": "^0.10.0",
     "swc-loader": "0.1.15",
     "vite": "~5.0.0",
