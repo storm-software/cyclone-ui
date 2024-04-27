@@ -13,6 +13,7 @@ env:
   NX_DAEMON: false
   NX_VERBOSE_LOGGING: true
   SKIP_ENV_VALIDATION: true
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   labels:

@@ -20,4 +20,4 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: "Hello, I'm 🤖 Stormie-Bot! Thank you for your interest in this project! The Storm team will review this issue and reach out to you ASAP."
-          pr-message: "Hello, I'm 🤖 Stormie-Bot! The Storm team sincerely appreciates your effort/interest in contributing to this project. A Storm developer will review this change and get back to you ASAP. Please feel free to reach out to the Storm team (contact@stormsoftware.com) if you have any questions/comments."
+          pr-message: "Hello, I'm 🤖 Stormie-Bot! The Storm team sincerely appreciates your effort/interest in contributing to this project. A Storm developer will review this change and get back to you ASAP. Please feel free to reach out to the Storm team (support@stormsoftware.com) if you have any questions/comments."
