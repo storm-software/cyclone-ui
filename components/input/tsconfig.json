@@ -3,9 +3,19 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "jsx": "preserve",
-    "composite": true
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ]
   },
   "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "bin/**/*"],
+  "include": [
+    "tamagui.config.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "bin/**/*"
+  ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

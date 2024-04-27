@@ -6,7 +6,7 @@
 
 import { blue } from '@tamagui/colors';
 import { blueDark } from '@tamagui/colors';
-import { CreateMask } from '@tamagui/create-theme';
+import type { CreateMask } from '@tamagui/create-theme';
 import { CreateThemePalette } from '@tamagui/create-theme';
 import { gray } from '@tamagui/colors';
 import { grayDark } from '@tamagui/colors';
@@ -4387,6 +4387,11 @@ export { colorTokens }
 export { colorTokens as colorTokens_alias_1 }
 
 // @public (undocumented)
+const createInverseMask: () => CreateMask;
+export { createInverseMask }
+export { createInverseMask as createInverseMask_alias_1 }
+
+// @public (undocumented)
 const darkColors: {
     yellow1: string;
     yellow2: string;
@@ -4487,152 +4492,6 @@ const darkColors: {
 };
 export { darkColors }
 export { darkColors as darkColors_alias_1 }
-
-// @public (undocumented)
-const darkTheme: {
-    base: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    primary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    secondary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    tertiary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    accent: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    success: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    info: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    warning: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    error: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    fatal: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-};
-export { darkTheme }
-export { darkTheme as darkTheme_alias_1 }
 
 // @public (undocumented)
 const formatPalettes: (dark: ColorTheme, light: ColorTheme) => Record<string, string[]>;
@@ -4752,152 +4611,6 @@ const lightColors: {
 };
 export { lightColors }
 export { lightColors as lightColors_alias_1 }
-
-// @public (undocumented)
-const lightTheme: {
-    base: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    primary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    secondary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    tertiary: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    accent: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    success: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    info: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    warning: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    error: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-    fatal: {
-        "0": string;
-        "1": string;
-        "2": string;
-        "3": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-    };
-};
-export { lightTheme }
-export { lightTheme as lightTheme_alias_1 }
 
 // @public (undocumented)
 export const maskOptions: {
@@ -5208,6 +4921,10 @@ export const templates: {
         color12: number;
     };
     colorLight: {
+        borderColor: number;
+        borderColorHover: number;
+        borderColorFocus: number;
+        borderColorPress: number;
         background: number;
         backgroundHover: number;
         backgroundPress: number;
@@ -5219,10 +4936,6 @@ export const templates: {
         colorPress: number;
         colorFocus: number;
         colorTransparent: number;
-        borderColor: number;
-        borderColorHover: number;
-        borderColorFocus: number;
-        borderColorPress: number;
         placeholderColor: number;
         color1: number;
         color2: number;
@@ -5238,6 +4951,302 @@ export const templates: {
         color12: number;
     };
 };
+
+// @public (undocumented)
+const theme: {
+    base: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    primary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    secondary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    tertiary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    accent: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    success: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    info: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    warning: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    error: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    fatal: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+};
+export { theme as default_alias }
+export { theme as lightTheme }
+export { theme as lightTheme_alias_1 }
+export { theme }
+
+// @public (undocumented)
+const theme_2: {
+    base: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    primary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    secondary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    tertiary: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    accent: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    success: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    info: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    warning: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    error: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+    fatal: {
+        "0": string;
+        "1": string;
+        "2": string;
+        "3": string;
+        "4": string;
+        "5": string;
+        "6": string;
+        "7": string;
+        "8": string;
+        "9": string;
+        "10": string;
+        "11": string;
+    };
+};
+export { theme_2 as darkTheme }
+export { theme_2 as darkTheme_alias_1 }
+export { theme_2 as default_alias_1 }
+export { theme_2 as theme_alias_1 }
 
 // @public (undocumented)
 const themes: {

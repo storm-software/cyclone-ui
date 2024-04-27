@@ -1,4 +1,4 @@
-import { config } from "../../packages/config/src/tamagui.config";
+import { config } from "@cyclone-ui/config";
 
 export type Conf = typeof config;
 

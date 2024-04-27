@@ -8,7 +8,8 @@
  */
 
 import type { GenericFont } from "@tamagui/core";
-import { createFont, isWeb } from "@tamagui/core";
+import { createFont } from "@tamagui/core";
+import { isWeb } from "@tamagui/constants";
 
 export const createMonaSansFont = <A extends GenericFont<keyof typeof size>>(
   font: Partial<A> = {}

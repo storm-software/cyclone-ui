@@ -1,4 +1,5 @@
 {
+  "extends": "./node_modules/@storm-software/config/presets/base.json",
   "name": "cyclone-ui",
   "namespace": "cyclone-ui",
   "repository": "https://github.com/storm-software/cyclone-ui",
@@ -8,6 +9,7 @@
   "timezone": "America/New_York",
   "locale": "en-US",
   "logLevel": "all",
+  "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
   "colors": {
     "light": {
@@ -29,7 +31,7 @@
       "primary": "#1fb2a6",
       "secondary": "#a5d6ff",
       "tertiary": "#f778ba",
-      "accent": "#8957e5",
+      "accent": "#7b61ff",
       "success": "#56d364",
       "info": "#58a6ff",
       "warning": "#e3b341",

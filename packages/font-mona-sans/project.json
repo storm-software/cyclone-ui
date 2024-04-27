@@ -4,80 +4,6 @@
   "projectType": "library",
   "sourceRoot": "packages/font-mona-sans/src",
   "targets": {
-    // "build-base": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "pnpm exec tamagui-build --clean --bundle",
-    //     "cwd": "packages/font-mona-sans"
-    //   }
-    // },
-    // "build": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["build-base"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "commands": [
-    //       "pnpm exec rimraf dist/packages/font-mona-sans",
-    //       "make-dir dist/packages/font-mona-sans",
-    //       "pnpm exec copyfiles -f LICENSE ./packages/font-mona-sans/package.json ./packages/font-mona-sans/*.md  ./dist/packages/font-mona-sans",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-mona-sans/dist/**/*.js ./dist/packages/font-mona-sans/dist",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-mona-sans/types/**/* ./dist/packages/font-mona-sans/types",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-mona-sans/css/**/*.css ./dist/packages/font-mona-sans/css"
-    //     ],
-    //     "parallel": false
-    //   }
-    // },
-
-    // "build": {
-    //   "cache": true,
-    //   "executor": "@cyclone-ui/nx:build",
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "output": "{options.outputPath}",
-    //   "options": {
-    //     "outputPath": "dist/packages/font-mona-sans",
-    //     "tsConfig": "packages/font-mona-sans/tsconfig.json",
-    //     "project": "packages/font-mona-sans/package.json",
-    //     "defaultConfiguration": "production",
-    //     "assets": [
-    //       {
-    //         "input": "packages/font-mona-sans",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "packages/font-mona-sans",
-    //         "glob": "css/*.css",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "packages/font-mona-sans",
-    //         "glob": "ttf/*.ttf",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       }
-    //     ]
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": false,
-    //       "verbose": false
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
-    //   }
-    // },
-
     "build": {
       "executor": "@storm-software/workspace-tools:tsup-neutral",
       "outputs": ["{options.outputPath}"],
@@ -121,7 +47,6 @@
         }
       }
     },
-
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

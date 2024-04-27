@@ -12,8 +12,7 @@ const profiling = isProduction && {
 };
 const shouldExtract = process.env.EXTRACT === "1";
 
-const extrasPlugins = ["@cyclone-ui/button"];
-
+const extrasPlugins = ["@cyclone-ui/button", "@cyclone-ui/input"];
 const tamaguiConfig = {
   components: [...extrasPlugins, "tamagui"],
   config: "apps/storybook/tamagui.config.ts",
@@ -42,7 +41,6 @@ export default defineConfig({
     fs: {
       // Load server-side code also from `src`
       allow: ["src"],
-      // Enable stricter file checks
       strict: true
     },
     port: 4200,

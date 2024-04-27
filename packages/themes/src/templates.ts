@@ -25,7 +25,7 @@ const template = {
   // can publish components for others to use without mandating a specific color scale
   // the @tamagui/button Button component looks for `$background`, so you set the
   // dark_red_Button theme to have a stronger background than the dark_red theme.
-  background: 2,
+  background: 1,
   backgroundHover: 3,
   backgroundPress: 4,
   backgroundFocus: 5,
@@ -37,21 +37,21 @@ const template = {
   colorFocus: -2,
   colorTransparent: -0,
   borderColor: -2,
-  borderColorHover: -4,
-  borderColorFocus: -5,
-  borderColorPress: -5,
+  borderColorHover: -3,
+  borderColorFocus: -4,
+  borderColorPress: -4,
   placeholderColor: -4
 };
 
 export const templates = {
   base: template,
   colorLight: {
-    ...template
+    ...template,
     // light color themes are a bit less sensitive
-    // borderColor: 4,
-    // borderColorHover: 5,
-    // borderColorFocus: 4,
-    // borderColorPress: 4
+    borderColor: 4,
+    borderColorHover: 5,
+    borderColorFocus: 4,
+    borderColorPress: 4
   }
 };
 

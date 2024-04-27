@@ -77,6 +77,7 @@
   },
   "prettier": "@storm-software/linting-tools/prettier/config.json",
   "dependencies": {
+    "@nderscore/tamagui-typescript-plugin": "^0.6.0",
     "@nx/devkit": "18.2.3",
     "@nx/js": "18.2.3",
     "@nx/node": "18.2.3",
@@ -89,6 +90,7 @@
     "@storm-software/tsconfig": "latest",
     "@storm-software/workspace-tools": "latest",
     "@storybook/icons": "^1.2.9",
+    "@tamagui/build": "^1.95.1",
     "@types/jest": "^29.5.8",
     "@types/node": "20.9.0",
     "@types/react": "^18.2.43",
@@ -192,11 +194,11 @@
       "@cyclone-ui/font-permanent-marker": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
+      "@cyclone-ui/nx": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/theme-provider": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/nx": "workspace:*"
+      "@cyclone-ui/website": "workspace:*"
     }
   },
   "bundlewatch": {

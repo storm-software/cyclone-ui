@@ -4,35 +4,8 @@
   "sourceRoot": "packages/config/src",
   "projectType": "library",
   "targets": {
-    // "build-base": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "pnpm exec tamagui-build --clean --bundle",
-    //     "cwd": "packages/config"
-    //   }
-    // },
-    // "build": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["build-base"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "commands": [
-    //       "pnpm exec rimraf dist/packages/config",
-    //       "make-dir dist/packages/config",
-    //       "pnpm exec copyfiles -f LICENSE ./packages/config/package.json ./packages/config/*.md  ./dist/packages/config",
-    //       "pnpm exec copyfiles -u 3 ./packages/config/dist/**/*.js ./dist/packages/config/dist",
-    //       "pnpm exec copyfiles -u 3 ./packages/config/types/**/* ./dist/packages/config/types"
-    //     ],
-    //     "parallel": false
-    //   }
-    // },
-
     "build": {
-      "cache": false,
+      "cache": true,
       "executor": "@cyclone-ui/nx:build",
       "inputs": ["default", "^production"],
       "dependsOn": ["^build"],
@@ -57,8 +30,8 @@
       },
       "configurations": {
         "production": {
-          "debug": false,
-          "verbose": false
+          "debug": true,
+          "verbose": true
         },
         "development": {
           "debug": true,
@@ -66,41 +39,6 @@
         }
       }
     },
-
-    // "build": {
-    //   "executor": "@storm-software/workspace-tools:tsup-neutral",
-    //   "outputs": ["{options.outputPath}"],
-    //   "options": {
-    //     "entry": "packages/config/src/index.ts",
-    //     "outputPath": "dist/packages/config",
-    //     "tsConfig": "packages/config/tsconfig.json",
-    //     "project": "packages/config/package.json",
-    //     "defaultConfiguration": "production",
-    //     "assets": [
-    //       {
-    //         "input": "packages/config",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       }
-    //     ],
-    //     "platform": "neutral"
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": false,
-    //       "verbose": false
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
-    //   }
-    // },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

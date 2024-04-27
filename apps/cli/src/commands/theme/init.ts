@@ -119,7 +119,7 @@ export default class Init extends Command {
             cancel('Operation cancelled.')
             process.exit(0)
           }
-          output = promptInput
+          output = promptInput as string
         }
       }
 
@@ -169,7 +169,11 @@ export default class Init extends Command {
   }
 
   public override async catch(error: Error): Promise<void> {
-    this.error(error.message)
+    this.error(
+      error?.message
+        ? `\nMessage: ${error.message}\n\n${error.stack ? 'Stacktrace: \n' : ''}${error.stack ? error.stack : ''}\n`
+        : error || 'An error occurred',
+    )
   }
 
   public override async init(): Promise<void> {

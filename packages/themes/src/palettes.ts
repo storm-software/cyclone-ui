@@ -90,14 +90,12 @@ export const palettes = (() => {
   const lightPalette = [
     lightTransparent,
     ...Object.values(lightTheme.base),
-    lightTheme.base["11"],
     darkTransparent
   ];
 
   const darkPalette = [
     darkTransparent,
     ...Object.values(darkTheme.base),
-    darkTheme.base["11"],
     lightTransparent
   ];
 

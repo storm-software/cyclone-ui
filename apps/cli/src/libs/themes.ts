@@ -13,8 +13,12 @@ export const getThemeFilePath = (
   output: string,
   themeType: ColorThemeType,
   name: string = 'default',
+  extension?: string,
 ): string => {
-  return join(getThemePath(workspaceRoot, output), `${name}-${themeType}.json`)
+  return join(
+    getThemePath(workspaceRoot, output),
+    `${name}-${themeType}${extension ? (extension.includes('.') ? extension : `.${extension}`) : ''}`,
+  )
 }
 
 export const getTheme = async (
@@ -36,9 +40,14 @@ export const getTheme = async (
   return theme
 }
 
-export const addPalette = (theme: ColorTheme, color: string, type: ColorPaletteType): ColorTheme => {
+export const addPalette = (
+  theme: ColorTheme,
+  color: string,
+  type: ColorPaletteType,
+  backgroundName = 'base',
+): ColorTheme => {
   theme[type] = chroma
-    .scale([theme.base['0'], color])
+    .scale([theme[backgroundName]['0'], color])
     .mode('lch')
     .colors(12)
     .reduce((acc: {[x: string]: string}, value: string, index: number) => {
@@ -76,7 +85,11 @@ export const setTheme = async (
     await fs.mkdir(join(workspaceRoot, output, 'themes'), {recursive: true})
   }
 
-  await fs.writeJson(getThemeFilePath(workspaceRoot, output, themeType, name), theme)
+  const filePath = getThemeFilePath(workspaceRoot, output, themeType, name)
+  await Promise.all([
+    fs.writeFile(`${filePath}.ts`, `export const theme = ${JSON.stringify(theme)}; \n\nexport default theme;`),
+    fs.writeJson(`${filePath}.json`, theme),
+  ])
 }
 
 export const writeSingleTheme = async (
@@ -104,13 +117,19 @@ export const writeMultiTheme = async (
   outputPath: string,
   name: string,
 ) => {
-  let lightTheme = await initialTheme(colors.light, ColorThemeType.LIGHT)
+  let lightTheme = await initialTheme(
+    {...colors.light, light: colors.light.background, dark: colors.light.foreground},
+    ColorThemeType.LIGHT,
+  )
   for (const type of Object.keys(colors.light).filter((type) => type !== 'background' && type !== 'foreground')) {
     lightTheme = addPalette(lightTheme, colors.light[type], type as ColorPaletteType)
   }
   await setTheme(lightTheme, workspaceRoot, outputPath, ColorThemeType.LIGHT, name)
 
-  let darkTheme = await initialTheme(colors.dark, ColorThemeType.DARK)
+  let darkTheme = await initialTheme(
+    {...colors.dark, dark: colors.dark.background, light: colors.dark.foreground},
+    ColorThemeType.DARK,
+  )
   for (const type of Object.keys(colors.dark).filter((type) => type !== 'background' && type !== 'foreground')) {
     darkTheme = addPalette(darkTheme, colors.dark[type], type as ColorPaletteType)
   }

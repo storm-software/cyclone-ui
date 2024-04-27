@@ -6,6 +6,14 @@
     "rootDir": ".",
     "baseUrl": ".",
     "skipLibCheck": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": true,
+    "incremental": true,
+    "jsx": "react-jsx",
+    "module": "system",
+    "moduleResolution": "node",
+    "resolveJsonModule": false,
     "paths": {
       "@cyclone-ui/build": ["packages/build/src/index.ts"],
       "@cyclone-ui/build/*": ["packages/build/src/*"],
@@ -29,13 +37,28 @@
       "@cyclone-ui/font-space-grotesk/*": ["packages/font-space-grotesk/src/*"],
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input/*": ["components/input/src/*"],
-      "@cyclone-ui/nx": ["apps/nx/src/index.ts"],
+      "@cyclone-ui/nx": ["apps/nx/index.ts"],
       "@cyclone-ui/nx/*": ["apps/nx/src/*"],
       "@cyclone-ui/theme-provider": ["packages/theme-provider/src/index.ts"],
       "@cyclone-ui/theme-provider/*": ["packages/theme-provider/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@nderscore/tamagui-typescript-plugin",
+        "pathToApp": "apps/website",
+        "defaultTheme": "dark",
+        "colorTileSize": 18,
+        "completionFilters": {
+          "showColorTokens": true,
+          "showTrueTokens": true,
+          "custom": {}
+        }
+      }
+    ]
   },
-  "references": []
+  "typeAcquisition": {
+    "enable": true
+  }
 }

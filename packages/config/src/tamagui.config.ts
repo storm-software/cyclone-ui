@@ -1,4 +1,3 @@
-import { createTamagui } from "@tamagui/core";
 import { shorthands } from "@tamagui/shorthands";
 import { themes, tokens } from "@cyclone-ui/themes";
 import { createMedia } from "@tamagui/react-native-media-driver";
@@ -6,6 +5,8 @@ import { animations } from "./animations";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
 import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
 import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
+import { createTamagui } from "./create-tamagui";
+import type { CreateTamaguiProps } from "@tamagui/web";
 
 const headingFont = createPermanentMarkerFont({
   transform: {
@@ -23,7 +24,8 @@ const headingFont = createPermanentMarkerFont({
 const labelFont = createMonaSansFont({});
 const bodyFont = createSpaceGroteskFont({});
 
-export const config = createTamagui({
+export const baseConfig = {
+  defaultFont: "body",
   animations,
   shouldAddPrefersColorThemes: true,
   themeClassNameOnRoot: true,
@@ -36,6 +38,7 @@ export const config = createTamagui({
   tokens,
   themes,
   media: createMedia({
+    xxs: { maxWidth: 390 },
     xs: { maxWidth: 660 },
     sm: { maxWidth: 800 },
     md: { maxWidth: 1020 },
@@ -50,5 +53,25 @@ export const config = createTamagui({
     tall: { minHeight: 820 },
     hoverNone: { hover: "none" },
     pointerCoarse: { pointer: "coarse" }
-  })
-});
+  }),
+  mediaQueryDefaultActive: {
+    xl: true,
+    lg: true,
+    md: true,
+    sm: true,
+    xs: true,
+    // false
+    xxs: false
+  },
+  selectionStyles: theme => ({
+    backgroundColor: theme.color5,
+    color: theme.color12
+  }),
+  settings: {
+    allowedStyleValues: "somewhat-strict-web",
+    autocompleteSpecificTokens: "except-special"
+    // mediaPropOrder: true,
+  }
+} satisfies CreateTamaguiProps;
+
+export const config = createTamagui(baseConfig);

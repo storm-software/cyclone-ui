@@ -44,16 +44,6 @@
         }
       }
     },
-    // "build-base": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "pnpm exec tamagui-build --clean --bundle",
-    //     "cwd": "packages/themes"
-    //   }
-    // },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

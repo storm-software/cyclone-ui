@@ -26,7 +26,12 @@
   "module": "dist/esm",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@tamagui/core": "^1.94.5"
+    "@tamagui/core": "^1.94.5",
+    "@tamagui/portal": "^1.94.5",
+    "@tamagui/web": "^1.94.5"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "module:jsx": "dist/jsx"
 }

@@ -1,6 +1,6 @@
 import { create } from "@storybook/theming/create";
 
-export default create({
+const theme: any = create({
   base: "dark",
 
   colorPrimary: "#1fb2a6",
@@ -32,3 +32,5 @@ export default create({
   brandImage: "https://pub-761b436209f44a4d886487c917806c08.r2.dev/logo.svg",
   brandTarget: "_self"
 });
+
+export default theme;

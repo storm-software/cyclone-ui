@@ -108,7 +108,7 @@ export default class Clean extends Command {
             cancel('Operation cancelled.')
             process.exit(0)
           }
-          output = promptInput
+          output = promptInput as string
         }
       }
 

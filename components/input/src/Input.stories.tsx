@@ -6,7 +6,7 @@ const meta: Meta<typeof Input> = {
   title: "Form/Input",
   component: Input,
   tags: ["autodocs"],
-  render: args => (
+  render: (args: any) => (
     <Input {...args}>
       <Input.Label htmlFor="input">Label Text</Input.Label>
       <Input.Box>

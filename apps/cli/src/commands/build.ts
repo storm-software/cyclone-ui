@@ -138,7 +138,7 @@ export default class Build extends Command {
             cancel('Operation cancelled.')
             process.exit(0)
           }
-          outputPath = promptInput
+          outputPath = promptInput as string
         }
       }
 

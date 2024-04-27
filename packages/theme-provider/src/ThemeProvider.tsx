@@ -1,7 +1,7 @@
 import { useThemeNameState } from "@cyclone-ui/themes";
-import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/core";
+import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
 import { config } from "@cyclone-ui/config";
-import React from "react";
+import { PortalProvider } from "@tamagui/portal";
 
 declare const window: any;
 
@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
 
   return (
     <TamaguiProvider config={config} {...props} defaultTheme={defaultTheme}>
-      {children}
+      <PortalProvider shouldAddRootHost={true}>{children}</PortalProvider>
     </TamaguiProvider>
   );
 };

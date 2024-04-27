@@ -4,30 +4,39 @@
   "projectType": "library",
   "sourceRoot": "components/input/src",
   "targets": {
-    "build-base": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm exec tamagui-build --clean",
-        "cwd": "components/input"
-      }
-    },
     "build": {
       "cache": true,
+      "executor": "@cyclone-ui/nx:build",
       "inputs": ["default", "^production"],
-      "dependsOn": ["build-base"],
-      "executor": "nx:run-commands",
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
       "options": {
-        "commands": [
-          "pnpm exec rimraf dist/components/input",
-          "make-dir dist/components/input",
-          "pnpm exec copyfiles -f LICENSE ./components/input/package.json ./components/input/*.md ./dist/components/input",
-          "pnpm exec copyfiles -u 3 ./components/input/types/**/* ./dist/components/input/types",
-          "pnpm exec copyfiles -u 3 ./components/input/dist/**/*.js ./dist/components/input/dist"
-        ],
-        "parallel": false
+        "outputPath": "dist/components/input",
+        "tsConfig": "components/input/tsconfig.json",
+        "project": "components/input/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/input",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
       }
     },
     "nx-release-publish": {

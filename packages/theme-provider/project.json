@@ -5,10 +5,12 @@
   "sourceRoot": "packages/theme-provider/src",
   "targets": {
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-browser",
-      "outputs": ["{options.outputPath}"],
+      "cache": true,
+      "executor": "@cyclone-ui/nx:build",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
       "options": {
-        "entry": "packages/theme-provider/src/index.ts",
         "outputPath": "dist/packages/theme-provider",
         "tsConfig": "packages/theme-provider/tsconfig.json",
         "project": "packages/theme-provider/package.json",
@@ -24,8 +26,7 @@
             "glob": "LICENSE",
             "output": "/"
           }
-        ],
-        "platform": "browser"
+        ]
       },
       "configurations": {
         "production": {
@@ -37,6 +38,9 @@
           "verbose": true
         }
       }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
     }
   }
 }

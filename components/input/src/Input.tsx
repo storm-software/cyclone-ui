@@ -1,24 +1,24 @@
 import { getFontSized } from "@tamagui/get-font-sized";
 import { getSpace } from "@tamagui/get-token";
 import type { GetProps, SizeVariantSpreadFunction } from "@tamagui/web";
+import { withStaticProperties } from "@tamagui/helpers";
 import { useState } from "react";
-import type { ColorTokens, FontSizeTokens } from "tamagui";
+import { Label } from "@tamagui/label";
+import { XGroup } from "@tamagui/group";
+import { isWeb } from "@tamagui/constants";
+import { XStack } from "@tamagui/stacks";
+import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
-  Label,
   Text,
   View,
-  XGroup,
-  XStack,
-  createStyledContext,
-  getFontSize,
-  getVariable,
-  isWeb,
   styled,
-  useGetThemedIcon,
+  createStyledContext,
   useTheme,
-  withStaticProperties
-} from "tamagui";
+  getVariable
+} from "@tamagui/core";
 import { InputBase } from "./InputBase";
+import { getFontSize } from "@tamagui/font-size";
+import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 
 const defaultContextValues = {
   size: "$true",
@@ -54,7 +54,6 @@ export const defaultInputGroupStyles = {
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-
   hoverStyle: {
     borderColor: "$borderColorHover"
   },
@@ -78,7 +77,7 @@ const InputGroupFrame = styled(XGroup, {
       ":number": {} as any
     },
     applyFocusStyle: {
-      ":boolean": (val, { props }) => {
+      ":boolean": (val: any, { props }: any) => {
         if (val) {
           return props.focusStyle || defaultInputGroupStyles.focusStyle;
         }
@@ -87,7 +86,7 @@ const InputGroupFrame = styled(XGroup, {
       }
     },
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val: any, { tokens }: any) => {
         return {
           borderRadius: tokens.radius[val]
         };
@@ -207,7 +206,7 @@ const getIconSize = (size: FontSizeTokens, scale: number) => {
 const InputIcon = InputIconFrame.styleable<{
   scaleIcon?: number;
   color?: ColorTokens | string;
-}>((props, ref) => {
+}>((props: any, ref: any) => {
   const { children, color: colorProp, ...rest } = props;
   const inputContext = InputContext.useStyledContext();
   const { size = "$true", color: contextColor, scaleIcon = 1 } = inputContext;
@@ -305,7 +304,7 @@ export const InputInfo = styled(Text, {
 
   variants: {
     size: {
-      "...fontSize": (val, { font }) => {
+      "...fontSize": (val: any, { font }: any) => {
         if (!font) {
           return;
         }
@@ -345,7 +344,7 @@ const InputXGroup = styled(XGroup, {
 
   variants: {
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val: any, { tokens }: any) => {
         const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
         return {
           borderRadius: radiusToken

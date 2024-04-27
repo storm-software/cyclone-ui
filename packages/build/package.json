@@ -10,7 +10,7 @@
   },
   "type": "module",
   "bin": {
-    "cyclone-ui-build": "./bin/build.js"
+    "cyclone-ui-build": "./bin/build.mjs"
   },
   "dependencies": {
     "@babel/core": "^7.14.5",

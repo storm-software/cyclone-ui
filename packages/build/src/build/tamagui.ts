@@ -2,7 +2,7 @@
 
 import { es5Plugin } from "esbuild-plugin-es5";
 import { transform } from "@babel/core";
-import { run } from "@storm-software/config-tools";
+import { run, writeTrace } from "@storm-software/config-tools";
 import type { StormConfig } from "@storm-software/config";
 import fs from "fs-extra";
 import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
@@ -66,12 +66,13 @@ export const build = async (
     exclude
   }: BuildOptions
 ) => {
-  const pkg = fs.readJSONSync(
-    join(config.workspaceRoot, projectRoot, "./package.json")
-  );
+  writeTrace("Running the Tamagui build process...", config);
+
+  projectRoot = join(config.workspaceRoot, projectRoot);
+  const pkg = fs.readJSONSync(join(projectRoot, "./package.json"));
   const pkgMain = pkg.main;
   const pkgSource = projectRoot
-    ? projectRoot
+    ? join(projectRoot, "src/index.ts")
     : pkg.source
       ? pkg.source
       : process.cwd();
@@ -99,7 +100,7 @@ export const build = async (
   async function handleClean() {
     try {
       await Promise.allSettled([
-        fs.remove(outputPath ? outputPath : join(projectRoot, "output-dir")),
+        fs.remove(outputPath),
         fs.remove(join(projectRoot, ".turbo")),
         fs.remove(join(projectRoot, "node_modules")),
         fs.remove(join(projectRoot, ".ultra.cache.json")),
@@ -122,39 +123,11 @@ export const build = async (
     process.exit(0);
   }
 
-  if (clean || cleanBuildOnly) {
-    handleClean().then(() => {
-      process.exit(0);
-    });
-  } else {
-    if (watch) {
-      process.env.IS_WATCHING = true as any;
-      process.env.DISABLE_AUTORUN = true as any;
-      const rebuild = debounce(handleBuild, 100);
-      const chokidar = await import("chokidar");
-
-      // do one js build but not types
-      handleBuild({
-        skipTypes: true
-      });
-
-      chokidar
-        // prevent infinite loop but cause race condition if you just build directly
-        .watch("src", {
-          persistent: true,
-          alwaysStat: true,
-          ignoreInitial: true
-        })
-        .on("change", rebuild)
-        .on("add", rebuild);
-    } else {
-      handleBuild();
-    }
-  }
-
   async function handleBuild(
     { skipTypes }: { skipTypes: boolean } = { skipTypes: false }
   ) {
+    writeTrace(`Starting the "${pkg.name}" build...`, config);
+
     if (process.env.DEBUG) {
       console.info("🔹", pkg.name);
     }
@@ -170,9 +143,13 @@ export const build = async (
     } catch (error) {
       console.error(`Error building:`, error.message);
     }
+
+    writeTrace(`Completed the "${pkg.name}" build...`, config);
   }
 
   async function buildTsc() {
+    writeTrace(`Starting the "${pkg.name}" TSC build...`, config);
+
     if (!pkgTypes) {
       return;
     }
@@ -184,7 +161,7 @@ export const build = async (
       return;
     }
 
-    const targetDir = join(projectRoot, "types");
+    const targetDir = join(outputPath, "types");
     try {
       // typescripts build cache messes up when doing declarationOnly
       await fs.remove(join(projectRoot, "tsconfig.tsbuildinfo"));
@@ -195,11 +172,11 @@ export const build = async (
         : "";
       const baseUrlFlag = ignoreBaseUrl
         ? ""
-        : ` --baseUrl ${baseUrl ? baseUrl : config.workspaceRoot}`;
+        : ` --baseUrl "${baseUrl ? baseUrl : config.workspaceRoot}" `;
       const tsProjectFlag = tsConfig
-        ? ` --project ${tsConfig ? tsConfig : '"./tsconfig.json"'}`
+        ? ` --project "${join(config.workspaceRoot, tsConfig)}" `
         : "";
-      const cmd = `npx tsc${baseUrlFlag}${tsProjectFlag} --root-dir \"${config.workspaceRoot}\" --outDir \"${targetDir}\" ${declarationToRootFlag}--emitDeclarationOnly --declarationMap`;
+      const cmd = `npx tsc${baseUrlFlag}${tsProjectFlag} --rootDir "${config.workspaceRoot}" --outDir "${targetDir}" ${declarationToRootFlag} --declaration --emitDeclarationOnly --declarationMap`;
 
       console.info("\x1b[2m$", cmd);
       await run(config, cmd);
@@ -210,10 +187,14 @@ export const build = async (
       }
     } finally {
       await fs.remove(join(projectRoot, "tsconfig.tsbuildinfo"));
+
+      writeTrace(`Completed the "${pkg.name}" TSC build...`, config);
     }
   }
 
   async function buildJs() {
+    writeTrace(`Starting the "${pkg.name}" JS build...`, config);
+
     if (skipJS) {
       return;
     }
@@ -237,7 +218,7 @@ export const build = async (
       skipNodeModulesBundle: true
     });
 
-    const external = bundle ? ["@swc/*", "*.node"] : undefined;
+    const external = bundle ? ["@swc/*", "@cyclone-ui/*", "*.node"] : undefined;
 
     const esbuildBundleProps = (
       bundleNative || bundleNativeTest
@@ -324,7 +305,7 @@ export const build = async (
       }
     }
 
-    return await Promise.all([
+    await Promise.all([
       // web output to cjs
       pkgMain
         ? esbuildWriteIfChanged(cjsConfig as ESBuildOptions, {
@@ -427,6 +408,8 @@ export const build = async (
       if (process.env.DEBUG)
         console.info(`built js in ${Date.now() - start}ms`);
     });
+
+    writeTrace(`Completed the "${pkg.name}" JS build...`, config);
   }
 
   async function esbuildWriteIfChanged(
@@ -441,6 +424,8 @@ export const build = async (
       env: ""
     }
   ) {
+    writeTrace(`Starting the "${pkg.name}" ESBuild write...`, config);
+
     if (!watch && !platform) {
       return await esbuild.build(opts);
     }
@@ -674,6 +659,44 @@ export const build = async (
       })
     );
 
+    writeTrace(`Completed the "${pkg.name}" ESBuild write...`, config);
+
     return;
+  }
+
+  if (clean || cleanBuildOnly) {
+    writeTrace(`Cleaning the "${pkg.name}" package...`, config);
+
+    handleClean().then(() => {
+      process.exit(0);
+    });
+  }
+
+  if (watch) {
+    writeTrace(`Watching the "${pkg.name}" package...`, config);
+
+    process.env.IS_WATCHING = true as any;
+    process.env.DISABLE_AUTORUN = true as any;
+    const rebuild = debounce(await handleBuild, 100);
+    const chokidar = await import("chokidar");
+
+    // do one js build but not types
+    await handleBuild({
+      skipTypes: true
+    });
+
+    chokidar
+      // prevent infinite loop but cause race condition if you just build directly
+      .watch("src", {
+        persistent: true,
+        alwaysStat: true,
+        ignoreInitial: true
+      })
+      .on("change", rebuild)
+      .on("add", rebuild);
+  } else {
+    writeTrace(`Building the "${pkg.name}" package...`, config);
+
+    await handleBuild();
   }
 };

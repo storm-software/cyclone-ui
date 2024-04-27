@@ -1,15 +1,10 @@
-import { View, withStaticProperties } from "tamagui";
+import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import type {
   FontSizeTokens,
   GetProps,
   SizeTokens,
-  StackStyleBase,
-  StaticConfigPublic,
-  TamaDefer,
-  TamaguiComponent,
-  TamaguiElement,
   ThemeableProps
 } from "@tamagui/web";
 import { styled, createStyledContext } from "@tamagui/web";
@@ -18,9 +13,11 @@ import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import type { FunctionComponent } from "react";
 import { useContext } from "react";
-import { RNTamaguiViewNonStyleProps } from "@tamagui/core";
+import { View } from "@tamagui/core";
+import { LinearGradient } from "@tamagui/linear-gradient";
+import { withStaticProperties } from "@tamagui/helpers";
 
-type ButtonVariant = "outlined";
+type ButtonVariant = "outlined" | "ghost" | "glass";
 
 type ButtonIconProps = { color?: any; size?: any };
 type IconProp =
@@ -59,8 +56,6 @@ type ButtonExtraProps = TextParentStyles &
     unstyled?: boolean;
   };
 
-type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
-
 const BUTTON_NAME = "Button";
 
 export const ButtonContext = createStyledContext<
@@ -68,6 +63,7 @@ export const ButtonContext = createStyledContext<
     TextContextStyles & {
       size: SizeTokens;
       variant?: ButtonVariant;
+      borderRadius?: SizeTokens;
     }
   >
 >({
@@ -81,29 +77,32 @@ export const ButtonContext = createStyledContext<
   maxFontSizeMultiplier: undefined,
   size: undefined,
   textAlign: undefined,
-  variant: undefined
+  variant: undefined,
+  borderRadius: "$4"
 });
 
 const ButtonFrame = styled(View, {
   name: BUTTON_NAME,
   context: ButtonContext,
-  backgroundColor: "$background",
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  alignItems: "center",
-  flexDirection: "row",
   tag: "button",
   role: "button",
   focusable: true,
-  animation: "fast",
+
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "row",
+  animation: "faster",
+  borderWidth: 1,
+  borderColor: "$borderColor",
+  backgroundColor: "$background",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$backgroundHover",
+    borderWidth: 3
   },
 
   pressStyle: {
-    backgroundColor: "$backgroundPress",
-    scale: 0.98
+    backgroundColor: "$backgroundPress"
   },
 
   variants: {
@@ -132,7 +131,6 @@ const ButtonFrame = styled(View, {
     variant: {
       outlined: {
         backgroundColor: "transparent",
-        borderWidth: 3,
         borderColor: "$borderColor",
         color: "$borderColor",
 
@@ -159,23 +157,68 @@ const ButtonFrame = styled(View, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderColor: "transparent",
-        color: "$borderColor",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          color: "$borderColorHover"
+          borderWidth: 1,
+          borderColor: "$borderColorHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          color: "$borderColorPress"
+          borderWidth: 1,
+          borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
-          color: "$borderColorFocus"
+          borderWidth: 1,
+          borderColor: "$borderColorFocus"
+        }
+      },
+
+      glass: {
+        backgroundColor: "transparent",
+        borderColor: "borderColor",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderColor: "$borderColorHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderColor: "$borderColorPress"
+        },
+
+        focusVisibleStyle: {
+          backgroundColor: "transparent",
+          borderColor: "$borderColorFocus"
         }
       }
+    },
+
+    gradient: {
+      ":string": (val: string) => ({
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        borderColor: "transparent",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          color: "transparent"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          color: "transparent"
+        },
+
+        focusVisibleStyle: {
+          backgroundColor: "transparent",
+          color: "transparent"
+        }
+      })
     },
 
     size: {
@@ -193,18 +236,6 @@ const ButtonFrame = styled(View, {
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
   }
-
-  // variants: {
-  //   size: {
-  //     "...size": (name: string | number, { tokens }: any) => {
-  //       return {
-  //         height: tokens.size[name],
-  //         borderRadius: tokens.radius[name],
-  //         gap: Number(tokens.space[name]) * 0.2
-  //       };
-  //     }
-  //   }
-  // } as const
 });
 
 const ButtonText = styled(SizableText, {
@@ -214,6 +245,7 @@ const ButtonText = styled(SizableText, {
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "bold",
+  animation: "faster",
 
   variants: {
     unstyled: {
@@ -225,6 +257,12 @@ const ButtonText = styled(SizableText, {
         flexShrink: 1,
         ellipse: true,
         color: "$color"
+      }
+    },
+
+    variant: {
+      outlined: {
+        color: "$borderColor"
       }
     }
   } as const,
@@ -261,25 +299,108 @@ const ButtonIcon = (props: {
   return getThemedIcon(children);
 };
 
-export type InputBaseFrameProps = GetProps<typeof ButtonFrame>;
+type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
 
-export const Button: TamaguiComponent<
-  TamaDefer,
-  TamaguiElement,
-  RNTamaguiViewNonStyleProps,
-  StackStyleBase,
-  {
-    size?: number | SizeTokens | undefined;
-    variant?: "outlined" | "ghost" | undefined;
-    disabled?: boolean | undefined;
-    unstyled?: boolean | undefined;
-    animated?: boolean | undefined;
-  },
-  StaticConfigPublic
-> = withStaticProperties(ButtonFrame, {
+const ButtonGhostBackground = styled(ThemeableStack, {
+  name: "ButtonGhostBackground",
+  context: ButtonContext,
+  backgroundColor: "transparent",
+  borderRadius: "$4",
+  animation: "faster",
+  opacity: 0.3
+});
+
+const ButtonGlassBackground = styled(LinearGradient, {
+  name: "ButtonGlassBackground",
+  context: ButtonContext,
+  backgroundColor: "transparent",
+  borderRadius: "$4",
+  animation: "faster",
+  opacity: 0.3,
+  colors: ["$color7", "$color9"],
+  start: [0, 1],
+  end: [0, 0]
+});
+
+const ButtonWrapper = styled(ThemeableStack, {
+  name: "ButtonWrapper",
+  context: ButtonContext,
+  animation: "faster",
+  position: "relative",
+
+  pressStyle: {
+    scale: 0.98
+  }
+});
+
+const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
+  (props, ref) => {
+    const { variant, gradient, ...rest } = props;
+
+    return (
+      <ButtonWrapper group={"button" as any}>
+        {gradient && (
+          <LinearGradient
+            colors={["$color3", gradient]}
+            start={[0, 1]}
+            end={[0, 0]}
+            fullscreen={true}
+          />
+        )}
+        {variant === "ghost" && (
+          <ButtonGhostBackground
+            fullscreen={true}
+            $group-button-hover={{ backgroundColor: "$color7" }}
+            $group-button-press={{ backgroundColor: "$color9" }}
+            style={{
+              filter: "blur(8px)"
+            }}
+          />
+        )}
+        {variant === "glass" && (
+          <ButtonGlassBackground
+            fullscreen={true}
+            style={{
+              filter: "blur(8px)"
+            }}
+            $group-button-hover={{ opacity: 0.5 }}
+            $group-button-press={{ opacity: 0.7 }}
+          />
+        )}
+        <ButtonFrame
+          ref={ref}
+          {...rest}
+          variant={variant}
+          gradient={gradient}
+        />
+      </ButtonWrapper>
+    );
+  }
+);
+
+export const Button = withStaticProperties(ButtonContainerImpl, {
   Text: ButtonText,
   Icon: ButtonIcon,
   Props: ButtonContext.Provider
 });
 
 export type { ButtonProps };
+
+// export const Button: TamaguiComponent<
+//   TamaDefer,
+//   TamaguiElement,
+//   RNTamaguiViewNonStyleProps,
+//   StackStyleBase,
+//   {
+//     size?: number | SizeTokens | undefined;
+//     variant?: "outlined" | "ghost" | "gradient" | undefined;
+//     disabled?: boolean | undefined;
+//     unstyled?: boolean | undefined;
+//     animated?: boolean | undefined;
+//   },
+//   StaticConfigPublic
+// > = withStaticProperties(ButtonContainerImpl, {
+//   Text: ButtonText,
+//   Icon: ButtonIcon,
+//   Props: ButtonContext.Provider
+// });

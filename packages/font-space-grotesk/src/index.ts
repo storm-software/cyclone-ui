@@ -7,8 +7,7 @@
  * @packageDocumentation
  */
 
-import type { GenericFont } from "@tamagui/core";
-import { createFont } from "@tamagui/core";
+import { type GenericFont, createFont } from "@tamagui/core";
 
 export const createSpaceGroteskFont = <
   A extends GenericFont<keyof typeof size>

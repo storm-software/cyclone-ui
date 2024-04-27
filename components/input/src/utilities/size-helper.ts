@@ -6,7 +6,7 @@ import { getSpace } from "@tamagui/get-token";
 
 export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   val = "$true",
-  extras
+  extras: any = {}
 ) => {
   if (extras.props.multiline || extras.props.numberOfLines > 1) {
     return textAreaSizeVariant(val, extras);
@@ -30,7 +30,7 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
 
 export const textAreaSizeVariant: SizeVariantSpreadFunction<any> = (
   val = "$true",
-  extras
+  extras: any = {}
 ) => {
   const { props } = extras;
   const buttonStyles = getButtonSized(val, extras);

@@ -29,6 +29,7 @@ const config: StorybookConfig = {
     config.define = {
       ...config.define,
       "process.env.STORYBOOK": true,
+      "process.env.TAMAGUI_TARGET": "web",
       "process.env.NODE_ENV":
         configType === "PRODUCTION" ? "production" : "development"
     };

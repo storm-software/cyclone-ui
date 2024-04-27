@@ -35,5 +35,8 @@
     "@tamagui/web": "^1.94.5",
     "zustand": "^4.5.2"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "module:jsx": "dist/jsx"
 }

@@ -2467,6 +2467,31 @@
           }
         },
         {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/themes!createInverseMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createInverseMask: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            }
+          ],
+          "fileUrlPath": "packages/themes/src/masks.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "createInverseMask"
+        },
+        {
           "kind": "Variable",
           "canonicalReference": "@cyclone-ui/themes!darkColors:var",
           "docComment": "",
@@ -2484,29 +2509,6 @@
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "darkColors",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/themes!darkTheme:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "darkTheme: "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    base: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    primary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    secondary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    tertiary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    accent: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    success: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    info: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    warning: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    error: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    fatal: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n}"
-            }
-          ],
-          "fileUrlPath": "packages/themes/src/colors.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "darkTheme",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
@@ -2594,29 +2596,6 @@
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "lightColors",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/themes!lightTheme:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "lightTheme: "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    base: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    primary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    secondary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    tertiary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    accent: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    success: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    info: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    warning: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    error: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    fatal: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n}"
-            }
-          ],
-          "fileUrlPath": "packages/themes/src/colors.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "lightTheme",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
@@ -2728,7 +2707,142 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    identity: import(\"@tamagui/create-theme\").CreateMask;\n    soften: import(\"@tamagui/create-theme\").CreateMask;\n    soften2: import(\"@tamagui/create-theme\").CreateMask;\n    soften3: import(\"@tamagui/create-theme\").CreateMask;\n    strengthen: import(\"@tamagui/create-theme\").CreateMask;\n    inverse: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften2: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften3: import(\"@tamagui/create-theme\").CreateMask;\n    inverseStrengthen2: import(\"@tamagui/create-theme\").CreateMask;\n    strengthenButSoftenBorder: import(\"@tamagui/create-theme\").CreateMask;\n    soften2Border1: import(\"@tamagui/create-theme\").CreateMask;\n    soften3FlatBorder: import(\"@tamagui/create-theme\").CreateMask;\n    softenBorder: import(\"@tamagui/create-theme\").CreateMask;\n    softenBorder2: import(\"@tamagui/create-theme\").CreateMask;\n}"
+              "text": "{\n    identity: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    soften: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    soften2: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    soften3: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    strengthen: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inverse: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inverseSoften: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inverseSoften2: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inverseSoften3: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    inverseStrengthen2: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    strengthenButSoftenBorder: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    soften2Border1: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    soften3FlatBorder: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    softenBorder: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    softenBorder2: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
             }
           ],
           "fileUrlPath": "packages/themes/src/masks.ts",
@@ -2737,7 +2851,7 @@
           "name": "masks",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 32
           }
         },
         {
@@ -3100,13 +3214,59 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    base: {\n        background: number;\n        backgroundHover: number;\n        backgroundPress: number;\n        backgroundFocus: number;\n        backgroundStrong: number;\n        backgroundTransparent: number;\n        color: number;\n        colorHover: number;\n        colorPress: number;\n        colorFocus: number;\n        colorTransparent: number;\n        borderColor: number;\n        borderColorHover: number;\n        borderColorFocus: number;\n        borderColorPress: number;\n        placeholderColor: number;\n        color1: number;\n        color2: number;\n        color3: number;\n        color4: number;\n        color5: number;\n        color6: number;\n        color7: number;\n        color8: number;\n        color9: number;\n        color10: number;\n        color11: number;\n        color12: number;\n    };\n    colorLight: {\n        background: number;\n        backgroundHover: number;\n        backgroundPress: number;\n        backgroundFocus: number;\n        backgroundStrong: number;\n        backgroundTransparent: number;\n        color: number;\n        colorHover: number;\n        colorPress: number;\n        colorFocus: number;\n        colorTransparent: number;\n        borderColor: number;\n        borderColorHover: number;\n        borderColorFocus: number;\n        borderColorPress: number;\n        placeholderColor: number;\n        color1: number;\n        color2: number;\n        color3: number;\n        color4: number;\n        color5: number;\n        color6: number;\n        color7: number;\n        color8: number;\n        color9: number;\n        color10: number;\n        color11: number;\n        color12: number;\n    };\n}"
+              "text": "{\n    base: {\n        background: number;\n        backgroundHover: number;\n        backgroundPress: number;\n        backgroundFocus: number;\n        backgroundStrong: number;\n        backgroundTransparent: number;\n        color: number;\n        colorHover: number;\n        colorPress: number;\n        colorFocus: number;\n        colorTransparent: number;\n        borderColor: number;\n        borderColorHover: number;\n        borderColorFocus: number;\n        borderColorPress: number;\n        placeholderColor: number;\n        color1: number;\n        color2: number;\n        color3: number;\n        color4: number;\n        color5: number;\n        color6: number;\n        color7: number;\n        color8: number;\n        color9: number;\n        color10: number;\n        color11: number;\n        color12: number;\n    };\n    colorLight: {\n        borderColor: number;\n        borderColorHover: number;\n        borderColorFocus: number;\n        borderColorPress: number;\n        background: number;\n        backgroundHover: number;\n        backgroundPress: number;\n        backgroundFocus: number;\n        backgroundStrong: number;\n        backgroundTransparent: number;\n        color: number;\n        colorHover: number;\n        colorPress: number;\n        colorFocus: number;\n        colorTransparent: number;\n        placeholderColor: number;\n        color1: number;\n        color2: number;\n        color3: number;\n        color4: number;\n        color5: number;\n        color6: number;\n        color7: number;\n        color8: number;\n        color9: number;\n        color10: number;\n        color11: number;\n        color12: number;\n    };\n}"
             }
           ],
           "fileUrlPath": "packages/themes/src/templates.ts",
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "templates",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/themes!theme_2:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "theme: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    base: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    primary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    secondary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    tertiary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    accent: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    success: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    info: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    warning: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    error: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    fatal: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n}"
+            }
+          ],
+          "fileUrlPath": ".storm/themes/default-dark.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "theme_2",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/themes!theme:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "theme: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    base: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    primary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    secondary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    tertiary: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    accent: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    success: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    info: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    warning: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    error: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n    fatal: {\n        \"0\": string;\n        \"1\": string;\n        \"2\": string;\n        \"3\": string;\n        \"4\": string;\n        \"5\": string;\n        \"6\": string;\n        \"7\": string;\n        \"8\": string;\n        \"9\": string;\n        \"10\": string;\n        \"11\": string;\n    };\n}"
+            }
+          ],
+          "fileUrlPath": ".storm/themes/default-light.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "theme",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2

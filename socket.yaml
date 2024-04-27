@@ -3,11 +3,11 @@ version: 2
 
 triggerPaths:
   - "packages/*/package.json"
+  - "components/*/package.json"
   - "package.json"
   - "pnpm-lock.yaml"
   - "pnpm-workspace.yaml"
   - "apps/*/package.json"
-  - "libs/*/package.json"
 
 projectIgnorePaths:
   - ".github/"

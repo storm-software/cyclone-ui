@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "jsx": "preserve",
-    "declaration": true,
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",

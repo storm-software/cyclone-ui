@@ -8,8 +8,8 @@
     "src/**/*.ts",
     "src/**/*.js",
     "bin/**/*",
-    "../../.storm/themes/default-light.json",
-    "../../.storm/themes/default-dark.json"
+    "../../.storm/themes/default-light.ts",
+    "../../.storm/themes/default-dark.ts"
   ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

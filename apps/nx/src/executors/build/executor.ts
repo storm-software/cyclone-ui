@@ -2,7 +2,7 @@ import type { ExecutorContext } from "@nx/devkit";
 import type { StormConfig } from "@storm-software/config";
 import { withRunExecutor } from "@storm-software/workspace-tools";
 import type { AssetGlob } from "@nx/js/src/utils/assets/assets";
-import { build, type BuildOptions } from "@cyclone-ui/build";
+import type { BuildOptions } from "@cyclone-ui/build";
 import type { BuildExecutorSchema } from "./schema.d";
 import { join } from "node:path";
 import { copyAssets } from "@nx/js";
@@ -15,6 +15,7 @@ export async function buildExecutorFn(
   const { writeDebug, writeInfo, writeSuccess } = await import(
     "@storm-software/config-tools"
   );
+  const { build } = await import("@cyclone-ui/build");
 
   writeInfo("📦  Running Cyclone UI build executor on the workspace", config);
 
@@ -56,17 +57,20 @@ ${Object.keys(optionsRecord)
 
   // #endregion Prepare build context variables
 
-  writeDebug(
-    `📦  Copying asset files to output directory: ${options.outputPath}`,
-    config
-  );
-
   const projectRoot = context.projectsConfigurations.projects[
     context.projectName
   ]!.root as string;
-  const outputPath = (
-    options?.outputPath ? options?.outputPath : join("dist", projectRoot)
-  ) as string;
+  const outputPath = join(
+    config.workspaceRoot,
+    (options?.outputPath
+      ? options?.outputPath
+      : join("dist", projectRoot)) as string
+  );
+
+  writeDebug(
+    `📦  Copying asset files to output directory: ${outputPath}`,
+    config
+  );
 
   const assets = Array.from(options.assets ?? []);
   if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "*.md")) {
@@ -116,6 +120,7 @@ ${Object.keys(optionsRecord)
   writeDebug(`⚡  Running Tamagui build on the package`, config);
 
   await build(config, {
+    bundle: true,
     ...options,
     projectRoot,
     outputPath,

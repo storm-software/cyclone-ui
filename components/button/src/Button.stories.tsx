@@ -57,8 +57,7 @@ export const PrimaryOutlined: Story = {
 export const PrimaryInverse: Story = {
   args: {
     children: "Button Text",
-    theme: "primary",
-    themeInverse: true
+    theme: "primary_inverse"
   }
 };
 
@@ -67,6 +66,14 @@ export const PrimaryGhost: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "ghost"
+  }
+};
+
+export const PrimaryGlass: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "glass"
   }
 };
 
