@@ -12,6 +12,8 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: GitGuardian scan
         uses: GitGuardian/ggshield-action@master

@@ -17,7 +17,7 @@ jobs:
   release:
     uses: storm-software/storm-ops/.github/workflows/release.yml@main
     with:
-      tag: ${{ env.TAG }}
+      tag: ${{ inputs.TAG }}
       stormBot: Stormie-Bot
     secrets:
       githubToken: ${{ github.token }}
