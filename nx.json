@@ -22,8 +22,6 @@
     }
   },
   "plugins": [
-    "@nx/eslint/plugin",
-    "@storm-software/workspace-tools/plugins/typescript",
     {
       "plugin": "@nx/webpack/plugin",
       "options": {
@@ -56,7 +54,15 @@
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
       }
-    }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "exclude": ["packages/**/__fixtures__/**/*"],
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    "@storm-software/workspace-tools/plugins/typescript"
   ],
   "generators": {
     "@nx/react": {
@@ -87,5 +93,6 @@
       "unitTestRunner": "none",
       "e2eTestRunner": "none"
     }
-  }
+  },
+  "parallel": 1
 }

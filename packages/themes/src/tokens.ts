@@ -129,7 +129,7 @@ function createColorTokens<
 function createThemeTokens(
   theme: ColorTheme
 ): Record<ColorPaletteType, ColorPaletteTokens> {
-  return Object.keys(theme).reduce(
+  return Object.keys(theme ?? {}).reduce(
     (ret: Record<ColorPaletteType, ColorPaletteTokens>, colorKey: string) => {
       ret[colorKey as ColorPaletteType] = createColorTokens(
         theme[colorKey as ColorPaletteType],

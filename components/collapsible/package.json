@@ -1,16 +1,12 @@
 {
-  "name": "@cyclone-ui/theme-provider",
+  "name": "@cyclone-ui/collapsible",
   "version": "0.0.1",
   "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "packages/theme-provider"
-  },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
+    "directory": "components/collapsible"
   },
   "type": "module",
   "exports": {
@@ -24,12 +20,23 @@
   },
   "main": "dist/cjs",
   "module": "dist/esm",
+  "source": "src/index.ts",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@tamagui/core": "^1.95.3",
-    "@tamagui/portal": "^1.95.3",
-    "@tamagui/web": "^1.95.3",
-    "zustand": "^4.5.2"
+    "@tamagui/animate-presence": "^1.95.3",
+    "@tamagui/helpers": "^1.95.3",
+    "@tamagui/stacks": "^1.95.3",
+    "@tamagui/use-controllable-state": "^1.95.3",
+    "@tamagui/use-presence": "^1.95.3",
+    "@tamagui/web": "^1.95.3"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
   },
   "publishConfig": {
     "access": "public"

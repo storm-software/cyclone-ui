@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["packages/config/tsconfig.*?.json"]
+        "project": ["components/collapsible/tsconfig.*?.json"]
       },
       "rules": {}
     },
@@ -31,8 +31,7 @@
             ],
             "checkMissingDependencies": true,
             "checkObsoleteDependencies": true,
-            "checkVersionMismatches": false,
-            "useLocalPathsForWorkspaceDependencies": true
+            "checkVersionMismatches": false
           }
         ]
       }

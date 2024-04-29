@@ -7,6 +7,7 @@ tmp
 /out-tsc
 tsconfig.tsbuildinfo
 .env.local
+__generated__
 
 # dependencies
 node_modules

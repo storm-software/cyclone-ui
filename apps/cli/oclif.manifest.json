@@ -232,13 +232,12 @@
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
-          "env": "STORM_OUTPUT_DIRECTORY",
           "hidden": false,
           "name": "outputPath",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",
-          "default": ".storm",
+          "default": ".storm/themes",
           "hasDynamicHelp": false,
           "helpValue": "<directory>",
           "multiple": false,
@@ -253,7 +252,7 @@
           "noCacheDefault": false,
           "required": false,
           "summary": "Skip confirmation prompts",
-          "allowNo": false,
+          "allowNo": true,
           "type": "boolean"
         },
         "clean": {
@@ -265,7 +264,19 @@
           "noCacheDefault": false,
           "required": false,
           "summary": "Clean output directory",
-          "allowNo": false,
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "json": {
+          "char": "j",
+          "deprecateAliases": false,
+          "description": "Should the design token file be generated as a JSON file",
+          "hidden": false,
+          "name": "json",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Generate JSON file",
+          "allowNo": true,
           "type": "boolean"
         }
       },
@@ -284,134 +295,6 @@
         "commands",
         "theme",
         "init.js"
-      ]
-    },
-    "theme:set": {
-      "aliases": [],
-      "args": {
-        "name": {
-          "default": "default",
-          "description": "The name of the specific theme to assign the design token to",
-          "name": "name",
-          "noCacheDefault": false,
-          "required": true
-        }
-      },
-      "description": "Generate themes for the client application based on the colors provided by the user",
-      "examples": [
-        {
-          "description": "Set default theme's primary color to red",
-          "command": "<%= config.bin %> <%= command.id %> set --color red --palette primary"
-        },
-        {
-          "description": "Set dark default theme's secondary color to blue",
-          "command": "<%= config.bin %> <%= command.id %> set --color blue --palette secondary --type dark"
-        },
-        {
-          "description": "Set light default theme's tertiary color to green and write the output to /path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> set --color green --palette tertiary --type light --output /path/to/output"
-        },
-        {
-          "description": "Set dark custom theme's accent color to black and write the output to /path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> set custom --color black --palette accent --type dark --output /path/to/output"
-        }
-      ],
-      "flags": {
-        "output": {
-          "aliases": [
-            "outDir",
-            "output-dir"
-          ],
-          "char": "o",
-          "deprecateAliases": false,
-          "description": "The location to output the design token file",
-          "env": "STORM_OUTPUT_DIRECTORY",
-          "hidden": false,
-          "name": "output",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Output directory",
-          "default": ".storm",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "type": {
-          "char": "t",
-          "deprecateAliases": false,
-          "description": "The name of the specific theme to assign the design token to",
-          "hidden": false,
-          "name": "type",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Theme Type",
-          "default": "both",
-          "hasDynamicHelp": false,
-          "helpValue": "<type>",
-          "multiple": false,
-          "options": [
-            "light",
-            "dark",
-            "both"
-          ],
-          "type": "option"
-        },
-        "color": {
-          "char": "c",
-          "deprecateAliases": false,
-          "description": "The color to use for the design token",
-          "hidden": false,
-          "name": "color",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Color",
-          "hasDynamicHelp": false,
-          "helpValue": "<color>",
-          "multiple": false,
-          "type": "option"
-        },
-        "palette": {
-          "char": "p",
-          "deprecateAliases": false,
-          "description": "The palette type of the color (primary, secondary, tertiary, etc.)",
-          "name": "palette",
-          "noCacheDefault": false,
-          "required": true,
-          "summary": "Color Palette Type",
-          "default": "primary",
-          "hasDynamicHelp": false,
-          "helpValue": "<palette>",
-          "multiple": false,
-          "options": [
-            "base",
-            "primary",
-            "secondary",
-            "tertiary",
-            "accent",
-            "success",
-            "info",
-            "warning",
-            "error"
-          ],
-          "type": "option"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "theme:set",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Cyclone UI - Initialize Themes",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "theme",
-        "set.js"
       ]
     }
   },

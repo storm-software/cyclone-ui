@@ -81,7 +81,6 @@ USAGE
 * [`cyclone-ui search`](#cyclone-ui-search)
 * [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
 * [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
-* [`cyclone-ui theme set NAME`](#cyclone-ui-theme-set-name)
 * [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
 * [`cyclone-ui version`](#cyclone-ui-version)
 
@@ -362,8 +361,8 @@ DESCRIPTION
   Links a plugin into the CLI for development.
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override
-  the user-installed or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command
+  will override the user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
@@ -552,15 +551,16 @@ Cyclone UI - Initialize Themes
 
 ```
 USAGE
-  $ cyclone-ui theme init NAME... [-o <value>] [-s] [-c]
+  $ cyclone-ui theme init NAME... [-o <value>] [-s] [-c] [-j]
 
 ARGUMENTS
   NAME...  [default: default] The name of the specific theme to assign the design token to
 
 FLAGS
-  -c, --clean                   Clean output directory
-  -o, --outputPath=<directory>  [default: .storm] Output directory
-  -s, --skip                    Skip confirmation prompts
+  -c, --[no-]clean              Clean output directory
+  -j, --[no-]json               Generate JSON file
+  -o, --outputPath=<directory>  [default: .storm/themes] Output directory
+  -s, --[no-]skip               Skip confirmation prompts
 
 DESCRIPTION
   Cyclone UI - Initialize Themes
@@ -581,80 +581,24 @@ EXAMPLES
     $ cyclone-ui theme init init --output=./path/to/output --skip
 
 FLAG DESCRIPTIONS
-  -c, --clean  Clean output directory
+  -c, --[no-]clean  Clean output directory
 
     Remove all theme files from the output directory before generating new themes
+
+  -j, --[no-]json  Generate JSON file
+
+    Should the design token file be generated as a JSON file
 
   -o, --outputPath=<directory>  Output directory
 
     The location to output the design token file
 
-  -s, --skip  Skip confirmation prompts
+  -s, --[no-]skip  Skip confirmation prompts
 
     Skip all confirmation prompts and use the default values
 ```
 
 _See code: [dist/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.0.1/dist/commands/theme/init.js)_
-
-## `cyclone-ui theme set NAME`
-
-Cyclone UI - Initialize Themes
-
-```
-USAGE
-  $ cyclone-ui theme set NAME... -p
-    base|primary|secondary|tertiary|accent|success|info|warning|error [-o <value>] [-t light|dark|both] [-c <value>]
-
-ARGUMENTS
-  NAME...  [default: default] The name of the specific theme to assign the design token to
-
-FLAGS
-  -c, --color=<color>       Color
-  -o, --output=<directory>  [default: .storm] Output directory
-  -p, --palette=<palette>   (required) [default: primary] Color Palette Type
-  -t, --type=<type>         [default: both] Theme Type
-
-DESCRIPTION
-  Cyclone UI - Initialize Themes
-
-  Generate themes for the client application based on the colors provided by the user
-
-EXAMPLES
-  Set default theme's primary color to red
-
-    $ cyclone-ui theme set set --color red --palette primary
-
-  Set dark default theme's secondary color to blue
-
-    $ cyclone-ui theme set set --color blue --palette secondary --type dark
-
-  Set light default theme's tertiary color to green and write the output to /path/to/output
-
-    $ cyclone-ui theme set set --color green --palette tertiary --type light --output /path/to/output
-
-  Set dark custom theme's accent color to black and write the output to /path/to/output
-
-    $ cyclone-ui theme set set custom --color black --palette accent --type dark --output /path/to/output
-
-FLAG DESCRIPTIONS
-  -c, --color=<color>  Color
-
-    The color to use for the design token
-
-  -o, --output=<directory>  Output directory
-
-    The location to output the design token file
-
-  -p, --palette=<palette>  Color Palette Type
-
-    The palette type of the color (primary, secondary, tertiary, etc.)
-
-  -t, --type=<type>  Theme Type
-
-    The name of the specific theme to assign the design token to
-```
-
-_See code: [dist/commands/theme/set.js](https://github.com/storm-software/cyclone-ui/blob/v0.0.1/dist/commands/theme/set.js)_
 
 ## `cyclone-ui update [CHANNEL]`
 

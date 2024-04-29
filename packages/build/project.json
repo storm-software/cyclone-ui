@@ -68,7 +68,7 @@
       "cache": true,
       "executor": "@nx/esbuild:esbuild",
       "inputs": ["default", "^production"],
-      "dependsOn": ["build-base", "^build"],
+      "dependsOn": ["build-base"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/build/bin",
@@ -81,13 +81,16 @@
         "minify": false,
         "skipTypeCheck": false,
         "thirdParty": true,
+        "generatePackageJson": false,
         "platform": "node",
         "external": ["nx", "@swc/core", "esbuild"],
         "format": ["esm"],
         "esbuildOptions": {
           "outExtension": {
             ".js": ".mjs"
-          }
+          },
+          "inject": ["packages/build/assets/esm_shims.js"],
+          "define": { "import.meta.url": "importMetaUrl" }
         }
       }
     },

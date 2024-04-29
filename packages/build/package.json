@@ -10,15 +10,16 @@
   },
   "type": "module",
   "bin": {
+    "cyclone-build": "./bin/build.mjs",
     "cyclone-ui-build": "./bin/build.mjs"
   },
   "dependencies": {
     "@babel/core": "^7.14.5",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
-    "@tamagui/fake-react-native": "^1.94.5",
-    "@tamagui/proxy-worm": "^1.94.5",
-    "@tamagui/web": "^1.94.5",
+    "@tamagui/fake-react-native": "^1.95.3",
+    "@tamagui/proxy-worm": "^1.95.3",
+    "@tamagui/web": "^1.95.3",
     "babel-plugin-fully-specified": "^1.3.0",
     "chokidar": "^3.6.0",
     "commander": "^12.0.0",
@@ -27,6 +28,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "lodash.debounce": "^4.0.8",
+    "pkg-types": "^1.1.0",
     "tsconfig-paths": "^4.2.0"
   },
   "publishConfig": {

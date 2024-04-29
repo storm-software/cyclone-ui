@@ -2,7 +2,12 @@
 
 import { es5Plugin } from "esbuild-plugin-es5";
 import { transform } from "@babel/core";
-import { run, writeTrace } from "@storm-software/config-tools";
+import {
+  getStopwatch,
+  run,
+  writeSuccess,
+  writeTrace
+} from "@storm-software/config-tools";
 import type { StormConfig } from "@storm-software/config";
 import fs from "fs-extra";
 import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
@@ -12,6 +17,7 @@ import debounce from "lodash.debounce";
 import { dirname, join } from "path";
 import alias from "../plugins/esbuild-alias-plugin";
 import { BuildOptions } from "../types";
+import { readTSConfig } from "pkg-types";
 
 // const jsOnly = !!process.env.JS_ONLY;
 // const skipJS = !!(process.env.SKIP_JS || false);
@@ -63,7 +69,8 @@ export const build = async (
     minify,
     baseUrl,
     tsConfig,
-    exclude
+    exclude,
+    verbose = false
   }: BuildOptions
 ) => {
   writeTrace("Running the Tamagui build process...", config);
@@ -99,6 +106,8 @@ export const build = async (
 
   async function handleClean() {
     try {
+      writeTrace(`Cleaning the "${pkg.name}" package...`, config);
+
       await Promise.allSettled([
         fs.remove(outputPath),
         fs.remove(join(projectRoot, ".turbo")),
@@ -111,7 +120,6 @@ export const build = async (
       // ok
     }
     if (cleanBuildOnly) {
-      console.info("🔹 cleaned", pkg.name);
       process.exit(0);
     }
     try {
@@ -119,7 +127,6 @@ export const build = async (
     } catch {
       // ok
     }
-    console.info("🔹 cleaned", pkg.name);
     process.exit(0);
   }
 
@@ -127,10 +134,6 @@ export const build = async (
     { skipTypes }: { skipTypes: boolean } = { skipTypes: false }
   ) {
     writeTrace(`Starting the "${pkg.name}" build...`, config);
-
-    if (process.env.DEBUG) {
-      console.info("🔹", pkg.name);
-    }
 
     try {
       const start = Date.now();
@@ -144,7 +147,7 @@ export const build = async (
       console.error(`Error building:`, error.message);
     }
 
-    writeTrace(`Completed the "${pkg.name}" build...`, config);
+    writeSuccess(`Completed the "${pkg.name}" build...`, config);
   }
 
   async function buildTsc() {
@@ -188,7 +191,7 @@ export const build = async (
     } finally {
       await fs.remove(join(projectRoot, "tsconfig.tsbuildinfo"));
 
-      writeTrace(`Completed the "${pkg.name}" TSC build...`, config);
+      writeSuccess(`Completed the "${pkg.name}" TSC build...`, config);
     }
   }
 
@@ -269,7 +272,7 @@ export const build = async (
         : {}
     ) as ESBuildOptions;
 
-    const start = Date.now();
+    const stopwatch = getStopwatch("Javascript Build");
 
     const cjsConfig = {
       format: "cjs",
@@ -405,11 +408,9 @@ export const build = async (
           )
         : null
     ]).then(() => {
-      if (process.env.DEBUG)
-        console.info(`built js in ${Date.now() - start}ms`);
+      writeSuccess(`Completed the "${pkg.name}" JS build...`, config);
+      stopwatch();
     });
-
-    writeTrace(`Completed the "${pkg.name}" JS build...`, config);
   }
 
   async function esbuildWriteIfChanged(
@@ -439,13 +440,22 @@ export const build = async (
       platform: "node"
     };
 
+    const tsconfigRaw = await readTSConfig(
+      join(config.workspaceRoot, tsConfig)
+    );
+
     const webEsbuildSettings = {
       target: "esnext",
       jsx: "automatic",
       platform: bundle ? "node" : "neutral",
       tsconfigRaw: {
+        ...tsconfigRaw,
         compilerOptions: {
+          ...tsconfigRaw.compilerOptions,
+          baseUrl: baseUrl ? baseUrl : config.workspaceRoot,
+          rootDir: config.workspaceRoot,
           paths: {
+            ...tsconfigRaw.compilerOptions?.paths,
             "react-native": ["react-native-web"]
           }
         }
@@ -454,10 +464,8 @@ export const build = async (
 
     const buildSettings = {
       ...opts,
-
       plugins: [
         ...(opts.plugins || []),
-
         ...(platform === "native"
           ? [
               // class isnt supported by hermes
@@ -503,7 +511,7 @@ export const build = async (
       keepNames: false,
       sourcemap: true,
       sourcesContent: false,
-      logLevel: "error",
+      logLevel: verbose ? "verbose" : "error",
       ...(platform === "native" && nativeEsbuildSettings),
       ...(platform === "web" && webEsbuildSettings),
       define: {
@@ -659,7 +667,7 @@ export const build = async (
       })
     );
 
-    writeTrace(`Completed the "${pkg.name}" ESBuild write...`, config);
+    writeSuccess(`Completed the "${pkg.name}" ESBuild write...`, config);
 
     return;
   }
@@ -698,5 +706,7 @@ export const build = async (
     writeTrace(`Building the "${pkg.name}" package...`, config);
 
     await handleBuild();
+
+    writeSuccess(`Completed the "${pkg.name}" build...`, config);
   }
 };

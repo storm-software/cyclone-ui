@@ -31,7 +31,8 @@
             ],
             "checkMissingDependencies": true,
             "checkObsoleteDependencies": true,
-            "checkVersionMismatches": false
+            "checkVersionMismatches": false,
+            "useLocalPathsForWorkspaceDependencies": true
           }
         ]
       }

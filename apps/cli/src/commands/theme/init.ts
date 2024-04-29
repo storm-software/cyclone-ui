@@ -27,8 +27,7 @@ export default class Init extends Command {
       summary: 'Output directory',
       description: 'The location to output the design token file',
       hidden: false,
-      env: 'STORM_OUTPUT_DIRECTORY',
-      default: '.storm',
+      default: '.storm/themes',
       defaultHelp: 'The ".storm/themes" folder in the workspace\'s root directory',
       required: false,
       aliases: ['outDir', 'output-dir'],
@@ -40,6 +39,7 @@ export default class Init extends Command {
       char: 's',
       summary: 'Skip confirmation prompts',
       description: 'Skip all confirmation prompts and use the default values',
+      allowNo: true,
       hidden: false,
       default: false,
       required: false,
@@ -50,6 +50,18 @@ export default class Init extends Command {
       char: 'c',
       summary: 'Clean output directory',
       description: 'Remove all theme files from the output directory before generating new themes',
+      allowNo: true,
+      hidden: false,
+      default: false,
+      required: false,
+      deprecateAliases: false,
+      noCacheDefault: false,
+    }),
+    json: Flags.boolean({
+      char: 'j',
+      summary: 'Generate JSON file',
+      description: 'Should the design token file be generated as a JSON file',
+      allowNo: true,
       hidden: false,
       default: false,
       required: false,
@@ -113,7 +125,7 @@ export default class Init extends Command {
         if (!useConfigOutput) {
           const promptInput = await text({
             message: 'Enter the themes output directory',
-            defaultValue: './.storm',
+            defaultValue: './.storm/themes',
           })
           if (isCancel(promptInput)) {
             cancel('Operation cancelled.')
@@ -156,12 +168,18 @@ export default class Init extends Command {
 
     if (config.colors?.base && typeof config.colors?.base === 'object') {
       for (const key of Object.keys(config.colors)) {
-        await writeMultiTheme(config.colors[key], config.workspaceRoot, output, key === 'base' ? args.name : key)
+        await writeMultiTheme(
+          config.colors[key],
+          config.workspaceRoot,
+          output,
+          key === 'base' ? args.name : key,
+          flags.json,
+        )
       }
     } else if (config.colors?.light && typeof config.colors?.light === 'object') {
-      await writeMultiTheme(config.colors, config.workspaceRoot, output, args.name)
+      await writeMultiTheme(config.colors, config.workspaceRoot, output, args.name, flags.json)
     } else {
-      await writeSingleTheme(config.colors, config.workspaceRoot, output, args.name)
+      await writeSingleTheme(config.colors, config.workspaceRoot, output, args.name, flags.json)
     }
 
     s3.stop('Wrote themes to output directory')

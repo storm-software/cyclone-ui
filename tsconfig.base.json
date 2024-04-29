@@ -8,9 +8,8 @@
     "skipLibCheck": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "preserveSymlinks": true,
     "incremental": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "system",
     "moduleResolution": "node",
     "resolveJsonModule": false,
@@ -42,21 +41,10 @@
       "@cyclone-ui/theme-provider": ["packages/theme-provider/src/index.ts"],
       "@cyclone-ui/theme-provider/*": ["packages/theme-provider/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
-      "@cyclone-ui/themes/*": ["packages/themes/src/*"]
-    },
-    "plugins": [
-      {
-        "name": "@nderscore/tamagui-typescript-plugin",
-        "pathToApp": "apps/website",
-        "defaultTheme": "dark",
-        "colorTileSize": 18,
-        "completionFilters": {
-          "showColorTokens": true,
-          "showTrueTokens": true,
-          "custom": {}
-        }
-      }
-    ]
+      "@cyclone-ui/themes/*": ["packages/themes/src/*"],
+      "@cyclone-ui/collapsible": ["components/collapsible/src/index.ts"],
+      "@cyclone-ui/collapsible/*": ["components/collapsible/src/*"]
+    }
   },
   "typeAcquisition": {
     "enable": true

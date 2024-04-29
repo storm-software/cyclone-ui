@@ -9,3 +9,4 @@
 
 export * from "./ThemeProvider";
 export * from "./ThemeProvider.server";
+export * from "./theme-state";

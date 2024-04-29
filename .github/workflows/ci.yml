@@ -1,4 +1,4 @@
-name: "Release"
+name: "CI"
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
       tag:
         description: override release tag
         required: false
-  pull_request:
+  push:
     branches:
       - "main"
       - "next"

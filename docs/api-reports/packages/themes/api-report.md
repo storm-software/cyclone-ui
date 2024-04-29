@@ -20,9 +20,7 @@ import { purple } from '@tamagui/colors';
 import { purpleDark } from '@tamagui/colors';
 import { red } from '@tamagui/colors';
 import { redDark } from '@tamagui/colors';
-import { StoreApi } from 'zustand/vanilla';
 import { ThemeMask } from '@tamagui/create-theme';
-import { UseBoundStoreWithEqualityFn } from 'zustand/traditional';
 import type { Variable } from '@tamagui/web';
 import { yellow } from '@tamagui/colors';
 import { yellowDark } from '@tamagui/colors';
@@ -34,7 +32,7 @@ export { blueDark }
 export { blueDark as blueDark_alias_1 }
 
 // @public (undocumented)
-const buildThemes: () => {
+export const buildThemes: () => {
     readonly light: {
         background: string;
         backgroundHover: string;
@@ -3876,8 +3874,6 @@ const buildThemes: () => {
         color12: string;
     };
 };
-export { buildThemes }
-export { buildThemes as buildThemes_alias_1 }
 
 // @public (undocumented)
 const color: {
@@ -4392,6 +4388,198 @@ export { createInverseMask }
 export { createInverseMask as createInverseMask_alias_1 }
 
 // @public (undocumented)
+export const dark: Theme;
+
+// @public (undocumented)
+export const dark_accent: Theme;
+
+// @public (undocumented)
+export const dark_accent_active: Theme;
+
+// @public (undocumented)
+export const dark_accent_alt1: Theme;
+
+// @public (undocumented)
+export const dark_accent_alt2: Theme;
+
+// @public (undocumented)
+export const dark_active: Theme;
+
+// @public (undocumented)
+export const dark_alt1: Theme;
+
+// @public (undocumented)
+export const dark_alt2: Theme;
+
+// @public (undocumented)
+export const dark_blue: Theme;
+
+// @public (undocumented)
+export const dark_blue_active: Theme;
+
+// @public (undocumented)
+export const dark_blue_alt1: Theme;
+
+// @public (undocumented)
+export const dark_blue_alt2: Theme;
+
+// @public (undocumented)
+export const dark_error: Theme;
+
+// @public (undocumented)
+export const dark_error_active: Theme;
+
+// @public (undocumented)
+export const dark_error_alt1: Theme;
+
+// @public (undocumented)
+export const dark_error_alt2: Theme;
+
+// @public (undocumented)
+export const dark_green: Theme;
+
+// @public (undocumented)
+export const dark_green_active: Theme;
+
+// @public (undocumented)
+export const dark_green_alt1: Theme;
+
+// @public (undocumented)
+export const dark_green_alt2: Theme;
+
+// @public (undocumented)
+export const dark_info: Theme;
+
+// @public (undocumented)
+export const dark_info_active: Theme;
+
+// @public (undocumented)
+export const dark_info_alt1: Theme;
+
+// @public (undocumented)
+export const dark_info_alt2: Theme;
+
+// @public (undocumented)
+export const dark_orange: Theme;
+
+// @public (undocumented)
+export const dark_orange_active: Theme;
+
+// @public (undocumented)
+export const dark_orange_alt1: Theme;
+
+// @public (undocumented)
+export const dark_orange_alt2: Theme;
+
+// @public (undocumented)
+export const dark_pink: Theme;
+
+// @public (undocumented)
+export const dark_pink_active: Theme;
+
+// @public (undocumented)
+export const dark_pink_alt1: Theme;
+
+// @public (undocumented)
+export const dark_pink_alt2: Theme;
+
+// @public (undocumented)
+export const dark_primary: Theme;
+
+// @public (undocumented)
+export const dark_primary_active: Theme;
+
+// @public (undocumented)
+export const dark_primary_alt1: Theme;
+
+// @public (undocumented)
+export const dark_primary_alt2: Theme;
+
+// @public (undocumented)
+export const dark_purple: Theme;
+
+// @public (undocumented)
+export const dark_purple_active: Theme;
+
+// @public (undocumented)
+export const dark_purple_alt1: Theme;
+
+// @public (undocumented)
+export const dark_purple_alt2: Theme;
+
+// @public (undocumented)
+export const dark_red: Theme;
+
+// @public (undocumented)
+export const dark_red_active: Theme;
+
+// @public (undocumented)
+export const dark_red_alt1: Theme;
+
+// @public (undocumented)
+export const dark_red_alt2: Theme;
+
+// @public (undocumented)
+export const dark_secondary: Theme;
+
+// @public (undocumented)
+export const dark_secondary_active: Theme;
+
+// @public (undocumented)
+export const dark_secondary_alt1: Theme;
+
+// @public (undocumented)
+export const dark_secondary_alt2: Theme;
+
+// @public (undocumented)
+export const dark_success: Theme;
+
+// @public (undocumented)
+export const dark_success_active: Theme;
+
+// @public (undocumented)
+export const dark_success_alt1: Theme;
+
+// @public (undocumented)
+export const dark_success_alt2: Theme;
+
+// @public (undocumented)
+export const dark_tertiary: Theme;
+
+// @public (undocumented)
+export const dark_tertiary_active: Theme;
+
+// @public (undocumented)
+export const dark_tertiary_alt1: Theme;
+
+// @public (undocumented)
+export const dark_tertiary_alt2: Theme;
+
+// @public (undocumented)
+export const dark_warning: Theme;
+
+// @public (undocumented)
+export const dark_warning_active: Theme;
+
+// @public (undocumented)
+export const dark_warning_alt1: Theme;
+
+// @public (undocumented)
+export const dark_warning_alt2: Theme;
+
+// @public (undocumented)
+export const dark_yellow: Theme;
+
+// @public (undocumented)
+export const dark_yellow_active: Theme;
+
+// @public (undocumented)
+export const dark_yellow_alt1: Theme;
+
+// @public (undocumented)
+export const dark_yellow_alt2: Theme;
+
+// @public (undocumented)
 const darkColors: {
     yellow1: string;
     yellow2: string;
@@ -4494,9 +4682,7 @@ export { darkColors }
 export { darkColors as darkColors_alias_1 }
 
 // @public (undocumented)
-const formatPalettes: (dark: ColorTheme, light: ColorTheme) => Record<string, string[]>;
-export { formatPalettes }
-export { formatPalettes as formatPalettes_alias_1 }
+export const formatPalettes: (dark: ColorTheme, light: ColorTheme) => Record<string, string[]>;
 
 export { gray }
 export { gray as gray_alias_1 }
@@ -4509,6 +4695,198 @@ export { green as green_alias_1 }
 
 export { greenDark }
 export { greenDark as greenDark_alias_1 }
+
+// @public (undocumented)
+export const light: Theme;
+
+// @public (undocumented)
+export const light_accent: Theme;
+
+// @public (undocumented)
+export const light_accent_active: Theme;
+
+// @public (undocumented)
+export const light_accent_alt1: Theme;
+
+// @public (undocumented)
+export const light_accent_alt2: Theme;
+
+// @public (undocumented)
+export const light_active: Theme;
+
+// @public (undocumented)
+export const light_alt1: Theme;
+
+// @public (undocumented)
+export const light_alt2: Theme;
+
+// @public (undocumented)
+export const light_blue: Theme;
+
+// @public (undocumented)
+export const light_blue_active: Theme;
+
+// @public (undocumented)
+export const light_blue_alt1: Theme;
+
+// @public (undocumented)
+export const light_blue_alt2: Theme;
+
+// @public (undocumented)
+export const light_error: Theme;
+
+// @public (undocumented)
+export const light_error_active: Theme;
+
+// @public (undocumented)
+export const light_error_alt1: Theme;
+
+// @public (undocumented)
+export const light_error_alt2: Theme;
+
+// @public (undocumented)
+export const light_green: Theme;
+
+// @public (undocumented)
+export const light_green_active: Theme;
+
+// @public (undocumented)
+export const light_green_alt1: Theme;
+
+// @public (undocumented)
+export const light_green_alt2: Theme;
+
+// @public (undocumented)
+export const light_info: Theme;
+
+// @public (undocumented)
+export const light_info_active: Theme;
+
+// @public (undocumented)
+export const light_info_alt1: Theme;
+
+// @public (undocumented)
+export const light_info_alt2: Theme;
+
+// @public (undocumented)
+export const light_orange: Theme;
+
+// @public (undocumented)
+export const light_orange_active: Theme;
+
+// @public (undocumented)
+export const light_orange_alt1: Theme;
+
+// @public (undocumented)
+export const light_orange_alt2: Theme;
+
+// @public (undocumented)
+export const light_pink: Theme;
+
+// @public (undocumented)
+export const light_pink_active: Theme;
+
+// @public (undocumented)
+export const light_pink_alt1: Theme;
+
+// @public (undocumented)
+export const light_pink_alt2: Theme;
+
+// @public (undocumented)
+export const light_primary: Theme;
+
+// @public (undocumented)
+export const light_primary_active: Theme;
+
+// @public (undocumented)
+export const light_primary_alt1: Theme;
+
+// @public (undocumented)
+export const light_primary_alt2: Theme;
+
+// @public (undocumented)
+export const light_purple: Theme;
+
+// @public (undocumented)
+export const light_purple_active: Theme;
+
+// @public (undocumented)
+export const light_purple_alt1: Theme;
+
+// @public (undocumented)
+export const light_purple_alt2: Theme;
+
+// @public (undocumented)
+export const light_red: Theme;
+
+// @public (undocumented)
+export const light_red_active: Theme;
+
+// @public (undocumented)
+export const light_red_alt1: Theme;
+
+// @public (undocumented)
+export const light_red_alt2: Theme;
+
+// @public (undocumented)
+export const light_secondary: Theme;
+
+// @public (undocumented)
+export const light_secondary_active: Theme;
+
+// @public (undocumented)
+export const light_secondary_alt1: Theme;
+
+// @public (undocumented)
+export const light_secondary_alt2: Theme;
+
+// @public (undocumented)
+export const light_success: Theme;
+
+// @public (undocumented)
+export const light_success_active: Theme;
+
+// @public (undocumented)
+export const light_success_alt1: Theme;
+
+// @public (undocumented)
+export const light_success_alt2: Theme;
+
+// @public (undocumented)
+export const light_tertiary: Theme;
+
+// @public (undocumented)
+export const light_tertiary_active: Theme;
+
+// @public (undocumented)
+export const light_tertiary_alt1: Theme;
+
+// @public (undocumented)
+export const light_tertiary_alt2: Theme;
+
+// @public (undocumented)
+export const light_warning: Theme;
+
+// @public (undocumented)
+export const light_warning_active: Theme;
+
+// @public (undocumented)
+export const light_warning_alt1: Theme;
+
+// @public (undocumented)
+export const light_warning_alt2: Theme;
+
+// @public (undocumented)
+export const light_yellow: Theme;
+
+// @public (undocumented)
+export const light_yellow_active: Theme;
+
+// @public (undocumented)
+export const light_yellow_alt1: Theme;
+
+// @public (undocumented)
+export const light_yellow_alt2: Theme;
 
 // @public (undocumented)
 const lightColors: {
@@ -5249,7 +5627,7 @@ export { theme_2 as default_alias_1 }
 export { theme_2 as theme_alias_1 }
 
 // @public (undocumented)
-const themes: {
+export const themes: {
     readonly light: {
         background: string;
         backgroundHover: string;
@@ -9091,8 +9469,6 @@ const themes: {
         color12: string;
     };
 };
-export { themes }
-export { themes as themes_alias_1 }
 
 // @public (undocumented)
 const tokens: {
@@ -9716,21 +10092,6 @@ const tokens: {
 }, "color" | "space" | "size" | "radius" | "zIndex">;
 export { tokens }
 export { tokens as tokens_alias_1 }
-
-// @public (undocumented)
-const useThemeNameState: (defaultName?: ThemeVars) => ThemeVars | undefined;
-export { useThemeNameState }
-export { useThemeNameState as useThemeNameState_alias_1 }
-
-// @public (undocumented)
-const useThemeState: UseBoundStoreWithEqualityFn<StoreApi<Theme>>;
-export { useThemeState }
-export { useThemeState as useThemeState_alias_1 }
-
-// @public (undocumented)
-const useThemeToggle: () => () => void;
-export { useThemeToggle }
-export { useThemeToggle as useThemeToggle_alias_1 }
 
 export { yellow }
 export { yellow as yellow_alias_1 }

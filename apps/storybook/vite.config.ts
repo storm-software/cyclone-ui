@@ -12,9 +12,14 @@ const profiling = isProduction && {
 };
 const shouldExtract = process.env.EXTRACT === "1";
 
-const extrasPlugins = ["@cyclone-ui/button", "@cyclone-ui/input"];
 const tamaguiConfig = {
-  components: [...extrasPlugins, "tamagui"],
+  components: [
+    "@cyclone-ui/themes",
+    "@cyclone-ui/config",
+    "@cyclone-ui/button",
+    "@cyclone-ui/input",
+    "tamagui"
+  ],
   config: "apps/storybook/tamagui.config.ts",
   outputCSS: "./public/tamagui.css"
 };

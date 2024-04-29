@@ -24,7 +24,7 @@ export const createInverseMask = () => {
             return [key, value];
           }
 
-          return [key, (-1 * (num - 2)) % 12];
+          return [key, -1 * num];
         })
       ) as any;
       return skipMask.mask(inverse, opts);

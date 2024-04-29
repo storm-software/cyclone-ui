@@ -15,3 +15,4 @@
 **/.tamagui*
 **/.next*
 **/CODEOWNERS
+**/assets/**

@@ -1,12 +1,13 @@
 import { shorthands } from "@tamagui/shorthands";
-import { themes, tokens } from "@cyclone-ui/themes";
+import { tokens } from "@cyclone-ui/themes";
+import * as themes from "@cyclone-ui/themes/default-theme";
 import { createMedia } from "@tamagui/react-native-media-driver";
 import { animations } from "./animations";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
 import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
 import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
 import { createTamagui } from "./create-tamagui";
-import type { CreateTamaguiProps } from "@tamagui/web";
+import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
 const headingFont = createPermanentMarkerFont({
   transform: {
@@ -24,7 +25,7 @@ const headingFont = createPermanentMarkerFont({
 const labelFont = createMonaSansFont({});
 const bodyFont = createSpaceGroteskFont({});
 
-export const baseConfig = {
+export const options: CreateTamaguiProps = {
   defaultFont: "body",
   animations,
   shouldAddPrefersColorThemes: true,
@@ -74,4 +75,5 @@ export const baseConfig = {
   }
 } satisfies CreateTamaguiProps;
 
-export const config = createTamagui(baseConfig);
+export const config: InferTamaguiConfig<CreateTamaguiProps> =
+  createTamagui(options);

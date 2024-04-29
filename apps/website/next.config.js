@@ -19,6 +19,7 @@ if (disableExtraction) {
 }
 
 const extrasPlugins = [
+  "@cyclone-ui/themes",
   "@cyclone-ui/config",
   "@cyclone-ui/button",
   "@cyclone-ui/input"

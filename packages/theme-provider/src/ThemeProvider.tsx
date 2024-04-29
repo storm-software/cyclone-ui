@@ -1,4 +1,4 @@
-import { useThemeNameState } from "@cyclone-ui/themes";
+import { useThemeNameState } from "./theme-state";
 import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
 import { config } from "@cyclone-ui/config";
 import { PortalProvider } from "@tamagui/portal";

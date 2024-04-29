@@ -1,6 +1,7 @@
 import { createAnimations } from "@tamagui/animations-moti";
+import type { AnimationDriver } from "@tamagui/web";
 
-export const animations = createAnimations({
+export const animations: AnimationDriver = createAnimations({
   "75ms": {
     type: "timing",
     duration: 75
@@ -80,4 +81,4 @@ export const animations = createAnimations({
     mass: 0.1,
     stiffness: 380
   }
-});
+} as const);

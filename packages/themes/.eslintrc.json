@@ -24,14 +24,15 @@
         "@nx/dependency-checks": [
           "error",
           {
-            "buildTargets": ["build"],
+            "buildTargets": ["build", "generate", "init"],
             "ignoredFiles": [
               "{projectRoot}/esbuild.config.{js,ts,mjs,mts}",
               "{projectRoot}/jest.config.ts"
             ],
             "checkMissingDependencies": true,
             "checkObsoleteDependencies": true,
-            "checkVersionMismatches": false
+            "checkVersionMismatches": false,
+            "useLocalPathsForWorkspaceDependencies": true
           }
         ]
       }

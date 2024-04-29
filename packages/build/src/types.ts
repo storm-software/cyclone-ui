@@ -17,4 +17,5 @@ export type BuildOptions = {
   baseUrl?: string;
   tsConfig: string;
   exclude?: string | RegExp;
+  verbose?: boolean;
 };

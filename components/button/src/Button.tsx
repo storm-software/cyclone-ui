@@ -17,7 +17,7 @@ import { View } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { withStaticProperties } from "@tamagui/helpers";
 
-type ButtonVariant = "outlined" | "ghost" | "glass";
+type ButtonVariant = "outlined" | "inverse" | "ghost" | "glass";
 
 type ButtonIconProps = { color?: any; size?: any };
 type IconProp =
@@ -91,7 +91,7 @@ const ButtonFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "faster",
+  animation: "medium",
   borderWidth: 1,
   borderColor: "$borderColor",
   backgroundColor: "$background",
@@ -179,20 +179,24 @@ const ButtonFrame = styled(View, {
 
       glass: {
         backgroundColor: "transparent",
-        borderColor: "borderColor",
+        borderWidth: 1,
+        borderColor: "$borderColor",
 
         hoverStyle: {
           backgroundColor: "transparent",
+          borderWidth: 1,
           borderColor: "$borderColorHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
+          borderWidth: 1,
           borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
+          borderWidth: 1,
           borderColor: "$borderColorFocus"
         }
       }
@@ -245,7 +249,7 @@ const ButtonText = styled(SizableText, {
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "bold",
-  animation: "faster",
+  animation: "medium",
 
   variants: {
     unstyled: {
@@ -306,7 +310,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   context: ButtonContext,
   backgroundColor: "transparent",
   borderRadius: "$4",
-  animation: "faster",
+  animation: "medium",
   opacity: 0.3
 });
 
@@ -315,17 +319,18 @@ const ButtonGlassBackground = styled(LinearGradient, {
   context: ButtonContext,
   backgroundColor: "transparent",
   borderRadius: "$4",
-  animation: "faster",
-  opacity: 0.3,
-  colors: ["$color7", "$color9"],
+  animation: "medium",
+  overflow: "hidden",
+  opacity: 0.4,
+  colors: ["$color4", "$color10"],
   start: [0, 1],
-  end: [0, 0]
+  end: [1, 1]
 });
 
 const ButtonWrapper = styled(ThemeableStack, {
   name: "ButtonWrapper",
   context: ButtonContext,
-  animation: "faster",
+  animation: "medium",
   position: "relative",
 
   pressStyle: {
@@ -361,9 +366,9 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
           <ButtonGlassBackground
             fullscreen={true}
             style={{
-              filter: "blur(8px)"
+              filter: "blur(3px)"
             }}
-            $group-button-hover={{ opacity: 0.5 }}
+            $group-button-hover={{ opacity: 0.6 }}
             $group-button-press={{ opacity: 0.7 }}
           />
         )}

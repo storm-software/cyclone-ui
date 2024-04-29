@@ -1,23 +1,23 @@
 {
-  "name": "config",
+  "name": "collapsible",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/config/src",
   "projectType": "library",
+  "sourceRoot": "components/collapsible/src",
   "targets": {
     "build": {
-      "cache": false,
+      "cache": true,
       "executor": "@cyclone-ui/nx:build",
       "inputs": ["default", "^production"],
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/packages/config",
-        "tsConfig": "packages/config/tsconfig.json",
-        "project": "packages/config/package.json",
+        "outputPath": "dist/components/collapsible",
+        "tsConfig": "components/collapsible/tsconfig.json",
+        "project": "components/collapsible/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "packages/config",
+            "input": "components/collapsible",
             "glob": "*.md",
             "output": "/"
           },
@@ -30,8 +30,8 @@
       },
       "configurations": {
         "production": {
-          "debug": true,
-          "verbose": true
+          "debug": false,
+          "verbose": false
         },
         "development": {
           "debug": true,

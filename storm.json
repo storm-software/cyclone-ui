@@ -20,7 +20,7 @@
       "tertiary": "#ec5990",
       "accent": "#6366f1",
       "success": "#087f5b",
-      "info": "#0ea5e9",
+      "info": "#58a6ff",
       "warning": "#fcc419",
       "error": "#990000",
       "fatal": "#7d1a1a"
@@ -29,11 +29,11 @@
       "background": "#1d232a",
       "foreground": "#fcfcf5",
       "primary": "#1fb2a6",
-      "secondary": "#a5d6ff",
+      "secondary": "#0ea5e9",
       "tertiary": "#f778ba",
       "accent": "#7b61ff",
       "success": "#56d364",
-      "info": "#58a6ff",
+      "info": "#a5d6ff",
       "warning": "#e3b341",
       "error": "#f85149",
       "fatal": "#b62324"
