@@ -155,7 +155,7 @@
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/core-server": "7.6.10",
     "@storybook/jest": "^0.2.3",
-    "@storybook/react": "7.6.10",
+    "@storybook/react": "8.0.9",
     "@storybook/react-vite": "7.6.10",
     "@storybook/test-runner": "^0.13.0",
     "@storybook/testing-library": "^0.2.2",
