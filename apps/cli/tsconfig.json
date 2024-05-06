@@ -1,14 +1,14 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "module": "Node16",
     "outDir": "dist",
     "rootDir": "src",
     "strict": false,
+    "incremental": false,
     "target": "es2022",
-    "moduleResolution": "node16",
-    "tsBuildInfoFile": "../../dist/apps/cli/tsconfig.tsbuildinfo"
+    "moduleResolution": "node16"
   },
   "include": ["./src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]

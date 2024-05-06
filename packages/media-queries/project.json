@@ -1,0 +1,42 @@
+{
+  "name": "media-queries",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/media-queries/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-node",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/media-queries/src/index.ts",
+        "outputPath": "dist/packages/media-queries",
+        "tsConfig": "packages/media-queries/tsconfig.json",
+        "project": "packages/media-queries/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/media-queries",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    }
+  }
+}

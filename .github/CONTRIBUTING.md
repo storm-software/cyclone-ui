@@ -1,4 +1,4 @@
-# All contributions, however small are valued
+# Contributing
 
 ## Steps to contribute
 
@@ -11,5 +11,7 @@ If you want to make a small change, go ahead and raise a pull request, otherwise
 
 ## Coding Guidelines
 
-- Projects use StyleCop and .editorconfig to produce style warnings. Please fix all warnings in any code you submit.
+- Projects use Biome, ESLint, Markdownlint, Prettier, and .editorconfig to produce style warnings. Please fix all warnings in any code you submit.
 - Write unit tests for any code written.
+
+**All contributions, however small are valued**

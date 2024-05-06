@@ -14,18 +14,192 @@ import {
   styled,
   createStyledContext,
   useTheme,
-  getVariable
+  getVariable,
+  getVariableValue,
+  useComposedRefs
 } from "@tamagui/core";
-import { InputBase } from "./InputBase";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { useFocusable } from "@tamagui/focusable";
+import { TextInput } from "react-native";
+import { useRef } from "react";
+import { getButtonSized } from "@tamagui/get-button-sized";
+
+export const textAreaSizeVariant: SizeVariantSpreadFunction<any> = (
+  val = "$true",
+  extras: any = {}
+) => {
+  const { props } = extras;
+  const buttonStyles = getButtonSized(val, extras);
+  const fontStyle = getFontSized(val as any, extras)!;
+  const lines = props.rows ?? props.numberOfLines;
+  const height =
+    typeof lines === "number"
+      ? lines * getVariableValue(fontStyle.lineHeight)
+      : "auto";
+  const paddingVertical = getSpace(val, {
+    shift: -2,
+    bounds: [2]
+  });
+  const paddingHorizontal = getSpace(val, {
+    shift: -1,
+    bounds: [2]
+  });
+  return {
+    ...buttonStyles,
+    ...fontStyle,
+    paddingVertical,
+    paddingHorizontal,
+    height
+  };
+};
+
+export const inputBaseSizeVariant: SizeVariantSpreadFunction<any> = (
+  val = "$true",
+  extras: any = {}
+) => {
+  if (extras.props.multiline || extras.props.numberOfLines > 1) {
+    return textAreaSizeVariant(val, extras);
+  }
+  const buttonStyles = getButtonSized(val, extras);
+  const paddingHorizontal = getSpace(val, {
+    shift: -2,
+    bounds: [2]
+  });
+  const fontStyle = getFontSized(val as any, extras);
+  // lineHeight messes up input on native
+  if (!isWeb && fontStyle) {
+    delete fontStyle["lineHeight"];
+  }
+  return {
+    ...fontStyle,
+    ...buttonStyles,
+    paddingHorizontal
+  };
+};
 
 const defaultContextValues = {
   size: "$true",
-  scaleIcon: 1.2,
+  scaleIcon: 1.0,
   color: undefined,
   required: false
 } as const;
+
+export const defaultStyles = {
+  size: "$true",
+  fontFamily: "$body",
+  borderWidth: 1,
+  outlineWidth: 0,
+  color: "$color",
+  animation: "medium",
+
+  ...(isWeb
+    ? {
+        tabIndex: 0
+      }
+    : {
+        focusable: true
+      }),
+
+  borderColor: "$borderColor",
+  backgroundColor: "$background",
+
+  // this fixes a flex bug where it overflows container
+  minWidth: 0,
+
+  hoverStyle: {
+    borderColor: "$borderColorHover"
+  },
+
+  focusStyle: {
+    borderColor: "$borderColorFocus",
+    borderWidth: 0,
+    fontWeight: "$4"
+  },
+
+  focusVisibleStyle: {
+    outlineColor: "$brand10",
+    outlineWidth: 2,
+    outlineStyle: "solid"
+  }
+} as const;
+
+export const InputBaseFrame = styled(
+  TextInput,
+  {
+    name: "Input",
+
+    variants: {
+      unstyled: {
+        false: defaultStyles
+      },
+
+      size: {
+        "...size": inputBaseSizeVariant
+      },
+
+      variant: {
+        outlined: {}
+      },
+
+      disabled: {
+        true: {}
+      }
+    } as const,
+
+    defaultVariants: {
+      unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    }
+  },
+  {
+    isInput: true,
+
+    accept: {
+      placeholderTextColor: "color",
+      selectionColor: "color"
+    } as const
+  }
+);
+
+export type InputBase = TextInput;
+export type InputBaseFrameProps = GetProps<typeof InputFrame>;
+export type InputBaseExtraProps = {
+  rows?: number;
+};
+export type InputBaseProps = InputBaseFrameProps & InputBaseExtraProps;
+export const InputBase = InputBaseFrame.styleable<InputExtraProps>(
+  (propsIn, forwardedRef) => {
+    const ref = useRef<InputBase>(null);
+    const composedRefs = useComposedRefs(forwardedRef, ref);
+    const props = useInputBaseProps(propsIn, composedRefs);
+
+    return <InputBaseFrame {...props} />;
+  }
+);
+
+function useInputBaseProps(props: InputBaseProps, ref: any) {
+  const theme = useTheme();
+  const { onChangeText, ref: combinedRef } = useFocusable({
+    // @ts-ignore
+    props,
+    ref,
+    isInput: true
+  });
+
+  const placeholderColorProp = props.placeholderTextColor;
+  const placeholderTextColor =
+    theme[placeholderColorProp as any]?.get() ??
+    placeholderColorProp ??
+    theme.placeholderColor?.get();
+
+  return {
+    ref: combinedRef,
+    readOnly: props.disabled,
+    ...props,
+    placeholderTextColor,
+    onChangeText
+  };
+}
 
 export const InputContext = createStyledContext<{
   size: FontSizeTokens;
@@ -50,7 +224,7 @@ export const defaultInputGroupStyles = {
       }),
 
   borderColor: "$borderColor",
-  backgroundColor: "$color2",
+  backgroundColor: "$background",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -59,10 +233,10 @@ export const defaultInputGroupStyles = {
   },
 
   focusStyle: {
-    outlineColor: "$outlineColor",
-    outlineWidth: 2,
+    outlineColor: "$brand10",
+    outlineWidth: 3,
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderWidth: 0
   }
 } as const;
 
@@ -237,13 +411,13 @@ export const InputContainerFrame = styled(View, {
   variants: {
     size: {
       "...size": (val, { tokens }) => {
-        let spaceToken = 0;
+        let spaceToken = 1;
         if (typeof val !== "undefined" && val !== null) {
           spaceToken = (tokens.space?.[val] as any)?.val;
         }
 
         return {
-          gap: (spaceToken ?? 0) * 0.3
+          gap: (spaceToken ?? 1) * 0.3
         };
       }
     },
@@ -289,7 +463,12 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
       </InputLabel>
       {required && (
         <View position="relative">
-          <Text color="$red9" fontWeight="800" position="absolute" top={-4}>
+          <Text
+            color="$error8"
+            fontWeight="900"
+            fontSize="$7"
+            position="absolute"
+            top={-2}>
             *
           </Text>
         </View>
@@ -309,16 +488,16 @@ export const InputInfo = styled(Text, {
           return;
         }
 
-        let sizeToken = 0;
-        let heightToken = 0;
+        let sizeToken = 1;
+        let heightToken = 1;
         if (typeof val !== "undefined" && val !== null) {
           sizeToken = (font.size?.[val] as any)?.val;
           heightToken = (font.lineHeight?.[val] as any)?.val;
         }
 
-        const fontSize = (sizeToken ?? 0) * 0.8;
-        const lineHeight = (heightToken ?? 0) * 0.8;
-        const fontWeight = font.weight?.["$2"];
+        const fontSize = (sizeToken ?? 1) * 1.2;
+        const lineHeight = (heightToken ?? 1) * 1;
+        const fontWeight = font.weight?.["$3"];
         const letterSpacing = font.letterSpacing?.[val];
         const textTransform = font.transform?.[val];
         const fontStyle = font.style?.[val];

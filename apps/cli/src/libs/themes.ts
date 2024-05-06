@@ -12,7 +12,7 @@ export const getThemeFilePath = (
   workspaceRoot: string,
   output: string,
   themeType: ColorThemeType,
-  name: string = 'default',
+  name: string = 'brand',
   extension?: string,
 ): string => {
   return join(
@@ -25,7 +25,7 @@ export const getTheme = async (
   workspaceRoot: string,
   output: string,
   themeType: ColorThemeType,
-  name: string = 'default',
+  name: string = 'brand',
 ): Promise<ColorTheme> => {
   const themePath = getThemeFilePath(workspaceRoot, output, themeType, name)
   if (!(await fs.exists(themePath))) {
@@ -33,27 +33,35 @@ export const getTheme = async (
   }
 
   let theme = await fs.readJson(themePath)
-  if (!theme?.base?.['0']) {
+  if (!theme?.base?.['base1']) {
     throw new Error('The base color is required to generate the design tokens')
   }
 
   return theme
 }
 
-export const addPalette = (
-  theme: ColorTheme,
-  color: string,
-  type: ColorPaletteType,
-  backgroundName = 'base',
-): ColorTheme => {
+export const addPalette = (theme: ColorTheme, color: string, type: ColorPaletteType): ColorTheme => {
   theme[type] = chroma
-    .scale([theme[backgroundName]['0'], color])
-    .mode('lch')
+    .scale([theme['base']['base1'], color])
+    .gamma(1)
     .colors(12)
+    .slice(2)
     .reduce((acc: {[x: string]: string}, value: string, index: number) => {
-      acc[index] = value
+      acc[`${type}${index + 1}`] = chroma(value).css('hsl')
+
       return acc
     }, {})
+
+  const currentLength = Object.keys(theme[type]).length
+  theme[type] = chroma
+    .scale([color, theme['base']['base12']])
+    .colors(4)
+    .slice(1, 3)
+    .reduce((acc: {[x: string]: string}, value: string, index: number) => {
+      acc[`${type}${currentLength + index + 1}`] = chroma(value).css('hsl')
+
+      return acc
+    }, theme[type])
 
   return theme
 }
@@ -63,10 +71,10 @@ export const initialTheme = (colors: Record<ColorThemeType, string>, themeType: 
 
   theme.base = chroma
     .scale(themeType === ColorThemeType.LIGHT ? [colors.light, colors.dark] : [colors.dark, colors.light])
-    .mode('lch')
-    .colors(12)
+    .gamma(themeType === 'dark' ? 2 : 1)
+    .colors(14)
     .reduce((acc: {[x: string]: string}, value: string, index: number) => {
-      acc[index] = value
+      acc[`base${index + 1}`] = chroma(value).css('hsl')
       return acc
     }, {})
 
@@ -78,7 +86,7 @@ export const setTheme = async (
   workspaceRoot: string,
   output: string,
   themeType: ColorThemeType,
-  name: string = 'default',
+  name: string = 'brand',
   generateJson = false,
 ) => {
   const themePath = getThemePath(workspaceRoot, output)

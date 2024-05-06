@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Base: Story = {
+export const Primary: Story = {
   args: {
     children: "Button Text"
   }
@@ -22,13 +22,6 @@ export const Outlined: Story = {
   args: {
     children: "Button Text",
     variant: "outlined"
-  }
-};
-
-export const Inverse: Story = {
-  args: {
-    children: "Button Text",
-    themeInverse: true
   }
 };
 
@@ -46,124 +39,69 @@ export const Glass: Story = {
   }
 };
 
-export const Primary: Story = {
+export const BrandPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "primary"
+    theme: "brand"
   }
 };
 
-export const PrimaryOutlined: Story = {
+export const BrandOutlined: Story = {
   args: {
     children: "Button Text",
-    theme: "primary",
+    theme: "brand",
     variant: "outlined"
   }
 };
 
-export const PrimaryInverse: Story = {
+export const BrandGhost: Story = {
   args: {
     children: "Button Text",
-    theme: "primary",
-    themeInverse: true
-  }
-};
-
-export const PrimaryGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "primary",
+    theme: "brand",
     variant: "ghost"
   }
 };
 
-export const PrimaryGlass: Story = {
+export const BrandGlass: Story = {
   args: {
     children: "Button Text",
-    theme: "primary",
+    theme: "brand",
     variant: "glass"
   }
 };
 
-export const Secondary: Story = {
+export const AccentPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "secondary"
+    theme: "accent"
   }
 };
 
-export const SecondaryOutlined: Story = {
+export const AccentOutlined: Story = {
   args: {
     children: "Button Text",
-    theme: "secondary",
+    theme: "accent",
     variant: "outlined"
   }
 };
 
-export const SecondaryInverse: Story = {
+export const AccentGhost: Story = {
   args: {
     children: "Button Text",
-    theme: "secondary",
-    themeInverse: true
-  }
-};
-
-export const SecondaryGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "secondary",
+    theme: "accent",
     variant: "ghost"
   }
 };
 
-export const SecondaryGlass: Story = {
+export const AccentGlass: Story = {
   args: {
     children: "Button Text",
-    theme: "secondary",
+    theme: "accent",
     variant: "glass"
   }
 };
 
-export const Tertiary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "tertiary"
-  }
-};
-
-export const TertiaryOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "tertiary",
-    variant: "outlined"
-  }
-};
-
-export const TertiaryInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "tertiary",
-    themeInverse: true
-  }
-};
-
-export const TertiaryGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "tertiary",
-    variant: "ghost"
-  }
-};
-
-export const TertiaryGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "tertiary",
-    variant: "glass"
-  }
-};
-
-export const Error: Story = {
+export const ErrorPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "error"
@@ -194,15 +132,7 @@ export const ErrorGlass: Story = {
   }
 };
 
-export const ErrorInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "error",
-    themeInverse: true
-  }
-};
-
-export const Warning: Story = {
+export const WarningPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "warning"
@@ -214,14 +144,6 @@ export const WarningOutlined: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "outlined"
-  }
-};
-
-export const WarningInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "warning",
-    themeInverse: true
   }
 };
 
@@ -241,7 +163,7 @@ export const WarningGlass: Story = {
   }
 };
 
-export const Info: Story = {
+export const InfoPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "info"
@@ -253,14 +175,6 @@ export const InfoOutlined: Story = {
     children: "Button Text",
     theme: "info",
     variant: "outlined"
-  }
-};
-
-export const InfoInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    themeInverse: true
   }
 };
 
@@ -280,7 +194,7 @@ export const InfoGlass: Story = {
   }
 };
 
-export const Success: Story = {
+export const SuccessPrimary: Story = {
   args: {
     children: "Button Text",
     theme: "success"
@@ -292,14 +206,6 @@ export const SuccessOutlined: Story = {
     children: "Button Text",
     theme: "success",
     variant: "outlined"
-  }
-};
-
-export const SuccessInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "success",
-    themeInverse: true
   }
 };
 
@@ -315,44 +221,6 @@ export const SuccessGlass: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "glass"
-  }
-};
-
-export const Accent: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent"
-  }
-};
-
-export const AccentOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent",
-    variant: "outlined"
-  }
-};
-
-export const AccentInverse: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent",
-    themeInverse: true
-  }
-};
-export const AccentGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent",
-    variant: "ghost"
-  }
-};
-
-export const AccentGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent",
     variant: "glass"
   }
 };

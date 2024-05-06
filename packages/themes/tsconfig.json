@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "jsx": "react-jsx",
@@ -10,12 +10,6 @@
     ]
   },
   "files": [],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "bin/**/*",
-    "../../.storm/themes/default-light.ts",
-    "../../.storm/themes/default-dark.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.js", "bin/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

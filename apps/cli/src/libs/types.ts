@@ -1,18 +1,7 @@
-export type ColorPaletteType =
-  | 'base'
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'accent'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'error'
+export type ColorPaletteType = 'base' | 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error'
 export const ColorPaletteType = {
   BASE: 'base' as ColorPaletteType,
-  PRIMARY: 'primary' as ColorPaletteType,
-  SECONDARY: 'secondary' as ColorPaletteType,
-  TERTIARY: 'tertiary' as ColorPaletteType,
+  BRAND: 'brand' as ColorPaletteType,
   ACCENT: 'accent' as ColorPaletteType,
   SUCCESS: 'success' as ColorPaletteType,
   INFO: 'info' as ColorPaletteType,
@@ -20,19 +9,13 @@ export const ColorPaletteType = {
   ERROR: 'error' as ColorPaletteType,
 }
 
-export type ColorPalette = {
-  '0': string
-  '1': string
-  '2': string
-  '3': string
-  '4': string
-  '5': string
-  '6': string
-  '7': string
-  '8': string
-  '9': string
-  '10': string
-  '11': string
+export type ColorPaletteTypeIndexes = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12'
+
+export type ColorPalette<
+  TPaletteType extends ColorPaletteType = ColorPaletteType,
+  TKey extends string = `${TPaletteType}${ColorPaletteTypeIndexes}`,
+> = {
+  [key in TKey]?: string
 }
 
 export type ColorThemeType = 'dark' | 'light'

@@ -6,6 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
+      "cache": true,
       "executor": "@nx/esbuild:esbuild",
       "inputs": ["default", "^production"],
       "dependsOn": ["clean", "^build"],
@@ -36,6 +37,7 @@
           "nx",
           "@nx/devkit",
           "esbuild",
+          "vue-tsc",
           "@swc/*",
           "@cyclone-ui/build"
         ],

@@ -42,8 +42,13 @@ const config: StorybookConfig = {
     };
     return config;
   },
+  env: config => ({
+    ...config,
+    "process.env.STORYBOOK": true
+  }),
   docs: {
-    autodocs: true
+    autodocs: true,
+    defaultName: "Documentation"
   }
 };
 

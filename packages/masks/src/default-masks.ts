@@ -1,39 +1,15 @@
-import type { MaskDefinitions, CreateMask } from "@tamagui/create-theme";
+import type { MaskDefinitions } from "@tamagui/create-theme";
 import {
   combineMasks,
   createIdentityMask,
+  createInverseMask,
   createMask,
   createSoftenMask,
   createStrengthenMask,
-  objectEntries,
-  objectFromEntries,
   skipMask
 } from "@tamagui/create-theme";
 
-export const createInverseMask = () => {
-  const mask: CreateMask = {
-    name: "inverse-mask",
-    mask: (template, opts) => {
-      const inverse = objectFromEntries(
-        objectEntries(template).map(([key, value]) => {
-          let num = value as number;
-          if (typeof value === "string" && !isNaN(parseInt(value))) {
-            num = parseInt(value);
-          }
-          if (typeof num !== "number") {
-            return [key, value];
-          }
-
-          return [key, -1 * num];
-        })
-      ) as any;
-      return skipMask.mask(inverse, opts);
-    }
-  };
-  return mask;
-};
-
-export const masks = {
+export const defaultMasks = {
   identity: createIdentityMask(),
   soften: createSoftenMask(),
   soften2: createSoftenMask({ strength: 2 }),

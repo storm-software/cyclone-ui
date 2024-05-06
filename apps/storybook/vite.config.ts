@@ -1,6 +1,6 @@
 /// <reference types='vitest' />
 
-import { tamaguiExtractPlugin, tamaguiPlugin } from "@tamagui/vite-plugin";
+import { tamaguiPlugin } from "@tamagui/vite-plugin";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
@@ -10,18 +10,28 @@ const isProduction = process.env.NODE_ENV === "production";
 const profiling = isProduction && {
   "react-dom/client": "react-dom/profiling"
 };
-const shouldExtract = process.env.EXTRACT === "1";
 
 const tamaguiConfig = {
+  config: "apps/storybook/tamagui.config.ts",
   components: [
     "@cyclone-ui/themes",
     "@cyclone-ui/config",
     "@cyclone-ui/button",
     "@cyclone-ui/input",
+    "@cyclone-ui/collapsible",
     "tamagui"
   ],
-  config: "apps/storybook/tamagui.config.ts",
+
+  /**
+   * these are mostly not necessary except for advanced cases:
+   **/
   outputCSS: "./public/tamagui.css"
+  // importsWhitelist: ["constants.js", "colors.js"],
+  // disableExtraction: process.env.NODE_ENV === "development"
+  // themeBuilder: {
+  //   input: "@cyclone-ui/themes/default-theme.ts",
+  //   output: "./generated-theme.ts"
+  // }
 };
 
 // https://vitejs.dev/config/
@@ -37,10 +47,13 @@ export default defineConfig({
     }
   },
   plugins: [
-    nxViteTsPaths({ debug: true }),
+    nxViteTsPaths({ debug: false }),
     react(),
-    tamaguiPlugin(tamaguiConfig),
-    shouldExtract ? tamaguiExtractPlugin(tamaguiConfig) : null
+    tamaguiPlugin(tamaguiConfig)
+    // tamaguiExtractPlugin({
+    //   ...tamaguiConfig,
+    //   logTimings: true
+    // })
   ].filter(Boolean),
   server: {
     fs: {

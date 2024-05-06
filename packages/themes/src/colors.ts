@@ -1,5 +1,5 @@
-import { theme as darkTheme } from "../../../.storm/themes/default-dark";
-import { theme as lightTheme } from "../../../.storm/themes/default-light";
+import { theme as darkTheme } from "./themes/brand-dark";
+import { theme as lightTheme } from "./themes/brand-light";
 import {
   blue,
   blueDark,
@@ -18,10 +18,15 @@ import {
   yellow,
   yellowDark
 } from "@tamagui/colors";
+import {
+  ExtendedColorThemeTokens,
+  ColorThemeTokens,
+  ColorfulColorTheme,
+  ColorfulColorRole,
+  BaseColorTheme
+} from "./types";
 
-export {
-  darkTheme,
-  lightTheme,
+export const external: ExtendedColorThemeTokens = {
   blue,
   blueDark,
   gray,
@@ -39,3 +44,27 @@ export {
   yellow,
   yellowDark
 };
+
+const getTheme = (
+  theme: ColorfulColorTheme<ColorfulColorRole> | BaseColorTheme<"base">,
+  dark = false
+) => {
+  return Object.keys(theme).reduce(
+    (
+      ret: ColorfulColorTheme<ColorfulColorRole> | BaseColorTheme<"base">,
+      key: string
+    ) => {
+      ret[`${key}${dark ? "Dark" : ""}`] = theme[key];
+
+      return ret;
+    },
+    {} as ColorThemeTokens
+  );
+};
+
+export const colors = {
+  ...getTheme(lightTheme),
+  ...getTheme(darkTheme, true)
+} as ColorThemeTokens;
+
+export default colors;

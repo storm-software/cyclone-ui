@@ -1,9 +1,12 @@
 import { config } from "../../packages/config/src/tamagui.config";
+import { createTamagui } from "../../packages/config/src/create-tamagui";
 
-export type Conf = typeof config;
+const tamaguiConf = createTamagui(config);
+
+export type Conf = typeof tamaguiConf;
 
 declare module "tamagui" {
   interface TamaguiCustomConfig extends Conf {}
 }
 
-export default config;
+export default tamaguiConf;

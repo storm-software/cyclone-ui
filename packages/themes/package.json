@@ -28,24 +28,33 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "./brand": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/brand-themes.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/brand-themes.cjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/brand-themes.js"
+      }
     }
   },
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "types": "./types/index.d.ts",
   "dependencies": {
     "@swc-node/register": "~1.8.0",
     "@swc/core": "~1.3.85",
-    "@tamagui/colors": "^1.95.3",
-    "@tamagui/create-theme": "^1.95.3",
-    "@tamagui/theme-builder": "^1.95.3",
-    "@tamagui/web": "^1.95.3"
+    "@tamagui/colors": "^1.96.0",
+    "@tamagui/theme-builder": "^1.96.0",
+    "@tamagui/web": "^1.96.0"
   },
   "devDependencies": {
-    "@tamagui/cli": "^1.95.3"
+    "@tamagui/cli": "^1.96.0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "module:jsx": "dist/jsx"
+  }
 }

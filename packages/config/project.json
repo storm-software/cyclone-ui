@@ -3,44 +3,5 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/config/src",
   "projectType": "library",
-  "targets": {
-    "build": {
-      "cache": false,
-      "executor": "@cyclone-ui/nx:build",
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "output": "{options.outputPath}",
-      "options": {
-        "outputPath": "dist/packages/config",
-        "tsConfig": "packages/config/tsconfig.json",
-        "project": "packages/config/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "packages/config",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
-      },
-      "configurations": {
-        "production": {
-          "debug": true,
-          "verbose": true
-        },
-        "development": {
-          "debug": true,
-          "verbose": true
-        }
-      }
-    },
-    "nx-release-publish": {
-      "executor": "@storm-software/workspace-tools:npm-publish"
-    }
-  }
+  "targets": {}
 }

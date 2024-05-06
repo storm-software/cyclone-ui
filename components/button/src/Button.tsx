@@ -67,7 +67,7 @@ export const ButtonContext = createStyledContext<
     }
   >
 >({
-  color: undefined,
+  color: "$color",
   ellipse: undefined,
   fontFamily: "$label",
   fontSize: undefined,
@@ -93,16 +93,22 @@ const ButtonFrame = styled(View, {
   flexDirection: "row",
   animation: "medium",
   borderWidth: 1,
-  borderColor: "$borderColor",
   backgroundColor: "$background",
+  borderColor: "$borderColor",
 
   hoverStyle: {
     backgroundColor: "$backgroundHover",
-    borderWidth: 3
+    borderColor: "$borderColorHover"
   },
 
   pressStyle: {
-    backgroundColor: "$backgroundPress"
+    backgroundColor: "$backgroundPress",
+    borderColor: "$borderColorPress"
+  },
+
+  focusVisibleStyle: {
+    backgroundColor: "$backgroundFocus",
+    borderColor: "$borderColorFocus"
   },
 
   variants: {
@@ -116,7 +122,6 @@ const ButtonFrame = styled(View, {
         cursor: "pointer",
         hoverTheme: true,
         pressTheme: true,
-        backgrounded: true,
         borderWidth: 0,
         borderColor: "transparent",
 
@@ -131,25 +136,22 @@ const ButtonFrame = styled(View, {
     variant: {
       outlined: {
         backgroundColor: "transparent",
-        borderColor: "$borderColor",
-        color: "$borderColor",
+        borderColor: "$primary",
+        borderWidth: 3,
 
         hoverStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorHover",
-          color: "$borderColorHover"
+          backgroundColor: "$backgroundHover",
+          borderColor: "$borderColorHover"
         },
 
         pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorPress",
-          color: "$borderColorPress"
+          backgroundColor: "$backgroundPress",
+          borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorFocus",
-          color: "$borderColorFocus"
+          backgroundColor: "$backgroundFocus",
+          borderColor: "$borderColorFocus"
         }
       },
 
@@ -202,29 +204,6 @@ const ButtonFrame = styled(View, {
       }
     },
 
-    gradient: {
-      ":string": (val: string) => ({
-        backgroundColor: "transparent",
-        borderWidth: 0,
-        borderColor: "transparent",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          color: "transparent"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          color: "transparent"
-        },
-
-        focusVisibleStyle: {
-          backgroundColor: "transparent",
-          color: "transparent"
-        }
-      })
-    },
-
     size: {
       "...size": getButtonSized,
       ":number": getButtonSized
@@ -245,7 +224,6 @@ const ButtonFrame = styled(View, {
 const ButtonText = styled(SizableText, {
   name: "ButtonText",
   context: ButtonContext,
-  color: "$color",
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "bold",
@@ -259,14 +237,7 @@ const ButtonText = styled(SizableText, {
         // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow: 0,
         flexShrink: 1,
-        ellipse: true,
-        color: "$color"
-      }
-    },
-
-    variant: {
-      outlined: {
-        color: "$borderColor"
+        ellipse: true
       }
     }
   } as const,
@@ -311,7 +282,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   backgroundColor: "transparent",
   borderRadius: "$4",
   animation: "medium",
-  opacity: 0.3
+  opacity: 0.5
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
@@ -321,8 +292,8 @@ const ButtonGlassBackground = styled(LinearGradient, {
   borderRadius: "$4",
   animation: "medium",
   overflow: "hidden",
-  opacity: 0.4,
-  colors: ["$color4", "$color10"],
+  opacity: 0.5,
+  colors: ["$muted", "$primary"],
   start: [0, 1],
   end: [1, 1]
 });
@@ -334,31 +305,23 @@ const ButtonWrapper = styled(ThemeableStack, {
   position: "relative",
 
   pressStyle: {
-    scale: 0.98
+    scale: 0.99
   }
 });
 
 const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
   (props, ref) => {
-    const { variant, gradient, ...rest } = props;
+    const { variant, ...rest } = props;
 
     return (
       <ButtonWrapper group={"button" as any}>
-        {gradient && (
-          <LinearGradient
-            colors={["$color3", gradient]}
-            start={[0, 1]}
-            end={[0, 0]}
-            fullscreen={true}
-          />
-        )}
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}
-            $group-button-hover={{ backgroundColor: "$color7" }}
-            $group-button-press={{ backgroundColor: "$color9" }}
+            $group-button-hover={{ backgroundColor: "$secondary" }}
+            $group-button-press={{ backgroundColor: "$primary" }}
             style={{
-              filter: "blur(8px)"
+              filter: "blur(3px)"
             }}
           />
         )}
@@ -368,18 +331,16 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
             style={{
               filter: "blur(3px)"
             }}
-            $group-button-hover={{ opacity: 0.6 }}
-            $group-button-press={{ opacity: 0.7 }}
+            $group-button-hover={{ opacity: 0.7 }}
+            $group-button-press={{ opacity: 1 }}
           />
         )}
-        <ButtonFrame
-          ref={ref}
-          {...rest}
-          variant={variant}
-          gradient={gradient}
-        />
+        <ButtonFrame ref={ref} {...rest} variant={variant} />
       </ButtonWrapper>
     );
+  },
+  {
+    staticConfig: { componentName: BUTTON_NAME }
   }
 );
 

@@ -1,31 +1,6 @@
 import type { Variable } from "@tamagui/web";
 import { createTokens } from "@tamagui/web";
-import {
-  ColorPalette,
-  ColorPaletteTokens,
-  ColorPaletteType,
-  ColorTheme
-} from "./types";
-import {
-  blue,
-  blueDark,
-  gray,
-  grayDark,
-  green,
-  greenDark,
-  orange,
-  orangeDark,
-  pink,
-  pinkDark,
-  purple,
-  purpleDark,
-  red,
-  redDark,
-  yellow,
-  yellowDark,
-  darkTheme,
-  lightTheme
-} from "./colors";
+import colors from "./colors";
 
 // should roughly map to button/input etc height at each level
 // fonts should match that height/lineHeight at each stop
@@ -113,98 +88,45 @@ export const zIndex = {
   5: 500
 };
 
-function createColorTokens<
-  ColorKey extends ColorPaletteType = ColorPaletteType
->(palette: ColorPalette, type: ColorKey): ColorPaletteTokens<ColorKey> {
-  return Object.values(palette).reduce(
-    (ret: ColorPaletteTokens<ColorKey>, color: string, index: number) => {
-      ret[`${type}${index + 1}`] = color;
-
-      return ret;
-    },
-    {} as ColorPaletteTokens<ColorKey>
-  );
-}
-
-function createThemeTokens(
-  theme: ColorTheme
-): Record<ColorPaletteType, ColorPaletteTokens> {
-  return Object.keys(theme ?? {}).reduce(
-    (ret: Record<ColorPaletteType, ColorPaletteTokens>, colorKey: string) => {
-      ret[colorKey as ColorPaletteType] = createColorTokens(
-        theme[colorKey as ColorPaletteType],
-        colorKey as ColorPaletteType
-      ) as ColorPaletteTokens<ColorPaletteType>;
-
-      return ret;
-    },
-    {} as Record<ColorPaletteType, ColorPaletteTokens>
-  );
-}
-
 export const colorTokens = {
   light: {
-    blue: blue,
-    gray: gray,
-    green: green,
-    orange: orange,
-    pink: pink,
-    purple: purple,
-    red: red,
-    yellow: yellow,
-    ...createThemeTokens(lightTheme)
+    base: colors.base,
+    brand: colors.brand,
+    accent: colors.accent,
+    success: colors.success,
+    error: colors.error,
+    warning: colors.warning,
+    info: colors.info
   },
   dark: {
-    blue: blueDark,
-    gray: grayDark,
-    green: greenDark,
-    orange: orangeDark,
-    pink: pinkDark,
-    purple: purpleDark,
-    red: redDark,
-    yellow: yellowDark,
-    ...createThemeTokens(darkTheme)
+    base: colors.baseDark,
+    brand: colors.brandDark,
+    accent: colors.accentDark,
+    success: colors.successDark,
+    error: colors.errorDark,
+    warning: colors.warningDark,
+    info: colors.infoDark
   }
 };
 
 export const darkColors = {
-  ...colorTokens.dark.blue,
-  ...colorTokens.dark.gray,
-  ...colorTokens.dark.green,
-  ...colorTokens.dark.orange,
-  ...colorTokens.dark.pink,
-  ...colorTokens.dark.purple,
-  ...colorTokens.dark.red,
-  ...colorTokens.dark.yellow,
   ...colorTokens.dark.base,
-  ...colorTokens.dark.primary,
-  ...colorTokens.dark.secondary,
-  ...colorTokens.dark.tertiary,
+  ...colorTokens.dark.brand,
+  ...colorTokens.dark.accent,
   ...colorTokens.dark.success,
   ...colorTokens.dark.error,
   ...colorTokens.dark.warning,
-  ...colorTokens.dark.info,
-  ...colorTokens.dark.accent
+  ...colorTokens.dark.info
 };
 
 export const lightColors = {
-  ...colorTokens.light.blue,
-  ...colorTokens.light.gray,
-  ...colorTokens.light.green,
-  ...colorTokens.light.orange,
-  ...colorTokens.light.pink,
-  ...colorTokens.light.purple,
-  ...colorTokens.light.red,
-  ...colorTokens.light.yellow,
   ...colorTokens.light.base,
-  ...colorTokens.light.primary,
-  ...colorTokens.light.secondary,
-  ...colorTokens.light.tertiary,
+  ...colorTokens.light.brand,
+  ...colorTokens.light.accent,
   ...colorTokens.light.success,
   ...colorTokens.light.error,
   ...colorTokens.light.warning,
-  ...colorTokens.light.info,
-  ...colorTokens.light.accent
+  ...colorTokens.light.info
 };
 
 export const color = {
@@ -252,3 +174,15 @@ export const tokens = createTokens({
   space,
   size
 });
+
+export const ColorPaletteShades = {
+  PRIMARY: 10,
+  SECONDARY: 8,
+  TERTIARY: 6,
+  QUATERNARY: 4,
+  MUTED: 2,
+  BACKGROUND: 1,
+  BACKGROUND_TRANSPARENT: 0,
+  FOREGROUND: -1,
+  FOREGROUND_TRANSPARENT: -0
+};

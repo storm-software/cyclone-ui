@@ -201,7 +201,7 @@
       "aliases": [],
       "args": {
         "name": {
-          "default": "default",
+          "default": "brand",
           "description": "The name of the specific theme to assign the design token to",
           "name": "name",
           "noCacheDefault": false,

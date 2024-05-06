@@ -7,29 +7,30 @@ const theme: any = create({
   colorSecondary: "#6366f1",
 
   // UI
-  appBg: "#1d232a",
-  appContentBg: "#1d232a",
-  appBorderColor: "#6366f1",
+  appBg: "#22272E",
+  appContentBg: "#22272E",
+  appBorderColor: "#1fb2a6",
   appBorderRadius: 2,
 
   // Text colors
-  textColor: "#6366F1",
+  textColor: "#1fb2a6",
   textInverseColor: "#1fb2a6",
 
   // Toolbar default and active colors
   barTextColor: "#1fb2a6",
   barSelectedColor: "#1fb2a6",
-  barBg: "#3f434a",
+  barBg: "#22272E",
 
   // Form colors
-  inputBg: "#1d232a",
-  inputBorder: "#6366f1",
-  inputTextColor: "#6366f1",
+  inputBg: "#22272E",
+  inputBorder: "#1fb2a6",
+  inputTextColor: "#1fb2a6",
   inputBorderRadius: 2,
 
   brandTitle: "Storm Software",
   brandUrl: "https://stormsoftware.com",
-  brandImage: "https://pub-761b436209f44a4d886487c917806c08.r2.dev/logo.svg",
+  brandImage:
+    "https://pub-761b436209f44a4d886487c917806c08.r2.dev/transparent.svg",
   brandTarget: "_self"
 });
 

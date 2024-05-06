@@ -5,19 +5,32 @@ import { transform } from "@babel/core";
 import {
   getStopwatch,
   run,
+  writeError,
   writeSuccess,
-  writeTrace
+  writeTrace,
+  writeWarning
 } from "@storm-software/config-tools";
 import type { StormConfig } from "@storm-software/config";
-import fs from "fs-extra";
+import {
+  readJSONSync,
+  remove,
+  move,
+  copy,
+  ensureDir,
+  readFile,
+  pathExists,
+  writeFile
+} from "fs-extra";
 import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
-import fg from "fast-glob";
+import { glob } from "fast-glob";
 import createExternalPlugin from "../plugins/external-node-plugin";
 import debounce from "lodash.debounce";
 import { dirname, join } from "path";
 import alias from "../plugins/esbuild-alias-plugin";
 import { BuildOptions } from "../types";
-import { readTSConfig } from "pkg-types";
+// import { readTSConfig } from "pkg-types";
+import { register as registerTsConfigPaths } from "tsconfig-paths";
+// import merge from "deepmerge";
 
 // const jsOnly = !!process.env.JS_ONLY;
 // const skipJS = !!(process.env.SKIP_JS || false);
@@ -49,11 +62,24 @@ import { readTSConfig } from "pkg-types";
 //     ? process.argv[excludeIndex + 1]
 //     : null;
 
+export const correctPaths = (path?: string): string => {
+  if (!path) {
+    return "";
+  }
+
+  // Handle Windows absolute paths
+  if (path?.toUpperCase()?.startsWith("C:")) {
+    return path.replaceAll("/", "\\");
+  }
+
+  return path.replaceAll("\\", "/");
+};
+
 export const build = async (
   config: StormConfig,
   {
     projectRoot,
-    outputPath,
+    outputPath: _outputPath,
     jsOnly,
     skipTypes,
     skipInitialTypes,
@@ -68,15 +94,24 @@ export const build = async (
     ignoreBaseUrl,
     minify,
     baseUrl,
-    tsConfig,
+    tsConfig: _tsConfig,
     exclude,
     verbose = false
   }: BuildOptions
 ) => {
   writeTrace("Running the Tamagui build process...", config);
 
-  projectRoot = join(config.workspaceRoot, projectRoot);
-  const pkg = fs.readJSONSync(join(projectRoot, "./package.json"));
+  const compilerOptions = readJSONSync(
+    join(config.workspaceRoot ?? "./", "tsconfig.base.json")
+  ).compilerOptions;
+  registerTsConfigPaths(compilerOptions);
+  process.chdir(config.workspaceRoot);
+
+  const outputPath = _outputPath.replaceAll("\\", "/");
+  // const projectRoot = join(config.workspaceRoot, _projectRoot);
+  const tsConfig = _tsConfig.replaceAll("\\", "/");
+
+  const pkg = readJSONSync(join(projectRoot, "./package.json"));
   const pkgMain = pkg.main;
   const pkgSource = projectRoot
     ? join(projectRoot, "src/index.ts")
@@ -106,15 +141,12 @@ export const build = async (
 
   async function handleClean() {
     try {
-      writeTrace(`Cleaning the "${pkg.name}" package...`, config);
-
       await Promise.allSettled([
-        fs.remove(outputPath),
-        fs.remove(join(projectRoot, ".turbo")),
-        fs.remove(join(projectRoot, "node_modules")),
-        fs.remove(join(projectRoot, ".ultra.cache.json")),
-        fs.remove(join(projectRoot, "types")),
-        fs.remove(join(projectRoot, "dist"))
+        remove(outputPath),
+        remove(join(projectRoot, ".turbo")),
+        remove(join(projectRoot, ".ultra.cache.json")),
+        remove(join(projectRoot, "dist")),
+        remove(join(projectRoot, "types"))
       ]);
     } catch {
       // ok
@@ -122,12 +154,6 @@ export const build = async (
     if (cleanBuildOnly) {
       process.exit(0);
     }
-    try {
-      await Promise.allSettled([fs.remove(join(projectRoot, "node_modules"))]);
-    } catch {
-      // ok
-    }
-    process.exit(0);
   }
 
   async function handleBuild(
@@ -164,34 +190,42 @@ export const build = async (
       return;
     }
 
-    const targetDir = join(outputPath, "types");
+    const targetDir = join(outputPath, "types").replaceAll("\\", "/");
     try {
       // typescripts build cache messes up when doing declarationOnly
-      await fs.remove(join(projectRoot, "tsconfig.tsbuildinfo"));
-      await fs.ensureDir(targetDir);
+      await remove(join(projectRoot, "tsconfig.tsbuildinfo"));
+      await ensureDir(targetDir);
 
       const declarationToRootFlag = declarationToRoot
         ? " --declarationDir ./"
         : "";
-      const baseUrlFlag = ignoreBaseUrl
-        ? ""
-        : ` --baseUrl "${baseUrl ? baseUrl : config.workspaceRoot}" `;
+      const baseUrlFlag = ignoreBaseUrl ? "" : ""; // ` --baseUrl "${baseUrl ? baseUrl : config.workspaceRoot}" `;
       const tsProjectFlag = tsConfig
-        ? ` --project "${join(config.workspaceRoot, tsConfig)}" `
+        ? "" // ` --project "${join(config.workspaceRoot, tsConfig)}" `
         : "";
-      const cmd = `npx tsc${baseUrlFlag}${tsProjectFlag} --rootDir "${config.workspaceRoot}" --outDir "${targetDir}" ${declarationToRootFlag} --declaration --emitDeclarationOnly --declarationMap`;
+      const cmd = `npx tsc${baseUrlFlag}${tsProjectFlag} --rootDir "src" ${declarationToRootFlag} --outDir "types" --emitDeclarationOnly --declarationMap`;
 
       console.info("\x1b[2m$", cmd);
-      await run(config, cmd);
+
+      await run(config, cmd, projectRoot);
+
+      try {
+        await move(join(projectRoot, "types"), targetDir, { overwrite: true });
+      } catch (e) {
+        await copy(join(projectRoot, "types"), targetDir, { overwrite: true });
+        await remove(join(projectRoot, "types"));
+      }
+
+      writeSuccess(`Completed the "${pkg.name}" TSC build...`, config);
     } catch (err) {
-      console.info(err.message);
+      writeError(`Failed to complete the "${pkg.name}" TSC build...`, config);
+      writeError(err.message, config);
+
       if (!watch) {
         process.exit(1);
       }
     } finally {
-      await fs.remove(join(projectRoot, "tsconfig.tsbuildinfo"));
-
-      writeSuccess(`Completed the "${pkg.name}" TSC build...`, config);
+      await remove(join(projectRoot, "tsconfig.tsbuildinfo"));
     }
   }
 
@@ -205,7 +239,7 @@ export const build = async (
     const files = bundle
       ? [pkgSource || "./src/index.ts"]
       : (
-          await fg([
+          await glob([
             join(projectRoot, "**/*.(m)?[jt]s(x)?"),
             join(projectRoot, "**/*.css")
           ])
@@ -220,8 +254,7 @@ export const build = async (
     const externalPlugin = createExternalPlugin({
       skipNodeModulesBundle: true
     });
-
-    const external = bundle ? ["@swc/*", "@cyclone-ui/*", "*.node"] : undefined;
+    const external = bundle ? ["@swc/*", "*.node"] : undefined;
 
     const esbuildBundleProps = (
       bundleNative || bundleNativeTest
@@ -297,7 +330,7 @@ export const build = async (
 
     if (pkgSource) {
       try {
-        const contents = await fs.readFile(pkgSource);
+        const contents = await readFile(pkgSource);
         if (contents.slice(0, 40).includes("GITCRYPT")) {
           // encrypted file, ignore
           console.info(`This package is encrypted, skipping`);
@@ -440,22 +473,34 @@ export const build = async (
       platform: "node"
     };
 
-    const tsconfigRaw = await readTSConfig(
-      join(config.workspaceRoot, tsConfig)
-    );
+    // const tsConfigs = await Promise.all([
+    //   await readTSConfig(
+    //     join(config.workspaceRoot, dirname(tsConfig)).replaceAll("/", "\\"),
+    //     {
+    //       cache: true
+    //     }
+    //   ),
+    //   await readTSConfig(config.workspaceRoot, {
+    //     cache: true
+    //   })
+    // ]);
+    // const tsconfigRaw = merge(tsConfigs[0], tsConfigs[1]);
+    // const tsconfigBaseRaw = await readTSConfig(config.workspaceRoot, {
+    //   cache: true
+    // });
+
+    // const buildOutputPath = correctPaths(
+    //   opts.outdir ? join(outputPath, opts.outdir) : outputPath
+    // );
 
     const webEsbuildSettings = {
       target: "esnext",
       jsx: "automatic",
       platform: bundle ? "node" : "neutral",
       tsconfigRaw: {
-        ...tsconfigRaw,
         compilerOptions: {
-          ...tsconfigRaw.compilerOptions,
-          baseUrl: baseUrl ? baseUrl : config.workspaceRoot,
-          rootDir: config.workspaceRoot,
+          baseUrl: "./",
           paths: {
-            ...tsconfigRaw.compilerOptions?.paths,
             "react-native": ["react-native-web"]
           }
         }
@@ -530,8 +575,15 @@ export const build = async (
       buildSettings.target === "esm" || buildSettings.target === "esnext";
 
     if (!built.outputFiles) {
+      writeWarning(`No output files generated for "${pkg.name}"...`, config);
+
       return;
     }
+
+    writeTrace(
+      `Writing files: \n${built.outputFiles.map(outputFile => outputFile.path).join(", \n")}\n`,
+      config
+    );
 
     const nativeFilesMap = Object.fromEntries(
       built.outputFiles.flatMap(p => {
@@ -580,7 +632,7 @@ export const build = async (
 
         const outDir = dirname(outPath);
 
-        await fs.ensureDir(outDir);
+        await ensureDir(outDir);
         let outString = new TextDecoder().decode(file.contents);
 
         if (platform === "web") {
@@ -618,13 +670,13 @@ export const build = async (
         async function flush(contents, path) {
           if (watch) {
             if (
-              !(await fs.pathExists(path)) ||
-              (await fs.readFile(path, "utf8")) !== contents
+              !(await pathExists(path)) ||
+              (await readFile(path, "utf8")) !== contents
             ) {
-              await fs.writeFile(path, contents);
+              await writeFile(path, contents);
             }
           } else {
-            await fs.writeFile(path, contents);
+            await writeFile(path, contents);
           }
         }
 
@@ -674,10 +726,7 @@ export const build = async (
 
   if (clean || cleanBuildOnly) {
     writeTrace(`Cleaning the "${pkg.name}" package...`, config);
-
-    handleClean().then(() => {
-      process.exit(0);
-    });
+    await handleClean();
   }
 
   if (watch) {

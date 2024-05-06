@@ -7,9 +7,11 @@
  * @packageDocumentation
  */
 
+import * as brandThemes from "./brand-themes";
+
 export * from "./tokens";
 export * from "./types";
 export * from "./colors";
 export * from "./palettes";
 export * from "./shadows";
-export * from "./masks";
+export const brand = brandThemes;

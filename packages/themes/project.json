@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "clean": {
-      "cache": true,
+      "cache": false,
       "executor": "nx:run-commands",
       "inputs": ["default", "^production"],
       "options": {
@@ -16,11 +16,13 @@
     "init": {
       "cache": true,
       "executor": "nx:run-commands",
+      "inputs": ["{workspaceRoot}/storm.json"],
+      "outputs": ["{projectRoot}/src/themes/*"],
       "dependsOn": ["^build"],
       "options": {
         "commands": [
           {
-            "command": "\"apps/cli/bin/dev.cmd\" theme init --clean"
+            "command": "\"apps/cli/bin/dev.cmd\" theme init --clean --outputPath \"packages/themes/src/themes\""
           }
         ]
       }
@@ -28,69 +30,31 @@
     "generate": {
       "cache": true,
       "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/src/themes/*"],
+      "outputs": ["{projectRoot}/src/brand-themes.ts"],
       "dependsOn": ["init"],
       "options": {
         "commands": [
           {
-            "command": "tamagui generate-themes ./src/themes-input.ts ./src/default-theme.ts"
+            "command": "tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts"
           }
         ],
         "cwd": "packages/themes"
       }
     },
-    // "build": {
-    //   "cache": true,
-    //   "executor": "@cyclone-ui/nx:build",
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["generate"],
-    //   "output": "{options.outputPath}",
-    //   "options": {
-    //     "outputPath": "dist/packages/themes",
-    //     "tsConfig": "packages/themes/tsconfig.json",
-    //     "project": "packages/themes/package.json",
-    //     "defaultConfiguration": "production",
-    //     "clean": false,
-    //     "bundle": false,
-    //     "assets": [
-    //       {
-    //         "input": "packages/themes",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": ".storm/themes",
-    //         "glob": "*.json",
-    //         "output": "/"
-    //       }
-    //     ]
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": true,
-    //       "verbose": true
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
-    //   }
-    // },
-
     "build": {
+      "cache": true,
       "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "dependsOn": ["generate"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/themes/src/index.ts",
-        "additionalEntryPoints": ["packages/themes/src/default-theme.ts"],
+        "additionalEntryPoints": ["packages/themes/src/brand-themes.ts"],
         "outputPath": "dist/packages/themes",
         "tsConfig": "packages/themes/tsconfig.json",
         "project": "packages/themes/package.json",
         "defaultConfiguration": "production",
+        "external": ["react", "react-native"],
         "assets": [
           {
             "input": "packages/themes",
@@ -100,11 +64,6 @@
           {
             "input": "",
             "glob": "LICENSE",
-            "output": "/"
-          },
-          {
-            "input": ".storm/themes",
-            "glob": "*.json",
             "output": "/"
           }
         ]

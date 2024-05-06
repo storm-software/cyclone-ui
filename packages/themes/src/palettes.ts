@@ -1,5 +1,6 @@
 import { colorTokens } from "./tokens";
-import { darkTheme, lightTheme } from "./colors";
+import colors from "./colors";
+import { ColorPalette } from "./types";
 
 type ObjectType = Record<PropertyKey, unknown>;
 
@@ -57,46 +58,52 @@ export function objectFromEntries<ARR_T extends EntriesType>(
 }
 
 export const palettes = (() => {
-  const lightTransparent = lightTheme.base["0"];
-  const darkTransparent = darkTheme.base["0"];
+  const lightestLightColor = colors.base.base1 as string;
+  const darkestDarkColor = colors.baseDark.base1 as string;
+  const darkestLightColor = colors.base.base14 ?? darkestDarkColor;
+  const lightestDarkColor = colors.baseDark.base14 ?? lightestLightColor;
+  if (!lightestLightColor || !darkestDarkColor) {
+    throw new Error("Missing transparent colors from palette");
+  }
 
   const transparent = (hsl: string, opacity = 0) =>
     hsl.replace(`%)`, `%, ${opacity})`).replace(`hsl(`, `hsla(`);
 
   const getColorPalette = (
-    colors: Record<string, any>,
-    color = colors[0]
+    colorPalette: ColorPalette,
+    foregroundColor: string,
+    backgroundColor: string
   ): string[] => {
-    const colorPalette = Object.values(colors);
+    const colorPaletteValues = Object.values(colorPalette);
 
     // were re-ordering these
     const [head, tail] = [
-      colorPalette.slice(0, 6),
-      colorPalette.slice(colorPalette.length - 5)
+      colorPaletteValues.slice(0, 6),
+      colorPaletteValues.slice(colorPaletteValues.length - 5)
     ];
 
     // add our transparent colors first/last
     // and make sure the last (foreground) color is white/black rather than colorful
     // this is mostly for consistency with the older theme-base
     return [
-      transparent(colorPalette[0]),
+      transparent(colorPaletteValues[0]),
+      backgroundColor,
       ...head,
       ...tail,
-      color,
-      transparent(colorPalette[colorPalette.length - 1])
+      foregroundColor,
+      transparent(colorPaletteValues[colorPaletteValues.length - 1])
     ];
   };
 
-  const lightPalette = [
-    lightTransparent,
-    ...Object.values(lightTheme.base),
-    darkTransparent
+  const lightBasePalette = [
+    transparent(lightestLightColor),
+    ...Object.values(colors.base),
+    transparent(darkestLightColor)
   ];
-
-  const darkPalette = [
-    darkTransparent,
-    ...Object.values(darkTheme.base),
-    lightTransparent
+  const darkBasePalette = [
+    transparent(darkestDarkColor),
+    ...Object.values(colors.baseDark),
+    transparent(lightestDarkColor)
   ];
 
   const lightPalettes = objectFromEntries(
@@ -106,9 +113,8 @@ export const palettes = (() => {
           `light_${key}`,
           getColorPalette(
             colorTokens.light[key],
-            Object.values(lightTheme.base)[
-              Object.values(lightTheme.base).length - 1
-            ]
+            darkestLightColor,
+            lightestLightColor
           )
         ] as const
     )
@@ -121,9 +127,8 @@ export const palettes = (() => {
           `dark_${key}`,
           getColorPalette(
             colorTokens.dark[key],
-            Object.values(darkTheme.base)[
-              Object.values(darkTheme.base).length - 1
-            ]
+            lightestDarkColor,
+            darkestDarkColor
           )
         ] as const
     )
@@ -135,8 +140,8 @@ export const palettes = (() => {
   };
 
   return {
-    light: lightPalette,
-    dark: darkPalette,
+    light: lightBasePalette,
+    dark: darkBasePalette,
     ...colorPalettes
   };
 })();

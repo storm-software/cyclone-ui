@@ -5,15 +5,17 @@
   "sourceRoot": "apps/cli/src",
   "targets": {
     "clean": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
       "options": {
         "command": "pnpm rimraf dist/apps/cli"
       }
     },
     "refresh-manifests": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/src/*"],
+      "outputs": ["{projectRoot}/oclif.manifest.json"],
       "dependsOn": ["build-tsc"],
       "options": {
         "command": "pnpm oclif manifest",
@@ -21,8 +23,10 @@
       }
     },
     "refresh-readme": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/src/*"],
+      "outputs": ["{projectRoot}/README.md"],
       "dependsOn": ["build-tsc"],
       "options": {
         "command": "pnpm oclif readme",
@@ -30,10 +34,10 @@
       }
     },
     "build-tsc": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
-      "outputs": ["{projectRoot}/dist"],
-      "inputs": ["{projectRoot}/*"],
+      "inputs": ["{projectRoot}/src/*"],
+      "outputs": ["{workspaceRoot}/dist/apps/cli"],
       "dependsOn": ["clean"],
       "options": {
         "commands": ["pnpm rimraf dist/apps/cli", "pnpm tsc -b ./apps/cli/tsconfig.json"],
@@ -41,10 +45,10 @@
       }
     },
     "build": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
-      "outputs": ["{projectRoot}/dist"],
-      "inputs": ["{projectRoot}/*"],
+      "inputs": ["{projectRoot}/src/*"],
+      "outputs": ["{workspaceRoot}/dist/apps/cli"],
       "dependsOn": ["refresh-readme", "refresh-manifests"],
       "options": {
         "commands": [

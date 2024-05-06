@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "strict": false,
     "declaration": true,
-    "types": ["node"]
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "files": [],
   "include": [],

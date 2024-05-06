@@ -8,6 +8,9 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/input"
   },
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -20,24 +23,28 @@
   },
   "main": "dist/cjs",
   "module": "dist/esm",
-  "source": "src/index.ts",
   "types": "./types/index.d.ts",
+  "files": [
+    "types",
+    "src",
+    "dist"
+  ],
   "dependencies": {
-    "@tamagui/compose-refs": "^1.95.3",
-    "@tamagui/constants": "^1.95.3",
-    "@tamagui/core": "^1.95.3",
-    "@tamagui/focusable": "^1.95.3",
-    "@tamagui/font-size": "^1.95.3",
-    "@tamagui/get-button-sized": "^1.95.3",
-    "@tamagui/get-font-sized": "^1.95.3",
-    "@tamagui/get-token": "^1.95.3",
-    "@tamagui/group": "^1.95.3",
-    "@tamagui/helpers": "^1.95.3",
-    "@tamagui/helpers-tamagui": "^1.95.3",
-    "@tamagui/label": "^1.95.3",
-    "@tamagui/stacks": "^1.95.3",
-    "@tamagui/text": "^1.95.3",
-    "@tamagui/web": "^1.95.3"
+    "@tamagui/compose-refs": "^1.96.0",
+    "@tamagui/constants": "^1.96.0",
+    "@tamagui/core": "^1.96.0",
+    "@tamagui/focusable": "^1.96.0",
+    "@tamagui/font-size": "^1.96.0",
+    "@tamagui/get-button-sized": "^1.96.0",
+    "@tamagui/get-font-sized": "^1.96.0",
+    "@tamagui/get-token": "^1.96.0",
+    "@tamagui/group": "^1.96.0",
+    "@tamagui/helpers": "^1.96.0",
+    "@tamagui/helpers-tamagui": "^1.96.0",
+    "@tamagui/label": "^1.96.0",
+    "@tamagui/stacks": "^1.96.0",
+    "@tamagui/text": "^1.96.0",
+    "@tamagui/web": "^1.96.0"
   },
   "devDependencies": {
     "react": "^18.2.0",

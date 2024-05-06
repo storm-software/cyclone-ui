@@ -8,12 +8,12 @@ const meta: Meta<typeof Collapsible> = {
   component: Collapsible,
   tags: ["autodocs"],
   render: (args: any) => (
-    <View>
+    <Collapsible>
       <Collapsible.Trigger>+</Collapsible.Trigger>
       <Collapsible.Content>
-        <Text>Some collapsed content</Text>
+        <Text>{args.children}</Text>
       </Collapsible.Content>
-    </View>
+    </Collapsible>
   )
 } satisfies Meta<typeof Collapsible>;
 
@@ -23,6 +23,6 @@ type Story = StoryObj<typeof Collapsible>;
 
 export const Base: Story = {
   args: {
-    children: "Button Text"
+    children: "Some collapsed content"
   }
 };

@@ -1,4 +1,5 @@
 {
+  "$schema": "https://cdn.jsdelivr.net/npm/@storm-software/config/schemas/storm.schema.json",
   "extends": "./node_modules/@storm-software/config/presets/base.json",
   "name": "cyclone-ui",
   "namespace": "cyclone-ui",
@@ -14,29 +15,23 @@
   "colors": {
     "light": {
       "background": "#f4f4f5",
-      "foreground": "#1d232a",
-      "primary": "#1fb2a6",
-      "secondary": "#0ea5e9",
-      "tertiary": "#ec5990",
-      "accent": "#6366f1",
+      "foreground": "#121212",
+      "brand": "#1fb2a6",
+      "accent": "#8250df",
       "success": "#087f5b",
-      "info": "#58a6ff",
-      "warning": "#fcc419",
-      "error": "#990000",
-      "fatal": "#7d1a1a"
+      "info": "#0550ae",
+      "warning": "#e3b341",
+      "error": "#a40e26"
     },
     "dark": {
-      "background": "#1d232a",
-      "foreground": "#fcfcf5",
-      "primary": "#1fb2a6",
-      "secondary": "#0ea5e9",
-      "tertiary": "#f778ba",
-      "accent": "#7b61ff",
-      "success": "#56d364",
-      "info": "#a5d6ff",
-      "warning": "#e3b341",
-      "error": "#f85149",
-      "fatal": "#b62324"
+      "background": "#22272E",
+      "foreground": "#F6F8FA",
+      "brand": "#1fb2a6",
+      "accent": "#8256D0",
+      "success": "#087f5b",
+      "info": "#316DCA",
+      "warning": "#F3D371",
+      "error": "#d1242f"
     }
   },
   "extensions": {

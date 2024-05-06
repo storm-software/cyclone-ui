@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": false,
   "description": "Button component for Cyclone UI",
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -14,19 +17,23 @@
   },
   "main": "dist/cjs",
   "module": "dist/esm",
-  "source": "src/index.ts",
   "types": "./types/index.d.ts",
+  "files": [
+    "types",
+    "src",
+    "dist"
+  ],
   "dependencies": {
-    "@tamagui/constants": "^1.95.3",
-    "@tamagui/core": "^1.95.3",
-    "@tamagui/font-size": "^1.95.3",
-    "@tamagui/get-button-sized": "^1.95.3",
-    "@tamagui/helpers": "^1.95.3",
-    "@tamagui/helpers-tamagui": "^1.95.3",
-    "@tamagui/linear-gradient": "^1.95.3",
-    "@tamagui/stacks": "^1.95.3",
-    "@tamagui/text": "^1.95.3",
-    "@tamagui/web": "^1.95.3"
+    "@tamagui/constants": "^1.96.0",
+    "@tamagui/core": "^1.96.0",
+    "@tamagui/font-size": "^1.96.0",
+    "@tamagui/get-button-sized": "^1.96.0",
+    "@tamagui/helpers": "^1.96.0",
+    "@tamagui/helpers-tamagui": "^1.96.0",
+    "@tamagui/linear-gradient": "^1.96.0",
+    "@tamagui/stacks": "^1.96.0",
+    "@tamagui/text": "^1.96.0",
+    "@tamagui/web": "^1.96.0"
   },
   "devDependencies": {
     "react": "^18.2.0",

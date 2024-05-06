@@ -60,12 +60,9 @@ ${Object.keys(optionsRecord)
   const projectRoot = context.projectsConfigurations.projects[
     context.projectName
   ]!.root as string;
-  const outputPath = join(
-    config.workspaceRoot,
-    (options?.outputPath
-      ? options?.outputPath
-      : join("dist", projectRoot)) as string
-  );
+  const outputPath = (
+    options?.outputPath ? options?.outputPath : join("dist", projectRoot)
+  ) as string;
 
   writeDebug(
     `📦  Copying asset files to output directory: ${outputPath}`,
@@ -120,8 +117,8 @@ ${Object.keys(optionsRecord)
   writeDebug(`⚡  Running Tamagui build on the package`, config);
 
   await build(config, {
-    bundle: true,
     ...options,
+    clean: false,
     projectRoot,
     outputPath,
     tsConfig: options.tsConfig as string

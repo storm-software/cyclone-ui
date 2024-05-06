@@ -5,7 +5,7 @@
   "sourceRoot": "apps/storybook/src",
   "tags": [],
   "targets": {
-    "storybook": {
+    "dev": {
       "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4600,
@@ -17,7 +17,7 @@
         }
       }
     },
-    "build-storybook": {
+    "build": {
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
@@ -30,21 +30,21 @@
         }
       }
     },
-    "test-storybook": {
+    "test": {
       "executor": "nx:run-commands",
       "options": {
         "command": "test-storybook -c apps/storybook/.storybook --url=http://localhost:4600"
       }
     },
-    "static-storybook": {
+    "static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "storybook:build-storybook",
+        "buildTarget": "storybook:build",
         "staticFilePath": "dist/storybook/storybook"
       },
       "configurations": {
         "ci": {
-          "buildTarget": "storybook:build-storybook:ci"
+          "buildTarget": "storybook:build:ci"
         }
       }
     }
