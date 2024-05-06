@@ -15,7 +15,7 @@ on:
 
 jobs:
   release:
-    uses: storm-software/storm-ops/.github/workflows/release.yml@main
+    uses: storm-software/storm-ops/.github/workflows/ci-reusable.yml@main
     with:
       tag: ${{ inputs.TAG }}
       stormBot: Stormie-Bot
