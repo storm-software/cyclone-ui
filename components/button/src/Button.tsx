@@ -17,7 +17,14 @@ import { View } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { withStaticProperties } from "@tamagui/helpers";
 
-type ButtonVariant = "outlined" | "inverse" | "ghost" | "glass";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "outlined"
+  | "inverse"
+  | "ghost"
+  | "glass";
 
 type ButtonIconProps = { color?: any; size?: any };
 type IconProp =
@@ -91,8 +98,9 @@ const ButtonFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "medium",
+  animation: "slow",
   borderWidth: 1,
+
   backgroundColor: "$background",
   borderColor: "$borderColor",
 
@@ -134,24 +142,68 @@ const ButtonFrame = styled(View, {
     },
 
     variant: {
-      outlined: {
-        backgroundColor: "transparent",
-        borderColor: "$primary",
-        borderWidth: 3,
+      secondary: {
+        backgroundColor: "$secondary",
+        borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover",
+          backgroundColor: "$primary",
           borderColor: "$borderColorHover"
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundPress",
+          backgroundColor: "$primary",
           borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
-          backgroundColor: "$backgroundFocus",
+          backgroundColor: "$primary",
           borderColor: "$borderColorFocus"
+        }
+      },
+
+      tertiary: {
+        backgroundColor: "$tertiary",
+        borderColor: "$borderColor",
+
+        hoverStyle: {
+          backgroundColor: "$secondary",
+          borderColor: "$borderColorHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$secondary",
+          borderColor: "$borderColorPress"
+        },
+
+        focusVisibleStyle: {
+          backgroundColor: "$secondary",
+          borderColor: "$borderColorFocus"
+        }
+      },
+
+      outlined: {
+        backgroundColor: "transparent",
+        borderColor: "$primary",
+        borderWidth: 2,
+        color: "$primary",
+
+        hoverStyle: {
+          backgroundColor: "$backgroundHover",
+          borderColor: "$borderColorHover",
+          color: "$bg"
+        },
+
+        pressStyle: {
+          backgroundColor: "$backgroundPress",
+          borderColor: "$borderColorPress",
+          color: "$bg"
+        },
+
+        focusVisibleStyle: {
+          backgroundColor: "$backgroundFocus",
+          borderColor: "$borderColorFocus",
+          color: "$bg"
         }
       },
 
@@ -159,46 +211,41 @@ const ButtonFrame = styled(View, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderColor: "transparent",
+        color: "$fg",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorFocus"
         }
       },
 
       glass: {
         backgroundColor: "transparent",
-        borderWidth: 1,
         borderColor: "$borderColor",
+        color: "$fg",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
-          borderWidth: 1,
           borderColor: "$borderColorFocus"
         }
       }

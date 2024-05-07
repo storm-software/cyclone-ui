@@ -116,7 +116,7 @@ export const maskOptions = {
       backgroundHover: ColorPaletteShades.PRIMARY + 1,
       backgroundFocus: ColorPaletteShades.PRIMARY + 2,
       backgroundPress: ColorPaletteShades.PRIMARY + 2,
-      color: ColorPaletteShades.FOREGROUND,
+      color: ColorPaletteShades.BACKGROUND,
       colorHover: ColorPaletteShades.BACKGROUND,
       colorPress: ColorPaletteShades.BACKGROUND,
       colorFocus: ColorPaletteShades.BACKGROUND,

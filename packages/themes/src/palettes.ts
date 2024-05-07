@@ -1,6 +1,6 @@
 import { colorTokens } from "./tokens";
 import colors from "./colors";
-import { ColorPalette } from "./types";
+import { ColorPalette, ColorRole } from "./types";
 
 type ObjectType = Record<PropertyKey, unknown>;
 
@@ -60,8 +60,8 @@ export function objectFromEntries<ARR_T extends EntriesType>(
 export const palettes = (() => {
   const lightestLightColor = colors.base.base1 as string;
   const darkestDarkColor = colors.baseDark.base1 as string;
-  const darkestLightColor = colors.base.base14 ?? darkestDarkColor;
-  const lightestDarkColor = colors.baseDark.base14 ?? lightestLightColor;
+  const darkestLightColor = colors.base.base12 ?? darkestDarkColor;
+  const lightestDarkColor = colors.baseDark.base12 ?? lightestLightColor;
   if (!lightestLightColor || !darkestDarkColor) {
     throw new Error("Missing transparent colors from palette");
   }
@@ -97,42 +97,53 @@ export const palettes = (() => {
 
   const lightBasePalette = [
     transparent(lightestLightColor),
+    "hsl(0,0%,100%)",
     ...Object.values(colors.base),
+    "hsl(0,0%,0%)",
     transparent(darkestLightColor)
   ];
   const darkBasePalette = [
     transparent(darkestDarkColor),
+    darkestDarkColor,
     ...Object.values(colors.baseDark),
+    "hsl(0,0%,100%)",
     transparent(lightestDarkColor)
   ];
 
   const lightPalettes = objectFromEntries(
-    objectKeys(colorTokens.light).map(
-      key =>
-        [
-          `light_${key}`,
-          getColorPalette(
-            colorTokens.light[key],
-            darkestLightColor,
-            lightestLightColor
-          )
-        ] as const
-    )
+    objectKeys(colorTokens.light)
+      .filter(key => key !== ColorRole.BASE)
+      .map(
+        key =>
+          [
+            `light_${key}`,
+            getColorPalette(
+              colorTokens.light[key],
+              darkestLightColor,
+              lightestLightColor
+            )
+          ] as const
+      )
   );
 
   const darkPalettes = objectFromEntries(
-    objectKeys(colorTokens.dark).map(
-      key =>
-        [
-          `dark_${key}`,
-          getColorPalette(
-            colorTokens.dark[key],
-            lightestDarkColor,
-            darkestDarkColor
-          )
-        ] as const
-    )
+    objectKeys(colorTokens.dark)
+      .filter(key => key !== ColorRole.BASE)
+      .map(
+        key =>
+          [
+            `dark_${key}`,
+            getColorPalette(
+              colorTokens.dark[key],
+              lightestDarkColor,
+              darkestDarkColor
+            )
+          ] as const
+      )
   );
+
+  lightPalettes.light_base = lightBasePalette;
+  darkPalettes.dark_base = darkBasePalette;
 
   const colorPalettes = {
     ...lightPalettes,

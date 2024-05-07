@@ -89,9 +89,10 @@ export const defaultStyles = {
   size: "$true",
   fontFamily: "$body",
   borderWidth: 1,
-  outlineWidth: 0,
+  outlineWidth: 1,
+  outlineColor: "$background",
   color: "$color",
-  animation: "medium",
+  animation: "slow",
 
   ...(isWeb
     ? {
@@ -113,8 +114,7 @@ export const defaultStyles = {
 
   focusStyle: {
     borderColor: "$borderColorFocus",
-    borderWidth: 0,
-    fontWeight: "$4"
+    borderWidth: 0
   },
 
   focusVisibleStyle: {
@@ -153,7 +153,6 @@ export const InputBaseFrame = styled(
   },
   {
     isInput: true,
-
     accept: {
       placeholderTextColor: "color",
       selectionColor: "color"
@@ -212,8 +211,10 @@ export const defaultInputGroupStyles = {
   size: "$true",
   fontFamily: "$body",
   borderWidth: 1,
-  outlineWidth: 0,
+  outlineColor: "$background",
+  outlineWidth: 2,
   color: "$color",
+  animation: "slow",
 
   ...(isWeb
     ? {
@@ -442,6 +443,8 @@ export const InputContainerFrame = styled(View, {
 
 export const InputLabel = styled(Label, {
   context: InputContext,
+  fontFamily: "$label",
+
   variants: {
     size: {
       "...fontSize": getFontSized as any

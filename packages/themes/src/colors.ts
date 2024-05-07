@@ -21,9 +21,7 @@ import {
 import {
   ExtendedColorThemeTokens,
   ColorThemeTokens,
-  ColorfulColorTheme,
-  ColorfulColorRole,
-  BaseColorTheme
+  ColorTheme
 } from "./types";
 
 export const external: ExtendedColorThemeTokens = {
@@ -45,21 +43,12 @@ export const external: ExtendedColorThemeTokens = {
   yellowDark
 };
 
-const getTheme = (
-  theme: ColorfulColorTheme<ColorfulColorRole> | BaseColorTheme<"base">,
-  dark = false
-) => {
-  return Object.keys(theme).reduce(
-    (
-      ret: ColorfulColorTheme<ColorfulColorRole> | BaseColorTheme<"base">,
-      key: string
-    ) => {
-      ret[`${key}${dark ? "Dark" : ""}`] = theme[key];
+const getTheme = (theme: ColorTheme, dark = false) => {
+  return Object.keys(theme).reduce((ret: ColorTheme, key: string) => {
+    ret[`${key}${dark ? "Dark" : ""}`] = theme[key];
 
-      return ret;
-    },
-    {} as ColorThemeTokens
-  );
+    return ret;
+  }, {} as ColorThemeTokens);
 };
 
 export const colors = {

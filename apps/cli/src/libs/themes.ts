@@ -54,8 +54,8 @@ export const addPalette = (theme: ColorTheme, color: string, type: ColorPaletteT
 
   const currentLength = Object.keys(theme[type]).length
   theme[type] = chroma
-    .scale([color, theme['base']['base12']])
-    .colors(4)
+    .scale([color, theme['base']['base10']])
+    .colors(6)
     .slice(1, 3)
     .reduce((acc: {[x: string]: string}, value: string, index: number) => {
       acc[`${type}${currentLength + index + 1}`] = chroma(value).css('hsl')
@@ -72,7 +72,7 @@ export const initialTheme = (colors: Record<ColorThemeType, string>, themeType: 
   theme.base = chroma
     .scale(themeType === ColorThemeType.LIGHT ? [colors.light, colors.dark] : [colors.dark, colors.light])
     .gamma(themeType === 'dark' ? 2 : 1)
-    .colors(14)
+    .colors(10)
     .reduce((acc: {[x: string]: string}, value: string, index: number) => {
       acc[`base${index + 1}`] = chroma(value).css('hsl')
       return acc
