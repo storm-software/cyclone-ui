@@ -20,7 +20,7 @@ jobs:
       tag: ${{ inputs.TAG }}
       stormBot: Stormie-Bot
     secrets:
-      githubToken: ${{ github.token }}
+      githubToken: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
       npmToken: ${{ secrets.STORM_BOT_NPM_TOKEN }}
       cargoToken: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
       slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}

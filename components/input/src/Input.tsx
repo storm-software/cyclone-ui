@@ -1,6 +1,11 @@
 import { getFontSized } from "@tamagui/get-font-sized";
 import { getSpace } from "@tamagui/get-token";
-import type { GetProps, SizeVariantSpreadFunction } from "@tamagui/web";
+import type {
+  GetProps,
+  SizeVariantSpreadFunction,
+  TextProps,
+  VariantSpreadExtras
+} from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
 import { useState } from "react";
 import { Label } from "@tamagui/label";
@@ -447,10 +452,23 @@ export const InputLabel = styled(Label, {
 
   variants: {
     size: {
-      "...fontSize": getFontSized as any
-    },
-    variant: {
-      outlined: {}
+      "...fontSize": (
+        val: FontSizeTokens,
+        config: VariantSpreadExtras<TextProps>
+      ) => {
+        const size = getFontSized(val, config);
+        if (!size) {
+          return;
+        }
+
+        return Object.keys(size).reduce(
+          (ret: Record<string, any>, key: string) => {
+            ret[key] = size[key] * 0.2;
+            return ret;
+          },
+          {} as Record<string, any>
+        );
+      }
     }
   } as const
 });
