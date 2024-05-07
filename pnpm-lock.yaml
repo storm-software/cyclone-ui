@@ -687,6 +687,9 @@ importers:
       '@tamagui/web':
         specifier: ^1.96.0
         version: 1.96.0(react@18.2.0)
+      tamagui:
+        specifier: ^1.96.0
+        version: 1.96.0(@types/react@18.2.75)(react-dom@18.2.0)(react-native-web@0.19.10)(react-native@0.73.2)(react@18.2.0)
     devDependencies:
       react:
         specifier: ^18.2.0

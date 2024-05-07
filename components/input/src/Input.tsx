@@ -19,191 +19,19 @@ import {
   styled,
   createStyledContext,
   useTheme,
-  getVariable,
-  getVariableValue,
-  useComposedRefs
+  getVariable
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { useFocusable } from "@tamagui/focusable";
-import { TextInput } from "react-native";
-import { useRef } from "react";
-import { getButtonSized } from "@tamagui/get-button-sized";
-
-export const textAreaSizeVariant: SizeVariantSpreadFunction<any> = (
-  val = "$true",
-  extras: any = {}
-) => {
-  const { props } = extras;
-  const buttonStyles = getButtonSized(val, extras);
-  const fontStyle = getFontSized(val as any, extras)!;
-  const lines = props.rows ?? props.numberOfLines;
-  const height =
-    typeof lines === "number"
-      ? lines * getVariableValue(fontStyle.lineHeight)
-      : "auto";
-  const paddingVertical = getSpace(val, {
-    shift: -2,
-    bounds: [2]
-  });
-  const paddingHorizontal = getSpace(val, {
-    shift: -1,
-    bounds: [2]
-  });
-  return {
-    ...buttonStyles,
-    ...fontStyle,
-    paddingVertical,
-    paddingHorizontal,
-    height
-  };
-};
-
-export const inputBaseSizeVariant: SizeVariantSpreadFunction<any> = (
-  val = "$true",
-  extras: any = {}
-) => {
-  if (extras.props.multiline || extras.props.numberOfLines > 1) {
-    return textAreaSizeVariant(val, extras);
-  }
-  const buttonStyles = getButtonSized(val, extras);
-  const paddingHorizontal = getSpace(val, {
-    shift: -2,
-    bounds: [2]
-  });
-  const fontStyle = getFontSized(val as any, extras);
-  // lineHeight messes up input on native
-  if (!isWeb && fontStyle) {
-    delete fontStyle["lineHeight"];
-  }
-  return {
-    ...fontStyle,
-    ...buttonStyles,
-    paddingHorizontal
-  };
-};
+import { Input as TamaguiInput } from "tamagui";
+import { FlatListComponent } from "react-native";
 
 const defaultContextValues = {
   size: "$true",
-  scaleIcon: 1.0,
+  scaleIcon: 1.2,
   color: undefined,
   required: false
 } as const;
-
-export const defaultStyles = {
-  size: "$true",
-  fontFamily: "$body",
-  borderWidth: 1,
-  outlineWidth: 1,
-  outlineColor: "$background",
-  color: "$color",
-  animation: "slow",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  borderColor: "$borderColor",
-  backgroundColor: "$background",
-
-  // this fixes a flex bug where it overflows container
-  minWidth: 0,
-
-  hoverStyle: {
-    borderColor: "$borderColorHover"
-  },
-
-  focusStyle: {
-    borderColor: "$borderColorFocus",
-    borderWidth: 0
-  },
-
-  focusVisibleStyle: {
-    outlineColor: "$brand10",
-    outlineWidth: 2,
-    outlineStyle: "solid"
-  }
-} as const;
-
-export const InputBaseFrame = styled(
-  TextInput,
-  {
-    name: "Input",
-
-    variants: {
-      unstyled: {
-        false: defaultStyles
-      },
-
-      size: {
-        "...size": inputBaseSizeVariant
-      },
-
-      variant: {
-        outlined: {}
-      },
-
-      disabled: {
-        true: {}
-      }
-    } as const,
-
-    defaultVariants: {
-      unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
-    }
-  },
-  {
-    isInput: true,
-    accept: {
-      placeholderTextColor: "color",
-      selectionColor: "color"
-    } as const
-  }
-);
-
-export type InputBase = TextInput;
-export type InputBaseFrameProps = GetProps<typeof InputFrame>;
-export type InputBaseExtraProps = {
-  rows?: number;
-};
-export type InputBaseProps = InputBaseFrameProps & InputBaseExtraProps;
-export const InputBase = InputBaseFrame.styleable<InputExtraProps>(
-  (propsIn, forwardedRef) => {
-    const ref = useRef<InputBase>(null);
-    const composedRefs = useComposedRefs(forwardedRef, ref);
-    const props = useInputBaseProps(propsIn, composedRefs);
-
-    return <InputBaseFrame {...props} />;
-  }
-);
-
-function useInputBaseProps(props: InputBaseProps, ref: any) {
-  const theme = useTheme();
-  const { onChangeText, ref: combinedRef } = useFocusable({
-    // @ts-ignore
-    props,
-    ref,
-    isInput: true
-  });
-
-  const placeholderColorProp = props.placeholderTextColor;
-  const placeholderTextColor =
-    theme[placeholderColorProp as any]?.get() ??
-    placeholderColorProp ??
-    theme.placeholderColor?.get();
-
-  return {
-    ref: combinedRef,
-    readOnly: props.disabled,
-    ...props,
-    placeholderTextColor,
-    onChangeText
-  };
-}
 
 export const InputContext = createStyledContext<{
   size: FontSizeTokens;
@@ -216,10 +44,8 @@ export const defaultInputGroupStyles = {
   size: "$true",
   fontFamily: "$body",
   borderWidth: 1,
-  outlineColor: "$background",
-  outlineWidth: 2,
+  outlineWidth: 0,
   color: "$color",
-  animation: "slow",
 
   ...(isWeb
     ? {
@@ -234,15 +60,17 @@ export const defaultInputGroupStyles = {
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
+
   hoverStyle: {
     borderColor: "$borderColorHover"
   },
 
   focusStyle: {
     outlineColor: "$brand10",
-    outlineWidth: 3,
+    outlineWidth: 2,
+    outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderWidth: 0
+    borderColor: "$borderColorFocus"
   }
 } as const;
 
@@ -257,28 +85,27 @@ const InputGroupFrame = styled(XGroup, {
       ":number": {} as any
     },
     applyFocusStyle: {
-      ":boolean": (val: any, { props }: any) => {
+      ":boolean": (val, { props }) => {
         if (val) {
           return props.focusStyle || defaultInputGroupStyles.focusStyle;
         }
-
-        return;
       }
     },
     size: {
-      "...size": (val: any, { tokens }: any) => {
+      "...size": (val, { tokens }) => {
         return {
           borderRadius: tokens.radius[val]
         };
       }
     },
-    variant: {
-      outlined: {}
+    required: {
+      ":boolean": (val, { tokens }) => ({})
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    required: false
   }
 });
 
@@ -323,7 +150,8 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   };
 };
 
-const InputFrame = styled(InputBase, {
+const InputFrame = styled(TamaguiInput, {
+  unstyled: true,
   context: InputContext
 });
 
@@ -342,7 +170,6 @@ const InputImpl = InputFrame.styleable<{ required?: boolean }>((props, ref) => {
         onBlur={() => setFocused(false)}
         size={size}
         {...rest}
-        variant="outlined"
       />
     </View>
   );
@@ -478,7 +305,7 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <XStack gap="$1">
+    <XStack gap="$1.5">
       <InputLabel ref={forwardedRef} color={color} {...rest}>
         {children}
       </InputLabel>
@@ -489,7 +316,7 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
             fontWeight="900"
             fontSize="$7"
             position="absolute"
-            top={-2}>
+            top={-1}>
             *
           </Text>
         </View>

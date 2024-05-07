@@ -12777,7 +12777,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    $0: number;\n    \"$0.25\": number;\n    \"$0.5\": number;\n    \"$0.75\": number;\n    $1: number;\n    \"$1.5\": number;\n    $2: number;\n    \"$2.5\": number;\n    $3: number;\n    \"$3.5\": number;\n    $4: number;\n    $true: number;\n    \"$4.5\": number;\n    $5: number;\n    $6: number;\n    $7: number;\n    $8: number;\n    $9: number;\n    $10: number;\n    $11: number;\n    $12: number;\n    $13: number;\n    $14: number;\n    $15: number;\n    $16: number;\n    $17: number;\n    $18: number;\n    $19: number;\n    $20: number;\n}"
+              "text": "{\n    $0: number;\n    \"$0.25\": number;\n    \"$0.5\": number;\n    \"$0.75\": number;\n    $1: number;\n    \"$1.25\": number;\n    \"$1.5\": number;\n    $2: number;\n    \"$2.5\": number;\n    $3: number;\n    \"$3.5\": number;\n    $4: number;\n    $true: number;\n    \"$4.5\": number;\n    $5: number;\n    $6: number;\n    $7: number;\n    $8: number;\n    $9: number;\n    $10: number;\n    $11: number;\n    $12: number;\n    $13: number;\n    $14: number;\n    $15: number;\n    $16: number;\n    $17: number;\n    $18: number;\n    $19: number;\n    $20: number;\n}"
             }
           ],
           "fileUrlPath": "packages/themes/src/tokens.ts",
@@ -14670,6 +14670,15 @@
             },
             {
               "kind": "Content",
+              "text": "<number>;\n        1.25: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
               "text": "<number>;\n        1.5: "
             },
             {
@@ -14914,6 +14923,15 @@
             {
               "kind": "Content",
               "text": "<number>;\n        [-0.75]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "<number>;\n        [-1.25]: "
             },
             {
               "kind": "Reference",
@@ -15175,6 +15193,15 @@
             {
               "kind": "Content",
               "text": "<number>;\n        0.75: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "<number>;\n        1.25: "
             },
             {
               "kind": "Reference",
@@ -18837,6 +18864,15 @@
             },
             {
               "kind": "Content",
+              "text": "<number>;\n        1.25: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
               "text": "<number>;\n        1.5: "
             },
             {
@@ -19081,6 +19117,15 @@
             {
               "kind": "Content",
               "text": "<number>;\n        [-0.75]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "<number>;\n        [-1.25]: "
             },
             {
               "kind": "Reference",
@@ -19350,6 +19395,15 @@
             },
             {
               "kind": "Content",
+              "text": "<number>;\n        1.25: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
               "text": "<number>;\n        1.5: "
             },
             {
@@ -19404,7 +19458,7 @@
           "name": "tokens",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 1436
+            "endIndex": 1448
           }
         },
         {

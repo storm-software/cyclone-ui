@@ -44,7 +44,8 @@
     "@tamagui/label": "^1.96.0",
     "@tamagui/stacks": "^1.96.0",
     "@tamagui/text": "^1.96.0",
-    "@tamagui/web": "^1.96.0"
+    "@tamagui/web": "^1.96.0",
+    "tamagui": "^1.96.0"
   },
   "devDependencies": {
     "react": "^18.2.0",
