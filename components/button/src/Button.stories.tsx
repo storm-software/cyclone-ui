@@ -25,13 +25,6 @@ export const Secondary: Story = {
   }
 };
 
-export const Outlined: Story = {
-  args: {
-    children: "Button Text",
-    variant: "outlined"
-  }
-};
-
 export const Ghost: Story = {
   args: {
     children: "Button Text",
@@ -61,14 +54,6 @@ export const BrandSecondary: Story = {
   }
 };
 
-export const BrandOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "outlined"
-  }
-};
-
 export const BrandGhost: Story = {
   args: {
     children: "Button Text",
@@ -85,41 +70,33 @@ export const BrandGlass: Story = {
   }
 };
 
-export const AccentPrimary: Story = {
+export const HelpPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "accent"
+    theme: "help"
   }
 };
 
-export const AccentSecondary: Story = {
+export const HelpSecondary: Story = {
   args: {
     children: "Button Text",
-    theme: "accent",
+    theme: "help",
     variant: "secondary"
   }
 };
 
-export const AccentOutlined: Story = {
+export const HelpGhost: Story = {
   args: {
     children: "Button Text",
-    theme: "accent",
-    variant: "outlined"
-  }
-};
-
-export const AccentGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "accent",
+    theme: "help",
     variant: "ghost"
   }
 };
 
-export const AccentGlass: Story = {
+export const HelpGlass: Story = {
   args: {
     children: "Button Text",
-    theme: "accent",
+    theme: "help",
     variant: "glass"
   }
 };
@@ -136,14 +113,6 @@ export const ErrorSecondary: Story = {
     children: "Button Text",
     theme: "error",
     variant: "secondary"
-  }
-};
-
-export const ErrorOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "error",
-    variant: "outlined"
   }
 };
 
@@ -178,14 +147,6 @@ export const WarningSecondary: Story = {
   }
 };
 
-export const WarningOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "warning",
-    variant: "outlined"
-  }
-};
-
 export const WarningGhost: Story = {
   args: {
     children: "Button Text",
@@ -217,14 +178,6 @@ export const InfoSecondary: Story = {
   }
 };
 
-export const InfoOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "outlined"
-  }
-};
-
 export const InfoGhost: Story = {
   args: {
     children: "Button Text",
@@ -253,14 +206,6 @@ export const SuccessSecondary: Story = {
     children: "Button Text",
     theme: "success",
     variant: "secondary"
-  }
-};
-
-export const SuccessOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "success",
-    variant: "outlined"
   }
 };
 

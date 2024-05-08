@@ -46,6 +46,7 @@ export const buildThemes = () => {
       base: colorThemeDefinition("base"),
       brand: colorThemeDefinition("brand"),
       accent: colorThemeDefinition("accent"),
+      help: colorThemeDefinition("help"),
       success: colorThemeDefinition("success"),
       warning: colorThemeDefinition("warning"),
       error: colorThemeDefinition("error"),

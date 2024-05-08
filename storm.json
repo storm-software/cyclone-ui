@@ -17,7 +17,7 @@
       "background": "#f4f4f5",
       "foreground": "#121212",
       "brand": "#1fb2a6",
-      "accent": "#8250df",
+      "help": "#8250df",
       "success": "#087f5b",
       "info": "#0550ae",
       "warning": "#e3b341",
@@ -27,9 +27,9 @@
       "background": "#22272E",
       "foreground": "#F6F8FA",
       "brand": "#1fb2a6",
-      "accent": "#8256D0",
+      "help": "#8256D0",
       "success": "#087f5b",
-      "info": "#316DCA",
+      "info": "#58a6ff",
       "warning": "#F3D371",
       "error": "#d1242f"
     }

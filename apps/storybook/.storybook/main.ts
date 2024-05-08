@@ -31,7 +31,8 @@ const config: StorybookConfig = {
       "process.env.STORYBOOK": true,
       // "process.env.TAMAGUI_TARGET": "web",
       "process.env.NODE_ENV":
-        configType === "PRODUCTION" ? "production" : "development"
+        configType === "PRODUCTION" ? "production" : "development",
+      "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": false
     };
     config.resolve = {
       ...config.resolve,
@@ -44,7 +45,8 @@ const config: StorybookConfig = {
   },
   env: config => ({
     ...config,
-    "process.env.STORYBOOK": true
+    "process.env.STORYBOOK": true,
+    "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": false
   }),
   docs: {
     autodocs: true,

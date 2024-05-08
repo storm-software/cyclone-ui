@@ -106,17 +106,29 @@ const ButtonFrame = styled(View, {
 
   hoverStyle: {
     backgroundColor: "$backgroundHover",
-    borderColor: "$borderColorHover"
+    borderColor: "$borderColorHover",
+    outlineColor: "$primary",
+    outlineStyle: "solid",
+    outlineWidth: 2,
+    outlineOffset: "$1.25"
   },
 
   pressStyle: {
     backgroundColor: "$backgroundPress",
-    borderColor: "$borderColorPress"
+    borderColor: "$borderColorPress",
+    outlineColor: "$primary",
+    outlineStyle: "solid",
+    outlineWidth: 2,
+    outlineOffset: "$1.25"
   },
 
   focusVisibleStyle: {
     backgroundColor: "$backgroundFocus",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderColorFocus",
+    outlineColor: "$primary",
+    outlineStyle: "solid",
+    outlineWidth: 2,
+    outlineOffset: "$1.25"
   },
 
   variants: {
@@ -143,67 +155,27 @@ const ButtonFrame = styled(View, {
 
     variant: {
       secondary: {
-        backgroundColor: "$secondary",
-        borderColor: "$borderColor",
-
-        hoverStyle: {
-          backgroundColor: "$primary",
-          borderColor: "$borderColorHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "$primary",
-          borderColor: "$borderColorPress"
-        },
-
-        focusVisibleStyle: {
-          backgroundColor: "$primary",
-          borderColor: "$borderColorFocus"
-        }
-      },
-
-      tertiary: {
-        backgroundColor: "$tertiary",
-        borderColor: "$borderColor",
-
-        hoverStyle: {
-          backgroundColor: "$secondary",
-          borderColor: "$borderColorHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "$secondary",
-          borderColor: "$borderColorPress"
-        },
-
-        focusVisibleStyle: {
-          backgroundColor: "$secondary",
-          borderColor: "$borderColorFocus"
-        }
-      },
-
-      outlined: {
         backgroundColor: "transparent",
         borderColor: "$primary",
         borderWidth: 2,
         color: "$primary",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover",
-          borderColor: "$borderColorHover",
-          color: "$bg"
+          backgroundColor: "transparent",
+          borderColor: "$backgroundHover",
+          outlineColor: "$backgroundHover"
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundPress",
-          borderColor: "$borderColorPress",
-          color: "$bg"
+          backgroundColor: "transparent",
+          borderColor: "$backgroundPress",
+          outlineColor: "$backgroundPress"
         },
 
         focusVisibleStyle: {
-          backgroundColor: "$backgroundFocus",
-          borderColor: "$borderColorFocus",
-          color: "$bg"
+          backgroundColor: "transparent",
+          borderColor: "$backgroundFocus",
+          outlineColor: "$backgroundFocus"
         }
       },
 
@@ -329,7 +301,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   backgroundColor: "transparent",
   borderRadius: "$4",
   animation: "medium",
-  opacity: 0.5
+  opacity: 0.6
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
@@ -365,10 +337,10 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}
-            $group-button-hover={{ backgroundColor: "$secondary" }}
+            $group-button-hover={{ backgroundColor: "$muted" }}
             $group-button-press={{ backgroundColor: "$primary" }}
             style={{
-              filter: "blur(3px)"
+              filter: "blur(1px)"
             }}
           />
         )}

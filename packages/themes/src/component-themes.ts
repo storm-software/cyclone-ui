@@ -78,7 +78,7 @@ export const componentThemes = {
   },
 
   RadioGroupItem: {
-    mask: "softenBorder2",
+    mask: "softenBorder",
     ...maskOptions.component
   },
 
@@ -117,12 +117,12 @@ export const componentThemes = {
   ModalOverlay: overlayThemeDefinitions,
 
   Input: {
-    mask: "softenBorder2",
+    mask: "identity",
     ...maskOptions.component
   },
 
   TextArea: {
-    mask: "softenBorder2",
+    mask: "identity",
     ...maskOptions.component
   }
 } satisfies ThemeDefinitions<keyof Masks>;

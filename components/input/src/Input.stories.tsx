@@ -36,42 +36,9 @@ export const Disabled: Story = {
   }
 };
 
-export const Primary: Story = {
+export const Help: Story = {
   args: {
-    theme: "primary"
-  }
-};
-
-export const PrimaryOutlined: Story = {
-  args: {
-    theme: "primary",
-    variant: "outlined"
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    theme: "secondary"
-  }
-};
-
-export const SecondaryOutlined: Story = {
-  args: {
-    theme: "secondary",
-    variant: "outlined"
-  }
-};
-
-export const Tertiary: Story = {
-  args: {
-    theme: "tertiary"
-  }
-};
-
-export const TertiaryOutlined: Story = {
-  args: {
-    theme: "tertiary",
-    variant: "outlined"
+    theme: "help"
   }
 };
 
@@ -81,23 +48,9 @@ export const Error: Story = {
   }
 };
 
-export const ErrorOutlined: Story = {
-  args: {
-    theme: "error",
-    variant: "outlined"
-  }
-};
-
 export const Warning: Story = {
   args: {
     theme: "warning"
-  }
-};
-
-export const WarningOutlined: Story = {
-  args: {
-    theme: "warning",
-    variant: "outlined"
   }
 };
 
@@ -107,35 +60,8 @@ export const Info: Story = {
   }
 };
 
-export const InfoOutlined: Story = {
-  args: {
-    theme: "info",
-    variant: "outlined"
-  }
-};
-
 export const Success: Story = {
   args: {
     theme: "success"
-  }
-};
-
-export const SuccessOutlined: Story = {
-  args: {
-    theme: "success",
-    variant: "outlined"
-  }
-};
-
-export const Accent: Story = {
-  args: {
-    theme: "accent"
-  }
-};
-
-export const AccentOutlined: Story = {
-  args: {
-    theme: "accent",
-    variant: "outlined"
   }
 };

@@ -24,7 +24,6 @@ import {
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { Input as TamaguiInput } from "tamagui";
-import { FlatListComponent } from "react-native";
 
 const defaultContextValues = {
   size: "$true",
@@ -43,9 +42,14 @@ export const InputContext = createStyledContext<{
 export const defaultInputGroupStyles = {
   size: "$true",
   fontFamily: "$body",
-  borderWidth: 1,
-  outlineWidth: 0,
   color: "$color",
+  backgroundColor: "$background",
+  borderRadius: "$radius",
+  borderWidth: 1,
+  borderColor: "$borderColor",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  outlineStyle: "none",
 
   ...(isWeb
     ? {
@@ -55,18 +59,15 @@ export const defaultInputGroupStyles = {
         focusable: true
       }),
 
-  borderColor: "$borderColor",
-  backgroundColor: "$background",
-
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderColorHover"
+    borderColor: "$accent10"
   },
 
   focusStyle: {
-    outlineColor: "$brand10",
+    outlineColor: "$accent10",
     outlineWidth: 2,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
@@ -195,9 +196,6 @@ export const InputIconFrame = styled(View, {
           paddingHorizontal: tokens.space[val]
         };
       }
-    },
-    variant: {
-      outlined: {}
     }
   } as const
 });
@@ -262,9 +260,6 @@ export const InputContainerFrame = styled(View, {
     },
     required: {
       ":boolean": {} as any
-    },
-    variant: {
-      outlined: {}
     }
   } as const,
 
@@ -359,9 +354,6 @@ export const InputInfo = styled(Text, {
           fontStyle
         };
       }
-    },
-    variant: {
-      outlined: {}
     }
   } as const
 });
@@ -377,9 +369,6 @@ const InputXGroup = styled(XGroup, {
           borderRadius: radiusToken
         };
       }
-    },
-    variant: {
-      outlined: {}
     }
   } as const
 });

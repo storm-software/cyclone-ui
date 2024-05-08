@@ -20,12 +20,12 @@ const tamaguiConfig = {
     "@cyclone-ui/input",
     "@cyclone-ui/collapsible",
     "tamagui"
-  ],
+  ]
 
   /**
    * these are mostly not necessary except for advanced cases:
    **/
-  outputCSS: "./public/tamagui.css"
+  // outputCSS: "./public/tamagui.css"
   // importsWhitelist: ["constants.js", "colors.js"],
   // disableExtraction: process.env.NODE_ENV === "development"
   // themeBuilder: {
@@ -74,5 +74,8 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true
     }
+  },
+  define: {
+    "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": false
   }
 });
