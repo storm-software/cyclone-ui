@@ -26,9 +26,9 @@
   "module": "dist/esm",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@tamagui/core": "^1.96.0",
-    "@tamagui/portal": "^1.96.0",
-    "@tamagui/web": "^1.96.0",
+    "@tamagui/core": "^1.97.1",
+    "@tamagui/portal": "^1.97.1",
+    "@tamagui/web": "^1.97.1",
     "zustand": "^4.5.2"
   },
   "publishConfig": {

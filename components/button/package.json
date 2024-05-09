@@ -24,16 +24,16 @@
     "dist"
   ],
   "dependencies": {
-    "@tamagui/constants": "^1.96.0",
-    "@tamagui/core": "^1.96.0",
-    "@tamagui/font-size": "^1.96.0",
-    "@tamagui/get-button-sized": "^1.96.0",
-    "@tamagui/helpers": "^1.96.0",
-    "@tamagui/helpers-tamagui": "^1.96.0",
-    "@tamagui/linear-gradient": "^1.96.0",
-    "@tamagui/stacks": "^1.96.0",
-    "@tamagui/text": "^1.96.0",
-    "@tamagui/web": "^1.96.0"
+    "@tamagui/constants": "^1.97.1",
+    "@tamagui/core": "^1.97.1",
+    "@tamagui/font-size": "^1.97.1",
+    "@tamagui/get-button-sized": "^1.97.1",
+    "@tamagui/helpers": "^1.97.1",
+    "@tamagui/helpers-tamagui": "^1.97.1",
+    "@tamagui/linear-gradient": "^1.97.1",
+    "@tamagui/stacks": "^1.97.1",
+    "@tamagui/text": "^1.97.1",
+    "@tamagui/web": "^1.97.1"
   },
   "devDependencies": {
     "react": "^18.2.0",

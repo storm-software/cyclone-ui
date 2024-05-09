@@ -30,11 +30,11 @@
     "dist"
   ],
   "dependencies": {
-    "@tamagui/constants": "^1.96.0",
-    "@tamagui/core": "^1.96.0",
-    "@tamagui/shapes": "^1.96.0",
-    "@tamagui/text": "^1.96.0",
-    "@tamagui/web": "^1.96.0"
+    "@tamagui/constants": "^1.97.1",
+    "@tamagui/core": "^1.97.1",
+    "@tamagui/shapes": "^1.97.1",
+    "@tamagui/text": "^1.97.1",
+    "@tamagui/web": "^1.97.1"
   },
   "devDependencies": {
     "react": "^18.2.0",
