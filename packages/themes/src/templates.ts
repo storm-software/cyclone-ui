@@ -124,5 +124,17 @@ export const maskOptions = {
       borderColorPress: ColorPaletteShades.PRIMARY + 2
     },
     skip: skipShadowsAndSpecificColors
+  },
+  link: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY,
+      colorHover: ColorPaletteShades.PRIMARY - 1,
+      colorPress: ColorPaletteShades.PRIMARY - 2,
+      colorFocus: ColorPaletteShades.PRIMARY - 2
+    },
+    skip: skipShadowsAndSpecificColors
   }
 } satisfies Record<string, MaskOptions>;

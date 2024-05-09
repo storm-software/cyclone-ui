@@ -201,7 +201,8 @@
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/theme-provider": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*"
+      "@cyclone-ui/website": "workspace:*",
+      "@cyclone-ui/link": "workspace:*"
     }
   },
   "bundlewatch": {

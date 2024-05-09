@@ -13,13 +13,14 @@ overrides:
   '@cyclone-ui/font-permanent-marker': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/input': workspace:*
+  '@cyclone-ui/masks': workspace:*
   '@cyclone-ui/media-queries': workspace:*
   '@cyclone-ui/nx': workspace:*
   '@cyclone-ui/storybook': workspace:*
   '@cyclone-ui/theme-provider': workspace:*
   '@cyclone-ui/themes': workspace:*
   '@cyclone-ui/website': workspace:*
-  '@cyclone-ui/masks': workspace:*
+  '@cyclone-ui/link': workspace:*
 
 importers:
 
@@ -690,6 +691,31 @@ importers:
       tamagui:
         specifier: ^1.96.0
         version: 1.96.0(@types/react@18.2.75)(react-dom@18.2.0)(react-native-web@0.19.10)(react-native@0.73.2)(react@18.2.0)
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/link:
+    dependencies:
+      '@tamagui/constants':
+        specifier: ^1.96.0
+        version: 1.96.0(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.96.0
+        version: 1.96.0(react@18.2.0)
+      '@tamagui/shapes':
+        specifier: ^1.96.0
+        version: 1.96.0(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.96.0
+        version: 1.96.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.96.0
+        version: 1.96.0(react@18.2.0)
     devDependencies:
       react:
         specifier: ^18.2.0

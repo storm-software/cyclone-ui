@@ -1493,6 +1493,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_TextArea: {
         background: string;
         backgroundHover: string;
@@ -2274,6 +2313,45 @@ export const buildThemes: () => {
         color14: string;
     };
     light_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -3131,6 +3209,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_base_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -3912,6 +4029,45 @@ export const buildThemes: () => {
         color14: string;
     };
     light_brand_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -4769,6 +4925,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_accent_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -5550,6 +5745,45 @@ export const buildThemes: () => {
         color14: string;
     };
     light_help_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -6407,6 +6641,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_success_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -7188,6 +7461,45 @@ export const buildThemes: () => {
         color14: string;
     };
     light_info_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -8045,6 +8357,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_warning_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -8826,6 +9177,45 @@ export const buildThemes: () => {
         color14: string;
     };
     light_error_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -9683,6 +10073,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_base_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -10464,6 +10893,45 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_brand_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -11321,6 +11789,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_accent_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -12102,6 +12609,45 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_help_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -12959,6 +13505,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_success_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -13740,6 +14325,45 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_info_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -14597,6 +15221,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_warning_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -15416,6 +16079,45 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_error_TextArea: {
         background: string;
         backgroundHover: string;
@@ -15469,6 +16171,8 @@ const color: {
     base8Dark: string | Variable<string>;
     base9Dark: string | Variable<string>;
     base10Dark: string | Variable<string>;
+    base11Dark: string | Variable<string>;
+    base12Dark: string | Variable<string>;
     brand1Dark: string | Variable<string>;
     brand2Dark: string | Variable<string>;
     brand3Dark: string | Variable<string>;
@@ -15553,8 +16257,6 @@ const color: {
     info10Dark: string | Variable<string>;
     info11Dark: string | Variable<string>;
     info12Dark: string | Variable<string>;
-    base11Dark: string | Variable<string>;
-    base12Dark: string | Variable<string>;
     base1Light: string | Variable<string>;
     base2Light: string | Variable<string>;
     base3Light: string | Variable<string>;
@@ -15565,6 +16267,8 @@ const color: {
     base8Light: string | Variable<string>;
     base9Light: string | Variable<string>;
     base10Light: string | Variable<string>;
+    base11Light: string | Variable<string>;
+    base12Light: string | Variable<string>;
     brand1Light: string | Variable<string>;
     brand2Light: string | Variable<string>;
     brand3Light: string | Variable<string>;
@@ -15649,8 +16353,6 @@ const color: {
     info10Light: string | Variable<string>;
     info11Light: string | Variable<string>;
     info12Light: string | Variable<string>;
-    base11Light: string | Variable<string>;
-    base12Light: string | Variable<string>;
 };
 export { color }
 export { color as color_alias_1 }
@@ -15726,24 +16428,24 @@ export { ColorThemeTokens as ColorThemeTokens_alias_1 }
 // @public (undocumented)
 const colorTokens: {
     light: {
-        base: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        brand: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        accent: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        help: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        success: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        error: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        warning: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        info: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
+        base: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        brand: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        accent: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        help: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        success: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        error: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        warning: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        info: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
     };
     dark: {
-        base: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        brand: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        accent: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        help: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        success: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        error: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        warning: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
-        info: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12" | "base11" | "base12">;
+        base: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        brand: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        accent: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        help: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        success: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        error: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        warning: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
+        info: ColorPalette<ColorRole, "base1" | "base2" | "base3" | "base4" | "base5" | "base6" | "base7" | "base8" | "base9" | "base10" | "base11" | "base12" | "brand1" | "brand2" | "brand3" | "brand4" | "brand5" | "brand6" | "brand7" | "brand8" | "brand9" | "brand10" | "brand11" | "brand12" | "accent1" | "accent2" | "accent3" | "accent4" | "accent5" | "accent6" | "accent7" | "accent8" | "accent9" | "accent10" | "accent11" | "accent12" | "help1" | "help2" | "help3" | "help4" | "help5" | "help6" | "help7" | "help8" | "help9" | "help10" | "help11" | "help12" | "success1" | "success2" | "success3" | "success4" | "success5" | "success6" | "success7" | "success8" | "success9" | "success10" | "success11" | "success12" | "error1" | "error2" | "error3" | "error4" | "error5" | "error6" | "error7" | "error8" | "error9" | "error10" | "error11" | "error12" | "warning1" | "warning2" | "warning3" | "warning4" | "warning5" | "warning6" | "warning7" | "warning8" | "warning9" | "warning10" | "warning11" | "warning12" | "info1" | "info2" | "info3" | "info4" | "info5" | "info6" | "info7" | "info8" | "info9" | "info10" | "info11" | "info12">;
     };
 };
 export { colorTokens }
@@ -16448,6 +17150,47 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
+    Link: {
+        overrideStrategy: "swap";
+        override: {
+            color: number;
+            colorHover: number;
+            colorPress: number;
+            colorFocus: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
     TextArea: {
         override: {
             shadowColor: number;
@@ -16510,6 +17253,9 @@ export const dark_accent_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_accent_Input: Theme;
+
+// @public (undocumented)
+export const dark_accent_Link: Theme;
 
 // @public (undocumented)
 export const dark_accent_ListItem: Theme;
@@ -16578,6 +17324,9 @@ export const dark_base_DrawerFrame: Theme;
 export const dark_base_Input: Theme;
 
 // @public (undocumented)
+export const dark_base_Link: Theme;
+
+// @public (undocumented)
 export const dark_base_ListItem: Theme;
 
 // @public (undocumented)
@@ -16642,6 +17391,9 @@ export const dark_brand_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_brand_Input: Theme;
+
+// @public (undocumented)
+export const dark_brand_Link: Theme;
 
 // @public (undocumented)
 export const dark_brand_ListItem: Theme;
@@ -16725,6 +17477,9 @@ export const dark_error_DrawerFrame: Theme;
 export const dark_error_Input: Theme;
 
 // @public (undocumented)
+export const dark_error_Link: Theme;
+
+// @public (undocumented)
 export const dark_error_ListItem: Theme;
 
 // @public (undocumented)
@@ -16789,6 +17544,9 @@ export const dark_help_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_help_Input: Theme;
+
+// @public (undocumented)
+export const dark_help_Link: Theme;
 
 // @public (undocumented)
 export const dark_help_ListItem: Theme;
@@ -16857,6 +17615,9 @@ export const dark_info_DrawerFrame: Theme;
 export const dark_info_Input: Theme;
 
 // @public (undocumented)
+export const dark_info_Link: Theme;
+
+// @public (undocumented)
 export const dark_info_ListItem: Theme;
 
 // @public (undocumented)
@@ -16905,6 +17666,9 @@ export const dark_info_TooltipContent: Theme;
 export const dark_Input: Theme;
 
 // @public (undocumented)
+export const dark_Link: Theme;
+
+// @public (undocumented)
 export const dark_ListItem: Theme;
 
 // @public (undocumented)
@@ -16951,6 +17715,9 @@ export const dark_success_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_success_Input: Theme;
+
+// @public (undocumented)
+export const dark_success_Link: Theme;
 
 // @public (undocumented)
 export const dark_success_ListItem: Theme;
@@ -17037,6 +17804,9 @@ export const dark_warning_DrawerFrame: Theme;
 export const dark_warning_Input: Theme;
 
 // @public (undocumented)
+export const dark_warning_Link: Theme;
+
+// @public (undocumented)
 export const dark_warning_ListItem: Theme;
 
 // @public (undocumented)
@@ -17093,6 +17863,8 @@ const darkColors: {
     base8?: string | undefined;
     base9?: string | undefined;
     base10?: string | undefined;
+    base11?: string | undefined;
+    base12?: string | undefined;
     brand1?: string | undefined;
     brand2?: string | undefined;
     brand3?: string | undefined;
@@ -17177,8 +17949,6 @@ const darkColors: {
     info10?: string | undefined;
     info11?: string | undefined;
     info12?: string | undefined;
-    base11?: string | undefined;
-    base12?: string | undefined;
 };
 export { darkColors }
 export { darkColors as darkColors_alias_1 }
@@ -17247,6 +18017,9 @@ export const light_accent_DrawerFrame: Theme;
 export const light_accent_Input: Theme;
 
 // @public (undocumented)
+export const light_accent_Link: Theme;
+
+// @public (undocumented)
 export const light_accent_ListItem: Theme;
 
 // @public (undocumented)
@@ -17313,6 +18086,9 @@ export const light_base_DrawerFrame: Theme;
 export const light_base_Input: Theme;
 
 // @public (undocumented)
+export const light_base_Link: Theme;
+
+// @public (undocumented)
 export const light_base_ListItem: Theme;
 
 // @public (undocumented)
@@ -17377,6 +18153,9 @@ export const light_brand_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_brand_Input: Theme;
+
+// @public (undocumented)
+export const light_brand_Link: Theme;
 
 // @public (undocumented)
 export const light_brand_ListItem: Theme;
@@ -17460,6 +18239,9 @@ export const light_error_DrawerFrame: Theme;
 export const light_error_Input: Theme;
 
 // @public (undocumented)
+export const light_error_Link: Theme;
+
+// @public (undocumented)
 export const light_error_ListItem: Theme;
 
 // @public (undocumented)
@@ -17524,6 +18306,9 @@ export const light_help_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_help_Input: Theme;
+
+// @public (undocumented)
+export const light_help_Link: Theme;
 
 // @public (undocumented)
 export const light_help_ListItem: Theme;
@@ -17592,6 +18377,9 @@ export const light_info_DrawerFrame: Theme;
 export const light_info_Input: Theme;
 
 // @public (undocumented)
+export const light_info_Link: Theme;
+
+// @public (undocumented)
 export const light_info_ListItem: Theme;
 
 // @public (undocumented)
@@ -17640,6 +18428,9 @@ export const light_info_TooltipContent: Theme;
 export const light_Input: Theme;
 
 // @public (undocumented)
+export const light_Link: Theme;
+
+// @public (undocumented)
 export const light_ListItem: Theme;
 
 // @public (undocumented)
@@ -17686,6 +18477,9 @@ export const light_success_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_success_Input: Theme;
+
+// @public (undocumented)
+export const light_success_Link: Theme;
 
 // @public (undocumented)
 export const light_success_ListItem: Theme;
@@ -17772,6 +18566,9 @@ export const light_warning_DrawerFrame: Theme;
 export const light_warning_Input: Theme;
 
 // @public (undocumented)
+export const light_warning_Link: Theme;
+
+// @public (undocumented)
 export const light_warning_ListItem: Theme;
 
 // @public (undocumented)
@@ -17828,6 +18625,8 @@ const lightColors: {
     base8?: string | undefined;
     base9?: string | undefined;
     base10?: string | undefined;
+    base11?: string | undefined;
+    base12?: string | undefined;
     brand1?: string | undefined;
     brand2?: string | undefined;
     brand3?: string | undefined;
@@ -17912,8 +18711,6 @@ const lightColors: {
     info10?: string | undefined;
     info11?: string | undefined;
     info12?: string | undefined;
-    base11?: string | undefined;
-    base12?: string | undefined;
 };
 export { lightColors }
 export { lightColors as lightColors_alias_1 }
@@ -17983,6 +18780,46 @@ export const maskOptions: {
             borderColorHover: number;
             borderColorFocus: number;
             borderColorPress: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    link: {
+        overrideStrategy: "swap";
+        override: {
+            color: number;
+            colorHover: number;
+            colorPress: number;
+            colorFocus: number;
             shadowColor: number;
             shadowColorHover: number;
             shadowColorPress: number;
@@ -18241,6 +19078,8 @@ const theme: {
         base8: string;
         base9: string;
         base10: string;
+        base11: string;
+        base12: string;
     };
     brand: {
         brand1: string;
@@ -18357,6 +19196,8 @@ const theme_2: {
         base8: string;
         base9: string;
         base10: string;
+        base11: string;
+        base12: string;
     };
     brand: {
         brand1: string;
@@ -19944,6 +20785,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_TextArea: {
         background: string;
         backgroundHover: string;
@@ -20725,6 +21605,45 @@ export const themes: {
         color14: string;
     };
     light_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -21582,6 +22501,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_base_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -22363,6 +23321,45 @@ export const themes: {
         color14: string;
     };
     light_brand_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -23220,6 +24217,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_accent_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -24001,6 +25037,45 @@ export const themes: {
         color14: string;
     };
     light_help_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -24858,6 +25933,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_success_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -25639,6 +26753,45 @@ export const themes: {
         color14: string;
     };
     light_info_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -26496,6 +27649,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_warning_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -27277,6 +28469,45 @@ export const themes: {
         color14: string;
     };
     light_error_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -28134,6 +29365,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_base_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -28915,6 +30185,45 @@ export const themes: {
         color14: string;
     };
     dark_brand_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -29772,6 +31081,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_accent_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -30553,6 +31901,45 @@ export const themes: {
         color14: string;
     };
     dark_help_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -31410,6 +32797,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_success_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -32191,6 +33617,45 @@ export const themes: {
         color14: string;
     };
     dark_info_Input: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Link: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -33048,6 +34513,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_warning_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -33867,6 +35371,45 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_error_TextArea: {
         background: string;
         backgroundHover: string;
@@ -33921,6 +35464,8 @@ const tokens: {
         base8Light: Variable<string>;
         base9Light: Variable<string>;
         base10Light: Variable<string>;
+        base11Light: Variable<string>;
+        base12Light: Variable<string>;
         brand1Light: Variable<string>;
         brand2Light: Variable<string>;
         brand3Light: Variable<string>;
@@ -34005,8 +35550,6 @@ const tokens: {
         info10Light: Variable<string>;
         info11Light: Variable<string>;
         info12Light: Variable<string>;
-        base11Light: Variable<string>;
-        base12Light: Variable<string>;
         base1Dark: Variable<string>;
         base2Dark: Variable<string>;
         base3Dark: Variable<string>;
@@ -34017,6 +35560,8 @@ const tokens: {
         base8Dark: Variable<string>;
         base9Dark: Variable<string>;
         base10Dark: Variable<string>;
+        base11Dark: Variable<string>;
+        base12Dark: Variable<string>;
         brand1Dark: Variable<string>;
         brand2Dark: Variable<string>;
         brand3Dark: Variable<string>;
@@ -34101,8 +35646,6 @@ const tokens: {
         info10Dark: Variable<string>;
         info11Dark: Variable<string>;
         info12Dark: Variable<string>;
-        base11Dark: Variable<string>;
-        base12Dark: Variable<string>;
     };
     space: {
         0: Variable<number>;
@@ -34233,6 +35776,8 @@ const tokens: {
         base8Light: Variable<string | Variable<string>>;
         base9Light: Variable<string | Variable<string>>;
         base10Light: Variable<string | Variable<string>>;
+        base11Light: Variable<string | Variable<string>>;
+        base12Light: Variable<string | Variable<string>>;
         brand1Light: Variable<string | Variable<string>>;
         brand2Light: Variable<string | Variable<string>>;
         brand3Light: Variable<string | Variable<string>>;
@@ -34317,8 +35862,6 @@ const tokens: {
         info10Light: Variable<string | Variable<string>>;
         info11Light: Variable<string | Variable<string>>;
         info12Light: Variable<string | Variable<string>>;
-        base11Light: Variable<string | Variable<string>>;
-        base12Light: Variable<string | Variable<string>>;
         base1Dark: Variable<string | Variable<string>>;
         base2Dark: Variable<string | Variable<string>>;
         base3Dark: Variable<string | Variable<string>>;
@@ -34329,6 +35872,8 @@ const tokens: {
         base8Dark: Variable<string | Variable<string>>;
         base9Dark: Variable<string | Variable<string>>;
         base10Dark: Variable<string | Variable<string>>;
+        base11Dark: Variable<string | Variable<string>>;
+        base12Dark: Variable<string | Variable<string>>;
         brand1Dark: Variable<string | Variable<string>>;
         brand2Dark: Variable<string | Variable<string>>;
         brand3Dark: Variable<string | Variable<string>>;
@@ -34413,8 +35958,6 @@ const tokens: {
         info10Dark: Variable<string | Variable<string>>;
         info11Dark: Variable<string | Variable<string>>;
         info12Dark: Variable<string | Variable<string>>;
-        base11Dark: Variable<string | Variable<string>>;
-        base12Dark: Variable<string | Variable<string>>;
     };
     radius: {
         0: Variable<number>;

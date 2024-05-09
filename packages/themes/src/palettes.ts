@@ -97,16 +97,12 @@ export const palettes = (() => {
 
   const lightBasePalette = [
     transparent(lightestLightColor),
-    "hsl(0,0%,100%)",
     ...Object.values(colors.base),
-    "hsl(0,0%,0%)",
     transparent(darkestLightColor)
   ];
   const darkBasePalette = [
     transparent(darkestDarkColor),
-    darkestDarkColor,
     ...Object.values(colors.baseDark),
-    "hsl(0,0%,100%)",
     transparent(lightestDarkColor)
   ];
 

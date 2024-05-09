@@ -14,7 +14,7 @@
   "externalPackagePatterns": ["@storm-software/"],
   "colors": {
     "light": {
-      "background": "#f4f4f5",
+      "background": "#fafafa",
       "foreground": "#121212",
       "brand": "#1fb2a6",
       "help": "#8250df",
@@ -25,10 +25,10 @@
     },
     "dark": {
       "background": "#22272E",
-      "foreground": "#F6F8FA",
+      "foreground": "#f4f4f5",
       "brand": "#1fb2a6",
       "help": "#8256D0",
-      "success": "#087f5b",
+      "success": "#10b981",
       "info": "#58a6ff",
       "warning": "#F3D371",
       "error": "#d1242f"

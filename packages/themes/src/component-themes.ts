@@ -121,6 +121,11 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
+  Link: {
+    mask: "identity",
+    ...maskOptions.link
+  },
+
   TextArea: {
     mask: "identity",
     ...maskOptions.component
