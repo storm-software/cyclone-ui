@@ -6,11 +6,7 @@ const meta: Meta<typeof Link> = {
   title: "General/Link",
   component: Link,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <Link {...args} width="70px">
-      Link Text
-    </Link>
-  )
+  render: (args: any) => <Link {...args}>Link Text</Link>
 } satisfies Meta<typeof Link>;
 
 export default meta;
@@ -34,6 +30,13 @@ export const UnderlineInitial: Story = {
   args: {
     href: "#",
     underline: "initial"
+  }
+};
+
+export const UnderlineStatic: Story = {
+  args: {
+    href: "#",
+    underline: "static"
   }
 };
 

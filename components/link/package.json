@@ -33,6 +33,7 @@
     "@tamagui/constants": "^1.97.1",
     "@tamagui/core": "^1.97.1",
     "@tamagui/shapes": "^1.97.1",
+    "@tamagui/stacks": "^1.97.1",
     "@tamagui/text": "^1.97.1",
     "@tamagui/web": "^1.97.1"
   },

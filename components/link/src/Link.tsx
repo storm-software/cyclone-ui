@@ -1,6 +1,6 @@
 import { useLink, UseLinkProps } from "solito/link";
 import { isWeb } from "@tamagui/constants";
-import { styled, View } from "@tamagui/core";
+import { styled, Text } from "@tamagui/core";
 import type { SizableTextProps } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import { Square } from "@tamagui/shapes";
@@ -8,7 +8,7 @@ import { Linking } from "react-native";
 
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;
-  underline?: "hover" | "initial" | "none";
+  underline?: "hover" | "initial" | "static" | "none";
 }
 
 export type LinkProps = SizableTextProps & LinkExtraProps;
@@ -19,9 +19,11 @@ const LinkFrame = styled(SizableText, {
   accessibilityRole: "link",
   textDecorationLine: "none",
   color: "$color",
-  fontWeight: "bold",
+  fontFamily: "$body",
+  fontWeight: "$6",
   cursor: "pointer",
-  textAlign: "center",
+  whiteSpace: "nowrap",
+  position: "relative",
 
   hoverStyle: {
     color: "$colorHover"
@@ -43,9 +45,10 @@ const Underline = styled(Square, {
   width: "100%",
   height: "2px",
   left: 0,
-  bottom: "-2px",
+  bottom: "$-0.5",
   backgroundColor: "$accent10",
   borderRadius: "2px",
+  display: "block",
 
   variants: {
     underline: {
@@ -55,6 +58,11 @@ const Underline = styled(Square, {
       },
 
       initial: {
+        transformOrigin: "left",
+        scaleX: 1
+      },
+
+      static: {
         transformOrigin: "left",
         scaleX: 1
       },
@@ -71,12 +79,12 @@ const Underline = styled(Square, {
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
     { target, children, underline = "hover", width, ...props }: LinkProps,
-    ref
+    forwardedRef
   ) => {
     const linkProps = useLink(props);
 
     return (
-      <View position="relative" group width={width}>
+      <Text>
         <LinkFrame
           {...linkProps}
           {...(isWeb
@@ -92,48 +100,55 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
                   }
                 }
               })}
-          ref={ref as any}>
-          {children}
+          ref={forwardedRef}
+          group={"link" as any}>
+          <Text>{children}</Text>
+          {underline !== "none" && (
+            <Underline
+              underline={underline}
+              $group-link-hover={
+                underline === "static"
+                  ? {}
+                  : underline === "initial"
+                    ? {
+                        transformOrigin: "right",
+                        scaleX: 0
+                      }
+                    : {
+                        transformOrigin: "left",
+                        scaleX: 1
+                      }
+              }
+              $group-link-focus={
+                underline === "static"
+                  ? {}
+                  : underline === "initial"
+                    ? {
+                        transformOrigin: "right",
+                        scaleX: 0
+                      }
+                    : {
+                        transformOrigin: "left",
+                        scaleX: 1
+                      }
+              }
+              $group-link-pressed={
+                underline === "static"
+                  ? {}
+                  : underline === "initial"
+                    ? {
+                        transformOrigin: "right",
+                        scaleX: 0
+                      }
+                    : {
+                        transformOrigin: "left",
+                        scaleX: 1
+                      }
+              }
+            />
+          )}
         </LinkFrame>
-        {underline !== "none" && (
-          <Underline
-            underline={underline}
-            $group-hover={
-              underline === "initial"
-                ? {
-                    transformOrigin: "right",
-                    scaleX: 0
-                  }
-                : {
-                    transformOrigin: "left",
-                    scaleX: 1
-                  }
-            }
-            $group-focus={
-              underline === "initial"
-                ? {
-                    transformOrigin: "right",
-                    scaleX: 0
-                  }
-                : {
-                    transformOrigin: "left",
-                    scaleX: 1
-                  }
-            }
-            $group-pressed={
-              underline === "initial"
-                ? {
-                    transformOrigin: "right",
-                    scaleX: 0
-                  }
-                : {
-                    transformOrigin: "left",
-                    scaleX: 1
-                  }
-            }
-          />
-        )}
-      </View>
+      </Text>
     );
   }
 );

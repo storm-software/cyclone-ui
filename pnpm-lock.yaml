@@ -716,6 +716,9 @@ importers:
       '@tamagui/shapes':
         specifier: ^1.97.1
         version: 1.97.1(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
       '@tamagui/text':
         specifier: ^1.97.1
         version: 1.97.1(react-native@0.73.2)(react@18.2.0)
