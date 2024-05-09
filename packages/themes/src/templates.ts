@@ -22,6 +22,7 @@ const templateColorsSpecific = {
 const brandColors = {
   primary: ColorPaletteShades.PRIMARY,
   muted: ColorPaletteShades.MUTED,
+  disabled: ColorPaletteShades.DISABLED,
   bg: ColorPaletteShades.BACKGROUND,
   bgTransparent: ColorPaletteShades.BACKGROUND_TRANSPARENT,
   fg: ColorPaletteShades.FOREGROUND,
@@ -134,6 +135,29 @@ export const maskOptions = {
       colorHover: ColorPaletteShades.PRIMARY - 1,
       colorPress: ColorPaletteShades.PRIMARY - 2,
       colorFocus: ColorPaletteShades.PRIMARY - 2
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  input: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      borderColor: ColorPaletteShades.PRIMARY - 4,
+      borderColorHover: ColorPaletteShades.PRIMARY - 4,
+      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
+      borderColorPress: ColorPaletteShades.PRIMARY - 4,
+      placeholderColor: ColorPaletteShades.PRIMARY - 4
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  label: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY - 2,
+      colorHover: ColorPaletteShades.FOREGROUND,
+      colorPress: ColorPaletteShades.FOREGROUND,
+      colorFocus: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   }

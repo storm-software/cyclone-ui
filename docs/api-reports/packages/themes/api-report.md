@@ -31,6 +31,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -70,6 +71,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -109,6 +111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -148,6 +151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -187,6 +191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -226,6 +231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -265,6 +271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -304,6 +311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -343,6 +351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -382,6 +391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -421,6 +431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -460,6 +471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -499,6 +511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -538,6 +551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -577,6 +591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -616,6 +631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -655,6 +671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -694,6 +711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -733,6 +751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -772,6 +791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -811,6 +831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -850,6 +871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -889,6 +911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -928,6 +951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -967,6 +991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1006,6 +1031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1045,6 +1071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1084,6 +1111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1123,6 +1151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1162,6 +1191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1201,6 +1231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1240,6 +1271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1279,6 +1311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1318,6 +1351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1357,6 +1391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1396,6 +1431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1435,6 +1471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1474,6 +1511,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1513,6 +1591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1552,6 +1631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1591,6 +1671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1630,6 +1711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1669,6 +1751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1708,6 +1791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1747,6 +1831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1786,6 +1871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1825,6 +1911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1864,6 +1951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1903,6 +1991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1942,6 +2031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -1981,6 +2071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2020,6 +2111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2059,6 +2151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2098,6 +2191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2137,6 +2231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2176,6 +2271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2215,6 +2311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2254,6 +2351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2293,6 +2391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2332,6 +2431,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2371,6 +2511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2410,6 +2551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2449,6 +2591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2488,6 +2631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2527,6 +2671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2566,6 +2711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2605,6 +2751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2644,6 +2791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2683,6 +2831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2722,6 +2871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2761,6 +2911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2800,6 +2951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2839,6 +2991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2878,6 +3031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2917,6 +3071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2956,6 +3111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -2995,6 +3151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3034,6 +3191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3073,6 +3231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3112,6 +3271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3151,6 +3311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3190,6 +3351,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3229,6 +3431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3268,6 +3471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3307,6 +3511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3346,6 +3551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3385,6 +3591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3424,6 +3631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3463,6 +3671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3502,6 +3711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3541,6 +3751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3580,6 +3791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3619,6 +3831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3658,6 +3871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3697,6 +3911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3736,6 +3951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3775,6 +3991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3814,6 +4031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3853,6 +4071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3892,6 +4111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3931,6 +4151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -3970,6 +4191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4009,6 +4231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4048,6 +4271,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4087,6 +4351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4126,6 +4391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4165,6 +4431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4204,6 +4471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4243,6 +4511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4282,6 +4551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4321,6 +4591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4360,6 +4631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4399,6 +4671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4438,6 +4711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4477,6 +4751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4516,6 +4791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4555,6 +4831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4594,6 +4871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4633,6 +4911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4672,6 +4951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4711,6 +4991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4750,6 +5031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4789,6 +5071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4828,6 +5111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4867,6 +5151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4906,6 +5191,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4945,6 +5271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -4984,6 +5311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5023,6 +5351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5062,6 +5391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5101,6 +5431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5140,6 +5471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5179,6 +5511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5218,6 +5551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5257,6 +5591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5296,6 +5631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5335,6 +5671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5374,6 +5711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5413,6 +5751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5452,6 +5791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5491,6 +5831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5530,6 +5871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5569,6 +5911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5608,6 +5951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5647,6 +5991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5686,6 +6031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5725,6 +6071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5764,6 +6111,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5803,6 +6191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5842,6 +6231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5881,6 +6271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5920,6 +6311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5959,6 +6351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -5998,6 +6391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6037,6 +6431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6076,6 +6471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6115,6 +6511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6154,6 +6551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6193,6 +6591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6232,6 +6631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6271,6 +6671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6310,6 +6711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6349,6 +6751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6388,6 +6791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6427,6 +6831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6466,6 +6871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6505,6 +6911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6544,6 +6951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6583,6 +6991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6622,6 +7031,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6661,6 +7111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6700,6 +7151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6739,6 +7191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6778,6 +7231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6817,6 +7271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6856,6 +7311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6895,6 +7351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6934,6 +7391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -6973,6 +7431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7012,6 +7471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7051,6 +7511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7090,6 +7551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7129,6 +7591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7168,6 +7631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7207,6 +7671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7246,6 +7711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7285,6 +7751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7324,6 +7791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7363,6 +7831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7402,6 +7871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7441,6 +7911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7480,6 +7951,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7519,6 +8031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7558,6 +8071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7597,6 +8111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7636,6 +8151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7675,6 +8191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7714,6 +8231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7753,6 +8271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7792,6 +8311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7831,6 +8351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7870,6 +8391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7909,6 +8431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7948,6 +8471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -7987,6 +8511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8026,6 +8551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8065,6 +8591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8104,6 +8631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8143,6 +8671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8182,6 +8711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8221,6 +8751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8260,6 +8791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8299,6 +8831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8338,6 +8871,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8377,6 +8951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8416,6 +8991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8455,6 +9031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8494,6 +9071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8533,6 +9111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8572,6 +9151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8611,6 +9191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8650,6 +9231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8689,6 +9271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8728,6 +9311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8767,6 +9351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8806,6 +9391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8845,6 +9431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8884,6 +9471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8923,6 +9511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -8962,6 +9551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9001,6 +9591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9040,6 +9631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9079,6 +9671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9118,6 +9711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9157,6 +9751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9196,6 +9791,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9235,6 +9871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9274,6 +9911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9313,6 +9951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9352,6 +9991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9391,6 +10031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9430,6 +10071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9469,6 +10111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9508,6 +10151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9547,6 +10191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9586,6 +10231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9625,6 +10271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9664,6 +10311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9703,6 +10351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9742,6 +10391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9781,6 +10431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9820,6 +10471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9859,6 +10511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9898,6 +10551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9937,6 +10591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -9976,6 +10631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10015,6 +10671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10054,6 +10711,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10093,6 +10791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10132,6 +10831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10171,6 +10871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10210,6 +10911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10249,6 +10951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10288,6 +10991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10327,6 +11031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10366,6 +11071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10405,6 +11111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10444,6 +11151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10483,6 +11191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10522,6 +11231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10561,6 +11271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10600,6 +11311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10639,6 +11351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10678,6 +11391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10717,6 +11431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10756,6 +11471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10795,6 +11511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10834,6 +11551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10873,6 +11591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10912,6 +11631,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10951,6 +11711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -10990,6 +11751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11029,6 +11791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11068,6 +11831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11107,6 +11871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11146,6 +11911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11185,6 +11951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11224,6 +11991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11263,6 +12031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11302,6 +12071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11341,6 +12111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11380,6 +12151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11419,6 +12191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11458,6 +12231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11497,6 +12271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11536,6 +12311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11575,6 +12351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11614,6 +12391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11653,6 +12431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11692,6 +12471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11731,6 +12511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11770,6 +12551,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11809,6 +12631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11848,6 +12671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11887,6 +12711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11926,6 +12751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -11965,6 +12791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12004,6 +12831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12043,6 +12871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12082,6 +12911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12121,6 +12951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12160,6 +12991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12199,6 +13031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12238,6 +13071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12277,6 +13111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12316,6 +13151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12355,6 +13191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12394,6 +13231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12433,6 +13271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12472,6 +13311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12511,6 +13351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12550,6 +13391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12589,6 +13431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12628,6 +13471,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12667,6 +13551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12706,6 +13591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12745,6 +13631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12784,6 +13671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12823,6 +13711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12862,6 +13751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12901,6 +13791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12940,6 +13831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -12979,6 +13871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13018,6 +13911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13057,6 +13951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13096,6 +13991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13135,6 +14031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13174,6 +14071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13213,6 +14111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13252,6 +14151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13291,6 +14191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13330,6 +14231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13369,6 +14271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13408,6 +14311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13447,6 +14351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13486,6 +14391,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13525,6 +14471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13564,6 +14511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13603,6 +14551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13642,6 +14591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13681,6 +14631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13720,6 +14671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13759,6 +14711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13798,6 +14751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13837,6 +14791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13876,6 +14831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13915,6 +14871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13954,6 +14911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -13993,6 +14951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14032,6 +14991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14071,6 +15031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14110,6 +15071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14149,6 +15111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14188,6 +15151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14227,6 +15191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14266,6 +15231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14305,6 +15271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14344,6 +15311,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14383,6 +15391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14422,6 +15431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14461,6 +15471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14500,6 +15511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14539,6 +15551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14578,6 +15591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14617,6 +15631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14656,6 +15671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14695,6 +15711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14734,6 +15751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14773,6 +15791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14812,6 +15831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14851,6 +15871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14890,6 +15911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14929,6 +15951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -14968,6 +15991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15007,6 +16031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15046,6 +16071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15085,6 +16111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15124,6 +16151,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15163,6 +16191,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15202,6 +16231,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15241,6 +16311,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15280,6 +16351,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15319,6 +16391,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15358,6 +16431,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15397,6 +16471,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15436,6 +16511,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15475,6 +16551,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15514,6 +16591,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15553,6 +16631,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15592,6 +16671,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15631,6 +16711,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15670,6 +16751,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15709,6 +16791,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15748,6 +16831,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15787,6 +16871,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15826,6 +16911,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15865,6 +16951,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15904,6 +16991,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15943,6 +17031,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -15982,6 +17071,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -16021,6 +17111,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -16060,6 +17151,47 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -16099,6 +17231,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -16138,6 +17271,7 @@ export const buildThemes: () => {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -16373,6 +17507,7 @@ export { ColorPaletteShade as ColorPaletteShade_alias_1 }
 const ColorPaletteShades: {
     PRIMARY: number;
     MUTED: number;
+    DISABLED: number;
     BACKGROUND: number;
     BACKGROUND_TRANSPARENT: number;
     FOREGROUND: number;
@@ -17150,6 +18285,47 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
+    Label: {
+        override: {
+            color: number;
+            colorHover: number;
+            colorPress: number;
+            colorFocus: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
     Link: {
         overrideStrategy: "swap";
         override: {
@@ -17255,6 +18431,9 @@ export const dark_accent_DrawerFrame: Theme;
 export const dark_accent_Input: Theme;
 
 // @public (undocumented)
+export const dark_accent_Label: Theme;
+
+// @public (undocumented)
 export const dark_accent_Link: Theme;
 
 // @public (undocumented)
@@ -17324,6 +18503,9 @@ export const dark_base_DrawerFrame: Theme;
 export const dark_base_Input: Theme;
 
 // @public (undocumented)
+export const dark_base_Label: Theme;
+
+// @public (undocumented)
 export const dark_base_Link: Theme;
 
 // @public (undocumented)
@@ -17391,6 +18573,9 @@ export const dark_brand_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_brand_Input: Theme;
+
+// @public (undocumented)
+export const dark_brand_Label: Theme;
 
 // @public (undocumented)
 export const dark_brand_Link: Theme;
@@ -17477,6 +18662,9 @@ export const dark_error_DrawerFrame: Theme;
 export const dark_error_Input: Theme;
 
 // @public (undocumented)
+export const dark_error_Label: Theme;
+
+// @public (undocumented)
 export const dark_error_Link: Theme;
 
 // @public (undocumented)
@@ -17544,6 +18732,9 @@ export const dark_help_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_help_Input: Theme;
+
+// @public (undocumented)
+export const dark_help_Label: Theme;
 
 // @public (undocumented)
 export const dark_help_Link: Theme;
@@ -17615,6 +18806,9 @@ export const dark_info_DrawerFrame: Theme;
 export const dark_info_Input: Theme;
 
 // @public (undocumented)
+export const dark_info_Label: Theme;
+
+// @public (undocumented)
 export const dark_info_Link: Theme;
 
 // @public (undocumented)
@@ -17666,6 +18860,9 @@ export const dark_info_TooltipContent: Theme;
 export const dark_Input: Theme;
 
 // @public (undocumented)
+export const dark_Label: Theme;
+
+// @public (undocumented)
 export const dark_Link: Theme;
 
 // @public (undocumented)
@@ -17715,6 +18912,9 @@ export const dark_success_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_success_Input: Theme;
+
+// @public (undocumented)
+export const dark_success_Label: Theme;
 
 // @public (undocumented)
 export const dark_success_Link: Theme;
@@ -17802,6 +19002,9 @@ export const dark_warning_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_warning_Input: Theme;
+
+// @public (undocumented)
+export const dark_warning_Label: Theme;
 
 // @public (undocumented)
 export const dark_warning_Link: Theme;
@@ -18017,6 +19220,9 @@ export const light_accent_DrawerFrame: Theme;
 export const light_accent_Input: Theme;
 
 // @public (undocumented)
+export const light_accent_Label: Theme;
+
+// @public (undocumented)
 export const light_accent_Link: Theme;
 
 // @public (undocumented)
@@ -18086,6 +19292,9 @@ export const light_base_DrawerFrame: Theme;
 export const light_base_Input: Theme;
 
 // @public (undocumented)
+export const light_base_Label: Theme;
+
+// @public (undocumented)
 export const light_base_Link: Theme;
 
 // @public (undocumented)
@@ -18153,6 +19362,9 @@ export const light_brand_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_brand_Input: Theme;
+
+// @public (undocumented)
+export const light_brand_Label: Theme;
 
 // @public (undocumented)
 export const light_brand_Link: Theme;
@@ -18239,6 +19451,9 @@ export const light_error_DrawerFrame: Theme;
 export const light_error_Input: Theme;
 
 // @public (undocumented)
+export const light_error_Label: Theme;
+
+// @public (undocumented)
 export const light_error_Link: Theme;
 
 // @public (undocumented)
@@ -18306,6 +19521,9 @@ export const light_help_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_help_Input: Theme;
+
+// @public (undocumented)
+export const light_help_Label: Theme;
 
 // @public (undocumented)
 export const light_help_Link: Theme;
@@ -18377,6 +19595,9 @@ export const light_info_DrawerFrame: Theme;
 export const light_info_Input: Theme;
 
 // @public (undocumented)
+export const light_info_Label: Theme;
+
+// @public (undocumented)
 export const light_info_Link: Theme;
 
 // @public (undocumented)
@@ -18428,6 +19649,9 @@ export const light_info_TooltipContent: Theme;
 export const light_Input: Theme;
 
 // @public (undocumented)
+export const light_Label: Theme;
+
+// @public (undocumented)
 export const light_Link: Theme;
 
 // @public (undocumented)
@@ -18477,6 +19701,9 @@ export const light_success_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_success_Input: Theme;
+
+// @public (undocumented)
+export const light_success_Label: Theme;
 
 // @public (undocumented)
 export const light_success_Link: Theme;
@@ -18564,6 +19791,9 @@ export const light_warning_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_warning_Input: Theme;
+
+// @public (undocumented)
+export const light_warning_Label: Theme;
 
 // @public (undocumented)
 export const light_warning_Link: Theme;
@@ -18853,6 +20083,87 @@ export const maskOptions: {
         min?: number | undefined;
         parentName?: string | undefined;
     };
+    input: {
+        override: {
+            borderColor: number;
+            borderColorHover: number;
+            borderColorFocus: number;
+            borderColorPress: number;
+            placeholderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    label: {
+        override: {
+            color: number;
+            colorHover: number;
+            colorPress: number;
+            colorFocus: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
 };
 
 // @public (undocumented)
@@ -18943,9 +20254,14 @@ export { shadows as shadows_alias_1 }
 // @public (undocumented)
 const size: {
     $0: number;
+    "$0.1": number;
+    "$0.2": number;
     "$0.25": number;
+    "$0.4": number;
     "$0.5": number;
     "$0.75": number;
+    "$0.80": number;
+    "$0.90": number;
     $1: number;
     "$1.25": number;
     "$1.5": number;
@@ -19005,6 +20321,7 @@ export const templates: {
         outlineColor: number;
         primary: number;
         muted: number;
+        disabled: number;
         bg: number;
         bgTransparent: number;
         fg: number;
@@ -19044,6 +20361,7 @@ export const templates: {
         outlineColor: number;
         primary: number;
         muted: number;
+        disabled: number;
         bg: number;
         bgTransparent: number;
         fg: number;
@@ -19323,6 +20641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19362,6 +20681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19401,6 +20721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19440,6 +20761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19479,6 +20801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19518,6 +20841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19557,6 +20881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19596,6 +20921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19635,6 +20961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19674,6 +21001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19713,6 +21041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19752,6 +21081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19791,6 +21121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19830,6 +21161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19869,6 +21201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19908,6 +21241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19947,6 +21281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -19986,6 +21321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20025,6 +21361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20064,6 +21401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20103,6 +21441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20142,6 +21481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20181,6 +21521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20220,6 +21561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20259,6 +21601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20298,6 +21641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20337,6 +21681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20376,6 +21721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20415,6 +21761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20454,6 +21801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20493,6 +21841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20532,6 +21881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20571,6 +21921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20610,6 +21961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20649,6 +22001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20688,6 +22041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20727,6 +22081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20766,6 +22121,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20805,6 +22201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20844,6 +22241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20883,6 +22281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20922,6 +22321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -20961,6 +22361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21000,6 +22401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21039,6 +22441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21078,6 +22481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21117,6 +22521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21156,6 +22561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21195,6 +22601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21234,6 +22641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21273,6 +22681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21312,6 +22721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21351,6 +22761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21390,6 +22801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21429,6 +22841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21468,6 +22881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21507,6 +22921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21546,6 +22961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21585,6 +23001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21624,6 +23041,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21663,6 +23121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21702,6 +23161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21741,6 +23201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21780,6 +23241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21819,6 +23281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21858,6 +23321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21897,6 +23361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21936,6 +23401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -21975,6 +23441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22014,6 +23481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22053,6 +23521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22092,6 +23561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22131,6 +23601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22170,6 +23641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22209,6 +23681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22248,6 +23721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22287,6 +23761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22326,6 +23801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22365,6 +23841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22404,6 +23881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22443,6 +23921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22482,6 +23961,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22521,6 +24041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22560,6 +24081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22599,6 +24121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22638,6 +24161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22677,6 +24201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22716,6 +24241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22755,6 +24281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22794,6 +24321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22833,6 +24361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22872,6 +24401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22911,6 +24441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22950,6 +24481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -22989,6 +24521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23028,6 +24561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23067,6 +24601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23106,6 +24641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23145,6 +24681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23184,6 +24721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23223,6 +24761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23262,6 +24801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23301,6 +24841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23340,6 +24881,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23379,6 +24961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23418,6 +25001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23457,6 +25041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23496,6 +25081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23535,6 +25121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23574,6 +25161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23613,6 +25201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23652,6 +25241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23691,6 +25281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23730,6 +25321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23769,6 +25361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23808,6 +25401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23847,6 +25441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23886,6 +25481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23925,6 +25521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -23964,6 +25561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24003,6 +25601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24042,6 +25641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24081,6 +25681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24120,6 +25721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24159,6 +25761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24198,6 +25801,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24237,6 +25881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24276,6 +25921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24315,6 +25961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24354,6 +26001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24393,6 +26041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24432,6 +26081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24471,6 +26121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24510,6 +26161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24549,6 +26201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24588,6 +26241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24627,6 +26281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24666,6 +26321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24705,6 +26361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24744,6 +26401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24783,6 +26441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24822,6 +26481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24861,6 +26521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24900,6 +26561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24939,6 +26601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -24978,6 +26641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25017,6 +26681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25056,6 +26721,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25095,6 +26801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25134,6 +26841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25173,6 +26881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25212,6 +26921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25251,6 +26961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25290,6 +27001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25329,6 +27041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25368,6 +27081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25407,6 +27121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25446,6 +27161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25485,6 +27201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25524,6 +27241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25563,6 +27281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25602,6 +27321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25641,6 +27361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25680,6 +27401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25719,6 +27441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25758,6 +27481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25797,6 +27521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25836,6 +27561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25875,6 +27601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25914,6 +27641,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25953,6 +27721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -25992,6 +27761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26031,6 +27801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26070,6 +27841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26109,6 +27881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26148,6 +27921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26187,6 +27961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26226,6 +28001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26265,6 +28041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26304,6 +28081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26343,6 +28121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26382,6 +28161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26421,6 +28201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26460,6 +28241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26499,6 +28281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26538,6 +28321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26577,6 +28361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26616,6 +28401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26655,6 +28441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26694,6 +28481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26733,6 +28521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26772,6 +28561,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26811,6 +28641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26850,6 +28681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26889,6 +28721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26928,6 +28761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -26967,6 +28801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27006,6 +28841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27045,6 +28881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27084,6 +28921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27123,6 +28961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27162,6 +29001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27201,6 +29041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27240,6 +29081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27279,6 +29121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27318,6 +29161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27357,6 +29201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27396,6 +29241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27435,6 +29281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27474,6 +29321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27513,6 +29361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27552,6 +29401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27591,6 +29441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27630,6 +29481,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27669,6 +29561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27708,6 +29601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27747,6 +29641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27786,6 +29681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27825,6 +29721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27864,6 +29761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27903,6 +29801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27942,6 +29841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -27981,6 +29881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28020,6 +29921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28059,6 +29961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28098,6 +30001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28137,6 +30041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28176,6 +30081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28215,6 +30121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28254,6 +30161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28293,6 +30201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28332,6 +30241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28371,6 +30281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28410,6 +30321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28449,6 +30361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28488,6 +30401,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28527,6 +30481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28566,6 +30521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28605,6 +30561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28644,6 +30601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28683,6 +30641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28722,6 +30681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28761,6 +30721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28800,6 +30761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28839,6 +30801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28878,6 +30841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28917,6 +30881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28956,6 +30921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -28995,6 +30961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29034,6 +31001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29073,6 +31041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29112,6 +31081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29151,6 +31121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29190,6 +31161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29229,6 +31201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29268,6 +31241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29307,6 +31281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29346,6 +31321,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29385,6 +31401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29424,6 +31441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29463,6 +31481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29502,6 +31521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29541,6 +31561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29580,6 +31601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29619,6 +31641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29658,6 +31681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29697,6 +31721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29736,6 +31761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29775,6 +31801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29814,6 +31841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29853,6 +31881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29892,6 +31921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29931,6 +31961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -29970,6 +32001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30009,6 +32041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30048,6 +32081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30087,6 +32121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30126,6 +32161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30165,6 +32201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30204,6 +32241,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30243,6 +32321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30282,6 +32361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30321,6 +32401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30360,6 +32441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30399,6 +32481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30438,6 +32521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30477,6 +32561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30516,6 +32601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30555,6 +32641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30594,6 +32681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30633,6 +32721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30672,6 +32761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30711,6 +32801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30750,6 +32841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30789,6 +32881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30828,6 +32921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30867,6 +32961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30906,6 +33001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30945,6 +33041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -30984,6 +33081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31023,6 +33121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31062,6 +33161,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31101,6 +33241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31140,6 +33281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31179,6 +33321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31218,6 +33361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31257,6 +33401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31296,6 +33441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31335,6 +33481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31374,6 +33521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31413,6 +33561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31452,6 +33601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31491,6 +33641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31530,6 +33681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31569,6 +33721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31608,6 +33761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31647,6 +33801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31686,6 +33841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31725,6 +33881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31764,6 +33921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31803,6 +33961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31842,6 +34001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31881,6 +34041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31920,6 +34081,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31959,6 +34161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -31998,6 +34201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32037,6 +34241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32076,6 +34281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32115,6 +34321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32154,6 +34361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32193,6 +34401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32232,6 +34441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32271,6 +34481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32310,6 +34521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32349,6 +34561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32388,6 +34601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32427,6 +34641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32466,6 +34681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32505,6 +34721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32544,6 +34761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32583,6 +34801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32622,6 +34841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32661,6 +34881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32700,6 +34921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32739,6 +34961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32778,6 +35001,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32817,6 +35081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32856,6 +35121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32895,6 +35161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32934,6 +35201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -32973,6 +35241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33012,6 +35281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33051,6 +35321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33090,6 +35361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33129,6 +35401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33168,6 +35441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33207,6 +35481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33246,6 +35521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33285,6 +35561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33324,6 +35601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33363,6 +35641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33402,6 +35681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33441,6 +35721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33480,6 +35761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33519,6 +35801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33558,6 +35841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33597,6 +35881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33636,6 +35921,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33675,6 +36001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33714,6 +36041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33753,6 +36081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33792,6 +36121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33831,6 +36161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33870,6 +36201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33909,6 +36241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33948,6 +36281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -33987,6 +36321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34026,6 +36361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34065,6 +36401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34104,6 +36441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34143,6 +36481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34182,6 +36521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34221,6 +36561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34260,6 +36601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34299,6 +36641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34338,6 +36681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34377,6 +36721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34416,6 +36761,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34455,6 +36801,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34494,6 +36841,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34533,6 +36921,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34572,6 +36961,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34611,6 +37001,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34650,6 +37041,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34689,6 +37081,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34728,6 +37121,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34767,6 +37161,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34806,6 +37201,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34845,6 +37241,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34884,6 +37281,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34923,6 +37321,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -34962,6 +37361,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35001,6 +37401,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35040,6 +37441,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35079,6 +37481,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35118,6 +37521,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35157,6 +37561,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35196,6 +37601,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35235,6 +37641,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35274,6 +37681,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35313,6 +37721,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35352,6 +37761,47 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Label: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35391,6 +37841,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35430,6 +37881,7 @@ export const themes: {
         outlineColor: string;
         primary: string;
         muted: string;
+        disabled: string;
         bg: string;
         bgTransparent: string;
         fg: string;
@@ -35669,9 +38121,14 @@ const tokens: {
         18: Variable<number>;
         19: Variable<number>;
         20: Variable<number>;
+        0.1: Variable<number>;
+        0.2: Variable<number>;
         0.25: Variable<number>;
+        0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
+        "0.80": Variable<number>;
+        "0.90": Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -35698,9 +38155,14 @@ const tokens: {
         [-18]: Variable<number>;
         [-19]: Variable<number>;
         [-20]: Variable<number>;
+        [-0.1]: Variable<number>;
+        [-0.2]: Variable<number>;
         [-0.25]: Variable<number>;
+        [-0.4]: Variable<number>;
         [-0.5]: Variable<number>;
         [-0.75]: Variable<number>;
+        "-0.80": Variable<number>;
+        "-0.90": Variable<number>;
         [-1.25]: Variable<number>;
         [-1.5]: Variable<number>;
         [-2.5]: Variable<number>;
@@ -35730,9 +38192,14 @@ const tokens: {
         18: Variable<number>;
         19: Variable<number>;
         20: Variable<number>;
+        0.1: Variable<number>;
+        0.2: Variable<number>;
         0.25: Variable<number>;
+        0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
+        "0.80": Variable<number>;
+        "0.90": Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -36005,9 +38472,14 @@ const tokens: {
         18: Variable<number>;
         19: Variable<number>;
         20: Variable<number>;
+        0.1: Variable<number>;
+        0.2: Variable<number>;
         0.25: Variable<number>;
+        0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
+        "0.80": Variable<number>;
+        "0.90": Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -36034,9 +38506,14 @@ const tokens: {
         [-18]: Variable<number>;
         [-19]: Variable<number>;
         [-20]: Variable<number>;
+        [-0.1]: Variable<number>;
+        [-0.2]: Variable<number>;
         [-0.25]: Variable<number>;
+        [-0.4]: Variable<number>;
         [-0.5]: Variable<number>;
         [-0.75]: Variable<number>;
+        "-0.80": Variable<number>;
+        "-0.90": Variable<number>;
         [-1.25]: Variable<number>;
         [-1.5]: Variable<number>;
         [-2.5]: Variable<number>;
@@ -36066,9 +38543,14 @@ const tokens: {
         18: Variable<number>;
         19: Variable<number>;
         20: Variable<number>;
+        0.1: Variable<number>;
+        0.2: Variable<number>;
         0.25: Variable<number>;
+        0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
+        "0.80": Variable<number>;
+        "0.90": Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;

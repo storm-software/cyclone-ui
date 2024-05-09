@@ -42,8 +42,11 @@ export const createMonaSansFont = <A extends GenericFont<keyof typeof size>>(
       Object.entries(size).map(([k, v]) => [k, v * 1.3])
     ) as typeof size,
     weight: {
+      2: "200",
       4: "300",
-      6: "700"
+      5: "500",
+      6: "700",
+      8: "900"
     },
     letterSpacing: {
       4: -0.25

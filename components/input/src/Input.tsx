@@ -7,7 +7,7 @@ import type {
   VariantSpreadExtras
 } from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
-import { useState } from "react";
+import { RefObject, createRef, useId, useRef, useState } from "react";
 import { Label } from "@tamagui/label";
 import { XGroup } from "@tamagui/group";
 import { isWeb } from "@tamagui/constants";
@@ -19,17 +19,29 @@ import {
   styled,
   createStyledContext,
   useTheme,
-  getVariable
+  getVariable,
+  Theme
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { Input as TamaguiInput } from "tamagui";
+import {
+  Asterisk,
+  AlertCircle,
+  Info,
+  HelpCircle,
+  CheckCircle,
+  Lock
+} from "@tamagui/lucide-icons";
+import { ColorRole } from "@cyclone-ui/themes";
 
 const defaultContextValues = {
   size: "$true",
-  scaleIcon: 1.2,
+  scaleIcon: 1.3,
   color: undefined,
-  required: false
+  required: false,
+  disabled: false,
+  theme: `${ColorRole.BASE}_Input`
 } as const;
 
 export const InputContext = createStyledContext<{
@@ -37,6 +49,8 @@ export const InputContext = createStyledContext<{
   scaleIcon: number;
   color?: ColorTokens | string;
   required: boolean;
+  disabled: boolean;
+  theme: string;
 }>(defaultContextValues);
 
 export const defaultInputGroupStyles = {
@@ -76,15 +90,20 @@ export const defaultInputGroupStyles = {
 } as const;
 
 const InputGroupFrame = styled(XGroup, {
+  name: "Input",
   justifyContent: "space-between",
   context: InputContext,
+  animation: "$slow",
+
   variants: {
     unstyled: {
       false: defaultInputGroupStyles
     },
+
     scaleIcon: {
       ":number": {} as any
     },
+
     applyFocusStyle: {
       ":boolean": (val, { props }) => {
         if (val) {
@@ -92,6 +111,7 @@ const InputGroupFrame = styled(XGroup, {
         }
       }
     },
+
     size: {
       "...size": (val, { tokens }) => {
         return {
@@ -99,14 +119,45 @@ const InputGroupFrame = styled(XGroup, {
         };
       }
     },
+
     required: {
-      ":boolean": (val, { tokens }) => ({})
+      true: {}
+    },
+
+    disabled: {
+      true: {
+        color: "$disabled",
+        borderColor: "$disabled",
+        placeholderColor: "$disabled",
+        userSelect: "none",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$disabled",
+          borderColor: "$disabled"
+        },
+
+        focusStyle: {
+          color: "$disabled",
+          borderColor: "$disabled",
+          outlineStyle: "none",
+          outlineColor: "transparent"
+        },
+
+        pressStyle: {
+          color: "$disabled",
+          borderColor: "$disabled",
+          outlineStyle: "none",
+          outlineColor: "transparent"
+        }
+      }
     }
   } as const,
 
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    required: false
+    required: false,
+    disabled: false
   }
 });
 
@@ -115,16 +166,60 @@ const FocusContext = createStyledContext({
   focused: false
 });
 
+const RefContext = createStyledContext({
+  inputRef: createRef<TamaguiInput>()
+});
+
+const DEFAULT_INPUT_NAME = "input_default_name";
+const NameContext = createStyledContext({
+  name: DEFAULT_INPUT_NAME
+});
+
 const InputGroupImpl = InputGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
-  const [focused, setFocused] = useState(false);
+  const { theme, disabled } = InputContext.useStyledContext();
+  const { focused } = FocusContext.useStyledContext();
 
   return (
-    <FocusContext.Provider focused={focused} setFocused={setFocused}>
-      <InputGroupFrame applyFocusStyle={focused} ref={forwardedRef} {...rest}>
-        {children}
-      </InputGroupFrame>
-    </FocusContext.Provider>
+    <InputGroupFrame
+      theme={theme}
+      applyFocusStyle={focused}
+      ref={forwardedRef}
+      {...rest}
+      disabled={disabled}>
+      {theme &&
+        (theme.toLowerCase().includes(ColorRole.ERROR) ||
+          theme.toLowerCase().includes(ColorRole.WARNING)) && (
+          <InputIcon>
+            <AlertCircle />
+          </InputIcon>
+        )}
+      {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
+        <InputIcon>
+          <Info />
+        </InputIcon>
+      )}
+      {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
+        <InputIcon>
+          <HelpCircle />
+        </InputIcon>
+      )}
+      {!disabled &&
+        theme &&
+        theme.toLowerCase().includes(ColorRole.SUCCESS) && (
+          <InputIcon>
+            <CheckCircle />
+          </InputIcon>
+        )}
+
+      {children}
+
+      {disabled && (
+        <InputIcon>
+          <Lock />
+        </InputIcon>
+      )}
+    </InputGroupFrame>
   );
 });
 
@@ -152,31 +247,53 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
 };
 
 const InputFrame = styled(TamaguiInput, {
+  name: "Input",
   unstyled: true,
-  context: InputContext
+  context: InputContext,
+
+  variants: {
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        placeholderTextColor: "$disabled",
+        color: "$disabled"
+      },
+      false: {
+        placeholderTextColor: "$placeholderColor"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    disabled: false
+  }
 });
 
 const InputImpl = InputFrame.styleable<{ required?: boolean }>((props, ref) => {
   const { setFocused } = FocusContext.useStyledContext();
-  const { size } = InputContext.useStyledContext();
+  const { size, disabled } = InputContext.useStyledContext();
+  const { name } = NameContext.useStyledContext();
   const { ...rest } = props;
 
   return (
     <View flex={1}>
       <InputFrame
+        id={name}
         ref={ref}
         onFocus={() => {
-          setFocused(true);
+          setFocused(!disabled);
         }}
         onBlur={() => setFocused(false)}
         size={size}
         {...rest}
+        disabled={disabled}
       />
     </View>
   );
 });
 
 const InputSection = styled(XGroup.Item, {
+  name: "Input",
   justifyContent: "center",
   alignItems: "center",
   context: InputContext
@@ -185,9 +302,11 @@ const InputSection = styled(XGroup.Item, {
 // Icon starts
 
 export const InputIconFrame = styled(View, {
+  name: "Input",
   justifyContent: "center",
   alignItems: "center",
   context: InputContext,
+  animation: "$slow",
 
   variants: {
     size: {
@@ -203,7 +322,7 @@ export const InputIconFrame = styled(View, {
 const getIconSize = (size: FontSizeTokens, scale: number) => {
   return (
     (typeof size === "number"
-      ? size * 0.5
+      ? size * 0.6
       : getFontSize(size as FontSizeTokens)) * scale
   );
 };
@@ -214,14 +333,24 @@ const InputIcon = InputIconFrame.styleable<{
 }>((props: any, ref: any) => {
   const { children, color: colorProp, ...rest } = props;
   const inputContext = InputContext.useStyledContext();
-  const { size = "$true", color: contextColor, scaleIcon = 1 } = inputContext;
+  const {
+    size = "$true",
+    color: contextColor,
+    disabled,
+    scaleIcon = 1
+  } = inputContext;
 
-  const theme = useTheme();
-  const color = getVariable(
-    contextColor ||
-      theme[contextColor as any]?.get("web") ||
-      theme.color10?.get("web")
-  );
+  const themeColors = useTheme({
+    name: inputContext.theme
+  });
+  const color = disabled
+    ? "$disabled"
+    : getVariable(
+        colorProp ||
+          contextColor ||
+          themeColors[contextColor as any]?.get("web") ||
+          themeColors.primary?.get("web")
+      );
   const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
 
   const getThemedIcon = useGetThemedIcon({
@@ -229,15 +358,62 @@ const InputIcon = InputIconFrame.styleable<{
     color: color as any
   });
   return (
-    <InputIconFrame ref={ref} {...rest}>
+    <InputIconFrame ref={ref} theme={inputContext.theme} {...rest}>
       {getThemedIcon(children)}
     </InputIconFrame>
   );
 });
 
-export const InputContainerFrame = styled(View, {
+const InputIconWrapper = InputIcon.styleable(
+  ({ children, ...props }: any, ref: any) => {
+    const { theme, disabled } = InputContext.useStyledContext();
+
+    if (
+      (theme &&
+        (theme.toLowerCase().includes(ColorRole.ERROR) ||
+          theme.toLowerCase().includes(ColorRole.WARNING) ||
+          theme.toLowerCase().includes(ColorRole.INFO) ||
+          theme.toLowerCase().includes(ColorRole.HELP) ||
+          theme.toLowerCase().includes(ColorRole.SUCCESS))) ||
+      disabled
+    ) {
+      return null;
+    }
+
+    return (
+      <InputIcon ref={ref} {...props}>
+        {children}
+      </InputIcon>
+    );
+  }
+);
+
+const InputContainer = View.styleable<{ name?: string }>(
+  (props, forwardedRef) => {
+    const { children, name, ...rest } = props;
+    const [focused, setFocused] = useState(false);
+
+    const id = useId();
+    const ref = useRef<TamaguiInput>(null);
+
+    return (
+      <NameContext.Provider
+        name={name && name !== DEFAULT_INPUT_NAME ? name : id}>
+        <RefContext.Provider inputRef={forwardedRef ? forwardedRef : ref}>
+          <FocusContext.Provider focused={focused} setFocused={setFocused}>
+            <View {...rest}>{children}</View>
+          </FocusContext.Provider>
+        </RefContext.Provider>
+      </NameContext.Provider>
+    );
+  }
+);
+
+export const InputContainerFrame = styled(InputContainer, {
+  name: "Input",
   context: InputContext,
   flexDirection: "column",
+  animation: "$slow",
 
   variants: {
     size: {
@@ -252,25 +428,39 @@ export const InputContainerFrame = styled(View, {
         };
       }
     },
+
     color: {
       "...color": () => ({})
     },
+
     gapScale: {
       ":number": {} as any
     },
+
     required: {
       ":boolean": {} as any
+    },
+
+    disabled: {
+      true: {
+        cursor: "not-allowed"
+      }
     }
   } as const,
 
   defaultVariants: {
-    size: "$4"
+    size: "$4",
+    required: false,
+    disabled: false
   }
 });
 
 export const InputLabel = styled(Label, {
+  name: "Label",
   context: InputContext,
   fontFamily: "$label",
+  animation: "$slow",
+  cursor: "pointer",
 
   variants: {
     size: {
@@ -278,42 +468,79 @@ export const InputLabel = styled(Label, {
         val: FontSizeTokens,
         config: VariantSpreadExtras<TextProps>
       ) => {
-        const size = getFontSized(val, config);
-        if (!size) {
+        if (!config.font) {
           return;
         }
 
-        return Object.keys(size).reduce(
-          (ret: Record<string, any>, key: string) => {
-            ret[key] = size[key] * 0.2;
-            return ret;
-          },
-          {} as Record<string, any>
-        );
+        let sizeToken = 1;
+        let heightToken = 1;
+        if (typeof val !== "undefined" && val !== null) {
+          sizeToken = (config.font.size?.[val] as any)?.val;
+          heightToken = (config.font.lineHeight?.[val] as any)?.val;
+        }
+
+        const fontSize = (sizeToken ?? 1) * 1.25;
+        const lineHeight = (heightToken ?? 1) * 1;
+        const fontWeight = config.font.weight?.["$3"];
+        const letterSpacing = config.font.letterSpacing?.[val];
+        const textTransform = config.font.transform?.[val];
+        const fontStyle = config.font.style?.[val];
+
+        return {
+          fontSize,
+          lineHeight,
+          fontWeight,
+          letterSpacing,
+          textTransform,
+          fontStyle
+        };
+      }
+    },
+
+    focused: {
+      true: {
+        color: "$base12",
+        fontWeight: "$5"
+      },
+      false: {
+        color: "$base10"
+      }
+    },
+
+    disabled: {
+      true: {
+        color: "$disabled",
+        cursor: "not-allowed"
       }
     }
-  } as const
+  } as const,
+
+  defaultVariants: {
+    focused: false,
+    disabled: false
+  }
 });
 
 const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
-  const { required, color } = InputContext.useStyledContext();
+  const { required, disabled } = InputContext.useStyledContext();
+  const { focused } = FocusContext.useStyledContext();
+  const { name } = NameContext.useStyledContext();
   const { children, ...rest } = props;
 
   return (
-    <XStack gap="$1.5">
-      <InputLabel ref={forwardedRef} color={color} {...rest}>
+    <XStack gap="$1.2">
+      <InputLabel
+        ref={forwardedRef}
+        {...rest}
+        focused={disabled ? false : focused}
+        disabled={disabled}
+        htmlFor={name}
+        theme="base">
         {children}
       </InputLabel>
       {required && (
         <View position="relative">
-          <Text
-            color="$error8"
-            fontWeight="900"
-            fontSize="$7"
-            position="absolute"
-            top={-1}>
-            *
-          </Text>
+          <Asterisk color="$error8" size="$0.75" position="absolute" top={-2} />
         </View>
       )}
     </XStack>
@@ -321,8 +548,23 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
 });
 
 export const InputInfo = styled(Text, {
+  name: "Input",
   context: InputContext,
-  color: "$color",
+  animation: "$slow",
+  color: "$borderColor",
+  marginTop: "$0.5",
+  fontStyle: "italic",
+  opacity: 1,
+
+  enterStyle: {
+    opacity: 0,
+    x: 10
+  },
+
+  exitStyle: {
+    opacity: 0,
+    x: 10
+  },
 
   variants: {
     size: {
@@ -338,7 +580,7 @@ export const InputInfo = styled(Text, {
           heightToken = (font.lineHeight?.[val] as any)?.val;
         }
 
-        const fontSize = (sizeToken ?? 1) * 1.2;
+        const fontSize = (sizeToken ?? 1) * 1.05;
         const lineHeight = (heightToken ?? 1) * 1;
         const fontWeight = font.weight?.["$3"];
         const letterSpacing = font.letterSpacing?.[val];
@@ -354,12 +596,36 @@ export const InputInfo = styled(Text, {
           fontStyle
         };
       }
+    },
+
+    disabled: {
+      true: {
+        color: "$disabled"
+      }
     }
-  } as const
+  } as const,
+
+  defaultVariants: {
+    disabled: false
+  }
+});
+
+const InputInfoImpl = InputInfo.styleable((props, forwardedRef) => {
+  const { disabled } = InputContext.useStyledContext();
+  const { name } = NameContext.useStyledContext();
+  const { children, ...rest } = props;
+
+  return (
+    <InputInfo ref={forwardedRef} disabled={disabled} htmlFor={name} {...rest}>
+      {children}
+    </InputInfo>
+  );
 });
 
 const InputXGroup = styled(XGroup, {
+  name: "Input",
   context: InputContext,
+  animation: "$slow",
 
   variants: {
     size: {
@@ -373,20 +639,20 @@ const InputXGroup = styled(XGroup, {
   } as const
 });
 
-export type InputContainerFrameProps = GetProps<typeof InputContainerFrame>;
+export type InputContainerProps = GetProps<typeof InputContainerFrame>;
 
 export type InputExtraProps = {
   required?: boolean;
 };
 
-export type InputProps = InputContainerFrameProps & InputExtraProps;
+export type InputProps = InputContainerProps & InputExtraProps;
 
 export const Input = withStaticProperties(InputContainerFrame, {
   Box: InputGroupImpl,
   Area: InputImpl,
   Section: InputSection,
-  Icon: InputIcon,
-  Info: InputInfo,
+  Icon: InputIconWrapper,
+  Info: InputInfoImpl,
   Label: InputLabelImpl,
   XGroup: withStaticProperties(InputXGroup, { Item: XGroup.Item })
 });

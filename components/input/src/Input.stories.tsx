@@ -7,11 +7,12 @@ const meta: Meta<typeof Input> = {
   component: Input,
   tags: ["autodocs"],
   render: (args: any) => (
-    <Input {...args}>
-      <Input.Label htmlFor="input">Label Text</Input.Label>
+    <Input name="inputName" {...args}>
+      <Input.Label>Label Text</Input.Label>
       <Input.Box>
-        <Input.Area id="input" placeholder="email@example.com" />
+        <Input.Area placeholder="email@example.com" />
       </Input.Box>
+      <Input.Info>This is an example detailed message for an input</Input.Info>
     </Input>
   )
 } satisfies Meta<typeof Input>;

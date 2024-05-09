@@ -16,9 +16,14 @@ import colors from "./colors";
 //  i'm setting space to generally just a fixed fraction of size (~1/3-2/3 still fine tuning)
 export const size = {
   $0: 0,
-  "$0.25": 2,
-  "$0.5": 4,
-  "$0.75": 8,
+  "$0.1": 2,
+  "$0.2": 4,
+  "$0.25": 5,
+  "$0.4": 8,
+  "$0.5": 10,
+  "$0.75": 15,
+  "$0.80": 16,
+  "$0.90": 18,
   $1: 20,
   "$1.25": 22,
   "$1.5": 24,
@@ -183,6 +188,7 @@ export const tokens = createTokens({
 export const ColorPaletteShades = {
   PRIMARY: 10,
   MUTED: 4,
+  DISABLED: 6,
   BACKGROUND: 1,
   BACKGROUND_TRANSPARENT: 0,
   FOREGROUND: -1,

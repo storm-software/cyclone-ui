@@ -25,7 +25,7 @@
     },
     "dark": {
       "background": "#22272E",
-      "foreground": "#f4f4f5",
+      "foreground": "#e4e4e7",
       "brand": "#1fb2a6",
       "help": "#8256D0",
       "success": "#10b981",

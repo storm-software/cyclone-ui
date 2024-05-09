@@ -121,6 +121,11 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
+  Label: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
   Link: {
     mask: "identity",
     ...maskOptions.link
