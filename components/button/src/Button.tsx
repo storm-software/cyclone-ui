@@ -230,13 +230,21 @@ const ButtonFrame = styled(View, {
 
     disabled: {
       true: {
-        pointerEvents: "none"
+        opacity: 0.4,
+        cursor: "not-allowed",
+        borderColor: "$disabled",
+        borderWidth: 3
+      },
+      false: {
+        opacity: 1,
+        borderColor: "$borderColor"
       }
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    disabled: false
   }
 });
 
@@ -330,15 +338,19 @@ const ButtonWrapper = styled(ThemeableStack, {
 
 const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
   (props, ref) => {
-    const { variant, ...rest } = props;
+    const { variant, disabled, ...rest } = props;
 
     return (
       <ButtonWrapper group={"button" as any}>
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}
-            $group-button-hover={{ backgroundColor: "$muted" }}
-            $group-button-press={{ backgroundColor: "$primary" }}
+            $group-button-hover={{
+              backgroundColor: disabled ? "transparent" : "$muted"
+            }}
+            $group-button-press={{
+              backgroundColor: disabled ? "transparent" : "$primary"
+            }}
             style={{
               filter: "blur(1px)"
             }}
@@ -350,11 +362,16 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
             style={{
               filter: "blur(3px)"
             }}
-            $group-button-hover={{ opacity: 0.7 }}
-            $group-button-press={{ opacity: 1 }}
+            $group-button-hover={{ opacity: disabled ? 0.5 : 0.7 }}
+            $group-button-press={{ opacity: disabled ? 0.5 : 1 }}
           />
         )}
-        <ButtonFrame ref={ref} {...rest} variant={variant} />
+        <ButtonFrame
+          ref={ref}
+          {...rest}
+          variant={variant}
+          disabled={disabled}
+        />
       </ButtonWrapper>
     );
   },

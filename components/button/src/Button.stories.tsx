@@ -14,35 +14,47 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: "Button Text"
+    children: "Button Text",
+    disabled: false
   }
 };
 
 export const Secondary: Story = {
   args: {
     children: "Button Text",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
 export const Ghost: Story = {
   args: {
     children: "Button Text",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
 export const Glass: Story = {
   args: {
     children: "Button Text",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Button Text",
+    disabled: true
   }
 };
 
 export const BrandPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "brand"
+    theme: "brand",
+    disabled: false
   }
 };
 
@@ -50,7 +62,8 @@ export const BrandSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -58,7 +71,8 @@ export const BrandGhost: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -66,14 +80,24 @@ export const BrandGlass: Story = {
   args: {
     children: "Button Text",
     theme: "brand",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const BrandDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    disabled: true
   }
 };
 
 export const HelpPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "help"
+    theme: "help",
+    disabled: false
   }
 };
 
@@ -81,7 +105,8 @@ export const HelpSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "help",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -89,7 +114,8 @@ export const HelpGhost: Story = {
   args: {
     children: "Button Text",
     theme: "help",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -97,14 +123,24 @@ export const HelpGlass: Story = {
   args: {
     children: "Button Text",
     theme: "help",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const HelpDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "help",
+    disabled: true
   }
 };
 
 export const ErrorPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "error"
+    theme: "error",
+    disabled: false
   }
 };
 
@@ -112,7 +148,8 @@ export const ErrorSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "error",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -120,7 +157,8 @@ export const ErrorGhost: Story = {
   args: {
     children: "Button Text",
     theme: "error",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -128,14 +166,24 @@ export const ErrorGlass: Story = {
   args: {
     children: "Button Text",
     theme: "error",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const ErrorDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "error",
+    disabled: true
   }
 };
 
 export const WarningPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "warning"
+    theme: "warning",
+    disabled: false
   }
 };
 
@@ -143,7 +191,8 @@ export const WarningSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -151,7 +200,8 @@ export const WarningGhost: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -159,14 +209,24 @@ export const WarningGlass: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const WarningDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning",
+    disabled: true
   }
 };
 
 export const InfoPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "info"
+    theme: "info",
+    disabled: false
   }
 };
 
@@ -174,7 +234,8 @@ export const InfoSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -182,7 +243,8 @@ export const InfoGhost: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -190,14 +252,24 @@ export const InfoGlass: Story = {
   args: {
     children: "Button Text",
     theme: "info",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const InfoDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    disabled: true
   }
 };
 
 export const SuccessPrimary: Story = {
   args: {
     children: "Button Text",
-    theme: "success"
+    theme: "success",
+    disabled: false
   }
 };
 
@@ -205,7 +277,8 @@ export const SuccessSecondary: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "secondary"
+    variant: "secondary",
+    disabled: false
   }
 };
 
@@ -213,7 +286,8 @@ export const SuccessGhost: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "ghost"
+    variant: "ghost",
+    disabled: false
   }
 };
 
@@ -221,6 +295,15 @@ export const SuccessGlass: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "glass"
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const SuccessDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success",
+    disabled: true
   }
 };
