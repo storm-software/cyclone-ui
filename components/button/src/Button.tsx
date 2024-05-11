@@ -79,7 +79,7 @@ export const ButtonContext = createStyledContext<
   fontFamily: "$label",
   fontSize: undefined,
   fontStyle: undefined,
-  fontWeight: "600",
+  fontWeight: "$6",
   letterSpacing: undefined,
   maxFontSizeMultiplier: undefined,
   size: undefined,
@@ -98,7 +98,7 @@ const ButtonFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "slow",
+  animation: "medium",
   borderWidth: 1,
 
   backgroundColor: "$background",
@@ -106,29 +106,17 @@ const ButtonFrame = styled(View, {
 
   hoverStyle: {
     backgroundColor: "$backgroundHover",
-    borderColor: "$borderColorHover",
-    outlineColor: "$primary",
-    outlineStyle: "solid",
-    outlineWidth: 2,
-    outlineOffset: "$1.25"
+    borderColor: "$borderColorHover"
   },
 
   pressStyle: {
     backgroundColor: "$backgroundPress",
-    borderColor: "$borderColorPress",
-    outlineColor: "$primary",
-    outlineStyle: "solid",
-    outlineWidth: 2,
-    outlineOffset: "$1.25"
+    borderColor: "$borderColorPress"
   },
 
   focusVisibleStyle: {
     backgroundColor: "$backgroundFocus",
-    borderColor: "$borderColorFocus",
-    outlineColor: "$primary",
-    outlineStyle: "solid",
-    outlineWidth: 2,
-    outlineOffset: "$1.25"
+    borderColor: "$borderColorFocus"
   },
 
   variants: {
@@ -162,20 +150,17 @@ const ButtonFrame = styled(View, {
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundHover",
-          outlineColor: "$backgroundHover"
+          borderColor: "$backgroundHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundPress",
-          outlineColor: "$backgroundPress"
+          borderColor: "$backgroundPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundFocus",
-          outlineColor: "$backgroundFocus"
+          borderColor: "$backgroundFocus"
         }
       },
 
@@ -239,12 +224,45 @@ const ButtonFrame = styled(View, {
         opacity: 1,
         borderColor: "$borderColor"
       }
+    },
+
+    outlined: {
+      true: {
+        hoverStyle: {
+          outlineColor: "$primary",
+          outlineStyle: "solid",
+          outlineWidth: 2,
+          outlineOffset: "$1.25"
+        },
+
+        pressStyle: {
+          outlineColor: "$primary",
+          outlineStyle: "solid",
+          outlineWidth: 2,
+          outlineOffset: "$1.25"
+        },
+
+        focusVisibleStyle: {
+          outlineColor: "$primary",
+          outlineStyle: "solid",
+          outlineWidth: 2,
+          outlineOffset: "$1.25"
+        }
+      }
+    },
+
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
     }
   } as const,
 
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    disabled: false
+    disabled: false,
+    outlined: false,
+    rounded: true
   }
 });
 
@@ -253,7 +271,7 @@ const ButtonText = styled(SizableText, {
   context: ButtonContext,
   userSelect: "none",
   fontFamily: "$label",
-  fontWeight: "bold",
+  fontWeight: "$6",
   animation: "medium",
 
   variants: {
@@ -329,7 +347,6 @@ const ButtonWrapper = styled(ThemeableStack, {
   name: "ButtonWrapper",
   context: ButtonContext,
   animation: "medium",
-  position: "relative",
 
   pressStyle: {
     scale: 0.99

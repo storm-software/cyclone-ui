@@ -50,6 +50,22 @@ export const Disabled: Story = {
   }
 };
 
+export const Rounded: Story = {
+  args: {
+    children: "Button Text",
+    disabled: false,
+    rounded: true
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    children: "Button Text",
+    disabled: false,
+    outlined: true
+  }
+};
+
 export const BrandPrimary: Story = {
   args: {
     children: "Button Text",
