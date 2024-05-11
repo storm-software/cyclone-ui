@@ -1651,6 +1651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_TextArea: {
         background: string;
         backgroundHover: string;
@@ -2572,6 +2612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -3571,6 +3651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_base_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -4492,6 +4612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_brand_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -5491,6 +5651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_accent_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -6412,6 +6612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_help_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -7411,6 +7651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_success_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -8332,6 +8612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_info_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -9331,6 +9651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_warning_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -10252,6 +10612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -11251,6 +11651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_base_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -12172,6 +12612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_brand_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -13171,6 +13651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_accent_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -14092,6 +14612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_help_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -15091,6 +15651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_success_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -16012,6 +16612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_info_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -17011,6 +17651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_warning_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -17932,6 +18612,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -19128,6 +19848,47 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
+    Badge: {
+        override: {
+            background: number;
+            backgroundHover: number;
+            color: number;
+            colorHover: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
     TextArea: {
         override: {
             shadowColor: number;
@@ -19172,6 +19933,9 @@ export const dark: Theme;
 
 // @public (undocumented)
 export const dark_accent: Theme;
+
+// @public (undocumented)
+export const dark_accent_Badge: Theme;
 
 // @public (undocumented)
 export const dark_accent_Breadcrumb: Theme;
@@ -19246,7 +20010,13 @@ export const dark_accent_TooltipArrow: Theme;
 export const dark_accent_TooltipContent: Theme;
 
 // @public (undocumented)
+export const dark_Badge: Theme;
+
+// @public (undocumented)
 export const dark_base: Theme;
+
+// @public (undocumented)
+export const dark_base_Badge: Theme;
 
 // @public (undocumented)
 export const dark_base_Breadcrumb: Theme;
@@ -19322,6 +20092,9 @@ export const dark_base_TooltipContent: Theme;
 
 // @public (undocumented)
 export const dark_brand: Theme;
+
+// @public (undocumented)
+export const dark_brand_Badge: Theme;
 
 // @public (undocumented)
 export const dark_brand_Breadcrumb: Theme;
@@ -19417,6 +20190,9 @@ export const dark_DrawerFrame: Theme;
 export const dark_error: Theme;
 
 // @public (undocumented)
+export const dark_error_Badge: Theme;
+
+// @public (undocumented)
 export const dark_error_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -19492,6 +20268,9 @@ export const dark_error_TooltipContent: Theme;
 export const dark_help: Theme;
 
 // @public (undocumented)
+export const dark_help_Badge: Theme;
+
+// @public (undocumented)
 export const dark_help_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -19565,6 +20344,9 @@ export const dark_help_TooltipContent: Theme;
 
 // @public (undocumented)
 export const dark_info: Theme;
+
+// @public (undocumented)
+export const dark_info_Badge: Theme;
 
 // @public (undocumented)
 export const dark_info_Breadcrumb: Theme;
@@ -19678,6 +20460,9 @@ export const dark_SliderTrackActive: Theme;
 export const dark_success: Theme;
 
 // @public (undocumented)
+export const dark_success_Badge: Theme;
+
+// @public (undocumented)
 export const dark_success_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -19769,6 +20554,9 @@ export const dark_TooltipContent: Theme;
 
 // @public (undocumented)
 export const dark_warning: Theme;
+
+// @public (undocumented)
+export const dark_warning_Badge: Theme;
 
 // @public (undocumented)
 export const dark_warning_Breadcrumb: Theme;
@@ -19990,6 +20778,9 @@ export const light: Theme;
 export const light_accent: Theme;
 
 // @public (undocumented)
+export const light_accent_Badge: Theme;
+
+// @public (undocumented)
 export const light_accent_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -20062,7 +20853,13 @@ export const light_accent_TooltipArrow: Theme;
 export const light_accent_TooltipContent: Theme;
 
 // @public (undocumented)
+export const light_Badge: Theme;
+
+// @public (undocumented)
 export const light_base: Theme;
+
+// @public (undocumented)
+export const light_base_Badge: Theme;
 
 // @public (undocumented)
 export const light_base_Breadcrumb: Theme;
@@ -20138,6 +20935,9 @@ export const light_base_TooltipContent: Theme;
 
 // @public (undocumented)
 export const light_brand: Theme;
+
+// @public (undocumented)
+export const light_brand_Badge: Theme;
 
 // @public (undocumented)
 export const light_brand_Breadcrumb: Theme;
@@ -20233,6 +21033,9 @@ export const light_DrawerFrame: Theme;
 export const light_error: Theme;
 
 // @public (undocumented)
+export const light_error_Badge: Theme;
+
+// @public (undocumented)
 export const light_error_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -20308,6 +21111,9 @@ export const light_error_TooltipContent: Theme;
 export const light_help: Theme;
 
 // @public (undocumented)
+export const light_help_Badge: Theme;
+
+// @public (undocumented)
 export const light_help_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -20381,6 +21187,9 @@ export const light_help_TooltipContent: Theme;
 
 // @public (undocumented)
 export const light_info: Theme;
+
+// @public (undocumented)
+export const light_info_Badge: Theme;
 
 // @public (undocumented)
 export const light_info_Breadcrumb: Theme;
@@ -20494,6 +21303,9 @@ export const light_SliderTrackActive: Theme;
 export const light_success: Theme;
 
 // @public (undocumented)
+export const light_success_Badge: Theme;
+
+// @public (undocumented)
 export const light_success_Breadcrumb: Theme;
 
 // @public (undocumented)
@@ -20585,6 +21397,9 @@ export const light_TooltipContent: Theme;
 
 // @public (undocumented)
 export const light_warning: Theme;
+
+// @public (undocumented)
+export const light_warning_Badge: Theme;
 
 // @public (undocumented)
 export const light_warning_Breadcrumb: Theme;
@@ -21012,6 +21827,46 @@ export const maskOptions: {
             shadowColorFocus: number;
         };
         palette?: CreateThemePalette | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    badge: {
+        override: {
+            background: number;
+            backgroundHover: number;
+            color: number;
+            colorHover: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
         overrideSwap?: Partial<ThemeMask> | undefined;
         overrideShift?: Partial<ThemeMask> | undefined;
         strength?: number | undefined;
@@ -23116,6 +23971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_TextArea: {
         background: string;
         backgroundHover: string;
@@ -24037,6 +24932,46 @@ export const themes: {
         color14: string;
     };
     light_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -25036,6 +25971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_base_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -25957,6 +26932,46 @@ export const themes: {
         color14: string;
     };
     light_brand_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -26956,6 +27971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_accent_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -27877,6 +28932,46 @@ export const themes: {
         color14: string;
     };
     light_help_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -28876,6 +29971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_success_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -29797,6 +30932,46 @@ export const themes: {
         color14: string;
     };
     light_info_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -30796,6 +31971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_warning_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -31717,6 +32932,46 @@ export const themes: {
         color14: string;
     };
     light_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -32716,6 +33971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_base_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_TextArea: {
         background: string;
         backgroundHover: string;
@@ -33637,6 +34932,46 @@ export const themes: {
         color14: string;
     };
     dark_brand_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -34636,6 +35971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_accent_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_TextArea: {
         background: string;
         backgroundHover: string;
@@ -35557,6 +36932,46 @@ export const themes: {
         color14: string;
     };
     dark_help_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -36556,6 +37971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_success_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_TextArea: {
         background: string;
         backgroundHover: string;
@@ -37477,6 +38932,46 @@ export const themes: {
         color14: string;
     };
     dark_info_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -38476,6 +39971,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_warning_Badge: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_TextArea: {
         background: string;
         backgroundHover: string;
@@ -39397,6 +40932,46 @@ export const themes: {
         color14: string;
     };
     dark_error_Link: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Badge: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;

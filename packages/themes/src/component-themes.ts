@@ -136,6 +136,11 @@ export const componentThemes = {
     ...maskOptions.link
   },
 
+  Badge: {
+    mask: "identity",
+    ...maskOptions.badge
+  },
+
   TextArea: {
     mask: "identity",
     ...maskOptions.component

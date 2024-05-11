@@ -639,6 +639,7 @@ const n28 = t([[14, 9],[15, 3],[16, 5],[17, 0],[18, 13],[19, 11],[20, 12],[21, 0
 
 export const light_Input = n28
 export const light_Label = n28
+export const light_Badge = n28
 export const light_TextArea = n28
 const n29 = t([[14, 9],[15, 3],[16, 5],[17, 0],[18, 13],[19, 11],[20, 12],[21, 0],[22, 2],[23, 3],[24, 3],[25, 0],[26, 13],[27, 11],[28, 8],[29, 7],[30, 7],[31, 12],[32, 8],[33, 10],[34, 9],[35, 9],[36, 8],[37, 9]])
 
@@ -649,10 +650,12 @@ const n30 = t([[14, 97],[15, 91],[16, 93],[17, 88],[18, 101],[19, 99],[20, 100],
 export const dark_ListItem = n30
 export const dark_Input = n30
 export const dark_Label = n30
+export const dark_Badge = n30
 export const dark_TextArea = n30
 export const dark_base_ListItem = n30
 export const dark_base_Input = n30
 export const dark_base_Label = n30
+export const dark_base_Badge = n30
 export const dark_base_TextArea = n30
 const n31 = t([[14, 98],[15, 92],[16, 94],[17, 89],[18, 88],[19, 98],[20, 99],[21, 89],[22, 91],[23, 92],[24, 92],[25, 89],[26, 88],[27, 96],[28, 99],[29, 100],[30, 100],[31, 99],[32, 95],[33, 97],[34, 96],[35, 96],[36, 95],[37, 98]])
 
@@ -741,6 +744,7 @@ const n48 = t([[14, 9],[15, 3],[16, 5],[17, 0],[18, 13],[19, 11],[20, 12],[21, 0
 
 export const light_base_Input = n48
 export const light_base_Label = n48
+export const light_base_Badge = n48
 export const light_base_TextArea = n48
 const n49 = t([[14, 9],[15, 3],[16, 5],[17, 0],[18, 13],[19, 11],[20, 12],[21, 0],[22, 2],[23, 3],[24, 3],[25, 0],[26, 13],[27, 11],[28, 8],[29, 7],[30, 7],[31, 12],[32, 3],[33, 4],[34, 3],[35, 3],[36, 8],[37, 9]])
 
@@ -800,9 +804,11 @@ const n59 = t([[14, 23],[15, 16],[16, 18],[17, 0],[18, 176],[19, 11],[20, 175],[
 
 export const light_brand_Input = n59
 export const light_brand_Label = n59
+export const light_brand_Badge = n59
 export const light_brand_TextArea = n59
 export const light_accent_Input = n59
 export const light_accent_Label = n59
+export const light_accent_Badge = n59
 export const light_accent_TextArea = n59
 const n60 = t([[14, 23],[15, 16],[16, 18],[17, 0],[18, 176],[19, 11],[20, 175],[21, 0],[22, 15],[23, 16],[24, 16],[25, 0],[26, 176],[27, 11],[28, 22],[29, 21],[30, 21],[31, 175],[32, 16],[33, 17],[34, 16],[35, 16],[36, 23],[37, 23]])
 
@@ -848,6 +854,7 @@ const n70 = t([[14, 35],[15, 28],[16, 30],[17, 0],[18, 178],[19, 11],[20, 177],[
 
 export const light_help_Input = n70
 export const light_help_Label = n70
+export const light_help_Badge = n70
 export const light_help_TextArea = n70
 const n71 = t([[14, 35],[15, 28],[16, 30],[17, 0],[18, 178],[19, 11],[20, 177],[21, 0],[22, 27],[23, 28],[24, 28],[25, 0],[26, 178],[27, 11],[28, 34],[29, 33],[30, 33],[31, 177],[32, 28],[33, 29],[34, 28],[35, 28],[36, 35],[37, 35]])
 
@@ -891,6 +898,7 @@ const n81 = t([[14, 47],[15, 40],[16, 42],[17, 0],[18, 180],[19, 11],[20, 179],[
 
 export const light_success_Input = n81
 export const light_success_Label = n81
+export const light_success_Badge = n81
 export const light_success_TextArea = n81
 const n82 = t([[14, 47],[15, 40],[16, 42],[17, 0],[18, 180],[19, 11],[20, 179],[21, 0],[22, 39],[23, 40],[24, 40],[25, 0],[26, 180],[27, 11],[28, 46],[29, 45],[30, 45],[31, 179],[32, 40],[33, 41],[34, 40],[35, 40],[36, 47],[37, 47]])
 
@@ -934,6 +942,7 @@ const n92 = t([[14, 71],[15, 64],[16, 66],[17, 0],[18, 182],[19, 11],[20, 181],[
 
 export const light_warning_Input = n92
 export const light_warning_Label = n92
+export const light_warning_Badge = n92
 export const light_warning_TextArea = n92
 const n93 = t([[14, 71],[15, 64],[16, 66],[17, 0],[18, 182],[19, 11],[20, 181],[21, 0],[22, 63],[23, 64],[24, 64],[25, 0],[26, 182],[27, 11],[28, 70],[29, 69],[30, 69],[31, 181],[32, 64],[33, 65],[34, 64],[35, 64],[36, 71],[37, 71]])
 
@@ -977,6 +986,7 @@ const n103 = t([[14, 59],[15, 52],[16, 54],[17, 0],[18, 184],[19, 11],[20, 183],
 
 export const light_error_Input = n103
 export const light_error_Label = n103
+export const light_error_Badge = n103
 export const light_error_TextArea = n103
 const n104 = t([[14, 59],[15, 52],[16, 54],[17, 0],[18, 184],[19, 11],[20, 183],[21, 0],[22, 51],[23, 52],[24, 52],[25, 0],[26, 184],[27, 11],[28, 58],[29, 57],[30, 57],[31, 183],[32, 52],[33, 53],[34, 52],[35, 52],[36, 59],[37, 59]])
 
@@ -1020,6 +1030,7 @@ const n114 = t([[14, 83],[15, 76],[16, 78],[17, 0],[18, 186],[19, 11],[20, 185],
 
 export const light_info_Input = n114
 export const light_info_Label = n114
+export const light_info_Badge = n114
 export const light_info_TextArea = n114
 const n115 = t([[14, 83],[15, 76],[16, 78],[17, 0],[18, 186],[19, 11],[20, 185],[21, 0],[22, 75],[23, 76],[24, 76],[25, 0],[26, 186],[27, 11],[28, 82],[29, 81],[30, 81],[31, 185],[32, 76],[33, 77],[34, 76],[35, 76],[36, 83],[37, 83]])
 
@@ -1030,10 +1041,12 @@ const n116 = t([[14, 23],[15, 104],[16, 106],[17, 88],[18, 188],[19, 99],[20, 18
 export const dark_brand_ListItem = n116
 export const dark_brand_Input = n116
 export const dark_brand_Label = n116
+export const dark_brand_Badge = n116
 export const dark_brand_TextArea = n116
 export const dark_accent_ListItem = n116
 export const dark_accent_Input = n116
 export const dark_accent_Label = n116
+export const dark_accent_Badge = n116
 export const dark_accent_TextArea = n116
 const n117 = t([[14, 111],[15, 105],[16, 107],[17, 102],[18, 88],[19, 112],[20, 99],[21, 102],[22, 104],[23, 105],[24, 105],[25, 102],[26, 88],[27, 110],[28, 112],[29, 99],[30, 99],[31, 99],[32, 110],[33, 111],[34, 23],[35, 23],[36, 110],[37, 111]])
 
@@ -1092,6 +1105,7 @@ const n126 = t([[14, 122],[15, 115],[16, 117],[17, 88],[18, 190],[19, 99],[20, 1
 export const dark_help_ListItem = n126
 export const dark_help_Input = n126
 export const dark_help_Label = n126
+export const dark_help_Badge = n126
 export const dark_help_TextArea = n126
 const n127 = t([[14, 123],[15, 116],[16, 118],[17, 113],[18, 88],[19, 124],[20, 99],[21, 113],[22, 115],[23, 116],[24, 116],[25, 113],[26, 88],[27, 121],[28, 124],[29, 99],[30, 99],[31, 99],[32, 121],[33, 123],[34, 122],[35, 122],[36, 121],[37, 123]])
 
@@ -1133,6 +1147,7 @@ const n136 = t([[14, 134],[15, 127],[16, 129],[17, 88],[18, 192],[19, 99],[20, 1
 export const dark_success_ListItem = n136
 export const dark_success_Input = n136
 export const dark_success_Label = n136
+export const dark_success_Badge = n136
 export const dark_success_TextArea = n136
 const n137 = t([[14, 135],[15, 128],[16, 130],[17, 125],[18, 88],[19, 136],[20, 99],[21, 125],[22, 127],[23, 128],[24, 128],[25, 125],[26, 88],[27, 133],[28, 136],[29, 99],[30, 99],[31, 99],[32, 133],[33, 135],[34, 134],[35, 134],[36, 133],[37, 135]])
 
@@ -1174,6 +1189,7 @@ const n146 = t([[14, 158],[15, 151],[16, 153],[17, 88],[18, 194],[19, 99],[20, 1
 export const dark_warning_ListItem = n146
 export const dark_warning_Input = n146
 export const dark_warning_Label = n146
+export const dark_warning_Badge = n146
 export const dark_warning_TextArea = n146
 const n147 = t([[14, 159],[15, 152],[16, 154],[17, 149],[18, 88],[19, 160],[20, 99],[21, 149],[22, 151],[23, 152],[24, 152],[25, 149],[26, 88],[27, 157],[28, 160],[29, 99],[30, 99],[31, 99],[32, 157],[33, 159],[34, 158],[35, 158],[36, 157],[37, 159]])
 
@@ -1215,6 +1231,7 @@ const n156 = t([[14, 146],[15, 139],[16, 141],[17, 88],[18, 196],[19, 99],[20, 1
 export const dark_error_ListItem = n156
 export const dark_error_Input = n156
 export const dark_error_Label = n156
+export const dark_error_Badge = n156
 export const dark_error_TextArea = n156
 const n157 = t([[14, 147],[15, 140],[16, 142],[17, 137],[18, 88],[19, 148],[20, 99],[21, 137],[22, 139],[23, 140],[24, 140],[25, 137],[26, 88],[27, 145],[28, 148],[29, 99],[30, 99],[31, 99],[32, 145],[33, 147],[34, 146],[35, 146],[36, 145],[37, 147]])
 
@@ -1256,6 +1273,7 @@ const n166 = t([[14, 170],[15, 163],[16, 165],[17, 88],[18, 198],[19, 99],[20, 1
 export const dark_info_ListItem = n166
 export const dark_info_Input = n166
 export const dark_info_Label = n166
+export const dark_info_Badge = n166
 export const dark_info_TextArea = n166
 const n167 = t([[14, 171],[15, 164],[16, 166],[17, 161],[18, 88],[19, 172],[20, 99],[21, 161],[22, 163],[23, 164],[24, 164],[25, 161],[26, 88],[27, 169],[28, 172],[29, 99],[30, 99],[31, 99],[32, 169],[33, 171],[34, 170],[35, 170],[36, 169],[37, 171]])
 

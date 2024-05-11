@@ -22,6 +22,7 @@ overrides:
   '@cyclone-ui/website': workspace:*
   '@cyclone-ui/link': workspace:*
   '@cyclone-ui/breadcrumb': workspace:*
+  '@cyclone-ui/badge': workspace:*
 
 importers:
 
@@ -573,6 +574,30 @@ importers:
       raf:
         specifier: ^3.4.1
         version: 3.4.1
+
+  components/badge:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/font-size':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/get-font-sized':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
 
   components/breadcrumb:
     dependencies:

@@ -172,5 +172,16 @@ export const maskOptions = {
       colorFocus: ColorPaletteShades.PRIMARY - 2
     },
     skip: skipShadowsAndSpecificColors
+  },
+  badge: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      background: ColorPaletteShades.PRIMARY,
+      backgroundHover: ColorPaletteShades.PRIMARY + 1,
+      color: ColorPaletteShades.BACKGROUND,
+      colorHover: ColorPaletteShades.BACKGROUND
+    },
+    skip: skipShadowsAndSpecificColors
   }
 } satisfies Record<string, MaskOptions>;
