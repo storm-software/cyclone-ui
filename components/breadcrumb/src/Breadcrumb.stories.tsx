@@ -25,6 +25,13 @@ export const Base: Story = {
   }
 };
 
+export const Slash: Story = {
+  args: {
+    current: "Current Page",
+    divider: "slash"
+  }
+};
+
 export const Chevron: Story = {
   args: {
     current: "Current Page",
@@ -36,12 +43,5 @@ export const DoubleChevron: Story = {
   args: {
     current: "Current Page",
     divider: "double"
-  }
-};
-
-export const Slash: Story = {
-  args: {
-    current: "Current Page",
-    divider: "slash"
   }
 };

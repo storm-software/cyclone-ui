@@ -1,6 +1,5 @@
 import {
   FontSizeTokens,
-  SizeTokens,
   ThemeableProps,
   createStyledContext,
   styled
@@ -34,7 +33,7 @@ type BreadcrumbContextProps = TextContextStyles &
 
 export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   size: "$0.5",
-  divider: BreadcrumbDivider.CHEVRON
+  divider: BreadcrumbDivider.SLASH
 });
 
 const BreadcrumbContainer = styled(ThemeableStack, {
