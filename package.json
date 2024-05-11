@@ -202,7 +202,8 @@
       "@cyclone-ui/theme-provider": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/link": "workspace:*"
+      "@cyclone-ui/link": "workspace:*",
+      "@cyclone-ui/breadcrumb": "workspace:*"
     }
   },
   "bundlewatch": {

@@ -44,10 +44,10 @@ const template = {
   backgroundFocus: 4,
   backgroundStrong: ColorPaletteShades.BACKGROUND,
   backgroundTransparent: ColorPaletteShades.BACKGROUND_TRANSPARENT,
-  color: -1,
-  colorHover: -2,
-  colorPress: -1,
-  colorFocus: -2,
+  color: ColorPaletteShades.PRIMARY - 2,
+  colorHover: ColorPaletteShades.PRIMARY + 1,
+  colorPress: ColorPaletteShades.PRIMARY + 2,
+  colorFocus: ColorPaletteShades.PRIMARY + 2,
   colorTransparent: -0,
   borderColor: -4,
   borderColorHover: -2,
@@ -131,7 +131,7 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY,
+      color: ColorPaletteShades.FOREGROUND,
       colorHover: ColorPaletteShades.PRIMARY - 1,
       colorPress: ColorPaletteShades.PRIMARY - 2,
       colorFocus: ColorPaletteShades.PRIMARY - 2
@@ -158,6 +158,18 @@ export const maskOptions = {
       colorHover: ColorPaletteShades.FOREGROUND,
       colorPress: ColorPaletteShades.FOREGROUND,
       colorFocus: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  breadcrumb: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND,
+      colorHover: ColorPaletteShades.PRIMARY - 1,
+      colorPress: ColorPaletteShades.PRIMARY - 2,
+      colorFocus: ColorPaletteShades.PRIMARY - 2
     },
     skip: skipShadowsAndSpecificColors
   }

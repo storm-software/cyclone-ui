@@ -71,13 +71,19 @@ export const initialTheme = (colors: Record<ColorThemeType, string>, themeType: 
 
   theme.base = chroma
     .scale(themeType === ColorThemeType.LIGHT ? [colors.light, colors.dark] : [colors.dark, colors.light])
-    .gamma(themeType === 'dark' ? 2 : 1)
+    .gamma(themeType === 'dark' ? 1.75 : 1)
     .colors(12)
-    .slice(2)
-    .reduce((acc: {[x: string]: string}, value: string, index: number) => {
-      acc[`base${index + 1}`] = chroma(value).css('hsl')
-      return acc
-    }, {})
+    .slice(1, -3)
+    .reduce(
+      (acc: {[x: string]: string}, value: string, index: number) => {
+        acc[`base${index + 2}`] = chroma(value).css('hsl')
+        return acc
+      },
+      {
+        base1: chroma(themeType === ColorThemeType.LIGHT ? colors.light : colors.dark).css('hsl'),
+      },
+    )
+  theme.base['base10'] = chroma(themeType === ColorThemeType.LIGHT ? colors.dark : colors.light).css('hsl')
 
   const currentLength = Object.keys(theme.base).length
   theme.base = chroma

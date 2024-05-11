@@ -126,6 +126,11 @@ export const componentThemes = {
     ...maskOptions.label
   },
 
+  Breadcrumb: {
+    mask: "identity",
+    ...maskOptions.breadcrumb
+  },
+
   Link: {
     mask: "identity",
     ...maskOptions.link

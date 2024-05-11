@@ -7,7 +7,7 @@ import type {
   VariantSpreadExtras
 } from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
-import { RefObject, createRef, useId, useRef, useState } from "react";
+import { createRef, useId, useRef, useState } from "react";
 import { Label } from "@tamagui/label";
 import { XGroup } from "@tamagui/group";
 import { isWeb } from "@tamagui/constants";
@@ -19,8 +19,7 @@ import {
   styled,
   createStyledContext,
   useTheme,
-  getVariable,
-  Theme
+  getVariable
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";

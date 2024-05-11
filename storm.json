@@ -24,13 +24,13 @@
       "error": "#a40e26"
     },
     "dark": {
-      "background": "#22272E",
+      "background": "#22272e",
       "foreground": "#e4e4e7",
       "brand": "#1fb2a6",
-      "help": "#8256D0",
+      "help": "#8256d0",
       "success": "#10b981",
       "info": "#58a6ff",
-      "warning": "#F3D371",
+      "warning": "#f3d371",
       "error": "#d1242f"
     }
   },

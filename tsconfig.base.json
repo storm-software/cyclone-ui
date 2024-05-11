@@ -65,6 +65,12 @@
       "@cyclone-ui/input/*": [
         "components/input/src/*"
       ],
+      "@cyclone-ui/link": [
+        "components/link/src/index.ts"
+      ],
+      "@cyclone-ui/link/*": [
+        "components/link/src/*"
+      ],
       "@cyclone-ui/masks": [
         "packages/masks/src/index.ts"
       ],
@@ -98,11 +104,11 @@
       "@cyclone-ui/themes/brand": [
         "packages/themes/src/brand-theme.ts"
       ],
-      "@cyclone-ui/link": [
-        "components/link/src/index.ts"
+      "@cyclone-ui/breadcrumb": [
+        "components/breadcrumb/src/index.ts"
       ],
-      "@cyclone-ui/link/*": [
-        "components/link/src/*"
+      "@cyclone-ui/breadcrumb/*": [
+        "components/breadcrumb/src/*"
       ]
     }
   }

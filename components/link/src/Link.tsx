@@ -17,6 +17,7 @@ const LinkFrame = styled(SizableText, {
   name: "Link",
   tag: "a",
   accessibilityRole: "link",
+
   textDecorationLine: "none",
   color: "$color",
   fontFamily: "$body",
@@ -45,7 +46,7 @@ const Underline = styled(Square, {
   width: "100%",
   height: "2px",
   left: 0,
-  bottom: "$-0.5",
+  bottom: "$-0.75",
   backgroundColor: "$accent10",
   borderRadius: "2px",
   display: "block",
@@ -78,13 +79,13 @@ const Underline = styled(Square, {
 
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
-    { target, children, underline = "hover", width, ...props }: LinkProps,
+    { target, children, underline = "hover", width, href, ...props }: LinkProps,
     forwardedRef
   ) => {
-    const linkProps = useLink(props);
+    const linkProps = useLink({ href, ...props });
 
     return (
-      <Text>
+      <SizableText {...props}>
         <LinkFrame
           {...linkProps}
           {...(isWeb
@@ -102,7 +103,7 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
               })}
           ref={forwardedRef}
           group={"link" as any}>
-          <Text>{children}</Text>
+          {children}
           {underline !== "none" && (
             <Underline
               underline={underline}
@@ -148,7 +149,8 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
             />
           )}
         </LinkFrame>
-      </Text>
+      </SizableText>
     );
-  }
+  },
+  { staticConfig: { componentName: "Link" } }
 );
