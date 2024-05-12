@@ -18,7 +18,7 @@ export const createSpaceGroteskFont = <
     family: "Space Grotesk Variable",
     size,
     lineHeight: Object.fromEntries(
-      Object.entries(size).map(([k, v]) => [k, v * 1.3])
+      Object.entries(size).map(([k, v]) => [k, v * 1.5])
     ) as typeof size,
     weight: {
       2: "200",

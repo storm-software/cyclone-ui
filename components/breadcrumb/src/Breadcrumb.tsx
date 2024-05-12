@@ -36,7 +36,7 @@ export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   divider: BreadcrumbDivider.SLASH
 });
 
-const BreadcrumbContainer = styled(ThemeableStack, {
+const BreadcrumbFrame = styled(ThemeableStack, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
   animation: "medium",
@@ -54,7 +54,7 @@ const BreadcrumbContainer = styled(ThemeableStack, {
   }
 });
 
-const BreadcrumbContainerImpl = BreadcrumbContainer.styleable<{
+const BreadcrumbFrameImpl = BreadcrumbFrame.styleable<{
   current: string;
 }>(
   (props, forwardRef) => {
@@ -62,7 +62,7 @@ const BreadcrumbContainerImpl = BreadcrumbContainer.styleable<{
     const { size } = useContext(BreadcrumbContext);
 
     return (
-      <BreadcrumbContainer {...rest} ref={forwardRef}>
+      <BreadcrumbFrame {...rest} ref={forwardRef}>
         {children}
         <SizableText
           color="$color"
@@ -71,7 +71,7 @@ const BreadcrumbContainerImpl = BreadcrumbContainer.styleable<{
           size={size}>
           {current}
         </SizableText>
-      </BreadcrumbContainer>
+      </BreadcrumbFrame>
     );
   },
   {
@@ -129,7 +129,7 @@ const BreadcrumbItem = Link.styleable<LinkProps>(
   }
 );
 
-export const Breadcrumb = withStaticProperties(BreadcrumbContainerImpl, {
+export const Breadcrumb = withStaticProperties(BreadcrumbFrameImpl, {
   Item: BreadcrumbItem,
   props: BreadcrumbContext.Provider
 });

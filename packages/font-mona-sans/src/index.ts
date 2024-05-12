@@ -11,25 +11,6 @@ import type { GenericFont } from "@tamagui/core";
 import { createFont } from "@tamagui/core";
 import { isWeb } from "@tamagui/constants";
 
-const size = {
-  1: 10,
-  2: 11,
-  3: 12,
-  4: 14,
-  5: 15,
-  6: 16,
-  7: 20,
-  8: 22,
-  9: 30,
-  10: 42,
-  11: 52,
-  12: 62,
-  13: 72,
-  14: 92,
-  15: 114,
-  16: 124
-} as const;
-
 export const createMonaSansFont = <A extends GenericFont<keyof typeof size>>(
   font: Partial<A> = {}
 ): A => {
@@ -56,3 +37,22 @@ export const createMonaSansFont = <A extends GenericFont<keyof typeof size>>(
     ...(font as any)
   });
 };
+
+export const size = {
+  1: 10,
+  2: 11,
+  3: 12,
+  4: 14,
+  5: 15,
+  6: 16,
+  7: 20,
+  8: 22,
+  9: 30,
+  10: 42,
+  11: 52,
+  12: 62,
+  13: 72,
+  14: 92,
+  15: 114,
+  16: 124
+} as const;

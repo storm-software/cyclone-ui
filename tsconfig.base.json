@@ -11,6 +11,12 @@
       "esnext"
     ],
     "paths": {
+      "@cyclone-ui/badge": [
+        "components/badge/src/index.ts"
+      ],
+      "@cyclone-ui/badge/*": [
+        "components/badge/src/*"
+      ],
       "@cyclone-ui/breadcrumb": [
         "components/breadcrumb/src/index.ts"
       ],
@@ -110,11 +116,11 @@
       "@cyclone-ui/themes/brand": [
         "packages/themes/src/brand-theme.ts"
       ],
-      "@cyclone-ui/badge": [
-        "components/badge/src/index.ts"
+      "@cyclone-ui/card": [
+        "components/card/src/index.ts"
       ],
-      "@cyclone-ui/badge/*": [
-        "components/badge/src/*"
+      "@cyclone-ui/card/*": [
+        "components/card/src/*"
       ]
     }
   }

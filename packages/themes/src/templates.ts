@@ -183,5 +183,35 @@ export const maskOptions = {
       colorHover: ColorPaletteShades.BACKGROUND
     },
     skip: skipShadowsAndSpecificColors
+  },
+  card: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      background: ColorPaletteShades.PRIMARY,
+      backgroundHover: ColorPaletteShades.PRIMARY + 2,
+      color: ColorPaletteShades.PRIMARY - 4,
+      borderColor: ColorPaletteShades.PRIMARY,
+      borderColorHover: ColorPaletteShades.PRIMARY + 2,
+      borderColorFocus: ColorPaletteShades.PRIMARY + 2,
+      borderColorPress: ColorPaletteShades.PRIMARY + 2
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  cardHeading: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  cardEyebrow: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY - 3
+    },
+    skip: skipShadowsAndSpecificColors
   }
 } satisfies Record<string, MaskOptions>;

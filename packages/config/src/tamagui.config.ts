@@ -8,21 +8,13 @@ import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
 import { createTamagui } from "./create-tamagui";
 import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
-const headingFont = createPermanentMarkerFont({
+const permanentMarkerFont = createPermanentMarkerFont({
   transform: {
     6: "uppercase"
-  },
-  weight: {
-    6: "400"
-  },
-  color: {
-    6: "$colorFocus",
-    7: "$color"
   }
 });
-
-const labelFont = createMonaSansFont({});
-const bodyFont = createSpaceGroteskFont({});
+const monaSansFont = createMonaSansFont();
+const spaceGroteskFont = createSpaceGroteskFont({});
 
 export const options: CreateTamaguiProps = {
   defaultFont: "body",
@@ -31,9 +23,11 @@ export const options: CreateTamaguiProps = {
   themeClassNameOnRoot: true,
   shorthands,
   fonts: {
-    heading: headingFont,
-    label: labelFont,
-    body: bodyFont
+    title: permanentMarkerFont,
+    eyebrow: permanentMarkerFont,
+    heading: monaSansFont,
+    label: monaSansFont,
+    body: spaceGroteskFont
   },
   tokens,
   themes: brand,

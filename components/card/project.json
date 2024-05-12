@@ -1,8 +1,8 @@
 {
-  "name": "link",
+  "name": "card",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/link/src",
+  "sourceRoot": "components/card/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/components/link",
-        "tsConfig": "components/link/tsconfig.json",
-        "project": "components/link/package.json",
+        "outputPath": "dist/components/card",
+        "tsConfig": "components/card/tsconfig.json",
+        "project": "components/card/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/link",
+            "input": "components/card",
             "glob": "*.md",
             "output": "/"
           },

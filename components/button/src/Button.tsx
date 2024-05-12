@@ -98,7 +98,7 @@ const ButtonFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "medium",
+  animation: "$slow",
   borderWidth: 1,
 
   backgroundColor: "$background",
@@ -220,6 +220,7 @@ const ButtonFrame = styled(View, {
         borderColor: "$disabled",
         borderWidth: 3
       },
+
       false: {
         opacity: 1,
         borderColor: "$borderColor"
@@ -272,7 +273,7 @@ const ButtonText = styled(SizableText, {
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "$6",
-  animation: "medium",
+  animation: "$slow",
 
   variants: {
     unstyled: {
@@ -290,14 +291,6 @@ const ButtonText = styled(SizableText, {
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
   }
-
-  // variants: {
-  //   size: {
-  //     "...fontSize": (name: string | number, { font }: any) => ({
-  //       fontSize: font?.size[name]
-  //     })
-  //   }
-  // } as const
 });
 
 const ButtonIcon = (props: {
@@ -326,7 +319,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   context: ButtonContext,
   backgroundColor: "transparent",
   borderRadius: "$4",
-  animation: "medium",
+  animation: "$slow",
   opacity: 0.6
 });
 
@@ -335,7 +328,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
   context: ButtonContext,
   backgroundColor: "transparent",
   borderRadius: "$4",
-  animation: "medium",
+  animation: "$slow",
   overflow: "hidden",
   opacity: 0.5,
   colors: ["$muted", "$primary"],
@@ -346,7 +339,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
 const ButtonWrapper = styled(ThemeableStack, {
   name: "ButtonWrapper",
   context: ButtonContext,
-  animation: "medium",
+  animation: "$slow",
 
   pressStyle: {
     scale: 0.99

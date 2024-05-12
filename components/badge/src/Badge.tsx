@@ -19,7 +19,7 @@ const BadgeContext = createStyledContext({
 
 const BADGE_NAME = "Badge";
 
-const BadgeImpl = styled(View, {
+const BadgeFrame = styled(View, {
   name: BADGE_NAME,
   flexDirection: "row",
   context: BadgeContext,
@@ -227,7 +227,7 @@ const ButtonComp = styled(View, {
   }
 });
 
-export const Badge = withStaticProperties(BadgeImpl, {
+export const Badge = withStaticProperties(BadgeFrame, {
   Text: BadgeText,
   Icon: BadgeIcon,
   Button: ButtonComp

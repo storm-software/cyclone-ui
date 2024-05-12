@@ -38,8 +38,18 @@ export const componentThemes = {
   ],
 
   Card: {
-    mask: "soften",
-    ...maskOptions.component
+    mask: "identity",
+    ...maskOptions.card
+  },
+
+  CardEyebrow: {
+    mask: "identity",
+    ...maskOptions.cardEyebrow
+  },
+
+  CardHeading: {
+    mask: "identity",
+    ...maskOptions.cardHeading
   },
 
   Button: {

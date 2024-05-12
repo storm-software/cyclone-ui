@@ -210,9 +210,7 @@ const InputGroupImpl = InputGroupFrame.styleable((props, forwardedRef) => {
             <CheckCircle />
           </InputIcon>
         )}
-
       {children}
-
       {disabled && (
         <InputIcon>
           <Lock />
@@ -237,6 +235,7 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   if (!isWeb && fontStyle) {
     delete fontStyle["lineHeight"];
   }
+
   return {
     ...fontStyle,
     height: val,
