@@ -545,7 +545,7 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
   );
 });
 
-export const InputInfo = styled(Text, {
+export const InputDetails = styled(Text, {
   name: "Input",
   context: InputContext,
   animation: "$slow",
@@ -608,15 +608,19 @@ export const InputInfo = styled(Text, {
   }
 });
 
-const InputInfoImpl = InputInfo.styleable((props, forwardedRef) => {
+const InputDetailsImpl = InputDetails.styleable((props, forwardedRef) => {
   const { disabled } = InputContext.useStyledContext();
   const { name } = NameContext.useStyledContext();
   const { children, ...rest } = props;
 
   return (
-    <InputInfo ref={forwardedRef} disabled={disabled} htmlFor={name} {...rest}>
+    <InputDetails
+      ref={forwardedRef}
+      disabled={disabled}
+      htmlFor={name}
+      {...rest}>
       {children}
-    </InputInfo>
+    </InputDetails>
   );
 });
 
@@ -650,7 +654,7 @@ export const Input = withStaticProperties(InputContainerFrame, {
   Area: InputImpl,
   Section: InputSection,
   Icon: InputIconWrapper,
-  Info: InputInfoImpl,
+  Details: InputDetailsImpl,
   Label: InputLabelImpl,
   XGroup: withStaticProperties(InputXGroup, { Item: XGroup.Item })
 });

@@ -12,7 +12,9 @@ const meta: Meta<typeof Input> = {
       <Input.Box>
         <Input.Area placeholder="email@example.com" />
       </Input.Box>
-      <Input.Info>This is an example detailed message for an input</Input.Info>
+      <Input.Details>
+        This is an example detailed message for an input
+      </Input.Details>
     </Input>
   )
 } satisfies Meta<typeof Input>;

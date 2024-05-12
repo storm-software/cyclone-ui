@@ -142,6 +142,7 @@ export const maskOptions = {
     ...baseMaskOptions,
     override: {
       ...colors,
+      color: ColorPaletteShades.FOREGROUND,
       borderColor: ColorPaletteShades.PRIMARY - 4,
       borderColorHover: ColorPaletteShades.PRIMARY - 4,
       borderColorFocus: ColorPaletteShades.PRIMARY - 4,
@@ -158,6 +159,24 @@ export const maskOptions = {
       colorHover: ColorPaletteShades.FOREGROUND,
       colorPress: ColorPaletteShades.FOREGROUND,
       colorFocus: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  alert: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      background: ColorPaletteShades.PRIMARY + 2,
+      color: ColorPaletteShades.PRIMARY - 3,
+      borderColor: ColorPaletteShades.PRIMARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  alertHeading: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   },
@@ -198,7 +217,7 @@ export const maskOptions = {
     },
     skip: skipShadowsAndSpecificColors
   },
-  cardHeading: {
+  cardTitle: {
     ...baseMaskOptions,
     override: {
       ...colors,

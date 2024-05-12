@@ -23,9 +23,9 @@ export const options: CreateTamaguiProps = {
   themeClassNameOnRoot: true,
   shorthands,
   fonts: {
-    title: permanentMarkerFont,
+    title: monaSansFont,
     eyebrow: permanentMarkerFont,
-    heading: monaSansFont,
+    heading: permanentMarkerFont,
     label: monaSansFont,
     body: spaceGroteskFont
   },

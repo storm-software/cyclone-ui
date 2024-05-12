@@ -244,7 +244,7 @@ const CardIcon = CardIconFrame.styleable<{
   );
 });
 
-export const CardTitle = styled(ThemeableStack, {
+export const CardTitleSection = styled(ThemeableStack, {
   context: CardContext,
   flexDirection: "column",
   paddingVertical: 0,
@@ -266,12 +266,12 @@ export const CardTitle = styled(ThemeableStack, {
   }
 });
 
-const CardHeading = styled(SizableText, {
-  name: "CardHeading",
+const CardTitle = styled(SizableText, {
+  name: "CardTitle",
   context: CardContext,
 
   theme: "base",
-  fontFamily: "$heading",
+  fontFamily: "$title",
   color: "$base10",
   zIndex: 20,
   verticalAlign: "middle",
@@ -498,11 +498,11 @@ export type CardHeaderProps = GetProps<typeof CardHeader>;
 export type CardFooterProps = GetProps<typeof CardFooter>;
 
 export const Card = withStaticProperties(CardFrameImpl, {
+  Header: CardHeader,
+  TitleSection: CardTitleSection,
   Eyebrow: CardEyebrow,
-  Heading: CardHeading,
   Title: CardTitle,
   Icon: CardIcon,
-  Header: CardHeader,
   Footer: CardFooter,
   Body: CardBody,
   Link: CardLinkImpl

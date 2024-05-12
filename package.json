@@ -205,7 +205,8 @@
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/breadcrumb": "workspace:*",
       "@cyclone-ui/badge": "workspace:*",
-      "@cyclone-ui/card": "workspace:*"
+      "@cyclone-ui/card": "workspace:*",
+      "@cyclone-ui/alert": "workspace:*"
     }
   },
   "bundlewatch": {

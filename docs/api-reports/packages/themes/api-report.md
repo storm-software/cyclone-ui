@@ -851,7 +851,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_CardHeading: {
+    dark_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -1931,7 +2011,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_CardHeading: {
+    light_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -3011,7 +3171,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_base_CardHeading: {
+    light_base_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -4091,7 +4331,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_brand_CardHeading: {
+    light_brand_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -5171,7 +5491,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_accent_CardHeading: {
+    light_accent_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -6251,7 +6651,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_help_CardHeading: {
+    light_help_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -7331,7 +7811,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_success_CardHeading: {
+    light_success_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -8411,7 +8971,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_info_CardHeading: {
+    light_info_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -9491,7 +10131,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_warning_CardHeading: {
+    light_warning_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -10571,7 +11291,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    light_error_CardHeading: {
+    light_error_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -11651,7 +12451,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_base_CardHeading: {
+    dark_base_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -12731,7 +13611,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_brand_CardHeading: {
+    dark_brand_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -13811,7 +14771,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_accent_CardHeading: {
+    dark_accent_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -14891,7 +15931,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_help_CardHeading: {
+    dark_help_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -15971,7 +17091,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_success_CardHeading: {
+    dark_success_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -17051,7 +18251,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_info_CardHeading: {
+    dark_info_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -18131,7 +19411,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_warning_CardHeading: {
+    dark_warning_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -19211,7 +20571,87 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
-    dark_error_CardHeading: {
+    dark_error_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -20625,7 +22065,85 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
-    CardHeading: {
+    CardTitle: {
+        override: {
+            color: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
+    Alert: {
+        override: {
+            background: number;
+            color: number;
+            borderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
+    AlertHeading: {
         override: {
             color: number;
             shadowColor: number;
@@ -21458,6 +22976,12 @@ export const dark: Theme;
 export const dark_accent: Theme;
 
 // @public (undocumented)
+export const dark_accent_Alert: Theme;
+
+// @public (undocumented)
+export const dark_accent_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_accent_Badge: Theme;
 
 // @public (undocumented)
@@ -21473,7 +22997,7 @@ export const dark_accent_Card: Theme;
 export const dark_accent_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_accent_CardHeading: Theme;
+export const dark_accent_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_accent_Checkbox: Theme;
@@ -21539,10 +23063,22 @@ export const dark_accent_TooltipArrow: Theme;
 export const dark_accent_TooltipContent: Theme;
 
 // @public (undocumented)
+export const dark_Alert: Theme;
+
+// @public (undocumented)
+export const dark_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_Badge: Theme;
 
 // @public (undocumented)
 export const dark_base: Theme;
+
+// @public (undocumented)
+export const dark_base_Alert: Theme;
+
+// @public (undocumented)
+export const dark_base_AlertHeading: Theme;
 
 // @public (undocumented)
 export const dark_base_Badge: Theme;
@@ -21560,7 +23096,7 @@ export const dark_base_Card: Theme;
 export const dark_base_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_base_CardHeading: Theme;
+export const dark_base_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_base_Checkbox: Theme;
@@ -21629,6 +23165,12 @@ export const dark_base_TooltipContent: Theme;
 export const dark_brand: Theme;
 
 // @public (undocumented)
+export const dark_brand_Alert: Theme;
+
+// @public (undocumented)
+export const dark_brand_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_brand_Badge: Theme;
 
 // @public (undocumented)
@@ -21644,7 +23186,7 @@ export const dark_brand_Card: Theme;
 export const dark_brand_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_brand_CardHeading: Theme;
+export const dark_brand_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_brand_Checkbox: Theme;
@@ -21722,7 +23264,7 @@ export const dark_Card: Theme;
 export const dark_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_CardHeading: Theme;
+export const dark_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_Checkbox: Theme;
@@ -21735,6 +23277,12 @@ export const dark_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const dark_error: Theme;
+
+// @public (undocumented)
+export const dark_error_Alert: Theme;
+
+// @public (undocumented)
+export const dark_error_AlertHeading: Theme;
 
 // @public (undocumented)
 export const dark_error_Badge: Theme;
@@ -21752,7 +23300,7 @@ export const dark_error_Card: Theme;
 export const dark_error_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_error_CardHeading: Theme;
+export const dark_error_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_error_Checkbox: Theme;
@@ -21821,6 +23369,12 @@ export const dark_error_TooltipContent: Theme;
 export const dark_help: Theme;
 
 // @public (undocumented)
+export const dark_help_Alert: Theme;
+
+// @public (undocumented)
+export const dark_help_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_help_Badge: Theme;
 
 // @public (undocumented)
@@ -21836,7 +23390,7 @@ export const dark_help_Card: Theme;
 export const dark_help_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_help_CardHeading: Theme;
+export const dark_help_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_help_Checkbox: Theme;
@@ -21905,6 +23459,12 @@ export const dark_help_TooltipContent: Theme;
 export const dark_info: Theme;
 
 // @public (undocumented)
+export const dark_info_Alert: Theme;
+
+// @public (undocumented)
+export const dark_info_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_info_Badge: Theme;
 
 // @public (undocumented)
@@ -21920,7 +23480,7 @@ export const dark_info_Card: Theme;
 export const dark_info_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_info_CardHeading: Theme;
+export const dark_info_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_info_Checkbox: Theme;
@@ -22025,6 +23585,12 @@ export const dark_SliderTrackActive: Theme;
 export const dark_success: Theme;
 
 // @public (undocumented)
+export const dark_success_Alert: Theme;
+
+// @public (undocumented)
+export const dark_success_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_success_Badge: Theme;
 
 // @public (undocumented)
@@ -22040,7 +23606,7 @@ export const dark_success_Card: Theme;
 export const dark_success_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_success_CardHeading: Theme;
+export const dark_success_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_success_Checkbox: Theme;
@@ -22127,6 +23693,12 @@ export const dark_TooltipContent: Theme;
 export const dark_warning: Theme;
 
 // @public (undocumented)
+export const dark_warning_Alert: Theme;
+
+// @public (undocumented)
+export const dark_warning_AlertHeading: Theme;
+
+// @public (undocumented)
 export const dark_warning_Badge: Theme;
 
 // @public (undocumented)
@@ -22142,7 +23714,7 @@ export const dark_warning_Card: Theme;
 export const dark_warning_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const dark_warning_CardHeading: Theme;
+export const dark_warning_CardTitle: Theme;
 
 // @public (undocumented)
 export const dark_warning_Checkbox: Theme;
@@ -22355,6 +23927,12 @@ export const light: Theme;
 export const light_accent: Theme;
 
 // @public (undocumented)
+export const light_accent_Alert: Theme;
+
+// @public (undocumented)
+export const light_accent_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_accent_Badge: Theme;
 
 // @public (undocumented)
@@ -22370,7 +23948,7 @@ export const light_accent_Card: Theme;
 export const light_accent_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_accent_CardHeading: Theme;
+export const light_accent_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_accent_Checkbox: Theme;
@@ -22436,10 +24014,22 @@ export const light_accent_TooltipArrow: Theme;
 export const light_accent_TooltipContent: Theme;
 
 // @public (undocumented)
+export const light_Alert: Theme;
+
+// @public (undocumented)
+export const light_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_Badge: Theme;
 
 // @public (undocumented)
 export const light_base: Theme;
+
+// @public (undocumented)
+export const light_base_Alert: Theme;
+
+// @public (undocumented)
+export const light_base_AlertHeading: Theme;
 
 // @public (undocumented)
 export const light_base_Badge: Theme;
@@ -22457,7 +24047,7 @@ export const light_base_Card: Theme;
 export const light_base_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_base_CardHeading: Theme;
+export const light_base_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_base_Checkbox: Theme;
@@ -22526,6 +24116,12 @@ export const light_base_TooltipContent: Theme;
 export const light_brand: Theme;
 
 // @public (undocumented)
+export const light_brand_Alert: Theme;
+
+// @public (undocumented)
+export const light_brand_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_brand_Badge: Theme;
 
 // @public (undocumented)
@@ -22541,7 +24137,7 @@ export const light_brand_Card: Theme;
 export const light_brand_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_brand_CardHeading: Theme;
+export const light_brand_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_brand_Checkbox: Theme;
@@ -22619,7 +24215,7 @@ export const light_Card: Theme;
 export const light_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_CardHeading: Theme;
+export const light_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_Checkbox: Theme;
@@ -22632,6 +24228,12 @@ export const light_DrawerFrame: Theme;
 
 // @public (undocumented)
 export const light_error: Theme;
+
+// @public (undocumented)
+export const light_error_Alert: Theme;
+
+// @public (undocumented)
+export const light_error_AlertHeading: Theme;
 
 // @public (undocumented)
 export const light_error_Badge: Theme;
@@ -22649,7 +24251,7 @@ export const light_error_Card: Theme;
 export const light_error_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_error_CardHeading: Theme;
+export const light_error_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_error_Checkbox: Theme;
@@ -22718,6 +24320,12 @@ export const light_error_TooltipContent: Theme;
 export const light_help: Theme;
 
 // @public (undocumented)
+export const light_help_Alert: Theme;
+
+// @public (undocumented)
+export const light_help_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_help_Badge: Theme;
 
 // @public (undocumented)
@@ -22733,7 +24341,7 @@ export const light_help_Card: Theme;
 export const light_help_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_help_CardHeading: Theme;
+export const light_help_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_help_Checkbox: Theme;
@@ -22802,6 +24410,12 @@ export const light_help_TooltipContent: Theme;
 export const light_info: Theme;
 
 // @public (undocumented)
+export const light_info_Alert: Theme;
+
+// @public (undocumented)
+export const light_info_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_info_Badge: Theme;
 
 // @public (undocumented)
@@ -22817,7 +24431,7 @@ export const light_info_Card: Theme;
 export const light_info_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_info_CardHeading: Theme;
+export const light_info_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_info_Checkbox: Theme;
@@ -22922,6 +24536,12 @@ export const light_SliderTrackActive: Theme;
 export const light_success: Theme;
 
 // @public (undocumented)
+export const light_success_Alert: Theme;
+
+// @public (undocumented)
+export const light_success_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_success_Badge: Theme;
 
 // @public (undocumented)
@@ -22937,7 +24557,7 @@ export const light_success_Card: Theme;
 export const light_success_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_success_CardHeading: Theme;
+export const light_success_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_success_Checkbox: Theme;
@@ -23024,6 +24644,12 @@ export const light_TooltipContent: Theme;
 export const light_warning: Theme;
 
 // @public (undocumented)
+export const light_warning_Alert: Theme;
+
+// @public (undocumented)
+export const light_warning_AlertHeading: Theme;
+
+// @public (undocumented)
 export const light_warning_Badge: Theme;
 
 // @public (undocumented)
@@ -23039,7 +24665,7 @@ export const light_warning_Card: Theme;
 export const light_warning_CardEyebrow: Theme;
 
 // @public (undocumented)
-export const light_warning_CardHeading: Theme;
+export const light_warning_CardTitle: Theme;
 
 // @public (undocumented)
 export const light_warning_Checkbox: Theme;
@@ -23346,6 +24972,7 @@ export const maskOptions: {
     };
     input: {
         override: {
+            color: number;
             borderColor: number;
             borderColorHover: number;
             borderColorFocus: number;
@@ -23391,6 +25018,82 @@ export const maskOptions: {
             colorHover: number;
             colorPress: number;
             colorFocus: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    alert: {
+        override: {
+            background: number;
+            color: number;
+            borderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    alertHeading: {
+        override: {
+            color: number;
             shadowColor: number;
             shadowColorHover: number;
             shadowColorPress: number;
@@ -23548,7 +25251,7 @@ export const maskOptions: {
         min?: number | undefined;
         parentName?: string | undefined;
     };
-    cardHeading: {
+    cardTitle: {
         override: {
             color: number;
             shadowColor: number;
@@ -24919,7 +26622,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_CardHeading: {
+    dark_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -25999,7 +27782,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_CardHeading: {
+    light_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -27079,7 +28942,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_base_CardHeading: {
+    light_base_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_base_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -28159,7 +30102,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_brand_CardHeading: {
+    light_brand_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -29239,7 +31262,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_accent_CardHeading: {
+    light_accent_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_accent_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -30319,7 +32422,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_help_CardHeading: {
+    light_help_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -31399,7 +33582,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_success_CardHeading: {
+    light_success_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_success_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -32479,7 +34742,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_info_CardHeading: {
+    light_info_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -33559,7 +35902,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_warning_CardHeading: {
+    light_warning_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_warning_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -34639,7 +37062,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    light_error_CardHeading: {
+    light_error_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -35719,7 +38222,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_base_CardHeading: {
+    dark_base_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_base_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -36799,7 +39382,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_brand_CardHeading: {
+    dark_brand_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -37879,7 +40542,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_accent_CardHeading: {
+    dark_accent_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_accent_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -38959,7 +41702,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_help_CardHeading: {
+    dark_help_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -40039,7 +42862,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_success_CardHeading: {
+    dark_success_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_success_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -41119,7 +44022,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_info_CardHeading: {
+    dark_info_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -42199,7 +45182,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_warning_CardHeading: {
+    dark_warning_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_warning_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -43279,7 +46342,87 @@ export const themes: {
         color13: string;
         color14: string;
     };
-    dark_error_CardHeading: {
+    dark_error_CardTitle: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_Alert: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_AlertHeading: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;

@@ -35,6 +35,12 @@
       "@cyclone-ui/button/*": [
         "components/button/src/*"
       ],
+      "@cyclone-ui/card": [
+        "components/card/src/index.ts"
+      ],
+      "@cyclone-ui/card/*": [
+        "components/card/src/*"
+      ],
       "@cyclone-ui/cli": [
         "apps/cli/src/index.ts"
       ],
@@ -116,11 +122,11 @@
       "@cyclone-ui/themes/brand": [
         "packages/themes/src/brand-theme.ts"
       ],
-      "@cyclone-ui/card": [
-        "components/card/src/index.ts"
+      "@cyclone-ui/alert": [
+        "components/alert/src/index.ts"
       ],
-      "@cyclone-ui/card/*": [
-        "components/card/src/*"
+      "@cyclone-ui/alert/*": [
+        "components/alert/src/*"
       ]
     }
   }

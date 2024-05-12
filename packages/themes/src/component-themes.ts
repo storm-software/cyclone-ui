@@ -47,9 +47,19 @@ export const componentThemes = {
     ...maskOptions.cardEyebrow
   },
 
-  CardHeading: {
+  CardTitle: {
     mask: "identity",
-    ...maskOptions.cardHeading
+    ...maskOptions.cardTitle
+  },
+
+  Alert: {
+    mask: "identity",
+    ...maskOptions.alert
+  },
+
+  AlertHeading: {
+    mask: "identity",
+    ...maskOptions.alertHeading
   },
 
   Button: {

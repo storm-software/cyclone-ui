@@ -1,33 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { HelpCircle } from "@tamagui/lucide-icons";
-import { Card } from "./Card";
+import { Alert, type AlertProps } from "./Alert";
 
-const meta: Meta<typeof Card> = {
-  title: "General/Card",
-  component: Card,
+const meta: Meta<typeof Alert> = {
+  title: "General/Alert",
+  component: Alert,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <Card {...args} width="500px">
-      <Card.Header>
-        <Card.Icon>
+  render: ({ children, ...rest }: AlertProps) => (
+    <Alert {...rest}>
+      <Alert.Header>
+        <Alert.Icon>
           <HelpCircle />
-        </Card.Icon>
-        <Card.TitleSection>
-          <Card.Eyebrow>Card Eyebrow</Card.Eyebrow>
-          <Card.Title>Card Title</Card.Title>
-        </Card.TitleSection>
-      </Card.Header>
-      <Card.Body>{args.children}</Card.Body>
-      <Card.Footer>
-        <Card.Link href="#">Card Link</Card.Link>
-      </Card.Footer>
-    </Card>
+        </Alert.Icon>
+        <Alert.Heading>Alert Heading</Alert.Heading>
+      </Alert.Header>
+      <Alert.Body>{children}</Alert.Body>
+    </Alert>
   )
-} satisfies Meta<typeof Card>;
+} satisfies Meta<typeof Alert>;
 
 export default meta;
 
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<typeof Alert>;
 
 export const Base: Story = {
   args: {
