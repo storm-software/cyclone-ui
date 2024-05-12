@@ -8,9 +8,9 @@ const meta: Meta<typeof Breadcrumb> = {
   tags: ["autodocs"],
   render: (args: any) => (
     <Breadcrumb {...args}>
-      <Breadcrumb.Item href="#">Item One</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">Item Two</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">Item Three</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Page One</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Page Two</Breadcrumb.Item>
+      <Breadcrumb.Item href="#">Page Three</Breadcrumb.Item>
     </Breadcrumb>
   )
 } satisfies Meta<typeof Breadcrumb>;

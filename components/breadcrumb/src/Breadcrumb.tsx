@@ -1,8 +1,10 @@
 import {
   FontSizeTokens,
+  Theme,
   ThemeableProps,
   createStyledContext,
-  styled
+  styled,
+  useThemeName
 } from "@tamagui/core";
 import type { SizableTextProps, TextContextStyles } from "@tamagui/text";
 import { ThemeableStack, XStack } from "@tamagui/stacks";
@@ -11,6 +13,7 @@ import { SizableText } from "@tamagui/text";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronsRight, ChevronRight, Slash } from "@tamagui/lucide-icons";
 import { useContext } from "react";
+import { ColorRole } from "@cyclone-ui/themes";
 
 export type BreadcrumbDivider = "chevron" | "double" | "slash";
 export const BreadcrumbDivider = {
@@ -33,13 +36,14 @@ type BreadcrumbContextProps = TextContextStyles &
 
 export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   size: "$0.5",
-  divider: BreadcrumbDivider.SLASH
+  divider: BreadcrumbDivider.SLASH,
+  theme: ColorRole.BRAND
 });
 
 const BreadcrumbFrame = styled(ThemeableStack, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
-  animation: "medium",
+  animation: "$medium",
   flexDirection: "row",
   alignItems: "center",
 
@@ -59,16 +63,18 @@ const BreadcrumbFrameImpl = BreadcrumbFrame.styleable<{
 }>(
   (props, forwardRef) => {
     const { children, current, ...rest } = props;
-    const { size } = useContext(BreadcrumbContext);
+    const { size, theme } = useContext(BreadcrumbContext);
 
     return (
-      <BreadcrumbFrame {...rest} ref={forwardRef}>
+      <BreadcrumbFrame {...rest} ref={forwardRef} theme={theme}>
         {children}
         <SizableText
-          color="$color"
+          color="$fg"
           fontFamily="$body"
           fontWeight="$6"
-          size={size}>
+          verticalAlign="middle"
+          size={size}
+          theme={theme}>
           {current}
         </SizableText>
       </BreadcrumbFrame>
@@ -82,7 +88,7 @@ const BreadcrumbFrameImpl = BreadcrumbFrame.styleable<{
 const BreadcrumbItemContainer = styled(XStack, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
-  animation: "medium",
+  animation: "$medium",
   flexDirection: "row",
   alignItems: "center",
 
@@ -100,28 +106,30 @@ const BreadcrumbItemContainer = styled(XStack, {
 const BreadcrumbItem = Link.styleable<LinkProps>(
   (props, forwardRef) => {
     const { children, ...rest } = props;
-    const { size, divider } = useContext(BreadcrumbContext);
+    const { size, theme, divider } = useContext(BreadcrumbContext);
 
     return (
-      <BreadcrumbItemContainer size={size}>
-        <Link
-          ref={forwardRef}
-          underline="initial"
-          fontFamily="$body"
-          size={size}
-          {...rest}>
-          {children}
-        </Link>
-        {divider === BreadcrumbDivider.CHEVRON && (
-          <ChevronRight color="$color" size="$1" />
-        )}
-        {divider === BreadcrumbDivider.DOUBLE && (
-          <ChevronsRight color="$color" size="$1" />
-        )}
-        {divider === BreadcrumbDivider.SLASH && (
-          <Slash color="$color" size="$0.5" />
-        )}
-      </BreadcrumbItemContainer>
+      <Theme name={theme} componentName="Breadcrumb">
+        <BreadcrumbItemContainer size={size}>
+          <Link
+            ref={forwardRef}
+            underline="initial"
+            fontFamily="$body"
+            size={size}
+            {...rest}>
+            {children}
+          </Link>
+          {divider === BreadcrumbDivider.CHEVRON && (
+            <ChevronRight color="$color" size="$1" />
+          )}
+          {divider === BreadcrumbDivider.DOUBLE && (
+            <ChevronsRight color="$color" size="$1" />
+          )}
+          {divider === BreadcrumbDivider.SLASH && (
+            <Slash color="$color" size="$0.5" />
+          )}
+        </BreadcrumbItemContainer>
+      </Theme>
     );
   },
   {

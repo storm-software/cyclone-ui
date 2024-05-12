@@ -1,10 +1,11 @@
 import { useLink, UseLinkProps } from "solito/link";
 import { isWeb } from "@tamagui/constants";
-import { styled, Text } from "@tamagui/core";
+import { styled, useThemeName } from "@tamagui/core";
 import type { SizableTextProps } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import { Square } from "@tamagui/shapes";
 import { Linking } from "react-native";
+import { ColorRole } from "@cyclone-ui/themes";
 
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;
@@ -18,6 +19,7 @@ const LinkFrame = styled(SizableText, {
   tag: "a",
   accessibilityRole: "link",
 
+  animation: "$slow",
   textDecorationLine: "none",
   color: "$color",
   fontFamily: "$body",
@@ -41,13 +43,13 @@ const LinkFrame = styled(SizableText, {
 
 const Underline = styled(Square, {
   name: "LinkUnderline",
-  animation: "medium",
+  animation: { scaleX: { type: "$slow", overshootClamping: true } },
   position: "absolute",
   width: "100%",
   height: "2px",
   left: 0,
   bottom: "$-0.75",
-  backgroundColor: "$accent10",
+  backgroundColor: "$primary",
   borderRadius: "2px",
   display: "block",
 
@@ -79,14 +81,24 @@ const Underline = styled(Square, {
 
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
-    { target, children, underline = "hover", width, href, ...props }: LinkProps,
+    {
+      target,
+      children,
+      underline = "initial",
+      width,
+      href,
+      size,
+      ...props
+    }: LinkProps,
     forwardedRef
   ) => {
     const linkProps = useLink({ href, ...props });
+    const themeName = useThemeName({ parent: true });
 
     return (
-      <SizableText {...props}>
+      <SizableText size={size}>
         <LinkFrame
+          {...props}
           {...linkProps}
           {...(isWeb
             ? {
@@ -107,7 +119,25 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
           {underline !== "none" && (
             <Underline
               underline={underline}
+              theme={
+                !themeName || themeName.toLowerCase().includes(ColorRole.BASE)
+                  ? ColorRole.BRAND
+                  : themeName
+              }
               $group-link-hover={
+                underline === "static"
+                  ? {}
+                  : underline === "initial"
+                    ? {
+                        transformOrigin: "right",
+                        scaleX: 0
+                      }
+                    : {
+                        transformOrigin: "left",
+                        scaleX: 1
+                      }
+              }
+              $group-card-hover={
                 underline === "static"
                   ? {}
                   : underline === "initial"

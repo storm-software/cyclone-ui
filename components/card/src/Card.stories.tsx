@@ -19,7 +19,7 @@ const meta: Meta<typeof Card> = {
       </Card.Header>
       <Card.Body>{args.children}</Card.Body>
       <Card.Footer>
-        <Card.Link href="#">Click Here</Card.Link>
+        <Card.Link href="#">Card Link</Card.Link>
       </Card.Footer>
     </Card>
   )

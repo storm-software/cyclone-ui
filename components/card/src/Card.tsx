@@ -426,6 +426,7 @@ const CardLink = styled(Link, {
   context: CardContext,
   zIndex: 25,
   underline: "initial",
+  color: "$primary",
 
   variants: {
     size: {
@@ -444,8 +445,8 @@ const CardLink = styled(Link, {
           heightToken = (config.font.lineHeight?.[val] as any)?.val;
         }
 
-        const fontSize = (sizeToken ?? 1) * 1.3;
-        const lineHeight = (heightToken ?? 1) * 1.3;
+        const fontSize = (sizeToken ?? 1) * 1.6;
+        const lineHeight = (heightToken ?? 1) * 1.6;
         const textTransform = config.font.transform?.[val];
         const fontStyle = config.font.style?.[val];
 
@@ -464,7 +465,7 @@ const CardLinkArrowRight = styled(ArrowRight, {
   name: "CardLink",
   context: CardContext,
   zIndex: 25,
-  color: "$fg",
+  color: "$primary",
   marginTop: "$0.4"
 });
 
