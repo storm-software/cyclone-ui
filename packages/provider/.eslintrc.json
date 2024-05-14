@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["packages/theme-provider/tsconfig.*?.json"]
+        "project": ["packages/provider/tsconfig.*?.json"]
       },
       "rules": {}
     },

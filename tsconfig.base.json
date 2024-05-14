@@ -47,13 +47,13 @@
       "@cyclone-ui/media-queries/*": ["packages/media-queries/src/*"],
       "@cyclone-ui/nx": ["apps/nx/index.ts"],
       "@cyclone-ui/nx/*": ["apps/nx/src/*"],
-      "@cyclone-ui/theme-provider": ["packages/theme-provider/src/index.ts"],
-      "@cyclone-ui/theme-provider/*": ["packages/theme-provider/src/*"],
+      "@cyclone-ui/pop-up": ["components/pop-up/src/index.ts"],
+      "@cyclone-ui/pop-up/*": ["components/pop-up/src/*"],
+      "@cyclone-ui/provider": ["packages/provider/src/index.ts"],
+      "@cyclone-ui/provider/*": ["packages/provider/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"],
-      "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
-      "@cyclone-ui/pop-up": ["components/pop-up/src/index.ts"],
-      "@cyclone-ui/pop-up/*": ["components/pop-up/src/*"]
+      "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"]
     }
   }
 }

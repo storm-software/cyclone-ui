@@ -1,8 +1,8 @@
 {
-  "name": "theme-provider",
+  "name": "provider",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/theme-provider/src",
+  "sourceRoot": "packages/provider/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/packages/theme-provider",
-        "tsConfig": "packages/theme-provider/tsconfig.json",
-        "project": "packages/theme-provider/package.json",
+        "outputPath": "dist/packages/provider",
+        "tsConfig": "packages/provider/tsconfig.json",
+        "project": "packages/provider/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "packages/theme-provider",
+            "input": "packages/provider",
             "glob": "*.md",
             "output": "/"
           },

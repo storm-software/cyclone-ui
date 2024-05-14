@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# theme-provider
+# provider
 
 A package containing the ThemeProvider component used to manage the applications theme state
 
@@ -13,14 +13,14 @@ A package containing the ThemeProvider component used to manage the applications
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/theme-provider
+pnpm add -D @cyclone-ui/provider
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/theme-provider
+npm install -D @cyclone-ui/provider
 ```
 
 </details>
@@ -29,7 +29,7 @@ npm install -D @cyclone-ui/theme-provider
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/theme-provider
+yarn add -D @cyclone-ui/provider
 ```
 
 </details>
@@ -44,15 +44,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build theme-provider` to build the library.
+Run `nx build provider` to build the library.
 
 ### Running unit tests
 
-Run `nx test theme-provider` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test provider` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint theme-provider` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint provider` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- END footer -->

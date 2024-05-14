@@ -2,11 +2,14 @@ import { useThemeNameState } from "./theme-state";
 import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
 import { config } from "@cyclone-ui/config";
 import { PortalProvider } from "@tamagui/portal";
+import { PropsWithChildren } from "react";
 
 declare const window: any;
 
-export type ThemeProviderProps = Partial<TamaguiProviderProps> &
-  Omit<TamaguiProviderProps, "defaultTheme" | "config">;
+export type ThemeProviderProps = PropsWithChildren<
+  Partial<TamaguiProviderProps> &
+    Omit<TamaguiProviderProps, "defaultTheme" | "config">
+>;
 
 export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   let theme = props?.defaultTheme;
