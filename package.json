@@ -187,26 +187,27 @@
   },
   "pnpm": {
     "overrides": {
+      "@cyclone-ui/alert": "workspace:*",
+      "@cyclone-ui/badge": "workspace:*",
+      "@cyclone-ui/breadcrumb": "workspace:*",
       "@cyclone-ui/build": "workspace:*",
       "@cyclone-ui/button": "workspace:*",
+      "@cyclone-ui/card": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/collapsible": "workspace:*",
       "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/font-permanent-marker": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
+      "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/masks": "workspace:*",
       "@cyclone-ui/media-queries": "workspace:*",
       "@cyclone-ui/nx": "workspace:*",
+      "@cyclone-ui/pop-up": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/theme-provider": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/link": "workspace:*",
-      "@cyclone-ui/breadcrumb": "workspace:*",
-      "@cyclone-ui/badge": "workspace:*",
-      "@cyclone-ui/card": "workspace:*",
-      "@cyclone-ui/alert": "workspace:*"
+      "@cyclone-ui/website": "workspace:*"
     }
   },
   "bundlewatch": {

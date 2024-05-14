@@ -5,14 +5,20 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  '@cyclone-ui/alert': workspace:*
+  '@cyclone-ui/badge': workspace:*
+  '@cyclone-ui/breadcrumb': workspace:*
   '@cyclone-ui/build': workspace:*
   '@cyclone-ui/button': workspace:*
+  '@cyclone-ui/card': workspace:*
   '@cyclone-ui/cli': workspace:*
   '@cyclone-ui/collapsible': workspace:*
+  '@cyclone-ui/confirm': workspace:*
   '@cyclone-ui/font-mona-sans': workspace:*
   '@cyclone-ui/font-permanent-marker': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/input': workspace:*
+  '@cyclone-ui/link': workspace:*
   '@cyclone-ui/masks': workspace:*
   '@cyclone-ui/media-queries': workspace:*
   '@cyclone-ui/nx': workspace:*
@@ -20,11 +26,6 @@ overrides:
   '@cyclone-ui/theme-provider': workspace:*
   '@cyclone-ui/themes': workspace:*
   '@cyclone-ui/website': workspace:*
-  '@cyclone-ui/link': workspace:*
-  '@cyclone-ui/breadcrumb': workspace:*
-  '@cyclone-ui/badge': workspace:*
-  '@cyclone-ui/card': workspace:*
-  '@cyclone-ui/alert': workspace:*
 
 importers:
 
@@ -597,6 +598,9 @@ importers:
       '@tamagui/linear-gradient':
         specifier: ^1.97.1
         version: 1.97.1(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native-svg@15.2.0)(react@18.2.0)
       '@tamagui/stacks':
         specifier: ^1.97.1
         version: 1.97.1(react@18.2.0)
@@ -606,19 +610,16 @@ importers:
       '@tamagui/web':
         specifier: ^1.97.1
         version: 1.97.1(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
     devDependencies:
-      '@tamagui/lucide-icons':
-        specifier: ^1.97.1
-        version: 1.97.1(react-native-svg@15.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-native:
         specifier: 0.73.2
         version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
-      react-native-svg:
-        specifier: ^15.2.0
-        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
 
   components/badge:
     dependencies:
@@ -771,6 +772,67 @@ importers:
       '@tamagui/web':
         specifier: ^1.97.1
         version: 1.97.1(react@18.2.0)
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/confirm:
+    dependencies:
+      '@tamagui/alert-dialog':
+        specifier: ^1.97.1
+        version: 1.97.1(@types/react@18.2.75)(react-dom@18.2.0)(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/compose-refs':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/constants':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/create-context':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/dialog':
+        specifier: ^1.97.1
+        version: 1.97.1(@types/react@18.2.75)(react-dom@18.2.0)(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/font-size':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/get-font-sized':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/linear-gradient':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.97.1
+        version: 1.97.1(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.97.1
+        version: 1.97.1(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
     devDependencies:
       react:
         specifier: ^18.2.0

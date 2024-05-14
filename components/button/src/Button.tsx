@@ -150,17 +150,20 @@ const ButtonFrame = styled(View, {
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundHover"
+          borderColor: "$backgroundHover",
+          color: "$backgroundHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundPress"
+          borderColor: "$backgroundPress",
+          color: "$backgroundPress"
         },
 
         focusVisibleStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundFocus"
+          borderColor: "$backgroundFocus",
+          color: "$backgroundFocus"
         }
       },
 
@@ -342,7 +345,7 @@ const ButtonWrapper = styled(ThemeableStack, {
   animation: "$slow",
 
   pressStyle: {
-    scale: 0.99
+    scale: 0.9
   }
 });
 
@@ -397,22 +400,3 @@ export const Button = withStaticProperties(ButtonContainerImpl, {
 });
 
 export type { ButtonProps };
-
-// export const Button: TamaguiComponent<
-//   TamaDefer,
-//   TamaguiElement,
-//   RNTamaguiViewNonStyleProps,
-//   StackStyleBase,
-//   {
-//     size?: number | SizeTokens | undefined;
-//     variant?: "outlined" | "ghost" | "gradient" | undefined;
-//     disabled?: boolean | undefined;
-//     unstyled?: boolean | undefined;
-//     animated?: boolean | undefined;
-//   },
-//   StaticConfigPublic
-// > = withStaticProperties(ButtonContainerImpl, {
-//   Text: ButtonText,
-//   Icon: ButtonIcon,
-//   Props: ButtonContext.Provider
-// });
