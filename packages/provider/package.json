@@ -26,10 +26,10 @@
   "module": "dist/esm",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@tamagui/core": "^1.97.1",
-    "@tamagui/portal": "^1.97.1",
-    "@tamagui/toast": "^1.97.1",
-    "@tamagui/web": "^1.97.1",
+    "@tamagui/core": "^1.98.0",
+    "@tamagui/portal": "^1.98.0",
+    "@tamagui/toast": "^1.98.0",
+    "@tamagui/web": "^1.98.0",
     "zustand": "^4.5.2"
   },
   "publishConfig": {

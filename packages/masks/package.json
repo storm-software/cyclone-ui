@@ -11,8 +11,8 @@
   "type": "module",
   "dependencies": {
     "@storm-software/config": "latest",
-    "@tamagui/create-theme": "^1.97.1",
-    "@tamagui/web": "^1.97.1",
+    "@tamagui/create-theme": "^1.98.0",
+    "@tamagui/web": "^1.98.0",
     "deepmerge": "^4.3.1"
   },
   "publishConfig": {

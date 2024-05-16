@@ -3,14 +3,14 @@ import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
 import { ThemeProvider, type ThemeProviderProps } from "./ThemeProvider";
 
 export type ProviderProps = PropsWithChildren<{
-  toast: ToastProviderProps;
-  theme: ThemeProviderProps;
+  toast?: ToastProviderProps;
+  theme?: ThemeProviderProps;
 }>;
 
 export const Provider = ({
   children,
-  toast,
-  theme,
+  toast = {},
+  theme = {},
   ...props
 }: ProviderProps) => {
   return (

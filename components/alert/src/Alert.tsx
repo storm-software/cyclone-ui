@@ -128,7 +128,6 @@ const AlertFrameImpl = AlertFrame.styleable(
           theme={theme}
         />
         <AlertBackgroundGradient theme={theme} />
-
         <AlertContent theme={theme}>{children}</AlertContent>
       </AlertFrame>
     );

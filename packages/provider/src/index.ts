@@ -10,6 +10,6 @@
 export * from "./ThemeProvider";
 export * from "./ThemeProvider.server";
 export * from "./theme-state";
-export * from "./ToastProvider";
 export * from "./Provider";
 export * from "./Provider.server";
+export * from "@tamagui/toast";

@@ -62,6 +62,16 @@ export const componentThemes = {
     ...maskOptions.alertHeading
   },
 
+  Message: {
+    mask: "identity",
+    ...maskOptions.message
+  },
+
+  MessageHeading: {
+    mask: "identity",
+    ...maskOptions.messageHeading
+  },
+
   Button: {
     mask: "identity",
     ...maskOptions.button

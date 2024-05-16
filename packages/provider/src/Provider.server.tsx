@@ -6,14 +6,14 @@ import {
 import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
 
 export type ProviderServerProps = PropsWithChildren<{
-  toast: ToastProviderProps;
-  theme: ThemeProviderServerProps;
+  toast?: ToastProviderProps;
+  theme?: ThemeProviderServerProps;
 }>;
 
 export const ProviderServer = ({
   children,
-  toast,
-  theme,
+  toast = {},
+  theme = {},
   ...props
 }: ProviderServerProps) => {
   return (

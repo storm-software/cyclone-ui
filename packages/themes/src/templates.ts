@@ -232,5 +232,23 @@ export const maskOptions = {
       color: ColorPaletteShades.PRIMARY - 3
     },
     skip: skipShadowsAndSpecificColors
+  },
+  message: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      background: ColorPaletteShades.PRIMARY + 2,
+      color: ColorPaletteShades.PRIMARY - 3,
+      borderColor: ColorPaletteShades.PRIMARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  messageHeading: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
   }
 } satisfies Record<string, MaskOptions>;

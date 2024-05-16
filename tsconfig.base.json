@@ -45,6 +45,8 @@
       "@cyclone-ui/masks/*": ["packages/masks/src/*"],
       "@cyclone-ui/media-queries": ["packages/media-queries/src/index.ts"],
       "@cyclone-ui/media-queries/*": ["packages/media-queries/src/*"],
+      "@cyclone-ui/message": ["components/message/src/index.ts"],
+      "@cyclone-ui/message/*": ["components/message/src/*"],
       "@cyclone-ui/nx": ["apps/nx/index.ts"],
       "@cyclone-ui/nx/*": ["apps/nx/src/*"],
       "@cyclone-ui/pop-up": ["components/pop-up/src/index.ts"],

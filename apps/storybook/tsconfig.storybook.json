@@ -30,7 +30,7 @@
     "../../packages/font-permanent-marker/*",
     "../../packages/font-space-grotesk/*",
     "../../packages/config/src/*",
-    "../../packages/theme-provider/src/*",
+    "../../packages/provider/src/*",
     "../../packages/themes/src/*"
   ]
 }

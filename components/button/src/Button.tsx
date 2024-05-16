@@ -257,7 +257,8 @@ const ButtonFrame = styled(View, {
 
     rounded: {
       true: {
-        borderRadius: 1000_000_000
+        borderRadius: 1000_000_000,
+        height: "fit-content"
       }
     }
   } as const,
@@ -266,7 +267,7 @@ const ButtonFrame = styled(View, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
     disabled: false,
     outlined: false,
-    rounded: true
+    rounded: false
   }
 });
 
@@ -287,6 +288,12 @@ const ButtonText = styled(SizableText, {
         flexGrow: 0,
         flexShrink: 1,
         ellipse: true
+      }
+    },
+
+    rounded: {
+      true: {
+        height: "fit-content"
       }
     }
   } as const,
@@ -323,7 +330,19 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   backgroundColor: "transparent",
   borderRadius: "$4",
   animation: "$slow",
-  opacity: 0.6
+  opacity: 0.6,
+
+  variants: {
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    rounded: false
+  }
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
@@ -336,7 +355,19 @@ const ButtonGlassBackground = styled(LinearGradient, {
   opacity: 0.5,
   colors: ["$muted", "$primary"],
   start: [0, 1],
-  end: [1, 1]
+  end: [1, 1],
+
+  variants: {
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    rounded: false
+  }
 });
 
 const ButtonWrapper = styled(ThemeableStack, {
@@ -346,18 +377,31 @@ const ButtonWrapper = styled(ThemeableStack, {
 
   pressStyle: {
     scale: 0.9
+  },
+
+  variants: {
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    rounded: false
   }
 });
 
 const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
   (props, ref) => {
-    const { variant, disabled, ...rest } = props;
+    const { variant, disabled, rounded, ...rest } = props;
 
     return (
-      <ButtonWrapper group={"button" as any}>
+      <ButtonWrapper group={"button" as any} rounded={rounded}>
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}
+            rounded={rounded}
             $group-button-hover={{
               backgroundColor: disabled ? "transparent" : "$muted"
             }}
@@ -372,6 +416,7 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
         {variant === "glass" && (
           <ButtonGlassBackground
             fullscreen={true}
+            rounded={rounded}
             style={{
               filter: "blur(3px)"
             }}
@@ -382,6 +427,7 @@ const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
         <ButtonFrame
           ref={ref}
           {...rest}
+          rounded={rounded}
           variant={variant}
           disabled={disabled}
         />
