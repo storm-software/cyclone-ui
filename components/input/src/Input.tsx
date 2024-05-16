@@ -244,10 +244,11 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   };
 };
 
-const InputFrame = styled(TamaguiInput, {
+const InputValue = styled(TamaguiInput, {
   name: "Input",
   unstyled: true,
   context: InputContext,
+  color: "$fg",
 
   variants: {
     disabled: {
@@ -267,35 +268,30 @@ const InputFrame = styled(TamaguiInput, {
   }
 });
 
-const InputImpl = InputFrame.styleable<{ required?: boolean }>((props, ref) => {
-  const { setFocused } = FocusContext.useStyledContext();
-  const { size, disabled } = InputContext.useStyledContext();
-  const { name } = NameContext.useStyledContext();
-  const { ...rest } = props;
+const InputValueImpl = InputValue.styleable<{ required?: boolean }>(
+  (props, ref) => {
+    const { setFocused } = FocusContext.useStyledContext();
+    const { size, disabled } = InputContext.useStyledContext();
+    const { name } = NameContext.useStyledContext();
+    const { ...rest } = props;
 
-  return (
-    <View flex={1}>
-      <InputFrame
-        id={name}
-        ref={ref}
-        onFocus={() => {
-          setFocused(!disabled);
-        }}
-        onBlur={() => setFocused(false)}
-        size={size}
-        {...rest}
-        disabled={disabled}
-      />
-    </View>
-  );
-});
-
-const InputSection = styled(XGroup.Item, {
-  name: "Input",
-  justifyContent: "center",
-  alignItems: "center",
-  context: InputContext
-});
+    return (
+      <View flex={1}>
+        <InputValue
+          id={name}
+          ref={ref}
+          onFocus={() => {
+            setFocused(!disabled);
+          }}
+          onBlur={() => setFocused(false)}
+          size={size}
+          {...rest}
+          disabled={disabled}
+        />
+      </View>
+    );
+  }
+);
 
 // Icon starts
 
@@ -651,8 +647,7 @@ export type InputProps = InputContainerProps & InputExtraProps;
 
 export const Input = withStaticProperties(InputContainerFrame, {
   Box: InputGroupImpl,
-  Area: InputImpl,
-  Section: InputSection,
+  Value: InputValueImpl,
   Icon: InputIconWrapper,
   Details: InputDetailsImpl,
   Label: InputLabelImpl,

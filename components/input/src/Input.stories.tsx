@@ -10,7 +10,7 @@ const meta: Meta<typeof Input> = {
     <Input name="inputName" {...args}>
       <Input.Label>Label Text</Input.Label>
       <Input.Box>
-        <Input.Area placeholder="email@example.com" />
+        <Input.Value placeholder="email@example.com" />
       </Input.Box>
       <Input.Details>
         This is an example detailed message for an input
@@ -38,6 +38,13 @@ export const Disabled: Story = {
     disabled: true
   }
 };
+
+export const DefaultValue: Story = {
+  args: {
+    defaultValue: "Defaulted Text"
+  }
+};
+
 
 export const Help: Story = {
   args: {

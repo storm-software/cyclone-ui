@@ -206,6 +206,7 @@
       "@cyclone-ui/nx": "workspace:*",
       "@cyclone-ui/pop-up": "workspace:*",
       "@cyclone-ui/provider": "workspace:*",
+      "@cyclone-ui/select": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*"

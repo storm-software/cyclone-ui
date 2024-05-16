@@ -55,7 +55,9 @@
       "@cyclone-ui/provider/*": ["packages/provider/src/*"],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"],
-      "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"]
+      "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
+      "@cyclone-ui/select": ["components/select/src/index.ts"],
+      "@cyclone-ui/select/*": ["components/select/src/*"]
     }
   }
 }

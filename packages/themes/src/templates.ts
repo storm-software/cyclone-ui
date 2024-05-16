@@ -151,6 +151,19 @@ export const maskOptions = {
     },
     skip: skipShadowsAndSpecificColors
   },
+  select: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND,
+      borderColor: ColorPaletteShades.PRIMARY - 4,
+      borderColorHover: ColorPaletteShades.PRIMARY - 4,
+      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
+      borderColorPress: ColorPaletteShades.PRIMARY - 4,
+      placeholderColor: ColorPaletteShades.PRIMARY - 4
+    },
+    skip: skipShadowsAndSpecificColors
+  },
   label: {
     ...baseMaskOptions,
     override: {

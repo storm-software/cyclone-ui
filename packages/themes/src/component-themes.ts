@@ -148,7 +148,12 @@ export const componentThemes = {
 
   Input: {
     mask: "identity",
-    ...maskOptions.component
+    ...maskOptions.input
+  },
+
+  Select: {
+    mask: "identity",
+    ...maskOptions.select
   },
 
   Label: {
