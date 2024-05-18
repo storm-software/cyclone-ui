@@ -1,0 +1,10 @@
+/**
+ * The checkbox library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A package containing the Checkbox component used by Storm Software
+ *
+ * @packageDocumentation
+ */
+
+export * from "./Checkbox";
