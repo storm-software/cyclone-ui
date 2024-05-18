@@ -45,7 +45,6 @@ export const DefaultValue: Story = {
   }
 };
 
-
 export const Help: Story = {
   args: {
     theme: "help"

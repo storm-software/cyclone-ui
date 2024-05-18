@@ -19,7 +19,8 @@ import {
   styled,
   createStyledContext,
   useTheme,
-  getVariable
+  getVariable,
+  useThemeName
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
@@ -473,10 +474,11 @@ export const CheckboxLabel = styled(Label, {
 });
 
 const CheckboxLabelImpl = CheckboxLabel.styleable((props, forwardedRef) => {
-  const { required, theme, disabled } = CheckboxContext.useStyledContext();
+  const { required, disabled } = CheckboxContext.useStyledContext();
   const { focused } = FocusContext.useStyledContext();
   const { name } = NameContext.useStyledContext();
   const { children, ...rest } = props;
+  const theme = useThemeName();
 
   return (
     <XStack justifyContent="space-between">

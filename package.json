@@ -193,6 +193,7 @@
       "@cyclone-ui/build": "workspace:*",
       "@cyclone-ui/button": "workspace:*",
       "@cyclone-ui/card": "workspace:*",
+      "@cyclone-ui/checkbox": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/collapsible": "workspace:*",
       "@cyclone-ui/font-mona-sans": "workspace:*",
@@ -206,11 +207,11 @@
       "@cyclone-ui/nx": "workspace:*",
       "@cyclone-ui/pop-up": "workspace:*",
       "@cyclone-ui/provider": "workspace:*",
+      "@cyclone-ui/radio-group": "workspace:*",
       "@cyclone-ui/select": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*",
-      "@cyclone-ui/checkbox": "workspace:*"
+      "@cyclone-ui/website": "workspace:*"
     }
   },
   "bundlewatch": {

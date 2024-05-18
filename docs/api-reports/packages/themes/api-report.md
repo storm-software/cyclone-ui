@@ -1811,6 +1811,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_Label: {
         background: string;
         backgroundHover: string;
@@ -3052,6 +3092,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -4371,6 +4451,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_base_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_Label: {
         background: string;
         backgroundHover: string;
@@ -5612,6 +5732,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_brand_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -6931,6 +7091,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_accent_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -8172,6 +8372,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_help_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -9491,6 +9731,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_success_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_Label: {
         background: string;
         backgroundHover: string;
@@ -10732,6 +11012,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_info_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -12051,6 +12371,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_warning_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -13292,6 +13652,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_error_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -14611,6 +15011,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_base_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_Label: {
         background: string;
         backgroundHover: string;
@@ -15852,6 +16292,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_brand_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -17171,6 +17651,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_accent_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -18412,6 +18932,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_help_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -19731,6 +20291,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_success_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_Label: {
         background: string;
         backgroundHover: string;
@@ -20972,6 +21572,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_info_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -22291,6 +22931,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_warning_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -23532,6 +24212,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_error_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -25053,6 +25773,49 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
+    RadioGroup: {
+        override: {
+            color: number;
+            borderColor: number;
+            borderColorHover: number;
+            borderColorFocus: number;
+            borderColorPress: number;
+            placeholderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
     Label: {
         override: {
             color: number;
@@ -25323,6 +26086,9 @@ export const dark_accent_Progress: Theme;
 export const dark_accent_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const dark_accent_RadioGroup: Theme;
+
+// @public (undocumented)
 export const dark_accent_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -25431,6 +26197,9 @@ export const dark_base_Progress: Theme;
 export const dark_base_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const dark_base_RadioGroup: Theme;
+
+// @public (undocumented)
 export const dark_base_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -25528,6 +26297,9 @@ export const dark_brand_Progress: Theme;
 
 // @public (undocumented)
 export const dark_brand_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const dark_brand_RadioGroup: Theme;
 
 // @public (undocumented)
 export const dark_brand_RadioGroupItem: Theme;
@@ -25653,6 +26425,9 @@ export const dark_error_Progress: Theme;
 export const dark_error_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const dark_error_RadioGroup: Theme;
+
+// @public (undocumented)
 export const dark_error_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -25750,6 +26525,9 @@ export const dark_help_Progress: Theme;
 
 // @public (undocumented)
 export const dark_help_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const dark_help_RadioGroup: Theme;
 
 // @public (undocumented)
 export const dark_help_RadioGroupItem: Theme;
@@ -25851,6 +26629,9 @@ export const dark_info_Progress: Theme;
 export const dark_info_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const dark_info_RadioGroup: Theme;
+
+// @public (undocumented)
 export const dark_info_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -25912,6 +26693,9 @@ export const dark_Progress: Theme;
 
 // @public (undocumented)
 export const dark_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const dark_RadioGroup: Theme;
 
 // @public (undocumented)
 export const dark_RadioGroupItem: Theme;
@@ -25993,6 +26777,9 @@ export const dark_success_Progress: Theme;
 
 // @public (undocumented)
 export const dark_success_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const dark_success_RadioGroup: Theme;
 
 // @public (undocumented)
 export const dark_success_RadioGroupItem: Theme;
@@ -26110,6 +26897,9 @@ export const dark_warning_Progress: Theme;
 
 // @public (undocumented)
 export const dark_warning_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const dark_warning_RadioGroup: Theme;
 
 // @public (undocumented)
 export const dark_warning_RadioGroupItem: Theme;
@@ -26355,6 +27145,9 @@ export const light_accent_Progress: Theme;
 export const light_accent_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const light_accent_RadioGroup: Theme;
+
+// @public (undocumented)
 export const light_accent_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -26463,6 +27256,9 @@ export const light_base_Progress: Theme;
 export const light_base_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const light_base_RadioGroup: Theme;
+
+// @public (undocumented)
 export const light_base_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -26560,6 +27356,9 @@ export const light_brand_Progress: Theme;
 
 // @public (undocumented)
 export const light_brand_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const light_brand_RadioGroup: Theme;
 
 // @public (undocumented)
 export const light_brand_RadioGroupItem: Theme;
@@ -26685,6 +27484,9 @@ export const light_error_Progress: Theme;
 export const light_error_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const light_error_RadioGroup: Theme;
+
+// @public (undocumented)
 export const light_error_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -26782,6 +27584,9 @@ export const light_help_Progress: Theme;
 
 // @public (undocumented)
 export const light_help_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const light_help_RadioGroup: Theme;
 
 // @public (undocumented)
 export const light_help_RadioGroupItem: Theme;
@@ -26883,6 +27688,9 @@ export const light_info_Progress: Theme;
 export const light_info_ProgressIndicator: Theme;
 
 // @public (undocumented)
+export const light_info_RadioGroup: Theme;
+
+// @public (undocumented)
 export const light_info_RadioGroupItem: Theme;
 
 // @public (undocumented)
@@ -26944,6 +27752,9 @@ export const light_Progress: Theme;
 
 // @public (undocumented)
 export const light_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const light_RadioGroup: Theme;
 
 // @public (undocumented)
 export const light_RadioGroupItem: Theme;
@@ -27025,6 +27836,9 @@ export const light_success_Progress: Theme;
 
 // @public (undocumented)
 export const light_success_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const light_success_RadioGroup: Theme;
 
 // @public (undocumented)
 export const light_success_RadioGroupItem: Theme;
@@ -27142,6 +27956,9 @@ export const light_warning_Progress: Theme;
 
 // @public (undocumented)
 export const light_warning_ProgressIndicator: Theme;
+
+// @public (undocumented)
+export const light_warning_RadioGroup: Theme;
 
 // @public (undocumented)
 export const light_warning_RadioGroupItem: Theme;
@@ -27462,6 +28279,48 @@ export const maskOptions: {
         parentName?: string | undefined;
     };
     select: {
+        override: {
+            color: number;
+            borderColor: number;
+            borderColorHover: number;
+            borderColorFocus: number;
+            borderColorPress: number;
+            placeholderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    radioGroup: {
         override: {
             color: number;
             borderColor: number;
@@ -30149,6 +31008,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_Label: {
         background: string;
         backgroundHover: string;
@@ -31390,6 +32289,46 @@ export const themes: {
         color14: string;
     };
     light_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -32709,6 +33648,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_base_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_Label: {
         background: string;
         backgroundHover: string;
@@ -33950,6 +34929,46 @@ export const themes: {
         color14: string;
     };
     light_brand_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -35269,6 +36288,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_accent_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -36510,6 +37569,46 @@ export const themes: {
         color14: string;
     };
     light_help_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -37829,6 +38928,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_success_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_Label: {
         background: string;
         backgroundHover: string;
@@ -39070,6 +40209,46 @@ export const themes: {
         color14: string;
     };
     light_info_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -40389,6 +41568,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_warning_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -41630,6 +42849,46 @@ export const themes: {
         color14: string;
     };
     light_error_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -42949,6 +44208,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_base_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_Label: {
         background: string;
         backgroundHover: string;
@@ -44190,6 +45489,46 @@ export const themes: {
         color14: string;
     };
     dark_brand_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -45509,6 +46848,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_accent_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -46750,6 +48129,46 @@ export const themes: {
         color14: string;
     };
     dark_help_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -48069,6 +49488,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_success_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_Label: {
         background: string;
         backgroundHover: string;
@@ -49310,6 +50769,46 @@ export const themes: {
         color14: string;
     };
     dark_info_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -50629,6 +52128,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_warning_RadioGroup: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -51870,6 +53409,46 @@ export const themes: {
         color14: string;
     };
     dark_error_Select: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_RadioGroup: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;

@@ -160,24 +160,16 @@ const InputGroupFrame = styled(XGroup, {
   }
 });
 
-const FocusContext = createStyledContext({
+const InternalStateContext = createStyledContext({
+  name: undefined as string | undefined,
   setFocused: (val: boolean) => {},
   focused: false
-});
-
-const RefContext = createStyledContext({
-  inputRef: createRef<TamaguiInput>()
-});
-
-const DEFAULT_INPUT_NAME = "input_default_name";
-const NameContext = createStyledContext({
-  name: DEFAULT_INPUT_NAME
 });
 
 const InputGroupImpl = InputGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
   const { theme, disabled } = InputContext.useStyledContext();
-  const { focused } = FocusContext.useStyledContext();
+  const { focused } = InternalStateContext.useStyledContext();
 
   return (
     <InputGroupFrame
@@ -270,9 +262,8 @@ const InputValue = styled(TamaguiInput, {
 
 const InputValueImpl = InputValue.styleable<{ required?: boolean }>(
   (props, ref) => {
-    const { setFocused } = FocusContext.useStyledContext();
+    const { setFocused, name } = InternalStateContext.useStyledContext();
     const { size, disabled } = InputContext.useStyledContext();
-    const { name } = NameContext.useStyledContext();
     const { ...rest } = props;
 
     return (
@@ -388,17 +379,16 @@ const InputContainer = View.styleable<{ name?: string }>(
     const [focused, setFocused] = useState(false);
 
     const id = useId();
-    const ref = useRef<TamaguiInput>(null);
 
     return (
-      <NameContext.Provider
-        name={name && name !== DEFAULT_INPUT_NAME ? name : id}>
-        <RefContext.Provider inputRef={forwardedRef ? forwardedRef : ref}>
-          <FocusContext.Provider focused={focused} setFocused={setFocused}>
-            <View {...rest}>{children}</View>
-          </FocusContext.Provider>
-        </RefContext.Provider>
-      </NameContext.Provider>
+      <InternalStateContext.Provider
+        name={name ? name : id}
+        focused={focused}
+        setFocused={setFocused}>
+        <View ref={forwardedRef} {...rest}>
+          {children}
+        </View>
+      </InternalStateContext.Provider>
     );
   }
 );
@@ -517,8 +507,7 @@ export const InputLabel = styled(Label, {
 
 const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
   const { required, disabled } = InputContext.useStyledContext();
-  const { focused } = FocusContext.useStyledContext();
-  const { name } = NameContext.useStyledContext();
+  const { focused, name } = InternalStateContext.useStyledContext();
   const { children, ...rest } = props;
 
   return (
@@ -606,7 +595,7 @@ export const InputDetails = styled(Text, {
 
 const InputDetailsImpl = InputDetails.styleable((props, forwardedRef) => {
   const { disabled } = InputContext.useStyledContext();
-  const { name } = NameContext.useStyledContext();
+  const { name } = InternalStateContext.useStyledContext();
   const { children, ...rest } = props;
 
   return (

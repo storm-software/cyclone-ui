@@ -156,6 +156,11 @@ export const componentThemes = {
     ...maskOptions.select
   },
 
+  RadioGroup: {
+    mask: "identity",
+    ...maskOptions.radioGroup
+  },
+
   Label: {
     mask: "identity",
     ...maskOptions.label

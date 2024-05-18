@@ -38,7 +38,7 @@ export const Disabled: Story = {
 
 export const DefaultValue: Story = {
   args: {
-    defaultValue: true
+    defaultChecked: true
   }
 };
 
