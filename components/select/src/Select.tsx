@@ -8,7 +8,6 @@ import type {
 } from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
 import {
-  createRef,
   useCallback,
   useId,
   useLayoutEffect,
@@ -19,7 +18,7 @@ import {
 import { Label } from "@tamagui/label";
 import { XGroup } from "@tamagui/group";
 import { isWeb } from "@tamagui/constants";
-import { XStack, YStack } from "@tamagui/stacks";
+import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
   Text,
@@ -97,20 +96,18 @@ export const defaultSelectGroupStyles = {
   hoverStyle: {
     borderColor: "$accent10",
     backgroundColor: "$background"
-  },
-
-  focusStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 2,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
   }
 } as const;
 
 const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
   name: "Select",
   context: SelectContext,
+  unstyled: true,
+  radiused: true,
+  hoverTheme: false,
+  pressTheme: true,
+  focusable: true,
+  backgrounded: false,
 
   justifyContent: "space-between",
   animation: "$slow",
@@ -118,37 +115,16 @@ const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
   fontFamily: "$body",
   color: "$color",
   backgroundColor: "$background",
-  borderRadius: "$radius",
-  borderWidth: 1,
-  borderColor: "$borderColor",
+  borderWidth: 0,
+  borderColor: "transparent",
+  borderStyle: "none" as any,
   outlineWidth: 0,
   outlineColor: "transparent",
   outlineStyle: "none",
 
-  hoverStyle: {
-    borderColor: "$accent10",
-    backgroundColor: "$background"
-  },
-
-  focusStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 2,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  },
-
   variants: {
     scaleIcon: {
       ":number": {} as any
-    },
-
-    applyFocusStyle: {
-      ":boolean": (val, { props }) => {
-        if (val) {
-          return props.focusStyle || defaultSelectGroupStyles.focusStyle;
-        }
-      }
     },
 
     size: {
@@ -166,10 +142,101 @@ const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
     disabled: {
       true: {
         color: "$disabled",
+        placeholderColor: "$disabled",
+        userSelect: "none",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$disabled"
+        },
+
+        focusStyle: {
+          color: "$disabled"
+        },
+
+        pressStyle: {
+          color: "$disabled"
+        }
+      },
+      false: {
+        cursor: "pointer"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    required: false,
+    disabled: false
+  }
+});
+
+const SelectGroupFrameContainer = styled(ThemeableStack, {
+  name: "Select",
+  context: SelectContext,
+
+  radiused: true,
+  hoverTheme: true,
+  pressTheme: true,
+  focusable: true,
+  backgrounded: false,
+  animation: "$slow",
+  backgroundColor: "transparent",
+  borderWidth: 1,
+  borderColor: "$borderColor",
+  borderStyle: "solid",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  outlineStyle: "none",
+
+  hoverStyle: {
+    borderColor: "$accent10"
+  },
+
+  focusStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 2,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColor"
+  },
+
+  variants: {
+    scaleIcon: {
+      ":number": {} as any
+    },
+
+    applyFocusStyle: {
+      ":boolean": (val, { props }) => {
+        if (val) {
+          return (
+            props.focusStyle || {
+              outlineColor: "$accent10",
+              outlineWidth: 2,
+              outlineOffset: "$1.25",
+              outlineStyle: "solid",
+              borderColor: "$borderColorFocus"
+            }
+          );
+        }
+      }
+    },
+
+    size: {
+      "...size": (val, { tokens }) => {
+        return {
+          borderRadius: tokens.radius[val]
+        };
+      }
+    },
+
+    disabled: {
+      true: {
+        color: "$disabled",
         borderColor: "$disabled",
         placeholderColor: "$disabled",
         userSelect: "none",
         cursor: "not-allowed",
+        borderWidth: 1,
 
         hoverStyle: {
           color: "$disabled",
@@ -189,12 +256,16 @@ const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
           outlineStyle: "none",
           outlineColor: "transparent"
         }
+      },
+      false: {
+        borderWidth: 1,
+        borderColor: "$borderColor",
+        cursor: "pointer"
       }
     }
   } as const,
 
   defaultVariants: {
-    required: false,
     disabled: false
   }
 });
@@ -212,49 +283,56 @@ const InternalStateContext = createStyledContext({
 
 const SelectGroupImpl = SelectGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
-  const { theme, disabled, size } = SelectContext.useStyledContext();
+  const { theme, disabled, size, scaleIcon } = SelectContext.useStyledContext();
   const { open } = InternalStateContext.useStyledContext();
 
   return (
-    <SelectGroupFrame
-      theme={theme}
-      applyFocusStyle={open}
-      ref={forwardedRef}
-      iconAfter={ChevronDown}
-      {...rest}
-      size={size}
-      disabled={disabled}>
-      {theme &&
-        (theme.toLowerCase().includes(ColorRole.ERROR) ||
-          theme.toLowerCase().includes(ColorRole.WARNING)) && (
+    <SelectGroupFrameContainer theme={theme} applyFocusStyle={open}>
+      <SelectGroupFrame
+        theme={theme}
+        ref={forwardedRef}
+        {...rest}
+        scaleIcon={scaleIcon}
+        size={size}
+        active={!disabled}
+        disabled={disabled}>
+        {theme &&
+          (theme.toLowerCase().includes(ColorRole.ERROR) ||
+            theme.toLowerCase().includes(ColorRole.WARNING)) && (
+            <SelectIcon>
+              <AlertCircle />
+            </SelectIcon>
+          )}
+        {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
           <SelectIcon>
-            <AlertCircle />
+            <Info />
           </SelectIcon>
         )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
-        <SelectIcon>
-          <Info />
-        </SelectIcon>
-      )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
-        <SelectIcon>
-          <HelpCircle />
-        </SelectIcon>
-      )}
-      {!disabled &&
-        theme &&
-        theme.toLowerCase().includes(ColorRole.SUCCESS) && (
+        {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
           <SelectIcon>
-            <CheckCircle />
+            <HelpCircle />
           </SelectIcon>
         )}
-      {children}
-      {disabled && (
-        <SelectIcon marginRight={0}>
-          <Lock />
-        </SelectIcon>
-      )}
-    </SelectGroupFrame>
+        {!disabled &&
+          theme &&
+          theme.toLowerCase().includes(ColorRole.SUCCESS) && (
+            <SelectIcon>
+              <CheckCircle />
+            </SelectIcon>
+          )}
+        {children}
+        {disabled && (
+          <SelectIcon marginRight={0}>
+            <Lock />
+          </SelectIcon>
+        )}
+        {!disabled && (
+          <SelectIconChevron marginRight={0} opened={open}>
+            <ChevronDown size="$1.5" />
+          </SelectIconChevron>
+        )}
+      </SelectGroupFrame>
+    </SelectGroupFrameContainer>
   );
 });
 
@@ -434,6 +512,29 @@ const SelectIconWrapper = SelectIcon.styleable(
     );
   }
 );
+
+const SelectIconChevron = styled(SelectIcon, {
+  name: "Select",
+  context: SelectContext,
+
+  marginRight: 0,
+  animation: "$slow",
+
+  variants: {
+    opened: {
+      true: {
+        rotate: "180deg"
+      },
+      false: {
+        rotate: "0deg"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    opened: false
+  }
+});
 
 export const SelectComp = styled(TamaguiSelect, {
   name: "Select",
