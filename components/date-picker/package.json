@@ -30,6 +30,7 @@
     "dist"
   ],
   "dependencies": {
+    "@formkit/tempo": "^0.1.1",
     "@rehookify/datepicker": "^6.6.1",
     "@tamagui/adapt": "^1.98.0",
     "@tamagui/animate-presence": "^1.98.0",

@@ -23,7 +23,7 @@ import {
   View,
   styled,
   createStyledContext,
-  useTheme,
+  useThemeName,
   getVariable
 } from "@tamagui/core";
 import { Adapt } from "@tamagui/adapt";
@@ -46,6 +46,7 @@ import {
 import { ColorRole } from "@cyclone-ui/themes";
 import { Button } from "@cyclone-ui/button";
 import { XStack, YStack } from "@tamagui/stacks";
+import { format } from "@formkit/tempo";
 
 export const DATE_PICKER_NAME = "DatePicker";
 
@@ -115,10 +116,12 @@ const DatePickerDetails = styled(Input.Details, {
   color: "$borderColor"
 });
 
+export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
+
 const DatePickerValue = styled(Input.Value, {
   name: DATE_PICKER_NAME,
   context: DatePickerContext,
-  placeholder: "MM/DD/YYYY"
+  placeholder: DEFAULT_DATE_FORMAT
 });
 
 /** rehookify internally return `onClick` and that's incompatible with native */
@@ -219,6 +222,7 @@ type DatePickerInputProps = {
 export const DatePickerInput: any =
   DatePickerValue.styleable<DatePickerInputProps>((props, ref) => {
     const { value, onButtonPress, size, onReset, ...rest } = props;
+
     return (
       <Input.Box>
         <DatePickerValue value={value} ref={ref} {...rest} />
@@ -452,6 +456,7 @@ export function YearSlider() {
   } = useDatePickerContext();
   const { type: header, setHeader } = useHeaderType();
   const { year } = calendars[0];
+
   return (
     <View
       flexDirection="row"
@@ -700,8 +705,9 @@ const DatePickerPopoverBody = () => {
 };
 
 export const DatePickerFrame = Input.styleable((props, ref) => {
-  const [selectedDates, onDatesChange] = useState<Date[]>([]);
-  const [open, setOpen] = useState(false);
+  const [selectedDates] = useState<Date[]>([]);
+  const [, setOpen] = useState(false);
+  const themeName = useThemeName();
 
   useEffect(() => {
     setOpen(false);
@@ -709,7 +715,7 @@ export const DatePickerFrame = Input.styleable((props, ref) => {
 
   return (
     <View $platform-native={{ minWidth: "100%" }}>
-      <Input ref={ref} {...props}>
+      <Input ref={ref} theme={themeName} hideIcons={false} {...props}>
         {props.children}
       </Input>
     </View>
@@ -737,7 +743,11 @@ const DatePickerValueImpl = DatePickerValue.styleable((props, ref) => {
       }}>
       <DatePickerPopover.Trigger asChild={true}>
         <DatePickerInput
-          value={selectedDates[0]?.toDateString() || ""}
+          value={
+            selectedDates[0]
+              ? format(selectedDates[0], DEFAULT_DATE_FORMAT)
+              : ""
+          }
           onReset={() => onDatesChange([])}
           onButtonPress={() => setOpen(true)}
         />

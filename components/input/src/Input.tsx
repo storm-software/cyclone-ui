@@ -7,7 +7,7 @@ import type {
   VariantSpreadExtras
 } from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
-import { createRef, useId, useRef, useState } from "react";
+import { useId, useState } from "react";
 import { Label } from "@tamagui/label";
 import { XGroup } from "@tamagui/group";
 import { isWeb } from "@tamagui/constants";
@@ -40,6 +40,7 @@ const defaultContextValues = {
   color: undefined,
   required: false,
   disabled: false,
+  hideIcons: true,
   theme: `${ColorRole.BASE}_Input`
 } as const;
 
@@ -49,6 +50,7 @@ export const InputContext = createStyledContext<{
   color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
+  hideIcons: boolean;
   theme: string;
 }>(defaultContextValues);
 
@@ -323,11 +325,12 @@ const InputIcon = InputIconFrame.styleable<{
     size = "$true",
     color: contextColor,
     disabled,
+    theme,
     scaleIcon = 1
   } = inputContext;
 
   const themeColors = useTheme({
-    name: inputContext.theme
+    name: theme
   });
   const color = disabled
     ? "$disabled"
@@ -335,7 +338,9 @@ const InputIcon = InputIconFrame.styleable<{
         colorProp ||
           contextColor ||
           themeColors[contextColor as any]?.get("web") ||
-          themeColors.primary?.get("web")
+          (!theme || theme === "base"
+            ? themeColors.color8?.get("web")
+            : themeColors.primary?.get("web"))
       );
   const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
 
@@ -344,7 +349,7 @@ const InputIcon = InputIconFrame.styleable<{
     color: color as any
   });
   return (
-    <InputIconFrame ref={ref} theme={inputContext.theme} {...rest}>
+    <InputIconFrame ref={ref} theme={theme} {...rest}>
       {getThemedIcon(children)}
     </InputIconFrame>
   );
@@ -352,10 +357,11 @@ const InputIcon = InputIconFrame.styleable<{
 
 const InputIconWrapper = InputIcon.styleable(
   ({ children, ...props }: any, ref: any) => {
-    const { theme, disabled } = InputContext.useStyledContext();
+    const { theme, disabled, hideIcons } = InputContext.useStyledContext();
 
     if (
-      (theme &&
+      (hideIcons &&
+        theme &&
         (theme.toLowerCase().includes(ColorRole.ERROR) ||
           theme.toLowerCase().includes(ColorRole.WARNING) ||
           theme.toLowerCase().includes(ColorRole.INFO) ||
@@ -426,6 +432,10 @@ export const InputContainerFrame = styled(InputContainer, {
       ":boolean": {} as any
     },
 
+    hideIcons: {
+      ":boolean": {} as any
+    },
+
     disabled: {
       true: {
         cursor: "not-allowed"
@@ -436,7 +446,8 @@ export const InputContainerFrame = styled(InputContainer, {
   defaultVariants: {
     size: "$4",
     required: false,
-    disabled: false
+    disabled: false,
+    hideIcons: true
   }
 });
 
