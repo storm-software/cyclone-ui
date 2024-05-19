@@ -241,6 +241,7 @@ const InputValue = styled(TamaguiInput, {
   unstyled: true,
   context: InputContext,
   color: "$fg",
+  verticalAlign: "center",
 
   variants: {
     disabled: {

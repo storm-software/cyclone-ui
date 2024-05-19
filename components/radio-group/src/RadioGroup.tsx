@@ -7,18 +7,10 @@ import type {
   VariantSpreadExtras
 } from "@tamagui/web";
 import { withStaticProperties } from "@tamagui/helpers";
-import {
-  useCallback,
-  useId,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState
-} from "react";
+import { useCallback, useId, useMemo, useState } from "react";
 import { Label } from "@tamagui/label";
-import { XGroup } from "@tamagui/group";
 import { isWeb } from "@tamagui/constants";
-import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
+import { ThemeableStack, XStack } from "@tamagui/stacks";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
   Text,
@@ -31,20 +23,14 @@ import {
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import {
-  RadioGroup as TamaguiRadioGroup,
-  type RadioGroupProps as TamaguiRadioGroupProps
-} from "@tamagui/radio-group";
+import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import {
   Asterisk,
   AlertCircle,
   Info,
   HelpCircle,
   CheckCircle,
-  Lock,
-  ChevronUp,
-  ChevronDown,
-  Check
+  Lock
 } from "@tamagui/lucide-icons";
 import { ColorRole } from "@cyclone-ui/themes";
 

@@ -161,6 +161,11 @@ export const componentThemes = {
     ...maskOptions.radioGroup
   },
 
+  DatePicker: {
+    mask: "identity",
+    ...maskOptions.datePicker
+  },
+
   Label: {
     mask: "identity",
     ...maskOptions.label

@@ -211,7 +211,8 @@
       "@cyclone-ui/select": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*"
+      "@cyclone-ui/website": "workspace:*",
+      "@cyclone-ui/date-picker": "workspace:*"
     }
   },
   "bundlewatch": {

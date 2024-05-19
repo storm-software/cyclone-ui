@@ -54,7 +54,7 @@ export const Rounded: Story = {
   args: {
     children: "Button Text",
     disabled: false,
-    rounded: true
+    circular: true
   }
 };
 

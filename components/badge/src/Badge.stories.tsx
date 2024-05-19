@@ -26,7 +26,7 @@ export const Base: Story = {
 export const Rounded: Story = {
   args: {
     children: "Badge Text",
-    rounded: true
+    circular: true
   }
 };
 
@@ -48,7 +48,7 @@ export const BrandRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "brand",
-    rounded: true
+    circular: true
   }
 };
 
@@ -71,7 +71,7 @@ export const HelpRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "help",
-    rounded: true
+    circular: true
   }
 };
 
@@ -94,7 +94,7 @@ export const ErrorRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "error",
-    rounded: true
+    circular: true
   }
 };
 
@@ -117,7 +117,7 @@ export const WarningRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "warning",
-    rounded: true
+    circular: true
   }
 };
 
@@ -140,7 +140,7 @@ export const InfoRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "info",
-    rounded: true
+    circular: true
   }
 };
 
@@ -163,7 +163,7 @@ export const SuccessRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "success",
-    rounded: true
+    circular: true
   }
 };
 

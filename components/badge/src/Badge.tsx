@@ -27,7 +27,7 @@ const BadgeFrame = styled(View, {
   backgroundColor: "$primary",
 
   variants: {
-    rounded: {
+    circular: {
       true: {
         borderRadius: 1000_000_000
       }

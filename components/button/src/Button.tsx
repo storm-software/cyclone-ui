@@ -61,6 +61,16 @@ type ButtonExtraProps = TextParentStyles &
      * remove default styles
      */
     unstyled?: boolean;
+
+    /**
+     * make the button circular
+     */
+    circular?: boolean;
+
+    /**
+     * make the button disabled
+     */
+    disabled?: boolean;
   };
 
 const BUTTON_NAME = "Button";
@@ -71,6 +81,9 @@ export const ButtonContext = createStyledContext<
       size: SizeTokens;
       variant?: ButtonVariant;
       borderRadius?: SizeTokens;
+      unstyled?: boolean;
+      circular?: boolean;
+      disabled?: boolean;
     }
   >
 >({
@@ -85,16 +98,19 @@ export const ButtonContext = createStyledContext<
   size: undefined,
   textAlign: undefined,
   variant: undefined,
-  borderRadius: "$4"
+  borderRadius: "$4",
+  unstyled: false,
+  circular: false,
+  disabled: false
 });
 
 const ButtonFrame = styled(View, {
   name: BUTTON_NAME,
   context: ButtonContext,
+
   tag: "button",
   role: "button",
   focusable: true,
-
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
@@ -111,7 +127,8 @@ const ButtonFrame = styled(View, {
 
   pressStyle: {
     backgroundColor: "$backgroundPress",
-    borderColor: "$borderColorPress"
+    borderColor: "$borderColorPress",
+    scale: 0.9
   },
 
   focusVisibleStyle: {
@@ -127,7 +144,6 @@ const ButtonFrame = styled(View, {
         alignItems: "center",
         flexWrap: "nowrap",
         flexDirection: "row",
-        cursor: "pointer",
         hoverTheme: true,
         pressTheme: true,
         borderWidth: 0,
@@ -219,11 +235,8 @@ const ButtonFrame = styled(View, {
     disabled: {
       true: {
         opacity: 0.4,
-        cursor: "not-allowed",
-        borderColor: "$disabled",
-        borderWidth: 3
+        borderColor: "$disabled"
       },
-
       false: {
         opacity: 1,
         borderColor: "$borderColor"
@@ -255,7 +268,7 @@ const ButtonFrame = styled(View, {
       }
     },
 
-    rounded: {
+    circular: {
       true: {
         borderRadius: 1000_000_000,
         height: "fit-content"
@@ -267,13 +280,14 @@ const ButtonFrame = styled(View, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
     disabled: false,
     outlined: false,
-    rounded: false
+    circular: false
   }
 });
 
 const ButtonText = styled(SizableText, {
   name: "ButtonText",
   context: ButtonContext,
+
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "$6",
@@ -283,7 +297,6 @@ const ButtonText = styled(SizableText, {
     unstyled: {
       false: {
         userSelect: "none",
-        cursor: "pointer",
         // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow: 0,
         flexShrink: 1,
@@ -291,7 +304,7 @@ const ButtonText = styled(SizableText, {
       }
     },
 
-    rounded: {
+    circular: {
       true: {
         height: "fit-content"
       }
@@ -308,7 +321,7 @@ const ButtonIcon = (props: {
   scaleIcon?: number;
 }) => {
   const { children, scaleIcon = 1 } = props;
-  const { size, color } = useContext(ButtonContext);
+  const { size, color, variant } = useContext(ButtonContext);
 
   const iconSize =
     (typeof size === "number"
@@ -317,7 +330,8 @@ const ButtonIcon = (props: {
 
   const getThemedIcon = useGetThemedIcon({
     size: iconSize,
-    color: color as any
+    color:
+      variant === "glass" || variant === "ghost" ? "$primary" : (color as any)
   });
   return getThemedIcon(children);
 };
@@ -325,15 +339,18 @@ const ButtonIcon = (props: {
 type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
 
 const ButtonGhostBackground = styled(ThemeableStack, {
-  name: "ButtonGhostBackground",
+  name: "Button",
   context: ButtonContext,
+
   backgroundColor: "transparent",
+  borderColor: "transparent",
   borderRadius: "$4",
   animation: "$slow",
+  borderWidth: 2,
   opacity: 0.6,
 
   variants: {
-    rounded: {
+    circular: {
       true: {
         borderRadius: 1000_000_000
       }
@@ -341,13 +358,14 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    rounded: false
+    circular: false
   }
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
-  name: "ButtonGlassBackground",
+  name: "Button",
   context: ButtonContext,
+
   backgroundColor: "transparent",
   borderRadius: "$4",
   animation: "$slow",
@@ -358,7 +376,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
   end: [1, 1],
 
   variants: {
-    rounded: {
+    circular: {
       true: {
         borderRadius: 1000_000_000
       }
@@ -366,12 +384,12 @@ const ButtonGlassBackground = styled(LinearGradient, {
   } as const,
 
   defaultVariants: {
-    rounded: false
+    circular: false
   }
 });
 
-const ButtonWrapper = styled(ThemeableStack, {
-  name: "ButtonWrapper",
+const ButtonContainer = styled(ThemeableStack, {
+  name: "Button",
   context: ButtonContext,
   animation: "$slow",
 
@@ -380,7 +398,16 @@ const ButtonWrapper = styled(ThemeableStack, {
   },
 
   variants: {
-    rounded: {
+    disabled: {
+      true: {
+        cursor: "not-allowed"
+      },
+      false: {
+        cursor: "pointer"
+      }
+    },
+
+    circular: {
       true: {
         borderRadius: 1000_000_000
       }
@@ -388,50 +415,51 @@ const ButtonWrapper = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    rounded: false
+    circular: false
   }
 });
 
-const ButtonContainerImpl = ThemeableStack.styleable<ButtonProps>(
-  (props, ref) => {
-    const { variant, disabled, rounded, ...rest } = props;
+const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
+  (props, forwardedRef) => {
+    const { variant, disabled, circular, ...rest } = props;
 
     return (
-      <ButtonWrapper group={"button" as any} rounded={rounded}>
+      <ButtonContainer
+        group={"button" as any}
+        circular={circular}
+        disabled={disabled}>
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}
-            rounded={rounded}
+            circular={circular}
             $group-button-hover={{
               backgroundColor: disabled ? "transparent" : "$muted"
             }}
             $group-button-press={{
-              backgroundColor: disabled ? "transparent" : "$primary"
-            }}
-            style={{
-              filter: "blur(1px)"
+              backgroundColor: disabled ? "transparent" : "$muted",
+              opacity: 1
             }}
           />
         )}
         {variant === "glass" && (
           <ButtonGlassBackground
             fullscreen={true}
-            rounded={rounded}
+            circular={circular}
             style={{
-              filter: "blur(3px)"
+              filter: "blur(1px)"
             }}
             $group-button-hover={{ opacity: disabled ? 0.5 : 0.7 }}
             $group-button-press={{ opacity: disabled ? 0.5 : 1 }}
           />
         )}
         <ButtonFrame
-          ref={ref}
+          ref={forwardedRef}
           {...rest}
-          rounded={rounded}
+          circular={circular}
           variant={variant}
           disabled={disabled}
         />
-      </ButtonWrapper>
+      </ButtonContainer>
     );
   },
   {

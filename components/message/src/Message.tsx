@@ -448,7 +448,7 @@ export const Message = () => {
         <Button
           theme={current.theme}
           variant="ghost"
-          rounded={true}
+          circular={true}
           padding="$0.75">
           <MessageIcon backgrounded={false}>
             <XCircle />
