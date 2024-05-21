@@ -1891,6 +1891,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_Label: {
         background: string;
         backgroundHover: string;
@@ -3212,6 +3252,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -4611,6 +4691,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_base_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_Label: {
         background: string;
         backgroundHover: string;
@@ -5932,6 +6052,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_brand_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -7331,6 +7491,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_accent_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -8652,6 +8852,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_help_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -10051,6 +10291,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_success_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_Label: {
         background: string;
         backgroundHover: string;
@@ -11372,6 +11652,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_info_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -12771,6 +13091,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    light_warning_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -14092,6 +14452,46 @@ export const buildThemes: () => {
         color14: string;
     };
     light_error_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -15491,6 +15891,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_base_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_Label: {
         background: string;
         backgroundHover: string;
@@ -16812,6 +17252,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_brand_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -18211,6 +18691,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_accent_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -19532,6 +20052,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_help_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -20931,6 +21491,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_success_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_Label: {
         background: string;
         backgroundHover: string;
@@ -22252,6 +22852,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_info_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -23651,6 +24291,46 @@ export const buildThemes: () => {
         color13: string;
         color14: string;
     };
+    dark_warning_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -24972,6 +25652,46 @@ export const buildThemes: () => {
         color14: string;
     };
     dark_error_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -26579,6 +27299,44 @@ export const componentThemes: {
         parentName?: string | undefined;
         mask: "identity";
     };
+    FilePicker: {
+        override: {
+            color: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+        mask: "identity";
+    };
     Label: {
         override: {
             color: number;
@@ -26825,6 +27583,9 @@ export const dark_accent_DialogOverlay: Theme;
 export const dark_accent_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const dark_accent_FilePicker: Theme;
+
+// @public (undocumented)
 export const dark_accent_Input: Theme;
 
 // @public (undocumented)
@@ -26939,6 +27700,9 @@ export const dark_base_DialogOverlay: Theme;
 export const dark_base_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const dark_base_FilePicker: Theme;
+
+// @public (undocumented)
 export const dark_base_Input: Theme;
 
 // @public (undocumented)
@@ -27042,6 +27806,9 @@ export const dark_brand_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const dark_brand_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const dark_brand_FilePicker: Theme;
 
 // @public (undocumented)
 export const dark_brand_Input: Theme;
@@ -27176,6 +27943,9 @@ export const dark_error_DialogOverlay: Theme;
 export const dark_error_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const dark_error_FilePicker: Theme;
+
+// @public (undocumented)
 export const dark_error_Input: Theme;
 
 // @public (undocumented)
@@ -27242,6 +28012,9 @@ export const dark_error_TooltipArrow: Theme;
 export const dark_error_TooltipContent: Theme;
 
 // @public (undocumented)
+export const dark_FilePicker: Theme;
+
+// @public (undocumented)
 export const dark_help: Theme;
 
 // @public (undocumented)
@@ -27279,6 +28052,9 @@ export const dark_help_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const dark_help_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const dark_help_FilePicker: Theme;
 
 // @public (undocumented)
 export const dark_help_Input: Theme;
@@ -27384,6 +28160,9 @@ export const dark_info_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const dark_info_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const dark_info_FilePicker: Theme;
 
 // @public (undocumented)
 export const dark_info_Input: Theme;
@@ -27539,6 +28318,9 @@ export const dark_success_DialogOverlay: Theme;
 export const dark_success_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const dark_success_FilePicker: Theme;
+
+// @public (undocumented)
 export const dark_success_Input: Theme;
 
 // @public (undocumented)
@@ -27660,6 +28442,9 @@ export const dark_warning_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const dark_warning_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const dark_warning_FilePicker: Theme;
 
 // @public (undocumented)
 export const dark_warning_Input: Theme;
@@ -27911,6 +28696,9 @@ export const light_accent_DialogOverlay: Theme;
 export const light_accent_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const light_accent_FilePicker: Theme;
+
+// @public (undocumented)
 export const light_accent_Input: Theme;
 
 // @public (undocumented)
@@ -28025,6 +28813,9 @@ export const light_base_DialogOverlay: Theme;
 export const light_base_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const light_base_FilePicker: Theme;
+
+// @public (undocumented)
 export const light_base_Input: Theme;
 
 // @public (undocumented)
@@ -28128,6 +28919,9 @@ export const light_brand_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const light_brand_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const light_brand_FilePicker: Theme;
 
 // @public (undocumented)
 export const light_brand_Input: Theme;
@@ -28262,6 +29056,9 @@ export const light_error_DialogOverlay: Theme;
 export const light_error_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const light_error_FilePicker: Theme;
+
+// @public (undocumented)
 export const light_error_Input: Theme;
 
 // @public (undocumented)
@@ -28328,6 +29125,9 @@ export const light_error_TooltipArrow: Theme;
 export const light_error_TooltipContent: Theme;
 
 // @public (undocumented)
+export const light_FilePicker: Theme;
+
+// @public (undocumented)
 export const light_help: Theme;
 
 // @public (undocumented)
@@ -28365,6 +29165,9 @@ export const light_help_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const light_help_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const light_help_FilePicker: Theme;
 
 // @public (undocumented)
 export const light_help_Input: Theme;
@@ -28470,6 +29273,9 @@ export const light_info_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const light_info_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const light_info_FilePicker: Theme;
 
 // @public (undocumented)
 export const light_info_Input: Theme;
@@ -28625,6 +29431,9 @@ export const light_success_DialogOverlay: Theme;
 export const light_success_DrawerFrame: Theme;
 
 // @public (undocumented)
+export const light_success_FilePicker: Theme;
+
+// @public (undocumented)
 export const light_success_Input: Theme;
 
 // @public (undocumented)
@@ -28746,6 +29555,9 @@ export const light_warning_DialogOverlay: Theme;
 
 // @public (undocumented)
 export const light_warning_DrawerFrame: Theme;
+
+// @public (undocumented)
+export const light_warning_FilePicker: Theme;
 
 // @public (undocumented)
 export const light_warning_Input: Theme;
@@ -29187,6 +29999,43 @@ export const maskOptions: {
             borderColorFocus: number;
             borderColorPress: number;
             placeholderColor: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        skip: {
+            color1: number;
+            color2: number;
+            color3: number;
+            color4: number;
+            color5: number;
+            color6: number;
+            color7: number;
+            color8: number;
+            color9: number;
+            color10: number;
+            color11: number;
+            color12: number;
+            color13: number;
+            color14: number;
+            shadowColor: number;
+            shadowColorHover: number;
+            shadowColorPress: number;
+            shadowColorFocus: number;
+        };
+        palette?: CreateThemePalette | undefined;
+        overrideStrategy?: "shift" | "swap" | undefined;
+        overrideSwap?: Partial<ThemeMask> | undefined;
+        overrideShift?: Partial<ThemeMask> | undefined;
+        strength?: number | undefined;
+        max?: number | undefined;
+        min?: number | undefined;
+        parentName?: string | undefined;
+    };
+    filePicker: {
+        override: {
+            color: number;
             shadowColor: number;
             shadowColorHover: number;
             shadowColorPress: number;
@@ -31947,6 +32796,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_Label: {
         background: string;
         backgroundHover: string;
@@ -33268,6 +34157,46 @@ export const themes: {
         color14: string;
     };
     light_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -34667,6 +35596,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_base_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_base_Label: {
         background: string;
         backgroundHover: string;
@@ -35988,6 +36957,46 @@ export const themes: {
         color14: string;
     };
     light_brand_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_brand_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -37387,6 +38396,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_accent_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -38708,6 +39757,46 @@ export const themes: {
         color14: string;
     };
     light_help_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_help_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -40107,6 +41196,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_success_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_success_Label: {
         background: string;
         backgroundHover: string;
@@ -41428,6 +42557,46 @@ export const themes: {
         color14: string;
     };
     light_info_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_info_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -42827,6 +43996,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    light_warning_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     light_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -44148,6 +45357,46 @@ export const themes: {
         color14: string;
     };
     light_error_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    light_error_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -45547,6 +46796,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_base_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_base_Label: {
         background: string;
         backgroundHover: string;
@@ -46868,6 +48157,46 @@ export const themes: {
         color14: string;
     };
     dark_brand_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_brand_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -48267,6 +49596,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_accent_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_accent_Label: {
         background: string;
         backgroundHover: string;
@@ -49588,6 +50957,46 @@ export const themes: {
         color14: string;
     };
     dark_help_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_help_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -50987,6 +52396,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_success_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_success_Label: {
         background: string;
         backgroundHover: string;
@@ -52308,6 +53757,46 @@ export const themes: {
         color14: string;
     };
     dark_info_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_info_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;
@@ -53707,6 +55196,46 @@ export const themes: {
         color13: string;
         color14: string;
     };
+    dark_warning_FilePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
     dark_warning_Label: {
         background: string;
         backgroundHover: string;
@@ -55028,6 +56557,46 @@ export const themes: {
         color14: string;
     };
     dark_error_DatePicker: {
+        background: string;
+        backgroundHover: string;
+        backgroundPress: string;
+        backgroundFocus: string;
+        backgroundStrong: string;
+        backgroundTransparent: string;
+        color: string;
+        colorHover: string;
+        colorPress: string;
+        colorFocus: string;
+        colorTransparent: string;
+        borderColor: string;
+        borderColorHover: string;
+        borderColorFocus: string;
+        borderColorPress: string;
+        placeholderColor: string;
+        outlineColor: string;
+        primary: string;
+        muted: string;
+        disabled: string;
+        bg: string;
+        bgTransparent: string;
+        fg: string;
+        fgTransparent: string;
+        color1: string;
+        color2: string;
+        color3: string;
+        color4: string;
+        color5: string;
+        color6: string;
+        color7: string;
+        color8: string;
+        color9: string;
+        color10: string;
+        color11: string;
+        color12: string;
+        color13: string;
+        color14: string;
+    };
+    dark_error_FilePicker: {
         background: string;
         backgroundHover: string;
         backgroundPress: string;

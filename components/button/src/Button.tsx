@@ -24,7 +24,8 @@ type ButtonVariant =
   | "outlined"
   | "inverse"
   | "ghost"
-  | "glass";
+  | "glass"
+  | "link";
 
 type ButtonIconProps = { color?: any; size?: any };
 type IconProp =
@@ -224,6 +225,38 @@ const ButtonFrame = styled(View, {
           backgroundColor: "transparent",
           borderColor: "$borderColorFocus"
         }
+      },
+
+      link: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
+        borderColor: "transparent",
+        color: "$borderColor",
+        textDecoration: "underline",
+        textDecorationColor: "$borderColor",
+        textDecorationStyle: "solid",
+        textDecorationThickness: 1,
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+          color: "$borderColorHover",
+          textDecorationColor: "$borderColorHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+          color: "$borderColorPress",
+          textDecorationColor: "$borderColorPress"
+        },
+
+        focusVisibleStyle: {
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+          color: "$borderColorFocus",
+          textDecorationColor: "$borderColorFocus"
+        }
       }
     },
 
@@ -304,6 +337,31 @@ const ButtonText = styled(SizableText, {
       }
     },
 
+    variant: {
+      link: {
+        color: "$borderColor",
+        textDecoration: "underline",
+        textDecorationColor: "$borderColor",
+        textDecorationStyle: "solid",
+        textDecorationThickness: 1,
+
+        hoverStyle: {
+          color: "$borderColorHover",
+          textDecorationColor: "$borderColorHover"
+        },
+
+        pressStyle: {
+          color: "$borderColorPress",
+          textDecorationColor: "$borderColorPress"
+        },
+
+        focusVisibleStyle: {
+          color: "$borderColorFocus",
+          textDecorationColor: "$borderColorFocus"
+        }
+      }
+    },
+
     circular: {
       true: {
         height: "fit-content"
@@ -331,7 +389,9 @@ const ButtonIcon = (props: {
   const getThemedIcon = useGetThemedIcon({
     size: iconSize,
     color:
-      variant === "glass" || variant === "ghost" ? "$primary" : (color as any)
+      variant === "glass" || variant === "ghost" || variant === "link"
+        ? "$primary"
+        : (color as any)
   });
   return getThemedIcon(children);
 };

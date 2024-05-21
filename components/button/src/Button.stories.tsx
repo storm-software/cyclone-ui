@@ -43,6 +43,14 @@ export const Glass: Story = {
   }
 };
 
+export const Link: Story = {
+  args: {
+    children: "Button Text",
+    variant: "link",
+    disabled: false
+  }
+};
+
 export const Disabled: Story = {
   args: {
     children: "Button Text",
@@ -101,6 +109,15 @@ export const BrandGlass: Story = {
   }
 };
 
+export const BrandLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "link",
+    disabled: false
+  }
+};
+
 export const BrandDisabled: Story = {
   args: {
     children: "Button Text",
@@ -140,6 +157,15 @@ export const HelpGlass: Story = {
     children: "Button Text",
     theme: "help",
     variant: "glass",
+    disabled: false
+  }
+};
+
+export const HelpLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "help",
+    variant: "link",
     disabled: false
   }
 };
@@ -187,6 +213,15 @@ export const ErrorGlass: Story = {
   }
 };
 
+export const ErrorLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "error",
+    variant: "link",
+    disabled: false
+  }
+};
+
 export const ErrorDisabled: Story = {
   args: {
     children: "Button Text",
@@ -226,6 +261,15 @@ export const WarningGlass: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "glass",
+    disabled: false
+  }
+};
+
+export const WarningLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning",
+    variant: "link",
     disabled: false
   }
 };
@@ -273,6 +317,15 @@ export const InfoGlass: Story = {
   }
 };
 
+export const InfoLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "link",
+    disabled: false
+  }
+};
+
 export const InfoDisabled: Story = {
   args: {
     children: "Button Text",
@@ -312,6 +365,15 @@ export const SuccessGlass: Story = {
     children: "Button Text",
     theme: "success",
     variant: "glass",
+    disabled: false
+  }
+};
+
+export const SuccessLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success",
+    variant: "link",
     disabled: false
   }
 };

@@ -190,6 +190,14 @@ export const maskOptions = {
     },
     skip: skipShadowsAndSpecificColors
   },
+  filePicker: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
   label: {
     ...baseMaskOptions,
     override: {

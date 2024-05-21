@@ -34,7 +34,7 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 const POPUP_NAME = "PopUp";
 
 type ScopedProps<P> = P & { __scopePopUp?: Scope };
-const [createPopUpContext, createPopUpScope] = createContextScope(POPUP_NAME, [
+const [createPopUpContext] = createContextScope(POPUP_NAME, [
   createDialogScope
 ]);
 

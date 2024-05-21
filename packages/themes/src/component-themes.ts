@@ -166,6 +166,11 @@ export const componentThemes = {
     ...maskOptions.datePicker
   },
 
+  FilePicker: {
+    mask: "identity",
+    ...maskOptions.filePicker
+  },
+
   Label: {
     mask: "identity",
     ...maskOptions.label

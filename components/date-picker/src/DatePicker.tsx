@@ -1,10 +1,6 @@
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type {
   GestureReponderEvent as GestureResponderEvent,
-  GetProps,
-  SizeVariantSpreadFunction,
-  TextProps,
-  VariantSpreadExtras
 } from "@tamagui/web";
 import type { DatePickerProviderProps } from "@rehookify/datepicker";
 import {
@@ -12,32 +8,21 @@ import {
   useDatePickerContext
 } from "@rehookify/datepicker";
 import { withStaticProperties } from "@tamagui/helpers";
-import { createRef, useEffect, useId, useMemo, useRef, useState } from "react";
-import { Label } from "@tamagui/label";
-import { XGroup } from "@tamagui/group";
+import { useEffect, useMemo, useState } from "react";
 import { isWeb } from "@tamagui/constants";
 import { SizableText } from "@tamagui/text";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
-  Text,
   View,
   styled,
   createStyledContext,
   useThemeName,
-  getVariable
 } from "@tamagui/core";
 import { Adapt } from "@tamagui/adapt";
 import { Popover, type PopoverProps } from "@tamagui/popover";
 import type { DPDay } from "@rehookify/datepicker";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { Input } from "@cyclone-ui/input";
 import {
-  Asterisk,
-  AlertCircle,
-  Info,
-  HelpCircle,
-  CheckCircle,
-  Lock,
   Calendar,
   ChevronLeft,
   ChevronRight,

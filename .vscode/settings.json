@@ -281,5 +281,6 @@
   "commitizen.capitalizeWindowsDriveLetter": true,
   "commitizen.autoSync": false,
   "commitizen.showOutputChannel": "always",
-  "eslint.validate": ["json"]
+  "eslint.validate": ["json"],
+  "cSpell.words": ["styleable"]
 }
