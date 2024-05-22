@@ -32,6 +32,8 @@ overrides:
   '@cyclone-ui/website': workspace:*
   '@cyclone-ui/date-picker': workspace:*
   '@cyclone-ui/file-picker': workspace:*
+  '@cyclone-ui/steps': workspace:*
+  '@cyclone-ui/tabs': workspace:*
 
 importers:
 
@@ -949,9 +951,6 @@ importers:
       '@tamagui/font-size':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)
-      '@tamagui/get-button-sized':
-        specifier: ^1.98.0
-        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
       '@tamagui/get-font-sized':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)
@@ -979,9 +978,6 @@ importers:
       '@tamagui/lucide-icons':
         specifier: ^1.98.0
         version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
-      '@tamagui/scroll-view':
-        specifier: ^1.98.0
-        version: 1.98.0(react@18.2.0)
       '@tamagui/stacks':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)
@@ -1333,6 +1329,116 @@ importers:
       '@tamagui/text':
         specifier: ^1.98.0
         version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/steps:
+    dependencies:
+      '@tamagui/animate-presence':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/button':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/font-size':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/get-font-sized':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/linear-gradient':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/tabs':
+        specifier: ^1.98.0
+        version: 1.98.0(@types/react@18.2.75)(react-dom@18.2.0)(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/tabs:
+    dependencies:
+      '@tamagui/animate-presence':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/button':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/font-size':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/get-font-sized':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/linear-gradient':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/tabs':
+        specifier: ^1.98.0
+        version: 1.98.0(@types/react@18.2.75)(react-dom@18.2.0)(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
       '@tamagui/web':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)

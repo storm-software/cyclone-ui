@@ -213,7 +213,9 @@
       "@cyclone-ui/themes": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
       "@cyclone-ui/date-picker": "workspace:*",
-      "@cyclone-ui/file-picker": "workspace:*"
+      "@cyclone-ui/file-picker": "workspace:*",
+      "@cyclone-ui/steps": "workspace:*",
+      "@cyclone-ui/tabs": "workspace:*"
     }
   },
   "bundlewatch": {

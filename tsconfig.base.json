@@ -77,6 +77,12 @@
       "@cyclone-ui/date-picker/*": [
         "components/date-picker/src/*"
       ],
+      "@cyclone-ui/file-picker": [
+        "components/file-picker/src/index.ts"
+      ],
+      "@cyclone-ui/file-picker/*": [
+        "components/file-picker/src/*"
+      ],
       "@cyclone-ui/font-mona-sans": [
         "packages/font-mona-sans/src/index.ts"
       ],
@@ -155,6 +161,12 @@
       "@cyclone-ui/select/*": [
         "components/select/src/*"
       ],
+      "@cyclone-ui/steps": [
+        "components/steps/src/index.ts"
+      ],
+      "@cyclone-ui/steps/*": [
+        "components/steps/src/*"
+      ],
       "@cyclone-ui/themes": [
         "packages/themes/src/index.ts"
       ],
@@ -164,11 +176,11 @@
       "@cyclone-ui/themes/brand": [
         "packages/themes/src/brand-theme.ts"
       ],
-      "@cyclone-ui/file-picker": [
-        "components/file-picker/src/index.ts"
+      "@cyclone-ui/tabs": [
+        "components/tabs/src/index.ts"
       ],
-      "@cyclone-ui/file-picker/*": [
-        "components/file-picker/src/*"
+      "@cyclone-ui/tabs/*": [
+        "components/tabs/src/*"
       ]
     }
   }
