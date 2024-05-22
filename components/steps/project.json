@@ -1,0 +1,46 @@
+{
+  "name": "steps",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/steps/src",
+  "targets": {
+    "build": {
+      "cache": true,
+      "executor": "@cyclone-ui/nx:build",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
+      "options": {
+        "outputPath": "dist/components/steps",
+        "tsConfig": "components/steps/tsconfig.json",
+        "project": "components/steps/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/steps",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

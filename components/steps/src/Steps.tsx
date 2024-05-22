@@ -18,11 +18,13 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { Circle } from "@tamagui/shapes";
+import { CheckCircle, Edit3, Lock } from "@tamagui/lucide-icons";
 
-export interface TabsState {
-  currentTab: string;
+export interface StepsState {
+  currentStep: string;
   /**
-   * Layout of the Tab user might intend to select (hovering / focusing)
+   * Layout of the Step user might intend to select (hovering / focusing)
    */
   intentAt: TamaguiTabLayout | null;
   /**
@@ -37,47 +39,42 @@ export interface TabsState {
    * List of step names
    */
   steps: string[];
-  /**
-   * The direction of the tabs list (i.e. horizontal or vertical)
-   */
-  orientation?: TamaguiTabsProps["orientation"];
+  // /**
+  //  * The direction of the tabs list (i.e. horizontal or vertical)
+  //  */
+  // orientation?: TamaguiTabsProps["orientation"];
 }
 
 const defaultContextValues = {
   state: {
     activeAt: null,
-    currentTab: "",
+    currentStep: "",
     intentAt: null,
     prevActiveAt: null,
-    steps: [] as string[],
-    orientation: "horizontal"
+    steps: [] as string[]
   },
-  setState: ((next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
+  setState: ((next: StepsState) => {}) as Dispatch<SetStateAction<StepsState>>,
   handleOnInteraction: (type, layout) => {},
   theme: "base"
 } as const;
 
 export const InternalStateContext = createStyledContext<{
-  state: TabsState;
-  setState: Dispatch<SetStateAction<TabsState>>;
+  state: StepsState;
+  setState: Dispatch<SetStateAction<StepsState>>;
   handleOnInteraction: TamaguiTabsTabProps["onInteraction"];
   theme: string;
 }>(defaultContextValues);
 
-export const TabsFrame = TamaguiTabs.styleable(
-  (
-    { children, orientation, onValueChange, ...rest }: TamaguiTabsProps,
-    forwardedRef
-  ) => {
-    const [state, setState] = useState<TabsState>({
-      ...defaultContextValues.state,
-      orientation
+export const StepsFrame = TamaguiTabs.styleable(
+  ({ children, onValueChange, ...rest }: TamaguiTabsProps, forwardedRef) => {
+    const [state, setState] = useState<StepsState>({
+      ...defaultContextValues.state
     });
-    const { steps, currentTab } = state;
+    const { steps, currentStep } = state;
 
-    const setCurrentTab = (currentTab: string) => {
-      onValueChange?.(currentTab);
-      setState({ ...state, currentTab });
+    const setCurrentStep = (currentStep: string) => {
+      onValueChange?.(currentStep);
+      setState({ ...state, currentStep });
     };
     const setIntentIndicator = intentAt => setState({ ...state, intentAt });
     const setActiveIndicator = activeAt =>
@@ -95,10 +92,10 @@ export const TabsFrame = TamaguiTabs.styleable(
     };
 
     useLayoutEffect(() => {
-      if (!currentTab) {
-        setState(next => ({ ...next, currentTab: next.steps[0] }));
+      if (!currentStep) {
+        setState(next => ({ ...next, currentStep: next.steps[0] }));
       }
-    }, [currentTab, steps]);
+    }, [currentStep, steps]);
 
     return (
       <InternalStateContext.Provider
@@ -108,18 +105,17 @@ export const TabsFrame = TamaguiTabs.styleable(
         theme="base">
         <TamaguiTabs
           ref={forwardedRef}
-          value={currentTab}
+          value={currentStep}
           size="$4"
-          padding="$2"
           height={150}
-          flexDirection={orientation === "horizontal" ? "column" : "row"}
+          flexDirection="row"
           activationMode="manual"
           backgroundColor="$background"
           borderRadius="$4"
           position="relative"
           {...rest}
-          onValueChange={setCurrentTab}
-          orientation={orientation}>
+          onValueChange={setCurrentStep}
+          orientation="vertical">
           {children}
         </TamaguiTabs>
       </InternalStateContext.Provider>
@@ -127,10 +123,10 @@ export const TabsFrame = TamaguiTabs.styleable(
   }
 );
 
-export const TabsHeaderList = YStack.styleable(
+export const StepsHeaderList = YStack.styleable(
   ({ children, ...rest }: StackProps, forwardedRef) => {
     const { state } = InternalStateContext.useStyledContext();
-    const { activeAt, intentAt, prevActiveAt, currentTab } = state;
+    const { activeAt, intentAt, prevActiveAt, currentStep } = state;
 
     // 1 = right, 0 = nowhere, -1 = left
     const direction = (() => {
@@ -142,38 +138,34 @@ export const TabsHeaderList = YStack.styleable(
 
     return (
       <YStack ref={forwardedRef} {...rest}>
-        <AnimatePresence>
+        {/*<AnimatePresence>
           {intentAt && (
-            <TabsRovingIndicatorImpl
-              borderRadius="$4"
+            <StepsRovingIndicatorImpl
               width={intentAt.width}
               height={intentAt.height}
               x={intentAt.x}
               y={intentAt.y}
               intent={true}
-              orientation={state.orientation}
             />
           )}
         </AnimatePresence>
         <AnimatePresence>
           {activeAt && (
-            <TabsRovingIndicatorImpl
-              borderRadius="$4"
+            <StepsRovingIndicatorImpl
               width={activeAt.width}
               height={activeAt.height}
               x={activeAt.x}
               y={activeAt.y}
               active={true}
-              orientation={state.orientation}
             />
           )}
-        </AnimatePresence>
+        </AnimatePresence>*/}
 
         <TamaguiTabs.List
           disablePassBorderRadius={true}
           loop={false}
-          aria-label="Tabs"
-          gap="$2"
+          aria-label="Steps"
+          gap="$3"
           backgroundColor="transparent">
           <AnimatePresence
             exitBeforeEnter={true}
@@ -187,39 +179,71 @@ export const TabsHeaderList = YStack.styleable(
   }
 );
 
-export const TabsHeaderItem = TamaguiTabs.Tab.styleable(
+export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
   ({ children, value, ...rest }: TamaguiTabsTabProps, forwardedRef) => {
     const { handleOnInteraction, setState, state } =
       InternalStateContext.useStyledContext();
+    const { activeAt, intentAt, prevActiveAt, currentStep } = state;
+
+    const index = state.steps.indexOf(value);
+    const currentIndex = state.steps.indexOf(currentStep);
 
     useLayoutEffect(() => {
       setState(next => ({ ...next, steps: [...next.steps, value] }));
     }, []);
 
     return (
-      <TamaguiTabs.Tab
-        ref={forwardedRef}
-        unstyled={true}
-        paddingVertical="$2"
-        paddingHorizontal="$3"
-        {...rest}
-        value={value}
-        onInteraction={handleOnInteraction}>
-        <SizableText
-          fontFamily="$heading"
-          color={state.currentTab === value ? "$primary" : "$color9"}>
-          {children}
-        </SizableText>
-      </TamaguiTabs.Tab>
+      <YStack flexDirection="column" gap="$3" justifyContent="center">
+        {(state.steps.length === 0 || state.steps[0] !== value) && (
+          <Circle
+            height={75}
+            width={3}
+            backgroundColor="$color5"
+            elevation="$4"
+            marginLeft="$5"
+          />
+        )}
+
+        <XStack gap="$4" alignItems="center">
+          <TamaguiTabs.Tab
+            animation="slow"
+            ref={forwardedRef}
+            unstyled={true}
+            padding="$3"
+            borderRadius={1000_000_000}
+            borderWidth="$0.5"
+            borderColor={index === currentIndex ? "$primary" : "$color5"}
+            {...rest}
+            value={value}
+            onInteraction={handleOnInteraction}>
+            {index < currentIndex && (
+              <CheckCircle animation="slow" color="$color5" size="$1" />
+            )}
+            {index === currentIndex && (
+              <Edit3 animation="slow" color="$primary" size="$1" />
+            )}
+            {index > currentIndex && (
+              <Lock animation="slow" color="$color5" size="$1" />
+            )}
+          </TamaguiTabs.Tab>
+
+          <SizableText
+            animation="slow"
+            fontFamily="$heading"
+            color={state.currentStep === value ? "$primary" : "$color5"}>
+            {children}
+          </SizableText>
+        </XStack>
+      </YStack>
     );
   }
 );
 
-export const TabsContentList = ({ children }) => {
+export const StepsContentList = ({ children }) => {
   return <View position="relative">{children}</View>;
 };
 
-export const TabsContentItem = TamaguiTabs.Content.styleable(
+export const StepsContentItem = TamaguiTabs.Content.styleable(
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
     return (
       <AnimatedView key={value}>
@@ -236,24 +260,25 @@ export const TabsContentItem = TamaguiTabs.Content.styleable(
   }
 );
 
-export const TabsHeader = withStaticProperties(TabsHeaderList, {
-  Item: TabsHeaderItem
+export const StepsHeader = withStaticProperties(StepsHeaderList, {
+  Item: StepsHeaderItem
 });
 
-export const TabsContent = withStaticProperties(TabsContentList, {
-  Item: TabsContentItem
+export const StepsContent = withStaticProperties(StepsContentList, {
+  Item: StepsContentItem
 });
 
-export const Tabs = withStaticProperties(TabsFrame, {
-  Header: TabsHeader,
-  Content: TabsContent
+export const Steps = withStaticProperties(StepsFrame, {
+  Header: StepsHeader,
+  Content: StepsContent
 });
 
-const TabsRovingIndicator = styled(YStack, {
+const StepsRovingIndicator = styled(YStack, {
   position: "absolute",
   backgroundColor: "$color8",
   opacity: 1,
   animation: "200ms",
+  borderRadius: 1000_000_000,
 
   enterStyle: {
     opacity: 0
@@ -278,38 +303,19 @@ const TabsRovingIndicator = styled(YStack, {
         opacity: 1,
         color: "$color9"
       }
-    },
-
-    orientation: {
-      horizontal: {
-        bottom: 0,
-        height: "$0.25"
-      },
-      vertical: {
-        right: 0,
-        width: "$0.25"
-      }
     }
   },
 
   defaultVariants: {
     active: false,
-    intent: false,
-    orientation: "horizontal"
+    intent: false
   }
 });
 
-const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
-  ({ height, width, orientation, ...props }, forwardedRef) => {
+const StepsRovingIndicatorImpl = StepsRovingIndicator.styleable(
+  (props, forwardedRef) => {
     return (
-      <TabsRovingIndicator
-        ref={forwardedRef}
-        animation="200ms"
-        {...props}
-        orientation={orientation}
-        height={orientation === "horizontal" ? "$0.25" : height}
-        width={orientation === "vertical" ? "$0.25" : width}
-      />
+      <StepsRovingIndicator ref={forwardedRef} animation="200ms" {...props} />
     );
   }
 );

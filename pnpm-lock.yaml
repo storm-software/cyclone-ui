@@ -1372,6 +1372,9 @@ importers:
       '@tamagui/lucide-icons':
         specifier: ^1.98.0
         version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/shapes':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
       '@tamagui/stacks':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)
