@@ -194,5 +194,15 @@ export const componentThemes = {
   TextArea: {
     mask: "identity",
     ...maskOptions.component
+  },
+
+  Table: {
+    mask: "identity",
+    ...maskOptions.table
+  },
+
+  TableHeader: {
+    mask: "identity",
+    ...maskOptions.tableHeader
   }
 } satisfies ThemeDefinitions<keyof Masks>;

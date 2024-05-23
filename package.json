@@ -215,7 +215,8 @@
       "@cyclone-ui/date-picker": "workspace:*",
       "@cyclone-ui/file-picker": "workspace:*",
       "@cyclone-ui/steps": "workspace:*",
-      "@cyclone-ui/tabs": "workspace:*"
+      "@cyclone-ui/tabs": "workspace:*",
+      "@cyclone-ui/table": "workspace:*"
     }
   },
   "bundlewatch": {

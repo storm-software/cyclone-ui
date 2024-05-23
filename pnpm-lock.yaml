@@ -34,6 +34,7 @@ overrides:
   '@cyclone-ui/file-picker': workspace:*
   '@cyclone-ui/steps': workspace:*
   '@cyclone-ui/tabs': workspace:*
+  '@cyclone-ui/table': workspace:*
 
 importers:
 
@@ -1394,6 +1395,55 @@ importers:
         specifier: ^15.2.0
         version: 15.2.0(react-native@0.73.2)(react@18.2.0)
     devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/table:
+    dependencies:
+      '@tamagui/animate-presence':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/linear-gradient':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
+    devDependencies:
+      '@tamagui/avatar':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tanstack/react-table':
+        specifier: ^8.17.3
+        version: 8.17.3(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/table-core':
+        specifier: ^8.17.3
+        version: 8.17.3
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -13290,7 +13340,6 @@ packages:
       '@tamagui/text': 1.98.0(react-native@0.73.2)(react@18.2.0)
       react: 18.2.0
       react-native: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
-    dev: false
 
   /@tamagui/babel-plugin-fully-specified@1.98.0:
     resolution: {integrity: sha512-kSx9/+YwHgoTji9paCOado4HVLkShKO0IlIWzxf0V38i4zv/64gQiTc723y1hVDTk4bWnZOkhupUJ/10DiIaKg==}
@@ -13884,7 +13933,6 @@ packages:
     dependencies:
       '@tamagui/core': 1.98.0(react@18.2.0)
       react: 18.2.0
-    dev: false
 
   /@tamagui/get-token@1.98.0(react-native@0.73.2)(react@18.2.0):
     resolution: {integrity: sha512-cbeQd+fXf5pLP3SZLptEDrlXD8sfK4vSNAK8gt8+TcYwgtmAgOhrS2jL9HcQdGRMrLBYZziL0rEJABOsv8+c8w==}
@@ -13952,7 +14000,6 @@ packages:
       '@tamagui/web': 1.98.0(react@18.2.0)
       react: 18.2.0
       react-native: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
-    dev: false
 
   /@tamagui/helpers@1.94.4(react@18.2.0):
     resolution: {integrity: sha512-xXEZSYcScxOHZgkXf7hJQ6jsmhyxMlwBVJN76sD/hBpi3H/XSTGHDYD/PSJUIr4ZclHv8RLblKZxdAqLGT4MOw==}
@@ -13990,7 +14037,6 @@ packages:
       '@tamagui/core': 1.98.0(react@18.2.0)
       react: 18.2.0
       react-native: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
-    dev: false
 
   /@tamagui/label@1.98.0(react-native@0.73.2)(react@18.2.0):
     resolution: {integrity: sha512-zBFCQeJEk+K57+EWpEWmphvQ6v3eF+hVaiqViToDIcDga1F8amvCdrKwfrm0P3EOljSlvkRgXyyihfVQO7w30Q==}
@@ -14398,7 +14444,6 @@ packages:
       '@tamagui/stacks': 1.98.0(react@18.2.0)
       '@tamagui/web': 1.98.0(react@18.2.0)
       react: 18.2.0
-    dev: false
 
   /@tamagui/sheet@1.98.0(@types/react@18.2.75)(react-native@0.73.2)(react@18.2.0):
     resolution: {integrity: sha512-5H1/+mJ2olwkrJT+l2bFEDtB/jKevazJdAqeOapZosKNQP70aHc1iqOvm52fBlKM3Fv++xIzfx8XvvtF/BmLzA==}
@@ -14474,7 +14519,6 @@ packages:
     dependencies:
       '@tamagui/core': 1.98.0(react@18.2.0)
       react: 18.2.0
-    dev: false
 
   /@tamagui/static@1.94.4(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
     resolution: {integrity: sha512-ql7KFjuiVhwq/nQfXwOfDoJ6RYLNNFLvwvRcfS+SHMzsV3WzKBRQ+nLcL2Dtl/l1DGODX+WMztFwME/yJMvUKg==}
@@ -14677,7 +14721,6 @@ packages:
       react: 18.2.0
     transitivePeerDependencies:
       - react-native
-    dev: false
 
   /@tamagui/theme-builder@1.98.0(react@18.2.0):
     resolution: {integrity: sha512-P3kPbiwfnmeWjJzCi6bT5OBwrd7HukABWQIzFOmd/yY8nuhzjqIXTJPXcayb58RN+rfsiJvgUXLNQEQXMk9P3A==}
@@ -15037,6 +15080,23 @@ packages:
       '@tamagui/use-event': 1.98.0(react@18.2.0)
       '@tamagui/use-force-update': 1.98.0(react@18.2.0)
       react: 18.2.0
+
+  /@tanstack/react-table@8.17.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5gwg5SvPD3lNAXPuJJz1fOCEZYk9/GeBFH3w/hCgnfyszOIzwkwgp5I7Q4MJtn0WECp84b5STQUDdmvGi8m3nA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@tanstack/table-core': 8.17.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: true
+
+  /@tanstack/table-core@8.17.3:
+    resolution: {integrity: sha512-mPBodDGVL+fl6d90wUREepHa/7lhsghg2A3vFpakEhrhtbIlgNAZiMr7ccTgak5qbHqF14Fwy+W1yFWQt+WmYQ==}
+    engines: {node: '>=12'}
+    dev: true
 
   /@testing-library/dom@9.3.4:
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}

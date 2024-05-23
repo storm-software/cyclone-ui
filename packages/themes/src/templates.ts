@@ -209,6 +209,24 @@ export const maskOptions = {
     },
     skip: skipShadowsAndSpecificColors
   },
+  table: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY - 4,
+      borderColor: ColorPaletteShades.BACKGROUND + 2
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  tableHeader: {
+    ...baseMaskOptions,
+    override: {
+      ...colors,
+      color: ColorPaletteShades.BACKGROUND + 4,
+      borderColor: ColorPaletteShades.BACKGROUND + 2
+    },
+    skip: skipShadowsAndSpecificColors
+  },
   alert: {
     ...baseMaskOptions,
     override: {

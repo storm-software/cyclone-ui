@@ -399,7 +399,7 @@ const ButtonIcon = (props: {
 type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
 
 const ButtonGhostBackground = styled(ThemeableStack, {
-  name: "Button",
+  name: BUTTON_NAME,
   context: ButtonContext,
 
   backgroundColor: "transparent",
@@ -423,7 +423,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
-  name: "Button",
+  name: BUTTON_NAME,
   context: ButtonContext,
 
   backgroundColor: "transparent",
@@ -449,7 +449,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
 });
 
 const ButtonContainer = styled(ThemeableStack, {
-  name: "Button",
+  name: BUTTON_NAME,
   context: ButtonContext,
   animation: "$slow",
 

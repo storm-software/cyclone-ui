@@ -90,8 +90,10 @@ export const defaultInputGroupStyles = {
   }
 } as const;
 
+export const INPUT_NAME = "Input";
+
 const InputGroupFrame = styled(XGroup, {
-  name: "Input",
+  name: INPUT_NAME,
   justifyContent: "space-between",
   context: InputContext,
   animation: "$slow",
@@ -239,7 +241,7 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
 };
 
 const InputValue = styled(TamaguiInput, {
-  name: "Input",
+  name: INPUT_NAME,
   unstyled: true,
   context: InputContext,
   color: "$fg",
@@ -290,7 +292,7 @@ const InputValueImpl = InputValue.styleable<{ required?: boolean }>(
 // Icon starts
 
 export const InputIconFrame = styled(View, {
-  name: "Input",
+  name: INPUT_NAME,
   justifyContent: "center",
   alignItems: "center",
   context: InputContext,
@@ -401,7 +403,7 @@ const InputContainer = View.styleable<{ name?: string }>(
 );
 
 export const InputContainerFrame = styled(InputContainer, {
-  name: "Input",
+  name: INPUT_NAME,
   context: InputContext,
   flexDirection: "column",
   animation: "$slow",
@@ -543,7 +545,7 @@ const InputLabelImpl = InputLabel.styleable((props, forwardedRef) => {
 });
 
 export const InputDetails = styled(Text, {
-  name: "Input",
+  name: INPUT_NAME,
   context: InputContext,
   animation: "$slow",
   color: "$borderColor",
@@ -622,7 +624,7 @@ const InputDetailsImpl = InputDetails.styleable((props, forwardedRef) => {
 });
 
 const InputXGroup = styled(XGroup, {
-  name: "Input",
+  name: INPUT_NAME,
   context: InputContext,
   animation: "$slow",
 
