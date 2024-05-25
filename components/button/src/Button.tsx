@@ -72,6 +72,11 @@ type ButtonExtraProps = TextParentStyles &
      * make the button disabled
      */
     disabled?: boolean;
+
+    /**
+     * Should the pressed, scale animation be applied
+     */
+    animate?: boolean;
   };
 
 const BUTTON_NAME = "Button";
@@ -85,6 +90,7 @@ export const ButtonContext = createStyledContext<
       unstyled?: boolean;
       circular?: boolean;
       disabled?: boolean;
+      animate?: boolean;
     }
   >
 >({
@@ -102,7 +108,8 @@ export const ButtonContext = createStyledContext<
   borderRadius: "$4",
   unstyled: false,
   circular: false,
-  disabled: false
+  disabled: false,
+  animate: true
 });
 
 const ButtonFrame = styled(View, {
@@ -453,10 +460,6 @@ const ButtonContainer = styled(ThemeableStack, {
   context: ButtonContext,
   animation: "$slow",
 
-  pressStyle: {
-    scale: 0.9
-  },
-
   variants: {
     disabled: {
       true: {
@@ -471,23 +474,33 @@ const ButtonContainer = styled(ThemeableStack, {
       true: {
         borderRadius: 1000_000_000
       }
+    },
+
+    animate: {
+      true: {
+        pressStyle: {
+          scale: 0.9
+        }
+      }
     }
   } as const,
 
   defaultVariants: {
-    circular: false
+    circular: false,
+    animate: true
   }
 });
 
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (props, forwardedRef) => {
-    const { variant, disabled, circular, ...rest } = props;
+    const { variant, disabled, circular, animate, ...rest } = props;
 
     return (
       <ButtonContainer
         group={"button" as any}
         circular={circular}
-        disabled={disabled}>
+        disabled={disabled}
+        animate={animate}>
         {variant === "ghost" && (
           <ButtonGhostBackground
             fullscreen={true}

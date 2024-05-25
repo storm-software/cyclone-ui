@@ -2,13 +2,11 @@ import { Dispatch, SetStateAction, useLayoutEffect, useState } from "react";
 import type {
   TabsProps as TamaguiTabsProps,
   TabLayout as TamaguiTabLayout,
-  TabsListProps as TamaguiTabsListProps,
   TabsTabProps as TamaguiTabsTabProps,
   TabsContentProps as TamaguiTabsContentProps
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import { Button } from "@tamagui/button";
 import { SizableText } from "@tamagui/text";
 import { XStack, YStack } from "@tamagui/stacks";
 import {

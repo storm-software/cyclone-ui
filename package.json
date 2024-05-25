@@ -216,7 +216,8 @@
       "@cyclone-ui/file-picker": "workspace:*",
       "@cyclone-ui/steps": "workspace:*",
       "@cyclone-ui/tabs": "workspace:*",
-      "@cyclone-ui/table": "workspace:*"
+      "@cyclone-ui/table": "workspace:*",
+      "@cyclone-ui/data-table": "workspace:*"
     }
   },
   "bundlewatch": {

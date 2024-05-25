@@ -23,7 +23,11 @@ import {
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { Input as TamaguiInput } from "tamagui";
+import {
+  Input as TamaguiInput,
+  useControllableState,
+  type InputProps as TamaguiInputProps
+} from "tamagui";
 import {
   Asterisk,
   AlertCircle,
@@ -170,52 +174,6 @@ const InternalStateContext = createStyledContext({
   focused: false
 });
 
-const InputGroupImpl = InputGroupFrame.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
-  const { theme, disabled } = InputContext.useStyledContext();
-  const { focused } = InternalStateContext.useStyledContext();
-
-  return (
-    <InputGroupFrame
-      theme={theme}
-      applyFocusStyle={focused}
-      ref={forwardedRef}
-      {...rest}
-      disabled={disabled}>
-      {theme &&
-        (theme.toLowerCase().includes(ColorRole.ERROR) ||
-          theme.toLowerCase().includes(ColorRole.WARNING)) && (
-          <InputIcon>
-            <AlertCircle />
-          </InputIcon>
-        )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
-        <InputIcon>
-          <Info />
-        </InputIcon>
-      )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
-        <InputIcon>
-          <HelpCircle />
-        </InputIcon>
-      )}
-      {!disabled &&
-        theme &&
-        theme.toLowerCase().includes(ColorRole.SUCCESS) && (
-          <InputIcon>
-            <CheckCircle />
-          </InputIcon>
-        )}
-      {children}
-      {disabled && (
-        <InputIcon>
-          <Lock />
-        </InputIcon>
-      )}
-    </InputGroupFrame>
-  );
-});
-
 export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   val = "$true",
   extras
@@ -265,31 +223,87 @@ const InputValue = styled(TamaguiInput, {
   }
 });
 
-const InputValueImpl = InputValue.styleable<{ required?: boolean }>(
-  (props, ref) => {
-    const { setFocused, name } = InternalStateContext.useStyledContext();
-    const { size, disabled } = InputContext.useStyledContext();
-    const { ...rest } = props;
+const InputValueImpl = InputValue.styleable<{
+  required?: boolean;
+  onChange?: (value?: string) => any;
+}>((props, ref) => {
+  const { setFocused, name } = InternalStateContext.useStyledContext();
+  const { size, disabled } = InputContext.useStyledContext();
+  const { onChange, value: valueProp, defaultValue, ...rest } = props;
 
-    return (
-      <View flex={1}>
-        <InputValue
-          id={name}
-          ref={ref}
-          onFocus={() => {
-            setFocused(!disabled);
-          }}
-          onBlur={() => setFocused(false)}
-          size={size}
-          {...rest}
-          disabled={disabled}
-        />
-      </View>
-    );
-  }
-);
+  const [value, setValue] = useControllableState({
+    prop: valueProp,
+    onChange,
+    defaultProp: defaultValue ?? ""
+  });
 
-// Icon starts
+  return (
+    <View flex={1}>
+      <InputValue
+        id={name}
+        ref={ref}
+        onFocus={() => {
+          setFocused(!disabled);
+        }}
+        onBlur={() => setFocused(false)}
+        size={size}
+        onChangeText={setValue}
+        {...rest}
+        value={value}
+        defaultValue={defaultValue}
+        disabled={disabled}
+      />
+    </View>
+  );
+});
+
+const InputValueWrapper = InputValueImpl.styleable<{
+  required?: boolean;
+  onChange?: (value?: string) => any;
+}>((props, forwardedRef) => {
+  const { children, ...rest } = props;
+  const { theme, disabled } = InputContext.useStyledContext();
+  const { focused } = InternalStateContext.useStyledContext();
+
+  return (
+    <InputGroupFrame
+      theme={theme}
+      applyFocusStyle={focused}
+      disabled={disabled}>
+      {theme &&
+        (theme.toLowerCase().includes(ColorRole.ERROR) ||
+          theme.toLowerCase().includes(ColorRole.WARNING)) && (
+          <InputIcon>
+            <AlertCircle />
+          </InputIcon>
+        )}
+      {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
+        <InputIcon>
+          <Info />
+        </InputIcon>
+      )}
+      {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
+        <InputIcon>
+          <HelpCircle />
+        </InputIcon>
+      )}
+      {!disabled &&
+        theme &&
+        theme.toLowerCase().includes(ColorRole.SUCCESS) && (
+          <InputIcon>
+            <CheckCircle />
+          </InputIcon>
+        )}
+      <InputValueImpl ref={forwardedRef} {...rest} />
+      {children}
+      {disabled && (
+        <InputIcon>
+          <Lock />
+        </InputIcon>
+      )}
+    </InputGroupFrame>
+  );
+});
 
 export const InputIconFrame = styled(View, {
   name: INPUT_NAME,
@@ -382,27 +396,7 @@ const InputIconWrapper = InputIcon.styleable(
   }
 );
 
-const InputContainer = View.styleable<{ name?: string }>(
-  (props, forwardedRef) => {
-    const { children, name, ...rest } = props;
-    const [focused, setFocused] = useState(false);
-
-    const id = useId();
-
-    return (
-      <InternalStateContext.Provider
-        name={name ? name : id}
-        focused={focused}
-        setFocused={setFocused}>
-        <View ref={forwardedRef} {...rest}>
-          {children}
-        </View>
-      </InternalStateContext.Provider>
-    );
-  }
-);
-
-export const InputContainerFrame = styled(InputContainer, {
+export const InputContainer = styled(View, {
   name: INPUT_NAME,
   context: InputContext,
   flexDirection: "column",
@@ -451,6 +445,26 @@ export const InputContainerFrame = styled(InputContainer, {
     disabled: false,
     hideIcons: true
   }
+});
+
+const InputContainerImpl = InputContainer.styleable<{
+  name?: string;
+}>((props, forwardedRef) => {
+  const { children, name, ...rest } = props;
+  const [focused, setFocused] = useState(false);
+
+  const id = useId();
+
+  return (
+    <InternalStateContext.Provider
+      name={name ? name : id}
+      focused={focused}
+      setFocused={setFocused}>
+      <View ref={forwardedRef} {...rest}>
+        {children}
+      </View>
+    </InternalStateContext.Provider>
+  );
 });
 
 export const InputLabel = styled(Label, {
@@ -640,17 +654,17 @@ const InputXGroup = styled(XGroup, {
   } as const
 });
 
-export type InputContainerProps = GetProps<typeof InputContainerFrame>;
+export type InputContainerProps = GetProps<typeof InputContainerImpl>;
 
 export type InputExtraProps = {
   required?: boolean;
+  onChange?: (value?: string) => any;
 };
 
 export type InputProps = InputContainerProps & InputExtraProps;
 
-export const Input = withStaticProperties(InputContainerFrame, {
-  Box: InputGroupImpl,
-  Value: InputValueImpl,
+export const Input = withStaticProperties(InputContainerImpl, {
+  Value: InputValueWrapper,
   Icon: InputIconWrapper,
   Details: InputDetailsImpl,
   Label: InputLabelImpl,

@@ -1,4 +1,4 @@
-import type { SizeTokens } from "@tamagui/core";
+import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   View,
   createStyledContext,
@@ -136,6 +136,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   tag: "th",
   context: TableContext,
 
+  zIndex: 10,
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
@@ -215,6 +216,8 @@ const TableComp = styled(ThemeableStack, {
     alignCells: val => ({})
   }
 });
+
+export type TableProps = GetProps<typeof TableComp>;
 
 export const Table = withStaticProperties(TableComp, {
   Head: TableHead,

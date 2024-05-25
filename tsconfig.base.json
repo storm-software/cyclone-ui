@@ -167,6 +167,12 @@
       "@cyclone-ui/steps/*": [
         "components/steps/src/*"
       ],
+      "@cyclone-ui/table": [
+        "components/table/src/index.ts"
+      ],
+      "@cyclone-ui/table/*": [
+        "components/table/src/*"
+      ],
       "@cyclone-ui/tabs": [
         "components/tabs/src/index.ts"
       ],
@@ -182,11 +188,11 @@
       "@cyclone-ui/themes/brand": [
         "packages/themes/src/brand-theme.ts"
       ],
-      "@cyclone-ui/table": [
-        "components/table/src/index.ts"
+      "@cyclone-ui/data-table": [
+        "components/data-table/src/index.ts"
       ],
-      "@cyclone-ui/table/*": [
-        "components/table/src/*"
+      "@cyclone-ui/data-table/*": [
+        "components/data-table/src/*"
       ]
     }
   }

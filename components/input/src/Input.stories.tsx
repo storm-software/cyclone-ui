@@ -6,12 +6,10 @@ const meta: Meta<typeof Input> = {
   title: "Form/Input",
   component: Input,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <Input name="inputName" {...args}>
+  render: ({ theme, ...rest }: any) => (
+    <Input name="inputName" theme={theme}>
       <Input.Label>Label Text</Input.Label>
-      <Input.Box>
-        <Input.Value placeholder="email@example.com" />
-      </Input.Box>
+      <Input.Value placeholder="email@example.com" {...rest} />
       <Input.Details>
         This is an example detailed message for an input
       </Input.Details>

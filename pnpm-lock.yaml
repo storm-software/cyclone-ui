@@ -35,6 +35,7 @@ overrides:
   '@cyclone-ui/steps': workspace:*
   '@cyclone-ui/tabs': workspace:*
   '@cyclone-ui/table': workspace:*
+  '@cyclone-ui/data-table': workspace:*
 
 importers:
 
@@ -856,6 +857,64 @@ importers:
         specifier: 0.73.2
         version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
 
+  components/data-table:
+    dependencies:
+      '@tamagui/adapt':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/animate-presence':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/core':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/form':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/helpers':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/linear-gradient':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/popover':
+        specifier: ^1.98.0
+        version: 1.98.0(@types/react@18.2.75)(react-dom@18.2.0)(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/stacks':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/text':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tanstack/react-table':
+        specifier: ^8.17.3
+        version: 8.17.3(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/table-core':
+        specifier: ^8.17.3
+        version: 8.17.3
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
+      title-case:
+        specifier: ^4.3.1
+        version: 4.3.1
+    devDependencies:
+      '@tamagui/avatar':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
   components/date-picker:
     dependencies:
       '@formkit/tempo':
@@ -1061,6 +1120,9 @@ importers:
       '@tamagui/text':
         specifier: ^1.98.0
         version: 1.98.0(react-native@0.73.2)(react@18.2.0)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
       '@tamagui/web':
         specifier: ^1.98.0
         version: 1.98.0(react@18.2.0)
@@ -15091,12 +15153,10 @@ packages:
       '@tanstack/table-core': 8.17.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: true
 
   /@tanstack/table-core@8.17.3:
     resolution: {integrity: sha512-mPBodDGVL+fl6d90wUREepHa/7lhsghg2A3vFpakEhrhtbIlgNAZiMr7ccTgak5qbHqF14Fwy+W1yFWQt+WmYQ==}
     engines: {node: '>=12'}
-    dev: true
 
   /@testing-library/dom@9.3.4:
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}
@@ -35768,6 +35828,10 @@ packages:
     resolution: {integrity: sha512-KYad6Vy5VDWV4GH3fjpseMQ/XU2BhIYP7Vzd0LG44qRWm/Yt2WCOTicFdvmgo6gWaqooMQCawTtILVQJupKu7A==}
     engines: {node: '>=14.0.0'}
     dev: true
+
+  /title-case@4.3.1:
+    resolution: {integrity: sha512-VnPxQ+/j0X2FZ4ceGq1oLruTLjtN5Ul4sam5ypd4mDZLm1eHwkwip1gLxqhON/j4qyTlUlfPKslE/t4NPSlxhg==}
+    dev: false
 
   /tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}

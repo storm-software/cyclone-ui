@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/input",
+  "name": "@cyclone-ui/data-table",
   "version": "0.0.1",
   "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "packages/input"
+    "directory": "components/data-table"
   },
   "sideEffects": [
     "*.css"
@@ -30,27 +30,24 @@
     "dist"
   ],
   "dependencies": {
-    "@tamagui/compose-refs": "^1.98.0",
-    "@tamagui/constants": "^1.98.0",
+    "@tamagui/adapt": "^1.98.0",
+    "@tamagui/animate-presence": "^1.98.0",
     "@tamagui/core": "^1.98.0",
-    "@tamagui/focusable": "^1.98.0",
-    "@tamagui/font-size": "^1.98.0",
-    "@tamagui/get-button-sized": "^1.98.0",
-    "@tamagui/get-font-sized": "^1.98.0",
-    "@tamagui/get-token": "^1.98.0",
-    "@tamagui/group": "^1.98.0",
+    "@tamagui/form": "^1.98.0",
     "@tamagui/helpers": "^1.98.0",
-    "@tamagui/helpers-tamagui": "^1.98.0",
-    "@tamagui/label": "^1.98.0",
+    "@tamagui/linear-gradient": "^1.98.0",
     "@tamagui/lucide-icons": "^1.98.0",
+    "@tamagui/popover": "^1.98.0",
     "@tamagui/stacks": "^1.98.0",
     "@tamagui/text": "^1.98.0",
-    "@tamagui/use-controllable-state": "^1.98.0",
     "@tamagui/web": "^1.98.0",
+    "@tanstack/react-table": "^8.17.3",
+    "@tanstack/table-core": "^8.17.3",
     "react-native-svg": "^15.2.0",
-    "tamagui": "^1.98.0"
+    "title-case": "^4.3.1"
   },
   "devDependencies": {
+    "@tamagui/avatar": "^1.98.0",
     "react": "^18.2.0",
     "react-native": "0.73.2"
   },
