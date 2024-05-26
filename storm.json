@@ -9,7 +9,7 @@
   "owner": "cyclone-ui",
   "timezone": "America/New_York",
   "locale": "en-US",
-  "logLevel": "all",
+  "logLevel": "info",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
   "colors": {
@@ -40,6 +40,9 @@
       "fileExtension": "log",
       "path": "tmp/storm/logs",
       "stacktrace": true
+    },
+    "cyclone": {
+      "accountId": "d011605e7391539ac2e021ab4399e116"
     }
   }
 }

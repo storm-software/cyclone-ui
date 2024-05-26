@@ -1,8 +1,0 @@
-{
-  "configs": [
-    {
-      "git_url": "github.com/storm-software/storm-ops",
-      "config": "packages/git-tools/src/lefthook/lefthook.yml"
-    }
-  ]
-}

@@ -17,8 +17,8 @@
     "inlineSourceMap": true,
     "preserveSymlinks": true,
     "jsx": "react-jsx",
-    "module": "system",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "noEmitOnError": false,
     "noImplicitAny": false,
     "noImplicitReturns": false,
@@ -35,7 +35,7 @@
     "lib": ["dom", "esnext"],
     "resolveJsonModule": false
   },
-  "exclude": ["test", "dist", "types", "**/__tests__"],
+  "exclude": ["test", "dist", "**/__tests__"],
   "typeAcquisition": {
     "enable": true
   }

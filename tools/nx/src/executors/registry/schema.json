@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Cyclone Component Registry",
+  "description": "An internal executor used to register a Cyclone UI component in the Storm CDN",
+  "type": "object",
+  "properties": {
+    "tsConfig": {
+      "type": "string",
+      "description": "The path to the `tsconfig.json` file.",
+      "x-completion-type": "file",
+      "x-completion-glob": "tsconfig*.json",
+      "x-priority": "important",
+      "default": "{projectRoot}/tsconfig.json"
+    },
+    "dryRun": {
+      "type": "boolean",
+      "description": "Whether to run the command without actually publishing the package to the registry.",
+      "default": false
+    },
+    "verbose": {
+      "type": "boolean",
+      "description": "Should write extra log outputs with details from the executor.",
+      "default": false
+    }
+  },
+  "required": ["tsConfig"]
+}

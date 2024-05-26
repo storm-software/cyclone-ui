@@ -1,0 +1,79 @@
+{
+  "name": "tools-nx",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/nx/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "cache": true,
+      "executor": "@nx/esbuild:esbuild",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["clean", "^build"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/nx",
+        "tsConfig": "tools/nx/tsconfig.lib.json",
+        "project": "tools/nx/package.json",
+        "main": "tools/nx/index.ts",
+        "additionalEntryPoints": [
+          "tools/nx/src/index.ts",
+          "tools/nx/src/executors/registry/executor.ts"
+        ],
+        "platform": "node",
+        "deleteOutputPath": true,
+        "bundle": true,
+        "thirdParty": true,
+        "skipTypeCheck": false,
+        "metafile": true,
+        "minify": false,
+        "format": ["cjs"],
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".js"
+          }
+        },
+        "external": ["nx", "@nx/devkit", "esbuild", "vue-tsc", "@swc/*"],
+        "assets": [
+          {
+            "input": "tools/nx",
+            "glob": "**/files/**",
+            "output": "/"
+          },
+          {
+            "input": "tools/nx",
+            "glob": "**/files/**/.gitkeep",
+            "output": "/"
+          },
+          {
+            "input": "tools/nx",
+            "glob": "**/*.json",
+            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc.json"],
+            "output": "."
+          },
+          {
+            "input": "tools/nx",
+            "glob": "**/*.js",
+            "ignore": ["**/jest.config.js"],
+            "output": "."
+          },
+          {
+            "input": "tools/nx",
+            "glob": "**/*.d.ts",
+            "output": "."
+          },
+          {
+            "input": "tools/nx",
+            "glob": "*.md",
+            "output": "."
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}
