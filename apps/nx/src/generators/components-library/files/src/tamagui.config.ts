@@ -1,4 +1,4 @@
-import { shorthands } from "@tamagui/shorthands";
+import { shorthands } from "@cyclone-ui/shorthands";
 import { tokens, brand } from "@cyclone-ui/themes";
 import { animations } from "@cyclone-ui/animations";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";

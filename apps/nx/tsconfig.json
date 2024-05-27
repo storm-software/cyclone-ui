@@ -10,6 +10,7 @@
   },
   "files": [],
   "include": [],
+  "exclude": ["src/generators/**/files/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.lib.json"
