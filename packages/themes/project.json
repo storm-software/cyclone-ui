@@ -22,7 +22,7 @@
       "options": {
         "commands": [
           {
-            "command": "\"apps/cli/bin/dev.cmd\" theme init --clean --outputPath \"packages/themes/src/themes\""
+            "command": "\"apps/cli/bin/run.js\" theme init --clean --outputPath \"packages/themes/src/themes\""
           }
         ]
       }
