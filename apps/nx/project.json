@@ -4,6 +4,7 @@
   "sourceRoot": "apps/nx/src",
   "projectType": "library",
   "tags": [],
+  "implicitDependencies": ["build"],
   "targets": {
     "build": {
       "cache": true,
@@ -18,7 +19,8 @@
         "main": "apps/nx/index.ts",
         "additionalEntryPoints": [
           "apps/nx/src/index.ts",
-          "apps/nx/src/executors/build/executor.ts"
+          "apps/nx/src/executors/build/executor.ts",
+          "apps/nx/src/generators/components-library/generator.ts"
         ],
         "platform": "node",
         "deleteOutputPath": true,
@@ -85,6 +87,5 @@
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
-  },
-  "implicitDependencies": ["build"]
+  }
 }

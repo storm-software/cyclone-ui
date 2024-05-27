@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "components-library": {
+      "factory": "./src/generators/components-library/generator",
+      "schema": "./src/generators/components-library/schema.json",
+      "description": "Add a package for the local design components library"
+    }
+  }
+}

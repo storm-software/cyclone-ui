@@ -52,5 +52,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "generators": "./generators.json"
 }

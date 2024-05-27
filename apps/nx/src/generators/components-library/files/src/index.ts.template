@@ -1,0 +1,12 @@
+/**
+ * The <%= name %> library containing the [Cyclone-UI](https://cyclone-ui.com) design components used in building React and React Native applications.
+ *
+ * @remarks
+ * <%= description %>
+ *
+ * This package uses [Tamagui](https://tamagui.com) under the hood to support UI development in web, mobile or desktop applications.
+ *
+ * @packageDocumentation
+ */
+
+export * from "./tamagui.config";
