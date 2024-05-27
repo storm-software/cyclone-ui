@@ -13,6 +13,10 @@ on:
       - "alpha"
       - "beta"
 
+env:
+  CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
+  CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
+
 jobs:
   release:
     uses: storm-software/storm-ops/.github/workflows/ci-reusable.yml@main
@@ -25,3 +29,14 @@ jobs:
       cargoToken: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
       slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
       discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK }}
+
+  registry:
+    name: Publish design components
+    needs:
+      - release
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish design components to Storm CDN Registry
+        run: pnpm nx run-many -t registry --projects=components/* --parallel=5
+        shell: bash

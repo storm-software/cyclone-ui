@@ -66,9 +66,9 @@ pre-push:
       glob: "**/*.*"
       run: "pnpm build-all"
       stage_fixed: true
-    registry:
-      run: "pnpm nx run-many -t registry --projects=components/* --parallel=5"
-      glob: "components/**/*"
+    # registry:
+    #   run: "pnpm nx run-many -t registry --projects=components/* --parallel=5"
+    #   glob: "components/**/*"
 
 post-merge:
   commands:
