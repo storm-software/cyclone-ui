@@ -148,7 +148,13 @@ export default async function runExecutor(
       description: projectPackageJson.description,
       dependencies: projectPackageJson.dependencies,
       devDependencies: projectPackageJson.devDependencies,
-      internalDependencies: internalDependencies.map(dep => dep.name)
+      internalDependencies: internalDependencies
+        .filter(
+          projectNode =>
+            projectNode.data.tags &&
+            projectNode.data.tags.some(tag => tag.toLowerCase() === "component")
+        )
+        .map(dep => dep.name)
     });
 
     writeInfo(`Generating component.json file: \n${componentJson}`);

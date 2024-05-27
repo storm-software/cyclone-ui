@@ -111,7 +111,8 @@
         "targetName": "lint"
       }
     },
-    "@storm-software/workspace-tools/plugins/typescript"
+    "@storm-software/workspace-tools/plugins/typescript",
+    "./dist/plugins/components/index.js"
   ],
   "generators": {
     "@nx/react": {

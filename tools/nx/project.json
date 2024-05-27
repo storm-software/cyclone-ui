@@ -18,7 +18,8 @@
         "main": "tools/nx/index.ts",
         "additionalEntryPoints": [
           "tools/nx/src/index.ts",
-          "tools/nx/src/executors/registry/executor.ts"
+          "tools/nx/src/executors/registry/executor.ts",
+          "tools/nx/src/plugins/components/index.ts"
         ],
         "platform": "node",
         "deleteOutputPath": true,

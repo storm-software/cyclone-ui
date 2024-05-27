@@ -13,30 +13,151 @@ on:
       - "alpha"
       - "beta"
 
-env:
-  CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
-  CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
-
 jobs:
-  release:
-    uses: storm-software/storm-ops/.github/workflows/ci-reusable.yml@main
-    with:
-      tag: ${{ inputs.TAG }}
-      stormBot: Stormie-Bot
-    secrets:
-      githubToken: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-      npmToken: ${{ secrets.STORM_BOT_NPM_TOKEN }}
-      cargoToken: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
-      slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
-      discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK }}
-
-  registry:
-    name: Publish design components
-    needs:
-      - release
-    if: ${{ success() }}
+  ci:
+    name: "Continuous Integration"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    if: startsWith(github.repository, 'storm-software/') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/beta')
     steps:
+      - name: Send notification - Deployment started
+        uses: storm-software/action-notify@main
+        with:
+          title: "Deployment for ${{ github.repository }} has started (In Progress)"
+          subtitle: "Deployment for ${{ github.repository }} has started - #${{ github.run_number }}"
+          description: "Deployment for ${{ github.repository }} is currently in process - #${{ github.run_number }}. \nClick here to see the full workflow details: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}."
+          color: 2077350
+          status: "In Progress"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.githubToken }}
+
+      - name: Setup workspace
+        uses: storm-software/action-setup@main
+        with:
+          packageManager: ${{ inputs.packageManager }}
+          packageManagerVersion: ${{ inputs.packageManagerVersion }}
+          stormBot: ${{ inputs.stormBot }}
+
+      - name: Build Cyclone-UI Nx-Plugin packages
+        run: pnpm build-plugins
+        shell: bash
+
+      - name: Configure git
+        run: |
+          git config user.name "${{ inputs.stormBot }}"
+          git config user.email "${{ inputs.stormBot }}@users.noreply.github.com"
+          git config lfs.allowincompletepush true
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+        shell: bash
+
+      - name: Get appropriate base and head commits for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: "main"
+
+      - name: Set appropriate base and head commits for `nx affected` commands
+        run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+        shell: bash
+
+      - name: Add permissions to CLI tools
+        run: chmod a=rwx apps/cli/bin/run.js
+
+      - name: Run build script
+        run: pnpm build-all
+        shell: bash
+
+      - name: Run linters scripts
+        run: pnpm lint
+        shell: bash
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v6.5.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
+
+      - name: Markdown-linter
+        uses: DavidAnson/markdownlint-cli2-action@v16
+
+      - name: Run formatters scripts
+        run: pnpm nx format
+        shell: bash
+
+      - name: Re-run build script
+        run: pnpm build-all
+        shell: bash
+
+      - name: Release repository updates
+        run: pnpm release --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+          NPM_TOKEN: ${{ secrets.npmToken }}
+          CARGO_REGISTRY_TOKEN: ${{ secrets.cargoToken }}
+          STORM_BOT: ${{ inputs.stormBot }}
+          STORM_WORKSPACE_ROOT: ${{ github.workspace }}
+          STORM_REPOSITORY: ${{ github.repositoryUrl }}
+          TAG: ${{ inputs.tag }}
+
       - name: Publish design components to Storm CDN Registry
         run: pnpm nx run-many -t registry --projects=components/* --parallel=5
         shell: bash
+        env:
+          CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
+          CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
+
+  success:
+    needs:
+      - ci
+    if: ${{ success() }}
+    name: Send success notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification - Deployment successful
+        uses: storm-software/action-notify@main
+        with:
+          title: "Deployment for ${{ github.repository }} has finished (Success)"
+          subtitle: "Deployment for ${{ github.repository }} has finished successfully - #${{ github.run_number }}"
+          description: "Deployment for ${{ github.repository }} has finished successfully - #${{ github.run_number }}. \nClick here to see the full workflow details: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}."
+          color: 556891
+          status: "Success"
+
+  failure:
+    needs:
+      - ci
+    if: ${{ failure() }}
+    name: Send failure notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification - Deployment successful
+        uses: storm-software/action-notify@main
+        with:
+          title: "Deployment for ${{ github.repository }} has finished (Failure)"
+          subtitle: "Deployment for ${{ github.repository }} finished with failures - #${{ github.run_number }}"
+          description: "Deployment for ${{ github.repository }} finished with failures - #${{ github.run_number }}. \nError: ${{ jobs.ci.result }} \nOutput: ${{ jobs.ci.output }} \nClick here to see the full workflow details: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}."
+          color: 10027008
+          status: "Failure"
+
+  cancelled:
+    needs:
+      - ci
+    if: ${{ cancelled() }}
+    name: Send cancelled notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification - Deployment cancelled
+        uses: storm-software/action-notify@main
+        with:
+          title: "Deployment for ${{ github.repository }} has finished (Cancelled)"
+          subtitle: "Deployment for ${{ github.repository }} was cancelled - #${{ github.run_number }}"
+          description: "Deployment for ${{ github.repository }} was stopped before it could complete - #${{ github.run_number }}. \nError: ${{ jobs.ci.result }} \nOutput: ${{ jobs.ci.output }} \nClick here to see the full workflow details: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}."
+          color: 16565273
+          status: "Cancelled"

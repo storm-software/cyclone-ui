@@ -38,9 +38,6 @@
           "verbose": true
         }
       }
-    },
-    "registry": {
-      "executor": "@cyclone-ui/tools-nx:registry"
     }
   }
 }
