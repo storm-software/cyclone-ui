@@ -31,7 +31,7 @@ jobs:
           color: 2077350
           status: "In Progress"
           slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
-          discordWebhook: "${{ secrets.STORM_BOT_DISCORD_WEBHOOK }}"
+          discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -132,7 +132,7 @@ jobs:
           color: 556891
           status: "Success"
           slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
-          discordWebhook: "${{ secrets.STORM_BOT_DISCORD_WEBHOOK }}"
+          discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
   failure:
     needs:
@@ -150,7 +150,7 @@ jobs:
           color: 10027008
           status: "Failure"
           slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
-          discordWebhook: "${{ secrets.STORM_BOT_DISCORD_WEBHOOK }}"
+          discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
   cancelled:
     needs:
