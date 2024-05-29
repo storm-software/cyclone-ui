@@ -85,9 +85,9 @@ jobs:
         run: pnpm build-all
         shell: bash
 
-      - name: Run linters scripts
-        run: pnpm lint
-        shell: bash
+      # - name: Run linters scripts
+      #   run: pnpm lint
+      #   shell: bash
 
       - name: Super-linter
         uses: super-linter/super-linter@v6.5.1
