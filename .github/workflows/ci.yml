@@ -14,8 +14,8 @@ on:
       - "beta"
 
 jobs:
-  ci:
-    name: "Continuous Integration"
+  start:
+    name: "Send in process notification"
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,6 +33,15 @@ jobs:
           slackToken: ${{ secrets.STORM_BOT_SLACK_TOKEN }}
           discordWebhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
+  process:
+    name: "Continuous Integration"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    needs:
+      - start
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
@@ -118,7 +127,7 @@ jobs:
 
   success:
     needs:
-      - ci
+      - process
     if: ${{ success() }}
     name: Send success notification
     runs-on: ubuntu-latest
@@ -136,7 +145,7 @@ jobs:
 
   failure:
     needs:
-      - ci
+      - process
     if: ${{ failure() }}
     name: Send failure notification
     runs-on: ubuntu-latest
@@ -154,7 +163,7 @@ jobs:
 
   cancelled:
     needs:
-      - ci
+      - process
     if: ${{ cancelled() }}
     name: Send cancelled notification
     runs-on: ubuntu-latest
