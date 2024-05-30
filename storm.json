@@ -12,6 +12,7 @@
   "logLevel": "info",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
+  "cloudflareAccountId": "d011605e7391539ac2e021ab4399e116",
   "colors": {
     "light": {
       "background": "#fafafa",
@@ -40,9 +41,6 @@
       "fileExtension": "log",
       "path": "tmp/storm/logs",
       "stacktrace": true
-    },
-    "cyclone": {
-      "accountId": "d011605e7391539ac2e021ab4399e116"
     }
   }
 }

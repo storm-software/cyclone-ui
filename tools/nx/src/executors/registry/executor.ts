@@ -90,14 +90,15 @@ export default async function runExecutor(
     //   return new Promise(resolve => resolve({ success: true }));
     // }
 
-    if (
-      !config.extensions.cyclone.registry &&
-      !config.extensions.cyclone.accountId
-    ) {
+    if (!config.extensions?.cyclone?.registry && !config.cloudflareAccountId) {
       throw new Error(
         "The Cyclone Registry URL is not set in the Storm config. Please set either the `extensions.cyclone.registry` or `config.extensions.cyclone.accountId` property in the Storm config."
       );
     }
+
+    const endpoint = config.extensions?.cyclone?.registry
+      ? config.extensions.cyclone.registry
+      : `https://${config.cloudflareAccountId}.r2.cloudflarestorage.com`;
 
     if (!process.env.CYCLONE_REGISTRY_ACCESS_KEY) {
       throw new Error(
@@ -116,14 +117,12 @@ export default async function runExecutor(
     }
 
     writeInfo(
-      `Publishing ${packageTxt} to the Cyclone Registry at ${config.extensions.cyclone.registry}`
+      `Publishing ${packageTxt} to the Cyclone Registry at ${endpoint}`
     );
 
     const s3Client = new S3Client({
       region: "auto",
-      endpoint: config.extensions.cyclone.registry
-        ? config.extensions.cyclone.registry
-        : `https://${config.extensions.cyclone.accountId}.r2.cloudflarestorage.com`,
+      endpoint,
       credentials: {
         accessKeyId: process.env.CYCLONE_REGISTRY_ACCESS_KEY,
         secretAccessKey: process.env.CYCLONE_REGISTRY_SECRET_KEY
@@ -142,11 +141,26 @@ export default async function runExecutor(
       projectName,
       projectGraph as ProjectGraph
     );
+
+    const dependencies = internalDependencies
+      .filter(
+        projectNode =>
+          !projectNode.data.tags ||
+          projectNode.data.tags.every(tag => tag.toLowerCase() !== "component")
+      )
+      .reduce((ret, dep) => {
+        if (!ret[dep.name]) {
+          ret[dep.name] = "latest";
+        }
+
+        return ret;
+      }, projectPackageJson.dependencies ?? {});
+
     const componentJson = JSON.stringify({
       name: projectName,
       version: componentVersion,
       description: projectPackageJson.description,
-      dependencies: projectPackageJson.dependencies,
+      dependencies,
       devDependencies: projectPackageJson.devDependencies,
       internalDependencies: internalDependencies
         .filter(

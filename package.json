@@ -81,9 +81,10 @@
     "@nx/devkit": "18.3.4",
     "@nx/eslint": "^18.3.4",
     "@nx/eslint-plugin": "^18.3.4",
-    "@nx/js": "18.3.4",
+    "@nx/js": "19.1.0",
     "@nx/node": "18.3.4",
     "@storm-software/build-tools": "latest",
+    "@storm-software/cloudflare-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/git-tools": "latest",
@@ -223,7 +224,9 @@
       "@cyclone-ui/table": "workspace:*",
       "@cyclone-ui/tabs": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/website": "workspace:*"
+      "@cyclone-ui/tools-nx": "workspace:*",
+      "@cyclone-ui/website": "workspace:*",
+      "@cyclone-ui/registry-trpc": "workspace:*"
     }
   },
   "bundlewatch": {
