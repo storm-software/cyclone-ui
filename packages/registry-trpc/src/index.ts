@@ -9,4 +9,4 @@
 
 export * from "./context";
 export * from "./router";
-export * from "./type";
+export * from "./types";

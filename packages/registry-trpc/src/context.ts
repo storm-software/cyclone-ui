@@ -1,5 +1,5 @@
 import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
-import { HttpHeaders, type Env } from "./type";
+import { HttpHeaders, type Env } from "./types";
 
 export const createContext =
   (env: Env) => (options: FetchCreateContextFnOptions) => {

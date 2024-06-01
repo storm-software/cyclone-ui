@@ -1,0 +1,56 @@
+{
+  "name": "registry-worker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/registry-worker/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/registry-worker",
+        "format": ["cjs"],
+        "bundle": true,
+        "main": "apps/registry-worker/src/index.ts",
+        "tsConfig": "apps/registry-worker/tsconfig.json",
+        "assets": ["apps/registry-worker/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "registry-worker:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "registry-worker:build:development"
+        },
+        "production": {
+          "buildTarget": "registry-worker:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
