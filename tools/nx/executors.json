@@ -1,8 +1,8 @@
 {
   "executors": {
-    "registry": {
-      "implementation": "./src/executors/registry/executor",
-      "schema": "./src/executors/registry/schema.json",
+    "component-publish": {
+      "implementation": "./src/executors/component-publish/executor",
+      "schema": "./src/executors/component-publish/schema.json",
       "description": "An internal executor used to register a Cyclone UI component in the Storm CDN"
     }
   }

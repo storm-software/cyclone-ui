@@ -41,9 +41,17 @@ export const createNodes = [
       };
     }
 
-    targets.registry = {
-      executor: "@cyclone-ui/tools-nx:registry"
-    };
+    // Apply nx-release-publish target for non-private projects
+    const isPrivate = packageJson.private ?? false;
+    if (!isPrivate) {
+      targets["nx-release-publish"] = {
+        cache: false,
+        inputs: ["default", "^production"],
+        dependsOn: ["build", "^nx-release-publish"],
+        executor: "@cyclone-ui/tools-nx:component-publish",
+        options: {}
+      };
+    }
 
     return project?.name
       ? {
@@ -51,7 +59,14 @@ export const createNodes = [
             [project.name]: {
               tags: ["component"],
               ...project,
-              targets
+              targets,
+              release: {
+                ...project?.release,
+                version: {
+                  ...project?.release?.version,
+                  generator: "@storm-software/workspace-tools:release-version"
+                }
+              }
             }
           }
         }

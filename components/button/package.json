@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/button",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "description": "Button component for Cyclone UI",
   "sideEffects": [
     "*.css"

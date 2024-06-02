@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.43.1",
+    "toolVersion": "7.44.1",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -243,6 +243,29 @@
             }
           ],
           "name": "createMonaSansFont"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/font-mona-sans!size:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "size: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    readonly 1: 10;\n    readonly 2: 11;\n    readonly 3: 12;\n    readonly 4: 14;\n    readonly 5: 15;\n    readonly 6: 16;\n    readonly 7: 20;\n    readonly 8: 22;\n    readonly 9: 30;\n    readonly 10: 42;\n    readonly 11: 52;\n    readonly 12: 62;\n    readonly 13: 72;\n    readonly 14: 92;\n    readonly 15: 114;\n    readonly 16: 124;\n}"
+            }
+          ],
+          "fileUrlPath": "packages/font-mona-sans/src/index.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "size",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         }
       ]
     }

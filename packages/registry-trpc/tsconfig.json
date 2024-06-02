@@ -1,14 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
     "strict": true,
     "composite": true,
-    "target": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["@cloudflare/workers-types"]
+    "declaration": true,
+    "types": ["@cloudflare/workers-types", "node"]
   },
-  "files": [],
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

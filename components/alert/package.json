@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/alert",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "description": "A package containing the Alert component used by Storm Software",
   "repository": {
     "type": "github",

@@ -1,10 +1,14 @@
 {
   "$schema": "https://json-schema.org/schema",
   "version": 2,
-  "title": "Cyclone Component Registry",
-  "description": "An internal executor used to register a Cyclone UI component in the Storm CDN",
+  "title": "Component Publish executor",
+  "description": "Publish a Cyclone UI component to the Storm CDN remote registry - DO NOT INVOKE DIRECTLY WITH `nx run`. Use `nx release publish` instead.",
   "type": "object",
   "properties": {
+    "packageRoot": {
+      "type": "string",
+      "description": "The root directory of the directory (containing a manifest file at its root) to publish. Defaults to the project root."
+    },
     "tsConfig": {
       "type": "string",
       "description": "The path to the `tsconfig.json` file.",

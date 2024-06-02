@@ -1,7 +1,16 @@
+export type ComponentPlatform = "web" | "mobile" | "all";
+export const ComponentPlatform = {
+  WEB: "web" as ComponentPlatform,
+  MOBILE: "mobile" as ComponentPlatform,
+  ALL: "all" as ComponentPlatform
+};
+
 interface ComponentHeader {
   name: string;
   version?: string;
-  description?: string;
+  release: string;
+  description: string;
+  platform: ComponentPlatform;
 }
 
 export interface ComponentSummary extends ComponentHeader {
@@ -17,6 +26,7 @@ export interface ComponentMeta extends ComponentHeader {
 export interface ComponentFile {
   name: string;
   content: string;
+  checksum?: string;
   updatedOn: Date;
 }
 
@@ -25,7 +35,8 @@ export interface ComponentDetails extends ComponentMeta {
 }
 
 export const HttpHeaders = {
-  Version: "x-cyclone-version"
+  Version: "x-cyclone-version",
+  Checksum: "x-cyclone-checksum"
 };
 
 export type Env = {

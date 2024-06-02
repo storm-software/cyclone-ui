@@ -1,0 +1,939 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.44.1",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@cyclone-ui/registry-trpc!",
+  "docComment": "",
+  "name": "@cyclone-ui/registry-trpc",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@cyclone-ui/registry-trpc!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentDetails:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ComponentDetails extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentMeta",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentMeta:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ComponentDetails",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentDetails#files:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "files: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ComponentFile",
+                  "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "files",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ComponentFile "
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ComponentFile",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile#checksum:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "checksum?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "checksum",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile#content:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "content: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "content",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentFile#updatedOn:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "updatedOn: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "updatedOn",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentMeta:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ComponentMeta extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentHeader",
+              "canonicalReference": "@cyclone-ui/registry-trpc!~ComponentHeader:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ComponentMeta",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentMeta#dependencies:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dependencies: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "dependencies",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentMeta#devDependencies:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "devDependencies: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "devDependencies",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentMeta#internalDependencies:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "internalDependencies: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "internalDependencies",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentPlatform:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ComponentPlatform = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"web\" | \"mobile\" | \"all\""
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "tmp/.tsup/declaration/packages/registry-trpc/src/types.d.ts",
+          "releaseTag": "Public",
+          "name": "ComponentPlatform",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentPlatform:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ComponentPlatform: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    WEB: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentPlatform",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentPlatform:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    MOBILE: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentPlatform",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentPlatform:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    ALL: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentPlatform",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentPlatform:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ComponentPlatform",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/registry-trpc!ComponentSummary:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ComponentSummary extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentHeader",
+              "canonicalReference": "@cyclone-ui/registry-trpc!~ComponentHeader:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ComponentSummary",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentSummary#updatedOn:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "updatedOn: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "updatedOn",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/registry-trpc!Context:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Context = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Awaited",
+              "canonicalReference": "!Awaited:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ReturnType",
+              "canonicalReference": "!ReturnType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "createContext",
+              "canonicalReference": "@cyclone-ui/registry-trpc!createContext:var"
+            },
+            {
+              "kind": "Content",
+              "text": ">>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/context.ts",
+          "releaseTag": "Public",
+          "name": "Context",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/registry-trpc!createContext:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createContext: (env: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Env",
+              "canonicalReference": "@cyclone-ui/registry-trpc!Env:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "FetchCreateContextFnOptions",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ") => {\n    version: string | undefined;\n    storage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "R2Bucket",
+              "canonicalReference": "!R2Bucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    req: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Request",
+              "canonicalReference": "!Request:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    resHeaders: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Headers",
+              "canonicalReference": "!Headers:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    info: import(\"@trpc/server/unstable-core-do-not-import\").TRPCRequestInfo;\n}"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/context.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "env",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "createContext"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/registry-trpc!Env:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Env = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    STORAGE_BUCKET: "
+            },
+            {
+              "kind": "Reference",
+              "text": "R2Bucket",
+              "canonicalReference": "!R2Bucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "releaseTag": "Public",
+          "name": "Env",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/registry-trpc!HttpHeaders:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "HttpHeaders: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    Version: string;\n    Checksum: string;\n}"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/types.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "HttpHeaders",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/registry-trpc!Router:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Router = "
+            },
+            {
+              "kind": "Content",
+              "text": "typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "router",
+              "canonicalReference": "@cyclone-ui/registry-trpc!router:var"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/router.ts",
+          "releaseTag": "Public",
+          "name": "Router",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/registry-trpc!router:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "router: "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"@trpc/server/unstable-core-do-not-import\").BuiltRouter<{\n    ctx: {\n        version: string | undefined;\n        storage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "R2Bucket",
+              "canonicalReference": "!R2Bucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n        req: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Request",
+              "canonicalReference": "!Request:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n        resHeaders: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Headers",
+              "canonicalReference": "!Headers:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n        info: import(\"@trpc/server/unstable-core-do-not-import\").TRPCRequestInfo;\n    };\n    meta: object;\n    errorShape: import(\"@trpc/server/unstable-core-do-not-import\").DefaultErrorShape;\n    transformer: false;\n}, import(\"@trpc/server/unstable-core-do-not-import\").DecorateCreateRouterOptions<{\n    component: import(\"@trpc/server/unstable-core-do-not-import\").BuiltRouter<{\n        ctx: {\n            version: string | undefined;\n            storage: "
+            },
+            {
+              "kind": "Reference",
+              "text": "R2Bucket",
+              "canonicalReference": "!R2Bucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n            req: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Request",
+              "canonicalReference": "!Request:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n            resHeaders: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Headers",
+              "canonicalReference": "!Headers:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n            info: import(\"@trpc/server/unstable-core-do-not-import\").TRPCRequestInfo;\n        };\n        meta: object;\n        errorShape: import(\"@trpc/server/unstable-core-do-not-import\").DefaultErrorShape;\n        transformer: false;\n    }, {\n        list: import(\"@trpc/server\").TRPCQueryProcedure<{\n            input: void;\n            output: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentSummary",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentSummary:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[];\n        }>;\n        get: import(\"@trpc/server\").TRPCQueryProcedure<{\n            input: string;\n            output: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComponentDetails",
+              "canonicalReference": "@cyclone-ui/registry-trpc!ComponentDetails:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n        }>;\n    }>;\n}>>"
+            }
+          ],
+          "fileUrlPath": "packages/registry-trpc/src/router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "router",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 18
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,14 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "module": "Node16",
+    "module": "ESNext",
     "outDir": "dist",
     "rootDir": "src",
     "strict": false,
-    "incremental": false,
-    "moduleResolution": "Node16"
+    "incremental": false
   },
   "references": [{"path": "../../packages/registry-trpc"}],
-  "include": ["./src/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

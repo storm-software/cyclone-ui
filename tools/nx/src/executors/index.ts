@@ -1,1 +1,1 @@
-export * from "./registry/executor";
+export * from "./component-publish/executor";

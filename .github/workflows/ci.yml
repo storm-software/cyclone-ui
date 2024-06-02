@@ -105,6 +105,11 @@ jobs:
         run: pnpm build-all
         shell: bash
 
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}
+          accountId: ${{ secrets.STORM_BOT_CLOUDFLARE_ACCOUNT }}
+
       - name: Release repository updates
         run: pnpm release --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
         env:
@@ -117,14 +122,16 @@ jobs:
           STORM_BOT: "Stormie-Bot"
           STORM_WORKSPACE_ROOT: ${{ github.workspace }}
           STORM_REPOSITORY: ${{ github.repositoryUrl }}
-          TAG: ${{ inputs.tag }}
-
-      - name: Publish design components to Storm CDN Registry
-        run: pnpm nx run-many -t registry --projects=components/* --parallel=5
-        shell: bash
-        env:
           CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
           CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
+          TAG: ${{ inputs.tag }}
+
+      # - name: Publish design components to Storm CDN Registry
+      #   run: pnpm nx run-many -t registry --projects=components/* --parallel=5
+      #   shell: bash
+      #   env:
+      #     CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
+      #     CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
 
   success:
     needs:

@@ -3,6 +3,6 @@
   "compilerOptions": {
     "composite": true
   },
-  "references": [],
+  "include": ["src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

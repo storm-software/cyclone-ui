@@ -8,8 +8,19 @@
       "options": {
         "port": 4873,
         "config": ".verdaccio/config.yml",
-        "storage": "tmp/local-registry/storage"
+        "storage": "dist/local-registry/storage"
       }
+    },
+    "populate-local-registry-storage": {
+      "cache": true,
+      "inputs": [
+        {
+          "input": "production",
+          "projects": ["*", "!tools-nx"]
+        }
+      ],
+      "command": "node ./scripts/local-registry/run-populate-storage.mjs",
+      "outputs": ["{workspaceRoot}/dist/local-registry/storage"]
     }
   }
 }

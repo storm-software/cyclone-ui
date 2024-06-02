@@ -14,8 +14,8 @@ const componentRouter = createRouter({
       prefix: "registry/components"
     });
 
-    return storageList.objects.reduce(
-      (ret: ComponentSummary[], storageObject: R2Object) => {
+    let metaFiles = await Promise.all(
+      storageList.objects.map(storageObject => {
         let componentName = storageObject.key.replace(
           "registry/components/",
           ""
@@ -27,24 +27,37 @@ const componentRouter = createRouter({
           );
         }
 
-        if (
-          !ret.some(c => c.name === componentName) &&
-          storageList.objects.some(
-            c => c.key === `registry/components/${componentName}/component.json`
-          )
-        ) {
-          ret.push({
-            name: componentName,
-            version: storageObject.customMetadata?.version,
-            description: storageObject.customMetadata?.description,
-            updatedOn: storageObject.uploaded
-          });
-        }
-
-        return ret;
-      },
-      []
+        return ctx.storage
+          .get(`registry/components/${componentName}/meta.json`)
+          .then(content =>
+            content ? content.json<ComponentMeta>() : undefined
+          );
+      })
     );
+    metaFiles = metaFiles.filter(meta => meta !== undefined);
+
+    return storageList.objects.reduce((ret, storageObject) => {
+      let componentName = storageObject.key.replace("registry/components/", "");
+      if (componentName.indexOf("/")) {
+        componentName = componentName.substring(0, componentName.indexOf("/"));
+      }
+
+      const metaJson = metaFiles.find(
+        metaFile => metaFile!.name === componentName
+      );
+      if (metaJson && !ret.some(c => c.name === componentName)) {
+        ret.push({
+          name: componentName,
+          version: metaJson.version,
+          release: metaJson.release,
+          description: metaJson.description,
+          updatedOn: storageObject.uploaded,
+          platform: metaJson.platform
+        });
+      }
+
+      return ret;
+    }, [] as ComponentSummary[]);
   }),
   get: publicProcedure
     .input(z.string())
@@ -66,20 +79,18 @@ const componentRouter = createRouter({
         )
       );
 
-      const metaFile = storageFiles.find(
-        file => file.name === "component.json"
-      );
+      const metaFile = storageFiles.find(file => file.name === "meta.json");
       if (!metaFile || !metaFile.content) {
         throw new Error("Component meta not found");
       }
 
       const meta = await metaFile.content.json<ComponentMeta>();
       const componentFiles = storageFiles.filter(
-        file => file.name !== "component.json" && file.content
+        file => file.name !== "meta.json" && file.content
       );
       const componentContent = await Promise.all(
         componentFiles
-          .filter(file => file.name !== "component.json" && file.content)
+          .filter(file => file.name !== "meta.json" && file.content)
           .map(file => Promise.resolve(file.content!.text()))
       );
 

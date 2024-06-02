@@ -2,7 +2,7 @@ import {Args, Command, Flags} from '@oclif/core'
 import {loadStormConfig} from '@storm-software/config-tools'
 import {cancel, confirm, intro, isCancel, multiselect, outro, spinner, text} from '@clack/prompts'
 import {createTRPCClient, httpBatchLink, loggerLink} from '@trpc/client'
-import type {Router} from '@cyclone-ui/registry-trpc'
+import type {Router} from '@cyclone-ui/registry-trpc/router'
 import fs from 'fs-extra'
 import {join} from 'path'
 

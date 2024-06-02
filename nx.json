@@ -1,17 +1,20 @@
 {
   "extends": "@storm-software/workspace-tools/config/nx.json",
+  "affected": {
+    "defaultBase": "origin/main"
+  },
+  "cli": {
+    "warnings": {
+      "versionMismatch": true
+    },
+    "packageManager": "pnpm"
+  },
   "targetDefaults": {
     "lint": {
       "cache": true,
-      "inputs": [
-        "default"
-      ],
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "dependsOn": [
-        "^lint"
-      ]
+      "inputs": ["default"],
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^lint"]
     },
     "clean": {
       "cache": false,
@@ -22,94 +25,45 @@
     },
     "build": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ],
-      "dependsOn": [
-        "^build"
-      ]
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"]
     },
     "docs": {
       "cache": true,
-      "inputs": [
-        "defaultDocs",
-        "^production"
-      ],
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "dependsOn": [
-        "build",
-        "^docs"
-      ]
+      "inputs": ["defaultDocs", "^production"],
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["build", "^docs"]
     },
     "test": {
       "cache": true,
-      "inputs": [
-        "defaultTesting",
-        "^production"
-      ],
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "dependsOn": [
-        "build",
-        "^test"
-      ]
+      "inputs": ["defaultTesting", "^production"],
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["build", "^test"]
     },
     "e2e": {
       "cache": true,
-      "inputs": [
-        "defaultTesting",
-        "^production"
-      ],
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "dependsOn": [
-        "test",
-        "^e2e"
-      ]
+      "inputs": ["defaultTesting", "^production"],
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["test", "^e2e"]
     },
     "nx-release-publish": {
       "cache": false,
-      "inputs": [
-        "default",
-        "^production"
-      ],
-      "dependsOn": [
-        "build",
-        "^nx-release-publish"
-      ]
+      "inputs": ["default", "^production"],
+      "dependsOn": ["build", "^nx-release-publish"]
     },
     "@nx/js:tsc": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "@nx/esbuild:esbuild": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "release": {
-    "projects": [
-      "packages/*",
-      "components/*",
-      "apps/*"
-    ],
+    "projects": ["packages/*", "components/*", "apps/*"],
     "projectsRelationship": "independent",
     "releaseTagPattern": "{projectName}-v{version}",
     "changelog": {
@@ -166,9 +120,7 @@
     },
     {
       "plugin": "@nx/eslint/plugin",
-      "exclude": [
-        "packages/**/__fixtures__/**/*"
-      ],
+      "exclude": ["packages/**/__fixtures__/**/*"],
       "options": {
         "targetName": "lint"
       }

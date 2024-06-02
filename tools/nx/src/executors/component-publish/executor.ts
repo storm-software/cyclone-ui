@@ -7,18 +7,22 @@ import {
   readCachedProjectGraph,
   readJsonFile
 } from "@nx/devkit";
-import { RegistryExecutorSchema } from "./schema";
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
-import { randomUUID } from "crypto";
+import { ComponentPublishExecutorSchema } from "./schema";
+import {
+  S3Client,
+  PutObjectCommand,
+  DeleteObjectsCommand
+} from "@aws-sdk/client-s3";
+import { createHash } from "crypto";
 import { glob } from "glob";
 import { readFile } from "fs/promises";
+import { execSync } from "node:child_process";
 
 export default async function runExecutor(
-  options: RegistryExecutorSchema,
+  options: ComponentPublishExecutorSchema,
   context: ExecutorContext
 ) {
   const {
-    writeDebug,
     writeWarning,
     writeFatal,
     writeInfo,
@@ -129,8 +133,8 @@ export default async function runExecutor(
       }
     });
 
-    const componentVersion = randomUUID();
-    writeInfo(`Generated component version: ${componentVersion}`);
+    const version = projectPackageJson.version;
+    writeInfo(`Generated component version: ${version}`);
 
     const files = await glob(joinPathFragments(sourceRoot, "**/*"), {
       ignore: "**/{*.stories.tsx,index.ts}"
@@ -156,9 +160,33 @@ export default async function runExecutor(
         return ret;
       }, projectPackageJson.dependencies ?? {});
 
-    const componentJson = JSON.stringify({
+    const release =
+      options.tag ?? execSync("npm config get tag").toString().trim();
+
+    writeInfo(`Clearing out existing items in ${projectPath}`);
+
+    if (!isDryRun) {
+      await s3Client.send(
+        new DeleteObjectsCommand({
+          Bucket: "storm-cdn-cyclone-ui",
+          Delete: {
+            Objects: [
+              {
+                Key: projectPath
+              }
+            ],
+            Quiet: true
+          }
+        })
+      );
+    } else {
+      writeWarning("Dry run: skipping upload to the Cyclone Registry.");
+    }
+
+    const metaJson = JSON.stringify({
       name: projectName,
-      version: componentVersion,
+      version,
+      release,
       description: projectPackageJson.description,
       dependencies,
       devDependencies: projectPackageJson.devDependencies,
@@ -171,14 +199,14 @@ export default async function runExecutor(
         .map(dep => dep.name)
     });
 
-    writeInfo(`Generating component.json file: \n${componentJson}`);
+    writeInfo(`Generating meta.json file: \n${metaJson}`);
 
     await uploadFile(
       s3Client,
       projectPath,
-      "component.json",
-      componentJson,
-      componentVersion,
+      "meta.json",
+      version,
+      metaJson,
       "application/json",
       isDryRun
     );
@@ -194,8 +222,8 @@ export default async function runExecutor(
             s3Client,
             projectPath,
             fileName,
+            version,
             fileContent,
-            componentVersion,
             "text/plain",
             isDryRun
           )
@@ -225,8 +253,8 @@ const uploadFile = async (
   client: S3Client,
   projectPath: string,
   fileName: string,
-  fileContent: string,
   version: string,
+  fileContent: string,
   contentType = "text/plain",
   isDryRun = false
 ) => {
@@ -234,6 +262,7 @@ const uploadFile = async (
     "@storm-software/config-tools"
   );
 
+  const checksum = createHash("sha256").update(fileContent).digest("base64");
   const fileKey = `${projectPath}/${fileName.startsWith("/") ? fileName.substring(1) : fileName}`;
   writeDebug(`Uploading file: ${fileKey}`);
 
@@ -244,8 +273,11 @@ const uploadFile = async (
         Key: fileKey,
         Body: fileContent.replaceAll(' from "@cyclone-ui', ' from "./'),
         ContentType: contentType,
+        ChecksumAlgorithm: "SHA256",
+        ChecksumSHA256: checksum,
         Metadata: {
-          "component-version": version
+          version,
+          checksum
         }
       })
     );
