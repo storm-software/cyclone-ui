@@ -39,7 +39,10 @@
     "@storm-software/config-tools": "latest",
     "chroma-js": "^2.4.2",
     "execa": "^8.0.1",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "@trpc/client": "11.0.0-rc.382",
+    "@trpc/server": "11.0.0-rc.382",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@oclif/prettier-config": "^0.2.1",
@@ -73,6 +76,9 @@
     "topics": {
       "theme": {
         "description": "Manage the local UI theme configuration"
+      },
+      "registry": {
+        "description": "Manage local copies of files from the Cyclone remote registry"
       }
     },
     "commands": "./dist/commands",

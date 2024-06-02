@@ -40,7 +40,7 @@
       "outputs": ["{workspaceRoot}/dist/apps/cli"],
       "dependsOn": ["clean"],
       "options": {
-        "commands": ["pnpm rimraf dist/apps/cli", "pnpm tsc -b ./apps/cli/tsconfig.json"],
+        "commands": ["pnpm rimraf dist/apps/cli", "pnpm tsc -p apps/cli --pretty"],
         "parallel": false
       }
     },

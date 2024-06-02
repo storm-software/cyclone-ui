@@ -2,14 +2,13 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "target": "ES2020",
-    "module": "CommonJS",
-    "lib": ["ES2020"],
     "strict": true,
     "composite": true,
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
     "types": ["@cloudflare/workers-types"]
   },
   "files": [],
-  "include": ["src/**/*.ts", "src/**/*.js", "bin/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

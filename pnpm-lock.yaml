@@ -29,6 +29,8 @@ overrides:
   '@cyclone-ui/pop-up': workspace:*
   '@cyclone-ui/provider': workspace:*
   '@cyclone-ui/radio-group': workspace:*
+  '@cyclone-ui/registry-trpc': workspace:*
+  '@cyclone-ui/registry-worker': workspace:*
   '@cyclone-ui/select': workspace:*
   '@cyclone-ui/steps': workspace:*
   '@cyclone-ui/storybook': workspace:*
@@ -37,7 +39,6 @@ overrides:
   '@cyclone-ui/themes': workspace:*
   '@cyclone-ui/tools-nx': workspace:*
   '@cyclone-ui/website': workspace:*
-  '@cyclone-ui/registry-trpc': workspace:*
 
 importers:
 
@@ -419,6 +420,9 @@ importers:
       '@trpc/client':
         specifier: 11.0.0-rc.382
         version: 11.0.0-rc.382(@trpc/server@11.0.0-rc.382)
+      '@trpc/server':
+        specifier: 11.0.0-rc.382
+        version: 11.0.0-rc.382
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -428,6 +432,9 @@ importers:
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@oclif/prettier-config':
         specifier: ^0.2.1

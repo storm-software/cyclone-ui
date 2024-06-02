@@ -7,9 +7,9 @@
     "rootDir": "src",
     "strict": false,
     "incremental": false,
-    "target": "es2022",
-    "moduleResolution": "node16"
+    "moduleResolution": "Node16"
   },
+  "references": [{"path": "../../packages/registry-trpc"}],
   "include": ["./src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

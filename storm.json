@@ -41,6 +41,10 @@
       "fileExtension": "log",
       "path": "tmp/storm/logs",
       "stacktrace": true
+    },
+    "cyclone": {
+      "registry": "https://cyclone-ui.com/registry",
+      "library": "examples/components-test"
     }
   }
 }
