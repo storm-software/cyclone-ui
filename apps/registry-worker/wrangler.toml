@@ -1,4 +1,10 @@
 name = "registry-worker"
 compatibility_date = "2024-04-21"
 main = "src/index.ts"
+
 account_id = "d011605e7391539ac2e021ab4399e116"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "STORAGE_BUCKET"
+bucket_name = "storm-cdn-cyclone-ui"
