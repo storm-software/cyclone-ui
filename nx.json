@@ -1,8 +1,5 @@
 {
   "extends": "@storm-software/workspace-tools/config/nx.json",
-  "affected": {
-    "defaultBase": "origin/main"
-  },
   "cli": {
     "warnings": {
       "versionMismatch": true
