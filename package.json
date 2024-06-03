@@ -141,7 +141,7 @@
     "@cloudflare/workers-types": "^4.20240419.0",
     "@expo/cli": "~0.16.5",
     "@nx/esbuild": "19.1.0",
-    "@nx/expo": "18.3.4",
+    "@nx/expo": "19.1.1",
     "@nx/jest": "18.3.4",
     "@nx/next": "18.3.4",
     "@nx/node": "19.1.0",
