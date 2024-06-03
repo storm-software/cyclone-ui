@@ -47,7 +47,7 @@ export default class Clean extends Command {
     }),
   }
 
-  public static override summary = 'Cyclone UI - Clean Themes'
+  public static override summary = "Clean the workspace's theme configuration"
   public static override description =
     'Clean the theme configuration for the client application based on the colors provided in the Storm configuration file'
   public static override strict = false

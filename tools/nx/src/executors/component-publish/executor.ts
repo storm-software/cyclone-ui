@@ -188,6 +188,7 @@ export default async function runExecutor(
       version,
       release,
       description: projectPackageJson.description,
+      tags: projectPackageJson.keywords,
       dependencies,
       devDependencies: projectPackageJson.devDependencies,
       internalDependencies: internalDependencies

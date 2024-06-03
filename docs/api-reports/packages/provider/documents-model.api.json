@@ -1,0 +1,2643 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.44.1",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@cyclone-ui/provider!",
+  "docComment": "",
+  "name": "@cyclone-ui/provider",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@cyclone-ui/provider!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!applyMaskStateless:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function applyMaskStateless<Theme extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "GenericTheme",
+              "canonicalReference": "@cyclone-ui/provider!GenericTheme:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(info: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeInfo",
+              "canonicalReference": "@cyclone-ui/provider!ThemeInfo:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", mask: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", parentName?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeInfo",
+              "canonicalReference": "@cyclone-ui/provider!ThemeInfo:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & {\n    theme: Theme;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 13,
+            "endIndex": 15
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "info",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "mask",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "parentName",
+              "parameterTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 12
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "Theme",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "applyMaskStateless"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!combineMasks:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "combineMasks: (...masks: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 4,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "masks",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "combineMasks"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createIdentityMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createIdentityMask: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "createIdentityMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createInverseMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createInverseMask: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "createInverseMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createMask: <C extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskFunction",
+              "canonicalReference": "@cyclone-ui/provider!MaskFunction:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(createMask: "
+            },
+            {
+              "kind": "Content",
+              "text": "C"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "createMask",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "C",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "createMask"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!CreateMask:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type CreateMask = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    name: string;\n    mask: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskFunction",
+              "canonicalReference": "@cyclone-ui/provider!MaskFunction:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "CreateMask",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createShiftMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createShiftMask: ({ inverse }?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ShiftMaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!~ShiftMaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", defaultOptions?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ inverse }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "defaultOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createShiftMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createSoftenMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createSoftenMask: (defaultOptions?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "defaultOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createSoftenMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createStrengthenMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createStrengthenMask: (defaultOptions?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "defaultOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createStrengthenMask"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createTheme:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function createTheme<Definition extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", Extras extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "GenericTheme",
+              "canonicalReference": "@cyclone-ui/provider!GenericTheme:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": ">(palette: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemePalette",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemePalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", definition: "
+            },
+            {
+              "kind": "Content",
+              "text": "Definition"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemeOptions",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemeOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", name?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", skipCache?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key in keyof Definition | keyof Extras]: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 17,
+            "endIndex": 18
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "palette",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "definition",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 12
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "name",
+              "parameterTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "skipCache",
+              "parameterTypeTokenRange": {
+                "startIndex": 15,
+                "endIndex": 16
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "Definition",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "Extras",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            }
+          ],
+          "name": "createTheme"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!CreateThemeOptions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type CreateThemeOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    nonInheritedValues?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "GenericTheme",
+              "canonicalReference": "@cyclone-ui/provider!GenericTheme:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "CreateThemeOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!CreateThemePalette:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type CreateThemePalette = "
+            },
+            {
+              "kind": "Content",
+              "text": "(string | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ")[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "CreateThemePalette",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!createWeakenMask:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "createWeakenMask: (defaultOptions?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "defaultOptions",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createWeakenMask"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!DeepWritable:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type DeepWritable<OBJ_T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    -readonly [P in keyof OBJ_T]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepWritable",
+              "canonicalReference": "@cyclone-ui/provider!DeepWritable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<OBJ_T[P]>;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "DeepWritable",
+          "typeParameters": [
+            {
+              "typeParameterName": "OBJ_T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/provider!defaultMasks:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "defaultMasks: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    identity: import(\"@tamagui/create-theme\").CreateMask;\n    soften: import(\"@tamagui/create-theme\").CreateMask;\n    soften2: import(\"@tamagui/create-theme\").CreateMask;\n    soften3: import(\"@tamagui/create-theme\").CreateMask;\n    strengthen: import(\"@tamagui/create-theme\").CreateMask;\n    inverse: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften2: import(\"@tamagui/create-theme\").CreateMask;\n    inverseSoften3: import(\"@tamagui/create-theme\").CreateMask;\n    inverseStrengthen2: import(\"@tamagui/create-theme\").CreateMask;\n    strengthenButSoftenBorder: import(\"@tamagui/create-theme\").CreateMask;\n    soften2Border1: import(\"@tamagui/create-theme\").CreateMask;\n    soften3FlatBorder: import(\"@tamagui/create-theme\").CreateMask;\n    softenBorder: import(\"@tamagui/create-theme\").CreateMask;\n    softenBorder2: import(\"@tamagui/create-theme\").CreateMask;\n}"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/default-masks.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "defaultMasks",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!EntriesToObject:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EntriesToObject<ARR_T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "EntriesType",
+              "canonicalReference": "@cyclone-ui/provider!EntriesType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "MergeIntersectingObjects",
+              "canonicalReference": "@cyclone-ui/provider!MergeIntersectingObjects:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "UnionToIntersection",
+              "canonicalReference": "@cyclone-ui/provider!UnionToIntersection:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "UnionObjectFromArrayOfPairs",
+              "canonicalReference": "@cyclone-ui/provider!UnionObjectFromArrayOfPairs:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<ARR_T>>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "EntriesToObject",
+          "typeParameters": [
+            {
+              "typeParameterName": "ARR_T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!EntriesType:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EntriesType = "
+            },
+            {
+              "kind": "Content",
+              "text": "["
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyKey",
+              "canonicalReference": "!PropertyKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", unknown][] | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ReadonlyArray",
+              "canonicalReference": "!ReadonlyArray:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<readonly ["
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyKey",
+              "canonicalReference": "!PropertyKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", unknown]>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "EntriesType",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 8
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!GenericTheme:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type GenericTheme = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: string | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Variable",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "GenericTheme",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!getThemeInfo:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getThemeInfo: (theme: "
+            },
+            {
+              "kind": "Reference",
+              "text": "GenericTheme",
+              "canonicalReference": "@cyclone-ui/provider!GenericTheme:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", name?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeInfo",
+              "canonicalReference": "@cyclone-ui/provider!ThemeInfo:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "theme",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "name",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getThemeInfo"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!isMinusZero:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function isMinusZero(value: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isMinusZero"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!MaskDefinitions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MaskDefinitions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[\"mask\"];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "MaskDefinitions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!MaskFunction:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MaskFunction = "
+            },
+            {
+              "kind": "Content",
+              "text": "<A extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(template: A, options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => A"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "MaskFunction",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!MaskOptions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MaskOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    palette?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemePalette",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemePalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    override?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    overrideStrategy?: \"shift\" | \"swap\";\n    overrideSwap?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    overrideShift?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    skip?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    strength?: number;\n    max?: number;\n    min?: number;\n    parentName?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "MaskOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 20
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!MergeIntersectingObjects:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MergeIntersectingObjects<ObjT> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key in keyof ObjT]: ObjT[key];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "MergeIntersectingObjects",
+          "typeParameters": [
+            {
+              "typeParameterName": "ObjT",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!objectEntries:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function objectEntries<OBJ_T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ObjectType",
+              "canonicalReference": "@cyclone-ui/provider!ObjectType:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj: "
+            },
+            {
+              "kind": "Content",
+              "text": "OBJ_T"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ObjectEntries",
+              "canonicalReference": "@cyclone-ui/provider!ObjectEntries:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<OBJ_T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "OBJ_T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "objectEntries"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ObjectEntries:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ObjectEntries<OBJ_T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [K in keyof OBJ_T]: [keyof "
+            },
+            {
+              "kind": "Reference",
+              "text": "PickByValue",
+              "canonicalReference": "@cyclone-ui/provider!PickByValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<OBJ_T, OBJ_T[K]>, OBJ_T[K]];\n}[keyof OBJ_T][]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ObjectEntries",
+          "typeParameters": [
+            {
+              "typeParameterName": "OBJ_T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!objectFromEntries:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function objectFromEntries<ARR_T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "EntriesType",
+              "canonicalReference": "@cyclone-ui/provider!EntriesType:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(arr: "
+            },
+            {
+              "kind": "Content",
+              "text": "ARR_T"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "EntriesToObject",
+              "canonicalReference": "@cyclone-ui/provider!EntriesToObject:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<ARR_T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arr",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "ARR_T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "objectFromEntries"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!objectKeys:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "objectKeys: <O extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Object",
+              "canonicalReference": "!Object:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">(obj: "
+            },
+            {
+              "kind": "Content",
+              "text": "O"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "(keyof O)[]"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "O",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "objectKeys"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ObjectType:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ObjectType = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyKey",
+              "canonicalReference": "!PropertyKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", unknown>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ObjectType",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!Palette:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Palette = "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "Palette",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!PaletteDefinitions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PaletteDefinitions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Palette",
+              "canonicalReference": "@cyclone-ui/provider!Palette:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "PaletteDefinitions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!PickByValue:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PickByValue<OBJ_T, VALUE_T> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Pick",
+              "canonicalReference": "!Pick:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<OBJ_T, {\n    [K in keyof OBJ_T]: OBJ_T[K] extends VALUE_T ? K : never;\n}[keyof OBJ_T]>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "PickByValue",
+          "typeParameters": [
+            {
+              "typeParameterName": "OBJ_T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "VALUE_T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!setThemeInfo:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "setThemeInfo: (theme: "
+            },
+            {
+              "kind": "Reference",
+              "text": "GenericTheme",
+              "canonicalReference": "@cyclone-ui/provider!GenericTheme:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", info: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Pick",
+              "canonicalReference": "!Pick:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeInfo",
+              "canonicalReference": "@cyclone-ui/provider!ThemeInfo:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"palette\" | \"definition\" | \"options\"> & {\n    name?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "void"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/helpers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 11
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "theme",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "info",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "setThemeInfo"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/provider!skipMask:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "skipMask: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/provider!CreateMask:type"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/create-mask.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "skipMask",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!Template:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Template = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: number | string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "Template",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!TemplateDefinitions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type TemplateDefinitions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Template",
+              "canonicalReference": "@cyclone-ui/provider!Template:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "TemplateDefinitions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!Theme:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Theme<Masks = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemePreDefined",
+              "canonicalReference": "@cyclone-ui/provider!~ThemePreDefined:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeUsingTemplate",
+              "canonicalReference": "@cyclone-ui/provider!ThemeUsingTemplate:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeUsingMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeUsingMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Masks>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "Theme",
+          "typeParameters": [
+            {
+              "typeParameterName": "Masks",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeDefinition:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeDefinition<Masks extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Theme",
+              "canonicalReference": "@cyclone-ui/provider!Theme:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Masks> | "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeWithParent",
+              "canonicalReference": "@cyclone-ui/provider!ThemeWithParent:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Masks>[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeDefinition",
+          "typeParameters": [
+            {
+              "typeParameterName": "Masks",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeDefinitions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeDefinitions<Masks extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key: string]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeDefinition",
+              "canonicalReference": "@cyclone-ui/provider!ThemeDefinition:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Masks | "
+            },
+            {
+              "kind": "Reference",
+              "text": "UnionableString",
+              "canonicalReference": "@cyclone-ui/provider!~UnionableString:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeDefinitions",
+          "typeParameters": [
+            {
+              "typeParameterName": "Masks",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 10
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeInfo:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeInfo = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    palette: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemePalette",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemePalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    definition: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeMask",
+              "canonicalReference": "@cyclone-ui/provider!ThemeMask:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemeOptions",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemeOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    cache: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Map",
+              "canonicalReference": "!Map:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any, any>;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeInfo",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 10
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeMask:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeMask = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, string | number>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeMask",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeUsingMask:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeUsingMask<Masks = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & {\n    mask: Masks;\n    avoidNestingWithin?: string[];\n    childOptions?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MaskOptions",
+              "canonicalReference": "@cyclone-ui/provider!MaskOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & {\n        mask?: Masks;\n    };\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeUsingMask",
+          "typeParameters": [
+            {
+              "typeParameterName": "Masks",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeUsingTemplate:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeUsingTemplate = "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateThemeOptions",
+              "canonicalReference": "@cyclone-ui/provider!CreateThemeOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & {\n    palette?: string;\n    template: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeUsingTemplate",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeWithParent:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeWithParent<Masks = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Theme",
+              "canonicalReference": "@cyclone-ui/provider!Theme:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Masks> & {\n    parent: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "ThemeWithParent",
+          "typeParameters": [
+            {
+              "typeParameterName": "Masks",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!UnionObjectFromArrayOfPairs:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type UnionObjectFromArrayOfPairs<ARR_T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "EntriesType",
+              "canonicalReference": "@cyclone-ui/provider!EntriesType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepWritable",
+              "canonicalReference": "@cyclone-ui/provider!DeepWritable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<ARR_T> extends (infer R)[] ? R extends [infer key, infer val] ? {\n    [prop in key & "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropertyKey",
+              "canonicalReference": "!PropertyKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "]: val;\n} : never : never"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "UnionObjectFromArrayOfPairs",
+          "typeParameters": [
+            {
+              "typeParameterName": "ARR_T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!UnionToIntersection:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type UnionToIntersection<UNION_T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "(UNION_T extends any ? (k: UNION_T) => void : never) extends (k: infer I) => void ? I : never"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/masks/src/types.ts",
+          "releaseTag": "Public",
+          "name": "UnionToIntersection",
+          "typeParameters": [
+            {
+              "typeParameterName": "UNION_T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        }
+      ]
+    }
+  ]
+}

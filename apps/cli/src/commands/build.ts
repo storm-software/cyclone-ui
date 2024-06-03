@@ -76,7 +76,7 @@ export default class Build extends Command {
     }),
   }
 
-  public static override summary = 'Cyclone UI - Build'
+  public static override summary = 'Build a cyclone-ui package'
   public static override description =
     'Build the theme configuration for the client application based on the colors provided in the Storm configuration file'
   public static override strict = false

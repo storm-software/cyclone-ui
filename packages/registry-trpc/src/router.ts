@@ -51,8 +51,8 @@ const componentRouter = createRouter({
           version: metaJson.version,
           release: metaJson.release,
           description: metaJson.description,
-          updatedOn: storageObject.uploaded,
-          platform: metaJson.platform
+          tags: metaJson.tags,
+          updatedOn: storageObject.uploaded
         });
       }
 

@@ -46,7 +46,8 @@
 # GitHub linguist             #
 ###############################
 
-apps/**/.next/** -text linguist-vendored
+packages/** -text linguist-vendored
+components/** -text linguist-vendored
 
 # Make dist folder indexable for github search
 dist/** linguist-generated=false

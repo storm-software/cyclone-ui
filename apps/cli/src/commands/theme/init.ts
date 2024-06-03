@@ -70,7 +70,7 @@ export default class Init extends Command {
     }),
   }
 
-  public static override summary = 'Cyclone UI - Initialize Themes'
+  public static override summary = 'Initialize a theme configuration'
   public static override description =
     'Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file'
   public static override strict = false

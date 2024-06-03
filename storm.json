@@ -5,11 +5,11 @@
   "namespace": "cyclone-ui",
   "repository": "https://github.com/storm-software/cyclone-ui",
   "organization": "storm-software",
-  "ci": true,
+  "ci": false,
   "owner": "cyclone-ui",
   "timezone": "America/New_York",
   "locale": "en-US",
-  "logLevel": "debug",
+  "logLevel": "info",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
   "colors": {

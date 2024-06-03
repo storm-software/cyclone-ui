@@ -9,8 +9,8 @@ interface ComponentHeader {
   name: string;
   version?: string;
   release: string;
+  tags: string[];
   description: string;
-  platform: ComponentPlatform;
 }
 
 export interface ComponentSummary extends ComponentHeader {

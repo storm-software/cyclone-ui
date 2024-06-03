@@ -2,7 +2,7 @@
   "name": "@cyclone-ui/monorepo",
   "version": "0.0.0",
   "private": true,
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "keywords": [
     "cyclone-ui",
     "storm",

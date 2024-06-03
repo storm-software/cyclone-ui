@@ -60,7 +60,7 @@ export default class Get extends Command {
     }),
   }
 
-  public static override summary = 'Cyclone UI - Get Component'
+  public static override summary = 'Get design component files from registry'
   public static override description =
     'A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package'
   public static override strict = false
