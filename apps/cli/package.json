@@ -29,7 +29,7 @@
     "@oclif/core": "^3.26.2",
     "@oclif/plugin-autocomplete": "^3.0.13",
     "@oclif/plugin-help": "^6.0.20",
-    "@oclif/plugin-not-found": "^3.1.2",
+    "@oclif/plugin-not-found": "^3.2.1",
     "@oclif/plugin-plugins": "^5.0.7",
     "@oclif/plugin-search": "^1.0.21",
     "@oclif/plugin-update": "^4.2.4",
