@@ -1,8 +1,7 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "composite": true,
     "esModuleInterop": true,
     "jsx": "react-jsx"
   },
