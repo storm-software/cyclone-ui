@@ -111,7 +111,7 @@
       "pluginName": "@cyclone-ui/cli",
       "pluginType": "core",
       "strict": false,
-      "summary": "Cyclone UI - Build",
+      "summary": "Build a cyclone-ui package",
       "enableJsonFlag": false,
       "isESM": true,
       "relativePath": [
@@ -199,7 +199,7 @@
       "pluginName": "@cyclone-ui/cli",
       "pluginType": "core",
       "strict": false,
-      "summary": "Cyclone UI - Get Component",
+      "summary": "Get design component files from registry",
       "enableJsonFlag": false,
       "isESM": true,
       "relativePath": [
@@ -276,7 +276,7 @@
       "pluginName": "@cyclone-ui/cli",
       "pluginType": "core",
       "strict": false,
-      "summary": "Cyclone UI - Clean Themes",
+      "summary": "Clean the workspace's theme configuration",
       "enableJsonFlag": false,
       "isESM": true,
       "relativePath": [
@@ -376,7 +376,7 @@
       "pluginName": "@cyclone-ui/cli",
       "pluginType": "core",
       "strict": false,
-      "summary": "Cyclone UI - Initialize Themes",
+      "summary": "Initialize a theme configuration",
       "enableJsonFlag": false,
       "isESM": true,
       "relativePath": [
