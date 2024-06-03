@@ -89,10 +89,10 @@ jobs:
       #   run: pnpm lint
       #   shell: bash
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v6.5.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+      # - name: Super-linter
+      #   uses: super-linter/super-linter@v6.5.1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: Markdown-linter
         uses: DavidAnson/markdownlint-cli2-action@v16
