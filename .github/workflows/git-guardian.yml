@@ -1,6 +1,15 @@
 name: "GitGuardian Scan"
 
-on: [push, pull_request]
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+    types:
+      - opened
+      - synchronize
+      - ready_for_review
+      - reopened
 
 jobs:
   scanning:
@@ -12,8 +21,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: GitGuardian scan
         uses: GitGuardian/ggshield-action@master

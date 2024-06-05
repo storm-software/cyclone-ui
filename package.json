@@ -47,7 +47,7 @@
     "adr-preview": "pnpm log4brains preview",
     "api-extractor": "pnpm storm-docs api-extractor --outputPath=\"docs/api-reference\" --clean",
     "build": "nx affected -t build --parallel=5",
-    "build-all": "pnpm build-plugins && pnpm nx run-many -t build --all --parallel=5 --exclude=\"components/*\"",
+    "build-all": "pnpm build-plugins && pnpm nx run-many -t build --all --nxBail --parallel=5 --exclude=\"components/*\"",
     "build-apps": "nx run-many -t build --projects=apps/* --parallel=5",
     "build-docs": "nx run-many -t build --projects=docs/* --parallel=5",
     "build-libs": "nx run-many -t build --projects=libs/* --parallel=5",
