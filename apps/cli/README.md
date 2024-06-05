@@ -118,7 +118,7 @@ _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomp
 
 ## `cyclone-ui build PROJECTROOT`
 
-Cyclone UI - Build
+Build a cyclone-ui package
 
 ```
 USAGE
@@ -136,7 +136,7 @@ FLAGS
   -t, --tsconfig=<file>         tsconfig.json File
 
 DESCRIPTION
-  Cyclone UI - Build
+  Build a cyclone-ui package
 
   Build the theme configuration for the client application based on the colors provided in the Storm configuration file
 
@@ -488,7 +488,7 @@ _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/
 
 ## `cyclone-ui registry get [COMPONENT]`
 
-Cyclone UI - Get Component
+Get design component files from registry
 
 ```
 USAGE
@@ -503,7 +503,7 @@ FLAGS
   -s, --[no-]skip            Skip confirmation prompts
 
 DESCRIPTION
-  Cyclone UI - Get Component
+  Get design component files from registry
 
   A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package
 
@@ -554,7 +554,7 @@ _See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1
 
 ## `cyclone-ui theme clean NAME`
 
-Cyclone UI - Clean Themes
+Clean the workspace's theme configuration
 
 ```
 USAGE
@@ -568,7 +568,7 @@ FLAGS
   -s, --skip                Skip confirmation prompts
 
 DESCRIPTION
-  Cyclone UI - Clean Themes
+  Clean the workspace's theme configuration
 
   Clean the theme configuration for the client application based on the colors provided in the Storm configuration file
 
@@ -599,7 +599,7 @@ _See code: [dist/commands/theme/clean.js](https://github.com/storm-software/cycl
 
 ## `cyclone-ui theme init NAME`
 
-Cyclone UI - Initialize Themes
+Initialize a theme configuration
 
 ```
 USAGE
@@ -615,7 +615,7 @@ FLAGS
   -s, --[no-]skip               Skip confirmation prompts
 
 DESCRIPTION
-  Cyclone UI - Initialize Themes
+  Initialize a theme configuration
 
   Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file
 

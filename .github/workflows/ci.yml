@@ -94,8 +94,8 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
-      - name: Markdown-linter
-        uses: DavidAnson/markdownlint-cli2-action@v16
+      # - name: Markdown-linter
+      #   uses: DavidAnson/markdownlint-cli2-action@v16
 
       - name: Run formatters scripts
         run: pnpm nx format

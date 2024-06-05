@@ -1,9 +1,6 @@
 {
   "extends": "@storm-software/workspace-tools/config/nx.json",
   "cli": {
-    "warnings": {
-      "versionMismatch": true
-    },
     "packageManager": "pnpm"
   },
   "targetDefaults": {
@@ -119,7 +116,8 @@
       "plugin": "@nx/eslint/plugin",
       "exclude": ["packages/**/__fixtures__/**/*"],
       "options": {
-        "targetName": "lint"
+        "targetName": "lint",
+        "useFlatConfig": true
       }
     },
     "@storm-software/workspace-tools/plugins/typescript",

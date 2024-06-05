@@ -1,8 +1,32 @@
 {
   "name": "@cyclone-ui/monorepo",
   "version": "0.0.0",
-  "private": true,
   "description": "A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git"
+  },
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
+  "private": true,
+  "packageManager": "pnpm@8.10.2",
+  "engines": {
+    "node": ">=20.11.0",
+    "pnpm": ">=8.10.2"
+  },
   "keywords": [
     "cyclone-ui",
     "storm",
@@ -18,30 +42,10 @@
     "sullivanpj",
     "monorepo"
   ],
-  "homepage": "https://stormsoftware.com",
-  "bugs": {
-    "url": "https://stormsoftware.com/support",
-    "email": "support@stormsoftware.com"
-  },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/cyclone-ui.git"
-  },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
-  },
-  "license": "Apache-2.0",
-  "author": {
-    "name": "Storm Software",
-    "email": "contact@stormsoftware.com",
-    "url": "https://stormsoftware.com"
-  },
   "scripts": {
     "adr": "pnpm log4brains adr new",
     "adr-preview": "pnpm log4brains preview",
     "api-extractor": "pnpm storm-docs api-extractor --outputPath=\"docs/api-reference\" --clean",
-    "prebuild": "pnpm clean",
     "build": "nx affected -t build --parallel=5",
     "build-all": "pnpm build-plugins && pnpm nx run-many -t build --all --parallel=5 --exclude=\"components/*\"",
     "build-apps": "nx run-many -t build --projects=apps/* --parallel=5",
@@ -63,11 +67,12 @@
     "format": "nx format:write",
     "graph": "nx graph",
     "help": "nx help",
-    "preinstall": "npx -y only-allow pnpm",
     "install-csb": "corepack enable && pnpm install --frozen-lockfile",
     "lint": "pnpm storm-lint all --skip-cspell",
     "local-registry": "nx local-registry @cyclone-ui/cyclone-ui",
     "nx": "nx",
+    "prebuild": "pnpm clean",
+    "preinstall": "npx -y only-allow pnpm",
     "prepare": "pnpm add lefthook -w && pnpm lefthook install",
     "readme-gen": "pnpm storm-git readme-gen --templates=\"docs/readme-templates\"",
     "release": "pnpm storm-git release",
@@ -76,7 +81,6 @@
     "test": "nx test && pnpm test:storybook",
     "test-storybook": "pnpm test-storybook"
   },
-  "prettier": "@storm-software/linting-tools/prettier/config.json",
   "dependencies": {
     "@nx/devkit": "18.3.4",
     "@nx/eslint": "^18.3.4",
@@ -156,7 +160,10 @@
     "@nx/workspace": "18.3.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@rollup/plugin-url": "^7.0.0",
-    "@storm-software/cloudflare-tools": "0.3.0",
+    "@storm-software/cloudflare-tools": "latest",
+    "@storm-software/eslint": "latest",
+    "@storm-software/eslint-plugin": "latest",
+    "@storm-software/prettier": "latest",
     "@storybook/addon-essentials": "7.6.10",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/core-server": "7.6.10",
@@ -175,11 +182,6 @@
     "core-js": "^3.36.1",
     "esbuild": "^0.20.2",
     "esbuild-register": "^3.5.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-hooks": "4.6.0",
     "jsdom": "~22.1.0",
     "lefthook": "^1.6.10",
     "nx": "18.3.4",
@@ -190,10 +192,36 @@
     "webpack-cli": "^5.1.4",
     "wrangler": "^3.51.2"
   },
-  "packageManager": "pnpm@8.10.2",
-  "engines": {
-    "node": ">=20.11.0",
-    "pnpm": ">=8.10.2"
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "dist/*/*.js",
+        "maxSize": "200kB"
+      }
+    ],
+    "ci": {
+      "trackBranches": [
+        "main",
+        "alpha",
+        "beta"
+      ]
+    }
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "namespace": "@cyclone-ui",
+  "nextBundleAnalysis": {
+    "buildOutputDirectory": "dist/apps/website/.next"
+  },
+  "nx": {
+    "includedScripts": [
+      "lint",
+      "format"
+    ]
   },
   "pnpm": {
     "overrides": {
@@ -233,36 +261,6 @@
       "@cyclone-ui/website": "workspace:*"
     }
   },
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "dist/*/*.js",
-        "maxSize": "200kB"
-      }
-    ],
-    "ci": {
-      "trackBranches": [
-        "main",
-        "alpha",
-        "beta"
-      ]
-    }
-  },
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ],
-  "namespace": "@cyclone-ui",
-  "nextBundleAnalysis": {
-    "buildOutputDirectory": "dist/apps/website/.next"
-  },
-  "nx": {
-    "includedScripts": [
-      "lint",
-      "format"
-    ]
-  },
+  "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }
