@@ -42,7 +42,7 @@
       "stacktrace": true
     },
     "cyclone": {
-      "registry": "https://cyclone-ui.com/registry",
+      "registry": "https://registry.cyclone-ui.com",
       "library": "examples/components-test"
     }
   }
