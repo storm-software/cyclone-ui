@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "clean": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
       "inputs": ["default", "^production"],
       "options": {
