@@ -5,13 +5,13 @@
   "namespace": "cyclone-ui",
   "repository": "https://github.com/storm-software/cyclone-ui",
   "organization": "storm-software",
-  "ci": false,
+  "ci": true,
   "owner": "cyclone-ui",
   "timezone": "America/New_York",
   "locale": "en-US",
-  "logLevel": "info",
+  "logLevel": "all",
   "packageManager": "pnpm",
-  "externalPackagePatterns": ["@storm-software/", "@cyclone-ui/"],
+  "externalPackagePatterns": ["@storm-software/"],
   "colors": {
     "light": {
       "background": "#fafafa",
