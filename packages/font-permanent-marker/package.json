@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/font-permanent-marker",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
@@ -12,7 +12,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
-  "type": "module",
+  "private": false,
   "exports": {
     "./package.json": "./package.json",
     "./css/style.css": "./css/style.css",

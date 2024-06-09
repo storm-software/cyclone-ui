@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/config",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "description": "Shared configuration files used by Cyclone UI",
   "repository": {
     "type": "github",
@@ -12,7 +12,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
-  "type": "module",
+  "private": true,
   "dependencies": {
     "@swc-node/register": "~1.8.0",
     "@swc/core": "~1.3.85",

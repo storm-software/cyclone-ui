@@ -1,14 +1,14 @@
 {
   "name": "@cyclone-ui/build",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/build"
   },
-  "type": "module",
+  "private": false,
   "bin": {
     "cyclone-build": "./bin/build.mjs",
     "cyclone-ui-build": "./bin/build.mjs"

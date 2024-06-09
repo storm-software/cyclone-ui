@@ -1,17 +1,16 @@
 {
   "name": "@cyclone-ui/radio-group",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/radio-group"
   },
-  "sideEffects": [
-    "*.css"
-  ],
-  "type": "module",
+  "private": false,
+  "main": "dist/cjs",
+  "module": "dist/esm",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -21,14 +20,16 @@
       "react-native": "./dist/cjs/index.native.js"
     }
   },
-  "main": "dist/cjs",
-  "module": "dist/esm",
   "types": "./types/index.d.ts",
   "files": [
-    "types",
+    "dist",
     "src",
-    "dist"
+    "types"
   ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
   "dependencies": {
     "@tamagui/compose-refs": "^1.98.0",
     "@tamagui/constants": "^1.98.0",
@@ -52,12 +53,11 @@
     "react": "^18.2.0",
     "react-native": "0.73.2"
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-native": "0.73.2"
-  },
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx"
 }

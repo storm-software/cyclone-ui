@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/themes",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "Shared theme configuration files used by Cyclone UI",
   "repository": {
     "type": "github",
@@ -12,7 +12,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
-  "type": "module",
+  "private": false,
   "exports": {
     "./package.json": "./package.json",
     ".": {

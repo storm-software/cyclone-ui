@@ -1,14 +1,14 @@
 {
   "name": "@cyclone-ui/media-queries",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/media-queries"
   },
-  "type": "module",
+  "private": false,
   "dependencies": {
     "@tamagui/react-native-media-driver": "^1.98.0"
   },

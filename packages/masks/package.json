@@ -1,14 +1,14 @@
 {
   "name": "@cyclone-ui/masks",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/masks"
   },
-  "type": "module",
+  "private": false,
   "dependencies": {
     "@storm-software/config": "latest",
     "@tamagui/create-theme": "^1.98.0",

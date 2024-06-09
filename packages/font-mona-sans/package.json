@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/font-mona-sans",
-  "version": "0.0.1",
-  "private": false,
+  "version": "0.1.0",
+  "type": "module",
   "description": "A Cyclone UI package containing the Mono-Sans font and font-related utilities used in the design system",
   "repository": {
     "type": "github",
@@ -12,7 +12,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
-  "type": "module",
+  "private": false,
   "exports": {
     "./package.json": "./package.json",
     "./css/200.css": "./css/200.css",
