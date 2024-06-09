@@ -4,33 +4,6 @@
   "projectType": "library",
   "sourceRoot": "packages/provider/src",
   "targets": {
-    // "build-base": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "pnpm exec tamagui-build",
-    //     "cwd": "packages/provider"
-    //   }
-    // },
-    // "build": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["build-base"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "commands": [
-    //       "pnpm exec rimraf dist/packages/provider",
-    //       "make-dir dist/packages/provider",
-    //       "pnpm exec copyfiles -f LICENSE ./packages/provider/package.json ./packages/provider/*.md  ./dist/packages/provider",
-    //       "pnpm exec copyfiles -u 3 ./packages/provider/dist/**/*.js ./dist/packages/provider/dist",
-    //       "pnpm exec copyfiles -u 3 ./packages/provider/types/**/* ./dist/packages/provider/types"
-    //     ],
-    //     "parallel": false
-    //   }
-    // },
-
     "build": {
       "executor": "@storm-software/workspace-tools:tsup-neutral",
       "outputs": ["{options.outputPath}"],
@@ -40,6 +13,7 @@
         "tsConfig": "packages/provider/tsconfig.json",
         "project": "packages/provider/package.json",
         "defaultConfiguration": "production",
+        "external": ["react-native", "react"],
         "assets": [
           {
             "input": "packages/provider",
@@ -64,7 +38,6 @@
         }
       }
     },
-
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

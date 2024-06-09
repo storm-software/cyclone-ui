@@ -54,7 +54,7 @@
         "tsConfig": "packages/themes/tsconfig.json",
         "project": "packages/themes/package.json",
         "defaultConfiguration": "production",
-        "external": ["react", "react-native"],
+        "external": ["react", "react-native", "@cyclone-ui/*"],
         "assets": [
           {
             "input": "packages/themes",

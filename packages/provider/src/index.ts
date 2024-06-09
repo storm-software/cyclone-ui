@@ -12,4 +12,10 @@ export * from "./ThemeProvider.server";
 export * from "./theme-state";
 export * from "./Provider";
 export * from "./Provider.server";
-export * from "@tamagui/toast";
+export {
+  Toast,
+  ToastViewport,
+  ToastViewportProps,
+  useToastState,
+  useToastController
+} from "@tamagui/toast";
