@@ -27,9 +27,9 @@ pre-commit:
       glob: "**/{lefthook.yml,biome.json}"
       run: "pnpm exec storm-prepare"
     prebuild:
+      files: "git diff --name-only HEAD @{push}"
       glob: "**/*.*"
-      run: "pnpm build-all"
-      stage_fixed: true
+      run: "pnpm build-all && git update-index"
     # validate:
     #   glob: "**/*.*"
     #   run: "pnpm exec storm-pre-commit {staged_files}"
@@ -62,10 +62,10 @@ pre-push:
       glob: "**/*.*"
       run: "pnpm exec storm-pre-push {files}"
       stage_fixed: true
-    build:
-      glob: "**/*.*"
-      run: "pnpm build-all"
-      stage_fixed: true
+    # build:
+    #   files: "git diff --name-only HEAD @{push}"
+    #   glob: "**/*.*"
+    #   run: "pnpm build-all && git update-index"
     # registry:
     #   run: "pnpm nx run-many -t registry --projects=components/* --parallel=5"
     #   glob: "components/**/*"
