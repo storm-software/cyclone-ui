@@ -8,7 +8,7 @@
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/registry-trpc"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@trpc/server": "11.0.0-rc.382",
     "zod": "^3.23.8"
