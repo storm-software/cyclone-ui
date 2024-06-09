@@ -79,6 +79,9 @@ jobs:
         run: pnpm build-plugins
         shell: bash
 
+      - name: Add permissions to CLI tools
+        run: chmod a=rwx apps/cli/bin/run.js
+
       # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
       # If this step fails, then you should remove it and run the build manually (see below)
       - name: Run build script
