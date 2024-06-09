@@ -40,8 +40,8 @@
         }
       }
     },
-    "registry": {
-      "executor": "@cyclone-ui/tools-nx:registry"
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
     }
   }
 }

@@ -50,6 +50,9 @@
           "buildTarget": "registry-worker:build:production"
         }
       }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/cloudflare-tools:cloudflare-publish"
     }
   },
   "tags": []

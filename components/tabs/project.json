@@ -38,6 +38,9 @@
           "verbose": true
         }
       }
+    },
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
     }
   }
 }

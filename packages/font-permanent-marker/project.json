@@ -4,86 +4,6 @@
   "projectType": "library",
   "sourceRoot": "packages/font-permanent-marker/src",
   "targets": {
-    // "build-base": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "command": "pnpm exec tamagui-build --clean --bundle",
-    //     "cwd": "packages/font-permanent-marker"
-    //   }
-    // },
-    // "build": {
-    //   "cache": true,
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["build-base"],
-    //   "executor": "nx:run-commands",
-    //   "options": {
-    //     "commands": [
-    //       "pnpm exec rimraf dist/packages/font-permanent-marker",
-    //       "make-dir dist/packages/font-permanent-marker",
-    //       "pnpm exec copyfiles -f LICENSE ./packages/font-permanent-marker/package.json ./packages/font-permanent-marker/*.md  ./dist/packages/font-permanent-marker",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/dist/**/*.js ./dist/packages/font-permanent-marker/dist",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/types/**/* ./dist/packages/font-permanent-marker/types",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/css/**/*.css ./dist/packages/font-permanent-marker/css",
-    //       "pnpm exec copyfiles -u 3 ./packages/font-permanent-marker/webfonts/**/* ./dist/packages/font-permanent-marker/webfonts"
-    //     ],
-    //     "parallel": false
-    //   }
-    // },
-
-    // "build": {
-    //   "cache": true,
-    //   "executor": "@cyclone-ui/nx:build",
-    //   "inputs": ["default", "^production"],
-    //   "dependsOn": ["^build"],
-    //   "output": "{options.outputPath}",
-    //   "options": {
-    //     "outputPath": "dist/packages/font-permanent-marker",
-    //     "tsConfig": "packages/font-permanent-marker/tsconfig.json",
-    //     "project": "packages/font-permanent-marker/package.json",
-    //     "defaultConfiguration": "production",
-    //     "assets": [
-    //       {
-    //         "input": "packages/font-permanent-marker",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "packages/font-permanent-marker",
-    //         "glob": "css/*.css",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "packages/font-permanent-marker",
-    //         "glob": "ttf/*.ttf",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "packages/font-permanent-marker",
-    //         "glob": "webfonts/{*.woff,*.woff2}",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       }
-    //     ]
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": false,
-    //       "verbose": false
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
-    //   }
-    // },
-
     "build": {
       "executor": "@storm-software/workspace-tools:tsup-neutral",
       "outputs": ["{options.outputPath}"],
@@ -132,7 +52,6 @@
         }
       }
     },
-
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

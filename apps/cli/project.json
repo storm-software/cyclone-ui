@@ -59,6 +59,9 @@
         ],
         "parallel": false
       }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
     }
   },
   "implicitDependencies": ["build", "registry-trpc"]
