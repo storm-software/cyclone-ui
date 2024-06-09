@@ -9,7 +9,7 @@
   "owner": "cyclone-ui",
   "timezone": "America/New_York",
   "locale": "en-US",
-  "logLevel": "all",
+  "logLevel": "info",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
   "colors": {
