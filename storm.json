@@ -12,6 +12,7 @@
   "logLevel": "info",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/"],
+  "cloudflareAccountId": "d011605e7391539ac2e021ab4399e116",
   "colors": {
     "light": {
       "background": "#fafafa",
@@ -42,7 +43,7 @@
       "stacktrace": true
     },
     "cyclone": {
-      "registry": "https://registry.cyclone-ui.com",
+      "registry": "https://storm-cdn.com",
       "library": "examples/components-test"
     }
   }

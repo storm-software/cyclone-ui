@@ -8,7 +8,6 @@
     "streetsidesoftware.code-spell-checker",
     "editorconfig.editorconfig",
     "ambar.bundle-size",
-    "vscode-icons-team.vscode-icons",
-    "davidanson.vscode-markdownlint"
+    "vscode-icons-team.vscode-icons"
   ]
 }

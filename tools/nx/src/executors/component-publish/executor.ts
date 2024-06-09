@@ -1,22 +1,22 @@
+import { createHash } from "crypto";
+import { readFile } from "fs/promises";
+import { execSync } from "node:child_process";
+import { glob } from "glob";
+import {
+  DeleteObjectsCommand,
+  PutObjectCommand,
+  S3Client
+} from "@aws-sdk/client-s3";
 import {
   ExecutorContext,
+  joinPathFragments,
   ProjectGraph,
   ProjectGraphDependency,
   ProjectGraphProjectNode,
-  joinPathFragments,
   readCachedProjectGraph,
   readJsonFile
 } from "@nx/devkit";
 import { ComponentPublishExecutorSchema } from "./schema";
-import {
-  S3Client,
-  PutObjectCommand,
-  DeleteObjectsCommand
-} from "@aws-sdk/client-s3";
-import { createHash } from "crypto";
-import { glob } from "glob";
-import { readFile } from "fs/promises";
-import { execSync } from "node:child_process";
 
 export default async function runExecutor(
   options: ComponentPublishExecutorSchema,
@@ -168,7 +168,7 @@ export default async function runExecutor(
     if (!isDryRun) {
       await s3Client.send(
         new DeleteObjectsCommand({
-          Bucket: "storm-cdn-cyclone-ui",
+          Bucket: "cyclone-ui-storage",
           Delete: {
             Objects: [
               {
