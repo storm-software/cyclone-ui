@@ -1,20 +1,22 @@
-const eslintPlugin = require("@storm-software/eslint-plugin/index.cjs");
+import eslintConfig from "eslint-plugin-storm-software";
+
 // const baseConfig = require("@storm-software/eslint/base");
-const { FlatCompat } = require("@eslint/eslintrc");
+// const { FlatCompat } = require("@eslint/eslintrc");
 
 // module.exports = apply({
 //   baseDirectory: __dirname,
 //   useReact: true
 // });
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslintPlugin.configs.recommended,
-  allConfig: undefined
-});
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+//   recommendedConfig: eslintPlugin.configs.recommended,
+//   allConfig: undefined
+// });
 
 module.exports = [
-  { plugins: { "@storm-software": eslintPlugin } }
+  ...eslintConfig
+  // { plugins: { "@storm-software": eslintPlugin } }
   // ...compat
   //   .config({
   //     parser: "jsonc-eslint-parser",
