@@ -1,19 +1,19 @@
+import { useContext } from "react";
+import { Link, LinkProps } from "@cyclone-ui/link";
+import { ColorRole } from "@cyclone-ui/tokens";
 import {
+  createStyledContext,
   FontSizeTokens,
+  styled,
   Theme,
   ThemeableProps,
-  createStyledContext,
-  styled,
   useThemeName
 } from "@tamagui/core";
-import type { SizableTextProps, TextContextStyles } from "@tamagui/text";
-import { ThemeableStack, XStack } from "@tamagui/stacks";
-import { Link, LinkProps } from "@cyclone-ui/link";
-import { SizableText } from "@tamagui/text";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ChevronsRight, ChevronRight, Slash } from "@tamagui/lucide-icons";
-import { useContext } from "react";
-import { ColorRole } from "@cyclone-ui/themes";
+import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";
+import { ThemeableStack, XStack } from "@tamagui/stacks";
+import type { SizableTextProps, TextContextStyles } from "@tamagui/text";
+import { SizableText } from "@tamagui/text";
 
 export type BreadcrumbDivider = "chevron" | "double" | "slash";
 export const BreadcrumbDivider = {

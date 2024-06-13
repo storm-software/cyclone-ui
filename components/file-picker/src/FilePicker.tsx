@@ -1,47 +1,47 @@
-import {
-  Trash2,
-  UploadCloud,
-  Asterisk,
-  Download,
-  AlertCircle,
-  CheckCircle,
-  HelpCircle,
-  Info,
-  Lock
-} from "@tamagui/lucide-icons";
 import { Dispatch, SetStateAction } from "react";
+import { DocumentPickerAsset } from "expo-document-picker";
+import { Linking } from "react-native";
 import { Button } from "@cyclone-ui/button";
+import { ColorRole } from "@cyclone-ui/tokens";
+import { format } from "@formkit/tempo";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
-  View,
-  Text,
   createStyledContext,
-  styled,
-  withStaticProperties,
-  type ColorTokens,
   FontSizeTokens,
-  VariantSpreadExtras,
-  TextProps,
-  isWeb,
-  useTheme,
   getVariable,
-  useThemeName
+  isWeb,
+  styled,
+  Text,
+  TextProps,
+  useTheme,
+  useThemeName,
+  VariantSpreadExtras,
+  View,
+  withStaticProperties,
+  type ColorTokens
 } from "@tamagui/core";
-import { Label } from "@tamagui/label";
-import { format } from "@formkit/tempo";
-import { XStack, YStack } from "@tamagui/stacks";
-import { useFilePicker } from "./useFilePicker";
-import { MediaTypeOptions } from "./file-picker-types";
-import { ColorRole } from "@cyclone-ui/themes";
-import { Image } from "@tamagui/image";
-import { DocumentPickerAsset } from "expo-document-picker";
-import { useControllableState } from "@tamagui/use-controllable-state";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import type { SizableTextProps } from "@tamagui/text";
-import { SizableText } from "@tamagui/text";
-import { Linking } from "react-native";
 import { getFontSize } from "@tamagui/font-size";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { Image } from "@tamagui/image";
+import { Label } from "@tamagui/label";
+import { LinearGradient } from "@tamagui/linear-gradient";
+import {
+  AlertCircle,
+  Asterisk,
+  CheckCircle,
+  Download,
+  HelpCircle,
+  Info,
+  Lock,
+  Trash2,
+  UploadCloud
+} from "@tamagui/lucide-icons";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { SizableTextProps } from "@tamagui/text";
+import { SizableText } from "@tamagui/text";
+import { useControllableState } from "@tamagui/use-controllable-state";
+import { MediaTypeOptions } from "./file-picker-types";
+import { useFilePicker } from "./useFilePicker";
 
 export interface FileResult extends DocumentPickerAsset {
   id: number;

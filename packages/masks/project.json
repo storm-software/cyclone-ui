@@ -13,7 +13,7 @@
         "tsConfig": "packages/masks/tsconfig.json",
         "project": "packages/masks/package.json",
         "defaultConfiguration": "production",
-        "external": ["react", "react-native"],
+        "external": ["@cyclone-ui/*"],
         "assets": [
           {
             "input": "packages/masks",

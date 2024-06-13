@@ -1,6 +1,6 @@
+import { colors } from "@cyclone-ui/colors";
 import type { Variable } from "@tamagui/web";
 import { createTokens } from "@tamagui/web";
-import colors from "./colors";
 
 // should roughly map to button/input etc height at each level
 // fonts should match that height/lineHeight at each stop

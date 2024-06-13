@@ -9,6 +9,8 @@ workers_dev = true
 binding = "STORAGE_BUCKET"
 bucket_name = "storm-cdn-cyclone-ui"
 
+routes = [{ pattern = "registry.cyclone-ui.com", custom_domain = true }]
+
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables

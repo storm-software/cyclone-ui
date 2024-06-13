@@ -1,10 +1,10 @@
-import { shorthands } from "@cyclone-ui/shorthands";
-import { tokens, brand } from "@cyclone-ui/themes";
 import { animations } from "@cyclone-ui/animations";
+import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
+import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
 import { media, mediaQueryDefaultActive } from "@cyclone-ui/media-queries";
-import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
-import { createMonaSansFont } from "@cyclone-ui/font-mona-sans";
+import { shorthands } from "@cyclone-ui/shorthands";
+import { brand, tokens } from "@cyclone-ui/tokens";
 import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
 const permanentMarkerFont = createPermanentMarkerFont({

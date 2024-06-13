@@ -1,12 +1,3 @@
-import { getFontSized } from "@tamagui/get-font-sized";
-import { getSpace } from "@tamagui/get-token";
-import type {
-  GetProps,
-  SizeVariantSpreadFunction,
-  TextProps,
-  VariantSpreadExtras
-} from "@tamagui/web";
-import { withStaticProperties } from "@tamagui/helpers";
 import {
   useCallback,
   useId,
@@ -15,40 +6,49 @@ import {
   useRef,
   useState
 } from "react";
-import { Label } from "@tamagui/label";
-import { XGroup } from "@tamagui/group";
+import { ColorRole } from "@cyclone-ui/tokens";
+import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
-import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
-  Text,
-  View,
-  styled,
   createStyledContext,
+  getVariable,
+  styled,
+  Text,
   useTheme,
-  getVariable
+  View
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
+import { getFontSized } from "@tamagui/get-font-sized";
+import { getSpace } from "@tamagui/get-token";
+import { XGroup } from "@tamagui/group";
+import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { Label } from "@tamagui/label";
+import { LinearGradient } from "@tamagui/linear-gradient";
+import {
+  AlertCircle,
+  Asterisk,
+  Check,
+  CheckCircle,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Info,
+  Lock
+} from "@tamagui/lucide-icons";
 import {
   Select as TamaguiSelect,
   type SelectProps as TamaguiSelectProps
 } from "@tamagui/select";
-import {
-  Asterisk,
-  AlertCircle,
-  Info,
-  HelpCircle,
-  CheckCircle,
-  Lock,
-  ChevronUp,
-  ChevronDown,
-  Check
-} from "@tamagui/lucide-icons";
-import { ColorRole } from "@cyclone-ui/themes";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import { Adapt } from "@tamagui/adapt";
 import { Sheet } from "@tamagui/sheet";
+import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
+import type {
+  GetProps,
+  SizeVariantSpreadFunction,
+  TextProps,
+  VariantSpreadExtras
+} from "@tamagui/web";
 
 const defaultContextValues = {
   size: "$true",

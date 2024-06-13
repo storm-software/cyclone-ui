@@ -1,4 +1,17 @@
+import { ColorRole } from "@cyclone-ui/types";
+import {
+  createStyledContext,
+  getVariable,
+  styled,
+  useTheme,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
+import { getFontSize } from "@tamagui/font-size";
+import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack, YStack } from "@tamagui/stacks";
+import { SizableText } from "@tamagui/text";
 import type {
   ColorTokens,
   FontSizeTokens,
@@ -7,19 +20,6 @@ import type {
   TextProps,
   VariantSpreadExtras
 } from "@tamagui/web";
-import {
-  View,
-  createStyledContext,
-  getVariable,
-  styled,
-  useTheme,
-  withStaticProperties
-} from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import { SizableText } from "@tamagui/text";
-import { getFontSize } from "@tamagui/font-size";
-import { ColorRole } from "@cyclone-ui/themes";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 
 const defaultContextValues = {
   size: "$3" as SizeTokens,

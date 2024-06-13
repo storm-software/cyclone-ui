@@ -1,12 +1,11 @@
-import type { CreateMask, MaskFunction, MaskOptions } from "./types";
 import {
-  objectEntries,
-  objectFromEntries,
-  isMinusZero,
   applyMaskStateless,
-  getThemeInfo
+  getThemeInfo,
+  isMinusZero,
+  objectEntries,
+  objectFromEntries
 } from "./helpers";
-import merge from "deepmerge";
+import type { CreateMask, MaskFunction, MaskOptions } from "./types";
 
 export const combineMasks = (...masks: CreateMask[]) => {
   const mask: CreateMask = {

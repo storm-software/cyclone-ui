@@ -13,6 +13,7 @@
         "tsConfig": "packages/media-queries/tsconfig.json",
         "project": "packages/media-queries/package.json",
         "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*", "react", "react-native"],
         "assets": [
           {
             "input": "packages/media-queries",

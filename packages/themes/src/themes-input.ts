@@ -1,3 +1,3 @@
-import { buildThemes } from "./build-themes";
+import { buildThemes } from "@cyclone-ui/theme-helpers";
 
 export const themes = buildThemes();

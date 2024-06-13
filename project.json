@@ -16,11 +16,16 @@
       "inputs": [
         {
           "input": "production",
-          "projects": ["*", "!tools-nx"]
+          "projects": [
+            "*",
+            "!tools-nx"
+          ]
         }
       ],
       "command": "node ./scripts/local-registry/run-populate-storage.mjs",
-      "outputs": ["{workspaceRoot}/dist/local-registry/storage"]
+      "outputs": [
+        "{workspaceRoot}/dist/local-registry/storage"
+      ]
     }
   }
 }

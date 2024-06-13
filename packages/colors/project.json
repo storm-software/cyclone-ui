@@ -1,0 +1,62 @@
+{
+  "name": "colors",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/colors/src",
+  "targets": {
+    "build-base": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": ["{workspaceRoot}/storm.json"],
+      "outputs": ["{projectRoot}/src/schemes/*"],
+      "dependsOn": ["^build"],
+      "options": {
+        "commands": [
+          {
+            "command": "\"apps/cli/bin/run.js\" theme init --clean --outputPath \"packages/colors/src/schemes\""
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["build-base", "^build"],
+      "options": {
+        "entry": "packages/colors/src/index.ts",
+        "outputPath": "dist/packages/colors",
+        "tsConfig": "packages/colors/tsconfig.json",
+        "project": "packages/colors/package.json",
+        "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*"],
+        "assets": [
+          {
+            "input": "packages/colors",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  },
+  "implicitDependencies": ["cli"]
+}

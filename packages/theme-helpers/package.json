@@ -1,0 +1,23 @@
+{
+  "name": "@cyclone-ui/theme-helpers",
+  "version": "0.0.1",
+  "description": "Shared theme configuration files used by Cyclone UI",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/theme-helpers"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "private": false,
+  "dependencies": {
+    "@tamagui/core": "^1.98.0",
+    "@tamagui/theme-builder": "^1.98.0",
+    "@tamagui/web": "^1.98.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

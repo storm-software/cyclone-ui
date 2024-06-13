@@ -1,0 +1,24 @@
+{
+  "name": "@cyclone-ui/animations",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/animations"
+  },
+  "private": false,
+  "dependencies": {
+    "@tamagui/animations-css": "^1.98.0",
+    "@tamagui/animations-moti": "^1.98.0",
+    "@tamagui/animations-react-native": "^1.98.0",
+    "@tamagui/core": "^1.98.0",
+    "@tamagui/react-native-media-driver": "^1.98.0",
+    "@tamagui/web": "^1.98.0",
+    "react-native-reanimated": "^3.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

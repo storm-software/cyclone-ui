@@ -1,0 +1,46 @@
+{
+  "name": "theme-helpers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/theme-helpers/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/theme-helpers/src/index.ts",
+        "outputPath": "dist/packages/theme-helpers",
+        "tsConfig": "packages/theme-helpers/tsconfig.json",
+        "project": "packages/theme-helpers/package.json",
+        "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*", "react", "react-native"],
+        "assets": [
+          {
+            "input": "packages/theme-helpers",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

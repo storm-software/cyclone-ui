@@ -1,11 +1,11 @@
+import { Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
+import { ColorRole } from "@cyclone-ui/tokens";
 import { isWeb } from "@tamagui/constants";
 import { styled, useThemeName } from "@tamagui/core";
+import { Square } from "@tamagui/shapes";
 import type { SizableTextProps } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
-import { Square } from "@tamagui/shapes";
-import { Linking } from "react-native";
-import { ColorRole } from "@cyclone-ui/themes";
 
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;

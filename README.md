@@ -25,12 +25,7 @@ maintainable.
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fstorm-software%2Fcyclone-ui.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fstorm-software%2Fcyclone-ui?ref=badge_large&issueType=license)
 
 > [!IMPORTANT] This repository, and the apps, libraries, and tools contained
-> within, is still in it's initial development phase. As a result, bugs and
-> issues are expected with it's usage. When the main development phase
-> completes, a proper release will be performed, the packages will be availible
-> through NPM (and other distributions), and this message will be removed.
-> However, in the meantime, please feel free to report any issues you may come
-> across.
+> within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be availible through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
 
 <br />
 

@@ -1,6 +1,6 @@
+import { colors } from "@cyclone-ui/colors";
+import { ColorPalette, ColorRole } from "@cyclone-ui/types";
 import { colorTokens } from "./tokens";
-import colors from "./colors";
-import { ColorPalette, ColorRole } from "./types";
 
 type ObjectType = Record<PropertyKey, unknown>;
 

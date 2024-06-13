@@ -1,0 +1,15 @@
+{
+  "name": "@cyclone-ui/types",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A base package containing various type definitions used by Cyclone UI",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/types"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

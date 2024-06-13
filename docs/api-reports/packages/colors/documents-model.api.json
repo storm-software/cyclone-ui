@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.46.2",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@cyclone-ui/colors!",
+  "docComment": "",
+  "name": "@cyclone-ui/colors",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@cyclone-ui/colors!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/colors!colors:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "colors: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorThemeTokens",
+              "canonicalReference": "@cyclone-ui/colors!~ColorThemeTokens:type"
+            }
+          ],
+          "fileUrlPath": "packages/colors/src/colors.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "colors",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/colors!colorSchemes:var",
+          "docComment": "/**\n * The colors library used by Storm Software for building TypeScript applications.\n *\n * @remarks\n *\n * A package containing the Cyclone UI default color scheme\n *\n * @packageDocumentation\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "colorSchemes: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    default: {\n        light: {\n            base: {\n                base1: string;\n                base2: string;\n                base3: string;\n                base4: string;\n                base5: string;\n                base6: string;\n                base7: string;\n                base8: string;\n                base9: string;\n                base10: string;\n                base11: string;\n                base12: string;\n            };\n            brand: {\n                brand1: string;\n                brand2: string;\n                brand3: string;\n                brand4: string;\n                brand5: string;\n                brand6: string;\n                brand7: string;\n                brand8: string;\n                brand9: string;\n                brand10: string;\n                brand11: string;\n                brand12: string;\n            };\n            help: {\n                help1: string;\n                help2: string;\n                help3: string;\n                help4: string;\n                help5: string;\n                help6: string;\n                help7: string;\n                help8: string;\n                help9: string;\n                help10: string;\n                help11: string;\n                help12: string;\n            };\n            success: {\n                success1: string;\n                success2: string;\n                success3: string;\n                success4: string;\n                success5: string;\n                success6: string;\n                success7: string;\n                success8: string;\n                success9: string;\n                success10: string;\n                success11: string;\n                success12: string;\n            };\n            info: {\n                info1: string;\n                info2: string;\n                info3: string;\n                info4: string;\n                info5: string;\n                info6: string;\n                info7: string;\n                info8: string;\n                info9: string;\n                info10: string;\n                info11: string;\n                info12: string;\n            };\n            warning: {\n                warning1: string;\n                warning2: string;\n                warning3: string;\n                warning4: string;\n                warning5: string;\n                warning6: string;\n                warning7: string;\n                warning8: string;\n                warning9: string;\n                warning10: string;\n                warning11: string;\n                warning12: string;\n            };\n            error: {\n                error1: string;\n                error2: string;\n                error3: string;\n                error4: string;\n                error5: string;\n                error6: string;\n                error7: string;\n                error8: string;\n                error9: string;\n                error10: string;\n                error11: string;\n                error12: string;\n            };\n            accent: {\n                accent1: string;\n                accent2: string;\n                accent3: string;\n                accent4: string;\n                accent5: string;\n                accent6: string;\n                accent7: string;\n                accent8: string;\n                accent9: string;\n                accent10: string;\n                accent11: string;\n                accent12: string;\n            };\n        };\n        dark: {\n            base: {\n                base1: string;\n                base2: string;\n                base3: string;\n                base4: string;\n                base5: string;\n                base6: string;\n                base7: string;\n                base8: string;\n                base9: string;\n                base10: string;\n                base11: string;\n                base12: string;\n            };\n            brand: {\n                brand1: string;\n                brand2: string;\n                brand3: string;\n                brand4: string;\n                brand5: string;\n                brand6: string;\n                brand7: string;\n                brand8: string;\n                brand9: string;\n                brand10: string;\n                brand11: string;\n                brand12: string;\n            };\n            help: {\n                help1: string;\n                help2: string;\n                help3: string;\n                help4: string;\n                help5: string;\n                help6: string;\n                help7: string;\n                help8: string;\n                help9: string;\n                help10: string;\n                help11: string;\n                help12: string;\n            };\n            success: {\n                success1: string;\n                success2: string;\n                success3: string;\n                success4: string;\n                success5: string;\n                success6: string;\n                success7: string;\n                success8: string;\n                success9: string;\n                success10: string;\n                success11: string;\n                success12: string;\n            };\n            info: {\n                info1: string;\n                info2: string;\n                info3: string;\n                info4: string;\n                info5: string;\n                info6: string;\n                info7: string;\n                info8: string;\n                info9: string;\n                info10: string;\n                info11: string;\n                info12: string;\n            };\n            warning: {\n                warning1: string;\n                warning2: string;\n                warning3: string;\n                warning4: string;\n                warning5: string;\n                warning6: string;\n                warning7: string;\n                warning8: string;\n                warning9: string;\n                warning10: string;\n                warning11: string;\n                warning12: string;\n            };\n            error: {\n                error1: string;\n                error2: string;\n                error3: string;\n                error4: string;\n                error5: string;\n                error6: string;\n                error7: string;\n                error8: string;\n                error9: string;\n                error10: string;\n                error11: string;\n                error12: string;\n            };\n            accent: {\n                accent1: string;\n                accent2: string;\n                accent3: string;\n                accent4: string;\n                accent5: string;\n                accent6: string;\n                accent7: string;\n                accent8: string;\n                accent9: string;\n                accent10: string;\n                accent11: string;\n                accent12: string;\n            };\n        };\n    };\n}"
+            }
+          ],
+          "fileUrlPath": "packages/colors/src/index.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "colorSchemes",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/colors!external_2:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "external: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorThemeTokens",
+              "canonicalReference": "@cyclone-ui/colors!~ExtendedColorThemeTokens:type"
+            }
+          ],
+          "fileUrlPath": "packages/colors/src/colors.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "external_2",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/colors!theme_2:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "theme: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    base: {\n        base1: string;\n        base2: string;\n        base3: string;\n        base4: string;\n        base5: string;\n        base6: string;\n        base7: string;\n        base8: string;\n        base9: string;\n        base10: string;\n        base11: string;\n        base12: string;\n    };\n    brand: {\n        brand1: string;\n        brand2: string;\n        brand3: string;\n        brand4: string;\n        brand5: string;\n        brand6: string;\n        brand7: string;\n        brand8: string;\n        brand9: string;\n        brand10: string;\n        brand11: string;\n        brand12: string;\n    };\n    help: {\n        help1: string;\n        help2: string;\n        help3: string;\n        help4: string;\n        help5: string;\n        help6: string;\n        help7: string;\n        help8: string;\n        help9: string;\n        help10: string;\n        help11: string;\n        help12: string;\n    };\n    success: {\n        success1: string;\n        success2: string;\n        success3: string;\n        success4: string;\n        success5: string;\n        success6: string;\n        success7: string;\n        success8: string;\n        success9: string;\n        success10: string;\n        success11: string;\n        success12: string;\n    };\n    info: {\n        info1: string;\n        info2: string;\n        info3: string;\n        info4: string;\n        info5: string;\n        info6: string;\n        info7: string;\n        info8: string;\n        info9: string;\n        info10: string;\n        info11: string;\n        info12: string;\n    };\n    warning: {\n        warning1: string;\n        warning2: string;\n        warning3: string;\n        warning4: string;\n        warning5: string;\n        warning6: string;\n        warning7: string;\n        warning8: string;\n        warning9: string;\n        warning10: string;\n        warning11: string;\n        warning12: string;\n    };\n    error: {\n        error1: string;\n        error2: string;\n        error3: string;\n        error4: string;\n        error5: string;\n        error6: string;\n        error7: string;\n        error8: string;\n        error9: string;\n        error10: string;\n        error11: string;\n        error12: string;\n    };\n    accent: {\n        accent1: string;\n        accent2: string;\n        accent3: string;\n        accent4: string;\n        accent5: string;\n        accent6: string;\n        accent7: string;\n        accent8: string;\n        accent9: string;\n        accent10: string;\n        accent11: string;\n        accent12: string;\n    };\n}"
+            }
+          ],
+          "fileUrlPath": "packages/colors/src/schemes/brand-light.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "theme_2",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/colors!theme:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "theme: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    base: {\n        base1: string;\n        base2: string;\n        base3: string;\n        base4: string;\n        base5: string;\n        base6: string;\n        base7: string;\n        base8: string;\n        base9: string;\n        base10: string;\n        base11: string;\n        base12: string;\n    };\n    brand: {\n        brand1: string;\n        brand2: string;\n        brand3: string;\n        brand4: string;\n        brand5: string;\n        brand6: string;\n        brand7: string;\n        brand8: string;\n        brand9: string;\n        brand10: string;\n        brand11: string;\n        brand12: string;\n    };\n    help: {\n        help1: string;\n        help2: string;\n        help3: string;\n        help4: string;\n        help5: string;\n        help6: string;\n        help7: string;\n        help8: string;\n        help9: string;\n        help10: string;\n        help11: string;\n        help12: string;\n    };\n    success: {\n        success1: string;\n        success2: string;\n        success3: string;\n        success4: string;\n        success5: string;\n        success6: string;\n        success7: string;\n        success8: string;\n        success9: string;\n        success10: string;\n        success11: string;\n        success12: string;\n    };\n    info: {\n        info1: string;\n        info2: string;\n        info3: string;\n        info4: string;\n        info5: string;\n        info6: string;\n        info7: string;\n        info8: string;\n        info9: string;\n        info10: string;\n        info11: string;\n        info12: string;\n    };\n    warning: {\n        warning1: string;\n        warning2: string;\n        warning3: string;\n        warning4: string;\n        warning5: string;\n        warning6: string;\n        warning7: string;\n        warning8: string;\n        warning9: string;\n        warning10: string;\n        warning11: string;\n        warning12: string;\n    };\n    error: {\n        error1: string;\n        error2: string;\n        error3: string;\n        error4: string;\n        error5: string;\n        error6: string;\n        error7: string;\n        error8: string;\n        error9: string;\n        error10: string;\n        error11: string;\n        error12: string;\n    };\n    accent: {\n        accent1: string;\n        accent2: string;\n        accent3: string;\n        accent4: string;\n        accent5: string;\n        accent6: string;\n        accent7: string;\n        accent8: string;\n        accent9: string;\n        accent10: string;\n        accent11: string;\n        accent12: string;\n    };\n}"
+            }
+          ],
+          "fileUrlPath": "packages/colors/src/schemes/brand-dark.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "theme",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        }
+      ]
+    }
+  ]
+}

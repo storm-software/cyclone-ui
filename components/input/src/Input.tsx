@@ -1,42 +1,42 @@
+import { useId, useState } from "react";
+import {
+  Input as TamaguiInput,
+  useControllableState,
+  type InputProps as TamaguiInputProps
+} from "tamagui";
+import { ColorRole } from "@cyclone-ui/tokens";
+import { isWeb } from "@tamagui/constants";
+import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
+import {
+  createStyledContext,
+  getVariable,
+  styled,
+  Text,
+  useTheme,
+  View
+} from "@tamagui/core";
+import { getFontSize } from "@tamagui/font-size";
 import { getFontSized } from "@tamagui/get-font-sized";
 import { getSpace } from "@tamagui/get-token";
+import { XGroup } from "@tamagui/group";
+import { withStaticProperties } from "@tamagui/helpers";
+import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { Label } from "@tamagui/label";
+import {
+  AlertCircle,
+  Asterisk,
+  CheckCircle,
+  HelpCircle,
+  Info,
+  Lock
+} from "@tamagui/lucide-icons";
+import { XStack } from "@tamagui/stacks";
 import type {
   GetProps,
   SizeVariantSpreadFunction,
   TextProps,
   VariantSpreadExtras
 } from "@tamagui/web";
-import { withStaticProperties } from "@tamagui/helpers";
-import { useId, useState } from "react";
-import { Label } from "@tamagui/label";
-import { XGroup } from "@tamagui/group";
-import { isWeb } from "@tamagui/constants";
-import { XStack } from "@tamagui/stacks";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
-import {
-  Text,
-  View,
-  styled,
-  createStyledContext,
-  useTheme,
-  getVariable
-} from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import {
-  Input as TamaguiInput,
-  useControllableState,
-  type InputProps as TamaguiInputProps
-} from "tamagui";
-import {
-  Asterisk,
-  AlertCircle,
-  Info,
-  HelpCircle,
-  CheckCircle,
-  Lock
-} from "@tamagui/lucide-icons";
-import { ColorRole } from "@cyclone-ui/themes";
 
 const defaultContextValues = {
   size: "$true",

@@ -4,94 +4,89 @@
 
 ```ts
 
-import { JSX as JSX_2 } from 'react/jsx-runtime';
-import { PropsWithChildren } from 'react';
-import { StoreApi } from 'zustand/vanilla';
-import { TamaguiProviderProps } from '@tamagui/web';
-import { Toast } from '@tamagui/toast';
-import { ToastProviderProps as ToastProviderProps_2 } from '@tamagui/toast';
-import { ToastViewport } from '@tamagui/toast';
-import { ToastViewportProps } from '@tamagui/toast';
-import { UseBoundStoreWithEqualityFn } from 'zustand/traditional';
-import { useToastController } from '@tamagui/toast';
-import { useToastState } from '@tamagui/toast';
+// @public (undocumented)
+type ColorPalette<TRole extends ColorRole = ColorRole, TKey extends string = `${TRole}${ColorPaletteShade}`> = {
+    [key in TKey]?: string;
+};
+export { ColorPalette }
+export { ColorPalette as ColorPalette_alias_1 }
 
 // @public (undocumented)
-const Provider: ({ children, toast, theme, ...props }: ProviderProps) => JSX_2.Element;
-export { Provider }
-export { Provider as Provider_alias_1 }
+type ColorPaletteShade = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
+export { ColorPaletteShade }
+export { ColorPaletteShade as ColorPaletteShade_alias_1 }
 
 // @public (undocumented)
-type ProviderProps = PropsWithChildren<{
-    toast?: ToastProviderProps;
-    theme?: ThemeProviderProps;
-}>;
-export { ProviderProps }
-export { ProviderProps as ProviderProps_alias_1 }
+type ColorRole = "base" | "brand" | "accent" | "help" | "success" | "info" | "warning" | "error";
 
 // @public (undocumented)
-const ProviderServer: ({ children, toast, theme, ...props }: ProviderServerProps) => JSX_2.Element;
-export { ProviderServer }
-export { ProviderServer as ProviderServer_alias_1 }
+const ColorRole: {
+    BASE: ColorRole;
+    BRAND: ColorRole;
+    ACCENT: ColorRole;
+    HELP: ColorRole;
+    SUCCESS: ColorRole;
+    INFO: ColorRole;
+    WARNING: ColorRole;
+    ERROR: ColorRole;
+};
+export { ColorRole }
+export { ColorRole as ColorRole_alias_1 }
 
 // @public (undocumented)
-type ProviderServerProps = PropsWithChildren<{
-    toast?: ToastProviderProps;
-    theme?: ThemeProviderServerProps;
-}>;
-export { ProviderServerProps }
-export { ProviderServerProps as ProviderServerProps_alias_1 }
+type ColorTheme<TRole extends ColorRole = ColorRole> = Record<TRole, ColorPalette<TRole>>;
+export { ColorTheme }
+export { ColorTheme as ColorTheme_alias_1 }
 
 // @public (undocumented)
-const ThemeProvider: ({ children, ...props }: ThemeProviderProps) => JSX_2.Element;
-export { ThemeProvider }
-export { ThemeProvider as ThemeProvider_alias_1 }
+type ColorThemeMode = "dark" | "light";
 
 // @public (undocumented)
-type ThemeProviderProps = PropsWithChildren<Partial<TamaguiProviderProps> & Omit<TamaguiProviderProps, "defaultTheme">>;
-export { ThemeProviderProps }
-export { ThemeProviderProps as ThemeProviderProps_alias_1 }
+const ColorThemeMode: {
+    DARK: ColorThemeMode;
+    LIGHT: ColorThemeMode;
+};
+export { ColorThemeMode }
+export { ColorThemeMode as ColorThemeMode_alias_1 }
 
 // @public (undocumented)
-const ThemeProviderServer: ({ children, ...props }: ThemeProviderServerProps) => JSX_2.Element;
-export { ThemeProviderServer }
-export { ThemeProviderServer as ThemeProviderServer_alias_1 }
+type ColorThemeTokens<TRole extends ColorRole = ColorRole> = Record<`${TRole}` | `${TRole}Dark`, ColorPalette<TRole>>;
+export { ColorThemeTokens }
+export { ColorThemeTokens as ColorThemeTokens_alias_1 }
 
 // @public (undocumented)
-type ThemeProviderServerProps = PropsWithChildren<Partial<TamaguiProviderProps> & Omit<TamaguiProviderProps, "defaultTheme">>;
-export { ThemeProviderServerProps }
-export { ThemeProviderServerProps as ThemeProviderServerProps_alias_1 }
-
-export { Toast }
-
-// @public (undocumented)
-export const ToastProvider: ({ children, ...props }: ToastProviderProps) => JSX_2.Element;
+type ExtendedColorPalette<TRole extends ExtendedColorRole = ExtendedColorRole, TKey extends string = `${TRole}${ColorPaletteShade}`> = {
+    [key in TKey]?: string;
+};
+export { ExtendedColorPalette }
+export { ExtendedColorPalette as ExtendedColorPalette_alias_1 }
 
 // @public (undocumented)
-export type ToastProviderProps = PropsWithChildren<Partial<ToastProviderProps_2> & Omit<ToastProviderProps_2, "id" | "label">>;
-
-export { ToastViewport }
-
-export { ToastViewportProps }
+type ExtendedColorRole = "blue" | "gray" | "green" | "orange" | "pink" | "purple" | "red" | "yellow";
 
 // @public (undocumented)
-const useThemeNameState: (defaultName?: ThemeVars) => ThemeVars | undefined;
-export { useThemeNameState }
-export { useThemeNameState as useThemeNameState_alias_1 }
+const ExtendedColorRole: {
+    BLUE: ExtendedColorRole;
+    GRAY: ExtendedColorRole;
+    GREEN: ExtendedColorRole;
+    ORANGE: ExtendedColorRole;
+    PINK: ExtendedColorRole;
+    PURPLE: ExtendedColorRole;
+    RED: ExtendedColorRole;
+    YELLOW: ExtendedColorRole;
+};
+export { ExtendedColorRole }
+export { ExtendedColorRole as ExtendedColorRole_alias_1 }
 
 // @public (undocumented)
-const useThemeState: UseBoundStoreWithEqualityFn<StoreApi<Theme>>;
-export { useThemeState }
-export { useThemeState as useThemeState_alias_1 }
+type ExtendedColorTheme<TRole extends ExtendedColorRole = ExtendedColorRole> = Record<TRole, ExtendedColorPalette<TRole>>;
+export { ExtendedColorTheme }
+export { ExtendedColorTheme as ExtendedColorTheme_alias_1 }
 
 // @public (undocumented)
-const useThemeToggle: () => () => void;
-export { useThemeToggle }
-export { useThemeToggle as useThemeToggle_alias_1 }
-
-export { useToastController }
-
-export { useToastState }
+type ExtendedColorThemeTokens<TRole extends ExtendedColorRole = ExtendedColorRole> = Record<`${TRole}` | `${TRole}Dark`, ExtendedColorPalette<TRole>>;
+export { ExtendedColorThemeTokens }
+export { ExtendedColorThemeTokens as ExtendedColorThemeTokens_alias_1 }
 
 // (No @packageDocumentation comment for this package)
 

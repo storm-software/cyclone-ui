@@ -293,5 +293,6 @@
     "json",
     "markdown"
   ],
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "eslint.experimental.useFlatConfig": true
 }

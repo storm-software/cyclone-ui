@@ -5,34 +5,11 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "clean": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "inputs": ["default", "^production"],
-      "options": {
-        "command": "pnpm rimraf dist/packages/themes"
-      }
-    },
-    "init": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "inputs": ["{workspaceRoot}/storm.json"],
-      "outputs": ["{projectRoot}/src/themes/*"],
-      "dependsOn": ["^build"],
-      "options": {
-        "commands": [
-          {
-            "command": "\"apps/cli/bin/run.js\" theme init --clean --outputPath \"packages/themes/src/themes\""
-          }
-        ]
-      }
-    },
     "generate": {
-      "cache": true,
       "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/src/themes/*"],
+      "dependsOn": ["^build"],
+      "inputs": ["{workspaceRoot}/packages/colors/src/*"],
       "outputs": ["{projectRoot}/src/brand-themes.ts"],
-      "dependsOn": ["init"],
       "options": {
         "commands": [
           {
@@ -43,7 +20,6 @@
       }
     },
     "build": {
-      "cache": true,
       "executor": "@storm-software/workspace-tools:tsup-neutral",
       "dependsOn": ["generate"],
       "outputs": ["{options.outputPath}"],
@@ -54,7 +30,6 @@
         "tsConfig": "packages/themes/tsconfig.json",
         "project": "packages/themes/package.json",
         "defaultConfiguration": "production",
-        "external": ["react", "react-native", "@cyclone-ui/*"],
         "assets": [
           {
             "input": "packages/themes",
@@ -82,6 +57,5 @@
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
-  },
-  "implicitDependencies": ["cli"]
+  }
 }

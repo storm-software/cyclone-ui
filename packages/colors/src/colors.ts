@@ -1,5 +1,8 @@
-import { theme as darkTheme } from "./themes/brand-dark";
-import { theme as lightTheme } from "./themes/brand-light";
+import {
+  ColorTheme,
+  ColorThemeTokens,
+  ExtendedColorThemeTokens
+} from "@cyclone-ui/types";
 import {
   blue,
   blueDark,
@@ -18,11 +21,8 @@ import {
   yellow,
   yellowDark
 } from "@tamagui/colors";
-import {
-  ExtendedColorThemeTokens,
-  ColorThemeTokens,
-  ColorTheme
-} from "./types";
+import { theme as darkTheme } from "./schemes/brand-dark";
+import { theme as lightTheme } from "./schemes/brand-light";
 
 export const external: ExtendedColorThemeTokens = {
   blue,
