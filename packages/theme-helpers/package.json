@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/theme-helpers",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Shared theme configuration files used by Cyclone UI",
   "repository": {
     "type": "github",

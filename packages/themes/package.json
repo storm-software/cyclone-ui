@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/themes",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "type": "module",
   "description": "A package containing the Cyclone UI theme files - repositories should create their own themes with their own colors",
   "repository": {

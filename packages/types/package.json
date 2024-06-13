@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/types",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "A base package containing various type definitions used by Cyclone UI",
   "repository": {
