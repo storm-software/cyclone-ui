@@ -168,7 +168,7 @@ export default async function runExecutor(
     if (!isDryRun) {
       await s3Client.send(
         new DeleteObjectsCommand({
-          Bucket: "cyclone-ui-storage",
+          Bucket: "storm-cdn-cyclone-ui",
           Delete: {
             Objects: [
               {
@@ -274,8 +274,6 @@ const uploadFile = async (
         Key: fileKey,
         Body: fileContent.replaceAll(' from "@cyclone-ui', ' from "./'),
         ContentType: contentType,
-        ChecksumAlgorithm: "SHA256",
-        ChecksumSHA256: checksum,
         Metadata: {
           version,
           checksum

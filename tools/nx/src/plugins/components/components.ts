@@ -1,10 +1,10 @@
-import { dirname, join } from "node:path";
 import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json";
 import { readJsonFile } from "nx/src/utils/fileutils";
 import {
-  type PackageJson,
-  readTargetsFromPackageJson
+  readTargetsFromPackageJson,
+  type PackageJson
 } from "nx/src/utils/package-json";
 
 export const name = "storm-software/cyclone-ui/components";
@@ -53,6 +53,9 @@ export const createNodes = [
       };
     }
 
+    const implicitDependencies = project?.implicitDependencies ?? [];
+    implicitDependencies.push("tools-nx");
+
     return project?.name
       ? {
           projects: {
@@ -60,6 +63,7 @@ export const createNodes = [
               tags: ["component"],
               ...project,
               targets,
+              implicitDependencies,
               release: {
                 ...project?.release,
                 version: {
