@@ -41,7 +41,6 @@ export const options: CreateTamaguiProps = {
   settings: {
     allowedStyleValues: "somewhat-strict-web",
     autocompleteSpecificTokens: "except-special"
-    // mediaPropOrder: true,
   }
 } satisfies CreateTamaguiProps;
 
