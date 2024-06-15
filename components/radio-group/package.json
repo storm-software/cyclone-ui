@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/radio-group",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {

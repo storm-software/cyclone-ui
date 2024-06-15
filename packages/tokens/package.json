@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tokens",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Shared theme configuration files used by Cyclone UI",
   "repository": {
