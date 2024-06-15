@@ -1,3 +1,10 @@
+## 0.3.1 (2024-06-15)
+
+
+### 🩹 Fixes
+
+- **monorepo:** Updates to TypeScript configuration in component packages ([6ff76bf](https://github.com/storm-software/cyclone-ui/commit/6ff76bf))
+
 ## 0.3.0 (2024-06-15)
 
 
