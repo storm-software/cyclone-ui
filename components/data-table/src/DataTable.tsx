@@ -1,22 +1,3 @@
-import { Table, type TableProps } from "@cyclone-ui/table";
-import { XStack, YStack } from "@tamagui/stacks";
-import { View, createStyledContext } from "@tamagui/core";
-import {
-  type TableOptions,
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  RowData,
-  ColumnDefTemplate,
-  CellContext,
-  SortingState,
-  ColumnSort,
-  HeaderContext,
-  getSortedRowModel,
-  getFilteredRowModel,
-  ColumnFiltersState
-} from "@tanstack/react-table";
 import {
   Dispatch,
   SetStateAction,
@@ -25,21 +6,40 @@ import {
   useRef,
   useState
 } from "react";
-import { SizableText } from "@tamagui/text";
+import { titleCase } from "title-case";
 import { Button } from "@cyclone-ui/button";
 import { Input } from "@cyclone-ui/input";
+import { Table, type TableProps } from "@cyclone-ui/table";
+import { Adapt } from "@tamagui/adapt";
+import { createStyledContext, View } from "@tamagui/core";
+import { Form } from "@tamagui/form";
 import {
-  Menu,
+  ArrowDownAZ,
+  ArrowUpZA,
   Edit3,
   Filter,
-  X,
-  ArrowDownAZ,
-  ArrowUpZA
+  Menu,
+  X
 } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
-import { Adapt } from "@tamagui/adapt";
-import { titleCase } from "title-case";
-import { Form } from "@tamagui/form";
+import { XStack, YStack } from "@tamagui/stacks";
+import { SizableText } from "@tamagui/text";
+import {
+  CellContext,
+  ColumnDefTemplate,
+  ColumnFiltersState,
+  ColumnSort,
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
+  HeaderContext,
+  RowData,
+  SortingState,
+  useReactTable,
+  type TableOptions
+} from "@tanstack/react-table";
 
 const defaultContextValues = {
   sorting: [] as SortingState,
@@ -298,8 +298,8 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
 
                 <Popover.Close asChild={true}>
                   <Form.Trigger asChild={true}>
-                    <Button size="$3" animate={false}>
-                      Apply Filter
+                    <Button animate={false}>
+                      <Button.Text>Apply Filter</Button.Text>
                     </Button>
                   </Form.Trigger>
                 </Popover.Close>

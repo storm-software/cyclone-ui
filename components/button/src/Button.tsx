@@ -1,6 +1,5 @@
 import type { FunctionComponent } from "react";
 import { useContext } from "react";
-import { PressableProps } from "react-native";
 import { View } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { getButtonSized } from "@tamagui/get-button-sized";
@@ -57,24 +56,29 @@ type ButtonExtraProps = TextParentStyles &
      * add icon before, passes color and size automatically if Component
      */
     icon?: IconProp;
+
     /**
      * add icon after, passes color and size automatically if Component
      */
     iconAfter?: IconProp;
+
     /**
      * adjust icon relative to size
      *
      * @default 1
      */
     scaleIcon?: number;
+
     /**
      * make the spacing elements flex
      */
     spaceFlex?: number | boolean;
+
     /**
      * adjust internal space relative to icon size
      */
     scaleSpace?: number;
+
     /**
      * remove default styles
      */
@@ -103,7 +107,7 @@ type ButtonExtraProps = TextParentStyles &
     /**
      * An alternate way to provide an onPress handler
      */
-    onClick?: PressableProps["onPress"];
+    onClick?: null | ((event: Event) => void) | undefined;
   };
 
 const BUTTON_NAME = "Button";
@@ -405,6 +409,15 @@ const ButtonText = styled(SizableText, {
       }
     },
 
+    disabled: {
+      true: {
+        cursor: "not-allowed"
+      },
+      false: {
+        cursor: "pointer"
+      }
+    },
+
     circular: {
       true: {
         height: "fit-content"
@@ -413,7 +426,8 @@ const ButtonText = styled(SizableText, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    disabled: false
   }
 });
 
@@ -573,8 +587,8 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           )}
           <ButtonFrame
             ref={forwardedRef}
-            onPress={onClick}
             {...rest}
+            onPress={onPress ? onPress : onClick}
             circular={circular}
             variant={variant}
             disabled={disabled}

@@ -29,6 +29,7 @@ export default async function runExecutor(
     writeInfo,
     writeSuccess,
     writeTrace,
+    writeDebug,
     findWorkspaceRoot,
     loadStormConfig
   } = await import("@storm-software/config-tools");
@@ -174,6 +175,10 @@ export default async function runExecutor(
         })
       );
 
+      writeDebug(
+        `Deleting the following existing items from the component registry: ${response.Contents.map(item => item.Key).join(", ")}`
+      );
+
       await Promise.all(
         response.Contents.map(item =>
           s3Client.send(
@@ -185,7 +190,7 @@ export default async function runExecutor(
                     Key: item.Key
                   }
                 ],
-                Quiet: true
+                Quiet: false
               }
             })
           )

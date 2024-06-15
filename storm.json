@@ -9,7 +9,7 @@
   "owner": "cyclone-ui",
   "timezone": "America/New_York",
   "locale": "en-US",
-  "logLevel": "info",
+  "logLevel": "debug",
   "packageManager": "pnpm",
   "externalPackagePatterns": ["@storm-software/", "@cyclone-ui/"],
   "cloudflareAccountId": "d011605e7391539ac2e021ab4399e116",
