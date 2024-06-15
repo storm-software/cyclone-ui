@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/button",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Button component for Cyclone UI",
   "private": false,
   "main": "dist/cjs",

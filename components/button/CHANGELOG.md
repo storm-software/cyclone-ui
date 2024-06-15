@@ -1,3 +1,10 @@
+## 0.3.2 (2024-06-15)
+
+
+### 🩹 Fixes
+
+- **button:** Resolve issue applying `onPress` handler to Button components ([d7c82f2](https://github.com/storm-software/cyclone-ui/commit/d7c82f2))
+
 ## 0.3.1 (2024-06-15)
 
 
