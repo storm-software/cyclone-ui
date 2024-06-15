@@ -4,6 +4,7 @@ import { execSync } from "node:child_process";
 import { glob } from "glob";
 import {
   DeleteObjectsCommand,
+  ListObjectsCommand,
   PutObjectCommand,
   S3Client
 } from "@aws-sdk/client-s3";
@@ -166,18 +167,29 @@ export default async function runExecutor(
     writeInfo(`Clearing out existing items in ${projectPath}`);
 
     if (!isDryRun) {
-      await s3Client.send(
-        new DeleteObjectsCommand({
+      const response = await s3Client.send(
+        new ListObjectsCommand({
           Bucket: "storm-cdn-cyclone-ui",
-          Delete: {
-            Objects: [
-              {
-                Key: projectPath
-              }
-            ],
-            Quiet: true
-          }
+          Prefix: projectPath
         })
+      );
+
+      await Promise.all(
+        response.Contents.map(item =>
+          s3Client.send(
+            new DeleteObjectsCommand({
+              Bucket: "storm-cdn-cyclone-ui",
+              Delete: {
+                Objects: [
+                  {
+                    Key: item.Key
+                  }
+                ],
+                Quiet: true
+              }
+            })
+          )
+        )
       );
     } else {
       writeWarning("Dry run: skipping upload to the Cyclone Registry.");
