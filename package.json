@@ -6,7 +6,7 @@
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git"
   },
-  "homepage": "https://stormsoftware.com",
+  "homepage": "https://cyclone-ui.com",
   "bugs": {
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
@@ -266,7 +266,10 @@
       "@cyclone-ui/colors": "workspace:*",
       "@cyclone-ui/theme-helpers": "workspace:*",
       "@cyclone-ui/types": "workspace:*",
-      "@cyclone-ui/animations": "workspace:*"
+      "@cyclone-ui/animations": "workspace:*",
+      "@cyclone-ui/pagination": "workspace:*",
+      "@cyclone-ui/next-button": "workspace:*",
+      "@cyclone-ui/previous-button": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",

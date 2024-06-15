@@ -1,5 +1,5 @@
-import type { StorybookConfig } from "@storybook/react-vite";
 import { dirname, join } from "path";
+import type { StorybookConfig } from "@storybook/react-vite";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -13,8 +13,8 @@ const config: StorybookConfig = {
   stories: ["../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("storybook-react-i18next")
   ],
   framework: {

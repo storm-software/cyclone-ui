@@ -1,6 +1,6 @@
 import { Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
-import { ColorRole } from "@cyclone-ui/tokens";
+import { ColorRole } from "@cyclone-ui/types";
 import { isWeb } from "@tamagui/constants";
 import { styled, useThemeName } from "@tamagui/core";
 import { Square } from "@tamagui/shapes";

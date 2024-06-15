@@ -173,809 +173,641 @@
       "preserveMemberOrder": false,
       "members": [
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorPalette:type",
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!Provider:function(1)",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ColorPalette<TRole extends "
+              "text": "Provider: ({ children, toast, theme, ...props }: "
             },
             {
               "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
+              "text": "ProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ProviderProps:type"
             },
             {
               "kind": "Content",
-              "text": " = "
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"react/jsx-runtime\")."
             },
             {
               "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ", TKey extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "`${TRole}${"
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorPaletteShade",
-              "canonicalReference": "@cyclone-ui/provider!ColorPaletteShade:type"
-            },
-            {
-              "kind": "Content",
-              "text": "}`"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    [key in TKey]?: string;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "JSX.Element",
+              "canonicalReference": "@types/react!JSX.Element:interface"
             }
           ],
-          "fileUrlPath": "packages/types/src/colors.ts",
+          "fileUrlPath": "packages/provider/src/Provider.tsx",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
           "releaseTag": "Public",
-          "name": "ColorPalette",
-          "typeParameters": [
+          "overloadIndex": 1,
+          "parameters": [
             {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
+              "parameterName": "{ children, toast, theme, ...props }",
+              "parameterTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
+              "isOptional": false
+            }
+          ],
+          "name": "Provider"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ProviderProps:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ProviderProps = "
             },
             {
-              "typeParameterName": "TKey",
-              "constraintTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+              "kind": "Reference",
+              "text": "PropsWithChildren",
+              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<{\n    toast?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ToastProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ToastProviderProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    theme?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ThemeProviderProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/Provider.tsx",
+          "releaseTag": "Public",
+          "name": "ProviderProps",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!ProviderServer:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ProviderServer: ({ children, toast, theme, ...props }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ProviderServerProps",
+              "canonicalReference": "@cyclone-ui/provider!ProviderServerProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"react/jsx-runtime\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "@types/react!JSX.Element:interface"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/Provider.server.tsx",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ children, toast, theme, ...props }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               },
-              "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 10
-              }
+              "isOptional": false
             }
           ],
-          "typeTokenRange": {
-            "startIndex": 11,
-            "endIndex": 12
-          }
+          "name": "ProviderServer"
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorPaletteShade:type",
+          "canonicalReference": "@cyclone-ui/provider!ProviderServerProps:type",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ColorPaletteShade = "
+              "text": "export type ProviderServerProps = "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropsWithChildren",
+              "canonicalReference": "@types/react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
-              "text": "\"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\""
+              "text": "<{\n    toast?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ToastProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ToastProviderProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    theme?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeProviderServerProps",
+              "canonicalReference": "@cyclone-ui/provider!ThemeProviderServerProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}>"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "packages/types/src/colors.ts",
+          "fileUrlPath": "packages/provider/src/Provider.server.tsx",
           "releaseTag": "Public",
-          "name": "ColorPaletteShade",
+          "name": "ProviderServerProps",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 7
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorRole:type",
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!ThemeProvider:function(1)",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ColorRole = "
+              "text": "ThemeProvider: ({ children, ...props }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ThemeProviderProps:type"
             },
             {
               "kind": "Content",
-              "text": "\"base\" | \"brand\" | \"accent\" | \"help\" | \"success\" | \"info\" | \"warning\" | \"error\""
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"react/jsx-runtime\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "@types/react!JSX.Element:interface"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ThemeProvider.tsx",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ children, ...props }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "ThemeProvider"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeProviderProps:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeProviderProps = "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropsWithChildren",
+              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "> & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"defaultTheme\">>"
             },
             {
               "kind": "Content",
               "text": ";"
             }
           ],
-          "fileUrlPath": "packages/types/src/colors.ts",
+          "fileUrlPath": "packages/provider/src/ThemeProvider.tsx",
           "releaseTag": "Public",
-          "name": "ColorRole",
+          "name": "ThemeProviderProps",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 11
           }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!ThemeProviderServer:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ThemeProviderServer: ({ children, ...props }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeProviderServerProps",
+              "canonicalReference": "@cyclone-ui/provider!ThemeProviderServerProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"react/jsx-runtime\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "@types/react!JSX.Element:interface"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ThemeProvider.server.tsx",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ children, ...props }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "ThemeProviderServer"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ThemeProviderServerProps:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ThemeProviderServerProps = "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropsWithChildren",
+              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "> & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"defaultTheme\">>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ThemeProvider.server.tsx",
+          "releaseTag": "Public",
+          "name": "ThemeProviderServerProps",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 11
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!ToastProvider:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ToastProvider: ({ children, ...props }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ToastProviderProps",
+              "canonicalReference": "@cyclone-ui/provider!ToastProviderProps:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "import(\"react/jsx-runtime\")."
+            },
+            {
+              "kind": "Reference",
+              "text": "JSX.Element",
+              "canonicalReference": "@types/react!JSX.Element:interface"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ToastProvider.tsx",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ children, ...props }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "ToastProvider"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ToastProviderProps:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ToastProviderProps = "
+            },
+            {
+              "kind": "Reference",
+              "text": "PropsWithChildren",
+              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiToastProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "> & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TamaguiToastProviderProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"id\" | \"label\">>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ToastProvider.tsx",
+          "releaseTag": "Public",
+          "name": "ToastProviderProps",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 11
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!useThemeNameState:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "useThemeNameState: (defaultName?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeVars",
+              "canonicalReference": "@cyclone-ui/provider!~ThemeVars:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThemeVars",
+              "canonicalReference": "@cyclone-ui/provider!~ThemeVars:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/theme-state.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "defaultName",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "useThemeNameState"
         },
         {
           "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/provider!ColorRole:var",
+          "canonicalReference": "@cyclone-ui/provider!useThemeState:var",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "ColorRole: "
+              "text": "useThemeState: "
             },
             {
               "kind": "Content",
-              "text": "{\n    BASE: "
+              "text": "import(\"zustand/traditional\").UseBoundStoreWithEqualityFn<import(\"zustand/vanilla\").StoreApi<"
             },
             {
               "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
+              "text": "Theme",
+              "canonicalReference": "@cyclone-ui/provider!~Theme:type"
             },
             {
               "kind": "Content",
-              "text": ";\n    BRAND: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    ACCENT: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    HELP: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    SUCCESS: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    INFO: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    WARNING: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    ERROR: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
+              "text": ">>"
             }
           ],
-          "fileUrlPath": "packages/types/src/colors.ts",
+          "fileUrlPath": "packages/provider/src/theme-state.ts",
           "isReadonly": true,
           "releaseTag": "Public",
-          "name": "ColorRole",
+          "name": "useThemeState",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 18
+            "endIndex": 4
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorTheme:type",
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!useThemeToggle:function(1)",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ColorTheme<TRole extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
+              "text": "useThemeToggle: () => "
             },
             {
               "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole, "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorPalette",
-              "canonicalReference": "@cyclone-ui/provider!ColorPalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole>>"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "() => void"
             }
           ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ColorTheme",
-          "typeParameters": [
-            {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorThemeMode:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ColorThemeMode = "
-            },
-            {
-              "kind": "Content",
-              "text": "\"dark\" | \"light\""
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ColorThemeMode",
-          "typeTokenRange": {
+          "fileUrlPath": "packages/provider/src/theme-state.ts",
+          "returnTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/provider!ColorThemeMode:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "ColorThemeMode: "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    DARK: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorThemeMode",
-              "canonicalReference": "@cyclone-ui/provider!ColorThemeMode:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    LIGHT: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorThemeMode",
-              "canonicalReference": "@cyclone-ui/provider!ColorThemeMode:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "isReadonly": true,
+          },
           "releaseTag": "Public",
-          "name": "ColorThemeMode",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ColorThemeTokens:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ColorThemeTokens<TRole extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<`${TRole}` | `${TRole}Dark`, "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorPalette",
-              "canonicalReference": "@cyclone-ui/provider!ColorPalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole>>"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ColorThemeTokens",
-          "typeParameters": [
-            {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ExtendedColorPalette:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ExtendedColorPalette<TRole extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ", TKey extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "`${TRole}${"
-            },
-            {
-              "kind": "Reference",
-              "text": "ColorPaletteShade",
-              "canonicalReference": "@cyclone-ui/provider!ColorPaletteShade:type"
-            },
-            {
-              "kind": "Content",
-              "text": "}`"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    [key in TKey]?: string;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ExtendedColorPalette",
-          "typeParameters": [
-            {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            },
-            {
-              "typeParameterName": "TKey",
-              "constraintTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 10
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 11,
-            "endIndex": 12
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ExtendedColorRole = "
-            },
-            {
-              "kind": "Content",
-              "text": "\"blue\" | \"gray\" | \"green\" | \"orange\" | \"pink\" | \"purple\" | \"red\" | \"yellow\""
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ExtendedColorRole",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:var",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "ExtendedColorRole: "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    BLUE: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    GRAY: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    GREEN: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    ORANGE: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    PINK: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    PURPLE: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    RED: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    YELLOW: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "ExtendedColorRole",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 18
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ExtendedColorTheme:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ExtendedColorTheme<TRole extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole, "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorPalette",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorPalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole>>"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ExtendedColorTheme",
-          "typeParameters": [
-            {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/provider!ExtendedColorThemeTokens:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type ExtendedColorThemeTokens<TRole extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorRole",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorRole:type"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<`${TRole}` | `${TRole}Dark`, "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtendedColorPalette",
-              "canonicalReference": "@cyclone-ui/provider!ExtendedColorPalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TRole>>"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/types/src/colors.ts",
-          "releaseTag": "Public",
-          "name": "ExtendedColorThemeTokens",
-          "typeParameters": [
-            {
-              "typeParameterName": "TRole",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
-          }
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "useThemeToggle"
         }
       ]
     }

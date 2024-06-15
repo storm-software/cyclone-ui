@@ -1,5 +1,5 @@
 import { createRef, useId, useRef, useState } from "react";
-import { ColorRole } from "@cyclone-ui/tokens";
+import { ColorRole } from "@cyclone-ui/types";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";

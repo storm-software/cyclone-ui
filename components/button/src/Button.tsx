@@ -1,3 +1,12 @@
+import type { FunctionComponent } from "react";
+import { useContext } from "react";
+import { PressableProps } from "react-native";
+import { View } from "@tamagui/core";
+import { getFontSize } from "@tamagui/font-size";
+import { getButtonSized } from "@tamagui/get-button-sized";
+import { withStaticProperties } from "@tamagui/helpers";
+import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
@@ -5,17 +14,12 @@ import type {
   FontSizeTokens,
   GetProps,
   SizeTokens,
-  ThemeableProps
+  ThemeableProps,
+  UnionableNumber,
+  UnionableString,
+  Variable
 } from "@tamagui/web";
-import { styled, createStyledContext } from "@tamagui/web";
-import { getButtonSized } from "@tamagui/get-button-sized";
-import { getFontSize } from "@tamagui/font-size";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import type { FunctionComponent } from "react";
-import { useContext } from "react";
-import { View } from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import { withStaticProperties } from "@tamagui/helpers";
+import { createStyledContext, styled } from "@tamagui/web";
 
 type ButtonVariant =
   | "primary"
@@ -33,6 +37,19 @@ type IconProp =
   | FunctionComponent<ButtonIconProps>
   | ((props: ButtonIconProps) => any)
   | null;
+
+type BorderRadiusSizeTokens =
+  | number
+  | `$${string}`
+  | `$${number}`
+  | "unset"
+  | `$${string}.${string}`
+  | `$${string}.${number}`
+  | UnionableNumber
+  | UnionableString
+  | Variable<any>
+  | any
+  | undefined;
 
 type ButtonExtraProps = TextParentStyles &
   ThemeableProps & {
@@ -74,9 +91,19 @@ type ButtonExtraProps = TextParentStyles &
     disabled?: boolean;
 
     /**
+     * The radius of the button's border
+     */
+    borderRadius?: BorderRadiusSizeTokens;
+
+    /**
      * Should the pressed, scale animation be applied
      */
     animate?: boolean;
+
+    /**
+     * An alternate way to provide an onPress handler
+     */
+    onClick?: PressableProps["onPress"];
   };
 
 const BUTTON_NAME = "Button";
@@ -86,7 +113,7 @@ export const ButtonContext = createStyledContext<
     TextContextStyles & {
       size: SizeTokens;
       variant?: ButtonVariant;
-      borderRadius?: SizeTokens;
+      borderRadius?: BorderRadiusSizeTokens;
       unstyled?: boolean;
       circular?: boolean;
       disabled?: boolean;
@@ -195,7 +222,6 @@ const ButtonFrame = styled(View, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderColor: "transparent",
-        color: "$fg",
 
         hoverStyle: {
           backgroundColor: "transparent",
@@ -216,7 +242,6 @@ const ButtonFrame = styled(View, {
       glass: {
         backgroundColor: "transparent",
         borderColor: "$borderColor",
-        color: "$fg",
 
         hoverStyle: {
           backgroundColor: "transparent",
@@ -238,7 +263,6 @@ const ButtonFrame = styled(View, {
         backgroundColor: "transparent",
         borderWidth: 0,
         borderColor: "transparent",
-        color: "$borderColor",
         textDecoration: "underline",
         textDecorationColor: "$borderColor",
         textDecorationStyle: "solid",
@@ -345,6 +369,18 @@ const ButtonText = styled(SizableText, {
     },
 
     variant: {
+      secondary: {
+        color: "$primary"
+      },
+
+      ghost: {
+        color: "$fg"
+      },
+
+      glass: {
+        color: "$fg"
+      },
+
       link: {
         color: "$borderColor",
         textDecoration: "underline",
@@ -386,7 +422,7 @@ const ButtonIcon = (props: {
   scaleIcon?: number;
 }) => {
   const { children, scaleIcon = 1 } = props;
-  const { size, color, variant } = useContext(ButtonContext);
+  const { variant, size } = useContext(ButtonContext);
 
   const iconSize =
     (typeof size === "number"
@@ -396,10 +432,15 @@ const ButtonIcon = (props: {
   const getThemedIcon = useGetThemedIcon({
     size: iconSize,
     color:
-      variant === "glass" || variant === "ghost" || variant === "link"
+      variant === "secondary"
         ? "$primary"
-        : (color as any)
+        : variant === "glass" || variant === "ghost"
+          ? "$fg"
+          : variant === "link"
+            ? "$borderColor"
+            : "$color"
   });
+
   return getThemedIcon(children);
 };
 
@@ -493,7 +534,8 @@ const ButtonContainer = styled(ThemeableStack, {
 
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (props, forwardedRef) => {
-    const { variant, disabled, circular, animate, ...rest } = props;
+    const { variant, disabled, circular, animate, onPress, onClick, ...rest } =
+      props;
 
     return (
       <ButtonContainer
@@ -501,37 +543,43 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         circular={circular}
         disabled={disabled}
         animate={animate}>
-        {variant === "ghost" && (
-          <ButtonGhostBackground
-            fullscreen={true}
+        <ButtonContext.Provider {...props}>
+          {variant === "ghost" && (
+            <ButtonGhostBackground
+              fullscreen={true}
+              circular={circular}
+              scale={1}
+              $group-button-hover={{
+                backgroundColor: disabled ? "transparent" : "$muted"
+              }}
+              $group-button-press={{
+                backgroundColor: disabled ? "transparent" : "$muted",
+                opacity: 1,
+                scale: 0.9
+              }}
+            />
+          )}
+          {variant === "glass" && (
+            <ButtonGlassBackground
+              fullscreen={true}
+              circular={circular}
+              scale={1}
+              style={{
+                filter: "blur(1px)"
+              }}
+              $group-button-hover={{ opacity: disabled ? 0.5 : 0.7 }}
+              $group-button-press={{ opacity: disabled ? 0.5 : 1, scale: 0.9 }}
+            />
+          )}
+          <ButtonFrame
+            ref={forwardedRef}
+            onPress={onClick}
+            {...rest}
             circular={circular}
-            $group-button-hover={{
-              backgroundColor: disabled ? "transparent" : "$muted"
-            }}
-            $group-button-press={{
-              backgroundColor: disabled ? "transparent" : "$muted",
-              opacity: 1
-            }}
+            variant={variant}
+            disabled={disabled}
           />
-        )}
-        {variant === "glass" && (
-          <ButtonGlassBackground
-            fullscreen={true}
-            circular={circular}
-            style={{
-              filter: "blur(1px)"
-            }}
-            $group-button-hover={{ opacity: disabled ? 0.5 : 0.7 }}
-            $group-button-press={{ opacity: disabled ? 0.5 : 1 }}
-          />
-        )}
-        <ButtonFrame
-          ref={forwardedRef}
-          {...rest}
-          circular={circular}
-          variant={variant}
-          disabled={disabled}
-        />
+        </ButtonContext.Provider>
       </ButtonContainer>
     );
   },

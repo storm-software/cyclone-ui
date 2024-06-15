@@ -3,39 +3,5 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/registry-trpc/src",
-  "targets": {
-    // "build": {
-    //   "executor": "@storm-software/workspace-tools:tsup-neutral",
-    //   "outputs": ["{options.outputPath}"],
-    //   "options": {
-    //     "entry": "packages/registry-trpc/src/index.ts",
-    //     "outputPath": "dist/packages/registry-trpc",
-    //     "tsConfig": "packages/registry-trpc/tsconfig.json",
-    //     "project": "packages/registry-trpc/package.json",
-    //     "defaultConfiguration": "production",
-    //     "assets": [
-    //       {
-    //         "input": "packages/registry-trpc",
-    //         "glob": "*.md",
-    //         "output": "/"
-    //       },
-    //       {
-    //         "input": "",
-    //         "glob": "LICENSE",
-    //         "output": "/"
-    //       }
-    //     ]
-    //   },
-    //   "configurations": {
-    //     "production": {
-    //       "debug": false,
-    //       "verbose": false
-    //     },
-    //     "development": {
-    //       "debug": true,
-    //       "verbose": true
-    //     }
-    //   }
-    // }
-  }
+  "targets": {}
 }

@@ -17,6 +17,12 @@
       "@cyclone-ui/alert/*": [
         "components/alert/src/*"
       ],
+      "@cyclone-ui/animations": [
+        "packages/animations/src/index.ts"
+      ],
+      "@cyclone-ui/animations/*": [
+        "packages/animations/src/*"
+      ],
       "@cyclone-ui/badge": [
         "components/badge/src/index.ts"
       ],
@@ -143,11 +149,23 @@
       "@cyclone-ui/message/*": [
         "components/message/src/*"
       ],
+      "@cyclone-ui/next-button": [
+        "components/next-button/src/index.ts"
+      ],
+      "@cyclone-ui/next-button/*": [
+        "components/next-button/src/*"
+      ],
       "@cyclone-ui/nx": [
         "apps/nx/index.ts"
       ],
       "@cyclone-ui/nx/*": [
         "apps/nx/src/*"
+      ],
+      "@cyclone-ui/pagination": [
+        "components/pagination/src/index.ts"
+      ],
+      "@cyclone-ui/pagination/*": [
+        "components/pagination/src/*"
       ],
       "@cyclone-ui/pop-up": [
         "components/pop-up/src/index.ts"
@@ -227,11 +245,11 @@
       "@cyclone-ui/types/*": [
         "packages/types/src/*"
       ],
-      "@cyclone-ui/animations": [
-        "packages/animations/src/index.ts"
+      "@cyclone-ui/previous-button": [
+        "components/previous-button/src/index.ts"
       ],
-      "@cyclone-ui/animations/*": [
-        "packages/animations/src/*"
+      "@cyclone-ui/previous-button/*": [
+        "components/previous-button/src/*"
       ]
     }
   }

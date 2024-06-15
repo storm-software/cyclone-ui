@@ -4,7 +4,7 @@ import {
   useControllableState,
   type InputProps as TamaguiInputProps
 } from "tamagui";
-import { ColorRole } from "@cyclone-ui/tokens";
+import { ColorRole } from "@cyclone-ui/types";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {

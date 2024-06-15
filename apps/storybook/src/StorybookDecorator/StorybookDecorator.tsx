@@ -1,6 +1,6 @@
-import { YStack } from "@tamagui/stacks";
-import { Provider } from "@cyclone-ui/provider";
 import { config } from "@cyclone-ui/config";
+import { Provider } from "@cyclone-ui/provider";
+import { YStack } from "@tamagui/stacks";
 
 export const StorybookDecorator = (Story: any, args: any) => {
   const { theme: themeKey } = args.globals;

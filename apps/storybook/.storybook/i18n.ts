@@ -1,8 +1,8 @@
-import { initReactI18next } from "react-i18next";
-import backend from "i18next-http-backend";
 import i18n from "i18next";
-import translationEn from "../../website/public/locales/en/common.json";
+import backend from "i18next-http-backend";
+import { initReactI18next } from "react-i18next";
 import translationDe from "../../website/public/locales/de/common.json";
+import translationEn from "../../website/public/locales/en/common.json";
 
 const ns = ["translation"];
 const supportedLngs = ["en", "de"];

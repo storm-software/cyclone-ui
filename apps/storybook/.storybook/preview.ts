@@ -4,8 +4,8 @@ import "../../../packages/font-permanent-marker/css/style.css";
 import "../../../packages/font-space-grotesk/css/style.css";
 import "raf/polyfill";
 import { Preview } from "@storybook/react";
-import i18n from "./i18n";
 import { StorybookDecorator } from "../src/StorybookDecorator";
+import i18n from "./i18n";
 
 const preview: Preview = {
   globalTypes: {

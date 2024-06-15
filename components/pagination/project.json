@@ -1,0 +1,44 @@
+{
+  "name": "pagination",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/pagination/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "components/pagination/src/index.ts",
+        "outputPath": "dist/components/pagination",
+        "tsConfig": "components/pagination/tsconfig.json",
+        "project": "components/pagination/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/pagination",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "browser"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "lint": {},
+    "test": {}
+  }
+}

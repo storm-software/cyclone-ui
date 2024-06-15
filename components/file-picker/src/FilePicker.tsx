@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { DocumentPickerAsset } from "expo-document-picker";
 import { Linking } from "react-native";
 import { Button } from "@cyclone-ui/button";
-import { ColorRole } from "@cyclone-ui/tokens";
+import { ColorRole } from "@cyclone-ui/types";
 import { format } from "@formkit/tempo";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {

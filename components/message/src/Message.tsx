@@ -7,7 +7,7 @@ import {
   useToastController,
   useToastState
 } from "@cyclone-ui/provider";
-import { ColorRole } from "@cyclone-ui/tokens";
+import { ColorRole } from "@cyclone-ui/types";
 import {
   createStyledContext,
   getVariable,

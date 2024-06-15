@@ -15,7 +15,6 @@ export * from "./Provider.server";
 export {
   Toast,
   ToastViewport,
-  ToastViewportProps,
   useToastState,
   useToastController
 } from "@tamagui/toast";

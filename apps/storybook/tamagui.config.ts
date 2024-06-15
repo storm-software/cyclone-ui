@@ -1,5 +1,5 @@
 import { config } from "../../packages/config/src/tamagui.config";
-import { createTamagui } from "../../packages/config/src/create-tamagui";
+import { createTamagui } from "../../packages/theme-helpers/src/create-tamagui";
 
 const tamaguiConf = createTamagui(config);
 

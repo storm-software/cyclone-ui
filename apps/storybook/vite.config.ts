@@ -1,9 +1,9 @@
 /// <reference types='vitest' />
 
-import { tamaguiPlugin } from "@tamagui/vite-plugin";
-import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+import { tamaguiPlugin } from "@tamagui/vite-plugin";
+import react from "@vitejs/plugin-react-swc";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -14,8 +14,10 @@ const profiling = isProduction && {
 const tamaguiConfig = {
   config: "apps/storybook/tamagui.config.ts",
   components: [
+    "@cyclone-ui/tokens",
     "@cyclone-ui/themes",
     "@cyclone-ui/config",
+    "@cyclone-ui/provider",
     "@cyclone-ui/button",
     "@cyclone-ui/input",
     "@cyclone-ui/collapsible",
