@@ -1,3 +1,10 @@
+## 0.4.0 (2024-06-16)
+
+
+### 🚀 Features
+
+- **monorepo:** Enhance the ESLint configuration to include React rules ([bd79cd9](https://github.com/storm-software/cyclone-ui/commit/bd79cd9))
+
 ## 0.3.2 (2024-06-15)
 
 
