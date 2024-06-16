@@ -107,7 +107,7 @@ type ButtonExtraProps = TextParentStyles &
     /**
      * An alternate way to provide an onPress handler
      */
-    onClick?: null | ((event: Event) => void) | undefined;
+    onClick?: null | ((event?: any) => void);
   };
 
 const BUTTON_NAME = "Button";

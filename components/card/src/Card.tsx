@@ -4,12 +4,11 @@ import {
   createStyledContext,
   getVariable,
   styled,
-  Theme,
   useTheme,
-  View,
-  withStaticProperties
+  View
 } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
+import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ArrowRight } from "@tamagui/lucide-icons";

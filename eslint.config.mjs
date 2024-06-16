@@ -2,6 +2,7 @@ import eslintPlugin from "@storm-software/eslint-plugin";
 
 export default [
   ...eslintPlugin.configs.recommended,
+  ...eslintPlugin.configs.react,
   {
     plugins: {
       "@storm-software": eslintPlugin

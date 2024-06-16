@@ -447,7 +447,7 @@ export const InputContainer = styled(View, {
   }
 });
 
-const InputContainerImpl = InputContainer.styleable<{
+const InputContainerImpl: any = InputContainer.styleable<{
   name?: string;
 }>((props, forwardedRef) => {
   const { children, name, ...rest } = props;
