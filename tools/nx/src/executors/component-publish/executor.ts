@@ -175,27 +175,33 @@ export default async function runExecutor(
         })
       );
 
-      writeDebug(
-        `Deleting the following existing items from the component registry: ${response.Contents.map(item => item.Key).join(", ")}`
-      );
+      if (response?.Contents && response.Contents.length > 0) {
+        writeDebug(
+          `Deleting the following existing items from the component registry: ${response.Contents.map(item => item.Key).join(", ")}`
+        );
 
-      await Promise.all(
-        response.Contents.map(item =>
-          s3Client.send(
-            new DeleteObjectsCommand({
-              Bucket: "storm-cdn-cyclone-ui",
-              Delete: {
-                Objects: [
-                  {
-                    Key: item.Key
-                  }
-                ],
-                Quiet: false
-              }
-            })
+        await Promise.all(
+          response.Contents.map(item =>
+            s3Client.send(
+              new DeleteObjectsCommand({
+                Bucket: "storm-cdn-cyclone-ui",
+                Delete: {
+                  Objects: [
+                    {
+                      Key: item.Key
+                    }
+                  ],
+                  Quiet: false
+                }
+              })
+            )
           )
-        )
-      );
+        );
+      } else {
+        writeDebug(
+          `No existing items to delete in the component registry path ${projectPath}`
+        );
+      }
     } else {
       writeWarning("Dry run: skipping upload to the Cyclone Registry.");
     }

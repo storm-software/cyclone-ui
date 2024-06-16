@@ -1,14 +1,14 @@
 import { useCallback } from "react";
-import { Button, type ButtonProps } from "@cyclone-ui/button";
+import { Button } from "@cyclone-ui/button";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
 import { XStack, XStackProps } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 
 type ExtraPaginationProps = {
-  count: number;
-  current: number;
-  onChange: (page: number) => void;
+  pageCount: number;
+  pageIndex: number;
+  setPageIndex: (pageIndex: number) => void;
   onFirst?: () => void;
   onLast?: () => void;
   onPrevious?: () => void;
@@ -19,71 +19,74 @@ export type PaginationProps = XStackProps & ExtraPaginationProps;
 export const Pagination = XStack.styleable<ExtraPaginationProps>(
   ({
     children,
-    count,
-    current: _current,
+    pageCount,
+    pageIndex,
     theme,
-    onChange,
+    setPageIndex,
     onFirst,
     onLast,
     onPrevious,
     onNext,
     ...props
   }: PaginationProps) => {
-    const current = Math.min(count, Math.max(1, _current));
-
     const handleFirst = useCallback(() => {
-      onChange(1);
-    }, [onChange]);
+      setPageIndex(0);
+    }, [setPageIndex]);
     const handleLast = useCallback(() => {
-      onChange(count);
-    }, [onChange, count]);
+      setPageIndex(pageCount - 1);
+    }, [setPageIndex, pageIndex]);
     const handlePrevious = useCallback(() => {
-      onChange(current - 1);
-    }, [onChange, current]);
+      setPageIndex(pageIndex - 1);
+    }, [setPageIndex, pageIndex]);
     const handleNext = useCallback(() => {
-      onChange(current + 1);
-    }, [onChange, current]);
+      setPageIndex(pageIndex + 1);
+    }, [setPageIndex, pageIndex]);
 
+    const currentPage = Math.min(pageCount, Math.max(1, pageIndex + 1));
     const handleSecond = useCallback(() => {
-      onChange(
-        current < 4
-          ? 2
-          : current < count - 1 && count > 5
-            ? current - 1
-            : count - 3
+      setPageIndex(
+        currentPage < 4
+          ? 1
+          : currentPage < pageCount - 1 && pageCount > 5
+            ? currentPage - 2
+            : pageCount - 4
       );
-    }, [onChange, current, count]);
+    }, [setPageIndex, currentPage, pageCount]);
     const handleThird = useCallback(() => {
-      onChange(
-        current < 4 ? 3 : current < count - 1 && count > 5 ? current : count - 2
+      setPageIndex(
+        currentPage < 4
+          ? 2
+          : currentPage < pageCount - 1 && pageCount > 5
+            ? currentPage - 1
+            : pageCount - 3
       );
-    }, [onChange, current, count]);
+    }, [setPageIndex, currentPage, pageCount]);
     const handleFourth = useCallback(() => {
-      onChange(
-        current < 4
-          ? 4
-          : current < count - 1 && count > 5
-            ? current + 1
-            : count - 1
+      setPageIndex(
+        currentPage < 4
+          ? 3
+          : currentPage < pageCount - 1 && pageCount > 5
+            ? currentPage
+            : pageCount - 2
       );
-    }, [onChange, current, count]);
+    }, [setPageIndex, currentPage, pageCount]);
 
     return (
       <XStack gap="$3" alignItems="center">
         <PreviousButton
           {...props}
           theme={theme}
-          disabled={current === 1}
+          disabled={currentPage === 1}
           onClick={onPrevious ?? handlePrevious}
         />
         <Button
           variant="secondary"
-          theme={current === 1 ? "accent" : theme}
+          theme={currentPage === 1 ? "accent" : theme}
           {...props}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
         </Button>
-        {current > 3 && count > 5 && (
+        {currentPage > 3 && pageCount > 5 && (
           <SizableText color="$primary" size="$6">
             . . .
           </SizableText>
@@ -91,70 +94,72 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
 
         <Button
           variant="secondary"
-          theme={current === 2 ? "accent" : theme}
+          theme={currentPage === 2 ? "accent" : theme}
           {...props}
           onClick={handleSecond}>
           <Button.Text>
-            {current < 4
+            {currentPage < 4
               ? 2
-              : current < count - 1 && count > 5
-                ? current - 1
-                : count - 3}
+              : currentPage < pageCount - 1 && pageCount > 5
+                ? currentPage - 1
+                : pageCount - 3}
           </Button.Text>
         </Button>
 
         <Button
           variant="secondary"
           theme={
-            current === 3 || (current > 3 && current < count - 1 && count > 5)
+            currentPage === 3 ||
+            (currentPage > 3 && currentPage < pageCount - 1 && pageCount > 5)
               ? "accent"
               : theme
           }
           {...props}
           onClick={handleThird}>
           <Button.Text>
-            {current < 4
+            {currentPage < 4
               ? 3
-              : current < count - 1 && count > 5
-                ? current
-                : count - 2}
+              : currentPage < pageCount - 1 && pageCount > 5
+                ? currentPage
+                : pageCount - 2}
           </Button.Text>
         </Button>
 
         <Button
           variant="secondary"
           theme={
-            (current === 4 && count < 5) || current === count - 1
+            (currentPage === 4 && pageCount < 5) ||
+            currentPage === pageCount - 1
               ? "accent"
               : theme
           }
           {...props}
           onClick={handleFourth}>
           <Button.Text>
-            {current < 4
+            {currentPage < 4
               ? 4
-              : current < count - 1 && count > 5
-                ? current + 1
-                : count - 1}
+              : currentPage < pageCount - 1 && pageCount > 5
+                ? currentPage + 1
+                : pageCount - 1}
           </Button.Text>
         </Button>
 
-        {current < count - 2 && count > 5 && (
+        {currentPage < pageCount - 2 && pageCount > 5 && (
           <SizableText color="$primary" size="$6">
             . . .
           </SizableText>
         )}
         <Button
           variant="secondary"
-          theme={current === count ? "accent" : theme}
+          theme={currentPage === pageCount ? "accent" : theme}
           {...props}
           onClick={onLast ?? handleLast}>
-          <Button.Text>{count}</Button.Text>
+          <Button.Text>{pageCount}</Button.Text>
         </Button>
         <NextButton
           {...props}
           theme={theme}
-          disabled={current === count}
+          disabled={currentPage === pageCount}
           onClick={onNext ?? handleNext}
         />
       </XStack>

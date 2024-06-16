@@ -2,6 +2,7 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState
@@ -9,6 +10,7 @@ import {
 import { titleCase } from "title-case";
 import { Button } from "@cyclone-ui/button";
 import { Input } from "@cyclone-ui/input";
+import { Pagination, PaginationProps } from "@cyclone-ui/pagination";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
@@ -33,11 +35,14 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
-  HeaderContext,
-  RowData,
-  SortingState,
   useReactTable,
+  type HeaderContext,
+  type PaginationState,
+  type Table as ReactTable,
+  type RowData,
+  type SortingState,
   type TableOptions
 } from "@tanstack/react-table";
 
@@ -45,7 +50,9 @@ const defaultContextValues = {
   sorting: [] as SortingState,
   setSorting: () => {},
   columnFilters: [] as ColumnFiltersState,
-  setColumnFilters: () => {}
+  setColumnFilters: () => {},
+  pagination: { pageIndex: 0, pageSize: 10 },
+  setPagination: () => {}
 } as const;
 
 export const InternalStateContext = createStyledContext<{
@@ -53,6 +60,8 @@ export const InternalStateContext = createStyledContext<{
   setSorting: Dispatch<SetStateAction<SortingState>>;
   columnFilters: ColumnFiltersState;
   setColumnFilters: Dispatch<SetStateAction<ColumnFiltersState>>;
+  pagination: PaginationState;
+  setPagination: Dispatch<SetStateAction<PaginationState>>;
 }>(defaultContextValues);
 
 export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
@@ -66,9 +75,13 @@ export function DataTable<TData extends RowData>({
   options,
   ...rest
 }: DataTableProps<TData>) {
-  const [data, setData] = useState(() => [...options.data]);
+  const [data, setData] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [pagination, setPagination] = useState<PaginationState>({
+    pageIndex: 0,
+    pageSize: 10
+  });
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -76,13 +89,18 @@ export function DataTable<TData extends RowData>({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
     state: {
       sorting,
-      columnFilters
+      columnFilters,
+      pagination
     },
     onColumnFiltersChange: setColumnFilters,
     onSortingChange: setSorting,
+    onPaginationChange: setPagination,
+    manualPagination: false,
     ...options,
+    rowCount: data.length,
     data
   });
 
@@ -94,7 +112,9 @@ export function DataTable<TData extends RowData>({
       sorting={sorting}
       setSorting={setSorting}
       columnFilters={columnFilters}
-      setColumnFilters={setColumnFilters}>
+      setColumnFilters={setColumnFilters}
+      pagination={pagination}
+      setPagination={setPagination}>
       <Table
         alignCells={{ x: "start", y: "center" }}
         alignHeaderCells={{ x: "start", y: "center" }}
@@ -133,6 +153,17 @@ export function DataTable<TData extends RowData>({
           })}
         </Table.Body>
       </Table>
+      <DataTablePagination
+        setPageIndex={table.setPageIndex}
+        getPageCount={table.getPageCount}
+        nextPage={table.nextPage}
+        previousPage={table.previousPage}
+        firstPage={table.firstPage}
+        lastPage={table.lastPage}
+        pageIndex={pagination.pageIndex}
+        pageSize={pagination.pageSize}
+        rowCount={data.length}
+      />
     </InternalStateContext.Provider>
   );
 }
@@ -167,11 +198,9 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
 ) {
   const [currentFilter, setCurrentFilter] = useState("");
 
-  const { sorting, setSorting } = InternalStateContext.useStyledContext();
+  const { sorting } = InternalStateContext.useStyledContext();
   const id = props.header.id;
   const { toggleSorting, clearSorting, setFilterValue } = props.column;
-
-  const canSort = props.column.getCanSort();
 
   const isSorted = props.column.getIsSorted();
   const sortIndex = props.column.getSortIndex();
@@ -308,6 +337,55 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
           </Popover.Content>
         </Popover>
       </View>
+    </XStack>
+  );
+}
+
+export type DataTablePaginationProps<TData extends RowData> = Pick<
+  ReactTable<TData>,
+  | "setPageIndex"
+  | "nextPage"
+  | "previousPage"
+  | "firstPage"
+  | "lastPage"
+  | "getPageCount"
+> &
+  Pick<PaginationState, "pageIndex" | "pageSize"> & {
+    rowCount: number;
+  };
+
+export function DataTablePagination<TData extends RowData>({
+  setPageIndex,
+  nextPage,
+  previousPage,
+  firstPage,
+  lastPage,
+  getPageCount,
+  pageIndex,
+  pageSize,
+  rowCount
+}: DataTablePaginationProps<TData>) {
+  const [pageCount, setPageCount] = useState<number>(1);
+  useEffect(() => {
+    setPageCount(getPageCount());
+  }, [pageSize, rowCount]);
+
+  return (
+    <XStack
+      group={"header" as any}
+      flexGrow={1}
+      justifyContent="space-between"
+      alignItems="center"
+      paddingHorizontal="$1">
+      <Pagination
+        pageIndex={pageIndex}
+        pageCount={pageCount}
+        setPageIndex={setPageIndex}
+        onNext={nextPage}
+        onPrevious={previousPage}
+        onFirst={firstPage}
+        onLast={lastPage}
+      />
     </XStack>
   );
 }

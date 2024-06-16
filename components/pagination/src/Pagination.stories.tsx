@@ -14,105 +14,105 @@ type Story = StoryObj<typeof Pagination>;
 
 export const FirstOfTen: Story = {
   args: {
-    current: 1,
-    count: 10
+    pageIndex: 0,
+    pageCount: 10
   }
 };
 
 export const SecondOfTen: Story = {
   args: {
-    current: 2,
-    count: 10
+    pageIndex: 1,
+    pageCount: 10
   }
 };
 
 export const ThirdOfTen: Story = {
   args: {
-    current: 3,
-    count: 10
+    pageIndex: 2,
+    pageCount: 10
   }
 };
 
 export const ForthOfTen: Story = {
   args: {
-    current: 4,
-    count: 10
+    pageIndex: 3,
+    pageCount: 10
   }
 };
 
 export const FifthOfTen: Story = {
   args: {
-    current: 5,
-    count: 10
+    pageIndex: 4,
+    pageCount: 10
   }
 };
 
 export const SixthOfTen: Story = {
   args: {
-    current: 6,
-    count: 10
+    pageIndex: 5,
+    pageCount: 10
   }
 };
 
 export const SeventhOfTen: Story = {
   args: {
-    current: 7,
-    count: 10
+    pageIndex: 6,
+    pageCount: 10
   }
 };
 
 export const EightOfTen: Story = {
   args: {
-    current: 8,
-    count: 10
+    pageIndex: 7,
+    pageCount: 10
   }
 };
 
 export const NinthOfTen: Story = {
   args: {
-    current: 9,
-    count: 10
+    pageIndex: 8,
+    pageCount: 10
   }
 };
 
 export const LastOfTen: Story = {
   args: {
-    current: 10,
-    count: 10
+    pageIndex: 9,
+    pageCount: 10
   }
 };
 
 export const FirstOfFive: Story = {
   args: {
-    current: 1,
-    count: 5
+    pageIndex: 0,
+    pageCount: 5
   }
 };
 
 export const SecondOfFive: Story = {
   args: {
-    current: 2,
-    count: 5
+    pageIndex: 1,
+    pageCount: 5
   }
 };
 
 export const ThirdOfFive: Story = {
   args: {
-    current: 3,
-    count: 5
+    pageIndex: 2,
+    pageCount: 5
   }
 };
 
 export const ForthOfFive: Story = {
   args: {
-    current: 4,
-    count: 5
+    pageIndex: 3,
+    pageCount: 5
   }
 };
 
 export const LastOfFive: Story = {
   args: {
-    current: 5,
-    count: 5
+    pageIndex: 4,
+    pageCount: 5
   }
 };

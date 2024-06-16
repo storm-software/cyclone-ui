@@ -11,7 +11,7 @@
   "locale": "en-US",
   "logLevel": "debug",
   "packageManager": "pnpm",
-  "externalPackagePatterns": ["@storm-software/", "@cyclone-ui/"],
+  "externalPackagePatterns": ["@cyclone-ui/"],
   "cloudflareAccountId": "d011605e7391539ac2e021ab4399e116",
   "colors": {
     "light": {
