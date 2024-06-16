@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/form",
+  "version": "0.4.1",
+  "type": "module",
+  "description": "A Form management package used to handle user input in Storm Software applications",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/form"
+  },
+  "private": false,
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
+  "dependencies": {
+    "@tamagui/core": "^1.98.0",
+    "@tamagui/lucide-icons": "^1.98.0",
+    "@tamagui/web": "^1.98.0",
+    "react-native-svg": "^15.2.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-native": "0.73.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx"
+}

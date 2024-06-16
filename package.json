@@ -269,7 +269,8 @@
       "@cyclone-ui/animations": "workspace:*",
       "@cyclone-ui/pagination": "workspace:*",
       "@cyclone-ui/next-button": "workspace:*",
-      "@cyclone-ui/previous-button": "workspace:*"
+      "@cyclone-ui/previous-button": "workspace:*",
+      "@cyclone-ui/form": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",

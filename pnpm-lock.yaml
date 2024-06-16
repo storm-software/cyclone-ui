@@ -46,6 +46,7 @@ overrides:
   '@cyclone-ui/pagination': workspace:*
   '@cyclone-ui/next-button': workspace:*
   '@cyclone-ui/previous-button': workspace:*
+  '@cyclone-ui/form': workspace:*
 
 importers:
 
@@ -83,7 +84,7 @@ importers:
         version: 0.5.0
       '@storm-software/workspace-tools':
         specifier: latest
-        version: 1.89.1(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.20.2)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
+        version: 1.89.2(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.20.2)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
       '@storybook/icons':
         specifier: ^1.2.9
         version: 1.2.9(react-dom@18.2.0)(react@18.2.0)
@@ -285,7 +286,7 @@ importers:
         version: 0.7.0(@cloudflare/workers-types@4.20240524.0)(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.20.2)(eslint@8.57.0)(nx@18.3.4)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)(webpack-cli@5.1.4)
       '@storm-software/eslint':
         specifier: latest
-        version: 0.9.1(@babel/core@7.24.4)(@nx/eslint-plugin@18.3.4)(@nx/eslint@18.3.4)(@types/node@20.9.0)(eslint@8.57.0)(graphql@16.8.1)(prettier@3.3.0)(typescript@5.2.2)
+        version: 0.9.2(@babel/core@7.24.4)(@nx/eslint-plugin@18.3.4)(@nx/eslint@18.3.4)(@types/node@20.9.0)(eslint@8.57.0)(graphql@16.8.1)(prettier@3.3.0)(typescript@5.2.2)
       '@storm-software/eslint-plugin':
         specifier: latest
         version: 0.9.1(@nx/eslint-plugin@18.3.4)(@nx/eslint@18.3.4)(@typescript-eslint/parser@7.12.0)(eslint@8.57.0)(typescript@5.2.2)
@@ -484,7 +485,7 @@ importers:
         version: 1.51.1(typescript@5.2.2)
       '@storm-software/workspace-tools':
         specifier: latest
-        version: 1.89.1(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
+        version: 1.89.2(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
       tslib:
         specifier: ^2.3.0
         version: 2.6.2
@@ -1128,6 +1129,28 @@ importers:
       react-dropzone:
         specifier: ^14.2.3
         version: 14.2.3(react@18.2.0)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.2.0(react-native@0.73.2)(react@18.2.0)
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-native:
+        specifier: 0.73.2
+        version: 0.73.2(@babel/core@7.24.4)(@babel/preset-env@7.24.4)(react@18.2.0)
+
+  components/form:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
+      '@tamagui/lucide-icons':
+        specifier: ^1.98.0
+        version: 1.98.0(react-native-svg@15.2.0)(react@18.2.0)
+      '@tamagui/web':
+        specifier: ^1.98.0
+        version: 1.98.0(react@18.2.0)
       react-native-svg:
         specifier: ^15.2.0
         version: 15.2.0(react-native@0.73.2)(react@18.2.0)
@@ -1951,7 +1974,7 @@ importers:
         version: 1.51.1(typescript@5.2.2)
       '@storm-software/workspace-tools':
         specifier: latest
-        version: 1.89.1(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
+        version: 1.89.2(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3)
       glob:
         specifier: ^10.4.1
         version: 10.4.1
@@ -10482,7 +10505,6 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
-      napi-wasm: 1.1.0
     dev: true
     optional: true
     bundledDependencies:
@@ -13415,8 +13437,8 @@ packages:
       - typescript
     dev: true
 
-  /@storm-software/eslint@0.9.1(@babel/core@7.24.4)(@nx/eslint-plugin@18.3.4)(@nx/eslint@18.3.4)(@types/node@20.9.0)(eslint@8.57.0)(graphql@16.8.1)(prettier@3.3.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-EERWApv5OYnNkzQwzh+knRW++yO63PQOku1bzzwAWjMtsWoPaQ9ywl6La6KjSgbGz+Glxf4vkRepqY6prQyqwQ==}
+  /@storm-software/eslint@0.9.2(@babel/core@7.24.4)(@nx/eslint-plugin@18.3.4)(@nx/eslint@18.3.4)(@types/node@20.9.0)(eslint@8.57.0)(graphql@16.8.1)(prettier@3.3.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-oNjd7ollYSE7w/NtbypKdwE4kvATbKKDLU123BLFPzGnHasDWZOYXvqSC8uuFDk10P/hvntPwMk+q+vscmrJ1w==}
     peerDependencies:
       '@nx/eslint': '>=18.3.0'
       '@nx/eslint-plugin': '>=18.3.0'
@@ -13631,8 +13653,8 @@ packages:
       '@total-typescript/ts-reset': 0.5.1
     dev: false
 
-  /@storm-software/workspace-tools@1.89.1(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3):
-    resolution: {integrity: sha512-/p+dm9c2XP6/+c/k0nlxeILW6fu8T+2GY/pr82Q3qvDRV3fbJS49tWW00VWVXOCibDCP2EUg0QM8Rgg5GtYDKA==}
+  /@storm-software/workspace-tools@1.89.2(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3):
+    resolution: {integrity: sha512-sshJBVoof0jtuZKGX4g9RGuRwF41pQH10LkgLFxvjOM3DoWX1IX0AH8hjDpwYEnmjXFA6WmcqWl9IeTuWwuD9g==}
     dependencies:
       '@anatine/esbuild-decorators': 0.2.19(esbuild@0.19.12)
       '@ltd/j-toml': 1.38.0
@@ -13675,8 +13697,8 @@ packages:
       - verdaccio
     dev: false
 
-  /@storm-software/workspace-tools@1.89.1(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.20.2)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3):
-    resolution: {integrity: sha512-/p+dm9c2XP6/+c/k0nlxeILW6fu8T+2GY/pr82Q3qvDRV3fbJS49tWW00VWVXOCibDCP2EUg0QM8Rgg5GtYDKA==}
+  /@storm-software/workspace-tools@1.89.2(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.20.2)(nx@18.3.4)(postcss@8.4.38)(ts-node@10.9.1)(typescript@5.2.2)(verdaccio@5.30.3):
+    resolution: {integrity: sha512-sshJBVoof0jtuZKGX4g9RGuRwF41pQH10LkgLFxvjOM3DoWX1IX0AH8hjDpwYEnmjXFA6WmcqWl9IeTuWwuD9g==}
     dependencies:
       '@anatine/esbuild-decorators': 0.2.19(esbuild@0.20.2)
       '@ltd/j-toml': 1.38.0
@@ -32651,12 +32673,6 @@ packages:
   /napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: true
-
-  /napi-wasm@1.1.0:
-    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /native-url@0.3.4:
     resolution: {integrity: sha512-6iM8R99ze45ivyH8vybJ7X0yekIcPf5GgLV5K0ENCbmRcaRIDoj37BC8iLEmaaBfqqb8enuZ5p0uhY+lVAbAcA==}

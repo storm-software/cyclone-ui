@@ -173,6 +173,12 @@
       "@cyclone-ui/pop-up/*": [
         "components/pop-up/src/*"
       ],
+      "@cyclone-ui/previous-button": [
+        "components/previous-button/src/index.ts"
+      ],
+      "@cyclone-ui/previous-button/*": [
+        "components/previous-button/src/*"
+      ],
       "@cyclone-ui/provider": [
         "packages/provider/src/index.ts"
       ],
@@ -245,11 +251,11 @@
       "@cyclone-ui/types/*": [
         "packages/types/src/*"
       ],
-      "@cyclone-ui/previous-button": [
-        "components/previous-button/src/index.ts"
+      "@cyclone-ui/form": [
+        "components/form/src/index.ts"
       ],
-      "@cyclone-ui/previous-button/*": [
-        "components/previous-button/src/*"
+      "@cyclone-ui/form/*": [
+        "components/form/src/*"
       ]
     }
   }
