@@ -1,3 +1,10 @@
+## 0.3.0 (2024-06-16)
+
+
+### 🚀 Features
+
+- **data-table:** Added support for table pagination functionality ([94e0dec](https://github.com/storm-software/cyclone-ui/commit/94e0dec))
+
 ## 0.2.2 (2024-06-15)
 
 
