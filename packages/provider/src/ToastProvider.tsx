@@ -1,36 +1,35 @@
 import { PropsWithChildren } from "react";
+import { ViewProps } from "@tamagui/core";
 import {
   ToastProvider as TamaguiToastProvider,
   type ToastProviderProps as TamaguiToastProviderProps
 } from "@tamagui/toast";
-import { ViewProps } from "@tamagui/core";
-
 
 export type ToastViewportProps = ViewProps & {
   /**
    * The keys to use as the keyboard shortcut that will move focus to the toast viewport.
    * @defaultValue ['F8']
    */
-  hotkey?: string[]
+  hotkey?: string[];
   /**
    * An author-localized label for the toast viewport to provide context for screen reader users
    * when navigating page landmarks. The available `{hotkey}` placeholder will be replaced for you.
    * @defaultValue 'Notifications ({hotkey})'
    */
-  label?: string
+  label?: string;
   /**
    * Used to reference the viewport if you want to have multiple viewports in the same provider.
    */
-  name?: string
+  name?: string;
   /**
    * Pass this when you want to have multiple/duplicated toasts.
    */
-  multipleToasts?: boolean
+  multipleToasts?: boolean;
   /**
    * When true, uses a portal to render at the very top of the root TamaguiProvider.
    */
-  portalToRoot?: boolean
-}
+  portalToRoot?: boolean;
+};
 
 export type ToastProviderProps = PropsWithChildren<
   Partial<TamaguiToastProviderProps> &

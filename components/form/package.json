@@ -34,6 +34,8 @@
     "@tamagui/core": "^1.98.0",
     "@tamagui/lucide-icons": "^1.98.0",
     "@tamagui/web": "^1.98.0",
+    "@tanstack/form-core": "^0.21.0",
+    "@tanstack/react-form": "^0.21.0",
     "react-native-svg": "^15.2.0"
   },
   "devDependencies": {

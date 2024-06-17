@@ -7,4 +7,5 @@
  * @packageDocumentation
  */
 
-export const variable = "form";
+export * from "./create-form-factory";
+export * from "./use-form-factory";

@@ -18,3 +18,4 @@ export {
   useToastState,
   useToastController
 } from "@tamagui/toast";
+export * from "./ToastProvider";

@@ -139,7 +139,7 @@ export default async function runExecutor(
     writeInfo(`Generated component version: ${version}`);
 
     const files = await glob(joinPathFragments(sourceRoot, "**/*"), {
-      ignore: "**/{*.stories.tsx,index.ts}"
+      ignore: "**/{*.stories.tsx,*.stories.ts,*.spec.tsx,*.spec.ts}"
     });
     const projectPath = `registry/components/${projectName}`;
 
@@ -295,7 +295,7 @@ const uploadFile = async (
       new PutObjectCommand({
         Bucket: "storm-cdn-cyclone-ui",
         Key: fileKey,
-        Body: fileContent.replaceAll(' from "@cyclone-ui', ' from "./'),
+        Body: fileContent.replaceAll(' from "@cyclone-ui/', ' from "../'),
         ContentType: contentType,
         Metadata: {
           version,
