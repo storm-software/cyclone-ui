@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/pagination",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "type": "module",
   "description": "A component to support page navigation, next and previous links",
   "repository": {
