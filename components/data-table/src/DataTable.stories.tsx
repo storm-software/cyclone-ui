@@ -1,21 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text, View } from "@tamagui/core";
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable
-} from "@tanstack/react-table";
-import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
-import { useState } from "react";
 import { Avatar } from "@tamagui/avatar";
-import { SizableText } from "@tamagui/text";
+import { Text, View } from "@tamagui/core";
+import { createColumnHelper } from "@tanstack/react-table";
+import { DataTable, DataTableCell, DataTableHeader } from "./DataTable";
 
 const meta: Meta<typeof DataTable> = {
   title: "General/DataTable",
   component: DataTable,
   tags: ["autodocs"],
-  render: ({ children, ...rest }: any) => {
+  render: ({ options, ...props }: any) => {
     return (
       <DataTable<Person>
         alignCells={{ x: "start", y: "center" }}
@@ -23,10 +16,10 @@ const meta: Meta<typeof DataTable> = {
         cellWidth="$18"
         cellHeight="$7"
         options={{
-          data: defaultData,
+          ...options,
           columns
         }}
-        {...rest}
+        {...props}
       />
     );
   }
@@ -241,55 +234,71 @@ const columns = [
 
 export const Base: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    options: {
+      data: defaultData
+    }
+  }
+};
+
+export const Pagination: Story = {
+  args: {
+    options: {
+      data: [...defaultData, ...defaultData, ...defaultData, ...defaultData, ...defaultData]
+    },
+    pageSize: 5
   }
 };
 
 export const Brand: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "brand"
+    theme: "brand",
+    options: {
+      data: defaultData
+    }
   }
 };
 
 export const Help: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "help"
+    theme: "help",
+    options: {
+      data: defaultData
+    }
   }
 };
 
 export const Error: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "error"
+    theme: "error",
+    options: {
+      data: defaultData
+    }
   }
 };
 
 export const Warning: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "warning"
+    theme: "warning",
+    options: {
+      data: defaultData
+    }
   }
 };
 
 export const Info: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "info"
+    theme: "info",
+    options: {
+      data: defaultData
+    }
   }
 };
 
 export const Success: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "success"
+    theme: "success",
+    options: {
+      data: defaultData
+    }
   }
 };

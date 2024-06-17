@@ -6,7 +6,7 @@ import {
   useRef,
   useState
 } from "react";
-import { ColorRole } from "@cyclone-ui/types";
+import { ColorRole, SelectOption } from "@cyclone-ui/types";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
@@ -99,6 +99,31 @@ export const defaultSelectGroupStyles = {
   }
 } as const;
 
+export const selectSizeVariant: SizeVariantSpreadFunction<any> = (
+  val = "$true",
+  extras
+) => {
+  const radiusToken =
+    extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
+  const paddingHorizontal = getSpace(val, {
+    shift: -2,
+    bounds: [2]
+  });
+
+  const fontStyle = getFontSized(val as any, extras);
+  // lineHeight messes up select on native
+  if (!isWeb && fontStyle) {
+    delete fontStyle["lineHeight"];
+  }
+
+  return {
+    ...fontStyle,
+    height: val,
+    borderRadius: extras.props.circular ? 100_000 : radiusToken,
+    paddingHorizontal
+  };
+};
+
 const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
   name: "Select",
   context: SelectContext,
@@ -121,6 +146,7 @@ const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
   outlineWidth: 0,
   outlineColor: "transparent",
   outlineStyle: "none",
+  paddingVertical: 0,
 
   variants: {
     scaleIcon: {
@@ -128,11 +154,7 @@ const SelectGroupFrame = styled(TamaguiSelect.Trigger, {
     },
 
     size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val]
-        };
-      }
+      "...size": selectSizeVariant
     },
 
     required: {
@@ -327,7 +349,7 @@ const SelectGroupImpl = SelectGroupFrame.styleable((props, forwardedRef) => {
           </SelectIcon>
         )}
         {!disabled && (
-          <SelectIconChevron marginRight={0} opened={open}>
+          <SelectIconChevron marginRight={0} marginLeft="$0.75" opened={open}>
             <ChevronDown size="$1.5" />
           </SelectIconChevron>
         )}
@@ -336,33 +358,11 @@ const SelectGroupImpl = SelectGroupFrame.styleable((props, forwardedRef) => {
   );
 });
 
-export const selectSizeVariant: SizeVariantSpreadFunction<any> = (
-  val = "$true",
-  extras
-) => {
-  const radiusToken =
-    extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
-  const paddingHorizontal = getSpace(val, {
-    shift: -1,
-    bounds: [2]
-  });
-  const fontStyle = getFontSized(val as any, extras);
-  // lineHeight messes up select on native
-  if (!isWeb && fontStyle) {
-    delete fontStyle["lineHeight"];
-  }
-
-  return {
-    ...fontStyle,
-    height: val,
-    borderRadius: extras.props.circular ? 100_000 : radiusToken,
-    paddingHorizontal
-  };
-};
-
 const SelectValueFrame = styled(TamaguiSelect.Value, {
   name: "Select",
   context: SelectContext,
+
+  paddingVertical: 0,
 
   variants: {
     placeholding: {
@@ -391,11 +391,6 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
     placeholding: false
   }
 });
-
-export interface SelectOption {
-  name: React.ReactNode;
-  value: string;
-}
 
 const SelectValueImpl = SelectValueFrame.styleable<{
   placeholder?: string;
@@ -551,11 +546,6 @@ export const SelectComp = styled(TamaguiSelect, {
   }
 });
 
-export interface SelectOption {
-  name: React.ReactNode;
-  value: string;
-}
-
 const SelectContainer = View.styleable<
   TamaguiSelectProps & {
     options?: SelectOption[];
@@ -659,7 +649,6 @@ const SelectContainer = View.styleable<
           </TamaguiSelect.ScrollUpButton>
 
           <TamaguiSelect.Viewport
-            // to do animations:
             animation="quick"
             animateOnly={["transform", "scale", "opacity"]}
             enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
@@ -674,12 +663,12 @@ const SelectContainer = View.styleable<
                       <TamaguiSelect.Item
                         index={i}
                         key={i}
-                        value={option.value}>
+                        value={String(option.value)}>
                         <TamaguiSelect.ItemText color="$fg">
                           {option.name}
                         </TamaguiSelect.ItemText>
                         <TamaguiSelect.ItemIndicator marginLeft="auto">
-                          <Check size={16} color="$fg" />
+                          <Check size={16} theme="$accent" color="$fg" />
                         </TamaguiSelect.ItemIndicator>
                       </TamaguiSelect.Item>
                     );

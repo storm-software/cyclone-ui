@@ -3,9 +3,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/themes/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
-    "generate": {
+    "build-base": {
+      "cache": true,
       "executor": "nx:run-commands",
       "dependsOn": ["^build"],
       "inputs": ["{workspaceRoot}/packages/colors/src/*"],
@@ -13,7 +13,11 @@
       "options": {
         "commands": [
           {
-            "command": "tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts"
+            "command": "npx tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts",
+            "forwardAllArgs": true,
+            "prefix": "Generate",
+            "color": "blue",
+            "description": "Generate brand themes from the input file"
           }
         ],
         "cwd": "packages/themes"
@@ -21,7 +25,7 @@
     },
     "build": {
       "executor": "@storm-software/workspace-tools:tsup-neutral",
-      "dependsOn": ["generate"],
+      "dependsOn": ["build-base"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/themes/src/index.ts",

@@ -2749,8 +2749,8 @@ const size: {
     "$0.4": number;
     "$0.5": number;
     "$0.75": number;
-    "$0.80": number;
-    "$0.90": number;
+    "$0.8": number;
+    "$0.9": number;
     $1: number;
     "$1.25": number;
     "$1.5": number;
@@ -3090,8 +3090,8 @@ const tokens: {
         0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
-        "0.80": Variable<number>;
-        "0.90": Variable<number>;
+        0.8: Variable<number>;
+        0.9: Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -3124,8 +3124,8 @@ const tokens: {
         [-0.4]: Variable<number>;
         [-0.5]: Variable<number>;
         [-0.75]: Variable<number>;
-        "-0.80": Variable<number>;
-        "-0.90": Variable<number>;
+        [-0.8]: Variable<number>;
+        [-0.9]: Variable<number>;
         [-1.25]: Variable<number>;
         [-1.5]: Variable<number>;
         [-2.5]: Variable<number>;
@@ -3161,8 +3161,8 @@ const tokens: {
         0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
-        "0.80": Variable<number>;
-        "0.90": Variable<number>;
+        0.8: Variable<number>;
+        0.9: Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -3441,8 +3441,8 @@ const tokens: {
         0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
-        "0.80": Variable<number>;
-        "0.90": Variable<number>;
+        0.8: Variable<number>;
+        0.9: Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;
@@ -3475,8 +3475,8 @@ const tokens: {
         [-0.4]: Variable<number>;
         [-0.5]: Variable<number>;
         [-0.75]: Variable<number>;
-        "-0.80": Variable<number>;
-        "-0.90": Variable<number>;
+        [-0.8]: Variable<number>;
+        [-0.9]: Variable<number>;
         [-1.25]: Variable<number>;
         [-1.5]: Variable<number>;
         [-2.5]: Variable<number>;
@@ -3512,8 +3512,8 @@ const tokens: {
         0.4: Variable<number>;
         0.5: Variable<number>;
         0.75: Variable<number>;
-        "0.80": Variable<number>;
-        "0.90": Variable<number>;
+        0.8: Variable<number>;
+        0.9: Variable<number>;
         1.25: Variable<number>;
         1.5: Variable<number>;
         2.5: Variable<number>;

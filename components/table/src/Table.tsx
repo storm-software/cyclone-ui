@@ -1,12 +1,12 @@
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
-  View,
   createStyledContext,
   styled,
+  View,
   withStaticProperties
 } from "@tamagui/core";
-import { ThemeableStack } from "@tamagui/stacks";
 import { LinearGradient } from "@tamagui/linear-gradient";
+import { ThemeableStack } from "@tamagui/stacks";
 
 export type AlignCells = {
   y: "center" | "start" | "end";
@@ -196,7 +196,6 @@ const TableComp = styled(ThemeableStack, {
   context: TableContext,
   borderWidth: 0,
   backgrounded: true,
-  padding: "$4",
   maxWidth: "100%",
 
   variants: {

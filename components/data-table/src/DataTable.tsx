@@ -3,35 +3,24 @@ import {
   SetStateAction,
   useCallback,
   useEffect,
-  useMemo,
-  useRef,
   useState
 } from "react";
 import { titleCase } from "title-case";
 import { Button } from "@cyclone-ui/button";
 import { Input } from "@cyclone-ui/input";
-import { Pagination, PaginationProps } from "@cyclone-ui/pagination";
+import { Pagination } from "@cyclone-ui/pagination";
+import { Select } from "@cyclone-ui/select";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
 import { Form } from "@tamagui/form";
-import {
-  ArrowDownAZ,
-  ArrowUpZA,
-  Edit3,
-  Filter,
-  Menu,
-  X
-} from "@tamagui/lucide-icons";
+import { ArrowDownAZ, ArrowUpZA, Filter, X } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import {
   CellContext,
-  ColumnDefTemplate,
   ColumnFiltersState,
-  ColumnSort,
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -69,10 +58,12 @@ export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
 
 export interface DataTableProps<TData extends RowData> extends TableProps {
   options: DataTableOptions<TData>;
+  pageSize?: number | null | false;
 }
 
 export function DataTable<TData extends RowData>({
   options,
+  pageSize = 100,
   ...rest
 }: DataTableProps<TData>) {
   const [data, setData] = useState<TData[]>(() => [...options.data]);
@@ -80,8 +71,9 @@ export function DataTable<TData extends RowData>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: 10
+    pageSize: typeof pageSize === "number" && pageSize > 0 ? pageSize : 100
   });
+  const [pageCount, setPageCount] = useState<number>(1);
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -107,6 +99,10 @@ export function DataTable<TData extends RowData>({
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
 
+  useEffect(() => {
+    setPageCount(table.getPageCount());
+  }, [pageSize, data.length]);
+
   return (
     <InternalStateContext.Provider
       sorting={sorting}
@@ -115,55 +111,61 @@ export function DataTable<TData extends RowData>({
       setColumnFilters={setColumnFilters}
       pagination={pagination}
       setPagination={setPagination}>
-      <Table
-        alignCells={{ x: "start", y: "center" }}
-        alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="$18"
-        cellHeight="$7"
-        {...rest}>
-        <Table.Head>
-          {headerGroups.map(headerGroup => {
-            return (
-              <Table.Row key={headerGroup.id} header={true}>
-                {headerGroup.headers.map(header => (
-                  <Table.HeaderCell key={header.id} group={"header" as any}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </Table.HeaderCell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Head>
-        <Table.Body>
-          {tableRows.map(row => {
-            return (
-              <Table.Row key={row.id}>
-                {row.getVisibleCells().map(cell => (
-                  <Table.Cell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table>
-      <DataTablePagination
-        setPageIndex={table.setPageIndex}
-        getPageCount={table.getPageCount}
-        nextPage={table.nextPage}
-        previousPage={table.previousPage}
-        firstPage={table.firstPage}
-        lastPage={table.lastPage}
-        pageIndex={pagination.pageIndex}
-        pageSize={pagination.pageSize}
-        rowCount={data.length}
-      />
+      <YStack gap="$3">
+        <Table
+          alignCells={{ x: "start", y: "center" }}
+          alignHeaderCells={{ x: "start", y: "center" }}
+          cellWidth="$18"
+          cellHeight="$7"
+          {...rest}>
+          <Table.Head>
+            {headerGroups.map(headerGroup => {
+              return (
+                <Table.Row key={headerGroup.id} header={true}>
+                  {headerGroup.headers.map(header => (
+                    <Table.HeaderCell key={header.id} group={"header" as any}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </Table.HeaderCell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Head>
+          <Table.Body>
+            {tableRows.map(row => {
+              return (
+                <Table.Row key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <Table.Cell key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </Table.Cell>
+                  ))}
+                </Table.Row>
+              );
+            })}
+          </Table.Body>
+        </Table>
+        {pageCount > 1 && (
+          <DataTablePagination
+            setPageIndex={table.setPageIndex}
+            nextPage={table.nextPage}
+            previousPage={table.previousPage}
+            firstPage={table.firstPage}
+            lastPage={table.lastPage}
+            pageIndex={pagination.pageIndex}
+            pageSize={pagination.pageSize}
+            pageCount={pageCount}
+          />
+        )}
+      </YStack>
     </InternalStateContext.Provider>
   );
 }
@@ -343,15 +345,10 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
 
 export type DataTablePaginationProps<TData extends RowData> = Pick<
   ReactTable<TData>,
-  | "setPageIndex"
-  | "nextPage"
-  | "previousPage"
-  | "firstPage"
-  | "lastPage"
-  | "getPageCount"
+  "setPageIndex" | "nextPage" | "previousPage" | "firstPage" | "lastPage"
 > &
   Pick<PaginationState, "pageIndex" | "pageSize"> & {
-    rowCount: number;
+    pageCount: number;
   };
 
 export function DataTablePagination<TData extends RowData>({
@@ -360,23 +357,32 @@ export function DataTablePagination<TData extends RowData>({
   previousPage,
   firstPage,
   lastPage,
-  getPageCount,
   pageIndex,
   pageSize,
-  rowCount
+  pageCount
 }: DataTablePaginationProps<TData>) {
-  const [pageCount, setPageCount] = useState<number>(1);
-  useEffect(() => {
-    setPageCount(getPageCount());
-  }, [pageSize, rowCount]);
-
   return (
     <XStack
       group={"header" as any}
       flexGrow={1}
       justifyContent="space-between"
-      alignItems="center"
-      paddingHorizontal="$1">
+      alignItems="center">
+      <Select
+        name="pageSize"
+        options={[
+          { name: "5", value: 5 },
+          { name: "10", value: 10 },
+          { name: "25", value: 25 },
+          { name: "50", value: 50 },
+          { name: "100", value: 100 }
+        ]}>
+        <XStack alignItems="center" gap="$3">
+          <Select.Label>Items per page</Select.Label>
+          <Select.Box>
+            <Select.Value placeholder="Size" />
+          </Select.Box>
+        </XStack>
+      </Select>
       <Pagination
         pageIndex={pageIndex}
         pageCount={pageCount}

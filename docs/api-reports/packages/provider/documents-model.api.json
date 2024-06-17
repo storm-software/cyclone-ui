@@ -707,6 +707,37 @@
           }
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!ToastViewportProps:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ToastViewportProps = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ViewProps",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": " & {\n    hotkey?: string[];\n    label?: string;\n    name?: string;\n    multipleToasts?: boolean;\n    portalToRoot?: boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/ToastProvider.tsx",
+          "releaseTag": "Public",
+          "name": "ToastViewportProps",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
           "kind": "Function",
           "canonicalReference": "@cyclone-ui/provider!useThemeNameState:function(1)",
           "docComment": "",

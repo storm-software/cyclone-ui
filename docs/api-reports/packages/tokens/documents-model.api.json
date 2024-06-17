@@ -5215,7 +5215,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    $0: number;\n    \"$0.1\": number;\n    \"$0.2\": number;\n    \"$0.25\": number;\n    \"$0.4\": number;\n    \"$0.5\": number;\n    \"$0.75\": number;\n    \"$0.80\": number;\n    \"$0.90\": number;\n    $1: number;\n    \"$1.25\": number;\n    \"$1.5\": number;\n    $2: number;\n    \"$2.5\": number;\n    $3: number;\n    \"$3.5\": number;\n    $4: number;\n    $true: number;\n    \"$4.5\": number;\n    $5: number;\n    $6: number;\n    $7: number;\n    $8: number;\n    $9: number;\n    $10: number;\n    $11: number;\n    $12: number;\n    $13: number;\n    $14: number;\n    $15: number;\n    $16: number;\n    $17: number;\n    $18: number;\n    $19: number;\n    $20: number;\n}"
+              "text": "{\n    $0: number;\n    \"$0.1\": number;\n    \"$0.2\": number;\n    \"$0.25\": number;\n    \"$0.4\": number;\n    \"$0.5\": number;\n    \"$0.75\": number;\n    \"$0.8\": number;\n    \"$0.9\": number;\n    $1: number;\n    \"$1.25\": number;\n    \"$1.5\": number;\n    $2: number;\n    \"$2.5\": number;\n    $3: number;\n    \"$3.5\": number;\n    $4: number;\n    $true: number;\n    \"$4.5\": number;\n    $5: number;\n    $6: number;\n    $7: number;\n    $8: number;\n    $9: number;\n    $10: number;\n    $11: number;\n    $12: number;\n    $13: number;\n    $14: number;\n    $15: number;\n    $16: number;\n    $17: number;\n    $18: number;\n    $19: number;\n    $20: number;\n}"
             }
           ],
           "fileUrlPath": "packages/tokens/src/tokens.ts",
@@ -7210,7 +7210,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.80\": "
+              "text": "<number>;\n        0.8: "
             },
             {
               "kind": "Reference",
@@ -7219,7 +7219,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.90\": "
+              "text": "<number>;\n        0.9: "
             },
             {
               "kind": "Reference",
@@ -7516,7 +7516,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"-0.80\": "
+              "text": "<number>;\n        [-0.8]: "
             },
             {
               "kind": "Reference",
@@ -7525,7 +7525,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"-0.90\": "
+              "text": "<number>;\n        [-0.9]: "
             },
             {
               "kind": "Reference",
@@ -7831,7 +7831,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.80\": "
+              "text": "<number>;\n        0.8: "
             },
             {
               "kind": "Reference",
@@ -7840,7 +7840,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.90\": "
+              "text": "<number>;\n        0.9: "
             },
             {
               "kind": "Reference",
@@ -11971,7 +11971,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.80\": "
+              "text": "<number>;\n        0.8: "
             },
             {
               "kind": "Reference",
@@ -11980,7 +11980,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.90\": "
+              "text": "<number>;\n        0.9: "
             },
             {
               "kind": "Reference",
@@ -12277,7 +12277,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"-0.80\": "
+              "text": "<number>;\n        [-0.8]: "
             },
             {
               "kind": "Reference",
@@ -12286,7 +12286,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"-0.90\": "
+              "text": "<number>;\n        [-0.9]: "
             },
             {
               "kind": "Reference",
@@ -12592,7 +12592,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.80\": "
+              "text": "<number>;\n        0.8: "
             },
             {
               "kind": "Reference",
@@ -12601,7 +12601,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number>;\n        \"0.90\": "
+              "text": "<number>;\n        0.9: "
             },
             {
               "kind": "Reference",

@@ -11,10 +11,10 @@ import { TamaguiProviderProps } from '@tamagui/web';
 import { Toast } from '@tamagui/toast';
 import { ToastProviderProps as ToastProviderProps_2 } from '@tamagui/toast';
 import { ToastViewport } from '@tamagui/toast';
-import { ToastViewportProps } from '@tamagui/toast';
 import { UseBoundStoreWithEqualityFn } from 'zustand/traditional';
 import { useToastController } from '@tamagui/toast';
 import { useToastState } from '@tamagui/toast';
+import { ViewProps } from '@tamagui/core';
 
 // @public (undocumented)
 const Provider: ({ children, toast, theme, ...props }: ProviderProps) => JSX_2.Element;
@@ -72,7 +72,14 @@ export type ToastProviderProps = PropsWithChildren<Partial<ToastProviderProps_2>
 
 export { ToastViewport }
 
-export { ToastViewportProps }
+// @public (undocumented)
+export type ToastViewportProps = ViewProps & {
+    hotkey?: string[];
+    label?: string;
+    name?: string;
+    multipleToasts?: boolean;
+    portalToRoot?: boolean;
+};
 
 // @public (undocumented)
 const useThemeNameState: (defaultName?: ThemeVars) => ThemeVars | undefined;

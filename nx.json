@@ -4,30 +4,6 @@
     "packageManager": "pnpm"
   },
   "targetDefaults": {
-    "lint": {
-      "cache": true,
-      "inputs": ["default"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["^lint"]
-    },
-    "clean": {
-      "cache": false,
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm exec rimraf dist/{projectRoot}"
-      }
-    },
-    "build": {
-      "cache": true,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"]
-    },
-    "docs": {
-      "cache": true,
-      "inputs": ["defaultDocs", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build", "^docs"]
-    },
     "test": {
       "cache": true,
       "inputs": ["defaultTesting", "^production"],
@@ -44,16 +20,6 @@
       "cache": false,
       "inputs": ["default", "^production"],
       "dependsOn": ["build", "^nx-release-publish"]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     }
   },
   "release": {
