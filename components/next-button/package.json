@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/next-button",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "type": "module",
   "description": "A Next Button component meant to be shared in many other components",
   "repository": {

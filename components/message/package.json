@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/message",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
@@ -27,7 +27,7 @@
     "types"
   ],
   "peerDependencies": {
-        "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "react-native": "0.73.2"
   },
@@ -45,7 +45,7 @@
     "react-native-svg": "^15.2.0"
   },
   "devDependencies": {
-        "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "react-native": "0.73.2"
   },

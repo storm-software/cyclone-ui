@@ -8300,6 +8300,14 @@ packages:
     transitivePeerDependencies:
       - nx
 
+  /@nrwl/devkit@19.2.0(nx@19.2.0):
+    resolution: {integrity: sha512-Ew5AJZkLXJwt15HjaIbHve8FOXmZ3HK8KPqTXqwKHX8jQW+fDUCaSXKe/lCZMNg0RvY+jMNecuC86uGdiIbLMg==}
+    dependencies:
+      '@nx/devkit': 19.2.0(nx@19.2.0)
+    transitivePeerDependencies:
+      - nx
+    dev: false
+
   /@nrwl/esbuild@19.1.0(@swc-node/register@1.9.2)(@swc/core@1.5.25)(@types/node@20.9.0)(esbuild@0.19.12)(nx@18.3.4)(typescript@5.2.2)(verdaccio@5.30.3):
     resolution: {integrity: sha512-PtijXfjlGlU/lqkeRgs5sbWWUqjuwBOMo2n5gTCldjJet633pdtwTdtvhyrC4uzX+CEV+LkkpNIZEEB6MU2r9Q==}
     dependencies:
@@ -8975,7 +8983,7 @@ packages:
     peerDependencies:
       nx: '>= 17 <= 20'
     dependencies:
-      '@nrwl/devkit': 19.2.0(nx@18.3.4)
+      '@nrwl/devkit': 19.2.0(nx@19.2.0)
       ejs: 3.1.9
       enquirer: 2.3.6
       ignore: 5.3.1
@@ -10585,6 +10593,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
+      napi-wasm: 1.1.0
     dev: true
     optional: true
     bundledDependencies:
@@ -32986,6 +32995,12 @@ packages:
   /napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /native-url@0.3.4:
     resolution: {integrity: sha512-6iM8R99ze45ivyH8vybJ7X0yekIcPf5GgLV5K0ENCbmRcaRIDoj37BC8iLEmaaBfqqb8enuZ5p0uhY+lVAbAcA==}

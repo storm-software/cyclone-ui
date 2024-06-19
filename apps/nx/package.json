@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/nx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "commonjs",
   "description": "⚡ A Nx plugin package that contains various executors and generators used in a Storm workspaces.",
   "repository": {

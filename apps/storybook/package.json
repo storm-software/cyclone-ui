@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/storybook",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@react-navigation/native": "~6.1.9",
