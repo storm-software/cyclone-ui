@@ -8,4 +8,4 @@
  */
 
 export * from "./create-form-factory";
-export * from "./use-form-factory";
+export * from "./use-form";

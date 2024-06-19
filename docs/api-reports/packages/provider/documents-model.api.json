@@ -174,6 +174,235 @@
       "members": [
         {
           "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!getMessageHeading:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getMessageHeading: (message: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MessageOptions",
+              "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "message",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getMessageHeading"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/provider!MessageOptions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MessageOptions = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "MessageProps",
+              "canonicalReference": "@cyclone-ui/provider!MessageProps:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"message\">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+          "releaseTag": "Public",
+          "name": "MessageOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/provider!MessageProps:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface MessageProps "
+            }
+          ],
+          "fileUrlPath": "tmp/.tsup/declaration/packages/provider/src/use-message-controller.d.ts",
+          "releaseTag": "Public",
+          "name": "MessageProps",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!MessageProps#heading:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "heading?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "heading",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!MessageProps#icon:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "icon?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "React.ReactNode",
+                  "canonicalReference": "types-react!React.ReactNode:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "icon",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!MessageProps#message:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "message",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!MessageProps#theme:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "theme?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "theme",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
           "canonicalReference": "@cyclone-ui/provider!Provider:function(1)",
           "docComment": "",
           "excerptTokens": [
@@ -197,7 +426,7 @@
             {
               "kind": "Reference",
               "text": "JSX.Element",
-              "canonicalReference": "@types/react!JSX.Element:interface"
+              "canonicalReference": "types-react!JSX.Element:interface"
             }
           ],
           "fileUrlPath": "packages/provider/src/Provider.tsx",
@@ -231,7 +460,7 @@
             {
               "kind": "Reference",
               "text": "PropsWithChildren",
-              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+              "canonicalReference": "types-react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
@@ -293,7 +522,7 @@
             {
               "kind": "Reference",
               "text": "JSX.Element",
-              "canonicalReference": "@types/react!JSX.Element:interface"
+              "canonicalReference": "types-react!JSX.Element:interface"
             }
           ],
           "fileUrlPath": "packages/provider/src/Provider.server.tsx",
@@ -327,7 +556,7 @@
             {
               "kind": "Reference",
               "text": "PropsWithChildren",
-              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+              "canonicalReference": "types-react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
@@ -389,7 +618,7 @@
             {
               "kind": "Reference",
               "text": "JSX.Element",
-              "canonicalReference": "@types/react!JSX.Element:interface"
+              "canonicalReference": "types-react!JSX.Element:interface"
             }
           ],
           "fileUrlPath": "packages/provider/src/ThemeProvider.tsx",
@@ -423,7 +652,7 @@
             {
               "kind": "Reference",
               "text": "PropsWithChildren",
-              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+              "canonicalReference": "types-react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
@@ -503,7 +732,7 @@
             {
               "kind": "Reference",
               "text": "JSX.Element",
-              "canonicalReference": "@types/react!JSX.Element:interface"
+              "canonicalReference": "types-react!JSX.Element:interface"
             }
           ],
           "fileUrlPath": "packages/provider/src/ThemeProvider.server.tsx",
@@ -537,7 +766,7 @@
             {
               "kind": "Reference",
               "text": "PropsWithChildren",
-              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+              "canonicalReference": "types-react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
@@ -617,7 +846,7 @@
             {
               "kind": "Reference",
               "text": "JSX.Element",
-              "canonicalReference": "@types/react!JSX.Element:interface"
+              "canonicalReference": "types-react!JSX.Element:interface"
             }
           ],
           "fileUrlPath": "packages/provider/src/ToastProvider.tsx",
@@ -651,7 +880,7 @@
             {
               "kind": "Reference",
               "text": "PropsWithChildren",
-              "canonicalReference": "@types/react!React.PropsWithChildren:type"
+              "canonicalReference": "types-react!React.PropsWithChildren:type"
             },
             {
               "kind": "Content",
@@ -736,6 +965,346 @@
             "startIndex": 1,
             "endIndex": 3
           }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/provider!useMessageController:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "useMessageController: () => "
+            },
+            {
+              "kind": "Reference",
+              "text": "UseMessageControllerResult",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult:interface"
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "useMessageController"
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface UseMessageControllerResult "
+            }
+          ],
+          "fileUrlPath": "packages/provider/src/use-message-controller.ts",
+          "releaseTag": "Public",
+          "name": "UseMessageControllerResult",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#hide:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hide: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "hide",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#nativeToast:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "nativeToast: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "nativeToast",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#options:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "options?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "options",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#show:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "show: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "show",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#showError:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "showError: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "showError",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#showHelp:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "showHelp: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "showHelp",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#showInfo:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "showInfo: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "showInfo",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#showSuccess:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "showSuccess: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "showSuccess",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/provider!UseMessageControllerResult#showWarning:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "showWarning: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(message: string, options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageOptions",
+                  "canonicalReference": "@cyclone-ui/provider!MessageOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "showWarning",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Function",

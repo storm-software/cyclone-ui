@@ -3,7 +3,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "components/button/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "cache": true,

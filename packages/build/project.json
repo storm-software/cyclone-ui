@@ -38,7 +38,9 @@
             ".js": ".js"
           },
           "inject": ["packages/build/assets/cjs_shims.js"],
-          "define": { "import.meta.url": "importMetaUrl" }
+          "define": {
+            "import.meta.url": "importMetaUrl"
+          }
         },
         "assets": [
           {
@@ -90,7 +92,9 @@
             ".js": ".mjs"
           },
           "inject": ["packages/build/assets/esm_shims.js"],
-          "define": { "import.meta.url": "importMetaUrl" }
+          "define": {
+            "import.meta.url": "importMetaUrl"
+          }
         }
       }
     },

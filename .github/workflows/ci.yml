@@ -98,7 +98,7 @@ jobs:
       #   uses: DavidAnson/markdownlint-cli2-action@v16
 
       - name: Run formatters scripts
-        run: pnpm nx format
+        run: pnpm format
         shell: bash
 
       - name: Re-run build script

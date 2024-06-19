@@ -1,13 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
-// import { HelpCircle } from "@tamagui/lucide-icons";
-import {
-  Message,
-  MessageViewport,
-  useMessageController,
-  type MessageProps
-} from "./Message";
-import { XStack, YStack } from "@tamagui/stacks";
 import { Button } from "@cyclone-ui/button";
+import { useMessageController, type MessageProps } from "@cyclone-ui/provider";
+import type { Meta, StoryObj } from "@storybook/react";
+import { XStack, YStack } from "@tamagui/stacks";
+// import { HelpCircle } from "@tamagui/lucide-icons";
+import { Message, MessageViewport } from "./Message";
 
 const meta: Meta<typeof Message> = {
   title: "General/Message",

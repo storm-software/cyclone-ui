@@ -4,7 +4,9 @@
 
 ```ts
 
-import { JSX as JSX_2 } from 'react/jsx-runtime';
+/// <reference types="react" />
+
+import { JSX } from 'react/jsx-runtime';
 import { PropsWithChildren } from 'react';
 import { StoreApi } from 'zustand/vanilla';
 import { TamaguiProviderProps } from '@tamagui/web';
@@ -17,7 +19,31 @@ import { useToastState } from '@tamagui/toast';
 import { ViewProps } from '@tamagui/core';
 
 // @public (undocumented)
-const Provider: ({ children, toast, theme, ...props }: ProviderProps) => JSX_2.Element;
+const getMessageHeading: (message: string, options: MessageOptions) => string;
+export { getMessageHeading }
+export { getMessageHeading as getMessageHeading_alias_1 }
+
+// @public (undocumented)
+type MessageOptions = Omit<MessageProps, "message">;
+export { MessageOptions }
+export { MessageOptions as MessageOptions_alias_1 }
+
+// @public (undocumented)
+interface MessageProps {
+    // (undocumented)
+    heading?: string;
+    // (undocumented)
+    icon?: React.ReactNode;
+    // (undocumented)
+    message: string;
+    // (undocumented)
+    theme?: string;
+}
+export { MessageProps }
+export { MessageProps as MessageProps_alias_1 }
+
+// @public (undocumented)
+const Provider: ({ children, toast, theme, ...props }: ProviderProps) => JSX.Element;
 export { Provider }
 export { Provider as Provider_alias_1 }
 
@@ -30,7 +56,7 @@ export { ProviderProps }
 export { ProviderProps as ProviderProps_alias_1 }
 
 // @public (undocumented)
-const ProviderServer: ({ children, toast, theme, ...props }: ProviderServerProps) => JSX_2.Element;
+const ProviderServer: ({ children, toast, theme, ...props }: ProviderServerProps) => JSX.Element;
 export { ProviderServer }
 export { ProviderServer as ProviderServer_alias_1 }
 
@@ -43,7 +69,7 @@ export { ProviderServerProps }
 export { ProviderServerProps as ProviderServerProps_alias_1 }
 
 // @public (undocumented)
-const ThemeProvider: ({ children, ...props }: ThemeProviderProps) => JSX_2.Element;
+const ThemeProvider: ({ children, ...props }: ThemeProviderProps) => JSX.Element;
 export { ThemeProvider }
 export { ThemeProvider as ThemeProvider_alias_1 }
 
@@ -53,7 +79,7 @@ export { ThemeProviderProps }
 export { ThemeProviderProps as ThemeProviderProps_alias_1 }
 
 // @public (undocumented)
-const ThemeProviderServer: ({ children, ...props }: ThemeProviderServerProps) => JSX_2.Element;
+const ThemeProviderServer: ({ children, ...props }: ThemeProviderServerProps) => JSX.Element;
 export { ThemeProviderServer }
 export { ThemeProviderServer as ThemeProviderServer_alias_1 }
 
@@ -65,21 +91,56 @@ export { ThemeProviderServerProps as ThemeProviderServerProps_alias_1 }
 export { Toast }
 
 // @public (undocumented)
-export const ToastProvider: ({ children, ...props }: ToastProviderProps) => JSX_2.Element;
+const ToastProvider: ({ children, ...props }: ToastProviderProps) => JSX.Element;
+export { ToastProvider }
+export { ToastProvider as ToastProvider_alias_1 }
 
 // @public (undocumented)
-export type ToastProviderProps = PropsWithChildren<Partial<ToastProviderProps_2> & Omit<ToastProviderProps_2, "id" | "label">>;
+type ToastProviderProps = PropsWithChildren<Partial<ToastProviderProps_2> & Omit<ToastProviderProps_2, "id" | "label">>;
+export { ToastProviderProps }
+export { ToastProviderProps as ToastProviderProps_alias_1 }
 
 export { ToastViewport }
 
 // @public (undocumented)
-export type ToastViewportProps = ViewProps & {
+type ToastViewportProps = ViewProps & {
     hotkey?: string[];
     label?: string;
     name?: string;
     multipleToasts?: boolean;
     portalToRoot?: boolean;
 };
+export { ToastViewportProps }
+export { ToastViewportProps as ToastViewportProps_alias_1 }
+
+// @public (undocumented)
+const useMessageController: () => UseMessageControllerResult;
+export { useMessageController }
+export { useMessageController as useMessageController_alias_1 }
+
+// @public (undocumented)
+interface UseMessageControllerResult {
+    // (undocumented)
+    hide: () => void;
+    // (undocumented)
+    nativeToast: any;
+    // (undocumented)
+    options?: any;
+    // (undocumented)
+    show: (message: string, options: MessageOptions) => void;
+    // (undocumented)
+    showError: (message: string, options: MessageOptions) => void;
+    // (undocumented)
+    showHelp: (message: string, options: MessageOptions) => void;
+    // (undocumented)
+    showInfo: (message: string, options: MessageOptions) => void;
+    // (undocumented)
+    showSuccess: (message: string, options: MessageOptions) => void;
+    // (undocumented)
+    showWarning: (message: string, options: MessageOptions) => void;
+}
+export { UseMessageControllerResult }
+export { UseMessageControllerResult as UseMessageControllerResult_alias_1 }
 
 // @public (undocumented)
 const useThemeNameState: (defaultName?: ThemeVars) => ThemeVars | undefined;

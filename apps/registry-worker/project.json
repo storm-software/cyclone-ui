@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/registry-worker/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -54,6 +55,5 @@
     "nx-release-publish": {
       "executor": "@storm-software/cloudflare-tools:cloudflare-publish"
     }
-  },
-  "tags": []
+  }
 }

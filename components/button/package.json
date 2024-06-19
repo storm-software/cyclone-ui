@@ -1,7 +1,13 @@
 {
   "name": "@cyclone-ui/button",
   "version": "0.5.0",
+  "type": "module",
   "description": "Button component for Cyclone UI",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/message"
+  },
   "private": false,
   "main": "dist/cjs",
   "module": "dist/esm",

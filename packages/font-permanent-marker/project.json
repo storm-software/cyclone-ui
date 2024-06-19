@@ -13,6 +13,7 @@
         "tsConfig": "packages/font-permanent-marker/tsconfig.json",
         "project": "packages/font-permanent-marker/package.json",
         "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*"],
         "assets": [
           {
             "input": "packages/font-permanent-marker",

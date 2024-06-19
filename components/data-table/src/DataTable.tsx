@@ -2,7 +2,7 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
-  useEffect,
+  useLayoutEffect,
   useState
 } from "react";
 import { titleCase } from "title-case";
@@ -99,7 +99,7 @@ export function DataTable<TData extends RowData>({
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setPageCount(table.getPageCount());
   }, [pageSize, data.length]);
 

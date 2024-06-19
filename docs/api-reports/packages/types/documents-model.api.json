@@ -1004,7 +1004,7 @@
                 {
                   "kind": "Reference",
                   "text": "React.ReactNode",
-                  "canonicalReference": "@types/react!React.ReactNode:type"
+                  "canonicalReference": "types-react!React.ReactNode:type"
                 },
                 {
                   "kind": "Content",

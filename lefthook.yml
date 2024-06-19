@@ -1,90 +1,99 @@
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+
 assert_lefthook_installed: true
 colors: true
 no_tty: false
 min_version: 1.5.0
 
-pre-install:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-pre-install"
+remotes:
+  - git_url: git@github.com:storm-software/storm-ops
+    ref: main
+    configs: packages/git-tools/src/lefthook/lefthook.yml
+# pre-install:
+#   commands:
+#     validate:
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-pre-install"
 
-prepare:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-prepare"
+# prepare:
+#   commands:
+#     validate:
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-prepare"
 
-pre-commit:
-  piped: true
-  commands:
-    # install:
-    #   files: "git diff --name-only HEAD @{push}"
-    #   glob: "**/package.json"
-    #   run: "pnpm install && git update-index"
-    prepare:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/{lefthook.yml,biome.json}"
-      run: "pnpm exec storm-prepare"
-    prebuild:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/*.*"
-      run: "pnpm build-all && git update-index"
-    # validate:
-    #   glob: "**/*.*"
-    #   run: "pnpm exec storm-pre-commit {staged_files}"
-    #   stage_fixed: true
-    # lint:
-    #   files: "git diff --name-only HEAD @{push}"
-    #   glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-    #   run: "pnpm lint && git update-index"
-    # lint-filename:
-    #   glob: "**/*.*"
-    #   run: 'pnpm exec ls-lint --config="@storm-software/linting-tools/ls-lint/ls-lint.yml"'
-    # readme-gen:
-    #   glob: "**/{README.md,package.json,executors.json,generators.json}"
-    #   run: 'pnpm exec storm-git readme-gen --templates="./docs/readme-templates" && git update-index'
-    # postbuild:
-    #   glob: "**/*.*"
-    #   run: "pnpm build-all"
-    #   stage_fixed: true
+# pre-commit:
+#   piped: true
+#   commands:
+#     # install:
+#     #   files: "git diff --name-only HEAD @{push}"
+#     #   glob: "**/package.json"
+#     #   run: "pnpm install && git update-index"
+#     prepare:
+#       files: "git diff --name-only HEAD @{push}"
+#       glob: "**/{lefthook.yml,biome.json}"
+#       run: "pnpm exec storm-prepare"
+#     prebuild:
+#       files: "git diff --name-only HEAD @{push}"
+#       glob: "**/*.*"
+#       run: "pnpm build-all && git update-index"
+#     # validate:
+#     #   glob: "**/*.*"
+#     #   run: "pnpm exec storm-pre-commit {staged_files}"
+#     #   stage_fixed: true
+#     # lint:
+#     #   files: "git diff --name-only HEAD @{push}"
+#     #   glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+#     #   run: "pnpm lint && git update-index"
+#     # lint-filename:
+#     #   glob: "**/*.*"
+#     #   run: 'pnpm exec ls-lint --config="@storm-software/linting-tools/ls-lint/ls-lint.yml"'
+#     # readme-gen:
+#     #   glob: "**/{README.md,package.json,executors.json,generators.json}"
+#     #   run: 'pnpm exec storm-git readme-gen --templates="./docs/readme-templates" && git update-index'
+#     # postbuild:
+#     #   glob: "**/*.*"
+#     #   run: "pnpm build-all"
+#     #   stage_fixed: true
 
-commit-msg:
-  commands:
-    validate:
-      run: 'pnpm exec commitlint --config="./node_modules/@storm-software/git-tools/commitlint.config.cjs" --edit {1}'
+# commit-msg:
+#   commands:
+#     validate:
+#       run: 'pnpm exec commitlint --config="./node_modules/@storm-software/git-tools/commitlint.config.cjs" --edit {1}'
 
-pre-push:
-  piped: true
-  commands:
-    validate:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/*.*"
-      run: "pnpm exec storm-pre-push {files}"
-      stage_fixed: true
-    # build:
-    #   files: "git diff --name-only HEAD @{push}"
-    #   glob: "**/*.*"
-    #   run: "pnpm build-all && git update-index"
-    # registry:
-    #   run: "pnpm nx run-many -t registry --projects=components/* --parallel=5"
-    #   glob: "components/**/*"
+# pre-push:
+#   piped: true
+#   commands:
+#     validate:
+#       files: "git diff --name-only HEAD @{push}"
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-pre-push {files}"
+#       stage_fixed: true
+#     # build:
+#     #   files: "git diff --name-only HEAD @{push}"
+#     #   glob: "**/*.*"
+#     #   run: "pnpm build-all && git update-index"
+#     # registry:
+#     #   run: "pnpm nx run-many -t registry --projects=components/* --parallel=5"
+#     #   glob: "components/**/*"
 
-post-merge:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-merge {staged_files}"
-      stage_fixed: true
+# post-merge:
+#   commands:
+#     validate:
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-post-merge {staged_files}"
+#       stage_fixed: true
 
-post-checkout:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-checkout {staged_files}"
+# post-checkout:
+#   commands:
+#     validate:
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-post-checkout {staged_files}"
 
-post-commit:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-commit {staged_files}"
+# post-commit:
+#   commands:
+#     validate:
+#       glob: "**/*.*"
+#       run: "pnpm exec storm-post-commit {staged_files}"

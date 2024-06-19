@@ -6,26 +6,13 @@
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/form"
+    "directory": "packages/form"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
   "peerDependencies": {
     "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
@@ -46,9 +33,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "sideEffects": [
-    "*.css"
-  ],
-  "module:jsx": "dist/jsx"
+  }
 }

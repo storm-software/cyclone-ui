@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/cli/src",
+  "implicitDependencies": ["build", "registry-trpc"],
   "targets": {
     "clean": {
       "cache": true,
@@ -63,6 +64,5 @@
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
-  },
-  "implicitDependencies": ["build", "registry-trpc"]
+  }
 }

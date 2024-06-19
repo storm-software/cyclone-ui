@@ -5,19 +5,17 @@
   "sourceRoot": "components/form/src",
   "targets": {
     "build": {
-      "cache": true,
-      "executor": "@cyclone-ui/nx:build",
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "output": "{options.outputPath}",
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/components/form",
-        "tsConfig": "components/form/tsconfig.json",
-        "project": "components/form/package.json",
+        "entry": "packages/form/src/index.ts",
+        "outputPath": "dist/packages/form",
+        "tsConfig": "packages/form/tsconfig.json",
+        "project": "packages/form/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/form",
+            "input": "packages/form",
             "glob": "*.md",
             "output": "/"
           },
@@ -40,7 +38,7 @@
       }
     },
     "nx-release-publish": {
-      "executor": "@cyclone-ui/tools-nx:component-publish"
+      "executor": "@storm-software/workspace-tools:npm-publish"
     }
   }
 }

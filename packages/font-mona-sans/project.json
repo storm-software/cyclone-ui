@@ -13,6 +13,7 @@
         "tsConfig": "packages/font-mona-sans/tsconfig.json",
         "project": "packages/font-mona-sans/package.json",
         "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*"],
         "assets": [
           {
             "input": "packages/font-mona-sans",

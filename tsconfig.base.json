@@ -4,109 +4,41 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "esnext"
-    ],
+    "types": ["node"],
+    "lib": ["esnext"],
     "paths": {
-      "@cyclone-ui/alert": [
-        "components/alert/src/index.ts"
-      ],
-      "@cyclone-ui/alert/*": [
-        "components/alert/src/*"
-      ],
-      "@cyclone-ui/animations": [
-        "packages/animations/src/index.ts"
-      ],
-      "@cyclone-ui/animations/*": [
-        "packages/animations/src/*"
-      ],
-      "@cyclone-ui/badge": [
-        "components/badge/src/index.ts"
-      ],
-      "@cyclone-ui/badge/*": [
-        "components/badge/src/*"
-      ],
-      "@cyclone-ui/breadcrumb": [
-        "components/breadcrumb/src/index.ts"
-      ],
-      "@cyclone-ui/breadcrumb/*": [
-        "components/breadcrumb/src/*"
-      ],
-      "@cyclone-ui/build": [
-        "packages/build/src/index.ts"
-      ],
-      "@cyclone-ui/build/*": [
-        "packages/build/src/*"
-      ],
-      "@cyclone-ui/button": [
-        "components/button/src/index.ts"
-      ],
-      "@cyclone-ui/button/*": [
-        "components/button/src/*"
-      ],
-      "@cyclone-ui/card": [
-        "components/card/src/index.ts"
-      ],
-      "@cyclone-ui/card/*": [
-        "components/card/src/*"
-      ],
-      "@cyclone-ui/checkbox": [
-        "components/checkbox/src/index.ts"
-      ],
-      "@cyclone-ui/checkbox/*": [
-        "components/checkbox/src/*"
-      ],
-      "@cyclone-ui/cli": [
-        "apps/cli/src/index.ts"
-      ],
-      "@cyclone-ui/cli/*": [
-        "apps/cli/src/*"
-      ],
-      "@cyclone-ui/collapsible": [
-        "components/collapsible/src/index.ts"
-      ],
-      "@cyclone-ui/collapsible/*": [
-        "packages/collapsible/src/*"
-      ],
-      "@cyclone-ui/colors": [
-        "packages/colors/src/index.ts"
-      ],
-      "@cyclone-ui/colors/*": [
-        "packages/colors/src/*"
-      ],
-      "@cyclone-ui/config": [
-        "packages/config/src/index.ts"
-      ],
-      "@cyclone-ui/config/*": [
-        "packages/config/src/*"
-      ],
-      "@cyclone-ui/data-table": [
-        "components/data-table/src/index.ts"
-      ],
-      "@cyclone-ui/data-table/*": [
-        "components/data-table/src/*"
-      ],
-      "@cyclone-ui/date-picker": [
-        "components/date-picker/src/index.ts"
-      ],
-      "@cyclone-ui/date-picker/*": [
-        "components/date-picker/src/*"
-      ],
-      "@cyclone-ui/file-picker": [
-        "components/file-picker/src/index.ts"
-      ],
-      "@cyclone-ui/file-picker/*": [
-        "components/file-picker/src/*"
-      ],
-      "@cyclone-ui/font-mona-sans": [
-        "packages/font-mona-sans/src/index.ts"
-      ],
-      "@cyclone-ui/font-mona-sans/*": [
-        "packages/font-mona-sans/src/*"
-      ],
+      "@cyclone-ui/alert": ["components/alert/src/index.ts"],
+      "@cyclone-ui/alert/*": ["components/alert/src/*"],
+      "@cyclone-ui/animations": ["packages/animations/src/index.ts"],
+      "@cyclone-ui/animations/*": ["packages/animations/src/*"],
+      "@cyclone-ui/badge": ["components/badge/src/index.ts"],
+      "@cyclone-ui/badge/*": ["components/badge/src/*"],
+      "@cyclone-ui/breadcrumb": ["components/breadcrumb/src/index.ts"],
+      "@cyclone-ui/breadcrumb/*": ["components/breadcrumb/src/*"],
+      "@cyclone-ui/build": ["packages/build/src/index.ts"],
+      "@cyclone-ui/build/*": ["packages/build/src/*"],
+      "@cyclone-ui/button": ["components/button/src/index.ts"],
+      "@cyclone-ui/button/*": ["components/button/src/*"],
+      "@cyclone-ui/card": ["components/card/src/index.ts"],
+      "@cyclone-ui/card/*": ["components/card/src/*"],
+      "@cyclone-ui/checkbox": ["components/checkbox/src/index.ts"],
+      "@cyclone-ui/checkbox/*": ["components/checkbox/src/*"],
+      "@cyclone-ui/cli": ["apps/cli/src/index.ts"],
+      "@cyclone-ui/cli/*": ["apps/cli/src/*"],
+      "@cyclone-ui/collapsible": ["components/collapsible/src/index.ts"],
+      "@cyclone-ui/collapsible/*": ["packages/collapsible/src/*"],
+      "@cyclone-ui/colors": ["packages/colors/src/index.ts"],
+      "@cyclone-ui/colors/*": ["packages/colors/src/*"],
+      "@cyclone-ui/config": ["packages/config/src/index.ts"],
+      "@cyclone-ui/config/*": ["packages/config/src/*"],
+      "@cyclone-ui/data-table": ["components/data-table/src/index.ts"],
+      "@cyclone-ui/data-table/*": ["components/data-table/src/*"],
+      "@cyclone-ui/date-picker": ["components/date-picker/src/index.ts"],
+      "@cyclone-ui/date-picker/*": ["components/date-picker/src/*"],
+      "@cyclone-ui/file-picker": ["components/file-picker/src/index.ts"],
+      "@cyclone-ui/file-picker/*": ["components/file-picker/src/*"],
+      "@cyclone-ui/font-mona-sans": ["packages/font-mona-sans/src/index.ts"],
+      "@cyclone-ui/font-mona-sans/*": ["packages/font-mona-sans/src/*"],
       "@cyclone-ui/font-permanent-marker": [
         "packages/font-permanent-marker/src/index.ts"
       ],
@@ -116,147 +48,55 @@
       "@cyclone-ui/font-space-grotesk": [
         "packages/font-space-grotesk/src/index.ts"
       ],
-      "@cyclone-ui/font-space-grotesk/*": [
-        "packages/font-space-grotesk/src/*"
-      ],
-      "@cyclone-ui/input": [
-        "components/input/src/index.ts"
-      ],
-      "@cyclone-ui/input/*": [
-        "components/input/src/*"
-      ],
-      "@cyclone-ui/link": [
-        "components/link/src/index.ts"
-      ],
-      "@cyclone-ui/link/*": [
-        "components/link/src/*"
-      ],
-      "@cyclone-ui/masks": [
-        "packages/masks/src/index.ts"
-      ],
-      "@cyclone-ui/masks/*": [
-        "packages/masks/src/*"
-      ],
-      "@cyclone-ui/media-queries": [
-        "packages/media-queries/src/index.ts"
-      ],
-      "@cyclone-ui/media-queries/*": [
-        "packages/media-queries/src/*"
-      ],
-      "@cyclone-ui/message": [
-        "components/message/src/index.ts"
-      ],
-      "@cyclone-ui/message/*": [
-        "components/message/src/*"
-      ],
-      "@cyclone-ui/next-button": [
-        "components/next-button/src/index.ts"
-      ],
-      "@cyclone-ui/next-button/*": [
-        "components/next-button/src/*"
-      ],
-      "@cyclone-ui/nx": [
-        "apps/nx/index.ts"
-      ],
-      "@cyclone-ui/nx/*": [
-        "apps/nx/src/*"
-      ],
-      "@cyclone-ui/pagination": [
-        "components/pagination/src/index.ts"
-      ],
-      "@cyclone-ui/pagination/*": [
-        "components/pagination/src/*"
-      ],
-      "@cyclone-ui/pop-up": [
-        "components/pop-up/src/index.ts"
-      ],
-      "@cyclone-ui/pop-up/*": [
-        "components/pop-up/src/*"
-      ],
+      "@cyclone-ui/font-space-grotesk/*": ["packages/font-space-grotesk/src/*"],
+      "@cyclone-ui/form": ["components/form/src/index.ts"],
+      "@cyclone-ui/form/*": ["components/form/src/*"],
+      "@cyclone-ui/input": ["components/input/src/index.ts"],
+      "@cyclone-ui/input/*": ["components/input/src/*"],
+      "@cyclone-ui/link": ["components/link/src/index.ts"],
+      "@cyclone-ui/link/*": ["components/link/src/*"],
+      "@cyclone-ui/masks": ["packages/masks/src/index.ts"],
+      "@cyclone-ui/masks/*": ["packages/masks/src/*"],
+      "@cyclone-ui/media-queries": ["packages/media-queries/src/index.ts"],
+      "@cyclone-ui/media-queries/*": ["packages/media-queries/src/*"],
+      "@cyclone-ui/message": ["components/message/src/index.ts"],
+      "@cyclone-ui/message/*": ["components/message/src/*"],
+      "@cyclone-ui/next-button": ["components/next-button/src/index.ts"],
+      "@cyclone-ui/next-button/*": ["components/next-button/src/*"],
+      "@cyclone-ui/nx": ["apps/nx/index.ts"],
+      "@cyclone-ui/nx/*": ["apps/nx/src/*"],
+      "@cyclone-ui/pagination": ["components/pagination/src/index.ts"],
+      "@cyclone-ui/pagination/*": ["components/pagination/src/*"],
+      "@cyclone-ui/pop-up": ["components/pop-up/src/index.ts"],
+      "@cyclone-ui/pop-up/*": ["components/pop-up/src/*"],
       "@cyclone-ui/previous-button": [
         "components/previous-button/src/index.ts"
       ],
-      "@cyclone-ui/previous-button/*": [
-        "components/previous-button/src/*"
-      ],
-      "@cyclone-ui/provider": [
-        "packages/provider/src/index.ts"
-      ],
-      "@cyclone-ui/provider/*": [
-        "packages/provider/src/*"
-      ],
-      "@cyclone-ui/radio-group": [
-        "components/radio-group/src/index.ts"
-      ],
-      "@cyclone-ui/radio-group/*": [
-        "components/radio-group/src/*"
-      ],
-      "@cyclone-ui/registry-trpc": [
-        "packages/registry-trpc/src/index.ts"
-      ],
-      "@cyclone-ui/registry-trpc/*": [
-        "packages/registry-trpc/src/*"
-      ],
-      "@cyclone-ui/select": [
-        "components/select/src/index.ts"
-      ],
-      "@cyclone-ui/select/*": [
-        "components/select/src/*"
-      ],
-      "@cyclone-ui/steps": [
-        "components/steps/src/index.ts"
-      ],
-      "@cyclone-ui/steps/*": [
-        "components/steps/src/*"
-      ],
-      "@cyclone-ui/table": [
-        "components/table/src/index.ts"
-      ],
-      "@cyclone-ui/table/*": [
-        "components/table/src/*"
-      ],
-      "@cyclone-ui/tabs": [
-        "components/tabs/src/index.ts"
-      ],
-      "@cyclone-ui/tabs/*": [
-        "components/tabs/src/*"
-      ],
-      "@cyclone-ui/theme-helpers": [
-        "packages/theme-helpers/src/index.ts"
-      ],
-      "@cyclone-ui/theme-helpers/*": [
-        "packages/theme-helpers/src/*"
-      ],
-      "@cyclone-ui/themes": [
-        "packages/themes/src/index.ts"
-      ],
-      "@cyclone-ui/themes/*": [
-        "packages/themes/src/*"
-      ],
-      "@cyclone-ui/themes/brand": [
-        "packages/themes/src/brand-theme.ts"
-      ],
-      "@cyclone-ui/tokens": [
-        "packages/tokens/src/index.ts"
-      ],
-      "@cyclone-ui/tokens/*": [
-        "packages/tokens/src/*"
-      ],
-      "@cyclone-ui/tools-nx": [
-        "tools/nx/src/index.ts"
-      ],
-      "@cyclone-ui/types": [
-        "packages/types/src/index.ts"
-      ],
-      "@cyclone-ui/types/*": [
-        "packages/types/src/*"
-      ],
-      "@cyclone-ui/form": [
-        "components/form/src/index.ts"
-      ],
-      "@cyclone-ui/form/*": [
-        "components/form/src/*"
-      ]
+      "@cyclone-ui/previous-button/*": ["components/previous-button/src/*"],
+      "@cyclone-ui/provider": ["packages/provider/src/index.ts"],
+      "@cyclone-ui/provider/*": ["packages/provider/src/*"],
+      "@cyclone-ui/radio-group": ["components/radio-group/src/index.ts"],
+      "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
+      "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
+      "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
+      "@cyclone-ui/select": ["components/select/src/index.ts"],
+      "@cyclone-ui/select/*": ["components/select/src/*"],
+      "@cyclone-ui/steps": ["components/steps/src/index.ts"],
+      "@cyclone-ui/steps/*": ["components/steps/src/*"],
+      "@cyclone-ui/table": ["components/table/src/index.ts"],
+      "@cyclone-ui/table/*": ["components/table/src/*"],
+      "@cyclone-ui/tabs": ["components/tabs/src/index.ts"],
+      "@cyclone-ui/tabs/*": ["components/tabs/src/*"],
+      "@cyclone-ui/theme-helpers": ["packages/theme-helpers/src/index.ts"],
+      "@cyclone-ui/theme-helpers/*": ["packages/theme-helpers/src/*"],
+      "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
+      "@cyclone-ui/themes/*": ["packages/themes/src/*"],
+      "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
+      "@cyclone-ui/tokens": ["packages/tokens/src/index.ts"],
+      "@cyclone-ui/tokens/*": ["packages/tokens/src/*"],
+      "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"],
+      "@cyclone-ui/types": ["packages/types/src/index.ts"],
+      "@cyclone-ui/types/*": ["packages/types/src/*"]
     }
   }
 }
