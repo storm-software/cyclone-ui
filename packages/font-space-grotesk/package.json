@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/font-space-grotesk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "A Cyclone UI package containing the Space Grotesk font and font-related utilities used in the design system",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/colors",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
