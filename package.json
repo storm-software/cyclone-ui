@@ -147,7 +147,7 @@
     "@nx/esbuild": "19.1.0",
     "@nx/eslint": "^18.3.4",
     "@nx/eslint-plugin": "^18.3.4",
-    "@nx/expo": "18.3.4",
+    "@nx/expo": "19.3.0",
     "@nx/jest": "18.3.4",
     "@nx/next": "18.3.4",
     "@nx/node": "19.1.0",
