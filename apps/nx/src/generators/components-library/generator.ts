@@ -1,5 +1,6 @@
+import { PackageJson } from "nx/src/utils/package-json";
 import {
-  type Tree,
+  ensurePackage,
   formatFiles,
   generateFiles,
   joinPathFragments,
@@ -7,19 +8,18 @@ import {
   offsetFromRoot,
   updateJson,
   writeJson,
-  ensurePackage
+  type Tree
 } from "@nx/devkit";
+import { determineProjectNameAndRootOptions } from "@nx/devkit/src/generators/project-name-and-root-utils";
+import { Bundler } from "@nx/js/src/utils/schema";
+import type { StormConfig } from "@storm-software/config";
 import {
-  withRunGenerator,
-  type TypeScriptLibraryGeneratorSchema,
   typeScriptLibraryGeneratorFn,
-  TypeScriptLibraryGeneratorNormalizedSchema
+  TypeScriptLibraryGeneratorNormalizedSchema,
+  withRunGenerator,
+  type TypeScriptLibraryGeneratorSchema
 } from "@storm-software/workspace-tools";
 import type { ComponentsLibraryGeneratorSchema } from "./schema";
-import type { StormConfig } from "@storm-software/config";
-import { PackageJson } from "nx/src/utils/package-json";
-import { Bundler } from "@nx/js/src/utils/schema";
-import { determineProjectNameAndRootOptions } from "@nx/devkit/src/generators/project-name-and-root-utils";
 
 export async function generatorFn(
   tree: Tree,
@@ -31,11 +31,13 @@ export async function generatorFn(
     ...schema,
     platform: "browser",
     devDependencies: {
-      "react": "^18.2.0",
+      "react": "19.0.0-rc-fb9a90fa48-20240614",
+      "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
       "react-native": "0.73.2"
     },
     peerDependencies: {
-      "react": "^18.2.0",
+      "react": "19.0.0-rc-fb9a90fa48-20240614",
+      "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
       "react-native": "0.73.2"
     }
   };

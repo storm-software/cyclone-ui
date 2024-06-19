@@ -27,7 +27,8 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "react-native": "0.73.2"
   },
   "dependencies": {
@@ -43,7 +44,8 @@
   },
   "devDependencies": {
     "@tamagui/lucide-icons": "^1.98.0",
-    "react": "^18.2.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "react-native": "0.73.2",
     "react-native-svg": "^15.2.0"
   },

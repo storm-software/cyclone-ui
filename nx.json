@@ -3,25 +3,6 @@
   "cli": {
     "packageManager": "pnpm"
   },
-  "targetDefaults": {
-    "test": {
-      "cache": true,
-      "inputs": ["defaultTesting", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build", "^test"]
-    },
-    "e2e": {
-      "cache": true,
-      "inputs": ["defaultTesting", "^production"],
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": ["test", "^e2e"]
-    },
-    "nx-release-publish": {
-      "cache": false,
-      "inputs": ["default", "^production"],
-      "dependsOn": ["build", "^nx-release-publish"]
-    }
-  },
   "release": {
     "projects": ["packages/*", "components/*", "apps/*"],
     "projectsRelationship": "independent",

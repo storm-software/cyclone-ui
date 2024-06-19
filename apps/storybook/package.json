@@ -14,8 +14,8 @@
     "expo-router": "^3.3.1",
     "i18next": "^23.11.2",
     "raf": "^3.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "tamagui": "^1.98.0"
   },
   "devDependencies": {

@@ -294,5 +294,43 @@
     "markdown"
   ],
   "eslint.format.enable": true,
-  "eslint.experimental.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "extensions": [
+      ".cjs",
+      ".mjs",
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".json",
+      ".md",
+      ".mdx"
+    ]
+  },
+  "eslint.run": "onSave",
+  "eslint.packageManager": "pnpm",
+  "eslint.nodePath": "node",
+  "eslint.workingDirectories": [
+    "./packages",
+    "./components",
+    "./apps",
+    "./tools"
+  ],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "markdown"
+  ],
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "separateLine"
+  },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  }
 }
