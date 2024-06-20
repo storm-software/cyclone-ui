@@ -173,99 +173,884 @@
       "preserveMemberOrder": false,
       "members": [
         {
-          "kind": "Function",
-          "canonicalReference": "@cyclone-ui/font-permanent-marker!createMonaSansFont:function(1)",
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPalette:type",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "createMonaSansFont: <A extends "
+              "text": "export type ColorPalette<TRole extends "
             },
             {
               "kind": "Reference",
-              "text": "GenericFont",
-              "canonicalReference": "!unknown"
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
             },
             {
               "kind": "Content",
-              "text": "<10 | 11 | 12 | 14 | 15 | 16 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 13>"
-            },
-            {
-              "kind": "Content",
-              "text": ">(font?: "
+              "text": " = "
             },
             {
               "kind": "Reference",
-              "text": "Partial",
-              "canonicalReference": "!Partial:type"
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
             },
             {
               "kind": "Content",
-              "text": "<A>"
+              "text": ", TKey extends "
             },
             {
               "kind": "Content",
-              "text": ") => "
+              "text": "string"
             },
             {
               "kind": "Content",
-              "text": "A"
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "`${TRole}${"
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorPaletteShade",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPaletteShade:type"
+            },
+            {
+              "kind": "Content",
+              "text": "}`"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key in TKey]?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
             }
           ],
-          "fileUrlPath": "packages/font-mona-sans/src/index.ts",
-          "returnTypeTokenRange": {
-            "startIndex": 7,
-            "endIndex": 8
-          },
+          "fileUrlPath": "packages/types/src/colors.ts",
           "releaseTag": "Public",
-          "overloadIndex": 1,
-          "parameters": [
-            {
-              "parameterName": "font",
-              "parameterTypeTokenRange": {
-                "startIndex": 4,
-                "endIndex": 6
-              },
-              "isOptional": true
-            }
-          ],
+          "name": "ColorPalette",
           "typeParameters": [
             {
-              "typeParameterName": "A",
+              "typeParameterName": "TRole",
               "constraintTokenRange": {
                 "startIndex": 1,
-                "endIndex": 3
+                "endIndex": 2
               },
               "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "typeParameterName": "TKey",
+              "constraintTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 10
               }
             }
           ],
-          "name": "createMonaSansFont"
+          "typeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          }
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/font-permanent-marker!size:var",
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPaletteShade:type",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "size: "
+              "text": "export type ColorPaletteShade = "
             },
             {
               "kind": "Content",
-              "text": "{\n    readonly 1: 10;\n    readonly 2: 11;\n    readonly 3: 12;\n    readonly 4: 14;\n    readonly 5: 15;\n    readonly 6: 16;\n    readonly 7: 20;\n    readonly 8: 22;\n    readonly 9: 30;\n    readonly 10: 42;\n    readonly 11: 52;\n    readonly 12: 62;\n    readonly 13: 72;\n    readonly 14: 92;\n    readonly 15: 114;\n    readonly 16: 124;\n}"
+              "text": "\"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\""
+            },
+            {
+              "kind": "Content",
+              "text": ";"
             }
           ],
-          "fileUrlPath": "packages/font-mona-sans/src/index.ts",
-          "isReadonly": true,
+          "fileUrlPath": "packages/types/src/colors.ts",
           "releaseTag": "Public",
-          "name": "size",
-          "variableTypeTokenRange": {
+          "name": "ColorPaletteShade",
+          "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ColorRole = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"base\" | \"brand\" | \"accent\" | \"help\" | \"success\" | \"info\" | \"warning\" | \"error\""
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ColorRole",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ColorRole: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    BASE: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    BRAND: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    ACCENT: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    HELP: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    SUCCESS: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    INFO: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    WARNING: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    ERROR: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ColorRole",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 18
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorTheme:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ColorTheme<TRole extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole, "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorPalette",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ColorTheme",
+          "typeParameters": [
+            {
+              "typeParameterName": "TRole",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorThemeMode:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ColorThemeMode = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"dark\" | \"light\""
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ColorThemeMode",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorThemeMode:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ColorThemeMode: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    DARK: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorThemeMode",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorThemeMode:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    LIGHT: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorThemeMode",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorThemeMode:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ColorThemeMode",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorThemeTokens:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ColorThemeTokens<TRole extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<`${TRole}` | `${TRole}Dark`, "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorPalette",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ColorThemeTokens",
+          "typeParameters": [
+            {
+              "typeParameterName": "TRole",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorPalette:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ExtendedColorPalette<TRole extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", TKey extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "`${TRole}${"
+            },
+            {
+              "kind": "Reference",
+              "text": "ColorPaletteShade",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ColorPaletteShade:type"
+            },
+            {
+              "kind": "Content",
+              "text": "}`"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [key in TKey]?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ExtendedColorPalette",
+          "typeParameters": [
+            {
+              "typeParameterName": "TRole",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "typeParameterName": "TKey",
+              "constraintTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 10
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ExtendedColorRole = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"blue\" | \"gray\" | \"green\" | \"orange\" | \"pink\" | \"purple\" | \"red\" | \"yellow\""
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ExtendedColorRole",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ExtendedColorRole: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    BLUE: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    GRAY: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    GREEN: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    ORANGE: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    PINK: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    PURPLE: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    RED: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    YELLOW: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ExtendedColorRole",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 18
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorTheme:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ExtendedColorTheme<TRole extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole, "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorPalette",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorPalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ExtendedColorTheme",
+          "typeParameters": [
+            {
+              "typeParameterName": "TRole",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorThemeTokens:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ExtendedColorThemeTokens<TRole extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorRole",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorRole:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<`${TRole}` | `${TRole}Dark`, "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtendedColorPalette",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!ExtendedColorPalette:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TRole>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/colors.ts",
+          "releaseTag": "Public",
+          "name": "ExtendedColorThemeTokens",
+          "typeParameters": [
+            {
+              "typeParameterName": "TRole",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/font-permanent-marker!SelectOption:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface SelectOption "
+            }
+          ],
+          "fileUrlPath": "tmp/.tsup/declaration/packages/types/src/form.d.ts",
+          "releaseTag": "Public",
+          "name": "SelectOption",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!SelectOption#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "React.ReactNode",
+                  "canonicalReference": "types-react!React.ReactNode:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/types/src/form.ts",
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/font-permanent-marker!SelectOption#value:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | number | boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "fileUrlPath": "packages/types/src/form.ts",
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         }
       ]
     }

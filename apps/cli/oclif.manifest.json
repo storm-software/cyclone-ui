@@ -120,95 +120,6 @@
         "build.js"
       ]
     },
-    "registry:get": {
-      "aliases": [],
-      "args": {
-        "component": {
-          "description": "The name of the component to add to the local components library package",
-          "name": "component",
-          "noCacheDefault": false,
-          "required": false
-        }
-      },
-      "description": "A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package",
-      "examples": [
-        {
-          "description": "Initialize the themes using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> init"
-        },
-        {
-          "description": "Initialize the themes, and write the output to ./path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output"
-        },
-        {
-          "description": "Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "library": {
-          "aliases": [
-            "lib"
-          ],
-          "char": "l",
-          "deprecateAliases": false,
-          "description": "The location of the local components library package directory",
-          "hidden": false,
-          "name": "library",
-          "required": false,
-          "summary": "Components library directory",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "registry": {
-          "aliases": [
-            "registryUrl",
-            "registry-url"
-          ],
-          "char": "r",
-          "deprecateAliases": false,
-          "description": "The URL of the Cyclone UI remote registry to use for the components library package",
-          "hidden": false,
-          "name": "registry",
-          "required": false,
-          "summary": "Registry URL",
-          "hasDynamicHelp": false,
-          "helpValue": "<url>",
-          "multiple": false,
-          "type": "option"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "registry:get",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Get design component files from registry",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "registry",
-        "get.js"
-      ]
-    },
     "theme:clean": {
       "aliases": [],
       "args": {
@@ -385,7 +296,96 @@
         "theme",
         "init.js"
       ]
+    },
+    "registry:get": {
+      "aliases": [],
+      "args": {
+        "component": {
+          "description": "The name of the component to add to the local components library package",
+          "name": "component",
+          "noCacheDefault": false,
+          "required": false
+        }
+      },
+      "description": "A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package",
+      "examples": [
+        {
+          "description": "Initialize the themes using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> init"
+        },
+        {
+          "description": "Initialize the themes, and write the output to ./path/to/output",
+          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output"
+        },
+        {
+          "description": "Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "library": {
+          "aliases": [
+            "lib"
+          ],
+          "char": "l",
+          "deprecateAliases": false,
+          "description": "The location of the local components library package directory",
+          "hidden": false,
+          "name": "library",
+          "required": false,
+          "summary": "Components library directory",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "registry": {
+          "aliases": [
+            "registryUrl",
+            "registry-url"
+          ],
+          "char": "r",
+          "deprecateAliases": false,
+          "description": "The URL of the Cyclone UI remote registry to use for the components library package",
+          "hidden": false,
+          "name": "registry",
+          "required": false,
+          "summary": "Registry URL",
+          "hasDynamicHelp": false,
+          "helpValue": "<url>",
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "registry:get",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Get design component files from registry",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "commands",
+        "registry",
+        "get.js"
+      ]
     }
   },
-  "version": "0.5.0"
+  "version": "0.6.0"
 }

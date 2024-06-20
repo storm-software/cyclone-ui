@@ -17,11 +17,6 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: ["main"]
-    types:
-      - opened
-      - synchronize
-      - ready_for_review
-      - reopened
   schedule:
     - cron: "37 16 * * 6"
 
@@ -68,25 +63,10 @@ jobs:
           # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
           # queries: security-extended,security-and-quality
 
-      - name: Setup workspace
-        uses: storm-software/action-setup@main
-        with:
-          packageManager: "pnpm"
-          packageManagerVersion: "8.10.2"
-          stormBot: "Stormie-Bot"
-
-      - name: Build Cyclone-UI Nx-Plugin packages
-        run: pnpm build-plugins
-        shell: bash
-
-      - name: Add permissions to CLI tools
-        run: chmod a=rwx apps/cli/bin/run.js
-
       # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
       # If this step fails, then you should remove it and run the build manually (see below)
-      - name: Run build script
-        run: pnpm build-all
-        shell: bash
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
 
       # ℹ️ Command-line programs to run using the OS shell.
       # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
