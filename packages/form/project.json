@@ -13,6 +13,7 @@
         "tsConfig": "packages/form/tsconfig.json",
         "project": "packages/form/package.json",
         "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*", "react", "react-native"],
         "assets": [
           {
             "input": "packages/form",
