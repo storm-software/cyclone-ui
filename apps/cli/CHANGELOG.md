@@ -1,3 +1,16 @@
+## 0.6.1 (2024-06-20)
+
+
+### 🩹 Fixes
+
+- **monorepo:** Resolve issues with security actions ([204600e](https://github.com/storm-software/cyclone-ui/commit/204600e))
+
+
+### 🧱 Updated Dependencies
+
+- Updated build to null
+- Updated build to null
+
 ## 0.6.0 (2024-06-19)
 
 
