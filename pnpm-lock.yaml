@@ -121,8 +121,8 @@ importers:
         specifier: 51.0.9
         version: 51.0.9(@babel/core@7.24.4)(@babel/preset-env@7.24.4)
       expo-av:
-        specifier: ^13.10.5
-        version: 13.10.5(expo@51.0.9)
+        specifier: ^14.0.5
+        version: 14.0.5(expo@51.0.9)
       expo-constants:
         specifier: ^15.4.5
         version: 15.4.5(expo@51.0.9)
@@ -27072,8 +27072,8 @@ packages:
       - supports-color
     dev: false
 
-  /expo-av@13.10.5(expo@51.0.9):
-    resolution: {integrity: sha512-w45oCoe+8PunDeM0rh/Ut6UaGh7OjEJOCjAiQy3nCxpA8FaXB17KaqpsvkAXIMvceHYWndH8+D29esUTS6wEsA==}
+  /expo-av@14.0.5(expo@51.0.9):
+    resolution: {integrity: sha512-lIRYUcuRLUZK7gXQYNtYoO+G8LGqbj2XJLd9/3jyv9W+uxBAI3BBmfOaSRzpDiJDksxoznAz+PgDtd785qP5DQ==}
     peerDependencies:
       expo: '*'
     dependencies:
