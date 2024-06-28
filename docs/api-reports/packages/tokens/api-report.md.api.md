@@ -3185,14 +3185,14 @@ const tokens: {
         3: Variable<number>;
         4: Variable<number>;
         5: Variable<number>;
-        8: Variable<number>;
-        10: Variable<number>;
-        true: Variable<number>;
-        12: Variable<number>;
-        7: Variable<number>;
-        9: Variable<number>;
         6: Variable<number>;
+        7: Variable<number>;
+        8: Variable<number>;
+        9: Variable<number>;
+        10: Variable<number>;
         11: Variable<number>;
+        12: Variable<number>;
+        true: Variable<number>;
     };
     zIndex: {
         0: Variable<number>;
@@ -3404,14 +3404,14 @@ const tokens: {
         3: Variable<number>;
         4: Variable<number>;
         5: Variable<number>;
-        8: Variable<number>;
-        10: Variable<number>;
-        true: Variable<number>;
-        12: Variable<number>;
-        7: Variable<number>;
-        9: Variable<number>;
         6: Variable<number>;
+        7: Variable<number>;
+        8: Variable<number>;
+        9: Variable<number>;
+        10: Variable<number>;
         11: Variable<number>;
+        12: Variable<number>;
+        true: Variable<number>;
     };
     zIndex: {
         0: Variable<number>;

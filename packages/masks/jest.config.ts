@@ -1,3 +1,3 @@
-import { getJestConfig } from '@storm-software/testing-tools';
+import { getJestConfig } from "@storm-software/testing-tools";
 
-export default getJestConfig('packages/masks', true, 'masks');
+export default getJestConfig("packages/masks", true, "masks");

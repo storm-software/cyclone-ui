@@ -1,15 +1,15 @@
 import type {
+  CreateMask,
+  CreateThemeOptions,
+  CreateThemePalette,
   EntriesToObject,
   EntriesType,
-  ObjectEntries,
-  ObjectType,
-  CreateMask,
   GenericTheme,
   MaskOptions,
-  ThemeMask,
+  ObjectEntries,
+  ObjectType,
   ThemeInfo,
-  CreateThemePalette,
-  CreateThemeOptions
+  ThemeMask
 } from "./types";
 
 export function isMinusZero(value: number): boolean {

@@ -1,7 +1,23 @@
 #!/usr/bin/env node
-
+import { dirname, join } from "path";
+import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
 import { es5Plugin } from "esbuild-plugin-es5";
+import { glob } from "fast-glob";
+import {
+  copy,
+  ensureDir,
+  move,
+  pathExists,
+  readFile,
+  readJSONSync,
+  remove,
+  writeFile
+} from "fs-extra";
+import debounce from "lodash.debounce";
+// import { readTSConfig } from "pkg-types";
+import { register as registerTsConfigPaths } from "tsconfig-paths";
 import { transform } from "@babel/core";
+import type { StormConfig } from "@storm-software/config";
 import {
   getStopwatch,
   run,
@@ -10,26 +26,10 @@ import {
   writeTrace,
   writeWarning
 } from "@storm-software/config-tools";
-import type { StormConfig } from "@storm-software/config";
-import {
-  readJSONSync,
-  remove,
-  move,
-  copy,
-  ensureDir,
-  readFile,
-  pathExists,
-  writeFile
-} from "fs-extra";
-import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
-import { glob } from "fast-glob";
-import createExternalPlugin from "../plugins/external-node-plugin";
-import debounce from "lodash.debounce";
-import { dirname, join } from "path";
 import alias from "../plugins/esbuild-alias-plugin";
+import createExternalPlugin from "../plugins/external-node-plugin";
 import { BuildOptions } from "../types";
-// import { readTSConfig } from "pkg-types";
-import { register as registerTsConfigPaths } from "tsconfig-paths";
+
 // import merge from "deepmerge";
 
 // const jsOnly = !!process.env.JS_ONLY;

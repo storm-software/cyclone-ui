@@ -17,6 +17,10 @@
     {
       "url": "https://cdn.jsdelivr.net/npm/nx/schemas/nx-schema.json",
       "fileMatch": ["nx.json"]
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/@storm-software/config/schemas/storm.schema.json",
+      "fileMatch": ["storm.json"]
     }
   ],
   "yaml.schemas": {
@@ -296,28 +300,19 @@
   "eslint.format.enable": true,
   "eslint.useFlatConfig": true,
   "eslint.alwaysShowStatus": true,
-  "eslint.options": {
-    "extensions": [
-      ".cjs",
-      ".mjs",
-      ".js",
-      ".jsx",
-      ".ts",
-      ".tsx",
-      ".json",
-      ".md",
-      ".mdx"
-    ]
-  },
   "eslint.run": "onSave",
   "eslint.packageManager": "pnpm",
-  "eslint.nodePath": "node",
-  "eslint.workingDirectories": [
-    "./packages",
-    "./components",
-    "./apps",
-    "./tools"
-  ],
+  // "eslint.nodePath": "node",
+  "eslint.debug": true,
+  // "eslint.workingDirectories": [
+  //   "./packages",
+  //   "./components",
+  //   "./apps",
+  //   "./tools"
+  // ],
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
   "eslint.probe": [
     "javascript",
     "javascriptreact",
@@ -332,5 +327,6 @@
   },
   "eslint.codeAction.showDocumentation": {
     "enable": true
-  }
+  },
+  "eslint.codeActionsOnSave.mode": "problems"
 }

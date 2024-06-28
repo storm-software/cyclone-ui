@@ -8,10 +8,10 @@
  *
  * Learn more at https://developers.cloudflare.com/workers/
  */
-import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-import { router } from "@cyclone-ui/registry-trpc/router";
 import { createContext } from "@cyclone-ui/registry-trpc/context";
+import { router } from "@cyclone-ui/registry-trpc/router";
 import type { Env } from "@cyclone-ui/registry-trpc/types";
+import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {

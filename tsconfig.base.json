@@ -83,6 +83,8 @@
       "@cyclone-ui/select/*": ["components/select/src/*"],
       "@cyclone-ui/steps": ["components/steps/src/index.ts"],
       "@cyclone-ui/steps/*": ["components/steps/src/*"],
+      "@cyclone-ui/store": ["packages/store/src/index.ts"],
+      "@cyclone-ui/store/*": ["packages/store/src/*"],
       "@cyclone-ui/table": ["components/table/src/index.ts"],
       "@cyclone-ui/table/*": ["components/table/src/*"],
       "@cyclone-ui/tabs": ["components/tabs/src/index.ts"],

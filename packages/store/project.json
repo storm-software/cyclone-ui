@@ -1,0 +1,46 @@
+{
+  "name": "store",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/store/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/store/src/index.ts",
+        "outputPath": "dist/packages/store",
+        "tsConfig": "packages/store/tsconfig.json",
+        "project": "packages/store/package.json",
+        "defaultConfiguration": "production",
+        "external": ["@cyclone-ui/*", "react", "react-dom", "react-native"],
+        "assets": [
+          {
+            "input": "packages/store",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "neutral"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

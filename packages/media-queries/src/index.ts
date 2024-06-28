@@ -7,8 +7,8 @@
  * @packageDocumentation
  */
 
-import { mediaQueries } from "./media-queries";
 import { createMedia } from "@tamagui/react-native-media-driver";
+import { mediaQueries } from "./media-queries";
 
 export * from "./default-active";
 export * from "./media-queries";

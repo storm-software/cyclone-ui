@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-
-import {
-  loadStormConfig,
-  exitWithSuccess,
-  handleProcess,
-  writeFatal,
-  writeSuccess,
-  exitWithError
-} from "@storm-software/config-tools";
-import { createProgram } from "../src/cli";
-import { register as registerTsConfigPaths } from "tsconfig-paths";
 import { join } from "node:path";
 import { readJsonSync } from "fs-extra";
+import { register as registerTsConfigPaths } from "tsconfig-paths";
+import {
+  exitWithError,
+  exitWithSuccess,
+  handleProcess,
+  loadStormConfig,
+  writeFatal,
+  writeSuccess
+} from "@storm-software/config-tools";
+import { createProgram } from "../src/cli";
 
 void (async () => {
   const config = await loadStormConfig();

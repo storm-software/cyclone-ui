@@ -1,5 +1,5 @@
-import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
 import { PropsWithChildren } from "react";
+import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
 
 export type ThemeProviderServerProps = PropsWithChildren<
   Partial<TamaguiProviderProps> & Omit<TamaguiProviderProps, "defaultTheme">

@@ -16,7 +16,7 @@ This package is part of the <b>⚡cyclone-ui</b> monorepo. The cyclone-ui packag
 
 <h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
 
-[![Version](https://img.shields.io/badge/version-0.0.1-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;
+[![Version](https://img.shields.io/badge/version-0.3.0-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;
 [![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with docusaurus](https://img.shields.io/badge/documented_with-docusaurus-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://docusaurus.io/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/storm-ops/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
 > [!IMPORTANT]
@@ -32,7 +32,8 @@ This package is part of the <b>⚡cyclone-ui</b> monorepo. The cyclone-ui packag
 
 # Cyclone UI Permanent Marker Font Package
 
-A Cyclone UI package containing the Permanent Marker font and font-related utilities used in the design system
+A Cyclone UI package containing the Permanent Marker font and font-related
+utilities used in the design system
 
 <!-- START doctoc -->
 <!-- END doctoc -->
@@ -65,11 +66,15 @@ yarn add -D @cyclone-ui/font-permanent-marker
 
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
+This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+due to its ability to remove unused code and ship smaller javascript files
+thanks to code splitting. This helps to greatly reduce the size of the package
+and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual
+commands are available to assist in development.
 
 ### Building
 
@@ -77,11 +82,13 @@ Run `nx build font-permanent-marker` to build the library.
 
 ### Running unit tests
 
-Run `nx test font-permanent-marker` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test font-permanent-marker` to execute the unit tests via
+[Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint font-permanent-marker` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint font-permanent-marker` to run [ESLint](https://eslint.org/) on the
+package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

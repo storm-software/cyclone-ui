@@ -1,7 +1,7 @@
-import { useThemeNameState } from "./theme-state";
-import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
-import { PortalProvider } from "@tamagui/portal";
 import { PropsWithChildren } from "react";
+import { PortalProvider } from "@tamagui/portal";
+import { TamaguiProvider, type TamaguiProviderProps } from "@tamagui/web";
+import { useThemeNameState } from "./theme-state";
 
 declare const window: any;
 

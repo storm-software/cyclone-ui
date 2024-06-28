@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
 import { ThemeProvider, type ThemeProviderProps } from "./ThemeProvider";
+import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
 
 export type ProviderProps = PropsWithChildren<{
   toast?: ToastProviderProps;

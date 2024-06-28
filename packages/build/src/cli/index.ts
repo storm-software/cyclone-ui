@@ -1,12 +1,12 @@
+import { join } from "node:path";
+import type { StormConfig } from "@storm-software/config";
 import {
   findWorkspaceRootSafe,
   writeFatal,
   writeInfo,
   writeSuccess
 } from "@storm-software/config-tools";
-import type { StormConfig } from "@storm-software/config";
 import { build } from "../build/tamagui";
-import { join } from "node:path";
 
 export async function createProgram(config: StormConfig) {
   const { Command, Option } = await import("commander");

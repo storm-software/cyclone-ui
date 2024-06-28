@@ -4,10 +4,54 @@
 
 ```ts
 
-import type { GenericFont } from '@tamagui/core';
-
 // @public (undocumented)
-export const createMonaSansFont: <A extends GenericFont<10 | 11 | 12 | 14 | 15 | 16 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 13>>(font?: Partial<A>) => A;
+export const media: {
+    xxs: {
+        maxWidth: number;
+    };
+    xs: {
+        maxWidth: number;
+    };
+    sm: {
+        maxWidth: number;
+    };
+    md: {
+        maxWidth: number;
+    };
+    lg: {
+        maxWidth: number;
+    };
+    xl: {
+        maxWidth: number;
+    };
+    xxl: {
+        maxWidth: number;
+    };
+    gtXs: {
+        minWidth: number;
+    };
+    gtSm: {
+        minWidth: number;
+    };
+    gtMd: {
+        minWidth: number;
+    };
+    gtLg: {
+        minWidth: number;
+    };
+    short: {
+        maxHeight: number;
+    };
+    tall: {
+        minHeight: number;
+    };
+    hoverNone: {
+        hover: string;
+    };
+    pointerCoarse: {
+        pointer: string;
+    };
+};
 
 // @public (undocumented)
 const mediaQueries: {
@@ -61,7 +105,7 @@ export { mediaQueries }
 export { mediaQueries as mediaQueries_alias_1 }
 
 // @public (undocumented)
-export const mediaQueryDefaultActive_alias_1: {
+const mediaQueryDefaultActive: {
     xl: boolean;
     lg: boolean;
     md: boolean;
@@ -69,26 +113,8 @@ export const mediaQueryDefaultActive_alias_1: {
     xs: boolean;
     xxs: boolean;
 };
-
-// @public (undocumented)
-export const size: {
-    readonly 1: 10;
-    readonly 2: 11;
-    readonly 3: 12;
-    readonly 4: 14;
-    readonly 5: 15;
-    readonly 6: 16;
-    readonly 7: 20;
-    readonly 8: 22;
-    readonly 9: 30;
-    readonly 10: 42;
-    readonly 11: 52;
-    readonly 12: 62;
-    readonly 13: 72;
-    readonly 14: 92;
-    readonly 15: 114;
-    readonly 16: 124;
-};
+export { mediaQueryDefaultActive }
+export { mediaQueryDefaultActive as mediaQueryDefaultActive_alias_1 }
 
 // (No @packageDocumentation comment for this package)
 

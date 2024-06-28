@@ -51,9 +51,9 @@ jobs:
       - name: Setup workspace
         uses: storm-software/action-setup@main
         with:
-          packageManager: "pnpm"
-          packageManagerVersion: "8.10.2"
-          stormBot: "Stormie-Bot"
+          packageManager: pnpm
+          packageManagerVersion: 9.4.0
+          stormBot: Stormie-Bot
 
       - name: Build Cyclone-UI Nx-Plugin packages
         run: pnpm build-plugins
@@ -97,13 +97,13 @@ jobs:
       # - name: Markdown-linter
       #   uses: DavidAnson/markdownlint-cli2-action@v16
 
-      - name: Run formatters scripts
-        run: pnpm format
-        shell: bash
+      # - name: Run formatters scripts
+      #   run: pnpm format
+      #   shell: bash
 
-      - name: Re-run build script
-        run: pnpm build-all
-        shell: bash
+      # - name: Re-run build script
+      #   run: pnpm build-all
+      #   shell: bash
 
       # - uses: cloudflare/wrangler-action@v3
       #   with:
@@ -119,7 +119,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.STORM_BOT_NPM_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}
-          STORM_BOT: "Stormie-Bot"
+          STORM_BOT: Stormie-Bot
           STORM_WORKSPACE_ROOT: ${{ github.workspace }}
           STORM_REPOSITORY: ${{ github.repositoryUrl }}
           CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}

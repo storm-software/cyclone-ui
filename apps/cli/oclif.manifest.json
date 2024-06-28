@@ -27,11 +27,7 @@
       ],
       "flags": {
         "outputPath": {
-          "aliases": [
-            "output",
-            "outDir",
-            "output-dir"
-          ],
+          "aliases": ["output", "outDir", "output-dir"],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
@@ -46,10 +42,7 @@
           "type": "option"
         },
         "tsconfig": {
-          "aliases": [
-            "tsconfig",
-            "ts-config"
-          ],
+          "aliases": ["tsconfig", "ts-config"],
           "char": "t",
           "deprecateAliases": false,
           "description": "The path to the tsconfig.json file for the project",
@@ -88,10 +81,7 @@
           "type": "boolean"
         },
         "skip": {
-          "aliases": [
-            "is-cli",
-            "is-cli-mode"
-          ],
+          "aliases": ["is-cli", "is-cli-mode"],
           "char": "s",
           "deprecateAliases": false,
           "description": "Skip all confirmation prompts and use the default values",
@@ -114,11 +104,7 @@
       "summary": "Build a cyclone-ui package",
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "build.js"
-      ]
+      "relativePath": ["dist", "commands", "build.js"]
     },
     "theme:clean": {
       "aliases": [],
@@ -148,10 +134,7 @@
       ],
       "flags": {
         "output": {
-          "aliases": [
-            "outDir",
-            "output-dir"
-          ],
+          "aliases": ["outDir", "output-dir"],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
@@ -190,12 +173,7 @@
       "summary": "Clean the workspace's theme configuration",
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "theme",
-        "clean.js"
-      ]
+      "relativePath": ["dist", "commands", "theme", "clean.js"]
     },
     "theme:init": {
       "aliases": [],
@@ -225,10 +203,7 @@
       ],
       "flags": {
         "outputPath": {
-          "aliases": [
-            "outDir",
-            "output-dir"
-          ],
+          "aliases": ["outDir", "output-dir"],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
@@ -290,12 +265,7 @@
       "summary": "Initialize a theme configuration",
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "theme",
-        "init.js"
-      ]
+      "relativePath": ["dist", "commands", "theme", "init.js"]
     },
     "registry:get": {
       "aliases": [],
@@ -324,9 +294,7 @@
       ],
       "flags": {
         "library": {
-          "aliases": [
-            "lib"
-          ],
+          "aliases": ["lib"],
           "char": "l",
           "deprecateAliases": false,
           "description": "The location of the local components library package directory",
@@ -352,10 +320,7 @@
           "type": "boolean"
         },
         "registry": {
-          "aliases": [
-            "registryUrl",
-            "registry-url"
-          ],
+          "aliases": ["registryUrl", "registry-url"],
           "char": "r",
           "deprecateAliases": false,
           "description": "The URL of the Cyclone UI remote registry to use for the components library package",
@@ -379,13 +344,8 @@
       "summary": "Get design component files from registry",
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "commands",
-        "registry",
-        "get.js"
-      ]
+      "relativePath": ["dist", "commands", "registry", "get.js"]
     }
   },
-  "version": "0.6.0"
+  "version": "0.6.1"
 }

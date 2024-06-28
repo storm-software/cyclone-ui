@@ -1,7 +1,7 @@
-import { getJestConfig } from '@storm-software/testing-tools';
+import { getJestConfig } from "@storm-software/testing-tools";
 
 export default getJestConfig(
-  'packages/font-space-grotesk',
+  "packages/font-space-grotesk",
   true,
-  'font-space-grotesk'
+  "font-space-grotesk"
 );

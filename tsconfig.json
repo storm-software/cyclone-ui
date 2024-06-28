@@ -35,7 +35,7 @@
     "lib": ["dom", "esnext"],
     "resolveJsonModule": false
   },
-  "exclude": ["test", "dist", "**/__tests__"],
+  "exclude": ["test", "dist", "**/__tests__", "node_modules"],
   "typeAcquisition": {
     "enable": true
   }

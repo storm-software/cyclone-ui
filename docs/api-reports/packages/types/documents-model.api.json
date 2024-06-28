@@ -623,6 +623,412 @@
         },
         {
           "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!ComputeRange:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ComputeRange<N extends "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ", Result extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<unknown>"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "Result[\"length\"] extends N ? Result : "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComputeRange",
+              "canonicalReference": "@cyclone-ui/types!ComputeRange:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<N, [...Result, Result[\"length\"]]>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "ComputeRange",
+          "typeParameters": [
+            {
+              "typeParameterName": "N",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "Result",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 11
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!DeepKeys:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type DeepKeys<T, TDepth extends "
+            },
+            {
+              "kind": "Content",
+              "text": "any[]"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "TDepth[\"length\"] extends 5 ? never : unknown extends T ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "PrefixFromDepth",
+              "canonicalReference": "@cyclone-ui/types!~PrefixFromDepth:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, TDepth> : T extends readonly any[] & "
+            },
+            {
+              "kind": "Reference",
+              "text": "IsTuple",
+              "canonicalReference": "@cyclone-ui/types!~IsTuple:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T> ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "PrefixTupleAccessor",
+              "canonicalReference": "@cyclone-ui/types!~PrefixTupleAccessor:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, "
+            },
+            {
+              "kind": "Reference",
+              "text": "AllowedIndexes",
+              "canonicalReference": "@cyclone-ui/types!~AllowedIndexes:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>, TDepth> : T extends any[] ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "PrefixArrayAccessor",
+              "canonicalReference": "@cyclone-ui/types!~PrefixArrayAccessor:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, [...TDepth, any]> : T extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Date",
+              "canonicalReference": "!Date:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " ? never : T extends object ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "PrefixObjectAccessor",
+              "canonicalReference": "@cyclone-ui/types!~PrefixObjectAccessor:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, TDepth> : T extends string | number | boolean | bigint ? \"\" : never"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/nested-helpers.ts",
+          "releaseTag": "Public",
+          "name": "DeepKeys",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "TDepth",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 20
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!DeepValue:type",
+          "docComment": "/**\n * Infer the type of a deeply nested property within an object or an array. See the tests in `util-types.test-d.ts` for usage.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type DeepValue<TValue, TAccessor extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string | number"
+            },
+            {
+              "kind": "Content",
+              "text": ", TNullable extends "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": " = "
+            },
+            {
+              "kind": "Reference",
+              "text": "IsNullable",
+              "canonicalReference": "@cyclone-ui/types!IsNullable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue>"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "unknown extends TValue ? TValue : TValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ReadonlyArray",
+              "canonicalReference": "!ReadonlyArray:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any> ? TAccessor extends `[${infer TBrackets}].${infer TAfter}` ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue, TBrackets>, TAfter> : TAccessor extends `[${infer TBrackets}]` ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue, TBrackets> : TAccessor extends keyof TValue ? TValue[TAccessor] : TValue[TAccessor & number] : TValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string | number, any> ? TAccessor extends `${infer TBefore}[${infer TEverythingElse}` ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue, TBefore>, `[${TEverythingElse}`> : TAccessor extends `[${infer TBrackets}]` ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue, TBrackets> : TAccessor extends `${infer TBefore}.${infer TAfter}` ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/types!DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue, TBefore>, TAfter> : TAccessor extends string ? TNullable extends true ? "
+            },
+            {
+              "kind": "Reference",
+              "text": "Nullable",
+              "canonicalReference": "@cyclone-ui/types!Nullable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TValue[TAccessor]> : TValue[TAccessor] : never : never"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/nested-helpers.ts",
+          "releaseTag": "Public",
+          "name": "DeepValue",
+          "typeParameters": [
+            {
+              "typeParameterName": "TValue",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "TAccessor",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "TNullable",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 31
+          }
+        },
+        {
+          "kind": "TypeAlias",
           "canonicalReference": "@cyclone-ui/types!ExtendedColorPalette:type",
           "docComment": "",
           "excerptTokens": [
@@ -978,6 +1384,958 @@
           }
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!Index40:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Index40 = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ComputeRange",
+              "canonicalReference": "@cyclone-ui/types!ComputeRange:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<40>[number]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "Index40",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isArray:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isArray: (arg: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "arg",
+              "canonicalReference": "@cyclone-ui/types!~arg"
+            },
+            {
+              "kind": "Content",
+              "text": " is any[]"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arg",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isArray"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isDate:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isDate: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "Date",
+              "canonicalReference": "!Date:interface"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isDate"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isEmpty:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isEmpty: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isEmpty"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isEqual:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isEqual: <TType>(x: "
+            },
+            {
+              "kind": "Content",
+              "text": "TType"
+            },
+            {
+              "kind": "Content",
+              "text": ", y: "
+            },
+            {
+              "kind": "Content",
+              "text": "TType"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "x",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "y",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "TType",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "isEqual"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isFloat:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isFloat: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is number"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isFloat"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isFunction:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isFunction: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "Function",
+              "canonicalReference": "!Function:interface"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isFunction"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isInt:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isInt: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is number"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isInt"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!IsNullable:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type IsNullable<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "[null] extends [T] ? true : false"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "IsNullable",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isNumber:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isNumber: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is number"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isNumber"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isObject:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isObject: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is object"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isObject"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isPrimitive:function(1)",
+          "docComment": "/**\n * Checks if the given value is primitive.\n *\n * Primitive Types: number , string , boolean , symbol, bigint, undefined, null\n *\n * @param value - value to check\n *\n * @returns {boolean} result\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isPrimitive: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isPrimitive"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isPromise:function(1)",
+          "docComment": "/**\n * This is really a _best guess_ promise checking. You should probably use Promise.resolve(value) to be 100% sure you're handling it correctly.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isPromise: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isPromise"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isString:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isString: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is string"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isString"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@cyclone-ui/types!isSymbol:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "isSymbol: (value: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "value",
+              "canonicalReference": "@cyclone-ui/types!~value"
+            },
+            {
+              "kind": "Content",
+              "text": " is symbol"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/type-checkers.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isSymbol"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!Narrow:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Narrow<A> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Try",
+              "canonicalReference": "@cyclone-ui/types!Try:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<A, [], "
+            },
+            {
+              "kind": "Reference",
+              "text": "NarrowRaw",
+              "canonicalReference": "@cyclone-ui/types!~NarrowRaw:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<A>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "Narrow",
+          "typeParameters": [
+            {
+              "typeParameterName": "A",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!NoInfer_2:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type NoInfer<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "[T][T extends any ? 0 : never]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "NoInfer_2",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!Nullable:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Nullable<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "T | null"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "Nullable",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!Pretty:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Pretty<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [K in keyof T]: T[K];\n} & {}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "Pretty",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!RequiredByKey:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RequiredByKey<T, K extends "
+            },
+            {
+              "kind": "Content",
+              "text": "keyof T"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, K> & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Required",
+              "canonicalReference": "!Required:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Pick",
+              "canonicalReference": "!Pick:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, K>>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "RequiredByKey",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 9
+          }
+        },
+        {
           "kind": "Interface",
           "canonicalReference": "@cyclone-ui/types!SelectOption:interface",
           "docComment": "",
@@ -1051,6 +2409,75 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/types!Try:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Try<A1, A2, Catch = "
+            },
+            {
+              "kind": "Content",
+              "text": "never"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "A1 extends A2 ? A1 : Catch"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/types/src/utilities.ts",
+          "releaseTag": "Public",
+          "name": "Try",
+          "typeParameters": [
+            {
+              "typeParameterName": "A1",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "A2",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "Catch",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          }
         }
       ]
     }
