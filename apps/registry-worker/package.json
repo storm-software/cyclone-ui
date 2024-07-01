@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@trpc/server": "11.0.0-rc.382",
-    "zod": "^3.23.8"
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240524.0"
