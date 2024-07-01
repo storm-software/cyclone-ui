@@ -18,10 +18,10 @@
     "react-native": "0.73.2"
   },
   "dependencies": {
-    "immer": "^10.0.3",
-    "lodash.mapvalues": "^4.6.0",
-    "react-tracked": "^1.7.11",
-    "zustand": ">=4.3.9"
+    "immer": "10.1.1",
+    "lodash.mapvalues": "4.6.0",
+    "react-tracked": "1.7.14",
+    "zustand": "4.5.2"
   },
   "devDependencies": {
     "react": "19.0.0-rc-fb9a90fa48-20240614",

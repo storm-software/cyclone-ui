@@ -19,13 +19,13 @@
     "react-native": "0.73.2"
   },
   "dependencies": {
-    "@tamagui/core": "^1.98.0",
-    "@tamagui/portal": "^1.98.0",
-    "@tamagui/toast": "^1.98.0",
-    "@tamagui/web": "^1.98.0",
-    "tamagui": "^1.98.0",
-    "undici-types": "^6.18.1",
-    "zustand": "^4.5.2"
+    "@tamagui/core": "1.98.0",
+    "@tamagui/portal": "1.98.0",
+    "@tamagui/toast": "1.98.0",
+    "@tamagui/web": "1.98.0",
+    "tamagui": "1.98.0",
+    "undici-types": "6.18.1",
+    "zustand": "4.5.2"
   },
   "devDependencies": {
     "react": "19.0.0-rc-fb9a90fa48-20240614",

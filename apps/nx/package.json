@@ -41,13 +41,13 @@
     "monorepo"
   ],
   "dependencies": {
-    "@nx/devkit": "^18.3.4",
-    "@nx/js": "^18.3.4",
+    "@nx/devkit": "18.3.4",
+    "@nx/js": "18.3.4",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
-    "tslib": "^2.3.0"
+    "tslib": "2.6.3"
   },
   "publishConfig": {
     "access": "public"

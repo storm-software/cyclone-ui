@@ -10,13 +10,13 @@
   },
   "private": false,
   "dependencies": {
-    "@tamagui/core": "^1.98.0",
-    "@tamagui/helpers": "^1.98.0",
-    "@tamagui/lucide-icons": "^1.98.0",
-    "@tamagui/stacks": "^1.98.0",
-    "@tamagui/text": "^1.98.0",
-    "@tamagui/web": "^1.98.0",
-    "react-native-svg": "^15.2.0"
+    "@tamagui/core": "1.98.0",
+    "@tamagui/helpers": "1.98.0",
+    "@tamagui/lucide-icons": "1.98.0",
+    "@tamagui/stacks": "1.98.0",
+    "@tamagui/text": "1.98.0",
+    "@tamagui/web": "1.98.0",
+    "react-native-svg": "15.2.0"
   },
   "publishConfig": {
     "access": "public"

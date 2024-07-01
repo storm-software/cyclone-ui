@@ -41,15 +41,15 @@
   "main": "./index.js",
   "typings": "./declarations.d.ts",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.583.0",
-    "@nx/devkit": "^18.3.4",
-    "@nx/js": "^18.3.4",
+    "@aws-sdk/client-s3": "3.583.0",
+    "@nx/devkit": "18.3.4",
+    "@nx/js": "18.3.4",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
-    "glob": "^10.4.1",
-    "tslib": "^2.3.0"
+    "glob": "10.4.2",
+    "tslib": "2.6.3"
   },
   "executors": "./executors.json"
 }
