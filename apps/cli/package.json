@@ -27,7 +27,7 @@
     "@clack/prompts": "^0.7.0",
     "@cyclone-ui/build": "0.2.0",
     "@oclif/core": "^3.26.2",
-    "@oclif/plugin-autocomplete": "^3.0.13",
+    "@oclif/plugin-autocomplete": "^3.1.5",
     "@oclif/plugin-help": "^6.0.20",
     "@oclif/plugin-not-found": "^3.1.2",
     "@oclif/plugin-plugins": "^5.0.7",
