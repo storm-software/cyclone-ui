@@ -14,7 +14,7 @@
     "cyclone-ui-build": "./bin/build.mjs"
   },
   "dependencies": {
-    "@babel/core": "^7.14.5",
+    "@babel/core": "^7.24.4",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@tamagui/fake-react-native": "^1.98.0",
@@ -28,7 +28,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "lodash.debounce": "^4.0.8",
-    "pkg-types": "^1.1.0",
+    "pkg-types": "^1.1.1",
     "tsconfig-paths": "^4.2.0"
   },
   "publishConfig": {
