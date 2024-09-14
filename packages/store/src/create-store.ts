@@ -75,9 +75,6 @@ export const createStore =
 
     middlewares.push(createVanillaStore);
 
-    // const pipeMiddlewares = (createState: StateCreator<T, SetImmerState<T>>) =>
-    //   pipe(createState as any, ...middlewares) as ImmerStoreApi<T>;
-
     // @ts-ignore
     const pipeMiddlewares = (createState: StateCreator<TState>) =>
       pipe(createState as any, ...middlewares) as ImmerStoreApi<TState>;
@@ -96,8 +93,6 @@ export const createStore =
         equalityFn as any
       )) as UseImmerStore<TState>;
 
-    const stateActions = generateStateActions<TState>(store, name);
-
     const mergeState: MergeState<TState> = (state, actionName) => {
       store.setState(
         draft => {
@@ -111,10 +106,10 @@ export const createStore =
       store.setState(fn, actionName || `@@${name}/setState`);
     };
 
+    const stateActions = generateStateActions<TState>(store, name);
     const stateRemovers = generateStateRemovers<TState>(store, name);
-
-    const hookSelectors = generateStateHookSelectors<TState>(useStore, store);
     const getterSelectors = generateStateGetSelectors<TState>(store);
+    const hookSelectors = generateStateHookSelectors<TState>(useStore, store);
 
     const useTrackedStore = createTrackedSelector<TState>(useStore);
     const trackedHooksSelectors = generateStateTrackedHooksSelectors<TState>(
@@ -143,9 +138,9 @@ export const createStore =
       useTrackedStore,
       extendSelectors: () => api as any,
       extendActions: () => api as any
-    } satisfies StoreApi<TState, StateActions<TState>>;
+    } as any;
 
-    return storeFactory(api) as StoreApi<TState, StateActions<TState>>;
+    return storeFactory<TState>(api) as StoreApi<TState, StateActions<TState>>;
   };
 
 // Alias {@link createStore}

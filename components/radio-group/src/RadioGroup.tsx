@@ -1,5 +1,5 @@
 import { useCallback, useId, useMemo, useState } from "react";
-import { ColorRole } from "@cyclone-ui/types";
+import { ColorRole } from "@cyclone-ui/colors";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {

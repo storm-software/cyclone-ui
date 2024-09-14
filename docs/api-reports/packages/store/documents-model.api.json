@@ -179,15 +179,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ActionBuilder<TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": "export type ActionBuilder<TState extends "
             },
             {
               "kind": "Reference",
@@ -234,7 +226,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors>, api: "
+              "text": "<TState, TSelectors>, api: "
             },
             {
               "kind": "Reference",
@@ -243,7 +235,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors>) => any"
+              "text": "<TState, TActions, TSelectors>) => any"
             },
             {
               "kind": "Content",
@@ -255,21 +247,10 @@
           "name": "ActionBuilder",
           "typeParameters": [
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,
@@ -283,8 +264,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 4
               }
             },
             {
@@ -294,14 +275,14 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 5,
+                "endIndex": 6
               }
             }
           ],
           "typeTokenRange": {
-            "startIndex": 9,
-            "endIndex": 16
+            "startIndex": 7,
+            "endIndex": 14
           }
         },
         {
@@ -311,7 +292,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "createStore: <TName extends "
+              "text": "createStore: (name: "
             },
             {
               "kind": "Content",
@@ -319,19 +300,11 @@
             },
             {
               "kind": "Content",
-              "text": ">(name: "
-            },
-            {
-              "kind": "Content",
-              "text": "TName"
-            },
-            {
-              "kind": "Content",
               "text": ") => "
             },
             {
               "kind": "Content",
-              "text": "<T extends "
+              "text": "<TState extends "
             },
             {
               "kind": "Reference",
@@ -340,7 +313,16 @@
             },
             {
               "kind": "Content",
-              "text": ">(initialState: T, options?: "
+              "text": ">(initialState: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, \"_\">, options?: "
             },
             {
               "kind": "Reference",
@@ -349,7 +331,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>) => "
+              "text": "<TState>) => "
             },
             {
               "kind": "Reference",
@@ -358,7 +340,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -367,12 +349,12 @@
             },
             {
               "kind": "Content",
-              "text": "<T>>"
+              "text": "<TState>>"
             }
           ],
           "fileUrlPath": "packages/store/src/create-store.ts",
           "returnTypeTokenRange": {
-            "startIndex": 5,
+            "startIndex": 3,
             "endIndex": 14
           },
           "releaseTag": "Public",
@@ -381,23 +363,10 @@
             {
               "parameterName": "name",
               "parameterTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "isOptional": false
-            }
-          ],
-          "typeParameters": [
-            {
-              "typeParameterName": "TName",
-              "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
+              "isOptional": false
             }
           ],
           "name": "createStore"
@@ -409,7 +378,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface CreateStoreOptions<T extends "
+              "text": "export interface CreateStoreOptions<TState extends "
             },
             {
               "kind": "Reference",
@@ -425,7 +394,7 @@
           "releaseTag": "Public",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -547,7 +516,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "<T>>"
+                  "text": "<TState>>"
                 },
                 {
                   "kind": "Content",
@@ -565,17 +534,17 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@cyclone-ui/store!CreateStoreOptions#sync:member",
-              "docComment": "/**\n * Sync middleware options.\n */\n",
+              "canonicalReference": "@cyclone-ui/store!CreateStoreOptions#publish:member",
+              "docComment": "/**\n * Publish middleware options.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "sync?: "
+                  "text": "publish?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "SyncOptions",
-                  "canonicalReference": "@cyclone-ui/store!SyncOptions:type"
+                  "text": "PublishOptions",
+                  "canonicalReference": "@cyclone-ui/store!PublishOptions:type"
                 },
                 {
                   "kind": "Content",
@@ -585,7 +554,7 @@
               "isReadonly": false,
               "isOptional": true,
               "releaseTag": "Public",
-              "name": "sync",
+              "name": "publish",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -601,7 +570,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "createZustandStore: <TName extends "
+              "text": "createZustandStore: (name: "
             },
             {
               "kind": "Content",
@@ -609,19 +578,11 @@
             },
             {
               "kind": "Content",
-              "text": ">(name: "
-            },
-            {
-              "kind": "Content",
-              "text": "TName"
-            },
-            {
-              "kind": "Content",
               "text": ") => "
             },
             {
               "kind": "Content",
-              "text": "<T extends "
+              "text": "<TState extends "
             },
             {
               "kind": "Reference",
@@ -630,7 +591,16 @@
             },
             {
               "kind": "Content",
-              "text": ">(initialState: T, options?: "
+              "text": ">(initialState: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Omit",
+              "canonicalReference": "!Omit:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, \"_\">, options?: "
             },
             {
               "kind": "Reference",
@@ -639,7 +609,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>) => "
+              "text": "<TState>) => "
             },
             {
               "kind": "Reference",
@@ -648,7 +618,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -657,12 +627,12 @@
             },
             {
               "kind": "Content",
-              "text": "<T>>"
+              "text": "<TState>>"
             }
           ],
           "fileUrlPath": "packages/store/src/create-store.ts",
           "returnTypeTokenRange": {
-            "startIndex": 5,
+            "startIndex": 3,
             "endIndex": 14
           },
           "releaseTag": "Public",
@@ -671,18 +641,46 @@
             {
               "parameterName": "name",
               "parameterTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isOptional": false
             }
           ],
+          "name": "createZustandStore"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!Draft:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Draft<T> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "ImmerDraft",
+              "canonicalReference": "!unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "Draft",
           "typeParameters": [
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "T",
               "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
+                "startIndex": 0,
+                "endIndex": 0
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,
@@ -690,7 +688,10 @@
               }
             }
           ],
-          "name": "createZustandStore"
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
         },
         {
           "kind": "TypeAlias",
@@ -699,11 +700,11 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type EqualityChecker<T> = "
+              "text": "export type EqualityChecker<TState> = "
             },
             {
               "kind": "Content",
-              "text": "(state: T, newState: T) => boolean"
+              "text": "(state: TState, newState: TState) => boolean"
             },
             {
               "kind": "Content",
@@ -715,7 +716,7 @@
           "name": "EqualityChecker",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
@@ -738,7 +739,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "extendActions: <AB extends "
+              "text": "extendActions: <TActionBuilder extends "
             },
             {
               "kind": "Reference",
@@ -747,7 +748,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, import(\"../types\")."
+              "text": "<TState, import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -756,7 +757,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n    state: import(\"../types\")."
+              "text": "<TState> & {\n    state: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -765,7 +766,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n    mergeState: import(\"../types\")."
+              "text": "<TState>;\n    mergeState: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -774,19 +775,11 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n} & TActions, TSelectors>"
+              "text": "<TState>;\n} & TActions, TSelectors>"
             },
             {
               "kind": "Content",
-              "text": ", TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": ", TState extends "
             },
             {
               "kind": "Reference",
@@ -798,8 +791,9 @@
               "text": " = "
             },
             {
-              "kind": "Content",
-              "text": "{}"
+              "kind": "Reference",
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
             },
             {
               "kind": "Content",
@@ -823,7 +817,7 @@
             },
             {
               "kind": "Content",
-              "text": "AB"
+              "text": "TActionBuilder"
             },
             {
               "kind": "Content",
@@ -836,7 +830,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -845,7 +839,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors>"
+              "text": "<TState> & TActions, TSelectors>"
             },
             {
               "kind": "Content",
@@ -858,7 +852,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -867,7 +861,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions & "
+              "text": "<TState> & TActions & "
             },
             {
               "kind": "Reference",
@@ -876,13 +870,13 @@
             },
             {
               "kind": "Content",
-              "text": "<AB>, TSelectors>"
+              "text": "<TActionBuilder>, TSelectors>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/extend-actions.ts",
           "returnTypeTokenRange": {
-            "startIndex": 27,
-            "endIndex": 33
+            "startIndex": 25,
+            "endIndex": 31
           },
           "releaseTag": "Public",
           "overloadIndex": 1,
@@ -890,23 +884,23 @@
             {
               "parameterName": "builder",
               "parameterTypeTokenRange": {
-                "startIndex": 20,
-                "endIndex": 21
+                "startIndex": 18,
+                "endIndex": 19
               },
               "isOptional": false
             },
             {
               "parameterName": "api",
               "parameterTypeTokenRange": {
-                "startIndex": 22,
-                "endIndex": 26
+                "startIndex": 20,
+                "endIndex": 24
               },
               "isOptional": false
             }
           ],
           "typeParameters": [
             {
-              "typeParameterName": "AB",
+              "typeParameterName": "TActionBuilder",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 9
@@ -917,25 +911,14 @@
               }
             },
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 10,
                 "endIndex": 11
               },
               "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
                 "startIndex": 12,
                 "endIndex": 13
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 14,
-                "endIndex": 15
               }
             },
             {
@@ -945,8 +928,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 16,
-                "endIndex": 17
+                "startIndex": 14,
+                "endIndex": 15
               }
             },
             {
@@ -956,8 +939,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 18,
-                "endIndex": 19
+                "startIndex": 16,
+                "endIndex": 17
               }
             }
           ],
@@ -970,7 +953,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "extendSelectors: <CB extends "
+              "text": "extendSelectors: <TSelectorBuilder extends "
             },
             {
               "kind": "Reference",
@@ -979,32 +962,16 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors>"
+              "text": "<TState, TActions, TSelectors>"
             },
             {
               "kind": "Content",
-              "text": ", TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": ", TState extends "
             },
             {
               "kind": "Reference",
               "text": "State",
               "canonicalReference": "@cyclone-ui/store!State:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
             },
             {
               "kind": "Content",
@@ -1028,7 +995,7 @@
             },
             {
               "kind": "Content",
-              "text": "CB"
+              "text": "TSelectorBuilder"
             },
             {
               "kind": "Content",
@@ -1041,7 +1008,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -1050,7 +1017,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors>"
+              "text": "<TState> & TActions, TSelectors>"
             },
             {
               "kind": "Content",
@@ -1063,7 +1030,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -1072,7 +1039,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors & "
+              "text": "<TState> & TActions, TSelectors & "
             },
             {
               "kind": "Reference",
@@ -1081,13 +1048,13 @@
             },
             {
               "kind": "Content",
-              "text": "<CB>>"
+              "text": "<TSelectorBuilder>>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/extend-selectors.ts",
           "returnTypeTokenRange": {
-            "startIndex": 21,
-            "endIndex": 27
+            "startIndex": 17,
+            "endIndex": 23
           },
           "releaseTag": "Public",
           "overloadIndex": 1,
@@ -1095,23 +1062,23 @@
             {
               "parameterName": "builder",
               "parameterTypeTokenRange": {
-                "startIndex": 14,
-                "endIndex": 15
+                "startIndex": 10,
+                "endIndex": 11
               },
               "isOptional": false
             },
             {
               "parameterName": "api",
               "parameterTypeTokenRange": {
-                "startIndex": 16,
-                "endIndex": 20
+                "startIndex": 12,
+                "endIndex": 16
               },
               "isOptional": false
             }
           ],
           "typeParameters": [
             {
-              "typeParameterName": "CB",
+              "typeParameterName": "TSelectorBuilder",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
@@ -1122,7 +1089,7 @@
               }
             },
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 4,
                 "endIndex": 5
@@ -1133,25 +1100,14 @@
               }
             },
             {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 8,
-                "endIndex": 9
-              }
-            },
-            {
               "typeParameterName": "TActions",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 10,
-                "endIndex": 11
+                "startIndex": 6,
+                "endIndex": 7
               }
             },
             {
@@ -1161,8 +1117,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 12,
-                "endIndex": 13
+                "startIndex": 8,
+                "endIndex": 9
               }
             }
           ],
@@ -1273,7 +1229,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "generateStateActions: <T extends "
+              "text": "generateStateActions: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1291,7 +1247,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1312,7 +1268,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/generate-state-actions.ts",
@@ -1342,7 +1298,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -1362,7 +1318,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "generateStateGetSelectors: <T extends "
+              "text": "generateStateGetSelectors: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1380,7 +1336,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1393,7 +1349,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/generate-state-get-selectors.ts",
@@ -1415,7 +1371,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -1435,7 +1391,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "generateStateHookSelectors: <T extends "
+              "text": "generateStateHookSelectors: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1453,7 +1409,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1466,7 +1422,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1479,7 +1435,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/generate-state-hook-selectors.ts",
@@ -1509,7 +1465,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -1529,7 +1485,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "generateStateRemovers: <T extends "
+              "text": "generateStateRemovers: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1547,7 +1503,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1568,7 +1524,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/generate-state-removers.ts",
@@ -1598,7 +1554,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -1618,7 +1574,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "generateStateTrackedHooksSelectors: <T extends "
+              "text": "generateStateTrackedHooksSelectors: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1631,7 +1587,7 @@
             },
             {
               "kind": "Content",
-              "text": "() => T"
+              "text": "() => TState"
             },
             {
               "kind": "Content",
@@ -1644,7 +1600,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -1657,7 +1613,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/generate-state-tracked-hooks-selectors.ts",
@@ -1687,7 +1643,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -1768,45 +1724,12 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type GetRecord<O, K extends "
-            },
-            {
-              "kind": "Content",
-              "text": "keyof O"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "keyof O"
-            },
-            {
-              "kind": "Content",
-              "text": ", C extends "
+              "text": "export type GetRecord<TState extends "
             },
             {
               "kind": "Reference",
-              "text": "DeepKeys",
-              "canonicalReference": "@cyclone-ui/store!~DeepKeys:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<O[K]> | undefined"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Reference",
-              "text": "DeepKeys",
-              "canonicalReference": "@cyclone-ui/store!~DeepKeys:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<O[K]> | undefined"
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
             },
             {
               "kind": "Content",
@@ -1814,16 +1737,43 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    [index in K]: (childKey?: C) => C extends "
+              "text": "{\n    [TField in keyof TState]: TState[TField] extends "
             },
             {
               "kind": "Reference",
-              "text": "DeepKeys",
-              "canonicalReference": "@cyclone-ui/store!~DeepKeys:type"
+              "text": "Primitive",
+              "canonicalReference": "@cyclone-ui/store!~Primitive:type"
             },
             {
               "kind": "Content",
-              "text": "<O[K]> ? "
+              "text": " ? () => TState[TField] : TState[TField] extends any[] ? (() => TState[TField]) & {\n        $item: <TIndex extends number>(index: TIndex) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "ArrayValues",
+              "canonicalReference": "@cyclone-ui/store!~ArrayValues:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>;\n    } : TState[TField] extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, unknown> ? (() => TState[TField]) & {\n        $path: <TKey extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepKey",
+              "canonicalReference": "@cyclone-ui/store!~DeepKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>>(key: TKey) => "
             },
             {
               "kind": "Reference",
@@ -1832,16 +1782,7 @@
             },
             {
               "kind": "Content",
-              "text": "<O[K], C, "
-            },
-            {
-              "kind": "Reference",
-              "text": "IsNullable",
-              "canonicalReference": "@cyclone-ui/store!~IsNullable:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<O[K]>> : O[K];\n}"
+              "text": "<TState[TField], TKey>;\n    } : never;\n}"
             },
             {
               "kind": "Content",
@@ -1853,42 +1794,20 @@
           "name": "GetRecord",
           "typeParameters": [
             {
-              "typeParameterName": "O",
-              "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "K",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
               "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              }
-            },
-            {
-              "typeParameterName": "C",
-              "constraintTokenRange": {
-                "startIndex": 5,
-                "endIndex": 7
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 8,
-                "endIndex": 10
+                "startIndex": 0,
+                "endIndex": 0
               }
             }
           ],
           "typeTokenRange": {
-            "startIndex": 11,
-            "endIndex": 18
+            "startIndex": 3,
+            "endIndex": 14
           }
         },
         {
@@ -1898,7 +1817,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "immerMiddleware: <T extends "
+              "text": "immerMiddleware: <TState extends "
             },
             {
               "kind": "Reference",
@@ -1916,7 +1835,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -1925,7 +1844,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>, "
+              "text": "<TState>, "
             },
             {
               "kind": "Reference",
@@ -1934,7 +1853,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>[\"getState\"]>"
+              "text": "<TState>[\"getState\"]>"
             },
             {
               "kind": "Content",
@@ -1947,7 +1866,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             }
           ],
           "fileUrlPath": "packages/store/src/middleware/immer.ts",
@@ -1969,7 +1888,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -2061,7 +1980,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface ImmerStoreApi<T extends "
+              "text": "export interface ImmerStoreApi<TState extends "
             },
             {
               "kind": "Reference",
@@ -2088,7 +2007,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>, \"setState\">"
+              "text": "<TState>, \"setState\">"
             },
             {
               "kind": "Content",
@@ -2099,7 +2018,7 @@
           "releaseTag": "Public",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -2129,7 +2048,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "<T>"
+                  "text": "<TState>"
                 },
                 {
                   "kind": "Content",
@@ -2152,6 +2071,32 @@
               "endIndex": 7
             }
           ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!InternalState:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type InternalState = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    name: string;\n    createdOn: number;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "InternalState",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         },
         {
           "kind": "Function",
@@ -2210,7 +2155,7 @@
             },
             {
               "kind": "Content",
-              "text": "string"
+              "text": "string | number"
             },
             {
               "kind": "Content",
@@ -2251,7 +2196,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type MergeState<T extends "
+              "text": "export type MergeState<TState extends "
             },
             {
               "kind": "Reference",
@@ -2273,7 +2218,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>, actionName?: string) => void"
+              "text": "<TState>, actionName?: string) => void"
             },
             {
               "kind": "Content",
@@ -2285,7 +2230,7 @@
           "name": "MergeState",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -60509,6 +60454,325 @@
         },
         {
           "kind": "Function",
+          "canonicalReference": "@cyclone-ui/store!publishMiddleware:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "publishMiddleware: <TState extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">(config: "
+            },
+            {
+              "kind": "Reference",
+              "text": "StateCreatorWithDevtools",
+              "canonicalReference": "@cyclone-ui/store!StateCreatorWithDevtools:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetImmerState",
+              "canonicalReference": "@cyclone-ui/store!SetImmerState:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState>>"
+            },
+            {
+              "kind": "Content",
+              "text": ", options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "PublishOptions",
+              "canonicalReference": "@cyclone-ui/store!PublishOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": " & "
+            },
+            {
+              "kind": "Reference",
+              "text": "Required",
+              "canonicalReference": "!Required:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Pick",
+              "canonicalReference": "!Pick:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "PublishOptions",
+              "canonicalReference": "@cyclone-ui/store!PublishOptions:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", \"name\">>"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "StateCreatorWithDevtools",
+              "canonicalReference": "@cyclone-ui/store!StateCreatorWithDevtools:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetImmerState",
+              "canonicalReference": "@cyclone-ui/store!SetImmerState:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState>>"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/middleware/publish.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 17,
+            "endIndex": 21
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "config",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 16
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "TState",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "publishMiddleware"
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface PublishMiddlewareState "
+            }
+          ],
+          "fileUrlPath": "packages/store/src/middleware/publish.ts",
+          "releaseTag": "Public",
+          "name": "PublishMiddlewareState",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState#channel:member",
+              "docComment": "/**\n * The broadcast channel\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "channel: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BroadcastChannel",
+                  "canonicalReference": "!BroadcastChannel:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "channel",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState#followers:member",
+              "docComment": "/**\n * Store a list of all the tabs / windows Only for the main tab / window\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "followers: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "followers",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState#id:member",
+              "docComment": "/**\n * The id of the tab / window\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState#isLeader:member",
+              "docComment": "/**\n * Is this tab / window the main tab / window When a new tab / window is opened, it will be synced with the main\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isLeader: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isLeader",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/store!PublishMiddlewareState#isSynced:member",
+              "docComment": "/**\n * Is the store synced with the other tabs\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isSynced: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "isSynced",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!PublishOptions:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PublishOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    name?: string;\n    enabled?: boolean;\n    timeoutMs?: number;\n    keepSynced?: boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "PublishOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Function",
           "canonicalReference": "@cyclone-ui/store!removeBy:function(1)",
           "docComment": "/**\n * Delete a field on an object using a path, including dot notation.\n */\n",
           "excerptTokens": [
@@ -60575,11 +60839,38 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type RemoveRecord<O> = "
+              "text": "export type RemoveRecord<TState extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
             },
             {
               "kind": "Content",
-              "text": "{\n    [K in keyof O]: (childKey?: string) => void;\n}"
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [TField in keyof TState]: TState[TField] extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Primitive",
+              "canonicalReference": "@cyclone-ui/store!~Primitive:type"
+            },
+            {
+              "kind": "Content",
+              "text": " ? () => void : TState[TField] extends any[] ? (() => void) & {\n        $item: <TIndex extends number>(index: TIndex) => void;\n    } : TState[TField] extends object ? (() => void) & {\n        $path: <TKey extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepKey",
+              "canonicalReference": "@cyclone-ui/store!~DeepKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>>(key: TKey) => void;\n    } : never;\n}"
             },
             {
               "kind": "Content",
@@ -60591,10 +60882,10 @@
           "name": "RemoveRecord",
           "typeParameters": [
             {
-              "typeParameterName": "O",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
+                "startIndex": 1,
+                "endIndex": 2
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,
@@ -60603,8 +60894,8 @@
             }
           ],
           "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
+            "startIndex": 3,
+            "endIndex": 8
           }
         },
         {
@@ -60614,15 +60905,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type SelectorBuilder<TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": "export type SelectorBuilder<TState extends "
             },
             {
               "kind": "Reference",
@@ -60651,7 +60934,7 @@
             },
             {
               "kind": "Content",
-              "text": "(state: T, get: "
+              "text": "(state: TState, get: "
             },
             {
               "kind": "Reference",
@@ -60660,7 +60943,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors>, api: "
+              "text": "<TState, TSelectors>, api: "
             },
             {
               "kind": "Reference",
@@ -60669,7 +60952,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors>) => "
+              "text": "<TState, TActions, TSelectors>) => "
             },
             {
               "kind": "Reference",
@@ -60690,21 +60973,10 @@
           "name": "SelectorBuilder",
           "typeParameters": [
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,
@@ -60718,8 +60990,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 4
               }
             },
             {
@@ -60729,14 +61001,14 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 5,
+                "endIndex": 6
               }
             }
           ],
           "typeTokenRange": {
-            "startIndex": 9,
-            "endIndex": 16
+            "startIndex": 7,
+            "endIndex": 14
           }
         },
         {
@@ -60746,7 +61018,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type SelectorRecord<T> = "
+              "text": "export type SelectorRecord<TState> = "
             },
             {
               "kind": "Reference",
@@ -60755,7 +61027,7 @@
             },
             {
               "kind": "Content",
-              "text": "<string, (state: T) => any>"
+              "text": "<string, (state: TState) => any>"
             },
             {
               "kind": "Content",
@@ -60767,7 +61039,7 @@
           "name": "SelectorRecord",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
@@ -60790,11 +61062,11 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type SelectRecord<O> = "
+              "text": "export type SelectRecord<TState> = "
             },
             {
               "kind": "Content",
-              "text": "{\n    [K in keyof O]: (equalityFn?: "
+              "text": "{\n    [K in keyof TState]: (equalityFn?: "
             },
             {
               "kind": "Reference",
@@ -60803,7 +61075,7 @@
             },
             {
               "kind": "Content",
-              "text": "<O[K]>) => O[K];\n}"
+              "text": "<TState[K]>) => TState[K];\n}"
             },
             {
               "kind": "Content",
@@ -60815,7 +61087,7 @@
           "name": "SelectRecord",
           "typeParameters": [
             {
-              "typeParameterName": "O",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
@@ -60832,17 +61104,56 @@
           }
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!SelectTrackedRecord:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type SelectTrackedRecord<TState> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [K in keyof TState]: () => TState[K];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "SelectTrackedRecord",
+          "typeParameters": [
+            {
+              "typeParameterName": "TState",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
           "kind": "Function",
           "canonicalReference": "@cyclone-ui/store!setBy:function(1)",
           "docComment": "/**\n * Set a value on an object using a path, including dot notation.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare function setBy<O, K extends "
+              "text": "export declare function setBy<T extends "
             },
             {
               "kind": "Content",
-              "text": "keyof O"
+              "text": "object"
             },
             {
               "kind": "Content",
@@ -60850,7 +61161,7 @@
             },
             {
               "kind": "Content",
-              "text": "O"
+              "text": "T"
             },
             {
               "kind": "Content",
@@ -60858,7 +61169,7 @@
             },
             {
               "kind": "Content",
-              "text": "K"
+              "text": "any"
             },
             {
               "kind": "Content",
@@ -60871,7 +61182,7 @@
             },
             {
               "kind": "Content",
-              "text": "<O, K>"
+              "text": "<T>"
             },
             {
               "kind": "Content",
@@ -60921,18 +61232,7 @@
           ],
           "typeParameters": [
             {
-              "typeParameterName": "O",
-              "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "K",
+              "typeParameterName": "T",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -60952,7 +61252,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type SetImmerState<T> = "
+              "text": "export type SetImmerState<TState> = "
             },
             {
               "kind": "Content",
@@ -60961,11 +61261,11 @@
             {
               "kind": "Reference",
               "text": "Draft",
-              "canonicalReference": "!unknown"
+              "canonicalReference": "@cyclone-ui/store!Draft:type"
             },
             {
               "kind": "Content",
-              "text": "<T>) => void, actionName?: string) => void"
+              "text": "<TState>) => void, actionName?: string) => void"
             },
             {
               "kind": "Content",
@@ -60977,7 +61277,7 @@
           "name": "SetImmerState",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
@@ -61000,20 +61300,92 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type SetRecord<O> = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    [K in keyof O]: "
+              "text": "export type SetRecord<TState extends "
             },
             {
               "kind": "Reference",
-              "text": "SetRecordProperty",
-              "canonicalReference": "@cyclone-ui/store!SetRecordProperty:type"
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
             },
             {
               "kind": "Content",
-              "text": "<O, K>;\n}"
+              "text": "> = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [TField in keyof TState]: TState[TField] extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Primitive",
+              "canonicalReference": "@cyclone-ui/store!~Primitive:type"
+            },
+            {
+              "kind": "Content",
+              "text": " ? (param: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParam",
+              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>) => void : TState[TField] extends any[] ? ((param: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParam",
+              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>) => void) & {\n        $item: <TIndex extends number>(index: TIndex, param: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParam",
+              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField][TIndex]>) => void;\n    } : TState[TField] extends object ? ((param: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParam",
+              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>) => void) & {\n        $path: <TKey extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepKey",
+              "canonicalReference": "@cyclone-ui/store!~DeepKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField]>>(key: TKey, param: "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParam",
+              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DeepValue",
+              "canonicalReference": "@cyclone-ui/store!~DeepValue:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState[TField], TKey>>) => void;\n    } : never;\n}"
             },
             {
               "kind": "Content",
@@ -61025,7 +61397,55 @@
           "name": "SetRecord",
           "typeParameters": [
             {
-              "typeParameterName": "O",
+              "typeParameterName": "TState",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 20
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!SetRecordParam:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type SetRecordParam<TState> = "
+            },
+            {
+              "kind": "Content",
+              "text": "TState | ((state: TState) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "SetRecordParamReturnType",
+              "canonicalReference": "@cyclone-ui/store!~SetRecordParamReturnType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState>)"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "SetRecordParam",
+          "typeParameters": [
+            {
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
@@ -61039,131 +61459,6 @@
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 4
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/store!SetRecordParam:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SetRecordParam<O, K extends "
-            },
-            {
-              "kind": "Content",
-              "text": "keyof O"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Content",
-              "text": "O[K] | ((previous: O[K]) => O[K])"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/store/src/types.ts",
-          "releaseTag": "Public",
-          "name": "SetRecordParam",
-          "typeParameters": [
-            {
-              "typeParameterName": "O",
-              "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "K",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 3,
-            "endIndex": 4
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/store!SetRecordProperty:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SetRecordProperty<O, K extends "
-            },
-            {
-              "kind": "Content",
-              "text": "keyof O"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Content",
-              "text": "(value: "
-            },
-            {
-              "kind": "Reference",
-              "text": "SetRecordParam",
-              "canonicalReference": "@cyclone-ui/store!SetRecordParam:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<O, K>, childKey?: string) => void"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/store/src/types.ts",
-          "releaseTag": "Public",
-          "name": "SetRecordProperty",
-          "typeParameters": [
-            {
-              "typeParameterName": "O",
-              "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "K",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 3,
-            "endIndex": 6
           }
         },
         {
@@ -61182,7 +61477,16 @@
             },
             {
               "kind": "Content",
-              "text": "<string, any>"
+              "text": "<string, any> & {\n    _: "
+            },
+            {
+              "kind": "Reference",
+              "text": "InternalState",
+              "canonicalReference": "@cyclone-ui/store!InternalState:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
             },
             {
               "kind": "Content",
@@ -61194,7 +61498,7 @@
           "name": "State",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 3
+            "endIndex": 5
           }
         },
         {
@@ -61204,7 +61508,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StateActions<T extends "
+              "text": "export type StateActions<TState extends "
             },
             {
               "kind": "Reference",
@@ -61222,7 +61526,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n    state: "
+              "text": "<TState> & {\n    state: "
             },
             {
               "kind": "Reference",
@@ -61231,7 +61535,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n    mergeState: "
+              "text": "<TState>;\n    mergeState: "
             },
             {
               "kind": "Reference",
@@ -61240,7 +61544,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n}"
+              "text": "<TState>;\n}"
             },
             {
               "kind": "Content",
@@ -61252,7 +61556,7 @@
           "name": "StateActions",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61275,7 +61579,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StateCreatorWithDevtools<T extends "
+              "text": "export type StateCreatorWithDevtools<TState extends "
             },
             {
               "kind": "Reference",
@@ -61293,7 +61597,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -61306,7 +61610,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -61319,7 +61623,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -61332,7 +61636,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -61340,7 +61644,7 @@
             },
             {
               "kind": "Content",
-              "text": "(set: CustomSetState, get: CustomGetState, api: CustomStoreApi) => T"
+              "text": "(set: CustomSetState, get: CustomGetState, api: CustomStoreApi) => TState"
             },
             {
               "kind": "Content",
@@ -61352,7 +61656,7 @@
           "name": "StateCreatorWithDevtools",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61408,7 +61712,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StateGetters<T extends "
+              "text": "export type StateGetters<TState extends "
             },
             {
               "kind": "Reference",
@@ -61426,7 +61730,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n    state: "
+              "text": "<TState> & {\n    state: "
             },
             {
               "kind": "Reference",
@@ -61435,7 +61739,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n}"
+              "text": "<TState>;\n}"
             },
             {
               "kind": "Content",
@@ -61447,7 +61751,7 @@
           "name": "StateGetters",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61470,7 +61774,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StateRemovers<T extends "
+              "text": "export type StateRemovers<TState extends "
             },
             {
               "kind": "Reference",
@@ -61488,7 +61792,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>"
+              "text": "<TState>"
             },
             {
               "kind": "Content",
@@ -61500,7 +61804,7 @@
           "name": "StateRemovers",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61523,7 +61827,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StateSelectors<T extends "
+              "text": "export type StateSelectors<TState extends "
             },
             {
               "kind": "Reference",
@@ -61541,7 +61845,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n    state: "
+              "text": "<TState> & {\n    state: "
             },
             {
               "kind": "Reference",
@@ -61550,7 +61854,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n}"
+              "text": "<TState>;\n}"
             },
             {
               "kind": "Content",
@@ -61562,7 +61866,7 @@
           "name": "StateSelectors",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61668,28 +61972,12 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StoreApi<TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": "export type StoreApi<TState extends "
             },
             {
               "kind": "Reference",
               "text": "State",
               "canonicalReference": "@cyclone-ui/store!State:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
             },
             {
               "kind": "Content",
@@ -61713,7 +62001,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    get: "
+              "text": "{\n    name: string;\n    get: "
             },
             {
               "kind": "Reference",
@@ -61722,7 +62010,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors>;\n    name: TName;\n    set: "
+              "text": "<TState, TSelectors>;\n    set: "
             },
             {
               "kind": "Reference",
@@ -61740,7 +62028,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n    store: "
+              "text": "<TState>;\n    store: "
             },
             {
               "kind": "Reference",
@@ -61749,25 +62037,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n    use: "
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUse",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n    useTracked: "
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUseTracked",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n    useStore: "
+              "text": "<TState>;\n    useStore: "
             },
             {
               "kind": "Reference",
@@ -61776,7 +62046,25 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n    useTrackedStore: () => T;\n    extendSelectors<SB extends "
+              "text": "<TState>;\n    use: "
+            },
+            {
+              "kind": "Reference",
+              "text": "StoreApiUse",
+              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, TSelectors>;\n    useTracked: "
+            },
+            {
+              "kind": "Reference",
+              "text": "StoreApiUseTracked",
+              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState, TSelectors>;\n    useTrackedStore: () => TState;\n    extendSelectors<TSelectorBuilder extends "
             },
             {
               "kind": "Reference",
@@ -61785,7 +62073,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors>>(builder: SB): "
+              "text": "<TState, TActions, TSelectors>>(builder: TSelectorBuilder): "
             },
             {
               "kind": "Reference",
@@ -61794,7 +62082,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -61803,7 +62091,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors & "
+              "text": "<TState> & TActions, TSelectors & "
             },
             {
               "kind": "Reference",
@@ -61812,7 +62100,7 @@
             },
             {
               "kind": "Content",
-              "text": "<SB>>;\n    extendActions<AB extends "
+              "text": "<TSelectorBuilder>>;\n    extendActions<TActionBuilder extends "
             },
             {
               "kind": "Reference",
@@ -61821,7 +62109,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -61830,7 +62118,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors>>(builder: AB): "
+              "text": "<TState> & TActions, TSelectors>>(builder: TActionBuilder): "
             },
             {
               "kind": "Reference",
@@ -61839,7 +62127,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -61848,7 +62136,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions & "
+              "text": "<TState> & TActions & "
             },
             {
               "kind": "Reference",
@@ -61857,7 +62145,7 @@
             },
             {
               "kind": "Content",
-              "text": "<AB>, TSelectors>;\n}"
+              "text": "<TActionBuilder>, TSelectors>;\n}"
             },
             {
               "kind": "Content",
@@ -61869,7 +62157,7 @@
           "name": "StoreApi",
           "typeParameters": [
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -61877,17 +62165,6 @@
               "defaultTypeTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
               }
             },
             {
@@ -61895,86 +62172,6 @@
               "constraintTokenRange": {
                 "startIndex": 0,
                 "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
-              }
-            },
-            {
-              "typeParameterName": "TSelectors",
-              "constraintTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 9,
-                "endIndex": 10
-              }
-            }
-          ],
-          "typeTokenRange": {
-            "startIndex": 11,
-            "endIndex": 44
-          }
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/store!StoreApiGet:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type StoreApiGet<T extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "State",
-              "canonicalReference": "@cyclone-ui/store!State:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
-            },
-            {
-              "kind": "Content",
-              "text": ", TSelectors = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
-            },
-            {
-              "kind": "Content",
-              "text": "> = "
-            },
-            {
-              "kind": "Reference",
-              "text": "StateGetters",
-              "canonicalReference": "@cyclone-ui/store!StateGetters:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T> & TSelectors"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/store/src/types.ts",
-          "releaseTag": "Public",
-          "name": "StoreApiGet",
-          "typeParameters": [
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
               },
               "defaultTypeTokenRange": {
                 "startIndex": 3,
@@ -61995,7 +62192,79 @@
           ],
           "typeTokenRange": {
             "startIndex": 7,
-            "endIndex": 9
+            "endIndex": 40
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@cyclone-ui/store!StoreApiGet:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type StoreApiGet<TState extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "State",
+              "canonicalReference": "@cyclone-ui/store!State:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", TSelectors = "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": "> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "StateGetters",
+              "canonicalReference": "@cyclone-ui/store!StateGetters:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<TState> & TSelectors"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "packages/store/src/types.ts",
+          "releaseTag": "Public",
+          "name": "StoreApiGet",
+          "typeParameters": [
+            {
+              "typeParameterName": "TState",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "TSelectors",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
           }
         },
         {
@@ -62052,20 +62321,12 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StoreApiUse<T extends "
+              "text": "export type StoreApiUse<TState extends "
             },
             {
               "kind": "Reference",
               "text": "State",
               "canonicalReference": "@cyclone-ui/store!State:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
             },
             {
               "kind": "Content",
@@ -62086,7 +62347,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TSelectors"
+              "text": "<TState> & TSelectors"
             },
             {
               "kind": "Content",
@@ -62098,14 +62359,14 @@
           "name": "StoreApiUse",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
               "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 0,
+                "endIndex": 0
               }
             },
             {
@@ -62115,14 +62376,14 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 4
               }
             }
           ],
           "typeTokenRange": {
-            "startIndex": 7,
-            "endIndex": 9
+            "startIndex": 5,
+            "endIndex": 7
           }
         },
         {
@@ -62132,20 +62393,12 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type StoreApiUseTracked<T extends "
+              "text": "export type StoreApiUseTracked<TState extends "
             },
             {
               "kind": "Reference",
               "text": "State",
               "canonicalReference": "@cyclone-ui/store!State:type"
-            },
-            {
-              "kind": "Content",
-              "text": " = "
-            },
-            {
-              "kind": "Content",
-              "text": "{}"
             },
             {
               "kind": "Content",
@@ -62161,12 +62414,12 @@
             },
             {
               "kind": "Reference",
-              "text": "SelectRecord",
-              "canonicalReference": "@cyclone-ui/store!SelectRecord:type"
+              "text": "SelectTrackedRecord",
+              "canonicalReference": "@cyclone-ui/store!SelectTrackedRecord:type"
             },
             {
               "kind": "Content",
-              "text": "<T> & TSelectors"
+              "text": "<TState> & TSelectors"
             },
             {
               "kind": "Content",
@@ -62178,14 +62431,14 @@
           "name": "StoreApiUseTracked",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
               },
               "defaultTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 0,
+                "endIndex": 0
               }
             },
             {
@@ -62195,14 +62448,14 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 4
               }
             }
           ],
           "typeTokenRange": {
-            "startIndex": 7,
-            "endIndex": 9
+            "startIndex": 5,
+            "endIndex": 7
           }
         },
         {
@@ -62212,15 +62465,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "storeFactory: <TName extends "
-            },
-            {
-              "kind": "Content",
-              "text": "string"
-            },
-            {
-              "kind": "Content",
-              "text": ", T extends "
+              "text": "storeFactory: <TState extends "
             },
             {
               "kind": "Reference",
@@ -62254,7 +62499,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, "
+              "text": "<TState, "
             },
             {
               "kind": "Reference",
@@ -62263,7 +62508,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & TActions, TSelectors>"
+              "text": "<TState> & TActions, TSelectors>"
             },
             {
               "kind": "Content",
@@ -62271,7 +62516,7 @@
             },
             {
               "kind": "Content",
-              "text": "{\n    extendSelectors: (builder: "
+              "text": "{\n    extendSelectors: <TSelectorBuilder extends "
             },
             {
               "kind": "Reference",
@@ -62280,25 +62525,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors>) => {\n        extendSelectors: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "SelectorBuilder",
-              "canonicalReference": "@cyclone-ui/store!SelectorBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, TActions, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => any;\n        extendActions: (builder: "
+              "text": "<TState, TActions, TSelectors>>(builder: TSelectorBuilder) => any;\n    extendActions: <TActionBuilder extends "
             },
             {
               "kind": "Reference",
@@ -62307,7 +62534,7 @@
             },
             {
               "kind": "Content",
-              "text": "<TName, T, import(\"../types\")."
+              "text": "<TState, import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62316,7 +62543,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n            state: import(\"../types\")."
+              "text": "<TState> & {\n        state: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62325,7 +62552,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n            mergeState: import(\"../types\")."
+              "text": "<TState>;\n        mergeState: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62334,52 +62561,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n        } & TActions, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => {\n            extendSelectors: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "SelectorBuilder",
-              "canonicalReference": "@cyclone-ui/store!SelectorBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => any;\n            extendActions: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ActionBuilder",
-              "canonicalReference": "@cyclone-ui/store!ActionBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => any;\n            get: import(\"../types\")."
+              "text": "<TState>;\n    } & TActions, TSelectors>>(builder: TActionBuilder) => any;\n    name: string;\n    get: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62388,97 +62570,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            name: TName;\n            set: any;\n            remove: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "RemoveRecord",
-              "canonicalReference": "@cyclone-ui/store!RemoveRecord:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            store: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "ImmerStoreApi",
-              "canonicalReference": "@cyclone-ui/store!ImmerStoreApi:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            use: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUse",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            useTracked: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUseTracked",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            useStore: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "UseImmerStore",
-              "canonicalReference": "@cyclone-ui/store!UseImmerStore:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            useTrackedStore: () => T;\n        };\n        get: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiGet",
-              "canonicalReference": "@cyclone-ui/store!StoreApiGet:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n        name: TName;\n        set: import(\"../types\")."
+              "text": "<TState, TSelectors>;\n    set: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62487,7 +62579,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T> & {\n            state: import(\"../types\")."
+              "text": "<TState> & {\n        state: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62496,7 +62588,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n            mergeState: import(\"../types\")."
+              "text": "<TState>;\n        mergeState: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62505,7 +62597,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n        } & TActions;\n        remove: import(\"../types\")."
+              "text": "<TState>;\n    } & TActions;\n    remove: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62514,7 +62606,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n        store: import(\"../types\")."
+              "text": "<TState>;\n    store: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62523,43 +62615,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n        use: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUse",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n        useTracked: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUseTracked",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n        useStore: import(\"../types\")."
+              "text": "<TState>;\n    useStore: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62568,106 +62624,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>;\n        useTrackedStore: () => T;\n    };\n    extendActions: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ActionBuilder",
-              "canonicalReference": "@cyclone-ui/store!ActionBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, "
-            },
-            {
-              "kind": "Reference",
-              "text": "StateActions",
-              "canonicalReference": "@cyclone-ui/store!StateActions:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T> & TActions, TSelectors>) => {\n        extendSelectors: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "SelectorBuilder",
-              "canonicalReference": "@cyclone-ui/store!SelectorBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors>) => {\n            extendSelectors: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "SelectorBuilder",
-              "canonicalReference": "@cyclone-ui/store!SelectorBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => any;\n            extendActions: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ActionBuilder",
-              "canonicalReference": "@cyclone-ui/store!ActionBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>) => any;\n            get: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiGet",
-              "canonicalReference": "@cyclone-ui/store!StoreApiGet:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            name: TName;\n            set: any;\n            remove: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "RemoveRecord",
-              "canonicalReference": "@cyclone-ui/store!RemoveRecord:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            store: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "ImmerStoreApi",
-              "canonicalReference": "@cyclone-ui/store!ImmerStoreApi:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            use: import(\"../types\")."
+              "text": "<TState>;\n    use: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62676,16 +62633,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            useTracked: import(\"../types\")."
+              "text": "<TState, TSelectors>;\n    useTracked: import(\"../types\")."
             },
             {
               "kind": "Reference",
@@ -62694,175 +62642,13 @@
             },
             {
               "kind": "Content",
-              "text": "<T, TSelectors & "
-            },
-            {
-              "kind": "Reference",
-              "text": "Record",
-              "canonicalReference": "!Record:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<string, (...args: any[]) => any>>;\n            useStore: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "UseImmerStore",
-              "canonicalReference": "@cyclone-ui/store!UseImmerStore:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n            useTrackedStore: () => T;\n        };\n        extendActions: (builder: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ActionBuilder",
-              "canonicalReference": "@cyclone-ui/store!ActionBuilder:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<TName, T, any, TSelectors>) => any;\n        get: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiGet",
-              "canonicalReference": "@cyclone-ui/store!StoreApiGet:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n        name: TName;\n        set: any;\n        remove: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "RemoveRecord",
-              "canonicalReference": "@cyclone-ui/store!RemoveRecord:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n        store: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "ImmerStoreApi",
-              "canonicalReference": "@cyclone-ui/store!ImmerStoreApi:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n        use: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUse",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n        useTracked: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUseTracked",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n        useStore: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "UseImmerStore",
-              "canonicalReference": "@cyclone-ui/store!UseImmerStore:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n        useTrackedStore: () => T;\n    };\n    get: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiGet",
-              "canonicalReference": "@cyclone-ui/store!StoreApiGet:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n    name: TName;\n    set: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "SetRecord",
-              "canonicalReference": "@cyclone-ui/store!SetRecord:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T> & {\n        state: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "SetImmerState",
-              "canonicalReference": "@cyclone-ui/store!SetImmerState:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n        mergeState: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "MergeState",
-              "canonicalReference": "@cyclone-ui/store!MergeState:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n    } & TActions;\n    remove: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "RemoveRecord",
-              "canonicalReference": "@cyclone-ui/store!RemoveRecord:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n    store: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "ImmerStoreApi",
-              "canonicalReference": "@cyclone-ui/store!ImmerStoreApi:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n    use: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUse",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n    useTracked: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "StoreApiUseTracked",
-              "canonicalReference": "@cyclone-ui/store!StoreApiUseTracked:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T, TSelectors>;\n    useStore: import(\"../types\")."
-            },
-            {
-              "kind": "Reference",
-              "text": "UseImmerStore",
-              "canonicalReference": "@cyclone-ui/store!UseImmerStore:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>;\n    useTrackedStore: () => T;\n}"
+              "text": "<TState, TSelectors>;\n    useTrackedStore: () => TState;\n}"
             }
           ],
           "fileUrlPath": "packages/store/src/factory/store-factory.ts",
           "returnTypeTokenRange": {
-            "startIndex": 14,
-            "endIndex": 145
+            "startIndex": 12,
+            "endIndex": 41
           },
           "releaseTag": "Public",
           "overloadIndex": 1,
@@ -62870,29 +62656,18 @@
             {
               "parameterName": "api",
               "parameterTypeTokenRange": {
-                "startIndex": 9,
-                "endIndex": 13
+                "startIndex": 7,
+                "endIndex": 11
               },
               "isOptional": false
             }
           ],
           "typeParameters": [
             {
-              "typeParameterName": "TName",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "T",
-              "constraintTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,
@@ -62906,8 +62681,8 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 4
               }
             },
             {
@@ -62917,38 +62692,12 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 5,
+                "endIndex": 6
               }
             }
           ],
           "name": "storeFactory"
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/store!SyncOptions:type",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SyncOptions = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    enabled?: boolean;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "packages/store/src/types.ts",
-          "releaseTag": "Public",
-          "name": "SyncOptions",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
         },
         {
           "kind": "TypeAlias",
@@ -63082,7 +62831,7 @@
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface UseImmerStore<T extends "
+              "text": "export interface UseImmerStore<TState extends "
             },
             {
               "kind": "Reference",
@@ -63118,7 +62867,7 @@
             },
             {
               "kind": "Content",
-              "text": "<T>>, \"setState\">"
+              "text": "<TState>>, \"setState\">"
             },
             {
               "kind": "Content",
@@ -63129,7 +62878,7 @@
           "releaseTag": "Public",
           "typeParameters": [
             {
-              "typeParameterName": "T",
+              "typeParameterName": "TState",
               "constraintTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -63154,7 +62903,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "T"
+                  "text": "TState"
                 },
                 {
                   "kind": "Content",
@@ -63185,7 +62934,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "<T, U>"
+                  "text": "<TState, U>"
                 },
                 {
                   "kind": "Content",
@@ -63267,7 +63016,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": "<T>"
+                  "text": "<TState>"
                 },
                 {
                   "kind": "Content",

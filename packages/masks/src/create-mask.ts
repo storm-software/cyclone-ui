@@ -1,3 +1,23 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone Ui
+
+ This code was released as part of the Cyclone Ui project. Cyclone Ui
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+
+ Contact:         https://stormsoftware.com/contact
+ Licensing:       https://stormsoftware.com/projects/cyclone-ui/licensing
+
+ -------------------------------------------------------------------*/
+
+/* eslint-disable no-console */
+
 import {
   applyMaskStateless,
   getThemeInfo,
@@ -10,9 +30,8 @@ import type { CreateMask, MaskFunction, MaskOptions } from "./types";
 export const combineMasks = (...masks: CreateMask[]) => {
   const mask: CreateMask = {
     name: "combine-mask",
-    mask: (template, opts) => {
+    mask: ((template, opts) => {
       let current = getThemeInfo(template, opts.parentName);
-      let theme: any;
 
       console.log(
         "*******************************************************************"
@@ -29,32 +48,40 @@ export const combineMasks = (...masks: CreateMask[]) => {
         "*******************************************************************"
       );
 
-      for (const mask of masks) {
+      return masks.reduce((_, mask) => {
         if (!current) {
           throw new Error(
             `Nothing returned from mask: ${current}, for template: ${template} and mask: ${mask.toString()}, given opts ${JSON.stringify(
               opts,
               null,
-              2
+              2,
             )}`
           );
         }
+
         const next = applyMaskStateless(current, mask, opts);
         current = next;
-        theme = next.theme;
-      }
-      return theme;
-    }
+
+        return next.theme;
+      }, {});
+    }) as MaskFunction
   };
+
   return mask;
 };
 
 export const createMask = <C extends CreateMask | MaskFunction>(
   createMask: C
-): CreateMask =>
-  typeof createMask === "function"
-    ? { name: createMask.name || "unnamed", mask: createMask }
-    : createMask;
+): CreateMask => {
+  if (typeof createMask === "function") {
+    return {
+      name: createMask.name || "unnamed",
+      mask: createMask
+    };
+  }
+
+  return createMask as CreateMask;
+};
 
 export const skipMask: CreateMask = {
   name: "skip-mask",
@@ -79,24 +106,24 @@ function applyOverrides(
   let strategy = opts.overrideStrategy;
 
   const overrideSwap = opts.overrideSwap?.[key];
-  if (typeof overrideSwap !== "undefined") {
-    override = overrideSwap;
-    strategy = "swap";
-  } else {
+  if (overrideSwap === undefined) {
     const overrideShift = opts.overrideShift?.[key];
-    if (typeof overrideShift !== "undefined") {
-      override = overrideShift;
-      strategy = "shift";
-    } else {
+    if (overrideShift === undefined) {
       const overrideDefault = opts.override?.[key];
-      if (typeof overrideDefault !== "undefined") {
+      if (overrideDefault !== undefined) {
         override = overrideDefault;
         strategy = opts.overrideStrategy;
       }
+    } else {
+      override = overrideShift;
+      strategy = "shift";
     }
+  } else {
+    override = overrideSwap;
+    strategy = "swap";
   }
 
-  if (typeof override === "undefined") return value;
+  if (override === undefined) return value;
   if (typeof override === "string") return value;
 
   if (strategy === "swap") {
@@ -124,7 +151,9 @@ export const createInverseMask = () => {
   return mask;
 };
 
-type ShiftMaskOptions = { inverse?: boolean };
+interface ShiftMaskOptions {
+  inverse?: boolean;
+}
 
 export const createShiftMask = (
   { inverse }: ShiftMaskOptions = {},

@@ -29,6 +29,9 @@
 - name: "dependencies"
   color: 1d76db
   description: "Upgrade or downgrade of project dependencies."
+- name: "dependabot"
+  color: 00404D
+  description: "Dependabot dependency update automation."
 
 - name: "in-progress"
   color: fbca04

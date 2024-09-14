@@ -9,33 +9,34 @@ import {
 } from "../types";
 
 export const extendSelectors = <
-  CB extends SelectorBuilder<TName, T, TActions, TSelectors>,
-  TName extends string,
-  T extends State = {},
+  TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>,
+  TState extends State,
   TActions = {},
   TSelectors = {}
 >(
-  builder: CB,
-  api: StoreApi<TName, T, StateActions<T> & TActions, TSelectors>
+  builder: TSelectorBuilder,
+  api: StoreApi<TState, StateActions<TState> & TActions, TSelectors>
 ): StoreApi<
-  TName,
-  T,
-  StateActions<T> & TActions,
-  TSelectors & ReturnType<CB>
+  TState,
+  StateActions<TState> & TActions,
+  TSelectors & ReturnType<TSelectorBuilder>
 > => {
   const use = {
     ...api.use
-  } as StoreApiUse<T, TSelectors & ReturnType<CB>>;
+  } as StoreApiUse<TState, TSelectors & ReturnType<TSelectorBuilder>>;
 
   const useTracked = {
     ...api.useTracked
-  } as StoreApiUseTracked<T, TSelectors & ReturnType<CB>>;
+  } as StoreApiUseTracked<TState, TSelectors & ReturnType<TSelectorBuilder>>;
 
   const get = {
     ...api.get
-  } as StoreApiGet<T, TSelectors & ReturnType<CB>>;
+  } as StoreApiGet<TState, TSelectors & ReturnType<TSelectorBuilder>>;
 
-  Object.keys(builder(api.store.getState(), api.get, api)).forEach(key => {
+  Object.keys(
+    builder(api.store.getState() as TState, api.get, api) as TSelectors &
+      ReturnType<TSelectorBuilder>
+  ).forEach(key => {
     // @ts-ignore
     use[key] = (...args: any[]) =>
       api.useStore(state => {
@@ -63,5 +64,9 @@ export const extendSelectors = <
     get,
     use,
     useTracked
-  };
+  } as StoreApi<
+    TState,
+    StateActions<TState> & TActions,
+    TSelectors & ReturnType<TSelectorBuilder>
+  >;
 };

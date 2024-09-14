@@ -30,15 +30,17 @@ export { createInverseMask }
 export { createInverseMask as createInverseMask_alias_1 }
 
 // @public (undocumented)
-type CreateMask = {
-    name: string;
+interface CreateMask {
+    // (undocumented)
     mask: MaskFunction;
-};
+    // (undocumented)
+    name: string;
+}
 export { CreateMask }
 export { CreateMask as CreateMask_alias_1 }
 
 // @public (undocumented)
-const createMask: <C extends MaskFunction | CreateMask>(createMask: C) => CreateMask;
+const createMask: <C extends CreateMask | MaskFunction>(createMask: C) => CreateMask;
 export { createMask }
 export { createMask as createMask_alias_1 }
 
@@ -65,9 +67,10 @@ export { createTheme }
 export { createTheme as createTheme_alias_1 }
 
 // @public (undocumented)
-type CreateThemeOptions = {
+interface CreateThemeOptions {
+    // (undocumented)
     nonInheritedValues?: GenericTheme;
-};
+}
 export { CreateThemeOptions }
 export { CreateThemeOptions as CreateThemeOptions_alias_1 }
 
@@ -115,14 +118,12 @@ export { EntriesToObject }
 export { EntriesToObject as EntriesToObject_alias_1 }
 
 // @public (undocumented)
-type EntriesType = [PropertyKey, unknown][] | ReadonlyArray<readonly [PropertyKey, unknown]>;
+type EntriesType = [PropertyKey, unknown][] | readonly (readonly [PropertyKey, unknown])[];
 export { EntriesType }
 export { EntriesType as EntriesType_alias_1 }
 
 // @public (undocumented)
-type GenericTheme = {
-    [key: string]: string | Variable;
-};
+type GenericTheme = Record<string, string | Variable>;
 export { GenericTheme }
 export { GenericTheme as GenericTheme_alias_1 }
 
@@ -137,9 +138,7 @@ export { isMinusZero }
 export { isMinusZero as isMinusZero_alias_1 }
 
 // @public (undocumented)
-type MaskDefinitions = {
-    [key: string]: CreateMask | CreateMask["mask"];
-};
+type MaskDefinitions = Record<string, CreateMask | CreateMask["mask"]>;
 export { MaskDefinitions }
 export { MaskDefinitions as MaskDefinitions_alias_1 }
 
@@ -149,18 +148,28 @@ export { MaskFunction }
 export { MaskFunction as MaskFunction_alias_1 }
 
 // @public (undocumented)
-type MaskOptions = {
-    palette?: CreateThemePalette;
-    override?: Partial<ThemeMask>;
-    overrideStrategy?: "shift" | "swap";
-    overrideSwap?: Partial<ThemeMask>;
-    overrideShift?: Partial<ThemeMask>;
-    skip?: Partial<ThemeMask>;
-    strength?: number;
+interface MaskOptions {
+    // (undocumented)
     max?: number;
+    // (undocumented)
     min?: number;
+    // (undocumented)
+    override?: Partial<ThemeMask>;
+    // (undocumented)
+    overrideShift?: Partial<ThemeMask>;
+    // (undocumented)
+    overrideStrategy?: "shift" | "swap";
+    // (undocumented)
+    overrideSwap?: Partial<ThemeMask>;
+    // (undocumented)
+    palette?: CreateThemePalette;
+    // (undocumented)
     parentName?: string;
-};
+    // (undocumented)
+    skip?: Partial<ThemeMask>;
+    // (undocumented)
+    strength?: number;
+}
 export { MaskOptions }
 export { MaskOptions as MaskOptions_alias_1 }
 
@@ -204,9 +213,7 @@ export { Palette }
 export { Palette as Palette_alias_1 }
 
 // @public (undocumented)
-type PaletteDefinitions = {
-    [key: string]: Palette;
-};
+type PaletteDefinitions = Record<string, Palette>;
 export { PaletteDefinitions }
 export { PaletteDefinitions as PaletteDefinitions_alias_1 }
 
@@ -230,16 +237,12 @@ export { skipMask }
 export { skipMask as skipMask_alias_1 }
 
 // @public (undocumented)
-type Template = {
-    [key: string]: number | string;
-};
+type Template = Record<string, number | string>;
 export { Template }
 export { Template as Template_alias_1 }
 
 // @public (undocumented)
-type TemplateDefinitions = {
-    [key: string]: Template;
-};
+type TemplateDefinitions = Record<string, Template>;
 export { TemplateDefinitions }
 export { TemplateDefinitions as TemplateDefinitions_alias_1 }
 
@@ -254,19 +257,21 @@ export { ThemeDefinition }
 export { ThemeDefinition as ThemeDefinition_alias_1 }
 
 // @public (undocumented)
-type ThemeDefinitions<Masks extends string = string> = {
-    [key: string]: ThemeDefinition<Masks | UnionableString>;
-};
+type ThemeDefinitions<Masks extends string = string> = Record<string, ThemeDefinition<Masks | UnionableString>>;
 export { ThemeDefinitions }
 export { ThemeDefinitions as ThemeDefinitions_alias_1 }
 
 // @public (undocumented)
-type ThemeInfo = {
-    palette: CreateThemePalette;
-    definition: ThemeMask;
-    options?: CreateThemeOptions;
+interface ThemeInfo {
+    // (undocumented)
     cache: Map<any, any>;
-};
+    // (undocumented)
+    definition: ThemeMask;
+    // (undocumented)
+    options?: CreateThemeOptions;
+    // (undocumented)
+    palette: CreateThemePalette;
+}
 export { ThemeInfo }
 export { ThemeInfo as ThemeInfo_alias_1 }
 

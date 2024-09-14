@@ -14,23 +14,42 @@
   },
   "private": false,
   "peerDependencies": {
+    "jotai": ">=2.8.0",
     "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-native": "0.73.2",
-    "zustand": ">=4.3.9"
+    "react-native": "0.74.1"
+  },
+  "peerDependenciesMeta": {
+    "jotai": {
+      "optional": false
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
   },
   "dependencies": {
+    "@storm-stack/errors": "latest",
+    "@storm-stack/utilities": "latest",
+    "@storm-stack/types": "latest",
     "@tamagui/core": "^1.98.0",
     "@tamagui/lucide-icons": "^1.98.0",
     "@tamagui/web": "^1.98.0",
     "decode-formdata": "^0.7.5",
+    "jotai-optics": "^0.4.0",
+    "optics-ts": "^2.4.1",
     "react-native-svg": "^15.2.0"
   },
   "devDependencies": {
+    "jotai": ">=2.8.0",
     "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-native": "0.73.2",
-    "zustand": ">=4.3.9"
+    "react-native": "0.74.1"
   },
   "publishConfig": {
     "access": "public"

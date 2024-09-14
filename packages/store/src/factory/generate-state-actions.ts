@@ -1,3 +1,27 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import {
+  DeepKey,
+  DeepValue,
+  isArray,
+  isObject,
+  Paths
+} from "@storm-stack/types";
 import { Draft } from "immer";
 import { ImmerStoreApi, SetRecord, SetRecordParam, State } from "../types";
 import { getBy, isFunction, setBy } from "../utils";
@@ -5,97 +29,93 @@ import { getBy, isFunction, setBy } from "../utils";
 export const generateStateActions = <TState extends State>(
   store: ImmerStoreApi<TState>,
   storeName: string
-) => {
-  const actions: SetRecord<T> = {} as any;
+): SetRecord<TState> => {
+  const actions = {} as any;
 
-  Object.keys((store as any).getState() as T).forEach(_key => {
-    // actions[key] = (
-    //   param: SetRecordParam<T>,
-    //   childKey?: keyof T[keyof T] | undefined
-    // ) => {
-    //   let updatedKey = key;
-
-    //   let prev = store.getState()[key];
-    //   if (childKey) {
-    //     if (typeof childKey === "string") {
-    //       updatedKey = `${key}.${childKey}`;
-    //     } else if (typeof childKey === "number") {
-    //       updatedKey = `${key}[${childKey}]`;
-    //     }
-
-    //     prev = getBy(prev, childKey);
-    //   }
-
-    //   let value = param;
-    //   if (isFunction(param)) {
-    //     if (param.length !== 1) {
-    //       throw new Error(
-    //         `A setter function must accept ${param.length <= 0 ? "a" : "only one"} parameter for the previous value. Use the format '(prev) => newValue' instead.`
-    //       );
-    //     }
-
-    //     value = param(prev) as typeof prev;
-    //   }
-
-    //   if (prev === value) {
-    //     return;
-    //   }
-
-    //   const actionKey = updatedKey.replace(/^\S/, s => s.toUpperCase());
-    //   store.setState(draft => {
-    //     setBy(draft, updatedKey as string | number, value as any);
-    //   }, `@@${storeName}/set${actionKey}`);
-    // };
-
-    const key: keyof TState = _key;
-
-    // for (const key in ) {
-    // selectors[`get${capitalize(key)}`] = () => store.getState()[key as keyof T];
-    function setStateField(param: SetRecordParam<TState[typeof key]>): void;
-    function setStateField<C extends keyof TState[typeof key]>(
-      param: SetRecordParam<TState[typeof key][C]>,
-      childKey: C
-    ): void;
-    function setStateField<C extends keyof TState[typeof key]>(
-      param: SetRecordParam<TState[typeof key] | TState[typeof key][C]>,
-      childKey?: C
-    ): void {
-      let updatedKey = key;
-
-      let prev = store.getState()[key];
-      if (childKey) {
-        if (typeof childKey === "string") {
-          updatedKey = `${key as string}.${childKey}`;
-        } else if (typeof childKey === "number") {
-          updatedKey = `${key as string}[${childKey}]`;
-        }
-
-        prev = getBy(prev, childKey);
-      }
-
-      let value = param;
-      if (isFunction(param)) {
-        // if (param.length !== 1) {
-        //   throw new Error(
-        //     `A setter function must accept ${param.length <= 0 ? "a" : "only one"} parameter for the previous value. Use the format '(prev) => newValue' instead.`
-        //   );
-        // }
-
-        value = param(prev) as typeof prev;
-      }
-
-      if (prev === value) {
+  const state = store.getState();
+  for (const field of Object.keys(state as TState)) {
+    const setStateField: any = (
+      param: SetRecordParam<TState[typeof field]>
+    ) => {
+      if (!isFunction(param) && store.getState()[field] === param) {
         return;
       }
 
-      const actionKey = updatedKey.replace(/^\S/, s => s.toUpperCase());
-      store.setState(draft => {
-        setBy(draft, updatedKey as string | number, value as any);
-      }, `@@${storeName}/set${actionKey}`);
+      store.setState(
+        prev => {
+          if (isFunction(param)) {
+            const updateFn = param as (
+              state: TState[typeof field]
+            ) => TState[typeof field];
+
+            return updateFn(prev[field as any]);
+          }
+
+          setBy(
+            prev,
+            field as Paths<Draft<TState>>,
+            param as TState[keyof TState]
+          );
+        },
+        `@@${storeName}/set${field.replace(/^\S/, s => s.toUpperCase())}`
+      );
+    };
+
+    if (isArray(state[field])) {
+      setStateField.$item = <TIndex extends number>(
+        index: TIndex,
+        param: SetRecordParam<TState[typeof field][TIndex]>
+      ) => {
+        if (!isFunction(param) && store.getState()[field][index] === param) {
+          return;
+        }
+
+        store.setState(
+          prev => {
+            if (isFunction(param)) {
+              const updateFn = param as (
+                state: TState[typeof field][TIndex]
+              ) => TState[typeof field][TIndex];
+
+              return updateFn(prev[field][index]);
+            }
+
+            prev[field][index] = param;
+          },
+          `@@${storeName}/setItem${field.replace(/^\S/, s => s.toUpperCase())}`
+        );
+      };
+    } else if (isObject(state[field])) {
+      setStateField.$path = <TKey extends DeepKey<TState[typeof field]>>(
+        key: TKey,
+        param: SetRecordParam<DeepValue<TState[typeof field], TKey>>
+      ) => {
+        if (
+          !isFunction(param) &&
+          getBy(store.getState()[field], key) === param
+        ) {
+          return;
+        }
+
+        store.setState(
+          prev => {
+            if (isFunction(param)) {
+              const updateFn = param as (
+                state: TState[typeof field][TKey]
+              ) => TState[typeof field][TKey];
+
+              return updateFn(getBy(prev[field], key));
+            }
+
+            setBy(prev[field], key, param);
+          },
+          `@@${storeName}/setPath${field.replace(/^\S/, s => s.toUpperCase())}`
+        );
+      };
     }
 
-    actions[key] = setStateField;
-  });
+    actions[field as keyof TState] = setStateField;
+  }
 
   return actions;
 };

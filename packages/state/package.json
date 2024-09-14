@@ -1,0 +1,48 @@
+{
+  "name": "@cyclone-ui/state",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A state management package used to handle state in Storm Software applications.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/state"
+  },
+  "private": false,
+  "keywords": [
+    "jotai"
+  ],
+  "peerDependencies": {
+    "jotai": ">=2.8.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-native": "0.74.1"
+  },
+  "peerDependenciesMeta": {
+    "jotai": {
+      "optional": false
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@storm-stack/serialization": "latest",
+    "@storm-stack/utilities": "latest"
+  },
+  "devDependencies": {
+    "jotai": ">=2.8.0",
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-native": "0.74.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

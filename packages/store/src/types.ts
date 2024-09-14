@@ -1,4 +1,24 @@
-import { Draft } from "immer";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import {
+ ArrayValues, DeepKey, DeepValue, Primitive 
+} from "@storm-stack/types";
+import { Draft as ImmerDraft } from "immer";
 import { StoreApi as RawStoreApi, UseBoundStore } from "zustand";
 import {
   PersistOptions as _PersistOptions,
@@ -6,7 +26,8 @@ import {
   NamedSet
 } from "zustand/middleware";
 import { GetState, StateSelector } from "zustand/vanilla";
-import { DeepKeys, DeepValue } from "@cyclone-ui/types";
+
+export type Draft<T> = ImmerDraft<T>;
 
 export type StoreApiGet<
   TState extends State,
@@ -19,39 +40,41 @@ export type StoreApiUse<
 export type StoreApiUseTracked<
   TState extends State,
   TSelectors = {}
-> = SelectRecord<TState> & TSelectors;
+> = SelectTrackedRecord<TState> & TSelectors;
 export type StoreApiSet<TActions = {}> = TActions;
 
 export type StoreApi<TState extends State, TActions = {}, TSelectors = {}> = {
-  get: StoreApiGet<TState, TSelectors>;
   name: string;
+  get: StoreApiGet<TState, TSelectors>;
   set: StoreApiSet<TActions>;
   remove: StateRemovers<TState>;
   store: ImmerStoreApi<TState>;
+  useStore: UseImmerStore<TState>;
   use: StoreApiUse<TState, TSelectors>;
   useTracked: StoreApiUseTracked<TState, TSelectors>;
-  useStore: UseImmerStore<TState>;
   useTrackedStore: () => TState;
 
-  extendSelectors<SB extends SelectorBuilder<TState, TActions, TSelectors>>(
-    builder: SB
+  extendSelectors<
+    TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>
+  >(
+    builder: TSelectorBuilder
   ): StoreApi<
     TState,
     StateActions<TState> & TActions,
-    TSelectors & ReturnType<SB>
+    TSelectors & ReturnType<TSelectorBuilder>
   >;
 
   extendActions<
-    AB extends ActionBuilder<
+    TActionBuilder extends ActionBuilder<
       TState,
       StateActions<TState> & TActions,
       TSelectors
     >
   >(
-    builder: AB
+    builder: TActionBuilder
   ): StoreApi<
     TState,
-    StateActions<TState> & TActions & ReturnType<AB>,
+    StateActions<TState> & TActions & ReturnType<TActionBuilder>,
     TSelectors
   >;
 
@@ -145,95 +168,65 @@ export interface UseImmerStore<TState extends State>
 export type SelectRecord<TState> = {
   [K in keyof TState]: (equalityFn?: EqualityChecker<TState[K]>) => TState[K];
 };
+export type SelectTrackedRecord<TState> = {
+  [K in keyof TState]: () => TState[K];
+};
 
-export type IsEqual<A, B> =
-  (<G>() => G extends A ? 1 : 2) extends <G>() => G extends B ? 1 : 2
-    ? true
-    : false;
-
-export type Primitive =
-  | null
-  | undefined
-  | string
-  | number
-  | boolean
-  | symbol
-  | bigint;
-
-export type GetRecord<TState extends {}> = {
+export type GetRecord<TState extends State> = {
   [TField in keyof TState]: TState[TField] extends Primitive
     ? () => TState[TField]
     : TState[TField] extends any[]
-      ? <TIndex extends number>(
-          index?: TIndex
-        ) => TIndex extends undefined ? TState[TField] : TState[TField][TIndex]
-      : <TKey extends DeepKeys<TState[TField]>>(
-          key?: TKey
-        ) => TKey extends undefined
-          ? TState[TField]
-          : DeepValue<TState[TField], TKey>;
+      ? (() => TState[TField]) & {
+          $item: <TIndex extends number>(
+            index: TIndex
+          ) => ArrayValues<TState[TField]>;
+        }
+      : TState[TField] extends Record<string, unknown>
+        ? (() => TState[TField]) & {
+            $path: <TKey extends DeepKey<TState[TField]>>(
+              key: TKey
+            ) => DeepValue<TState[TField], TKey>;
+          }
+        : never;
 };
 
-// TState extends Primitive ? TState : TState extends any[] ? (index?: number) => TState[number] : <TKey extends DeepKeys<TState>>(key?: TKey) => TKey extends undefined ? DeepValue<TState, TKey> : TState;
-
-// export type GetRecord<TState extends {} | any[] | Primitive> =
-//   TState extends Primitive
-//     ? TState
-//     : TState extends any[]
-//       ? <TIndex extends number>(
-//           index?: TIndex
-//         ) => TIndex extends undefined ? TState : GetRecord<TState[number]>
-//       : TState extends {}
-//         ? {
-//             [TField in keyof TState]: () => GetRecord<TState[TField]>;
-//           }
-//         : never;
-
-// <TKey extends keyof TState>(key?: TKey) => TKey extends undefined ? DeepValue<TState, TKey> : TState;};
-
-// export type GetRecordProperty<
-//   T extends {},
-//   K extends keyof T = keyof T,
-//   C extends undefined | keyof T[K] = undefined
-// > = (childKey?: C) => C extends keyof T[K] ? T[K][C] : T[K];
-// export type GetRecord<
-//   T extends {},
-//   C extends undefined | keyof T[keyof T] = undefined
-// > = { [K in keyof T]: GetRecordProperty<T, K, C> };
-
-// {
-//   [I in K]: ;
-// };
-
-export type SetRecordParam<S> = S | ((previous: S) => S);
-export type SetRecordProperty<
-  T extends {},
-  K extends keyof T = keyof T,
-  C extends keyof T[K] | undefined = undefined
-> = (
-  value: C extends keyof T[K] ? SetRecordParam<T[K][C]> : SetRecordParam<T[K]>,
-  childKey?: C
-) => void;
-export type SetRecord<
-  T extends {}
-  // C extends keyof T[keyof T] | undefined = undefined
-> = {
-  [K in keyof T]: SetRecordProperty<T, K, undefined | keyof T[K]>;
+type SetRecordParamReturnType<TState> = TState | void | undefined | never;
+export type SetRecordParam<TState> =
+  | TState
+  | ((state: TState) => SetRecordParamReturnType<TState>);
+export type SetRecord<TState extends State> = {
+  [TField in keyof TState]: TState[TField] extends Primitive
+    ? (param: SetRecordParam<TState[TField]>) => void
+    : TState[TField] extends any[]
+      ? ((param: SetRecordParam<TState[TField]>) => void) & {
+          $item: <TIndex extends number>(
+            index: TIndex,
+            param: SetRecordParam<TState[TField][TIndex]>
+          ) => void;
+        }
+      : TState[TField] extends object
+        ? ((param: SetRecordParam<TState[TField]>) => void) & {
+            $path: <TKey extends DeepKey<TState[TField]>>(
+              key: TKey,
+              param: SetRecordParam<DeepValue<TState[TField], TKey>>
+            ) => void;
+          }
+        : never;
 };
 
-export type RemoveRecord<T extends {}> = {
-  [K in keyof T]: (childKey?: keyof T[K]) => void;
+export type RemoveRecord<TState extends State> = {
+  [TField in keyof TState]: TState[TField] extends Primitive
+    ? () => void
+    : TState[TField] extends any[]
+      ? (() => void) & {
+          $item: <TIndex extends number>(index: TIndex) => void;
+        }
+      : TState[TField] extends object
+        ? (() => void) & {
+            $path: <TKey extends DeepKey<TState[TField]>>(key: TKey) => void;
+          }
+        : never;
 };
-
-// export type UseRecord<T> = {
-//   [K in keyof T as `use${Capitalize<string & K>}`]: () => T[K];
-// };
-// export type GetRecord<T> = {
-//   [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];
-// };
-// export type SetRecord<T> = {
-//   [K in keyof T as `set${Capitalize<string & K>}`]: (value: T[K]) => void;
-// };
 
 export interface CreateStoreOptions<TState extends State> {
   /**

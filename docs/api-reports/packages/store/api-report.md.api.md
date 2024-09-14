@@ -5,7 +5,7 @@
 ```ts
 
 import { DevtoolsOptions } from 'zustand/middleware';
-import { Draft } from 'immer';
+import { Draft as Draft_2 } from 'immer';
 import { GetState } from 'zustand/vanilla';
 import { NamedSet } from 'zustand/middleware';
 import { PersistOptions as PersistOptions_2 } from 'zustand/middleware';
@@ -14,44 +14,49 @@ import { StoreApi as StoreApi_2 } from 'zustand';
 import { UseBoundStore } from 'zustand';
 
 // @public (undocumented)
-type ActionBuilder<TName extends string, T extends State, TActions = {}, TSelectors = {}> = (set: StoreApiSet<TActions>, get: StoreApiGet<T, TSelectors>, api: StoreApi<TName, T, TActions, TSelectors>) => any;
+type ActionBuilder<TState extends State, TActions = {}, TSelectors = {}> = (set: StoreApiSet<TActions>, get: StoreApiGet<TState, TSelectors>, api: StoreApi<TState, TActions, TSelectors>) => any;
 export { ActionBuilder }
 export { ActionBuilder as ActionBuilder_alias_1 }
 
 // @public (undocumented)
-const createStore: <TName extends string>(name: TName) => <T extends State>(initialState: T, options?: CreateStoreOptions<T>) => StoreApi<TName, T, StateActions<T>>;
+const createStore: (name: string) => <TState extends State>(initialState: Omit<TState, "_">, options?: CreateStoreOptions<TState>) => StoreApi<TState, StateActions<TState>>;
 export { createStore }
 export { createStore as createStore_alias_1 }
 
 // @public (undocumented)
-interface CreateStoreOptions<T extends State> {
+interface CreateStoreOptions<TState extends State> {
     devtools?: DevtoolsOptions;
     immer?: ImmerOptions;
     middlewares?: any[];
-    persist?: PersistOptions<Partial<T>>;
-    sync?: SyncOptions;
+    persist?: PersistOptions<Partial<TState>>;
+    publish?: PublishOptions;
 }
 export { CreateStoreOptions }
 export { CreateStoreOptions as CreateStoreOptions_alias_1 }
 
 // @public (undocumented)
-const createZustandStore: <TName extends string>(name: TName) => <T extends State>(initialState: T, options?: CreateStoreOptions<T>) => StoreApi<TName, T, StateActions<T>>;
+const createZustandStore: (name: string) => <TState extends State>(initialState: Omit<TState, "_">, options?: CreateStoreOptions<TState>) => StoreApi<TState, StateActions<TState>>;
 export { createZustandStore }
 export { createZustandStore as createZustandStore_alias_1 }
 
 // @public (undocumented)
-type EqualityChecker<T> = (state: T, newState: T) => boolean;
+type Draft<T> = Draft_2<T>;
+export { Draft }
+export { Draft as Draft_alias_1 }
+
+// @public (undocumented)
+type EqualityChecker<TState> = (state: TState, newState: TState) => boolean;
 export { EqualityChecker }
 export { EqualityChecker as EqualityChecker_alias_1 }
 
 // @public (undocumented)
-export const extendActions: <AB extends ActionBuilder<TName, T, SetRecord<T> & {
-    state: SetImmerState<T>;
-    mergeState: MergeState<T>;
-} & TActions, TSelectors>, TName extends string, T extends State = {}, TActions = {}, TSelectors = {}>(builder: AB, api: StoreApi<TName, T, StateActions<T> & TActions, TSelectors>) => StoreApi<TName, T, StateActions<T> & TActions & ReturnType<AB>, TSelectors>;
+export const extendActions: <TActionBuilder extends ActionBuilder<TState, SetRecord<TState> & {
+    state: SetImmerState<TState>;
+    mergeState: MergeState<TState>;
+} & TActions, TSelectors>, TState extends State = State, TActions = {}, TSelectors = {}>(builder: TActionBuilder, api: StoreApi<TState, StateActions<TState> & TActions, TSelectors>) => StoreApi<TState, StateActions<TState> & TActions & ReturnType<TActionBuilder>, TSelectors>;
 
 // @public (undocumented)
-export const extendSelectors: <CB extends SelectorBuilder<TName, T, TActions, TSelectors>, TName extends string, T extends State = {}, TActions = {}, TSelectors = {}>(builder: CB, api: StoreApi<TName, T, StateActions<T> & TActions, TSelectors>) => StoreApi<TName, T, StateActions<T> & TActions, TSelectors & ReturnType<CB>>;
+export const extendSelectors: <TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>, TState extends State, TActions = {}, TSelectors = {}>(builder: TSelectorBuilder, api: StoreApi<TState, StateActions<TState> & TActions, TSelectors>) => StoreApi<TState, StateActions<TState> & TActions, TSelectors & ReturnType<TSelectorBuilder>>;
 
 // @public (undocumented)
 function functionalUpdate<TInput, TOutput = TInput>(updater: Updater<TInput, TOutput>, input: TInput): TOutput;
@@ -60,19 +65,19 @@ export { functionalUpdate as functionalUpdate_alias_1 }
 export { functionalUpdate as functionalUpdate_alias_2 }
 
 // @public (undocumented)
-export const generateStateActions: <T extends State>(store: ImmerStoreApi<T>, storeName: string) => SetRecord<T>;
+export const generateStateActions: <TState extends State>(store: ImmerStoreApi<TState>, storeName: string) => SetRecord<TState>;
 
 // @public (undocumented)
-export const generateStateGetSelectors: <T extends State>(store: ImmerStoreApi<T>) => GetRecord<T>;
+export const generateStateGetSelectors: <TState extends State>(store: ImmerStoreApi<TState>) => GetRecord<TState>;
 
 // @public (undocumented)
-export const generateStateHookSelectors: <T extends State>(useStore: UseImmerStore<T>, store: ImmerStoreApi<T>) => StoreApiUse<T>;
+export const generateStateHookSelectors: <TState extends State>(useStore: UseImmerStore<TState>, store: ImmerStoreApi<TState>) => StoreApiUse<TState>;
 
 // @public (undocumented)
-export const generateStateRemovers: <T extends State>(store: ImmerStoreApi<T>, storeName: string) => RemoveRecord<T>;
+export const generateStateRemovers: <TState extends State>(store: ImmerStoreApi<TState>, storeName: string) => RemoveRecord<TState>;
 
 // @public (undocumented)
-export const generateStateTrackedHooksSelectors: <T extends State>(useTrackedStore: () => T, store: ImmerStoreApi<T>) => StoreApiUseTracked<T>;
+export const generateStateTrackedHooksSelectors: <TState extends State>(useTrackedStore: () => TState, store: ImmerStoreApi<TState>) => StoreApiUseTracked<TState>;
 
 // @public
 function getBy(obj: any, path: any): any;
@@ -81,14 +86,18 @@ export { getBy as getBy_alias_1 }
 export { getBy as getBy_alias_2 }
 
 // @public (undocumented)
-type GetRecord<O, K extends keyof O = keyof O, C extends DeepKeys<O[K]> | undefined = DeepKeys<O[K]> | undefined> = {
-    [index in K]: (childKey?: C) => C extends DeepKeys<O[K]> ? DeepValue<O[K], C, IsNullable<O[K]>> : O[K];
+type GetRecord<TState extends State> = {
+    [TField in keyof TState]: TState[TField] extends Primitive ? () => TState[TField] : TState[TField] extends any[] ? (() => TState[TField]) & {
+        $item: <TIndex extends number>(index: TIndex) => ArrayValues<TState[TField]>;
+    } : TState[TField] extends Record<string, unknown> ? (() => TState[TField]) & {
+        $path: <TKey extends DeepKey<TState[TField]>>(key: TKey) => DeepValue<TState[TField], TKey>;
+    } : never;
 };
 export { GetRecord }
 export { GetRecord as GetRecord_alias_1 }
 
 // @public (undocumented)
-const immerMiddleware: <T extends State>(config: StateCreatorWithDevtools<T, SetImmerState<T>, StoreApi_2<T>["getState"]>) => StateCreatorWithDevtools<T>;
+const immerMiddleware: <TState extends State>(config: StateCreatorWithDevtools<TState, SetImmerState<TState>, StoreApi_2<TState>["getState"]>) => StateCreatorWithDevtools<TState>;
 export { immerMiddleware }
 export { immerMiddleware as immerMiddleware_alias_1 }
 export { immerMiddleware as immerMiddleware_alias_2 }
@@ -103,12 +112,20 @@ export { ImmerOptions }
 export { ImmerOptions as ImmerOptions_alias_1 }
 
 // @public (undocumented)
-interface ImmerStoreApi<T extends State> extends Omit<StoreApi_2<T>, "setState"> {
+interface ImmerStoreApi<TState extends State> extends Omit<StoreApi_2<TState>, "setState"> {
     // (undocumented)
-    setState: SetImmerState<T>;
+    setState: SetImmerState<TState>;
 }
 export { ImmerStoreApi }
 export { ImmerStoreApi as ImmerStoreApi_alias_1 }
+
+// @public (undocumented)
+type InternalState = {
+    name: string;
+    createdOn: number;
+};
+export { InternalState }
+export { InternalState as InternalState_alias_1 }
 
 // @public (undocumented)
 const isFunction: (value: unknown) => value is ((params?: unknown) => unknown) & ((param?: any) => any);
@@ -117,13 +134,13 @@ export { isFunction as isFunction_alias_1 }
 export { isFunction as isFunction_alias_2 }
 
 // @public (undocumented)
-function makePathArray(str: string): (string | number)[];
+function makePathArray(str: string | number): (string | number)[];
 export { makePathArray }
 export { makePathArray as makePathArray_alias_1 }
 export { makePathArray as makePathArray_alias_2 }
 
 // @public (undocumented)
-type MergeState<T extends State> = (state: Partial<T>, actionName?: string) => void;
+type MergeState<TState extends State> = (state: Partial<TState>, actionName?: string) => void;
 export { MergeState }
 export { MergeState as MergeState_alias_1 }
 
@@ -330,6 +347,34 @@ export { pipe }
 export { pipe as pipe_alias_1 }
 export { pipe as pipe_alias_2 }
 
+// @public (undocumented)
+const publishMiddleware: <TState extends State>(config: StateCreatorWithDevtools<TState, SetImmerState<TState>>, options: PublishOptions & Required<Pick<PublishOptions, "name">>) => StateCreatorWithDevtools<TState, SetImmerState<TState>>;
+export { publishMiddleware }
+export { publishMiddleware as publishMiddleware_alias_1 }
+export { publishMiddleware as publishMiddleware_alias_2 }
+
+// @public (undocumented)
+interface PublishMiddlewareState {
+    channel: BroadcastChannel;
+    followers: number[];
+    id: number;
+    isLeader: boolean;
+    isSynced: boolean;
+}
+export { PublishMiddlewareState }
+export { PublishMiddlewareState as PublishMiddlewareState_alias_1 }
+export { PublishMiddlewareState as PublishMiddlewareState_alias_2 }
+
+// @public (undocumented)
+type PublishOptions = {
+    name?: string;
+    enabled?: boolean;
+    timeoutMs?: number;
+    keepSynced?: boolean;
+};
+export { PublishOptions }
+export { PublishOptions as PublishOptions_alias_1 }
+
 // @public
 function removeBy(obj: any, _path: any): any;
 export { removeBy }
@@ -337,90 +382,102 @@ export { removeBy as removeBy_alias_1 }
 export { removeBy as removeBy_alias_2 }
 
 // @public (undocumented)
-type RemoveRecord<O> = {
-    [K in keyof O]: (childKey?: string) => void;
+type RemoveRecord<TState extends State> = {
+    [TField in keyof TState]: TState[TField] extends Primitive ? () => void : TState[TField] extends any[] ? (() => void) & {
+        $item: <TIndex extends number>(index: TIndex) => void;
+    } : TState[TField] extends object ? (() => void) & {
+        $path: <TKey extends DeepKey<TState[TField]>>(key: TKey) => void;
+    } : never;
 };
 export { RemoveRecord }
 export { RemoveRecord as RemoveRecord_alias_1 }
 
 // @public (undocumented)
-type SelectorBuilder<TName extends string, T extends State, TActions = {}, TSelectors = {}> = (state: T, get: StoreApiGet<T, TSelectors>, api: StoreApi<TName, T, TActions, TSelectors>) => Record<string, (...args: any[]) => any>;
+type SelectorBuilder<TState extends State, TActions = {}, TSelectors = {}> = (state: TState, get: StoreApiGet<TState, TSelectors>, api: StoreApi<TState, TActions, TSelectors>) => Record<string, (...args: any[]) => any>;
 export { SelectorBuilder }
 export { SelectorBuilder as SelectorBuilder_alias_1 }
 
 // @public (undocumented)
-type SelectorRecord<T> = Record<string, (state: T) => any>;
+type SelectorRecord<TState> = Record<string, (state: TState) => any>;
 export { SelectorRecord }
 export { SelectorRecord as SelectorRecord_alias_1 }
 
 // @public (undocumented)
-type SelectRecord<O> = {
-    [K in keyof O]: (equalityFn?: EqualityChecker<O[K]>) => O[K];
+type SelectRecord<TState> = {
+    [K in keyof TState]: (equalityFn?: EqualityChecker<TState[K]>) => TState[K];
 };
 export { SelectRecord }
 export { SelectRecord as SelectRecord_alias_1 }
 
+// @public (undocumented)
+type SelectTrackedRecord<TState> = {
+    [K in keyof TState]: () => TState[K];
+};
+export { SelectTrackedRecord }
+export { SelectTrackedRecord as SelectTrackedRecord_alias_1 }
+
 // @public
-function setBy<O, K extends keyof O>(obj: O, _path: K, updater: SetRecordParam<O, K>): any;
+function setBy<T extends object>(obj: T, _path: any, updater: SetRecordParam<T>): any;
 export { setBy }
 export { setBy as setBy_alias_1 }
 export { setBy as setBy_alias_2 }
 
 // @public (undocumented)
-type SetImmerState<T> = (fn: (draft: Draft<T>) => void, actionName?: string) => void;
+type SetImmerState<TState> = (fn: (draft: Draft<TState>) => void, actionName?: string) => void;
 export { SetImmerState }
 export { SetImmerState as SetImmerState_alias_1 }
 
 // @public (undocumented)
-type SetRecord<O> = {
-    [K in keyof O]: SetRecordProperty<O, K>;
+type SetRecord<TState extends State> = {
+    [TField in keyof TState]: TState[TField] extends Primitive ? (param: SetRecordParam<TState[TField]>) => void : TState[TField] extends any[] ? ((param: SetRecordParam<TState[TField]>) => void) & {
+        $item: <TIndex extends number>(index: TIndex, param: SetRecordParam<TState[TField][TIndex]>) => void;
+    } : TState[TField] extends object ? ((param: SetRecordParam<TState[TField]>) => void) & {
+        $path: <TKey extends DeepKey<TState[TField]>>(key: TKey, param: SetRecordParam<DeepValue<TState[TField], TKey>>) => void;
+    } : never;
 };
 export { SetRecord }
 export { SetRecord as SetRecord_alias_1 }
 
 // @public (undocumented)
-type SetRecordParam<O, K extends keyof O> = O[K] | ((previous: O[K]) => O[K]);
+type SetRecordParam<TState> = TState | ((state: TState) => SetRecordParamReturnType<TState>);
 export { SetRecordParam }
 export { SetRecordParam as SetRecordParam_alias_1 }
 
 // @public (undocumented)
-type SetRecordProperty<O, K extends keyof O> = (value: SetRecordParam<O, K>, childKey?: string) => void;
-export { SetRecordProperty }
-export { SetRecordProperty as SetRecordProperty_alias_1 }
-
-// @public (undocumented)
-type State = Record<string, any>;
+type State = Record<string, any> & {
+    _: InternalState;
+};
 export { State }
 export { State as State_alias_1 }
 
 // @public (undocumented)
-type StateActions<T extends State> = SetRecord<T> & {
-    state: SetImmerState<T>;
-    mergeState: MergeState<T>;
+type StateActions<TState extends State> = SetRecord<TState> & {
+    state: SetImmerState<TState>;
+    mergeState: MergeState<TState>;
 };
 export { StateActions }
 export { StateActions as StateActions_alias_1 }
 
 // @public (undocumented)
-type StateCreatorWithDevtools<T extends State, CustomSetState = NamedSet<T>, CustomGetState = GetState<T>, CustomStoreApi extends StoreApi_2<T> = StoreApi_2<T>> = (set: CustomSetState, get: CustomGetState, api: CustomStoreApi) => T;
+type StateCreatorWithDevtools<TState extends State, CustomSetState = NamedSet<TState>, CustomGetState = GetState<TState>, CustomStoreApi extends StoreApi_2<TState> = StoreApi_2<TState>> = (set: CustomSetState, get: CustomGetState, api: CustomStoreApi) => TState;
 export { StateCreatorWithDevtools }
 export { StateCreatorWithDevtools as StateCreatorWithDevtools_alias_1 }
 
 // @public (undocumented)
-type StateGetters<T extends State> = GetRecord<T> & {
-    state: GetState<T>;
+type StateGetters<TState extends State> = GetRecord<TState> & {
+    state: GetState<TState>;
 };
 export { StateGetters }
 export { StateGetters as StateGetters_alias_1 }
 
 // @public (undocumented)
-type StateRemovers<T extends State> = RemoveRecord<T>;
+type StateRemovers<TState extends State> = RemoveRecord<TState>;
 export { StateRemovers }
 export { StateRemovers as StateRemovers_alias_1 }
 
 // @public (undocumented)
-type StateSelectors<T extends State> = SelectRecord<T> & {
-    state: GetState<T>;
+type StateSelectors<TState extends State> = SelectRecord<TState> & {
+    state: GetState<TState>;
 };
 export { StateSelectors }
 export { StateSelectors as StateSelectors_alias_1 }
@@ -442,24 +499,24 @@ export { StorageValue }
 export { StorageValue as StorageValue_alias_1 }
 
 // @public (undocumented)
-type StoreApi<TName extends string, T extends State = {}, TActions = {}, TSelectors = {}> = {
-    get: StoreApiGet<T, TSelectors>;
-    name: TName;
+type StoreApi<TState extends State, TActions = {}, TSelectors = {}> = {
+    name: string;
+    get: StoreApiGet<TState, TSelectors>;
     set: StoreApiSet<TActions>;
-    remove: StateRemovers<T>;
-    store: ImmerStoreApi<T>;
-    use: StoreApiUse<T, TSelectors>;
-    useTracked: StoreApiUseTracked<T, TSelectors>;
-    useStore: UseImmerStore<T>;
-    useTrackedStore: () => T;
-    extendSelectors<SB extends SelectorBuilder<TName, T, TActions, TSelectors>>(builder: SB): StoreApi<TName, T, StateActions<T> & TActions, TSelectors & ReturnType<SB>>;
-    extendActions<AB extends ActionBuilder<TName, T, StateActions<T> & TActions, TSelectors>>(builder: AB): StoreApi<TName, T, StateActions<T> & TActions & ReturnType<AB>, TSelectors>;
+    remove: StateRemovers<TState>;
+    store: ImmerStoreApi<TState>;
+    useStore: UseImmerStore<TState>;
+    use: StoreApiUse<TState, TSelectors>;
+    useTracked: StoreApiUseTracked<TState, TSelectors>;
+    useTrackedStore: () => TState;
+    extendSelectors<TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>>(builder: TSelectorBuilder): StoreApi<TState, StateActions<TState> & TActions, TSelectors & ReturnType<TSelectorBuilder>>;
+    extendActions<TActionBuilder extends ActionBuilder<TState, StateActions<TState> & TActions, TSelectors>>(builder: TActionBuilder): StoreApi<TState, StateActions<TState> & TActions & ReturnType<TActionBuilder>, TSelectors>;
 };
 export { StoreApi }
 export { StoreApi as StoreApi_alias_1 }
 
 // @public (undocumented)
-type StoreApiGet<T extends State = {}, TSelectors = {}> = StateGetters<T> & TSelectors;
+type StoreApiGet<TState extends State, TSelectors = {}> = StateGetters<TState> & TSelectors;
 export { StoreApiGet }
 export { StoreApiGet as StoreApiGet_alias_1 }
 
@@ -469,93 +526,35 @@ export { StoreApiSet }
 export { StoreApiSet as StoreApiSet_alias_1 }
 
 // @public (undocumented)
-type StoreApiUse<T extends State = {}, TSelectors = {}> = SelectRecord<T> & TSelectors;
+type StoreApiUse<TState extends State, TSelectors = {}> = SelectRecord<TState> & TSelectors;
 export { StoreApiUse }
 export { StoreApiUse as StoreApiUse_alias_1 }
 
 // @public (undocumented)
-type StoreApiUseTracked<T extends State = {}, TSelectors = {}> = SelectRecord<T> & TSelectors;
+type StoreApiUseTracked<TState extends State, TSelectors = {}> = SelectTrackedRecord<TState> & TSelectors;
 export { StoreApiUseTracked }
 export { StoreApiUseTracked as StoreApiUseTracked_alias_1 }
 
 // @public (undocumented)
-export const storeFactory: <TName extends string, T extends State, TActions = {}, TSelectors = {}>(api: StoreApi<TName, T, StateActions<T> & TActions, TSelectors>) => {
-    extendSelectors: (builder: SelectorBuilder<TName, T, TActions, TSelectors>) => {
-        extendSelectors: (builder: SelectorBuilder<TName, T, TActions, TSelectors & Record<string, (...args: any[]) => any>>) => any;
-        extendActions: (builder: ActionBuilder<TName, T, SetRecord<T> & {
-            state: SetImmerState<T>;
-            mergeState: MergeState<T>;
-        } & TActions, TSelectors & Record<string, (...args: any[]) => any>>) => {
-            extendSelectors: (builder: SelectorBuilder<TName, T, any, TSelectors & Record<string, (...args: any[]) => any>>) => any;
-            extendActions: (builder: ActionBuilder<TName, T, any, TSelectors & Record<string, (...args: any[]) => any>>) => any;
-            get: StoreApiGet<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            name: TName;
-            set: any;
-            remove: RemoveRecord<T>;
-            store: ImmerStoreApi<T>;
-            use: StoreApiUse<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            useTracked: StoreApiUseTracked<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            useStore: UseImmerStore<T>;
-            useTrackedStore: () => T;
-        };
-        get: StoreApiGet<T, TSelectors & Record<string, (...args: any[]) => any>>;
-        name: TName;
-        set: SetRecord<T> & {
-            state: SetImmerState<T>;
-            mergeState: MergeState<T>;
-        } & TActions;
-        remove: RemoveRecord<T>;
-        store: ImmerStoreApi<T>;
-        use: StoreApiUse<T, TSelectors & Record<string, (...args: any[]) => any>>;
-        useTracked: StoreApiUseTracked<T, TSelectors & Record<string, (...args: any[]) => any>>;
-        useStore: UseImmerStore<T>;
-        useTrackedStore: () => T;
-    };
-    extendActions: (builder: ActionBuilder<TName, T, StateActions<T> & TActions, TSelectors>) => {
-        extendSelectors: (builder: SelectorBuilder<TName, T, any, TSelectors>) => {
-            extendSelectors: (builder: SelectorBuilder<TName, T, any, TSelectors & Record<string, (...args: any[]) => any>>) => any;
-            extendActions: (builder: ActionBuilder<TName, T, any, TSelectors & Record<string, (...args: any[]) => any>>) => any;
-            get: StoreApiGet<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            name: TName;
-            set: any;
-            remove: RemoveRecord<T>;
-            store: ImmerStoreApi<T>;
-            use: StoreApiUse<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            useTracked: StoreApiUseTracked<T, TSelectors & Record<string, (...args: any[]) => any>>;
-            useStore: UseImmerStore<T>;
-            useTrackedStore: () => T;
-        };
-        extendActions: (builder: ActionBuilder<TName, T, any, TSelectors>) => any;
-        get: StoreApiGet<T, TSelectors>;
-        name: TName;
-        set: any;
-        remove: RemoveRecord<T>;
-        store: ImmerStoreApi<T>;
-        use: StoreApiUse<T, TSelectors>;
-        useTracked: StoreApiUseTracked<T, TSelectors>;
-        useStore: UseImmerStore<T>;
-        useTrackedStore: () => T;
-    };
-    get: StoreApiGet<T, TSelectors>;
-    name: TName;
-    set: SetRecord<T> & {
-        state: SetImmerState<T>;
-        mergeState: MergeState<T>;
+export const storeFactory: <TState extends State, TActions = {}, TSelectors = {}>(api: StoreApi<TState, StateActions<TState> & TActions, TSelectors>) => {
+    extendSelectors: <TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>>(builder: TSelectorBuilder) => any;
+    extendActions: <TActionBuilder extends ActionBuilder<TState, SetRecord<TState> & {
+        state: SetImmerState<TState>;
+        mergeState: MergeState<TState>;
+    } & TActions, TSelectors>>(builder: TActionBuilder) => any;
+    name: string;
+    get: StoreApiGet<TState, TSelectors>;
+    set: SetRecord<TState> & {
+        state: SetImmerState<TState>;
+        mergeState: MergeState<TState>;
     } & TActions;
-    remove: RemoveRecord<T>;
-    store: ImmerStoreApi<T>;
-    use: StoreApiUse<T, TSelectors>;
-    useTracked: StoreApiUseTracked<T, TSelectors>;
-    useStore: UseImmerStore<T>;
-    useTrackedStore: () => T;
+    remove: RemoveRecord<TState>;
+    store: ImmerStoreApi<TState>;
+    useStore: UseImmerStore<TState>;
+    use: StoreApiUse<TState, TSelectors>;
+    useTracked: StoreApiUseTracked<TState, TSelectors>;
+    useTrackedStore: () => TState;
 };
-
-// @public (undocumented)
-type SyncOptions = {
-    enabled?: boolean;
-};
-export { SyncOptions }
-export { SyncOptions as SyncOptions_alias_1 }
 
 // @public (undocumented)
 type Updater<TInput, TOutput = TInput> = TOutput | UpdaterFn<TInput, TOutput>;
@@ -570,13 +569,13 @@ export { UpdaterFn as UpdaterFn_alias_1 }
 export { UpdaterFn as UpdaterFn_alias_2 }
 
 // @public (undocumented)
-interface UseImmerStore<T extends State> extends Omit<UseBoundStore<StoreApi_2<T>>, "setState"> {
+interface UseImmerStore<TState extends State> extends Omit<UseBoundStore<StoreApi_2<TState>>, "setState"> {
     // (undocumented)
-    (): T;
+    (): TState;
     // (undocumented)
-    <U>(selector: StateSelector<T, U>, equalityFn?: EqualityChecker<U>): U;
+    <U>(selector: StateSelector<TState, U>, equalityFn?: EqualityChecker<U>): U;
     // (undocumented)
-    setState: SetImmerState<T>;
+    setState: SetImmerState<TState>;
 }
 export { UseImmerStore }
 export { UseImmerStore as UseImmerStore_alias_1 }

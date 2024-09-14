@@ -1,5 +1,21 @@
-import { colors } from "@cyclone-ui/colors";
-import { ColorPalette, ColorRole } from "@cyclone-ui/types";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { ColorPalette, ColorRole, colors } from "@cyclone-ui/colors";
 import { colorTokens } from "./tokens";
 
 type ObjectType = Record<PropertyKey, unknown>;
@@ -67,7 +83,7 @@ export const palettes = (() => {
   }
 
   const transparent = (hsl: string, opacity = 0) =>
-    hsl.replace(`%)`, `%, ${opacity})`).replace(`hsl(`, `hsla(`);
+    hsl.replace("%)", `%, ${opacity})`).replace("hsl(", "hsla(");
 
   const getColorPalette = (
     colorPalette: ColorPalette,
@@ -79,7 +95,7 @@ export const palettes = (() => {
     // were re-ordering these
     const [head, tail] = [
       colorPaletteValues.slice(0, 6),
-      colorPaletteValues.slice(colorPaletteValues.length - 5)
+      colorPaletteValues.slice(-5)
     ];
 
     // add our transparent colors first/last
@@ -91,7 +107,7 @@ export const palettes = (() => {
       ...head,
       ...tail,
       foregroundColor,
-      transparent(colorPaletteValues[colorPaletteValues.length - 1])
+      transparent(colorPaletteValues.at(-1))
     ];
   };
 

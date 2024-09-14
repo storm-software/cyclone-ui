@@ -6,7 +6,7 @@ import {
   useRef,
   useState
 } from "react";
-import { ColorRole, SelectOption } from "@cyclone-ui/types";
+import { ColorRole, SelectOption } from "@cyclone-ui/colors";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";

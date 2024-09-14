@@ -202,7 +202,7 @@
             {
               "kind": "Reference",
               "text": "ThemeInfo",
-              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:type"
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:interface"
             },
             {
               "kind": "Content",
@@ -211,7 +211,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             },
             {
               "kind": "Content",
@@ -220,7 +220,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -237,7 +237,7 @@
             {
               "kind": "Reference",
               "text": "ThemeInfo",
-              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:type"
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:interface"
             },
             {
               "kind": "Content",
@@ -316,7 +316,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             },
             {
               "kind": "Content",
@@ -329,7 +329,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -363,7 +363,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -388,7 +388,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -412,8 +412,8 @@
             },
             {
               "kind": "Reference",
-              "text": "MaskFunction",
-              "canonicalReference": "@cyclone-ui/masks!MaskFunction:type"
+              "text": "CreateMask",
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             },
             {
               "kind": "Content",
@@ -421,8 +421,8 @@
             },
             {
               "kind": "Reference",
-              "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "text": "MaskFunction",
+              "canonicalReference": "@cyclone-ui/masks!MaskFunction:type"
             },
             {
               "kind": "Content",
@@ -439,7 +439,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -475,39 +475,77 @@
           "name": "createMask"
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/masks!CreateMask:type",
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/masks!CreateMask:interface",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type CreateMask = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    name: string;\n    mask: "
-            },
-            {
-              "kind": "Reference",
-              "text": "MaskFunction",
-              "canonicalReference": "@cyclone-ui/masks!MaskFunction:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "export interface CreateMask "
             }
           ],
           "fileUrlPath": "packages/masks/src/types.ts",
           "releaseTag": "Public",
           "name": "CreateMask",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 4
-          }
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!CreateMask#mask:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mask: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MaskFunction",
+                  "canonicalReference": "@cyclone-ui/masks!MaskFunction:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "mask",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!CreateMask#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Function",
@@ -521,7 +559,7 @@
             {
               "kind": "Reference",
               "text": "ShiftMaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!~ShiftMaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!~ShiftMaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -530,7 +568,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -539,7 +577,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -581,7 +619,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -590,7 +628,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -624,7 +662,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -633,7 +671,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -710,7 +748,7 @@
             {
               "kind": "Reference",
               "text": "CreateThemeOptions",
-              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:interface"
             },
             {
               "kind": "Content",
@@ -817,39 +855,50 @@
           "name": "createTheme"
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:type",
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:interface",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type CreateThemeOptions = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    nonInheritedValues?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "GenericTheme",
-              "canonicalReference": "@cyclone-ui/masks!GenericTheme:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "export interface CreateThemeOptions "
             }
           ],
           "fileUrlPath": "packages/masks/src/types.ts",
           "releaseTag": "Public",
           "name": "CreateThemeOptions",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 4
-          }
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions#nonInheritedValues:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "nonInheritedValues?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "GenericTheme",
+                  "canonicalReference": "@cyclone-ui/masks!GenericTheme:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "nonInheritedValues",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "TypeAlias",
@@ -898,7 +947,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -907,7 +956,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -1091,16 +1140,7 @@
             },
             {
               "kind": "Content",
-              "text": ", unknown][] | "
-            },
-            {
-              "kind": "Reference",
-              "text": "ReadonlyArray",
-              "canonicalReference": "!ReadonlyArray:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<readonly ["
+              "text": ", unknown][] | readonly (readonly ["
             },
             {
               "kind": "Reference",
@@ -1109,7 +1149,7 @@
             },
             {
               "kind": "Content",
-              "text": ", unknown]>"
+              "text": ", unknown])[]"
             },
             {
               "kind": "Content",
@@ -1121,7 +1161,7 @@
           "name": "EntriesType",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 8
+            "endIndex": 6
           }
         },
         {
@@ -1134,8 +1174,13 @@
               "text": "export type GenericTheme = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: string | "
+              "text": "<string, string | "
             },
             {
               "kind": "Reference",
@@ -1144,7 +1189,7 @@
             },
             {
               "kind": "Content",
-              "text": ";\n}"
+              "text": ">"
             },
             {
               "kind": "Content",
@@ -1156,7 +1201,7 @@
           "name": "GenericTheme",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 4
+            "endIndex": 5
           }
         },
         {
@@ -1197,7 +1242,7 @@
             {
               "kind": "Reference",
               "text": "ThemeInfo",
-              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:type"
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:interface"
             },
             {
               "kind": "Content",
@@ -1286,13 +1331,18 @@
               "text": "export type MaskDefinitions = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: "
+              "text": "<string, "
             },
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             },
             {
               "kind": "Content",
@@ -1301,11 +1351,11 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             },
             {
               "kind": "Content",
-              "text": "[\"mask\"];\n}"
+              "text": "[\"mask\"]>"
             },
             {
               "kind": "Content",
@@ -1317,7 +1367,7 @@
           "name": "MaskDefinitions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 6
+            "endIndex": 7
           }
         },
         {
@@ -1345,7 +1395,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -1365,111 +1415,349 @@
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/masks!MaskOptions:type",
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type MaskOptions = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    palette?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "CreateThemePalette",
-              "canonicalReference": "@cyclone-ui/masks!CreateThemePalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    override?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Partial",
-              "canonicalReference": "!Partial:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "ThemeMask",
-              "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
-            },
-            {
-              "kind": "Content",
-              "text": ">;\n    overrideStrategy?: \"shift\" | \"swap\";\n    overrideSwap?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Partial",
-              "canonicalReference": "!Partial:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "ThemeMask",
-              "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
-            },
-            {
-              "kind": "Content",
-              "text": ">;\n    overrideShift?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Partial",
-              "canonicalReference": "!Partial:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "ThemeMask",
-              "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
-            },
-            {
-              "kind": "Content",
-              "text": ">;\n    skip?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Partial",
-              "canonicalReference": "!Partial:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "ThemeMask",
-              "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
-            },
-            {
-              "kind": "Content",
-              "text": ">;\n    strength?: number;\n    max?: number;\n    min?: number;\n    parentName?: string;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "export interface MaskOptions "
             }
           ],
           "fileUrlPath": "packages/masks/src/types.ts",
           "releaseTag": "Public",
           "name": "MaskOptions",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 20
-          }
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#max:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "max?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "max",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#min:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "min?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "min",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#override:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "override?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ThemeMask",
+                  "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "override",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#overrideShift:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "overrideShift?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ThemeMask",
+                  "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "overrideShift",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#overrideStrategy:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "overrideStrategy?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"shift\" | \"swap\""
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "overrideStrategy",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#overrideSwap:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "overrideSwap?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ThemeMask",
+                  "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "overrideSwap",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#palette:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "palette?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CreateThemePalette",
+                  "canonicalReference": "@cyclone-ui/masks!CreateThemePalette:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "palette",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#parentName:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parentName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "parentName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#skip:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "skip?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ThemeMask",
+                  "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "skip",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions#strength:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "strength?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "strength",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "TypeAlias",
@@ -1841,8 +2129,13 @@
               "text": "export type PaletteDefinitions = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: "
+              "text": "<string, "
             },
             {
               "kind": "Reference",
@@ -1851,7 +2144,7 @@
             },
             {
               "kind": "Content",
-              "text": ";\n}"
+              "text": ">"
             },
             {
               "kind": "Content",
@@ -1863,7 +2156,7 @@
           "name": "PaletteDefinitions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 4
+            "endIndex": 5
           }
         },
         {
@@ -1960,7 +2253,7 @@
             {
               "kind": "Reference",
               "text": "ThemeInfo",
-              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:type"
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo:interface"
             },
             {
               "kind": "Content",
@@ -2014,7 +2307,7 @@
             {
               "kind": "Reference",
               "text": "CreateMask",
-              "canonicalReference": "@cyclone-ui/masks!CreateMask:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateMask:interface"
             }
           ],
           "fileUrlPath": "packages/masks/src/create-mask.ts",
@@ -2036,8 +2329,13 @@
               "text": "export type Template = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: number | string;\n}"
+              "text": "<string, number | string>"
             },
             {
               "kind": "Content",
@@ -2049,7 +2347,7 @@
           "name": "Template",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 3
           }
         },
         {
@@ -2062,8 +2360,13 @@
               "text": "export type TemplateDefinitions = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: "
+              "text": "<string, "
             },
             {
               "kind": "Reference",
@@ -2072,7 +2375,7 @@
             },
             {
               "kind": "Content",
-              "text": ";\n}"
+              "text": ">"
             },
             {
               "kind": "Content",
@@ -2084,7 +2387,7 @@
           "name": "TemplateDefinitions",
           "typeTokenRange": {
             "startIndex": 1,
-            "endIndex": 4
+            "endIndex": 5
           }
         },
         {
@@ -2107,7 +2410,7 @@
             {
               "kind": "Reference",
               "text": "ThemePreDefined",
-              "canonicalReference": "@cyclone-ui/masks!~ThemePreDefined:type"
+              "canonicalReference": "@cyclone-ui/masks!~ThemePreDefined:interface"
             },
             {
               "kind": "Content",
@@ -2252,8 +2555,13 @@
               "text": "> = "
             },
             {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
               "kind": "Content",
-              "text": "{\n    [key: string]: "
+              "text": "<string, "
             },
             {
               "kind": "Reference",
@@ -2271,7 +2579,7 @@
             },
             {
               "kind": "Content",
-              "text": ">;\n}"
+              "text": ">>"
             },
             {
               "kind": "Content",
@@ -2296,70 +2604,142 @@
           ],
           "typeTokenRange": {
             "startIndex": 5,
-            "endIndex": 10
+            "endIndex": 11
           }
         },
         {
-          "kind": "TypeAlias",
-          "canonicalReference": "@cyclone-ui/masks!ThemeInfo:type",
+          "kind": "Interface",
+          "canonicalReference": "@cyclone-ui/masks!ThemeInfo:interface",
           "docComment": "",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export type ThemeInfo = "
-            },
-            {
-              "kind": "Content",
-              "text": "{\n    palette: "
-            },
-            {
-              "kind": "Reference",
-              "text": "CreateThemePalette",
-              "canonicalReference": "@cyclone-ui/masks!CreateThemePalette:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    definition: "
-            },
-            {
-              "kind": "Reference",
-              "text": "ThemeMask",
-              "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    options?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "CreateThemeOptions",
-              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:type"
-            },
-            {
-              "kind": "Content",
-              "text": ";\n    cache: "
-            },
-            {
-              "kind": "Reference",
-              "text": "Map",
-              "canonicalReference": "!Map:interface"
-            },
-            {
-              "kind": "Content",
-              "text": "<any, any>;\n}"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
+              "text": "export interface ThemeInfo "
             }
           ],
           "fileUrlPath": "packages/masks/src/types.ts",
           "releaseTag": "Public",
           "name": "ThemeInfo",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 10
-          }
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo#cache:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "cache: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Map",
+                  "canonicalReference": "!Map:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any, any>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "cache",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo#definition:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "definition: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ThemeMask",
+                  "canonicalReference": "@cyclone-ui/masks!ThemeMask:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "definition",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo#options:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CreateThemeOptions",
+                  "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "options",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@cyclone-ui/masks!ThemeInfo#palette:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "palette: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CreateThemePalette",
+                  "canonicalReference": "@cyclone-ui/masks!CreateThemePalette:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "palette",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "TypeAlias",
@@ -2412,7 +2792,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -2421,7 +2801,7 @@
             {
               "kind": "Reference",
               "text": "MaskOptions",
-              "canonicalReference": "@cyclone-ui/masks!MaskOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!MaskOptions:interface"
             },
             {
               "kind": "Content",
@@ -2465,7 +2845,7 @@
             {
               "kind": "Reference",
               "text": "CreateThemeOptions",
-              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:type"
+              "canonicalReference": "@cyclone-ui/masks!CreateThemeOptions:interface"
             },
             {
               "kind": "Content",

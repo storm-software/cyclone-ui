@@ -1,4 +1,4 @@
-import { ColorRole } from "@cyclone-ui/types";
+import { ColorRole } from "@storm-stack/types";
 import {
   createStyledContext,
   getVariable,

@@ -1,17 +1,35 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone Ui
+
+ This code was released as part of the Cyclone Ui project. Cyclone Ui
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+
+ Contact:         https://stormsoftware.com/contact
+ Licensing:       https://stormsoftware.com/projects/cyclone-ui/licensing
+
+ -------------------------------------------------------------------*/
+
 import type { Variable } from "@tamagui/web";
 
-export type ThemeInfo = {
+export interface ThemeInfo {
   palette: CreateThemePalette;
   definition: ThemeMask;
   options?: CreateThemeOptions;
   cache: Map<any, any>;
-};
+}
 
 export type CreateThemePalette = (string | Variable)[];
 
 export type ThemeMask = Record<string, string | number>;
 
-export type MaskOptions = {
+export interface MaskOptions {
   palette?: CreateThemePalette;
   override?: Partial<ThemeMask>;
   overrideStrategy?: "shift" | "swap";
@@ -22,29 +40,27 @@ export type MaskOptions = {
   max?: number;
   min?: number;
   parentName?: string;
-};
+}
 
-export type GenericTheme = { [key: string]: string | Variable };
+export type GenericTheme = Record<string, string | Variable>;
 
 export type MaskFunction = <A extends ThemeMask>(
   template: A,
   options: MaskOptions
 ) => A;
 
-export type CreateMask = {
+export interface CreateMask {
   name: string;
   mask: MaskFunction;
-};
+}
 
-export type CreateThemeOptions = {
+export interface CreateThemeOptions {
   nonInheritedValues?: GenericTheme;
-};
+}
 
 export type Palette = string[];
 
-export type Template = {
-  [key: string]: number | string;
-};
+export type Template = Record<string, number | string>;
 
 export type ThemeUsingMask<Masks = string> = MaskOptions & {
   mask: Masks;
@@ -59,9 +75,9 @@ export type ThemeUsingTemplate = CreateThemeOptions & {
   template: string;
 };
 
-type ThemePreDefined = {
-  theme: { [key: string]: string };
-};
+interface ThemePreDefined {
+  theme: Record<string, string>;
+}
 
 export type Theme<Masks = string> =
   | ThemePreDefined
@@ -72,9 +88,7 @@ export type ThemeWithParent<Masks = string> = Theme<Masks> & {
   parent: string;
 };
 
-export type PaletteDefinitions = {
-  [key: string]: Palette;
-};
+export type PaletteDefinitions = Record<string, Palette>;
 
 export type ThemeDefinition<Masks extends string = string> =
   | Theme<Masks>
@@ -82,17 +96,14 @@ export type ThemeDefinition<Masks extends string = string> =
 
 type UnionableString = string & {};
 
-export type ThemeDefinitions<Masks extends string = string> = {
-  [key: string]: ThemeDefinition<Masks | UnionableString>;
-};
+export type ThemeDefinitions<Masks extends string = string> = Record<
+  string,
+  ThemeDefinition<Masks | UnionableString>
+>;
 
-export type TemplateDefinitions = {
-  [key: string]: Template;
-};
+export type TemplateDefinitions = Record<string, Template>;
 
-export type MaskDefinitions = {
-  [key: string]: CreateMask | CreateMask["mask"];
-};
+export type MaskDefinitions = Record<string, CreateMask | CreateMask["mask"]>;
 
 export type ObjectType = Record<PropertyKey, unknown>;
 
@@ -109,7 +120,7 @@ export type ObjectEntries<OBJ_T> = // From https://stackoverflow.com/a/60142095
 
 export type EntriesType =
   | [PropertyKey, unknown][]
-  | ReadonlyArray<readonly [PropertyKey, unknown]>;
+  | readonly (readonly [PropertyKey, unknown])[];
 
 // Existing Utils
 export type DeepWritable<OBJ_T> = {

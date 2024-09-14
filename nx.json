@@ -1,33 +1,7 @@
 {
-  "extends": "@storm-software/workspace-tools/config/nx.json",
-  "cli": {
-    "packageManager": "pnpm"
-  },
+  "extends": "@storm-software/workspace-tools/config/nx-default.json",
   "release": {
-    "projects": ["packages/*", "components/*", "apps/*"],
-    "projectsRelationship": "independent",
-    "releaseTagPattern": "{projectName}@{version}",
-    "changelog": {
-      "automaticFromRef": true,
-      "workspaceChangelog": false,
-      "projectChangelogs": {
-        "createRelease": "github",
-        "entryWhenNoChanges": false,
-        "renderOptions": {
-          "authors": false,
-          "commitReferences": true,
-          "versionTitleDate": true
-        }
-      }
-    },
-    "version": {
-      "preVersionCommand": "pnpm build-all",
-      "generator": "@storm-software/workspace-tools:release-version",
-      "generatorOptions": {
-        "currentVersionResolver": "git-tag",
-        "specifierSource": "conventional-commits"
-      }
-    }
+    "projects": ["packages/*", "components/*", "apps/*"]
   },
   "plugins": [
     {
@@ -49,12 +23,6 @@
       }
     },
     {
-      "plugin": "@nx/rollup/plugin",
-      "options": {
-        "buildTargetName": "build"
-      }
-    },
-    {
       "plugin": "@nx/storybook/plugin",
       "options": {
         "buildStorybookTargetName": "build-storybook",
@@ -73,35 +41,5 @@
     },
     "@storm-software/workspace-tools/plugins/typescript",
     "./dist/plugins/components/index.js"
-  ],
-  "generators": {
-    "@nx/react": {
-      "library": {
-        "style": "none",
-        "linter": "eslint",
-        "unitTestRunner": "none"
-      },
-      "application": {
-        "babel": true,
-        "style": "none",
-        "linter": "eslint",
-        "bundler": "webpack"
-      },
-      "component": {
-        "style": "none"
-      }
-    },
-    "@nx/next": {
-      "application": {
-        "style": "none",
-        "linter": "eslint"
-      }
-    },
-    "@nx/web:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "none",
-      "e2eTestRunner": "none"
-    }
-  }
+  ]
 }

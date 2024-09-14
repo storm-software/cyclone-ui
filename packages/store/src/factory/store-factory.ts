@@ -17,14 +17,25 @@ export const storeFactory = <
 ) => {
   return {
     ...api,
-    extendSelectors: (builder: SelectorBuilder<TState, TActions, TSelectors>) =>
-      storeFactory(extendSelectors(builder, api)),
-    extendActions: (
-      builder: ActionBuilder<
+    extendSelectors: <
+      TSelectorBuilder extends SelectorBuilder<TState, TActions, TSelectors>
+    >(
+      builder: TSelectorBuilder
+    ) =>
+      storeFactory<TState, TActions, TSelectors>(
+        extendSelectors<TSelectorBuilder, TState, TActions, TSelectors>(
+          builder,
+          api
+        )
+      ),
+    extendActions: <
+      TActionBuilder extends ActionBuilder<
         TState,
         StateActions<TState> & TActions,
         TSelectors
       >
-    ) => storeFactory(extendActions(builder, api))
+    >(
+      builder: TActionBuilder
+    ) => storeFactory<TState, TActions, TSelectors>(extendActions(builder, api))
   };
 };

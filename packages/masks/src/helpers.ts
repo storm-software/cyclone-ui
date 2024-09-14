@@ -1,3 +1,21 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+
+ Contact:         https://stormsoftware.com/contact
+ Licensing:       https://stormsoftware.com/projects/cyclone-ui/licensing
+
+ -------------------------------------------------------------------*/
+
 import type {
   CreateMask,
   CreateThemeOptions,
@@ -16,8 +34,8 @@ export function isMinusZero(value: number): boolean {
   return 1 / value === -Infinity;
 }
 
-export const objectKeys = <O extends Object>(obj: O) =>
-  Object.keys(obj) as Array<keyof O>;
+export const objectKeys = <O extends object>(obj: O) =>
+  Object.keys(obj) as (keyof O)[];
 
 export function objectEntries<OBJ_T extends ObjectType>(
   obj: OBJ_T
@@ -84,7 +102,7 @@ export function applyMaskStateless<Theme extends GenericTheme | ThemeMask>(
 
   // skip nonInheritedValues from parent theme
   if (info.options?.nonInheritedValues) {
-    for (const key in info.options.nonInheritedValues) {
+    for (const key of Object.keys(info.options.nonInheritedValues)) {
       skip[key] = 1;
     }
   }
@@ -125,10 +143,8 @@ export function createTheme<
   const cacheKey = skipCache
     ? ""
     : JSON.stringify([name, palette, definition, options]);
-  if (!skipCache) {
-    if (IDENTITY_CACHE.has(cacheKey)) {
-      return IDENTITY_CACHE.get(cacheKey);
-    }
+  if (!skipCache && IDENTITY_CACHE.has(cacheKey)) {
+    return IDENTITY_CACHE.get(cacheKey);
   }
 
   const theme = {
@@ -140,7 +156,12 @@ export function createTheme<
     ...options?.nonInheritedValues
   };
 
-  setThemeInfo(theme, { palette, definition, options, name });
+  setThemeInfo(theme, {
+    palette,
+    definition,
+    options,
+    name
+  });
 
   if (cacheKey) {
     IDENTITY_CACHE.set(cacheKey, theme);

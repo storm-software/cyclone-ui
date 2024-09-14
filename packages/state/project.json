@@ -1,0 +1,42 @@
+{
+  "name": "state",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/state/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:tsup-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/state/src/index.ts",
+        "outputPath": "dist/packages/state",
+        "tsConfig": "packages/state/tsconfig.json",
+        "project": "packages/state/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "packages/state",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ],
+        "platform": "browser"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    }
+  }
+}

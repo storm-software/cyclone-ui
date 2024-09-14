@@ -1,5 +1,5 @@
 import { Link } from "@cyclone-ui/link";
-import { ColorRole } from "@cyclone-ui/types";
+import { ColorRole } from "@cyclone-ui/colorsss";
 import {
   createStyledContext,
   getVariable,

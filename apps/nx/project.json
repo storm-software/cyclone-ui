@@ -57,7 +57,7 @@
           {
             "input": "apps/nx",
             "glob": "**/*.json",
-            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc.json"],
+            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc"],
             "output": "."
           },
           {

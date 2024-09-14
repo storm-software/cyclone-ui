@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, LinkProps } from "@cyclone-ui/link";
-import { ColorRole } from "@cyclone-ui/types";
+import { ColorRole } from "@storm-stack/typess";
 import {
   createStyledContext,
   FontSizeTokens,

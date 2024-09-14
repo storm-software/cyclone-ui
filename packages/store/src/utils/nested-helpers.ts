@@ -1,4 +1,3 @@
-import { DeepKeys } from "@cyclone-ui/types";
 import { SetRecordParam } from "../types";
 
 export type UpdaterFn<TInput, TOutput = TInput> = (input: TInput) => TOutput;
@@ -58,9 +57,9 @@ export function getBy(obj: any, path: any) {
 /**
  * Set a value on an object using a path, including dot notation.
  */
-export function setBy<T, K extends DeepKeys<T> = DeepKeys<T>>(
+export function setBy<T extends object>(
   obj: T,
-  _path: string | number,
+  _path: any,
   updater: SetRecordParam<T>
 ) {
   const path = makePathArray(_path as string);

@@ -4,8 +4,6 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "types": ["node"],
-    "lib": ["esnext"],
     "paths": {
       "@cyclone-ui/alert": ["components/alert/src/index.ts"],
       "@cyclone-ui/alert/*": ["components/alert/src/*"],
@@ -81,6 +79,8 @@
       "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
       "@cyclone-ui/select": ["components/select/src/index.ts"],
       "@cyclone-ui/select/*": ["components/select/src/*"],
+      "@cyclone-ui/state": ["packages/state/src/index.ts"],
+      "@cyclone-ui/state/*": ["packages/state/src/*"],
       "@cyclone-ui/steps": ["components/steps/src/index.ts"],
       "@cyclone-ui/steps/*": ["components/steps/src/*"],
       "@cyclone-ui/store": ["packages/store/src/index.ts"],
@@ -96,9 +96,7 @@
       "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
       "@cyclone-ui/tokens": ["packages/tokens/src/index.ts"],
       "@cyclone-ui/tokens/*": ["packages/tokens/src/*"],
-      "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"],
-      "@cyclone-ui/types": ["packages/types/src/index.ts"],
-      "@cyclone-ui/types/*": ["packages/types/src/*"]
+      "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"]
     }
   }
 }

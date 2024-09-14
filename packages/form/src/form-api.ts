@@ -1,108 +1,130 @@
-import { ReactNode } from "react";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { baseAtom, createAtomStore } from "@cyclone-ui/state";
+import { atomFamily } from "jotai/utils";
 import {
-  createStore,
-  getBy,
-  setBy,
-  SetRecordParam,
-  State,
-  type GetRecord,
-  type SetRecord,
-  type StoreApi
-} from "@cyclone-ui/store";
-import type { DeepKeys, DeepValue, NoInfer } from "@cyclone-ui/types";
-import type {
-  FieldComponent,
-  FieldInfo,
-  FieldMeta,
-  FieldState,
-  FormAsyncValidateOrFn,
-  FormOptions,
-  FormState,
-  FormValidateFn,
-  FormValidateOrFn,
-  FormValidators,
-  IFormApi,
-  NodeType,
-  UseField,
-  ValidationCause,
-  ValidationError,
-  ValidationErrorMap,
-  ValidationErrorMapKeys,
-  Validator
+  FormBaseState,
+  FormExtendedState,
+  type FormOptions,
+  type Validator
 } from "./types";
-import {
-  getAsyncValidatorArray,
-  getSyncValidatorArray,
-  isNonEmptyArray
-} from "./utils";
+
+const atomWithField = <TField extends string, TValue>(
+  field: TField,
+  initialValue: TValue
+) => {
+  const optionsAtom = baseAtom(initialValue);
+};
 
 function getDefaultFormState<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValue extends object,
+  TFormValidator extends Validator<TFormValue, unknown> | undefined = undefined
 >(
-  defaultState: Partial<FormState<TFormData, TFormValidator>>
-): Omit<FormState<TFormData, TFormValidator>, "options" | "name"> {
+  defaultState: Partial<FormBaseState<TFormValue, TFormValidator>>
+): FormBaseState<TFormValue, TFormValidator> {
   return {
     values: defaultState.values ?? ({} as never),
-    errors: defaultState.errors ?? [],
-    errorMap: defaultState.errorMap ?? {},
-    fieldMeta: defaultState.fieldMeta ?? ({} as never),
-    _fieldInfo: {} as Record<
-      DeepKeys<TFormData>,
-      FieldInfo<TFormData, TFormValidator>
-    >,
-    canSubmit: defaultState.canSubmit ?? true,
-    isFieldsValid: defaultState.isFieldsValid ?? false,
-    isFieldsValidating: defaultState.isFieldsValidating ?? false,
-    isFormValid: defaultState.isFormValid ?? false,
-    isFormValidating: defaultState.isFormValidating ?? false,
     isSubmitted: defaultState.isSubmitted ?? false,
     isSubmitting: defaultState.isSubmitting ?? false,
-    isTouched: defaultState.isTouched ?? false,
-    isPristine: defaultState.isPristine ?? true,
-    isDirty: defaultState.isDirty ?? false,
-    isValid: defaultState.isValid ?? false,
     isValidating: defaultState.isValidating ?? false,
     submissionAttempts: defaultState.submissionAttempts ?? 0,
-    validationMetaMap: defaultState.validationMetaMap ?? {
-      onChange: undefined,
-      onBlur: undefined,
-      onSubmit: undefined,
-      onMount: undefined,
-      onServer: undefined
-    }
+    isDisabled: defaultState.isDisabled ?? false,
+    validationResults: {
+      resultMap: defaultState.validationResults?.resultMap ?? {},
+      meta: defaultState.validationResults?.meta ?? {
+        onChange: undefined,
+        onBlur: undefined,
+        onSubmit: undefined,
+        onMount: undefined,
+        onServer: undefined
+      }
+    },
+    fieldStates: defaultState.fieldStates ?? ({} as never),
+    fieldOptions: defaultState.fieldOptions ?? ({} as never),
+    fieldValidationResults: defaultState.fieldValidationResults ?? ({} as never)
   };
 }
 
 export const createFormStore = <
-  TFormData extends State,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValue extends object,
+  TFormValidator extends Validator<TFormValue, unknown> | undefined = undefined,
+  TName extends string = string
+>(
+  name: TName,
+  options: FormOptions<TFormValue, TFormValidator, TName>
+) => {
+  return createAtomStore<
+    FormBaseState<TFormValue, TFormValidator>,
+    FormExtendedState<TFormValue, TFormValidator>,
+    TName
+  >({
+    ...options,
+    name,
+    initialState: getDefaultFormState<TFormValue, TFormValidator>({
+      ...options?.defaultState,
+      values: options?.defaultValues ?? options?.defaultState?.values,
+      intro: atomFamily(get => `My name is ${get(atoms.fieldStates)}`)
+    }),
+    extend: atoms => ({
+      intro: atomFamily(get => `My name is ${get(atoms.fieldStates)}`)
+    })
+  });
+};
+
+/* export const createForm2Store = <
+  TFormValue extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValue, unknown> | undefined = undefined
 >(
   name: string,
-  options: FormOptions<TFormData, TFormValidator> = {}
+  options: FormOptions<TFormValue, TFormValidator> = {}
 ) => {
-  return createStore(name)<FormState<TFormData, TFormValidator>>({
-    ...getDefaultFormState<TFormData, TFormValidator>({
-      ...(options?.defaultState as any),
-      values: options?.defaultValues ?? options?.defaultState?.values,
-      isFormValid: true
+  return createStore(name)<FormState<TFormValue, TFormValidator>>({
+    ...getDefaultFormState<TFormValue, TFormValidator>({
+      ...(options?.defaultState ?? {}),
+      values: options?.defaultValues ?? options?.defaultState?.values
     }),
-    name,
     options
   })
     .extendSelectors((state, get, api) => ({
       isFieldsValidating: () => {
-        return (
-          Object.values(get.fieldMeta()) as (FieldMeta | undefined)[]
-        ).some(field => field?.isValidating);
+        return (Object.values(get.fieldStates()) as FieldState[]).some(
+          field => !!field?.isValidating
+        );
       },
-      isFieldsValid: () => {
+      isFieldValid: <TFieldName extends DeepKey<TFormValue>>(
+        name: TFieldName
+      ) => {
         return (
-          Object.values(get.fieldMeta()) as (FieldMeta | undefined)[]
+          Object.values(
+            get.fieldValidationResults.$path(name)
+          ) as ValidationResults[]
         ).some(
           field =>
-            field?.errorMap &&
-            isNonEmptyArray(Object.values(field.errorMap).filter(Boolean))
+            !field?.resultMap ||
+            !Object.values(field?.resultMap).some(results =>
+              results.some(result =>
+                !result
+                  ? false
+                  : isString(result)
+                    ? !!result
+                    : result.type === ValidationMessageType.ERROR
+              )
+            )
         );
       },
       isTouched: () => {
@@ -124,6 +146,9 @@ export const createFormStore = <
       isFormValid: () => {
         return get.errors().length === 0;
       },
+      firstError: () => {
+        return get.errors.$item(1);
+      },
       isValid: () => {
         return get.isFieldsValid() && get.isFormValid();
       },
@@ -133,92 +158,94 @@ export const createFormStore = <
           (!get.isValidating() && !get.isSubmitting() && get.isValid())
         );
       },
-      // errors: () => {
-      //   return Object.values(state.errorMap).filter(
-      //     (val: unknown) => val !== undefined
-      //   );
-      // },
-      // fieldValue: <TField extends DeepKeys<TFormData>>(
-      //   field: TField
-      // ): DeepValue<TFormData, TField> => getBy(get.values(), field),
-      // fieldMeta: <TField extends DeepKeys<TFormData>>(
-      //   field: TField
-      // ): FieldMeta | undefined => get.fieldMeta()[field],
-      fieldInfo: <TField extends DeepKeys<TFormData>>(
+      fieldInfo: <TField extends string>(
         field: TField
-      ): FieldInfo<TFormData, TFormValidator> => {
-        let info = get._fieldInfo(field);
-        return (info ?? {
-          instance: null,
-          validationMetaMap: {
-            onChange: undefined,
-            onBlur: undefined,
-            onSubmit: undefined,
-            onMount: undefined,
-            onServer: undefined
+      ): FieldInfo<TFormValue, TFormValidator> => {
+        let info = get._fieldInfo.$path(field);
+
+        return (
+          info ?? {
+            instance: null,
+            validationMetaMap: {
+              onChange: undefined,
+              onBlur: undefined,
+              onSubmit: undefined,
+              onMount: undefined,
+              onServer: undefined
+            }
           }
-        }) as FieldInfo<TFormData, TFormValidator>;
+        );
       }
+    }))
+    .extendSelectors((state, get, api) => ({
+      isAllFieldsValid: () =>
+        Object.keys(get.fieldMeta()).some(field => get.isFieldValid(field))
     }))
     .extendActions((set, get, api) => ({
       _runValidator: <
         TValue extends {
-          value: TFormData;
-          api: StoreApi<FormState<TFormData, TFormValidator>>;
+          value: TFormValue;
+          api: StoreApi<FormState<TFormValue, TFormValidator>>;
         },
         TType extends "validate" | "validateAsync"
       >(props: {
         validate: TType extends "validate"
-          ? FormValidateOrFn<TFormData, TFormValidator>
-          : FormAsyncValidateOrFn<TFormData, TFormValidator>;
+          ? FormValidateOrFn<TFormValue, TFormValidator>
+          : FormAsyncValidateOrFn<TFormValue, TFormValidator>;
         value: TValue;
         type: TType;
       }): ReturnType<ReturnType<Validator<TType>>[TType]> => {
-        const adapter = get.options().validatorAdapter as TFormValidator;
+        const adapter = get.options.$path("validatorAdapter") as TFormValidator;
         if (adapter && typeof props.validate !== "function") {
           return adapter()[props.type](props.value, props.validate) as never;
         }
 
-        return (props.validate as FormValidateFn<TFormData, TFormValidator>)(
+        return (props.validate as FormValidateFn<TFormValue, TFormValidator>)(
           props.value
         ) as never;
       },
-      update: (options?: FormOptions<TFormData, TFormValidator>) => {
+      update: (options?: FormOptions<TFormValue, TFormValidator>) => {
         if (!options) {
           return;
         }
 
-        const oldOptions = get.options();
-
         // Options need to be updated first so that when the store is updated, the state is correct for the derived state
-        set.options(options as any);
-        set.state(prev =>
-          getDefaultFormState(
-            Object.assign(
-              {},
-              prev,
-              options.defaultState !== oldOptions.defaultState &&
-                !get.isTouched()
-                ? options.defaultState
-                : {},
-              options.defaultValues &&
-                options.defaultValues !== oldOptions.defaultValues &&
-                !get.isTouched()
-                ? { values: options.defaultValues }
-                : {}
-            )
-          )
-        );
+        // set.options(options as any);
+
+        set.state(prev => {
+          if (
+            options.defaultState &&
+            options.defaultState !== get.options.$path("defaultState") &&
+            !get.isTouched()
+          ) {
+            Object.keys(options.defaultState).forEach(key => {
+              prev[key] = options.defaultState![key];
+            });
+          }
+
+          if (
+            options.defaultValues &&
+            options.defaultValues !== get.options.$path("defaultValues") &&
+            !get.isTouched()
+          ) {
+            prev.values = options.defaultValues as Draft<TFormValue>;
+          }
+
+          const defaulted = getDefaultFormState(options);
+
+          return defaulted;
+        });
 
         set.mergeState(
-          getDefaultFormState<TFormData, TFormValidator>({
+          getDefaultFormState<TFormValue, TFormValidator>({
             ...get.state(),
             values:
-              get.options().defaultValues ?? get.options().defaultState?.values
+              get.options.$path("defaultValues") ??
+              get.options.$path("defaultState.values")
           })
         );
       },
-      resetFieldMeta: <TField extends DeepKeys<TFormData>>(
+      resetFieldMeta: <TField extends Paths<TFormValue>>(
         fieldMeta: Record<TField, FieldMeta>
       ): Record<TField, FieldMeta> => {
         return Object.keys(fieldMeta).reduce(
@@ -229,9 +256,14 @@ export const createFormStore = <
               isTouched: false,
               isDirty: false,
               isPristine: true,
+              isDisabled: false,
+              isRequired: false,
               touchedErrors: [],
+              errorMap: {},
               errors: [],
-              errorMap: {}
+              warnings: [],
+              information: [],
+              successes: []
             };
             return acc;
           },
@@ -239,7 +271,8 @@ export const createFormStore = <
         );
       },
       validateAllFields: async (cause: ValidationCause) => {
-        const fieldValidationPromises: Promise<ValidationError[]>[] = [] as any;
+        const fieldValidationPromises: Promise<ValidationMessage[]>[] =
+          [] as any;
 
         void (
           Object.values(get._fieldInfo()) as FieldInfo<any, TFormValidator>[]
@@ -264,11 +297,10 @@ export const createFormStore = <
         const fieldErrorMapMap = await Promise.all(fieldValidationPromises);
         return fieldErrorMapMap.flat();
       },
-      validateField: <TField extends DeepKeys<TFormData>>(
+      validateField: <TField extends string>(
         field: TField,
         cause: ValidationCause
       ) => {
-        // eslint-disable-next-line  @typescript-eslint/no-unnecessary-condition
         const fieldInstance = get.fieldInfo(field)?.instance;
         if (!fieldInstance) {
           return [];
@@ -285,10 +317,8 @@ export const createFormStore = <
     }))
     .extendActions((set, get, api) => ({
       mount: () => {
-        const { onMount } = (get.options().validators || {}) as FormValidators<
-          TFormData,
-          TFormValidator
-        >;
+        const { onMount } = (get.options.$path("validators") ||
+          {}) as FormValidators<TFormValue, TFormValidator>;
         if (!onMount) {
           return;
         }
@@ -302,28 +332,30 @@ export const createFormStore = <
           type: "validate"
         });
         if (error) {
-          set.errorMap({ ...get.errorMap(), onMount: error });
+          set.errorMap(prev => {
+            prev.onMount = error;
+          });
         }
       },
       reset: () => {
         const fields = set.resetFieldMeta(get.fieldMeta());
         set.mergeState(
-          getDefaultFormState<TFormData, TFormValidator>({
+          getDefaultFormState<TFormValue, TFormValidator>({
             ...get.state(),
-            values:
-              get.options().defaultValues ?? get.options().defaultState?.values,
+            values: (get.options.$path("defaultValues") ??
+              get.options.$path("defaultState.values")) as
+              | TFormValue
+              | undefined,
             fieldMeta: fields
           })
         );
       },
-      validateArrayFieldsStartingFrom: async <
-        TField extends DeepKeys<TFormData>
-      >(
+      validateArrayFieldsStartingFrom: async <TField extends Paths<TFormValue>>(
         field: TField,
         index: number,
         cause: ValidationCause
       ) => {
-        const currentValue = get.values(field);
+        const currentValue = get.values.$path(field);
         const lastIndex = Array.isArray(currentValue)
           ? Math.max(currentValue.length - 1, 0)
           : null;
@@ -337,10 +369,11 @@ export const createFormStore = <
         // We also have to include all fields that are nested in the shifted fields
         const fieldsToValidate = Object.keys(get._fieldInfo()).filter(
           fieldKey => fieldKeysToValidate.some(key => fieldKey.startsWith(key))
-        ) as DeepKeys<TFormData>[];
+        ) as Paths<TFormValue>[];
 
         // Validate the fields
-        const fieldValidationPromises: Promise<ValidationError[]>[] = [] as any;
+        const fieldValidationPromises: Promise<ValidationMessage[]>[] =
+          [] as any;
         fieldsToValidate.forEach(nestedField => {
           fieldValidationPromises.push(
             Promise.resolve().then(() => set.validateField(nestedField, cause))
@@ -351,92 +384,94 @@ export const createFormStore = <
         return fieldErrorMapMap.flat();
       },
 
-      values: <TField extends DeepKeys<TFormData>>(
+      values: <TField extends string>(
         name: TField,
-        value: SetRecordParam<TFormData, TField>,
-        opts?: { touch?: boolean }
+        value: SetRecordParam<Get<TFormValue, ToPath<TField>>>,
+        options?: { touch?: boolean }
       ) => {
-        const touch = opts?.touch;
+        const touch = options?.touch;
         if (touch) {
-          set.fieldMeta(prev => {
-            prev[name].isTouched = true;
-            prev[name].isDirty = true;
-
-            return prev;
+          set.fieldMeta.$path(state => {
+            state.isTouched = true;
+            state.isDirty = true;
           });
         }
 
         set.values(prev => setBy(prev, name, value));
+        if (touch) {
+          set.validateField(field, "change");
+        }
       },
 
-      deleteField: <TField extends DeepKeys<TFormData>>(field: TField) => {
-        if (touch) {
-          set.fieldMeta(prev => {
-            prev[name].isTouched = true;
-            prev[name].isDirty = true;
-
-            return prev;
+      deleteField: <TField extends string>(
+        field: TField,
+        options?: { touch?: boolean }
+      ) => {
+        if (options?.touch) {
+          set.fieldMeta.$path(state => {
+            state.isTouched = true;
+            state.isDirty = true;
           });
         }
 
-        api.remove.values(field);
+        api.remove.values.$path(field);
+        api.remove.fieldMeta.$path(field);
+        api.remove._fieldInfo.$path(field);
 
-        set.values(prev => deleteBy(prev, field));
-        set.fieldMeta(prev => ({
-          ...prev,
-          [field]: undefined
-        }));
-
-        set._fieldInfo(prev => ({
-          ...prev,
-          [field]: undefined
-        }));
+        set.validateField(field, "change");
       },
 
-      pushFieldValue: <TField extends DeepKeys<TFormData>>(
+      pushFieldValue: <TField extends string>(
         field: TField,
-        value: DeepValue<TFormData, TField> extends any[]
-          ? DeepValue<TFormData, TField>[number]
+        value: Get<TFormValue, ToPath<TField>> extends any[]
+          ? Get<TFormValue, ToPath<TField>>[number]
           : never,
-        opts?: { touch?: boolean }
+        options?: { touch?: boolean }
       ) => {
-        set.values(
-          field,
-          prev => [...(Array.isArray(prev) ? prev : []), value] as any,
-          opts
-        );
-        this.validateField(field, "change");
+        if (options?.touch) {
+          set.fieldMeta.$path(state => {
+            state.isTouched = true;
+            state.isDirty = true;
+          });
+        }
+
+        set.values.$path(field, state => {
+          state.push(value);
+        });
+
+        set.validateField(field, "change");
       },
 
-      insertFieldValue: async <TField extends DeepKeys<TFormData>>(
+      insertFieldValue: async <TField extends string>(
         field: TField,
         index: number,
-        value: DeepValue<TFormData, TField> extends any[]
-          ? DeepValue<TFormData, TField>[number]
+        value: Get<TFormValue, ToPath<TField>> extends any[]
+          ? Get<TFormValue, ToPath<TField>>[number]
           : never,
-        opts?: { touch?: boolean }
+        options?: { touch?: boolean }
       ) => {
-        this.setFieldValue(
-          field,
-          prev => {
-            return [
-              ...(prev as DeepValue<TFormData, TField>[]).slice(0, index),
-              value,
-              ...(prev as DeepValue<TFormData, TField>[]).slice(index)
-            ] as any;
-          },
-          opts
-        );
+        if (options?.touch) {
+          set.fieldMeta.$path(state => {
+            state.isTouched = true;
+            state.isDirty = true;
+          });
+        }
 
-        // Validate the whole array + all fields that have shifted
-        await this.validateField(field, "change");
+        set.values.$path(field, state => {
+          const newState = state.slice(0, index);
+          newState.push(value);
+          newState.push(...state.slice(index));
+        });
+
+        set.validateField(field, "change");
       }
     }));
+
   // .extendActions((set, get, api) => ({
 
   //   }));
   // })).extendActions((set, get, api) => ({
-  //   deleteField: <TField extends DeepKeys<TFormData>>(field: TField) => {
+  //   deleteField: <TField extends DeepKey<TFormValue>>(field: TField) => {
   //     set.values(prev => deleteBy(prev, field));
   //     set.fieldMeta(prev => ({
   //       ...prev,
@@ -449,10 +484,10 @@ export const createFormStore = <
   //     }));
   //   },
 
-  //   pushFieldValue: <TField extends DeepKeys<TFormData>>(
+  //   pushFieldValue: <TField extends DeepKey<TFormValue>>(
   //     field: TField,
-  //     value: DeepValue<TFormData, TField> extends any[]
-  //       ? DeepValue<TFormData, TField>[number]
+  //     value: DeepValue<TFormValue, TField> extends any[]
+  //       ? DeepValue<TFormValue, TField>[number]
   //       : never,
   //     opts?: { touch?: boolean }
   //   ) => {
@@ -464,11 +499,11 @@ export const createFormStore = <
   //     this.validateField(field, "change");
   //   },
 
-  //   insertFieldValue: async <TField extends DeepKeys<TFormData>>(
+  //   insertFieldValue: async <TField extends DeepKey<TFormValue>>(
   //     field: TField,
   //     index: number,
-  //     value: DeepValue<TFormData, TField> extends any[]
-  //       ? DeepValue<TFormData, TField>[number]
+  //     value: DeepValue<TFormValue, TField> extends any[]
+  //       ? DeepValue<TFormValue, TField>[number]
   //       : never,
   //     opts?: { touch?: boolean }
   //   ) => {
@@ -476,9 +511,9 @@ export const createFormStore = <
   //       field,
   //       prev => {
   //         return [
-  //           ...(prev as DeepValue<TFormData, TField>[]).slice(0, index),
+  //           ...(prev as DeepValue<TFormValue, TField>[]).slice(0, index),
   //           value,
-  //           ...(prev as DeepValue<TFormData, TField>[]).slice(index)
+  //           ...(prev as DeepValue<TFormValue, TField>[]).slice(index)
   //         ] as any;
   //       },
   //       opts
@@ -488,18 +523,18 @@ export const createFormStore = <
   //     await this.validateField(field, "change");
   //   },
 
-  //   replaceFieldValue: async <TField extends DeepKeys<TFormData>>(
+  //   replaceFieldValue: async <TField extends DeepKey<TFormValue>>(
   //     field: TField,
   //     index: number,
-  //     value: DeepValue<TFormData, TField> extends any[]
-  //       ? DeepValue<TFormData, TField>[number]
+  //     value: DeepValue<TFormValue, TField> extends any[]
+  //       ? DeepValue<TFormValue, TField>[number]
   //       : never,
   //     opts?: { touch?: boolean }
   //   ) => {
   //     this.setFieldValue(
   //       field,
   //       prev => {
-  //         return (prev as DeepValue<TFormData, TField>[]).map((d, i) =>
+  //         return (prev as DeepValue<TFormValue, TField>[]).map((d, i) =>
   //           i === index ? value : d
   //         ) as any;
   //       },
@@ -511,7 +546,7 @@ export const createFormStore = <
   //     await this.validateArrayFieldsStartingFrom(field, index, "change");
   //   },
 
-  //   removeFieldValue: async <TField extends DeepKeys<TFormData>>(
+  //   removeFieldValue: async <TField extends DeepKey<TFormValue>>(
   //     field: TField,
   //     index: number,
   //     opts?: { touch?: boolean }
@@ -525,7 +560,7 @@ export const createFormStore = <
   //     this.setFieldValue(
   //       field,
   //       prev => {
-  //         return (prev as DeepValue<TFormData, TField>[]).filter(
+  //         return (prev as DeepValue<TFormValue, TField>[]).filter(
   //           (_d, i) => i !== index
   //         ) as any;
   //       },
@@ -547,7 +582,7 @@ export const createFormStore = <
   //     await this.validateArrayFieldsStartingFrom(field, index, "change");
   //   },
 
-  //   swapFieldValues: <TField extends DeepKeys<TFormData>>(
+  //   swapFieldValues: <TField extends DeepKey<TFormValue>>(
   //     field: TField,
   //     index1: number,
   //     index2: number,
@@ -567,16 +602,16 @@ export const createFormStore = <
   //     this.validateField(field, "change");
   //     // Validate the swapped fields
   //     this.validateField(
-  //       `${field}[${index1}]` as DeepKeys<TFormData>,
+  //       `${field}[${index1}]` as DeepKey<TFormValue>,
   //       "change"
   //     );
   //     this.validateField(
-  //       `${field}[${index2}]` as DeepKeys<TFormData>,
+  //       `${field}[${index2}]` as DeepKey<TFormValue>,
   //       "change"
   //     );
   //   },
 
-  //   moveFieldValues: <TField extends DeepKeys<TFormData>>(
+  //   moveFieldValues: <TField extends DeepKey<TFormValue>>(
   //     field: TField,
   //     index1: number,
   //     index2: number,
@@ -595,11 +630,11 @@ export const createFormStore = <
   //     this.validateField(field, "change");
   //     // Validate the moved fields
   //     this.validateField(
-  //       `${field}[${index1}]` as DeepKeys<TFormData>,
+  //       `${field}[${index1}]` as DeepKey<TFormValue>,
   //       "change"
   //     );
   //     this.validateField(
-  //       `${field}[${index2}]` as DeepKeys<TFormData>,
+  //       `${field}[${index2}]` as DeepKey<TFormValue>,
   //       "change"
   //     );
   //   }
@@ -607,25 +642,25 @@ export const createFormStore = <
 };
 
 // export class FormApi<
-//   TFormData,
-//   TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
-// > implements IFormApi<TFormData, TFormValidator>
+//   TFormValue,
+//   TFormValidator extends Validator<TFormValue, unknown> | undefined = undefined
+// > implements IFormApi<TFormValue, TFormValidator>
 // {
-//   public options: FormOptions<TFormData, TFormValidator> = {};
-//   public store!: StoreApi<FormState<TFormData>>;
+//   public options: FormOptions<TFormValue, TFormValidator> = {};
+//   public store!: StoreApi<FormState<TFormValue>>;
 //   // Do not use __state directly, as it is not reactive.
 //   // Please use form.useStore() utility to subscribe to state
-//   public state!: FormState<TFormData>;
+//   public state!: FormState<TFormValue>;
 //   // // This carries the context for nested fields
 //   public fieldInfo: Record<
-//     DeepKeys<TFormData>,
-//     FieldInfo<TFormData, TFormValidator>
+//     DeepKey<TFormValue>,
+//     FieldInfo<TFormValue, TFormValidator>
 //   > = {} as any;
 
 //   public prevTransformArray: unknown[] = [];
 
-//   public constructor(opts?: FormOptions<TFormData, TFormValidator>) {
-//     this.store = new Store<FormState<TFormData>>(
+//   public constructor(opts?: FormOptions<TFormValue, TFormValidator>) {
+//     this.store = new Store<FormState<TFormValue>>(
 //       getDefaultFormState({
 //         ...(opts?.defaultState as any),
 //         values: opts?.defaultValues ?? opts?.defaultState?.values,
@@ -700,23 +735,23 @@ export const createFormStore = <
 //     this.update(opts || {});
 //   }
 
-//   public Field!: FieldComponent<TFormData, TFormValidator>;
-//   public useField!: UseField<TFormData, TFormValidator>;
-//   public useStore!: <TSelected = FormState<TFormData>>(
-//     selector?: ((state: FormState<TFormData>) => TSelected) | undefined
+//   public Field!: FieldComponent<TFormValue, TFormValidator>;
+//   public useField!: UseField<TFormValue, TFormValidator>;
+//   public useStore!: <TSelected = FormState<TFormValue>>(
+//     selector?: ((state: FormState<TFormValue>) => TSelected) | undefined
 //   ) => TSelected;
-//   public Subscribe!: <TSelected = FormState<TFormData>>(props: {
-//     selector?: ((state: FormState<TFormData>) => TSelected) | undefined;
+//   public Subscribe!: <TSelected = FormState<TFormValue>>(props: {
+//     selector?: ((state: FormState<TFormValue>) => TSelected) | undefined;
 //     children: ((state: NoInfer<TSelected>) => NodeType) | NodeType;
 //   }) => ReactNode;
 
 //   public runValidator = <
-//     TValue extends { value: TFormData; formApi: FormApi<any, any> },
+//     TValue extends { value: TFormValue; formApi: FormApi<any, any> },
 //     TType extends "validate" | "validateAsync"
 //   >(props: {
 //     validate: TType extends "validate"
-//       ? FormValidateOrFn<TFormData, TFormValidator>
-//       : FormAsyncValidateOrFn<TFormData, TFormValidator>;
+//       ? FormValidateOrFn<TFormValue, TFormValidator>
+//       : FormAsyncValidateOrFn<TFormValue, TFormValidator>;
 //     value: TValue;
 //     type: TType;
 //   }): ReturnType<ReturnType<Validator<any>>[TType]> => {
@@ -747,7 +782,7 @@ export const createFormStore = <
 //     }
 //   };
 
-//   public update = (options?: FormOptions<TFormData, TFormValidator>) => {
+//   public update = (options?: FormOptions<TFormValue, TFormValidator>) => {
 //     if (!options) return;
 
 //     const oldOptions = this.options;
@@ -824,7 +859,7 @@ export const createFormStore = <
 //   };
 
 //   public validateArrayFieldsStartingFrom = async <
-//     TField extends DeepKeys<TFormData>
+//     TField extends DeepKey<TFormValue>
 //   >(
 //     field: TField,
 //     index: number,
@@ -845,7 +880,7 @@ export const createFormStore = <
 //     // We also have to include all fields that are nested in the shifted fields
 //     const fieldsToValidate = Object.keys(this.fieldInfo).filter(fieldKey =>
 //       fieldKeysToValidate.some(key => fieldKey.startsWith(key))
-//     ) as DeepKeys<TFormData>[];
+//     ) as DeepKey<TFormValue>[];
 
 //     // Validate the fields
 //     const fieldValidationPromises: Promise<ValidationError[]>[] = [] as any;
@@ -861,7 +896,7 @@ export const createFormStore = <
 //     return fieldErrorMapMap.flat();
 //   };
 
-//   public validateField = <TField extends DeepKeys<TFormData>>(
+//   public validateField = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     cause: ValidationCause
 //   ) => {
@@ -1095,19 +1130,19 @@ export const createFormStore = <
 //     }
 //   };
 
-//   public getFieldValue = <TField extends DeepKeys<TFormData>>(
+//   public getFieldValue = <TField extends DeepKey<TFormValue>>(
 //     field: TField
-//   ): DeepValue<TFormData, TField> => getBy(this.state.values, field);
+//   ): DeepValue<TFormValue, TField> => getBy(this.state.values, field);
 
-//   public getFieldMeta = <TField extends DeepKeys<TFormData>>(
+//   public getFieldMeta = <TField extends DeepKey<TFormValue>>(
 //     field: TField
 //   ): FieldMeta | undefined => {
 //     return this.state.fieldMeta[field];
 //   };
 
-//   public getFieldInfo = <TField extends DeepKeys<TFormData>>(
+//   public getFieldInfo = <TField extends DeepKey<TFormValue>>(
 //     field: TField
-//   ): FieldInfo<TFormData, TFormValidator> => {
+//   ): FieldInfo<TFormValue, TFormValidator> => {
 //     // eslint-disable-next-line  @typescript-eslint/no-unnecessary-condition
 //     return (this.fieldInfo[field] ||= {
 //       instance: null,
@@ -1121,7 +1156,7 @@ export const createFormStore = <
 //     });
 //   };
 
-//   public setFieldMeta = <TField extends DeepKeys<TFormData>>(
+//   public setFieldMeta = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     updater: Updater<FieldMeta>
 //   ) => {
@@ -1136,7 +1171,7 @@ export const createFormStore = <
 //     });
 //   };
 
-//   public resetFieldMeta = <TField extends DeepKeys<TFormData>>(
+//   public resetFieldMeta = <TField extends DeepKey<TFormValue>>(
 //     fieldMeta: Record<TField, FieldMeta>
 //   ): Record<TField, FieldMeta> => {
 //     return Object.keys(fieldMeta).reduce(
@@ -1157,9 +1192,9 @@ export const createFormStore = <
 //     );
 //   };
 
-//   public setFieldValue = <TField extends DeepKeys<TFormData>>(
+//   public setFieldValue = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
-//     updater: Updater<DeepValue<TFormData, TField>>,
+//     updater: Updater<DeepValue<TFormValue, TField>>,
 //     opts?: { touch?: boolean }
 //   ) => {
 //     const touch = opts?.touch;
@@ -1182,7 +1217,7 @@ export const createFormStore = <
 //     });
 //   };
 
-//   public deleteField = <TField extends DeepKeys<TFormData>>(field: TField) => {
+//   public deleteField = <TField extends DeepKey<TFormValue>>(field: TField) => {
 //     this.store.setState(prev => {
 //       const newState = { ...prev };
 //       newState.values = deleteBy(newState.values, field);
@@ -1193,10 +1228,10 @@ export const createFormStore = <
 //     delete this.fieldInfo[field];
 //   };
 
-//   public pushFieldValue = <TField extends DeepKeys<TFormData>>(
+//   public pushFieldValue = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
-//     value: DeepValue<TFormData, TField> extends any[]
-//       ? DeepValue<TFormData, TField>[number]
+//     value: DeepValue<TFormValue, TField> extends any[]
+//       ? DeepValue<TFormValue, TField>[number]
 //       : never,
 //     opts?: { touch?: boolean }
 //   ) => {
@@ -1208,11 +1243,11 @@ export const createFormStore = <
 //     this.validateField(field, "change");
 //   };
 
-//   public insertFieldValue = async <TField extends DeepKeys<TFormData>>(
+//   public insertFieldValue = async <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     index: number,
-//     value: DeepValue<TFormData, TField> extends any[]
-//       ? DeepValue<TFormData, TField>[number]
+//     value: DeepValue<TFormValue, TField> extends any[]
+//       ? DeepValue<TFormValue, TField>[number]
 //       : never,
 //     opts?: { touch?: boolean }
 //   ) => {
@@ -1220,9 +1255,9 @@ export const createFormStore = <
 //       field,
 //       prev => {
 //         return [
-//           ...(prev as DeepValue<TFormData, TField>[]).slice(0, index),
+//           ...(prev as DeepValue<TFormValue, TField>[]).slice(0, index),
 //           value,
-//           ...(prev as DeepValue<TFormData, TField>[]).slice(index)
+//           ...(prev as DeepValue<TFormValue, TField>[]).slice(index)
 //         ] as any;
 //       },
 //       opts
@@ -1232,18 +1267,18 @@ export const createFormStore = <
 //     await this.validateField(field, "change");
 //   };
 
-//   public replaceFieldValue = async <TField extends DeepKeys<TFormData>>(
+//   public replaceFieldValue = async <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     index: number,
-//     value: DeepValue<TFormData, TField> extends any[]
-//       ? DeepValue<TFormData, TField>[number]
+//     value: DeepValue<TFormValue, TField> extends any[]
+//       ? DeepValue<TFormValue, TField>[number]
 //       : never,
 //     opts?: { touch?: boolean }
 //   ) => {
 //     this.setFieldValue(
 //       field,
 //       prev => {
-//         return (prev as DeepValue<TFormData, TField>[]).map((d, i) =>
+//         return (prev as DeepValue<TFormValue, TField>[]).map((d, i) =>
 //           i === index ? value : d
 //         ) as any;
 //       },
@@ -1255,7 +1290,7 @@ export const createFormStore = <
 //     await this.validateArrayFieldsStartingFrom(field, index, "change");
 //   };
 
-//   public removeFieldValue = async <TField extends DeepKeys<TFormData>>(
+//   public removeFieldValue = async <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     index: number,
 //     opts?: { touch?: boolean }
@@ -1269,7 +1304,7 @@ export const createFormStore = <
 //     this.setFieldValue(
 //       field,
 //       prev => {
-//         return (prev as DeepValue<TFormData, TField>[]).filter(
+//         return (prev as DeepValue<TFormValue, TField>[]).filter(
 //           (_d, i) => i !== index
 //         ) as any;
 //       },
@@ -1291,7 +1326,7 @@ export const createFormStore = <
 //     await this.validateArrayFieldsStartingFrom(field, index, "change");
 //   };
 
-//   public swapFieldValues = <TField extends DeepKeys<TFormData>>(
+//   public swapFieldValues = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     index1: number,
 //     index2: number,
@@ -1310,11 +1345,11 @@ export const createFormStore = <
 //     // Validate the whole array
 //     this.validateField(field, "change");
 //     // Validate the swapped fields
-//     this.validateField(`${field}[${index1}]` as DeepKeys<TFormData>, "change");
-//     this.validateField(`${field}[${index2}]` as DeepKeys<TFormData>, "change");
+//     this.validateField(`${field}[${index1}]` as DeepKey<TFormValue>, "change");
+//     this.validateField(`${field}[${index2}]` as DeepKey<TFormValue>, "change");
 //   };
 
-//   public moveFieldValues = <TField extends DeepKeys<TFormData>>(
+//   public moveFieldValues = <TField extends DeepKey<TFormValue>>(
 //     field: TField,
 //     index1: number,
 //     index2: number,
@@ -1332,8 +1367,8 @@ export const createFormStore = <
 //     // Validate the whole array
 //     this.validateField(field, "change");
 //     // Validate the moved fields
-//     this.validateField(`${field}[${index1}]` as DeepKeys<TFormData>, "change");
-//     this.validateField(`${field}[${index2}]` as DeepKeys<TFormData>, "change");
+//     this.validateField(`${field}[${index1}]` as DeepKey<TFormValue>, "change");
+//     this.validateField(`${field}[${index2}]` as DeepKey<TFormValue>, "change");
 //   };
 // }
 

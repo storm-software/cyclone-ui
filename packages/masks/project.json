@@ -5,27 +5,14 @@
   "sourceRoot": "packages/masks/src",
   "targets": {
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/masks/src/index.ts",
         "outputPath": "dist/packages/masks",
         "tsConfig": "packages/masks/tsconfig.json",
         "project": "packages/masks/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*"],
-        "assets": [
-          {
-            "input": "packages/masks",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

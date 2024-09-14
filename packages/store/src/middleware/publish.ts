@@ -65,16 +65,10 @@ type Message =
 
 export const publishMiddleware =
   <TState extends State>(
-    config: StateCreatorWithDevtools<
-      TState,
-      SetImmerState<TState>,
-      StoreApi<TState>
-    >,
-    options?: PublishOptions
-  ): StateCreatorWithDevtools<TState> =>
+    config: StateCreatorWithDevtools<TState, SetImmerState<TState>>,
+    options: PublishOptions & Required<Pick<PublishOptions, "name">>
+  ): StateCreatorWithDevtools<TState, SetImmerState<TState>> =>
   (set, get, api) => {
-    const _setState = api.setState;
-
     if (typeof window === "undefined") {
       console.warn(
         "BroadcastChannel is not supported in this environment. The store will not be shared."
@@ -90,31 +84,27 @@ export const publishMiddleware =
 
     const publisher: PublishMiddlewareState = {
       id: 0,
-      channel: new BroadcastChannel(options?.name ? options?.name : api.name),
+      channel: new BroadcastChannel(options.name),
       isSynced: get() !== undefined,
       isLeader: false,
       followers: [0]
     };
 
-    const setState = (fn, actionName) => {
-      const previous = get() as Item;
-      _setState(fn, actionName);
-
+    const unsubscribe = api.subscribe((state: TState, previous: TState) => {
       if (options?.keepSynced === false) {
         return;
       }
 
       publisher.channel.postMessage({
         action: "change",
-        state: Object.entries(get() as Item).reduce((obj, [key, val]) => {
+        state: Object.entries(state).reduce((obj, [key, val]) => {
           if (previous[key] !== val) {
             obj = { ...obj, [key]: val };
           }
           return obj;
-        }, {} as Item)
+        }, {} as TState)
       } as Message);
-    };
-    api.setState = setState;
+    });
 
     /**
      * Subscribe to the broadcast channel
@@ -138,12 +128,12 @@ export const publishMiddleware =
         /**
          * Set the new tab / window id
          */
-        const new_id = publisher.followers[publisher.followers.length - 1]! + 1;
-        publisher.followers.push(new_id);
+        const id = publisher.followers[publisher.followers.length - 1]! + 1;
+        publisher.followers.push(id);
 
         publisher.channel.postMessage({
           action: "add_new_follower",
-          id: new_id
+          id
         } as Message);
 
         return;
@@ -206,6 +196,8 @@ export const publishMiddleware =
     };
 
     const onClose = (): void => {
+      unsubscribe();
+
       publisher.channel.postMessage({
         action: "close",
         id: publisher.id
@@ -245,5 +237,5 @@ export const publishMiddleware =
       }, options?.timeoutMs ?? 100);
     }
 
-    return config(setState, get, api);
+    return config(set, get, api);
   };

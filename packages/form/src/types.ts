@@ -1,82 +1,143 @@
-import type { FunctionComponent } from "react";
-import { State, type StoreApi } from "@cyclone-ui/store";
-import { DeepKeys, DeepValue, NoInfer } from "@cyclone-ui/types";
+/*-------------------------------------------------------------------
 
-export type ValidationError = undefined | false | null | string;
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import type { CreateAtomStoreOptions } from "@cyclone-ui/state";
+import type { StormError } from "@storm-stack/errors";
+import type {
+  DeepKey,
+  DeepValue,
+  MessageDetails,
+  NoInfer,
+  Nullable,
+  RequiredByKey,
+  SerializablePrimitive
+} from "@storm-stack/types";
+import type { Getter, Setter } from "jotai";
+import type { FunctionComponent } from "react";
+
+import { type StoreApi } from "@cyclone-ui/store";
+
+export type FieldPrimitive = Date | SerializablePrimitive;
+export type IsFieldPrimitive<T> = [T] extends [FieldPrimitive] ? true : false;
+
+export type InferFieldValue<
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>
+> =
+  IsFieldPrimitive<DeepValue<TFormValues, TFieldName>> extends true
+    ? Nullable<DeepValue<TFormValues, TFieldName>>
+    : DeepValue<TFormValues, TFieldName>;
+
+export type ValidationResult =
+  | MessageDetails
+  | MessageDetails[]
+  | StormError
+  | StormError[]
+  | false
+  | null
+  | string
+  | undefined;
 
 // If/when TypeScript supports higher-kinded types, this should not be `unknown` anymore
-export type Validator<Type, Fn = unknown> = () => {
-  validate(options: { value: Type }, fn: Fn): ValidationError;
-  validateAsync(options: { value: Type }, fn: Fn): Promise<ValidationError>;
+export type Validator<TValue, Fn = unknown> = () => {
+  validate(
+    options: { get: Getter; previous?: TValue; set: Setter; value: TValue },
+    fn: Fn
+  ): ValidationResult[];
+  validateAsync(
+    options: { get: Getter; previous?: TValue; set: Setter; value: TValue },
+    fn: Fn
+  ): Promise<ValidationResult[]>;
 };
 
 // "server" is only intended for SSR/SSG validation and should not execute anything
-export type ValidationCause = "change" | "blur" | "submit" | "mount" | "server";
+export type ValidationCause = "blur" | "change" | "mount" | "server" | "submit";
+// eslint-disable-next-line no-redeclare
+export const ValidationCause = {
+  BLUR: "blur" as ValidationCause,
+  CHANGE: "change" as ValidationCause,
+  MOUNT: "mount" as ValidationCause,
+  SERVER: "server" as ValidationCause,
+  SUBMIT: "submit" as ValidationCause
+};
 
-export type ValidationErrorMapKeys = `on${Capitalize<ValidationCause>}`;
+export type ValidationResultMapKeys = `on${Capitalize<ValidationCause>}`;
 
-export type ValidationErrorMap = {
-  [K in ValidationErrorMapKeys]?: ValidationError;
+export type ValidationMeta = {
+  lastAbortController: AbortController;
+};
+
+export type ValidationResults = {
+  meta: Record<ValidationResultMapKeys, ValidationMeta | undefined>;
+  resultMap: Partial<Record<ValidationResultMapKeys, MessageDetails[]>>;
 };
 
 export interface FieldApiOptions<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
 > extends FieldOptions<
-    TParentData,
+    TFormValues,
     TName,
     TFieldValidator,
     TFormValidator,
     TData
   > {
-  form: IFormApi<TParentData, TFormValidator>;
+  form: IFormApi<TFormValues, TFormValidator>;
 }
 
 /**
  * The field options.
  */
 export type UseFieldOptions<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
-> = FieldApiOptions<
-  TParentData,
-  TName,
-  TFieldValidator,
-  TFormValidator,
-  TData
-> & {
-  mode?: "value" | "array";
-};
+  TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
+> = {
+  mode?: "array" | "value";
+} & FieldApiOptions<TFormValues, TName, TFieldValidator, TFormValidator, TData>;
 
 export interface IFieldApi<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
-  TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+  TFormValues extends Record<string, unknown>,
+  TName extends DeepKey<TFormValues>,
+  _TFieldValidator extends
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  _TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
 > {
   /**
    * A pre-bound and type-safe sub-field component using this field as a root.
    */
-  Field: FieldComponent<TParentData, TFormValidator>;
+  Field: FieldComponent<TFormValues, TFormValidator>;
 }
 
 /**
@@ -85,226 +146,471 @@ export interface IFieldApi<
  * A function that takes an optional object with a `name` property and field options, and returns a `FieldApi` instance for the specified field.
  */
 export type UseField<
-  TParentData,
-  TFormValidator extends Validator<TParentData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > = <
-  TName extends DeepKeys<TParentData>,
+  TName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
 >(
   opts: Omit<
-    UseFieldOptions<TParentData, TName, TFieldValidator, TFormValidator, TData>,
+    UseFieldOptions<TFormValues, TName, TFieldValidator, TFormValidator, TData>,
     "form"
   >
-) => IFieldApi<TParentData, TName, TFieldValidator, TFormValidator, TData>;
+) => IFieldApi<TFormValues, TName, TFieldValidator, TFormValidator, TData>;
 
 export type FormValidateFn<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > = (props: {
-  value: TFormData;
-  api: StoreApi<FormState<TFormData, TFormValidator>>;
-}) => ValidationError;
+  api: StoreApi<FormState<TFormValues, TFormValidator>>;
+  value: TFormValues;
+}) => ValidationResult[];
 
 export type FormValidateOrFn<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > =
-  TFormValidator extends Validator<TFormData, infer TFN>
+  TFormValidator extends Validator<TFormValues, infer TFN>
     ? TFN
-    : FormValidateFn<TFormData, TFormValidator>;
+    : FormValidateFn<TFormValues, TFormValidator>;
 
 export type FormValidateAsyncFn<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > = (props: {
-  value: TFormData;
-  formApi: IFormApi<TFormData, TFormValidator>;
+  formApi: IFormApi<TFormValues, TFormValidator>;
   signal: AbortSignal;
-}) => ValidationError | Promise<ValidationError>;
+  value: TFormValues;
+}) => Promise<ValidationResult[]> | ValidationResult[];
 
 export type FormAsyncValidateOrFn<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > =
-  TFormValidator extends Validator<TFormData, infer FFN>
-    ? FFN | FormValidateAsyncFn<TFormData, TFormValidator>
-    : FormValidateAsyncFn<TFormData, TFormValidator>;
+  TFormValidator extends Validator<TFormValues, infer FFN>
+    ? FFN | FormValidateAsyncFn<TFormValues, TFormValidator>
+    : FormValidateAsyncFn<TFormValues, TFormValidator>;
 
 export interface FormValidators<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > {
-  onMount?: FormValidateOrFn<TFormData, TFormValidator>;
-  onChange?: FormValidateOrFn<TFormData, TFormValidator>;
-  onChangeAsync?: FormAsyncValidateOrFn<TFormData, TFormValidator>;
-  onChangeAsyncDebounceMs?: number;
-  onBlur?: FormValidateOrFn<TFormData, TFormValidator>;
-  onBlurAsync?: FormAsyncValidateOrFn<TFormData, TFormValidator>;
+  onBlur?: FormValidateOrFn<TFormValues, TFormValidator>;
+  onBlurAsync?: FormAsyncValidateOrFn<TFormValues, TFormValidator>;
   onBlurAsyncDebounceMs?: number;
-  onSubmit?: FormValidateOrFn<TFormData, TFormValidator>;
-  onSubmitAsync?: FormAsyncValidateOrFn<TFormData, TFormValidator>;
+  onChange?: FormValidateOrFn<TFormValues, TFormValidator>;
+  onChangeAsync?: FormAsyncValidateOrFn<TFormValues, TFormValidator>;
+  onChangeAsyncDebounceMs?: number;
+  onMount?: FormValidateOrFn<TFormValues, TFormValidator>;
+  onSubmit?: FormValidateOrFn<TFormValues, TFormValidator>;
+  onSubmitAsync?: FormAsyncValidateOrFn<TFormValues, TFormValidator>;
 }
 
 export interface FormTransform<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > {
-  fn: (
-    formBase: IFormApi<TFormData, TFormValidator>
-  ) => IFormApi<TFormData, TFormValidator>;
   deps: unknown[];
+  fn: (
+    formBase: IFormApi<TFormValues, TFormValidator>
+  ) => IFormApi<TFormValues, TFormValidator>;
 }
 
 export interface FormOptions<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
-> {
-  defaultValues?: TFormData;
-  defaultState?: Partial<FormState<TFormData>>;
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined,
+  TName extends string = string
+> extends CreateAtomStoreOptions<
+    FormBaseState<TFormValues, TFormValidator>,
+    FormExtendedState<TFormValues, TFormValidator>,
+    TName
+  > {
   asyncAlways?: boolean;
   asyncDebounceMs?: number;
-  validatorAdapter?: TFormValidator;
-  validators?: FormValidators<TFormData, TFormValidator>;
+  defaultState?: Partial<FormBaseState<TFormValues, TFormValidator>>;
+  defaultValues?: TFormValues;
   onSubmit?: (props: {
-    value: TFormData;
-    formApi: IFormApi<TFormData, TFormValidator>;
-  }) => any | Promise<any>;
+    formApi: IFormApi<TFormValues, TFormValidator>;
+    value: TFormValues;
+  }) => Promise<any> | any;
   onSubmitInvalid?: (props: {
-    value: TFormData;
-    formApi: IFormApi<TFormData, TFormValidator>;
+    formApi: IFormApi<TFormValues, TFormValidator>;
+    value: TFormValues;
   }) => void;
-  transform?: FormTransform<TFormData, TFormValidator>;
+  transform?: FormTransform<TFormValues, TFormValidator>;
+  validatorAdapter?: TFormValidator;
+  validators?: FormValidators<TFormValues, TFormValidator>;
 }
 
-export type ValidationMeta = {
-  lastAbortController: AbortController;
-};
-
 export type FieldInfo<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > = {
   instance: IFieldApi<
-    TFormData,
+    TFormValues,
     any,
     Validator<unknown, unknown> | undefined,
     TFormValidator
   > | null;
-  validationMetaMap: Record<ValidationErrorMapKeys, ValidationMeta | undefined>;
 };
 
-export type FieldMeta = {
-  isTouched: boolean;
-  isPristine: boolean;
-  isDirty: boolean;
-  touchedErrors: ValidationError[];
-  errors: ValidationError[];
-  errorMap: ValidationErrorMap;
-  isValidating: boolean;
-};
-
-export type FieldState<TData> = {
-  value: TData;
-  meta: FieldMeta;
-};
-
-export type ResolveName<TParentData> = unknown extends TParentData
-  ? string
-  : DeepKeys<TParentData>;
-
-export interface FieldOptions<
-  TParentData,
-  TFieldName extends DeepKeys<TParentData>,
+export type FieldBaseState<
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TFieldName>, unknown>
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TFieldName> = DeepValue<
-    TParentData,
+  TFormName extends string = string,
+  TFieldValue extends InferFieldValue<
+    TFormValues,
     TFieldName
-  >
-> {
-  name: TFieldName;
-  defaultValue?: NoInfer<TData>;
-  asyncDebounceMs?: number;
-  asyncAlways?: boolean;
-  preserveValue?: boolean;
-  validatorAdapter?: TFieldValidator;
-  validators?: FieldValidators<
-    TParentData,
+  > = InferFieldValue<TFormValues, TFieldName>,
+  TFieldOptions extends FieldOptions<
+    TFormValues,
     TFieldName,
     TFieldValidator,
     TFormValidator,
-    TData
+    TFormName,
+    TFieldValue
+  > = FieldOptions<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFormName,
+    TFieldValue
+  >
+> = {
+  initialState: FieldBaseState<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFormName,
+    TFieldValue,
+    TFieldOptions
   >;
-  defaultMeta?: Partial<FieldMeta>;
-}
-
-export type FormState<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined = undefined
-> = State & {
-  // Form Meta
-  options: FormOptions<TFormData, TFormValidator>;
-
-  // Form Data
-  values: TFormData;
-  // Form Validation
-  isFormValidating: boolean;
-  isFormValid: boolean;
-  errors: ValidationError[];
-  errorMap: ValidationErrorMap;
-  validationMetaMap: Record<ValidationErrorMapKeys, ValidationMeta | undefined>;
-  // Fields
-  fieldMeta: Record<DeepKeys<TFormData>, FieldMeta>;
-  _fieldInfo: Record<DeepKeys<TFormData>, any>;
-  isFieldsValidating: boolean;
-  isFieldsValid: boolean;
-  isSubmitting: boolean;
-  // General
+  initialValue: Nullable<TFieldValue>;
+  isDisabled: boolean;
+  isFocused: boolean;
+  isRequired: boolean;
   isTouched: boolean;
+  isValidating: boolean;
+  options: RequiredByKey<TFieldOptions, "areEqual">;
+  validationResults: ValidationResults;
+  value: TFieldValue;
+  previousValue: Nullable<TFieldValue>;
+};
+
+export type FieldState<
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
+  TFieldValidator extends
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
+    | undefined = undefined,
+  TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined,
+  TFormName extends string = string,
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>,
+  TFieldOptions extends FieldOptions<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFormName,
+    TFieldValue
+  > = FieldOptions<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFormName,
+    TFieldValue
+  >
+> = {
+  debouncedValue: Nullable<TFieldValue>;
+  errors: ValidationResult[];
+  info: ValidationResult[];
   isDirty: boolean;
   isPristine: boolean;
-  isSubmitted: boolean;
-  isValidating: boolean;
   isValid: boolean;
+  maskedValue: string;
+  successes: ValidationResult[];
+  warnings: ValidationResult[];
+} & FieldBaseState<
+  TFormValues,
+  TFieldName,
+  TFieldValidator,
+  TFormValidator,
+  TFormName,
+  TFieldValue,
+  TFieldOptions
+>;
+
+export type FieldOptions<
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
+  TFieldValidator extends
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
+    | undefined = undefined,
+  TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined,
+  TFormName extends string = string,
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
+> = {
+  /**
+   * A function that determines whether two field values are equal. This is used to determine whether a field has changed and should be validated.
+   *
+   * @defaultValue `Object.is`
+   *
+   * @param a - The first field value
+   * @param b - The second field value
+   * @returns `true` if the two values are equal, `false` otherwise
+   */
+  areEqual?: (a: TFieldValue, b: TFieldValue) => boolean;
+  asyncAlways?: boolean;
+  debounceMs?: number;
+  defaultState?: Partial<
+    FieldBaseState<
+      TFormValues,
+      TFieldName,
+      TFieldValidator,
+      TFormValidator,
+      TFormName,
+      TFieldValue
+    >
+  >;
+  defaultValue?: TFieldValue;
+  formName: TFormName;
+  isDisabled?: boolean;
+  isRequired?: boolean;
+  mask?: (value: TFieldValue) => string;
+  name: TFieldName;
+  parse?: (value: unknown) => TFieldValue;
+  shouldDebounceOnReset?: boolean;
+  shouldUnregister?: boolean;
+  validatorAdapter?: TFieldValidator;
+  validators?: FieldValidators<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFieldValue
+  >;
+} & Omit<
+  CreateAtomStoreOptions<
+    FieldBaseState<
+      TFormValues,
+      TFieldName,
+      TFieldValidator,
+      TFormValidator,
+      TFormName,
+      TFieldValue,
+      never
+    >
+  >,
+  "initialState" | "name"
+>;
+
+// export type FieldState<
+//   TFormValues extends Record<string, unknown>,
+//   TFieldName extends DeepKey<TFormValues>,
+//   TFieldValidator extends
+//     | Validator<FieldValue<TFormValues, TFieldName>, unknown>
+//     | undefined = undefined,
+//   TFormValidator extends
+//     | Validator<TFormValues, unknown>
+//     | undefined = undefined,
+//   TData extends DeepValue<TFormValues, TFieldName> = DeepValue<
+//     TFormValues,
+//     TFieldName
+//   >
+// > = FieldMeta & {
+//   options: FieldOptions<
+//     TFormValues,
+//     TFieldName,
+//     TFieldValidator,
+//     TFormValidator,
+//     TData
+//   >;
+
+// };
+
+// export type FieldMeta<
+// TFormValues extends Record<string, unknown>,
+// TFieldName extends DeepKey<TFormValues>,
+// TFieldValidator extends
+//   | Validator<FieldValue<TFormValues, TFieldName>, unknown>
+//   | undefined = undefined,
+// TFormValidator extends
+//   | Validator<TFormValues, unknown>
+//   | undefined = undefined,
+// TData extends DeepValue<TFormValues, TFieldName> = DeepValue<
+//   TFormValues,
+//   TFieldName
+// >
+// > = FieldMetaBase<
+// TFormValues,
+// TFieldName,
+// TFieldValidator,
+// TFormValidator,
+// TData
+// > & {
+//   isTouched: boolean;
+//   isPristine: boolean;
+//   isDirty: boolean;
+//   isDisabled: boolean;
+//   isRequired: boolean;
+//   isValidating: boolean;
+//   validationMap: ValidationResultMap;
+//   validationMetaMap: Record<
+//     ValidationResultMapKeys,
+//     ValidationMeta | undefined
+//   >;
+// };
+
+// export type ResolveName<TFormValues> = unknown extends TFormValues
+//   ? string
+//   : DeepKey<TFormValues>;
+
+export type FormBaseState<
+  TFormValues extends Record<string, unknown>,
+  _TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined
+> = {
+  fieldOptions: {
+    [TKey in DeepKey<TFormValues>]: FieldOptions<TFormValues, TKey>;
+  };
+  fieldStates: {
+    [TKey in DeepKey<TFormValues>]: FieldState;
+  };
+  fieldValidationResults: {
+    [TKey in DeepKey<TFormValues>]: ValidationResults;
+  };
+  isDisabled: boolean;
+  isSubmitted: boolean;
+  isSubmitting: boolean;
+  isValidating: boolean;
+  submissionAttempts: number;
+  validationResults: ValidationResults;
+  values: TFormValues;
+};
+
+export type FormExtendedState<
+  TFormValues extends Record<string, unknown>,
+  _TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined
+> = {
   canSubmit: boolean;
+  errors: ValidationResult[];
+  info: ValidationResult[];
+  isDirty: boolean;
+  isDisabled: boolean;
+  isFieldsValid: boolean;
+  isFieldsValidating: boolean;
+  isFormValid: boolean;
+  isFormValidating: boolean;
+  isPristine: boolean;
+  isTouched: boolean;
+  isValid: boolean;
+  successes: ValidationResult[];
+  warnings: ValidationResult[];
+};
+
+export type FormMeta<
+  TFormValues extends Record<string, unknown>,
+  _TFormValidator extends
+    | Validator<TFormValues, unknown>
+    | undefined = undefined
+> = {
+  canSubmit: boolean;
+  isDirty: boolean;
+  isDisabled: boolean;
+  isFieldsValid: boolean;
+  isFieldsValidating: boolean;
+  isFormValid: boolean;
+  isFormValidating: boolean;
+  isPristine: boolean;
+  isSubmitted: boolean;
+  isSubmitting: boolean;
+  isTouched: boolean;
+
+  isValid: boolean;
+  isValidating: boolean;
   submissionAttempts: number;
 };
+
+// export type FormState<
+//   TFormValues extends Record<string, unknown> = object,
+//   TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
+// > = State & {
+//   // Form Meta
+//   options: FormOptions<TFormValues, TFormValidator>;
+
+//   // Form Data
+//   values: TFormValues;
+//   // Form Validation
+//   isFormValidating: boolean;
+//   isFormValid: boolean;
+//   errors: ValidationResult[];
+
+//   // Fields
+//   fieldMeta: Record<Paths<TFormValues>, FieldMeta>;
+//   _fieldInfo: Record<
+//     Paths<TFormValues>,
+//     FieldInfo<TFormValues, TFormValidator>
+//   >;
+//   isFieldsValidating: boolean;
+//   isFieldsValid: boolean;
+//   isSubmitting: boolean;
+//   // General
+//   isTouched: boolean;
+//   isDirty: boolean;
+//   isPristine: boolean;
+//   isSubmitted: boolean;
+//   isValidating: boolean;
+//   isValid: boolean;
+//   isDisabled: boolean;
+//   canSubmit: boolean;
+//   submissionAttempts: number;
+// };
 
 /**
  * When using `@tanstack/react-form`, the core form API is extended at type level with additional methods for React-specific functionality:
  */
 export interface IFormApi<
-  TFormData,
-  TFormValidator extends Validator<TFormData, unknown> | undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined
 > {
   /**
    * A React component to render form fields. With this, you can render and manage individual form fields.
    */
-  Field: FieldComponent<TFormData, TFormValidator>;
-
-  /**
-   * A custom React hook that provides functionalities related to individual form fields. It gives you access to field values, errors, and allows you to set or update field values.
-   */
-  useField: UseField<TFormData, TFormValidator>;
-
-  /**
-   * A `useStore` hook that connects to the internal store of the form. It can be used to access the form's current state or any other related state information. You can optionally pass in a selector function to cherry-pick specific parts of the state
-   */
-  useStore: <TSelected = NoInfer<FormState<TFormData>>>(
-    selector?: (state: NoInfer<FormState<TFormData>>) => TSelected
-  ) => TSelected;
+  Field: FieldComponent<TFormValues, TFormValidator>;
 
   /**
    * A `Subscribe` function that allows you to listen and react to changes in the form's state. It's especially useful when you need to execute side effects or render specific components in response to state updates.
    */
-  Subscribe: <TSelected = NoInfer<FormState<TFormData>>>(props: {
+  Subscribe: <TSelected = NoInfer<FormState<TFormValues>>>(props: {
+    children: ((state: NoInfer<TSelected>) => NodeType) | NodeType;
+
     /**
       TypeScript versions <=5.0.4 have a bug that prevents
       the type of the `TSelected` generic from being inferred
@@ -316,66 +622,79 @@ export interface IFormApi<
       @see {@link https://github.com/TanStack/form/pull/606/files#r1506715714 | This discussion on GitHub for the details}
       @see {@link https://github.com/microsoft/TypeScript/issues/52786 | The bug report in `microsoft/TypeScript`}
       */
-    selector?: (state: NoInfer<FormState<TFormData>>) => TSelected;
-
-    children: ((state: NoInfer<TSelected>) => NodeType) | NodeType;
+    selector?: (state: NoInfer<FormState<TFormValues>>) => TSelected;
   }) => NodeType;
 
-  options: FormOptions<TFormData, TFormValidator>;
+  // // This carries the context for nested fields
+  fieldInfo: Record<
+    DeepKey<TFormValues>,
+    FieldInfo<TFormValues, TFormValidator>
+  >;
 
-  store: StoreApi<FormState<TFormData>>;
+  options: FormOptions<TFormValues, TFormValidator>;
+
+  // Please use form.useStore() utility to subscribe to state
+  state: FormState<TFormValues>;
+
+  store: StoreApi<FormState<TFormValues>>;
 
   // Do not use __state directly, as it is not reactive.
-  // Please use form.useStore() utility to subscribe to state
-  state: FormState<TFormData>;
+  /**
+   * A custom React hook that provides functionalities related to individual form fields. It gives you access to field values, errors, and allows you to set or update field values.
+   */
+  useField: UseField<TFormValues, TFormValidator>;
 
-  // // This carries the context for nested fields
-  fieldInfo: Record<DeepKeys<TFormData>, FieldInfo<TFormData, TFormValidator>>;
+  /**
+   * A `useStore` hook that connects to the internal store of the form. It can be used to access the form's current state or any other related state information. You can optionally pass in a selector function to cherry-pick specific parts of the state
+   */
+  useStore: <TSelected = NoInfer<FormState<TFormValues>>>(
+    selector?: (state: NoInfer<FormState<TFormValues>>) => TSelected
+  ) => TSelected;
 }
 
 /**
  * @param children A render function that takes a field API instance and returns a React element.
  */
 type FieldComponentProps<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
 > = {
   children: (
     fieldApi: IFieldApi<
-      TParentData,
+      TFormValues,
       TName,
       TFieldValidator,
       TFormValidator,
       TData
     >
   ) => NodeType;
-} & UseFieldOptions<TParentData, TName, TFieldValidator, TFormValidator, TData>;
+} & UseFieldOptions<TFormValues, TName, TFieldValidator, TFormValidator, TData>;
 
 /**
  * A type alias representing a field component for a specific form data type.
  */
 export type FieldComponent<
-  TParentData,
-  TFormValidator extends Validator<TParentData, unknown> | undefined = undefined
+  TFormValues extends Record<string, unknown>,
+  TFormValidator extends Validator<TFormValues, unknown> | undefined = undefined
 > = <
-  TName extends DeepKeys<TParentData>,
+  TName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<DeepValue<TFormValues, TName>, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TData extends DeepValue<TFormValues, TName> = DeepValue<TFormValues, TName>
 >({
   children,
   ...fieldOptions
 }: Omit<
   FieldComponentProps<
-    TParentData,
+    TFormValues,
     TName,
     TFieldValidator,
     TFormValidator,
@@ -385,189 +704,196 @@ export type FieldComponent<
 >) => NodeType;
 
 export type FieldValidateFn<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
-  TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
+  _TFieldValidator extends
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
-  TFormValidator extends
-    | Validator<TParentData, unknown>
+  _TFormValidator extends
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
-> = (props: {
-  value: TData;
-  fieldApi: IFieldApi<
-    TParentData,
-    TName,
-    TFieldValidator,
-    TFormValidator,
-    TData
-  >;
-}) => ValidationError;
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
+> = (params: {
+  get: Getter;
+  previousValue: Nullable<TFieldValue>;
+  set: Setter;
+  value: TFieldValue;
+}) => ValidationResult[];
 
 export type FieldValidateOrFn<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
 > =
-  TFieldValidator extends Validator<TData, infer TFN>
+  TFieldValidator extends Validator<TFieldValue, infer TFN>
     ?
-        | TFN
         | FieldValidateFn<
-            TParentData,
-            TName,
+            TFormValues,
+            TFieldName,
             TFieldValidator,
             TFormValidator,
-            TData
+            TFieldValue
           >
-    : TFormValidator extends Validator<TParentData, infer FFN>
+        | TFN
+    : TFormValidator extends Validator<TFormValues, infer FFN>
       ?
           | FFN
           | FieldValidateFn<
-              TParentData,
-              TName,
+              TFormValues,
+              TFieldName,
               TFieldValidator,
               TFormValidator,
-              TData
+              TFieldValue
             >
       : FieldValidateFn<
-          TParentData,
-          TName,
+          TFormValues,
+          TFieldName,
           TFieldValidator,
           TFormValidator,
-          TData
+          TFieldValue
         >;
 
 export type FieldValidateAsyncFn<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
-  TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
+  _TFieldValidator extends
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
-  TFormValidator extends
-    | Validator<TParentData, unknown>
+  _TFormValidator extends
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
 > = (options: {
-  value: TData;
-  fieldApi: IFieldApi<
-    TParentData,
-    TName,
-    TFieldValidator,
-    TFormValidator,
-    TData
-  >;
+  get: Getter;
+  previous?: TFieldValue;
+  set: Setter;
   signal: AbortSignal;
-}) => ValidationError | Promise<ValidationError>;
+  value: TFieldValue;
+}) => Promise<ValidationResult[]> | ValidationResult[];
 
 export type FieldAsyncValidateOrFn<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
 > =
-  TFieldValidator extends Validator<TData, infer TFN>
+  TFieldValidator extends Validator<TFieldValue, infer TFN>
     ?
-        | TFN
         | FieldValidateAsyncFn<
-            TParentData,
-            TName,
+            TFormValues,
+            TFieldName,
             TFieldValidator,
             TFormValidator,
-            TData
+            TFieldValue
           >
-    : TFormValidator extends Validator<TParentData, infer FFN>
+        | TFN
+    : TFormValidator extends Validator<TFormValues, infer FFN>
       ?
           | FFN
           | FieldValidateAsyncFn<
-              TParentData,
-              TName,
+              TFormValues,
+              TFieldName,
               TFieldValidator,
               TFormValidator,
-              TData
+              TFieldValue
             >
       : FieldValidateAsyncFn<
-          TParentData,
-          TName,
+          TFormValues,
+          TFieldName,
           TFieldValidator,
           TFormValidator,
-          TData
+          TFieldValue
         >;
 
 export interface FieldValidators<
-  TParentData,
-  TName extends DeepKeys<TParentData>,
+  TFormValues extends Record<string, unknown>,
+  TFieldName extends DeepKey<TFormValues>,
   TFieldValidator extends
-    | Validator<DeepValue<TParentData, TName>, unknown>
+    | Validator<InferFieldValue<TFormValues, TFieldName>, unknown>
     | undefined = undefined,
   TFormValidator extends
-    | Validator<TParentData, unknown>
+    | Validator<TFormValues, unknown>
     | undefined = undefined,
-  TData extends DeepValue<TParentData, TName> = DeepValue<TParentData, TName>
+  TFieldValue extends InferFieldValue<
+    TFormValues,
+    TFieldName
+  > = InferFieldValue<TFormValues, TFieldName>
 > {
-  onMount?: FieldValidateOrFn<
-    TParentData,
-    TName,
-    TFieldValidator,
-    TFormValidator,
-    TData
-  >;
-  onChange?: FieldValidateOrFn<
-    TParentData,
-    TName,
-    TFieldValidator,
-    TFormValidator,
-    TData
-  >;
-  onChangeAsync?: FieldAsyncValidateOrFn<
-    TParentData,
-    TName,
-    TFieldValidator,
-    TFormValidator,
-    TData
-  >;
-  onChangeAsyncDebounceMs?: number;
-  onChangeListenTo?: DeepKeys<TParentData>[];
   onBlur?: FieldValidateOrFn<
-    TParentData,
-    TName,
+    TFormValues,
+    TFieldName,
     TFieldValidator,
     TFormValidator,
-    TData
+    TFieldValue
   >;
   onBlurAsync?: FieldAsyncValidateOrFn<
-    TParentData,
-    TName,
+    TFormValues,
+    TFieldName,
     TFieldValidator,
     TFormValidator,
-    TData
+    TFieldValue
   >;
   onBlurAsyncDebounceMs?: number;
-  onBlurListenTo?: DeepKeys<TParentData>[];
-  onSubmit?: FieldValidateOrFn<
-    TParentData,
-    TName,
+  onBlurListenTo?: DeepKey<TFormValues>[];
+  onChange?: FieldValidateOrFn<
+    TFormValues,
+    TFieldName,
     TFieldValidator,
     TFormValidator,
-    TData
+    TFieldValue
+  >;
+  onChangeAsync?: FieldAsyncValidateOrFn<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFieldValue
+  >;
+  onChangeAsyncDebounceMs?: number;
+  onChangeListenTo?: DeepKey<TFormValues>[];
+  onMount?: FieldValidateOrFn<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFieldValue
+  >;
+  onSubmit?: FieldValidateOrFn<
+    TFormValues,
+    TFieldName,
+    TFieldValidator,
+    TFormValidator,
+    TFieldValue
   >;
   onSubmitAsync?: FieldAsyncValidateOrFn<
-    TParentData,
-    TName,
+    TFormValues,
+    TFieldName,
     TFieldValidator,
     TFormValidator,
-    TData
+    TFieldValue
   >;
 }
 
