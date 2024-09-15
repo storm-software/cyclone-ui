@@ -94,8 +94,11 @@ export type ExtendedColorTheme<
   TRole extends ExtendedColorRole = ExtendedColorRole
 > = Record<TRole, ExtendedColorPalette<TRole>>;
 
+export type ColorThemeRole<TRole extends ColorRole = ColorRole> =
+  | `${TRole}`
+  | `${TRole}Dark`;
 export type ColorThemeTokens<TRole extends ColorRole = ColorRole> = Record<
-  `${TRole}` | `${TRole}Dark`,
+  ColorThemeRole<TRole>,
   ColorPalette<TRole>
 >;
 export type ExtendedColorThemeTokens<

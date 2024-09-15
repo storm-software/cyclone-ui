@@ -22,13 +22,13 @@
           "apps/nx/src/executors/build/executor.ts",
           "apps/nx/src/generators/components-library/generator.ts"
         ],
-        "platform": "node",
         "deleteOutputPath": true,
         "bundle": true,
         "thirdParty": true,
-        "skipTypeCheck": false,
+        "skipTypeCheck": true,
         "metafile": true,
         "minify": false,
+        "platform": "node",
         "format": ["cjs"],
         "esbuildOptions": {
           "outExtension": {

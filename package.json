@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/monorepo",
   "version": "0.0.0",
-  "description": "A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
+  "description": "🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git"
@@ -278,6 +278,6 @@
       "@cyclone-ui/state": "workspace:*"
     }
   },
-  "prettier": "./node_modules/@storm-software/prettier/config.json",
+  "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }

@@ -1,7 +1,20 @@
-import { createHash } from "crypto";
-import { readFile } from "fs/promises";
-import { execSync } from "node:child_process";
-import { glob } from "glob";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import {
   DeleteObjectsCommand,
   ListObjectsCommand,
@@ -17,6 +30,10 @@ import {
   readCachedProjectGraph,
   readJsonFile
 } from "@nx/devkit";
+import { glob } from "glob";
+import { execSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { readFile } from "node:fs/promises";
 import { ComponentPublishExecutorSchema } from "./schema";
 
 export default async function runExecutor(
@@ -35,6 +52,9 @@ export default async function runExecutor(
   } = await import("@storm-software/config-tools");
 
   try {
+    const workspaceRoot = findWorkspaceRoot();
+    const config = await loadStormConfig(workspaceRoot);
+
     if (!context.projectName) {
       throw new Error("The executor requires a projectName.");
     }
@@ -47,8 +67,6 @@ export default async function runExecutor(
     ) {
       throw new Error("The executor requires projectsConfigurations.");
     }
-
-    const workspaceRoot = findWorkspaceRoot();
 
     const packageRoot =
       joinPathFragments(
@@ -69,10 +87,10 @@ export default async function runExecutor(
     const packageName = projectPackageJson.name;
 
     writeInfo(
-      `🚀  Running Cyclone Component Registry executor on the ${packageName} package`
+      `🚀  Running Cyclone Component Registry executor on the ${packageName} package`,
+      config
     );
 
-    const config = await loadStormConfig(workspaceRoot);
     writeTrace("Completed Loading Storm config", config);
 
     /**
@@ -101,10 +119,9 @@ export default async function runExecutor(
       );
     }
 
-    const endpoint = config.extensions?.cyclone?.registry
-      ? config.extensions.cyclone.registry
-      : `https://${config.cloudflareAccountId}.r2.cloudflarestorage.com`;
-
+    const endpoint =
+      config.extensions?.cyclone?.registry ||
+      `https://${config.cloudflareAccountId}.r2.cloudflarestorage.com`;
     if (!process.env.CYCLONE_REGISTRY_ACCESS_KEY) {
       throw new Error(
         "The Cyclone Registry Access Key is not set. Please set the `CYCLONE_REGISTRY_ACCESS_KEY` environment variable."
@@ -122,7 +139,8 @@ export default async function runExecutor(
     }
 
     writeInfo(
-      `Publishing ${packageTxt} to the Cyclone Registry at ${endpoint}`
+      `Publishing ${packageTxt} to the Cyclone Registry at ${endpoint}`,
+      config
     );
 
     const s3Client = new S3Client({
@@ -135,7 +153,7 @@ export default async function runExecutor(
     });
 
     const version = projectPackageJson.version;
-    writeInfo(`Generated component version: ${version}`);
+    writeInfo(`Generated component version: ${version}`, config);
 
     const files = await glob(joinPathFragments(sourceRoot, "**/*"), {
       ignore: "**/{*.stories.tsx,*.stories.ts,*.spec.tsx,*.spec.ts}"
@@ -164,26 +182,29 @@ export default async function runExecutor(
     const release =
       options.tag ?? execSync("npm config get tag").toString().trim();
 
-    writeInfo(`Clearing out existing items in ${projectPath}`);
+    writeInfo(`Clearing out existing items in ${projectPath}`, config);
 
-    if (!isDryRun) {
+    if (isDryRun) {
+      writeWarning("Dry run: skipping upload to the Cyclone Registry.", config);
+    } else {
       const response = await s3Client.send(
         new ListObjectsCommand({
-          Bucket: "storm-cdn-cyclone-ui",
+          Bucket: "cyclone-ui-registry",
           Prefix: projectPath
         })
       );
 
       if (response?.Contents && response.Contents.length > 0) {
         writeDebug(
-          `Deleting the following existing items from the component registry: ${response.Contents.map(item => item.Key).join(", ")}`
+          `Deleting the following existing items from the component registry: ${response.Contents.map(item => item.Key).join(", ")}`,
+          config
         );
 
         await Promise.all(
           response.Contents.map(item =>
             s3Client.send(
               new DeleteObjectsCommand({
-                Bucket: "storm-cdn-cyclone-ui",
+                Bucket: "cyclone-ui-registry",
                 Delete: {
                   Objects: [
                     {
@@ -198,11 +219,10 @@ export default async function runExecutor(
         );
       } else {
         writeDebug(
-          `No existing items to delete in the component registry path ${projectPath}`
+          `No existing items to delete in the component registry path ${projectPath}`,
+          config
         );
       }
-    } else {
-      writeWarning("Dry run: skipping upload to the Cyclone Registry.");
     }
 
     const metaJson = JSON.stringify({
@@ -222,7 +242,7 @@ export default async function runExecutor(
         .map(dep => dep.name)
     });
 
-    writeInfo(`Generating meta.json file: \n${metaJson}`);
+    writeInfo(`Generating meta.json file: \n${metaJson}`, config);
 
     await uploadFile(
       s3Client,
@@ -262,10 +282,11 @@ export default async function runExecutor(
     return {
       success: true
     };
-  } catch (e) {
-    writeFatal("An error occurred while running the executor.");
+  } catch (error) {
+    writeFatal(
+      `An error occurred while running the component registry publish executor. \n${error.message}`
+    );
 
-    console.error(e);
     return {
       success: false
     };
@@ -286,10 +307,12 @@ const uploadFile = async (
   );
 
   const checksum = createHash("sha256").update(fileContent).digest("base64");
-  const fileKey = `${projectPath}/${fileName.startsWith("/") ? fileName.substring(1) : fileName}`;
+  const fileKey = `${projectPath}/${fileName.startsWith("/") ? fileName.slice(1) : fileName}`;
   writeDebug(`Uploading file: ${fileKey}`);
 
-  if (!isDryRun) {
+  if (isDryRun) {
+    writeWarning("Dry run: skipping upload to the Cyclone Registry.");
+  } else {
     await client.send(
       new PutObjectCommand({
         Bucket: "storm-cdn-cyclone-ui",
@@ -302,8 +325,6 @@ const uploadFile = async (
         }
       })
     );
-  } else {
-    writeWarning("Dry run: skipping upload to the Cyclone Registry.");
   }
 };
 
@@ -313,8 +334,8 @@ const getInternalDependencies = (
 ): ProjectGraphProjectNode[] => {
   const allDeps = graph.dependencies[projectName] ?? [];
 
-  return Array.from(
-    allDeps.reduce(
+  return [
+    ...allDeps.reduce(
       (acc: ProjectGraphProjectNode[], node: ProjectGraphDependency) => {
         const found = graph.nodes[node.target];
         if (found) acc.push(found);
@@ -322,5 +343,5 @@ const getInternalDependencies = (
       },
       []
     )
-  );
+  ];
 };

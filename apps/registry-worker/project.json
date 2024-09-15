@@ -10,29 +10,31 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "platform": "node",
         "outputPath": "dist/apps/registry-worker",
-        "format": ["cjs"],
-        "bundle": true,
-        "main": "apps/registry-worker/src/index.ts",
         "tsConfig": "apps/registry-worker/tsconfig.json",
-        "assets": ["apps/registry-worker/src/assets"],
-        "generatePackageJson": true,
+        "project": "apps/registry-worker/package.json",
+        "main": "apps/registry-worker/src/index.ts",
+        "platform": "neutral",
+        "format": ["esm"],
+        "deleteOutputPath": true,
+        "bundle": true,
+        "thirdParty": true,
+        "skipTypeCheck": false,
+        "metafile": false,
+        "minify": true,
         "esbuildOptions": {
-          "sourcemap": true,
-          "outExtension": {
-            ".js": ".js"
-          }
+          "sourcemap": false
         }
       },
       "configurations": {
-        "development": {},
+        "development": {
+          "esbuildOptions": {
+            "sourcemap": true
+          }
+        },
         "production": {
           "esbuildOptions": {
-            "sourcemap": false,
-            "outExtension": {
-              ".js": ".js"
-            }
+            "sourcemap": false
           }
         }
       }

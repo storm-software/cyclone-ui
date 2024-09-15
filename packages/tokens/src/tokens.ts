@@ -115,6 +115,8 @@ export const colorTokens = {
   light: {
     base: colors.base,
     brand: colors.brand,
+    brand2: colors.brand2,
+    brand3: colors.brand3,
     accent: colors.accent,
     help: colors.help,
     success: colors.success,
@@ -125,6 +127,8 @@ export const colorTokens = {
   dark: {
     base: colors.baseDark,
     brand: colors.brandDark,
+    brand2: colors.brand2Dark,
+    brand3: colors.brand3Dark,
     accent: colors.accentDark,
     help: colors.helpDark,
     success: colors.successDark,
@@ -137,6 +141,8 @@ export const colorTokens = {
 export const darkColors = {
   ...colorTokens.dark.base,
   ...colorTokens.dark.brand,
+  ...colorTokens.dark.brand2,
+  ...colorTokens.dark.brand3,
   ...colorTokens.dark.accent,
   ...colorTokens.dark.help,
   ...colorTokens.dark.success,
@@ -148,6 +154,8 @@ export const darkColors = {
 export const lightColors = {
   ...colorTokens.light.base,
   ...colorTokens.light.brand,
+  ...colorTokens.light.brand2,
+  ...colorTokens.light.brand3,
   ...colorTokens.light.accent,
   ...colorTokens.light.help,
   ...colorTokens.light.success,

@@ -227,7 +227,7 @@ export default class Get extends Command {
       ]
     });
 
-    const remoteComponents = await client.component.list.query();
+    const remoteComponents = await client.components.list.query();
     s2.stop("Connected to the Cyclone remote registry...");
 
     const s3 = spinner();
@@ -243,10 +243,7 @@ export default class Get extends Command {
         "Found components.json file in local design components library..."
       );
     } else {
-      await fs.writeJson(
-        join(library, "components.json"),
-        {}
-      );
+      await fs.writeJson(join(library, "components.json"), {});
       s3.stop(
         "Added components.json file to local design components library..."
       );
@@ -291,7 +288,7 @@ export default class Get extends Command {
       s4.start("Adding components to the local components library package...");
 
       for (const component of components) {
-        await client.component.get.query(component);
+        await client.components.get.query(component);
       }
 
       s4.stop("Added components to the local components library package...");

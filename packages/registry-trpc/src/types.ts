@@ -15,6 +15,8 @@
 
  -------------------------------------------------------------------*/
 
+import type { R2Bucket } from "@cloudflare/workers-types";
+
 export type ComponentPlatform = "web" | "mobile" | "all";
 export const ComponentPlatform = {
   WEB: "web" as ComponentPlatform,

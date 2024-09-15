@@ -20,8 +20,10 @@
       }
     },
     "build": {
+      "cache": true,
       "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["build-base"],
       "options": {
         "entry": "packages/colors/src/index.ts",
         "outputPath": "dist/packages/colors",

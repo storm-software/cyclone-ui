@@ -1,7 +1,6 @@
 {
   "name": "@cyclone-ui/nx",
   "version": "0.3.0",
-  "type": "commonjs",
   "description": "⚡ A Nx plugin package that contains various executors and generators used in a Storm workspaces.",
   "repository": {
     "type": "github",
@@ -18,7 +17,7 @@
     "email": "contact@stormsoftware.com",
     "url": "https://stormsoftware.com"
   },
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "private": false,
   "main": "./index.js",
   "exports": {
@@ -41,12 +40,13 @@
     "monorepo"
   ],
   "dependencies": {
-    "@nx/devkit": "19.3.1",
-    "@nx/js": "19.3.1",
+    "@nx/devkit": "19.7.3",
+    "@nx/js": "19.7.3",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
+    "@storm-stack/types": "latest",
     "tslib": "^2.6.2"
   },
   "publishConfig": {

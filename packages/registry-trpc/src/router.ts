@@ -15,6 +15,11 @@
 
  -------------------------------------------------------------------*/
 
+import type {
+  R2Object,
+  R2ObjectBody,
+  R2Objects
+} from "@cloudflare/workers-types";
 import { initTRPC } from "@trpc/server";
 import { z } from "zod";
 import { Context } from "./context";
@@ -25,14 +30,43 @@ const t = initTRPC.context<Context>().create();
 const publicProcedure = t.procedure;
 const createRouter = t.router;
 
-const componentRouter = createRouter({
+type RegistryStorageFile = {
+  name: string;
+  content: R2ObjectBody | null;
+  updatedOn: Date;
+};
+
+const componentsRouter = createRouter({
   list: publicProcedure.query<ComponentSummary[]>(async ({ ctx }) => {
     const storageList: R2Objects = await ctx.storage.list({
       prefix: "registry/components"
     });
 
-    let metaFiles = await Promise.all(
-      storageList.objects.map(storageObject => {
+    const metaFiles = (
+      await Promise.all(
+        storageList.objects.map((storageObject: R2Object) => {
+          let componentName = storageObject.key.replace(
+            "registry/components/",
+            ""
+          );
+          if (componentName.indexOf("/")) {
+            componentName = componentName.slice(
+              0,
+              Math.max(0, componentName.indexOf("/"))
+            );
+          }
+
+          return ctx.storage
+            .get(`registry/components/${componentName}/meta.json`)
+            .then((content: R2ObjectBody | null) =>
+              content ? content.json<ComponentMeta>() : undefined
+            );
+        })
+      )
+    ).filter(Boolean) as ComponentMeta[];
+
+    return storageList.objects.reduce(
+      (ret: ComponentSummary[], storageObject: R2Object) => {
         let componentName = storageObject.key.replace(
           "registry/components/",
           ""
@@ -44,40 +78,29 @@ const componentRouter = createRouter({
           );
         }
 
-        return ctx.storage
-          .get(`registry/components/${componentName}/meta.json`)
-          .then(content =>
-            content ? content.json<ComponentMeta>() : undefined
-          );
-      })
-    );
-    metaFiles = metaFiles.filter(meta => meta !== undefined);
-
-    return storageList.objects.reduce((ret, storageObject) => {
-      let componentName = storageObject.key.replace("registry/components/", "");
-      if (componentName.indexOf("/")) {
-        componentName = componentName.slice(
-          0,
-          Math.max(0, componentName.indexOf("/"))
+        const metaJson = metaFiles.find(
+          (metaFile: ComponentMeta) => metaFile!.name === componentName
         );
-      }
+        if (
+          metaJson &&
+          !ret.some(
+            (component: ComponentSummary) => component.name === componentName
+          )
+        ) {
+          ret.push({
+            name: componentName,
+            version: metaJson.version,
+            release: metaJson.release,
+            description: metaJson.description,
+            tags: metaJson.tags,
+            updatedOn: storageObject.uploaded
+          });
+        }
 
-      const metaJson = metaFiles.find(
-        metaFile => metaFile!.name === componentName
-      );
-      if (metaJson && !ret.some(c => c.name === componentName)) {
-        ret.push({
-          name: componentName,
-          version: metaJson.version,
-          release: metaJson.release,
-          description: metaJson.description,
-          tags: metaJson.tags,
-          updatedOn: storageObject.uploaded
-        });
-      }
-
-      return ret;
-    }, [] as ComponentSummary[]);
+        return ret;
+      },
+      [] as ComponentSummary[]
+    );
   }),
   get: publicProcedure
     .input(z.string())
@@ -86,20 +109,26 @@ const componentRouter = createRouter({
         prefix: `registry/components/${input}/`
       });
 
-      const storageFiles = await Promise.all(
-        storageList.objects.map(storageObject =>
-          ctx.storage.get(storageObject.key).then(content => ({
-            name: storageObject.key.replace(
-              `registry/components/${input}/`,
-              ""
-            ),
-            content,
-            updatedOn: storageObject.uploaded
-          }))
+      const storageFiles = (
+        await Promise.all(
+          storageList.objects.map((storageObject: R2Object) =>
+            ctx.storage
+              .get(storageObject.key)
+              .then((content: R2ObjectBody | null) => ({
+                name: storageObject.key.replace(
+                  `registry/components/${input}/`,
+                  ""
+                ),
+                content,
+                updatedOn: storageObject.uploaded
+              }))
+          )
         )
-      );
+      ).filter(Boolean) as RegistryStorageFile[];
 
-      const metaFile = storageFiles.find(file => file.name === "meta.json");
+      const metaFile = storageFiles.find(
+        (file: RegistryStorageFile) => file.name === "meta.json"
+      );
       if (!metaFile || !metaFile.content) {
         throw new Error("Component meta not found");
       }
@@ -125,7 +154,7 @@ const componentRouter = createRouter({
 });
 
 export const router = createRouter({
-  component: componentRouter
+  components: componentsRouter
 });
 
 // export type definition of API

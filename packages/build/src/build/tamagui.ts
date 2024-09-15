@@ -1,5 +1,23 @@
-#!/usr/bin/env node
-import { dirname, join } from "path";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
+
 import esbuild, { BuildOptions as ESBuildOptions, SameShape } from "esbuild";
 import { es5Plugin } from "esbuild-plugin-es5";
 import { glob } from "fast-glob";
@@ -14,8 +32,8 @@ import {
   writeFile
 } from "fs-extra";
 import debounce from "lodash.debounce";
+import { dirname, join } from "node:path";
 // import { readTSConfig } from "pkg-types";
-import { register as registerTsConfigPaths } from "tsconfig-paths";
 import { transform } from "@babel/core";
 import type { StormConfig } from "@storm-software/config";
 import {
@@ -26,6 +44,7 @@ import {
   writeTrace,
   writeWarning
 } from "@storm-software/config-tools";
+import { register as registerTsConfigPaths } from "tsconfig-paths";
 import alias from "../plugins/esbuild-alias-plugin";
 import createExternalPlugin from "../plugins/external-node-plugin";
 import { BuildOptions } from "../types";
@@ -82,7 +101,7 @@ export const build = async (
     outputPath: _outputPath,
     jsOnly,
     skipTypes,
-    skipInitialTypes,
+    skipInitialTypes: _skipInitialTypes,
     skipJS,
     skipMjs,
     bundle,
@@ -99,7 +118,7 @@ export const build = async (
     verbose = false
   }: BuildOptions
 ) => {
-  writeTrace("Running the Tamagui build process...", config);
+  writeTrace("Running the Cyclone-Tamagui build...", config);
 
   const compilerOptions = readJSONSync(
     join(config.workspaceRoot ?? "./", "tsconfig.base.json")
@@ -110,14 +129,12 @@ export const build = async (
   const outputPath = _outputPath.replaceAll("\\", "/");
   // const projectRoot = join(config.workspaceRoot, _projectRoot);
   const tsConfig = _tsConfig.replaceAll("\\", "/");
-
+  let skipInitialTypes = _skipInitialTypes;
   const pkg = readJSONSync(join(projectRoot, "./package.json"));
   const pkgMain = pkg.main;
   const pkgSource = projectRoot
     ? join(projectRoot, "src/index.ts")
-    : pkg.source
-      ? pkg.source
-      : process.cwd();
+    : pkg.source || process.cwd();
   const bundleNative = pkg.tamagui?.["bundle.native"];
   const bundleNativeTest = pkg.tamagui?.["bundle.native.test"];
   const pkgModule = pkg.module;
@@ -152,25 +169,20 @@ export const build = async (
       // ok
     }
     if (cleanBuildOnly) {
+      // eslint-disable-next-line unicorn/no-process-exit
       process.exit(0);
     }
   }
 
-  async function handleBuild(
-    { skipTypes }: { skipTypes: boolean } = { skipTypes: false }
-  ) {
+  async function handleBuild(opts?: { skipTypes: boolean }) {
     writeTrace(`Starting the "${pkg.name}" build...`, config);
 
     try {
       const start = Date.now();
-      await Promise.all([
-        //
-        skipTypes ? null : buildTsc(),
-        buildJs()
-      ]);
+      await Promise.all([opts?.skipTypes ? null : buildTsc(), buildJs()]);
       console.info("built", pkg.name, "in", Date.now() - start, "ms");
     } catch (error) {
-      console.error(`Error building:`, error.message);
+      console.error("Error building:", error.message);
     }
 
     writeSuccess(`Completed the "${pkg.name}" build...`, config);
@@ -182,7 +194,7 @@ export const build = async (
     if (!pkgTypes) {
       return;
     }
-    if (jsOnly || skipTypes) {
+    if (jsOnly ?? skipTypes) {
       return;
     }
     if (skipInitialTypes) {
@@ -205,23 +217,24 @@ export const build = async (
         : "";
       const cmd = `npx tsc${baseUrlFlag}${tsProjectFlag} --rootDir "src" ${declarationToRootFlag} --outDir "types" --emitDeclarationOnly --declarationMap`;
 
-      console.info("\x1b[2m$", cmd);
+      console.info("\u001B[2m$", cmd);
 
       await run(config, cmd, projectRoot);
 
       try {
         await move(join(projectRoot, "types"), targetDir, { overwrite: true });
-      } catch (e) {
+      } catch {
         await copy(join(projectRoot, "types"), targetDir, { overwrite: true });
         await remove(join(projectRoot, "types"));
       }
 
       writeSuccess(`Completed the "${pkg.name}" TSC build...`, config);
-    } catch (err) {
+    } catch (error_) {
       writeError(`Failed to complete the "${pkg.name}" TSC build...`, config);
-      writeError(err.message, config);
+      writeError(error_.message, config);
 
       if (!watch) {
+        // eslint-disable-next-line unicorn/no-process-exit
         process.exit(1);
       }
     } finally {
@@ -246,9 +259,9 @@ export const build = async (
         ).filter(
           x =>
             !x.includes(".d.ts") &&
-            (exclude ? !x.match(exclude) : true) &&
-            !x.match(join(projectRoot, ".tamagui/**/*")) &&
-            !x.match(join(projectRoot, "dist/**/*"))
+            (exclude ? !new RegExp(exclude).test(x) : true) &&
+            !new RegExp(join(projectRoot, ".tamagui/**/*")).test(x) &&
+            !new RegExp(join(projectRoot, "dist/**/*")).test(x)
         );
 
     const externalPlugin = createExternalPlugin({
@@ -297,7 +310,7 @@ export const build = async (
               ".js",
               ".jsx"
             ],
-            minify: minify ? true : false,
+            minify: Boolean(minify),
             define: {
               "process.env.TAMAGUI_IS_CORE_NODE": '"1"'
             }
@@ -314,7 +327,7 @@ export const build = async (
       bundle,
       external,
       plugins: bundleNodeModules ? [] : [externalPlugin],
-      minify: minify ? true : false,
+      minify: Boolean(minify),
       platform: "node"
     };
 
@@ -325,7 +338,7 @@ export const build = async (
       bundle,
       external,
       allowOverwrite: true,
-      minify: minify ? true : false
+      minify: Boolean(minify)
     };
 
     if (pkgSource) {
@@ -333,7 +346,7 @@ export const build = async (
         const contents = await readFile(pkgSource);
         if (contents.slice(0, 40).includes("GITCRYPT")) {
           // encrypted file, ignore
-          console.info(`This package is encrypted, skipping`);
+          console.info("This package is encrypted, skipping");
           return;
         }
       } catch {
@@ -410,7 +423,7 @@ export const build = async (
               allowOverwrite: true,
               target: "esnext",
               format: "esm",
-              minify: minify ? true : false,
+              minify: Boolean(minify),
               platform: "neutral"
             },
             {
@@ -432,7 +445,7 @@ export const build = async (
               allowOverwrite: true,
               target: "node16",
               format: "esm",
-              minify: minify ? true : false,
+              minify: Boolean(minify),
               platform: "neutral"
             },
             {
@@ -448,30 +461,17 @@ export const build = async (
 
   async function esbuildWriteIfChanged(
     opts: ESBuildOptions,
-    {
-      platform,
-      env,
-      mjs
-    }: { platform: string; env?: string; mjs?: boolean } = {
-      mjs: false,
-      platform: "",
-      env: ""
-    }
+    context: { platform: string; env?: string; mjs?: boolean }
   ) {
     writeTrace(`Starting the "${pkg.name}" ESBuild write...`, config);
 
-    if (!watch && !platform) {
-      return await esbuild.build(opts);
-    }
+    const mjs = context.mjs ?? false;
+    const platform = context.platform ?? "web";
+    const env = context.env ?? "production";
 
-    const nativeEsbuildSettings = {
-      target: "node16",
-      supported: {
-        "logical-assignment": false
-      },
-      jsx: "automatic",
-      platform: "node"
-    };
+    if (!watch && !platform) {
+      return esbuild.build(opts);
+    }
 
     // const tsConfigs = await Promise.all([
     //   await readTSConfig(
@@ -488,10 +488,18 @@ export const build = async (
     // const tsconfigBaseRaw = await readTSConfig(config.workspaceRoot, {
     //   cache: true
     // });
-
     // const buildOutputPath = correctPaths(
     //   opts.outdir ? join(outputPath, opts.outdir) : outputPath
     // );
+
+    const nativeEsbuildSettings = {
+      target: "node16",
+      supported: {
+        "logical-assignment": false
+      },
+      jsx: "automatic",
+      platform: "node"
+    };
 
     const webEsbuildSettings = {
       target: "esnext",
@@ -510,10 +518,9 @@ export const build = async (
     const buildSettings = {
       ...opts,
       plugins: [
-        ...(opts.plugins || []),
+        ...(opts.plugins ?? []),
         ...(platform === "native"
           ? [
-              // class isnt supported by hermes
               es5Plugin({
                 swc: {
                   jsc: {
@@ -530,21 +537,6 @@ export const build = async (
               })
             ]
           : [])
-
-        // not workin
-        // {
-        //   name: 'no-side-effects',
-        //   setup(build) {
-        //     build.onResolve({ filter: /@tamagui.*/ }, async ({ path, ...options }) => {
-        //       const result = await build.resolve(path, {
-        //         ...options,
-        //         namespace: 'noRecurse',
-        //       })
-        //       console.log('no side effects', path)
-        //       return { ...result, sideEffects: false }
-        //     })
-        //   },
-        // },
       ].filter(Boolean),
 
       treeShaking: true,
@@ -571,13 +563,9 @@ export const build = async (
     } as SameShape<ESBuildOptions, ESBuildOptions>;
 
     const built = await esbuild.build(buildSettings);
-    const isESM =
-      buildSettings.target === "esm" || buildSettings.target === "esnext";
-
     if (!built.outputFiles) {
       writeWarning(`No output files generated for "${pkg.name}"...`, config);
-
-      return;
+      return null;
     }
 
     writeTrace(
@@ -590,17 +578,20 @@ export const build = async (
         if (p.path.includes(".native.js")) {
           return [[p.path, true]];
         }
+
         return [];
       })
     );
 
-    await Promise.all(
+    return Promise.all(
       built.outputFiles.map(async file => {
         let outPath = file.path;
 
         if (outPath.endsWith(".js") || outPath.endsWith(".js.map")) {
           const [_, extPlatform] =
-            outPath.match(/(web|native|ios|android)\.js(\.map)?$/) ?? [];
+            outPath.match(
+              /(?<temp2>web|native|ios|android)\.js(?<temp1>\.map)?$/
+            ) ?? [];
 
           if (platform === "native") {
             if (
@@ -608,31 +599,28 @@ export const build = async (
               nativeFilesMap[outPath.replace(".js", ".native.js")]
             ) {
               // if native exists, avoid outputting non-native
-              return;
+              return null;
             }
 
             if (extPlatform === "web") {
-              return;
+              return null;
             }
             if (!extPlatform) {
               outPath = outPath.replace(".js", ".native.js");
             }
           }
 
-          if (platform === "web") {
-            if (
-              extPlatform === "native" ||
+          if (
+            platform === "web" &&
+            (extPlatform === "native" ||
               extPlatform === "android" ||
-              extPlatform === "ios"
-            ) {
-              return;
-            }
+              extPlatform === "ios")
+          ) {
+            return null;
           }
         }
 
-        const outDir = dirname(outPath);
-
-        await ensureDir(outDir);
+        await ensureDir(dirname(outPath));
         let outString = new TextDecoder().decode(file.contents);
 
         if (platform === "web") {
@@ -647,7 +635,10 @@ export const build = async (
           }
         }
 
-        if (pkgRemoveSideEffects && isESM) {
+        if (
+          pkgRemoveSideEffects &&
+          (buildSettings.target === "esm" || buildSettings.target === "esnext")
+        ) {
           const allowedSideEffects = pkg.sideEffects || [];
 
           const result = [] as string[];
@@ -658,9 +649,9 @@ export const build = async (
               allowedSideEffects.some(allowed => line.includes(allowed))
             ) {
               result.push(line);
-              continue;
+            } else {
+              result.push(line.replace(/import "[^"]+";/g, ""));
             }
-            result.push(line.replace(/import "[^"]+";/g, ""));
           }
 
           // match whitespace to preserve sourcemaps
@@ -680,51 +671,50 @@ export const build = async (
           }
         }
 
-        return await Promise.all([
+        return Promise.all([
           flush(outString, outPath),
           (async () => {
             const shouldDoMJS =
-              !skipMjs && isESM && mjs && outPath.endsWith(".js");
+              !skipMjs &&
+              (buildSettings.target === "esm" ||
+                buildSettings.target === "esnext") &&
+              mjs &&
+              outPath.endsWith(".js");
             if (shouldDoMJS) {
-              const mjsOutPath = outPath.replace(".js", ".mjs");
               // if bundling no need to specify as its all internal
               // and babel is bad on huge bundled files
-              const output = bundle
-                ? outString
-                : transform(outString, {
-                    filename: mjsOutPath,
-                    configFile: false,
-                    plugins: [
-                      [
-                        require.resolve("babel-plugin-fully-specified"),
-                        {
-                          // this doesn't work because the files don't exist as you build in random orders
-                          // ensureFileExists: true,
-                          esExtensionDefault: ".mjs",
-                          tryExtensions: [".mjs", ".js"],
-                          esExtensions: [".mjs", ".js"]
-                        }
-                      ]
-                      // pkg.tamagui?.build?.skipEnvToMeta
-                      //   ? null
-                      //   : require.resolve('./babel-plugin-process-env-to-meta'),
-                    ].filter(Boolean)
-                  }).code;
-
-              // output to mjs fully specified
-              await flush(output, mjsOutPath);
+              await flush(
+                bundle
+                  ? outString
+                  : transform(outString, {
+                      filename: outPath.replace(".js", ".mjs"),
+                      configFile: false,
+                      plugins: [
+                        [
+                          require.resolve("babel-plugin-fully-specified"),
+                          {
+                            // this doesn't work because the files don't exist as you build in random orders
+                            // ensureFileExists: true,
+                            esExtensionDefault: ".mjs",
+                            tryExtensions: [".mjs", ".js"],
+                            esExtensions: [".mjs", ".js"]
+                          }
+                        ]
+                        // pkg.tamagui?.build?.skipEnvToMeta
+                        //   ? null
+                        //   : require.resolve('./babel-plugin-process-env-to-meta'),
+                      ].filter(Boolean)
+                    }).code,
+                outPath.replace(".js", ".mjs")
+              );
             }
           })()
         ]);
       })
     );
-
-    writeSuccess(`Completed the "${pkg.name}" ESBuild write...`, config);
-
-    return;
   }
 
-  if (clean || cleanBuildOnly) {
+  if (clean ?? cleanBuildOnly) {
     writeTrace(`Cleaning the "${pkg.name}" package...`, config);
     await handleClean();
   }

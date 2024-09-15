@@ -1,4 +1,20 @@
-import { PackageJson } from "nx/src/utils/package-json";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import {
   ensurePackage,
   formatFiles,
@@ -15,10 +31,13 @@ import { Bundler } from "@nx/js/src/utils/schema";
 import type { StormConfig } from "@storm-software/config";
 import {
   typeScriptLibraryGeneratorFn,
-  TypeScriptLibraryGeneratorNormalizedSchema,
-  withRunGenerator,
-  type TypeScriptLibraryGeneratorSchema
+  withRunGenerator
 } from "@storm-software/workspace-tools";
+import type {
+  TypeScriptLibraryGeneratorNormalizedSchema,
+  TypeScriptLibraryGeneratorSchema
+} from "@storm-software/workspace-tools/declarations";
+import type { PackageJson } from "@storm-stack/types";
 import type { ComponentsLibraryGeneratorSchema } from "./schema";
 
 export async function generatorFn(
@@ -31,12 +50,12 @@ export async function generatorFn(
     ...schema,
     platform: "browser",
     devDependencies: {
-      "react": "19.0.0-rc-fb9a90fa48-20240614",
+      react: "19.0.0-rc-fb9a90fa48-20240614",
       "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
       "react-native": "0.73.2"
     },
     peerDependencies: {
-      "react": "19.0.0-rc-fb9a90fa48-20240614",
+      react: "19.0.0-rc-fb9a90fa48-20240614",
       "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
       "react-native": "0.73.2"
     }
@@ -56,18 +75,18 @@ export async function generatorFn(
     dot: ".",
     className,
     name,
-    namespace: process.env.STORM_NAMESPACE ?? "storm-software",
+    namespace: config?.namespace ?? "storm-software",
     description: schema.description ?? "",
     propertyName,
-    js: !!options.js,
+    js: Boolean(options.js),
     cliCommand: "nx",
     strict: undefined,
     tmpl: "",
     offsetFromRoot: offsetFromRoot(options.projectRoot),
     tsConfigOptions: {
       compilerOptions: {
-        "jsx": "react-jsx",
-        "types": [
+        jsx: "react-jsx",
+        types: [
           "node",
           "@nx/react/typings/cssmodule.d.ts",
           "@nx/react/typings/image.d.ts"
@@ -91,9 +110,9 @@ export async function generatorFn(
         exports: {
           "./package.json": "./package.json",
           ".": {
-            "types": "./types/index.d.ts",
-            "import": "./dist/esm/index.mjs",
-            "require": "./dist/cjs/index.js",
+            types: "./types/index.d.ts",
+            import: "./dist/esm/index.mjs",
+            require: "./dist/cjs/index.js",
             "react-native": "./dist/cjs/index.native.js"
           }
         },
@@ -126,9 +145,9 @@ export async function generatorFn(
       exports: {
         "./package.json": "./package.json",
         ".": {
-          "types": "./types/index.d.ts",
-          "import": "./dist/esm/index.mjs",
-          "require": "./dist/cjs/index.js",
+          types: "./types/index.d.ts",
+          import: "./dist/esm/index.mjs",
+          require: "./dist/cjs/index.js",
           "react-native": "./dist/cjs/index.native.js"
         }
       },
@@ -167,12 +186,10 @@ export async function normalizeOptions(
   tree: Tree,
   options: TypeScriptLibraryGeneratorSchema
 ): Promise<TypeScriptLibraryGeneratorNormalizedSchema> {
-  if (options.publishable) {
-    if (!options.importPath) {
-      throw new Error(
-        `For publishable libs you have to provide a proper "--importPath" which needs to be a valid npm package name (e.g. my-awesome-lib or @myorg/my-lib)`
-      );
-    }
+  if (options.publishable && !options.importPath) {
+    throw new Error(
+      'For publishable libs you have to provide a proper "--importPath" which needs to be a valid npm package name (e.g. my-awesome-lib or @myorg/my-lib)'
+    );
   }
 
   let bundler: Bundler = "tsc";

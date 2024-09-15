@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { defaultMasks } from "@cyclone-ui/masks";
 import {
   componentThemes,
@@ -36,6 +53,8 @@ export const buildThemes = () => {
     .addChildThemes({
       base: getColorDefinition("base"),
       brand: getColorDefinition("brand"),
+      brand2: getColorDefinition("brand2"),
+      brand3: getColorDefinition("brand3"),
       accent: getColorDefinition("accent"),
       help: getColorDefinition("help"),
       success: getColorDefinition("success"),

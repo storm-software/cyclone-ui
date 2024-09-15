@@ -78,6 +78,8 @@
       "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
       "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
       "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
+      "@cyclone-ui/registry-worker": ["packages/registry-worker/src/index.ts"],
+      "@cyclone-ui/registry-worker/*": ["packages/registry-worker/src/*"],
       "@cyclone-ui/select": ["components/select/src/index.ts"],
       "@cyclone-ui/select/*": ["components/select/src/*"],
       "@cyclone-ui/state": ["packages/state/src/index.ts"],

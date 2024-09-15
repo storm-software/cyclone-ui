@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import {
   createTamagui as createTamaguiCore,
   type CreateTamaguiProps,
@@ -6,7 +23,7 @@ import {
 
 /**
  * Adds some helpful validation at dev time only for `tamagui` specifically
- **/
+ * */
 export const createTamagui = <Conf extends CreateTamaguiProps>(
   conf: Conf
 ): InferTamaguiConfig<Conf> => {
@@ -17,7 +34,7 @@ export const createTamagui = <Conf extends CreateTamaguiProps>(
   const sizeTokenKeys = ["$true"];
 
   const hasKeys = (expectedKeys: string[], obj: Record<any, any>) => {
-    return expectedKeys.every(k => typeof obj[k] !== "undefined");
+    return expectedKeys.every(k => obj[k] !== undefined);
   };
 
   const tamaguiConfig = createTamaguiCore<Conf>(conf);

@@ -7,7 +7,7 @@ workers_dev = true
 
 [[r2_buckets]]
 binding = "STORAGE_BUCKET"
-bucket_name = "storm-cdn-cyclone-ui"
+bucket_name = "cyclone-ui-registry"
 
 routes = [{ pattern = "registry.cyclone-ui.com", custom_domain = true }]
 

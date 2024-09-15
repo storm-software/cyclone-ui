@@ -1,48 +1,38 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { build } from "@cyclone-ui/build/build/tamagui";
+import { type BuildOptions } from "@cyclone-ui/build/types";
 import type { ExecutorContext } from "@nx/devkit";
+import { copyAssets } from "@nx/js";
+import type { AssetGlob } from "@nx/js/src/utils/assets/assets";
 import type { StormConfig } from "@storm-software/config";
 import { withRunExecutor } from "@storm-software/workspace-tools";
-import type { AssetGlob } from "@nx/js/src/utils/assets/assets";
-import type { BuildOptions } from "@cyclone-ui/build";
-import type { BuildExecutorSchema } from "./schema.d";
 import { join } from "node:path";
-import { copyAssets } from "@nx/js";
+import type { BuildExecutorSchema } from "./schema.d";
 
 export async function buildExecutorFn(
   options: BuildExecutorSchema,
   context: ExecutorContext,
   config?: StormConfig
 ) {
-  const { writeDebug, writeInfo, writeSuccess } = await import(
+  const { writeDebug, writeTrace } = await import(
     "@storm-software/config-tools"
   );
-  const { build } = await import("@cyclone-ui/build");
-
-  writeInfo("📦  Running Cyclone UI build executor on the workspace", config);
-
-  // #region Apply default options
-
-  const optionsRecord = options as Record<string, any>;
-  writeDebug(
-    `⚙️  Executor options:
-${Object.keys(optionsRecord)
-  .map(
-    key =>
-      `${key}: ${
-        !optionsRecord[key] || _isPrimitive(optionsRecord[key])
-          ? optionsRecord[key]
-          : _isFunction(optionsRecord[key])
-            ? "<function>"
-            : JSON.stringify(optionsRecord[key])
-      }`
-  )
-  .join("\n")}
-`,
-    config
-  );
-
-  // #endregion Apply default options
-
-  // #region Prepare build context variables
 
   if (
     !context.projectsConfigurations?.projects ||
@@ -55,21 +45,18 @@ ${Object.keys(optionsRecord)
     );
   }
 
-  // #endregion Prepare build context variables
-
   const projectRoot = context.projectsConfigurations.projects[
     context.projectName
   ]!.root as string;
-  const outputPath = (
-    options?.outputPath ? options?.outputPath : join("dist", projectRoot)
-  ) as string;
+  const outputPath = (options?.outputPath ||
+    join("dist", projectRoot)) as string;
 
   writeDebug(
     `📦  Copying asset files to output directory: ${outputPath}`,
     config
   );
 
-  const assets = Array.from(options.assets ?? []);
+  const assets = [...(options.assets ?? [])];
   if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "*.md")) {
     assets.push({
       input: projectRoot,
@@ -92,14 +79,6 @@ ${Object.keys(optionsRecord)
     output: "."
   });
 
-  // if (options.includeSrc !== false) {
-  //   assets.push({
-  //     input: projectRoot,
-  //     glob: "src/**/*",
-  //     output: "."
-  //   });
-  // }
-
   const result = await copyAssets(
     {
       assets,
@@ -114,9 +93,9 @@ ${Object.keys(optionsRecord)
 
   // #region Run the build process
 
-  writeDebug(`⚡  Running Tamagui build on the package`, config);
+  writeTrace("⚡  Running Tamagui build on the package", config);
 
-  await build(config, {
+  await build(config!, {
     ...options,
     clean: false,
     projectRoot,
@@ -125,8 +104,6 @@ ${Object.keys(optionsRecord)
   } as BuildOptions);
 
   // #endregion Run the build process
-
-  writeSuccess("⚡ The Build process has completed successfully", config);
 
   return {
     success: true
@@ -157,31 +134,3 @@ export default withRunExecutor<BuildExecutorSchema>(
     }
   }
 );
-
-const _isPrimitive = (value: unknown): boolean => {
-  try {
-    return (
-      value === undefined ||
-      value === null ||
-      (typeof value !== "object" && typeof value !== "function")
-    );
-    // biome-ignore lint/correctness/noUnusedVariables: <explanation>
-  } catch (e) {
-    return false;
-  }
-};
-
-const _isFunction = (
-  value: unknown
-): value is ((params?: unknown) => unknown) & ((param?: any) => any) => {
-  try {
-    return (
-      value instanceof Function ||
-      typeof value === "function" ||
-      !!(value?.constructor && (value as any)?.call && (value as any)?.apply)
-    );
-    // biome-ignore lint/correctness/noUnusedVariables: <explanation>
-  } catch (e) {
-    return false;
-  }
-};
