@@ -8,9 +8,11 @@ export default getStormConfig({
     "no-undef": 0,
     "no-unused-vars": "warn",
     "unicorn/consistent-function-scoping": 0,
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "operator-linebreak": 0,
+    "indent": 0,
+    "function-paren-newline": 0,
+    "space-before-function-paren": 0
   },
-  tsconfig: "./tsconfig.json",
-  useReactCompiler: true,
   markdown: false
 });

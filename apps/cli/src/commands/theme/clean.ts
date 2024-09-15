@@ -1,4 +1,20 @@
-import { exists, remove } from "fs-extra";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import {
   cancel,
   confirm,
@@ -10,7 +26,8 @@ import {
 } from "@clack/prompts";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
-import { isFunction } from "../../libs/is-function.js";
+import { isFunction } from "@storm-stack/types/type-checks/is-function";
+import { exists, remove } from "fs-extra";
 import { getThemePath } from "../../libs/themes.js";
 
 /**
@@ -58,9 +75,12 @@ export default class Clean extends Command {
   };
 
   public static override summary = "Clean the workspace's theme configuration";
+
   public static override description =
     "Clean the theme configuration for the client application based on the colors provided in the Storm configuration file";
+
   public static override strict = false;
+
   public static override examples = [
     {
       description:
@@ -102,20 +122,26 @@ export default class Clean extends Command {
 
     intro("Cyclone UI - Clean Themes");
 
-    let s1 = spinner();
+    const s1 = spinner();
     s1.start("Loading Storm configuration");
+
     const config = await loadStormConfig();
+
     s1.stop("Loaded Storm configuration");
 
     let output = flags.output;
+
     if (!output) {
       output = config.outputDirectory;
+
       if (!flags.skip) {
         const useConfigOutput = await confirm({
-          message: `Should the output directory be set to ${output} (defaulted from ${config.configPath ? config.configPath : "Storm configuration"} file)?`
+          message: `Should the output directory be set to ${output} (defaulted from ${config.configFile || "Storm configuration"})?`
         });
+
         if (isCancel(useConfigOutput)) {
           cancel("Operation cancelled.");
+          // eslint-disable-next-line unicorn/no-process-exit
           process.exit(0);
         }
 
@@ -124,17 +150,20 @@ export default class Clean extends Command {
             message: "Enter the themes output directory",
             defaultValue: "./.storm"
           });
+
           if (isCancel(promptInput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
+
           output = promptInput as string;
         }
       }
 
       if (!output) {
         this.error(
-          `The output was not provided in the CLI and does not exist in the Storm configuration file`
+          "The output was not provided in the CLI and does not exist in the Storm configuration file"
         );
       }
     }
@@ -147,7 +176,6 @@ export default class Clean extends Command {
     }
 
     s2.start("Cleaned the themes output directory");
-
     outro(
       "Theme configurations were successfully cleared out of the output directory"
     );

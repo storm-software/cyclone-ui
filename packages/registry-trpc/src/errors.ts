@@ -15,4 +15,10 @@
 
  -------------------------------------------------------------------*/
 
-import "./app/app.element";
+import { ErrorCode } from "@storm-stack/errors/errors";
+
+export type CycloneErrorCode = ErrorCode | "metadata_not_found";
+export const CycloneErrorCode = {
+  ...ErrorCode,
+  metadata_not_found: "metadata_not_found" as CycloneErrorCode
+};

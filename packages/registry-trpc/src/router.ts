@@ -1,5 +1,22 @@
-import { z } from "zod";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { initTRPC } from "@trpc/server";
+import { z } from "zod";
 import { Context } from "./context";
 import { ComponentDetails, ComponentMeta, ComponentSummary } from "./types";
 
@@ -21,9 +38,9 @@ const componentRouter = createRouter({
           ""
         );
         if (componentName.indexOf("/")) {
-          componentName = componentName.substring(
+          componentName = componentName.slice(
             0,
-            componentName.indexOf("/")
+            Math.max(0, componentName.indexOf("/"))
           );
         }
 
@@ -39,7 +56,10 @@ const componentRouter = createRouter({
     return storageList.objects.reduce((ret, storageObject) => {
       let componentName = storageObject.key.replace("registry/components/", "");
       if (componentName.indexOf("/")) {
-        componentName = componentName.substring(0, componentName.indexOf("/"));
+        componentName = componentName.slice(
+          0,
+          Math.max(0, componentName.indexOf("/"))
+        );
       }
 
       const metaJson = metaFiles.find(
@@ -98,7 +118,7 @@ const componentRouter = createRouter({
         ...meta,
         files: componentFiles.map((file, index) => ({
           ...file,
-          content: componentContent[index]
+          content: componentContent[index]!
         }))
       };
     })

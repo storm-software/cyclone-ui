@@ -5,27 +5,14 @@
   "sourceRoot": "packages/state/src",
   "targets": {
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-browser",
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/state/src/index.ts",
         "outputPath": "dist/packages/state",
         "tsConfig": "packages/state/tsconfig.json",
         "project": "packages/state/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "packages/state",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ],
-        "platform": "browser"
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {
@@ -37,6 +24,9 @@
           "verbose": true
         }
       }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
     }
   }
 }

@@ -10,7 +10,7 @@
   },
   "private": false,
   "devDependencies": {
-    "@tamagui/cli": "^1.98.0"
+    "@tamagui/cli": "^1.110.5"
   },
   "publishConfig": {
     "access": "public"

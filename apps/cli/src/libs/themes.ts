@@ -1,10 +1,29 @@
-import { join } from "node:path";
-import chroma from "chroma-js";
-import fs from "fs-extra";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+/* eslint-disable no-restricted-syntax */
+
 import type {
   MultiThemeColorConfig,
   SingleThemeColorConfig
 } from "@storm-software/config";
+import chroma from "chroma-js";
+import fs from "fs-extra";
+import { join } from "node:path";
 import { ColorPaletteType, ColorTheme, ColorThemeType } from "./types.js";
 
 export const getThemePath = (workspaceRoot: string, output: string): string => {
@@ -35,7 +54,7 @@ export const getTheme = async (
     throw new Error(`The theme file ${themePath} does not exist`);
   }
 
-  let theme = await fs.readJson(themePath);
+  const theme = await fs.readJson(themePath);
   if (!theme?.base?.["base1"]) {
     throw new Error("The base color is required to generate the design tokens");
   }
@@ -60,6 +79,7 @@ export const addPalette = (
     }, {});
 
   const currentLength = Object.keys(theme[type]).length;
+
   theme[type] = chroma
     .scale([color, theme["base"]["base10"]])
     .colors(4)
@@ -91,6 +111,7 @@ export const initialTheme = (
     .reduce(
       (acc: { [x: string]: string }, value: string, index: number) => {
         acc[`base${index + 2}`] = chroma(value).css("hsl");
+
         return acc;
       },
       {
@@ -104,6 +125,7 @@ export const initialTheme = (
   ).css("hsl");
 
   const currentLength = Object.keys(theme.base).length;
+
   theme.base = chroma
     .scale([
       theme["base"]["base10"],
@@ -140,6 +162,7 @@ export const setTheme = async (
           `${filePath}.ts`,
           `export const theme = ${JSON.stringify(theme)}; \n\nexport default theme;`
         ),
+
         fs.writeJson(`${filePath}.json`, theme)
       ])
     : await fs.writeFile(
@@ -211,6 +234,7 @@ export const writeMultiTheme = async (
       light: preparedColors.light.background,
       dark: preparedColors.light.foreground
     },
+
     ColorThemeType.LIGHT
   );
   for (const type of Object.keys(preparedColors.light).filter(
@@ -237,6 +261,7 @@ export const writeMultiTheme = async (
       dark: preparedColors.dark.background,
       light: preparedColors.dark.foreground
     },
+
     ColorThemeType.DARK
   );
   for (const type of Object.keys(preparedColors.dark).filter(
@@ -275,6 +300,7 @@ const prepareMultiThemeColorConfig = (
     config.light ??= {} as MultiThemeColorConfig["light"];
     config.light.accent = config.light.brand;
   }
+
   if (!config.dark?.accent) {
     config.dark ??= {} as MultiThemeColorConfig["dark"];
     config.dark.accent = config.dark.brand;

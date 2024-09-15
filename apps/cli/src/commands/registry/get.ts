@@ -1,5 +1,23 @@
-import { join } from "path";
-import fs from "fs-extra";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
+
 import {
   cancel,
   confirm,
@@ -13,7 +31,10 @@ import {
 import type { Router } from "@cyclone-ui/registry-trpc/router";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
+import { isString } from "@storm-stack/types/type-checks/is-string";
 import { createTRPCClient, httpBatchLink, loggerLink } from "@trpc/client";
+import * as fs from "fs-extra";
+import { join } from "node:path";
 
 export type Option<TValue = any> = {
   value: TValue;
@@ -73,9 +94,12 @@ export default class Get extends Command {
   };
 
   public static override summary = "Get design component files from registry";
+
   public static override description =
     "A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package";
+
   public static override strict = false;
+
   public static override examples = [
     {
       description:
@@ -103,18 +127,21 @@ export default class Get extends Command {
 
     const s1 = spinner();
     s1.start("Loading Storm configuration");
+
     const config = await loadStormConfig();
+
     s1.stop("Loaded Storm configuration");
 
     let library = flags.library;
     if (!library) {
-      library = config.library;
+      library = config.extensions.cyclone.library;
       if (!flags.skip) {
         const useConfigOutput = await confirm({
           message: `Should the "${library}" directory be used as the root of the components library package?`
         });
         if (isCancel(useConfigOutput)) {
           cancel("Operation cancelled.");
+          // eslint-disable-next-line unicorn/no-process-exit
           process.exit(0);
         }
 
@@ -124,10 +151,13 @@ export default class Get extends Command {
               "Enter the local components library package output directory",
             defaultValue: "./packages/components"
           });
+
           if (isCancel(promptInput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
+
           library = promptInput as string;
         }
       }
@@ -140,8 +170,8 @@ export default class Get extends Command {
     }
 
     let registry = flags.registry;
-    if (!registry) {
-      registry = config.registry;
+    if (!registry && config.registry.cyclone) {
+      registry = new URL(config.registry.cyclone);
       if (!flags.skip) {
         let useConfigOutput = false as boolean | symbol;
         if (registry) {
@@ -150,6 +180,7 @@ export default class Get extends Command {
           });
           if (isCancel(useConfigOutput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
         }
@@ -161,8 +192,10 @@ export default class Get extends Command {
           });
           if (isCancel(promptInput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
+
           registry =
             promptInput && typeof promptInput === "string"
               ? new URL(promptInput)
@@ -180,33 +213,42 @@ export default class Get extends Command {
     const s2 = spinner();
     s2.start("Connecting to the Cyclone remote registry...");
 
+    if (!registry) {
+      this.error(
+        "A remote URL for the Cyclone UI registry is required. Please provide a valid URL."
+      );
+    }
     const client = createTRPCClient<Router>({
-      links: [loggerLink(), httpBatchLink({ url: registry })]
+      links: [
+        loggerLink(),
+        httpBatchLink({
+          url: isString(registry) ? registry : registry.toString()
+        })
+      ]
     });
 
     const remoteComponents = await client.component.list.query();
-
     s2.stop("Connected to the Cyclone remote registry...");
 
     const s3 = spinner();
+
     s3.start(
       "Checking for components.json file in local design components library..."
     );
 
     let localComponents = {};
-    if (!(await fs.exists(library))) {
-      localComponents = await fs.writeJson(
-        join(library, "components.json"),
-        {}
-      );
-
-      s3.stop(
-        "Added components.json file to local design components library..."
-      );
-    } else {
+    if (await fs.exists(library)) {
       localComponents = await fs.readJson(join(library, "components.json"));
       s3.stop(
         "Found components.json file in local design components library..."
+      );
+    } else {
+      await fs.writeJson(
+        join(library, "components.json"),
+        {}
+      );
+      s3.stop(
+        "Added components.json file to local design components library..."
       );
     }
 
@@ -217,8 +259,10 @@ export default class Get extends Command {
         useConfigOutput = await confirm({
           message: `Do you want the "${components[0]}" component added to the design components library?`
         });
+
         if (isCancel(useConfigOutput)) {
           cancel("Operation cancelled.");
+          // eslint-disable-next-line unicorn/no-process-exit
           process.exit(0);
         }
 
@@ -254,14 +298,14 @@ export default class Get extends Command {
     }
 
     outro(
-      `Added ${components.length > 1 ? [...components.slice(-1), `and ${components[components.length - 1]}`].join(", ") : components[0]} to the local components library package`
+      `Added ${components.length > 1 ? [...components.slice(-1), `and ${components.at(-1)}`].join(", ") : components[0]} to the local components library package`
     );
   }
 
   public override async catch(error: Error): Promise<void> {
     this.error(
       error?.message
-        ? `\nMessage: ${error.message}\n\n${error.stack ? "Stacktrace: \n" : ""}${error.stack ? error.stack : ""}\n`
+        ? `\nMessage: ${error.message}\n\n${error.stack ? "Stacktrace: \n" : ""}${error.stack || ""}\n`
         : error || "An error occurred"
     );
   }
@@ -282,19 +326,26 @@ export default class Get extends Command {
       message:
         "Select the components to add to the local components library package",
       initialValues: Object.keys(localComponents),
-      options: remoteComponents.map(component => ({
-        value: component.name,
-        label: component.name,
-        hint: localComponents[component.name]
-          ? localComponents[component.name] === component.version
-            ? "Local version is up-to-date"
-            : "Local version is outdated"
-          : "Component not found locally"
-      }))
+      options: remoteComponents.map(component => {
+        let hint = "Component not found locally";
+        if (localComponents[component.name]) {
+          hint =
+            localComponents[component.name] === component.version
+              ? "Local version is up-to-date"
+              : "Local version is outdated";
+        }
+
+        return {
+          value: component.name,
+          label: component.name,
+          hint
+        };
+      })
     });
 
     if (isCancel(promptInput)) {
       cancel("Operation cancelled.");
+      // eslint-disable-next-line unicorn/no-process-exit
       process.exit(0);
     }
 

@@ -1,15 +1,37 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 export type ColorPaletteType =
   | "base"
   | "brand"
+  | "brand2"
+  | "brand3"
   | "accent"
   | "help"
   | "success"
   | "info"
   | "warning"
   | "error";
+
 export const ColorPaletteType = {
   BASE: "base" as ColorPaletteType,
   BRAND: "brand" as ColorPaletteType,
+  BRAND2: "brand2" as ColorPaletteType,
+  BRAND3: "brand3" as ColorPaletteType,
   ACCENT: "accent" as ColorPaletteType,
   HELP: "help" as ColorPaletteType,
   SUCCESS: "success" as ColorPaletteType,
@@ -40,6 +62,7 @@ export type ColorPalette<
 };
 
 export type ColorThemeType = "dark" | "light";
+
 export const ColorThemeType = {
   DARK: "dark" as ColorThemeType,
   LIGHT: "light" as ColorThemeType

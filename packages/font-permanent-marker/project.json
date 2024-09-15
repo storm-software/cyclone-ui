@@ -4,43 +4,15 @@
   "projectType": "library",
   "sourceRoot": "packages/font-permanent-marker/src",
   "targets": {
-    "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+   "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/font-permanent-marker/src/index.ts",
         "outputPath": "dist/packages/font-permanent-marker",
         "tsConfig": "packages/font-permanent-marker/tsconfig.json",
         "project": "packages/font-permanent-marker/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*"],
-        "assets": [
-          {
-            "input": "packages/font-permanent-marker",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          },
-          {
-            "input": "packages/font-permanent-marker",
-            "glob": "css/*.css",
-            "output": "/"
-          },
-          {
-            "input": "packages/font-permanent-marker",
-            "glob": "ttf/*.ttf",
-            "output": "/"
-          },
-          {
-            "input": "packages/font-permanent-marker",
-            "glob": "webfonts/{*.woff,*.woff2}",
-            "output": "/"
-          }
-        ]
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

@@ -4,29 +4,15 @@
   "projectType": "library",
   "sourceRoot": "packages/theme-helpers/src",
   "targets": {
-    "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+   "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/theme-helpers/src/index.ts",
         "outputPath": "dist/packages/theme-helpers",
         "tsConfig": "packages/theme-helpers/tsconfig.json",
         "project": "packages/theme-helpers/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*", "react", "react-native"],
-        "assets": [
-          {
-            "input": "packages/theme-helpers",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ],
-        "platform": "neutral"
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

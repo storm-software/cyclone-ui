@@ -7,7 +7,7 @@
 import { GenericFont } from '@tamagui/core';
 
 // @public (undocumented)
-export const createPermanentMarkerFont: <A extends GenericFont<10 | 11 | 12 | 14 | 15 | 16 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 13>>(font?: Partial<A>) => A;
+export const createPermanentMarkerFont: <A extends GenericFont<keyof typeof size>>(font?: Partial<A>) => A;
 
 // (No @packageDocumentation comment for this package)
 

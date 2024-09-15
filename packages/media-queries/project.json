@@ -4,29 +4,15 @@
   "projectType": "library",
   "sourceRoot": "packages/media-queries/src",
   "targets": {
-    "build": {
-      "executor": "@storm-software/workspace-tools:tsup-node",
+   "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/media-queries/src/index.ts",
         "outputPath": "dist/packages/media-queries",
         "tsConfig": "packages/media-queries/tsconfig.json",
         "project": "packages/media-queries/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*", "react", "react-native"],
-        "assets": [
-          {
-            "input": "packages/media-queries",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ],
-        "platform": "node"
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

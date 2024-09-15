@@ -13,9 +13,9 @@
       "options": {
         "commands": [
           {
-            "command": "npx tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts",
+            "command": "pnpm exec tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts",
             "forwardAllArgs": true,
-            "prefix": "Generate",
+            "prefix": "Generate Themes",
             "color": "blue",
             "description": "Generate brand themes from the input file"
           }
@@ -24,28 +24,14 @@
       }
     },
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
-      "dependsOn": ["build-base"],
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/themes/src/index.ts",
-        "additionalEntryPoints": ["packages/themes/src/brand-themes.ts"],
         "outputPath": "dist/packages/themes",
         "tsConfig": "packages/themes/tsconfig.json",
         "project": "packages/themes/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "packages/themes",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

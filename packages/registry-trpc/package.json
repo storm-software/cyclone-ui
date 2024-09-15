@@ -1,7 +1,6 @@
 {
   "name": "@cyclone-ui/registry-trpc",
   "version": "0.3.0",
-  "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
@@ -10,11 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@storm-stack/errors": "latest",
     "@trpc/client": "11.0.0-rc.382",
     "@trpc/server": "11.0.0-rc.382",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240524.0"
+    "@cloudflare/workers-types": "^4.20240909.0"
   }
 }

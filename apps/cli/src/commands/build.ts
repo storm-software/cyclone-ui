@@ -1,5 +1,20 @@
-import { join } from "path";
-import { exists, remove } from "fs-extra";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import {
   cancel,
   confirm,
@@ -11,11 +26,16 @@ import {
 } from "@clack/prompts";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig, run } from "@storm-software/config-tools";
-import { isFunction } from "../libs/is-function.js";
+import { isFunction } from "@storm-stack/types/type-checks/is-function";
+import { exists, remove } from "fs-extra";
+import { join } from "node:path";
 
 /**
+
  * A command to generate design tokens based on the colors provided by the user.
+
  */
+
 export default class Build extends Command {
   public static override args = {
     projectRoot: Args.directory({
@@ -86,9 +106,12 @@ export default class Build extends Command {
   };
 
   public static override summary = "Build a cyclone-ui package";
+
   public static override description =
     "Build the theme configuration for the client application based on the colors provided in the Storm configuration file";
+
   public static override strict = false;
+
   public static override examples = [
     {
       description:
@@ -130,21 +153,25 @@ export default class Build extends Command {
 
     intro("Cyclone UI - Build");
 
-    let s1 = spinner();
+    const s1 = spinner();
     s1.start("Loading Storm configuration");
+
     const config = await loadStormConfig();
+
     s1.stop("Loaded Storm configuration");
 
-    let projectRoot = args.projectRoot;
+    const projectRoot = args.projectRoot;
     let outputPath = flags.outputPath;
     if (!outputPath) {
       outputPath = config.outputDirectory;
       if (!flags.skip) {
         const useConfigOutput = await confirm({
-          message: `Should the output directory be set to ${outputPath} (defaulted from ${config.configPath ? config.configPath : "Storm configuration"} file)?`
+          message: `Should the output directory be set to ${outputPath} (defaulted from ${config.configFile || "Storm configuration"} file)?`
         });
+
         if (isCancel(useConfigOutput)) {
           cancel("Operation cancelled.");
+          // eslint-disable-next-line unicorn/no-process-exit
           process.exit(0);
         }
 
@@ -153,17 +180,20 @@ export default class Build extends Command {
             message: "Enter the build output directory",
             defaultValue: join("dist", projectRoot)
           });
+
           if (isCancel(promptInput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
+
           outputPath = promptInput as string;
         }
       }
 
       if (!outputPath) {
         this.error(
-          `The output was not provided in the CLI and does not exist in the Storm configuration file`
+          "The output was not provided in the CLI and does not exist in the Storm configuration file"
         );
       }
     }
@@ -176,8 +206,8 @@ export default class Build extends Command {
     }
 
     s2.start("Cleaned the build output directory");
-
     const s3 = spinner();
+
     s3.start("Running the build process");
 
     const buildArgs = [
@@ -185,20 +215,22 @@ export default class Build extends Command {
       `--output-path ${outputPath}`,
       `--tsconfig ${flags.tsconfig}`
     ];
+
     if (flags.bundle) {
       buildArgs.push("--bundle");
     }
+
     if (flags.clean) {
       buildArgs.push("--clean");
     }
 
     await run(
-      `${process.env.CYCLONE_BUILD_CMD ? process.env.CYCLONE_BUILD_CMD : "cyclone-ui-build"} tamagui `,
+      config,
+      `${config.extensions?.cyclone?.buildCmd || process.env.CYCLONE_BUILD_CMD || "cyclone-ui-build"} tamagui `,
       buildArgs.join(" ")
     );
 
     s3.start("Completed the build process");
-
     outro(
       "The build was successfully completed and distribution files were moved to the output directory"
     );

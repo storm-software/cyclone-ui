@@ -188,7 +188,16 @@
             },
             {
               "kind": "Content",
-              "text": "<10 | 11 | 12 | 14 | 15 | 16 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 13>"
+              "text": "<keyof typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "size",
+              "canonicalReference": "@cyclone-ui/font-space-grotesk!~size:var"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
             },
             {
               "kind": "Content",
@@ -214,8 +223,8 @@
           ],
           "fileUrlPath": "packages/font-space-grotesk/src/index.ts",
           "returnTypeTokenRange": {
-            "startIndex": 7,
-            "endIndex": 8
+            "startIndex": 9,
+            "endIndex": 10
           },
           "releaseTag": "Public",
           "overloadIndex": 1,
@@ -223,8 +232,8 @@
             {
               "parameterName": "font",
               "parameterTypeTokenRange": {
-                "startIndex": 4,
-                "endIndex": 6
+                "startIndex": 6,
+                "endIndex": 8
               },
               "isOptional": true
             }
@@ -234,7 +243,7 @@
               "typeParameterName": "A",
               "constraintTokenRange": {
                 "startIndex": 1,
-                "endIndex": 3
+                "endIndex": 5
               },
               "defaultTypeTokenRange": {
                 "startIndex": 0,

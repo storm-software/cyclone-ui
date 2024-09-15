@@ -74,7 +74,6 @@ export default async function runExecutor(
 
     const config = await loadStormConfig(workspaceRoot);
     writeTrace("Completed Loading Storm config", config);
-    writeTrace(config, config);
 
     /**
      * We need to check both the env var and the option because the executor may have been triggered

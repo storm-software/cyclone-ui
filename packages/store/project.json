@@ -4,29 +4,15 @@
   "projectType": "library",
   "sourceRoot": "packages/store/src",
   "targets": {
-    "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+   "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/store/src/index.ts",
         "outputPath": "dist/packages/store",
         "tsConfig": "packages/store/tsconfig.json",
         "project": "packages/store/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*", "react", "react-dom", "react-native"],
-        "assets": [
-          {
-            "input": "packages/store",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ],
-        "platform": "neutral"
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

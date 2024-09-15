@@ -105,7 +105,7 @@ export async function generatorFn(
           "@cyclone-ui/media-queries": "latest",
           "@cyclone-ui/shorthands": "latest",
           "@cyclone-ui/themes": "latest",
-          "@tamagui/web": "^1.98.0",
+          "@tamagui/web": "^1.110.5",
           ...json.dependencies
         },
         main: "dist/cjs",
@@ -140,7 +140,7 @@ export async function generatorFn(
         "@cyclone-ui/media-queries": "latest",
         "@cyclone-ui/shorthands": "latest",
         "@cyclone-ui/themes": "latest",
-        "@tamagui/web": "^1.98.0"
+        "@tamagui/web": "^1.110.5"
       },
       main: "dist/cjs",
       module: "dist/esm",

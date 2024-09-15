@@ -20,29 +20,14 @@
       }
     },
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build-base", "^build"],
       "options": {
         "entry": "packages/colors/src/index.ts",
         "outputPath": "dist/packages/colors",
         "tsConfig": "packages/colors/tsconfig.json",
         "project": "packages/colors/package.json",
-        "defaultConfiguration": "production",
-        "external": ["@cyclone-ui/*"],
-        "assets": [
-          {
-            "input": "packages/colors",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ],
-        "platform": "neutral"
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

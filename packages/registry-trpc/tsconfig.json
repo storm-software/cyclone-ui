@@ -1,9 +1,7 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "strict": true,
-    "composite": true,
-    "declaration": true,
     "types": ["@cloudflare/workers-types", "node"]
   },
   "include": ["src/**/*"],

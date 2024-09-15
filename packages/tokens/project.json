@@ -6,26 +6,14 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@storm-software/workspace-tools:tsup-neutral",
+      "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/tokens/src/index.ts",
         "outputPath": "dist/packages/tokens",
         "tsConfig": "packages/tokens/tsconfig.json",
         "project": "packages/tokens/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "packages/tokens",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
+        "defaultConfiguration": "production"
       },
       "configurations": {
         "production": {

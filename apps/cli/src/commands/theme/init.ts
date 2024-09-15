@@ -1,4 +1,23 @@
-import fs from "fs-extra";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
+
 import {
   cancel,
   confirm,
@@ -10,7 +29,9 @@ import {
 } from "@clack/prompts";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
-import { isFunction } from "../../libs/is-function.js";
+import { isFunction } from "@storm-stack/types/type-checks/is-function";
+import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
+import * as fs from "fs-extra";
 import {
   getThemeFilePath,
   getThemePath,
@@ -87,9 +108,12 @@ export default class Init extends Command {
   };
 
   public static override summary = "Initialize a theme configuration";
+
   public static override description =
     "Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file";
+
   public static override strict = false;
+
   public static override examples = [
     {
       description:
@@ -134,18 +158,23 @@ export default class Init extends Command {
 
     const s1 = spinner();
     s1.start("Loading Storm configuration");
+
     const config = await loadStormConfig();
+
     s1.stop("Loaded Storm configuration");
 
     let output = flags.outputPath;
     if (!output) {
       output = config.outputDirectory;
+
       if (!flags.skip) {
         const useConfigOutput = await confirm({
-          message: `Should the output directory be set to "${output}" (defaulted from ${config.configPath ? config.configPath : "Storm configuration"} file)?`
+          message: `Should the output directory be set to "${output}" (defaulted from ${config.configFile || "Storm configuration"} file)?`
         });
+
         if (isCancel(useConfigOutput)) {
           cancel("Operation cancelled.");
+          // eslint-disable-next-line unicorn/no-process-exit
           process.exit(0);
         }
 
@@ -154,17 +183,20 @@ export default class Init extends Command {
             message: "Enter the themes output directory",
             defaultValue: "./.storm/themes"
           });
+
           if (isCancel(promptInput)) {
             cancel("Operation cancelled.");
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
           }
+
           output = promptInput as string;
         }
       }
 
       if (!output) {
         this.error(
-          `The output was not provided in the CLI and does not exist in the Storm configuration file`
+          "The output was not provided in the CLI and does not exist in the Storm configuration file"
         );
       }
     }
@@ -208,12 +240,14 @@ export default class Init extends Command {
           );
         }
       }
-    } catch {}
+    } catch {
+      // Do nothing
+    }
 
     const s3 = spinner();
     s3.start(`Writing themes to "${output}"`);
 
-    if (config.colors?.base && typeof config.colors?.base === "object") {
+    if (isSetObject((config.colors as any)?.base)) {
       for (const key of Object.keys(config.colors)) {
         await writeMultiTheme(
           config.colors[key],
@@ -223,12 +257,9 @@ export default class Init extends Command {
           flags.json
         );
       }
-    } else if (
-      config.colors?.light &&
-      typeof config.colors?.light === "object"
-    ) {
+    } else if (isSetObject((config.colors as any)?.light)) {
       await writeMultiTheme(
-        config.colors,
+        config.colors as any,
         config.workspaceRoot,
         output,
         args.name,
@@ -236,7 +267,7 @@ export default class Init extends Command {
       );
     } else {
       await writeSingleTheme(
-        config.colors,
+        config.colors as any,
         config.workspaceRoot,
         output,
         args.name,
@@ -253,7 +284,7 @@ export default class Init extends Command {
   public override async catch(error: Error): Promise<void> {
     this.error(
       error?.message
-        ? `\nMessage: ${error.message}\n\n${error.stack ? "Stacktrace: \n" : ""}${error.stack ? error.stack : ""}\n`
+        ? `\nMessage: ${error.message}\n\n${error.stack ? "Stacktrace: \n" : ""}${error.stack || ""}\n`
         : error || "An error occurred"
     );
   }

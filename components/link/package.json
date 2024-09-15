@@ -32,12 +32,12 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.98.0",
-    "@tamagui/core": "^1.98.0",
-    "@tamagui/shapes": "^1.98.0",
-    "@tamagui/stacks": "^1.98.0",
-    "@tamagui/text": "^1.98.0",
-    "@tamagui/web": "^1.98.0"
+    "@tamagui/constants": "^1.110.5",
+    "@tamagui/core": "^1.110.5",
+    "@tamagui/shapes": "^1.110.5",
+    "@tamagui/stacks": "^1.110.5",
+    "@tamagui/text": "^1.110.5",
+    "@tamagui/web": "^1.110.5"
   },
   "devDependencies": {
     "react": "19.0.0-rc-fb9a90fa48-20240614",
