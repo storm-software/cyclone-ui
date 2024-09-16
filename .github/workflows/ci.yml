@@ -1,4 +1,4 @@
-name: "CI"
+name: "CI/CD"
 
 on:
   workflow_dispatch:
@@ -34,6 +34,7 @@ jobs:
 
   process:
     name: "Continuous Integration"
+    if: always() && !cancelled() && !contains(needs.*.result, 'failure') && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -41,9 +42,21 @@ jobs:
     needs:
       - start
     steps:
-      - name: Checkout code
+      - name: Checkout [Pull Request]
         uses: actions/checkout@v4
+        if: ${{ github.event_name == 'pull_request' }}
         with:
+          # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
+          ref: ${{ github.event.pull_request.head.sha }}
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+          token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+
+      - name: Checkout `main` branch
+        uses: actions/checkout@v4
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
           token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
