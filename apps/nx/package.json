@@ -47,7 +47,7 @@
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
-    "tslib": "^2.3.0"
+    "tslib": "^2.7.0"
   },
   "publishConfig": {
     "access": "public"

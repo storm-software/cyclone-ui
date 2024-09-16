@@ -49,7 +49,7 @@
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
     "glob": "^10.4.1",
-    "tslib": "^2.3.0"
+    "tslib": "^2.7.0"
   },
   "executors": "./executors.json"
 }
