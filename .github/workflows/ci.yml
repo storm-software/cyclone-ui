@@ -63,9 +63,8 @@ jobs:
       - name: Setup workspace
         uses: storm-software/action-setup@main
         with:
-          packageManager: pnpm
-          packageManagerVersion: 9.10.0
-          stormBot: Stormie-Bot
+          package-manager-version: 9.10.0
+          storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: Build Cyclone-UI Nx-Plugin packages
         run: pnpm build-plugins
