@@ -56,10 +56,6 @@ commit-msg:
 pre-push:
   piped: true
   commands:
-    readme-gen:
-      glob: "**/{README.md,package.json,executors.json,generators.json}"
-      run: 'pnpm exec storm-git readme-gen --templates="./docs/readme-templates"'
-      stage_fixed: true
     format:
       glob: "**/*.*"
       run: "pnpm format"

@@ -74,7 +74,7 @@
     "graph": "nx graph",
     "help": "nx help",
     "install-csb": "corepack enable && pnpm install --no-frozen-lockfile",
-    "lint": "pnpm storm-lint all --skip-cspell --skip-alex --skip-codeowners",
+    "lint": "pnpm storm-lint all --skip-circular-deps",
     "local-registry": "nx local-registry @cyclone-ui/monorepo",
     "nuke": "pnpm nuke-cache && pnpm nuke-node_modules",
     "nuke-cache": "pnpm exec rimraf --no-interactive -- ./dist ./tmp ./pnpm-lock.yaml ./.tamagui",
