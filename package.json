@@ -156,7 +156,7 @@
     "eslint": "^8.53.0",
     "eslint-prettier-config": "^1.0.1",
     "expo": "51.0.9",
-    "expo-av": "^13.10.5",
+    "expo-av": "^14.0.7",
     "expo-constants": "^15.4.5",
     "expo-document-picker": "^11.10.1",
     "expo-linking": "^6.2.2",
