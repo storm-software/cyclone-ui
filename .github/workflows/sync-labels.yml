@@ -16,19 +16,16 @@ env:
   NX_VERBOSE_LOGGING: true
   SKIP_ENV_VALIDATION: true
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   labels:
     name: ♻️ Sync labels
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: 🚀 Run Label Syncer
         uses: micnncim/action-label-syncer@v1.3.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}

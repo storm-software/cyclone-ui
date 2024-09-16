@@ -1,0 +1,23 @@
+---
+name: Weekly codeowners cleanup
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "3 2 1 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  cleanowners:
+    name: cleanowners
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Run cleanowners action
+        uses: github/cleanowners@v1
+        env:
+          GH_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+          ORGANIZATION: storm-software

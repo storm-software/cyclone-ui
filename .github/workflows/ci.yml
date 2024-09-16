@@ -8,9 +8,9 @@ on:
         required: false
   push:
     branches:
-      - "main"
-      - "canary"
-      - "experimental"
+      - main
+      - canary
+      - experimental
 
 jobs:
   start:
@@ -19,7 +19,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    if: startsWith(github.repository, 'storm-software/') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/canary' || github.ref == 'refs/heads/experimental')
+    if: github.repository == 'storm-software/cyclone-ui' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/canary' || github.ref == 'refs/heads/experimental')
     steps:
       - name: Send notification - Deployment started
         uses: storm-software/action-notify@main
@@ -63,7 +63,9 @@ jobs:
       - name: Setup workspace
         uses: storm-software/action-setup@main
         with:
+          package-manager: pnpm
           package-manager-version: 9.10.0
+          storm-bot: Stormie-Bot
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: Build Cyclone-UI Nx-Plugin packages

@@ -1,0 +1,31 @@
+---
+name: Dependabot Update
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - dependabot
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    env:
+      PR_URL: ${{github.event.pull_request.html_url}}
+      GITHUB_TOKEN: "${{secrets.STORM_BOT_GITHUB_TOKEN}}"
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.STORM_BOT_GITHUB_TOKEN }}"
+
+      - name: Approve Dependabot PRs
+        uses: storm-software/action-dependabot-approve@main
