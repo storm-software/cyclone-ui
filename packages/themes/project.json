@@ -8,7 +8,7 @@
       "cache": true,
       "executor": "nx:run-commands",
       "dependsOn": ["^build"],
-      "inputs": ["{workspaceRoot}/packages/colors/src/*"],
+      "inputs": ["{workspaceRoot}/packages/colors/src/*", "^production"],
       "outputs": ["{projectRoot}/src/brand-themes.ts"],
       "options": {
         "commands": [
@@ -25,7 +25,9 @@
     },
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["build-base"],
       "options": {
         "entry": "packages/themes/src/index.ts",
         "outputPath": "dist/packages/themes",

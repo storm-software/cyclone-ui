@@ -130,6 +130,57 @@ export const BrandDisabled: Story = {
   }
 };
 
+export const AlternatePrimary: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    disabled: false
+  }
+};
+
+export const AlternateSecondary: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    variant: "secondary",
+    disabled: false
+  }
+};
+
+export const AlternateGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const AlternateGlass: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    variant: "glass",
+    disabled: false
+  }
+};
+
+export const AlternateLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const AlternateDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "alternate",
+    disabled: true
+  }
+};
 export const HelpPrimary: Story = {
   args: {
     children: "Button Text",

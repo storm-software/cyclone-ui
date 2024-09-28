@@ -1,6 +1,20 @@
-import { Dispatch, SetStateAction } from "react";
-import { DocumentPickerAsset } from "expo-document-picker";
-import { Linking } from "react-native";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import { format } from "@formkit/tempo";
@@ -40,6 +54,9 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { SizableTextProps } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import { useControllableState } from "@tamagui/use-controllable-state";
+import { DocumentPickerAsset } from "expo-document-picker";
+import { Dispatch, SetStateAction } from "react";
+import { Linking } from "react-native";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
@@ -295,11 +312,11 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
             color="$base10"
             fontSize="$6"
             fontWeight="$5">
-            {!file.name
-              ? "Unnamed File"
-              : file.name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
+            {file.name
+              ? file.name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
                 ? `${file.name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
-                : file.name}
+                : file.name
+              : "Unnamed File"}
           </Text>
           <XStack gap="$4" justifyContent="center">
             <Text zIndex={25} color="$base9" fontSize="$4" fontWeight="$3">
@@ -323,7 +340,7 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
         fullscreen={true}
         zIndex={10}
         colors={["transparent", "$accent8"]}
-        locations={[0.0, 1.1]}
+        locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}
         opacity={0}
@@ -369,7 +386,7 @@ export const FilePickerBox = View.styleable(
             ...file,
             mimeType: file.type,
             name: file.name,
-            size: file.size ? file.size : 0,
+            size: file.size > 0 ? file.size : 0,
             lastModified: file.lastModified ? file.lastModified : 0,
             uri: URL.createObjectURL(file)
           }));
@@ -474,11 +491,10 @@ export const FilePickerBox = View.styleable(
               }}
               size="$6">
               <Button.Text>
-                {children
-                  ? children
-                  : max > 1
+                {children ||
+                  (max > 1
                     ? "Click or drop files to upload"
-                    : "Click or drop a file to upload"}
+                    : "Click or drop a file to upload")}
               </Button.Text>
             </Button>
           )}
@@ -565,13 +581,13 @@ export const FilePickerLabel = styled(Label, {
 
         let sizeToken = 1;
         let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
+        if (val !== undefined && val !== null) {
           sizeToken = (config.font.size?.[val] as any)?.val;
           heightToken = (config.font.lineHeight?.[val] as any)?.val;
         }
 
         const fontSize = (sizeToken ?? 1) * 1.25;
-        const lineHeight = (heightToken ?? 1) * 1;
+        const lineHeight = Number(heightToken ?? 1);
         const fontWeight = config.font.weight?.["$3"];
         const letterSpacing = config.font.letterSpacing?.[val];
         const textTransform = config.font.transform?.[val];
@@ -690,13 +706,13 @@ export const FilePickerDetails = styled(Text, {
 
         let sizeToken = 1;
         let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
+        if (val !== undefined && val !== null) {
           sizeToken = (font.size?.[val] as any)?.val;
           heightToken = (font.lineHeight?.[val] as any)?.val;
         }
 
         const fontSize = (sizeToken ?? 1) * 1.05;
-        const lineHeight = (heightToken ?? 1) * 1;
+        const lineHeight = Number(heightToken ?? 1);
         const fontWeight = font.weight?.["$3"];
         const letterSpacing = font.letterSpacing?.[val];
         const textTransform = font.transform?.[val];

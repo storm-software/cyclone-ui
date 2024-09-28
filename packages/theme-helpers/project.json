@@ -6,6 +6,7 @@
   "targets": {
    "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/theme-helpers/src/index.ts",

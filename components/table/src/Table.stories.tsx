@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
+import { SizableText } from "@tamagui/text";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable
 } from "@tanstack/react-table";
-import { Table } from "./Table";
 import { useState } from "react";
-import { Avatar } from "@tamagui/avatar";
-import { SizableText } from "@tamagui/text";
+import { Table } from "./Table";
 
 const meta: Meta<typeof Table> = {
   title: "General/Table",

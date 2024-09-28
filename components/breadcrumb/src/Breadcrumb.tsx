@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { Link, LinkProps } from "@cyclone-ui/link";
-import { ColorRole } from "@storm-stack/typess";
+import { ColorRole } from "@cyclone-ui/colors";
 import {
   createStyledContext,
   FontSizeTokens,
   styled,
   Theme,
   ThemeableProps,
-  useThemeName
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";

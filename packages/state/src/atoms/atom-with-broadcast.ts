@@ -1,5 +1,23 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { StormParser } from "@storm-stack/serialization";
-import { isFunction, isRuntimeServer } from "@storm-stack/utilities";
+import { isFunction } from "@storm-stack/types/type-checks/is-function";
+import { isRuntimeServer } from "@storm-stack/utilities";
 import type { PrimitiveAtom, SetStateAction, WritableAtom } from "jotai";
 import { baseAtom } from "../base/base-atom";
 import { isAtom } from "../utilities/is-atom";
@@ -21,13 +39,16 @@ export function atomWithBroadcast<TValue>(
   const valueAtom = isAtom(initialValueOrAtom)
     ? initialValueOrAtom
     : baseAtom(initialValueOrAtom);
-  const listeners = new Set<(event: MessageEvent<string>) => void>();
+  const listeners = new Set<(_: MessageEvent) => void>();
 
-  const channel = isRuntimeServer() ? null : new BroadcastChannel(key);
+  const channel = isRuntimeServer() ? undefined : new BroadcastChannel(key);
   if (channel) {
-    channel.addEventListener("message", event => {
-      for (const listener of listeners) listener(event);
-    });
+    // eslint-disable-next-line unicorn/prefer-add-event-listener
+    channel.onmessage = (message: unknown) => {
+      for (const listener of listeners) {
+        listener(message as MessageEvent);
+      }
+    };
   }
 
   const broadcastAtom = baseAtom<
@@ -50,7 +71,7 @@ export function atomWithBroadcast<TValue>(
     }
   );
   broadcastAtom.onMount = setAtom => {
-    const listener = (event: MessageEvent<string>) => {
+    const listener = (event: MessageEvent) => {
       setAtom({ isEvent: true, value: StormParser.parse(event.data) });
     };
     listeners.add(listener);

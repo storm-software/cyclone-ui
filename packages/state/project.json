@@ -6,13 +6,15 @@
   "targets": {
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
       "options": {
         "entry": "packages/state/src/index.ts",
         "outputPath": "dist/packages/state",
         "tsConfig": "packages/state/tsconfig.json",
         "project": "packages/state/package.json",
-        "defaultConfiguration": "production"
+        "defaultConfiguration": "production",
+        "platform": "browser"
       },
       "configurations": {
         "production": {

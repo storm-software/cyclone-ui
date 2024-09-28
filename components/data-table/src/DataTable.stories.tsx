@@ -243,7 +243,13 @@ export const Base: Story = {
 export const Pagination: Story = {
   args: {
     options: {
-      data: [...defaultData, ...defaultData, ...defaultData, ...defaultData, ...defaultData]
+      data: [
+        ...defaultData,
+        ...defaultData,
+        ...defaultData,
+        ...defaultData,
+        ...defaultData
+      ]
     },
     pageSize: 5
   }
@@ -252,6 +258,15 @@ export const Pagination: Story = {
 export const Brand: Story = {
   args: {
     theme: "brand",
+    options: {
+      data: defaultData
+    }
+  }
+};
+
+export const Alternate: Story = {
+  args: {
+    theme: "alternate",
     options: {
       data: defaultData
     }

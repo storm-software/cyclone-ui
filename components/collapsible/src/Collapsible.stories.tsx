@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { Text } from "@tamagui/web";
 import { Collapsible } from "./Collapsible";
-import { Text, View } from "@tamagui/web";
 
 const meta: Meta<typeof Collapsible> = {
   title: "General/Collapsible",

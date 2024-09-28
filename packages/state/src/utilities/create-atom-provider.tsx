@@ -1,6 +1,6 @@
-import type { MaybePromise } from "@storm-stack/utilities";
+import type { MaybePromise } from "@storm-stack/types";
 import { Provider as AtomProvider } from "jotai";
-import { createStore } from "jotai/vanilla";
+import { Atom, createStore } from "jotai/vanilla";
 import React, {
   useContext,
   useEffect,
@@ -53,7 +53,7 @@ export const useAtomStore = (
 };
 
 export type ProviderProps<T extends object> = {
-  initialValues?: Partial<T>;
+  initialValues?: Partial<{ [TKey in keyof T]: T[TKey] | Atom<T[TKey]> }>;
   resetKey?: unknown;
   scope?: string;
 } & AtomProviderProps &
@@ -84,6 +84,7 @@ export function HydrateAtoms<T extends object>({
 
 /**
  * Creates a generic provider for a jotai store.
+ *
  * - `initialValues`: Initial values for the store.
  * - `props`: Dynamic values for the store.
  */

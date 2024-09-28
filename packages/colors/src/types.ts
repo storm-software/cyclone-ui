@@ -38,8 +38,7 @@ export const ExtendedColorRole = {
 export type ColorRole =
   | "base"
   | "brand"
-  | "brand2"
-  | "brand3"
+  | "alternate"
   | "accent"
   | "help"
   | "success"
@@ -49,8 +48,7 @@ export type ColorRole =
 export const ColorRole = {
   BASE: "base" as ColorRole,
   BRAND: "brand" as ColorRole,
-  BRAND2: "brand2" as ColorRole,
-  BRAND3: "brand3" as ColorRole,
+  ALTERNATE: "alternate" as ColorRole,
   ACCENT: "accent" as ColorRole,
   HELP: "help" as ColorRole,
   SUCCESS: "success" as ColorRole,

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "jsx": "preserve"
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],

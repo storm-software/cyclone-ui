@@ -1,4 +1,4 @@
-import { ColorRole } from "@storm-stack/types";
+import { ColorRole } from "@cyclone-ui/colors";
 import {
   createStyledContext,
   getVariable,
@@ -173,8 +173,6 @@ const AlertIconFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   animation: "$slow",
-  backgroundColor: "$color4",
-  padding: "$2",
 
   variants: {
     size: {
@@ -190,7 +188,7 @@ const AlertIconFrame = styled(View, {
 const getIconSize = (size: FontSizeTokens, scale: number) => {
   return (
     (typeof size === "number"
-      ? size * 0.6
+      ? size * 1.0
       : getFontSize(size as FontSizeTokens)) * scale
   );
 };
@@ -300,7 +298,7 @@ const AlertBody = styled(SizableText, {
 
   theme: "base",
   fontFamily: "$body",
-  color: "$base10",
+  color: "$base9",
   zIndex: 20,
   paddingVertical: 0,
 

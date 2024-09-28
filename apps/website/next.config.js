@@ -5,7 +5,7 @@ const { composePlugins, withNx } = require("@nx/next");
 const { withTamagui } = require("@tamagui/next-plugin");
 const { join } = require("path");
 const withTM = require("next-transpile-modules"); // pass the modules you would like to see transpiled
-const { i18n } = require("./next-i18next.config");
+// const { i18n } = require("./next-i18next.config");
 
 const disableExtraction =
   {
@@ -68,7 +68,7 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false
   },
-  i18n,
+  // i18n,
   typescript: {
     ignoreBuildErrors: true
   },

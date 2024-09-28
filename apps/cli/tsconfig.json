@@ -1,14 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ESNext",
     "outDir": "dist",
     "types": ["@cloudflare/workers-types", "node"],
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
     "composite": false,
-    "strict": false
+    "strict": false,
+    "incremental": false
   },
   "include": ["src/**/*"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "ts-node": {
+    "esm": true
+  }
 }

@@ -1,11 +1,11 @@
+import { Preview } from "@storybook/react";
 import "@tamagui/core/reset.css";
+import "raf/polyfill";
 import "../../../packages/font-mona-sans/css/style.css";
 import "../../../packages/font-permanent-marker/css/style.css";
 import "../../../packages/font-space-grotesk/css/style.css";
-import "raf/polyfill";
-import { Preview } from "@storybook/react";
 import { StorybookDecorator } from "../src/StorybookDecorator";
-import i18n from "./i18n";
+// import i18n from "./i18n";
 
 const preview: Preview = {
   globalTypes: {
@@ -24,21 +24,25 @@ const preview: Preview = {
       }
     }
   },
-  globals: {
+
+  // parameters: {
+  //   i18n
+  //   // nextRouter: {
+  //   //   Provider: RouterContext.Provider, // next 13 next 13 (using next/navigation)
+  //   //   // Provider: RouterContext.Provider, // next 13 (using next/router) / next < 12
+  //   // },
+  // },
+
+  decorators: [StorybookDecorator],
+
+  tags: ["autodocs"],
+  initialGlobals: {
     locale: "en",
     locales: {
       en: "English",
       de: "German"
     }
-  },
-  parameters: {
-    i18n
-    // nextRouter: {
-    //   Provider: RouterContext.Provider, // next 13 next 13 (using next/navigation)
-    //   // Provider: RouterContext.Provider, // next 13 (using next/router) / next < 12
-    // },
-  },
-  decorators: [StorybookDecorator]
+  }
 };
 
 export default preview;

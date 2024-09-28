@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { PopUp, type PopUpProps } from "./PopUp";
-import { XStack, YStack } from "@tamagui/stacks";
 import { Button } from "@cyclone-ui/button";
+import type { Meta, StoryObj } from "@storybook/react";
+import { XStack, YStack } from "@tamagui/stacks";
+import { PopUp, type PopUpProps } from "./PopUp";
 
 const meta: Meta<typeof PopUp> = {
   title: "General/PopUp",

@@ -27,6 +27,8 @@ export const animations: AnimationDriver = createAnimations({
   superBouncy: "ease-in 500ms",
   lazy: "ease-in 1000ms",
   medium: "ease-in 300ms",
+  slowest: "ease-in 1000ms",
+  slower: "ease-in 750ms",
   slow: "ease-in 500ms",
   fast: `${smoothBezier} 400ms`,
   faster: `${smoothBezier} 300ms`,

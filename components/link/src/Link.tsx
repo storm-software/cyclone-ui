@@ -48,7 +48,7 @@ const Underline = styled(Square, {
   width: "100%",
   height: "2px",
   left: 0,
-  bottom: "$-0.75",
+  bottom: 0,
   backgroundColor: "$primary",
   borderRadius: "2px",
   display: "block",

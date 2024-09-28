@@ -13,12 +13,16 @@
     "jotai"
   ],
   "peerDependencies": {
+    "@tanstack/store": ">=0.5.5",
     "jotai": ">=2.8.0",
-    "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.74.1"
   },
   "peerDependenciesMeta": {
+    "@tanstack/store": {
+      "optional": true
+    },
     "jotai": {
       "optional": false
     },
@@ -34,12 +38,15 @@
   },
   "dependencies": {
     "@storm-stack/serialization": "latest",
+    "@storm-stack/string-fns": "latest",
+    "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest"
   },
   "devDependencies": {
+    "@tanstack/store": ">=0.5.5",
     "jotai": ">=2.8.0",
-    "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.74.1"
   },
   "publishConfig": {

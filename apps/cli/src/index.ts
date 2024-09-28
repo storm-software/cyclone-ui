@@ -15,4 +15,23 @@
 
  -------------------------------------------------------------------*/
 
-export { run } from "@oclif/core";
+import Build from "./commands/build";
+import Get from "./commands/registry/get";
+import Clean from "./commands/theme/clean";
+import Init from "./commands/theme/init";
+import initHook from "./hooks/init/init";
+
+export const hooks = {
+  init: initHook
+}
+
+export const commands = {
+  build: Build,
+  theme: {
+    clean: Clean,
+    init: Init
+  },
+  registry: {
+    get: Get
+  }
+};

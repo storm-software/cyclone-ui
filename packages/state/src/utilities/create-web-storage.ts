@@ -1,12 +1,31 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { StormParser } from "@storm-stack/serialization/storm-parser";
+import {
+  isPromise,
+  isPromiseLike
+} from "@storm-stack/types/type-checks/is-promise";
 import type {
   AsyncStorage,
   AsyncStringStorage,
   SyncStorage,
   SyncStringStorage
 } from "jotai/vanilla/utils/atomWithStorage";
-
-import { StormParser } from "@storm-stack/serialization";
-import { isPromiseLike } from "@storm-stack/utilities";
 
 export function createWebStorage<TValue>(
   getStringStorage: () => AsyncStringStorage | SyncStringStorage | undefined
@@ -16,12 +35,11 @@ export function createWebStorage<TValue>(
 
   const storage: AsyncStorage<TValue> | SyncStorage<TValue> = {
     getItem: (key, initialValue) => {
-      const parse = (param: null | string) => {
-        const strValue = param || "";
+      const parse = (strValue = "") => {
         if (lastStrValue !== strValue) {
           try {
             const nextValue = parse(strValue);
-            if (isPromiseLike(nextValue)) {
+            if (isPromise(nextValue)) {
               return (nextValue as PromiseLike<TValue>).then(result => {
                 lastValue = result;
 
@@ -38,12 +56,12 @@ export function createWebStorage<TValue>(
 
         return lastValue;
       };
-      const strValue = getStringStorage()?.getItem(key) ?? null;
-      if (isPromiseLike(strValue)) {
-        return strValue.then(parse);
+      const strValue = getStringStorage()?.getItem(key) ?? undefined;
+      if (strValue && isPromiseLike(strValue)) {
+        return strValue.then(value => parse(value as string));
       }
 
-      return parse(strValue);
+      return parse(strValue!);
     },
     removeItem: key => getStringStorage()?.removeItem(key),
     setItem: (key, newValue) =>

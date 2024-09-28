@@ -50,13 +50,13 @@ export async function generatorFn(
     ...schema,
     platform: "browser",
     devDependencies: {
-      react: "19.0.0-rc-fb9a90fa48-20240614",
-      "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+      react: "18.3.1",
+      "react-dom": "18.3.1",
       "react-native": "0.73.2"
     },
     peerDependencies: {
-      react: "19.0.0-rc-fb9a90fa48-20240614",
-      "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+      react: "18.3.1",
+      "react-dom": "18.3.1",
       "react-native": "0.73.2"
     }
   };

@@ -18,8 +18,7 @@
 export type ColorPaletteType =
   | "base"
   | "brand"
-  | "brand2"
-  | "brand3"
+  | "alternate"
   | "accent"
   | "help"
   | "success"
@@ -30,8 +29,7 @@ export type ColorPaletteType =
 export const ColorPaletteType = {
   BASE: "base" as ColorPaletteType,
   BRAND: "brand" as ColorPaletteType,
-  BRAND2: "brand2" as ColorPaletteType,
-  BRAND3: "brand3" as ColorPaletteType,
+  ALTERNATE: "alternate" as ColorPaletteType,
   ACCENT: "accent" as ColorPaletteType,
   HELP: "help" as ColorPaletteType,
   SUCCESS: "success" as ColorPaletteType,

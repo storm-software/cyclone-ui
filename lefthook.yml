@@ -25,7 +25,7 @@ pre-commit:
   commands:
     install:
       glob: "./{pnpm-lock.yaml,lefthook.yml}"
-      run: "pnpm install && git update-index"
+      run: "pnpm install && pnpm lefthook install && git update-index"
       stage_fixed: true
     prepare:
       glob: "**/{lefthook.yml,biome.json}"

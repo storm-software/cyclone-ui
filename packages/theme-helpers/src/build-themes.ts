@@ -53,8 +53,7 @@ export const buildThemes = () => {
     .addChildThemes({
       base: getColorDefinition("base"),
       brand: getColorDefinition("brand"),
-      brand2: getColorDefinition("brand2"),
-      brand3: getColorDefinition("brand3"),
+      alternate: getColorDefinition("alternate"),
       accent: getColorDefinition("accent"),
       help: getColorDefinition("help"),
       success: getColorDefinition("success"),

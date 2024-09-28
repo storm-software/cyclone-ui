@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["^build"],
       "options": {
         "entry": "packages/tokens/src/index.ts",
         "outputPath": "dist/packages/tokens",

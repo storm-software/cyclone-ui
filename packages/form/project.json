@@ -2,7 +2,7 @@
   "name": "form",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/form/src",
+  "sourceRoot": "packages/form/src",
   "targets": {
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
@@ -12,7 +12,8 @@
         "outputPath": "dist/packages/form",
         "tsConfig": "packages/form/tsconfig.json",
         "project": "packages/form/package.json",
-        "defaultConfiguration": "production"
+        "defaultConfiguration": "production",
+        "platform": "browser"
       },
       "configurations": {
         "production": {

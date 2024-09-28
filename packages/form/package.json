@@ -2,21 +2,20 @@
   "name": "@cyclone-ui/form",
   "version": "0.9.0",
   "type": "module",
-  "description": "A Form management package used to handle user input in Storm Software applications",
+  "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/form"
   },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
-  },
   "private": false,
+  "keywords": [
+    "jotai"
+  ],
   "peerDependencies": {
     "jotai": ">=2.8.0",
-    "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.74.1"
   },
   "peerDependenciesMeta": {
@@ -31,25 +30,29 @@
     },
     "react-native": {
       "optional": true
+    },
+    "valibot": {
+      "optional": false
     }
   },
   "dependencies": {
     "@storm-stack/errors": "latest",
+    "@storm-stack/serialization": "latest",
+    "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "decode-formdata": "^0.7.5",
-    "jotai-optics": "^0.4.0",
-    "optics-ts": "^2.4.1",
-    "react-native-svg": "^15.2.0"
+    "@tanstack/form-core": "^0.33.0",
+    "@tanstack/react-form": "^0.33.0",
+    "@tanstack/store": "^0.5.5",
+    "@tanstack/valibot-form-adapter": "^0.33.0",
+    "maska": "^3.0.2"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",
-    "react": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
-    "react-native": "0.74.1"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1",
+    "valibot": "^0.42.1"
   },
   "publishConfig": {
     "access": "public"

@@ -138,7 +138,7 @@ export default async function runExecutor(
       throw new Error("No project graph found in cache");
     }
 
-    writeInfo(
+    writeDebug(
       `Publishing ${packageTxt} to the Cyclone Registry at ${endpoint}`,
       config
     );
@@ -153,7 +153,7 @@ export default async function runExecutor(
     });
 
     const version = projectPackageJson.version;
-    writeInfo(`Generated component version: ${version}`, config);
+    writeDebug(`Generated component version: ${version}`, config);
 
     const files = await glob(joinPathFragments(sourceRoot, "**/*"), {
       ignore: "**/{*.stories.tsx,*.stories.ts,*.spec.tsx,*.spec.ts}"
@@ -182,7 +182,7 @@ export default async function runExecutor(
     const release =
       options.tag ?? execSync("npm config get tag").toString().trim();
 
-    writeInfo(`Clearing out existing items in ${projectPath}`, config);
+    writeDebug(`Clearing out existing items in ${projectPath}`, config);
 
     if (isDryRun) {
       writeWarning("Dry run: skipping upload to the Cyclone Registry.", config);
@@ -242,7 +242,7 @@ export default async function runExecutor(
         .map(dep => dep.name)
     });
 
-    writeInfo(`Generating meta.json file: \n${metaJson}`, config);
+    writeDebug(`Generating meta.json file: \n${metaJson}`, config);
 
     await uploadFile(
       s3Client,

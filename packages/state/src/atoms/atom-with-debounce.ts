@@ -1,4 +1,4 @@
-/*--------------------------@storm-stack/types------------------------
+/*-------------------------------------------------------------------
 
                    ⚡ Storm Software - Cyclone UI
 
@@ -14,6 +14,8 @@
  License:         https://stormsoftware.com/projects/cyclone-ui/license
 
  -------------------------------------------------------------------*/
+
+/* eslint-disable unicorn/no-null */
 
 import { isFunction } from "@storm-stack/types";
 import type { Atom, PrimitiveAtom, SetStateAction, WritableAtom } from "jotai";
@@ -63,10 +65,10 @@ export function atomWithDebounce<TValue = unknown>(
       const prevValue = get(_currentValueAtom);
       const nextValue =
         update === RESET
-        get(innerValueAtom) :
-        isFunction(update) ?
-          (update as (prev: TValue) => TValue)(prevValue) :
-          update;
+          ? get(innerValueAtom)
+          : isFunction(update)
+            ? (update as (prev: TValue) => TValue)(prevValue)
+            : update;
 
       const onDebounceStart = () => {
         set(_currentValueAtom, nextValue);

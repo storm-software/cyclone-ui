@@ -32,7 +32,7 @@ type ObjectEntries<OBJ_T> = // From https://stackoverflow.com/a/60142095
   }[keyof OBJ_T][];
 
 export const objectKeys = <O extends Object>(obj: O) =>
-  Object.keys(obj) as Array<keyof O>;
+  (obj ? Object.keys(obj) : []) as Array<keyof O>;
 
 export function objectEntries<OBJ_T extends ObjectType>(
   obj: OBJ_T
@@ -102,12 +102,12 @@ export const palettes = (() => {
     // and make sure the last (foreground) color is white/black rather than colorful
     // this is mostly for consistency with the older theme-base
     return [
-      transparent(colorPaletteValues[0]),
+      transparent(colorPaletteValues[0]!),
       backgroundColor,
       ...head,
       ...tail,
       foregroundColor,
-      transparent(colorPaletteValues.at(-1))
+      transparent(colorPaletteValues.at(-1)!)
     ];
   };
 

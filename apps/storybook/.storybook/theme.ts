@@ -1,14 +1,31 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { create } from "@storybook/theming/create";
 
 const theme: any = create({
   base: "dark",
 
   colorPrimary: "#1fb2a6",
-  colorSecondary: "#6366f1",
+  colorSecondary: "#514477",
 
   // UI
-  appBg: "#22272E",
-  appContentBg: "#22272E",
+  appBg: "#22272e",
+  appContentBg: "#22272e",
   appBorderColor: "#1fb2a6",
   appBorderRadius: 2,
 
@@ -19,7 +36,7 @@ const theme: any = create({
   // Toolbar default and active colors
   barTextColor: "#1fb2a6",
   barSelectedColor: "#1fb2a6",
-  barBg: "#22272E",
+  barBg: "#22272e",
 
   // Form colors
   inputBg: "#22272E",
@@ -29,8 +46,7 @@ const theme: any = create({
 
   brandTitle: "Storm Software",
   brandUrl: "https://stormsoftware.com",
-  brandImage:
-    "https://pub-761b436209f44a4d886487c917806c08.r2.dev/transparent.svg",
+  brandImage: "https://public.storm-cdn.com/transparent.svg",
   brandTarget: "_self"
 });
 

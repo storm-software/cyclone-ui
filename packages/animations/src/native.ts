@@ -66,14 +66,16 @@ export const animations: AnimationDriver = createAnimations({
     mass: 0.8
   },
   slowest: {
-    type: "spring",
-    damping: 15,
-    stiffness: 10
+    type: "timing",
+    duration: 1000
+  },
+  slower: {
+    type: "timing",
+    duration: 750
   },
   slow: {
-    type: "spring",
-    damping: 15,
-    stiffness: 60
+    type: "timing",
+    duration: 500
   },
   fast: {
     type: "spring",

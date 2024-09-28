@@ -6,15 +6,15 @@
   "implicitDependencies": ["cli"],
   "targets": {
     "build-base": {
-      "cache": true,
+      "cache": false,
       "executor": "nx:run-commands",
-      "inputs": ["{workspaceRoot}/storm.json"],
+      "inputs": ["{workspaceRoot}/storm.json", "^production"],
       "outputs": ["{projectRoot}/src/schemes/*"],
       "dependsOn": ["^build"],
       "options": {
         "commands": [
           {
-            "command": "\"apps/cli/bin/run.js\" theme init --clean --outputPath \"packages/colors/src/schemes\""
+            "command": "\"apps/cli/bin/run.cmd\" theme init --clean --outputPath \"packages/colors/src/schemes\""
           }
         ]
       }
@@ -22,8 +22,9 @@
     "build": {
       "cache": true,
       "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["build-base"],
+      "dependsOn": ["build-base", "^build"],
       "options": {
         "entry": "packages/colors/src/index.ts",
         "outputPath": "dist/packages/colors",

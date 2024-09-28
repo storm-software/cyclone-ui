@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "@tamagui/core";
-import { XStack } from "@tamagui/stacks";
 import { Steps } from "./Steps";
 
 const meta: Meta<typeof Steps> = {

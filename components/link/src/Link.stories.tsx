@@ -54,6 +54,13 @@ export const Brand: Story = {
   }
 };
 
+export const Alternate: Story = {
+  args: {
+    href: "#",
+    theme: "alternate"
+  }
+};
+
 export const Help: Story = {
   args: {
     href: "#",

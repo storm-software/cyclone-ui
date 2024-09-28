@@ -1,5 +1,5 @@
 import { Link } from "@cyclone-ui/link";
-import { ColorRole } from "@cyclone-ui/colorsss";
+import { ColorRole } from "@cyclone-ui/colors";
 import {
   createStyledContext,
   getVariable,
@@ -444,8 +444,8 @@ const CardLink = styled(Link, {
           heightToken = (config.font.lineHeight?.[val] as any)?.val;
         }
 
-        const fontSize = (sizeToken ?? 1) * 1.6;
-        const lineHeight = (heightToken ?? 1) * 1.6;
+        const fontSize = (sizeToken ?? 1) * 2;
+        const lineHeight = (heightToken ?? 1) * 2;
         const textTransform = config.font.transform?.[val];
         const fontStyle = config.font.style?.[val];
 
@@ -474,7 +474,7 @@ export const CardLinkImpl = CardLink.styleable(
 
     return (
       <XStack gap="$1.5" alignItems="center">
-        <CardLink ref={forwardedRef} {...rest}>
+        <CardLink ref={forwardedRef} size="$2" {...rest}>
           {children}
         </CardLink>
         <View

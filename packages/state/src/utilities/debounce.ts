@@ -1,17 +1,32 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
 
 export interface DebounceOptions {
   /**
    * Call the `fn` on the [leading edge of the timeout](https://css-tricks.com/debouncing-throttling-explained-examples/#article-header-id-1).
    * Meaning immediately, instead of waiting for `wait` milliseconds.
    *
-   * @default false
+   * @defaultValue false
    */
   readonly leading?: boolean;
 
   /**
   Call the `fn` on trailing edge with last used arguments. Result of call is from previous call.
-  @default true
+  @defaultValue true
   */
   readonly trailing?: boolean;
 }
@@ -42,19 +57,19 @@ export function debounce<TArgs extends unknown[], TReturn>(
   let resolveList: Array<(value: PromiseLike<TReturn> | TReturn) => void> = [];
 
   // Keep state of currently resolving promise
-  let currentPromise: Promise<TReturn> | null;
+  let currentPromise: Promise<TReturn> | undefined;
 
   // Trailing call info
-  let trailingArgs: any[] | null;
+  let trailingArgs: any[] | undefined;
 
   const applyFn = (_this: any, args: any[]) => {
     currentPromise = _applyPromised(fn, _this, args);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     currentPromise.finally(() => {
-      currentPromise = null;
+      currentPromise = undefined;
       if (options.trailing && trailingArgs && !timeout) {
         const promise = applyFn(_this, trailingArgs);
-        trailingArgs = null;
+        trailingArgs = undefined;
         return promise;
       }
 
@@ -65,7 +80,7 @@ export function debounce<TArgs extends unknown[], TReturn>(
   };
 
   // eslint-disable-next-line func-names
-  return function (...args: TArgs) {
+  return (...args: TArgs) => {
     if (currentPromise) {
       if (options.trailing) {
         trailingArgs = args;
@@ -80,7 +95,7 @@ export function debounce<TArgs extends unknown[], TReturn>(
         timeout = undefined;
 
         const promise = options.leading ? leadingValue : applyFn(this, args);
-        resolveList.forEach(_resolve => _resolve(promise));
+        for (const _resolve of resolveList) _resolve(promise);
 
         resolveList = [];
       }, wait);
@@ -97,5 +112,5 @@ export function debounce<TArgs extends unknown[], TReturn>(
 
 async function _applyPromised(fn: () => any, _this: any, args: any[]) {
   // eslint-disable-next-line no-return-await
-  return await fn.apply(_this, args);
+  return await fn.apply(_this, args as []);
 }

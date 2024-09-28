@@ -13,10 +13,10 @@
     "node": ">=18.0.0"
   },
   "bin": {
-    "cyclone": "./bin/run.js",
-    "cyclone-ui": "./bin/run.js"
+    "cyclone-ui": "./bin/run.js",
+    "cyclone": "./bin/run.js"
   },
-  "exports": "./lib/index.js",
+  "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "/bin",
@@ -25,7 +25,6 @@
   ],
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@cyclone-ui/build": "0.2.0",
     "@oclif/core": "^4.0.22",
     "@oclif/plugin-autocomplete": "^3.0.13",
     "@oclif/plugin-help": "^6.0.20",

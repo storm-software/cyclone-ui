@@ -60,6 +60,29 @@ export const BrandOutlined: Story = {
   }
 };
 
+export const Alternate: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "alternate"
+  }
+};
+
+export const AlternateRounded: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "alternate",
+    circular: true
+  }
+};
+
+export const AlternateOutlined: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "alternate",
+    outlined: true
+  }
+};
+
 export const Help: Story = {
   args: {
     children: "Badge Text",
