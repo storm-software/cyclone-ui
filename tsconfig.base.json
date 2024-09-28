@@ -99,6 +99,8 @@
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"],
       "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
+      "@cyclone-ui/themeable-icon": ["components/themeable-icon/src/index.ts"],
+      "@cyclone-ui/themeable-icon/*": ["components/themeable-icon/src/*"],
       "@cyclone-ui/tokens": ["packages/tokens/src/index.ts"],
       "@cyclone-ui/tokens/*": ["packages/tokens/src/*"],
       "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"]

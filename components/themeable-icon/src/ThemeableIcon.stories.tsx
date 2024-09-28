@@ -1,0 +1,47 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { ThemeableIcon } from "./ThemeableIcon";
+
+const meta: Meta<typeof ThemeableIcon> = {
+  title: "General/ThemeableIcon",
+  component: ThemeableIcon,
+  tags: ["autodocs"],
+  render: ({ theme, ...rest }: any) => <ThemeableIcon theme={theme} />
+} satisfies Meta<typeof ThemeableIcon>;
+
+export default meta;
+
+type Story = StoryObj<typeof ThemeableIcon>;
+
+export const Base: Story = {
+  args: {}
+};
+
+export const Help: Story = {
+  args: {
+    theme: "help"
+  }
+};
+
+export const Error: Story = {
+  args: {
+    theme: "error"
+  }
+};
+
+export const Warning: Story = {
+  args: {
+    theme: "warning"
+  }
+};
+
+export const Info: Story = {
+  args: {
+    theme: "info"
+  }
+};
+
+export const Success: Story = {
+  args: {
+    theme: "success"
+  }
+};

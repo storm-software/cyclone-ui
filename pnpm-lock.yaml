@@ -49,6 +49,7 @@ overrides:
   '@cyclone-ui/form': workspace:*
   '@cyclone-ui/form-field': workspace:*
   '@cyclone-ui/state': workspace:*
+  '@cyclone-ui/themeable-icon': workspace:*
 
 importers:
 
@@ -1735,6 +1736,40 @@ importers:
       '@tamagui/use-controllable-state':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
+      '@tamagui/web':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/themeable-icon:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/font-size':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/lucide-icons':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)

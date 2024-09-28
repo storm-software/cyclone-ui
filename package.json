@@ -282,7 +282,8 @@
       "@cyclone-ui/previous-button": "workspace:*",
       "@cyclone-ui/form": "workspace:*",
       "@cyclone-ui/form-field": "workspace:*",
-      "@cyclone-ui/state": "workspace:*"
+      "@cyclone-ui/state": "workspace:*",
+      "@cyclone-ui/themeable-icon": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",
