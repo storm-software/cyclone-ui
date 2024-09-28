@@ -1105,9 +1105,6 @@ importers:
         specifier: ^15.2.0
         version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
-      '@cyclone-ui/input':
-        specifier: workspace:*
-        version: link:../input
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -2033,7 +2030,7 @@ importers:
         version: 1.19.0
     devDependencies:
       '@tanstack/store':
-        specifier: '>=0.5.5'
+        specifier: ^0.5.5
         version: 0.5.5
       jotai:
         specifier: '>=2.8.0'
@@ -5189,7 +5186,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -26137,6 +26133,15 @@ snapshots:
       - typescript
       - verdaccio
 
+  '@nrwl/tao@19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))':
+    dependencies:
+      nx: 19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - '@swc-node/register'
+      - '@swc/core'
+      - debug
+
   '@nrwl/tao@19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))':
     dependencies:
       nx: 19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))
@@ -41980,7 +41985,7 @@ snapshots:
   nx@19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13)):
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.4
-      '@nrwl/tao': 19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))
+      '@nrwl/tao': 19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7

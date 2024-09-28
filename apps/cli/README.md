@@ -119,15 +119,17 @@ oclif example Hello World CLI
 [![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
 
 <!-- toc -->
-* [cli](#cli)
-* [oclif-hello-world](#oclif-hello-world)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [cli](#cli)
+- [oclif-hello-world](#oclif-hello-world)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @cyclone-ui/cli
 $ cyclone-ui COMMAND
@@ -139,30 +141,32 @@ USAGE
   $ cyclone-ui COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
-* [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
-* [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
-* [`cyclone-ui plugins`](#cyclone-ui-plugins)
-* [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
-* [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
-* [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
-* [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
-* [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
-* [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
-* [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
-* [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
-* [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
-* [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
-* [`cyclone-ui search`](#cyclone-ui-search)
-* [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
-* [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
-* [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
-* [`cyclone-ui version`](#cyclone-ui-version)
+
+- [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
+- [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
+- [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
+- [`cyclone-ui plugins`](#cyclone-ui-plugins)
+- [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
+- [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
+- [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
+- [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
+- [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
+- [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
+- [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
+- [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
+- [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
+- [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
+- [`cyclone-ui search`](#cyclone-ui-search)
+- [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
+- [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
+- [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
+- [`cyclone-ui version`](#cyclone-ui-version)
 
 ## `cyclone-ui autocomplete [SHELL]`
 
@@ -193,7 +197,8 @@ EXAMPLES
   $ cyclone-ui autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.1.5/src/commands/autocomplete/index.ts)_
+_See code:
+[@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.1.5/src/commands/autocomplete/index.ts)_
 
 ## `cyclone-ui build PROJECTROOT`
 
@@ -253,7 +258,8 @@ FLAG DESCRIPTIONS
     The path to the tsconfig.json file for the project
 ```
 
-_See code: [dist/commands/build.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/build.js)_
+_See code:
+[dist/commands/build.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/build.js)_
 
 ## `cyclone-ui help [COMMAND]`
 
@@ -273,7 +279,8 @@ DESCRIPTION
   Display help for cyclone-ui.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.11/src/commands/help.ts)_
+_See code:
+[@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.11/src/commands/help.ts)_
 
 ## `cyclone-ui plugins`
 
@@ -296,7 +303,8 @@ EXAMPLES
   $ cyclone-ui plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/index.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/index.ts)_
 
 ## `cyclone-ui plugins add PLUGIN`
 
@@ -370,7 +378,8 @@ EXAMPLES
   $ cyclone-ui plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/inspect.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/inspect.ts)_
 
 ## `cyclone-ui plugins install PLUGIN`
 
@@ -419,7 +428,8 @@ EXAMPLES
     $ cyclone-ui plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/install.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/install.ts)_
 
 ## `cyclone-ui plugins link PATH`
 
@@ -441,15 +451,16 @@ DESCRIPTION
   Links a plugin into the CLI for development.
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override
-  the user-installed or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the
+  user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
   $ cyclone-ui plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/link.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/link.ts)_
 
 ## `cyclone-ui plugins remove [PLUGIN]`
 
@@ -490,7 +501,8 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/reset.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/reset.ts)_
 
 ## `cyclone-ui plugins uninstall [PLUGIN]`
 
@@ -518,7 +530,8 @@ EXAMPLES
   $ cyclone-ui plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/uninstall.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/uninstall.ts)_
 
 ## `cyclone-ui plugins unlink [PLUGIN]`
 
@@ -562,7 +575,8 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/update.ts)_
+_See code:
+[@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/update.ts)_
 
 ## `cyclone-ui registry get [COMPONENT]`
 
@@ -612,7 +626,8 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/registry/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/registry/get.js)_
+_See code:
+[dist/commands/registry/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/registry/get.js)_
 
 ## `cyclone-ui search`
 
@@ -628,7 +643,8 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.2.1/src/commands/search.ts)_
+_See code:
+[@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.2.1/src/commands/search.ts)_
 
 ## `cyclone-ui theme clean NAME`
 
@@ -673,7 +689,8 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/clean.js)_
+_See code:
+[dist/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/clean.js)_
 
 ## `cyclone-ui theme init NAME`
 
@@ -728,7 +745,8 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/init.js)_
+_See code:
+[dist/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/init.js)_
 
 ## `cyclone-ui update [CHANNEL]`
 
@@ -765,7 +783,8 @@ EXAMPLES
     $ cyclone-ui update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.4.6/src/commands/update.ts)_
+_See code:
+[@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.4.6/src/commands/update.ts)_
 
 ## `cyclone-ui version`
 
@@ -785,7 +804,9 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.5/src/commands/version.ts)_
+_See code:
+[@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.5/src/commands/version.ts)_
+
 <!-- commandsstop -->
 
 ## Reduced Package Size

@@ -13,7 +13,7 @@
     "jotai"
   ],
   "peerDependencies": {
-    "@tanstack/store": ">=0.5.5",
+    "@tanstack/store": "^0.5.5",
     "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -43,7 +43,7 @@
     "@storm-stack/utilities": "latest"
   },
   "devDependencies": {
-    "@tanstack/store": ">=0.5.5",
+    "@tanstack/store": "^0.5.5",
     "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

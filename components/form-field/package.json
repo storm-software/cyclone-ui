@@ -42,7 +42,6 @@
     "react-native-svg": "^15.2.0"
   },
   "devDependencies": {
-    "@cyclone-ui/input": "latest",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"
