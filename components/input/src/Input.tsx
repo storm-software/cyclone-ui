@@ -1,5 +1,5 @@
 import { ColorRole } from "@cyclone-ui/colors";
-import { useFieldStore } from "@cyclone-ui/form";
+import { FieldStatus, useFieldApi, useFieldStore } from "@cyclone-ui/form";
 import {
   ThemeableIcon,
   ThemeableIconWrapper
@@ -16,11 +16,11 @@ import { getFontSized } from "@tamagui/get-font-sized";
 import { getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import type { SizeVariantSpreadFunction } from "@tamagui/web";
+import { useCallback } from "react";
 import { Input as TamaguiInput, useControllableState } from "tamagui";
 
 const defaultContextValues = {
   size: "$true",
-  scaleIcon: 1.3,
   color: undefined,
   hideIcons: true,
   theme: `${ColorRole.BASE}_Input`
@@ -28,7 +28,6 @@ const defaultContextValues = {
 
 export const InputContext = createStyledContext<{
   size: FontSizeTokens;
-  scaleIcon: number;
   color?: ColorTokens | string;
   hideIcons: boolean;
   theme: string;
@@ -179,6 +178,7 @@ const InputValue = styled(TamaguiInput, {
   context: InputContext,
   color: "$fg",
   verticalAlign: "center",
+  paddingVertical: "$3",
 
   // internalAutofillSelected: {
   //   backgroundColor: "transparent !important",
@@ -205,36 +205,48 @@ const InputValue = styled(TamaguiInput, {
 
 const InputValueImpl = InputValue.styleable<{
   onChange?: (value?: string) => any;
+  onBlur?: () => any;
 }>((props, ref) => {
   const { size } = InputContext.useStyledContext();
-  const { onChange, value: valueProp, defaultValue, ...rest } = props;
-
-  const [value, setValue] = useControllableState({
-    prop: valueProp,
-    onChange,
-    defaultProp: defaultValue ?? ""
-  });
+  const { onChange, onBlur, value, defaultValue, ...rest } = props;
 
   const store = useFieldStore();
   const name = store.get.name();
   const disabled = store.get.disabled();
-  const theme = store.get.theme();
+  const status = store.get.status();
+
+  const api = useFieldApi();
+  const handleChange = useCallback(
+    (text: string) => {
+      api.handleChange(text);
+      onChange?.(text);
+    },
+    [api.handleChange, onChange]
+  );
 
   const setFocused = store.set.focused();
+  const handleBlur = useCallback(
+    () => {
+      api.handleBlur();
+      setFocused(false);
+      onBlur?.();
+    },
+    [api.handleChange, onChange]
+  );
 
   return (
     <View flex={1}>
       <InputValue
         id={name}
         ref={ref}
+        size={size}
         onFocus={() => {
           setFocused(!disabled);
         }}
-        onBlur={() => setFocused(false)}
-        size={size}
-        onChangeText={setValue}
+        onBlur={handleBlur}
+        onChangeText={handleChange}
         {...rest}
-        theme={theme}
+        theme={status}
         value={value}
         defaultValue={defaultValue}
         disabled={disabled}
@@ -248,30 +260,28 @@ const InputGroupImpl = InputValueImpl.styleable<{
   onChange?: (value?: string) => any;
 }>((props, forwardedRef) => {
   const { children, ...rest } = props;
-  const { scaleIcon } = InputContext.useStyledContext();
+  // const { scaleIcon, size } = InputContext.useStyledContext();
 
   const store = useFieldStore();
   const focused = store.get.focused();
   const disabled = store.get.disabled();
-  const theme = store.get.theme();
+  const status = store.get.status();
 
   return (
     <InputGroupFrame
-      theme={theme}
+      theme={status}
       applyFocusStyle={focused}
       disabled={disabled}>
-      {!disabled &&
-        theme &&
-        (theme.toLowerCase().includes(ColorRole.ERROR) ||
-          theme.toLowerCase().includes(ColorRole.WARNING) ||
-          theme.toLowerCase().includes(ColorRole.INFO) ||
-          theme.toLowerCase().includes(ColorRole.HELP) ||
-          theme.toLowerCase().includes(ColorRole.SUCCESS)) && (
-          <ThemeableIcon theme={theme} scaleIcon={scaleIcon} />
-        )}
-      <InputValueImpl ref={forwardedRef} {...rest} />
+      {!disabled && <ThemeableIcon theme={status} disabled={false} size="$3" />}
+      <InputValueImpl
+        ref={forwardedRef}
+        {...rest}
+        paddingHorizontal={
+          status.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
+        }
+      />
       {children}
-      {disabled && <ThemeableIcon disabled={true} scaleIcon={scaleIcon} />}
+      {disabled && <ThemeableIcon disabled={true} size="$3" />}
     </InputGroupFrame>
   );
 });

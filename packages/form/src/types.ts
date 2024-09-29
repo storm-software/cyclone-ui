@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { ColorRole } from "@cyclone-ui/colors";
 import {
   FieldState as BaseFieldState,
   FieldComponent,
@@ -37,11 +38,31 @@ interface ReactFieldApi<TFormValues> {
   Field: FieldComponent<TFormValues, ValibotValidator>;
 }
 
+export type FieldStatus =
+  | "base"
+  | "help"
+  | "success"
+  | "info"
+  | "warning"
+  | "error";
+export const FieldStatus = {
+  BASE: ColorRole.BASE as FieldStatus,
+  HELP: ColorRole.HELP as FieldStatus,
+  SUCCESS: ColorRole.SUCCESS as FieldStatus,
+  INFO: ColorRole.INFO as FieldStatus,
+  WARNING: ColorRole.WARNING as FieldStatus,
+  ERROR: ColorRole.ERROR as FieldStatus
+};
+
 export type FieldState<TFormValues> = BaseFieldState<TFormValues> & {
   /**
    * The theme state value.
    */
-  theme: ColorRole;
+  theme: string;
+  /**
+   * The status state value.
+   */
+  status: FieldStatus;
   /**
    * The disabled state value.
    */
@@ -82,7 +103,7 @@ export type UseFieldOptions<
   "form"
 > & {
   mode?: "value" | "array";
-  theme?: ColorRole;
+  theme?: string;
   focused?: boolean;
   required?: boolean;
   disabled?: boolean;

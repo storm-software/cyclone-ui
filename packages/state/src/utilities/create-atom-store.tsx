@@ -183,10 +183,10 @@ export type UseStoreApi<
   > = CreateAtomStoreOptions<TState, SelectorsFn<TState>>
 > = (options?: UseAtomOptionsOrScope) => {
   get: { atom: GetAtomFn } & GetRecord<StoreAtoms<TState, TOptions>>;
+  set: { atom: SetAtomFn } & SetRecord<WritableStoreAtoms<TState, TOptions>>;
   reset: {
     atom: ResetAtomFn;
   } & ResetRecord<WritableStoreAtoms<TState, TOptions>>;
-  set: { atom: SetAtomFn } & SetRecord<WritableStoreAtoms<TState, TOptions>>;
   store: (opts?: UseAtomOptionsOrScope) => JotaiStore | undefined;
   use: { atom: UseAtomFn } & UseRecord<WritableStoreAtoms<TState, TOptions>>;
 };
@@ -227,11 +227,11 @@ export type SelectorsFn<
   TSelectorsReturnType extends object = object
 > = (
   atomsWithoutSelectors: StoreAtomsWithoutSelectors<TState>
-) => AtomRecord<TSelectorsReturnType>;
+) => TSelectorsReturnType;
 
 export type InferSelectorsReturnType<
   TState extends object,
-  TSelectorsFn extends SelectorsFn<TState> | undefined
+  TSelectorsFn extends SelectorsFn<TState, any> | undefined
 > =
   TSelectorsFn extends SelectorsFn<TState, infer TSelectorsReturnType>
     ? TSelectorsReturnType
@@ -239,12 +239,12 @@ export type InferSelectorsReturnType<
 
 export type InferOptionsSelectorsReturnType<
   TState extends object,
-  TOptions extends CreateAtomStoreOptions<TState, SelectorsFn<TState>>
+  TOptions extends CreateAtomStoreOptions<TState, SelectorsFn<TState, any>>
 > = InferSelectorsReturnType<TState, TOptions["selectors"]>;
 
 export interface CreateAtomStoreOptions<
   TState extends object,
-  TSelectorsFn extends SelectorsFn<TState> | undefined = undefined
+  TSelectorsFn extends SelectorsFn<TState, any> | undefined = undefined
 > {
   delayMs?: UseAtomOptions["delayMs"];
   effect?: React.FC;

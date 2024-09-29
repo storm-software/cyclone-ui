@@ -5,7 +5,7 @@ const meta: Meta<typeof ThemeableIcon> = {
   title: "General/ThemeableIcon",
   component: ThemeableIcon,
   tags: ["autodocs"],
-  render: ({ theme, ...rest }: any) => <ThemeableIcon theme={theme} />
+  render: ({ ...rest }: any) => <ThemeableIcon {...rest} />
 } satisfies Meta<typeof ThemeableIcon>;
 
 export default meta;
@@ -43,5 +43,11 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
+  }
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true
   }
 };

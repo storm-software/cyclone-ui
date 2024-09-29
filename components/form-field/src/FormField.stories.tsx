@@ -7,9 +7,9 @@ const meta: Meta<typeof FormField> = {
   title: "Form/FormField",
   component: FormField,
   tags: ["autodocs"],
-  render: ({ theme, ...rest }: any) => (
+  render: ({ ...rest }: any) => (
     <FormProvider name="formName" defaultValues={{ inputName: "" }}>
-      <FormField name="inputName" theme={theme} {...rest}>
+      <FormField name="inputName" {...rest}>
         <FormField.Label>Label Text</FormField.Label>
         <Input placeholder="email@example.com" {...rest} />
         <FormField.Details>

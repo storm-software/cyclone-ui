@@ -10,17 +10,20 @@ import {
   Info,
   Lock
 } from "@tamagui/lucide-icons";
+import { forwardRef } from "react";
 
 export const ThemeableIconFrame = styled(View, {
+  display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  animation: "slow",
 
   variants: {
     size: {
       "...size": (val, { tokens }) => {
+        const padding = tokens.space[val] ?? 0;
+
         return {
-          paddingHorizontal: tokens.space[val]
+          paddingHorizontal: padding
         };
       }
     }
@@ -29,18 +32,17 @@ export const ThemeableIconFrame = styled(View, {
 
 const getIconSize = (size: FontSizeTokens, scale: number) => {
   return (
-    (typeof size === "number"
-      ? size * 0.6
-      : getFontSize(size as FontSizeTokens)) * scale
+    (typeof size === "number" ? size : getFontSize(size as FontSizeTokens)) *
+    scale
   );
 };
 
 export const ThemeableIconWrapper = ThemeableIconFrame.styleable<{
   hideIcons?: boolean;
-}>(({ children, theme, disabled, hideIcons, ...props }, ref) => {
+}>(({ children, theme, disabled, hideIcons = false, ...props }, ref) => {
   if (
-    (hideIcons &&
-      theme &&
+    hideIcons ||
+    (theme &&
       (theme.toLowerCase().includes(ColorRole.ERROR) ||
         theme.toLowerCase().includes(ColorRole.WARNING) ||
         theme.toLowerCase().includes(ColorRole.INFO) ||
@@ -58,35 +60,84 @@ export const ThemeableIconWrapper = ThemeableIconFrame.styleable<{
   );
 });
 
-export const ThemeableIcon = ThemeableIconFrame.styleable<{
+type ThemeableIconExtraProps = {
   disabled?: boolean;
   theme?: string;
+  size?: FontSizeTokens;
   scaleIcon?: number;
   hideIcons?: boolean;
   color?: ColorTokens | string;
-}>(
+  animated?: boolean;
+};
+
+const ThemeableIconContainer = styled(View, {
+  animation: "$slow",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  opacity: 1,
+  scale: 1,
+
+  enterStyle: {
+    opacity: 0,
+    scale: 0
+  },
+
+  exitStyle: {
+    opacity: 0,
+    scale: 0
+  }
+});
+
+export const ThemeableIcon = forwardRef<
+  typeof ThemeableIconFrame,
+  ThemeableIconExtraProps
+>(
   (
-    { children, theme, disabled, scaleIcon = 1.3, size = "$true", ...props },
+    {
+      theme,
+      disabled = false,
+      hideIcons = false,
+      scaleIcon = 1.75,
+      size = "$3",
+      ...props
+    },
     ref
   ) => {
     const themeColors = useTheme({
       name: theme
     });
+
     const color = disabled
       ? "$disabled"
       : getVariable(
-          props.color ||
-            themeColors[props.color as any]?.get("web") ||
+          (props.color &&
+            props.color in themeColors &&
+            themeColors[props.color as any]?.get("web")) ||
+            props.color ||
             (!theme || theme === "base"
-              ? themeColors.color8?.get("web")
+              ? themeColors.color10?.get("web")
               : themeColors.primary?.get("web"))
         );
-    const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
 
     const getThemedIcon = useGetThemedIcon({
-      size: iconSize,
-      color: color as any
+      size: getIconSize(size, scaleIcon),
+      color
     });
+
+    if (
+      hideIcons ||
+      (!theme?.toLowerCase().includes(ColorRole.ERROR) &&
+        !theme?.toLowerCase().includes(ColorRole.WARNING) &&
+        !theme?.toLowerCase().includes(ColorRole.INFO) &&
+        !theme?.toLowerCase().includes(ColorRole.HELP) &&
+        !theme?.toLowerCase().includes(ColorRole.SUCCESS) &&
+        !disabled)
+    ) {
+      return null;
+    }
+
     return (
       <ThemeableIconFrame
         ref={ref}
@@ -94,31 +145,26 @@ export const ThemeableIcon = ThemeableIconFrame.styleable<{
         theme={theme}
         disabled={disabled}
         size={size}>
-        {!disabled &&
-          theme &&
-          (theme.toLowerCase().includes(ColorRole.ERROR) ||
-            theme.toLowerCase().includes(ColorRole.WARNING)) &&
-          getThemedIcon(<AlertCircle />)}
-        {!disabled &&
-          theme &&
-          theme.toLowerCase().includes(ColorRole.INFO) &&
-          getThemedIcon(<Info />)}
-        {!disabled &&
-          theme &&
-          theme.toLowerCase().includes(ColorRole.HELP) &&
-          getThemedIcon(<HelpCircle />)}
-        {!disabled &&
-          theme &&
-          theme.toLowerCase().includes(ColorRole.SUCCESS) &&
-          getThemedIcon(<CheckCircle />)}
-        <ThemeableIconWrapper
-          {...props}
-          theme={theme}
-          disabled={disabled}
-          size={size}>
-          {getThemedIcon(children)}
-        </ThemeableIconWrapper>
-        {disabled && getThemedIcon(<Lock />)}
+        <ThemeableIconContainer>
+          {!disabled &&
+            theme &&
+            (theme.toLowerCase().includes(ColorRole.ERROR) ||
+              theme.toLowerCase().includes(ColorRole.WARNING)) &&
+            getThemedIcon(<AlertCircle />)}
+          {!disabled &&
+            theme &&
+            theme.toLowerCase().includes(ColorRole.INFO) &&
+            getThemedIcon(<Info />)}
+          {!disabled &&
+            theme &&
+            theme.toLowerCase().includes(ColorRole.HELP) &&
+            getThemedIcon(<HelpCircle />)}
+          {!disabled &&
+            theme &&
+            theme.toLowerCase().includes(ColorRole.SUCCESS) &&
+            getThemedIcon(<CheckCircle />)}
+          {disabled && getThemedIcon(<Lock />)}
+        </ThemeableIconContainer>
       </ThemeableIconFrame>
     );
   }

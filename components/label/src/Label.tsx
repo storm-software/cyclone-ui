@@ -12,7 +12,7 @@ const LabelText = styled(SizableText, {
   name: LABEL_NAME,
 
   fontFamily: "$label",
-  animation: "medium",
+  animation: "200ms",
   cursor: "pointer",
 
   fontSize: "$6",

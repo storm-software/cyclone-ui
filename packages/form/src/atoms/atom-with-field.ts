@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { ColorRole } from "@cyclone-ui/colors";
 import { atomWithTanstack } from "@cyclone-ui/state";
 import {
   DeepKeys,
@@ -24,17 +25,18 @@ import {
   Validator
 } from "@tanstack/react-form/nextjs";
 import { ValibotValidator } from "@tanstack/valibot-form-adapter";
-import { Atom } from "jotai";
+import { atom, Atom } from "jotai";
+import { FieldStatus } from "../types";
 
 /**
  * Creates an atom that creates and wraps a Tanstack Field.
  *
  *
  * @remarks
- * Please see the {@link https://tanstack.com/form | Tanstack Form documentation} for more information.
+ * Please see the {@link https://tanstack.com/field | Tanstack Form documentation} for more information.
  *
- * @param options - The Tanstack Field options to use when creating the FieldApi.
- * @returns An atom that wraps a Tanstack Field.
+ * @param field - The Tanstack FieldApi.
+ * @returns An atom that wraps a Tanstack Field Store.
  */
 export const atomWithField = <
   TFormValues,
@@ -56,4 +58,28 @@ export const atomWithField = <
   >
 ): Atom<FieldState<TFieldValue>> => {
   return atomWithTanstack<FieldState<TFieldValue>>(field.store);
+};
+
+export const atomWithFieldStatus = (
+  themeAtom: Atom<string | undefined>
+): Atom<FieldStatus> => {
+  return atom<FieldStatus>(get => {
+    const theme = get(themeAtom);
+
+    if (theme) {
+      if (theme.toLowerCase().includes(ColorRole.HELP)) {
+        return FieldStatus.HELP;
+      } else if (theme.toLowerCase().includes(ColorRole.SUCCESS)) {
+        return FieldStatus.SUCCESS;
+      } else if (theme.toLowerCase().includes(ColorRole.INFO)) {
+        return FieldStatus.INFO;
+      } else if (theme.toLowerCase().includes(ColorRole.WARNING)) {
+        return FieldStatus.WARNING;
+      } else if (theme.toLowerCase().includes(ColorRole.ERROR)) {
+        return FieldStatus.ERROR;
+      }
+    }
+
+    return FieldStatus.BASE;
+  });
 };

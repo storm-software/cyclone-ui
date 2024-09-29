@@ -1,11 +1,12 @@
 import { ColorRole } from "@cyclone-ui/colors";
 import {
-  AtomStoreApi,
   atomWithTanstack,
   createAtomStore,
+  CreateAtomStoreOptions,
+  StoreAtomsWithoutSelectors,
   UseAtomOptionsOrScope
 } from "@cyclone-ui/state";
-import { isSetObject } from "@storm-stack/types/index";
+import { isSetObject } from "@storm-stack/types";
 import {
   DeepKeys,
   DeepValue,
@@ -16,6 +17,7 @@ import {
 } from "@tanstack/react-form";
 import { Store } from "@tanstack/store";
 import { ValibotValidator } from "@tanstack/valibot-form-adapter";
+import { atom } from "jotai";
 import React, {
   createContext,
   PropsWithChildren,
@@ -24,8 +26,10 @@ import React, {
   useMemo,
   useRef
 } from "react";
+import { atomWithField, atomWithFieldStatus } from "../atoms/atom-with-field";
 import { UseFieldOptions } from "../types";
 import { useFormApi, useFormStore } from "./FormStoreProvider";
+import { useThemeName } from "@tamagui/core";
 
 const ApiContext = createContext<RefObject<
   FieldApi<any, any, any, any>
@@ -49,16 +53,24 @@ export type FieldStoreState = {
   name: string;
   formName: string;
   field: FieldState<any>;
-  theme: ColorRole;
+  theme: string;
   focused: boolean;
   required: boolean;
   disabled: boolean;
-  options: UseFieldOptions<any, any, any>;
 };
 
-export type FieldStoreApi = AtomStoreApi<FieldStoreState>;
+const fieldStoreSelectors = (
+  atoms: StoreAtomsWithoutSelectors<FieldStoreState>
+) => {
+  return {
+    status: atomWithFieldStatus(atoms.theme)
+  };
+};
 
-export const fieldStore = createAtomStore<FieldStoreState>({
+export const fieldStore = createAtomStore<
+  FieldStoreState,
+  CreateAtomStoreOptions<FieldStoreState, typeof fieldStoreSelectors>
+>({
   name: "field",
   initialState: {
     name: "field",
@@ -82,10 +94,12 @@ export const fieldStore = createAtomStore<FieldStoreState>({
     ),
     focused: false,
     required: false,
-    disabled: false,
-    options: {} as UseFieldOptions<any, any, any>
-  }
+    disabled: false
+  },
+  selectors: fieldStoreSelectors
 });
+
+export type FieldStoreApi = typeof fieldStore;
 
 export const FieldProvider = <
   TFormValues,
@@ -106,21 +120,28 @@ export const FieldProvider = <
   TFieldValidator,
   TFieldValue
 >) => {
-  const form = useFormApi();
+  const form = useFormApi<TFormValues>();
   const api = useField<
     TFormValues,
     TFieldName,
     TFieldValidator,
     ValibotValidator,
     TFieldValue
-  >({ ...options, form: form as any });
+  >({
+    ...options,
+    form
+  });
   const apiRef = useRef(api);
 
   const fieldAtom = useMemo(() => {
-    return atomWithTanstack(api.store);
+    return atomWithField<TFormValues, TFieldName, TFieldValidator, TFieldValue>(
+      api
+    );
   }, [options]);
 
-  return (
+  const theme = useThemeName();
+
+   return (
     <ApiContext.Provider value={apiRef}>
       <fieldStore.Provider
         scope={String(options.name)}
@@ -128,11 +149,10 @@ export const FieldProvider = <
           name: String(options.name),
           formName: useFormStore().get.$name(),
           field: fieldAtom,
-          theme: options.theme,
+          theme: theme || ColorRole.BASE,
           focused: !!options.focused,
           required: !!options.required,
-          disabled: !!options.disabled,
-          options
+          disabled: !!options.disabled
         }}>
         {children}
       </fieldStore.Provider>

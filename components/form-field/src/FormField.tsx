@@ -38,12 +38,10 @@ export const FormFieldContext = createStyledContext<{
   scaleIcon: number;
   color?: ColorTokens | string;
   hideIcons: boolean;
-  theme: string;
 }>({
   size: "$4",
   scaleIcon: 1,
-  hideIcons: true,
-  theme: "default"
+  hideIcons: false
 });
 
 export const FORM_FIELD_NAME = "FormField";
