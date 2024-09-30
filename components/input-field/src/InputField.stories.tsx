@@ -1,28 +1,27 @@
 import { FormProvider } from "@cyclone-ui/form";
-import { Input } from "@cyclone-ui/input";
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormField } from "./FormField";
+import { InputField } from "./InputField";
 
-const meta: Meta<typeof FormField> = {
-  title: "Form/FormField",
-  component: FormField,
+const meta: Meta<typeof InputField> = {
+  title: "Form/InputField",
+  component: InputField,
   tags: ["autodocs"],
-  render: ({ ...rest }: any) => (
-    <FormProvider name="formName" defaultValues={{ formFieldName: "" }}>
-      <FormField name="formFieldName" {...rest}>
-        <FormField.Label>Label Text</FormField.Label>
-        <Input placeholder="email@example.com" {...rest} />
-        <FormField.Details>
-          This is an example detailed message for an input
-        </FormField.Details>
-      </FormField>
+  render: (props: any) => (
+    <FormProvider name="formName" defaultValues={{ inputFieldName: "" }}>
+      <InputField name="inputFieldName" {...props}>
+        <InputField.Label>Label Text</InputField.Label>
+        <InputField.Value placeholder="email@example.com" />
+        <InputField.Details>
+          This is an example detailed message for an input field
+        </InputField.Details>
+      </InputField>
     </FormProvider>
   )
-} satisfies Meta<typeof FormField>;
+} satisfies Meta<typeof InputField>;
 
 export default meta;
 
-type Story = StoryObj<typeof FormField>;
+type Story = StoryObj<typeof InputField>;
 
 export const Base: Story = {
   args: {}

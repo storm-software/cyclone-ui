@@ -255,6 +255,7 @@
       "@cyclone-ui/font-permanent-marker": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
+      "@cyclone-ui/input-field": "workspace:*",
       "@cyclone-ui/label": "workspace:*",
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/masks": "workspace:*",

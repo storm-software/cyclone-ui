@@ -1,0 +1,46 @@
+{
+  "name": "input-field",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/input-field/src",
+  "targets": {
+    "build": {
+      "cache": true,
+      "executor": "@cyclone-ui/nx:build",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
+      "options": {
+        "outputPath": "dist/components/input-field",
+        "tsConfig": "components/input-field/tsconfig.json",
+        "project": "components/input-field/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/input-field",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

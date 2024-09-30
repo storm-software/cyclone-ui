@@ -21,6 +21,7 @@ overrides:
   '@cyclone-ui/font-permanent-marker': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/input': workspace:*
+  '@cyclone-ui/input-field': workspace:*
   '@cyclone-ui/label': workspace:*
   '@cyclone-ui/link': workspace:*
   '@cyclone-ui/masks': workspace:*
@@ -1175,6 +1176,28 @@ importers:
       tamagui:
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/input-field:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/web':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1

@@ -17,7 +17,7 @@ import { getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import type { SizeVariantSpreadFunction } from "@tamagui/web";
 import { useCallback } from "react";
-import { Input as TamaguiInput, useControllableState } from "tamagui";
+import { Input as TamaguiInput } from "tamagui";
 
 const defaultContextValues = {
   size: "$true",
@@ -170,7 +170,7 @@ export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
   };
 };
 
-const InputValue = styled(TamaguiInput, {
+const BaseInput = styled(TamaguiInput, {
   name: INPUT_NAME,
 
   unstyled: true,
@@ -203,12 +203,12 @@ const InputValue = styled(TamaguiInput, {
   }
 });
 
-const InputValueImpl = InputValue.styleable<{
+const BaseInputImpl = BaseInput.styleable<{
   onChange?: (value?: string) => any;
   onBlur?: () => any;
 }>((props, ref) => {
   const { size } = InputContext.useStyledContext();
-  const { onChange, onBlur, value, defaultValue, ...rest } = props;
+  const { onChange, onBlur, value, defaultValue, children, ...rest } = props;
 
   const store = useFieldStore();
   const name = store.get.name();
@@ -225,18 +225,15 @@ const InputValueImpl = InputValue.styleable<{
   );
 
   const setFocused = store.set.focused();
-  const handleBlur = useCallback(
-    () => {
-      api.handleBlur();
-      setFocused(false);
-      onBlur?.();
-    },
-    [api.handleChange, onChange]
-  );
+  const handleBlur = useCallback(() => {
+    api.handleBlur();
+    setFocused(false);
+    onBlur?.();
+  }, [api.handleChange, onChange]);
 
   return (
     <View flex={1}>
-      <InputValue
+      <BaseInput
         id={name}
         ref={ref}
         size={size}
@@ -249,13 +246,14 @@ const InputValueImpl = InputValue.styleable<{
         theme={status}
         value={value}
         defaultValue={defaultValue}
-        disabled={disabled}
-      />
+        disabled={disabled}>
+        {children}
+      </BaseInput>
     </View>
   );
 });
 
-const InputGroupImpl = InputValueImpl.styleable<{
+const InputGroupImpl = BaseInputImpl.styleable<{
   required?: boolean;
   onChange?: (value?: string) => any;
 }>((props, forwardedRef) => {
@@ -273,14 +271,14 @@ const InputGroupImpl = InputValueImpl.styleable<{
       applyFocusStyle={focused}
       disabled={disabled}>
       {!disabled && <ThemeableIcon theme={status} disabled={false} size="$3" />}
-      <InputValueImpl
+      <BaseInputImpl
         ref={forwardedRef}
         {...rest}
         paddingHorizontal={
           status.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
-        }
-      />
-      {children}
+        }>
+        {children}
+      </BaseInputImpl>
       {disabled && <ThemeableIcon disabled={true} size="$3" />}
     </InputGroupFrame>
   );
