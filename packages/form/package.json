@@ -42,11 +42,7 @@
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
     "@tamagui/core": "^1.110.5",
-    "@tanstack/form-core": "^0.33.0",
-    "@tanstack/react-form": "^0.33.0",
-    "@tanstack/store": "^0.5.5",
-    "@tanstack/valibot-form-adapter": "^0.33.0",
-    "maska": "^3.0.2"
+    "maska": "^3.0.3"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",

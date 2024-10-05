@@ -1531,6 +1531,9 @@ importers:
 
   components/select:
     dependencies:
+      '@storm-stack/types':
+        specifier: latest
+        version: 0.4.2
       '@tamagui/adapt':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1972,21 +1975,9 @@ importers:
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
-      '@tanstack/form-core':
-        specifier: ^0.33.0
-        version: 0.33.0
-      '@tanstack/react-form':
-        specifier: ^0.33.0
-        version: 0.33.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2)
-      '@tanstack/store':
-        specifier: ^0.5.5
-        version: 0.5.5
-      '@tanstack/valibot-form-adapter':
-        specifier: ^0.33.0
-        version: 0.33.0(valibot@0.42.1(typescript@5.6.2))
       maska:
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.0.3
+        version: 3.0.3
     devDependencies:
       jotai:
         specifier: '>=2.8.0'
@@ -8240,24 +8231,6 @@ packages:
     peerDependencies:
       react: '*'
 
-  '@tanstack/form-core@0.33.0':
-    resolution: {integrity: sha512-ouu1JVwLZgfPkIdIq3TWIZs++KpLOo8Bx4tXYOc/1KwA9qUQ0Iv/+Y6GfiC4wMcUzGCtLKOww84eZ8Qdge3ZmQ==}
-
-  '@tanstack/react-form@0.33.0':
-    resolution: {integrity: sha512-+292gWfP67uAu3zYeIQAQYEk6T7IvQUiuKwanCyATROG92FsxQrYeJdqDk4Bkh0MB8uy13CilrdxZOoEMdEKSQ==}
-    peerDependencies:
-      '@tanstack/start': ^1.43.13
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@tanstack/start':
-        optional: true
-
-  '@tanstack/react-store@0.5.5':
-    resolution: {integrity: sha512-1orYXGatBqXCYKuroFwV8Ll/6aDa5E3pU6RR4h7RvRk7TmxF1+zLCsWALZaeijXkySNMGmvawSbUXRypivg2XA==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-
   '@tanstack/react-table@8.19.2':
     resolution: {integrity: sha512-itoSIAkA/Vsg+bjY23FSemcTyPhc5/1YjYyaMsr9QSH/cdbZnQxHVWrpWn0Sp2BWN71qkzR7e5ye8WuMmwyOjg==}
     engines: {node: '>=12'}
@@ -8271,11 +8244,6 @@ packages:
   '@tanstack/table-core@8.19.2':
     resolution: {integrity: sha512-KpRjhgehIhbfH78ARm/GJDXGnpdw4bCg3qas6yjWSi7czJhI/J6pWln7NHtmBkGE9ZbohiiNtLqwGzKmBfixig==}
     engines: {node: '>=12'}
-
-  '@tanstack/valibot-form-adapter@0.33.0':
-    resolution: {integrity: sha512-Yow3HbUXbwE5UVo2MI0AkgXG6tmSaZ9eBrlNcL6CSrS4w0LON0bSvGaOvLN9euePtjRLNTsbAzBFXDCdcZL9wQ==}
-    peerDependencies:
-      valibot: '>=0.33.0 <1'
 
   '@taplo/cli@0.7.0':
     resolution: {integrity: sha512-Ck3zFhQhIhi02Hl6T4ZmJsXdnJE+wXcJz5f8klxd4keRYgenMnip3JDPMGDRLbnC/2iGd8P0sBIQqI3KxfVjBg==}
@@ -11086,9 +11054,6 @@ packages:
 
   decky@1.1.1:
     resolution: {integrity: sha512-VMX6krHDqOgKByapwEar1w+P7aj8YIeH1DiRfOOrnLcgR7a0CEI0NvrvV2FSAzkhkHIsGBV59xwsgOook8TIxg==}
-
-  decode-formdata@0.8.0:
-    resolution: {integrity: sha512-iUzDgnWsw5ToSkFY7VPFA5Gfph6ROoOxOB7Ybna4miUSzLZ4KaSJk6IAB2AdW6+C9vCVWhjjNA4gjT6wF3eZHQ==}
 
   decode-named-character-reference@1.0.2:
     resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
@@ -14822,8 +14787,8 @@ packages:
   marky@1.2.5:
     resolution: {integrity: sha512-q9JtQJKjpsVxCRVgQ+WapguSbKC3SQ5HEzFGPAJMStgh3QjCawp00UKv3MTTAArTmGmmPUvllHZoNbZ3gs0I+Q==}
 
-  maska@3.0.2:
-    resolution: {integrity: sha512-onh3JCFrkUTFrrhhDpfQZGwQ830zeEUEVbuQDZpLzY/JXJ5QR+hQ6FJ7lcw1NikAixtpGXkxxC+teO5glT3Vyw==}
+  maska@3.0.3:
+    resolution: {integrity: sha512-ItFbuqVeBKk1JmC4QCRxKeNaX+Ym/oMUYZVXwvAPKAwMeO4bYZpIGjNWOcZy+L8YXQaPvCZ68+5eYpGRdyaA8w==}
 
   md5-file@3.2.3:
     resolution: {integrity: sha512-3Tkp1piAHaworfcCgH0jKbTvj1jWWFgbvh2cXaNCgHwyTCBxxvD1Y04rmfpvdPm1P4oXMOpm6+2H7sr7v9v8Fw==}
@@ -20023,11 +19988,6 @@ packages:
 
   use-sync-external-store@1.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-
-  use-sync-external-store@1.2.2:
-    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -31517,28 +31477,6 @@ snapshots:
       '@tamagui/use-force-update': 1.96.0(react@18.3.1)
       react: 18.3.1
 
-  '@tanstack/form-core@0.33.0':
-    dependencies:
-      '@tanstack/store': 0.5.5
-
-  '@tanstack/react-form@0.33.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.2)':
-    dependencies:
-      '@remix-run/node': 2.12.1(typescript@5.6.2)
-      '@tanstack/form-core': 0.33.0
-      '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      decode-formdata: 0.8.0
-      react: 18.3.1
-    transitivePeerDependencies:
-      - react-dom
-      - typescript
-
-  '@tanstack/react-store@0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@tanstack/store': 0.5.5
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      use-sync-external-store: 1.2.2(react@18.3.1)
-
   '@tanstack/react-table@8.19.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/table-core': 8.19.2
@@ -31548,11 +31486,6 @@ snapshots:
   '@tanstack/store@0.5.5': {}
 
   '@tanstack/table-core@8.19.2': {}
-
-  '@tanstack/valibot-form-adapter@0.33.0(valibot@0.42.1(typescript@5.6.2))':
-    dependencies:
-      '@tanstack/form-core': 0.33.0
-      valibot: 0.42.1(typescript@5.6.2)
 
   '@taplo/cli@0.7.0': {}
 
@@ -35171,8 +35104,6 @@ snapshots:
       fast-glob: 3.3.2
     optionalDependencies:
       esbuild: 0.8.57
-
-  decode-formdata@0.8.0: {}
 
   decode-named-character-reference@1.0.2:
     dependencies:
@@ -40107,7 +40038,7 @@ snapshots:
 
   marky@1.2.5: {}
 
-  maska@3.0.2: {}
+  maska@3.0.3: {}
 
   md5-file@3.2.3:
     dependencies:
@@ -47365,10 +47296,6 @@ snapshots:
       react: 17.0.2
 
   use-sync-external-store@1.2.0(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-
-  use-sync-external-store@1.2.2(react@18.3.1):
     dependencies:
       react: 18.3.1
 

@@ -15,18 +15,18 @@
 
  -------------------------------------------------------------------*/
 
+/* eslint-disable unicorn/no-null */
+
 import { ColorRole } from "@cyclone-ui/colors";
 import { atomWithTanstack } from "@cyclone-ui/state";
-import {
-  DeepKeys,
-  DeepValue,
-  FieldApi,
-  FieldState,
-  Validator
-} from "@tanstack/react-form/nextjs";
-import { ValibotValidator } from "@tanstack/valibot-form-adapter";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { atom, Atom } from "jotai";
-import { FieldStatus } from "../types";
+import {
+  FieldOptions,
+  FieldStatus,
+  FieldValueType,
+  InferFieldValue
+} from "../types";
 
 /**
  * Creates an atom that creates and wraps a Tanstack Field.
@@ -60,6 +60,21 @@ export const atomWithField = <
   return atomWithTanstack<FieldState<TFieldValue>>(field.store);
 };
 
+export type FieldAtomFamilyOptions = {
+  field: FieldApi<any, any, any, any>;
+  formName: string;
+};
+
+// export const fieldAtomFamily = atomFamily<
+//   FieldAtomFamilyOptions,
+//   ReturnType<typeof atomWithField>
+// >(
+//   (options: FieldAtomFamilyOptions) => atomWithField(options.field),
+//   (options1, options2) =>
+//     `${options1.formName}:${options1.field.name}` ===
+//     `${options2.formName}:${options2.field.name}`
+// );
+
 export const atomWithFieldStatus = (
   themeAtom: Atom<string | undefined>
 ): Atom<FieldStatus> => {
@@ -81,5 +96,39 @@ export const atomWithFieldStatus = (
     }
 
     return FieldStatus.BASE;
+  });
+};
+
+export const atomWithFieldValue = <
+  TFieldOptions extends FieldOptions = FieldOptions,
+  TFieldValue extends
+    InferFieldValue<TFieldOptions> = InferFieldValue<TFieldOptions>
+>(
+  fieldAtom: Atom<FieldApi<
+    any,
+    any,
+    any,
+    ValibotValidator,
+    TFieldValue
+  > | null>,
+  optionsAtom: Atom<TFieldOptions>
+) => {
+  return atom<TFieldValue>(get => {
+    const options = get(optionsAtom);
+    const field = get(fieldAtom);
+
+    return (
+      options.valueType === FieldValueType.STRING
+        ? isSet(field?.state.value)
+          ? String(field.state.value)
+          : ""
+        : options.valueType === FieldValueType.BOOLEAN
+          ? isSet(field?.state.value)
+            ? Boolean(field.state.value)
+            : false
+          : isSet(field?.state.value)
+            ? field.state.value
+            : null
+    ) as TFieldValue;
   });
 };

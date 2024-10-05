@@ -31,7 +31,6 @@ import type {
 } from "jotai/vanilla/utils/atomWithStorage";
 import type React from "react";
 import { useCallback } from "react";
-import { atomWithWrapper } from "../atoms/atom-with-wrapper";
 import { baseAtom } from "../base/base-atom";
 import type { ProviderProps } from "./create-atom-provider";
 import { createAtomProvider, useAtomStore } from "./create-atom-provider";
@@ -306,7 +305,7 @@ export const createAtomStore = <
   for (const [key, atomOrValue] of Object.entries(options.initialState)) {
     const atomConfig: Atom<unknown> = isAtom(atomOrValue)
       ? atomOrValue
-      : atomWithWrapper(atomOrValue);
+      : baseAtom(atomOrValue);
     atomConfig.debugLabel = `${options.name}:${key}`;
 
     atomsWithoutSelectors[key as keyof TStoreAtomsWithoutSelectors] =

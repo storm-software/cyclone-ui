@@ -41,7 +41,7 @@ export const Disabled: Story = {
 
 export const DefaultValue: Story = {
   args: {
-    defaultValue: "Defaulted Text"
+    initialValue: "Defaulted Text"
   }
 };
 

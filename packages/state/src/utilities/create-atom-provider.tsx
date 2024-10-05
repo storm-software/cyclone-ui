@@ -53,7 +53,7 @@ export const useAtomStore = (
 };
 
 export type ProviderProps<T extends object> = {
-  initialValues?: Partial<{ [TKey in keyof T]: T[TKey] | Atom<T[TKey]> }>;
+  initialValues?: Partial<{ [TKey in keyof T]: T[TKey] }>;
   resetKey?: unknown;
   scope?: string;
 } & AtomProviderProps &
@@ -175,7 +175,7 @@ const InnerAtomProviderComponent = <TState extends object>(
     if (onMount) {
       void onMount(atoms);
     }
-  });
+  }, []);
 
   return children;
 };

@@ -32,6 +32,7 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
+    "@storm-stack/types": "latest",
     "@tamagui/adapt": "^1.110.5",
     "@tamagui/compose-refs": "^1.110.5",
     "@tamagui/constants": "^1.110.5",

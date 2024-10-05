@@ -4,7 +4,8 @@
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "noImplicitAny": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"]
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],

@@ -15,18 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import { FormOptions, formOptions } from "@tanstack/react-form/nextjs";
-import {
-  valibotValidator,
-  type ValibotValidator
-} from "@tanstack/valibot-form-adapter";
+import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import { formStore, FormStore } from "../stores";
 
-export const createFormOptions = <TFormValues>(
-  options?: FormOptions<TFormValues, ValibotValidator>
-): FormOptions<TFormValues, ValibotValidator> | undefined => {
-  return formOptions<TFormValues, ValibotValidator>({
-    asyncDebounceMs: 500,
-    validatorAdapter: valibotValidator(),
-    ...options
-  });
+export const useFormStore = (
+  options?: UseAtomOptionsOrScope
+): ReturnType<FormStore["useStore"]> => {
+  return formStore.useStore(options);
 };

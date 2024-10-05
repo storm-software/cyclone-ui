@@ -1,21 +1,28 @@
+import { FieldValueType, FormProvider } from "@cyclone-ui/form";
+import { FormField } from "@cyclone-ui/form-field";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Select } from "./Select";
 
 const meta: Meta<typeof Select> = {
   title: "Form/Select",
   component: Select,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <Select name="selectName" {...args}>
-      <Select.Label>Label Text</Select.Label>
-      <Select.Box>
-        <Select.Value placeholder="email@example.com" />
-      </Select.Box>
-      <Select.Details>
-        This is an example detailed message for an select
-      </Select.Details>
-    </Select>
+  render: (props: any) => (
+    <FormProvider name="formName" defaultValues={{ selectName: "" }}>
+      <FormField name="selectName" valueType={FieldValueType.STRING} {...props}>
+        <FormField.Label>Label Text</FormField.Label>
+        <Select placeholder="email@example.com">
+          {options.map((option, i) => (
+            <Select.Item key={i} index={i} value={option.value}>
+              {option.name}
+            </Select.Item>
+          ))}
+        </Select>
+        <FormField.Details>
+          This is an example detailed message for an select
+        </FormField.Details>
+      </FormField>
+    </FormProvider>
   )
 } satisfies Meta<typeof Select>;
 
@@ -49,56 +56,47 @@ const options = [
 ];
 
 export const Base: Story = {
-  args: {
-    options
-  }
+  args: {}
 };
 
 export const Required: Story = {
   args: {
-    required: true,
-    options
+    required: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true,
-    options
+    disabled: true
   }
 };
 
 export const Help: Story = {
   args: {
-    theme: "help",
-    options
+    theme: "help"
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "error",
-    options
+    theme: "error"
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning",
-    options
+    theme: "warning"
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info",
-    options
+    theme: "info"
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success",
-    options
+    theme: "success"
   }
 };

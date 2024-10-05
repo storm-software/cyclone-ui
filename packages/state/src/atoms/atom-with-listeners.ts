@@ -36,14 +36,13 @@ export type Callback<Value> = (
 /**
  * Creates an atom that broadcasts its value to other tabs/windows using the BroadcastChannel API.
  *
- * @param key - The key to use for the BroadcastChannel
  * @param initialValue - The initial value of the atom
  * @returns An atom that broadcasts its value to other tabs/windows using the BroadcastChannel API.
  */
 export function atomWithListeners<TValue>(
-  initial: TValue | WritableAtom<TValue, any, Promise<void> | void>
+  initialValue: TValue | WritableAtom<TValue, any, Promise<void> | void>
 ) {
-  const rootAtom = isAtom(initial) ? initial : baseAtom(initial);
+  const rootAtom = isAtom(initialValue) ? initialValue : baseAtom(initialValue);
   const listenersAtom = baseAtom(<Callback<TValue>[]>[]);
 
   const anAtom = baseAtom(

@@ -15,24 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-"use client";
+import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import { FieldStore, fieldStore } from "../stores";
 
-import {
-  FormOptions,
-  mergeForm,
-  useForm as useTanstackForm,
-  useTransform
-} from "@tanstack/react-form";
-import { ServerFormState } from "@tanstack/react-form/nextjs";
-import { type ValibotValidator } from "@tanstack/valibot-form-adapter";
-import type { UseFormReturn } from "../types";
-
-export const useForm = <TFormValues>(
-  state: ServerFormState<TFormValues>,
-  options: FormOptions<TFormValues, ValibotValidator> = {}
-): UseFormReturn<TFormValues> => {
-  return useTanstackForm<TFormValues, any>({
-    ...options,
-    transform: useTransform(baseForm => mergeForm(baseForm, state!), [state])
-  });
+export const useFieldStore = (
+  options?: UseAtomOptionsOrScope
+): ReturnType<FieldStore["useStore"]> => {
+  return fieldStore.useStore(options);
 };

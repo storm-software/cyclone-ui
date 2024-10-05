@@ -1,9 +1,6 @@
-import { ColorRole } from "@cyclone-ui/colors";
-import { FieldStatus, useFieldApi, useFieldStore } from "@cyclone-ui/form";
-import {
-  ThemeableIcon,
-  ThemeableIconWrapper
-} from "@cyclone-ui/themeable-icon";
+import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
+import { FormFieldThemeableIcon } from "@cyclone-ui/form-field";
+import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
@@ -16,21 +13,20 @@ import { getFontSized } from "@tamagui/get-font-sized";
 import { getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import type { SizeVariantSpreadFunction } from "@tamagui/web";
-import { useCallback } from "react";
 import { Input as TamaguiInput } from "tamagui";
 
 const defaultContextValues = {
   size: "$true",
   color: undefined,
-  hideIcons: true,
-  theme: `${ColorRole.BASE}_Input`
+  hideIcons: true
+  // theme: `${ColorRole.BASE}_Input`
 } as const;
 
 export const InputContext = createStyledContext<{
   size: FontSizeTokens;
   color?: ColorTokens | string;
   hideIcons: boolean;
-  theme: string;
+  // theme: string;
 }>(defaultContextValues);
 
 export const defaultInputGroupStyles = {
@@ -203,49 +199,30 @@ const BaseInput = styled(TamaguiInput, {
   }
 });
 
-const BaseInputImpl = BaseInput.styleable<{
-  onChange?: (value?: string) => any;
-  onBlur?: () => any;
-}>((props, ref) => {
+const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
   const { size } = InputContext.useStyledContext();
-  const { onChange, onBlur, value, defaultValue, children, ...rest } = props;
+  const { children, ...rest } = props;
 
   const store = useFieldStore();
   const name = store.get.name();
   const disabled = store.get.disabled();
-  const status = store.get.status();
+  const value = store.get.value();
+  const initialValue = store.get.initialValue();
 
-  const api = useFieldApi();
-  const handleChange = useCallback(
-    (text: string) => {
-      api.handleChange(text);
-      onChange?.(text);
-    },
-    [api.handleChange, onChange]
-  );
-
-  const setFocused = store.set.focused();
-  const handleBlur = useCallback(() => {
-    api.handleBlur();
-    setFocused(false);
-    onBlur?.();
-  }, [api.handleChange, onChange]);
+  const { handleFocus, handleBlur, handleChange } = useFieldActions<string>();
 
   return (
     <View flex={1}>
       <BaseInput
         id={name}
-        ref={ref}
+        ref={forwardedRef}
         size={size}
-        onFocus={() => {
-          setFocused(!disabled);
-        }}
+        {...rest}
+        onFocus={handleFocus}
         onBlur={handleBlur}
         onChangeText={handleChange}
-        {...rest}
-        theme={status}
-        value={value}
-        defaultValue={defaultValue}
+        value={String(value ?? "")}
+        defaultValue={String(initialValue ?? "")}
         disabled={disabled}>
         {children}
       </BaseInput>
@@ -253,33 +230,26 @@ const BaseInputImpl = BaseInput.styleable<{
   );
 });
 
-const InputGroupImpl = BaseInputImpl.styleable<{
-  required?: boolean;
-  onChange?: (value?: string) => any;
-}>((props, forwardedRef) => {
+const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
-  // const { scaleIcon, size } = InputContext.useStyledContext();
 
   const store = useFieldStore();
   const focused = store.get.focused();
   const disabled = store.get.disabled();
-  const status = store.get.status();
+  const theme = store.get.theme();
 
   return (
-    <InputGroupFrame
-      theme={status}
-      applyFocusStyle={focused}
-      disabled={disabled}>
-      {!disabled && <ThemeableIcon theme={status} disabled={false} size="$3" />}
+    <InputGroupFrame applyFocusStyle={focused} disabled={disabled}>
+      {!disabled && <FormFieldThemeableIcon disabled={false} />}
       <BaseInputImpl
         ref={forwardedRef}
         {...rest}
         paddingHorizontal={
-          status.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
+          theme.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
         }>
         {children}
       </BaseInputImpl>
-      {disabled && <ThemeableIcon disabled={true} size="$3" />}
+      {disabled && <FormFieldThemeableIcon disabled={true} />}
     </InputGroupFrame>
   );
 });

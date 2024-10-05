@@ -1,4 +1,4 @@
-import { FormProvider } from "@cyclone-ui/form";
+import { FieldValueType, FormProvider } from "@cyclone-ui/form";
 import { FormField } from "@cyclone-ui/form-field";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "./Input";
@@ -7,11 +7,11 @@ const meta: Meta<typeof Input> = {
   title: "Form/Input",
   component: Input,
   tags: ["autodocs"],
-  render: ({ theme, ...rest }: any) => (
+  render: (props: any) => (
     <FormProvider name="formName" defaultValues={{ inputName: "" }}>
-      <FormField name="inputName" {...rest}>
+      <FormField name="inputName" valueType={FieldValueType.STRING} {...props}>
         <FormField.Label>Label Text</FormField.Label>
-        <Input placeholder="email@example.com" {...rest} />
+        <Input placeholder="email@example.com" />
         <FormField.Details>
           This is an example detailed message for an input
         </FormField.Details>
@@ -42,7 +42,7 @@ export const Disabled: Story = {
 
 export const DefaultValue: Story = {
   args: {
-    defaultValue: "Defaulted Text"
+    initialValue: "Defaulted Text"
   }
 };
 

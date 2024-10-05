@@ -130,16 +130,16 @@ export const maskOptions = {
       ...colors,
       background: ColorPaletteShades.PRIMARY,
       backgroundHover: ColorPaletteShades.PRIMARY + 2,
-      backgroundFocus: ColorPaletteShades.PRIMARY - 1,
-      backgroundPress: ColorPaletteShades.PRIMARY - 1,
+      backgroundFocus: ColorPaletteShades.PRIMARY - 2,
+      backgroundPress: ColorPaletteShades.PRIMARY - 2,
       color: ColorPaletteShades.BACKGROUND,
       colorHover: ColorPaletteShades.BACKGROUND,
       colorPress: ColorPaletteShades.BACKGROUND,
       colorFocus: ColorPaletteShades.BACKGROUND,
-      borderColor: ColorPaletteShades.PRIMARY,
+      borderColor: ColorPaletteShades.PRIMARY - 1,
       borderColorHover: ColorPaletteShades.PRIMARY + 2,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 1,
-      borderColorPress: ColorPaletteShades.PRIMARY - 1
+      borderColorFocus: ColorPaletteShades.PRIMARY - 2,
+      borderColorPress: ColorPaletteShades.PRIMARY - 2
     },
     skip: skipShadowsAndSpecificColors
   },
