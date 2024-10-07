@@ -176,7 +176,7 @@
     "log4brains": "^1.0.1",
     "ls-lint": "^0.1.2",
     "make-dir-cli": "^3.1.0",
-    "next": "14.2.3",
+    "next": "14.2.10",
     "next-router-mock": "^0.9.13",
     "nx": "19.7.3",
     "prettier": "^3.3.0",
