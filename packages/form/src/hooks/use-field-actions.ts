@@ -18,9 +18,11 @@
 import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns";
 import { MessageDetails, isPromise } from "@storm-stack/types";
+import { Getter, Setter } from "jotai";
+import { useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
+import { fieldStore } from "../stores/field-store";
 import { ValidationCause, Validator } from "../types";
-import { useFieldStore } from "./use-field-store";
 
 export const useFieldActions = <
   TFieldValue = any,
@@ -28,110 +30,127 @@ export const useFieldActions = <
 >(
   opts?: UseAtomOptionsOrScope
 ) => {
-  const store = useFieldStore(opts);
-  const options = store.get.options();
-  const disabled = store.get.disabled();
+  const validate = useAtomCallback(
+    useCallback(
+      async (
+        get: Getter,
+        set: Setter,
+        nextValue: TFieldValue,
+        cause: ValidationCause
+      ) => {
+        const options = get(fieldStore.api.atom.options);
+        if (
+          options.validate?.[`on${upperCaseFirst(cause)}`] &&
+          options.validate[`on${upperCaseFirst(cause)}`].length > 0
+        ) {
+          set(fieldStore.api.atom.validating, true);
+          const previousValue = get(fieldStore.api.atom.previousValue);
 
-  const setValidating = store.set.validating();
-  const setValidationResults = store.set.validationResults();
-  const [value, setValue] = store.use.value();
-  const [previousValue, setPreviousValue] = store.use.previousValue();
-  const [blurred, setBlurred] = store.use.blurred();
+          const results = options.validate[`on${upperCaseFirst(cause)}`].map(
+            validator => validator(nextValue, previousValue)
+          );
 
-  const validate = useCallback(
-    async (nextValue: TFieldValue, cause: ValidationCause) => {
-      if (
-        options.validate?.[`on${upperCaseFirst(cause)}`] &&
-        options.validate[`on${upperCaseFirst(cause)}`].length > 0
-      ) {
-        setValidating(true);
-        const results = options.validate[`on${upperCaseFirst(cause)}`].map(
-          validator => validator(nextValue, previousValue)
-        );
+          const messages = [] as MessageDetails[];
+          const promises = [] as Promise<MessageDetails[]>[];
+          for (const result of results) {
+            if (result) {
+              if (isPromise(result)) {
+                promises.push(result as Promise<MessageDetails[]>);
+              } else {
+                messages.push(...result);
+              }
+            }
+          }
 
-        const messages = [] as MessageDetails[];
-        const promises = [] as Promise<MessageDetails[]>[];
-        for (const result of results) {
-          if (result) {
-            if (isPromise(result)) {
-              promises.push(result as Promise<MessageDetails[]>);
-            } else {
+          for (const result of await Promise.all(promises)) {
+            if (result && result.length > 0) {
               messages.push(...result);
             }
           }
-        }
 
-        for (const result of await Promise.all(promises)) {
-          if (result && result.length > 0) {
-            messages.push(...result);
+          set(fieldStore.api.atom.validationResults, prev => ({
+            ...prev,
+            [cause]: messages
+          }));
+          set(fieldStore.api.atom.validating, false);
+        }
+      },
+      []
+    )
+  );
+
+  const handleChange = useAtomCallback(
+    useCallback(
+      async (get: Getter, set: Setter, nextValue: TFieldValue) => {
+        const options = get(fieldStore.api.atom.options);
+        const disabled = get(fieldStore.api.atom.disabled);
+        const value = get(fieldStore.api.atom.value);
+
+        if (!disabled && nextValue !== value) {
+          set(fieldStore.api.atom.value, nextValue);
+          set(fieldStore.api.atom.previousValue, value);
+
+          const promises = [] as Promise<void>[];
+          if (options.onChange) {
+            promises.push(Promise.resolve(options.onChange(nextValue)));
           }
-        }
 
-        setValidationResults(prev => ({
-          ...prev,
-          [cause]: messages
-        }));
-        setValidating(false);
-      }
-    },
-    [previousValue, options.validate, setValidating, setValidationResults]
+          promises.push(validate(nextValue, ValidationCause.CHANGE));
+
+          const blurred = get(fieldStore.api.atom.blurred);
+          if (blurred) {
+            promises.push(validate(nextValue, ValidationCause.BLUR));
+          }
+
+          await Promise.all(promises);
+        }
+      },
+      [validate]
+    )
   );
 
-  const handleChange = useCallback(
-    async (nextValue: TFieldValue) => {
-      if (!disabled && nextValue !== value) {
-        setValue(nextValue);
-        setPreviousValue(value);
+  const handleFocus = useAtomCallback(
+    useCallback(async (get: Getter, set: Setter) => {
+      const disabled = get(fieldStore.api.atom.disabled);
+      const focused = get(fieldStore.api.atom.focused);
 
-        const promises = [] as Promise<void>[];
-        if (options.onChange) {
-          promises.push(Promise.resolve(options.onChange(nextValue)));
+      if (!disabled && !focused) {
+        set(fieldStore.api.atom.focused, true);
+
+        const options = get(fieldStore.api.atom.options);
+        if (options.onFocus) {
+          await Promise.resolve(options.onFocus());
         }
-
-        promises.push(validate(nextValue, ValidationCause.CHANGE));
-        if (blurred) {
-          promises.push(validate(nextValue, ValidationCause.BLUR));
-        }
-
-        await Promise.all(promises);
       }
-    },
-    [setValue, setPreviousValue, validate, options.onChange, disabled, value]
+    }, [])
   );
 
-  const [focused, setFocused] = store.use.focused();
-  const handleFocus = useCallback(async () => {
-    if (!disabled && !focused) {
-      setFocused(true);
+  const handleBlur = useAtomCallback(
+    useCallback(
+      async (get: Getter, set: Setter) => {
+        const focused = get(fieldStore.api.atom.focused);
+        const disabled = get(fieldStore.api.atom.disabled);
 
-      if (options.onFocus) {
-        await Promise.resolve(options.onFocus());
-      }
-    }
-  }, [focused, setFocused, options.onFocus, disabled]);
+        if (!disabled && focused) {
+          set(fieldStore.api.atom.focused, false);
+          set(fieldStore.api.atom.blurred, true);
 
-  const handleBlur = useCallback(async () => {
-    if (!disabled && focused) {
-      setFocused(false);
-      setBlurred(true);
+          const options = get(fieldStore.api.atom.options);
 
-      const promises = [] as Promise<void>[];
-      if (options.onBlur) {
-        promises.push(Promise.resolve(options.onBlur()));
-      }
+          const promises = [] as Promise<void>[];
+          if (options.onBlur) {
+            promises.push(Promise.resolve(options.onBlur()));
+          }
 
-      promises.push(validate(value as TFieldValue, ValidationCause.BLUR));
-      await Promise.all(promises);
-    }
-  }, [
-    setBlurred,
-    value,
-    focused,
-    setFocused,
-    validate,
-    options.onBlur,
-    disabled
-  ]);
+          const value = get(fieldStore.api.atom.value);
+
+          promises.push(validate(value as TFieldValue, ValidationCause.BLUR));
+          await Promise.all(promises);
+        }
+      },
+      [validate]
+    )
+  );
 
   return {
     handleChange,

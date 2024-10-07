@@ -299,21 +299,20 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  animation: "slow",
   backgroundColor: "transparent",
 
-  hoverStyle: {
-    backgroundColor: "$color8"
-  },
+  // hoverStyle: {
+  //   backgroundColor: "$color8"
+  // },
 
   variants: {
     selected: {
       true: {
-        backgroundColor: "$muted",
+        backgroundColor: "$muted"
 
-        hoverStyle: {
-          backgroundColor: "$color8"
-        }
+        // hoverStyle: {
+        //   backgroundColor: "$color8"
+        // }
       }
     },
 
@@ -339,7 +338,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  animation: "slow",
+  animation: "fast",
   color: "$color",
   fontFamily: "$body",
   paddingVertical: "$1",
@@ -427,7 +426,7 @@ const BaseSelect = styled(TamaguiSelect, {
 
   justifyContent: "center",
   alignItems: "center",
-  animation: "slow",
+  animation: "fast",
   borderColor: "transparent",
 
   // internalAutofillSelected: {
@@ -472,7 +471,6 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
         handleFocus();
         onOpen?.();
       } else {
-        handleChange(value);
         handleBlur();
         onClose?.();
       }
