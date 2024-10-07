@@ -1,18 +1,27 @@
+import { FieldValueType, FormProvider } from "@cyclone-ui/form";
+import { FormField } from "@cyclone-ui/form-field";
 import type { Meta, StoryObj } from "@storybook/react";
-
+import { XStack } from "@tamagui/stacks";
 import { Checkbox } from "./Checkbox";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Form/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <Checkbox name="checkboxName" {...args}>
-      <Checkbox.Label>Label Text</Checkbox.Label>
-      <Checkbox.Details>
-        This is an example detailed message for an checkbox
-      </Checkbox.Details>
-    </Checkbox>
+  render: (props: any) => (
+    <FormProvider name="formName" defaultValues={{ inputName: false }}>
+      <FormField name="inputName" valueType={FieldValueType.BOOLEAN} {...props}>
+        <XStack gap="$3" alignContent="center" verticalAlign="center">
+          <Checkbox />
+          <FormField.Label paddingBottom={0}>
+            This is an example label message for a checkbox
+          </FormField.Label>
+        </XStack>
+        <FormField.Details>
+          This is an example detailed message for a checkbox
+        </FormField.Details>
+      </FormField>
+    </FormProvider>
   )
 } satisfies Meta<typeof Checkbox>;
 

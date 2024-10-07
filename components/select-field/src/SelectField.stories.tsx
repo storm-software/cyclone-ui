@@ -10,13 +10,13 @@ const meta: Meta<typeof SelectField> = {
     <FormProvider name="formName" defaultValues={{ selectFieldName: "" }}>
       <SelectField name="selectFieldName" {...props}>
         <SelectField.Label>Label Text</SelectField.Label>
-        <SelectField.Value placeholder="email@example.com">
+        <SelectField.Control placeholder="email@example.com">
           {options.map((option, i) => (
-            <SelectField.Item key={i} index={i} value={option.value}>
+            <SelectField.Control.Item key={i} index={i} value={option.value}>
               {option.name}
-            </SelectField.Item>
+            </SelectField.Control.Item>
           ))}
-        </SelectField.Value>
+        </SelectField.Control>
         <SelectField.Details>
           This is an example detailed message for an select field
         </SelectField.Details>

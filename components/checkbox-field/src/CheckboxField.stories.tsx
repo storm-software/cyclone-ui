@@ -1,27 +1,32 @@
 import { FormProvider } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-import { InputField } from "./InputField";
+import { XStack } from "@tamagui/stacks";
+import { CheckboxField } from "./CheckboxField";
 
-const meta: Meta<typeof InputField> = {
-  title: "Form/InputField",
-  component: InputField,
+const meta: Meta<typeof CheckboxField> = {
+  title: "Form/CheckboxField",
+  component: CheckboxField,
   tags: ["autodocs"],
   render: (props: any) => (
-    <FormProvider name="formName" defaultValues={{ inputFieldName: "" }}>
-      <InputField name="inputFieldName" {...props}>
-        <InputField.Label>Label Text</InputField.Label>
-        <InputField.Control placeholder="email@example.com" />
-        <InputField.Details>
+    <FormProvider name="formName" defaultValues={{ checkboxFieldName: false }}>
+      <CheckboxField name="checkboxFieldName" {...props}>
+        <XStack gap="$3" alignContent="center" verticalAlign="center">
+          <CheckboxField.Control />
+          <CheckboxField.Label>
+            This is an example label message for a checkbox field
+          </CheckboxField.Label>
+        </XStack>
+        <CheckboxField.Details>
           This is an example detailed message for an input field
-        </InputField.Details>
-      </InputField>
+        </CheckboxField.Details>
+      </CheckboxField>
     </FormProvider>
   )
-} satisfies Meta<typeof InputField>;
+} satisfies Meta<typeof CheckboxField>;
 
 export default meta;
 
-type Story = StoryObj<typeof InputField>;
+type Story = StoryObj<typeof CheckboxField>;
 
 export const Base: Story = {
   args: {}
@@ -41,7 +46,7 @@ export const Disabled: Story = {
 
 export const DefaultValue: Story = {
   args: {
-    initialValue: "Defaulted Text"
+    initialValue: true
   }
 };
 

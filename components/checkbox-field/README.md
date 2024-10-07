@@ -39,29 +39,30 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# select-field
+# checkbox-field
 
-Select Form Field component for Cyclone UI
+Checkbox Form Field component for Cyclone UI
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [checkbox-field](#checkbox-field)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -70,14 +71,14 @@ Select Form Field component for Cyclone UI
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/select-field
+pnpm add -D @cyclone-ui/checkbox-field
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/select-field
+npm install -D @cyclone-ui/checkbox-field
 ```
 
 </details>
@@ -86,7 +87,7 @@ npm install -D @cyclone-ui/select-field
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/select-field
+yarn add -D @cyclone-ui/checkbox-field
 ```
 
 </details>
@@ -101,15 +102,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build select-field` to build the library.
+Run `nx build checkbox-field` to build the library.
 
 ### Running unit tests
 
-Run `nx test select-field` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test checkbox-field` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint select-field` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint checkbox-field` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

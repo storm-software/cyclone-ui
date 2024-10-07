@@ -15,7 +15,6 @@ const SelectFieldGroup = FormField.styleable((props, forwardedRef) => {
 
 export const SelectField = withStaticProperties(SelectFieldGroup, {
   Label: FormField.Label,
-  Value: Select,
-  Item: Select.Item,
+  Control: Select,
   Details: FormField.Details
 });
