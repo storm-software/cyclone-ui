@@ -248,8 +248,8 @@ export const maskOptions = {
     ...baseMaskOptions,
     override: {
       ...colors,
-      background: ColorPaletteShades.PRIMARY + 2,
-      color: ColorPaletteShades.PRIMARY - 3,
+      background: ColorPaletteShades.PRIMARY - 2,
+      color: ColorPaletteShades.PRIMARY - 4,
       borderColor: ColorPaletteShades.PRIMARY
     },
     skip: skipShadowsAndSpecificColors
@@ -312,24 +312,6 @@ export const maskOptions = {
     override: {
       ...colors,
       color: ColorPaletteShades.PRIMARY - 3
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  message: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      background: ColorPaletteShades.PRIMARY + 2,
-      color: ColorPaletteShades.PRIMARY - 3,
-      borderColor: ColorPaletteShades.PRIMARY
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  messageHeading: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   }

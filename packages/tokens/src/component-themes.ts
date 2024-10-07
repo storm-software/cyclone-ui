@@ -81,12 +81,12 @@ export const componentThemes = {
 
   Message: {
     mask: "identity",
-    ...maskOptions.message
+    ...maskOptions.alert
   },
 
   MessageHeading: {
     mask: "identity",
-    ...maskOptions.messageHeading
+    ...maskOptions.alertHeading
   },
 
   Button: {

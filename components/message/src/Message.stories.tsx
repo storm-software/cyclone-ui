@@ -1,5 +1,5 @@
 import { Button } from "@cyclone-ui/button";
-import { useMessageController, type MessageProps } from "@cyclone-ui/provider";
+import { useMessageController } from "@cyclone-ui/provider";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack, YStack } from "@tamagui/stacks";
 // import { HelpCircle } from "@tamagui/lucide-icons";
@@ -9,7 +9,7 @@ const meta: Meta<typeof Message> = {
   title: "General/Message",
   component: Message,
   tags: ["autodocs"],
-  render: ({ message, theme, ...rest }: MessageProps) => {
+  render: ({ message, theme, ...rest }: any) => {
     const { show, hide } = useMessageController();
 
     return (

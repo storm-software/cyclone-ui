@@ -1,39 +1,15 @@
-import React from "react";
+import { Alert, AlertContext } from "@cyclone-ui/alert";
 import { Button } from "@cyclone-ui/button";
+import { ColorRole } from "@cyclone-ui/colors";
 import {
   Toast,
   ToastViewport,
   ToastViewportProps,
-  useToastState,
-  type MessageProps
+  useToastState
 } from "@cyclone-ui/provider";
-import { ColorRole } from "@cyclone-ui/colors";
-import {
-  createStyledContext,
-  getVariable,
-  styled,
-  useTheme,
-  View
-} from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { LinearGradient } from "@tamagui/linear-gradient";
-import {
-  AlertCircle,
-  CheckCircle,
-  HelpCircle,
-  Info,
-  XCircle
-} from "@tamagui/lucide-icons";
-import { ThemeableStack, YStack } from "@tamagui/stacks";
-import type {
-  ColorTokens,
-  FontSizeTokens,
-  GetProps,
-  SizeTokens,
-  TextProps,
-  VariantSpreadExtras
-} from "@tamagui/web";
+import { createStyledContext, styled } from "@tamagui/core";
+import { X } from "@tamagui/lucide-icons";
+import type { ColorTokens, SizeTokens } from "@tamagui/web";
 
 const defaultContextValues = {
   size: "$3" as SizeTokens,
@@ -51,330 +27,46 @@ export const MessageContext = createStyledContext<{
 
 const MESSAGE_NAME = "Message";
 
-export const MessageFrame: any = styled(Toast, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  overflow: "hidden",
-  animation: "$slow",
-  borderColor: "$primary",
-  borderWidth: 2,
-  marginHorizontal: "$6",
-  backgroundColor: "transparent",
-
-  focusVisibleStyle: {
-    borderColor: "$borderColor",
-    outlineColor: "$borderColor",
-    outlineStyle: "solid",
-    outlineWidth: 1
-  },
-
-  pressStyle: {
-    borderColor: "$borderColor",
-    outlineColor: "$borderColor",
-    outlineStyle: "solid",
-    outlineWidth: 1
-  },
-
-  variants: {
-    unstyled: {
-      false: {
-        size: "$true",
-        position: "relative"
-      }
-    },
-
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val] ?? val
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
-  }
-});
-
-const MessageBackground = styled(YStack, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  fullscreen: true,
-  backgroundColor: "$fg",
-  animation: "$slow",
-  overflow: "hidden",
-  zIndex: 0,
-  opacity: 0.025
-});
-
-const MessageBackgroundGradient = styled(LinearGradient, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  fullscreen: true,
-  flexDirection: "row",
-  animation: "$slow",
-  overflow: "hidden",
-  opacity: 0.8,
-  zIndex: 5,
-  colors: ["transparent", "$backgroundHover"],
-
-  start: [0, 0],
-  end: [1.0, 1.0]
-});
-
-const MessageContent = styled(YStack, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  flexDirection: "column",
-  animation: "$slow",
-  zIndex: 20,
-  padding: "$6",
-  margin: 0,
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          gap: tokens.space[val] ?? val,
-          padding: tokens.space[val] ?? val
-        };
-      }
-    }
-  }
-});
-
-export const MessageHeader = styled(ThemeableStack, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  flexDirection: "row",
-  paddingBottom: 0,
-  zIndex: 10,
-  backgroundColor: "transparent",
-  alignItems: "center",
-
-  variants: {
-    unstyled: {
-      false: {}
-    },
-
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          gap: tokens.space[val] ?? val
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
-  }
-});
-
-const MessageIconFrame = styled(View, {
-  name: MESSAGE_NAME,
-  context: MessageContext,
-
-  justifyContent: "center",
-  alignItems: "center",
-  animation: "$slow",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val] ?? val
-        };
-      }
-    },
-
-    backgrounded: {
-      true: {
-        backgroundColor: "$color4",
-        padding: "$2"
-      },
-      false: {
-        backgroundColor: "transparent",
-        padding: 0
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    backgrounded: true
-  }
-});
-
-const getIconSize = (size: FontSizeTokens, scale: number) => {
-  return (
-    (typeof size === "number"
-      ? size * 0.6
-      : getFontSize(size as FontSizeTokens)) * scale
-  );
-};
-
-const MessageIcon = MessageIconFrame.styleable<{
-  scaleIcon?: number;
-  color?: ColorTokens | string;
-}>((props: any, ref: any) => {
-  const { children, color: colorProp, ...rest } = props;
-  const context = MessageContext.useStyledContext();
-  const { size = "$true", color: contextColor, scaleIcon = 1 } = context;
-
-  const themeColors = useTheme({
-    name: context.theme
-  });
-  const color = getVariable(
-    colorProp ||
-      contextColor ||
-      themeColors[contextColor as any]?.get("web") ||
-      themeColors.primary?.get("web")
-  );
-  const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
-
-  const getThemedIcon = useGetThemedIcon({
-    size: iconSize,
-    color: color as any
-  });
-  return (
-    <MessageIconFrame ref={ref} theme={context.theme} {...rest}>
-      {getThemedIcon(children)}
-    </MessageIconFrame>
-  );
-});
-
-export const MessageIconWrapper = MessageIcon.styleable(
-  ({ children, ...props }: any, ref: any) => {
-    const { theme } = MessageContext.useStyledContext();
-
-    if (
-      theme &&
-      (theme.toLowerCase().includes(ColorRole.ERROR) ||
-        theme.toLowerCase().includes(ColorRole.WARNING) ||
-        theme.toLowerCase().includes(ColorRole.INFO) ||
-        theme.toLowerCase().includes(ColorRole.HELP) ||
-        theme.toLowerCase().includes(ColorRole.SUCCESS))
-    ) {
-      return null;
-    }
-
-    return (
-      <MessageIcon ref={ref} {...props}>
-        {children}
-      </MessageIcon>
-    );
-  }
-);
-
 const MessageClose = styled(Toast.Close, {
   name: "Message",
   context: MessageContext,
 
   zIndex: 25,
   position: "absolute",
-  top: "$1",
-  right: "$1"
+  top: "$1.5",
+  right: "$1.5"
 });
 
-const MessageHeading = styled(Toast.Title, {
-  name: "Message",
-  context: MessageContext,
-
-  theme: "base",
-  fontFamily: "$heading",
-  color: "$fg",
-  zIndex: 20,
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 2.6;
-        const lineHeight = (heightToken ?? 1) * 2;
-        const fontWeight = config.font.weight?.["$6"];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
-});
-
-const MessageBody = styled(Toast.Description, {
+export const MessageFrame = styled(Toast, {
   name: MESSAGE_NAME,
-  context: MessageContext,
+  context: AlertContext,
 
-  theme: "base",
-  fontFamily: "$body",
-  color: "$base10",
-  zIndex: 20,
+  animation: "200ms",
   padding: 0,
+  elevate: true,
+  unstyled: true,
+  marginTop: "$5",
+  marginHorizontal: "$6",
+  borderColor: "transparent",
+  backgroundColor: "$background",
+
+  enterStyle: { opacity: 0, scale: 0.75, y: 100 },
+  exitStyle: { opacity: 0, scale: 1, y: -20 },
+
+  hoverStyle: {
+    backgroundColor: "$backgroundHover"
+  },
 
   variants: {
     size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.5;
-        const lineHeight = (heightToken ?? 1) * 1.3;
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
+      "...size": (val, { tokens }) => {
         return {
-          fontSize,
-          lineHeight,
-          textTransform,
-          fontStyle
+          borderRadius: tokens.radius[val] ?? val
         };
       }
     }
-  } as const
+  }
 });
-
-export type MessageHeaderProps = GetProps<typeof MessageHeader>;
-export type MessageHeadingProps = GetProps<typeof MessageHeading>;
-export type MessageBodyProps = GetProps<typeof MessageBody>;
-export type MessageIconProps = GetProps<typeof MessageIconWrapper>;
 
 export const Message = () => {
   const current = useToastState();
@@ -385,76 +77,27 @@ export const Message = () => {
   return (
     <MessageFrame
       key={current.id}
-      group="message"
-      duration={current.duration}
       theme={current.theme}
-      enterStyle={{ opacity: 0, scale: 0.5, y: -25 }}
-      exitStyle={{ opacity: 0, scale: 1, y: -20 }}
-      y={10}
-      opacity={1}
-      scale={1}
-      padding={0}
-      animation="100ms"
-      elevate={true}
+      duration={current.duration}
       viewportName={current.viewportName}>
-      <MessageBackground
-        style={{
-          filter: "blur(2px)"
-        }}
-        $group-message-hover={{
-          backgroundColor: "$backgroundHover"
-        }}
-        theme={current.theme}
-      />
-      <MessageContent theme={current.theme}>
-        <MessageBackgroundGradient theme={current.theme} />
-        <MessageHeader theme={current.theme}>
-          {current.icon ? (
-            <MessageIconWrapper>{current.icon}</MessageIconWrapper>
-          ) : (
-            <>
-              {current.theme &&
-                (current.theme.toLowerCase().includes(ColorRole.ERROR) ||
-                  current.theme.toLowerCase().includes(ColorRole.WARNING)) && (
-                  <MessageIcon>
-                    <AlertCircle />
-                  </MessageIcon>
-                )}
-              {current.theme &&
-                current.theme.toLowerCase().includes(ColorRole.INFO) && (
-                  <MessageIcon>
-                    <Info />
-                  </MessageIcon>
-                )}
-              {current.theme &&
-                current.theme.toLowerCase().includes(ColorRole.HELP) && (
-                  <MessageIcon>
-                    <HelpCircle />
-                  </MessageIcon>
-                )}
-              {current.theme &&
-                current.theme.toLowerCase().includes(ColorRole.SUCCESS) && (
-                  <MessageIcon>
-                    <CheckCircle />
-                  </MessageIcon>
-                )}
-            </>
-          )}
-          <MessageHeading theme={current.theme}>{current.title}</MessageHeading>
-        </MessageHeader>
-        {!!current.message && <MessageBody>{current.message}</MessageBody>}
-      </MessageContent>
-      <MessageClose>
-        <Button
-          theme={current.theme}
-          variant="ghost"
-          circular={true}
-          padding="$0.75">
-          <MessageIcon backgrounded={false}>
-            <XCircle />
-          </MessageIcon>
-        </Button>
-      </MessageClose>
+      <Alert theme={current.theme}>
+        <Alert.Header theme={current.theme}>
+          <Alert.Icon>{current.icon}</Alert.Icon>
+          <Alert.Heading theme={current.theme}>{current.title}</Alert.Heading>
+        </Alert.Header>
+        {!!current.message && <Alert.Body>{current.message}</Alert.Body>}
+        <MessageClose>
+          <Button
+            theme={current.theme}
+            variant="ghost"
+            circular={true}
+            padding="$0.75">
+            <Button.Icon>
+              <X size="$1.5" />
+            </Button.Icon>
+          </Button>
+        </MessageClose>
+      </Alert>
     </MessageFrame>
   );
 };
