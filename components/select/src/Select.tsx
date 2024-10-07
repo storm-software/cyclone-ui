@@ -463,6 +463,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
   const disabled = store.get.disabled();
   const value = store.get.value();
   const focused = store.get.focused();
+  const required = store.get.required();
 
   const { handleChange, handleBlur, handleFocus } = useFieldActions();
   const handleOpenChange = useCallback(
@@ -562,7 +563,15 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
             enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
             exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
             minWidth={200}>
-            <TamaguiSelect.Group>{children}</TamaguiSelect.Group>
+            <TamaguiSelect.Group>
+              {!required && (
+                <SelectItem
+                  key={-1}
+                  index={-1}
+                  value={null as any}></SelectItem>
+              )}
+              {children}
+            </TamaguiSelect.Group>
           </TamaguiSelect.Viewport>
 
           <TamaguiSelect.ScrollDownButton

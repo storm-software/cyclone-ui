@@ -268,6 +268,7 @@
       "@cyclone-ui/registry-trpc": "workspace:*",
       "@cyclone-ui/registry-worker": "workspace:*",
       "@cyclone-ui/select": "workspace:*",
+      "@cyclone-ui/select-field": "workspace:*",
       "@cyclone-ui/steps": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/table": "workspace:*",
