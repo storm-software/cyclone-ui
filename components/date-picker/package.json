@@ -29,35 +29,35 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.75.4"
   },
   "dependencies": {
-    "@formkit/tempo": "^0.1.1",
-    "@rehookify/datepicker": "^6.6.1",
-    "@tamagui/adapt": "^1.110.5",
-    "@tamagui/animate-presence": "^1.110.5",
-    "@tamagui/compose-refs": "^1.110.5",
-    "@tamagui/constants": "^1.110.5",
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/focusable": "^1.110.5",
-    "@tamagui/font-size": "^1.110.5",
-    "@tamagui/get-token": "^1.110.5",
-    "@tamagui/group": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/label": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/popover": "^1.110.5",
-    "@tamagui/sheet": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5",
-    "@tamagui/text": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "react-native-svg": "^15.2.0"
+    "@formkit/tempo": "^0.1.2",
+    "@rehookify/datepicker": "^6.6.7",
+    "@tamagui/adapt": "^1.114.1",
+    "@tamagui/animate-presence": "^1.114.1",
+    "@tamagui/compose-refs": "^1.114.1",
+    "@tamagui/constants": "^1.114.1",
+    "@tamagui/core": "^1.114.1",
+    "@tamagui/focusable": "^1.114.1",
+    "@tamagui/font-size": "^1.114.1",
+    "@tamagui/get-token": "^1.114.1",
+    "@tamagui/group": "^1.114.1",
+    "@tamagui/helpers": "^1.114.1",
+    "@tamagui/helpers-tamagui": "^1.114.1",
+    "@tamagui/label": "^1.114.1",
+    "@tamagui/lucide-icons": "^1.114.1",
+    "@tamagui/popover": "^1.114.1",
+    "@tamagui/sheet": "^1.114.1",
+    "@tamagui/stacks": "^1.114.1",
+    "@tamagui/text": "^1.114.1",
+    "@tamagui/web": "^1.114.1",
+    "react-native-svg": "^15.7.1"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.75.4"
   },
   "publishConfig": {
     "access": "public"
