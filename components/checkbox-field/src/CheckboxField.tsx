@@ -35,7 +35,7 @@ const InnerCheckboxFieldLabel = forwardRef<typeof XStack, XStackProps>(
         verticalAlign="center"
         {...rest}>
         {children}
-        {store.get.isDisabled() && <FieldStatusIcon isDisabled={true} />}
+        {store.get.disabled() && <FieldStatusIcon disabled={true} />}
       </XStack>
     );
   }

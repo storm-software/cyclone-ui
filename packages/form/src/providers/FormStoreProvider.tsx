@@ -27,7 +27,7 @@ export const FormProvider = <
       scope={String(options.name)}
       initialValues={{
         name: String(options.name),
-        isFormDisabled: !!options.isDisabled,
+        disabled: !!options.disabled,
         options: {
           debounceMs: 500,
           theme,

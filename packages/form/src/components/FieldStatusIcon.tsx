@@ -35,7 +35,7 @@ export const FieldStatusIconFrame = styled(View, {
       }
     },
 
-    isDisabled: {
+    disabled: {
       true: {
         cursor: "not-allowed"
       },
@@ -46,7 +46,7 @@ export const FieldStatusIconFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -59,7 +59,7 @@ const getIconSize = (size: FontSizeTokens, scale: number) => {
 
 export const FieldStatusIconWrapper = FieldStatusIconFrame.styleable<{
   hideIcons?: boolean;
-}>(({ children, theme, isDisabled, hideIcons = false, ...props }, ref) => {
+}>(({ children, theme, disabled, hideIcons = false, ...props }, ref) => {
   if (
     hideIcons ||
     (theme &&
@@ -68,7 +68,7 @@ export const FieldStatusIconWrapper = FieldStatusIconFrame.styleable<{
         theme.toLowerCase().includes(ColorRole.INFO) ||
         theme.toLowerCase().includes(ColorRole.HELP) ||
         theme.toLowerCase().includes(ColorRole.SUCCESS))) ||
-    isDisabled
+    disabled
   ) {
     return null;
   }
@@ -81,7 +81,7 @@ export const FieldStatusIconWrapper = FieldStatusIconFrame.styleable<{
 });
 
 type FieldStatusIconExtraProps = {
-  isDisabled?: boolean;
+  disabled?: boolean;
   theme?: string;
   size?: FontSizeTokens;
   scaleIcon?: number;
@@ -116,7 +116,7 @@ export const FieldStatusIcon = forwardRef<
 >(
   (
     {
-      isDisabled = false,
+      disabled = false,
       hideIcons = false,
       scaleIcon = 1.75,
       size = "$3",
@@ -131,7 +131,7 @@ export const FieldStatusIcon = forwardRef<
 
     const { focus } = useFieldActions();
 
-    const color = isDisabled
+    const color = disabled
       ? "$disabled"
       : getVariable(
           (props.color &&
@@ -155,7 +155,7 @@ export const FieldStatusIcon = forwardRef<
         !theme?.toLowerCase().includes(ColorRole.INFO) &&
         !theme?.toLowerCase().includes(ColorRole.HELP) &&
         !theme?.toLowerCase().includes(ColorRole.SUCCESS) &&
-        !isDisabled)
+        !disabled)
     ) {
       return null;
     }
@@ -165,28 +165,28 @@ export const FieldStatusIcon = forwardRef<
         ref={forwardedRef}
         {...props}
         theme={theme}
-        isDisabled={isDisabled}
+        disabled={disabled}
         size={size}
         onPress={focus}>
         <FieldStatusIconContainer>
-          {!isDisabled &&
+          {!disabled &&
             theme &&
             (theme.toLowerCase().includes(ColorRole.ERROR) ||
               theme.toLowerCase().includes(ColorRole.WARNING)) &&
             getThemedIcon(<AlertCircle />)}
-          {!isDisabled &&
+          {!disabled &&
             theme &&
             theme.toLowerCase().includes(ColorRole.INFO) &&
             getThemedIcon(<Info />)}
-          {!isDisabled &&
+          {!disabled &&
             theme &&
             theme.toLowerCase().includes(ColorRole.HELP) &&
             getThemedIcon(<HelpCircle />)}
-          {!isDisabled &&
+          {!disabled &&
             theme &&
             theme.toLowerCase().includes(ColorRole.SUCCESS) &&
             getThemedIcon(<CheckCircle />)}
-          {isDisabled && getThemedIcon(<Lock />)}
+          {disabled && getThemedIcon(<Lock />)}
         </FieldStatusIconContainer>
       </FieldStatusIconFrame>
     );

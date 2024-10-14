@@ -65,8 +65,8 @@ export const useFormActions = <
   const submit = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
       if (get(formStore.api.atom.canSubmit)) {
-        if (!get(formStore.api.atom.isSubmitting)) {
-          set(formStore.api.atom.isSubmitting, true);
+        if (!get(formStore.api.atom.submitting)) {
+          set(formStore.api.atom.submitting, true);
         }
 
         set(formStore.api.atom.submitAttempts, prev => prev + 1);
@@ -79,17 +79,17 @@ export const useFormActions = <
         // promises.push(validate(value, ValidationCause.SUBMIT));
         // await Promise.all(promises);
 
-        if (get(formStore.api.atom.isValid)) {
+        if (get(formStore.api.atom.valid)) {
           await options.onSubmit?.(
             get(formStore.api.atom.values) as TFormValues
           );
         }
 
-        set(formStore.api.atom.isSubmitting, false);
-      } else if (get(formStore.api.atom.isInvalid)) {
-        if (get(formStore.api.atom.isFormInvalid)) {
-          // set(fieldStore.api.atom.isTouched, true);
-        } else if (get(formStore.api.atom.isFieldsInvalid)) {
+        set(formStore.api.atom.submitting, false);
+      } else if (get(formStore.api.atom.invalid)) {
+        if (get(formStore.api.atom.invalid)) {
+          // set(fieldStore.api.atom.touched, true);
+        } else if (get(formStore.api.atom.invalid)) {
           // const invalidFields = get(formStore.api.atom.invalidFields);
           // const name = Object.keys(invalidFields)[0];
           // const fieldStoreAtom = get(formStore.api.atom.fields);

@@ -102,7 +102,7 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {}
     },
 
-    isDisabled: {
+    disabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -138,7 +138,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
     required: false,
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -159,7 +159,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   // },
 
   variants: {
-    isDisabled: {
+    disabled: {
       true: {
         cursor: "not-allowed",
         placeholderTextColor: "$disabled",
@@ -172,7 +172,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   } as const,
 
   defaultVariants: {
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -203,7 +203,7 @@ const BaseCheckboxImpl = BaseCheckbox.styleable((props, forwardedRef) => {
         onCheckedChange={handleCheckedChange}
         checked={Boolean(store.get.value())}
         defaultChecked={Boolean(store.get.initialValue())}
-        isDisabled={store.get.isDisabled()}>
+        disabled={store.get.disabled()}>
         <TamaguiCheckbox.Indicator
           animation="slow"
           enterStyle={{
@@ -229,13 +229,13 @@ const CheckboxGroupImpl = BaseCheckboxImpl.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const isDisabled = store.get.isDisabled();
+  const disabled = store.get.disabled();
 
   return (
     <XStack gap="$0.5" alignContent="center" verticalAlign="center">
       <CheckboxGroupFrame
-        applyFocusStyle={store.get.isFocused()}
-        isDisabled={isDisabled}>
+        applyFocusStyle={store.get.focused()}
+        disabled={disabled}>
         <BaseCheckboxImpl
           ref={forwardedRef}
           {...rest}

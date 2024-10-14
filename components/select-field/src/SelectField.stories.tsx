@@ -60,13 +60,13 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    isRequired: true
+    required: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true
+    disabled: true
   }
 };
 

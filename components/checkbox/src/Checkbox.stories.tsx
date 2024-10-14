@@ -4,7 +4,7 @@ import { XStack } from "@tamagui/stacks";
 import { Checkbox } from "./Checkbox";
 
 const meta: Meta<typeof Checkbox> = {
-  title: "Form/Checkbox",
+  title: "Base/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
   render: (props: any) => (
@@ -34,13 +34,13 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    isRequired: true
+    required: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true
+    disabled: true
   }
 };
 

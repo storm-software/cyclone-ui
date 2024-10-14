@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "./Select";
 
 const meta: Meta<typeof Select> = {
-  title: "Form/Select",
+  title: "Base/Select",
   component: Select,
   tags: ["autodocs"],
   render: (props: any) => (
@@ -60,13 +60,13 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    isRequired: true
+    required: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true
+    disabled: true
   }
 };
 

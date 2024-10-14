@@ -94,13 +94,13 @@ export const useFieldActions = <
           }
 
           if (promises.length > 0) {
-            set(fieldApi.atom.isValidating, true);
+            set(fieldApi.atom.validating, true);
             for (const result of await Promise.all(promises)) {
               if (result && result.length > 0) {
                 messages.push(...result);
               }
             }
-            set(fieldApi.atom.isValidating, false);
+            set(fieldApi.atom.validating, false);
           }
 
           set(fieldApi.atom.validationResults, prev => ({
@@ -115,13 +115,13 @@ export const useFieldActions = <
 
   const reset = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      set(fieldApi.atom.isDisabled, RESET);
-      set(fieldApi.atom.isTouched, RESET);
-      set(fieldApi.atom.isBlurred, RESET);
+      set(fieldApi.atom.disabled, RESET);
+      set(fieldApi.atom.touched, RESET);
+      set(fieldApi.atom.blurred, RESET);
       set(fieldApi.atom.previousValue, RESET);
       set(fieldApi.atom.value, get(fieldApi.atom.initialValue));
       set(fieldApi.atom.options, RESET);
-      set(fieldApi.atom.isValidating, RESET);
+      set(fieldApi.atom.validating, RESET);
       set(fieldApi.atom.validationResults, RESET);
     }, [])
   );
@@ -134,7 +134,7 @@ export const useFieldActions = <
         initialValue: TFieldValue,
         skipIfDirty = true
       ) => {
-        if (skipIfDirty && get(fieldApi.atom.isDirty)) {
+        if (skipIfDirty && get(fieldApi.atom.dirty)) {
           return;
         }
 
@@ -148,7 +148,7 @@ export const useFieldActions = <
           set(fieldApi.atom.initialValue, initialValue);
           set(fieldApi.atom.value, initialValue);
 
-          set(fieldApi.atom.isValidating, RESET);
+          set(fieldApi.atom.validating, RESET);
           set(fieldApi.atom.validationResults, RESET);
 
           const options = get(fieldApi.atom.options);
@@ -174,9 +174,9 @@ export const useFieldActions = <
         nextValue: TFieldValue,
         touch = false
       ) => {
-        if (!get(fieldApi.atom.isDisabled)) {
-          if (!get(fieldApi.atom.isTouched) && touch) {
-            set(fieldApi.atom.isTouched, touch);
+        if (!get(fieldApi.atom.disabled)) {
+          if (!get(fieldApi.atom.touched) && touch) {
+            set(fieldApi.atom.touched, touch);
           }
 
           const value = get(fieldApi.atom.value);
@@ -193,8 +193,8 @@ export const useFieldActions = <
 
             promises.push(validate(nextValue, ValidationCause.CHANGE));
 
-            const isBlurred = get(fieldApi.atom.isBlurred);
-            if (isBlurred) {
+            const blurred = get(fieldApi.atom.blurred);
+            if (blurred) {
               promises.push(validate(nextValue, ValidationCause.BLUR));
             }
 
@@ -213,12 +213,12 @@ export const useFieldActions = <
 
   const focus = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      if (!get(fieldApi.atom.isDisabled)) {
-        if (!get(fieldApi.atom.isTouched)) {
-          set(fieldApi.atom.isTouched, true);
+      if (!get(fieldApi.atom.disabled)) {
+        if (!get(fieldApi.atom.touched)) {
+          set(fieldApi.atom.touched, true);
         }
 
-        set(fieldApi.atom.isFocused, true);
+        set(fieldApi.atom.focused, true);
 
         const options = get(fieldApi.atom.options);
         if (options.onFocus) {
@@ -231,13 +231,13 @@ export const useFieldActions = <
   const blur = useAtomCallback(
     useCallback(
       async (get: Getter, set: Setter) => {
-        if (!get(fieldApi.atom.isDisabled)) {
-          if (!get(fieldApi.atom.isTouched)) {
-            set(fieldApi.atom.isTouched, true);
+        if (!get(fieldApi.atom.disabled)) {
+          if (!get(fieldApi.atom.touched)) {
+            set(fieldApi.atom.touched, true);
           }
 
-          set(fieldApi.atom.isFocused, false);
-          set(fieldApi.atom.isBlurred, true);
+          set(fieldApi.atom.focused, false);
+          set(fieldApi.atom.blurred, true);
 
           const options = get(fieldApi.atom.options);
 

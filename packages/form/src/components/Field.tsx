@@ -15,9 +15,8 @@
 
  -------------------------------------------------------------------*/
 
-import type { ColorTokens } from "@cyclone-ui/colors";
 import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
-import type { FontSizeTokens, GetProps } from "@tamagui/core";
+import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
   isWeb,
@@ -100,7 +99,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
       }
     },
 
-    isDisabled: {
+    disabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -137,7 +136,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1",
     size: "$true",
     orientation: "vertical",
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -145,7 +144,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const isDisable = store.get.isDisabled();
+  const isDisable = store.get.disabled();
 
   // const name = store.get.name();
 
@@ -165,7 +164,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
       <FieldGroupFrame
         ref={forwardedRef}
         {...rest}
-        isDisabled={isBoolean(isDisable) ? isDisable : undefined}>
+        disabled={isBoolean(isDisable) ? isDisable : undefined}>
         {children}
       </FieldGroupFrame>
     </Theme>
@@ -239,15 +238,16 @@ export const FieldDetails = styled(Text, {
       }
     },
 
-    isDisabled: {
+    disabled: {
       true: {
-        color: "$disabled"
+        color: "$disabled",
+        cursor: "not-allowed"
       }
     }
   } as const,
 
   defaultVariants: {
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -283,7 +283,7 @@ const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
   return (
     <FieldDetails
       ref={forwardedRef}
-      isDisabled={!!store.get.isDisabled()}
+      disabled={!!store.get.disabled()}
       htmlFor={store.get.name()}
       {...rest}>
       <FieldDetailsMessage>{children}</FieldDetailsMessage>
@@ -302,9 +302,9 @@ export const FieldLabel = forwardRef<typeof Label, Omit<LabelProps, "htmlFor">>(
         paddingBottom="$0.5"
         {...rest}
         htmlFor={store.get.name()}
-        isDisabled={!!store.get.isDisabled()}
-        isRequired={!!store.get.isRequired()}
-        isFocused={!!store.get.isFocused()}>
+        disabled={!!store.get.disabled()}
+        required={!!store.get.required()}
+        focused={!!store.get.focused()}>
         {children}
       </Label>
     );
@@ -316,16 +316,11 @@ export const FieldFieldStatusIcon = forwardRef<
   GetProps<typeof FieldStatusIcon>
 >(props => {
   const store = useFieldStore();
-  const isDisabled = store.get.isDisabled();
+  const disabled = store.get.disabled();
   const theme = store.get.theme();
 
   return (
-    <FieldStatusIcon
-      isDisabled={isDisabled}
-      theme={theme}
-      size="$3"
-      {...props}
-    />
+    <FieldStatusIcon disabled={disabled} theme={theme} size="$3" {...props} />
   );
 });
 

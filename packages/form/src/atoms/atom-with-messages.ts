@@ -17,7 +17,7 @@
 
 import { ColorRole } from "@cyclone-ui/colors";
 import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
-import { MessageType } from "@storm-stack/types/utility-types/message-details";
+import { MessageType } from "@storm-stack/types/utility-types/messages";
 import {
   ErrorValidationDetails,
   HelpValidationDetails,
@@ -25,30 +25,15 @@ import {
   SuccessValidationDetails,
   ValidationDetails,
   WarningValidationDetails
-} from "@storm-stack/types/utility-types/validation-details";
+} from "@storm-stack/types/utility-types/validations";
 import { Atom, atom } from "jotai";
 import { FieldOptions, InferFieldState, ValidationResults } from "../types";
 import { isValidationResults } from "../utilities/is-validation-results";
 
 export const getMessageType = <
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : TMessageType extends "success"
-          ? SuccessValidationDetails
-          : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : TMessageType extends "success"
-          ? SuccessValidationDetails
-          : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   validationResults: ValidationResults,
   type: TMessageType
@@ -131,28 +116,17 @@ export const getMessageType = <
 export const getFieldsMessageTypes = <
   TFieldValue,
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   messageMap: InferFieldState<TFieldValue, ValidationResults>,
   type: TMessageType
 ): InferFieldState<TFieldValue, TValidationDetails[]> => {
   if (isValidationResults(messageMap)) {
-    return getMessageType(messageMap, type) as InferFieldState<
-      TFieldValue,
-      TValidationDetails[]
-    >;
+    return getMessageType<TMessageType, TValidationDetails>(
+      messageMap,
+      type
+    ) as InferFieldState<TFieldValue, TValidationDetails[]>;
   }
 
   return Object.entries(messageMap).reduce(
@@ -163,7 +137,10 @@ export const getFieldsMessageTypes = <
           type
         );
       } else {
-        ret[field] = getMessageType(messages, type);
+        ret[field] = getMessageType<TMessageType, TValidationDetails>(
+          messages,
+          type
+        );
       }
 
       return ret;
@@ -175,19 +152,8 @@ export const getFieldsMessageTypes = <
 export const atomWithFieldsMessageTypes = <
   TFieldValue,
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   validationResultsAtom: Atom<InferFieldState<TFieldValue, ValidationResults>>,
   type: TMessageType
@@ -200,38 +166,30 @@ export const atomWithFieldsMessageTypes = <
 export const getFieldsMessageList = <
   TFieldValue,
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   messageMap: InferFieldState<TFieldValue, ValidationResults>,
   type: TMessageType
 ): TValidationDetails[] => {
   if (isValidationResults(messageMap)) {
-    return getMessageType(messageMap, type);
+    return getMessageType<TMessageType, TValidationDetails>(messageMap, type);
   }
 
   return Object.entries(messageMap ?? {}).reduce((ret, [_, messages]) => {
     if (isSetObject(messages)) {
       if (!isValidationResults(messages)) {
         ret.push(
-          ...getFieldsMessageList(
-            messages as InferFieldState<TFieldValue, ValidationResults>,
-            type
-          )
+          ...getFieldsMessageList<
+            TFieldValue,
+            TMessageType,
+            TValidationDetails
+          >(messages as InferFieldState<TFieldValue, ValidationResults>, type)
         );
       } else {
-        ret.push(...getMessageType(messages, type));
+        ret.push(
+          ...getMessageType<TMessageType, TValidationDetails>(messages, type)
+        );
       }
     }
 
@@ -242,19 +200,8 @@ export const getFieldsMessageList = <
 export const atomWithFieldsMessageList = <
   TFieldValue,
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   validationResultsAtom: Atom<InferFieldState<TFieldValue, ValidationResults>>,
   type: TMessageType
@@ -269,23 +216,8 @@ export const atomWithFieldsMessageList = <
 
 export const atomWithMessageTypes = <
   TMessageType extends MessageType,
-  TValidationDetails extends TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : TMessageType extends "success"
-          ? SuccessValidationDetails
-          : ValidationDetails = TMessageType extends "error"
-    ? ErrorValidationDetails
-    : TMessageType extends "warning"
-      ? WarningValidationDetails
-      : TMessageType extends "info"
-        ? InfoValidationDetails
-        : TMessageType extends "success"
-          ? SuccessValidationDetails
-          : ValidationDetails
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
 >(
   validationResultsAtom: Atom<ValidationResults>,
   type: TMessageType

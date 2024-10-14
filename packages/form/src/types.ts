@@ -116,7 +116,7 @@ export type FormOptions<
 > = {
   name: string;
   theme?: string;
-  isDisabled?: boolean;
+  disabled?: boolean;
   defaultValues?: FormValuesState<TFormValues>;
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
@@ -146,27 +146,27 @@ export type FormBaseState<
   /**
    * The disabled state value.
    */
-  isFormDisabled: boolean;
+  disabled: boolean;
 
   /**
    * A flag indicating whether the field is currently being validated.
    */
-  isFormValidating: boolean;
+  validating: boolean;
 
   /**
    * The results of the form validation.
    */
-  formValidationResults: ValidationResults;
+  validationResults: ValidationResults;
 
   /**
    * A flag indicating whether the form is currently being submitted.
    */
-  isSubmitting: boolean;
+  submitting: boolean;
 
   /**
    * A flag indicating whether the form has been submitted.
    */
-  isSubmitted: boolean;
+  submitted: boolean;
 
   /**
    * The number of times the form has been submitted.
@@ -176,36 +176,37 @@ export type FormBaseState<
   /**
    * The disabled state value.
    */
-  isFieldsDisabled: InferFormState<TFormValues, boolean>;
+  disabledFields: InferFormState<TFormValues, boolean>;
 
   /**
    * The required state value.
    */
-  isFieldsRequired: InferFormState<TFormValues, boolean>;
+  requiredFields: InferFormState<TFormValues, boolean>;
 
   /**
    * The focused state value.
    */
-  isFieldsFocused: InferFormState<TFormValues, boolean>;
+  focusedFields: InferFormState<TFormValues, boolean>;
+
   /**
    * A flag indicating whether the field has been touched.
    */
-  isFieldsTouched: InferFormState<TFormValues, boolean>;
+  touchedFields: InferFormState<TFormValues, boolean>;
 
   /**
    * A flag indicating whether the field has been blurred.
    */
-  isFieldsBlurred: InferFormState<TFormValues, boolean>;
+  blurredFields: InferFormState<TFormValues, boolean>;
 
   /**
    * A flag indicating whether the field is currently being validated.
    */
-  isFieldsValidating: InferFormState<TFormValues, boolean>;
+  validatingFields: InferFormState<TFormValues, boolean>;
 
   /**
    * The results of the field validation.
    */
-  fieldsValidationResults: InferFormState<TFormValues, ValidationResults>;
+  validationResultsFields: InferFormState<TFormValues, ValidationResults>;
 
   /**
    * The field group's initial values.
@@ -238,8 +239,8 @@ export type FieldOptions<
   name: string;
   mode?: "value" | "array";
   theme?: string;
-  isRequired?: boolean;
-  isDisabled?: boolean;
+  required?: boolean;
+  disabled?: boolean;
   items?: SelectOption[];
   valueType?: FieldValueType;
   validate?: Record<
@@ -282,32 +283,32 @@ export type FieldBaseState<TFieldValue = any> = {
   /**
    * The disabled state value.
    */
-  isDisabled: InferFieldState<TFieldValue, boolean>;
+  disabled: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The required state value.
    */
-  isRequired: InferFieldState<TFieldValue, boolean>;
+  required: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The focused state value.
    */
-  isFocused: InferFieldState<TFieldValue, boolean>;
+  focused: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field has been touched.
    */
-  isTouched: InferFieldState<TFieldValue, boolean>;
+  touched: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field has been blurred.
    */
-  isBlurred: InferFieldState<TFieldValue, boolean>;
+  blurred: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field is currently being validated.
    */
-  isValidating: InferFieldState<TFieldValue, boolean>;
+  validating: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The results of the field validation.
@@ -347,12 +348,12 @@ export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {
   theme: string;
 
   /**
-   * A flag that is `true` if the field's value has not been modified by the user. Opposite of `isDirty`.
+   * A flag that is `true` if the field's value has not been modified by the user. Opposite of `dirty`.
    */
-  isPristine: boolean;
+  pristine: boolean;
 
   /**
-   * A flag that is `true` if the field's value has been modified by the user. Opposite of `isPristine`.
+   * A flag that is `true` if the field's value has been modified by the user. Opposite of `pristine`.
    */
-  isDirty: boolean;
+  dirty: boolean;
 };

@@ -103,11 +103,11 @@ const InputGroupFrame = styled(XGroup, {
       }
     },
 
-    isRequired: {
+    required: {
       true: {}
     },
 
-    isDisabled: {
+    disabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -139,8 +139,8 @@ const InputGroupFrame = styled(XGroup, {
 
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    isRequired: false,
-    isDisabled: false
+    required: false,
+    disabled: false
   }
 });
 
@@ -180,13 +180,8 @@ const BaseInput = styled(TamaguiInput, {
   verticalAlign: "center",
   paddingVertical: "$3",
 
-  // internalAutofillSelected: {
-  //   backgroundColor: "transparent !important",
-  //   color: "inherit !important"
-  // },
-
   variants: {
-    isDisabled: {
+    disabled: {
       true: {
         cursor: "not-allowed",
         placeholderTextColor: "$disabled",
@@ -201,7 +196,7 @@ const BaseInput = styled(TamaguiInput, {
   } as const,
 
   defaultVariants: {
-    isDisabled: false
+    disabled: false
   }
 });
 
@@ -210,7 +205,7 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const isDisabled = store.get.isDisabled();
+  const disabled = store.get.disabled();
 
   const { focus, blur, change } = useFieldActions<string>();
 
@@ -226,8 +221,7 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
         onChangeText={change}
         value={String(store.get.value() ?? "")}
         defaultValue={String(store.get.options().defaultValue ?? "")}
-        isDisabled={isDisabled}
-        disabled={isDisabled}>
+        disabled={disabled}>
         {children}
       </BaseInput>
     </View>
@@ -238,13 +232,11 @@ const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const isDisabled = store.get.isDisabled();
+  const disabled = store.get.disabled();
 
   return (
-    <InputGroupFrame
-      applyFocusStyle={store.get.isFocused()}
-      isDisabled={isDisabled}>
-      {!isDisabled && <FieldStatusIcon isDisabled={false} />}
+    <InputGroupFrame applyFocusStyle={store.get.focused()} disabled={disabled}>
+      {!disabled && <FieldStatusIcon disabled={false} />}
       <BaseInputImpl
         ref={forwardedRef}
         {...rest}
@@ -253,7 +245,7 @@ const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
         }>
         {children}
       </BaseInputImpl>
-      {isDisabled && <FieldStatusIcon isDisabled={true} />}
+      {disabled && <FieldStatusIcon disabled={true} />}
     </InputGroupFrame>
   );
 });

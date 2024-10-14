@@ -18,10 +18,8 @@
 /* eslint-disable unicorn/no-null */
 
 import { ColorRole } from "@cyclone-ui/colors";
-import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
-import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { atom, Atom } from "jotai";
-import { FieldStatus, InferFieldState } from "../types";
+import { FieldStatus } from "../types";
 
 export const atomWithFieldStatus = (
   themeAtom: Atom<string | undefined>
@@ -47,35 +45,35 @@ export const atomWithFieldStatus = (
   });
 };
 
-export const getFieldIndicator = <TFieldValue>(
-  fieldIndicators: InferFieldState<TFieldValue, boolean>,
-  ifValueOverride?: boolean
-): boolean => {
-  if (isBoolean(fieldIndicators)) {
-    return Boolean(fieldIndicators);
-  } else {
-    return !!Object.entries(fieldIndicators).reduce(
-      (ret, [_, fieldIndicator]) => {
-        if (isBoolean(fieldIndicator)) {
-          return isSet(ifValueOverride) && ret === ifValueOverride
-            ? ret
-            : ret && fieldIndicator;
-        }
+// export const getFieldIndicator = <TFieldValue = any>(
+//   fieldIndicators: InferFieldState<TFieldValue, boolean>,
+//   ifValueOverride?: boolean
+// ): boolean => {
+//   if (isBoolean(fieldIndicators)) {
+//     return Boolean(fieldIndicators);
+//   } else {
+//     return !!Object.entries(fieldIndicators).reduce(
+//       (ret, [_, fieldIndicator]) => {
+//         if (isBoolean(fieldIndicator)) {
+//           return isSet(ifValueOverride) && ret === ifValueOverride
+//             ? ret
+//             : ret && fieldIndicator;
+//         }
 
-        return isSet(ifValueOverride) && ret === ifValueOverride
-          ? ret
-          : ret && getFieldIndicator(fieldIndicator, ifValueOverride);
-      },
-      undefined as undefined | boolean
-    );
-  }
-};
+//         return isSet(ifValueOverride) && ret === ifValueOverride
+//           ? ret
+//           : ret && getFieldIndicator(fieldIndicator, ifValueOverride);
+//       },
+//       undefined as undefined | boolean
+//     );
+//   }
+// };
 
-export const atomWithFieldIndicator = <TFieldValue>(
-  fieldIndicatorAtom: Atom<InferFieldState<TFieldValue, boolean>>,
-  ifValueOverride?: boolean
-) => {
-  return atom<boolean>(get => {
-    return getFieldIndicator(get(fieldIndicatorAtom), ifValueOverride);
-  });
-};
+// export const atomWithFieldIndicator = <TFieldValue>(
+//   fieldIndicatorAtom: Atom<InferFieldState<TFieldValue, boolean>>,
+//   ifValueOverride?: boolean
+// ) => {
+//   return atom<boolean>(get => {
+//     return getFieldIndicator(get(fieldIndicatorAtom), ifValueOverride);
+//   });
+// };

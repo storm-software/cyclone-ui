@@ -53,7 +53,7 @@ const LabelText = styled(SizableText, {
     //   }
     // },
 
-    isFocused: {
+    focused: {
       true: {
         color: "$base12",
         fontWeight: "$5"
@@ -63,7 +63,7 @@ const LabelText = styled(SizableText, {
       }
     },
 
-    isDisabled: {
+    disabled: {
       true: {
         color: "$disabled",
         cursor: "not-allowed"
@@ -75,35 +75,34 @@ const LabelText = styled(SizableText, {
   } as const,
 
   defaultVariants: {
-    isFocused: false,
-    isDisabled: false
+    focused: false,
+    disabled: false
   }
 });
 
 type LabelExtraProps = {
-  isRequired?: boolean;
-  isDisabled?: boolean;
-  isFocused?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  focused?: boolean;
   htmlFor: string;
 };
 export type LabelProps = GetProps<typeof LabelText> & LabelExtraProps;
 
 export const Label = forwardRef<typeof TamaguiLabel, LabelProps>(
   (props, forwardedRef) => {
-    const { children, isRequired, isFocused, isDisabled, htmlFor, ...rest } =
-      props;
+    const { children, required, focused, disabled, htmlFor, ...rest } = props;
 
     return (
       <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
         <XStack gap="$1.2">
           <LabelText
             {...rest}
-            isFocused={isDisabled ? false : isFocused}
-            isDisabled={isDisabled}
+            focused={disabled ? false : focused}
+            disabled={disabled}
             theme="base">
             {children}
           </LabelText>
-          {isRequired && (
+          {required && (
             <View position="relative">
               <Asterisk
                 color="$error8"

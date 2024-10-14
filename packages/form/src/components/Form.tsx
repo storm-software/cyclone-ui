@@ -63,7 +63,7 @@ export const FormTrigger = FormTriggerFrame.styleable(
         tag="button"
         {...(triggerProps as any)}
         ref={forwardedRef}
-        isDisabled={store.get.canSubmit()}
+        disabled={store.get.canSubmit()}
         onPress={composeEventHandlers(onPress as any, submit)}>
         {children}
       </FormTriggerFrame>

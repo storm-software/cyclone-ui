@@ -58,11 +58,11 @@ export const FieldProvider = <
       <fieldStore.Provider
         scope={`${formName}:${String(fieldOptions.name)}`}
         initialValues={{
-          isRequired: fieldOptions.isRequired as InferFieldState<
+          required: fieldOptions.required as InferFieldState<
             TFieldValue,
             boolean
           >,
-          isDisabled: fieldOptions.isDisabled as InferFieldState<
+          disabled: fieldOptions.disabled as InferFieldState<
             TFieldValue,
             boolean
           >,
@@ -76,7 +76,7 @@ export const FieldProvider = <
               ...fieldOptions.validate,
               onBlur: [
                 ...(fieldOptions.validate?.onBlur ?? ([] as TValidator[])),
-                ...(fieldOptions.isRequired ? [requiredValidator] : [])
+                ...(fieldOptions.required ? [requiredValidator] : [])
               ]
             }
           } as FieldOptions<TFieldValue, TValidator>

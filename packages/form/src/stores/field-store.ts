@@ -39,7 +39,7 @@ export const createFieldStore = <TFieldValue>(name: string) => {
   const fieldStoreSelectors = (
     atoms: StoreAtomsWithoutSelectors<FieldBaseState<TFieldValue>>
   ) => {
-    const isDirtyAtom = atom(get =>
+    const dirtyAtom = atom(get =>
       isEqual(get(atoms.value), get(atoms.initialValue))
     );
 
@@ -85,25 +85,28 @@ export const createFieldStore = <TFieldValue>(name: string) => {
       "success"
     );
 
-    const isInvalidAtom = atom(get => {
+    const invalidAtom = atom(get => {
       const errorMessages = get(errorMessagesAtom);
       return errorMessages.length > 0;
     });
-    const isValidAtom = atom(get => !get(isInvalidAtom));
+    const validAtom = atom(get => !get(invalidAtom));
 
     return {
-      isPristine: atom(get => !get(isDirtyAtom)),
-      isDirty: isDirtyAtom,
+      pristine: atom(get => !get(dirtyAtom)),
+      dirty: dirtyAtom,
+
       errors: errorsAtom,
       warnings: warningsAtom,
       info: infoAtom,
       help: helpAtom,
-      successes: successesAtom,
+      success: successesAtom,
+
       errorMessages: errorMessagesAtom,
       warningMessages: warningMessagesAtom,
       infoMessages: infoMessagesAtom,
       helpMessages: helpMessagesAtom,
       successMessages: successMessagesAtom,
+
       theme: atomWithTheme(
         atoms.options,
         errorMessagesAtom,
@@ -119,8 +122,8 @@ export const createFieldStore = <TFieldValue>(name: string) => {
         helpMessagesAtom,
         successMessagesAtom
       ),
-      isInvalid: isInvalidAtom,
-      isValid: isValidAtom
+      invalid: invalidAtom,
+      valid: validAtom
     };
   };
 
@@ -138,26 +141,26 @@ export const createFieldStore = <TFieldValue>(name: string) => {
     initialState: {
       name,
       path,
-      isFocused: focusAtom(formStore.api.atom.isFieldsFocused, optic =>
+      focused: focusAtom(formStore.api.atom.focusedFields, optic =>
         optic.path(...path)
       ),
-      isRequired: focusAtom(formStore.api.atom.isFieldsRequired, optic =>
+      required: focusAtom(formStore.api.atom.requiredFields, optic =>
         optic.path(...path)
       ),
-      isDisabled: focusAtom(formStore.api.atom.isFieldsDisabled, optic =>
+      disabled: focusAtom(formStore.api.atom.disabledFields, optic =>
         optic.path(...path)
       ),
-      isTouched: focusAtom(formStore.api.atom.isFieldsTouched, optic =>
+      touched: focusAtom(formStore.api.atom.touchedFields, optic =>
         optic.path(...path)
       ),
-      isBlurred: focusAtom(formStore.api.atom.isFieldsBlurred, optic =>
+      blurred: focusAtom(formStore.api.atom.blurredFields, optic =>
         optic.path(...path)
       ),
-      isValidating: focusAtom(formStore.api.atom.isFieldsValidating, optic =>
+      validating: focusAtom(formStore.api.atom.validatingFields, optic =>
         optic.path(...path)
       ),
       validationResults: focusAtom(
-        formStore.api.atom.fieldsValidationResults,
+        formStore.api.atom.validationResultsFields,
         optic => optic.path(...path)
       ),
       initialValue: focusAtom(formStore.api.atom.initialValues, optic =>

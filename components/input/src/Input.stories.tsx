@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "./Input";
 
 const meta: Meta<typeof Input> = {
-  title: "Form/Input",
+  title: "Base/Input",
   component: Input,
   tags: ["autodocs"],
   render: (props: any) => (
@@ -29,13 +29,13 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    isRequired: true
+    required: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    isDisabled: true
+    disabled: true
   }
 };
 
