@@ -1348,8 +1348,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
+        specifier: ^1.115.0
+        version: 1.115.0(react@18.3.1)
       '@tamagui/dialog':
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1958,8 +1958,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
+        specifier: ^1.115.0
+        version: 1.115.0(react@18.3.1)
       '@tamagui/font-size':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -7753,6 +7753,11 @@ packages:
     peerDependencies:
       react: '*'
 
+  '@tamagui/create-context@1.115.0':
+    resolution: {integrity: sha512-ZoZ7G5I6m0W4LFhj5sXykxSjR9XsCSZ4iBr3Di0Ry1rnOs3SVCaDG40aFcEAVtJPpX+9XLjsQMTen4sopZn4Tg==}
+    peerDependencies:
+      react: '*'
+
   '@tamagui/create-theme@1.101.5':
     resolution: {integrity: sha512-ofTKytfapKXpSTKNvDUZ+BxPo0Zr1JgXwD25Fmo/2vgSbKvgHtP1dX6S/AeplhxVdlsj4U2ohZ6YexXHSz0U2A==}
 
@@ -11480,6 +11485,9 @@ packages:
   entities@1.1.2:
     resolution: {integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==}
 
+  entities@2.0.3:
+    resolution: {integrity: sha512-MyoZ0jgnLvB2X3Lg5HqpFmn1kybDiIfEQmKzTb5apr51Rb+T3KdmMiqa70T+bhGnyv7bQ6WMj2QMHpGMmlrUYQ==}
+
   entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
@@ -14495,6 +14503,9 @@ packages:
     resolution: {integrity: sha512-wM1+Z03eypVAVUCE7QdSqpVIvelbOakn1M0bPDoA4SGWPx3sNDVUiMo3L6To6WWGClB7VyXnhQ4Sn7gxiJbE6A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  linkify-it@3.0.3:
+    resolution: {integrity: sha512-ynTsyrFSdE5oZ/O9GEf00kPngmOfVwazR5GKDq6EYfhlpFug3J2zybX56a2PRRpc9P+FuSoGNAwjlbDs9jJBPQ==}
+
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
@@ -14777,6 +14788,10 @@ packages:
   markdown-it-source-map@0.1.1:
     resolution: {integrity: sha512-q4+ij82K/0C6O8rw/NnWogcgp3AeQykZZ5954yyxY8pcX8Rago8uAS7e+4Ogd6rERf/tDAen73KwT+Sb7dP/6w==}
 
+  markdown-it@11.0.1:
+    resolution: {integrity: sha512-aU1TzmBKcWNNYvH9pjq6u92BML+Hz3h5S/QpfTFwiQF852pLT+9qHsrhM9JYipkOXZxGn+sGH8oyJE9FD9WezQ==}
+    hasBin: true
+
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
     hasBin: true
@@ -14981,6 +14996,9 @@ packages:
 
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
+
+  mdurl@1.0.1:
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
 
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
@@ -18442,8 +18460,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-git@3.27.0:
-    resolution: {integrity: sha512-ivHoFS9Yi9GY49ogc6/YAi3Fl9ROnF4VyubNylgCkA+RVqLaKWnDSzXOVzya8csELIaWaYNutsEuAhZrtOjozA==}
+  simple-git@2.48.0:
+    resolution: {integrity: sha512-z4qtrRuaAFJS4PUd0g+xy7aN4y+RvEt/QTJpR184lhJguBA1S/LsVlvE/CM95RsYMOFJG3NGGDjqFCzKU19S/A==}
 
   simple-plist@1.3.1:
     resolution: {integrity: sha512-iMSw5i0XseMnrhtIzRb7XpQEXepa9xhWxGUojHBL43SIpQuDQkh3Wpy67ZbDzZVr6EKxvwVChnVpdl8hEVLDiw==}
@@ -19632,6 +19650,9 @@ packages:
 
   ua-parser-js@1.0.38:
     resolution: {integrity: sha512-Aq5ppTOfvrCMgAPneW1HfWj66Xi7XL+/mIy996R1/CLS/rcyJQm6QZdsKrUeivDFQ+Oc9Wyuwor8Ze8peEoUoQ==}
+
+  uc.micro@1.0.6:
+    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
@@ -25282,14 +25303,14 @@ snapshots:
       joi: 17.13.3
       launch-editor: 2.8.0
       lodash: 4.17.21
-      markdown-it: 14.1.0
+      markdown-it: 11.0.1
       markdown-it-source-map: 0.1.1
       moment: 2.30.1
       moment-timezone: 0.5.45
       neverthrow: 2.7.1
       open: 7.4.2
       parse-git-config: 3.0.0
-      simple-git: 3.27.0
+      simple-git: 2.48.0
       slugify: 1.6.6
       yaml: 1.10.2
     transitivePeerDependencies:
@@ -25311,8 +25332,8 @@ snapshots:
       '@log4brains/cli-common': 1.0.0
       '@log4brains/core': 1.0.0
       '@material-ui/core': 4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@next/bundle-analyzer': 10.2.3(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       babel-plugin-import: 1.13.8
       badge-maker: 3.3.1
@@ -25401,7 +25422,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.6
 
-  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@material-ui/core': 4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -25410,7 +25431,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.6
 
-  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@material-ui/core': 4.12.4(@types/react@18.3.6)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -30414,6 +30435,10 @@ snapshots:
       react: 18.3.1
 
   '@tamagui/create-context@1.110.5(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
+  '@tamagui/create-context@1.115.0(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
@@ -35551,6 +35576,8 @@ snapshots:
 
   entities@1.1.2: {}
 
+  entities@2.0.3: {}
+
   entities@2.2.0: {}
 
   entities@4.5.0: {}
@@ -39718,6 +39745,10 @@ snapshots:
 
   lines-and-columns@2.0.4: {}
 
+  linkify-it@3.0.3:
+    dependencies:
+      uc.micro: 1.0.6
+
   linkify-it@5.0.0:
     dependencies:
       uc.micro: 2.1.0
@@ -40015,6 +40046,14 @@ snapshots:
   map-stream@0.1.0: {}
 
   markdown-it-source-map@0.1.1: {}
+
+  markdown-it@11.0.1:
+    dependencies:
+      argparse: 1.0.10
+      entities: 2.0.3
+      linkify-it: 3.0.3
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
 
   markdown-it@14.1.0:
     dependencies:
@@ -40490,6 +40529,8 @@ snapshots:
   mdn-data@2.0.28: {}
 
   mdn-data@2.0.30: {}
+
+  mdurl@1.0.1: {}
 
   mdurl@2.0.0: {}
 
@@ -45316,7 +45357,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-git@3.27.0:
+  simple-git@2.48.0:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
@@ -46819,6 +46860,8 @@ snapshots:
       typescript: 5.6.2
 
   ua-parser-js@1.0.38: {}
+
+  uc.micro@1.0.6: {}
 
   uc.micro@2.1.0: {}
 

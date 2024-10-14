@@ -43,7 +43,7 @@
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/create-context": "^1.115.0",
     "@tamagui/font-size": "^1.110.5",
     "@tamagui/helpers": "^1.110.5",
     "@tamagui/helpers-tamagui": "^1.110.5",
