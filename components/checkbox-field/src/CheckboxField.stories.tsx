@@ -7,8 +7,8 @@ const meta: Meta<typeof CheckboxField> = {
   title: "Form/CheckboxField",
   component: CheckboxField,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ checkboxFieldName: false }}>
+  render: ({ defaultValue, ...props }: any) => (
+    <Form name="formName" defaultValues={{ checkboxFieldName: defaultValue }}>
       <CheckboxField name="checkboxFieldName" {...props}>
         <XStack gap="$3" alignContent="center" verticalAlign="center">
           <CheckboxField.Control />

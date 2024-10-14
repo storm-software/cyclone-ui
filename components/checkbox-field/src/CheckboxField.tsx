@@ -1,6 +1,14 @@
 import { Checkbox } from "@cyclone-ui/checkbox";
-import { Field, FieldValueType, Label, LabelProps } from "@cyclone-ui/form";
-import { withStaticProperties } from "@tamagui/web";
+import {
+  Field,
+  FieldStatusIcon,
+  FieldValueType,
+  Label,
+  LabelProps,
+  useFieldStore
+} from "@cyclone-ui/form";
+import { withStaticProperties } from "@tamagui/core";
+import { XStack, XStackProps } from "@tamagui/stacks";
 import { forwardRef } from "react";
 
 const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
@@ -13,6 +21,26 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
+const InnerCheckboxFieldLabel = forwardRef<typeof XStack, XStackProps>(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    const store = useFieldStore();
+
+    return (
+      <XStack
+        ref={forwardedRef}
+        gap="$0.5"
+        alignContent="center"
+        verticalAlign="center"
+        {...rest}>
+        {children}
+        {store.get.isDisabled() && <FieldStatusIcon isDisabled={true} />}
+      </XStack>
+    );
+  }
+);
+
 export const CheckboxFieldLabel = forwardRef<
   typeof Label,
   Omit<LabelProps, "htmlFor">
@@ -21,7 +49,7 @@ export const CheckboxFieldLabel = forwardRef<
 
   return (
     <Field.Label ref={forwardedRef} paddingBottom={0} {...rest}>
-      {children}
+      <InnerCheckboxFieldLabel>{children}</InnerCheckboxFieldLabel>
     </Field.Label>
   );
 });

@@ -193,7 +193,9 @@ const BaseInput = styled(TamaguiInput, {
         color: "$disabled"
       },
       false: {
-        placeholderTextColor: "$placeholderColor"
+        placeholderTextColor: "$placeholderColor",
+
+        cursor: "pointer"
       }
     }
   } as const,
@@ -208,6 +210,8 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
+  const isDisabled = store.get.isDisabled();
+
   const { focus, blur, change } = useFieldActions<string>();
 
   return (
@@ -222,7 +226,8 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
         onChangeText={change}
         value={String(store.get.value() ?? "")}
         defaultValue={String(store.get.options().defaultValue ?? "")}
-        disabled={store.get.isDisabled()}>
+        isDisabled={isDisabled}
+        disabled={isDisabled}>
         {children}
       </BaseInput>
     </View>

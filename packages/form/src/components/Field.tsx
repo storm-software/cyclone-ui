@@ -126,6 +126,9 @@ const FieldGroupFrame = styled(ThemeableStack, {
           outlineStyle: "none",
           outlineColor: "transparent"
         }
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,

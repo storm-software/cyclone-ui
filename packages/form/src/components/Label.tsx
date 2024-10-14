@@ -67,6 +67,9 @@ const LabelText = styled(SizableText, {
       true: {
         color: "$disabled",
         cursor: "not-allowed"
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,

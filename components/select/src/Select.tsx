@@ -98,7 +98,7 @@ const SelectGroupFrame = styled(XGroup, {
       true: {}
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -124,6 +124,9 @@ const SelectGroupFrame = styled(XGroup, {
           outlineStyle: "none",
           outlineColor: "transparent"
         }
+      },
+      false: {
+        cursor: "pointer"
       }
     },
 
@@ -141,7 +144,7 @@ const SelectGroupFrame = styled(XGroup, {
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
     required: false,
-    disabled: false,
+    isDisabled: false,
     open: false
   }
 });
@@ -208,7 +211,7 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
       true: {}
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled",
         placeholderColor: "$disabled",
@@ -235,7 +238,7 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
 
   defaultVariants: {
     required: false,
-    disabled: false
+    isDisabled: false
   }
 });
 
@@ -264,16 +267,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
       }
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         color: "$disabled"
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
+    isDisabled: false,
     placeholding: false
   }
 });
@@ -284,7 +290,7 @@ const SelectValue = SelectValueFrame.styleable<{
   const { size } = SelectContext.useStyledContext();
 
   const store = useFieldStore();
-  const disabled = store.get.isDisabled();
+  const isDisabled = store.get.isDisabled();
 
   return (
     <View flex={1}>
@@ -293,8 +299,9 @@ const SelectValue = SelectValueFrame.styleable<{
         ref={ref}
         size={size}
         {...props}
-        disabled={disabled}
-        placeholding={!store.get.value() && !disabled}>
+        isDisabled={isDisabled}
+        disabled={isDisabled}
+        placeholding={!store.get.value() && !isDisabled}>
         {children}
       </SelectValueFrame>
     </View>
@@ -322,7 +329,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
       }
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         backgroundColor: "transparent",
@@ -330,12 +337,15 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
         hoverStyle: {
           backgroundColor: "transparent"
         }
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
+    isDisabled: false,
     selected: false
   }
 });
@@ -356,7 +366,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
       }
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         color: "$disabled",
@@ -364,12 +374,15 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
         hoverStyle: {
           color: "$disabled"
         }
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
+    isDisabled: false,
     selected: false
   }
 });
@@ -387,7 +400,7 @@ export const SelectItem = forwardRef<
   const fieldDisabled = store.get.isDisabled();
 
   const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
-  const disabled = useMemo(
+  const isDisabled = useMemo(
     () => !!(fieldDisabled || props.disabled),
     [fieldDisabled, props.disabled]
   );
@@ -395,9 +408,9 @@ export const SelectItem = forwardRef<
   useLayoutEffect(() => {
     setItems(prev => [
       ...prev.filter(item => item.value !== value),
-      { name: children, value, disabled, selected } as SelectOption
+      { name: children, value, disabled: isDisabled, selected } as SelectOption
     ]);
-  }, [disabled, value, selected]);
+  }, [isDisabled, value, selected]);
 
   return (
     <SelectItemFrame
@@ -407,12 +420,12 @@ export const SelectItem = forwardRef<
       value={String(value)}
       textValue={String(value)}
       selected={selected}
-      disabled={disabled}>
+      isDisabled={isDisabled}>
       <SelectItemTextFrame
         selected={selected}
-        disabled={disabled}
+        isDisabled={isDisabled}
         $group-hover={{
-          color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
+          color: isDisabled ? "$disabled" : selected ? "$fg" : "$colorHover"
         }}>
         {children}
       </SelectItemTextFrame>
@@ -441,7 +454,7 @@ const BaseSelect = styled(TamaguiSelect, {
   // },
 
   variants: {
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         color: "$disabled",
@@ -451,7 +464,7 @@ const BaseSelect = styled(TamaguiSelect, {
   } as const,
 
   defaultVariants: {
-    disabled: false
+    isDisabled: false
   }
 });
 
@@ -466,7 +479,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
   const { children, onOpen, onClose, placeholder, ...rest } = props;
 
   const store = useFieldStore();
-  const disabled = store.get.isDisabled();
+  const isDisabled = store.get.isDisabled();
   const value = store.get.value();
   const focused = store.get.isFocused();
   const required = store.get.isRequired();
@@ -498,7 +511,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
         open={focused}
         value={String(value ?? "")}
         defaultValue={String(store.get.initialValue() ?? "")}
-        disabled={disabled}>
+        isDisabled={isDisabled}>
         <SelectTrigger
           paddingLeft={
             store.get.theme().toLowerCase().includes(FieldStatus.BASE)
@@ -506,11 +519,11 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
               : 0
           }
           paddingRight="$3">
-          {!disabled && <FieldStatusIcon disabled={false} />}
+          {!isDisabled && <FieldStatusIcon isDisabled={false} />}
           <SelectValue placeholder={placeholder} />
 
-          {disabled && <FieldStatusIcon disabled={true} />}
-          {!disabled && (
+          {isDisabled && <FieldStatusIcon isDisabled={true} />}
+          {!isDisabled && (
             <SelectIconChevron
               marginRight={0}
               marginLeft="$0.75"
@@ -633,10 +646,10 @@ const SelectGroupImpl = BaseSelectImpl.styleable<SelectExtraProps>(
 
     const store = useFieldStore();
     const focused = store.get.isFocused();
-    const disabled = store.get.isDisabled();
+    const isDisabled = store.get.isDisabled();
 
     return (
-      <SelectGroupFrame open={focused} disabled={disabled}>
+      <SelectGroupFrame open={focused} isDisabled={isDisabled}>
         <BaseSelectImpl ref={forwardedRef} {...rest}>
           {children}
         </BaseSelectImpl>

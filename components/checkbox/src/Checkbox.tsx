@@ -1,9 +1,4 @@
-import {
-  FieldStatus,
-  FieldStatusIcon,
-  useFieldActions,
-  useFieldStore
-} from "@cyclone-ui/form";
+import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
 import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
@@ -133,6 +128,9 @@ const CheckboxGroupFrame = styled(XGroup, {
           outlineStyle: "none",
           outlineColor: "transparent"
         }
+      },
+      false: {
+        cursor: "pointer"
       }
     }
   } as const,
@@ -235,7 +233,6 @@ const CheckboxGroupImpl = BaseCheckboxImpl.styleable((props, forwardedRef) => {
 
   return (
     <XStack gap="$0.5" alignContent="center" verticalAlign="center">
-      {isDisabled && <FieldStatusIcon isDisabled={true} />}
       <CheckboxGroupFrame
         applyFocusStyle={store.get.isFocused()}
         isDisabled={isDisabled}>

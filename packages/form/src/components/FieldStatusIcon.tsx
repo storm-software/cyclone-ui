@@ -36,7 +36,12 @@ export const FieldStatusIconFrame = styled(View, {
     },
 
     isDisabled: {
-      true: {}
+      true: {
+        cursor: "not-allowed"
+      },
+      false: {
+        cursor: "pointer"
+      }
     }
   } as const,
 
