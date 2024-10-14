@@ -119,54 +119,50 @@ oclif example Hello World CLI
 [![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
 
 <!-- toc -->
-
-- [cli](#cli)
-- [oclif-hello-world](#oclif-hello-world)
-- [Usage](#usage)
-- [Commands](#commands)
+* [cli](#cli)
+* [oclif-hello-world](#oclif-hello-world)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @cyclone-ui/cli
 $ cyclone-ui COMMAND
 running command...
 $ cyclone-ui (--version|-v)
-@cyclone-ui/cli/0.6.1 win32-x64 node-v22.8.0
+@cyclone-ui/cli/0.6.1 win32-x64 node-v22.9.0
 $ cyclone-ui --help [COMMAND]
 USAGE
   $ cyclone-ui COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
-- [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
-- [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
-- [`cyclone-ui plugins`](#cyclone-ui-plugins)
-- [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
-- [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
-- [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
-- [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
-- [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
-- [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
-- [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
-- [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
-- [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
-- [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
-- [`cyclone-ui search`](#cyclone-ui-search)
-- [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
-- [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
-- [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
-- [`cyclone-ui version`](#cyclone-ui-version)
+* [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
+* [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
+* [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
+* [`cyclone-ui plugins`](#cyclone-ui-plugins)
+* [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
+* [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
+* [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
+* [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
+* [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
+* [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
+* [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
+* [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
+* [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
+* [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
+* [`cyclone-ui search`](#cyclone-ui-search)
+* [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
+* [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
+* [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
+* [`cyclone-ui version`](#cyclone-ui-version)
 
 ## `cyclone-ui autocomplete [SHELL]`
 
@@ -205,7 +201,8 @@ Build a cyclone-ui package
 
 ```
 USAGE
-  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b] [-c] [-s]
+  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b]
+    [-c] [-s]
 
 ARGUMENTS
   PROJECTROOT...  The path of the project to build relative to the workspace root
@@ -445,8 +442,8 @@ DESCRIPTION
   Links a plugin into the CLI for development.
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the user-installed
-  or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  command will override the user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
@@ -587,7 +584,8 @@ FLAGS
 DESCRIPTION
   Get design component files from registry
 
-  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package
+  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library
+  package
 
 EXAMPLES
   Initialize the themes using the output path from the Storm configuration file
@@ -699,7 +697,8 @@ FLAGS
 DESCRIPTION
   Initialize a theme configuration
 
-  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file
+  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration
+  file
 
 EXAMPLES
   Initialize the themes using the output path from the Storm configuration file
@@ -790,7 +789,6 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.5/src/commands/version.ts)_
-
 <!-- commandsstop -->
 
 ## Reduced Package Size

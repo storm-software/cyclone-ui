@@ -16,26 +16,42 @@
  -------------------------------------------------------------------*/
 
 import { ColorRole } from "@cyclone-ui/colors";
-import { MaybePromise, MessageDetails, SelectOption } from "@storm-stack/types";
+import {
+  IsPlainObject,
+  MaybePromise,
+  SelectOption,
+  ValidationDetails
+} from "@storm-stack/types";
+import { Getter, Setter } from "jotai";
 
 /**
  * "server" is only intended for SSR/SSG validation and should not execute anything
  */
-export type ValidationCause = "change" | "blur" | "submit" | "mount" | "server";
+export type ValidationCause =
+  | "initialize"
+  | "change"
+  | "blur"
+  | "submit"
+  | "server";
 export const ValidationCause = {
+  INITIALIZE: "initialize" as ValidationCause,
   CHANGE: "change" as ValidationCause,
   BLUR: "blur" as ValidationCause,
   SUBMIT: "submit" as ValidationCause,
-  MOUNT: "mount" as ValidationCause,
   SERVER: "server" as ValidationCause
 };
 
 export type Validator<TValue = any> = (
   value: TValue,
-  previousValue?: TValue
-) => MaybePromise<MessageDetails[]>;
+  previousValue: TValue,
+  cause: ValidationCause,
+  get: Getter,
+  set: Setter
+) => MaybePromise<ValidationDetails[]>;
 
-export type FieldValidationResults = Record<ValidationCause, MessageDetails[]>;
+export type ValidationResults = Partial<
+  Record<ValidationCause, ValidationDetails[]>
+>;
 
 /**
  * The field status.
@@ -74,6 +90,144 @@ export const FieldValueType = {
   ANY: "any" as FieldValueType
 };
 
+export type InferFieldState<TValues, TState> =
+  IsPlainObject<TValues> extends true
+    ? {
+        [TKey in keyof TValues]: InferFieldState<TValues[TKey], TState>;
+      }
+    : TState;
+
+export type InferFormState<TValues extends Record<string, any>, TState> = {
+  [TKey in keyof TValues]: InferFieldState<TValues[TKey], TState>;
+};
+
+export type FormValuesState<TValues extends Record<string, any>> = {
+  [TKey in keyof TValues]: IsPlainObject<TValues[TKey]> extends true
+    ? FormValuesState<TValues[TKey]>
+    : TValues[TKey] | null;
+};
+
+/**
+ * The form options.
+ */
+export type FormOptions<
+  TFormValues extends Record<string, any> = Record<string, any>,
+  TValidator extends Validator<TFormValues> = Validator<TFormValues>
+> = {
+  name: string;
+  theme?: string;
+  isDisabled?: boolean;
+  defaultValues?: FormValuesState<TFormValues>;
+  validate?: Record<
+    `on${Capitalize<ValidationCause>}`,
+    TValidator[] | undefined
+  >;
+  debounceMs?: number;
+  onInitialize?: () => MaybePromise<void>;
+  onBlur?: () => MaybePromise<void>;
+  onFocus?: () => MaybePromise<void>;
+  onChange?: (values: TFormValues) => MaybePromise<void>;
+  onSubmit?: (values: TFormValues) => MaybePromise<void>;
+
+  /**
+   * The default options provided to all fields when they are created.
+   */
+  defaultFieldOptions?: Partial<Omit<FieldOptions, "name" | "mode">>;
+};
+
+export type FormBaseState<
+  TFormValues extends Record<string, any> = Record<string, any>
+> = {
+  /**
+   * The name of the form.
+   */
+  name: string;
+
+  /**
+   * The disabled state value.
+   */
+  isFormDisabled: boolean;
+
+  /**
+   * A flag indicating whether the field is currently being validated.
+   */
+  isFormValidating: boolean;
+
+  /**
+   * The results of the form validation.
+   */
+  formValidationResults: ValidationResults;
+
+  /**
+   * A flag indicating whether the form is currently being submitted.
+   */
+  isSubmitting: boolean;
+
+  /**
+   * A flag indicating whether the form has been submitted.
+   */
+  isSubmitted: boolean;
+
+  /**
+   * The number of times the form has been submitted.
+   */
+  submitAttempts: number;
+
+  /**
+   * The disabled state value.
+   */
+  isFieldsDisabled: InferFormState<TFormValues, boolean>;
+
+  /**
+   * The required state value.
+   */
+  isFieldsRequired: InferFormState<TFormValues, boolean>;
+
+  /**
+   * The focused state value.
+   */
+  isFieldsFocused: InferFormState<TFormValues, boolean>;
+  /**
+   * A flag indicating whether the field has been touched.
+   */
+  isFieldsTouched: InferFormState<TFormValues, boolean>;
+
+  /**
+   * A flag indicating whether the field has been blurred.
+   */
+  isFieldsBlurred: InferFormState<TFormValues, boolean>;
+
+  /**
+   * A flag indicating whether the field is currently being validated.
+   */
+  isFieldsValidating: InferFormState<TFormValues, boolean>;
+
+  /**
+   * The results of the field validation.
+   */
+  fieldsValidationResults: InferFormState<TFormValues, ValidationResults>;
+
+  /**
+   * The field group's initial values.
+   */
+  initialValues: FormValuesState<TFormValues>;
+
+  /**
+   * The field group's previous values.
+   */
+  previousValues: FormValuesState<TFormValues>;
+
+  /**
+   * The field group's current values.
+   */
+  values: FormValuesState<TFormValues>;
+
+  /**
+   * The options provided when creating the form.
+   */
+  options: FormOptions<TFormValues>;
+};
+
 /**
  * The field options.
  */
@@ -84,78 +238,96 @@ export type FieldOptions<
   name: string;
   mode?: "value" | "array";
   theme?: string;
-  required?: boolean;
-  disabled?: boolean;
+  isRequired?: boolean;
+  isDisabled?: boolean;
   items?: SelectOption[];
-  initialValue?: TFieldValue;
   valueType?: FieldValueType;
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
     TValidator[] | undefined
   >;
   debounceMs?: number;
-  onMount?: () => MaybePromise<void>;
+  onInitialize?: () => MaybePromise<void>;
   onBlur?: () => MaybePromise<void>;
   onFocus?: () => MaybePromise<void>;
   onChange?: (value: TFieldValue) => MaybePromise<void>;
 };
 
-export type InferFieldValue<TFieldOptions extends FieldOptions> =
-  TFieldOptions["valueType"] extends "string"
-    ? string
-    : TFieldOptions["valueType"] extends "boolean"
-      ? boolean
-      : NonNullable<TFieldOptions["initialValue"]> | null;
+// export type InferFieldValue<TFieldOptions extends FieldOptions> =
+//   TFieldOptions["valueType"] extends "string"
+//     ? string
+//     : TFieldOptions["valueType"] extends "boolean"
+//       ? boolean
+//       : NonNullable<TFieldOptions["defaultValue"]> | null;
 
-export type FieldBaseState<
-  TFieldOptions extends FieldOptions,
-  TFieldValue extends
-    InferFieldValue<TFieldOptions> = InferFieldValue<TFieldOptions>
-> = {
+export type FieldBaseState<TFieldValue = any> = {
+  /**
+   * Internal value used by the Framework to identify the field.
+   */
+  // scope: string | null;
+
   /**
    * The name of the field.
+   *
+   * @remarks
+   * This is the name of the field nested inside internal objects/arrays (if they exist).
    */
   name: string;
 
   /**
-   * The name of the form.
+   * The path segments of the name of the field.
    */
-  formName: string;
+  path: string[];
 
   /**
    * The disabled state value.
    */
-  disabled: boolean;
+  isDisabled: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The required state value.
    */
-  required: boolean;
+  isRequired: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The focused state value.
    */
-  focused: boolean;
+  isFocused: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field has been touched.
    */
-  touched: boolean;
+  isTouched: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field has been blurred.
    */
-  blurred: boolean;
+  isBlurred: InferFieldState<TFieldValue, boolean>;
 
   /**
    * A flag indicating whether the field is currently being validated.
    */
-  validating: boolean;
+  isValidating: InferFieldState<TFieldValue, boolean>;
 
   /**
    * The results of the field validation.
    */
-  validationResults: FieldValidationResults;
+  validationResults: InferFieldState<TFieldValue, ValidationResults>;
+
+  /**
+   * The field group's initial values.
+   */
+  initialValue: TFieldValue | null;
+
+  /**
+   * The field group's previous values.
+   */
+  previousValue: TFieldValue | null;
+
+  /**
+   * The field group's current values.
+   */
+  value: TFieldValue | null;
 
   /**
    * A list of options for the field.
@@ -163,31 +335,12 @@ export type FieldBaseState<
   items: SelectOption[];
 
   /**
-   * The field's initial value.
-   */
-  initialValue: TFieldValue | null;
-
-  /**
-   * The field's previous value.
-   */
-  previousValue: TFieldValue | null;
-
-  /**
-   * The field's current value.
-   */
-  value: TFieldValue;
-
-  /**
    * The options provided when creating the field.
    */
-  options: TFieldOptions;
+  options: FieldOptions<TFieldValue>;
 };
 
-export type FieldState<
-  TFieldOptions extends FieldOptions,
-  TFieldValue extends
-    InferFieldValue<TFieldOptions> = InferFieldValue<TFieldOptions>
-> = FieldBaseState<TFieldOptions, TFieldValue> & {
+export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {
   /**
    * The theme state value.
    */
@@ -196,10 +349,10 @@ export type FieldState<
   /**
    * A flag that is `true` if the field's value has not been modified by the user. Opposite of `isDirty`.
    */
-  pristine: boolean;
+  isPristine: boolean;
 
   /**
    * A flag that is `true` if the field's value has been modified by the user. Opposite of `isPristine`.
    */
-  dirty: boolean;
+  isDirty: boolean;
 };

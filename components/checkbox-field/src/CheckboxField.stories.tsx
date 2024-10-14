@@ -1,4 +1,4 @@
-import { FormProvider } from "@cyclone-ui/form";
+import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack } from "@tamagui/stacks";
 import { CheckboxField } from "./CheckboxField";
@@ -8,7 +8,7 @@ const meta: Meta<typeof CheckboxField> = {
   component: CheckboxField,
   tags: ["autodocs"],
   render: (props: any) => (
-    <FormProvider name="formName" defaultValues={{ checkboxFieldName: false }}>
+    <Form name="formName" defaultValues={{ checkboxFieldName: false }}>
       <CheckboxField name="checkboxFieldName" {...props}>
         <XStack gap="$3" alignContent="center" verticalAlign="center">
           <CheckboxField.Control />
@@ -20,7 +20,7 @@ const meta: Meta<typeof CheckboxField> = {
           This is an example detailed message for an input field
         </CheckboxField.Details>
       </CheckboxField>
-    </FormProvider>
+    </Form>
   )
 } satisfies Meta<typeof CheckboxField>;
 
@@ -34,19 +34,19 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    required: true
+    isRequired: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true
+    isDisabled: true
   }
 };
 
 export const DefaultValue: Story = {
   args: {
-    initialValue: true
+    defaultValue: true
   }
 };
 

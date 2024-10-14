@@ -16,141 +16,315 @@
  -------------------------------------------------------------------*/
 
 import { ColorRole } from "@cyclone-ui/colors";
+import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
+import { MessageType } from "@storm-stack/types/utility-types/message-details";
 import {
-  ErrorMessageDetails,
-  InfoMessageDetails,
-  MessageDetails,
-  MessageType,
-  SuccessMessageDetails,
-  WarningMessageDetails
-} from "@storm-stack/types/utility-types/messages";
+  ErrorValidationDetails,
+  HelpValidationDetails,
+  InfoValidationDetails,
+  SuccessValidationDetails,
+  ValidationDetails,
+  WarningValidationDetails
+} from "@storm-stack/types/utility-types/validation-details";
 import { Atom, atom } from "jotai";
-import { FieldOptions, FieldValidationResults } from "../types";
+import { FieldOptions, InferFieldState, ValidationResults } from "../types";
+import { isValidationResults } from "../utilities/is-validation-results";
+
+export const getMessageType = <
+  TMessageType extends MessageType,
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : TMessageType extends "success"
+          ? SuccessValidationDetails
+          : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : TMessageType extends "success"
+          ? SuccessValidationDetails
+          : ValidationDetails
+>(
+  validationResults: ValidationResults,
+  type: TMessageType
+): TValidationDetails[] => {
+  const messages = [] as TValidationDetails[];
+  if (validationResults.initialize) {
+    messages.push(
+      ...(validationResults.initialize.filter(
+        message =>
+          type === message.type &&
+          (message.message || message.code) &&
+          !messages.some(
+            existing =>
+              existing.message === message.message ||
+              existing.code === message.code
+          )
+      ) as TValidationDetails[])
+    );
+  }
+  if (validationResults.change) {
+    messages.push(
+      ...(validationResults.change.filter(
+        message =>
+          type === message.type &&
+          (message.message || message.code) &&
+          !messages.some(
+            existing =>
+              existing.message === message.message ||
+              existing.code === message.code
+          )
+      ) as TValidationDetails[])
+    );
+  }
+  if (validationResults.blur) {
+    messages.push(
+      ...(validationResults.blur.filter(
+        message =>
+          type === message.type &&
+          (message.message || message.code) &&
+          !messages.some(
+            existing =>
+              existing.message === message.message ||
+              existing.code === message.code
+          )
+      ) as TValidationDetails[])
+    );
+  }
+  if (validationResults.server) {
+    messages.push(
+      ...(validationResults.server.filter(
+        message =>
+          type === message.type &&
+          (message.message || message.code) &&
+          !messages.some(
+            existing =>
+              existing.message === message.message ||
+              existing.code === message.code
+          )
+      ) as TValidationDetails[])
+    );
+  }
+  if (validationResults.submit) {
+    messages.push(
+      ...(validationResults.submit.filter(
+        message =>
+          type === message.type &&
+          (message.message || message.code) &&
+          !messages.some(
+            existing =>
+              existing.message === message.message ||
+              existing.code === message.code
+          )
+      ) as TValidationDetails[])
+    );
+  }
+
+  return messages;
+};
+
+export const getFieldsMessageTypes = <
+  TFieldValue,
+  TMessageType extends MessageType,
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails
+>(
+  messageMap: InferFieldState<TFieldValue, ValidationResults>,
+  type: TMessageType
+): InferFieldState<TFieldValue, TValidationDetails[]> => {
+  if (isValidationResults(messageMap)) {
+    return getMessageType(messageMap, type) as InferFieldState<
+      TFieldValue,
+      TValidationDetails[]
+    >;
+  }
+
+  return Object.entries(messageMap).reduce(
+    (ret, [field, messages]) => {
+      if (!isValidationResults(messages)) {
+        ret[field] = getFieldsMessageTypes(
+          messages as InferFieldState<TFieldValue, ValidationResults>,
+          type
+        );
+      } else {
+        ret[field] = getMessageType(messages, type);
+      }
+
+      return ret;
+    },
+    {} as InferFieldState<TFieldValue, TValidationDetails[]>
+  );
+};
+
+export const atomWithFieldsMessageTypes = <
+  TFieldValue,
+  TMessageType extends MessageType,
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails
+>(
+  validationResultsAtom: Atom<InferFieldState<TFieldValue, ValidationResults>>,
+  type: TMessageType
+): Atom<InferFieldState<TFieldValue, TValidationDetails[]>> => {
+  return atom<InferFieldState<TFieldValue, TValidationDetails[]>>(get => {
+    return getFieldsMessageTypes(get(validationResultsAtom), type);
+  });
+};
+
+export const getFieldsMessageList = <
+  TFieldValue,
+  TMessageType extends MessageType,
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails
+>(
+  messageMap: InferFieldState<TFieldValue, ValidationResults>,
+  type: TMessageType
+): TValidationDetails[] => {
+  if (isValidationResults(messageMap)) {
+    return getMessageType(messageMap, type);
+  }
+
+  return Object.entries(messageMap ?? {}).reduce((ret, [_, messages]) => {
+    if (isSetObject(messages)) {
+      if (!isValidationResults(messages)) {
+        ret.push(
+          ...getFieldsMessageList(
+            messages as InferFieldState<TFieldValue, ValidationResults>,
+            type
+          )
+        );
+      } else {
+        ret.push(...getMessageType(messages, type));
+      }
+    }
+
+    return ret;
+  }, [] as TValidationDetails[]);
+};
+
+export const atomWithFieldsMessageList = <
+  TFieldValue,
+  TMessageType extends MessageType,
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
+    : TMessageType extends "warning"
+      ? WarningValidationDetails
+      : TMessageType extends "info"
+        ? InfoValidationDetails
+        : ValidationDetails
+>(
+  validationResultsAtom: Atom<InferFieldState<TFieldValue, ValidationResults>>,
+  type: TMessageType
+): Atom<TValidationDetails[]> => {
+  return atom<TValidationDetails[]>(get => {
+    return getFieldsMessageList<TFieldValue, TMessageType, TValidationDetails>(
+      get(validationResultsAtom),
+      type
+    );
+  });
+};
 
 export const atomWithMessageTypes = <
   TMessageType extends MessageType,
-  TMessageDetails extends TMessageType extends "error"
-    ? ErrorMessageDetails
+  TValidationDetails extends TMessageType extends "error"
+    ? ErrorValidationDetails
     : TMessageType extends "warning"
-      ? WarningMessageDetails
+      ? WarningValidationDetails
       : TMessageType extends "info"
-        ? InfoMessageDetails
+        ? InfoValidationDetails
         : TMessageType extends "success"
-          ? SuccessMessageDetails
-          : MessageDetails = TMessageType extends "error"
-    ? ErrorMessageDetails
+          ? SuccessValidationDetails
+          : ValidationDetails = TMessageType extends "error"
+    ? ErrorValidationDetails
     : TMessageType extends "warning"
-      ? WarningMessageDetails
+      ? WarningValidationDetails
       : TMessageType extends "info"
-        ? InfoMessageDetails
+        ? InfoValidationDetails
         : TMessageType extends "success"
-          ? SuccessMessageDetails
-          : MessageDetails
+          ? SuccessValidationDetails
+          : ValidationDetails
 >(
-  validationResultsAtom: Atom<FieldValidationResults>,
+  validationResultsAtom: Atom<ValidationResults>,
   type: TMessageType
-): Atom<TMessageDetails[]> => {
-  return atom<TMessageDetails[]>(get => {
-    const messageMap = get(validationResultsAtom);
-
-    const messages = [] as TMessageDetails[];
-    if (messageMap.mount) {
-      messages.push(
-        ...(messageMap.mount.filter(
-          message =>
-            type === message.type &&
-            (message.message || message.code) &&
-            !messages.some(
-              existing =>
-                existing.message === message.message ||
-                existing.code === message.code
-            )
-        ) as TMessageDetails[])
-      );
-    }
-    if (messageMap.change) {
-      messages.push(
-        ...(messageMap.change.filter(
-          message =>
-            type === message.type &&
-            (message.message || message.code) &&
-            !messages.some(
-              existing =>
-                existing.message === message.message ||
-                existing.code === message.code
-            )
-        ) as TMessageDetails[])
-      );
-    }
-    if (messageMap.blur) {
-      messages.push(
-        ...(messageMap.blur.filter(
-          message =>
-            type === message.type &&
-            (message.message || message.code) &&
-            !messages.some(
-              existing =>
-                existing.message === message.message ||
-                existing.code === message.code
-            )
-        ) as TMessageDetails[])
-      );
-    }
-    if (messageMap.server) {
-      messages.push(
-        ...(messageMap.server.filter(
-          message =>
-            type === message.type &&
-            (message.message || message.code) &&
-            !messages.some(
-              existing =>
-                existing.message === message.message ||
-                existing.code === message.code
-            )
-        ) as TMessageDetails[])
-      );
-    }
-    if (messageMap.submit) {
-      messages.push(
-        ...(messageMap.submit.filter(
-          message =>
-            type === message.type &&
-            (message.message || message.code) &&
-            !messages.some(
-              existing =>
-                existing.message === message.message ||
-                existing.code === message.code
-            )
-        ) as TMessageDetails[])
-      );
-    }
-
-    return messages;
+): Atom<TValidationDetails[]> => {
+  return atom<TValidationDetails[]>(get => {
+    return getMessageType<TMessageType, TValidationDetails>(
+      get(validationResultsAtom),
+      type
+    );
   });
 };
 
 export const atomWithMessages = (
-  errorMessagesAtom: Atom<ErrorMessageDetails[]>,
-  warningMessagesAtom: Atom<WarningMessageDetails[]>,
-  infoMessagesAtom: Atom<InfoMessageDetails[]>,
-  successMessagesAtom: Atom<SuccessMessageDetails[]>
+  errorMessagesAtom: Atom<ErrorValidationDetails[]>,
+  warningMessagesAtom: Atom<WarningValidationDetails[]>,
+  infoMessagesAtom: Atom<InfoValidationDetails[]>,
+  helpMessagesAtom: Atom<HelpValidationDetails[]>,
+  successMessagesAtom: Atom<SuccessValidationDetails[]>
 ) =>
-  atom<MessageDetails[] | undefined>(get => {
+  atom<ValidationDetails[] | undefined>(get => {
     const errorMessages = get(errorMessagesAtom);
     if (errorMessages.length > 0) {
-      return errorMessages as MessageDetails[];
+      return errorMessages as ValidationDetails[];
     }
     const warningMessages = get(warningMessagesAtom);
     if (warningMessages.length > 0) {
-      return warningMessages as MessageDetails[];
+      return warningMessages as ValidationDetails[];
     }
     const infoMessages = get(infoMessagesAtom);
     if (infoMessages.length > 0) {
-      return infoMessages as MessageDetails[];
+      return infoMessages as ValidationDetails[];
+    }
+    const helpMessages = get(helpMessagesAtom);
+    if (helpMessages.length > 0) {
+      return helpMessages as ValidationDetails[];
     }
     const successMessages = get(successMessagesAtom);
     if (successMessages.length > 0) {
-      return successMessages as MessageDetails[];
+      return successMessages as ValidationDetails[];
     }
 
     return undefined;
@@ -166,10 +340,11 @@ const getTheme = (type: ColorRole, theme?: string) => {
 
 export const atomWithTheme = (
   optionsAtom: Atom<FieldOptions>,
-  errorMessagesAtom: Atom<ErrorMessageDetails[]>,
-  warningMessagesAtom: Atom<WarningMessageDetails[]>,
-  infoMessagesAtom: Atom<InfoMessageDetails[]>,
-  successMessagesAtom: Atom<SuccessMessageDetails[]>
+  errorMessagesAtom: Atom<ErrorValidationDetails[]>,
+  warningMessagesAtom: Atom<WarningValidationDetails[]>,
+  infoMessagesAtom: Atom<InfoValidationDetails[]>,
+  helpMessagesAtom: Atom<HelpValidationDetails[]>,
+  successMessagesAtom: Atom<SuccessValidationDetails[]>
 ) =>
   atom<string>(get => {
     const options = get(optionsAtom);
@@ -193,7 +368,10 @@ export const atomWithTheme = (
       options.theme?.toLowerCase().includes(ColorRole.INFO)
     ) {
       return getTheme(ColorRole.INFO, options.theme);
-    } else if (options.theme?.toLowerCase().includes(ColorRole.HELP)) {
+    } else if (
+      get(helpMessagesAtom).length > 0 ||
+      options.theme?.toLowerCase().includes(ColorRole.HELP)
+    ) {
       return getTheme(ColorRole.HELP, options.theme);
     }
 

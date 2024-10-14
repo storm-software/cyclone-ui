@@ -17,93 +17,226 @@
 
 /* eslint-disable unicorn/no-null */
 
-import { ColorRole } from "@cyclone-ui/colors";
 import {
   createAtomStore,
   CreateAtomStoreOptions,
   StoreAtomsWithoutSelectors
 } from "@cyclone-ui/state";
-import { atom } from "jotai";
+import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
+import { Atom, atom } from "jotai";
 import {
+  atomWithFieldsMessageList,
+  atomWithFieldsMessageTypes,
   atomWithMessages,
   atomWithMessageTypes,
   atomWithTheme
 } from "../atoms/atom-with-messages";
+import {
+  FormBaseState,
+  FormOptions,
+  InferFieldState,
+  InferFormState,
+  ValidationResults
+} from "../types";
 
-const formStoreSelectors = <TFormValues = any>(
-  atoms: StoreAtomsWithoutSelectors<any>
+const formStoreSelectors = <
+  TFormValues extends Record<string, any> = Record<string, any>
+>(
+  atoms: StoreAtomsWithoutSelectors<FormBaseState<TFormValues>>
 ) => {
-  const dirtyAtom = atom(get => get(atoms.value) !== get(atoms.initialValue));
+  const isDirtyAtom = atom(get =>
+    isEqual(get(atoms.values), get(atoms.initialValues))
+  );
+  const isPristineAtom = atom(get => !get(isDirtyAtom));
 
-  const errorMessagesAtom = atomWithMessageTypes(
-    atoms.validationResults,
+  const formErrorsAtom = atomWithMessageTypes(
+    atoms.formValidationResults,
     "error"
   );
-  const warningMessagesAtom = atomWithMessageTypes(
-    atoms.validationResults,
+  const formWarningsAtom = atomWithMessageTypes(
+    atoms.formValidationResults,
     "warning"
   );
-  const infoMessagesAtom = atomWithMessageTypes(
-    atoms.validationResults,
+  const formInfoAtom = atomWithMessageTypes(
+    atoms.formValidationResults,
     "info"
   );
-  const successMessagesAtom = atomWithMessageTypes(
-    atoms.validationResults,
+  const formHelpAtom = atomWithMessageTypes(
+    atoms.formValidationResults,
+    "help"
+  );
+  const formSuccessesAtom = atomWithMessageTypes(
+    atoms.formValidationResults,
     "success"
   );
 
+  const isFormInvalidAtom = atom(get => {
+    const errorMessages = get(formErrorsAtom);
+    return errorMessages.length > 0;
+  });
+  const isFormValidAtom = atom(get => !get(isFormInvalidAtom));
+
+  const fieldsErrorsAtom = atomWithFieldsMessageTypes(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "error"
+  );
+  const fieldsWarningsAtom = atomWithFieldsMessageTypes(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "warning"
+  );
+  const fieldsInfoAtom = atomWithFieldsMessageTypes(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "info"
+  );
+  const fieldsHelpAtom = atomWithFieldsMessageTypes(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "help"
+  );
+  const fieldsSuccessesAtom = atomWithFieldsMessageTypes(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "success"
+  );
+
+  const fieldsErrorMessagesAtom = atomWithFieldsMessageList(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "error"
+  );
+  const fieldsWarningMessagesAtom = atomWithFieldsMessageList(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "warning"
+  );
+  const fieldsInfoMessagesAtom = atomWithFieldsMessageList(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "info"
+  );
+  const fieldsHelpMessagesAtom = atomWithFieldsMessageList(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "help"
+  );
+  const fieldsSuccessMessagesAtom = atomWithFieldsMessageList(
+    atoms.fieldsValidationResults as Atom<
+      InferFieldState<TFormValues, ValidationResults>
+    >,
+    "success"
+  );
+
+  const isFieldsInvalidAtom = atom(get => {
+    const errorMessages = get(fieldsErrorMessagesAtom);
+    return errorMessages.length > 0;
+  });
+  const isFieldsValidAtom = atom(get => !get(isFormInvalidAtom));
+
+  const isInvalidAtom = atom(
+    get => get(isFormInvalidAtom) || get(isFieldsInvalidAtom)
+  );
+  const isValidAtom = atom(get => !get(isInvalidAtom));
+
+  const canSubmitAtom = atom(
+    get =>
+      get(isValidAtom) &&
+      !get(atoms.isSubmitting) &&
+      !get(atoms.isSubmitted) &&
+      !get(atoms.isFormDisabled)
+  );
+
   return {
-    pristine: atom(get => !get(dirtyAtom)),
-    dirty: dirtyAtom,
-    errorMessages: errorMessagesAtom,
-    warningMessages: warningMessagesAtom,
-    infoMessages: infoMessagesAtom,
-    successMessages: successMessagesAtom,
+    isDirty: isDirtyAtom,
+    isPristine: isPristineAtom,
+    formErrorMessages: formErrorsAtom,
+    formWarningMessages: formWarningsAtom,
+    formInfoMessages: formInfoAtom,
+    formHelpMessages: formHelpAtom,
+    formSuccessMessages: formSuccessesAtom,
+    fieldsErrors: fieldsErrorsAtom,
+    fieldsWarnings: fieldsWarningsAtom,
+    fieldsInfo: fieldsInfoAtom,
+    fieldsHelp: fieldsHelpAtom,
+    fieldsSuccesses: fieldsSuccessesAtom,
+    fieldsErrorMessages: fieldsErrorMessagesAtom,
+    fieldsWarningMessages: fieldsWarningMessagesAtom,
+    fieldsInfoMessages: fieldsInfoMessagesAtom,
+    fieldsHelpMessages: fieldsHelpMessagesAtom,
+    fieldsSuccessMessages: fieldsSuccessMessagesAtom,
+    isFormValid: isFormValidAtom,
+    isFormInvalid: isFormInvalidAtom,
+    isFieldsValid: isFieldsValidAtom,
+    isFieldsInvalid: isFieldsInvalidAtom,
+    isValid: isValidAtom,
+    isInvalid: isInvalidAtom,
     theme: atomWithTheme(
-      atoms.theme,
-      errorMessagesAtom,
-      warningMessagesAtom,
-      infoMessagesAtom,
-      successMessagesAtom
+      atoms.options,
+      formErrorsAtom,
+      formWarningsAtom,
+      formInfoAtom,
+      formHelpAtom,
+      formSuccessesAtom
     ),
     messages: atomWithMessages(
-      errorMessagesAtom,
-      warningMessagesAtom,
-      infoMessagesAtom,
-      successMessagesAtom
-    )
+      formErrorsAtom,
+      formWarningsAtom,
+      formInfoAtom,
+      formHelpAtom,
+      formSuccessesAtom
+    ),
+    canSubmit: canSubmitAtom
   };
 };
 
 export const formStore = createAtomStore<
-  any,
-  CreateAtomStoreOptions<any, typeof formStoreSelectors>
+  FormBaseState,
+  CreateAtomStoreOptions<FormBaseState, typeof formStoreSelectors>
 >({
   name: "form",
   initialState: {
     name: "form",
-    theme: ColorRole.BASE,
-    initialValues: {},
-    previousValues: {},
-    values: {},
-    focused: false,
-    required: false,
-    disabled: false,
-    touched: false,
-    blurred: false,
-    errors: [],
-    validating: false,
-    validationResults: {
-      mount: [],
+    isFormDisabled: false,
+    isFormValidating: false,
+    formValidationResults: {
+      initialize: [],
       change: [],
       blur: [],
       submit: [],
       server: []
     },
-    items: [],
-    options: {}
+    isSubmitting: false,
+    isSubmitted: false,
+    submitAttempts: 0,
+    initialValues: {} as Record<string, any>,
+    previousValues: {} as Record<string, any>,
+    values: {} as Record<string, any>,
+    isFieldsFocused: {} as InferFormState<Record<string, any>, boolean>,
+    isFieldsRequired: {} as InferFormState<Record<string, any>, boolean>,
+    isFieldsDisabled: {} as InferFormState<Record<string, any>, boolean>,
+    isFieldsTouched: {} as InferFormState<Record<string, any>, boolean>,
+    isFieldsBlurred: {} as InferFormState<Record<string, any>, boolean>,
+    isFieldsValidating: {} as InferFormState<Record<string, any>, boolean>,
+    fieldsValidationResults: {} as InferFormState<
+      Record<string, any>,
+      ValidationResults
+    >,
+    options: {} as FormOptions
   },
   selectors: formStoreSelectors
 });
 
 export type FormStore = typeof formStore;
+export type FormStoreApi = FormStore["api"];
+export type FormStoreAtom = FormStoreApi["atom"];

@@ -16,6 +16,5 @@
  -------------------------------------------------------------------*/
 
 export * from "./use-hydrate-store";
-export * from "./use-isomorphic-layout-effect";
 export * from "./use-prepare-atoms";
 export * from "./use-sync-store";

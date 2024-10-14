@@ -1,17 +1,39 @@
-import React, { PropsWithChildren } from "react";
+import { useIsomorphicLayoutEffect } from "@storm-stack/hooks";
+import { useThemeName } from "@tamagui/core";
+import { PropsWithChildren } from "react";
 import { formStore } from "../stores/form-store";
+import { FormOptions, Validator } from "../types";
 
-export type FormProviderOptions<TFormValues extends Record<string, any>> =
-  PropsWithChildren<any>;
+export type FormProviderOptions<
+  TFormValues extends Record<string, any> = Record<string, any>,
+  TValidator extends Validator<TFormValues> = Validator<TFormValues>
+> = PropsWithChildren<FormOptions<TFormValues, TValidator>>;
 
-export const FormProvider = <TFormValues extends Record<string, any>>({
+export const FormProvider = <
+  TFormValues extends Record<string, any> = Record<string, any>,
+  TValidator extends Validator<TFormValues> = Validator<TFormValues>
+>({
   children,
   ...options
-}: FormProviderOptions<TFormValues>) => {
+}: FormProviderOptions<TFormValues, TValidator>) => {
+  const theme = useThemeName();
+
+  useIsomorphicLayoutEffect(() => {
+    options.onInitialize?.();
+  }, [options.onInitialize]);
+
   return (
     <formStore.Provider
       scope={String(options.name)}
-      initialValues={{ name: String(options.name), options }}>
+      initialValues={{
+        name: String(options.name),
+        isFormDisabled: !!options.isDisabled,
+        options: {
+          debounceMs: 500,
+          theme,
+          ...options
+        } as FormOptions
+      }}>
       {children}
     </formStore.Provider>
   );

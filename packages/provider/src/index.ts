@@ -7,16 +7,16 @@
  * @packageDocumentation
  */
 
-export * from "./ThemeProvider";
-export * from "./ThemeProvider.server";
-export * from "./theme-state";
-export * from "./Provider";
-export * from "./Provider.server";
 export {
   Toast,
   ToastViewport,
-  useToastState,
-  useToastController
+  useToastController,
+  useToastState
 } from "@tamagui/toast";
+export * from "./Provider";
+export * from "./Provider.server";
+export * from "./theme-state";
+export * from "./ThemeProvider";
+export * from "./ThemeProvider.server";
 export * from "./ToastProvider";
-export * from "./use-message-controller";
+export * from "./use-message-actions";

@@ -27,7 +27,7 @@ export interface MessageProps {
 
 export type MessageOptions = Omit<MessageProps, "message">;
 
-export interface UseMessageControllerResult {
+export interface UseMessageActionsResult {
   show: (message: string, options: MessageOptions) => void;
   showInfo: (message: string, options: MessageOptions) => void;
   showSuccess: (message: string, options: MessageOptions) => void;
@@ -39,7 +39,7 @@ export interface UseMessageControllerResult {
   options?: any;
 }
 
-export const useMessageController = (): UseMessageControllerResult => {
+export const useMessageActions = (): UseMessageActionsResult => {
   const toast = useToastController();
 
   return {

@@ -16,3 +16,4 @@
  -------------------------------------------------------------------*/
 
 export * from "./validators";
+export * from "./is-validation-results";

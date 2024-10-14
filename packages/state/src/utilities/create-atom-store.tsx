@@ -18,12 +18,12 @@
 import { isString } from "@storm-stack/types";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import type { useHydrateAtoms } from "jotai/utils";
-import { RESET } from "jotai/utils";
+import { atomWithReset, RESET } from "jotai/utils";
 import type {
   Atom,
+  createStore,
   SetStateAction,
-  WritableAtom,
-  createStore
+  WritableAtom
 } from "jotai/vanilla";
 import type {
   AsyncStorage,
@@ -305,7 +305,7 @@ export const createAtomStore = <
   for (const [key, atomOrValue] of Object.entries(options.initialState)) {
     const atomConfig: Atom<unknown> = isAtom(atomOrValue)
       ? atomOrValue
-      : baseAtom(atomOrValue);
+      : atomWithReset(atomOrValue);
     atomConfig.debugLabel = `${options.name}:${key}`;
 
     atomsWithoutSelectors[key as keyof TStoreAtomsWithoutSelectors] =

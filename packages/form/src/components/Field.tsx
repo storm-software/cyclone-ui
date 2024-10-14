@@ -16,14 +16,7 @@
  -------------------------------------------------------------------*/
 
 import type { ColorTokens } from "@cyclone-ui/colors";
-import {
-  FieldProvider,
-  FieldProviderOptions,
-  useFieldStore,
-  Validator
-} from "@cyclone-ui/form";
-import { Label, LabelProps } from "@cyclone-ui/label";
-import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
 import type { FontSizeTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
@@ -36,8 +29,16 @@ import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import { Paragraph } from "@tamagui/text";
 import { Text, Theme } from "@tamagui/web";
 import { ForwardedRef, forwardRef, PropsWithChildren } from "react";
+import { useFieldStore } from "../hooks/use-field-store";
+import {
+  FieldProvider,
+  FieldProviderOptions
+} from "../providers/FieldStoreProvider";
+import { Validator } from "../types";
+import { FieldStatusIcon } from "./FieldStatusIcon";
+import { Label, LabelProps } from "./Label";
 
-export const FormFieldContext = createStyledContext<{
+export const FieldContext = createStyledContext<{
   size: FontSizeTokens;
   scaleIcon: number;
   color?: ColorTokens | string;
@@ -48,12 +49,13 @@ export const FormFieldContext = createStyledContext<{
   hideIcons: false
 });
 
-export const FORM_FIELD_NAME = "FormField";
+export const FIELD_NAME = "Field";
 
-const FormFieldGroup = styled(ThemeableStack, {
+const FieldGroupFrame = styled(ThemeableStack, {
+  name: FIELD_NAME,
+
   animation: "$slow",
-  context: FormFieldContext,
-
+  context: FieldContext,
   display: "flex",
 
   variants: {
@@ -98,7 +100,7 @@ const FormFieldGroup = styled(ThemeableStack, {
       }
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -132,50 +134,60 @@ const FormFieldGroup = styled(ThemeableStack, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1",
     size: "$true",
     orientation: "vertical",
-    disabled: false
+    isDisabled: false
   }
 });
 
-const FormFieldGroupInnerImpl = FormFieldGroup.styleable(
-  (props, forwardedRef) => {
-    const { children, ...rest } = props;
-    const store = useFieldStore();
-    const theme = store.get.theme();
+const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
+  const { children, ...rest } = props;
 
-    return (
-      <Theme name={theme}>
-        <FormFieldGroup
-          ref={forwardedRef}
-          {...rest}
-          disabled={store.get.disabled()}>
-          {children}
-        </FormFieldGroup>
-      </Theme>
-    );
-  }
-);
+  const store = useFieldStore();
+  const isDisable = store.get.isDisabled();
 
-export type FormFieldProps<
+  // const name = store.get.name();
+
+  // const contextStore = useAtomStore("field", store.get._scope());
+
+  // const { initializeField, uninitializeField } = useFormActions();
+  // useIsomorphicLayoutEffect(() => {
+  //   initializeField(name, useFieldStore());
+
+  //   () => {
+  //     uninitializeField(name);
+  //   };
+  // }, [name]);
+
+  return (
+    <Theme name={store.get.theme()}>
+      <FieldGroupFrame
+        ref={forwardedRef}
+        {...rest}
+        isDisabled={isBoolean(isDisable) ? isDisable : undefined}>
+        {children}
+      </FieldGroupFrame>
+    </Theme>
+  );
+});
+
+export type FieldProps<
   TFieldValue = any,
   TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
 > = FieldProviderOptions<TFieldValue, TValidator>;
 
-const FormFieldGroupImpl = FormFieldGroup.styleable<FormFieldProps>(
+export const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     return (
       <FieldProvider {...rest}>
-        <FormFieldGroupInnerImpl ref={forwardedRef}>
-          {children}
-        </FormFieldGroupInnerImpl>
+        <FieldGroupInnerImpl ref={forwardedRef}>{children}</FieldGroupInnerImpl>
       </FieldProvider>
     );
   }
 );
 
-export const FormFieldDetails = styled(Text, {
-  context: FormFieldContext,
+export const FieldDetails = styled(Text, {
+  context: FieldContext,
   animation: "$slow",
   color: "$borderColor",
   marginTop: "$0.5",
@@ -224,7 +236,7 @@ export const FormFieldDetails = styled(Text, {
       }
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled"
       }
@@ -232,11 +244,11 @@ export const FormFieldDetails = styled(Text, {
   } as const,
 
   defaultVariants: {
-    disabled: false
+    isDisabled: false
   }
 });
 
-const FormFieldDetailsMessage = (props: PropsWithChildren) => {
+const FieldDetailsMessage = (props: PropsWithChildren) => {
   const { children } = props;
 
   const messages = useFieldStore().get.messages();
@@ -261,64 +273,61 @@ const FormFieldDetailsMessage = (props: PropsWithChildren) => {
   );
 };
 
-const FormFieldDetailsImpl = FormFieldDetails.styleable(
+const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
+  const { children, ...rest } = props;
+  const store = useFieldStore();
+
+  return (
+    <FieldDetails
+      ref={forwardedRef}
+      isDisabled={!!store.get.isDisabled()}
+      htmlFor={store.get.name()}
+      {...rest}>
+      <FieldDetailsMessage>{children}</FieldDetailsMessage>
+    </FieldDetails>
+  );
+});
+
+export const FieldLabel = forwardRef<typeof Label, Omit<LabelProps, "htmlFor">>(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const store = useFieldStore();
 
     return (
-      <FormFieldDetails
-        ref={forwardedRef}
-        disabled={store.get.disabled()}
+      <Label
+        ref={forwardedRef as ForwardedRef<any>}
+        paddingBottom="$0.5"
+        {...rest}
         htmlFor={store.get.name()}
-        {...rest}>
-        <FormFieldDetailsMessage>{children}</FormFieldDetailsMessage>
-      </FormFieldDetails>
+        isDisabled={!!store.get.isDisabled()}
+        isRequired={!!store.get.isRequired()}
+        isFocused={!!store.get.isFocused()}>
+        {children}
+      </Label>
     );
   }
 );
 
-export const FormFieldLabel = forwardRef<
-  typeof Label,
-  Omit<LabelProps, "htmlFor">
->((props, forwardedRef) => {
-  const { children, ...rest } = props;
-
+export const FieldFieldStatusIcon = forwardRef<
+  typeof FieldStatusIcon,
+  GetProps<typeof FieldStatusIcon>
+>(props => {
   const store = useFieldStore();
-  const name = store.get.name();
-  const disabled = store.get.disabled();
-  const required = store.get.required();
-  const focused = store.get.focused();
-
-  return (
-    <Label
-      ref={forwardedRef as ForwardedRef<any>}
-      paddingBottom="$0.5"
-      {...rest}
-      htmlFor={name}
-      disabled={disabled}
-      required={required}
-      focused={focused}>
-      {children}
-    </Label>
-  );
-});
-
-export const FormFieldThemeableIcon = forwardRef<
-  typeof ThemeableIcon,
-  GetProps<typeof ThemeableIcon>
->((props) => {
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
+  const isDisabled = store.get.isDisabled();
   const theme = store.get.theme();
 
   return (
-    <ThemeableIcon disabled={disabled} theme={theme} size="$3" {...props} />
+    <FieldStatusIcon
+      isDisabled={isDisabled}
+      theme={theme}
+      size="$3"
+      {...props}
+    />
   );
 });
 
-export const FormField = withStaticProperties(FormFieldGroupImpl, {
-  Label: FormFieldLabel,
-  Details: FormFieldDetailsImpl,
-  ThemeableIcon: FormFieldThemeableIcon
+export const Field = withStaticProperties(FieldGroup, {
+  Label: FieldLabel,
+  Details: FieldDetailsImpl,
+  StatusIcon: FieldStatusIcon
 });

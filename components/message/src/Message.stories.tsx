@@ -1,5 +1,5 @@
 import { Button } from "@cyclone-ui/button";
-import { useMessageController } from "@cyclone-ui/provider";
+import { useMessageActions } from "@cyclone-ui/provider";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack, YStack } from "@tamagui/stacks";
 // import { HelpCircle } from "@tamagui/lucide-icons";
@@ -10,7 +10,7 @@ const meta: Meta<typeof Message> = {
   component: Message,
   tags: ["autodocs"],
   render: ({ message, theme, ...rest }: any) => {
-    const { show, hide } = useMessageController();
+    const { show, hide } = useMessageActions();
 
     return (
       <YStack space={true} alignItems="center">

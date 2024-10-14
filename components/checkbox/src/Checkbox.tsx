@@ -1,5 +1,9 @@
-import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
-import { FormFieldThemeableIcon } from "@cyclone-ui/form-field";
+import {
+  FieldStatus,
+  FieldStatusIcon,
+  useFieldActions,
+  useFieldStore
+} from "@cyclone-ui/form";
 import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
@@ -103,7 +107,7 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {}
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -136,7 +140,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
     required: false,
-    disabled: false
+    isDisabled: false
   }
 });
 
@@ -157,7 +161,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   // },
 
   variants: {
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         placeholderTextColor: "$disabled",
@@ -170,7 +174,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   } as const,
 
   defaultVariants: {
-    disabled: false
+    isDisabled: false
   }
 });
 
@@ -179,33 +183,29 @@ const BaseCheckboxImpl = BaseCheckbox.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const name = store.get.name();
-  const disabled = store.get.disabled();
-  const value = store.get.value();
-  const initialValue = store.get.initialValue();
 
-  const { handleFocus, handleBlur, handleChange } = useFieldActions<boolean>();
+  const { focus, blur, change } = useFieldActions<boolean>();
   const handleCheckedChange = useCallback(
     async (checked: boolean) => {
-      await handleChange(checked);
-      await handleBlur();
+      await change(checked);
+      await blur();
     },
-    [handleBlur, handleChange]
+    [blur, change]
   );
 
   return (
     <View flex={1}>
       <BaseCheckbox
-        id={name}
         ref={forwardedRef}
         size={size}
         {...rest}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        id={store.get.name()}
+        onFocus={focus}
+        onBlur={blur}
         onCheckedChange={handleCheckedChange}
-        checked={Boolean(value)}
-        defaultChecked={Boolean(initialValue)}
-        disabled={disabled}>
+        checked={Boolean(store.get.value())}
+        defaultChecked={Boolean(store.get.initialValue())}
+        isDisabled={store.get.isDisabled()}>
         <TamaguiCheckbox.Indicator
           animation="slow"
           enterStyle={{
@@ -231,19 +231,21 @@ const CheckboxGroupImpl = BaseCheckboxImpl.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const focused = store.get.focused();
-  const disabled = store.get.disabled();
-  const theme = store.get.theme();
+  const isDisabled = store.get.isDisabled();
 
   return (
     <XStack gap="$0.5" alignContent="center" verticalAlign="center">
-      {disabled && <FormFieldThemeableIcon disabled={true} />}
-      <CheckboxGroupFrame applyFocusStyle={focused} disabled={disabled}>
+      {isDisabled && <FieldStatusIcon isDisabled={true} />}
+      <CheckboxGroupFrame
+        applyFocusStyle={store.get.isFocused()}
+        isDisabled={isDisabled}>
         <BaseCheckboxImpl
           ref={forwardedRef}
           {...rest}
           paddingHorizontal={
-            theme.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
+            store.get.theme().toLowerCase().includes(FieldStatus.BASE)
+              ? "$3"
+              : 0
           }>
           {children}
         </BaseCheckboxImpl>

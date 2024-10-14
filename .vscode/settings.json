@@ -51,6 +51,8 @@
       "(?:twMerge|twJoin)\\(([^\\);]*)[\\);]"
     ]
   ],
+  "i18n-ally.localesPaths": ["./assets/locales"],
+  "i18n-ally.keystyle": "nested",
   "prettier.requireConfig": true,
   "prettier.bracketSameLine": true,
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",

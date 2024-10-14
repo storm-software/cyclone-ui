@@ -1,4 +1,4 @@
-import { FormProvider } from "@cyclone-ui/form";
+import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { InputField } from "./InputField";
 
@@ -7,7 +7,7 @@ const meta: Meta<typeof InputField> = {
   component: InputField,
   tags: ["autodocs"],
   render: (props: any) => (
-    <FormProvider name="formName" defaultValues={{ inputFieldName: "" }}>
+    <Form name="formName" defaultValues={{ inputFieldName: "" }}>
       <InputField name="inputFieldName" {...props}>
         <InputField.Label>Label Text</InputField.Label>
         <InputField.Control placeholder="email@example.com" />
@@ -15,7 +15,7 @@ const meta: Meta<typeof InputField> = {
           This is an example detailed message for an input field
         </InputField.Details>
       </InputField>
-    </FormProvider>
+    </Form>
   )
 } satisfies Meta<typeof InputField>;
 
@@ -29,19 +29,19 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    required: true
+    isRequired: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true
+    isDisabled: true
   }
 };
 
 export const DefaultValue: Story = {
   args: {
-    initialValue: "Defaulted Text"
+    defaultValue: "Defaulted Text"
   }
 };
 

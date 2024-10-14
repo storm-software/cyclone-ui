@@ -19,10 +19,11 @@ import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns";
 import { MessageDetails, isPromise } from "@storm-stack/types";
 import { Getter, Setter } from "jotai";
-import { useAtomCallback } from "jotai/utils";
+import { RESET, useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
-import { fieldStore } from "../stores/field-store";
+import { formStore } from "../stores/form-store";
 import { ValidationCause, Validator } from "../types";
+import { useFieldApi } from "./use-field-store";
 
 export const useFieldActions = <
   TFieldValue = any,
@@ -30,6 +31,8 @@ export const useFieldActions = <
 >(
   opts?: UseAtomOptionsOrScope
 ) => {
+  const fieldApi = useFieldApi();
+
   const validate = useAtomCallback(
     useCallback(
       async (
@@ -38,17 +41,45 @@ export const useFieldActions = <
         nextValue: TFieldValue,
         cause: ValidationCause
       ) => {
-        const options = get(fieldStore.api.atom.options);
+        const options = get(fieldApi.atom.options);
         if (
-          options.validate?.[`on${upperCaseFirst(cause)}`] &&
-          options.validate[`on${upperCaseFirst(cause)}`].length > 0
+          (options.validate?.[`on${upperCaseFirst(cause)}`] &&
+            options.validate[`on${upperCaseFirst(cause)}`].length > 0) ||
+          (options.validate?.[
+            `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+          ] &&
+            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
+              .length > 0)
         ) {
-          set(fieldStore.api.atom.validating, true);
-          const previousValue = get(fieldStore.api.atom.previousValue);
+          const previousValue = get(fieldApi.atom.previousValue);
 
-          const results = options.validate[`on${upperCaseFirst(cause)}`].map(
-            validator => validator(nextValue, previousValue)
-          );
+          const results = [] as any[];
+          if (
+            options.validate?.[`on${upperCaseFirst(cause)}`] &&
+            options.validate[`on${upperCaseFirst(cause)}`].length > 0
+          ) {
+            results.push(
+              ...options.validate[`on${upperCaseFirst(cause)}`].map(validator =>
+                validator(nextValue, previousValue, cause, get, set)
+              )
+            );
+          }
+          if (
+            cause !== ValidationCause.INITIALIZE &&
+            options.validate?.[
+              `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+            ] &&
+            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
+              .length > 0
+          ) {
+            results.push(
+              ...options.validate[
+                `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+              ].map(validator =>
+                validator(nextValue, previousValue, cause, get, set)
+              )
+            );
+          }
 
           const messages = [] as MessageDetails[];
           const promises = [] as Promise<MessageDetails[]>[];
@@ -62,46 +93,72 @@ export const useFieldActions = <
             }
           }
 
-          for (const result of await Promise.all(promises)) {
-            if (result && result.length > 0) {
-              messages.push(...result);
+          if (promises.length > 0) {
+            set(fieldApi.atom.isValidating, true);
+            for (const result of await Promise.all(promises)) {
+              if (result && result.length > 0) {
+                messages.push(...result);
+              }
             }
+            set(fieldApi.atom.isValidating, false);
           }
 
-          set(fieldStore.api.atom.validationResults, prev => ({
+          set(fieldApi.atom.validationResults, prev => ({
             ...prev,
             [cause]: messages
           }));
-          set(fieldStore.api.atom.validating, false);
         }
       },
       []
     )
   );
 
-  const handleChange = useAtomCallback(
-    useCallback(
-      async (get: Getter, set: Setter, nextValue: TFieldValue) => {
-        const options = get(fieldStore.api.atom.options);
-        const disabled = get(fieldStore.api.atom.disabled);
-        const value = get(fieldStore.api.atom.value);
+  const reset = useAtomCallback(
+    useCallback(async (get: Getter, set: Setter) => {
+      set(fieldApi.atom.isDisabled, RESET);
+      set(fieldApi.atom.isTouched, RESET);
+      set(fieldApi.atom.isBlurred, RESET);
+      set(fieldApi.atom.previousValue, RESET);
+      set(fieldApi.atom.value, get(fieldApi.atom.initialValue));
+      set(fieldApi.atom.options, RESET);
+      set(fieldApi.atom.isValidating, RESET);
+      set(fieldApi.atom.validationResults, RESET);
+    }, [])
+  );
 
-        if (!disabled && nextValue !== value) {
-          set(fieldStore.api.atom.value, nextValue);
-          set(fieldStore.api.atom.previousValue, value);
+  const initialize = useAtomCallback(
+    useCallback(
+      async (
+        get: Getter,
+        set: Setter,
+        initialValue: TFieldValue,
+        skipIfDirty = true
+      ) => {
+        if (skipIfDirty && get(fieldApi.atom.isDirty)) {
+          return;
+        }
+
+        set(fieldApi.atom.previousValue, RESET);
+        set(fieldApi.atom.options, prev => ({
+          ...prev,
+          defaultValue: initialValue
+        }));
+
+        if (initialValue !== get(fieldApi.atom.initialValue)) {
+          set(fieldApi.atom.initialValue, initialValue);
+          set(fieldApi.atom.value, initialValue);
+
+          set(fieldApi.atom.isValidating, RESET);
+          set(fieldApi.atom.validationResults, RESET);
+
+          const options = get(fieldApi.atom.options);
 
           const promises = [] as Promise<void>[];
-          if (options.onChange) {
-            promises.push(Promise.resolve(options.onChange(nextValue)));
+          if (options.onInitialize) {
+            promises.push(Promise.resolve(options.onInitialize()));
           }
 
-          promises.push(validate(nextValue, ValidationCause.CHANGE));
-
-          const blurred = get(fieldStore.api.atom.blurred);
-          if (blurred) {
-            promises.push(validate(nextValue, ValidationCause.BLUR));
-          }
-
+          promises.push(validate(initialValue, ValidationCause.INITIALIZE));
           await Promise.all(promises);
         }
       },
@@ -109,15 +166,61 @@ export const useFieldActions = <
     )
   );
 
-  const handleFocus = useAtomCallback(
+  const change = useAtomCallback(
+    useCallback(
+      async (
+        get: Getter,
+        set: Setter,
+        nextValue: TFieldValue,
+        touch = false
+      ) => {
+        if (!get(fieldApi.atom.isDisabled)) {
+          if (!get(fieldApi.atom.isTouched) && touch) {
+            set(fieldApi.atom.isTouched, touch);
+          }
+
+          const value = get(fieldApi.atom.value);
+          if (nextValue !== value) {
+            const options = get(fieldApi.atom.options);
+
+            set(fieldApi.atom.value, nextValue);
+            set(fieldApi.atom.previousValue, value);
+
+            const promises = [] as Promise<void>[];
+            if (options.onChange) {
+              promises.push(Promise.resolve(options.onChange(nextValue)));
+            }
+
+            promises.push(validate(nextValue, ValidationCause.CHANGE));
+
+            const isBlurred = get(fieldApi.atom.isBlurred);
+            if (isBlurred) {
+              promises.push(validate(nextValue, ValidationCause.BLUR));
+            }
+
+            const submitAttempts = get(formStore.api.atom.submitAttempts);
+            if (submitAttempts > 0) {
+              promises.push(validate(nextValue, ValidationCause.SUBMIT));
+            }
+
+            await Promise.all(promises);
+          }
+        }
+      },
+      [validate]
+    )
+  );
+
+  const focus = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      const disabled = get(fieldStore.api.atom.disabled);
-      const focused = get(fieldStore.api.atom.focused);
+      if (!get(fieldApi.atom.isDisabled)) {
+        if (!get(fieldApi.atom.isTouched)) {
+          set(fieldApi.atom.isTouched, true);
+        }
 
-      if (!disabled && !focused) {
-        set(fieldStore.api.atom.focused, true);
+        set(fieldApi.atom.isFocused, true);
 
-        const options = get(fieldStore.api.atom.options);
+        const options = get(fieldApi.atom.options);
         if (options.onFocus) {
           await Promise.resolve(options.onFocus());
         }
@@ -125,26 +228,35 @@ export const useFieldActions = <
     }, [])
   );
 
-  const handleBlur = useAtomCallback(
+  const blur = useAtomCallback(
     useCallback(
       async (get: Getter, set: Setter) => {
-        const focused = get(fieldStore.api.atom.focused);
-        const disabled = get(fieldStore.api.atom.disabled);
+        if (!get(fieldApi.atom.isDisabled)) {
+          if (!get(fieldApi.atom.isTouched)) {
+            set(fieldApi.atom.isTouched, true);
+          }
 
-        if (!disabled && focused) {
-          set(fieldStore.api.atom.focused, false);
-          set(fieldStore.api.atom.blurred, true);
+          set(fieldApi.atom.isFocused, false);
+          set(fieldApi.atom.isBlurred, true);
 
-          const options = get(fieldStore.api.atom.options);
+          const options = get(fieldApi.atom.options);
 
           const promises = [] as Promise<void>[];
           if (options.onBlur) {
             promises.push(Promise.resolve(options.onBlur()));
           }
 
-          const value = get(fieldStore.api.atom.value);
+          const value = get(fieldApi.atom.value);
 
           promises.push(validate(value as TFieldValue, ValidationCause.BLUR));
+
+          const submitAttempts = get(formStore.api.atom.submitAttempts);
+          if (submitAttempts > 0) {
+            promises.push(
+              validate(value as TFieldValue, ValidationCause.SUBMIT)
+            );
+          }
+
           await Promise.all(promises);
         }
       },
@@ -153,9 +265,11 @@ export const useFieldActions = <
   );
 
   return {
-    handleChange,
-    handleFocus,
-    handleBlur,
-    validate
+    initialize,
+    change,
+    focus,
+    blur,
+    validate,
+    reset
   };
 };

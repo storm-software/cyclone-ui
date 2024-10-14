@@ -1,20 +1,19 @@
-import { FieldValueType } from "@cyclone-ui/form";
-import { FormField } from "@cyclone-ui/form-field";
+import { Field, FieldValueType } from "@cyclone-ui/form";
 import { Select } from "@cyclone-ui/select";
 import { withStaticProperties } from "@tamagui/web";
 
-const SelectFieldGroup = FormField.styleable((props, forwardedRef) => {
+const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <FormField ref={forwardedRef} valueType={FieldValueType.STRING} {...rest}>
+    <Field ref={forwardedRef} valueType={FieldValueType.STRING} {...rest}>
       {children}
-    </FormField>
+    </Field>
   );
 });
 
 export const SelectField = withStaticProperties(SelectFieldGroup, {
-  Label: FormField.Label,
+  Label: Field.Label,
   Control: Select,
-  Details: FormField.Details
+  Details: Field.Details
 });

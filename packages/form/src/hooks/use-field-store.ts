@@ -16,10 +16,31 @@
  -------------------------------------------------------------------*/
 
 import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
-import { FieldStore, fieldStore } from "../stores";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
+import { useContext } from "react";
+import { FieldStoreContext } from "../providers/FieldStoreProvider";
+import {
+  FieldStore,
+  FieldStoreApi,
+  UseFieldStore
+} from "../stores/field-store";
+
+export const useField = (): FieldStore => {
+  const fieldStoreRef = useContext(FieldStoreContext);
+
+  if (!isSet(fieldStoreRef?.current)) {
+    throw new Error("useField must be used within a FieldStoreProvider");
+  }
+
+  return fieldStoreRef.current;
+};
 
 export const useFieldStore = (
   options?: UseAtomOptionsOrScope
-): ReturnType<FieldStore["useStore"]> => {
-  return fieldStore.useStore(options);
+): ReturnType<UseFieldStore> => {
+  return useField().useStore(options);
+};
+
+export const useFieldApi = (): FieldStoreApi => {
+  return useField().api;
 };

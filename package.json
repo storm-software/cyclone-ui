@@ -257,7 +257,6 @@
       "@cyclone-ui/font-space-grotesk": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
       "@cyclone-ui/input-field": "workspace:*",
-      "@cyclone-ui/label": "workspace:*",
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/masks": "workspace:*",
       "@cyclone-ui/media-queries": "workspace:*",
@@ -284,7 +283,6 @@
       "@cyclone-ui/next-button": "workspace:*",
       "@cyclone-ui/previous-button": "workspace:*",
       "@cyclone-ui/form": "workspace:*",
-      "@cyclone-ui/form-field": "workspace:*",
       "@cyclone-ui/state": "workspace:*",
       "@cyclone-ui/themeable-icon": "workspace:*"
     }

@@ -1,6 +1,10 @@
 import { ColorRole } from "@cyclone-ui/colors";
-import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
-import { FormFieldThemeableIcon } from "@cyclone-ui/form-field";
+import {
+  FieldStatus,
+  FieldStatusIcon,
+  useFieldActions,
+  useFieldStore
+} from "@cyclone-ui/form";
 import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
@@ -239,8 +243,10 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  paddingVertical: 0,
+  fontFamily: "$body",
+  fontSize: "$4",
   color: "$fg",
+  paddingVertical: 0,
   backgroundColor: "transparent",
 
   hoverStyle: {
@@ -278,7 +284,7 @@ const SelectValue = SelectValueFrame.styleable<{
   const { size } = SelectContext.useStyledContext();
 
   const store = useFieldStore();
-  const disabled = store.get.disabled();
+  const disabled = store.get.isDisabled();
 
   return (
     <View flex={1}>
@@ -378,7 +384,7 @@ export const SelectItem = forwardRef<
   const setItems = store.set.items();
 
   const fieldValue = store.get.value();
-  const fieldDisabled = store.get.disabled();
+  const fieldDisabled = store.get.isDisabled();
 
   const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
   const disabled = useMemo(
@@ -460,23 +466,23 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
   const { children, onOpen, onClose, placeholder, ...rest } = props;
 
   const store = useFieldStore();
-  const disabled = store.get.disabled();
+  const disabled = store.get.isDisabled();
   const value = store.get.value();
-  const focused = store.get.focused();
-  const required = store.get.required();
+  const focused = store.get.isFocused();
+  const required = store.get.isRequired();
 
-  const { handleChange, handleBlur, handleFocus } = useFieldActions();
+  const { change, blur, focus } = useFieldActions();
   const handleOpenChange = useCallback(
     (next: boolean) => {
       if (next) {
-        handleFocus();
+        focus();
         onOpen?.();
       } else {
-        handleBlur();
+        blur();
         onClose?.();
       }
     },
-    [handleFocus, handleChange, handleBlur, onOpen, onClose, value]
+    [focus, blur, onOpen, onClose]
   );
 
   return (
@@ -488,7 +494,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
         disablePreventBodyScroll={true}
         {...rest}
         onOpenChange={handleOpenChange}
-        onValueChange={handleChange}
+        onValueChange={change}
         open={focused}
         value={String(value ?? "")}
         defaultValue={String(store.get.initialValue() ?? "")}
@@ -500,10 +506,10 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
               : 0
           }
           paddingRight="$3">
-          {!disabled && <FormFieldThemeableIcon disabled={false} />}
+          {!disabled && <FieldStatusIcon disabled={false} />}
           <SelectValue placeholder={placeholder} />
 
-          {disabled && <FormFieldThemeableIcon disabled={true} />}
+          {disabled && <FieldStatusIcon disabled={true} />}
           {!disabled && (
             <SelectIconChevron
               marginRight={0}
@@ -626,8 +632,8 @@ const SelectGroupImpl = BaseSelectImpl.styleable<SelectExtraProps>(
     const { children, ...rest } = props;
 
     const store = useFieldStore();
-    const focused = store.get.focused();
-    const disabled = store.get.disabled();
+    const focused = store.get.isFocused();
+    const disabled = store.get.isDisabled();
 
     return (
       <SelectGroupFrame open={focused} disabled={disabled}>

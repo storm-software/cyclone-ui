@@ -23,7 +23,6 @@ overrides:
   '@cyclone-ui/font-space-grotesk': workspace:*
   '@cyclone-ui/input': workspace:*
   '@cyclone-ui/input-field': workspace:*
-  '@cyclone-ui/label': workspace:*
   '@cyclone-ui/link': workspace:*
   '@cyclone-ui/masks': workspace:*
   '@cyclone-ui/media-queries': workspace:*
@@ -50,7 +49,6 @@ overrides:
   '@cyclone-ui/next-button': workspace:*
   '@cyclone-ui/previous-button': workspace:*
   '@cyclone-ui/form': workspace:*
-  '@cyclone-ui/form-field': workspace:*
   '@cyclone-ui/state': workspace:*
   '@cyclone-ui/themeable-icon': workspace:*
 
@@ -405,10 +403,10 @@ importers:
         version: 1.101.2(typescript@5.6.2)
       '@storm-stack/errors':
         specifier: latest
-        version: 1.20.1(qx3zdi4vruiki2ltmcbyz2eqkq)
+        version: 1.23.0(qx3zdi4vruiki2ltmcbyz2eqkq)
       '@storm-stack/types':
         specifier: latest
-        version: 0.4.2
+        version: 0.7.0
       '@trpc/client':
         specifier: 11.0.0-rc.382
         version: 11.0.0-rc.382(@trpc/server@11.0.0-rc.382)
@@ -475,7 +473,7 @@ importers:
         version: 1.190.2(7ihixbmkw6bjjeqmtlidmfooja)
       '@storm-stack/types':
         specifier: latest
-        version: 0.4.2
+        version: 0.7.0
       tslib:
         specifier: ^2.6.2
         version: 2.6.3
@@ -1110,43 +1108,6 @@ importers:
         specifier: 0.74.1
         version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
-  components/form-field:
-    dependencies:
-      '@tamagui/core':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/group':
-        specifier: ^1.110.5
-        version: 1.110.5(@types/react@18.3.6)(immer@10.1.1)(react@18.3.1)
-      '@tamagui/label':
-        specifier: ^1.110.5
-        version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      '@tamagui/lucide-icons':
-        specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
-      '@tamagui/stacks':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/text':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/web':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-native:
-        specifier: 0.74.1
-        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
-
   components/input:
     dependencies:
       '@tamagui/compose-refs':
@@ -1220,40 +1181,6 @@ importers:
   components/input-field:
     dependencies:
       '@tamagui/core':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/web':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-native:
-        specifier: 0.74.1
-        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
-
-  components/label:
-    dependencies:
-      '@tamagui/core':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/label':
-        specifier: ^1.110.5
-        version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      '@tamagui/lucide-icons':
-        specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
-      '@tamagui/stacks':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/text':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/web':
@@ -1563,7 +1490,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.4.2
+        version: 0.7.0
       '@tamagui/adapt':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -2011,25 +1938,61 @@ importers:
     dependencies:
       '@storm-stack/errors':
         specifier: latest
-        version: 1.20.1(qx3zdi4vruiki2ltmcbyz2eqkq)
+        version: 1.23.0(qx3zdi4vruiki2ltmcbyz2eqkq)
+      '@storm-stack/hooks':
+        specifier: latest
+        version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@storm-stack/serialization':
         specifier: latest
-        version: 1.19.2
+        version: 1.22.0
       '@storm-stack/string-fns':
         specifier: latest
-        version: 0.3.1
+        version: 0.6.0
       '@storm-stack/types':
         specifier: latest
-        version: 0.4.2
+        version: 0.7.0
       '@storm-stack/utilities':
         specifier: latest
-        version: 1.19.0
+        version: 1.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
+      '@tamagui/create-context':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/font-size':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/label':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/lucide-icons':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/web':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      jotai-optics:
+        specifier: ^0.4.0
+        version: 0.4.0(jotai@2.8.4(@types/react@18.3.6)(react@18.3.1))(optics-ts@2.4.1)
       maska:
         specifier: ^3.0.3
         version: 3.0.3
+      optics-ts:
+        specifier: ^2.4.1
+        version: 2.4.1
     devDependencies:
       jotai:
         specifier: '>=2.8.0'
@@ -2103,7 +2066,7 @@ importers:
     dependencies:
       '@storm-stack/errors':
         specifier: latest
-        version: 1.20.1(qx3zdi4vruiki2ltmcbyz2eqkq)
+        version: 1.23.0(qx3zdi4vruiki2ltmcbyz2eqkq)
       '@trpc/client':
         specifier: 11.0.0-rc.382
         version: 11.0.0-rc.382(@trpc/server@11.0.0-rc.382)
@@ -2122,16 +2085,16 @@ importers:
     dependencies:
       '@storm-stack/serialization':
         specifier: latest
-        version: 1.19.2
+        version: 1.22.0
       '@storm-stack/string-fns':
         specifier: latest
-        version: 0.3.1
+        version: 0.6.0
       '@storm-stack/types':
         specifier: latest
-        version: 0.4.2
+        version: 0.7.0
       '@storm-stack/utilities':
         specifier: latest
-        version: 1.19.0
+        version: 1.24.0
     devDependencies:
       '@tanstack/store':
         specifier: ^0.5.5
@@ -5290,6 +5253,7 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
+    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -7068,20 +7032,34 @@ packages:
       '@microsoft/api-extractor':
         optional: true
 
-  '@storm-stack/errors@1.20.1':
-    resolution: {integrity: sha512-xLJJsZ6i/ekCdbN96zwrEFdPbIbcJdY+cL6u5ByxkKdi2eovw7UCvIH3GEUSQM674F/D2qBcFkDjdHqXGambOw==}
+  '@storm-stack/errors@1.23.0':
+    resolution: {integrity: sha512-keaNJ4vrbjs3n2eq2Cx+hPw+7Wz+Vt3lcKvadvU+m+hLCskG1QhfPFm/8tWjyrx1xV9iPAJA/MTgSNCD/59Cpw==}
 
-  '@storm-stack/serialization@1.19.2':
-    resolution: {integrity: sha512-5Of8/JplgZreTwv2fzYl2COdakOneH9IR+Sdw4lr8eJhJB/Fxsik3c0ZaHJifHmp/xi+OiU4V144BiU1nmFmYA==}
+  '@storm-stack/hooks@0.3.0':
+    resolution: {integrity: sha512-nWLvsH89veJgQr09ickPzSZaUcDEOh1cAPI+XNhx6DK+Rntgsa/llUm7mbmqztxCHksB5mXPOzF6B4OWwk1mng==}
+    peerDependencies:
+      react: 19.0.0-rc-f6cce072-20240723
+      react-dom: 19.0.0-rc-f6cce072-20240723
+      react-native: 0.75.4
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
 
-  '@storm-stack/string-fns@0.3.1':
-    resolution: {integrity: sha512-Z5Wf7+dPdBOcbMyuMfKxfijGlaAZIfJU8bpWYHRyhH0ZV7zdB5OvjYgB1jd7pNXsdp9Toucwm8T7DMluOQ+7+w==}
+  '@storm-stack/serialization@1.22.0':
+    resolution: {integrity: sha512-6Ao4VwyX6l9U+tT1A6lZoejLjM9XyPrDS+RxnAlGGnlky8GjayqAIe/IpCCL3q6vDN7dILF5Mo1EGiiRhgllgA==}
 
-  '@storm-stack/types@0.4.2':
-    resolution: {integrity: sha512-sEyyx8NjE8Zk5W9P7VfUkQoGn61e3wMx/ev7/72Jll8QCrwLDc2UNOBAAaawnB2hLOHHZbcOEwmApwRQYgeelA==}
+  '@storm-stack/string-fns@0.6.0':
+    resolution: {integrity: sha512-WhsuCgvuMLqRWqi9GbV5yrsxu58BnWn0sJj+s7a5ku36o5C29h3qarFDmoDQR0zXC1gUtM1UHmrlpqmN4jmXkQ==}
 
-  '@storm-stack/utilities@1.19.0':
-    resolution: {integrity: sha512-/+mpQBdUhyOs89JJuRsTzMZSEVeN4OLksWo4ORZ6pTzSMUaQg8YB/2YKcf2GCP4JOFsiGTlJ2TMOP9h3pBO3WA==}
+  '@storm-stack/types@0.7.0':
+    resolution: {integrity: sha512-nH5F/ARssL5LBBoLOXuHJ963hWo3ZwIgtPyDDyA3IM9WvBYtl01ADXkNLwscjDU+lGNLdUn44eokmRoUHwucDw==}
+
+  '@storm-stack/utilities@1.24.0':
+    resolution: {integrity: sha512-nadGBfjZMH8E7clar5K0d0mY4QFSyumGZKkNuhrWT2G/YNWorzXv3OMb0XhyP4KRPuqVXGIbhTvwa6bpEpES9Q==}
 
   '@storybook/addon-actions@8.3.0':
     resolution: {integrity: sha512-HvAc3fW979JVw8CSKXZMouvgrJ2BNLNWaUB8jNokQb3Us00P6igVKLwg/pBV8GBgDr5Ng4pHYqi/ZH+xzEYFFw==}
@@ -11502,9 +11480,6 @@ packages:
   entities@1.1.2:
     resolution: {integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==}
 
-  entities@2.0.3:
-    resolution: {integrity: sha512-MyoZ0jgnLvB2X3Lg5HqpFmn1kybDiIfEQmKzTb5apr51Rb+T3KdmMiqa70T+bhGnyv7bQ6WMj2QMHpGMmlrUYQ==}
-
   entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
@@ -11975,11 +11950,13 @@ packages:
   eslint@6.8.0:
     resolution: {integrity: sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==}
     engines: {node: ^8.10.0 || ^10.13.0 || >=11.10.1}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   esm-resolve@1.0.11:
@@ -14114,6 +14091,12 @@ packages:
   join-component@1.1.0:
     resolution: {integrity: sha512-bF7vcQxbODoGK1imE2P9GS9aw4zD0Sd+Hni68IMZLj7zRnquH7dXUmMw9hDI5S/Jzt7q+IyTXN0rSg2GI0IKhQ==}
 
+  jotai-optics@0.4.0:
+    resolution: {integrity: sha512-osbEt9AgS55hC4YTZDew2urXKZkaiLmLqkTS/wfW5/l0ib8bmmQ7kBXSFaosV6jDDWSp00IipITcJARFHdp42g==}
+    peerDependencies:
+      jotai: '>=2.0.0'
+      optics-ts: '>=2.0.0'
+
   jotai@2.8.4:
     resolution: {integrity: sha512-f6jwjhBJcDtpeauT2xH01gnqadKEySwwt1qNBLvAXcnojkmb76EdqRt05Ym8IamfHGAQz2qMKAwftnyjeSoHAA==}
     engines: {node: '>=12.20.0'}
@@ -14512,9 +14495,6 @@ packages:
     resolution: {integrity: sha512-wM1+Z03eypVAVUCE7QdSqpVIvelbOakn1M0bPDoA4SGWPx3sNDVUiMo3L6To6WWGClB7VyXnhQ4Sn7gxiJbE6A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  linkify-it@3.0.3:
-    resolution: {integrity: sha512-ynTsyrFSdE5oZ/O9GEf00kPngmOfVwazR5GKDq6EYfhlpFug3J2zybX56a2PRRpc9P+FuSoGNAwjlbDs9jJBPQ==}
-
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
@@ -14797,10 +14777,6 @@ packages:
   markdown-it-source-map@0.1.1:
     resolution: {integrity: sha512-q4+ij82K/0C6O8rw/NnWogcgp3AeQykZZ5954yyxY8pcX8Rago8uAS7e+4Ogd6rERf/tDAen73KwT+Sb7dP/6w==}
 
-  markdown-it@11.0.1:
-    resolution: {integrity: sha512-aU1TzmBKcWNNYvH9pjq6u92BML+Hz3h5S/QpfTFwiQF852pLT+9qHsrhM9JYipkOXZxGn+sGH8oyJE9FD9WezQ==}
-    hasBin: true
-
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
     hasBin: true
@@ -15005,9 +14981,6 @@ packages:
 
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
-
-  mdurl@1.0.1:
-    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
 
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
@@ -16148,6 +16121,9 @@ packages:
   opener@1.5.2:
     resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
     hasBin: true
+
+  optics-ts@2.4.1:
+    resolution: {integrity: sha512-HaYzMHvC80r7U/LqAd4hQyopDezC60PO2qF5GuIwALut2cl5rK1VWHsqTp0oqoJJWjiv6uXKqsO+Q2OO0C3MmQ==}
 
   optionator@0.8.3:
     resolution: {integrity: sha512-+IW9pACdk3XWmmTXG8m3upGUJst5XRGzxMRjXzAuJ1XnIFNvfhjjIuYkDvysnPQ7qzqVzLt78BCruntqRhWQbA==}
@@ -18466,8 +18442,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-git@2.48.0:
-    resolution: {integrity: sha512-z4qtrRuaAFJS4PUd0g+xy7aN4y+RvEt/QTJpR184lhJguBA1S/LsVlvE/CM95RsYMOFJG3NGGDjqFCzKU19S/A==}
+  simple-git@3.27.0:
+    resolution: {integrity: sha512-ivHoFS9Yi9GY49ogc6/YAi3Fl9ROnF4VyubNylgCkA+RVqLaKWnDSzXOVzya8csELIaWaYNutsEuAhZrtOjozA==}
 
   simple-plist@1.3.1:
     resolution: {integrity: sha512-iMSw5i0XseMnrhtIzRb7XpQEXepa9xhWxGUojHBL43SIpQuDQkh3Wpy67ZbDzZVr6EKxvwVChnVpdl8hEVLDiw==}
@@ -19656,9 +19632,6 @@ packages:
 
   ua-parser-js@1.0.38:
     resolution: {integrity: sha512-Aq5ppTOfvrCMgAPneW1HfWj66Xi7XL+/mIy996R1/CLS/rcyJQm6QZdsKrUeivDFQ+Oc9Wyuwor8Ze8peEoUoQ==}
-
-  uc.micro@1.0.6:
-    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
@@ -25309,14 +25282,14 @@ snapshots:
       joi: 17.13.3
       launch-editor: 2.8.0
       lodash: 4.17.21
-      markdown-it: 11.0.1
+      markdown-it: 14.1.0
       markdown-it-source-map: 0.1.1
       moment: 2.30.1
       moment-timezone: 0.5.45
       neverthrow: 2.7.1
       open: 7.4.2
       parse-git-config: 3.0.0
-      simple-git: 2.48.0
+      simple-git: 3.27.0
       slugify: 1.6.6
       yaml: 1.10.2
     transitivePeerDependencies:
@@ -29260,7 +29233,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  '@storm-stack/errors@1.20.1(qx3zdi4vruiki2ltmcbyz2eqkq)':
+  '@storm-stack/errors@1.23.0(qx3zdi4vruiki2ltmcbyz2eqkq)':
     dependencies:
       '@storm-software/testing-tools': 1.74.2(@nx/jest@19.7.3(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))(@types/node@22.5.5)(nx@19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13)))(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.6.2))(typescript@5.6.2)(verdaccio@5.31.1(encoding@0.1.13)(typanion@3.14.0)))(jest@29.7.0(@types/node@22.5.5)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.6.2)))
       '@storm-software/workspace-tools': 1.190.2(7ihixbmkw6bjjeqmtlidmfooja)
@@ -29282,17 +29255,23 @@ snapshots:
       - ts-node
       - typescript
 
-  '@storm-stack/serialization@1.19.2':
+  '@storm-stack/hooks@0.3.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)':
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-native: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  '@storm-stack/serialization@1.22.0':
     dependencies:
       buffer: 6.0.3
       superjson: 2.2.1
       ufo: 1.5.4
 
-  '@storm-stack/string-fns@0.3.1': {}
+  '@storm-stack/string-fns@0.6.0': {}
 
-  '@storm-stack/types@0.4.2': {}
+  '@storm-stack/types@0.7.0': {}
 
-  '@storm-stack/utilities@1.19.0': {}
+  '@storm-stack/utilities@1.24.0': {}
 
   '@storybook/addon-actions@8.3.0(storybook@8.3.0(bufferutil@4.0.8)(utf-8-validate@5.0.10))':
     dependencies:
@@ -35572,8 +35551,6 @@ snapshots:
 
   entities@1.1.2: {}
 
-  entities@2.0.3: {}
-
   entities@2.2.0: {}
 
   entities@4.5.0: {}
@@ -39266,6 +39243,11 @@ snapshots:
 
   join-component@1.1.0: {}
 
+  jotai-optics@0.4.0(jotai@2.8.4(@types/react@18.3.6)(react@18.3.1))(optics-ts@2.4.1):
+    dependencies:
+      jotai: 2.8.4(@types/react@18.3.6)(react@18.3.1)
+      optics-ts: 2.4.1
+
   jotai@2.8.4(@types/react@18.3.6)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.6
@@ -39736,10 +39718,6 @@ snapshots:
 
   lines-and-columns@2.0.4: {}
 
-  linkify-it@3.0.3:
-    dependencies:
-      uc.micro: 1.0.6
-
   linkify-it@5.0.0:
     dependencies:
       uc.micro: 2.1.0
@@ -40037,14 +40015,6 @@ snapshots:
   map-stream@0.1.0: {}
 
   markdown-it-source-map@0.1.1: {}
-
-  markdown-it@11.0.1:
-    dependencies:
-      argparse: 1.0.10
-      entities: 2.0.3
-      linkify-it: 3.0.3
-      mdurl: 1.0.1
-      uc.micro: 1.0.6
 
   markdown-it@14.1.0:
     dependencies:
@@ -40520,8 +40490,6 @@ snapshots:
   mdn-data@2.0.28: {}
 
   mdn-data@2.0.30: {}
-
-  mdurl@1.0.1: {}
 
   mdurl@2.0.0: {}
 
@@ -42311,6 +42279,8 @@ snapshots:
       is-wsl: 2.2.0
 
   opener@1.5.2: {}
+
+  optics-ts@2.4.1: {}
 
   optionator@0.8.3:
     dependencies:
@@ -45346,7 +45316,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-git@2.48.0:
+  simple-git@3.27.0:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
@@ -46849,8 +46819,6 @@ snapshots:
       typescript: 5.6.2
 
   ua-parser-js@1.0.38: {}
-
-  uc.micro@1.0.6: {}
 
   uc.micro@2.1.0: {}
 

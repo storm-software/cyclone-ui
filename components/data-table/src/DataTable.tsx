@@ -367,6 +367,7 @@ export function DataTablePagination<TData extends RowData>({
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center">
+        <form>
       <Select
         name="pageSize"
         options={[
@@ -392,6 +393,7 @@ export function DataTablePagination<TData extends RowData>({
         onFirst={firstPage}
         onLast={lastPage}
       />
+      </form>
     </XStack>
   );
 }

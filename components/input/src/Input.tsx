@@ -1,5 +1,9 @@
-import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
-import { FormFieldThemeableIcon } from "@cyclone-ui/form-field";
+import {
+  FieldStatus,
+  FieldStatusIcon,
+  useFieldActions,
+  useFieldStore
+} from "@cyclone-ui/form";
 import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
@@ -18,15 +22,13 @@ import { Input as TamaguiInput } from "tamagui";
 const defaultContextValues = {
   size: "$true",
   color: undefined,
-  hideIcons: true
-  // theme: `${ColorRole.BASE}_Input`
+  hideIcons: false
 } as const;
 
 export const InputContext = createStyledContext<{
   size: FontSizeTokens;
   color?: ColorTokens | string;
   hideIcons: boolean;
-  // theme: string;
 }>(defaultContextValues);
 
 export const defaultInputGroupStyles = {
@@ -101,11 +103,11 @@ const InputGroupFrame = styled(XGroup, {
       }
     },
 
-    required: {
+    isRequired: {
       true: {}
     },
 
-    disabled: {
+    isDisabled: {
       true: {
         color: "$disabled",
         borderColor: "$disabled",
@@ -137,8 +139,8 @@ const InputGroupFrame = styled(XGroup, {
 
   defaultVariants: {
     unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    required: false,
-    disabled: false
+    isRequired: false,
+    isDisabled: false
   }
 });
 
@@ -173,6 +175,8 @@ const BaseInput = styled(TamaguiInput, {
 
   context: InputContext,
   color: "$fg",
+  fontFamily: "$body",
+  fontSize: "$4",
   verticalAlign: "center",
   paddingVertical: "$3",
 
@@ -182,7 +186,7 @@ const BaseInput = styled(TamaguiInput, {
   // },
 
   variants: {
-    disabled: {
+    isDisabled: {
       true: {
         cursor: "not-allowed",
         placeholderTextColor: "$disabled",
@@ -195,7 +199,7 @@ const BaseInput = styled(TamaguiInput, {
   } as const,
 
   defaultVariants: {
-    disabled: false
+    isDisabled: false
   }
 });
 
@@ -204,26 +208,21 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const name = store.get.name();
-  const disabled = store.get.disabled();
-  const value = store.get.value();
-  const initialValue = store.get.initialValue();
-
-  const { handleFocus, handleBlur, handleChange } = useFieldActions<string>();
+  const { focus, blur, change } = useFieldActions<string>();
 
   return (
     <View flex={1}>
       <BaseInput
-        id={name}
+        id={store.get.name()}
         ref={forwardedRef}
         size={size}
         {...rest}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChangeText={handleChange}
-        value={String(value ?? "")}
-        defaultValue={String(initialValue ?? "")}
-        disabled={disabled}>
+        onFocus={focus}
+        onBlur={blur}
+        onChangeText={change}
+        value={String(store.get.value() ?? "")}
+        defaultValue={String(store.get.options().defaultValue ?? "")}
+        disabled={store.get.isDisabled()}>
         {children}
       </BaseInput>
     </View>
@@ -234,22 +233,22 @@ const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const focused = store.get.focused();
-  const disabled = store.get.disabled();
-  const theme = store.get.theme();
+  const isDisabled = store.get.isDisabled();
 
   return (
-    <InputGroupFrame applyFocusStyle={focused} disabled={disabled}>
-      {!disabled && <FormFieldThemeableIcon disabled={false} />}
+    <InputGroupFrame
+      applyFocusStyle={store.get.isFocused()}
+      isDisabled={isDisabled}>
+      {!isDisabled && <FieldStatusIcon isDisabled={false} />}
       <BaseInputImpl
         ref={forwardedRef}
         {...rest}
         paddingHorizontal={
-          theme.toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
+          store.get.theme().toLowerCase().includes(FieldStatus.BASE) ? "$3" : 0
         }>
         {children}
       </BaseInputImpl>
-      {disabled && <FormFieldThemeableIcon disabled={true} />}
+      {isDisabled && <FieldStatusIcon isDisabled={true} />}
     </InputGroupFrame>
   );
 });

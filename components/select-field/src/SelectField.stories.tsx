@@ -1,4 +1,4 @@
-import { FormProvider } from "@cyclone-ui/form";
+import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { SelectField } from "./SelectField";
 
@@ -7,7 +7,7 @@ const meta: Meta<typeof SelectField> = {
   component: SelectField,
   tags: ["autodocs"],
   render: (props: any) => (
-    <FormProvider name="formName" defaultValues={{ selectFieldName: "" }}>
+    <Form name="formName" defaultValues={{ selectFieldName: "" }}>
       <SelectField name="selectFieldName" {...props}>
         <SelectField.Label>Label Text</SelectField.Label>
         <SelectField.Control placeholder="email@example.com">
@@ -21,7 +21,7 @@ const meta: Meta<typeof SelectField> = {
           This is an example detailed message for an select field
         </SelectField.Details>
       </SelectField>
-    </FormProvider>
+    </Form>
   )
 } satisfies Meta<typeof SelectField>;
 
@@ -60,19 +60,19 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    required: true
+    isRequired: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true
+    isDisabled: true
   }
 };
 
 export const DefaultValue: Story = {
   args: {
-    initialValue: "Defaulted Text"
+    defaultValue: "Starfruit"
   }
 };
 

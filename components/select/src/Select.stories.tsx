@@ -1,5 +1,4 @@
-import { FieldValueType, FormProvider } from "@cyclone-ui/form";
-import { FormField } from "@cyclone-ui/form-field";
+import { Field, FieldValueType, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "./Select";
 
@@ -8,9 +7,9 @@ const meta: Meta<typeof Select> = {
   component: Select,
   tags: ["autodocs"],
   render: (props: any) => (
-    <FormProvider name="formName" defaultValues={{ selectName: "" }}>
-      <FormField name="selectName" valueType={FieldValueType.STRING} {...props}>
-        <FormField.Label>Label Text</FormField.Label>
+    <Form name="formName" defaultValues={{ selectName: "" }}>
+      <Field name="selectName" valueType={FieldValueType.STRING} {...props}>
+        <Field.Label>Label Text</Field.Label>
         <Select placeholder="email@example.com">
           {options.map((option, i) => (
             <Select.Item key={i} index={i} value={option.value}>
@@ -18,11 +17,11 @@ const meta: Meta<typeof Select> = {
             </Select.Item>
           ))}
         </Select>
-        <FormField.Details>
+        <Field.Details>
           This is an example detailed message for an select
-        </FormField.Details>
-      </FormField>
-    </FormProvider>
+        </Field.Details>
+      </Field>
+    </Form>
   )
 } satisfies Meta<typeof Select>;
 
@@ -61,13 +60,19 @@ export const Base: Story = {
 
 export const Required: Story = {
   args: {
-    required: true
+    isRequired: true
   }
 };
 
 export const Disabled: Story = {
   args: {
-    disabled: true
+    isDisabled: true
+  }
+};
+
+export const DefaultValue: Story = {
+  args: {
+    defaultValue: "Starfruit"
   }
 };
 
