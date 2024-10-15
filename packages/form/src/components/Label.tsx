@@ -61,9 +61,6 @@ const LabelText = styled(SizableText, {
       true: {
         color: "$fg",
         fontWeight: "$5"
-      },
-      false: {
-        color: "$color10"
       }
     },
 
@@ -89,6 +86,7 @@ const LabelXStack = styled(XStack, {
 
   cursor: "pointer",
   gap: "$1.2",
+  flex: 1,
 
   variants: {
     disabled: {

@@ -132,7 +132,6 @@ const RadioGroupItemDescription = styled(Paragraph, {
     disabled: {
       true: {
         color: "$disabled",
-        placeholderColor: "$disabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
@@ -205,20 +204,23 @@ const BaseRadioGroupItem = styled(TamaguiRadioGroup.Item, {
     disabled: {
       true: {
         color: "$disabled",
-        placeholderColor: "$disabled",
+        borderColor: "$disabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$disabled"
+          color: "$disabled",
+          borderColor: "$disabled"
         },
 
         focusStyle: {
-          color: "$disabled"
+          color: "$disabled",
+          borderColor: "$disabled"
         },
 
         pressStyle: {
-          color: "$disabled"
+          color: "$disabled",
+          borderColor: "$disabled"
         }
       },
       false: {
@@ -321,22 +323,25 @@ const RadioGroupItemContainer = styled(XStack, {
     disabled: {
       true: {
         color: "$disabled",
-        placeholderColor: "$disabled",
+        borderColor: "$disabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
+          borderColor: "$disabled",
           color: "$disabled",
           backgroundColor: "transparent"
         },
 
         focusStyle: {
+          borderColor: "$disabled",
           color: "$disabled",
           backgroundColor: "transparent"
         },
 
         pressStyle: {
+          borderColor: "$disabled",
           color: "$disabled",
           backgroundColor: "transparent"
         }
@@ -353,88 +358,88 @@ const RadioGroupItemContainer = styled(XStack, {
   }
 });
 
-const RadioGroupItem = RadioGroupItemContainer.styleable<SelectOption>(
-  ({ children, value, description, ...rest }, forwardedRef) => {
-    const { size } = RadioGroupContext.useStyledContext();
+const RadioGroupItem = RadioGroupItemContainer.styleable<
+  Partial<SelectOption> & Pick<SelectOption, "value">
+>(({ children, value, description, ...rest }, forwardedRef) => {
+  const { size } = RadioGroupContext.useStyledContext();
 
-    const store = useFieldStore();
-    const setItems = store.set.items();
+  const store = useFieldStore();
+  const setItems = store.set.items();
 
-    const fieldValue = store.get.value();
-    const fieldDisabled = store.get.disabled();
+  const fieldValue = store.get.value();
+  const fieldDisabled = store.get.disabled();
 
-    const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
-    const disabled = useMemo(
-      () => !!(fieldDisabled || rest.disabled),
-      [fieldDisabled, rest.disabled]
-    );
+  const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
+  const disabled = useMemo(
+    () => !!(fieldDisabled || rest.disabled),
+    [fieldDisabled, rest.disabled]
+  );
 
-    useLayoutEffect(() => {
-      setItems(prev => [
-        ...prev.filter(item => item.value !== value),
-        {
-          name: children,
-          value,
-          disabled,
-          selected,
-          description
-        } as SelectOption
-      ]);
-    }, [disabled, value, selected]);
+  useLayoutEffect(() => {
+    setItems(prev => [
+      ...prev.filter(item => item.value !== value),
+      {
+        name: children,
+        value,
+        disabled,
+        selected,
+        description
+      } as SelectOption
+    ]);
+  }, [disabled, value, selected]);
 
-    const { change } = useFieldActions();
-    const handlePress = useEvent(() => change(value));
+  const { change } = useFieldActions();
+  const handlePress = useEvent(() => change(value));
 
-    return (
-      <RadioGroupItemContainer
-        group={true}
-        ref={forwardedRef}
-        onPress={handlePress}
-        {...rest}
-        disabled={disabled}>
-        <View onPress={e => e.stopPropagation()}>
-          <BaseRadioGroupItem
-            id={String(value)}
+  return (
+    <RadioGroupItemContainer
+      group={true}
+      ref={forwardedRef}
+      onPress={handlePress}
+      {...rest}
+      disabled={disabled}>
+      <View onPress={e => e.stopPropagation()}>
+        <BaseRadioGroupItem
+          id={String(value)}
+          size={size}
+          value={String(value)}
+          disabled={disabled}
+          $group-hover={{
+            borderColor: disabled
+              ? "$disabled"
+              : selected
+                ? "$colorFocus"
+                : "$accent10"
+          }}>
+          {selected && <BaseRadioGroupItemIndicator />}
+        </BaseRadioGroupItem>
+      </View>
+      <YStack gap="$1" justifyContent="flex-start" flex={1}>
+        <RadioGroupItemLabel
+          htmlFor={String(value)}
+          size={size}
+          disabled={disabled}
+          focused={selected}
+          selected={selected}
+          $group-hover={{
+            color: disabled ? "$disabled" : selected ? "$fg" : "$base10"
+          }}>
+          {children}
+        </RadioGroupItemLabel>
+        {description && (
+          <RadioGroupItemDescription
             size={size}
-            value={String(value)}
             disabled={disabled}
-            $group-hover={{
-              borderColor: disabled
-                ? "$disabled"
-                : selected
-                  ? "$colorFocus"
-                  : "$accent10"
-            }}>
-            {selected && <BaseRadioGroupItemIndicator />}
-          </BaseRadioGroupItem>
-        </View>
-        <YStack gap="$1" justifyContent="flex-start" flex={1}>
-          <RadioGroupItemLabel
-            htmlFor={String(value)}
-            size={size}
-            disabled={disabled}
-            focused={selected}
-            selected={selected}
-            $group-hover={{
-              color: disabled ? "$disabled" : selected ? "$fg" : "$base10"
-            }}>
-            {children}
-          </RadioGroupItemLabel>
-          {description && (
-            <RadioGroupItemDescription
-              size={size}
-              disabled={disabled}
-              display="flex">
-              {description}
-            </RadioGroupItemDescription>
-          )}
-        </YStack>
+            display="flex">
+            {description}
+          </RadioGroupItemDescription>
+        )}
+      </YStack>
 
-        {disabled && <FieldStatusIcon disabled={true} />}
-      </RadioGroupItemContainer>
-    );
-  }
-);
+      {disabled && <FieldStatusIcon disabled={true} />}
+    </RadioGroupItemContainer>
+  );
+});
 
 const RadioGroupFrame = styled(TamaguiRadioGroup, {
   name: RADIO_GROUP_NAME,
@@ -446,6 +451,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   justifyContent: "flex-start",
   alignItems: "flex-start",
   borderColor: "transparent",
+  width: "100%",
 
   variants: {
     size: {

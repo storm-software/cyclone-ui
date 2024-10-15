@@ -265,6 +265,7 @@
       "@cyclone-ui/pop-up": "workspace:*",
       "@cyclone-ui/provider": "workspace:*",
       "@cyclone-ui/radio-group": "workspace:*",
+      "@cyclone-ui/radio-group-field": "workspace:*",
       "@cyclone-ui/registry-trpc": "workspace:*",
       "@cyclone-ui/registry-worker": "workspace:*",
       "@cyclone-ui/select": "workspace:*",

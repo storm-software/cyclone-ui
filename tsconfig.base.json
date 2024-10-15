@@ -80,6 +80,10 @@
       "@cyclone-ui/provider/*": ["packages/provider/src/*"],
       "@cyclone-ui/radio-group": ["components/radio-group/src/index.ts"],
       "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
+      "@cyclone-ui/radio-group-field": [
+        "components/radio-group-field/src/index.ts"
+      ],
+      "@cyclone-ui/radio-group-field/*": ["components/radio-group-field/src/*"],
       "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
       "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
       "@cyclone-ui/registry-worker": ["packages/registry-worker/src/index.ts"],

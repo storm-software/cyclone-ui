@@ -190,10 +190,7 @@ export const maskOptions = {
       borderColorHover: ColorPaletteShades.PRIMARY - 4,
       borderColorFocus: ColorPaletteShades.PRIMARY - 4,
       borderColorPress: ColorPaletteShades.PRIMARY - 4,
-      placeholderColor: ColorPaletteShades.PRIMARY - 4,
-      backgroundHover: ColorPaletteShades.PRIMARY - 4,
-      backgroundPress: ColorPaletteShades.FOREGROUND,
-      backgroundFocus: ColorPaletteShades.FOREGROUND
+      placeholderColor: ColorPaletteShades.PRIMARY - 4
     },
     skip: skipShadowsAndSpecificColors
   },
