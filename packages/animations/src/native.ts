@@ -31,6 +31,10 @@ export const animations: AnimationDriver = createAnimations({
     type: "timing",
     duration: 200
   },
+  "1000ms": {
+    type: "timing",
+    duration: 1000
+  },
   superBouncy: {
     type: "spring",
     damping: 5,
@@ -61,6 +65,7 @@ export const animations: AnimationDriver = createAnimations({
     stiffness: 50
   },
   medium: {
+    type: "spring",
     damping: 16,
     stiffness: 120,
     mass: 0.8

@@ -32,6 +32,8 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
+    "@storm-stack/hooks": "latest",
+    "@storm-stack/types": "latest",
     "@tamagui/compose-refs": "^1.110.5",
     "@tamagui/constants": "^1.110.5",
     "@tamagui/core": "^1.110.5",
@@ -40,6 +42,7 @@
     "@tamagui/get-button-sized": "^1.110.5",
     "@tamagui/get-font-sized": "^1.110.5",
     "@tamagui/get-token": "^1.110.5",
+    "@tamagui/group": "^1.110.5",
     "@tamagui/helpers": "^1.110.5",
     "@tamagui/helpers-tamagui": "^1.110.5",
     "@tamagui/label": "^1.110.5",

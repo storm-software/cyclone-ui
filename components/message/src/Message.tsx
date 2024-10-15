@@ -81,11 +81,26 @@ export const Message = () => {
       duration={current.duration}
       viewportName={current.viewportName}>
       <Alert theme={current.theme}>
-        <Alert.Header theme={current.theme}>
+        <Alert.Header
+          theme={current.theme}
+          animation="slow"
+          enterStyle={{
+            opacity: 0,
+            y: 50
+          }}>
           <Alert.Icon>{current.icon}</Alert.Icon>
           <Alert.Heading theme={current.theme}>{current.title}</Alert.Heading>
         </Alert.Header>
-        {!!current.message && <Alert.Body>{current.message}</Alert.Body>}
+        {!!current.message && (
+          <Alert.Body
+            animation="lazy"
+            enterStyle={{
+              opacity: 0,
+              y: 50
+            }}>
+            {current.message}
+          </Alert.Body>
+        )}
         <MessageClose>
           <Button
             theme={current.theme}

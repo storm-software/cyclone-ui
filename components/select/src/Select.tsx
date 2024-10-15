@@ -300,7 +300,6 @@ const SelectValue = SelectValueFrame.styleable<{
         size={size}
         {...props}
         disabled={disabled}
-        disabled={disabled}
         placeholding={!store.get.value() && !disabled}>
         {children}
       </SelectValueFrame>

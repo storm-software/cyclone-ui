@@ -189,7 +189,6 @@ const BaseInput = styled(TamaguiInput, {
       },
       false: {
         placeholderTextColor: "$placeholderColor",
-
         cursor: "pointer"
       }
     }
@@ -220,7 +219,7 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
         onBlur={blur}
         onChangeText={change}
         value={String(store.get.value() ?? "")}
-        defaultValue={String(store.get.options().defaultValue ?? "")}
+        defaultValue={String(store.get.initialValue() ?? "")}
         disabled={disabled}>
         {children}
       </BaseInput>

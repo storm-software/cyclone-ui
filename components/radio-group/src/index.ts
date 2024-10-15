@@ -7,4 +7,4 @@
  * @packageDocumentation
  */
 
-const variable = "radio-group";
+export * from "./RadioGroup";

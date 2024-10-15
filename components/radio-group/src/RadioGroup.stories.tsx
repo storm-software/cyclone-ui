@@ -1,21 +1,30 @@
+import { Field, FieldValueType, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { RadioGroup } from "./RadioGroup";
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "Form/RadioGroup",
+  title: "Base/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <RadioGroup name="radioGroupName" {...args}>
-      <RadioGroup.Label>Label Text</RadioGroup.Label>
-      {options.map(option => (
-        <RadioGroup.Option {...option} />
-      ))}
-      <RadioGroup.Details>
-        This is an example detailed message for an radio group
-      </RadioGroup.Details>
-    </RadioGroup>
+  render: (props: any) => (
+    <Form name="formName" defaultValues={{ selectName: "" }}>
+      <Field name="selectName" valueType={FieldValueType.STRING} {...props}>
+        <Field.Label>Label Text</Field.Label>
+        <RadioGroup width="500px">
+          {options.map((option, i) => (
+            <RadioGroup.Item
+              key={i}
+              value={option.value}
+              description={option.description}>
+              {option.name}
+            </RadioGroup.Item>
+          ))}
+        </RadioGroup>
+        <Field.Details>
+          This is an example detailed message for an select
+        </Field.Details>
+      </Field>
+    </Form>
   )
 } satisfies Meta<typeof RadioGroup>;
 
@@ -24,16 +33,30 @@ export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
 const options = [
-  { name: "Apple", value: "Apple" },
-  { name: "Blackberry", value: "Blackberry" },
-  { name: "Starfruit", value: "Starfruit" },
-  { name: "Blueberry", value: "Blueberry" },
-  { name: "Raspberry", value: "Raspberry" },
-  { name: "Strawberry", value: "Strawberry" },
-  { name: "Pineapple", value: "Pineapple" },
-  { name: "Lime", value: "Lime" },
-  { name: "Orange", value: "Orange" },
-  { name: "Grape", value: "Grape" }
+  {
+    name: "Apple",
+    value: "Apple",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+  },
+  {
+    name: "Pear",
+    value: "Pear",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+  },
+  {
+    name: "Blackberry",
+    value: "Blackberry",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+  },
+  {
+    name: "Peach",
+    value: "Peach",
+    description:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+  }
 ];
 
 export const Base: Story = {
@@ -49,6 +72,12 @@ export const Required: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true
+  }
+};
+
+export const DefaultValue: Story = {
+  args: {
+    defaultValue: "Blackberry"
   }
 };
 
