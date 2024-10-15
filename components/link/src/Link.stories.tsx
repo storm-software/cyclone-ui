@@ -19,6 +19,14 @@ export const Base: Story = {
   }
 };
 
+export const CallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true
+  }
+};
+
+
 export const UnderlineHover: Story = {
   args: {
     href: "#",

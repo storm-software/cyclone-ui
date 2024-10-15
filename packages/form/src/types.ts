@@ -209,6 +209,11 @@ export type FormBaseState<
   validationResultsFields: InferFormState<TFormValues, ValidationResults>;
 
   /**
+   * The tab indexes for the fields.
+   */
+  tabIndexes:  InferFormState<TFormValues, number>;
+
+  /**
    * The field group's initial values.
    */
   initialValues: FormValuesState<TFormValues>;

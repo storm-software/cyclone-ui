@@ -9,28 +9,6 @@
 
 import { createFont, type GenericFont } from "@tamagui/core";
 
-export const createPermanentMarkerFont = <
-  A extends GenericFont<keyof typeof size>
->(
-  font: Partial<A> = {}
-): A => {
-  return createFont({
-    family: "Permanent Marker",
-    size,
-    lineHeight: Object.fromEntries(
-      Object.entries(size).map(([k, v]) => [k, v * 1.3])
-    ) as typeof size,
-    weight: {
-      5: "400"
-    },
-    letterSpacing: {
-      5: 0
-    },
-
-    ...(font as any)
-  });
-};
-
 const size = {
   1: 10,
   2: 11,
@@ -49,3 +27,47 @@ const size = {
   15: 114,
   16: 124
 } as const;
+
+/**
+ * Create a new Permanent Marker font.
+ *
+ * @param font - The font configuration.
+ * @param defaultSize - The default font size.
+ * @param defaultWeight - The default font weight.
+ * @returns The Permanent Marker font.
+ */
+export const createPermanentMarkerFont = <
+  TFont extends GenericFont<keyof typeof size>
+>(
+  font: Partial<TFont> = {},
+  defaultSize = 16,
+  defaultWeight = "400"
+) => {
+  const fontSize = {
+    ...size,
+    ...font.size,
+    true: defaultSize
+  } as Record<string | number, number>;
+
+  return createFont({
+    ...font,
+    family: "Permanent Marker",
+    size: fontSize,
+    lineHeight: Object.fromEntries(
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.3])
+    ) as typeof fontSize,
+    weight: {
+      light: "400",
+      5: "400",
+      true: defaultWeight,
+      bold: "400",
+      ...font.weight
+    },
+    letterSpacing: {
+      4: -0.25,
+      5: 0,
+      true: 0,
+      ...font.letterSpacing
+    }
+  });
+};

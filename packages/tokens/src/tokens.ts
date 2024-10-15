@@ -108,7 +108,11 @@ export const zIndex = {
   2: 200,
   3: 300,
   4: 400,
-  5: 500
+  5: 500,
+  6: 600,
+  7: 700,
+  8: 800,
+  9: 900
 };
 
 export const colorTokens = {
@@ -187,7 +191,7 @@ export const radius = {
   2: 5,
   3: 7,
   4: 9,
-  true: 9,
+  true: 10,
   5: 10,
   6: 16,
   7: 19,
@@ -203,7 +207,12 @@ export const tokens = createTokens({
   radius,
   zIndex,
   space,
-  size
+  size,
+  icon: {
+    sm: 16,
+    md: 24,
+    lg: 32
+  }
 });
 
 export const ColorPaletteShades = {

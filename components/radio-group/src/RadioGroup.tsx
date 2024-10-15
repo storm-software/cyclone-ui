@@ -178,10 +178,10 @@ const BaseRadioGroupItem = styled(TamaguiRadioGroup.Item, {
   },
 
   focusStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 2,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
+    // outlineColor: "$accent10",
+    // outlineWidth: 2,
+    // outlineOffset: "$1.25",
+    // outlineStyle: "solid",
     borderColor: "$borderColorFocus"
   },
 

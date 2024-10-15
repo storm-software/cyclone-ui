@@ -218,6 +218,7 @@ export const formStore = createAtomStore<
       Record<string, any>,
       ValidationResults
     >,
+    tabIndexes: {} as InferFormState<Record<string, any>, number>,
     options: {} as FormOptions
   },
   selectors: formStoreSelectors

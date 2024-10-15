@@ -47,32 +47,53 @@ export const size = {
   16: 124
 } as const;
 
+/**
+ * Create a new Mona Sans font.
+ *
+ * @param font - The font configuration.
+ * @param defaultSize - The default font size.
+ * @param defaultWeight - The default font weight.
+ * @returns The Mona Sans font.
+ */
 export const createMonaSansFont = <
   TFont extends GenericFont<keyof typeof size>
 >(
-  font: Partial<TFont> = {}
-): TFont => {
+  font: Partial<TFont> = {},
+  defaultSize = 16,
+  defaultWeight = "550"
+) => {
+  const fontSize = {
+    ...size,
+    ...font.size,
+    true: defaultSize
+  } as Record<string | number, number>;
+
   return createFont({
+    ...font,
     family: isWeb
       ? "Mona Sans, Monaco, Consolas, Ubuntu Mono, monospace"
       : "Mona Sans",
-    size,
+    size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(size).map(([k, v]) => [k, v * 1.3])
-    ) as typeof size,
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.5])
+    ) as typeof fontSize,
     weight: {
       2: "200",
       3: "300",
+      light: "700",
       4: "400",
+      true: defaultWeight,
       5: "550",
       6: "600",
       7: "700",
-      8: "900"
+      bold: "700",
+      8: "900",
+      ...font.weight
     },
     letterSpacing: {
-      4: -0.25
-    },
-
-    ...font
-  }) as TFont;
+      4: -0.25,
+      true: -0.25,
+      ...font.letterSpacing
+    }
+  });
 };

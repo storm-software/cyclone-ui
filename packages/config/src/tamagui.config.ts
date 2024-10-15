@@ -9,38 +9,74 @@ import { tokens } from "@cyclone-ui/tokens";
 import { shorthands } from "@tamagui/shorthands";
 import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
-const permanentMarkerFont = createPermanentMarkerFont({
+const titleFont = createMonaSansFont({}, 30, "700");
+const eyebrowFont = createPermanentMarkerFont(
+  {
+    transform: {
+      6: "uppercase"
+    }
+  },
+  12,
+  "400"
+);
+const headingFont = createPermanentMarkerFont({
   transform: {
     6: "uppercase"
   }
 });
-const monaSansFont = createMonaSansFont();
-const spaceGroteskFont = createSpaceGroteskFont({});
+const labelFont = createMonaSansFont();
+const bodyFont = createSpaceGroteskFont();
 
 export const options: CreateTamaguiProps = {
   defaultFont: "body",
   animations,
   shouldAddPrefersColorThemes: true,
   themeClassNameOnRoot: true,
-  shorthands,
+  shorthands: {
+    ...shorthands,
+    p: "padding",
+    px: "paddingHorizontal",
+    py: "paddingVertical",
+    pl: "paddingLeft",
+    pr: "paddingRight",
+    pt: "paddingTop",
+    pb: "paddingBottom",
+    f: "flex",
+    m: "margin",
+    mx: "marginHorizontal",
+    my: "marginVertical",
+    ml: "marginLeft",
+    mr: "marginRight",
+    mt: "marginTop",
+    mb: "marginBottom",
+    h: "height",
+    w: "width"
+  } as const,
   fonts: {
-    title: monaSansFont,
-    eyebrow: permanentMarkerFont,
-    heading: permanentMarkerFont,
-    label: monaSansFont,
-    body: spaceGroteskFont
+    title: titleFont,
+    eyebrow: eyebrowFont,
+    heading: headingFont,
+    label: labelFont,
+    body: bodyFont,
+    link: bodyFont,
+    cta: labelFont
   },
   tokens,
   themes: brand,
   media,
   mediaQueryDefaultActive,
   selectionStyles: theme => ({
-    backgroundColor: theme.color5,
+    backgroundColor: theme.color6,
     color: theme.color12
   }),
   settings: {
-    allowedStyleValues: "somewhat-strict-web",
+    // allowedStyleValues: "somewhat-strict-web",
     autocompleteSpecificTokens: "except-special"
+  },
+  defaultProps: {
+    Paragraph: {
+      fontFamily: "body"
+    }
   }
 } satisfies CreateTamaguiProps;
 

@@ -36,28 +36,49 @@ const size = {
   16: 124
 } as const;
 
+/**
+ * Create a new Space Grotesk font.
+ *
+ * @param font - The font configuration.
+ * @param defaultSize - The default font size.
+ * @param defaultWeight - The default font weight.
+ * @returns The Space Grotesk font.
+ */
 export const createSpaceGroteskFont = <
-  A extends GenericFont<keyof typeof size>
+  TFont extends GenericFont<keyof typeof size>
 >(
-  font: Partial<A> = {}
-): A => {
+  font: Partial<TFont> = {},
+  defaultSize = 16,
+  defaultWeight = "300"
+) => {
+  const fontSize = {
+    ...size,
+    ...font.size,
+    true: defaultSize
+  } as Record<string | number, number>;
+
   return createFont({
+    ...font,
     family: "Space Grotesk Variable",
-    size,
+    size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(size).map(([k, v]) => [k, v * 1.5])
-    ) as typeof size,
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.5])
+    ) as typeof fontSize,
     weight: {
       2: "200",
+      light: "200",
       4: "300",
+      true: defaultWeight,
       5: "500",
       6: "700",
-      8: "900"
+      bold: "700",
+      8: "900",
+      ...font.weight
     },
     letterSpacing: {
-      4: -0.25
-    },
-
-    ...(font as any)
+      4: -0.25,
+      true: -0.25,
+      ...font.letterSpacing
+    }
   });
 };
