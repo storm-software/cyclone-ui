@@ -4,7 +4,7 @@ import {
   useFieldActions,
   useFieldStore
 } from "@cyclone-ui/form";
-import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
+import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { useEvent } from "@storm-stack/hooks/use-event";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { isWeb } from "@tamagui/constants";
@@ -512,6 +512,6 @@ const RadioGroupImpl = RadioGroupFrame.styleable(
 );
 
 export const RadioGroup = withStaticProperties(RadioGroupImpl, {
-  Icon: ThemeableIconWrapper,
+  Icon: ThemedIcon,
   Item: RadioGroupItem
 });

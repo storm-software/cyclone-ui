@@ -24,11 +24,12 @@ overrides:
   '@cyclone-ui/input': workspace:*
   '@cyclone-ui/input-field': workspace:*
   '@cyclone-ui/link': workspace:*
+  '@cyclone-ui/body-text': workspace:*
   '@cyclone-ui/masks': workspace:*
   '@cyclone-ui/media-queries': workspace:*
   '@cyclone-ui/message': workspace:*
   '@cyclone-ui/nx': workspace:*
-  '@cyclone-ui/pop-up': workspace:*
+  '@cyclone-ui/dialog': workspace:*
   '@cyclone-ui/provider': workspace:*
   '@cyclone-ui/radio-group': workspace:*
   '@cyclone-ui/radio-group-field': workspace:*
@@ -642,6 +643,25 @@ importers:
         specifier: 0.74.1
         version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
+  components/body-text:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
   components/breadcrumb:
     dependencies:
       '@tamagui/core':
@@ -1024,6 +1044,70 @@ importers:
         specifier: 0.74.1
         version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
+  components/dialog:
+    dependencies:
+      '@tamagui/alert-dialog':
+        specifier: ^1.110.5
+        version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/compose-refs':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/constants':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/create-context':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/dialog':
+        specifier: ^1.110.5
+        version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/font-size':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/get-font-sized':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/linear-gradient':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/lucide-icons':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/use-controllable-state':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/web':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      react-native-svg:
+        specifier: ^15.2.0
+        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
   components/file-picker:
     dependencies:
       '@formkit/tempo':
@@ -1318,70 +1402,6 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/text':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/web':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-native:
-        specifier: 0.74.1
-        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
-
-  components/pop-up:
-    dependencies:
-      '@tamagui/alert-dialog':
-        specifier: ^1.110.5
-        version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      '@tamagui/compose-refs':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/constants':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/core':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/dialog':
-        specifier: ^1.110.5
-        version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      '@tamagui/font-size':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/get-font-sized':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/helpers':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/helpers-tamagui':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/linear-gradient':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/lucide-icons':
-        specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
-      '@tamagui/stacks':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/text':
-        specifier: ^1.110.5
-        version: 1.110.5(react@18.3.1)
-      '@tamagui/use-controllable-state':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/web':

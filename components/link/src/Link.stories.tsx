@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "./Link";
 
 const meta: Meta<typeof Link> = {
-  title: "General/Link",
+  title: "Triggers/Link",
   component: Link,
   tags: ["autodocs"],
   render: (args: any) => <Link {...args}>Link Text</Link>
@@ -25,7 +25,6 @@ export const CallToAction: Story = {
     cta: true
   }
 };
-
 
 export const UnderlineHover: Story = {
   args: {

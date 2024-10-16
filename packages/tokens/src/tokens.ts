@@ -210,6 +210,7 @@ export const tokens = createTokens({
   size,
   icon: {
     sm: 16,
+    true: 24,
     md: 24,
     lg: 32
   }
@@ -217,6 +218,7 @@ export const tokens = createTokens({
 
 export const ColorPaletteShades = {
   PRIMARY: 10,
+  SECONDARY: 8,
   MUTED: 4,
   DISABLED: 6,
   BACKGROUND: 1,

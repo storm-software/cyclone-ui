@@ -1,10 +1,7 @@
-import type { FunctionComponent } from "react";
-import { useContext } from "react";
+import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { View } from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
 import { getButtonSized } from "@tamagui/get-button-sized";
 import { withStaticProperties } from "@tamagui/helpers";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
@@ -19,6 +16,7 @@ import type {
   Variable
 } from "@tamagui/web";
 import { createStyledContext, styled } from "@tamagui/web";
+import { useContext, type FunctionComponent } from "react";
 
 type ButtonVariant =
   | "primary"
@@ -431,32 +429,36 @@ const ButtonText = styled(SizableText, {
   }
 });
 
-const ButtonIcon = (props: {
-  children: React.ReactNode;
-  scaleIcon?: number;
-}) => {
-  const { children, scaleIcon = 1 } = props;
-  const { variant, size } = useContext(ButtonContext);
+const ButtonIconFrame = styled(ThemedIcon, {
+  name: BUTTON_NAME,
+  context: ButtonContext,
 
-  const iconSize =
-    (typeof size === "number"
-      ? size * 0.5
-      : getFontSize(size as FontSizeTokens)) * scaleIcon;
+  size: "$2"
+});
 
-  const getThemedIcon = useGetThemedIcon({
-    size: iconSize,
-    color:
-      variant === "secondary"
-        ? "$primary"
-        : variant === "glass" || variant === "ghost"
-          ? "$fg"
-          : variant === "link"
-            ? "$borderColor"
-            : "$color"
-  });
+const ButtonIcon = ButtonIconFrame.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { variant, size } = useContext(ButtonContext);
 
-  return getThemedIcon(children);
-};
+    return (
+      <ButtonIconFrame
+        ref={forwardedRef}
+        color={
+          variant === "secondary"
+            ? "$primary"
+            : variant === "glass" || variant === "ghost"
+              ? "$fg"
+              : variant === "link"
+                ? "$borderColor"
+                : "$color"
+        }
+        size={size as FontSizeTokens}
+        {...props}>
+        {children}
+      </ButtonIconFrame>
+    );
+  }
+);
 
 type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
 

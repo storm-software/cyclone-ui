@@ -5,7 +5,7 @@ import {
   useFieldActions,
   useFieldStore
 } from "@cyclone-ui/form";
-import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
+import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
@@ -654,6 +654,6 @@ const SelectGroupImpl = BaseSelectImpl.styleable<SelectExtraProps>(
 );
 
 export const Select = withStaticProperties(SelectGroupImpl, {
-  Icon: ThemeableIconWrapper,
+  Icon: ThemedIcon,
   Item: SelectItem
 });

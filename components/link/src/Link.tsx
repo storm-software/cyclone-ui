@@ -1,7 +1,8 @@
 import { ColorRole } from "@cyclone-ui/colors";
 import { isWeb } from "@tamagui/constants";
-import { styled, Text, useThemeName, type TextProps } from "@tamagui/core";
+import { GetProps, styled, Text, useThemeName } from "@tamagui/core";
 import { Square } from "@tamagui/shapes";
+import { useMemo } from "react";
 import { Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
 
@@ -9,8 +10,6 @@ export interface LinkExtraProps extends UseLinkProps {
   target?: string;
   underline?: "hover" | "initial" | "static" | "none";
 }
-
-export type LinkProps = TextProps & LinkExtraProps;
 
 export const LINK_NAME = "Link";
 
@@ -49,11 +48,20 @@ const LinkFrame = styled(Text, {
         fontWeight: "$bold",
         textTransform: "uppercase"
       }
+    },
+
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        color: "$disabled",
+        textDecorationLine: "none"
+      }
     }
   } as const,
 
   defaultVariants: {
-    cta: false
+    cta: false,
+    disabled: false
   }
 });
 
@@ -106,19 +114,16 @@ const Underline = styled(Square, {
 
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
-    {
-      target,
-      children,
-      underline = "initial",
-      cta = false,
-      width,
-      href,
-      ...props
-    },
+    { target, children, cta = false, disabled = false, width, href, ...props },
     forwardedRef
   ) => {
     const linkProps = useLink({ href, ...props });
     const themeName = useThemeName({ parent: true });
+
+    const underline = useMemo(
+      () => (disabled ? "static" : props.underline || "initial"),
+      [disabled, props.underline]
+    );
 
     return (
       <Text position="relative">
@@ -209,5 +214,7 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
       </Text>
     );
   },
-  { staticConfig: { componentName: "Link" } }
+  { staticConfig: { componentName: LINK_NAME } }
 );
+
+export type LinkProps = GetProps<typeof Link>;

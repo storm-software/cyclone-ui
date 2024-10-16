@@ -56,6 +56,8 @@
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],
       "@cyclone-ui/input/*": ["components/input/src/*"],
+      "@cyclone-ui/body-text": ["components/body-text/src/index.ts"],
+      "@cyclone-ui/body-text/*": ["components/body-text/src/*"],
       "@cyclone-ui/link": ["components/link/src/index.ts"],
       "@cyclone-ui/link/*": ["components/link/src/*"],
       "@cyclone-ui/masks": ["packages/masks/src/index.ts"],
@@ -70,8 +72,8 @@
       "@cyclone-ui/nx/*": ["apps/nx/src/*"],
       "@cyclone-ui/pagination": ["components/pagination/src/index.ts"],
       "@cyclone-ui/pagination/*": ["components/pagination/src/*"],
-      "@cyclone-ui/pop-up": ["components/pop-up/src/index.ts"],
-      "@cyclone-ui/pop-up/*": ["components/pop-up/src/*"],
+      "@cyclone-ui/dialog": ["components/dialog/src/index.ts"],
+      "@cyclone-ui/dialog/*": ["components/dialog/src/*"],
       "@cyclone-ui/previous-button": [
         "components/previous-button/src/index.ts"
       ],
@@ -79,11 +81,11 @@
       "@cyclone-ui/provider": ["packages/provider/src/index.ts"],
       "@cyclone-ui/provider/*": ["packages/provider/src/*"],
       "@cyclone-ui/radio-group": ["components/radio-group/src/index.ts"],
-      "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
       "@cyclone-ui/radio-group-field": [
         "components/radio-group-field/src/index.ts"
       ],
       "@cyclone-ui/radio-group-field/*": ["components/radio-group-field/src/*"],
+      "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
       "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
       "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
       "@cyclone-ui/registry-worker": ["packages/registry-worker/src/index.ts"],

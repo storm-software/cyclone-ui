@@ -54,6 +54,11 @@ export const componentThemes = {
     }
   ],
 
+  BodyText: {
+    mask: "identity",
+    ...maskOptions.bodyText
+  },
+
   Card: {
     mask: "identity",
     ...maskOptions.card

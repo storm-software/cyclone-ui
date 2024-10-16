@@ -1,19 +1,21 @@
+import { Field, FieldValueType, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { DatePicker } from "./DatePicker";
 
 const meta: Meta<typeof DatePicker> = {
   title: "Form/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <DatePicker name="datePickerName" {...args}>
-      <DatePicker.Label>Label Text</DatePicker.Label>
-      <DatePicker.Value />
-      <DatePicker.Details>
-        This is an example detailed message for an date-picker
-      </DatePicker.Details>
-    </DatePicker>
+  render: (props: any) => (
+    <Form name="formName" defaultValues={{ datePickerName: null }}>
+      <Field name="datePickerName" valueType={FieldValueType.DATE} {...props}>
+        <Field.Label>Label Text</Field.Label>
+        <DatePicker />
+        <Field.Details>
+          This is an example detailed message for an date-picker
+        </Field.Details>
+      </Field>
+    </Form>
   )
 } satisfies Meta<typeof DatePicker>;
 
@@ -37,11 +39,11 @@ export const Disabled: Story = {
   }
 };
 
-export const DefaultValue: Story = {
-  args: {
-    defaultValue: "Defaulted Text"
-  }
-};
+// export const DefaultValue: Story = {
+//   args: {
+//     defaultValue: "Defaulted Text"
+//   }
+// };
 
 export const Help: Story = {
   args: {

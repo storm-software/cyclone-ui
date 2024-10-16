@@ -1,8 +1,8 @@
 {
-  "name": "pop-up",
+  "name": "dialog",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/pop-up/src",
+  "sourceRoot": "components/dialog/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/components/pop-up",
-        "tsConfig": "components/pop-up/tsconfig.json",
-        "project": "components/pop-up/package.json",
+        "outputPath": "dist/components/dialog",
+        "tsConfig": "components/dialog/tsconfig.json",
+        "project": "components/dialog/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/pop-up",
+            "input": "components/dialog",
             "glob": "*.md",
             "output": "/"
           },

@@ -5,81 +5,87 @@ import { Slottable, View, isTamaguiElement, styled } from "@tamagui/core";
 import type { Scope } from "@tamagui/create-context";
 import { createContextScope } from "@tamagui/create-context";
 import type {
-  DialogCloseProps,
-  DialogContentProps,
-  DialogDescriptionProps,
-  DialogOverlayProps,
-  DialogPortalProps,
-  DialogProps,
-  DialogTitleProps,
-  DialogTriggerProps
+  DialogCloseProps as TamaguiDialogCloseProps,
+  DialogContentProps as TamaguiDialogContentProps,
+  DialogDescriptionProps as TamaguiDialogDescriptionProps,
+  DialogOverlayProps as TamaguiDialogOverlayProps,
+  DialogPortalProps as TamaguiDialogPortalProps,
+  DialogProps as TamaguiDialogProps,
+  DialogTitleProps as TamaguiDialogTitleProps,
+  DialogTriggerProps as TamaguiDialogTriggerProps
 } from "@tamagui/dialog";
 import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogOverlay,
-  DialogPortal,
-  DialogTitle,
-  DialogTrigger,
+  Dialog as TamaguiDialog,
+  DialogClose as TamaguiDialogClose,
+  DialogContent as TamaguiDialogContent,
+  DialogDescription as TamaguiDialogDescription,
+  DialogOverlay as TamaguiDialogOverlay,
+  DialogPortal as TamaguiDialogPortal,
+  DialogTitle as TamaguiDialogTitle,
+  DialogTrigger as TamaguiDialogTrigger,
   createDialogScope
 } from "@tamagui/dialog";
 import { composeEventHandlers, withStaticProperties } from "@tamagui/helpers";
+import { LinearGradient } from "@tamagui/linear-gradient";
 import { useControllableState } from "@tamagui/use-controllable-state";
 import * as React from "react";
 import { Alert } from "react-native";
-import { LinearGradient } from "@tamagui/linear-gradient";
 
-const POPUP_NAME = "PopUp";
+const DIALOG_NAME = "Dialog";
 
-type ScopedProps<P> = P & { __scopePopUp?: Scope };
-const [createPopUpContext] = createContextScope(POPUP_NAME, [
+type ScopedProps<P> = P & { __scopeDialog?: Scope };
+const [createDialogContext] = createContextScope(DIALOG_NAME, [
   createDialogScope
 ]);
 
 const useDialogScope = createDialogScope();
 
-const TRIGGER_NAME = "PopUpTrigger";
+const TRIGGER_NAME = "DialogTrigger";
 
-interface PopUpTriggerProps extends DialogTriggerProps {}
+interface DialogTriggerProps extends TamaguiDialogTriggerProps {
+  __native?: boolean;
+}
 
-const NativePopUpTriggerFrame = styled(View, {
+const NativeDialogTriggerFrame = styled(View, {
   name: TRIGGER_NAME
 });
 
-const PopUpTrigger = React.forwardRef<TamaguiElement, PopUpTriggerProps>(
-  (props: ScopedProps<PopUpTriggerProps>, forwardedRef) => {
+const DialogTrigger = React.forwardRef<TamaguiElement, DialogTriggerProps>(
+  (props: ScopedProps<DialogTriggerProps>, forwardedRef) => {
     if (props["__native"]) {
       const { __native, onPress, __onPress, ...rest } = props as any;
       return (
-        <NativePopUpTriggerFrame
+        <NativeDialogTriggerFrame
           {...rest}
           onPress={composeEventHandlers(onPress, __onPress)}
         />
       );
     }
 
-    const { __scopePopUp, ...triggerProps } = props;
-    const dialogScope = useDialogScope(__scopePopUp);
+    const { __scopeDialog, ...triggerProps } = props;
+    const dialogScope = useDialogScope(__scopeDialog);
     return (
-      <DialogTrigger {...dialogScope} {...triggerProps} ref={forwardedRef} />
+      <TamaguiDialogTrigger
+        {...dialogScope}
+        {...triggerProps}
+        ref={forwardedRef}
+      />
     );
   }
 );
 
-PopUpTrigger.displayName = TRIGGER_NAME;
+DialogTrigger.displayName = TRIGGER_NAME;
 
-const TITLE_NAME = "PopUpTitle";
+const TITLE_NAME = "DialogTitle";
 
-type PopUpTitleProps = DialogTitleProps;
+type DialogTitleProps = TamaguiDialogTitleProps;
 
-const PopUpTitle = React.forwardRef<TamaguiElement, PopUpTitleProps>(
-  (props: ScopedProps<PopUpTitleProps>, forwardedRef) => {
-    const { __scopePopUp, ...titleProps } = props;
-    const dialogScope = useDialogScope(__scopePopUp);
+const DialogTitle = React.forwardRef<TamaguiElement, DialogTitleProps>(
+  (props: ScopedProps<DialogTitleProps>, forwardedRef) => {
+    const { __scopeDialog, ...titleProps } = props;
+    const dialogScope = useDialogScope(__scopeDialog);
     return (
-      <DialogTitle
+      <TamaguiDialogTitle
         {...dialogScope}
         {...titleProps}
         color="$fg"
@@ -89,20 +95,20 @@ const PopUpTitle = React.forwardRef<TamaguiElement, PopUpTitleProps>(
   }
 );
 
-PopUpTitle.displayName = TITLE_NAME;
+DialogTitle.displayName = TITLE_NAME;
 
-const DESCRIPTION_NAME = "PopUpDescription";
+const DESCRIPTION_NAME = "DialogDescription";
 
-type PopUpDescriptionProps = DialogDescriptionProps;
+type DialogDescriptionProps = TamaguiDialogDescriptionProps;
 
-const PopUpDescription = React.forwardRef<
+const DialogDescription = React.forwardRef<
   TamaguiElement,
-  PopUpDescriptionProps
->((props: ScopedProps<PopUpDescriptionProps>, forwardedRef) => {
-  const { __scopePopUp, ...descriptionProps } = props;
-  const dialogScope = useDialogScope(__scopePopUp);
+  DialogDescriptionProps
+>((props: ScopedProps<DialogDescriptionProps>, forwardedRef) => {
+  const { __scopeDialog, ...descriptionProps } = props;
+  const dialogScope = useDialogScope(__scopeDialog);
   return (
-    <DialogDescription
+    <TamaguiDialogDescription
       {...dialogScope}
       {...descriptionProps}
       ref={forwardedRef}
@@ -110,56 +116,62 @@ const PopUpDescription = React.forwardRef<
   );
 });
 
-PopUpDescription.displayName = DESCRIPTION_NAME;
+DialogDescription.displayName = DESCRIPTION_NAME;
 
-const ACTION_NAME = "PopUpAction";
+const ACTION_NAME = "DialogAction";
 
-type PopUpActionProps = DialogCloseProps;
+type DialogActionProps = TamaguiDialogCloseProps;
 
-const PopUpAction = React.forwardRef<TamaguiElement, PopUpActionProps>(
-  (props: ScopedProps<PopUpActionProps>, forwardedRef) => {
-    const { __scopePopUp, ...actionProps } = props;
-    const dialogScope = useDialogScope(__scopePopUp);
-    return <DialogClose {...dialogScope} {...actionProps} ref={forwardedRef} />;
+const DialogAction = React.forwardRef<TamaguiElement, DialogActionProps>(
+  (props: ScopedProps<DialogActionProps>, forwardedRef) => {
+    const { __scopeDialog, ...actionProps } = props;
+    const dialogScope = useDialogScope(__scopeDialog);
+    return (
+      <TamaguiDialogClose
+        {...dialogScope}
+        {...actionProps}
+        ref={forwardedRef}
+      />
+    );
   }
 );
 
-PopUpAction.displayName = ACTION_NAME;
+DialogAction.displayName = ACTION_NAME;
 
-const CANCEL_NAME = "PopUpCancel";
+const CANCEL_NAME = "DialogCancel";
 
-interface PopUpCancelProps extends DialogCloseProps {}
+interface DialogCancelProps extends TamaguiDialogCloseProps {}
 
-const PopUpCancel = React.forwardRef<TamaguiElement, PopUpCancelProps>(
-  (props: ScopedProps<PopUpCancelProps>, forwardedRef) => {
-    const { __scopePopUp, ...cancelProps } = props;
-    const { cancelRef } = usePopUpContentContext(CANCEL_NAME, __scopePopUp);
-    const dialogScope = useDialogScope(__scopePopUp);
+const DialogCancel = React.forwardRef<TamaguiElement, DialogCancelProps>(
+  (props: ScopedProps<DialogCancelProps>, forwardedRef) => {
+    const { __scopeDialog, ...cancelProps } = props;
+    const { cancelRef } = useDialogContentContext(CANCEL_NAME, __scopeDialog);
+    const dialogScope = useDialogScope(__scopeDialog);
     const ref = useComposedRefs(forwardedRef, cancelRef);
-    return <DialogClose {...dialogScope} {...cancelProps} ref={ref} />;
+    return <TamaguiDialogClose {...dialogScope} {...cancelProps} ref={ref} />;
   }
 );
 
-PopUpCancel.displayName = CANCEL_NAME;
+DialogCancel.displayName = CANCEL_NAME;
 
-interface PopUpPortalProps extends DialogPortalProps {}
+interface DialogPortalProps extends TamaguiDialogPortalProps {}
 
-const PopUpPortal: React.FC<PopUpPortalProps> = (
-  props: ScopedProps<PopUpPortalProps>
+const DialogPortal: React.FC<DialogPortalProps> = (
+  props: ScopedProps<DialogPortalProps>
 ) => {
-  const { __scopePopUp, ...portalProps } = props;
-  const dialogScope = useDialogScope(__scopePopUp);
-  return <DialogPortal {...dialogScope} {...portalProps} />;
+  const { __scopeDialog, ...portalProps } = props;
+  const dialogScope = useDialogScope(__scopeDialog);
+  return <TamaguiDialogPortal {...dialogScope} {...portalProps} />;
 };
 
-const PORTAL_NAME = "PopUpPortal";
-PopUpPortal.displayName = PORTAL_NAME;
+const PORTAL_NAME = "DialogPortal";
+DialogPortal.displayName = PORTAL_NAME;
 
-const OVERLAY_NAME = "PopUpOverlay";
+const OVERLAY_NAME = "DialogOverlay";
 
-const PopUpOverlayFrame = styled(LinearGradient, {
+const DialogOverlayFrame = styled(LinearGradient, {
   name: OVERLAY_NAME,
-  animation: "$fast",
+  animation: "fast",
   opacity: 0.9,
   pointerEvents: "auto",
   colors: ["transparent", "black"],
@@ -183,31 +195,31 @@ const PopUpOverlayFrame = styled(LinearGradient, {
   }
 });
 
-interface PopUpOverlayProps extends DialogOverlayProps {}
+interface DialogOverlayProps extends TamaguiDialogOverlayProps {}
 
-const PopUpOverlay = PopUpOverlayFrame.extractable(
-  React.forwardRef<TamaguiElement, PopUpOverlayProps>(
-    (props: ScopedProps<PopUpOverlayProps>, forwardedRef) => {
-      const { __scopePopUp, ...overlayProps } = props;
-      const dialogScope = useDialogScope(__scopePopUp);
+const DialogOverlay = DialogOverlayFrame.extractable(
+  React.forwardRef<TamaguiElement, DialogOverlayProps>(
+    (props: ScopedProps<DialogOverlayProps>, forwardedRef) => {
+      const { __scopeDialog, ...overlayProps } = props;
+      const dialogScope = useDialogScope(__scopeDialog);
 
       return (
-        <PopUpOverlayFrame>
-          <DialogOverlay
+        <DialogOverlayFrame>
+          <TamaguiDialogOverlay
             {...dialogScope}
             {...overlayProps}
             opacity={0}
             ref={forwardedRef}
           />
-        </PopUpOverlayFrame>
+        </DialogOverlayFrame>
       );
     }
   )
 );
 
-PopUpOverlay.displayName = OVERLAY_NAME;
+DialogOverlay.displayName = OVERLAY_NAME;
 
-export type PopUpProps = DialogProps & {
+export type DialogProps = TamaguiDialogProps & {
   native?: boolean;
 };
 
@@ -240,9 +252,11 @@ function getStringChildren(child: React.ReactElement) {
   return string;
 }
 
-const PopUpInner: React.FC<PopUpProps> = (props: ScopedProps<PopUpProps>) => {
-  const { __scopePopUp, native, children, ...rest } = props;
-  const dialogScope = useDialogScope(__scopePopUp);
+const DialogInner: React.FC<DialogProps> = (
+  props: ScopedProps<DialogProps>
+) => {
+  const { __scopeDialog, native, children, ...rest } = props;
+  const dialogScope = useDialogScope(__scopeDialog);
 
   if (process.env.TAMAGUI_TARGET === "native") {
     const [open, setOpen] = useControllableState({
@@ -262,10 +276,15 @@ const PopUpInner: React.FC<PopUpProps> = (props: ScopedProps<PopUpProps>) => {
     }[] = [];
 
     forEachChildDeep(React.Children.toArray(props.children), child => {
-      if (!React.isValidElement(child)) return false;
+      if (!React.isValidElement(child)) {
+        return false;
+      }
+
       const name = isTamaguiElement(child)
         ? child.type.staticConfig.componentName
-        : (child.type["displayName"] as string | undefined);
+        : typeof child.type === "object" && "displayName" in child.type
+          ? (child.type as any).displayName
+          : undefined;
       switch (name) {
         case TRIGGER_NAME: {
           triggerElement = React.cloneElement(child as any, {
@@ -322,38 +341,38 @@ const PopUpInner: React.FC<PopUpProps> = (props: ScopedProps<PopUpProps>) => {
   }
 
   return (
-    <Dialog {...dialogScope} {...rest} modal={true}>
+    <TamaguiDialog {...dialogScope} {...rest} modal={true}>
       {children}
-    </Dialog>
+    </TamaguiDialog>
   );
 };
 
-const CONTENT_NAME = "PopUpContent";
+const CONTENT_NAME = "DialogContent";
 
-type PopUpContentContextValue = {
+type DialogContentContextValue = {
   cancelRef: React.MutableRefObject<TamaguiElement | null>;
 };
 
-const [PopUpContentProvider, usePopUpContentContext] =
-  createPopUpContext<PopUpContentContextValue>(CONTENT_NAME);
+const [DialogContentProvider, useDialogContentContext] =
+  createDialogContext<DialogContentContextValue>(CONTENT_NAME);
 
-interface PopUpContentProps
+interface DialogContentProps
   extends Omit<
-    DialogContentProps,
+    TamaguiDialogContentProps,
     "onPointerDownOutside" | "onInteractOutside"
   > {}
 
-const PopUpContent = React.forwardRef<TamaguiElement, PopUpContentProps>(
-  (props: ScopedProps<PopUpContentProps>, forwardedRef) => {
-    const { __scopePopUp, children, ...contentProps } = props;
-    const dialogScope = useDialogScope(__scopePopUp);
+const DialogContent = React.forwardRef<TamaguiElement, DialogContentProps>(
+  (props: ScopedProps<DialogContentProps>, forwardedRef) => {
+    const { __scopeDialog, children, ...contentProps } = props;
+    const dialogScope = useDialogScope(__scopeDialog);
     const contentRef = React.useRef<TamaguiElement>(null);
     const composedRefs = useComposedRefs(forwardedRef, contentRef);
     const cancelRef = React.useRef<TamaguiElement | null>(null);
 
     return (
-      <PopUpContentProvider scope={__scopePopUp} cancelRef={cancelRef}>
-        <DialogContent
+      <DialogContentProvider scope={__scopeDialog} cancelRef={cancelRef}>
+        <TamaguiDialogContent
           role="alertdialog"
           animation={[
             "quick",
@@ -365,10 +384,6 @@ const PopUpContent = React.forwardRef<TamaguiElement, PopUpContentProps>(
           ]}
           enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
           exitStyle={{ x: 0, y: 20, opacity: 0, scale: 0.95 }}
-          x={0}
-          scale={1}
-          opacity={1}
-          y={0}
           margin="$5"
           {...dialogScope}
           {...contentProps}
@@ -385,23 +400,23 @@ const PopUpContent = React.forwardRef<TamaguiElement, PopUpContentProps>(
           onPointerDownOutside={event => event.preventDefault()}
           onInteractOutside={event => event.preventDefault()}>
           <Slottable>{children}</Slottable>
-        </DialogContent>
-      </PopUpContentProvider>
+        </TamaguiDialogContent>
+      </DialogContentProvider>
     );
   }
 );
 
-PopUpContent.displayName = CONTENT_NAME;
+DialogContent.displayName = CONTENT_NAME;
 
-export const PopUp = withStaticProperties(PopUpInner, {
-  Trigger: PopUpTrigger,
-  Portal: PopUpPortal,
-  Overlay: PopUpOverlay,
-  Content: PopUpContent,
-  Title: PopUpTitle,
-  Description: PopUpDescription,
-  Cancel: PopUpCancel,
-  Action: PopUpAction
+export const Dialog = withStaticProperties(DialogInner, {
+  Trigger: DialogTrigger,
+  Portal: DialogPortal,
+  Overlay: DialogOverlay,
+  Content: DialogContent,
+  Title: DialogTitle,
+  Description: DialogDescription,
+  Cancel: DialogCancel,
+  Action: DialogAction
 });
 
-PopUp.displayName = POPUP_NAME;
+Dialog.displayName = DIALOG_NAME;

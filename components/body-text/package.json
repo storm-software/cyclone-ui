@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/pop-up",
-  "version": "0.3.0",
+  "name": "@cyclone-ui/body-text",
+  "version": "0.5.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/pop-up"
+    "directory": "components/body-text"
   },
   "private": false,
   "main": "dist/cjs",
@@ -32,23 +32,8 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/alert-dialog": "^1.110.5",
-    "@tamagui/compose-refs": "^1.110.5",
-    "@tamagui/constants": "^1.110.5",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
-    "@tamagui/dialog": "^1.110.5",
-    "@tamagui/font-size": "^1.110.5",
-    "@tamagui/get-font-sized": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/linear-gradient": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5",
-    "@tamagui/text": "^1.110.5",
-    "@tamagui/use-controllable-state": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "react-native-svg": "^15.2.0"
+    "@tamagui/text": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",
@@ -60,6 +45,5 @@
   },
   "sideEffects": [
     "*.css"
-  ],
-  "module:jsx": "dist/jsx"
+  ]
 }

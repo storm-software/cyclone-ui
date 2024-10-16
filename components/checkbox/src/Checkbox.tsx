@@ -1,5 +1,5 @@
 import { FieldStatus, useFieldActions, useFieldStore } from "@cyclone-ui/form";
-import { ThemeableIconWrapper } from "@cyclone-ui/themeable-icon";
+import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
@@ -252,5 +252,5 @@ const CheckboxGroupImpl = BaseCheckboxImpl.styleable((props, forwardedRef) => {
 });
 
 export const Checkbox = withStaticProperties(CheckboxGroupImpl, {
-  Icon: ThemeableIconWrapper
+  Icon: ThemedIcon
 });

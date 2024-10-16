@@ -21,7 +21,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
 
-[![Version](https://img.shields.io/badge/version-0.1.0-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with docusaurus](https://img.shields.io/badge/documented_with-docusaurus-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://docusaurus.io/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/cyclone-ui/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
+[![Version](https://img.shields.io/badge/version-0.5.0-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with docusaurus](https://img.shields.io/badge/documented_with-docusaurus-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://docusaurus.io/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/cyclone-ui/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -39,29 +39,30 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# radio-group-field
+# Body Text
 
-Radio Group Form Field component for Cyclone UI
+A `BodyText` component used to render the body text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [Body Text](#body-text)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -70,14 +71,14 @@ Radio Group Form Field component for Cyclone UI
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/radio-group-field
+pnpm add -D @cyclone-ui/body-text
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/radio-group-field
+npm install -D @cyclone-ui/body-text
 ```
 
 </details>
@@ -86,7 +87,7 @@ npm install -D @cyclone-ui/radio-group-field
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/radio-group-field
+yarn add -D @cyclone-ui/body-text
 ```
 
 </details>
@@ -101,15 +102,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build radio-group-field` to build the library.
+Run `nx build body-text` to build the library.
 
 ### Running unit tests
 
-Run `nx test radio-group-field` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test body-text` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint radio-group-field` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint body-text` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->
@@ -264,7 +265,7 @@ specification. Contributions of any kind welcome!
 
 <div align="center">
 <b>
-<a href="https://stormsoftware.com" target="_blank">Website</a>   •   <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •   <a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •   <a href="https://linkedin.com/in/pat-sullivan-dev" target="_blank">LinkedIn</a>  •   <a href="https://medium.com/@pat.joseph.sullivan" target="_blank">Medium</a>  •   <a href="https://github.com/storm-software" target="_blank">GitHub</a>  •   <a href="https://keybase.io/sullivanp" target="_blank">OpenPGP Key</a>
+<a href="https://stormsoftware.com" target="_blank">Website</a>   •   <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •   <a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •   <a href="https://body-textedin.com/in/pat-sullivan-dev" target="_blank">body-textedIn</a>  •   <a href="https://medium.com/@pat.joseph.sullivan" target="_blank">Medium</a>  •   <a href="https://github.com/storm-software" target="_blank">GitHub</a>  •   <a href="https://keybase.io/sullivanp" target="_blank">OpenPGP Key</a>
 </b>
 </div>
 

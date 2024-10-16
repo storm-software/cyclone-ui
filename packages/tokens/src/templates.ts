@@ -38,6 +38,7 @@ const templateColorsSpecific = {
 
 const brandColors = {
   primary: ColorPaletteShades.PRIMARY,
+  secondary: ColorPaletteShades.SECONDARY,
   muted: ColorPaletteShades.MUTED,
   disabled: ColorPaletteShades.DISABLED,
   bg: ColorPaletteShades.BACKGROUND,
@@ -56,6 +57,7 @@ const template = {
   // the @tamagui/button Button component looks for `$background`, so you set the
   // dark_red_Button theme to have a stronger background than the dark_red theme.
   background: ColorPaletteShades.BACKGROUND,
+  backgroundRaised: 3,
   backgroundHover: 3,
   backgroundPress: 4,
   backgroundFocus: 4,
@@ -66,7 +68,7 @@ const template = {
   colorPress: ColorPaletteShades.PRIMARY + 2,
   colorFocus: ColorPaletteShades.PRIMARY + 2,
   colorTransparent: -0,
-  borderColor: -4,
+  borderColor: -2,
   borderColorHover: -2,
   borderColorFocus: -3,
   borderColorPress: -3,
@@ -140,6 +142,15 @@ export const maskOptions = {
       borderColorHover: ColorPaletteShades.PRIMARY + 2,
       borderColorFocus: ColorPaletteShades.PRIMARY - 2,
       borderColorPress: ColorPaletteShades.PRIMARY - 2
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  bodyText: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY - 2
     },
     skip: skipShadowsAndSpecificColors
   },

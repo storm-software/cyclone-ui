@@ -42,7 +42,7 @@ export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
 const BreadcrumbFrame = styled(ThemeableStack, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
-  animation: "$medium",
+  animation: "medium",
   flexDirection: "row",
   alignItems: "center",
 
@@ -114,7 +114,6 @@ const BreadcrumbItem = Link.styleable<LinkProps>(
             ref={forwardRef}
             underline="initial"
             fontFamily="$body"
-            size={size}
             {...rest}>
             {children}
           </Link>

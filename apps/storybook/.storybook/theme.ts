@@ -21,11 +21,11 @@ const theme: any = create({
   base: "dark",
 
   colorPrimary: "#1fb2a6",
-  colorSecondary: "#514477",
+  colorSecondary: "#7434db",
 
   // UI
-  appBg: "#22272e",
-  appContentBg: "#22272e",
+  appBg: "#17181b",
+  appContentBg: "#17181b",
   appBorderColor: "#1fb2a6",
   appBorderRadius: 2,
 
@@ -36,10 +36,10 @@ const theme: any = create({
   // Toolbar default and active colors
   barTextColor: "#1fb2a6",
   barSelectedColor: "#1fb2a6",
-  barBg: "#22272e",
+  barBg: "#17181b",
 
   // Form colors
-  inputBg: "#22272E",
+  inputBg: "#17181b",
   inputBorder: "#1fb2a6",
   inputTextColor: "#1fb2a6",
   inputBorderRadius: 2,
