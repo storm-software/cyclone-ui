@@ -29,16 +29,16 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.75.4"
   },
   "dependencies": {
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5"
+    "@tamagui/core": "^1.115.5",
+    "@tamagui/stacks": "^1.115.5"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.75.4"
   },
   "publishConfig": {
     "access": "public"

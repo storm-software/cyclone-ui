@@ -10,11 +10,11 @@
   },
   "private": false,
   "dependencies": {
-    "@trpc/server": "11.0.0-rc.382",
+    "@trpc/server": "11.0.0-rc.584",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240909.0"
+    "@cloudflare/workers-types": "^4.20241011.0"
   },
   "publishConfig": {
     "access": "public"
