@@ -41,10 +41,10 @@
     }
   },
   "dependencies": {
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@tamagui/colors": "^1.110.5",
-    "@tamagui/web": "^1.110.5"
+    "@swc-node/register": "~1.10.9",
+    "@swc/core": "~1.7.36",
+    "@tamagui/colors": "^1.115.5",
+    "@tamagui/web": "^1.115.5"
   },
   "publishConfig": {
     "access": "public"
