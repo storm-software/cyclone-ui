@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/themeable-icon",
-  "version": "0.6.0",
+  "name": "@cyclone-ui/spinner",
+  "version": "0.5.0",
   "type": "module",
-  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "description": "A Next Button component meant to be shared in many other components",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/themeable-icon"
+    "directory": "components/spinner"
   },
   "private": false,
   "main": "dist/cjs",
@@ -33,13 +33,7 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
-    "@tamagui/font-size": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/helpers-icon": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "react-native-svg": "^15.2.0"
+    "@tamagui/stacks": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",

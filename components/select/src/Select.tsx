@@ -1,7 +1,7 @@
 import { ColorRole } from "@cyclone-ui/colors";
 import {
-  FieldStatus,
-  FieldStatusIcon,
+  FieldIcon,
+  FieldThemeIcon,
   useFieldActions,
   useFieldStore
 } from "@cyclone-ui/form";
@@ -24,7 +24,7 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
-import { YStack } from "@tamagui/stacks";
+import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps, SizeVariantSpreadFunction } from "@tamagui/web";
 import { forwardRef, useCallback, useLayoutEffect, useMemo } from "react";
 
@@ -73,9 +73,11 @@ export const SELECT_NAME = "Select";
 
 const SelectGroupFrame = styled(XGroup, {
   name: SELECT_NAME,
-  justifyContent: "space-between",
   context: SelectContext,
-  animation: "$slow",
+
+  justifyContent: "space-between",
+  animation: "slow",
+  height: "$4.5",
 
   variants: {
     unstyled: {
@@ -177,6 +179,7 @@ export const selectSizeVariant: SizeVariantSpreadFunction<any> = (
 const SelectTrigger = styled(TamaguiSelect.Trigger, {
   name: SELECT_NAME,
   context: SelectContext,
+
   unstyled: true,
   radiused: true,
   hoverTheme: false,
@@ -196,15 +199,11 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   outlineWidth: 0,
   outlineColor: "transparent",
   outlineStyle: "none",
-  paddingVertical: 0,
+  paddingHorizontal: "$2",
 
   variants: {
     scaleIcon: {
       ":number": {} as any
-    },
-
-    size: {
-      "...size": selectSizeVariant
     },
 
     required: {
@@ -247,10 +246,12 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   context: SelectContext,
 
   fontFamily: "$body",
-  fontSize: "$4",
+  fontSize: "$true",
+  fontWeight: "$true",
   color: "$fg",
-  paddingVertical: 0,
   backgroundColor: "transparent",
+  flexGrow: 1,
+  marginHorizontal: "$1.75",
 
   hoverStyle: {
     backgroundColor: "transparent"
@@ -287,23 +288,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
 const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
 }>(({ children, ...props }, ref) => {
-  const { size } = SelectContext.useStyledContext();
-
   const store = useFieldStore();
   const disabled = store.get.disabled();
 
   return (
-    <View flex={1}>
-      <SelectValueFrame
-        id={store.get.name()}
-        ref={ref}
-        size={size}
-        {...props}
-        disabled={disabled}
-        placeholding={!store.get.value() && !disabled}>
-        {children}
-      </SelectValueFrame>
-    </View>
+    <SelectValueFrame
+      id={store.get.name()}
+      ref={ref}
+      size={0}
+      {...props}
+      disabled={disabled}
+      placeholding={!store.get.value() && !disabled}>
+      {children}
+    </SelectValueFrame>
   );
 });
 
@@ -353,9 +350,10 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  animation: "fast",
   color: "$color",
   fontFamily: "$body",
+  fontSize: "$true",
+  fontWeight: "$true",
   paddingVertical: "$1",
 
   variants: {
@@ -474,6 +472,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
 
   const store = useFieldStore();
   const disabled = store.get.disabled();
+  const validating = store.get.validating();
   const value = store.get.value();
   const focused = store.get.focused();
   const required = store.get.required();
@@ -493,122 +492,111 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
   );
 
   return (
-    <View flex={1}>
-      <BaseSelect
-        id={store.get.name()}
-        ref={ref}
-        size={size}
-        disablePreventBodyScroll={true}
-        {...rest}
-        onOpenChange={handleOpenChange}
-        onValueChange={change}
-        open={focused}
-        value={String(value ?? "")}
-        defaultValue={String(store.get.initialValue() ?? "")}
-        disabled={disabled}>
-        <SelectTrigger
-          paddingLeft={
-            store.get.theme().toLowerCase().includes(FieldStatus.BASE)
-              ? "$3"
-              : 0
-          }
-          paddingRight="$3"
-          disabled={disabled}>
-          {!disabled && <FieldStatusIcon disabled={false} />}
+    <BaseSelect
+      id={store.get.name()}
+      ref={ref}
+      size={size}
+      disablePreventBodyScroll={true}
+      {...rest}
+      onOpenChange={handleOpenChange}
+      onValueChange={change}
+      open={focused}
+      value={String(value ?? "")}
+      defaultValue={String(store.get.initialValue() ?? "")}
+      disabled={disabled}>
+      <SelectTrigger disabled={disabled}>
+        <XStack alignItems="center" width="100%">
+          {!disabled && <FieldThemeIcon />}
           <SelectValue placeholder={placeholder} />
 
-          {disabled && <FieldStatusIcon disabled={true} />}
+          {(disabled || validating) && <FieldThemeIcon />}
           {!disabled && (
-            <SelectIconChevron
-              marginRight={0}
-              marginLeft="$0.75"
-              open={focused}>
-              <ChevronDown size="$1.5" />
+            <SelectIconChevron open={focused}>
+              <FieldIcon>
+                <ChevronDown />
+              </FieldIcon>
             </SelectIconChevron>
           )}
-        </SelectTrigger>
+        </XStack>
+      </SelectTrigger>
 
-        <Adapt when={"sm" as any} platform="touch">
-          <Sheet
-            modal
-            dismissOnSnapToBottom
-            animationConfig={{
-              type: "spring",
-              damping: 20,
-              mass: 1.2,
-              stiffness: 250
-            }}>
-            <Sheet.Frame>
-              <Sheet.ScrollView>
-                <Adapt.Contents />
-              </Sheet.ScrollView>
-            </Sheet.Frame>
-            <Sheet.Overlay
-              animation="lazy"
-              enterStyle={{ opacity: 0 }}
-              exitStyle={{ opacity: 0 }}
-            />
-          </Sheet>
-        </Adapt>
+      <Adapt when={"sm" as any} platform="touch">
+        <Sheet
+          modal
+          dismissOnSnapToBottom
+          animationConfig={{
+            type: "spring",
+            damping: 20,
+            mass: 1.2,
+            stiffness: 250
+          }}>
+          <Sheet.Frame>
+            <Sheet.ScrollView>
+              <Adapt.Contents />
+            </Sheet.ScrollView>
+          </Sheet.Frame>
+          <Sheet.Overlay
+            animation="lazy"
+            enterStyle={{ opacity: 0 }}
+            exitStyle={{ opacity: 0 }}
+          />
+        </Sheet>
+      </Adapt>
 
-        <TamaguiSelect.Content zIndex={200000}>
-          <TamaguiSelect.ScrollUpButton
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            width="100%"
-            height="$3">
-            <YStack zIndex={10}>
-              <ChevronUp size={20} />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["$background", "transparent"]}
-              borderRadius="$4"
-              marginTop="$0.2"
-            />
-          </TamaguiSelect.ScrollUpButton>
+      <TamaguiSelect.Content zIndex={200000}>
+        <TamaguiSelect.ScrollUpButton
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          width="100%"
+          height="$3">
+          <YStack zIndex={10}>
+            <ChevronUp size={20} />
+          </YStack>
+          <LinearGradient
+            start={[0, 0]}
+            end={[0, 1]}
+            fullscreen={true}
+            colors={["$background", "transparent"]}
+            borderRadius="$4"
+            marginTop="$0.2"
+          />
+        </TamaguiSelect.ScrollUpButton>
 
-          <TamaguiSelect.Viewport
-            animation="quick"
-            animateOnly={["transform", "scale", "opacity"]}
-            enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
-            exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
-            minWidth={200}>
-            <TamaguiSelect.Group>
-              {!required && (
-                <SelectItem
-                  key={-1}
-                  index={-1}
-                  value={null as any}></SelectItem>
-              )}
-              {children}
-            </TamaguiSelect.Group>
-          </TamaguiSelect.Viewport>
+        <TamaguiSelect.Viewport
+          animation="quick"
+          animateOnly={["transform", "scale", "opacity"]}
+          enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
+          exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
+          minWidth={200}>
+          <TamaguiSelect.Group>
+            {!required && (
+              <SelectItem key={-1} index={-1} value={null as any}></SelectItem>
+            )}
+            {children}
+          </TamaguiSelect.Group>
+        </TamaguiSelect.Viewport>
 
-          <TamaguiSelect.ScrollDownButton
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            width="100%"
-            height="$3">
-            <YStack zIndex={10}>
-              <ChevronDown size={20} />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["transparent", "$background"]}
-              borderRadius="$4"
-              marginBottom="$0.2"
-            />
-          </TamaguiSelect.ScrollDownButton>
-        </TamaguiSelect.Content>
-      </BaseSelect>
-    </View>
+        <TamaguiSelect.ScrollDownButton
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          width="100%"
+          height="$3">
+          <YStack zIndex={10}>
+            <ChevronDown size={20} />
+          </YStack>
+          <LinearGradient
+            start={[0, 0]}
+            end={[0, 1]}
+            fullscreen={true}
+            colors={["transparent", "$background"]}
+            borderRadius="$4"
+            marginBottom="$0.2"
+          />
+        </TamaguiSelect.ScrollDownButton>
+      </TamaguiSelect.Content>
+    </BaseSelect>
   );
 });
 

@@ -15,6 +15,8 @@
 
  -------------------------------------------------------------------*/
 
+import { BodyText } from "@cyclone-ui/body-text";
+import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
 import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import {
@@ -25,16 +27,15 @@ import {
 } from "@tamagui/core";
 import { Dot } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import { Paragraph } from "@tamagui/text";
-import { Text, Theme } from "@tamagui/web";
-import { ForwardedRef, forwardRef, PropsWithChildren } from "react";
+import { Theme } from "@tamagui/web";
+import { ForwardedRef, forwardRef } from "react";
 import { useFieldStore } from "../hooks/use-field-store";
 import {
   FieldProvider,
   FieldProviderOptions
 } from "../providers/FieldStoreProvider";
 import { Validator } from "../types";
-import { FieldStatusIcon } from "./FieldStatusIcon";
+import { FieldThemeIcon } from "./FieldIcon";
 import { Label, LabelProps } from "./Label";
 
 export const FieldContext = createStyledContext<{
@@ -43,7 +44,7 @@ export const FieldContext = createStyledContext<{
   color?: ColorTokens | string;
   hideIcons: boolean;
 }>({
-  size: "$4",
+  size: "$1",
   scaleIcon: 1,
   hideIcons: false
 });
@@ -53,7 +54,7 @@ export const FIELD_NAME = "Field";
 const FieldGroupFrame = styled(ThemeableStack, {
   name: FIELD_NAME,
 
-  animation: "$slow",
+  animation: "slow",
   context: FieldContext,
   display: "flex",
 
@@ -140,6 +141,36 @@ const FieldGroupFrame = styled(ThemeableStack, {
   }
 });
 
+const FieldDetailsMessage = () => {
+  const store = useFieldStore();
+  const theme = store.get.theme();
+  const messages = store.get.messages();
+
+  if (!messages || !messages.length) {
+    return null;
+  } else if (messages.length === 1 && messages[0]?.message) {
+    return <FieldDetails theme={theme}>{messages[0].message}</FieldDetails>;
+  }
+
+  return (
+    <YStack gap="$1.5">
+      <FieldDetails theme={theme}>
+        The following errors must be resolved:
+      </FieldDetails>
+      {messages
+        .filter(message => message.message)
+        .map(message => (
+          <XStack gap="$1" alignItems="center">
+            <ThemedIcon theme={theme}>
+              <Dot />
+            </ThemedIcon>
+            <FieldDetails theme={theme}>{message.message}</FieldDetails>
+          </XStack>
+        ))}
+    </YStack>
+  );
+};
+
 const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
@@ -165,7 +196,10 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
         ref={forwardedRef}
         {...rest}
         disabled={isBoolean(isDisable) ? isDisable : undefined}>
-        {children}
+        <YStack gap="$0.5">
+          {children}
+          <FieldDetailsMessage />
+        </YStack>
       </FieldGroupFrame>
     </Theme>
   );
@@ -188,12 +222,14 @@ export const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   }
 );
 
-export const FieldDetails = styled(Text, {
+export const FieldDetails = styled(BodyText, {
   context: FieldContext,
-  animation: "$slow",
-  color: "$borderColor",
+
+  animation: "slow",
   marginTop: "$0.5",
+
   fontStyle: "italic",
+  fontSize: "$sm",
   opacity: 1,
 
   enterStyle: {
@@ -251,42 +287,25 @@ export const FieldDetails = styled(Text, {
   }
 });
 
-const FieldDetailsMessage = (props: PropsWithChildren) => {
-  const { children } = props;
-
-  const messages = useFieldStore().get.messages();
-  if (!messages || !messages.length) {
-    return children;
-  } else if (messages.length === 1 && messages[0]?.message) {
-    return <Paragraph>{messages[0].message}</Paragraph>;
-  }
-
-  return (
-    <YStack>
-      <Paragraph>The following errors must be resolved:</Paragraph>
-      {messages
-        .filter(message => message.message)
-        .map(message => (
-          <XStack>
-            <Dot />
-            <Paragraph>{message.message}</Paragraph>
-          </XStack>
-        ))}
-    </YStack>
-  );
-};
-
 const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
+
   const store = useFieldStore();
+  const messages = store.get.messages();
+  const disabled = store.get.disabled();
+  const name = store.get.name();
+
+  if (messages && messages.length > 0) {
+    return null;
+  }
 
   return (
     <FieldDetails
       ref={forwardedRef}
-      disabled={!!store.get.disabled()}
-      htmlFor={store.get.name()}
+      disabled={!!disabled}
+      htmlFor={name}
       {...rest}>
-      <FieldDetailsMessage>{children}</FieldDetailsMessage>
+      {children}
     </FieldDetails>
   );
 });
@@ -299,7 +318,7 @@ export const FieldLabel = forwardRef<typeof Label, Omit<LabelProps, "htmlFor">>(
     return (
       <Label
         ref={forwardedRef as ForwardedRef<any>}
-        paddingBottom="$0.5"
+        pb="$0.5"
         {...rest}
         htmlFor={store.get.name()}
         disabled={!!store.get.disabled()}
@@ -311,21 +330,21 @@ export const FieldLabel = forwardRef<typeof Label, Omit<LabelProps, "htmlFor">>(
   }
 );
 
-export const FieldFieldStatusIcon = forwardRef<
-  typeof FieldStatusIcon,
-  GetProps<typeof FieldStatusIcon>
+export const FieldFieldThemeIcon = forwardRef<
+  typeof FieldThemeIcon,
+  GetProps<typeof FieldThemeIcon>
 >(props => {
   const store = useFieldStore();
   const disabled = store.get.disabled();
   const theme = store.get.theme();
 
   return (
-    <FieldStatusIcon disabled={disabled} theme={theme} size="$3" {...props} />
+    <FieldThemeIcon disabled={disabled} theme={theme} size="$3" {...props} />
   );
 });
 
 export const Field = withStaticProperties(FieldGroup, {
   Label: FieldLabel,
   Details: FieldDetailsImpl,
-  StatusIcon: FieldStatusIcon
+  StatusIcon: FieldThemeIcon
 });

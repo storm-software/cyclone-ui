@@ -13,61 +13,34 @@ const LABEL_NAME = "Label";
 const LabelText = styled(SizableText, {
   name: LABEL_NAME,
 
-  fontFamily: "$label",
   animation: "100ms",
   cursor: "pointer",
-
-  color: "$base10",
-  fontSize: "$6",
-  fontWeight: "$3",
+  color: "$primary",
+  fontFamily: "$label",
+  fontSize: "$true",
+  fontWeight: "$true",
   wordWrap: "break-word",
+  verticalAlign: "middle",
+
+  hoverStyle: {
+    color: "$colorHover"
+  },
 
   variants: {
-    // size: {
-    //   "...fontSize": (
-    //     val: FontSizeTokens,
-    //     config: VariantSpreadExtras<TextProps>
-    //   ) => {
-    //     if (!config.font) {
-    //       return;
-    //     }
-
-    //     let sizeToken = 1;
-    //     let heightToken = 1;
-    //     if (typeof val !== "undefined" && val !== null) {
-    //       sizeToken = (config.font.size?.[val] as any)?.val;
-    //       heightToken = (config.font.lineHeight?.[val] as any)?.val;
-    //     }
-
-    //     const fontSize = (sizeToken ?? 1) * 1.25;
-    //     const lineHeight = (heightToken ?? 1) * 1;
-    //     const fontWeight = config.font.weight?.["$3"];
-    //     const letterSpacing = config.font.letterSpacing?.[val];
-    //     const textTransform = config.font.transform?.[val];
-    //     const fontStyle = config.font.style?.[val];
-
-    //     return {
-    //       fontSize,
-    //       lineHeight,
-    //       fontWeight,
-    //       letterSpacing,
-    //       textTransform,
-    //       fontStyle
-    //     };
-    //   }
-    // },
-
     focused: {
       true: {
-        color: "$fg",
-        fontWeight: "$5"
+        color: "$colorFocus"
       }
     },
 
     disabled: {
       true: {
         color: "$disabled",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$disabled"
+        }
       },
       false: {
         cursor: "pointer"
@@ -143,7 +116,7 @@ export const Label = forwardRef<typeof TamaguiLabel, LabelProps>(
                 color="$error8"
                 size="$0.75"
                 position="absolute"
-                top={-2}
+                top={-5}
               />
             </View>
           )}

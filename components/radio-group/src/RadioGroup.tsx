@@ -1,5 +1,6 @@
+import { BodyText } from "@cyclone-ui/body-text";
 import {
-  FieldStatusIcon,
+  FieldThemeIcon,
   Label,
   useFieldActions,
   useFieldStore
@@ -18,7 +19,6 @@ import {
 import { getFontSized } from "@tamagui/get-font-sized";
 import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
-import { Paragraph } from "@tamagui/text";
 import type { SizeVariantSpreadFunction } from "@tamagui/web";
 import { useLayoutEffect, useMemo } from "react";
 
@@ -119,13 +119,11 @@ const RadioGroupItemLabel = styled(Label, {
   }
 });
 
-const RadioGroupItemDescription = styled(Paragraph, {
+const RadioGroupItemDescription = styled(BodyText, {
   name: RADIO_GROUP_NAME,
   context: RadioGroupContext,
 
   animation: "slow",
-  fontFamily: "$body",
-  fontSize: "$4",
   color: "$color",
 
   variants: {
@@ -436,7 +434,7 @@ const RadioGroupItem = RadioGroupItemContainer.styleable<
         )}
       </YStack>
 
-      {disabled && <FieldStatusIcon disabled={true} />}
+      {disabled && <FieldThemeIcon />}
     </RadioGroupItemContainer>
   );
 });
@@ -499,7 +497,7 @@ const RadioGroupImpl = RadioGroupFrame.styleable(
         disabled={disabled}>
         <YStack
           justifyContent="flex-start"
-          gap="$3"
+          gap="$2.5"
           $sm={{
             paddingHorizontal: "$4",
             paddingVertical: "$4.5"

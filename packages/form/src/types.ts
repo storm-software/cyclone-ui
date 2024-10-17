@@ -211,7 +211,7 @@ export type FormBaseState<
   /**
    * The tab indexes for the fields.
    */
-  tabIndexes:  InferFormState<TFormValues, number>;
+  tabIndexes: InferFormState<TFormValues, number>;
 
   /**
    * The field group's initial values.

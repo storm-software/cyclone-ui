@@ -16,7 +16,7 @@
   "colors": {
     "light": {
       "background": "#fafafa",
-      "foreground": "#121212",
+      "foreground": "#1d1e22",
       "brand": "#1fb2a6",
       "alternate": "#7434db",
       "help": "#5C4EE5",
@@ -26,11 +26,11 @@
       "error": "#a40e26"
     },
     "dark": {
-      "background": "#22272e",
-      "foreground": "#dfdfdf",
-      "brand": "#1fb2a6",
-      "alternate": "#514477",
-      "help": "#5C4EE5",
+      "background": "#1d1e22",
+      "foreground": "#cbd5e1",
+      "brand": "#2dd4bf",
+      "alternate": "#7434db",
+      "help": "#818cf8",
       "success": "#10b981",
       "info": "#58a6ff",
       "warning": "#f3d371",

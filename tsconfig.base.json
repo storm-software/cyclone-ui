@@ -94,6 +94,8 @@
       "@cyclone-ui/select-field": ["components/select-field/src/index.ts"],
       "@cyclone-ui/select-field/*": ["components/select-field/src/*"],
       "@cyclone-ui/select/*": ["components/select/src/*"],
+      "@cyclone-ui/spinner": ["components/spinner/src/index.ts"],
+      "@cyclone-ui/spinner/*": ["components/spinner/src/*"],
       "@cyclone-ui/state": ["packages/state/src/index.ts"],
       "@cyclone-ui/state/*": ["packages/state/src/*"],
       "@cyclone-ui/steps": ["components/steps/src/index.ts"],

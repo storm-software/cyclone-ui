@@ -105,7 +105,8 @@ export const initialTheme = (
         ? [colors.light, colors.dark]
         : [colors.dark, colors.light]
     )
-    .gamma(themeType === "dark" ? 1.75 : 1)
+    // .gamma(themeType === "dark" ? 1.75 : 1)
+    .gamma(1)
     .colors(12)
     .slice(1, -3)
     .reduce(

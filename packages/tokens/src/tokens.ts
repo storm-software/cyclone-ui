@@ -36,6 +36,7 @@ export const size = {
   "$0.1": 2,
   "$0.2": 4,
   "$0.25": 5,
+  "$0.3": 6,
   "$0.4": 8,
   "$0.5": 10,
   "$0.75": 15,
@@ -44,8 +45,11 @@ export const size = {
   $1: 20,
   "$1.25": 22,
   "$1.5": 24,
-  $2: 28,
-  "$2.5": 32,
+  "$1.75": 26,
+  "$2": 28,
+  "$2.25": 30,
+  "$2.5": 34,
+  "$2.75": 35,
   $3: 36,
   "$3.5": 40,
   $4: 44,
@@ -66,7 +70,12 @@ export const size = {
   $17: 224,
   $18: 244,
   $19: 264,
-  $20: 284
+  $20: 284,
+  $21: 304,
+  $22: 324,
+  $23: 344,
+  $24: 364,
+  $25: 384
 };
 
 type SizeKeysIn = keyof typeof size;
@@ -200,7 +209,7 @@ export const radius = {
   10: 34,
   11: 42,
   12: 50
-};
+} as const;
 
 export const tokens = createTokens({
   color,
@@ -225,4 +234,4 @@ export const ColorPaletteShades = {
   BACKGROUND_TRANSPARENT: 0,
   FOREGROUND: -1,
   FOREGROUND_TRANSPARENT: -0
-};
+} as const;

@@ -1,7 +1,7 @@
 import { Checkbox } from "@cyclone-ui/checkbox";
 import {
   Field,
-  FieldStatusIcon,
+  FieldThemeIcon,
   FieldValueType,
   Label,
   LabelProps,
@@ -35,7 +35,7 @@ const InnerCheckboxFieldLabel = forwardRef<typeof XStack, XStackProps>(
         verticalAlign="center"
         {...rest}>
         {children}
-        {store.get.disabled() && <FieldStatusIcon disabled={true} />}
+        {store.get.disabled() && <FieldThemeIcon disabled={true} />}
       </XStack>
     );
   }

@@ -57,22 +57,22 @@ const template = {
   // the @tamagui/button Button component looks for `$background`, so you set the
   // dark_red_Button theme to have a stronger background than the dark_red theme.
   background: ColorPaletteShades.BACKGROUND,
-  backgroundRaised: 3,
-  backgroundHover: 3,
-  backgroundPress: 4,
-  backgroundFocus: 4,
+  backgroundRaised: ColorPaletteShades.BACKGROUND + 2,
+  backgroundHover: ColorPaletteShades.BACKGROUND + 2,
+  backgroundPress: ColorPaletteShades.BACKGROUND,
+  backgroundFocus: ColorPaletteShades.BACKGROUND,
   backgroundStrong: ColorPaletteShades.BACKGROUND,
   backgroundTransparent: ColorPaletteShades.BACKGROUND_TRANSPARENT,
-  color: ColorPaletteShades.PRIMARY - 2,
+  color: ColorPaletteShades.SECONDARY,
   colorHover: ColorPaletteShades.PRIMARY + 1,
   colorPress: ColorPaletteShades.PRIMARY + 2,
   colorFocus: ColorPaletteShades.PRIMARY + 2,
-  colorTransparent: -0,
-  borderColor: -2,
-  borderColorHover: -2,
-  borderColorFocus: -3,
-  borderColorPress: -3,
-  placeholderColor: -4,
+  colorTransparent: ColorPaletteShades.FOREGROUND_TRANSPARENT,
+  borderColor: ColorPaletteShades.SECONDARY,
+  borderColorHover: ColorPaletteShades.PRIMARY,
+  borderColorFocus: ColorPaletteShades.FOREGROUND,
+  borderColorPress: ColorPaletteShades.FOREGROUND,
+  placeholderColor: ColorPaletteShades.SECONDARY,
   outlineColor: ColorPaletteShades.PRIMARY
 };
 
@@ -130,27 +130,14 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      background: ColorPaletteShades.PRIMARY,
-      backgroundHover: ColorPaletteShades.PRIMARY + 2,
+      background: ColorPaletteShades.SECONDARY,
+      backgroundHover: ColorPaletteShades.FOREGROUND,
       backgroundFocus: ColorPaletteShades.PRIMARY - 2,
       backgroundPress: ColorPaletteShades.PRIMARY - 2,
       color: ColorPaletteShades.BACKGROUND,
       colorHover: ColorPaletteShades.BACKGROUND,
       colorPress: ColorPaletteShades.BACKGROUND,
-      colorFocus: ColorPaletteShades.BACKGROUND,
-      borderColor: ColorPaletteShades.PRIMARY - 1,
-      borderColorHover: ColorPaletteShades.PRIMARY + 2,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 2,
-      borderColorPress: ColorPaletteShades.PRIMARY - 2
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  bodyText: {
-    ...baseMaskOptions,
-    overrideStrategy: "swap",
-    override: {
-      ...colors,
-      color: ColorPaletteShades.PRIMARY - 2
+      colorFocus: ColorPaletteShades.BACKGROUND
     },
     skip: skipShadowsAndSpecificColors
   },
@@ -159,70 +146,8 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      colorHover: ColorPaletteShades.PRIMARY - 1,
-      colorPress: ColorPaletteShades.PRIMARY - 2,
-      colorFocus: ColorPaletteShades.PRIMARY - 2
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  input: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      borderColor: ColorPaletteShades.PRIMARY - 4,
-      borderColorHover: ColorPaletteShades.PRIMARY - 4,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
-      borderColorPress: ColorPaletteShades.PRIMARY - 4,
-      placeholderColor: ColorPaletteShades.PRIMARY - 4
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  select: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      borderColor: ColorPaletteShades.PRIMARY - 4,
-      borderColorHover: ColorPaletteShades.PRIMARY - 4,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
-      borderColorPress: ColorPaletteShades.PRIMARY - 4,
-      placeholderColor: ColorPaletteShades.PRIMARY - 4
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  radioGroup: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      borderColor: ColorPaletteShades.PRIMARY - 4,
-      borderColorHover: ColorPaletteShades.PRIMARY - 4,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
-      borderColorPress: ColorPaletteShades.PRIMARY - 4,
-      placeholderColor: ColorPaletteShades.PRIMARY - 4
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  datePicker: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      borderColor: ColorPaletteShades.PRIMARY - 4,
-      borderColorHover: ColorPaletteShades.PRIMARY - 4,
-      borderColorFocus: ColorPaletteShades.PRIMARY - 4,
-      borderColorPress: ColorPaletteShades.PRIMARY - 4,
-      placeholderColor: ColorPaletteShades.PRIMARY - 4
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  filePicker: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND
+      color: ColorPaletteShades.PRIMARY,
+      colorHover: ColorPaletteShades.SECONDARY
     },
     skip: skipShadowsAndSpecificColors
   },
@@ -230,7 +155,7 @@ export const maskOptions = {
     ...baseMaskOptions,
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY - 2,
+      color: ColorPaletteShades.PRIMARY,
       colorHover: ColorPaletteShades.FOREGROUND,
       colorPress: ColorPaletteShades.FOREGROUND,
       colorFocus: ColorPaletteShades.FOREGROUND

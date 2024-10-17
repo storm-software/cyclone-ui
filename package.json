@@ -286,6 +286,7 @@
       "@cyclone-ui/previous-button": "workspace:*",
       "@cyclone-ui/form": "workspace:*",
       "@cyclone-ui/state": "workspace:*",
+      "@cyclone-ui/spinner": "workspace:*",
       "@cyclone-ui/themeable-icon": "workspace:*"
     }
   },

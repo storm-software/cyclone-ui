@@ -1,4 +1,5 @@
 import { ThemedIcon } from "@cyclone-ui/themeable-icon";
+import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import { View } from "@tamagui/core";
 import { getButtonSized } from "@tamagui/get-button-sized";
 import { withStaticProperties } from "@tamagui/helpers";
@@ -7,7 +8,6 @@ import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { SizableText } from "@tamagui/text";
 import type {
-  FontSizeTokens,
   GetProps,
   SizeTokens,
   ThemeableProps,
@@ -93,6 +93,11 @@ type ButtonExtraProps = TextParentStyles &
     disabled?: boolean;
 
     /**
+     * The font color of the button
+     */
+    color?: ColorTokens | string;
+
+    /**
      * The radius of the button's border
      */
     borderRadius?: BorderRadiusSizeTokens;
@@ -116,6 +121,7 @@ export const ButtonContext = createStyledContext<
       size: SizeTokens;
       variant?: ButtonVariant;
       borderRadius?: BorderRadiusSizeTokens;
+      color?: ColorTokens | string;
       unstyled?: boolean;
       circular?: boolean;
       disabled?: boolean;
@@ -438,19 +444,21 @@ const ButtonIconFrame = styled(ThemedIcon, {
 
 const ButtonIcon = ButtonIconFrame.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { variant, size } = useContext(ButtonContext);
+    const { variant, color, size } = useContext(ButtonContext);
 
     return (
       <ButtonIconFrame
         ref={forwardedRef}
         color={
-          variant === "secondary"
-            ? "$primary"
-            : variant === "glass" || variant === "ghost"
-              ? "$fg"
-              : variant === "link"
-                ? "$borderColor"
-                : "$color"
+          color
+            ? color
+            : variant === "secondary"
+              ? "$primary"
+              : variant === "glass" || variant === "ghost"
+                ? "$fg"
+                : variant === "link"
+                  ? "$borderColor"
+                  : "$color"
         }
         size={size as FontSizeTokens}
         {...props}>

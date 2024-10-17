@@ -16,6 +16,6 @@
  -------------------------------------------------------------------*/
 
 export * from "./Field";
-export * from "./FieldStatusIcon";
+export * from "./FieldIcon";
 export * from "./Form";
 export * from "./Label";

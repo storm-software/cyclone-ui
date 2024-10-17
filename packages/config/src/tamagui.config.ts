@@ -24,7 +24,7 @@ const headingFont = createPermanentMarkerFont({
     6: "uppercase"
   }
 });
-const labelFont = createMonaSansFont();
+const labelFont = createMonaSansFont({}, 18, "550");
 const bodyFont = createSpaceGroteskFont();
 
 export const options: CreateTamaguiProps = {

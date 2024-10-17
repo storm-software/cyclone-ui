@@ -32,13 +32,16 @@ export const size = {
   1: 10,
   2: 11,
   3: 12,
+  sm: 12,
   4: 14,
   5: 15,
   6: 16,
   7: 20,
+  md: 20,
   8: 22,
   9: 30,
   10: 42,
+  lg: 42,
   11: 52,
   12: 62,
   13: 72,
@@ -75,12 +78,12 @@ export const createMonaSansFont = <
       : "Mona Sans",
     size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(fontSize).map(([k, v]) => [k, v * 1.5])
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.25])
     ) as typeof fontSize,
     weight: {
       2: "200",
       3: "300",
-      light: "700",
+      light: "300",
       4: "400",
       true: defaultWeight,
       5: "550",

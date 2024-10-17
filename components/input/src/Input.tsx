@@ -1,6 +1,6 @@
-import { Button } from "@cyclone-ui/button";
 import {
-  FieldStatusIcon,
+  FieldIcon,
+  FieldThemeIcon,
   useFieldActions,
   useFieldStore
 } from "@cyclone-ui/form";
@@ -9,14 +9,10 @@ import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
-  View,
   withStaticProperties
 } from "@tamagui/core";
-import { getFontSized } from "@tamagui/get-font-sized";
-import { getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
-import type { SizeVariantSpreadFunction } from "@tamagui/web";
-import { Input as TamaguiInput, YStack } from "tamagui";
+import { Input as TamaguiInput, XStack } from "tamagui";
 
 const defaultContextValues = {
   size: "$true",
@@ -31,7 +27,7 @@ export const InputContext = createStyledContext<{
 }>(defaultContextValues);
 
 export const defaultInputGroupStyles = {
-  size: "$true",
+  size: "$1",
   fontFamily: "$body",
   fontSize: "$4",
   color: "$color",
@@ -71,9 +67,11 @@ export const INPUT_NAME = "Input";
 
 const InputGroupFrame = styled(XGroup, {
   name: INPUT_NAME,
-  justifyContent: "space-between",
   context: InputContext,
-  animation: "$slow",
+
+  justifyContent: "space-between",
+  animation: "slow",
+  height: "$4.5",
 
   variants: {
     unstyled: {
@@ -143,41 +141,43 @@ const InputGroupFrame = styled(XGroup, {
   }
 });
 
-export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
-  val = "$true",
-  extras
-) => {
-  const radiusToken =
-    extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
-  const paddingHorizontal = getSpace(val, {
-    shift: -1,
-    bounds: [2]
-  });
-  const fontStyle = getFontSized(val as any, extras);
-  // lineHeight messes up input on native
-  if (!isWeb && fontStyle) {
-    delete fontStyle["lineHeight"];
-  }
+// export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
+//   val = "$true",
+//   extras
+// ) => {
+//   const radiusToken =
+//     extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
+//   const paddingHorizontal = getSpace(val, {
+//     shift: -1,
+//     bounds: [2]
+//   });
+//   const fontStyle = getFontSized(val as any, extras);
+//   // lineHeight messes up input on native
+//   if (!isWeb && fontStyle) {
+//     delete fontStyle["lineHeight"];
+//   }
 
-  return {
-    ...fontStyle,
-    height: val,
-    borderRadius: extras.props.circular ? 100_000 : radiusToken,
-    paddingHorizontal
-  };
-};
+//   return {
+//     ...fontStyle,
+//     height: val,
+//     borderRadius: extras.props.circular ? 100_000 : radiusToken,
+//     paddingHorizontal
+//   };
+// };
 
 const BaseInput = styled(TamaguiInput, {
   name: INPUT_NAME,
+  context: InputContext,
 
   unstyled: true,
-
-  context: InputContext,
   color: "$fg",
   fontFamily: "$body",
-  fontSize: "$4",
+  fontSize: "$true",
+  fontWeight: "$true",
+  display: "flex",
+  flexGrow: 1,
   verticalAlign: "center",
-  paddingVertical: "$3",
+  marginHorizontal: "$1.75",
 
   variants: {
     disabled: {
@@ -199,51 +199,24 @@ const BaseInput = styled(TamaguiInput, {
 });
 
 const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
-  const { size } = InputContext.useStyledContext();
-
   const store = useFieldStore();
   const disabled = store.get.disabled();
 
   const { focus, blur, change } = useFieldActions<string>();
 
   return (
-    <View flex={1}>
-      <BaseInput
-        id={store.get.name()}
-        ref={forwardedRef}
-        size={size}
-        {...props}
-        onFocus={focus}
-        onBlur={blur}
-        onChangeText={change}
-        value={String(store.get.value() ?? "")}
-        defaultValue={String(store.get.initialValue() ?? "")}
-        disabled={disabled}
-      />
-    </View>
-  );
-});
-
-const InputIcon = Button.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
-
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-  const theme = store.get.theme();
-
-  return (
-    <YStack alignItems="center">
-      <Button
-        ref={forwardedRef}
-        variant="ghost"
-        circular={true}
-        theme={theme}
-        disabled={disabled}
-        padding="$2"
-        {...rest}>
-        <Button.Icon>{children}</Button.Icon>
-      </Button>
-    </YStack>
+    <BaseInput
+      id={store.get.name()}
+      ref={forwardedRef}
+      size={0}
+      {...props}
+      onFocus={focus}
+      onBlur={blur}
+      onChangeText={change}
+      value={String(store.get.value() ?? "")}
+      defaultValue={String(store.get.initialValue() ?? "")}
+      disabled={disabled}
+    />
   );
 });
 
@@ -252,21 +225,24 @@ const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
 
   const store = useFieldStore();
   const disabled = store.get.disabled();
+  const validating = store.get.validating();
 
   return (
     <InputGroupFrame
       applyFocusStyle={store.get.focused()}
       disabled={disabled}
-      paddingHorizontal="$3">
-      {!disabled && <FieldStatusIcon disabled={false} />}
-      {children}
-      <BaseInputImpl ref={forwardedRef} {...rest} />
+      paddingHorizontal="$2">
+      <XStack alignItems="center" width="100%">
+        {!disabled && <FieldThemeIcon />}
 
-      {disabled && <FieldStatusIcon disabled={true} />}
+        <BaseInputImpl ref={forwardedRef} {...rest} />
+        {children}
+        {(disabled || validating) && <FieldThemeIcon />}
+      </XStack>
     </InputGroupFrame>
   );
 });
 
 export const Input = withStaticProperties(InputGroupImpl, {
-  Icon: InputIcon
+  Icon: FieldIcon
 });

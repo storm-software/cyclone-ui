@@ -56,7 +56,7 @@ export const componentThemes = {
 
   BodyText: {
     mask: "identity",
-    ...maskOptions.bodyText
+    ...maskOptions.component
   },
 
   Card: {
@@ -170,27 +170,27 @@ export const componentThemes = {
 
   Input: {
     mask: "identity",
-    ...maskOptions.input
+    ...maskOptions.component
   },
 
   Select: {
     mask: "identity",
-    ...maskOptions.select
+    ...maskOptions.component
   },
 
   RadioGroup: {
     mask: "identity",
-    ...maskOptions.radioGroup
+    ...maskOptions.component
   },
 
   DatePicker: {
     mask: "identity",
-    ...maskOptions.datePicker
+    ...maskOptions.component
   },
 
   FilePicker: {
     mask: "identity",
-    ...maskOptions.filePicker
+    ...maskOptions.component
   },
 
   Label: {
