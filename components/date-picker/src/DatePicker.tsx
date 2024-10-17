@@ -591,10 +591,10 @@ const DatePickerPopoverBody = () => {
 export const DatePickerControl = Input.styleable((props, ref) => {
   const { size, ...rest } = props;
 
-  const store = useFieldStore();
+  const store = useFieldStore<Date>();
   const { focus } = useFieldActions();
 
-  const value = store.get.value() as Date;
+  const value = store.get.value();
   const reset = store.reset.value();
 
   return (
@@ -679,10 +679,10 @@ const DatePickerPopoverContent = styled(Popover.Content, {
 
 const DatePickerControlImpl = DatePickerControl.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
+    const store = useFieldStore<Date>();
 
     const focused = store.get.focused();
-    const value = store.get.value() as Date;
+    const value = store.get.value();
 
     const { focus, blur, change } = useFieldActions();
     const handleOpenChange = useCallback(

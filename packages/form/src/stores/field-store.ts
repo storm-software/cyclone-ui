@@ -177,7 +177,11 @@ export const createFieldStore = <TFieldValue>(name: string) => {
   });
 };
 
-export type FieldStore = ReturnType<typeof createFieldStore>;
-export type FieldStoreApi = FieldStore["api"];
-export type FieldStoreAtom = FieldStoreApi["atom"];
-export type UseFieldStore = FieldStore["useStore"];
+export type FieldStore<TFieldValue = any> = ReturnType<
+  typeof createFieldStore<TFieldValue>
+>;
+export type FieldStoreApi<TFieldValue = any> = FieldStore<TFieldValue>["api"];
+export type FieldStoreAtom<TFieldValue = any> =
+  FieldStoreApi<TFieldValue>["atom"];
+export type UseFieldStore<TFieldValue = any> =
+  FieldStore<TFieldValue>["useStore"];

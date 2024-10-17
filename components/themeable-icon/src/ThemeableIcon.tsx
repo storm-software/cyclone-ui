@@ -37,7 +37,7 @@ const getIconSize = (size: FontSizeTokens, scale: number) => {
 type ThemedIconExtraProps = {
   disabled?: boolean;
   validating?: boolean;
-  theme?: string;
+  theme?: string | null;
   size?: FontSizeTokens;
   scaleIcon?: number;
   hideIcons?: boolean;
@@ -116,7 +116,7 @@ export const ThemeIcon = forwardRef<typeof View, ThemeIconProps>(
 type ThemeableIconExtraProps = {
   disabled?: boolean;
   validating?: boolean;
-  theme?: string;
+  theme?: string | null;
   size?: FontSizeTokens;
   scaleIcon?: number;
   hideIcons?: boolean;
@@ -197,7 +197,6 @@ export const ThemeableIcon = forwardRef<
           theme.toLowerCase().includes(ColorRole.SUCCESS) &&
           getThemedIcon(<CheckCircle />)}
         {disabled && getThemedIcon(<Lock />)}
-        {validating && <Spinner size="small" color="$accent10" />}
       </ThemeableIconFrame>
     );
   }

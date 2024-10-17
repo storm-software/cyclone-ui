@@ -16,7 +16,6 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
 import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import {
@@ -25,8 +24,7 @@ import {
   styled,
   withStaticProperties
 } from "@tamagui/core";
-import { Dot } from "@tamagui/lucide-icons";
-import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
+import { ThemeableStack, YStack } from "@tamagui/stacks";
 import { Theme } from "@tamagui/web";
 import { ForwardedRef, forwardRef } from "react";
 import { useFieldStore } from "../hooks/use-field-store";
@@ -37,6 +35,7 @@ import {
 import { Validator } from "../types";
 import { FieldThemeIcon } from "./FieldIcon";
 import { Label, LabelProps } from "./Label";
+import { ValidationMessage } from "./ValidationMessage";
 
 export const FieldContext = createStyledContext<{
   size: FontSizeTokens;
@@ -141,64 +140,24 @@ const FieldGroupFrame = styled(ThemeableStack, {
   }
 });
 
-const FieldDetailsMessage = () => {
-  const store = useFieldStore();
-  const theme = store.get.theme();
-  const messages = store.get.messages();
-
-  if (!messages || !messages.length) {
-    return null;
-  } else if (messages.length === 1 && messages[0]?.message) {
-    return <FieldDetails theme={theme}>{messages[0].message}</FieldDetails>;
-  }
-
-  return (
-    <YStack gap="$1.5">
-      <FieldDetails theme={theme}>
-        The following errors must be resolved:
-      </FieldDetails>
-      {messages
-        .filter(message => message.message)
-        .map(message => (
-          <XStack gap="$1" alignItems="center">
-            <ThemedIcon theme={theme}>
-              <Dot />
-            </ThemedIcon>
-            <FieldDetails theme={theme}>{message.message}</FieldDetails>
-          </XStack>
-        ))}
-    </YStack>
-  );
-};
-
 const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   const store = useFieldStore();
-  const isDisable = store.get.disabled();
 
-  // const name = store.get.name();
-
-  // const contextStore = useAtomStore("field", store.get._scope());
-
-  // const { initializeField, uninitializeField } = useFormActions();
-  // useIsomorphicLayoutEffect(() => {
-  //   initializeField(name, useFieldStore());
-
-  //   () => {
-  //     uninitializeField(name);
-  //   };
-  // }, [name]);
+  const disabled = store.get.disabled();
+  const theme = store.get.theme();
+  const messages = store.get.messages();
 
   return (
-    <Theme name={store.get.theme()}>
+    <Theme name={theme}>
       <FieldGroupFrame
         ref={forwardedRef}
         {...rest}
-        disabled={isBoolean(isDisable) ? isDisable : undefined}>
+        disabled={isBoolean(disabled) ? disabled : undefined}>
         <YStack gap="$0.5">
           {children}
-          <FieldDetailsMessage />
+          <ValidationMessage theme={theme} messages={messages} />
         </YStack>
       </FieldGroupFrame>
     </Theme>

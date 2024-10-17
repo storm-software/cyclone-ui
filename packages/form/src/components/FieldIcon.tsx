@@ -2,34 +2,61 @@ import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import { Spinner } from "@cyclone-ui/spinner";
 import { ThemeIcon } from "@cyclone-ui/themeable-icon";
+import { Tooltip } from "@tamagui/tooltip";
 import { useFieldActions, useFieldStore } from "../hooks";
+import { ValidationMessage } from "./ValidationMessage";
 
 const InnerFieldIcon = Button.styleable((props, forwardedRef) => {
   const { children, color, ...rest } = props;
 
   const store = useFieldStore();
+
   const disabled = store.get.disabled();
   const theme = store.get.theme();
+  const messages = store.get.messages();
 
   return (
-    <Button
-      ref={forwardedRef}
-      variant="ghost"
-      circular={true}
-      color={
-        color
-          ? color
-          : disabled
-            ? "$disabled"
-            : theme.toLowerCase().includes(ColorRole.BASE)
-              ? "$base9"
-              : "$primary"
-      }
-      padding="$2"
-      {...rest}
-      disabled={false}>
-      <Button.Icon>{children}</Button.Icon>
-    </Button>
+    <Tooltip groupId="field-icon">
+      <Tooltip.Content
+        enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+        exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+        animation={[
+          "quick",
+          {
+            opacity: {
+              overshootClamping: true
+            }
+          }
+        ]}>
+        <Tooltip.Arrow />
+        <ValidationMessage
+          theme={theme}
+          messages={messages}
+          disabled={disabled}
+        />
+      </Tooltip.Content>
+
+      <Tooltip.Trigger>
+        <Button
+          ref={forwardedRef}
+          variant="ghost"
+          circular={true}
+          color={
+            color
+              ? color
+              : disabled
+                ? "$disabled"
+                : theme.toLowerCase().includes(ColorRole.BASE)
+                  ? "$base9"
+                  : "$primary"
+          }
+          padding="$2"
+          {...rest}
+          disabled={false}>
+          <Button.Icon>{children}</Button.Icon>
+        </Button>
+      </Tooltip.Trigger>
+    </Tooltip>
   );
 });
 

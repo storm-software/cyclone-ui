@@ -25,7 +25,7 @@ import {
   UseFieldStore
 } from "../stores/field-store";
 
-export const useField = (): FieldStore => {
+export const useField = <TFieldValue>(): FieldStore<TFieldValue> => {
   const fieldStoreRef = useContext(FieldStoreContext);
 
   if (!isSet(fieldStoreRef?.current)) {
@@ -35,12 +35,20 @@ export const useField = (): FieldStore => {
   return fieldStoreRef.current;
 };
 
-export const useFieldStore = (
+export const useFieldStore = <TFieldValue>(
   options?: UseAtomOptionsOrScope
-): ReturnType<UseFieldStore> => {
-  return useField().useStore(options);
+): ReturnType<UseFieldStore<TFieldValue>> => {
+  return useField<TFieldValue>().useStore(options);
 };
 
-export const useFieldApi = (): FieldStoreApi => {
-  return useField().api;
+export const useFieldValue = <TFieldValue>(
+  options?: UseAtomOptionsOrScope
+): TFieldValue => {
+  const store = useFieldStore<TFieldValue>(options);
+
+  return store.get.value() as TFieldValue;
+};
+
+export const useFieldApi = <TFieldValue>(): FieldStoreApi<TFieldValue> => {
+  return useField<TFieldValue>().api;
 };
