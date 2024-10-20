@@ -26,6 +26,13 @@ export const CallToAction: Story = {
   }
 };
 
+export const External: Story = {
+  args: {
+    href: "#",
+    external: true
+  }
+};
+
 export const UnderlineHover: Story = {
   args: {
     href: "#",
@@ -61,9 +68,41 @@ export const Brand: Story = {
   }
 };
 
+export const BrandCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "brand"
+  }
+};
+
+export const BrandExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "brand"
+  }
+};
+
 export const Alternate: Story = {
   args: {
     href: "#",
+    theme: "alternate"
+  }
+};
+
+export const AlternateCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "alternate"
+  }
+};
+
+export const AlternateExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
     theme: "alternate"
   }
 };
@@ -75,9 +114,41 @@ export const Help: Story = {
   }
 };
 
+export const HelpCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "help"
+  }
+};
+
+export const HelpExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "help"
+  }
+};
+
 export const Error: Story = {
   args: {
     href: "#",
+    theme: "error"
+  }
+};
+
+export const ErrorCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "error"
+  }
+};
+
+export const ErrorExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
     theme: "error"
   }
 };
@@ -89,6 +160,22 @@ export const Warning: Story = {
   }
 };
 
+export const WarningCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "warning"
+  }
+};
+
+export const WarningExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "warning"
+  }
+};
+
 export const Info: Story = {
   args: {
     href: "#",
@@ -96,9 +183,41 @@ export const Info: Story = {
   }
 };
 
+export const InfoCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "info"
+  }
+};
+
+export const InfoExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "info"
+  }
+};
+
 export const Success: Story = {
   args: {
     href: "#",
+    theme: "success"
+  }
+};
+
+export const SuccessCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "success"
+  }
+};
+
+export const SuccessExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
     theme: "success"
   }
 };

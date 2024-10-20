@@ -1,14 +1,17 @@
 import { ColorRole } from "@cyclone-ui/colors";
+import { ThemedIcon, type ThemedIconProp } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import { GetProps, styled, Text, useThemeName } from "@tamagui/core";
+import { ArrowUpRight } from "@tamagui/lucide-icons";
 import { Square } from "@tamagui/shapes";
+import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
-
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;
   underline?: "hover" | "initial" | "static" | "none";
+  external?: boolean;
 }
 
 export const LINK_NAME = "Link";
@@ -20,7 +23,7 @@ const LinkFrame = styled(Text, {
 
   animation: "200ms",
   textDecorationLine: "none",
-  color: "$color",
+  color: "$fg",
   fontFamily: "$link",
   fontSize: "$true",
   fontWeight: "$true",
@@ -55,6 +58,9 @@ const LinkFrame = styled(Text, {
         cursor: "not-allowed",
         color: "$disabled",
         textDecorationLine: "none"
+      },
+      false: {
+        color: "$fg"
       }
     }
   } as const,
@@ -114,7 +120,17 @@ const Underline = styled(Square, {
 
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
-    { target, children, cta = false, disabled = false, width, href, ...props },
+    {
+      target,
+      children,
+      cta = false,
+      external = false,
+      disabled = false,
+      width,
+      href,
+      color,
+      ...props
+    },
     forwardedRef
   ) => {
     const linkProps = useLink({ href, ...props });
@@ -126,92 +142,105 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
     );
 
     return (
-      <Text position="relative">
-        <LinkFrame
-          {...props}
-          {...linkProps}
-          {...(isWeb
-            ? {
-                href: linkProps.href,
-                target
-              }
-            : {
-                onPress: event => {
-                  props.onPress?.(event);
-                  if (linkProps.href !== undefined) {
-                    Linking.openURL(linkProps.href);
-                  }
+      <XStack group={"link" as any} gap="0.25" alignItems="flex-end">
+        <Text position="relative">
+          <LinkFrame
+            {...props}
+            {...linkProps}
+            {...(isWeb
+              ? {
+                  href: linkProps.href,
+                  target
                 }
-              })}
-          ref={forwardedRef}
-          group={"link" as any}
-          cta={cta}>
-          {children}
-          {underline !== "none" && (
-            <Underline
-              underline={underline}
-              cta={cta}
-              theme={
-                !themeName || themeName.toLowerCase().includes(ColorRole.BASE)
-                  ? ColorRole.BRAND
-                  : themeName
-              }
-              $group-link-hover={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-card-hover={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-link-focus={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-link-pressed={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-            />
-          )}
-        </LinkFrame>
-      </Text>
+              : {
+                  onPress: event => {
+                    props.onPress?.(event);
+                    if (linkProps.href !== undefined) {
+                      Linking.openURL(linkProps.href);
+                    }
+                  }
+                })}
+            ref={forwardedRef}
+            cta={cta}
+            color={color}>
+            {children}
+            {underline !== "none" && (
+              <Underline
+                underline={underline}
+                cta={cta}
+                theme={
+                  !themeName || themeName.toLowerCase().includes(ColorRole.BASE)
+                    ? ColorRole.BRAND
+                    : themeName
+                }
+                $group-link-hover={
+                  underline === "static"
+                    ? {}
+                    : underline === "initial"
+                      ? {
+                          transformOrigin: "right",
+                          scaleX: 0
+                        }
+                      : {
+                          transformOrigin: "left",
+                          scaleX: 1
+                        }
+                }
+                $group-card-hover={
+                  underline === "static"
+                    ? {}
+                    : underline === "initial"
+                      ? {
+                          transformOrigin: "right",
+                          scaleX: 0
+                        }
+                      : {
+                          transformOrigin: "left",
+                          scaleX: 1
+                        }
+                }
+                $group-link-focus={
+                  underline === "static"
+                    ? {}
+                    : underline === "initial"
+                      ? {
+                          transformOrigin: "right",
+                          scaleX: 0
+                        }
+                      : {
+                          transformOrigin: "left",
+                          scaleX: 1
+                        }
+                }
+                $group-link-pressed={
+                  underline === "static"
+                    ? {}
+                    : underline === "initial"
+                      ? {
+                          transformOrigin: "right",
+                          scaleX: 0
+                        }
+                      : {
+                          transformOrigin: "left",
+                          scaleX: 1
+                        }
+                }
+              />
+            )}
+          </LinkFrame>
+        </Text>
+        {external && (
+          <ThemedIcon
+            size="$1"
+            theme={themeName}
+            color={(color as ThemedIconProp["color"]) || "$fg"}
+            $group-link-hover={{
+              color: "$colorHover"
+            }}>
+            <ArrowUpRight />
+          </ThemedIcon>
+        )}
+      </XStack>
     );
   },
   { staticConfig: { componentName: LINK_NAME } }
