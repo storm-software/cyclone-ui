@@ -16,6 +16,8 @@
       "@cyclone-ui/body-text/*": ["components/body-text/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
+      "@cyclone-ui/heading-text": ["components/heading-text/src/index.ts"],
+      "@cyclone-ui/heading-text/*": ["components/heading-text/src/*"],
       "@cyclone-ui/breadcrumb": ["components/breadcrumb/src/index.ts"],
       "@cyclone-ui/breadcrumb/*": ["components/breadcrumb/src/*"],
       "@cyclone-ui/build": ["packages/build/src/index.ts"],

@@ -260,6 +260,7 @@
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/body-text": "workspace:*",
       "@cyclone-ui/label-text": "workspace:*",
+      "@cyclone-ui/heading-text": "workspace:*",
       "@cyclone-ui/masks": "workspace:*",
       "@cyclone-ui/media-queries": "workspace:*",
       "@cyclone-ui/message": "workspace:*",
