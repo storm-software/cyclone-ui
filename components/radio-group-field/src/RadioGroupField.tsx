@@ -1,4 +1,4 @@
-import { Field, FieldValueType } from "@cyclone-ui/form";
+import { Field } from "@cyclone-ui/form";
 import { RadioGroup } from "@cyclone-ui/radio-group";
 import { withStaticProperties } from "@tamagui/web";
 
@@ -6,7 +6,7 @@ const RadioGroupFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} valueType={FieldValueType.STRING} {...rest}>
+    <Field ref={forwardedRef} {...rest}>
       {children}
     </Field>
   );

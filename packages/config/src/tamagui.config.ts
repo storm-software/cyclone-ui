@@ -19,11 +19,14 @@ const eyebrowFont = createPermanentMarkerFont(
   12,
   "400"
 );
-const headingFont = createPermanentMarkerFont({
-  transform: {
-    6: "uppercase"
-  }
-});
+const headingFont = createPermanentMarkerFont(
+  {
+    transform: {
+      6: "uppercase"
+    }
+  },
+  20
+);
 const labelFont = createMonaSansFont({}, 18, "550");
 const bodyFont = createSpaceGroteskFont();
 

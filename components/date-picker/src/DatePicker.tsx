@@ -2,9 +2,13 @@ import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form";
 import { Input } from "@cyclone-ui/input";
+import { LabelText } from "@cyclone-ui/label-text";
 import { ThemedIcon } from "@cyclone-ui/themeable-icon";
-import { format } from "@formkit/tempo";
-import type { DatePickerProviderProps, DPDay } from "@rehookify/datepicker";
+import type {
+  DatePickerProviderProps,
+  DPDay,
+  DPPropGetter
+} from "@rehookify/datepicker";
 import {
   DatePickerProvider as RehookifyDatePickerProvider,
   useDatePickerContext
@@ -13,13 +17,20 @@ import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
-import { createStyledContext, styled, View } from "@tamagui/core";
+import { createStyledContext, styled, useThemeName, View } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { Calendar, ChevronLeft, ChevronRight, X } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from "react";
+import { DimensionValue } from "react-native";
 
 export const DATE_PICKER_NAME = "DatePicker";
 
@@ -79,19 +90,12 @@ export const defaultDatePickerGroupStyles = {
 
 export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 
-// const DatePickerInput = styled(Input, {
-//   name: DATE_PICKER_NAME,
-//   context: DatePickerContext,
-
-//   placeholder: DEFAULT_DATE_FORMAT
-// });
-
-/** rehookify internally return `onClick` and that's incompatible with native */
-export function swapOnClick<D>(d: D) {
+/** Rehookify internally return `onClick` and that's incompatible with native */
+const swapOnClick = <D extends any>(d: D) => {
   //@ts-ignore
   d.onPress = d.onClick;
   return d;
-}
+};
 
 export function useDateAnimation({
   listenTo
@@ -149,7 +153,9 @@ export function useDateAnimation({
     }
 
     if (listenTo === "month") {
-      if (currentMonth === null) return { enterStyle: { opacity: 0 } };
+      if (currentMonth === null) {
+        return { enterStyle: { opacity: 0 } };
+      }
       const newDate = new Date(`${calendarListenTo} 1, ${calendar?.year}`);
       const currentDate = new Date(`${currentMonth} 1, ${calendar?.year}`);
 
@@ -172,7 +178,9 @@ export function useDateAnimation({
     }
 
     if (listenTo === "year") {
-      if (currentYear === null) return { enterStyle: { opacity: 0 } };
+      if (currentYear === null) {
+        return { enterStyle: { opacity: 0 } };
+      }
       const newDate = new Date(`${calendar?.month} 1, ${calendar?.year}`);
       const currentDate = new Date(`${calendar?.month} 1, ${currentYear}`);
 
@@ -206,6 +214,7 @@ const DayPicker = () => {
     data: { calendars, weekDays },
     propGetters: { dayButton }
   } = useDatePickerContext();
+  const theme = useThemeName();
 
   const days = calendars[0]?.days ?? [];
   const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
@@ -233,8 +242,9 @@ const DayPicker = () => {
   return (
     <AnimatePresence key={prevNextAnimationKey}>
       <YStack
-        animation="medium"
+        animation="slow"
         justifyContent="center"
+        gap="$0.5"
         {...prevNextAnimation()}>
         <XStack gap="$1">
           {weekDays.map(day => (
@@ -251,27 +261,27 @@ const DayPicker = () => {
                 gap="$1"
                 alignItems="center">
                 {days.map(day => (
-                  <Button
-                    key={day.$date.toString()}
-                    variant={day.selected ? undefined : "ghost"}
-                    circular={true}
-                    outlined={true}
-                    paddingVertical="$3"
+                  <View
                     width={45}
-                    {...swapOnClick(dayButton(day))}
-                    theme={day.selected ? "accent" : "base"}
-                    disabled={!day.inCurrentMonth}>
-                    <Button.Text
-                      color={
-                        day.selected
-                          ? "$base12"
-                          : day.inCurrentMonth
-                            ? "$base11"
-                            : "$base6"
-                      }>
-                      {day.day}
-                    </Button.Text>
-                  </Button>
+                    justifyContent="center"
+                    alignItems="center"
+                    padding="$0.5">
+                    <Button
+                      key={day.$date.toString()}
+                      variant={day.selected ? undefined : "ghost"}
+                      circular={true}
+                      outlined={true}
+                      width={40}
+                      paddingVertical="$2.5"
+                      {...swapOnClick(dayButton(day))}
+                      theme={day.selected ? "accent" : theme}
+                      disabled={!day.inCurrentMonth}>
+                      <Button.Text
+                        color={day.inCurrentMonth ? "$fg" : "$disabled"}>
+                        {day.day}
+                      </Button.Text>
+                    </Button>
+                  </View>
                 ))}
               </XStack>
             );
@@ -292,20 +302,25 @@ export function YearRangeSlider() {
     <View
       flexDirection="row"
       width="100%"
+      height={40}
       alignItems="center"
       justifyContent="space-between">
       <Button variant="ghost" size="$4" {...swapOnClick(previousYearsButton())}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronLeft />
         </Button.Icon>
       </Button>
       <View y={2} flexDirection="column" alignItems="center">
-        <SizableText size="$5">
+        <LabelText
+          color="$fg"
+          textAlign="center"
+          userSelect="auto"
+          tabIndex={0}>
           {`${years[0]?.year} - ${years[years.length - 1]?.year}`}
-        </SizableText>
+        </LabelText>
       </View>
       <Button variant="ghost" size="$4" {...swapOnClick(nextYearsButton())}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronRight />
         </Button.Icon>
       </Button>
@@ -318,41 +333,41 @@ export function YearSlider() {
     data: { calendars },
     propGetters: { subtractOffset }
   } = useDatePickerContext();
-  const { type: header, setHeader } = useHeaderType();
+  const { setHeader } = useHeaderType();
   const year = calendars[0]?.year;
 
   return (
     <View
       flexDirection="row"
       width="100%"
-      height={50}
+      height={40}
       alignItems="center"
       justifyContent="space-between">
       <Button
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: 12 }))}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <SizableText
+      <LabelText
         onPress={() => setHeader("year")}
         selectable={true}
         tabIndex={0}
         size="$6"
         cursor="pointer"
-        color="$color11"
+        color="$fg"
         hoverStyle={{
-          color: "$color12"
+          color: "$accent10"
         }}>
         {year}
-      </SizableText>
+      </LabelText>
       <Button
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: -12 }))}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronRight />
         </Button.Icon>
       </Button>
@@ -376,55 +391,58 @@ const CalendarHeader = () => {
 
   if (header === "month") {
     return (
-      <SizableText
+      <XStack
         width="100%"
-        textAlign="center"
-        userSelect="auto"
-        tabIndex={0}
-        size="$8">
-        Select a month
-      </SizableText>
+        alignItems="center"
+        justifyContent="center"
+        height={40}>
+        <LabelText
+          textAlign="center"
+          userSelect="auto"
+          tabIndex={0}
+          color="$fg">
+          Select a month
+        </LabelText>
+      </XStack>
     );
   }
 
   return (
-    <View
-      flexDirection="row"
-      width="100%"
-      alignItems="center"
-      justifyContent="space-between">
+    <XStack width="100%" alignItems="center" justifyContent="space-between">
       <Button
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: 1 }))}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronLeft />
         </Button.Icon>
       </Button>
       <YStack gap="$1" alignItems="center">
         <SizableText
+          animation="slow"
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
           size="$5"
           cursor="pointer"
-          color="$color11"
+          color="$fg"
           hoverStyle={{
-            color: "$color12"
+            color: "$accent10"
           }}>
           {year}
         </SizableText>
         <SizableText
+          animation="slow"
           onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
           size="$8"
-          color="$base12"
+          color="$fg"
           fontWeight="600"
           lineHeight="$1"
           hoverStyle={{
-            color: "$base10"
+            color: "$accent10"
           }}>
           {month}
         </SizableText>
@@ -433,13 +451,41 @@ const CalendarHeader = () => {
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: -1 }))}>
-        <Button.Icon scaleIcon={1.5}>
+        <Button.Icon scaleIcon={1.5} color="$fg">
           <ChevronRight />
         </Button.Icon>
       </Button>
-    </View>
+    </XStack>
   );
 };
+
+type ItemPickerProps = PropsWithChildren<
+  DPPropGetter & {
+    active: boolean;
+    key: string;
+    flexBasis?: "unset" | DimensionValue | undefined;
+  }
+>;
+
+export function ItemPicker({
+  active,
+  flexBasis,
+  key,
+  children,
+  ...rest
+}: ItemPickerProps) {
+  return (
+    <View flexGrow={1} flexBasis={flexBasis}>
+      <Button
+        variant={active ? undefined : "ghost"}
+        paddingVertical="$3"
+        key={key}
+        {...rest}>
+        <Button.Text>{children}</Button.Text>
+      </Button>
+    </View>
+  );
+}
 
 export function MonthPicker({
   onChange = (e, date) => {}
@@ -459,34 +505,27 @@ export function MonthPicker({
     <AnimatePresence key={prevNextAnimationKey}>
       <View
         {...prevNextAnimation()}
+        display="flex"
         flexDirection="row"
         flexWrap="wrap"
         gap="$2"
         animation="100ms"
-        flexGrow={0}
         $platform-native={{
           justifyContent: "space-between",
           width: "100%"
-        }}
-        $gtXs={{ width: 285 }}>
+        }}>
         {months.map(month => (
-          <Button
-            variant="ghost"
-            themeInverse={month.active}
-            borderRadius="$true"
-            flexGrow={1}
-            flexBasis="30%"
-            backgroundColor={month.active ? "$background" : "transparent"}
+          <ItemPicker
+            active={month.active}
             key={month.$date.toString()}
+            flexBasis="30%"
             {...swapOnClick(
               monthButton(month, {
                 onClick: onChange as any
               })
             )}>
-            <Button.Text color={month.active ? "$accent10" : "$base11"}>
-              {month.month}
-            </Button.Text>
-          </Button>
+            {month.month}
+          </ItemPicker>
         ))}
       </View>
     </AnimatePresence>
@@ -512,37 +551,24 @@ export function YearPicker({
     <AnimatePresence key={prevNextAnimationKey}>
       <View
         {...prevNextAnimation()}
-        animation="quick"
+        animation="100ms"
         flexDirection="row"
         flexWrap="wrap"
         gap="$2"
         width="100%"
-        maxWidth={280}
         justifyContent="space-between">
         {years.map(year => (
-          <Button
-            variant="ghost"
-            themeInverse={year.year === Number(selectedYear)}
-            borderRadius="$true"
-            flexBasis="30%"
-            flexGrow={1}
-            backgroundColor={
-              year.year === Number(selectedYear) ? "$background" : "transparent"
-            }
+          <ItemPicker
+            active={year.year === Number(selectedYear)}
             key={year.$date.toString()}
-            padding={0}
+            flexBasis="20%"
             {...swapOnClick(
               yearButton(year, {
                 onClick: onChange as any
               })
             )}>
-            <Button.Text
-              color={
-                year.year === Number(selectedYear) ? "$accent10" : "$base11"
-              }>
-              {year.year}
-            </Button.Text>
-          </Button>
+            {year.year}
+          </ItemPicker>
         ))}
       </View>
     </AnimatePresence>
@@ -555,7 +581,7 @@ const DatePickerPopoverBody = () => {
   return (
     <HeaderTypeProvider type={header} setHeader={setHeader}>
       <XStack justifyContent="center">
-        <YStack alignItems="center" gap="$2.5" maxWidth={325}>
+        <YStack alignItems="center" gap="$2.5" maxWidth={425}>
           <CalendarHeader />
           {header === "month" && (
             <MonthPicker onChange={() => setHeader("day")} />
@@ -570,52 +596,33 @@ const DatePickerPopoverBody = () => {
   );
 };
 
-// export const DatePickerFrame = Input.styleable((props, ref) => {
-//   const [selectedDates] = useState<Date[]>([]);
-//   const [, setOpen] = useState(false);
-//   const themeName = useThemeName();
-
-//   useEffect(() => {
-//     setOpen(false);
-//   }, [selectedDates]);
-
-//   return (
-//     <View $platform-native={{ minWidth: "100%" }}>
-//       <Input ref={ref} theme={themeName} {...props}>
-//         {props.children}
-//       </Input>
-//     </View>
-//   );
-// });
-
 export const DatePickerControl = Input.styleable((props, ref) => {
   const { size, ...rest } = props;
 
   const store = useFieldStore<Date>();
-  const { focus } = useFieldActions();
+  const { focus, change } = useFieldActions();
 
   const value = store.get.value();
   const reset = store.reset.value();
 
   return (
-    <Input
-      value={useMemo(
-        () => (value ? format(value, DEFAULT_DATE_FORMAT) : ""),
-        [value]
-      )}
-      ref={ref}
-      placeholder={DEFAULT_DATE_FORMAT}
-      {...rest}>
-      {value ? (
-        <Input.Icon onPress={reset}>
-          <X />
-        </Input.Icon>
-      ) : (
-        <Input.Icon onPress={focus}>
-          <Calendar />
-        </Input.Icon>
-      )}
-    </Input>
+    <Popover.Trigger asChild={true}>
+      <Input
+        ref={ref}
+        placeholder={DEFAULT_DATE_FORMAT}
+        {...rest}
+        onChangeText={change}>
+        {value ? (
+          <Input.Icon onPress={reset}>
+            <X />
+          </Input.Icon>
+        ) : (
+          <Input.Icon onPress={focus}>
+            <Calendar />
+          </Input.Icon>
+        )}
+      </Input>
+    </Popover.Trigger>
   );
 });
 
@@ -659,85 +666,87 @@ const DatePickerPopoverContent = styled(Popover.Content, {
   }
 });
 
-// const DatePickerPopoverArrow = styled(DatePickerPopoverContent.Arrow, {
-//   name: DATE_PICKER_NAME,
-//   context: DatePickerContext,
+const DatePickerGroup = ({ children, ...props }: PropsWithChildren) => {
+  const store = useFieldStore<Date>();
+  const focused = store.get.focused();
+  const value = store.get.value();
 
-//   borderWidth: 1,
-//       borderColor: "$borderColor"
-// });
+  const { focus, blur, change } = useFieldActions();
+  const handleOpenChange = useCallback(
+    (open: boolean) => {
+      if (open) {
+        focus();
+      } else {
+        blur();
+      }
+    },
+    [focus, blur]
+  );
 
-// export const DatePickerPopover = withStaticProperties(DatePickerImpl, {
-//   Trigger,
-//   Content: withStaticProperties(DatePickerContent, {
-//     Arrow: styled(Popover.Arrow, {
-//       borderWidth: 1,
-//       borderColor: "$borderColor"
-//     })
-//   })
-// });
+  const handleDatesChange = useCallback(
+    (dates: Date[]) => {
+      blur();
+
+      // const next = dates.length > 0 ? dates[0] : null;
+      // if (next) {
+      //   next.setMonth(next.getMonth() - 1);
+      // }
+
+      change(dates.length > 0 ? dates[0] : null);
+    },
+    [change, blur]
+  );
+
+  return (
+    <DatePickerProvider
+      config={{
+        selectedDates: value ? [value] : [],
+        onDatesChange: handleDatesChange,
+        calendar: {
+          startDay: 1
+        }
+      }}>
+      <Popover
+        keepChildrenMounted={true}
+        size="$5"
+        allowFlip={true}
+        open={focused}
+        onOpenChange={handleOpenChange}>
+        {children}
+      </Popover>
+    </DatePickerProvider>
+  );
+};
 
 const DatePickerControlImpl = DatePickerControl.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore<Date>();
-
-    const focused = store.get.focused();
-    const value = store.get.value();
-
-    const { focus, blur, change } = useFieldActions();
-    const handleOpenChange = useCallback(
-      (open: boolean) => {
-        if (open) {
-          focus();
-        } else {
-          blur();
-        }
-      },
-      [focus, blur]
-    );
-
     return (
-      <DatePickerProvider
-        config={{
-          selectedDates: value ? [value] : [],
-          onDatesChange: dates => change(dates.length > 0 ? dates[0] : null),
-          calendar: {
-            startDay: 1
-          }
-        }}>
-        <Popover
-          keepChildrenMounted={true}
-          size="$5"
-          allowFlip={true}
-          open={focused}
-          onOpenChange={handleOpenChange}>
-          <Adapt when={"sm" as any} platform="touch">
-            <Popover.Sheet
-              modal={true}
-              dismissOnSnapToBottom={true}
-              snapPointsMode="fit">
-              <Popover.Sheet.Frame padding="$4">
-                <Adapt.Contents />
-              </Popover.Sheet.Frame>
-              <Popover.Sheet.Overlay
-                animation="lazy"
-                enterStyle={{ opacity: 0 }}
-                exitStyle={{ opacity: 0 }}
-              />
-            </Popover.Sheet>
-          </Adapt>
+      <DatePickerGroup>
+        <Adapt when={"sm" as any} platform="touch">
+          <Popover.Sheet
+            modal={true}
+            dismissOnSnapToBottom={true}
+            snapPointsMode="fit">
+            <Popover.Sheet.Frame padding="$4">
+              <Adapt.Contents />
+            </Popover.Sheet.Frame>
+            <Popover.Sheet.Overlay
+              animation="lazy"
+              enterStyle={{ opacity: 0 }}
+              exitStyle={{ opacity: 0 }}
+            />
+          </Popover.Sheet>
+        </Adapt>
 
-          <Popover.Trigger asChild={true}>
-            <DatePickerControl ref={forwardedRef} {...props}>
-              {children}
-            </DatePickerControl>
-          </Popover.Trigger>
-          <DatePickerPopoverContent>
-            <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
-            <DatePickerPopoverBody />
-          </DatePickerPopoverContent>
-        </Popover>
-      </DatePickerProvider>
+        <DatePickerControl ref={forwardedRef} {...props}>
+          {children}
+        </DatePickerControl>
+
+        <DatePickerPopoverContent>
+          <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
+          <DatePickerPopoverBody />
+        </DatePickerPopoverContent>
+      </DatePickerGroup>
     );
   }
 );

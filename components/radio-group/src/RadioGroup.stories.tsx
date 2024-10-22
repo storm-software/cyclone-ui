@@ -1,4 +1,4 @@
-import { Field, FieldValueType, Form } from "@cyclone-ui/form";
+import { Field, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { RadioGroup } from "./RadioGroup";
 
@@ -8,7 +8,7 @@ const meta: Meta<typeof RadioGroup> = {
   tags: ["autodocs"],
   render: (props: any) => (
     <Form name="formName" defaultValues={{ selectName: "" }}>
-      <Field name="selectName" valueType={FieldValueType.STRING} {...props}>
+      <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <RadioGroup width="500px">
           {options.map((option, i) => (

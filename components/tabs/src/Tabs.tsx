@@ -1,21 +1,45 @@
-import { Dispatch, SetStateAction, useLayoutEffect, useState } from "react";
-import type {
-  TabsProps as TamaguiTabsProps,
-  TabLayout as TamaguiTabLayout,
-  TabsTabProps as TamaguiTabsTabProps,
-  TabsContentProps as TamaguiTabsContentProps
-} from "@tamagui/tabs";
-import { Tabs as TamaguiTabs } from "@tamagui/tabs";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { LabelText } from "@cyclone-ui/label-text";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import { SizableText } from "@tamagui/text";
-import { YStack } from "@tamagui/stacks";
 import {
-  StackProps,
   createStyledContext,
+  StackProps,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { YStack } from "@tamagui/stacks";
+import type {
+  TabLayout as TamaguiTabLayout,
+  TabsContentProps as TamaguiTabsContentProps,
+  TabsProps as TamaguiTabsProps,
+  TabsTabProps as TamaguiTabsTabProps
+} from "@tamagui/tabs";
+import { Tabs as TamaguiTabs } from "@tamagui/tabs";
+import { SizableText } from "@tamagui/text";
+import {
+  Dispatch,
+  PropsWithChildren,
+  SetStateAction,
+  useLayoutEffect,
+  useState
+} from "react";
 
 export interface TabsState {
   currentTab: string;
@@ -51,7 +75,7 @@ const defaultContextValues = {
     orientation: "horizontal"
   },
   setState: ((next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
-  handleOnInteraction: (type, layout) => {},
+  handleOnInteraction: (type: any, layout: any) => {},
   theme: "base"
 } as const;
 
@@ -203,17 +227,15 @@ export const TabsHeaderItem = TamaguiTabs.Tab.styleable(
         {...rest}
         value={value}
         onInteraction={handleOnInteraction}>
-        <SizableText
-          fontFamily="$heading"
-          color={state.currentTab === value ? "$primary" : "$color9"}>
+        <LabelText color={state.currentTab === value ? "$primary" : "$color9"}>
           {children}
-        </SizableText>
+        </LabelText>
       </TamaguiTabs.Tab>
     );
   }
 );
 
-export const TabsContentList = ({ children }) => {
+export const TabsContentList = ({ children }: PropsWithChildren) => {
   return <View position="relative">{children}</View>;
 };
 

@@ -2,7 +2,6 @@ import { Checkbox } from "@cyclone-ui/checkbox";
 import {
   Field,
   FieldThemeIcon,
-  FieldValueType,
   Label,
   LabelProps,
   useFieldStore
@@ -15,7 +14,7 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} valueType={FieldValueType.BOOLEAN} {...rest}>
+    <Field ref={forwardedRef} {...rest}>
       {children}
     </Field>
   );

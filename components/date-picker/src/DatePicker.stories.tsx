@@ -1,22 +1,46 @@
-import { Field, FieldValueType, Form } from "@cyclone-ui/form";
+import { Field, Form } from "@cyclone-ui/form";
+import { StormDate } from "@storm-stack/date-time/storm-date";
+import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import type { Meta, StoryObj } from "@storybook/react";
+import { useCallback } from "react";
 import { DatePicker } from "./DatePicker";
 
 const meta: Meta<typeof DatePicker> = {
   title: "Form/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ datePickerName: null }}>
-      <Field name="datePickerName" valueType={FieldValueType.DATE} {...props}>
-        <Field.Label>Label Text</Field.Label>
-        <DatePicker />
-        <Field.Details>
-          This is an example detailed message for an date-picker
-        </Field.Details>
-      </Field>
-    </Form>
-  )
+  render: (props: any) => {
+    const handleFormat = useCallback((value: any) => {
+      return formatDate(StormDate.create(value), {
+        returnEmptyIfNotSet: true,
+        returnEmptyIfInvalid: true
+      });
+    }, []);
+
+    const handleParse = useCallback((value: any) => {
+      const date = StormDate.create(value);
+
+      const invalid = date.validate();
+
+      return !invalid ? date : null;
+    }, []);
+
+    return (
+      <Form name="formName" defaultValues={{ datePickerName: null }}>
+        <Field
+          name="datePickerName"
+          {...props}
+          format={handleFormat}
+          parse={handleParse}>
+          <Field.Label>Label Text</Field.Label>
+          <DatePicker />
+          <Field.Details>
+            This is an example detailed message for an date-picker
+          </Field.Details>
+        </Field>
+      </Form>
+    );
+  }
 } satisfies Meta<typeof DatePicker>;
 
 export default meta;

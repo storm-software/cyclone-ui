@@ -22,6 +22,8 @@ import {
   CreateAtomStoreOptions,
   StoreAtomsWithoutSelectors
 } from "@cyclone-ui/state";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
+import { isString } from "@storm-stack/types/type-checks/is-string";
 import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
 import { toPath } from "@storm-stack/utilities/helper-fns/to-path";
 import { atom } from "jotai";
@@ -91,9 +93,28 @@ export const createFieldStore = <TFieldValue>(name: string) => {
     });
     const validAtom = atom(get => !get(invalidAtom));
 
+    const formattedValueAtom = atom(get => {
+      const options = get(atoms.options);
+      let value = get(atoms.value);
+
+      if (options?.format) {
+        value = options.format(value);
+      }
+
+      if (!isSet(value)) {
+        return "";
+      } else if (isString(value)) {
+        return value;
+      }
+
+      return String(value);
+    });
+
     return {
       pristine: atom(get => !get(dirtyAtom)),
       dirty: dirtyAtom,
+
+      formattedValue: formattedValueAtom,
 
       errors: errorsAtom,
       warnings: warningsAtom,

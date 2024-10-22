@@ -27,7 +27,8 @@ const InnerFieldIcon = Button.styleable((props, forwardedRef) => {
               overshootClamping: true
             }
           }
-        ]}>
+        ]}
+        backgroundColor="$background">
         <Tooltip.Arrow />
         <ValidationMessage
           theme={theme}

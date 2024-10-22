@@ -1,9 +1,4 @@
-import {
-  FieldIcon,
-  FieldThemeIcon,
-  useFieldActions,
-  useFieldStore
-} from "@cyclone-ui/form";
+import { FieldIcon, FieldThemeIcon, useFieldStore } from "@cyclone-ui/form";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
@@ -201,8 +196,7 @@ const BaseInput = styled(TamaguiInput, {
 const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
   const store = useFieldStore();
   const disabled = store.get.disabled();
-
-  const { focus, blur, change } = useFieldActions<string>();
+  const formattedValue = store.get.formattedValue();
 
   return (
     <BaseInput
@@ -210,10 +204,7 @@ const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
       ref={forwardedRef}
       size={0}
       {...props}
-      onFocus={focus}
-      onBlur={blur}
-      onChangeText={change}
-      value={String(store.get.value() ?? "")}
+      value={formattedValue}
       defaultValue={String(store.get.initialValue() ?? "")}
       disabled={disabled}
     />

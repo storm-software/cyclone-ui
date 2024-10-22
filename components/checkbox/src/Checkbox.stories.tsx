@@ -1,4 +1,4 @@
-import { Field, FieldValueType, Form } from "@cyclone-ui/form";
+import { Field, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack } from "@tamagui/stacks";
 import { Checkbox } from "./Checkbox";
@@ -9,7 +9,7 @@ const meta: Meta<typeof Checkbox> = {
   tags: ["autodocs"],
   render: (props: any) => (
     <Form name="formName" defaultValues={{ inputName: false }}>
-      <Field name="inputName" valueType={FieldValueType.BOOLEAN} {...props}>
+      <Field name="inputName" {...props}>
         <XStack gap="$3" alignContent="center" verticalAlign="center">
           <Checkbox />
           <Field.Label paddingBottom={0}>

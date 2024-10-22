@@ -1,5 +1,5 @@
 import { ColorRole } from "@cyclone-ui/colors";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
+import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import { getVariable, styled, useTheme, View } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import type { IconProps } from "@tamagui/helpers-icon";
@@ -86,13 +86,15 @@ export const ThemedIcon = ThemeableIconFrame.styleable<ThemedIconExtraProps>(
   }
 );
 
-export type ThemeIconProps = {
+export type ThemedIconProp = GetProps<typeof ThemedIcon>;
+
+type BaseThemeIconProps = {
   theme: string;
   validating: boolean;
   disabled: boolean;
 } & IconProps;
 
-export const ThemeIcon = forwardRef<typeof View, ThemeIconProps>(
+export const ThemeIcon = forwardRef<typeof View, BaseThemeIconProps>(
   ({ theme, disabled, validating, ...props }, forwardedRef) => {
     if (disabled) {
       return <Lock {...props} />;
@@ -112,6 +114,8 @@ export const ThemeIcon = forwardRef<typeof View, ThemeIconProps>(
     return null;
   }
 );
+
+export type ThemeIconProp = GetProps<typeof ThemeIcon>;
 
 type ThemeableIconExtraProps = {
   disabled?: boolean;

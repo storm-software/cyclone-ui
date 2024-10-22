@@ -1,4 +1,4 @@
-import { Field, FieldValueType, Form } from "@cyclone-ui/form";
+import { Field, Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "./Input";
 
@@ -8,7 +8,7 @@ const meta: Meta<typeof Input> = {
   tags: ["autodocs"],
   render: (props: any) => (
     <Form name="formName" defaultValues={{ inputName: "" }}>
-      <Field name="inputName" valueType={FieldValueType.STRING} {...props}>
+      <Field name="inputName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <Input placeholder="email@example.com" />
         <Field.Details>

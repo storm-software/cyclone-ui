@@ -1,16 +1,33 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { ColorRole } from "@cyclone-ui/colors";
+import { LabelText } from "@cyclone-ui/label-text";
 import { styled, View } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons";
 import { XStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type { GetProps } from "@tamagui/web";
 import { forwardRef, useMemo } from "react";
 import { useFieldStore } from "../hooks/use-field-store";
 
 const LABEL_NAME = "Label";
 
-const LabelText = styled(SizableText, {
+const StyledLabelText = styled(LabelText, {
   name: LABEL_NAME,
 
   animation: "100ms",
@@ -92,24 +109,24 @@ export const Label = forwardRef<typeof TamaguiLabel, LabelProps>(
     const fieldDisabled = store.get.disabled();
 
     const disabled = useMemo(
-      () => !!(fieldDisabled || props.disabled),
+      () => Boolean(fieldDisabled || props.disabled),
       [fieldDisabled, props.disabled]
     );
     const focused = useMemo(
-      () => !!(disabled ? false : props.focused),
+      () => Boolean(disabled ? false : props.focused),
       [disabled, props.focused]
     );
 
     return (
       <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
         <LabelXStack disabled={disabled}>
-          <LabelText
+          <StyledLabelText
             {...rest}
             focused={focused}
             disabled={disabled}
             theme={ColorRole.BASE}>
             {children}
-          </LabelText>
+          </StyledLabelText>
           {required && (
             <View position="relative">
               <Asterisk

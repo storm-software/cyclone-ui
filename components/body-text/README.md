@@ -47,22 +47,21 @@ A `BodyText` component used to render the body text of a page. It is a simple co
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Body Text](#body-text)
-  - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-    - [Documentation](#documentation)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
+- [Installing](#installing)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+  - [Documentation](#documentation)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
+  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
 
@@ -265,7 +264,7 @@ specification. Contributions of any kind welcome!
 
 <div align="center">
 <b>
-<a href="https://stormsoftware.com" target="_blank">Website</a>   •   <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •   <a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •   <a href="https://body-textedin.com/in/pat-sullivan-dev" target="_blank">body-textedIn</a>  •   <a href="https://medium.com/@pat.joseph.sullivan" target="_blank">Medium</a>  •   <a href="https://github.com/storm-software" target="_blank">GitHub</a>  •   <a href="https://keybase.io/sullivanp" target="_blank">OpenPGP Key</a>
+<a href="https://stormsoftware.com" target="_blank">Website</a>   •   <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •   <a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •   <a href="https://linkedin.com/in/pat-sullivan-dev" target="_blank">LinkedIn</a>  •   <a href="https://medium.com/@pat.joseph.sullivan" target="_blank">Medium</a>  •   <a href="https://github.com/storm-software" target="_blank">GitHub</a>  •   <a href="https://keybase.io/sullivanp" target="_blank">OpenPGP Key</a>
 </b>
 </div>
 

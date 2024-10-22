@@ -72,23 +72,23 @@ export const FieldStatus = {
   ERROR: ColorRole.ERROR as FieldStatus
 };
 
-export type FieldValueType =
-  | "date"
-  | "time"
-  | "datetime"
-  | "string"
-  | "number"
-  | "boolean"
-  | "any";
-export const FieldValueType = {
-  DATE: "date" as FieldValueType,
-  TIME: "time" as FieldValueType,
-  DATETIME: "datetime" as FieldValueType,
-  STRING: "string" as FieldValueType,
-  NUMBER: "number" as FieldValueType,
-  BOOLEAN: "boolean" as FieldValueType,
-  ANY: "any" as FieldValueType
-};
+// export type FieldValueType =
+//   | "date"
+//   | "time"
+//   | "datetime"
+//   | "string"
+//   | "number"
+//   | "boolean"
+//   | "any";
+// export const FieldValueType = {
+//   DATE: "date" as FieldValueType,
+//   TIME: "time" as FieldValueType,
+//   DATETIME: "datetime" as FieldValueType,
+//   STRING: "string" as FieldValueType,
+//   NUMBER: "number" as FieldValueType,
+//   BOOLEAN: "boolean" as FieldValueType,
+//   ANY: "any" as FieldValueType
+// };
 
 export type InferFieldState<TValues, TState> =
   IsPlainObject<TValues> extends true
@@ -247,7 +247,6 @@ export type FieldOptions<
   required?: boolean;
   disabled?: boolean;
   items?: SelectOption[];
-  valueType?: FieldValueType;
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
     TValidator[] | undefined
@@ -257,6 +256,8 @@ export type FieldOptions<
   onBlur?: () => MaybePromise<void>;
   onFocus?: () => MaybePromise<void>;
   onChange?: (value: TFieldValue) => MaybePromise<void>;
+  format?: (value: TFieldValue) => string;
+  parse?: (value: any) => TFieldValue;
 };
 
 // export type InferFieldValue<TFieldOptions extends FieldOptions> =

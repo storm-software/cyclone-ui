@@ -29,10 +29,12 @@ export default getStormConfig({
     "operator-linebreak": 0,
     "indent": 0,
     "function-paren-newline": 0,
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    "react/display-name": 0
   },
   markdown: false,
   react: true,
-  tsConfigType: "base",
-  useUnicorn: true
+  typescriptEslintConfigType: "base",
+  useUnicorn: false,
+  logLevel: "all"
 });

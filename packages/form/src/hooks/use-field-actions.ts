@@ -179,28 +179,33 @@ export const useFieldActions = <
             set(fieldApi.atom.touched, touch);
           }
 
+          const options = get(fieldApi.atom.options);
           const value = get(fieldApi.atom.value);
-          if (nextValue !== value) {
-            const options = get(fieldApi.atom.options);
 
-            set(fieldApi.atom.value, nextValue);
+          let nextParsed = nextValue as TFieldValue;
+          if (options.parse) {
+            nextParsed = options.parse(nextValue) as TFieldValue;
+          }
+
+          if (nextParsed !== value) {
+            set(fieldApi.atom.value, nextParsed);
             set(fieldApi.atom.previousValue, value);
 
             const promises = [] as Promise<void>[];
             if (options.onChange) {
-              promises.push(Promise.resolve(options.onChange(nextValue)));
+              promises.push(Promise.resolve(options.onChange(nextParsed)));
             }
 
-            promises.push(validate(nextValue, ValidationCause.CHANGE));
+            promises.push(validate(nextParsed, ValidationCause.CHANGE));
 
             const blurred = get(fieldApi.atom.blurred);
             if (blurred) {
-              promises.push(validate(nextValue, ValidationCause.BLUR));
+              promises.push(validate(nextParsed, ValidationCause.BLUR));
             }
 
             const submitAttempts = get(formStore.api.atom.submitAttempts);
             if (submitAttempts > 0) {
-              promises.push(validate(nextValue, ValidationCause.SUBMIT));
+              promises.push(validate(nextParsed, ValidationCause.SUBMIT));
             }
 
             await Promise.all(promises);

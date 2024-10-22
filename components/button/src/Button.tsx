@@ -157,7 +157,7 @@ const ButtonFrame = styled(View, {
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "$slow",
+  animation: "slow",
   borderWidth: 1,
 
   backgroundColor: "$background",
@@ -307,11 +307,13 @@ const ButtonFrame = styled(View, {
     disabled: {
       true: {
         opacity: 0.4,
-        borderColor: "$disabled"
+        borderColor: "$disabled",
+        cursor: "not-allowed"
       },
       false: {
         opacity: 1,
-        borderColor: "$borderColor"
+        borderColor: "$borderColor",
+        cursor: "pointer"
       }
     },
 
@@ -363,7 +365,7 @@ const ButtonText = styled(SizableText, {
   userSelect: "none",
   fontFamily: "$label",
   fontWeight: "$6",
-  animation: "$slow",
+  animation: "slow",
 
   variants: {
     unstyled: {
@@ -477,7 +479,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   backgroundColor: "transparent",
   borderColor: "transparent",
   borderRadius: "$4",
-  animation: "$slow",
+  animation: "slow",
   borderWidth: 2,
   opacity: 0.6,
 
@@ -500,7 +502,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
 
   backgroundColor: "transparent",
   borderRadius: "$4",
-  animation: "$slow",
+  animation: "slow",
   overflow: "hidden",
   opacity: 0.5,
   colors: ["$muted", "$primary"],
