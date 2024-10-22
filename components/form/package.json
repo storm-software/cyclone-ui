@@ -1,0 +1,50 @@
+{
+  "name": "@cyclone-ui/form",
+  "version": "0.5.0",
+  "type": "module",
+  "description": "A Next Button component meant to be shared in many other components",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/form"
+  },
+  "private": false,
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
+  "peerDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
+  },
+  "dependencies": {
+    "@tamagui/core": "^1.110.5",
+    "@tamagui/stacks": "^1.110.5"
+  },
+  "devDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx"
+}

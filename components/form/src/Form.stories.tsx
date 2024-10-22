@@ -15,56 +15,45 @@
 
  -------------------------------------------------------------------*/
 
-import { Form } from "@cyclone-ui/form";
-import { Field } from "@cyclone-ui/form-state";
 import type { Meta, StoryObj } from "@storybook/react";
-import { XStack } from "@tamagui/stacks";
-import { Checkbox } from "./Checkbox";
+import { Form } from "./Form";
 
-const meta: Meta<typeof Checkbox> = {
-  title: "Base/Checkbox",
-  component: Checkbox,
+const meta: Meta<typeof Form> = {
+  title: "Base/Form",
+  component: Form,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ inputName: false }}>
-      <Field name="inputName" {...props}>
-        <XStack gap="$3" alignContent="center" verticalAlign="center">
-          <Checkbox />
-          <Field.Label paddingBottom={0}>
-            This is an example label message for a checkbox
-          </Field.Label>
-        </XStack>
-        <Field.Details>
-          This is an example detailed message for a checkbox
-        </Field.Details>
-      </Field>
-    </Form>
-  )
-} satisfies Meta<typeof Checkbox>;
+  render: (args: any) => <Form {...args} />
+} satisfies Meta<typeof Form>;
 
 export default meta;
 
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<typeof Form>;
 
 export const Base: Story = {
   args: {}
 };
 
-export const Required: Story = {
+export const Small: Story = {
   args: {
-    required: true
+    size: "small"
   }
 };
 
-export const Disabled: Story = {
+export const Large: Story = {
   args: {
-    disabled: true
+    size: "large"
   }
 };
 
-export const DefaultValue: Story = {
+export const Brand: Story = {
   args: {
-    defaultValue: true
+    theme: "brand"
+  }
+};
+
+export const Alternate: Story = {
+  args: {
+    theme: "alternate"
   }
 };
 

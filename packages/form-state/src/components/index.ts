@@ -17,6 +17,5 @@
 
 export * from "./Field";
 export * from "./FieldIcon";
-export * from "./Form";
 export * from "./Label";
 export * from "./ValidationMessage";

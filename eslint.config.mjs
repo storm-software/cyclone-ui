@@ -30,7 +30,8 @@ export default getStormConfig({
     "indent": 0,
     "function-paren-newline": 0,
     "space-before-function-paren": 0,
-    "react/display-name": 0
+    "react/display-name": 0,
+    "react/react-in-jsx-scope": 0
   },
   markdown: false,
   react: true,
