@@ -1,11 +1,23 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Checkbox } from "@cyclone-ui/checkbox";
-import {
-  Field,
-  FieldThemeIcon,
-  Label,
-  LabelProps,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+import { Field, FieldThemeIcon } from "@cyclone-ui/field";
+import { useFieldStore } from "@cyclone-ui/form-state";
 import { withStaticProperties } from "@tamagui/core";
 import { XStack, XStackProps } from "@tamagui/stacks";
 import { forwardRef } from "react";
@@ -40,10 +52,7 @@ const InnerCheckboxFieldLabel = forwardRef<typeof XStack, XStackProps>(
   }
 );
 
-export const CheckboxFieldLabel = forwardRef<
-  typeof Label,
-  Omit<LabelProps, "htmlFor">
->((props, forwardedRef) => {
+export const CheckboxFieldLabel = Field.Label.styled((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (

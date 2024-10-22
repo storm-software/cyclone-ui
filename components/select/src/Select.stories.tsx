@@ -15,8 +15,8 @@
 
  -------------------------------------------------------------------*/
 
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { Field } from "@cyclone-ui/form-state";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "./Select";
 

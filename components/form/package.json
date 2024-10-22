@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5"
+    "@tamagui/helpers": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",

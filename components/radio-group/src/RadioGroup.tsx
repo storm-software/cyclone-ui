@@ -1,7 +1,23 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { BodyText } from "@cyclone-ui/body-text";
 import {
   FieldThemeIcon,
-  Label,
   useFieldActions,
   useFieldStore
 } from "@cyclone-ui/form-state";
@@ -17,6 +33,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { getFontSized } from "@tamagui/get-font-sized";
+import { Label } from "@tamagui/label";
 import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { SizeVariantSpreadFunction } from "@tamagui/web";
@@ -75,9 +92,15 @@ const RadioGroupItemLabel = styled(Label, {
   name: RADIO_GROUP_NAME,
   context: RadioGroupContext,
 
+  tag: "label",
+  cursor: "pointer",
   animation: "100ms",
   color: "$base10",
+  fontFamily: "$label",
+  fontSize: "$true",
   fontWeight: "$3",
+  wordWrap: "break-word",
+  verticalAlign: "middle",
 
   variants: {
     selected: {
@@ -228,7 +251,7 @@ const BaseRadioGroupItem = styled(TamaguiRadioGroup.Item, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false
   }
 });
@@ -351,7 +374,7 @@ const RadioGroupItemContainer = styled(XStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false
   }
 });
@@ -369,7 +392,7 @@ const RadioGroupItem = RadioGroupItemContainer.styleable<
 
   const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
   const disabled = useMemo(
-    () => !!(fieldDisabled || rest.disabled),
+    () => Boolean(fieldDisabled || rest.disabled),
     [fieldDisabled, rest.disabled]
   );
 

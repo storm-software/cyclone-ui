@@ -16,26 +16,30 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { ColorRole } from "@cyclone-ui/colors";
+import {
+  FieldProvider,
+  FieldProviderOptions,
+  FieldThemeIcon,
+  useFieldStore,
+  ValidationMessage,
+  Validator
+} from "@cyclone-ui/form-state";
+import { LabelText } from "@cyclone-ui/label-text";
 import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
 import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
   isWeb,
   styled,
+  View,
   withStaticProperties
 } from "@tamagui/core";
-import { ThemeableStack, YStack } from "@tamagui/stacks";
+import { Label as TamaguiLabel } from "@tamagui/label";
+import { Asterisk } from "@tamagui/lucide-icons";
+import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import { Theme } from "@tamagui/web";
-import { ForwardedRef, forwardRef } from "react";
-import { useFieldStore } from "../hooks/use-field-store";
-import {
-  FieldProvider,
-  FieldProviderOptions
-} from "../providers/FieldStoreProvider";
-import { Validator } from "../types";
-import { FieldThemeIcon } from "./FieldIcon";
-import { Label, LabelProps } from "./Label";
-import { ValidationMessage } from "./ValidationMessage";
+import { ForwardedRef, forwardRef, useMemo } from "react";
 
 export const FieldContext = createStyledContext<{
   size: FontSizeTokens;
@@ -269,25 +273,142 @@ const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
   );
 });
 
-export const FieldLabel = forwardRef<typeof Label, Omit<LabelProps, "htmlFor">>(
-  (props, forwardedRef) => {
-    const { children, ...rest } = props;
-    const store = useFieldStore();
+const LABEL_NAME = "Label";
 
-    return (
-      <Label
-        ref={forwardedRef as ForwardedRef<any>}
-        pb="$0.5"
-        {...rest}
-        htmlFor={store.get.name()}
-        disabled={!!store.get.disabled()}
-        required={!!store.get.required()}
-        focused={!!store.get.focused()}>
-        {children}
-      </Label>
-    );
+const StyledLabelText = styled(LabelText, {
+  name: LABEL_NAME,
+
+  tag: "label",
+  animation: "100ms",
+  cursor: "pointer",
+  color: "$primary",
+  fontFamily: "$label",
+  fontSize: "$true",
+  fontWeight: "$true",
+  wordWrap: "break-word",
+  verticalAlign: "middle",
+
+  hoverStyle: {
+    color: "$colorHover"
+  },
+
+  variants: {
+    focused: {
+      true: {
+        color: "$colorFocus"
+      }
+    },
+
+    disabled: {
+      true: {
+        color: "$disabled",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$disabled"
+        }
+      },
+      false: {
+        cursor: "pointer"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    focused: false,
+    disabled: false
   }
-);
+});
+
+const LabelXStack = styled(XStack, {
+  name: LABEL_NAME,
+
+  cursor: "pointer",
+  gap: "$1.2",
+  flex: 1,
+
+  variants: {
+    disabled: {
+      true: {
+        cursor: "not-allowed"
+      },
+      false: {
+        cursor: "pointer"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    disabled: false
+  }
+});
+
+export const FieldLabelText = StyledLabelText.styled<{
+  required?: boolean;
+  disabled?: boolean;
+  focused?: boolean;
+  htmlFor: string;
+}>((props, forwardedRef) => {
+  const { children, required, htmlFor, ...rest } = props;
+
+  const store = useFieldStore();
+  const fieldDisabled = store.get.disabled();
+
+  const disabled = useMemo(
+    () => Boolean(fieldDisabled || props.disabled),
+    [fieldDisabled, props.disabled]
+  );
+  const focused = useMemo(
+    () => Boolean(disabled ? false : props.focused),
+    [disabled, props.focused]
+  );
+
+  return (
+    <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
+      <LabelXStack disabled={disabled}>
+        <StyledLabelText
+          {...rest}
+          focused={focused}
+          disabled={disabled}
+          theme={ColorRole.BASE}>
+          {children}
+        </StyledLabelText>
+        {required && (
+          <View position="relative">
+            <Asterisk
+              color="$error8"
+              size="$0.75"
+              position="absolute"
+              top={-5}
+            />
+          </View>
+        )}
+      </LabelXStack>
+    </TamaguiLabel>
+  );
+});
+
+export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
+
+export const FieldLabel = StyledLabelText.styled((props, forwardedRef) => {
+  const { children, ...rest } = props;
+  const store = useFieldStore();
+
+  return (
+    <FieldLabelText
+      ref={forwardedRef as ForwardedRef<any>}
+      pb="$0.5"
+      htmlFor={store.get.name()}
+      {...rest}
+      disabled={!!store.get.disabled()}
+      required={!!store.get.required()}
+      focused={!!store.get.focused()}>
+      {children}
+    </FieldLabelText>
+  );
+});
+
+export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
 export const FieldFieldThemeIcon = forwardRef<
   typeof FieldThemeIcon,

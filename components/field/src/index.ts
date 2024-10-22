@@ -15,5 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./FieldIcon";
-export * from "./ValidationMessage";
+export * from "./Field";

@@ -273,6 +273,7 @@
       "@cyclone-ui/registry-worker": "workspace:*",
       "@cyclone-ui/select": "workspace:*",
       "@cyclone-ui/select-field": "workspace:*",
+      "@cyclone-ui/field": "workspace:*",
       "@cyclone-ui/steps": "workspace:*",
       "@cyclone-ui/storybook": "workspace:*",
       "@cyclone-ui/table": "workspace:*",
@@ -287,6 +288,7 @@
       "@cyclone-ui/next-button": "workspace:*",
       "@cyclone-ui/previous-button": "workspace:*",
       "@cyclone-ui/form-state": "workspace:*",
+      "@cyclone-ui/form": "workspace:*",
       "@cyclone-ui/state": "workspace:*",
       "@cyclone-ui/spinner": "workspace:*",
       "@cyclone-ui/themeable-icon": "workspace:*"
