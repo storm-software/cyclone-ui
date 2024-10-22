@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# form
+# Form State Management
 
 A form state management library used by Storm Software
 
@@ -70,14 +70,14 @@ A form state management library used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/form
+pnpm add -D @cyclone-ui/form-state
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/form
+npm install -D @cyclone-ui/form-state
 ```
 
 </details>
@@ -86,7 +86,7 @@ npm install -D @cyclone-ui/form
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/form
+yarn add -D @cyclone-ui/form-state
 ```
 
 </details>

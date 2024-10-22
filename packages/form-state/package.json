@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/form",
+  "name": "@cyclone-ui/form-state",
   "version": "0.9.0",
   "type": "module",
   "description": "A state management package used to handle state in Storm Software applications.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "packages/form"
+    "directory": "packages/form-state"
   },
   "private": false,
   "keywords": [

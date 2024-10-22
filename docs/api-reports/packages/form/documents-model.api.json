@@ -161,20 +161,20 @@
     }
   },
   "kind": "Package",
-  "canonicalReference": "@cyclone-ui/form!",
+  "canonicalReference": "@cyclone-ui/form-state!",
   "docComment": "",
-  "name": "@cyclone-ui/form",
+  "name": "@cyclone-ui/form-state",
   "preserveMemberOrder": false,
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "@cyclone-ui/form!",
+      "canonicalReference": "@cyclone-ui/form-state!",
       "name": "",
       "preserveMemberOrder": false,
       "members": [
         {
           "kind": "Function",
-          "canonicalReference": "@cyclone-ui/form!createFormFactory:function(1)",
+          "canonicalReference": "@cyclone-ui/form-state!createFormFactory:function(1)",
           "docComment": "",
           "excerptTokens": [
             {
@@ -270,7 +270,7 @@
         },
         {
           "kind": "Variable",
-          "canonicalReference": "@cyclone-ui/form!DEFAULT_FORM_OPTIONS:var",
+          "canonicalReference": "@cyclone-ui/form-state!DEFAULT_FORM_OPTIONS:var",
           "docComment": "",
           "excerptTokens": [
             {
@@ -293,7 +293,7 @@
         },
         {
           "kind": "Function",
-          "canonicalReference": "@cyclone-ui/form!useForm:function(1)",
+          "canonicalReference": "@cyclone-ui/form-state!useForm:function(1)",
           "docComment": "/**\n * A hook that creates a form and provides a way to interact with it.\n *\n * @param factory - The factory to use to create the form\n *\n * @param state - The current state of the form - more details can be found in the [React documentation](https://react.dev/reference/react/useActionState)\n *\n * @param options - The options to use when creating the form\n *\n * @returns The [form API](https://tanstack.com/form/latest/docs/reference/formApi) to interact with the form\n */\n",
           "excerptTokens": [
             {

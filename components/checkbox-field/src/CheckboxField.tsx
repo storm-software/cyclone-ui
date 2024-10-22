@@ -5,7 +5,7 @@ import {
   Label,
   LabelProps,
   useFieldStore
-} from "@cyclone-ui/form";
+} from "@cyclone-ui/form-state";
 import { withStaticProperties } from "@tamagui/core";
 import { XStack, XStackProps } from "@tamagui/stacks";
 import { forwardRef } from "react";

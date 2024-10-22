@@ -1,17 +1,17 @@
 {
-  "name": "form",
+  "name": "form-state",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/form/src",
+  "sourceRoot": "packages/form-state/src",
   "targets": {
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "entry": "packages/form/src/index.ts",
-        "outputPath": "dist/packages/form",
-        "tsConfig": "packages/form/tsconfig.json",
-        "project": "packages/form/package.json",
+        "entry": "packages/form-state/src/index.ts",
+        "outputPath": "dist/packages/form-state",
+        "tsConfig": "packages/form-state/tsconfig.json",
+        "project": "packages/form-state/package.json",
         "defaultConfiguration": "production",
         "platform": "browser"
       },
