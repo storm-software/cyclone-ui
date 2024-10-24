@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/create-context": "^1.116.6",
     "@tamagui/web": "^1.110.5",
     "react-native-svg": "^15.2.0"
   },
