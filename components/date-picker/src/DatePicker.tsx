@@ -1,9 +1,25 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import type {
   DatePickerProviderProps,
   DPDay,
@@ -18,8 +34,7 @@ import { AnimatePresence } from "@tamagui/animate-presence";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import { createStyledContext, styled, useThemeName, View } from "@tamagui/core";
-import { withStaticProperties } from "@tamagui/helpers";
-import { Calendar, ChevronLeft, ChevronRight, X } from "@tamagui/lucide-icons";
+import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
@@ -92,7 +107,7 @@ export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 
 /** Rehookify internally return `onClick` and that's incompatible with native */
 const swapOnClick = <D extends any>(d: D) => {
-  //@ts-ignore
+  // @ts-ignore
   d.onPress = d.onClick;
   return d;
 };
@@ -124,7 +139,7 @@ export function useDateAnimation({
         setCurrentYearsSum(sumYears());
       }
     }
-  }, [years, sumYears, currentYearsSum]);
+  }, [years, sumYears, listenTo, currentYearsSum]);
 
   useEffect(() => {
     if (listenTo === "month") {
@@ -132,7 +147,7 @@ export function useDateAnimation({
         setCurrentMonth(calendar.month);
       }
     }
-  }, [calendarListenTo, currentMonth]);
+  }, [listenTo, currentMonth]);
 
   useEffect(() => {
     if (listenTo === "year") {
@@ -140,7 +155,7 @@ export function useDateAnimation({
         setCurrentYear(calendar?.year);
       }
     }
-  }, [calendarListenTo, currentYear]);
+  }, [listenTo, currentYear]);
 
   const prevNextAnimation = useCallback(() => {
     if (listenTo === "years") {
@@ -156,8 +171,10 @@ export function useDateAnimation({
       if (currentMonth === null) {
         return { enterStyle: { opacity: 0 } };
       }
-      const newDate = new Date(`${calendarListenTo} 1, ${calendar?.year}`);
-      const currentDate = new Date(`${currentMonth} 1, ${calendar?.year}`);
+
+      const isPreviousDate =
+        new Date(`${calendarListenTo} 1, ${calendar?.year}`) <
+        new Date(`${currentMonth} 1, ${calendar?.year}`);
 
       if (currentMonth === "December" && calendar?.month === "January") {
         return {
@@ -172,8 +189,8 @@ export function useDateAnimation({
         };
       }
       return {
-        enterStyle: { opacity: 0, x: newDate < currentDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: newDate < currentDate ? -15 : 15 }
+        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
+        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
       };
     }
 
@@ -181,12 +198,14 @@ export function useDateAnimation({
       if (currentYear === null) {
         return { enterStyle: { opacity: 0 } };
       }
-      const newDate = new Date(`${calendar?.month} 1, ${calendar?.year}`);
-      const currentDate = new Date(`${calendar?.month} 1, ${currentYear}`);
+
+      const isPreviousDate =
+        new Date(`${calendar?.month} 1, ${calendar?.year}`) <
+        new Date(`${calendar?.month} 1, ${currentYear}`);
 
       return {
-        enterStyle: { opacity: 0, x: newDate < currentDate ? -15 : 15 },
-        exitStyle: { opacity: 0, x: newDate < currentDate ? -15 : 15 }
+        enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
+        exitStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 }
       };
     }
 
@@ -597,8 +616,6 @@ const DatePickerPopoverBody = () => {
 };
 
 export const DatePickerControl = Input.styleable((props, ref) => {
-  const { size, ...rest } = props;
-
   const store = useFieldStore<Date>();
   const { focus, change } = useFieldActions();
 
@@ -610,9 +627,9 @@ export const DatePickerControl = Input.styleable((props, ref) => {
       <Input
         ref={ref}
         placeholder={DEFAULT_DATE_FORMAT}
-        {...rest}
-        onChangeText={change}>
-        {value ? (
+        {...props}
+        onChange={change}>
+        {/* value ? (
           <Input.Icon onPress={reset}>
             <X />
           </Input.Icon>
@@ -620,7 +637,7 @@ export const DatePickerControl = Input.styleable((props, ref) => {
           <Input.Icon onPress={focus}>
             <Calendar />
           </Input.Icon>
-        )}
+        ) */}
       </Input>
     </Popover.Trigger>
   );
@@ -718,7 +735,7 @@ const DatePickerGroup = ({ children, ...props }: PropsWithChildren) => {
   );
 };
 
-const DatePickerControlImpl = DatePickerControl.styleable(
+export const DatePicker = DatePickerControl.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <DatePickerGroup>
@@ -751,6 +768,6 @@ const DatePickerControlImpl = DatePickerControl.styleable(
   }
 );
 
-export const DatePicker = withStaticProperties(DatePickerControlImpl, {
-  Icon: ThemedIcon
-});
+// export const DatePicker = withStaticProperties(DatePickerControlImpl, {
+//   Icon: ThemedIcon
+// });

@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import { View } from "@tamagui/core";
@@ -351,7 +368,7 @@ const ButtonFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false,
     outlined: false,
     circular: false
@@ -432,7 +449,7 @@ const ButtonText = styled(SizableText, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false
   }
 });
@@ -452,15 +469,14 @@ const ButtonIcon = ButtonIconFrame.styleable(
       <ButtonIconFrame
         ref={forwardedRef}
         color={
-          color
-            ? color
-            : variant === "secondary"
-              ? "$primary"
-              : variant === "glass" || variant === "ghost"
-                ? "$fg"
-                : variant === "link"
-                  ? "$borderColor"
-                  : "$color"
+          color ||
+          (variant === "secondary"
+            ? "$primary"
+            : variant === "glass" || variant === "ghost"
+              ? "$fg"
+              : variant === "link"
+                ? "$borderColor"
+                : "$color")
         }
         size={size as FontSizeTokens}
         {...props}>
@@ -600,7 +616,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           <ButtonFrame
             ref={forwardedRef}
             {...rest}
-            onPress={onPress ? onPress : onClick}
+            onPress={onPress || onClick}
             circular={circular}
             variant={variant}
             disabled={disabled}

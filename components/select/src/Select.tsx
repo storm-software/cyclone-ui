@@ -1,11 +1,22 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
-import {
-  FieldIcon,
-  FieldThemeIcon,
-  useFieldActions,
-  useFieldStore
-} from "@cyclone-ui/form-state";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
@@ -14,31 +25,36 @@ import {
   createStyledContext,
   styled,
   Theme,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { getFontSized } from "@tamagui/get-font-sized";
-import { getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
-import { XStack, YStack } from "@tamagui/stacks";
-import type { GetProps, SizeVariantSpreadFunction } from "@tamagui/web";
-import { forwardRef, useCallback, useLayoutEffect, useMemo } from "react";
+import { YStack } from "@tamagui/stacks";
 
 const defaultContextValues = {
   size: "$true",
   color: undefined,
-  hideIcons: true
+  hideIcons: true,
+  disabled: false,
+  focused: false
 } as const;
 
-export const SelectContext = createStyledContext<{
+export type SelectContextProps = {
+  name?: string;
   size: FontSizeTokens;
   color?: ColorTokens | string;
-  hideIcons: boolean;
-}>(defaultContextValues);
+  hideIcons?: boolean;
+  disabled: boolean;
+  focused: boolean;
+};
+
+export const SelectContext =
+  createStyledContext<SelectContextProps>(defaultContextValues);
 
 export const defaultSelectGroupStyles = {
   size: "$true",
@@ -96,10 +112,6 @@ const SelectGroupFrame = styled(XGroup, {
       }
     },
 
-    required: {
-      true: {}
-    },
-
     disabled: {
       true: {
         color: "$disabled",
@@ -132,7 +144,7 @@ const SelectGroupFrame = styled(XGroup, {
       }
     },
 
-    open: {
+    focused: {
       true: {
         outlineColor: "$accent10",
         outlineWidth: 2,
@@ -144,37 +156,11 @@ const SelectGroupFrame = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    required: false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false,
-    open: false
+    focused: false
   }
 });
-
-export const selectSizeVariant: SizeVariantSpreadFunction<any> = (
-  val = "$true",
-  extras
-) => {
-  const radiusToken =
-    extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
-  const paddingHorizontal = getSpace(val, {
-    shift: -2,
-    bounds: [2]
-  });
-
-  const fontStyle = getFontSized(val as any, extras);
-  // lineHeight messes up select on native
-  if (!isWeb && fontStyle) {
-    delete fontStyle["lineHeight"];
-  }
-
-  return {
-    ...fontStyle,
-    height: val,
-    borderRadius: extras.props.circular ? 100_000 : radiusToken,
-    paddingHorizontal
-  };
-};
 
 const SelectTrigger = styled(TamaguiSelect.Trigger, {
   name: SELECT_NAME,
@@ -200,6 +186,9 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   outlineColor: "transparent",
   outlineStyle: "none",
   paddingHorizontal: "$2",
+  flexDirection: "row",
+  alignItems: "center",
+  width: "100%",
 
   variants: {
     scaleIcon: {
@@ -239,69 +228,6 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
     required: false,
     disabled: false
   }
-});
-
-const SelectValueFrame = styled(TamaguiSelect.Value, {
-  name: SELECT_NAME,
-  context: SelectContext,
-
-  fontFamily: "$body",
-  fontSize: "$true",
-  fontWeight: "$true",
-  color: "$fg",
-  backgroundColor: "transparent",
-  flexGrow: 1,
-  marginHorizontal: "$1.75",
-
-  hoverStyle: {
-    backgroundColor: "transparent"
-  },
-
-  focusStyle: {
-    backgroundColor: "transparent"
-  },
-
-  variants: {
-    placeholding: {
-      true: {
-        color: "$placeholderColor"
-      }
-    },
-
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "$disabled"
-      },
-      false: {
-        cursor: "pointer"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false,
-    placeholding: false
-  }
-});
-
-const SelectValue = SelectValueFrame.styleable<{
-  placeholder?: string;
-}>(({ children, ...props }, ref) => {
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-
-  return (
-    <SelectValueFrame
-      id={store.get.name()}
-      ref={ref}
-      size={0}
-      {...props}
-      disabled={disabled}
-      placeholding={!store.get.value() && !disabled}>
-      {children}
-    </SelectValueFrame>
-  );
 });
 
 const SelectItemFrame = styled(TamaguiSelect.Item, {
@@ -384,60 +310,99 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   }
 });
 
-export const SelectItem = forwardRef<
-  typeof TamaguiSelect.Item,
-  GetProps<typeof TamaguiSelect.Item> & Partial<Omit<SelectOption, "name">>
->((props, forwardedRef) => {
-  const { children, value, ...rest } = props;
+const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
+  ({ children, value, selected, disabled, ...props }, forwardedRef) => {
+    return (
+      <SelectItemFrame
+        {...props}
+        group={true}
+        ref={forwardedRef}
+        value={String(value)}
+        textValue={String(value)}
+        selected={selected}
+        disabled={disabled}>
+        <SelectItemTextFrame
+          selected={selected}
+          disabled={disabled}
+          $group-hover={{
+            color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
+          }}>
+          {children}
+        </SelectItemTextFrame>
+        <TamaguiSelect.ItemIndicator marginLeft="auto">
+          <Theme name={ColorRole.ACCENT}>
+            <Check size="$2" color="$color" />
+          </Theme>
+        </TamaguiSelect.ItemIndicator>
+      </SelectItemFrame>
+    );
+  }
+);
 
-  const store = useFieldStore();
-  const setItems = store.set.items();
+const SelectValueFrame = styled(TamaguiSelect.Value, {
+  name: SELECT_NAME,
+  context: SelectContext,
 
-  const fieldValue = store.get.value();
-  const fieldDisabled = store.get.disabled();
+  fontFamily: "$body",
+  fontSize: "$true",
+  fontWeight: "$true",
+  color: "$fg",
+  backgroundColor: "transparent",
+  flexGrow: 1,
+  marginHorizontal: "$1.75",
 
-  const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
-  const disabled = useMemo(
-    () => !!(fieldDisabled || props.disabled),
-    [fieldDisabled, props.disabled]
-  );
+  hoverStyle: {
+    backgroundColor: "transparent"
+  },
 
-  useLayoutEffect(() => {
-    setItems(prev => [
-      ...prev.filter(item => item.value !== value),
-      { name: children, value, disabled: disabled, selected } as SelectOption
-    ]);
-  }, [disabled, value, selected]);
+  focusStyle: {
+    backgroundColor: "transparent"
+  },
+
+  variants: {
+    placeholding: {
+      true: {
+        color: "$placeholderColor"
+      }
+    },
+
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        color: "$disabled"
+      },
+      false: {
+        cursor: "pointer"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    disabled: false,
+    placeholding: false
+  }
+});
+
+const SelectValue = SelectValueFrame.styleable<{
+  placeholder?: string;
+}>(({ children, placeholding, ...props }, forwardedRef) => {
+  const { disabled, name } = SelectContext.useStyledContext();
 
   return (
-    <SelectItemFrame
-      {...rest}
-      group={true}
+    <SelectValueFrame
+      id={name}
       ref={forwardedRef}
-      value={String(value)}
-      textValue={String(value)}
-      selected={selected}
-      disabled={disabled}>
-      <SelectItemTextFrame
-        selected={selected}
-        disabled={disabled}
-        $group-hover={{
-          color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
-        }}>
-        {children}
-      </SelectItemTextFrame>
-      <TamaguiSelect.ItemIndicator marginLeft="auto">
-        <Theme name={ColorRole.ACCENT}>
-          <Check size="$2" color="$color" />
-        </Theme>
-      </TamaguiSelect.ItemIndicator>
-    </SelectItemFrame>
+      size={0}
+      {...props}
+      disabled={disabled}
+      placeholding={placeholding && !disabled}>
+      {children}
+    </SelectValueFrame>
   );
 });
 
 const BaseSelect = styled(TamaguiSelect, {
   name: SELECT_NAME,
-
   context: SelectContext,
 
   justifyContent: "center",
@@ -460,66 +425,79 @@ const BaseSelect = styled(TamaguiSelect, {
   }
 });
 
-export type SelectExtraProps = {
-  onOpen?: () => any;
-  onClose?: () => any;
-  placeholder?: string;
-};
+const SelectButtonIcon = styled(Button.Icon, {
+  name: SELECT_NAME,
+  context: SelectContext,
 
-const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
-  const { size } = SelectContext.useStyledContext();
-  const { children, onOpen, onClose, placeholder, ...rest } = props;
+  animation: "slow",
 
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-  const validating = store.get.validating();
-  const value = store.get.value();
-  const focused = store.get.focused();
-  const required = store.get.required();
-
-  const { change, blur, focus } = useFieldActions();
-  const handleOpenChange = useCallback(
-    (next: boolean) => {
-      if (next) {
-        focus();
-        onOpen?.();
-      } else {
-        blur();
-        onClose?.();
+  variants: {
+    focused: {
+      true: {
+        rotate: "180deg"
+      },
+      false: {
+        rotate: "0deg"
       }
-    },
-    [focus, blur, onOpen, onClose]
-  );
+    }
+  } as const,
 
+  defaultVariants: {
+    focused: false
+  }
+});
+
+const SelectButton = Button.styleable<{ rotateOnFocused?: boolean }>(
+  ({ children, rotateOnFocused = true, ...props }, forwardedRef) => {
+    const { color, focused, disabled } = SelectContext.useStyledContext();
+    const theme = useThemeName();
+
+    return (
+      <Button
+        ref={forwardedRef}
+        theme={theme}
+        variant="ghost"
+        circular={true}
+        disabled={false}
+        padding="$2"
+        {...props}
+        color={
+          color ||
+          (disabled
+            ? "$disabled"
+            : theme.toLowerCase().includes(ColorRole.BASE)
+              ? "$base9"
+              : "$primary")
+        }>
+        <SelectButtonIcon focused={rotateOnFocused ? focused : false}>
+          {children ?? <ChevronDown />}
+        </SelectButtonIcon>
+      </Button>
+    );
+  }
+);
+
+const SelectGroup = BaseSelect.styleable<Partial<SelectContextProps>>(
+  ({ name, disabled, focused, children, ...props }, forwardedRef) => {
+    return (
+      <SelectGroupFrame focused={focused} disabled={disabled}>
+        <BaseSelect
+          id={name}
+          ref={forwardedRef}
+          disablePreventBodyScroll={true}
+          {...props}
+          open={focused}
+          disabled={disabled}>
+          {children}
+        </BaseSelect>
+      </SelectGroupFrame>
+    );
+  }
+);
+
+const SelectItems = View.styleable(({ children, ...props }, forwardedRef) => {
   return (
-    <BaseSelect
-      id={store.get.name()}
-      ref={ref}
-      size={size}
-      disablePreventBodyScroll={true}
-      {...rest}
-      onOpenChange={handleOpenChange}
-      onValueChange={change}
-      open={focused}
-      value={String(value ?? "")}
-      defaultValue={String(store.get.initialValue() ?? "")}
-      disabled={disabled}>
-      <SelectTrigger disabled={disabled}>
-        <XStack alignItems="center" width="100%">
-          {!disabled && <FieldThemeIcon />}
-          <SelectValue placeholder={placeholder} />
-
-          {(disabled || validating) && <FieldThemeIcon />}
-          {!disabled && (
-            <SelectIconChevron open={focused}>
-              <FieldIcon>
-                <ChevronDown />
-              </FieldIcon>
-            </SelectIconChevron>
-          )}
-        </XStack>
-      </SelectTrigger>
-
+    <View ref={forwardedRef} flex={1} {...props}>
       <Adapt when={"sm" as any} platform="touch">
         <Sheet
           modal
@@ -569,12 +547,7 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
           enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
           exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
           minWidth={200}>
-          <TamaguiSelect.Group>
-            {!required && (
-              <SelectItem key={-1} index={-1} value={null as any}></SelectItem>
-            )}
-            {children}
-          </TamaguiSelect.Group>
+          <TamaguiSelect.Group>{children}</TamaguiSelect.Group>
         </TamaguiSelect.Viewport>
 
         <TamaguiSelect.ScrollDownButton
@@ -596,52 +569,16 @@ const BaseSelectImpl = BaseSelect.styleable<SelectExtraProps>((props, ref) => {
           />
         </TamaguiSelect.ScrollDownButton>
       </TamaguiSelect.Content>
-    </BaseSelect>
+    </View>
   );
 });
 
-const SelectIconChevron = styled(View, {
-  name: SELECT_NAME,
-  context: SelectContext,
-
-  marginRight: 0,
-  animation: "slow",
-
-  variants: {
-    open: {
-      true: {
-        rotate: "180deg"
-      },
-      false: {
-        rotate: "0deg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    open: false
-  }
-});
-
-const SelectGroupImpl = BaseSelectImpl.styleable<SelectExtraProps>(
-  (props, forwardedRef) => {
-    const { children, ...rest } = props;
-
-    const store = useFieldStore();
-    const focused = store.get.focused();
-    const disabled = store.get.disabled();
-
-    return (
-      <SelectGroupFrame open={focused} disabled={disabled}>
-        <BaseSelectImpl ref={forwardedRef} {...rest}>
-          {children}
-        </BaseSelectImpl>
-      </SelectGroupFrame>
-    );
-  }
-);
-
-export const Select = withStaticProperties(SelectGroupImpl, {
-  Icon: ThemedIcon,
-  Item: SelectItem
+export const Select = withStaticProperties(SelectGroup, {
+  Trigger: withStaticProperties(SelectTrigger, {
+    Value: SelectValue,
+    Button: SelectButton
+  }),
+  Items: withStaticProperties(SelectItems, {
+    Item: SelectItem
+  })
 });

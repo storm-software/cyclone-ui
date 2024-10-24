@@ -24,16 +24,19 @@ const meta: Meta<typeof RadioGroup> = {
   title: "Base/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ selectName: "" }}>
+  render: ({ defaultValue, ...props }: any) => (
+    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <RadioGroup width="500px">
           {options.map((option, i) => (
             <RadioGroup.Item
-              key={i}
+              key={option.value}
+              index={i}
               value={option.value}
-              description={option.description}>
+              description={option.description}
+              disabled={false}
+              selected={false}>
               {option.name}
             </RadioGroup.Item>
           ))}

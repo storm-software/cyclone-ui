@@ -1,8 +1,20 @@
-import {
-  FieldIcon,
-  FieldThemeIcon,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
@@ -11,19 +23,28 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { Input as TamaguiInput, XStack } from "tamagui";
+import { Input as TamaguiInput } from "tamagui";
 
 const defaultContextValues = {
   size: "$true",
   color: undefined,
-  hideIcons: false
+  hideIcons: false,
+  disabled: false,
+  focused: false,
+  required: false
 } as const;
 
-export const InputContext = createStyledContext<{
+export type InputContextProps = {
+  name?: string;
   size: FontSizeTokens;
   color?: ColorTokens | string;
   hideIcons: boolean;
-}>(defaultContextValues);
+  disabled: boolean;
+  focused: boolean;
+};
+
+export const InputContext =
+  createStyledContext<InputContextProps>(defaultContextValues);
 
 export const defaultInputGroupStyles = {
   size: "$1",
@@ -71,6 +92,7 @@ const InputGroupFrame = styled(XGroup, {
   justifyContent: "space-between",
   animation: "slow",
   height: "$4.5",
+  alignItems: "center",
 
   variants: {
     unstyled: {
@@ -81,10 +103,10 @@ const InputGroupFrame = styled(XGroup, {
       ":number": {} as any
     },
 
-    applyFocusStyle: {
+    focused: {
       ":boolean": (val, { props }) => {
         if (val) {
-          return props.focusStyle || defaultInputGroupStyles.focusStyle;
+          return props.focusStyle ?? defaultInputGroupStyles.focusStyle;
         }
 
         return {};
@@ -97,10 +119,6 @@ const InputGroupFrame = styled(XGroup, {
           borderRadius: tokens.radius[val]
         };
       }
-    },
-
-    required: {
-      true: {}
     },
 
     disabled: {
@@ -134,35 +152,10 @@ const InputGroupFrame = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    required: false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false
   }
 });
-
-// export const inputSizeVariant: SizeVariantSpreadFunction<any> = (
-//   val = "$true",
-//   extras
-// ) => {
-//   const radiusToken =
-//     extras.tokens.radius[val] ?? extras.tokens.radius["$true"];
-//   const paddingHorizontal = getSpace(val, {
-//     shift: -1,
-//     bounds: [2]
-//   });
-//   const fontStyle = getFontSized(val as any, extras);
-//   // lineHeight messes up input on native
-//   if (!isWeb && fontStyle) {
-//     delete fontStyle["lineHeight"];
-//   }
-
-//   return {
-//     ...fontStyle,
-//     height: val,
-//     borderRadius: extras.props.circular ? 100_000 : radiusToken,
-//     paddingHorizontal
-//   };
-// };
 
 const BaseInput = styled(TamaguiInput, {
   name: INPUT_NAME,
@@ -197,47 +190,34 @@ const BaseInput = styled(TamaguiInput, {
   }
 });
 
-const BaseInputImpl = BaseInput.styleable((props, forwardedRef) => {
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-  const formattedValue = store.get.formattedValue();
+const InputValue = BaseInput.styleable((props, forwardedRef) => {
+  const { disabled, name } = InputContext.useStyledContext();
 
   return (
     <BaseInput
-      id={store.get.name()}
+      id={name}
       ref={forwardedRef}
       size={0}
-      {...props}
-      value={formattedValue}
-      defaultValue={String(store.get.initialValue() ?? "")}
       disabled={disabled}
+      {...props}
     />
   );
 });
 
-const InputGroupImpl = BaseInputImpl.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
+const InputGroupImpl = InputGroupFrame.styleable<Partial<InputContextProps>>(
+  (props, forwardedRef) => {
+    const { children } = props;
 
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-  const validating = store.get.validating();
-
-  return (
-    <InputGroupFrame
-      applyFocusStyle={store.get.focused()}
-      disabled={disabled}
-      paddingHorizontal="$2">
-      <XStack alignItems="center" width="100%">
-        {!disabled && <FieldThemeIcon />}
-
-        <BaseInputImpl ref={forwardedRef} {...rest} />
-        {children}
-        {(disabled || validating) && <FieldThemeIcon />}
-      </XStack>
-    </InputGroupFrame>
-  );
-});
+    return (
+      <InputContext.Provider {...props}>
+        <InputGroupFrame ref={forwardedRef} paddingHorizontal="$2" {...props}>
+          {children}
+        </InputGroupFrame>
+      </InputContext.Provider>
+    );
+  }
+);
 
 export const Input = withStaticProperties(InputGroupImpl, {
-  Icon: FieldIcon
+  Value: InputValue
 });

@@ -15,20 +15,20 @@
 
  -------------------------------------------------------------------*/
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { Form } from "@cyclone-ui/form";
-import { Input } from "@cyclone-ui/input";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Field } from "./Field";
 
 const meta: Meta<typeof Field> = {
-  title: "Base/Field",
+  title: "Form/Field",
   component: Field,
   tags: ["autodocs"],
   render: (props: any) => (
     <Form name="formName" defaultValues={{ fieldName: "" }}>
       <Field name="fieldName" {...props}>
         <Field.Label>Label Text</Field.Label>
-        <Input placeholder="email@example.com" />
+        <BodyText>The form field can be added here</BodyText>
         <Field.Details>
           This is an example detailed message for an input
         </Field.Details>

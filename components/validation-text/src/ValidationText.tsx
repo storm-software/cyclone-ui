@@ -23,7 +23,7 @@ import { styled } from "@tamagui/core";
 import { Dot } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 
-const ValidationTextFrame = styled(BodyText, {
+const ValidationBodyText = styled(BodyText, {
   animation: "slow",
   marginTop: "$0.5",
 
@@ -75,7 +75,7 @@ const ValidationTextFrame = styled(BodyText, {
   } as const
 });
 
-export const ValidationText = ValidationTextFrame.styleable<{
+export const ValidationText = ValidationBodyText.styleable<{
   messages?: ValidationDetails[];
   theme?: string | null;
   disabled?: boolean;
@@ -86,9 +86,9 @@ export const ValidationText = ValidationTextFrame.styleable<{
   if ((messages.length === 1 && messages[0]?.message) || disabled) {
     const message = messages[0]?.message || "This field is disabled";
     return (
-      <ValidationTextFrame ref={forwardedRef} {...props} theme={theme}>
+      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
         {message}
-      </ValidationTextFrame>
+      </ValidationBodyText>
     );
   } else if (messages.length === 0) {
     return null;
@@ -105,19 +105,19 @@ export const ValidationText = ValidationTextFrame.styleable<{
 
   return (
     <YStack gap="$1">
-      <ValidationTextFrame ref={forwardedRef} {...props} theme={theme}>
+      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
         {heading}
-      </ValidationTextFrame>
+      </ValidationBodyText>
       {messages
         .filter(message => message.message)
         .map(message => (
-          <XStack gap="$1" alignItems="center">
+          <XStack key={message.message} gap="$1" alignItems="center">
             <ThemedIcon theme={theme}>
               <Dot />
             </ThemedIcon>
-            <ValidationTextFrame {...props} theme={theme}>
+            <ValidationBodyText {...props} theme={theme}>
               {message.message}
-            </ValidationTextFrame>
+            </ValidationBodyText>
           </XStack>
         ))}
     </YStack>

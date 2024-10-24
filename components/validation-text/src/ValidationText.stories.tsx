@@ -15,34 +15,35 @@
 
  -------------------------------------------------------------------*/
 
+import { MessageType } from "@storm-stack/types/utility-types/messages";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Form } from "./Form";
+import { ValidationText } from "./ValidationText";
 
-const meta: Meta<typeof Form> = {
-  title: "Base/Form",
-  component: Form,
+const meta: Meta<typeof ValidationText> = {
+  title: "Typography/ValidationText",
+  component: ValidationText,
   tags: ["autodocs"],
-  render: (args: any) => <Form {...args} />
-} satisfies Meta<typeof Form>;
+  render: (args: any) => (
+    <ValidationText
+      {...args}
+      messages={[
+        { type: MessageType.ERROR, message: "This is an example message" },
+        { type: MessageType.ERROR, message: "This is another example message" },
+        {
+          type: MessageType.ERROR,
+          message: "Finally, one last example message"
+        }
+      ]}
+    />
+  )
+} satisfies Meta<typeof ValidationText>;
 
 export default meta;
 
-type Story = StoryObj<typeof Form>;
+type Story = StoryObj<typeof ValidationText>;
 
 export const Base: Story = {
   args: {}
-};
-
-export const Small: Story = {
-  args: {
-    size: "small"
-  }
-};
-
-export const Large: Story = {
-  args: {
-    size: "large"
-  }
 };
 
 export const Brand: Story = {

@@ -24,11 +24,13 @@ const meta: Meta<typeof Input> = {
   title: "Base/Input",
   component: Input,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ inputName: "" }}>
+  render: ({ defaultValue, ...props }: any) => (
+    <Form name="formName" defaultValues={{ inputName: defaultValue }}>
       <Field name="inputName" {...props}>
         <Field.Label>Label Text</Field.Label>
-        <Input placeholder="email@example.com" />
+        <Input>
+          <Input.Value placeholder="email@example.com" />
+        </Input>
         <Field.Details>
           This is an example detailed message for an input
         </Field.Details>

@@ -23,21 +23,15 @@ const meta: Meta<typeof RadioGroupField> = {
   title: "Form/RadioGroupField",
   component: RadioGroupField,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ selectFieldName: "" }}>
-      <RadioGroupField name="selectFieldName" {...props} maxWidth="500px">
+  render: ({ defaultValue, ...props }: any) => (
+    <Form name="formName" defaultValues={{ selectFieldName: defaultValue }}>
+      <RadioGroupField
+        name="selectFieldName"
+        {...props}
+        items={items}
+        maxWidth="500px">
         <RadioGroupField.Label>Label Text</RadioGroupField.Label>
-        <RadioGroupField.Control maxWidth="500px">
-          {options.map((option, i) => (
-            <RadioGroupField.Control.Item
-              key={i}
-              index={i}
-              value={option.value}
-              description={option.description}>
-              {option.name}
-            </RadioGroupField.Control.Item>
-          ))}
-        </RadioGroupField.Control>
+        <RadioGroupField.Control maxWidth="500px" />
         <RadioGroupField.Details>
           This is an example detailed message for an select field
         </RadioGroupField.Details>
@@ -50,7 +44,7 @@ export default meta;
 
 type Story = StoryObj<typeof RadioGroupField>;
 
-const options = [
+const items = [
   {
     name: "Apple",
     value: "Apple",

@@ -15,8 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable unicorn/no-null */
-
 import {
   createAtomStore,
   CreateAtomStoreOptions,
@@ -28,6 +26,8 @@ import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
 import { toPath } from "@storm-stack/utilities/helper-fns/to-path";
 import { atom } from "jotai";
 import { focusAtom } from "jotai-optics";
+import { splitAtom } from "jotai/utils";
+import { atomWithFieldItems } from "../atoms/atom-with-field";
 import {
   atomWithFieldsMessageList,
   atomWithFieldsMessageTypes,
@@ -110,11 +110,21 @@ export const createFieldStore = <TFieldValue>(name: string) => {
       return String(value);
     });
 
+    const itemsAtom = atomWithFieldItems(
+      atoms.options,
+      atoms.value,
+      atoms.disabled
+    );
+    const itemsAtomsAtom = splitAtom(itemsAtom);
+
     return {
       pristine: atom(get => !get(dirtyAtom)),
       dirty: dirtyAtom,
 
       formattedValue: formattedValueAtom,
+
+      items: itemsAtom,
+      itemsAtoms: itemsAtomsAtom,
 
       errors: errorsAtom,
       warnings: warningsAtom,
@@ -191,7 +201,6 @@ export const createFieldStore = <TFieldValue>(name: string) => {
         optic.path(...path)
       ),
       value: focusAtom(formStore.api.atom.values, optic => optic.path(...path)),
-      items: [],
       options: {} as FieldOptions
     },
     selectors: fieldStoreSelectors

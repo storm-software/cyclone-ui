@@ -24,7 +24,7 @@ import { useCallback } from "react";
 import { DatePicker } from "./DatePicker";
 
 const meta: Meta<typeof DatePicker> = {
-  title: "Form/DatePicker",
+  title: "Base/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
   render: (props: any) => {

@@ -16,17 +16,21 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import {
   FieldProvider,
   FieldProviderOptions,
-  FieldThemeIcon,
+  useFieldActions,
   useFieldStore,
-  ValidationMessage,
   Validator
 } from "@cyclone-ui/form-state";
 import { LabelText } from "@cyclone-ui/label-text";
+import { Spinner } from "@cyclone-ui/spinner";
+import { ThemeIcon } from "@cyclone-ui/themeable-icon";
+import { ValidationText } from "@cyclone-ui/validation-text";
 import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
+import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
 import {
   createStyledContext,
@@ -38,8 +42,9 @@ import {
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
+import { Tooltip } from "@tamagui/tooltip";
 import { Theme } from "@tamagui/web";
-import { ForwardedRef, forwardRef, useMemo } from "react";
+import { ForwardedRef, useMemo } from "react";
 
 export const FieldContext = createStyledContext<{
   size: FontSizeTokens;
@@ -161,7 +166,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
         disabled={isBoolean(disabled) ? disabled : undefined}>
         <YStack gap="$0.5">
           {children}
-          <ValidationMessage theme={theme} messages={messages} />
+          <ValidationText theme={theme} messages={messages} />
         </YStack>
       </FieldGroupFrame>
     </Theme>
@@ -265,7 +270,7 @@ const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
   return (
     <FieldDetails
       ref={forwardedRef}
-      disabled={!!disabled}
+      disabled={Boolean(disabled)}
       htmlFor={name}
       {...rest}>
       {children}
@@ -343,7 +348,7 @@ const LabelXStack = styled(XStack, {
   }
 });
 
-export const FieldLabelText = StyledLabelText.styled<{
+export const FieldLabelText = StyledLabelText.styleable<{
   required?: boolean;
   disabled?: boolean;
   focused?: boolean;
@@ -390,19 +395,19 @@ export const FieldLabelText = StyledLabelText.styled<{
 
 export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
 
-export const FieldLabel = StyledLabelText.styled((props, forwardedRef) => {
+export const FieldLabel = StyledLabelText.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
   const store = useFieldStore();
 
   return (
     <FieldLabelText
       ref={forwardedRef as ForwardedRef<any>}
-      pb="$0.5"
+      paddingBottom="$0.5"
       htmlFor={store.get.name()}
       {...rest}
-      disabled={!!store.get.disabled()}
-      required={!!store.get.required()}
-      focused={!!store.get.focused()}>
+      disabled={Boolean(store.get.disabled())}
+      required={Boolean(store.get.required())}
+      focused={Boolean(store.get.focused())}>
       {children}
     </FieldLabelText>
   );
@@ -410,21 +415,126 @@ export const FieldLabel = StyledLabelText.styled((props, forwardedRef) => {
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
-export const FieldFieldThemeIcon = forwardRef<
-  typeof FieldThemeIcon,
-  GetProps<typeof FieldThemeIcon>
->(props => {
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-  const theme = store.get.theme();
+const InnerFieldIcon = Button.styleable(
+  ({ children, color, ...rest }, forwardedRef) => {
+    const store = useFieldStore();
+
+    const disabled = store.get.disabled();
+    const theme = store.get.theme();
+
+    return (
+      <Button
+        ref={forwardedRef}
+        variant="ghost"
+        circular={true}
+        color={
+          color ||
+          (disabled
+            ? "$disabled"
+            : theme.toLowerCase().includes(ColorRole.BASE)
+              ? "$base9"
+              : "$primary")
+        }
+        padding="$2"
+        {...rest}
+        disabled={false}>
+        <Button.Icon>{children}</Button.Icon>
+      </Button>
+    );
+  }
+);
+
+export const FieldIcon = InnerFieldIcon.styleable(
+  ({ children, ...rest }, forwardedRef) => {
+    const store = useFieldStore();
+    if (store.get.disabled()) {
+      return null;
+    }
+
+    return (
+      <InnerFieldIcon ref={forwardedRef} {...rest}>
+        {children}
+      </InnerFieldIcon>
+    );
+  }
+);
+
+const InnerFieldThemeIcon = InnerFieldIcon.styleable<{
+  messages?: ValidationDetails[];
+}>(({ children, theme, messages, disabled, ...rest }, forwardedRef) => {
+  if ((!messages || messages.length === 0) && !disabled) {
+    return (
+      <InnerFieldIcon ref={forwardedRef} {...rest}>
+        {children}
+      </InnerFieldIcon>
+    );
+  }
 
   return (
-    <FieldThemeIcon disabled={disabled} theme={theme} size="$3" {...props} />
+    <Tooltip groupId="field-icon">
+      <Tooltip.Content
+        enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+        exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+        animation={[
+          "quick",
+          {
+            opacity: {
+              overshootClamping: true
+            }
+          }
+        ]}
+        backgroundColor="$background">
+        <Tooltip.Arrow />
+        <ValidationText theme={theme} messages={messages} disabled={disabled} />
+      </Tooltip.Content>
+
+      <Tooltip.Trigger>
+        <InnerFieldIcon ref={forwardedRef} {...rest}>
+          {children}
+        </InnerFieldIcon>
+      </Tooltip.Trigger>
+    </Tooltip>
+  );
+});
+
+const FieldThemeIcon = InnerFieldThemeIcon.styleable((props, forwardedRef) => {
+  const store = useFieldStore();
+  const { focus } = useFieldActions();
+
+  const disabled = store.get.disabled();
+  const validating = store.get.validating();
+  const theme = store.get.theme();
+  const messages = store.get.messages();
+
+  if (validating) {
+    return <Spinner size="small" theme="$accent" />;
+  } else if (
+    !theme?.toLowerCase().includes(ColorRole.ERROR) &&
+    !theme?.toLowerCase().includes(ColorRole.WARNING) &&
+    !theme?.toLowerCase().includes(ColorRole.INFO) &&
+    !theme?.toLowerCase().includes(ColorRole.HELP) &&
+    !theme?.toLowerCase().includes(ColorRole.SUCCESS) &&
+    !disabled
+  ) {
+    return null;
+  }
+
+  return (
+    <InnerFieldThemeIcon
+      ref={forwardedRef}
+      {...props}
+      theme={theme}
+      disabled={disabled}
+      messages={messages}
+      onPress={focus}>
+      <ThemeIcon theme={theme} disabled={disabled} validating={validating} />
+    </InnerFieldThemeIcon>
   );
 });
 
 export const Field = withStaticProperties(FieldGroup, {
   Label: FieldLabel,
   Details: FieldDetailsImpl,
-  StatusIcon: FieldThemeIcon
+  Icon: FieldIcon,
+  ThemeIcon: FieldThemeIcon
 });

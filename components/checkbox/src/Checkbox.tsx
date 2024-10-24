@@ -1,34 +1,25 @@
-import {
-  FieldStatus,
-  useFieldActions,
-  useFieldStore
-} from "@cyclone-ui/form-state";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
-import {
-  createStyledContext,
-  styled,
-  View,
-  withStaticProperties
-} from "@tamagui/core";
+import { styled } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { Check } from "@tamagui/lucide-icons";
-import { XStack } from "@tamagui/stacks";
-import { useCallback } from "react";
-
-const defaultContextValues = {
-  size: "$true",
-  color: undefined,
-  hideIcons: true
-} as const;
-
-export const CheckboxContext = createStyledContext<{
-  size: FontSizeTokens;
-  color?: ColorTokens | string;
-  hideIcons: boolean;
-}>(defaultContextValues);
 
 export const defaultCheckboxGroupStyles = {
   size: "$true",
@@ -71,23 +62,21 @@ export const CHECKBOX_NAME = "Checkbox";
 
 const CheckboxGroupFrame = styled(XGroup, {
   name: CHECKBOX_NAME,
+
   justifyContent: "space-between",
-  context: CheckboxContext,
-  animation: "$slow",
+  animation: "slow",
+  alignContent: "center",
+  verticalAlign: "center",
 
   variants: {
     unstyled: {
       false: defaultCheckboxGroupStyles
     },
 
-    scaleIcon: {
-      ":number": {} as any
-    },
-
-    applyFocusStyle: {
+    focused: {
       ":boolean": (val, { props }) => {
         if (val) {
-          return props.focusStyle || defaultCheckboxGroupStyles.focusStyle;
+          return props.focusStyle ?? defaultCheckboxGroupStyles.focusStyle;
         }
 
         return {};
@@ -100,10 +89,6 @@ const CheckboxGroupFrame = styled(XGroup, {
           borderRadius: tokens.radius[val]
         };
       }
-    },
-
-    required: {
-      true: {}
     },
 
     disabled: {
@@ -140,29 +125,31 @@ const CheckboxGroupFrame = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false,
-    required: false,
+    unstyled: process.env.TAMAGUI_HEADLESS === "1",
+    focused: false,
     disabled: false
   }
 });
 
 const BaseCheckbox = styled(TamaguiCheckbox, {
   name: CHECKBOX_NAME,
-
   unstyled: true,
 
-  context: CheckboxContext,
   verticalAlign: "center",
   height: "$1.5",
   width: "$1.5",
   padding: "$0.5",
 
-  // internalAutofillSelected: {
-  //   backgroundColor: "transparent !important",
-  //   color: "inherit !important"
-  // },
-
   variants: {
+    focused: {
+      true: {
+        // borderColor: "$accent10"
+      },
+      false: {
+        // borderColor: "$borderColor"
+      }
+    },
+
     disabled: {
       true: {
         cursor: "not-allowed",
@@ -176,85 +163,39 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   } as const,
 
   defaultVariants: {
-    disabled: false
+    disabled: false,
+    focused: false
   }
 });
 
-const BaseCheckboxImpl = BaseCheckbox.styleable((props, forwardedRef) => {
-  const { size } = CheckboxContext.useStyledContext();
-  const { children, ...rest } = props;
-
-  const store = useFieldStore();
-
-  const { focus, blur, change } = useFieldActions<boolean>();
-  const handleCheckedChange = useCallback(
-    async (checked: boolean) => {
-      await change(checked);
-      await blur();
-    },
-    [blur, change]
-  );
-
-  return (
-    <View flex={1}>
-      <BaseCheckbox
-        ref={forwardedRef}
-        size={size}
-        {...rest}
-        id={store.get.name()}
-        onFocus={focus}
-        onBlur={blur}
-        onCheckedChange={handleCheckedChange}
-        checked={Boolean(store.get.value())}
-        defaultChecked={Boolean(store.get.initialValue())}
-        disabled={store.get.disabled()}>
-        <TamaguiCheckbox.Indicator
-          animation="slow"
-          enterStyle={{
-            scale: 0.8,
-            y: 10,
-            opacity: 0
-          }}
-          exitStyle={{
-            scale: 0.8,
-            y: -10,
-            opacity: 0
-          }}
-          justifyContent="center"
-          alignItems="center">
-          <Check color="$fg" height="$1" width="$1" />
-        </TamaguiCheckbox.Indicator>
-      </BaseCheckbox>
-    </View>
-  );
-});
-
-const CheckboxGroupImpl = BaseCheckboxImpl.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
-
-  const store = useFieldStore();
-  const disabled = store.get.disabled();
-
-  return (
-    <XStack gap="$0.5" alignContent="center" verticalAlign="center">
-      <CheckboxGroupFrame
-        applyFocusStyle={store.get.focused()}
-        disabled={disabled}>
-        <BaseCheckboxImpl
+export const Checkbox = BaseCheckbox.styleable(
+  ({ focused, disabled, name, ...props }, forwardedRef) => {
+    return (
+      <CheckboxGroupFrame focused={focused} disabled={disabled}>
+        <BaseCheckbox
           ref={forwardedRef}
-          {...rest}
-          paddingHorizontal={
-            store.get.theme().toLowerCase().includes(FieldStatus.BASE)
-              ? "$3"
-              : 0
-          }>
-          {children}
-        </BaseCheckboxImpl>
+          id={name}
+          {...props}
+          focused={focused}
+          disabled={disabled}>
+          <TamaguiCheckbox.Indicator
+            animation="slow"
+            enterStyle={{
+              scale: 0.8,
+              y: 10,
+              opacity: 0
+            }}
+            exitStyle={{
+              scale: 0.8,
+              y: -10,
+              opacity: 0
+            }}
+            justifyContent="center"
+            alignItems="center">
+            <Check color="$fg" height="$1" width="$1" />
+          </TamaguiCheckbox.Indicator>
+        </BaseCheckbox>
       </CheckboxGroupFrame>
-    </XStack>
-  );
-});
-
-export const Checkbox = withStaticProperties(CheckboxGroupImpl, {
-  Icon: ThemedIcon
-});
+    );
+  }
+);

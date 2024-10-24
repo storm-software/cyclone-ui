@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import { useFieldActions } from "@cyclone-ui/form-state";
+import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { withStaticProperties } from "@tamagui/web";
 
@@ -30,18 +30,33 @@ const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const InputFieldControl = Input.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
+const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
   const { focus, blur, change } = useFieldActions();
 
+  const store = useFieldStore();
+
+  const name = store.get.name();
+  const disabled = store.get.disabled();
+  const focused = store.get.focused();
+  const validating = store.get.validating();
+  const formattedValue = store.get.formattedValue();
+  const initialValue = store.get.initialValue();
+
   return (
-    <Input
-      ref={forwardedRef}
-      {...rest}
-      onFocus={focus}
-      onBlur={blur}
-      onChangeText={change}>
-      {children}
+    <Input name={name} focused={focused} disabled={disabled}>
+      {!disabled && <Field.ThemeIcon />}
+
+      <Input.Value
+        ref={forwardedRef}
+        {...props}
+        onFocus={focus}
+        onBlur={blur}
+        onChangeText={change}
+        value={formattedValue}
+        defaultValue={String(initialValue ?? "")}
+      />
+
+      {(disabled || validating) && <Field.ThemeIcon />}
     </Input>
   );
 });
@@ -49,5 +64,6 @@ const InputFieldControl = Input.styleable((props, forwardedRef) => {
 export const InputField = withStaticProperties(InputFieldGroup, {
   Label: Field.Label,
   Control: InputFieldControl,
-  Details: Field.Details
+  Details: Field.Details,
+  Icon: Field.Icon
 });

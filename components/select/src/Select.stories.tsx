@@ -24,16 +24,28 @@ const meta: Meta<typeof Select> = {
   title: "Base/Select",
   component: Select,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ selectName: "" }}>
+  render: ({ defaultValue, ...props }: any) => (
+    <Form name="formName" defaultValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
-        <Select placeholder="email@example.com">
-          {options.map((option, i) => (
-            <Select.Item key={i} index={i} value={option.value}>
-              {option.name}
-            </Select.Item>
-          ))}
+        <Select>
+          <Select.Trigger>
+            <Select.Trigger.Value placeholder="email@example.com" />
+            <Select.Trigger.Button />
+          </Select.Trigger>
+
+          <Select.Items>
+            {options.map((option, i) => (
+              <Select.Items.Item
+                key={option.value}
+                index={i}
+                value={option.value}
+                disabled={false}
+                selected={false}>
+                {option.name}
+              </Select.Items.Item>
+            ))}
+          </Select.Items>
         </Select>
         <Field.Details>
           This is an example detailed message for an select

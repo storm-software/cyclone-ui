@@ -1,5 +1,22 @@
-import { Link } from "@cyclone-ui/link";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { ColorRole } from "@cyclone-ui/colors";
+import { Link } from "@cyclone-ui/link";
 import {
   createStyledContext,
   getVariable,
@@ -80,7 +97,7 @@ export const CardFrame = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
@@ -181,7 +198,7 @@ export const CardHeader = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
@@ -261,7 +278,7 @@ export const CardTitleSection = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 

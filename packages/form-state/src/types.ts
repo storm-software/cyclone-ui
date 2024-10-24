@@ -246,7 +246,7 @@ export type FieldOptions<
   theme?: string;
   required?: boolean;
   disabled?: boolean;
-  items?: SelectOption[];
+  items?: Array<Partial<SelectOption> & Pick<SelectOption, "name" | "value">>;
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
     TValidator[] | undefined
@@ -335,11 +335,6 @@ export type FieldBaseState<TFieldValue = any> = {
    * The field group's current values.
    */
   value: TFieldValue | null;
-
-  /**
-   * A list of options for the field.
-   */
-  items: SelectOption[];
 
   /**
    * The options provided when creating the field.

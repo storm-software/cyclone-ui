@@ -16,11 +16,12 @@
  -------------------------------------------------------------------*/
 
 import { Checkbox } from "@cyclone-ui/checkbox";
-import { Field, FieldThemeIcon } from "@cyclone-ui/field";
-import { useFieldStore } from "@cyclone-ui/form-state";
+import { Field } from "@cyclone-ui/field";
+import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { withStaticProperties } from "@tamagui/core";
-import { XStack, XStackProps } from "@tamagui/stacks";
-import { forwardRef } from "react";
+import { XStack } from "@tamagui/stacks";
+import { useCallback } from "react";
 
 const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -32,38 +33,58 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const InnerCheckboxFieldLabel = forwardRef<typeof XStack, XStackProps>(
-  (props, forwardedRef) => {
-    const { children, ...rest } = props;
-
+const CheckboxFieldLabel = Field.Label.styleable(
+  ({ children, ...props }, forwardedRef) => {
     const store = useFieldStore();
+    const disabled = store.get.disabled();
 
     return (
-      <XStack
-        ref={forwardedRef}
-        gap="$0.5"
-        alignContent="center"
-        verticalAlign="center"
-        {...rest}>
-        {children}
-        {store.get.disabled() && <FieldThemeIcon disabled={true} />}
-      </XStack>
+      <Field.Label ref={forwardedRef} paddingBottom={0} {...props}>
+        <XStack gap="$0.5" alignContent="center" verticalAlign="center">
+          {children}
+          {disabled && <Field.ThemeIcon disabled={true} />}
+        </XStack>
+      </Field.Label>
     );
   }
 );
 
-export const CheckboxFieldLabel = Field.Label.styled((props, forwardedRef) => {
-  const { children, ...rest } = props;
+const CheckboxFieldControl = Checkbox.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { focus, change, blur } = useFieldActions<boolean>();
+    const handleCheckedChange = useCallback(
+      async (checked: boolean) => {
+        await change(checked);
+        await blur();
+      },
+      [blur, change]
+    );
 
-  return (
-    <Field.Label ref={forwardedRef} paddingBottom={0} {...rest}>
-      <InnerCheckboxFieldLabel>{children}</InnerCheckboxFieldLabel>
-    </Field.Label>
-  );
-});
+    const store = useFieldStore<boolean>();
+    const disabled = store.get.disabled();
+    const focused = store.get.focused();
+    const value = store.get.value();
+    const initialValue = store.get.initialValue();
+
+    return (
+      <Checkbox
+        ref={forwardedRef}
+        {...props}
+        onFocus={focus}
+        onBlur={blur}
+        onCheckedChange={handleCheckedChange}
+        checked={isSet(value) ? value : "indeterminate"}
+        defaultChecked={isSet(initialValue) ? initialValue : "indeterminate"}
+        focused={focused}
+        disabled={disabled}>
+        {children}
+      </Checkbox>
+    );
+  }
+);
 
 export const CheckboxField = withStaticProperties(CheckboxFieldGroup, {
   Label: CheckboxFieldLabel,
-  Control: Checkbox,
+  Control: CheckboxFieldControl,
   Details: Field.Details
 });

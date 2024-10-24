@@ -19,7 +19,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Form } from "./Form";
 
 const meta: Meta<typeof Form> = {
-  title: "Base/Form",
+  title: "Form/Form",
   component: Form,
   tags: ["autodocs"],
   render: (args: any) => <Form {...args} />

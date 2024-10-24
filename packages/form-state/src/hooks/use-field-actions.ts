@@ -269,11 +269,30 @@ export const useFieldActions = <
     )
   );
 
+  const setFocused = useCallback(
+    (focused: boolean) => {
+      if (focused) {
+        return focus();
+      }
+      return blur();
+    },
+    [focus, blur]
+  );
+
+  const toggleFocused = useAtomCallback(
+    useCallback(
+      (get: Getter) => setFocused(!get(fieldApi.atom.focused)),
+      [setFocused]
+    )
+  );
+
   return {
     initialize,
     change,
     focus,
     blur,
+    setFocused,
+    toggleFocused,
     validate,
     reset
   };
