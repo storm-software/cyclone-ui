@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorRole } from "@cyclone-ui/colors";
+import type { MaskitoOptions } from "@maskito/core";
 import {
   IsPlainObject,
   MaybePromise,
@@ -258,6 +259,16 @@ export type FieldOptions<
   onChange?: (value: TFieldValue) => MaybePromise<void>;
   format?: (value: TFieldValue) => string;
   parse?: (value: any) => TFieldValue;
+
+  /**
+   * The options provided to the Maskito library when masking user input
+   *
+   * @remarks
+   * More information can be found in the [Maskito documentation](https://maskito.dev/core-concepts/overview).
+   *
+   * API reference: https://github.com/taiga-family/maskito/blob/main/projects/core/src/lib/types/mask-options.ts
+   */
+  mask?: MaskitoOptions;
 };
 
 // export type InferFieldValue<TFieldOptions extends FieldOptions> =

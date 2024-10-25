@@ -251,6 +251,7 @@
       "@cyclone-ui/collapsible": "workspace:*",
       "@cyclone-ui/data-table": "workspace:*",
       "@cyclone-ui/date-picker": "workspace:*",
+      "@cyclone-ui/date-picker-field": "workspace:*",
       "@cyclone-ui/file-picker": "workspace:*",
       "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/font-permanent-marker": "workspace:*",

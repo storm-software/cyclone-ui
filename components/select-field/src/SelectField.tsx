@@ -16,16 +16,12 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import {
-  useFieldActions,
-  useFieldApi,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Select } from "@cyclone-ui/select";
-import { GetProps, withStaticProperties } from "@tamagui/web";
-import { Getter } from "jotai";
-import { useAtomCallback } from "jotai/utils";
-import { useCallback, useMemo } from "react";
+import { SelectOption } from "@storm-stack/types/utility-types/form";
+import { GetProps, withStaticProperties } from "@tamagui/core";
+import { Atom, useAtomValue } from "jotai";
+import { PropsWithChildren } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -37,42 +33,30 @@ const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const SelectFieldItem = Select.Items.Item.styleable(
-  ({ children, value, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const fieldValue = store.get.value();
-    const fieldDisabled = store.get.disabled();
+const SelectFieldItem = (
+  props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>
+) => {
+  const item = useAtomValue(props.itemAtom);
+  const { value, name } = item;
 
-    const selected = useMemo(() => fieldValue === value, [fieldValue, value]);
-    const disabled = useMemo(
-      () => Boolean(fieldDisabled || props.disabled),
-      [fieldDisabled, props.disabled]
-    );
-    return (
-      <Select.Items.Item
-        ref={forwardedRef}
-        {...props}
-        value={value}
-        textValue={String(value)}
-        selected={selected}
-        disabled={disabled}>
-        {children}
-      </Select.Items.Item>
-    );
-  }
-);
+  return (
+    <Select.Items.Item {...item} textValue={String(value)}>
+      {name}
+    </Select.Items.Item>
+  );
+};
 
 const SelectFieldControl = Select.styleable<
   Pick<GetProps<typeof Select.Trigger.Value>, "placeholder">
 >(({ placeholder, ...props }, forwardedRef) => {
   const { focus, blur, change, toggleFocused } = useFieldActions();
-  const fieldApi = useFieldApi();
 
   const store = useFieldStore();
   const name = store.get.name();
   const disabled = store.get.disabled();
   const focused = store.get.focused();
   const validating = store.get.validating();
+  const itemsAtoms = store.get.itemsAtoms();
   const value = store.get.value();
   const formattedValue = store.get.formattedValue();
   const initialValue = store.get.initialValue();
@@ -103,25 +87,9 @@ const SelectFieldControl = Select.styleable<
       </Select.Trigger>
 
       <Select.Items>
-        {useAtomCallback(
-          useCallback((get: Getter) => {
-            return get(fieldApi.atom.items)
-              .filter(item => Boolean(item.value))
-              .map((item, index) => {
-                const { value, name, ...rest } = item;
-
-                return (
-                  <SelectFieldItem
-                    {...rest}
-                    key={index}
-                    index={index}
-                    value={value}>
-                    {name}
-                  </SelectFieldItem>
-                );
-              });
-          }, [])
-        )}
+        {itemsAtoms.map((itemAtom, index) => (
+          <SelectFieldItem key={index} itemAtom={itemAtom} />
+        ))}
       </Select.Items>
     </Select>
   );

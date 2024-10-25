@@ -15,8 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable unicorn/no-null */
-
 import {
   createAtomStore,
   CreateAtomStoreOptions,

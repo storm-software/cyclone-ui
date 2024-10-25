@@ -384,7 +384,7 @@ export const FieldLabelText = StyledLabelText.styleable<{
               color="$error8"
               size="$0.75"
               position="absolute"
-              top={-5}
+              top={-2}
             />
           </View>
         )}

@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/select-field",
-  "version": "0.1.0",
+  "name": "@cyclone-ui/date-picker-field",
+  "version": "0.5.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/select-field"
+    "directory": "components/date-picker-field"
   },
   "private": false,
   "main": "dist/cjs",
@@ -27,20 +27,19 @@
     "types"
   ],
   "peerDependencies": {
-    "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
+    "@maskito/core": "^3.1.2",
+    "@maskito/kit": "^3.1.2",
+    "@storm-stack/date-time": "latest",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
+    "@tamagui/lucide-icons": "^1.110.5",
     "react-native-svg": "^15.2.0"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"

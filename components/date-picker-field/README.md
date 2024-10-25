@@ -39,9 +39,9 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Heading Text
+# date-picker
 
-A `HeadingText` component used to render the body text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
+A package containing the Date Picker component used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -70,14 +70,14 @@ A `HeadingText` component used to render the body text of a page. It is a simple
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/heading-text
+pnpm add -D @cyclone-ui/date-picker
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/heading-text
+npm install -D @cyclone-ui/date-picker
 ```
 
 </details>
@@ -86,7 +86,7 @@ npm install -D @cyclone-ui/heading-text
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/heading-text
+yarn add -D @cyclone-ui/date-picker
 ```
 
 </details>
@@ -101,15 +101,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build heading-text` to build the library.
+Run `nx build date-picker` to build the library.
 
 ### Running unit tests
 
-Run `nx test heading-text` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test date-picker` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint heading-text` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint date-picker` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

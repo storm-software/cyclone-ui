@@ -15,8 +15,25 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./use-field-actions";
-export * from "./use-field-ref";
-export * from "./use-field-store";
-export * from "./use-form-actions";
-export * from "./use-form-store";
+import { useMaskito } from "@maskito/react";
+import { ReactRef, useComposedRefs } from "@storm-stack/hooks";
+import { useRef } from "react";
+import { useFieldStore } from "./use-field-store";
+
+export const useFieldRef = <TFieldValue>(
+  forwardedRef?: ReactRef<HTMLElement | null>
+): ReactRef<HTMLInputElement | null> => {
+  const ref = useRef<HTMLInputElement | null>(null);
+
+  const store = useFieldStore<TFieldValue>();
+  const options = store.get.options();
+
+  const inputRef = useMaskito({ options: options.mask });
+
+  const refs = [ref, inputRef] as ReactRef<HTMLInputElement | null>[];
+  if (forwardedRef) {
+    refs.push(forwardedRef);
+  }
+
+  return useComposedRefs(...refs);
+};

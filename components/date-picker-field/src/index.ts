@@ -15,8 +15,13 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./use-field-actions";
-export * from "./use-field-ref";
-export * from "./use-field-store";
-export * from "./use-form-actions";
-export * from "./use-form-store";
+/**
+ * The date-picker-field library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A package containing the Date Picker Field component used by Storm Software
+ *
+ * @packageDocumentation
+ */
+
+export * from "./DatePickerField";

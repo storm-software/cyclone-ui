@@ -24,7 +24,7 @@ import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { isString } from "@storm-stack/types/type-checks/is-string";
 import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
 import { toPath } from "@storm-stack/utilities/helper-fns/to-path";
-import { atom } from "jotai";
+import { Atom, atom } from "jotai";
 import { focusAtom } from "jotai-optics";
 import { splitAtom } from "jotai/utils";
 import { atomWithFieldItems } from "../atoms/atom-with-field";
@@ -113,7 +113,7 @@ export const createFieldStore = <TFieldValue>(name: string) => {
     const itemsAtom = atomWithFieldItems(
       atoms.options,
       atoms.value,
-      atoms.disabled
+      atoms.disabled as Atom<boolean>
     );
     const itemsAtomsAtom = splitAtom(itemsAtom);
 

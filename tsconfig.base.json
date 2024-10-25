@@ -14,14 +14,6 @@
       "@cyclone-ui/badge/*": ["components/badge/src/*"],
       "@cyclone-ui/body-text": ["components/body-text/src/index.ts"],
       "@cyclone-ui/body-text/*": ["components/body-text/src/*"],
-      "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
-      "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
-      "@cyclone-ui/heading-text": ["components/heading-text/src/index.ts"],
-      "@cyclone-ui/heading-text/*": ["components/heading-text/src/*"],
-      "@cyclone-ui/validation-text": [
-        "components/validation-text/src/index.ts"
-      ],
-      "@cyclone-ui/validation-text/*": ["components/validation-text/src/*"],
       "@cyclone-ui/breadcrumb": ["components/breadcrumb/src/index.ts"],
       "@cyclone-ui/breadcrumb/*": ["components/breadcrumb/src/*"],
       "@cyclone-ui/build": ["packages/build/src/index.ts"],
@@ -46,8 +38,14 @@
       "@cyclone-ui/data-table/*": ["components/data-table/src/*"],
       "@cyclone-ui/date-picker": ["components/date-picker/src/index.ts"],
       "@cyclone-ui/date-picker/*": ["components/date-picker/src/*"],
+      "@cyclone-ui/date-picker-field": [
+        "components/date-picker-field/src/index.ts"
+      ],
+      "@cyclone-ui/date-picker-field/*": ["components/date-picker-field/src/*"],
       "@cyclone-ui/dialog": ["components/dialog/src/index.ts"],
       "@cyclone-ui/dialog/*": ["components/dialog/src/*"],
+      "@cyclone-ui/field": ["components/field/src/index.ts"],
+      "@cyclone-ui/field/*": ["components/field/src/*"],
       "@cyclone-ui/file-picker": ["components/file-picker/src/index.ts"],
       "@cyclone-ui/file-picker/*": ["components/file-picker/src/*"],
       "@cyclone-ui/font-mona-sans": ["packages/font-mona-sans/src/index.ts"],
@@ -62,16 +60,18 @@
         "packages/font-space-grotesk/src/index.ts"
       ],
       "@cyclone-ui/font-space-grotesk/*": ["packages/font-space-grotesk/src/*"],
+      "@cyclone-ui/form": ["components/form/src/index.ts"],
       "@cyclone-ui/form-state": ["packages/form-state/src/index.ts"],
       "@cyclone-ui/form-state/*": ["packages/form-state/src/*"],
-      "@cyclone-ui/field": ["components/field/src/index.ts"],
-      "@cyclone-ui/field/*": ["components/field/src/*"],
-      "@cyclone-ui/form": ["components/form/src/index.ts"],
       "@cyclone-ui/form/*": ["components/form/src/*"],
+      "@cyclone-ui/heading-text": ["components/heading-text/src/index.ts"],
+      "@cyclone-ui/heading-text/*": ["components/heading-text/src/*"],
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],
       "@cyclone-ui/input/*": ["components/input/src/*"],
+      "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
+      "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
       "@cyclone-ui/link": ["components/link/src/index.ts"],
       "@cyclone-ui/link/*": ["components/link/src/*"],
       "@cyclone-ui/masks": ["packages/masks/src/index.ts"],
@@ -125,7 +125,11 @@
       "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],
       "@cyclone-ui/tokens": ["packages/tokens/src/index.ts"],
       "@cyclone-ui/tokens/*": ["packages/tokens/src/*"],
-      "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"]
+      "@cyclone-ui/tools-nx": ["tools/nx/src/index.ts"],
+      "@cyclone-ui/validation-text": [
+        "components/validation-text/src/index.ts"
+      ],
+      "@cyclone-ui/validation-text/*": ["components/validation-text/src/*"]
     }
   }
 }

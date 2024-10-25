@@ -36,6 +36,8 @@
     }
   },
   "dependencies": {
+    "@maskito/core": "^3.1.2",
+    "@maskito/react": "^3.1.2",
     "@storm-stack/errors": "latest",
     "@storm-stack/hooks": "latest",
     "@storm-stack/serialization": "latest",
@@ -43,16 +45,6 @@
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
-    "@tamagui/font-size": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/label": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5",
-    "@tamagui/text": "^1.110.5",
-    "@tamagui/tooltip": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
     "jotai-optics": "^0.4.0",
     "maska": "^3.0.3",
     "optics-ts": "^2.4.1"

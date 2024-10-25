@@ -17,7 +17,6 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
 import type {
@@ -33,7 +32,13 @@ import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
-import { createStyledContext, styled, useThemeName, View } from "@tamagui/core";
+import {
+  createStyledContext,
+  styled,
+  useThemeName,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -214,12 +219,14 @@ export function useDateAnimation({
       exitStyle: {}
     };
   }, [
-    sumYears,
     listenTo,
     currentYearsSum,
+    sumYears,
     currentMonth,
     calendarListenTo,
-    calendar
+    calendar?.year,
+    calendar?.month,
+    currentYear
   ]);
 
   return {
@@ -281,12 +288,12 @@ const DayPicker = () => {
                 alignItems="center">
                 {days.map(day => (
                   <View
+                    key={day.$date.toString()}
                     width={45}
                     justifyContent="center"
                     alignItems="center"
                     padding="$0.5">
                     <Button
-                      key={day.$date.toString()}
                       variant={day.selected ? undefined : "ghost"}
                       circular={true}
                       outlined={true}
@@ -615,38 +622,35 @@ const DatePickerPopoverBody = () => {
   );
 };
 
-export const DatePickerControl = Input.styleable((props, ref) => {
-  const store = useFieldStore<Date>();
-  const { focus, change } = useFieldActions();
+const DatePickerControl = Input.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <Popover.Trigger asChild={true}>
+        <Input ref={forwardedRef} {...props}>
+          {children}
+        </Input>
+      </Popover.Trigger>
+    );
+  }
+);
 
-  const value = store.get.value();
-  const reset = store.reset.value();
-
-  return (
-    <Popover.Trigger asChild={true}>
-      <Input
-        ref={ref}
+const DatePickerControlValue = Input.Value.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <Input.Value
+        ref={forwardedRef}
         placeholder={DEFAULT_DATE_FORMAT}
-        {...props}
-        onChange={change}>
-        {/* value ? (
-          <Input.Icon onPress={reset}>
-            <X />
-          </Input.Icon>
-        ) : (
-          <Input.Icon onPress={focus}>
-            <Calendar />
-          </Input.Icon>
-        ) */}
-      </Input>
-    </Popover.Trigger>
-  );
-});
+        {...props}>
+        {children}
+      </Input.Value>
+    );
+  }
+);
 
 const DatePickerProvider =
   RehookifyDatePickerProvider as React.ComponentType<DatePickerProviderProps>;
 
-export const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
+const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
   createStyledContext({
     type: "day",
     setHeader: (_: "day" | "month" | "year") => {}
@@ -683,91 +687,77 @@ const DatePickerPopoverContent = styled(Popover.Content, {
   }
 });
 
-const DatePickerGroup = ({ children, ...props }: PropsWithChildren) => {
-  const store = useFieldStore<Date>();
-  const focused = store.get.focused();
-  const value = store.get.value();
+const DatePickerControlImpl = DatePickerControl.styleable<{
+  onChange: (date?: Date | null) => any;
+  onOpenChange: (opened: boolean) => any;
+  open: boolean;
+  date?: Date | null;
+}>(
+  (
+    { children, onChange, onOpenChange, open, date, ...props },
+    forwardedRef
+  ) => {
+    const handleDatesChange = useCallback(
+      (dates: Date[]) => {
+        onChange(Array.isArray(dates) && dates.length > 0 ? dates[0] : null);
+      },
+      [onChange]
+    );
 
-  const { focus, blur, change } = useFieldActions();
-  const handleOpenChange = useCallback(
-    (open: boolean) => {
-      if (open) {
-        focus();
-      } else {
-        blur();
+    const selectedDates = useMemo(() => {
+      if (!date) {
+        return [];
       }
-    },
-    [focus, blur]
-  );
 
-  const handleDatesChange = useCallback(
-    (dates: Date[]) => {
-      blur();
+      date.setMonth(date.getMonth() - 1);
+      return [date];
+    }, [date]);
 
-      // const next = dates.length > 0 ? dates[0] : null;
-      // if (next) {
-      //   next.setMonth(next.getMonth() - 1);
-      // }
-
-      change(dates.length > 0 ? dates[0] : null);
-    },
-    [change, blur]
-  );
-
-  return (
-    <DatePickerProvider
-      config={{
-        selectedDates: value ? [value] : [],
-        onDatesChange: handleDatesChange,
-        calendar: {
-          startDay: 1
-        }
-      }}>
-      <Popover
-        keepChildrenMounted={true}
-        size="$5"
-        allowFlip={true}
-        open={focused}
-        onOpenChange={handleOpenChange}>
-        {children}
-      </Popover>
-    </DatePickerProvider>
-  );
-};
-
-export const DatePicker = DatePickerControl.styleable(
-  ({ children, ...props }, forwardedRef) => {
     return (
-      <DatePickerGroup>
-        <Adapt when={"sm" as any} platform="touch">
-          <Popover.Sheet
-            modal={true}
-            dismissOnSnapToBottom={true}
-            snapPointsMode="fit">
-            <Popover.Sheet.Frame padding="$4">
-              <Adapt.Contents />
-            </Popover.Sheet.Frame>
-            <Popover.Sheet.Overlay
-              animation="lazy"
-              enterStyle={{ opacity: 0 }}
-              exitStyle={{ opacity: 0 }}
-            />
-          </Popover.Sheet>
-        </Adapt>
+      <DatePickerProvider
+        config={{
+          selectedDates,
+          onDatesChange: handleDatesChange,
+          calendar: {
+            startDay: 1
+          }
+        }}>
+        <Popover
+          keepChildrenMounted={true}
+          size="$5"
+          allowFlip={true}
+          open={open}
+          onOpenChange={onOpenChange}>
+          <Adapt when={"sm" as any} platform="touch">
+            <Popover.Sheet
+              modal={true}
+              dismissOnSnapToBottom={true}
+              snapPointsMode="fit">
+              <Popover.Sheet.Frame padding="$4">
+                <Adapt.Contents />
+              </Popover.Sheet.Frame>
+              <Popover.Sheet.Overlay
+                animation="lazy"
+                enterStyle={{ opacity: 0 }}
+                exitStyle={{ opacity: 0 }}
+              />
+            </Popover.Sheet>
+          </Adapt>
 
-        <DatePickerControl ref={forwardedRef} {...props}>
-          {children}
-        </DatePickerControl>
+          <DatePickerControl ref={forwardedRef} {...props}>
+            {children}
+          </DatePickerControl>
 
-        <DatePickerPopoverContent>
-          <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
-          <DatePickerPopoverBody />
-        </DatePickerPopoverContent>
-      </DatePickerGroup>
+          <DatePickerPopoverContent>
+            <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
+            <DatePickerPopoverBody />
+          </DatePickerPopoverContent>
+        </Popover>
+      </DatePickerProvider>
     );
   }
 );
 
-// export const DatePicker = withStaticProperties(DatePickerControlImpl, {
-//   Icon: ThemedIcon
-// });
+export const DatePicker = withStaticProperties(DatePickerControlImpl, {
+  Value: DatePickerControlValue
+});

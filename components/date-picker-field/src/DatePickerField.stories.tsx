@@ -15,59 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable react-hooks/rules-of-hooks */
-
-import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import type { Meta, StoryObj } from "@storybook/react";
-import { useCallback } from "react";
-import { DatePicker } from "./DatePicker";
+import { DatePickerField } from "./DatePickerField";
 
-const meta: Meta<typeof DatePicker> = {
-  title: "Base/DatePicker",
-  component: DatePicker,
+const meta: Meta<typeof DatePickerField> = {
+  title: "Form/DatePickerField",
+  component: DatePickerField,
   tags: ["autodocs"],
   render: (props: any) => {
-    const handleFormat = useCallback((value: any) => {
-      return formatDate(StormDate.create(value), {
-        returnEmptyIfNotSet: true,
-        returnEmptyIfInvalid: true
-      });
-    }, []);
-
-    const handleParse = useCallback((value: any) => {
-      const date = StormDate.create(value);
-
-      const invalid = date.validate();
-
-      return !invalid ? date : null;
-    }, []);
-
     return (
-      <Form name="formName" defaultValues={{ datePickerName: null }}>
-        <Field
-          name="datePickerName"
-          {...props}
-          format={handleFormat}
-          parse={handleParse}>
-          <Field.Label>Label Text</Field.Label>
-          <DatePicker>
-            <DatePicker.Value />
-          </DatePicker>
-          <Field.Details>
-            This is an example detailed message for an date-picker
-          </Field.Details>
-        </Field>
+      <Form name="formName" defaultValues={{ datePickerFieldName: "" }}>
+        <DatePickerField name="datePickerFieldName" {...props}>
+          <DatePickerField.Label>Label Text</DatePickerField.Label>
+          <DatePickerField.Control />
+          <DatePickerField.Details>
+            This is an example detailed message for an date-picker field
+          </DatePickerField.Details>
+        </DatePickerField>
       </Form>
     );
   }
-} satisfies Meta<typeof DatePicker>;
+} satisfies Meta<typeof DatePickerField>;
 
 export default meta;
 
-type Story = StoryObj<typeof DatePicker>;
+type Story = StoryObj<typeof DatePickerField>;
 
 export const Base: Story = {
   args: {}
