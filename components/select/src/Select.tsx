@@ -33,7 +33,7 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
-import { YStack } from "@tamagui/stacks";
+import { XStack, YStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 
 const defaultContextValues = {
@@ -178,7 +178,6 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   size: "$true",
   fontFamily: "$body",
   color: "$color",
-  // backgroundColor: "$background",
   borderWidth: 0,
   borderColor: "transparent",
   borderStyle: "none" as any,
@@ -188,7 +187,7 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   paddingHorizontal: "$2",
   flexDirection: "row",
   alignItems: "center",
-  width: "100%",
+  flex: 1,
 
   variants: {
     scaleIcon: {
@@ -234,31 +233,50 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   name: SELECT_NAME,
   context: SelectContext,
 
+  backgroundColor: "transparent",
+  paddingVertical: 0,
+  paddingHorizontal: "$2",
+  marginVertical: 0,
+
+  focusStyle: {
+    backgroundColor: "transparent"
+  },
+
   hoverStyle: {
-    backgroundColor: "$color8"
+    backgroundColor: "transparent"
+  }
+});
+
+const SelectItemGroup = styled(XStack, {
+  name: SELECT_NAME,
+  context: SelectContext,
+
+  gap: "$2",
+  alignItems: "center",
+  paddingHorizontal: "$2",
+  paddingVertical: "$2.25",
+  borderRadius: "$3",
+  width: "100%",
+
+  hoverStyle: {
+    backgroundColor: "$muted"
   },
 
   focusStyle: {
-    backgroundColor: "color8"
+    backgroundColor: "$muted"
   },
 
   variants: {
-    selected: {
-      true: {
-        backgroundColor: "$muted",
-
-        hoverStyle: {
-          backgroundColor: "$color8"
-        }
-      }
-    },
-
     disabled: {
       true: {
         cursor: "not-allowed",
         backgroundColor: "transparent",
 
         hoverStyle: {
+          backgroundColor: "transparent"
+        },
+
+        focusStyle: {
           backgroundColor: "transparent"
         }
       },
@@ -269,8 +287,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   } as const,
 
   defaultVariants: {
-    disabled: false,
-    selected: false
+    disabled: false
   }
 });
 
@@ -283,6 +300,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   fontSize: "$true",
   fontWeight: "$true",
   paddingVertical: "$1",
+  flex: 1,
 
   variants: {
     selected: {
@@ -321,21 +339,24 @@ const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         ref={forwardedRef}
         value={String(value)}
         textValue={String(value)}
-        selected={selected}
         disabled={disabled}>
-        <SelectItemTextFrame
-          selected={selected}
-          disabled={disabled}
-          $group-hover={{
-            color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
-          }}>
-          {children}
-        </SelectItemTextFrame>
-        <TamaguiSelect.ItemIndicator marginLeft="auto">
-          <Theme name={ColorRole.ACCENT}>
-            <Check size="$2" color="$color" />
-          </Theme>
-        </TamaguiSelect.ItemIndicator>
+        <SelectItemGroup disabled={disabled}>
+          <View width="$2" justifyContent="center">
+            <TamaguiSelect.ItemIndicator>
+              <Theme name={ColorRole.ACCENT}>
+                <Check size="$2" color="$color" />
+              </Theme>
+            </TamaguiSelect.ItemIndicator>
+          </View>
+          <SelectItemTextFrame
+            selected={selected}
+            disabled={disabled}
+            $group-hover={{
+              color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
+            }}>
+            {children}
+          </SelectItemTextFrame>
+        </SelectItemGroup>
       </SelectItemFrame>
     );
   }
@@ -350,8 +371,8 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   fontWeight: "$true",
   color: "$fg",
   backgroundColor: "transparent",
+  paddingHorizontal: "$2",
   flexGrow: 1,
-  marginHorizontal: "$1.75",
 
   hoverStyle: {
     backgroundColor: "transparent"
@@ -513,7 +534,6 @@ const SelectItems = View.styleable(({ children, ...props }, forwardedRef) => {
           alignItems="center"
           justifyContent="center"
           position="relative"
-          width="100%"
           height="$3">
           <YStack zIndex={10}>
             <ChevronUp size={20} />

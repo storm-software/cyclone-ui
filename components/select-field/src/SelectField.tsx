@@ -37,10 +37,10 @@ const SelectFieldItem = (
   props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>
 ) => {
   const item = useAtomValue(props.itemAtom);
-  const { value, name } = item;
+  const { value, name, index } = item;
 
   return (
-    <Select.Items.Item {...item} textValue={String(value)}>
+    <Select.Items.Item {...item} tabIndex={index} textValue={String(value)}>
       {name}
     </Select.Items.Item>
   );
