@@ -23,17 +23,13 @@ const meta: Meta<typeof SelectField> = {
   title: "Form/SelectField",
   component: SelectField,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" defaultValues={{ selectFieldName: "" }}>
-      <SelectField name="selectFieldName" {...props}>
+  render: ({ defaultValue, ...props }: any) => (
+    <Form
+      name="formName"
+      defaultValues={{ selectFieldName: defaultValue ?? "" }}>
+      <SelectField name="selectFieldName" {...props} items={items}>
         <SelectField.Label>Label Text</SelectField.Label>
-        <SelectField.Control placeholder="email@example.com">
-          {options.map((option, i) => (
-            <SelectField.Control.Item key={i} index={i} value={option.value}>
-              {option.name}
-            </SelectField.Control.Item>
-          ))}
-        </SelectField.Control>
+        <SelectField.Control placeholder="email@example.com" />
         <SelectField.Details>
           This is an example detailed message for an select field
         </SelectField.Details>
@@ -46,7 +42,7 @@ export default meta;
 
 type Story = StoryObj<typeof SelectField>;
 
-const options = [
+const items = [
   { name: "Apple", value: "Apple" },
   { name: "Pear", value: "Pear" },
   { name: "Blackberry", value: "Blackberry" },

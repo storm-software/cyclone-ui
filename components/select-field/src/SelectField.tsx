@@ -82,7 +82,11 @@ const SelectFieldControl = Select.styleable<
           placeholding={!value}
         />
 
-        {!disabled && !validating && <Select.Trigger.Button />}
+        {!disabled && !validating && (
+          <Field.Icon>
+            <Select.Trigger.Chevron />
+          </Field.Icon>
+        )}
         {(disabled || validating) && <Field.ThemeIcon />}
       </Select.Trigger>
 

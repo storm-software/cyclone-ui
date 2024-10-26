@@ -15,7 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
@@ -35,6 +34,7 @@ import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { YStack } from "@tamagui/stacks";
+import { useMemo } from "react";
 
 const defaultContextValues = {
   size: "$true",
@@ -61,7 +61,7 @@ export const defaultSelectGroupStyles = {
   fontFamily: "$body",
   fontSize: "$4",
   color: "$color",
-  backgroundColor: "$background",
+  // backgroundColor: "$background",
   borderRadius: "$radius",
   borderWidth: 1,
   borderColor: "$borderColor",
@@ -178,7 +178,7 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   size: "$true",
   fontFamily: "$body",
   color: "$color",
-  backgroundColor: "$background",
+  // backgroundColor: "$background",
   borderWidth: 0,
   borderColor: "transparent",
   borderStyle: "none" as any,
@@ -234,20 +234,22 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  backgroundColor: "transparent",
+  hoverStyle: {
+    backgroundColor: "$color8"
+  },
 
-  // hoverStyle: {
-  //   backgroundColor: "$color8"
-  // },
+  focusStyle: {
+    backgroundColor: "color8"
+  },
 
   variants: {
     selected: {
       true: {
-        backgroundColor: "$muted"
+        backgroundColor: "$muted",
 
-        // hoverStyle: {
-        //   backgroundColor: "$color8"
-        // }
+        hoverStyle: {
+          backgroundColor: "$color8"
+        }
       }
     },
 
@@ -425,41 +427,29 @@ const BaseSelect = styled(TamaguiSelect, {
   }
 });
 
-const SelectButtonIcon = styled(Button.Icon, {
+const SelectChevron = styled(ChevronDown, {
   name: SELECT_NAME,
   context: SelectContext,
 
-  animation: "slow",
-
-  variants: {
-    focused: {
-      true: {
-        rotate: "180deg"
-      },
-      false: {
-        rotate: "0deg"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    focused: false
-  }
+  animation: "500ms"
 });
 
-const SelectButton = Button.styleable<{ rotateOnFocused?: boolean }>(
-  ({ children, rotateOnFocused = true, ...props }, forwardedRef) => {
-    const { color, focused, disabled } = SelectContext.useStyledContext();
-    const theme = useThemeName();
+const SelectChevronImpl = SelectChevron.styleable<{
+  rotateOnFocused?: boolean;
+}>(({ rotateOnFocused = true, ...props }, forwardedRef) => {
+  const { color, focused, disabled } = SelectContext.useStyledContext();
+  const theme = useThemeName();
 
-    return (
-      <Button
+  const rotate = useMemo(
+    () => (rotateOnFocused ? focused : false),
+    [rotateOnFocused, focused]
+  );
+
+  return (
+    <View animation="500ms" rotate={rotate ? "180deg" : "0deg"}>
+      <SelectChevron
         ref={forwardedRef}
         theme={theme}
-        variant="ghost"
-        circular={true}
-        disabled={false}
-        padding="$2"
         {...props}
         color={
           color ||
@@ -468,14 +458,11 @@ const SelectButton = Button.styleable<{ rotateOnFocused?: boolean }>(
             : theme.toLowerCase().includes(ColorRole.BASE)
               ? "$base9"
               : "$primary")
-        }>
-        <SelectButtonIcon focused={rotateOnFocused ? focused : false}>
-          {children ?? <ChevronDown />}
-        </SelectButtonIcon>
-      </Button>
-    );
-  }
-);
+        }
+      />
+    </View>
+  );
+});
 
 const SelectGroup = BaseSelect.styleable<Partial<SelectContextProps>>(
   ({ name, disabled, focused, children, ...props }, forwardedRef) => {
@@ -576,7 +563,7 @@ const SelectItems = View.styleable(({ children, ...props }, forwardedRef) => {
 export const Select = withStaticProperties(SelectGroup, {
   Trigger: withStaticProperties(SelectTrigger, {
     Value: SelectValue,
-    Button: SelectButton
+    Chevron: SelectChevronImpl
   }),
   Items: withStaticProperties(SelectItems, {
     Item: SelectItem

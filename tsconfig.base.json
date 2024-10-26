@@ -37,11 +37,11 @@
       "@cyclone-ui/data-table": ["components/data-table/src/index.ts"],
       "@cyclone-ui/data-table/*": ["components/data-table/src/*"],
       "@cyclone-ui/date-picker": ["components/date-picker/src/index.ts"],
-      "@cyclone-ui/date-picker/*": ["components/date-picker/src/*"],
       "@cyclone-ui/date-picker-field": [
         "components/date-picker-field/src/index.ts"
       ],
       "@cyclone-ui/date-picker-field/*": ["components/date-picker-field/src/*"],
+      "@cyclone-ui/date-picker/*": ["components/date-picker/src/*"],
       "@cyclone-ui/dialog": ["components/dialog/src/index.ts"],
       "@cyclone-ui/dialog/*": ["components/dialog/src/*"],
       "@cyclone-ui/field": ["components/field/src/index.ts"],

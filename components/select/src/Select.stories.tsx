@@ -31,7 +31,7 @@ const meta: Meta<typeof Select> = {
         <Select>
           <Select.Trigger>
             <Select.Trigger.Value placeholder="email@example.com" />
-            <Select.Trigger.Button />
+            <Select.Trigger.Chevron />
           </Select.Trigger>
 
           <Select.Items>
