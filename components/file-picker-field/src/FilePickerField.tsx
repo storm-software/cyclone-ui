@@ -39,7 +39,7 @@ const FilePickerFieldControl = FilePicker.styleable(
 
     // const name = store.get.name();
     const disabled = store.get.disabled();
-    // const focused = store.get.focused();
+    const options = store.get.options();
     const value = store.get.value();
     // const formattedValue = store.get.formattedValue();
     // const initialValue = store.get.initialValue();
@@ -56,21 +56,20 @@ const FilePickerFieldControl = FilePicker.styleable(
       <FilePicker
         ref={forwardedRef}
         {...props}
+        max={options.max}
         disabled={disabled}
         files={value ?? []}
         onChange={change}>
-        {!disabled && <Field.ThemeIcon />}
-
-        <FilePicker.Trigger>
-          <FilePicker.Trigger.Button />
-        </FilePicker.Trigger>
-
         <FilePicker.Files>
           {value &&
             value?.map(file => (
               <FilePicker.Files.File key={file.id} {...file} />
             ))}
         </FilePicker.Files>
+
+        <FilePicker.Trigger>
+          <FilePicker.Trigger.Button />
+        </FilePicker.Trigger>
 
         {children}
       </FilePicker>

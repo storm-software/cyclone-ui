@@ -269,6 +269,8 @@ export type FieldOptions<
    * API reference: https://github.com/taiga-family/maskito/blob/main/projects/core/src/lib/types/mask-options.ts
    */
   mask?: MaskitoOptions;
+
+  [key: string]: any;
 };
 
 // export type InferFieldValue<TFieldOptions extends FieldOptions> =

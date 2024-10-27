@@ -17,12 +17,13 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import { BytesText } from "@cyclone-ui/bytes-text";
 import { ColorRole } from "@cyclone-ui/colors";
+import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import { ClientFileResult } from "@cyclone-ui/state";
 import { formatDateTime } from "@storm-stack/date-time/utilities/format-date-time";
-import { isSet } from "@storm-stack/types/type-checks/is-set";
-import { isString } from "@storm-stack/types/type-checks/is-string";
+import { useComposedRefs } from "@storm-stack/hooks";
 import { FileStatus } from "@storm-stack/types/utility-types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
@@ -30,18 +31,16 @@ import {
   FontSizeTokens,
   isWeb,
   styled,
-  Text,
   View,
   withStaticProperties,
   type ColorTokens
 } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Download, Trash2, Upload } from "@tamagui/lucide-icons";
+import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 import { DocumentPickerResult } from "expo-document-picker";
 import { PropsWithChildren, useCallback } from "react";
-import { Linking } from "react-native";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
@@ -50,8 +49,9 @@ export type FilePickerContextProps = {
   typeOfPicker: "image" | "file";
   max: number;
   mediaTypes: MediaTypeOptions[];
-  pick: ({ webFiles, nativeFiles }: PickFileProps) => any;
-  open: () => void;
+  onPick: ({ webFiles, nativeFiles }: PickFileProps) => any;
+  onOpen: () => void;
+  onChange: (files: ClientFileResult[]) => any;
   files: ClientFileResult[];
   name: string;
   scaleIcon: number;
@@ -66,8 +66,9 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
-  pick: (props: PickFileProps) => {},
-  open: () => {},
+  onPick: (props: PickFileProps) => {},
+  onOpen: () => {},
+  onChange: (files: ClientFileResult[]) => {},
   files: [] as ClientFileResult[],
   name: "",
   scaleIcon: 1.3,
@@ -81,45 +82,21 @@ const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
 
 export const FILE_PICKER_NAME = "FilePicker";
 
-const DownloadLink = Link.styleable(
-  ({ href, target, ...props }, forwardedRef) => {
-    return (
-      <Link
-        {...props}
-        {...(isWeb
-          ? {
-              href,
-              target
-            }
-          : {
-              href: "#",
-              onPress: event => {
-                props.onPress?.(event);
-                if (isSet(href)) {
-                  Linking.openURL(isString(href) ? href : href.toString());
-                }
-              }
-            })}
-        ref={forwardedRef}
-      />
-    );
-  }
-);
-
 const FilePickerGroupFrame = styled(View, {
   name: FILE_PICKER_NAME,
   context: FilePickerContext,
 
-  // animation: "slow",
+  animation: "slow",
   flexDirection: "column",
   width: "100%",
   minHeight: "$15",
   justifyContent: "center",
   alignItems: "center",
-  borderStyle: "dashed",
   gap: "$1",
+  paddingVertical: "$4",
+  borderStyle: "dashed",
+  borderWidth: 2,
   borderRadius: "$4",
-  padding: "$2",
   borderColor: "$borderColor",
   backgroundColor: "transparent",
   outlineWidth: 0,
@@ -164,8 +141,7 @@ const FilePickerGroupFrame = styled(View, {
         }
       },
       false: {
-        opacity: 1,
-        cursor: "pointer"
+        opacity: 1
       }
     }
   },
@@ -182,9 +158,7 @@ type PickFileProps = {
 };
 
 const FilePickerGroup = FilePickerGroupFrame.styleable<
-  Partial<FilePickerContextProps> & {
-    onChange?: (files: ClientFileResult[]) => any;
-  }
+  Partial<FilePickerContextProps>
 >(
   (
     {
@@ -206,16 +180,23 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           if (webFiles && webFiles.length > 0) {
             await onChange(
               webFiles
-                .map((file, index) => ({
-                  ...file,
-                  id: files.length + index,
-                  status: FileStatus.INITIALIZED,
-                  mimeType: file.type,
-                  name: file.name,
-                  size: file.size > 0 ? file.size : 0,
-                  lastModified: file.lastModified ? file.lastModified : 0,
-                  uri: URL.createObjectURL(file)
-                }))
+                .reduce(
+                  (ret, file, index) => {
+                    ret.push({
+                      ...file,
+                      id: files.length + index,
+                      status: FileStatus.INITIALIZED,
+                      mimeType: file.type,
+                      name: file.name,
+                      size: file.size > 0 ? file.size : 0,
+                      lastModified: file.lastModified ? file.lastModified : 0,
+                      uri: URL.createObjectURL(file)
+                    });
+
+                    return ret;
+                  },
+                  [...files]
+                )
                 .slice(max * -1)
             );
           }
@@ -223,19 +204,22 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           if (nativeFiles && nativeFiles.length > 0) {
             await onChange(
               nativeFiles
-                .reduce((ret, file, index) => {
-                  if (file.assets && file.assets.length > 0) {
-                    ret.push(
-                      ...file.assets.map((asset, i) => ({
-                        ...asset,
-                        id: files.length + index + i,
-                        status: FileStatus.INITIALIZED
-                      }))
-                    );
-                  }
+                .reduce(
+                  (ret, file, index) => {
+                    if (file.assets && file.assets.length > 0) {
+                      ret.push(
+                        ...file.assets.map((asset, i) => ({
+                          ...asset,
+                          id: files.length + index + i,
+                          status: FileStatus.INITIALIZED
+                        }))
+                      );
+                    }
 
-                  return ret;
-                }, files as ClientFileResult[])
+                    return ret;
+                  },
+                  [...files]
+                )
                 .slice(max * -1)
             );
           }
@@ -244,27 +228,30 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
       [onChange, files, max]
     );
 
-    const { open, getInputProps, getRootProps, dragStatus } = useFilePicker({
+    const { onOpen, getInputProps, getRootProps, dragStatus } = useFilePicker({
       typeOfPicker,
       mediaTypes,
       multiple: max > 1,
       onPick: handlePick
     });
 
+    const { ref, ...rootProps } = getRootProps();
+    const composedRef = useComposedRefs(forwardedRef, ref);
+
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
       <FilePickerGroupFrame
-        ref={forwardedRef}
-        {...getRootProps()}
         {...props}
+        {...rootProps}
+        ref={composedRef}
         group={true}
-        onPress={open}
         active={Boolean(dragStatus?.isDragActive)}>
         <FilePickerContext.Provider
           name={name}
           files={files}
-          open={open}
-          pick={handlePick}
+          onOpen={onOpen}
+          onPick={handlePick}
+          onChange={onChange}
           disabled={disabled}
           typeOfPicker={typeOfPicker}
           mediaTypes={mediaTypes}
@@ -288,9 +275,10 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
 const FilePickerTrigger = YStack.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files } = FilePickerContext.useStyledContext();
+    const { disabled, onOpen, files, max } =
+      FilePickerContext.useStyledContext();
 
-    if (files?.length) {
+    if (files.length >= max) {
       return null;
     }
 
@@ -300,8 +288,11 @@ const FilePickerTrigger = YStack.styleable(
         justifyContent="center"
         alignItems="center"
         gap="$1"
+        onPress={onOpen}
+        width="100%"
+        cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
-        {!files?.length && (
+        {files.length === 0 && (
           <Upload
             size="$5"
             color={disabled ? "$disabled" : "$color"}
@@ -322,9 +313,9 @@ const FilePickerTrigger = YStack.styleable(
 
 const FilePickerTriggerButton = Button.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max, open } = FilePickerContext.useStyledContext();
+    const { disabled, files, max } = FilePickerContext.useStyledContext();
 
-    if (disabled || files?.length) {
+    if (disabled) {
       return null;
     }
 
@@ -333,7 +324,7 @@ const FilePickerTriggerButton = Button.styleable(
         ref={forwardedRef}
         variant="link"
         disabled={disabled}
-        onPress={open}
+        noPadding={true}
         $platform-native={{
           display: "none"
         }}
@@ -341,7 +332,9 @@ const FilePickerTriggerButton = Button.styleable(
         <Button.Text>
           {children ||
             (max > 1
-              ? "Click or drop files to upload"
+              ? files.length === 0
+                ? "Click or drop files to upload"
+                : "Click or drop files to add more uploads"
               : "Click or drop a file to upload")}
         </Button.Text>
       </Button>
@@ -370,11 +363,34 @@ const FilePickerFiles = YStack.styleable(
   }
 );
 
-export type FilePickerFileProps = PropsWithChildren<
-  ClientFileResult & {
-    onRemove?: (id: number) => any;
+const FilePickerViewLink = ({
+  uri,
+  children,
+  ...props
+}: PropsWithChildren<{ uri?: string }>) => {
+  if (uri) {
+    return (
+      <Link
+        fontFamily="$label"
+        fontSize="$7"
+        fontWeight="$true"
+        color="$fg"
+        {...props}
+        href={uri}
+        target="_blank">
+        {children}
+      </Link>
+    );
   }
->;
+
+  return (
+    <LabelText fontFamily="$label" fontSize="$7" color="$fg" {...props}>
+      {children}
+    </LabelText>
+  );
+};
+
+export type FilePickerFileProps = PropsWithChildren<ClientFileResult>;
 
 const FilePickerFile = ({
   id,
@@ -382,13 +398,14 @@ const FilePickerFile = ({
   name,
   size,
   lastModified,
-  onRemove
+  mimeType
 }: FilePickerFileProps) => {
-  const { disabled } = FilePickerContext.useStyledContext();
+  const { disabled, onChange, files } = FilePickerContext.useStyledContext();
 
-  const handleRemove = useCallback(() => {
-    onRemove?.(id);
-  }, [onRemove, id]);
+  const handleRemove = useCallback(
+    () => onChange(files.filter(file => file.id !== id)),
+    [onChange, files, id]
+  );
 
   return (
     <View
@@ -438,20 +455,26 @@ const FilePickerFile = ({
         animation="100ms"
         position="absolute"
         zIndex={20}
-        left={12}
+        left={16}
         top="30%"
         opacity={0}
         $group-file-hover={{
           opacity: 1
         }}>
         {uri && (
-          <DownloadLink href={uri} download={name}>
-            <Button variant="ghost" theme="base" padding="$2" circular={true}>
+          <Link underline="none" href={uri} download={name}>
+            <Button
+              variant="ghost"
+              theme="base"
+              color="$primary"
+              size="$6"
+              padding="$2"
+              circular={true}>
               <Button.Icon>
-                <Download color="$primary" size="$2" />
+                <Download />
               </Button.Icon>
             </Button>
-          </DownloadLink>
+          </Link>
         )}
       </View>
 
@@ -460,7 +483,7 @@ const FilePickerFile = ({
           animation="100ms"
           position="absolute"
           zIndex={20}
-          right={12}
+          right={16}
           top="30%"
           opacity={0}
           $group-file-hover={{
@@ -469,7 +492,9 @@ const FilePickerFile = ({
           <Button
             variant="ghost"
             theme="base"
+            color="$primary"
             onPress={handleRemove}
+            size="$6"
             padding="$2"
             circular={true}>
             <Button.Icon>
@@ -489,30 +514,37 @@ const FilePickerFile = ({
         right={0}
         alignItems="center"
         justifyContent="center">
-        <YStack width="75%" gap="$1.5">
-          <Text
-            zIndex={25}
-            textAlign="center"
-            color="$base10"
-            fontSize="$6"
-            fontWeight="$5">
-            {name
-              ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
-                ? `${name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
-                : name
-              : "Unnamed File"}
-          </Text>
-          <XStack gap="$4" justifyContent="center">
-            <BodyText zIndex={25} color="$base9">
-              {(size ?? 0) / 1000} KB
-            </BodyText>
+        <YStack width="75%" gap="$1.75">
+          <View zIndex={25} justifyContent="center" alignItems="center">
+            <FilePickerViewLink uri={uri}>
+              {name
+                ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
+                  ? `${name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
+                  : name
+                : "Unnamed File"}
+            </FilePickerViewLink>
+          </View>
+          <XStack gap="$1.5" justifyContent="center" alignItems="center">
+            <BytesText zIndex={25} color="$base9" fontWeight="$5">
+              {size}
+            </BytesText>
+
+            {lastModified && <Dot size="$1.25" color="$base9" />}
 
             {lastModified && (
-              <BodyText zIndex={25} color="$base9">
+              <BodyText zIndex={25} color="$base9" fontWeight="$5">
                 {formatDateTime(new Date(lastModified), {
                   returnEmptyIfNotSet: true,
                   returnEmptyIfInvalid: true
                 })}
+              </BodyText>
+            )}
+
+            {mimeType && <Dot size="$1.25" color="$base9" />}
+
+            {mimeType && (
+              <BodyText zIndex={25} color="$base9" fontWeight="$5">
+                {mimeType}
               </BodyText>
             )}
           </XStack>
@@ -523,7 +555,7 @@ const FilePickerFile = ({
         animation="slow"
         fullscreen={true}
         zIndex={10}
-        colors={["transparent", "$accent8"]}
+        colors={["transparent", "$accent4"]}
         locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}

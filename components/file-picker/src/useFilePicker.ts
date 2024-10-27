@@ -23,7 +23,7 @@ import { MediaTypeOptions } from "./file-picker-types";
 import { useDropZone } from "./useDropZone";
 
 export type UseFilePickerControl = {
-  open: () => void;
+  onOpen: () => void;
   getInputProps: <TProps extends DropzoneInputProps>(props?: TProps) => TProps;
   getRootProps: <TProps extends DropzoneRootProps>(props?: TProps) => TProps;
   dragStatus?: {
@@ -92,7 +92,7 @@ export function useFilePicker<TMediaTypeOptions extends MediaTypeOptions[]>(
   });
 
   const control = {
-    open,
+    onOpen: open,
     getInputProps,
     getRootProps,
     dragStatus: {

@@ -15,87 +15,96 @@
 
  -------------------------------------------------------------------*/
 
-import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-import { FilePickerField } from "./FilePickerField";
 
-const meta: Meta<typeof FilePickerField> = {
-  title: "Form/FilePickerField",
-  component: FilePickerField,
+import { BytesText } from "./BytesText";
+
+const meta: Meta<typeof BytesText> = {
+  title: "Typography/BytesText",
+  component: BytesText,
   tags: ["autodocs"],
-  render: (props: any) => {
-    return (
-      <Form name="formName" defaultValues={{ filePickerFieldName: "" }}>
-        <FilePickerField name="filePickerFieldName" {...props}>
-          <FilePickerField.Label>Label Text</FilePickerField.Label>
-          <FilePickerField.Control />
-          <FilePickerField.Details>
-            This is an example detailed message for an file-picker field
-          </FilePickerField.Details>
-        </FilePickerField>
-      </Form>
-    );
-  }
-} satisfies Meta<typeof FilePickerField>;
+  render: ({ children, ...props }: any) => (
+    <BytesText {...props}>{children}</BytesText>
+  )
+} satisfies Meta<typeof BytesText>;
 
 export default meta;
 
-type Story = StoryObj<typeof FilePickerField>;
+type Story = StoryObj<typeof BytesText>;
 
 export const Base: Story = {
+  args: {
+    children: "1337"
+  }
+};
+
+export const NoChildren: Story = {
   args: {}
 };
 
-export const Required: Story = {
+export const Bytes: Story = {
   args: {
-    required: true
+    children: "25"
   }
 };
 
-export const Disabled: Story = {
+export const KiloBytes: Story = {
   args: {
-    disabled: true
+    children: "1337"
   }
 };
 
-export const Multiple: Story = {
+export const GigaBytes: Story = {
   args: {
-    max: 10
+    children: "12345678"
   }
 };
 
-// export const DefaultValue: Story = {
-//   args: {
-//     defaultValue: "Defaulted Text"
-//   }
-// };
+export const Brand: Story = {
+  args: {
+    theme: "brand",
+    children: "1337"
+  }
+};
+
+export const Alternate: Story = {
+  args: {
+    theme: "alternate",
+    children: "1337"
+  }
+};
 
 export const Help: Story = {
   args: {
-    theme: "help"
+    theme: "help",
+    children: "1337"
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "error"
+    theme: "error",
+    children: "1337"
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    theme: "warning",
+    children: "1337"
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    theme: "info",
+    children: "1337"
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    theme: "success",
+    children: "1337"
   }
 };

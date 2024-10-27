@@ -143,6 +143,7 @@ export const ButtonContext = createStyledContext<
       circular?: boolean;
       disabled?: boolean;
       animate?: boolean;
+      noPadding?: boolean;
     }
   >
 >({
@@ -161,6 +162,7 @@ export const ButtonContext = createStyledContext<
   unstyled: false,
   circular: false,
   disabled: false,
+  noPadding: false,
   animate: true
 });
 
@@ -364,6 +366,13 @@ const ButtonFrame = styled(View, {
         borderRadius: 1000_000_000,
         height: "fit-content"
       }
+    },
+
+    noPadding: {
+      true: {
+        padding: 0,
+        height: "fit-content"
+      }
     }
   } as const,
 
@@ -371,7 +380,8 @@ const ButtonFrame = styled(View, {
     unstyled: process.env.TAMAGUI_HEADLESS === "1",
     disabled: false,
     outlined: false,
-    circular: false
+    circular: false,
+    noPadding: false
   }
 });
 
@@ -575,9 +585,18 @@ const ButtonContainer = styled(ThemeableStack, {
 });
 
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
-  (props, forwardedRef) => {
-    const { variant, disabled, circular, animate, onPress, onClick, ...rest } =
-      props;
+  (
+    {
+      variant,
+      disabled = false,
+      circular = false,
+      noPadding = false,
+      animate = true,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    const { onPress, onClick, ...rest } = props;
 
     return (
       <ButtonContainer
@@ -585,7 +604,13 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         circular={circular}
         disabled={disabled}
         animate={animate}>
-        <ButtonContext.Provider {...props}>
+        <ButtonContext.Provider
+          variant={variant}
+          disabled={disabled}
+          circular={circular}
+          noPadding={noPadding}
+          animate={animate}
+          {...props}>
           {variant === "ghost" && (
             <ButtonGhostBackground
               fullscreen={true}

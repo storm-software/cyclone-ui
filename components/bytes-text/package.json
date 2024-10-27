@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/file-picker",
+  "name": "@cyclone-ui/bytes-text",
   "version": "0.5.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/file-picker"
+    "directory": "components/bytes-text"
   },
   "private": false,
   "main": "dist/cjs",
@@ -32,26 +32,8 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@storm-stack/date-time": "latest",
-    "@storm-stack/hooks": "latest",
-    "@storm-stack/types": "latest",
-    "@tamagui/animate-presence": "^1.110.5",
-    "@tamagui/constants": "^1.110.5",
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/group": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/image": "^1.110.5",
-    "@tamagui/linear-gradient": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/separator": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5",
-    "@tamagui/text": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "expo-document-picker": "^11.10.1",
-    "expo-image-picker": "^15.0.5",
-    "react-dropzone": "^14.2.3",
-    "react-native-svg": "^15.2.0"
+    "@storm-stack/string-fns": "latest",
+    "@tamagui/core": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",
@@ -63,6 +45,5 @@
   },
   "sideEffects": [
     "*.css"
-  ],
-  "module:jsx": "dist/jsx"
+  ]
 }

@@ -28,6 +28,7 @@ overrides:
   '@cyclone-ui/link': workspace:*
   '@cyclone-ui/body-text': workspace:*
   '@cyclone-ui/label-text': workspace:*
+  '@cyclone-ui/bytes-text': workspace:*
   '@cyclone-ui/heading-text': workspace:*
   '@cyclone-ui/validation-text': workspace:*
   '@cyclone-ui/masks': workspace:*
@@ -416,7 +417,7 @@ importers:
         version: 1.32.1(qv4fx2hc3vtgs63gzmf4xdsdza)
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@trpc/client':
         specifier: 11.0.0-rc.382
         version: 11.0.0-rc.382(@trpc/server@11.0.0-rc.382)
@@ -483,7 +484,7 @@ importers:
         version: 1.194.0(fd2zhq2oqjlbh54bpjfl2eud2e)
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       tslib:
         specifier: ^2.6.2
         version: 2.6.3
@@ -737,6 +738,25 @@ importers:
         specifier: 0.74.1
         version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
+  components/bytes-text:
+    dependencies:
+      '@storm-stack/string-fns':
+        specifier: latest
+        version: 0.14.1
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
   components/card:
     dependencies:
       '@tamagui/core':
@@ -824,7 +844,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/checkbox-headless':
         specifier: ^1.110.5
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -944,10 +964,10 @@ importers:
         version: 6.6.1(react@18.3.1)
       '@storm-stack/date-time':
         specifier: latest
-        version: 1.37.1
+        version: 1.38.0
       '@storm-stack/hooks':
         specifier: latest
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        version: 0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/adapt':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1029,7 +1049,7 @@ importers:
         version: 3.1.2(@maskito/core@3.1.2)
       '@storm-stack/date-time':
         specifier: latest
-        version: 1.37.1
+        version: 1.38.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1118,7 +1138,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1152,13 +1172,13 @@ importers:
     dependencies:
       '@storm-stack/date-time':
         specifier: latest
-        version: 1.37.1
+        version: 1.38.0
       '@storm-stack/hooks':
         specifier: latest
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        version: 0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/animate-presence':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1186,6 +1206,9 @@ importers:
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
         version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/separator':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1222,10 +1245,10 @@ importers:
     dependencies:
       '@storm-stack/date-time':
         specifier: latest
-        version: 1.37.1
+        version: 1.38.0
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1560,10 +1583,10 @@ importers:
     dependencies:
       '@storm-stack/hooks':
         specifier: latest
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        version: 0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/constants':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1606,10 +1629,10 @@ importers:
     dependencies:
       '@storm-stack/hooks':
         specifier: latest
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        version: 0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1640,7 +1663,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/adapt':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1725,7 +1748,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1983,7 +2006,7 @@ importers:
     dependencies:
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@tamagui/core':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -2159,16 +2182,16 @@ importers:
         version: 1.32.1(qv4fx2hc3vtgs63gzmf4xdsdza)
       '@storm-stack/hooks':
         specifier: latest
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        version: 0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@storm-stack/serialization':
         specifier: latest
-        version: 1.35.1
+        version: 1.36.0
       '@storm-stack/string-fns':
         specifier: latest
         version: 0.14.1
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@storm-stack/utilities':
         specifier: latest
         version: 1.32.1
@@ -2276,13 +2299,13 @@ importers:
     dependencies:
       '@storm-stack/serialization':
         specifier: latest
-        version: 1.35.1
+        version: 1.36.0
       '@storm-stack/string-fns':
         specifier: latest
         version: 0.14.1
       '@storm-stack/types':
         specifier: latest
-        version: 0.23.1
+        version: 0.24.0
       '@storm-stack/utilities':
         specifier: latest
         version: 1.32.1
@@ -5448,7 +5471,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -7328,14 +7350,14 @@ packages:
       '@microsoft/api-extractor':
         optional: true
 
-  '@storm-stack/date-time@1.37.1':
-    resolution: {integrity: sha512-RYp9KpFHAS1WnbjUn/kF31Qsw7Nh2RNUeVHLfM8Mj54RLxe+mDbiZebJCpbo5VVS8lYebE3EEoqN+Cwwia8ghQ==}
+  '@storm-stack/date-time@1.38.0':
+    resolution: {integrity: sha512-ho/2JsXPSoGxak2sEkIXc15meGOauhUXiS2vwKGwWeWf7t7nKgA0w3hFThcXz0Z+B2aDzLEbYcbRWFNerQcTKA==}
 
   '@storm-stack/errors@1.32.1':
     resolution: {integrity: sha512-DHGNkiGlBAgRf2lmIgtGHzLufueC6kupS8hhyLwSSAalubjrApQYnnkh0Pkw95J58KzWyYLucyoe1Idk9HCjIA==}
 
-  '@storm-stack/hooks@0.14.1':
-    resolution: {integrity: sha512-uMg6WjaQVc0Q+9Jcw5WXARxIalPwhNaaIiqyFpfRJ82j4LuL10xDpODg9wf9dpFImb7rQoFVVdZhH5Fy7Jl3eA==}
+  '@storm-stack/hooks@0.15.0':
+    resolution: {integrity: sha512-NMubFD4FZ/oD3deoPMXaz0OGFvKPG5OicfW1XLUhq6JoGWBLsGdvxkITtwmNkVG7AJrjPkTPKefiQTkRm6lx+Q==}
     peerDependencies:
       react: 19.0.0-rc-f6cce072-20240723
       react-dom: 19.0.0-rc-f6cce072-20240723
@@ -7348,14 +7370,14 @@ packages:
       react-native:
         optional: true
 
-  '@storm-stack/serialization@1.35.1':
-    resolution: {integrity: sha512-LTVwMdOg71FkUAmVLPOCJ3PqQulJidKqXWwVk3Uqlwkzmv2MUGiS/ncez76t7Dt7J+Ok3SZBG2SCQQ318p2GvA==}
+  '@storm-stack/serialization@1.36.0':
+    resolution: {integrity: sha512-96qmeGP+MnNFgM/xuoayAWpZgtJ65ZO2o2146eDMBmqv6Sl6NE1V9jA4y1T0hMnmQydQo34pq7n1csR+n11fCQ==}
 
   '@storm-stack/string-fns@0.14.1':
     resolution: {integrity: sha512-fZg+iIYxeJiMjECJYiYOWQIqqQg2k/pV1JCQqX2QI+JiR07MZD1DchQcKyVQqxUYcvB5cbtfcbQq24AynWz9MQ==}
 
-  '@storm-stack/types@0.23.1':
-    resolution: {integrity: sha512-H7lkKGi0OSjEQsOlB5Hp3Pw0beCoagHxW3lFYgsP+h4l1HlF0rWWiwxHjnFumLYS4O/1SLZiDbjiorzqOrNHpA==}
+  '@storm-stack/types@0.24.0':
+    resolution: {integrity: sha512-ynK9XP8EK5LrYs9oNsU3Rc7ilh/FjXQ2FaTanOJeZBI3nVRQ5s82t+eDMfMXQYW7WCMHglzilVqPI1WQaDmGLQ==}
 
   '@storm-stack/utilities@1.32.1':
     resolution: {integrity: sha512-xnQwl2vikPjSL8/3EWqZlsFH8zYy+QPRkZipKUPlkl5qDe3Bb5PgqLZJRrzvpXgKZx5oTkxGkL2Ei4yy82/gww==}
@@ -26549,6 +26571,15 @@ snapshots:
       - typescript
       - verdaccio
 
+  '@nrwl/tao@19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))':
+    dependencies:
+      nx: 19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))
+      tslib: 2.6.3
+    transitivePeerDependencies:
+      - '@swc-node/register'
+      - '@swc/core'
+      - debug
+
   '@nrwl/tao@19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))':
     dependencies:
       nx: 19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))
@@ -29762,7 +29793,7 @@ snapshots:
       - ts-node
       - webpack-sources
 
-  '@storm-stack/date-time@1.37.1':
+  '@storm-stack/date-time@1.38.0':
     dependencies:
       '@formkit/tempo': 0.1.2
       '@js-temporal/polyfill': 0.4.4
@@ -29797,13 +29828,13 @@ snapshots:
       - typescript
       - webpack-sources
 
-  '@storm-stack/hooks@0.14.1(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)':
+  '@storm-stack/hooks@0.15.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)':
     optionalDependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-native: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
-  '@storm-stack/serialization@1.35.1':
+  '@storm-stack/serialization@1.36.0':
     dependencies:
       buffer: 6.0.3
       superjson: 2.2.1
@@ -29811,7 +29842,7 @@ snapshots:
 
   '@storm-stack/string-fns@0.14.1': {}
 
-  '@storm-stack/types@0.23.1': {}
+  '@storm-stack/types@0.24.0': {}
 
   '@storm-stack/utilities@1.32.1': {}
 
@@ -42571,7 +42602,7 @@ snapshots:
   nx@19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13)):
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.4
-      '@nrwl/tao': 19.7.3(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.7.26(@swc/helpers@0.5.13))
+      '@nrwl/tao': 19.7.3(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.6.2))(@swc/core@1.5.29(@swc/helpers@0.5.13))
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
