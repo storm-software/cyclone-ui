@@ -15,70 +15,37 @@
 
  -------------------------------------------------------------------*/
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { ColorRole } from "@cyclone-ui/colors";
-import { format } from "@formkit/tempo";
+import { Link } from "@cyclone-ui/link";
+import { ClientFileResult } from "@cyclone-ui/state";
+import { formatDateTime } from "@storm-stack/date-time/utilities/format-date-time";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
+import { isString } from "@storm-stack/types/type-checks/is-string";
+import { FileStatus } from "@storm-stack/types/utility-types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
   createStyledContext,
   FontSizeTokens,
-  getVariable,
   isWeb,
   styled,
   Text,
-  TextProps,
-  useTheme,
-  useThemeName,
-  VariantSpreadExtras,
   View,
   withStaticProperties,
   type ColorTokens
 } from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { Image } from "@tamagui/image";
-import { Label } from "@tamagui/label";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import {
-  AlertCircle,
-  Asterisk,
-  CheckCircle,
-  Download,
-  HelpCircle,
-  Info,
-  Lock,
-  Trash2,
-  UploadCloud
-} from "@tamagui/lucide-icons";
+import { Download, Trash2, Upload } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { SizableTextProps } from "@tamagui/text";
-import { SizableText } from "@tamagui/text";
-import { useControllableState } from "@tamagui/use-controllable-state";
-import { DocumentPickerAsset } from "expo-document-picker";
-import { Dispatch, SetStateAction } from "react";
+import { DocumentPickerResult } from "expo-document-picker";
+import { PropsWithChildren, useCallback } from "react";
 import { Linking } from "react-native";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
-export interface FileResult extends DocumentPickerAsset {
-  id: number;
-}
-
-const defaultContextValues = {
-  size: "$4",
-  typeOfPicker: "file",
-  mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
-  max: 1,
-  files: [] as FileResult[],
-  name: "",
-  scaleIcon: 1.3,
-  color: undefined,
-  required: false,
-  disabled: false,
-  theme: `${ColorRole.BASE}_FilePicker`
-} as const;
-
-export const FilePickerContext = createStyledContext<{
+export type FilePickerProps = {
   size: FontSizeTokens;
   typeOfPicker: "image" | "file";
   max: number;
@@ -87,127 +54,80 @@ export const FilePickerContext = createStyledContext<{
     webFiles?: File[];
     nativeFiles?: { uri: string }[];
   }) => void;
-  files: FileResult[];
+  files: ClientFileResult[];
   name: string;
   scaleIcon: number;
   color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
   theme: string;
-}>(defaultContextValues);
+};
+
+export const FilePickerContext = createStyledContext<FilePickerProps>({
+  size: "$4",
+  typeOfPicker: "file",
+  mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
+  max: 1,
+  files: [] as ClientFileResult[],
+  name: "",
+  scaleIcon: 1.3,
+  color: undefined,
+  required: false,
+  disabled: false,
+  theme: `${ColorRole.BASE}_FilePicker`
+});
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
 
-export const FilePickerFrame = styled(View, {
-  name: "FilePicker",
-  context: FilePickerContext,
+export const FILE_PICKER_NAME = "FilePicker";
 
-  animation: "$slow",
-  flexDirection: "column",
-  gap: "$2",
-
-  variants: {
-    disabled: {
-      true: {
-        color: "$disabled"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false
-  }
-});
-
-const InternalStateContext = createStyledContext({
-  name: undefined as string | undefined,
-  setValue: ((val?: FileResult[]) => {}) as Dispatch<
-    SetStateAction<FileResult[]>
-  >,
-  value: [] as FileResult[]
-});
-
-export const FilePickerFrameImpl = FilePickerFrame.styleable<{
-  name: string;
-  onChange: (files: FileResult[]) => any;
-  value: FileResult[];
-  defaultValue?: FileResult[];
-}>(
-  (
-    { children, onChange, value: valueProp, defaultValue, name, ...props },
-    forwardedRef
-  ) => {
-    const [value, setValue] = useControllableState({
-      prop: valueProp,
-      onChange,
-      defaultProp: defaultValue ?? []
-    });
-
+const DownloadLink = Link.styleable(
+  ({ href, target, ...props }, forwardedRef) => {
     return (
-      <InternalStateContext.Provider
-        name={name}
-        value={value}
-        setValue={setValue}>
-        <FilePickerFrame ref={forwardedRef} {...props}>
-          {children}
-        </FilePickerFrame>
-      </InternalStateContext.Provider>
+      <Link
+        {...props}
+        {...(isWeb
+          ? {
+              href,
+              target
+            }
+          : {
+              href: "#",
+              onPress: event => {
+                props.onPress?.(event);
+                if (isSet(href)) {
+                  Linking.openURL(isString(href) ? href : href.toString());
+                }
+              }
+            })}
+        ref={forwardedRef}
+      />
     );
   }
 );
 
-export interface DownloadAnchorExtraProps {
-  href?: string;
-  target?: string;
-  rel?: string;
-  download?: string;
-}
+export type FilePickerItemProps = PropsWithChildren<
+  ClientFileResult & {
+    onRemove?: (id: number) => any;
+  }
+>;
 
-export type DownloadAnchorProps = SizableTextProps & DownloadAnchorExtraProps;
-
-const DownloadAnchorFrame = styled(SizableText, {
-  name: "Anchor",
-  tag: "a",
-  accessibilityRole: "link"
-});
-
-export const DownloadAnchor =
-  DownloadAnchorFrame.styleable<DownloadAnchorExtraProps>(
-    ({ href, target, ...props }, ref) => {
-      return (
-        <DownloadAnchorFrame
-          {...props}
-          {...(isWeb
-            ? {
-                href,
-                target
-              }
-            : {
-                onPress: event => {
-                  props.onPress?.(event);
-                  if (href !== undefined) {
-                    Linking.openURL(href);
-                  }
-                }
-              })}
-          ref={ref as any}
-        />
-      );
-    }
-  );
-
-export interface FilePickerItemProps {
-  key: string;
-  file: FileResult;
-}
-
-const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
-  const { setValue } = InternalStateContext.useStyledContext();
+const FilePickerFile = ({
+  id,
+  uri,
+  name,
+  size,
+  lastModified,
+  onRemove
+}: FilePickerItemProps) => {
   const { disabled } = FilePickerContext.useStyledContext();
+
+  const handleRemove = useCallback(() => {
+    onRemove?.(id);
+  }, [onRemove, id]);
 
   return (
     <View
-      key={key}
       group={"file" as any}
       flexDirection="column"
       animation="100ms"
@@ -260,13 +180,15 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
         $group-file-hover={{
           opacity: 1
         }}>
-        <DownloadAnchor href={file.uri} download={file.name}>
-          <Button variant="ghost" theme="base" padding="$2" circular={true}>
-            <Button.Icon>
-              <Download color="$primary" size="$2" />
-            </Button.Icon>
-          </Button>
-        </DownloadAnchor>
+        {uri && (
+          <DownloadLink href={uri} download={name}>
+            <Button variant="ghost" theme="base" padding="$2" circular={true}>
+              <Button.Icon>
+                <Download color="$primary" size="$2" />
+              </Button.Icon>
+            </Button>
+          </DownloadLink>
+        )}
       </View>
 
       {!disabled && (
@@ -283,13 +205,11 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
           <Button
             variant="ghost"
             theme="base"
-            onPress={() =>
-              setValue(files => files.filter(current => file.id !== current.id))
-            }
+            onPress={handleRemove}
             padding="$2"
             circular={true}>
             <Button.Icon>
-              <Trash2 color="$primary" size="$2" />
+              <Trash2 />
             </Button.Icon>
           </Button>
         </View>
@@ -312,24 +232,21 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
             color="$base10"
             fontSize="$6"
             fontWeight="$5">
-            {file.name
-              ? file.name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
-                ? `${file.name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
-                : file.name
+            {name
+              ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
+                ? `${name?.slice(0, MAX_DISPLAYABLE_FILE_NAME_LENGTH)}...`
+                : name
               : "Unnamed File"}
           </Text>
           <XStack gap="$4" justifyContent="center">
-            <Text zIndex={25} color="$base9" fontSize="$4" fontWeight="$3">
-              {(file.size ?? 0) / 1000} KB
-            </Text>
+            <BodyText zIndex={25} color="$base9">
+              {(size ?? 0) / 1000} KB
+            </BodyText>
 
-            {file.lastModified && (
-              <Text zIndex={25} color="$base9" fontSize="$4" fontWeight="$3">
-                {format(new Date(file.lastModified), {
-                  date: "short",
-                  time: "short"
-                })}
-              </Text>
+            {lastModified && (
+              <BodyText zIndex={25} color="$base9">
+                {formatDateTime(new Date(lastModified))}
+              </BodyText>
             )}
           </XStack>
         </YStack>
@@ -360,406 +277,214 @@ const FilePickerItem = ({ key, file }: FilePickerItemProps) => {
         $group-file-hover={{
           scale: 1.2
         }}>
-        <Image
-          key={file.uri}
-          height={500}
-          source={{ height: 500, uri: file.uri }}
-        />
+        <Image key={id} height={500} source={{ height: 500, uri: uri }} />
       </View>
     </View>
   );
 };
 
-export const FilePickerBox = View.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    const { disabled, typeOfPicker, mediaTypes, max, name } =
-      FilePickerContext.useStyledContext();
+const FilePickerGroupFrame = styled(View, {
+  name: FILE_PICKER_NAME,
+  context: FilePickerContext,
 
-    const { value, setValue } = InternalStateContext.useStyledContext();
-    const { open, getInputProps, getRootProps, dragStatus } = useFilePicker({
-      typeOfPicker,
-      mediaTypes,
-      multiple: max > 1,
-      onPick: ({ webFiles, nativeFiles }) => {
-        if (webFiles?.length) {
-          const pickedImages = webFiles?.map(file => ({
-            ...file,
-            mimeType: file.type,
-            name: file.name,
-            size: file.size > 0 ? file.size : 0,
-            lastModified: file.lastModified ? file.lastModified : 0,
-            uri: URL.createObjectURL(file)
-          }));
-
-          setValue(prevFiles =>
-            [
-              ...prevFiles,
-              ...pickedImages.map((file, index) => ({
-                ...file,
-                id: prevFiles.length + index
-              }))
-            ].slice(max * -1)
-          );
-        } else if (nativeFiles?.length) {
-          setValue(prevFiles =>
-            [
-              ...prevFiles,
-              ...nativeFiles?.reduce(
-                (ret, file) => [
-                  ...ret,
-                  ...(file.assets?.map((asset, index) => ({
-                    ...asset,
-                    id: prevFiles.length + index
-                  })) ?? [])
-                ],
-                [] as FileResult[]
-              )
-            ].slice(max * -1)
-          );
-        }
-      }
-    });
-
-    return (
-      // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
-      <View
-        ref={forwardedRef}
-        flexDirection="column"
-        {...getRootProps()}
-        {...props}
-        width="100%"
-        justifyContent="center"
-        alignItems="center"
-        borderStyle="dashed"
-        borderWidth={dragStatus?.isDragActive ? 2 : 1}
-        borderColor={
-          isWeb
-            ? "transparent"
-            : dragStatus?.isDragActive
-              ? "$borderColorPress"
-              : "$borderColor"
-        }
-        gap="$1"
-        borderRadius="$true"
-        paddingVertical="$4"
-        style={
-          isWeb
-            ? {
-                background: `linear-gradient(to right, gray 50%, transparent 0%) top repeat-x,
-        linear-gradient(gray 50%, transparent 0%) right repeat-y,
-        linear-gradient(to right, gray 50%, transparent 0%) bottom repeat-x,
-        linear-gradient(gray 50%, transparent 0%) left repeat-y`,
-                backgroundSize: "40px 2px, 2px 40px"
-              }
-            : {}
-        }>
-        {/* need an empty input div just have image drop feature in the web */}
-        {/* @ts-ignore */}
-        <View id={name} tag="input" width={0} height={0} {...getInputProps()} />
-
-        <AnimatePresence>
-          {value?.length && (
-            <YStack gap="$4" paddingHorizontal="$4" width="100%">
-              {value?.map(file => (
-                <FilePickerItem key={file.uri} file={file} />
-              ))}
-            </YStack>
-          )}
-        </AnimatePresence>
-
-        <YStack justifyContent="center" alignItems="center" gap="$0.5">
-          {!value?.length && (
-            <UploadCloud
-              size="$11"
-              color={disabled ? "$disabled" : "$primary"}
-              animation="100ms"
-              opacity={1}
-              scale={1}
-              exitStyle={{
-                opacity: 0,
-                scale: 0.5
-              }}
-            />
-          )}
-          {(!disabled || !value?.length) && (
-            <Button
-              variant="link"
-              disabled={disabled}
-              onPress={open}
-              $platform-native={{
-                display: "none"
-              }}
-              size="$6">
-              <Button.Text>
-                {children ||
-                  (max > 1
-                    ? "Click or drop files to upload"
-                    : "Click or drop a file to upload")}
-              </Button.Text>
-            </Button>
-          )}
-        </YStack>
-      </View>
-    );
-  }
-);
-
-export const FilePickerIconFrame = styled(View, {
-  name: "FilePicker",
+  // animation: "slow",
+  flexDirection: "column",
+  width: "100%",
+  minHeight: "$15",
   justifyContent: "center",
   alignItems: "center",
-  context: FilePickerContext,
-  animation: "$slow"
+  borderStyle: "dashed",
+  gap: "$1",
+  borderRadius: "$4",
+  padding: "$2",
+  borderColor: "$borderColor",
+  backgroundColor: "transparent",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  outlineStyle: "none",
+
+  ...(isWeb
+    ? {
+        tabIndex: 0
+      }
+    : {
+        focusable: true
+      }),
+
+  hoverStyle: {
+    borderColor: "$accent10"
+  },
+
+  variants: {
+    active: {
+      true: {
+        outlineColor: "$accent10",
+        outlineWidth: 2,
+        outlineOffset: "$1.25",
+        outlineStyle: "solid",
+        borderColor: "$borderColorPress",
+
+        hoverStyle: {
+          borderColor: "$borderColorFocus"
+        }
+      }
+    },
+
+    disabled: {
+      true: {
+        opacity: 0.8,
+        cursor: "not-allowed",
+        borderColor: "$disabled",
+
+        hoverStyle: {
+          borderColor: "$disabled"
+        }
+      },
+      false: {
+        opacity: 1,
+        cursor: "pointer"
+      }
+    }
+  },
+
+  defaultVariants: {
+    active: false,
+    disabled: false
+  }
 });
 
-const getIconSize = (size: FontSizeTokens, scale: number) => {
-  return (
-    (typeof size === "number"
-      ? size * 0.6
-      : getFontSize(size as FontSizeTokens)) * scale
-  );
+type PickFileProps = {
+  webFiles?: File[] | null;
+  nativeFiles?: DocumentPickerResult[] | null;
 };
 
-const FilePickerIcon = FilePickerIconFrame.styleable<{
-  scaleIcon?: number;
-  color?: ColorTokens | string;
-}>((props: any, ref: any) => {
-  const { children, color: colorProp, ...rest } = props;
-  const inputContext = FilePickerContext.useStyledContext();
-  const {
-    size = "$true",
-    color: contextColor,
-    disabled,
-    theme,
-    scaleIcon = 1
-  } = inputContext;
+const FilePickerGroup = FilePickerGroupFrame.styleable<{
+  files?: ClientFileResult[];
+  onChange?: (files: ClientFileResult[]) => any;
+}>(({ children, files = [], onChange, ...props }, forwardedRef) => {
+  const { disabled, typeOfPicker, mediaTypes, max, name } =
+    FilePickerContext.useStyledContext();
 
-  const themeColors = useTheme({
-    name: theme
-  });
-  const color = disabled
-    ? "$disabled"
-    : getVariable(
-        colorProp ||
-          contextColor ||
-          themeColors[contextColor as any]?.get("web") ||
-          (!theme || theme === "base"
-            ? themeColors.color8?.get("web")
-            : themeColors.primary?.get("web"))
-      );
-  const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
+  const handlePick = useCallback(
+    async ({ webFiles, nativeFiles }: PickFileProps) => {
+      if (onChange) {
+        if (webFiles && webFiles.length > 0) {
+          await onChange(
+            webFiles
+              .map((file, index) => ({
+                ...file,
+                id: files.length + index,
+                status: FileStatus.INITIALIZED,
+                mimeType: file.type,
+                name: file.name,
+                size: file.size > 0 ? file.size : 0,
+                lastModified: file.lastModified ? file.lastModified : 0,
+                uri: URL.createObjectURL(file)
+              }))
+              .slice(max * -1)
+          );
+        }
 
-  const getThemedIcon = useGetThemedIcon({
-    size: iconSize,
-    color: color as any
+        if (nativeFiles && nativeFiles.length > 0) {
+          await onChange(
+            nativeFiles
+              .reduce((ret, file, index) => {
+                if (file.assets && file.assets.length > 0) {
+                  ret.push(
+                    ...file.assets.map((asset, i) => ({
+                      ...asset,
+                      id: files.length + index + i,
+                      status: FileStatus.INITIALIZED
+                    }))
+                  );
+                }
+
+                return ret;
+              }, files as ClientFileResult[])
+              .slice(max * -1)
+          );
+        }
+      }
+    },
+    [onChange, files, max]
+  );
+
+  const { open, getInputProps, getRootProps, dragStatus } = useFilePicker({
+    typeOfPicker,
+    mediaTypes,
+    multiple: max > 1,
+    onPick: handlePick
   });
+
   return (
-    <FilePickerIconFrame ref={ref} theme={theme} {...rest}>
-      {getThemedIcon(children)}
-    </FilePickerIconFrame>
+    // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
+    <FilePickerGroupFrame
+      ref={forwardedRef}
+      {...getRootProps()}
+      {...props}
+      group={true}
+      onPress={open}
+      active={Boolean(dragStatus?.isDragActive)}
+      // style={
+      //   isWeb
+      //     ? {
+      //         background: `linear-gradient(to right, ${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) top repeat-x,
+      //   linear-gradient(${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) right repeat-y,
+      //   linear-gradient(to right, ${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) bottom repeat-x,
+      //   linear-gradient(${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) left repeat-y`,
+      //         backgroundSize: "20px 1px, 1px 20px"
+      //       }
+      //     : {}
+      // }
+    >
+      {/* need an empty input div just have image drop feature in the web */}
+      {/* @ts-ignore */}
+      <View id={name} tag="input" width={0} height={0} {...getInputProps()} />
+
+      <AnimatePresence>
+        {files?.length && (
+          <YStack gap="$4" paddingHorizontal="$4" width="100%">
+            {files?.map(file => <FilePickerFile key={file.id} {...file} />)}
+          </YStack>
+        )}
+      </AnimatePresence>
+
+      <YStack justifyContent="center" alignItems="center" gap="$1">
+        {!files?.length && (
+          <Upload
+            size="$5"
+            color={disabled ? "$disabled" : "$color"}
+            animation="100ms"
+            opacity={1}
+            scale={1}
+            exitStyle={{
+              opacity: 0,
+              scale: 0.5
+            }}
+          />
+        )}
+
+        {(!disabled || !files?.length) && (
+          <Button
+            variant="link"
+            disabled={disabled}
+            onPress={open}
+            $platform-native={{
+              display: "none"
+            }}>
+            <Button.Text>
+              {children ||
+                (max > 1
+                  ? "Click or drop files to upload"
+                  : "Click or drop a file to upload")}
+            </Button.Text>
+          </Button>
+        )}
+      </YStack>
+    </FilePickerGroupFrame>
   );
 });
 
-export const FilePickerLabel = styled(Label, {
-  name: "FilePicker",
-  context: FilePickerContext,
-
-  fontFamily: "$label",
-  animation: "$slow",
-  cursor: "pointer",
-  color: "$base10",
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (val !== undefined && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.25;
-        const lineHeight = Number(heightToken ?? 1);
-        const fontWeight = config.font.weight?.["$3"];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    },
-
-    disabled: {
-      true: {
-        color: "$disabled",
-        cursor: "not-allowed"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false
-  }
-});
-
-const FilePickerLabelImpl = FilePickerLabel.styleable((props, forwardedRef) => {
-  const { required, disabled, name } = FilePickerContext.useStyledContext();
-  const theme = useThemeName();
-  const { children, ...rest } = props;
-
-  return (
-    <XStack justifyContent="space-between">
-      <XStack gap="$1.2">
-        <FilePickerLabel
-          ref={forwardedRef}
-          {...rest}
-          disabled={disabled}
-          htmlFor={name}
-          theme="base">
-          {children}
-        </FilePickerLabel>
-        {required && (
-          <View position="relative">
-            <Asterisk
-              color="$error8"
-              size="$0.75"
-              position="absolute"
-              top={-2}
-            />
-          </View>
-        )}
-      </XStack>
-      {theme &&
-        (theme.toLowerCase().includes(ColorRole.ERROR) ||
-          theme.toLowerCase().includes(ColorRole.WARNING)) && (
-          <FilePickerIcon>
-            <AlertCircle />
-          </FilePickerIcon>
-        )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.INFO) && (
-        <FilePickerIcon>
-          <Info />
-        </FilePickerIcon>
-      )}
-      {!disabled && theme && theme.toLowerCase().includes(ColorRole.HELP) && (
-        <FilePickerIcon>
-          <HelpCircle />
-        </FilePickerIcon>
-      )}
-      {!disabled &&
-        theme &&
-        theme.toLowerCase().includes(ColorRole.SUCCESS) && (
-          <FilePickerIcon>
-            <CheckCircle />
-          </FilePickerIcon>
-        )}
-      {disabled && (
-        <FilePickerIcon>
-          <Lock />
-        </FilePickerIcon>
-      )}
-    </XStack>
-  );
-});
-
-export const FilePickerDetails = styled(Text, {
-  name: "FilePicker",
-  context: FilePickerContext,
-
-  animation: "$slow",
-  color: "$borderColor",
-  marginTop: "$0.5",
-  fontStyle: "italic",
-  opacity: 1,
-
-  enterStyle: {
-    opacity: 0,
-    x: 10
-  },
-
-  exitStyle: {
-    opacity: 0,
-    x: 10
-  },
-
-  variants: {
-    size: {
-      "...fontSize": (val: any, { font }: any) => {
-        if (!font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (val !== undefined && val !== null) {
-          sizeToken = (font.size?.[val] as any)?.val;
-          heightToken = (font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.05;
-        const lineHeight = Number(heightToken ?? 1);
-        const fontWeight = font.weight?.["$3"];
-        const letterSpacing = font.letterSpacing?.[val];
-        const textTransform = font.transform?.[val];
-        const fontStyle = font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    },
-
-    disabled: {
-      true: {
-        color: "$disabled"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    disabled: false
-  }
-});
-
-const FilePickerDetailsImpl = FilePickerDetails.styleable(
-  (props, forwardedRef) => {
-    const { disabled, name } = FilePickerContext.useStyledContext();
-    const { children, ...rest } = props;
-
-    return (
-      <FilePickerDetails
-        ref={forwardedRef}
-        disabled={disabled}
-        htmlFor={name}
-        {...rest}>
-        {children}
-      </FilePickerDetails>
-    );
-  }
-);
-
-export const FilePicker: any = withStaticProperties(FilePickerFrameImpl, {
-  Box: FilePickerBox,
-  Details: FilePickerDetailsImpl,
-  Label: FilePickerLabelImpl
+export const FilePicker = withStaticProperties(FilePickerGroup, {
+  File: FilePickerFile
 });

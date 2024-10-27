@@ -1,15 +1,31 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import * as DocumentPicker from "expo-document-picker";
 import * as ImagePicker from "expo-image-picker";
+import { useCallback } from "react";
 import type { DropzoneInputProps, DropzoneRootProps } from "react-dropzone";
-import { useEvent } from "@tamagui/use-event";
-
+import { MediaTypeOptions } from "./file-picker-types";
 import { useDropZone } from "./useDropZone";
 
-export type MediaTypeOptions = "All" | "Videos" | "Images" | "Audios";
 export type UseFilePickerControl = {
   open: () => void;
-  getInputProps: <T extends DropzoneInputProps>(props?: T | undefined) => T;
-  getRootProps: <T extends DropzoneRootProps>(props?: T | undefined) => T;
+  getInputProps: <TProps extends DropzoneInputProps>(props?: TProps) => TProps;
+  getRootProps: <TProps extends DropzoneRootProps>(props?: TProps) => TProps;
   dragStatus?: {
     isDragAccept: boolean;
     isDragActive: boolean;
@@ -18,59 +34,58 @@ export type UseFilePickerControl = {
   typeOfPicker: "file" | "image";
 };
 
-type NativeFiles<MT extends MediaTypeOptions[]> = MT[number] extends "Images"
-  ? ImagePicker.ImagePickerResult["assets"]
-  : //@ts-ignore
-    DocumentPicker.DocumentResult[];
-export type OnPickType<MT extends MediaTypeOptions[]> = (param: {
+export type NativeFiles<TMediaTypeOptions extends MediaTypeOptions[]> =
+  TMediaTypeOptions[number] extends "Images"
+    ? ImagePicker.ImagePickerResult["assets"]
+    : // @ts-ignore
+      DocumentPicker.DocumentResult[];
+
+export type OnPickType<TMediaTypeOptions extends MediaTypeOptions[]> = (param: {
   webFiles: File[] | null;
-  nativeFiles: NativeFiles<MT> | null;
+  nativeFiles: NativeFiles<TMediaTypeOptions> | null;
 }) => void | Promise<void>;
-type UseFilePickerProps<MT extends MediaTypeOptions> = {
-  mediaTypes: MT[];
-  onPick: OnPickType<MT[]>;
+
+type UseFilePickerProps<TMediaTypeOptions extends MediaTypeOptions[]> = {
+  mediaTypes: TMediaTypeOptions;
+  onPick: OnPickType<TMediaTypeOptions>;
   /** multiple only works for image only types on native, but on web it works regarding the media types */
   multiple: boolean;
   typeOfPicker: "file" | "image";
 };
 
-export function useFilePicker<MT extends MediaTypeOptions>(
-  props?: UseFilePickerProps<MT>
+export function useFilePicker<TMediaTypeOptions extends MediaTypeOptions[]>(
+  props: UseFilePickerProps<TMediaTypeOptions>
 ) {
-  const { mediaTypes, onPick, typeOfPicker, ...rest } = props || {};
+  const { mediaTypes, onPick, typeOfPicker, ...rest } = props;
 
-  const _onOpenNative = useEvent(nativeFiles => {
-    if (onPick) {
-      onPick({ webFiles: null, nativeFiles });
-    }
-  });
+  const onOpen = useCallback(
+    (nativeFiles: any) => {
+      if (onPick) {
+        onPick({ webFiles: null, nativeFiles });
+      }
+    },
+    [onPick]
+  );
 
-  const {
-    open,
-    getInputProps,
-    getRootProps,
-    isDragAccept,
-    isDragActive,
-    isDragReject
-  } = useDropZone({
-    onOpen: _onOpenNative,
-    // @ts-ignore
-    mediaTypes,
-    noClick: true,
-    ...rest
-  });
+  const { isDragAccept, isDragActive, isDragReject } =
+    useDropZone<TMediaTypeOptions>({
+      onOpen,
+      mediaTypes,
+      noClick: true,
+      ...rest
+    });
 
-  const _handleOpenNative = async () => {
+  const handleOpen = async () => {
     // No permissions request is necessary for launching the image or document library
     if (typeOfPicker === "image") {
       let result = await ImagePicker.launchImageLibraryAsync({
         quality: 1,
         allowsMultipleSelection: true
       });
-      _onOpenNative(result.assets);
+      onOpen(result.assets);
     } else {
       let result = await DocumentPicker.getDocumentAsync();
-      _onOpenNative(result.assets);
+      onOpen(result.assets);
     }
   };
 
@@ -82,7 +97,7 @@ export function useFilePicker<MT extends MediaTypeOptions>(
     },
     getInputProps: () => null,
     getRootProps: () => null,
-    open: _handleOpenNative
+    open: handleOpen
   };
 
   return { control, ...control };

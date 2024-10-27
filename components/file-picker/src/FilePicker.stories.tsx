@@ -1,19 +1,41 @@
-import type { Meta, StoryObj } from "@storybook/react";
+/*-------------------------------------------------------------------
 
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { Field } from "@cyclone-ui/field";
+import { Form } from "@cyclone-ui/form";
+import type { Meta, StoryObj } from "@storybook/react";
 import { FilePicker } from "./FilePicker";
 
 const meta: Meta<typeof FilePicker> = {
-  title: "Form/FilePicker",
+  title: "Base/FilePicker",
   component: FilePicker,
   tags: ["autodocs"],
-  render: ({ children, ...args }: any) => (
-    <FilePicker name="filePickerName" width="500px" {...args}>
-      <FilePicker.Label>Label Text</FilePicker.Label>
-      <FilePicker.Box>{children}</FilePicker.Box>
-      <FilePicker.Details>
-        This is an example detailed message for a file-picker
-      </FilePicker.Details>
-    </FilePicker>
+  render: ({ defaultValue, disabled, children, ...props }: any) => (
+    <Form name="formName" defaultValues={{ filePickerName: defaultValue }}>
+      <Field name="filePickerName" {...props} disabled={disabled} width="500px">
+        <Field.Label>Label Text</Field.Label>
+        <FilePicker width="500px" disabled={disabled}>
+          {children}
+        </FilePicker>
+        <Field.Details>
+          This is an example detailed message for an file-picker
+        </Field.Details>
+      </Field>
+    </Form>
   )
 } satisfies Meta<typeof FilePicker>;
 

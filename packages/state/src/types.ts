@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import type { FileResult } from "@storm-stack/types/utility-types/file";
 import type { Atom, SetStateAction, WritableAtom } from "jotai";
 
 export type IsAtom<T> = [T] extends [Atom<unknown>] ? true : false;
@@ -34,3 +35,7 @@ export type BaseAtom<
   TArgs extends unknown[] = [SetStateAction<TValue>],
   TResult = void
 > = WritableAtom<TValue, TArgs, TResult>;
+
+export type ClientFileResult = FileResult & {
+  id: number;
+};

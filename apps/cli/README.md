@@ -201,7 +201,8 @@ Build a cyclone-ui package
 
 ```
 USAGE
-  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b] [-c] [-s]
+  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b]
+    [-c] [-s]
 
 ARGUMENTS
   PROJECTROOT...  The path of the project to build relative to the workspace root
@@ -441,8 +442,8 @@ DESCRIPTION
   Links a plugin into the CLI for development.
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override
-  the user-installed or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  command will override the user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
@@ -583,7 +584,8 @@ FLAGS
 DESCRIPTION
   Get design component files from registry
 
-  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package
+  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library
+  package
 
 EXAMPLES
   Initialize the themes using the output path from the Storm configuration file
@@ -695,7 +697,8 @@ FLAGS
 DESCRIPTION
   Initialize a theme configuration
 
-  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file
+  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration
+  file
 
 EXAMPLES
   Initialize the themes using the output path from the Storm configuration file
