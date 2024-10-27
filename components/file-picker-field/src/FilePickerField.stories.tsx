@@ -15,35 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-import { FilePicker } from "./FilePicker";
+import { FilePickerField } from "./FilePickerField";
 
-const meta: Meta<typeof FilePicker> = {
-  title: "Base/FilePicker",
-  component: FilePicker,
+const meta: Meta<typeof FilePickerField> = {
+  title: "Form/FilePickerField",
+  component: FilePickerField,
   tags: ["autodocs"],
-  render: ({ defaultValue, disabled, children, ...props }: any) => (
-    <Form name="formName" defaultValues={{ filePickerName: defaultValue }}>
-      <Field name="filePickerName" {...props} disabled={disabled} width="500px">
-        <Field.Label>Label Text</Field.Label>
-        <FilePicker width="500px" disabled={disabled}>
-          <FilePicker.Trigger>
-            <FilePicker.Trigger.Button />
-          </FilePicker.Trigger>
-        </FilePicker>
-        <Field.Details>
-          This is an example detailed message for an file-picker
-        </Field.Details>
-      </Field>
-    </Form>
-  )
-} satisfies Meta<typeof FilePicker>;
+  render: (props: any) => {
+    return (
+      <Form name="formName" defaultValues={{ filePickerFieldName: "" }}>
+        <FilePickerField name="filePickerFieldName" {...props}>
+          <FilePickerField.Label>Label Text</FilePickerField.Label>
+          <FilePickerField.Control />
+          <FilePickerField.Details>
+            This is an example detailed message for an file-picker field
+          </FilePickerField.Details>
+        </FilePickerField>
+      </Form>
+    );
+  }
+} satisfies Meta<typeof FilePickerField>;
 
 export default meta;
 
-type Story = StoryObj<typeof FilePicker>;
+type Story = StoryObj<typeof FilePickerField>;
 
 export const Base: Story = {
   args: {}
@@ -55,23 +52,17 @@ export const Required: Story = {
   }
 };
 
-export const CustomText: Story = {
-  args: {
-    children: "Custom button text"
-  }
-};
-
-export const Multiple: Story = {
-  args: {
-    max: 10
-  }
-};
-
 export const Disabled: Story = {
   args: {
     disabled: true
   }
 };
+
+// export const DefaultValue: Story = {
+//   args: {
+//     defaultValue: "Defaulted Text"
+//   }
+// };
 
 export const Help: Story = {
   args: {

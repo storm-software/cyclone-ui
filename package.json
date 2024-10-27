@@ -253,6 +253,7 @@
       "@cyclone-ui/date-picker": "workspace:*",
       "@cyclone-ui/date-picker-field": "workspace:*",
       "@cyclone-ui/file-picker": "workspace:*",
+      "@cyclone-ui/file-picker-field": "workspace:*",
       "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/font-permanent-marker": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",

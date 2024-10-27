@@ -45,15 +45,13 @@ import { Linking } from "react-native";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
-export type FilePickerProps = {
+export type FilePickerContextProps = {
   size: FontSizeTokens;
   typeOfPicker: "image" | "file";
   max: number;
   mediaTypes: MediaTypeOptions[];
-  onChange?: (files: {
-    webFiles?: File[];
-    nativeFiles?: { uri: string }[];
-  }) => void;
+  pick: ({ webFiles, nativeFiles }: PickFileProps) => any;
+  open: () => void;
   files: ClientFileResult[];
   name: string;
   scaleIcon: number;
@@ -63,11 +61,13 @@ export type FilePickerProps = {
   theme: string;
 };
 
-export const FilePickerContext = createStyledContext<FilePickerProps>({
+export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   size: "$4",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
+  pick: (props: PickFileProps) => {},
+  open: () => {},
   files: [] as ClientFileResult[],
   name: "",
   scaleIcon: 1.3,
@@ -106,7 +106,271 @@ const DownloadLink = Link.styleable(
   }
 );
 
-export type FilePickerItemProps = PropsWithChildren<
+const FilePickerGroupFrame = styled(View, {
+  name: FILE_PICKER_NAME,
+  context: FilePickerContext,
+
+  // animation: "slow",
+  flexDirection: "column",
+  width: "100%",
+  minHeight: "$15",
+  justifyContent: "center",
+  alignItems: "center",
+  borderStyle: "dashed",
+  gap: "$1",
+  borderRadius: "$4",
+  padding: "$2",
+  borderColor: "$borderColor",
+  backgroundColor: "transparent",
+  outlineWidth: 0,
+  outlineColor: "transparent",
+  outlineStyle: "none",
+
+  ...(isWeb
+    ? {
+        tabIndex: 0
+      }
+    : {
+        focusable: true
+      }),
+
+  hoverStyle: {
+    borderColor: "$accent10"
+  },
+
+  variants: {
+    active: {
+      true: {
+        outlineColor: "$accent10",
+        outlineWidth: 2,
+        outlineOffset: "$1.25",
+        outlineStyle: "solid",
+        borderColor: "$borderColorPress",
+
+        hoverStyle: {
+          borderColor: "$borderColorFocus"
+        }
+      }
+    },
+
+    disabled: {
+      true: {
+        opacity: 0.8,
+        cursor: "not-allowed",
+        borderColor: "$disabled",
+
+        hoverStyle: {
+          borderColor: "$disabled"
+        }
+      },
+      false: {
+        opacity: 1,
+        cursor: "pointer"
+      }
+    }
+  },
+
+  defaultVariants: {
+    active: false,
+    disabled: false
+  }
+});
+
+type PickFileProps = {
+  webFiles?: File[] | null;
+  nativeFiles?: DocumentPickerResult[] | null;
+};
+
+const FilePickerGroup = FilePickerGroupFrame.styleable<
+  Partial<FilePickerContextProps> & {
+    onChange?: (files: ClientFileResult[]) => any;
+  }
+>(
+  (
+    {
+      children,
+      files = [],
+      onChange,
+      disabled = false,
+      typeOfPicker = "file",
+      mediaTypes = [MediaTypeOptions.All],
+      max = 1,
+      name,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    const handlePick = useCallback(
+      async ({ webFiles, nativeFiles }: PickFileProps) => {
+        if (onChange) {
+          if (webFiles && webFiles.length > 0) {
+            await onChange(
+              webFiles
+                .map((file, index) => ({
+                  ...file,
+                  id: files.length + index,
+                  status: FileStatus.INITIALIZED,
+                  mimeType: file.type,
+                  name: file.name,
+                  size: file.size > 0 ? file.size : 0,
+                  lastModified: file.lastModified ? file.lastModified : 0,
+                  uri: URL.createObjectURL(file)
+                }))
+                .slice(max * -1)
+            );
+          }
+
+          if (nativeFiles && nativeFiles.length > 0) {
+            await onChange(
+              nativeFiles
+                .reduce((ret, file, index) => {
+                  if (file.assets && file.assets.length > 0) {
+                    ret.push(
+                      ...file.assets.map((asset, i) => ({
+                        ...asset,
+                        id: files.length + index + i,
+                        status: FileStatus.INITIALIZED
+                      }))
+                    );
+                  }
+
+                  return ret;
+                }, files as ClientFileResult[])
+                .slice(max * -1)
+            );
+          }
+        }
+      },
+      [onChange, files, max]
+    );
+
+    const { open, getInputProps, getRootProps, dragStatus } = useFilePicker({
+      typeOfPicker,
+      mediaTypes,
+      multiple: max > 1,
+      onPick: handlePick
+    });
+
+    return (
+      // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
+      <FilePickerGroupFrame
+        ref={forwardedRef}
+        {...getRootProps()}
+        {...props}
+        group={true}
+        onPress={open}
+        active={Boolean(dragStatus?.isDragActive)}>
+        <FilePickerContext.Provider
+          name={name}
+          files={files}
+          open={open}
+          pick={handlePick}
+          disabled={disabled}
+          typeOfPicker={typeOfPicker}
+          mediaTypes={mediaTypes}
+          max={max}>
+          {/* need an empty input div just have image drop feature in the web */}
+          {/* @ts-ignore */}
+          <View
+            id={name}
+            tag="input"
+            width={0}
+            height={0}
+            {...getInputProps()}
+          />
+
+          {children}
+        </FilePickerContext.Provider>
+      </FilePickerGroupFrame>
+    );
+  }
+);
+
+const FilePickerTrigger = YStack.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { disabled, files } = FilePickerContext.useStyledContext();
+
+    if (files?.length) {
+      return null;
+    }
+
+    return (
+      <YStack
+        ref={forwardedRef}
+        justifyContent="center"
+        alignItems="center"
+        gap="$1"
+        {...props}>
+        {!files?.length && (
+          <Upload
+            size="$5"
+            color={disabled ? "$disabled" : "$color"}
+            animation="100ms"
+            opacity={1}
+            scale={1}
+            exitStyle={{
+              opacity: 0,
+              scale: 0.5
+            }}
+          />
+        )}
+        {children}
+      </YStack>
+    );
+  }
+);
+
+const FilePickerTriggerButton = Button.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { disabled, files, max, open } = FilePickerContext.useStyledContext();
+
+    if (disabled || files?.length) {
+      return null;
+    }
+
+    return (
+      <Button
+        ref={forwardedRef}
+        variant="link"
+        disabled={disabled}
+        onPress={open}
+        $platform-native={{
+          display: "none"
+        }}
+        {...props}>
+        <Button.Text>
+          {children ||
+            (max > 1
+              ? "Click or drop files to upload"
+              : "Click or drop a file to upload")}
+        </Button.Text>
+      </Button>
+    );
+  }
+);
+
+const FilePickerFiles = YStack.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { files } = FilePickerContext.useStyledContext();
+
+    return (
+      <AnimatePresence>
+        {files?.length && (
+          <YStack
+            ref={forwardedRef}
+            gap="$4"
+            paddingHorizontal="$4"
+            width="100%"
+            {...props}>
+            {children}
+          </YStack>
+        )}
+      </AnimatePresence>
+    );
+  }
+);
+
+export type FilePickerFileProps = PropsWithChildren<
   ClientFileResult & {
     onRemove?: (id: number) => any;
   }
@@ -119,7 +383,7 @@ const FilePickerFile = ({
   size,
   lastModified,
   onRemove
-}: FilePickerItemProps) => {
+}: FilePickerFileProps) => {
   const { disabled } = FilePickerContext.useStyledContext();
 
   const handleRemove = useCallback(() => {
@@ -245,7 +509,10 @@ const FilePickerFile = ({
 
             {lastModified && (
               <BodyText zIndex={25} color="$base9">
-                {formatDateTime(new Date(lastModified))}
+                {formatDateTime(new Date(lastModified), {
+                  returnEmptyIfNotSet: true,
+                  returnEmptyIfInvalid: true
+                })}
               </BodyText>
             )}
           </XStack>
@@ -283,208 +550,11 @@ const FilePickerFile = ({
   );
 };
 
-const FilePickerGroupFrame = styled(View, {
-  name: FILE_PICKER_NAME,
-  context: FilePickerContext,
-
-  // animation: "slow",
-  flexDirection: "column",
-  width: "100%",
-  minHeight: "$15",
-  justifyContent: "center",
-  alignItems: "center",
-  borderStyle: "dashed",
-  gap: "$1",
-  borderRadius: "$4",
-  padding: "$2",
-  borderColor: "$borderColor",
-  backgroundColor: "transparent",
-  outlineWidth: 0,
-  outlineColor: "transparent",
-  outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
-  variants: {
-    active: {
-      true: {
-        outlineColor: "$accent10",
-        outlineWidth: 2,
-        outlineOffset: "$1.25",
-        outlineStyle: "solid",
-        borderColor: "$borderColorPress",
-
-        hoverStyle: {
-          borderColor: "$borderColorFocus"
-        }
-      }
-    },
-
-    disabled: {
-      true: {
-        opacity: 0.8,
-        cursor: "not-allowed",
-        borderColor: "$disabled",
-
-        hoverStyle: {
-          borderColor: "$disabled"
-        }
-      },
-      false: {
-        opacity: 1,
-        cursor: "pointer"
-      }
-    }
-  },
-
-  defaultVariants: {
-    active: false,
-    disabled: false
-  }
-});
-
-type PickFileProps = {
-  webFiles?: File[] | null;
-  nativeFiles?: DocumentPickerResult[] | null;
-};
-
-const FilePickerGroup = FilePickerGroupFrame.styleable<{
-  files?: ClientFileResult[];
-  onChange?: (files: ClientFileResult[]) => any;
-}>(({ children, files = [], onChange, ...props }, forwardedRef) => {
-  const { disabled, typeOfPicker, mediaTypes, max, name } =
-    FilePickerContext.useStyledContext();
-
-  const handlePick = useCallback(
-    async ({ webFiles, nativeFiles }: PickFileProps) => {
-      if (onChange) {
-        if (webFiles && webFiles.length > 0) {
-          await onChange(
-            webFiles
-              .map((file, index) => ({
-                ...file,
-                id: files.length + index,
-                status: FileStatus.INITIALIZED,
-                mimeType: file.type,
-                name: file.name,
-                size: file.size > 0 ? file.size : 0,
-                lastModified: file.lastModified ? file.lastModified : 0,
-                uri: URL.createObjectURL(file)
-              }))
-              .slice(max * -1)
-          );
-        }
-
-        if (nativeFiles && nativeFiles.length > 0) {
-          await onChange(
-            nativeFiles
-              .reduce((ret, file, index) => {
-                if (file.assets && file.assets.length > 0) {
-                  ret.push(
-                    ...file.assets.map((asset, i) => ({
-                      ...asset,
-                      id: files.length + index + i,
-                      status: FileStatus.INITIALIZED
-                    }))
-                  );
-                }
-
-                return ret;
-              }, files as ClientFileResult[])
-              .slice(max * -1)
-          );
-        }
-      }
-    },
-    [onChange, files, max]
-  );
-
-  const { open, getInputProps, getRootProps, dragStatus } = useFilePicker({
-    typeOfPicker,
-    mediaTypes,
-    multiple: max > 1,
-    onPick: handlePick
-  });
-
-  return (
-    // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
-    <FilePickerGroupFrame
-      ref={forwardedRef}
-      {...getRootProps()}
-      {...props}
-      group={true}
-      onPress={open}
-      active={Boolean(dragStatus?.isDragActive)}
-      // style={
-      //   isWeb
-      //     ? {
-      //         background: `linear-gradient(to right, ${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) top repeat-x,
-      //   linear-gradient(${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) right repeat-y,
-      //   linear-gradient(to right, ${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) bottom repeat-x,
-      //   linear-gradient(${(isHovering ? theme.accent10?.val : dragStatus?.isDragActive ? theme.color12?.val : theme.base8?.val) || "gray"} 50%, transparent 0%) left repeat-y`,
-      //         backgroundSize: "20px 1px, 1px 20px"
-      //       }
-      //     : {}
-      // }
-    >
-      {/* need an empty input div just have image drop feature in the web */}
-      {/* @ts-ignore */}
-      <View id={name} tag="input" width={0} height={0} {...getInputProps()} />
-
-      <AnimatePresence>
-        {files?.length && (
-          <YStack gap="$4" paddingHorizontal="$4" width="100%">
-            {files?.map(file => <FilePickerFile key={file.id} {...file} />)}
-          </YStack>
-        )}
-      </AnimatePresence>
-
-      <YStack justifyContent="center" alignItems="center" gap="$1">
-        {!files?.length && (
-          <Upload
-            size="$5"
-            color={disabled ? "$disabled" : "$color"}
-            animation="100ms"
-            opacity={1}
-            scale={1}
-            exitStyle={{
-              opacity: 0,
-              scale: 0.5
-            }}
-          />
-        )}
-
-        {(!disabled || !files?.length) && (
-          <Button
-            variant="link"
-            disabled={disabled}
-            onPress={open}
-            $platform-native={{
-              display: "none"
-            }}>
-            <Button.Text>
-              {children ||
-                (max > 1
-                  ? "Click or drop files to upload"
-                  : "Click or drop a file to upload")}
-            </Button.Text>
-          </Button>
-        )}
-      </YStack>
-    </FilePickerGroupFrame>
-  );
-});
-
 export const FilePicker = withStaticProperties(FilePickerGroup, {
-  File: FilePickerFile
+  Trigger: withStaticProperties(FilePickerTrigger, {
+    Button: FilePickerTriggerButton
+  }),
+  Files: withStaticProperties(FilePickerFiles, {
+    File: FilePickerFile
+  })
 });

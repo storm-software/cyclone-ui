@@ -48,6 +48,10 @@
       "@cyclone-ui/field/*": ["components/field/src/*"],
       "@cyclone-ui/file-picker": ["components/file-picker/src/index.ts"],
       "@cyclone-ui/file-picker/*": ["components/file-picker/src/*"],
+      "@cyclone-ui/file-picker-field": [
+        "components/file-picker-field/src/index.ts"
+      ],
+      "@cyclone-ui/file-picker-field/*": ["components/file-picker-field/src/*"],
       "@cyclone-ui/font-mona-sans": ["packages/font-mona-sans/src/index.ts"],
       "@cyclone-ui/font-mona-sans/*": ["packages/font-mona-sans/src/*"],
       "@cyclone-ui/font-permanent-marker": [
