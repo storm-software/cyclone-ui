@@ -18,6 +18,7 @@
 "use client";
 
 import { PdfIcon } from "@cyclone-ui/icons";
+import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import { isString } from "@storm-stack/types/type-checks/is-string";
 import { FileResult } from "@storm-stack/types/utility-types/file";
 import { styled, View, ViewProps } from "@tamagui/core";
@@ -36,7 +37,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const StyledPdfIcon = styled(PdfIcon, {
-  animation: "slow",
+  animation: "200ms",
   height: "100%",
   width: "100%",
   position: "absolute",
@@ -123,19 +124,22 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
     );
 
     return (
-      <View ref={forwardedRef} position="relative" {...props}>
+      <View ref={forwardedRef} {...props}>
         <StyledPdfIcon
           height="100%"
           width="100%"
           visible={loading || error !== null}
         />
-        <Document
-          file={isString(src) ? { url: src } : src.file}
-          onLoadProgress={onLoadProgress}
-          onLoadSuccess={handleLoadSuccess}
-          onLoadError={handleLoadError}>
-          <Page pageNumber={pageNumber} />
-        </Document>
+
+        <VisuallyHidden visible={!loading && !error} animate={true}>
+          <Document
+            file={isString(src) ? { url: src } : src.file}
+            onLoadProgress={onLoadProgress}
+            onLoadSuccess={handleLoadSuccess}
+            onLoadError={handleLoadError}>
+            <Page pageNumber={pageNumber} />
+          </Document>
+        </VisuallyHidden>
       </View>
     );
   }

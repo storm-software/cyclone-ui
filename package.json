@@ -297,6 +297,7 @@
       "@cyclone-ui/form": "workspace:*",
       "@cyclone-ui/state": "workspace:*",
       "@cyclone-ui/spinner": "workspace:*",
+      "@cyclone-ui/visually-hidden": "workspace:*",
       "@cyclone-ui/themeable-icon": "workspace:*"
     }
   },

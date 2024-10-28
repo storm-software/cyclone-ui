@@ -1,0 +1,46 @@
+{
+  "name": "visually-hidden",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/visually-hidden/src",
+  "targets": {
+    "build": {
+      "cache": true,
+      "executor": "@cyclone-ui/nx:build",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
+      "options": {
+        "outputPath": "dist/components/visually-hidden",
+        "tsConfig": "components/visually-hidden/tsconfig.json",
+        "project": "components/visually-hidden/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/visually-hidden",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}
