@@ -1,19 +1,29 @@
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useLayoutEffect,
-  useState
-} from "react";
-import { titleCase } from "title-case";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Button } from "@cyclone-ui/button";
-import { Input } from "@cyclone-ui/input";
+import { CheckboxField } from "@cyclone-ui/checkbox-field";
+import { Form } from "@cyclone-ui/form";
+import { InputField } from "@cyclone-ui/input-field";
 import { Pagination } from "@cyclone-ui/pagination";
-import { Select } from "@cyclone-ui/select";
+import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
-import { Form } from "@tamagui/form";
 import { ArrowDownAZ, ArrowUpZA, Filter, X } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -34,6 +44,14 @@ import {
   type SortingState,
   type TableOptions
 } from "@tanstack/react-table";
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useLayoutEffect,
+  useState
+} from "react";
+import { titleCase } from "title-case";
 
 const defaultContextValues = {
   sorting: [] as SortingState,
@@ -214,16 +232,16 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
     } else {
       toggleSorting(!desc, true);
     }
-  }, [toggleSorting, desc, sorting]);
+  }, [toggleSorting, clearSorting, desc]);
   const handleFilterSubmit = useCallback(() => {
     setFilterValue(currentFilter);
-  }, [currentFilter]);
+  }, [setFilterValue, currentFilter]);
   const handleFilterClear = useCallback(() => {
     setFilterValue("");
     setCurrentFilter("");
   }, [setFilterValue, setCurrentFilter]);
   const handleFilterChanged = useCallback(
-    value => {
+    (value: string) => {
       setCurrentFilter(value ?? "");
     },
     [setCurrentFilter]
@@ -306,26 +324,24 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
             animation="slow">
             <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
 
-            <Form onSubmit={handleFilterSubmit}>
+            <Form name="columnFilter" onSubmit={handleFilterSubmit}>
               <YStack gap="$4">
-                <Input name="filter">
-                  <Input.Value
-                    placeholder="Filter"
-                    value={currentFilter}
-                    onChange={handleFilterChanged}>
-                    <Input.Icon>
-                      <Button
-                        variant="ghost"
-                        circular={true}
-                        padding="$1.5"
-                        onPress={handleFilterClear}>
-                        <Button.Icon>
-                          <X size="$1" />
-                        </Button.Icon>
-                      </Button>
-                    </Input.Icon>
-                  </Input.Value>
-                </Input>
+                <InputField
+                  name="search"
+                  value={currentFilter}
+                  onChange={handleFilterChanged}>
+                  <InputField.Control placeholder="Search" />
+                  <InputField.Icon onPress={handleFilterClear}>
+                    <X />
+                  </InputField.Icon>
+                </InputField>
+
+                <CheckboxField name="filter" value={true}>
+                  <XStack gap="$2">
+                    <CheckboxField.Control />
+                    <CheckboxField.Label>Filter</CheckboxField.Label>
+                  </XStack>
+                </CheckboxField>
 
                 <Popover.Close asChild={true}>
                   <Form.Trigger asChild={true}>
@@ -367,23 +383,25 @@ export function DataTablePagination<TData extends RowData>({
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center">
-        <form>
-      <Select
-        name="pageSize"
-        options={[
-          { name: "5", value: 5 },
-          { name: "10", value: 10 },
-          { name: "25", value: 25 },
-          { name: "50", value: 50 },
-          { name: "100", value: 100 }
-        ]}>
-        <XStack alignItems="center" gap="$3">
-          <Select.Label>Items per page</Select.Label>
-          <Select.Box>
-            <Select.Value placeholder="Size" />
-          </Select.Box>
-        </XStack>
-      </Select>
+      <Form name="pageSizing">
+        <SelectField
+          name="pageSize"
+          options={[
+            { name: "5", value: 5 },
+            { name: "10", value: 10 },
+            { name: "25", value: 25 },
+            { name: "50", value: 50 },
+            { name: "100", value: 100 }
+          ]}
+          value={pageSize}
+          defaultValue={10}>
+          <XStack alignItems="center" gap="$3">
+            <SelectField.Label>Items per page</SelectField.Label>
+            <SelectField.Control placeholder="Size" />
+          </XStack>
+        </SelectField>
+      </Form>
+
       <Pagination
         pageIndex={pageIndex}
         pageCount={pageCount}
@@ -393,7 +411,6 @@ export function DataTablePagination<TData extends RowData>({
         onFirst={firstPage}
         onLast={lastPage}
       />
-      </form>
     </XStack>
   );
 }

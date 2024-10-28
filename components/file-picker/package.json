@@ -51,7 +51,7 @@
     "expo-document-picker": "^11.10.1",
     "expo-image-picker": "^15.0.5",
     "react-dropzone": "^14.2.3",
-    "react-native-svg": "^15.2.0"
+    "react-native-svg": "^15.8.0"
   },
   "devDependencies": {
     "react": "18.3.1",

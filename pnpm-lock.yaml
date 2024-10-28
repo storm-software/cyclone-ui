@@ -23,6 +23,7 @@ overrides:
   '@cyclone-ui/font-mona-sans': workspace:*
   '@cyclone-ui/font-permanent-marker': workspace:*
   '@cyclone-ui/font-space-grotesk': workspace:*
+  '@cyclone-ui/icons': workspace:*
   '@cyclone-ui/input': workspace:*
   '@cyclone-ui/input-field': workspace:*
   '@cyclone-ui/link': workspace:*
@@ -532,6 +533,9 @@ importers:
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
+      react-native-svg:
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       tamagui:
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -595,7 +599,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -606,8 +610,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -682,7 +686,7 @@ importers:
         version: 1.110.5(react@19.0.0-rc-fb9a90fa48-20240614)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@19.0.0-rc-fb9a90fa48-20240614)
@@ -693,8 +697,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@19.0.0-rc-fb9a90fa48-20240614)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
 
   components/button:
     dependencies:
@@ -790,7 +794,7 @@ importers:
     devDependencies:
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -801,8 +805,8 @@ importers:
         specifier: 0.74.1
         version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
 
   components/checkbox:
     dependencies:
@@ -823,13 +827,13 @@ importers:
         version: 1.110.5(@types/react@18.3.6)(immer@10.1.1)(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -919,7 +923,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/popover':
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -939,8 +943,8 @@ importers:
         specifier: ^8.17.3
         version: 8.19.2
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       title-case:
         specifier: ^4.3.1
         version: 4.3.1
@@ -1007,7 +1011,7 @@ importers:
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/popover':
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1027,8 +1031,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1056,10 +1060,10 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1108,7 +1112,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1122,8 +1126,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1148,7 +1152,7 @@ importers:
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1206,7 +1210,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/separator':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1229,8 +1233,8 @@ importers:
         specifier: ^14.2.3
         version: 14.2.3(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1255,10 +1259,10 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1297,6 +1301,31 @@ importers:
       '@tamagui/text':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/icons:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.110.5
+        version: 1.110.5(react@18.3.1)
+      '@tamagui/helpers-icon':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/lucide-icons':
+        specifier: ^1.110.5
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      react-native-svg:
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1348,7 +1377,7 @@ importers:
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1362,8 +1391,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       tamagui:
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1387,8 +1416,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1429,7 +1458,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/shapes':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1475,7 +1504,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1486,8 +1515,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1506,13 +1535,13 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1531,7 +1560,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1542,8 +1571,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1584,13 +1613,13 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1624,7 +1653,7 @@ importers:
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/radio-group':
         specifier: ^1.110.5
         version: 1.110.5(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1635,8 +1664,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1666,8 +1695,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       jotai:
         specifier: '>=2.8.0'
@@ -1725,7 +1754,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/helpers-icon':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/helpers-tamagui':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1737,7 +1766,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/select':
         specifier: ^1.110.5
         version: 1.110.5(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1754,8 +1783,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1782,8 +1811,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       jotai:
         specifier: '>=2.8.0'
@@ -1845,7 +1874,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/shapes':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1865,8 +1894,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1894,7 +1923,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1908,8 +1937,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       '@tamagui/avatar':
         specifier: ^1.110.5
@@ -1958,7 +1987,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -1975,8 +2004,8 @@ importers:
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -2001,19 +2030,19 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/helpers-icon':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/helpers-tamagui':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
       react-native-svg:
-        specifier: ^15.2.0
-        version: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+        specifier: ^15.8.0
+        version: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -2035,7 +2064,7 @@ importers:
         version: 1.110.5(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.110.5
-        version: 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+        version: 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.110.5
         version: 1.110.5(react@18.3.1)
@@ -18036,8 +18065,8 @@ packages:
       react: '*'
       react-native: '*'
 
-  react-native-svg@15.3.0:
-    resolution: {integrity: sha512-mBHu/fdlzUbpGX8SZFxgbKvK/sgqLfDLP8uh8G7Us+zJgdjO8OSEeqHQs+kPRdQmdLJQiqPJX2WXgCl7ToTWqw==}
+  react-native-svg@15.8.0:
+    resolution: {integrity: sha512-KHJzKpgOjwj1qeZzsBjxNdoIgv2zNCO9fVcoq2TEhTRsVV5DGTZ9JzUZwybd7q4giT/H3RdtqC3u44dWdO0Ffw==}
     peerDependencies:
       react: '*'
       react-native: '*'
@@ -31321,17 +31350,17 @@ snapshots:
       - '@types/react'
       - immer
 
-  '@tamagui/helpers-icon@1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)':
+  '@tamagui/helpers-icon@1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tamagui/core': 1.110.5(react@18.3.1)
       react: 18.3.1
-      react-native-svg: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      react-native-svg: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
 
-  '@tamagui/helpers-icon@1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)':
+  '@tamagui/helpers-icon@1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)':
     dependencies:
       '@tamagui/core': 1.110.5(react@19.0.0-rc-fb9a90fa48-20240614)
       react: 19.0.0-rc-fb9a90fa48-20240614
-      react-native-svg: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
+      react-native-svg: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
 
   '@tamagui/helpers-node@1.101.5':
     dependencies:
@@ -31422,19 +31451,19 @@ snapshots:
       '@tamagui/web': 1.110.5(react@18.3.1)
       react: 18.3.1
 
-  '@tamagui/lucide-icons@1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)':
+  '@tamagui/lucide-icons@1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tamagui/core': 1.110.5(react@18.3.1)
-      '@tamagui/helpers-icon': 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/helpers-icon': 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       react: 18.3.1
-      react-native-svg: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      react-native-svg: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
 
-  '@tamagui/lucide-icons@1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)':
+  '@tamagui/lucide-icons@1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)':
     dependencies:
       '@tamagui/core': 1.110.5(react@19.0.0-rc-fb9a90fa48-20240614)
-      '@tamagui/helpers-icon': 1.110.5(react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
+      '@tamagui/helpers-icon': 1.110.5(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
       react: 19.0.0-rc-fb9a90fa48-20240614
-      react-native-svg: 15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
+      react-native-svg: 15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614)
 
   '@tamagui/next-plugin@1.101.5(@babel/core@7.25.2)(@rspack/core@1.0.5(@swc/helpers@0.5.13))(encoding@0.1.13)(next@14.2.3(@babel/core@7.25.2)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(react@18.3.1)(webpack@5.92.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(esbuild@0.21.5))':
     dependencies:
@@ -44840,19 +44869,21 @@ snapshots:
       react-native: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
       warn-once: 0.1.1
 
-  react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
+  react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
     dependencies:
       css-select: 5.1.0
       css-tree: 1.1.3
       react: 18.3.1
       react-native: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+      warn-once: 0.1.1
 
-  react-native-svg@15.3.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614):
+  react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10))(react@19.0.0-rc-fb9a90fa48-20240614):
     dependencies:
       css-select: 5.1.0
       css-tree: 1.1.3
       react: 19.0.0-rc-fb9a90fa48-20240614
       react-native: 0.74.1(@babel/core@7.25.2)(@babel/preset-env@7.24.7(@babel/core@7.25.2))(@types/react@18.3.6)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0-rc-fb9a90fa48-20240614)(utf-8-validate@5.0.10)
+      warn-once: 0.1.1
 
   react-native-web-internals@1.101.5:
     dependencies:

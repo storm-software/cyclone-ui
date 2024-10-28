@@ -46,7 +46,7 @@ export const size = {
   "$1.25": 22,
   "$1.5": 24,
   "$1.75": 26,
-  "$2": 28,
+  $2: 28,
   "$2.25": 30,
   "$2.5": 34,
   "$2.75": 35,
@@ -185,7 +185,7 @@ function postfixObjKeys<
   obj: A,
   postfix: B
 ): {
-  [Key in `${keyof A extends string ? keyof A : never}${B}`]:
+  [TKey in `${keyof A extends string ? keyof A : never}${B}`]:
     | Variable<string>
     | string;
 } {

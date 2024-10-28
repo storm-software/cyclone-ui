@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# PDF Document Display
+# ValidationText
 
 A Next Button component meant to be shared in many other components
 
@@ -70,14 +70,14 @@ A Next Button component meant to be shared in many other components
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/pdf-document-display
+pnpm add -D @cyclone-ui/validation-text
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/pdf-document-display
+npm install -D @cyclone-ui/validation-text
 ```
 
 </details>
@@ -86,7 +86,7 @@ npm install -D @cyclone-ui/pdf-document-display
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/pdf-document-display
+yarn add -D @cyclone-ui/validation-text
 ```
 
 </details>
@@ -105,16 +105,16 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build pdf-document-display` to build the library.
+Run `nx build validation-text` to build the library.
 
 ### Running unit tests
 
-Run `nx test pdf-document-display` to execute the unit tests via
+Run `nx test validation-text` to execute the unit tests via
 [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint pdf-document-display` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint validation-text` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

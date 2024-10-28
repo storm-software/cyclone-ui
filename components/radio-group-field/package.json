@@ -38,7 +38,7 @@
     "@tamagui/core": "^1.110.5",
     "@tamagui/label": "^1.110.5",
     "@tamagui/stacks": "^1.110.5",
-    "react-native-svg": "^15.2.0"
+    "react-native-svg": "^15.8.0"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",

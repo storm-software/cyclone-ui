@@ -257,6 +257,7 @@
       "@cyclone-ui/font-mona-sans": "workspace:*",
       "@cyclone-ui/font-permanent-marker": "workspace:*",
       "@cyclone-ui/font-space-grotesk": "workspace:*",
+      "@cyclone-ui/icons": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
       "@cyclone-ui/input-field": "workspace:*",
       "@cyclone-ui/link": "workspace:*",

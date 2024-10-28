@@ -16,25 +16,18 @@
  -------------------------------------------------------------------*/
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { PdfDocumentDisplay } from "./PdfDocumentDisplay";
+import { PdfIcon } from "./PdfIcon";
 
-const meta: Meta<typeof PdfDocumentDisplay> = {
-  title: "Display/PdfDocumentDisplay",
-  component: PdfDocumentDisplay,
+const meta: Meta<typeof PdfIcon> = {
+  title: "Icons/PdfIcon",
+  component: PdfIcon,
   tags: ["autodocs"],
-  render: (args: any) => (
-    <PdfDocumentDisplay
-      {...args}
-      src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
-      height="375px"
-      width="200px"
-    />
-  )
-} satisfies Meta<typeof PdfDocumentDisplay>;
+  render: (args: any) => <PdfIcon {...args} />
+} satisfies Meta<typeof PdfIcon>;
 
 export default meta;
 
-type Story = StoryObj<typeof PdfDocumentDisplay>;
+type Story = StoryObj<typeof PdfIcon>;
 
 export const Base: Story = {
   args: {}

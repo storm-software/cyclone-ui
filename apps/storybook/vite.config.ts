@@ -1,8 +1,24 @@
+/*-------------------------------------------------------------------
 
-import { defineConfig } from "vite";
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import { tamaguiPlugin } from "@tamagui/vite-plugin";
 import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -25,7 +41,7 @@ const tamaguiConfig = {
 
   /**
    * these are mostly not necessary except for advanced cases:
-   **/
+   * */
   // outputCSS: "./public/tamagui.css"
   // importsWhitelist: ["constants.js", "colors.js"],
   // disableExtraction: process.env.NODE_ENV === "development"
