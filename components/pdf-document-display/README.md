@@ -39,29 +39,30 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# File Picker Field
+# PDF Document Display
 
-A package containing the File Picker component used by Storm Software
+A Next Button component meant to be shared in many other components
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [PDF Document Display](#pdf-document-display)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -70,14 +71,14 @@ A package containing the File Picker component used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/file-picker-field
+pnpm add -D @cyclone-ui/pdf-document-display
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/file-picker-field
+npm install -D @cyclone-ui/pdf-document-display
 ```
 
 </details>
@@ -86,30 +87,35 @@ npm install -D @cyclone-ui/file-picker-field
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/file-picker-field
+yarn add -D @cyclone-ui/pdf-document-display
 ```
 
 </details>
 
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code due to its ability to remove unused code and ship smaller javascript files thanks to code splitting. This helps to greatly reduce the size of the package and to make it easier to use in other projects.
+This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+due to its ability to remove unused code and ship smaller javascript files
+thanks to code splitting. This helps to greatly reduce the size of the package
+and to make it easier to use in other projects.
 
 ## Development
 
-This project is built using [Nx](https://nx.dev). As a result, many of the usual commands are available to assist in development.
+This project is built using [Nx](https://nx.dev). As a result, many of the usual
+commands are available to assist in development.
 
 ### Building
 
-Run `nx build file-picker-field` to build the library.
+Run `nx build pdf-document-display` to build the library.
 
 ### Running unit tests
 
-Run `nx test file-picker-field` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test pdf-document-display` to execute the unit tests via
+[Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint file-picker-field` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint pdf-document-display` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

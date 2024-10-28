@@ -20,6 +20,8 @@
       "@cyclone-ui/build/*": ["packages/build/src/*"],
       "@cyclone-ui/button": ["components/button/src/index.ts"],
       "@cyclone-ui/button/*": ["components/button/src/*"],
+      "@cyclone-ui/bytes-text": ["components/bytes-text/src/index.ts"],
+      "@cyclone-ui/bytes-text/*": ["components/bytes-text/src/*"],
       "@cyclone-ui/card": ["components/card/src/index.ts"],
       "@cyclone-ui/card/*": ["components/card/src/*"],
       "@cyclone-ui/checkbox": ["components/checkbox/src/index.ts"],
@@ -47,11 +49,11 @@
       "@cyclone-ui/field": ["components/field/src/index.ts"],
       "@cyclone-ui/field/*": ["components/field/src/*"],
       "@cyclone-ui/file-picker": ["components/file-picker/src/index.ts"],
-      "@cyclone-ui/file-picker/*": ["components/file-picker/src/*"],
       "@cyclone-ui/file-picker-field": [
         "components/file-picker-field/src/index.ts"
       ],
       "@cyclone-ui/file-picker-field/*": ["components/file-picker-field/src/*"],
+      "@cyclone-ui/file-picker/*": ["components/file-picker/src/*"],
       "@cyclone-ui/font-mona-sans": ["packages/font-mona-sans/src/index.ts"],
       "@cyclone-ui/font-mona-sans/*": ["packages/font-mona-sans/src/*"],
       "@cyclone-ui/font-permanent-marker": [
@@ -76,8 +78,6 @@
       "@cyclone-ui/input/*": ["components/input/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
-      "@cyclone-ui/bytes-text": ["components/bytes-text/src/index.ts"],
-      "@cyclone-ui/bytes-text/*": ["components/bytes-text/src/*"],
       "@cyclone-ui/link": ["components/link/src/index.ts"],
       "@cyclone-ui/link/*": ["components/link/src/*"],
       "@cyclone-ui/masks": ["packages/masks/src/index.ts"],
@@ -88,6 +88,12 @@
       "@cyclone-ui/message/*": ["components/message/src/*"],
       "@cyclone-ui/next-button": ["components/next-button/src/index.ts"],
       "@cyclone-ui/next-button/*": ["components/next-button/src/*"],
+      "@cyclone-ui/pdf-document-display": [
+        "components/pdf-document-display/src/index.ts"
+      ],
+      "@cyclone-ui/pdf-document-display/*": [
+        "components/pdf-document-display/src/*"
+      ],
       "@cyclone-ui/nx": ["apps/nx/index.ts"],
       "@cyclone-ui/nx/*": ["apps/nx/src/*"],
       "@cyclone-ui/pagination": ["components/pagination/src/index.ts"],
