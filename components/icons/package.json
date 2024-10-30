@@ -29,18 +29,19 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "react-native-svg": ">=12"
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
     "@tamagui/helpers-icon": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/lucide-icons": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "react-native-svg": "^15.8.0"
   },
   "publishConfig": {
     "access": "public"

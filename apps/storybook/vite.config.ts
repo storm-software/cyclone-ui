@@ -54,15 +54,26 @@ const tamaguiConfig = {
 // https://vitejs.dev/config/
 export default defineConfig({
   root: __dirname,
-  cacheDir: "../../node_modules/.vite/apps/storybook",
+  cacheDir: "../../node_modules/.cache/.vite/apps/storybook",
+  envPrefix: "NEXT_PUBLIC_",
   resolve: {
     // extensions: extensions,
     alias: {
+      "react-native-svg": "@tamagui/react-native-svg",
       "react-native/Libraries/Image/AssetRegistry":
         "react-native-web/dist/modules/AssetRegistry",
       ...profiling
-    }
+    },
+
+    dedupe: [
+      "react",
+      "react-dom",
+      "react-native",
+      "react-native-web",
+      "react-native-svg"
+    ]
   },
+
   plugins: [
     nxViteTsPaths({ debug: false }),
     react(),

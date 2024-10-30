@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -23,19 +25,20 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "files": [],
+  "files": [
+    "../../node_modules/@nx/react/typings/styled-jsx.d.ts",
+    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nx/react/typings/image.d.ts"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "vite.config.ts",
-    "tamagui.config.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.storybook.json"
-    }
+    "tamagui.config.ts",
+    ".storybook/*",
+    "../../packages/font-mona-sans/*",
+    "../../packages/font-permanent-marker/*",
+    "../../packages/font-space-grotesk/*",
+    "../../components/**/*.stories.tsx"
   ]
 }

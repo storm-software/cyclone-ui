@@ -25,6 +25,7 @@ import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
+
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;
   rel?: string;

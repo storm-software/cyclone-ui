@@ -6,6 +6,7 @@
     "@react-navigation/native": "~6.1.9",
     "@react-navigation/stack": "^6.3.20",
     "@tamagui/core": "^1.110.5",
+    "@tamagui/react-native-svg": "^1.110.5",
     "@tamagui/stacks": "^1.110.5",
     "expo-linear-gradient": "^12.7.2",
     "expo-router": "^3.3.1",

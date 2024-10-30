@@ -4,49 +4,5 @@
   "projectType": "application",
   "sourceRoot": "apps/storybook/src",
   "tags": [],
-  "targets": {
-    "dev": {
-      "executor": "@nx/storybook:storybook",
-      "options": {
-        "port": 4600,
-        "configDir": "apps/storybook/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/apps/storybook",
-        "configDir": "apps/storybook/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "test-storybook -c apps/storybook/.storybook --url=http://localhost:4600"
-      }
-    },
-    "static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "storybook:build",
-        "staticFilePath": "dist/apps/storybook"
-      },
-      "configurations": {
-        "ci": {
-          "buildTarget": "storybook:build:ci"
-        }
-      }
-    }
-  }
+  "targets": {}
 }

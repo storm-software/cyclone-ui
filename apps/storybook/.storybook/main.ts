@@ -17,6 +17,7 @@
 
 import type { StorybookConfig } from "@storybook/react-vite";
 import { dirname, join } from "node:path";
+import { mergeConfig } from "vite";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -31,8 +32,8 @@ const config: StorybookConfig = {
 
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-interactions"),
     getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-interactions"),
     // getAbsolutePath("storybook-react-i18next"),
     "@chromatic-com/storybook"
   ],
@@ -41,28 +42,28 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {
       builder: {
-        viteConfigPath: "apps/storybook/vite.config.ts"
+        viteConfigPath: "vite.config.ts"
       }
     }
   },
 
   viteFinal: async (config, { configType }) => {
-    config.define = {
-      ...config.define,
-      "process.env.STORYBOOK": "true",
-      // "process.env.TAMAGUI_TARGET": "web",
-      "process.env.NODE_ENV":
-        configType === "PRODUCTION" ? "production" : "development",
-      "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": "false"
-    };
-    config.resolve = {
-      ...config.resolve,
-      alias: {
-        ...config.resolve?.alias,
-        "next/router": getAbsolutePath("next-router-mock")
+    return mergeConfig(config, {
+      resolve: {
+        alias: {
+          "next/router": getAbsolutePath("next-router-mock"),
+          "react-native-svg": getAbsolutePath("@tamagui/react-native-svg")
+        }
+      },
+
+      define: {
+        "process.env.STORYBOOK": "true",
+        // "process.env.TAMAGUI_TARGET": "web",
+        "process.env.NODE_ENV":
+          configType === "PRODUCTION" ? "production" : "development",
+        "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": "false"
       }
-    };
-    return config;
+    });
   },
 
   env: {

@@ -130,8 +130,8 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      background: ColorPaletteShades.PRIMARY,
-      backgroundHover: ColorPaletteShades.FOREGROUND,
+      background: ColorPaletteShades.FOREGROUND,
+      backgroundHover: ColorPaletteShades.PRIMARY,
       backgroundFocus: ColorPaletteShades.PRIMARY - 2,
       backgroundPress: ColorPaletteShades.PRIMARY - 2,
       color: ColorPaletteShades.BACKGROUND,
