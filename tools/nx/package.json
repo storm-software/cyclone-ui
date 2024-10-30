@@ -1,34 +1,26 @@
 {
   "name": "@cyclone-ui/tools-nx",
   "version": "0.0.1",
-  "private": true,
+  "type": "commonjs",
   "description": "⚡ A Nx plugin package that contains various executors and generators used in a Storm workspaces.",
-  "keywords": [
-    "storm",
-    "storm-ops",
-    "stormstack",
-    "storm-stack",
-    "sullivanpj",
-    "open-system",
-    "monorepo"
-  ],
-  "homepage": "https://stormsoftware.com",
-  "bugs": {
-    "url": "https://github.com/storm-software/cyclone-ui/issues",
-    "email": "support@stormsoftware.com"
-  },
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui",
     "directory": "tools/nx"
   },
-  "license": "Apache-2.0",
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://github.com/storm-software/cyclone-ui/issues",
+    "email": "support@stormsoftware.com"
+  },
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
     "url": "https://stormsoftware.com"
   },
-  "type": "commonjs",
+  "license": "Apache-2.0",
+  "private": true,
+  "main": "./index.js",
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json",
@@ -38,8 +30,16 @@
     "./executors.json": "./executors.json",
     "./executors/*/schema.json": "./src/executors/*/schema.json"
   },
-  "main": "./index.js",
   "typings": "./declarations.d.ts",
+  "keywords": [
+    "storm",
+    "storm-ops",
+    "stormstack",
+    "storm-stack",
+    "sullivanpj",
+    "open-system",
+    "monorepo"
+  ],
   "dependencies": {
     "@aws-sdk/client-s3": "^3.651.1",
     "@nx/devkit": "19.7.3",
@@ -48,7 +48,7 @@
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
-    "glob": "^10.4.1",
+    "glob": "^11.0.0",
     "tslib": "^2.6.2"
   },
   "executors": "./executors.json"

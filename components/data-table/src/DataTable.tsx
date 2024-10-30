@@ -17,6 +17,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
+import { ColorRole } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
 import { InputField } from "@cyclone-ui/input-field";
 import { Pagination } from "@cyclone-ui/pagination";
@@ -253,7 +254,9 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingHorizontal="$1">
+      paddingRight="$3"
+      borderRightColor="$borderColor"
+      borderRightWidth={1}>
       <XStack gap="$2" onPress={handleSorting} flex={1} cursor="pointer">
         <SizableText
           animation="medium"
@@ -297,7 +300,12 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
         $group-header-hover={{ opacity: 1 }}>
         <Popover size="$5" allowFlip={true}>
           <Popover.Trigger asChild={true}>
-            <Button variant="ghost" circular={true} padding="$1.5">
+            <Button
+              variant="ghost"
+              theme={ColorRole.BASE}
+              circular={true}
+              color="$primary"
+              padding="$2">
               <Button.Icon>
                 <Filter size="$1" />
               </Button.Icon>
@@ -344,11 +352,11 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
                 </CheckboxField>
 
                 <Popover.Close asChild={true}>
-                  <Form.Trigger asChild={true}>
+                  <Form.Reset asChild={true}>
                     <Button animate={false}>
-                      <Button.Text>Apply Filter</Button.Text>
+                      <Button.Text>Clear</Button.Text>
                     </Button>
-                  </Form.Trigger>
+                  </Form.Reset>
                 </Popover.Close>
               </YStack>
             </Form>

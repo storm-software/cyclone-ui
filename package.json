@@ -169,6 +169,7 @@
     "expo-document-picker": "^11.10.1",
     "expo-linking": "^6.2.2",
     "expo-modules-core": "^1.11.13",
+    "glob": "^11.0.0",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-environment-node": "^29.7.0",

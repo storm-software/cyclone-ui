@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Visually Hidden 
+# Visually Hidden
 
 A Next Button component meant to be shared in many other components
 

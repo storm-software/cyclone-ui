@@ -98,9 +98,12 @@ export const useFormActions = <
     }, [])
   );
 
+  const reset = useCallback(() => {}, []);
+
   return {
     initializeField,
     uninitializeField,
-    submit
+    submit,
+    reset
   };
 };

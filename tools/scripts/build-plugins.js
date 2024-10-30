@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { build } from "esbuild";
 
 build({
@@ -14,5 +15,24 @@ build({
   format: "cjs",
   platform: "node"
 }).then(() => {
-  console.log("Cyclone-UI plugins built successfully");
+  console.log("Components plugin build completed...");
+
+  build({
+    entryPoints: ["tools/nx/src/plugins/storybook/index.ts"],
+    outdir: "dist/plugins/storybook",
+    tsconfig: "tools/nx/tsconfig.lib.json",
+    packages: "external",
+    logLevel: "silent",
+    bundle: true,
+    minify: false,
+    outExtension: {
+      ".js": ".js"
+    },
+    format: "cjs",
+    platform: "node"
+  }).then(() => {
+    console.log("Storybook plugin build completed...");
+
+    console.info("Cyclone-UI plugins built successfully");
+  });
 });

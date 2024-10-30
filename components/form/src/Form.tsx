@@ -94,10 +94,10 @@ const FormTriggerFrame = styled(View, {
   name: FORM_NAME
 });
 
-export interface FormTriggerProps extends StackProps {}
+export interface FormSubmitProps extends StackProps {}
 
-export const FormTrigger = FormTriggerFrame.styleable(
-  (props: FormTriggerProps, forwardedRef) => {
+export const FormSubmit = FormTriggerFrame.styleable(
+  (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
 
     const store = useFormStore();
@@ -116,6 +116,27 @@ export const FormTrigger = FormTriggerFrame.styleable(
   }
 );
 
+export const FormReset = FormTriggerFrame.styleable(
+  (props: FormSubmitProps, forwardedRef) => {
+    const { children, onPress, ...triggerProps } = props;
+
+    const store = useFormStore();
+    const { reset } = useFormActions();
+
+    return (
+      <FormTriggerFrame
+        tag="button"
+        {...(triggerProps as any)}
+        ref={forwardedRef}
+        disabled={store.get.canSubmit()}
+        onPress={composeEventHandlers(onPress, reset)}>
+        {children}
+      </FormTriggerFrame>
+    );
+  }
+);
+
 export const Form = withStaticProperties(FormGroup, {
-  Trigger: FormTrigger
+  Submit: FormSubmit,
+  Reset: FormReset
 });
