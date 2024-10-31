@@ -16,12 +16,13 @@
  -------------------------------------------------------------------*/
 
 import { GetProps, styled } from "@tamagui/core";
-import { Paragraph } from "@tamagui/text";
+import { SizableText } from "@tamagui/text";
 
 export const LABEL_TEXT_NAME = "LabelText";
 
-export const LabelText = styled(Paragraph, {
+export const LabelText = styled(SizableText, {
   name: LABEL_TEXT_NAME,
+  tag: "p",
 
   color: "$color",
   fontFamily: "$label",

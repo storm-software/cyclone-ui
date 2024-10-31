@@ -18,12 +18,13 @@
 import { ColorRole } from "@cyclone-ui/colors";
 import { ThemedIcon, type ThemedIconProp } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
-import { GetProps, styled, Text, useThemeName } from "@tamagui/core";
+import { GetProps, styled, useThemeName } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons";
 import { Square } from "@tamagui/shapes";
 import { XStack } from "@tamagui/stacks";
+import { SizableText } from "@tamagui/text";
 import { useMemo } from "react";
-import { Linking } from "react-native";
+import { GestureResponderEvent, Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
 
 export interface LinkExtraProps extends UseLinkProps {
@@ -36,7 +37,7 @@ export interface LinkExtraProps extends UseLinkProps {
 
 export const LINK_NAME = "Link";
 
-const LinkFrame = styled(Text, {
+const LinkFrame = styled(SizableText, {
   name: LINK_NAME,
   tag: "a",
   accessibilityRole: "link",
@@ -49,7 +50,6 @@ const LinkFrame = styled(Text, {
   fontWeight: "$true",
   cursor: "pointer",
   whiteSpace: "nowrap",
-  position: "relative",
   zIndex: "$2",
 
   hoverStyle: {
@@ -78,17 +78,9 @@ const LinkFrame = styled(Text, {
         cursor: "not-allowed",
         color: "$disabled",
         textDecorationLine: "none"
-      },
-      false: {
-        color: "$fg"
       }
     }
-  } as const,
-
-  defaultVariants: {
-    cta: false,
-    disabled: false
-  }
+  } as const
 });
 
 const Underline = styled(Square, {
@@ -161,7 +153,7 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
     );
 
     return (
-      <XStack group={"link" as any} gap="0.25" alignItems="flex-end">
+      <XStack group={"link" as any} gap="$0.25" alignItems="flex-end">
         <LinkFrame
           {...props}
           {...linkProps}
@@ -171,7 +163,7 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
                 target
               }
             : {
-                onPress: event => {
+                onPress: (event: GestureResponderEvent) => {
                   props.onPress?.(event);
                   if (linkProps.href !== undefined) {
                     Linking.openURL(linkProps.href);
@@ -246,13 +238,17 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
             />
           )}
         </LinkFrame>
+
         {external && (
           <ThemedIcon
+            animation="slow"
             size="$1"
             theme={themeName}
             color={(color as ThemedIconProp["color"]) || "$fg"}
             $group-link-hover={{
-              color: "$colorHover"
+              color: "$colorHover",
+              x: 5,
+              y: -5
             }}>
             <ArrowUpRight />
           </ThemedIcon>

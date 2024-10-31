@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { ColorRole } from "@cyclone-ui/colors";
 import {
   createStyledContext,
@@ -64,7 +81,7 @@ export const AlertFrame = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
@@ -162,7 +179,7 @@ export const AlertHeader = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
@@ -188,7 +205,7 @@ const AlertIconFrame = styled(View, {
 const getIconSize = (size: FontSizeTokens, scale: number) => {
   return (
     (typeof size === "number"
-      ? size * 1.0
+      ? Number(size)
       : getFontSize(size as FontSizeTokens)) * scale
   );
 };

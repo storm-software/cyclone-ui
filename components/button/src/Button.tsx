@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { LabelText } from "@cyclone-ui/label-text";
 import { ThemedIcon } from "@cyclone-ui/themeable-icon";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import { View } from "@tamagui/core";
@@ -23,7 +24,6 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
-import { SizableText } from "@tamagui/text";
 import type {
   GetProps,
   SizeTokens,
@@ -149,12 +149,6 @@ export const ButtonContext = createStyledContext<
 >({
   color: "$color",
   ellipse: undefined,
-  fontFamily: "$label",
-  fontSize: undefined,
-  fontStyle: undefined,
-  fontWeight: "$6",
-  letterSpacing: undefined,
-  maxFontSizeMultiplier: undefined,
   size: undefined,
   textAlign: undefined,
   variant: undefined,
@@ -172,15 +166,27 @@ const ButtonFrame = styled(View, {
 
   tag: "button",
   role: "button",
+  animation: "slow",
+
   focusable: true,
+
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
-  animation: "slow",
+  flexWrap: "nowrap",
   borderWidth: 1,
-
+  cursor: "pointer",
   backgroundColor: "$background",
   borderColor: "$borderColor",
+
+  // borderWidth: 0,
+  // borderColor: "transparent",
+
+  // focusVisibleStyle: {
+  //   outlineColor: "$outlineColor",
+  //   outlineStyle: "solid",
+  //   outlineWidth: 2
+  // }
 
   hoverStyle: {
     backgroundColor: "$backgroundHover",
@@ -199,26 +205,6 @@ const ButtonFrame = styled(View, {
   },
 
   variants: {
-    unstyled: {
-      false: {
-        size: "$true",
-        justifyContent: "center",
-        alignItems: "center",
-        flexWrap: "nowrap",
-        flexDirection: "row",
-        hoverTheme: true,
-        pressTheme: true,
-        borderWidth: 0,
-        borderColor: "transparent",
-
-        focusVisibleStyle: {
-          outlineColor: "$outlineColor",
-          outlineStyle: "solid",
-          outlineWidth: 2
-        }
-      }
-    },
-
     variant: {
       secondary: {
         backgroundColor: "transparent",
@@ -328,11 +314,6 @@ const ButtonFrame = styled(View, {
         opacity: 0.4,
         borderColor: "$disabled",
         cursor: "not-allowed"
-      },
-      false: {
-        opacity: 1,
-        borderColor: "$borderColor",
-        cursor: "pointer"
       }
     },
 
@@ -372,37 +353,35 @@ const ButtonFrame = styled(View, {
       true: {
         padding: 0,
         height: "fit-content"
+      },
+      false: {
+        padding: "$3"
       }
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1",
-    disabled: false,
-    outlined: false,
-    circular: false,
     noPadding: false
   }
 });
 
-const ButtonText = styled(SizableText, {
+const ButtonText = styled(LabelText, {
   name: "ButtonText",
   context: ButtonContext,
 
-  userSelect: "none",
-  fontFamily: "$label",
-  fontWeight: "$6",
   animation: "slow",
+  userSelect: "none",
+  // flexGrow 1 leads to inconsistent native style where text pushes to start of view
+  flexGrow: 0,
+  flexShrink: 1,
+  ellipse: true,
+  borderRadius: 0,
+  color: "$color",
+  cursor: "pointer",
 
   variants: {
     unstyled: {
-      false: {
-        userSelect: "none",
-        // flexGrow 1 leads to inconsistent native style where text pushes to start of view
-        flexGrow: 0,
-        flexShrink: 1,
-        ellipse: true
-      }
+      false: {}
     },
 
     variant: {
@@ -445,9 +424,6 @@ const ButtonText = styled(SizableText, {
     disabled: {
       true: {
         cursor: "not-allowed"
-      },
-      false: {
-        cursor: "pointer"
       }
     },
 
@@ -456,19 +432,17 @@ const ButtonText = styled(SizableText, {
         height: "fit-content"
       }
     }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1",
-    disabled: false
-  }
+  } as const
 });
 
 const ButtonIconFrame = styled(ThemedIcon, {
   name: BUTTON_NAME,
   context: ButtonContext,
 
-  size: "$2"
+  size: "$2",
+  borderRadius: 0,
+  color: "$color",
+  cursor: "pointer"
 });
 
 const ButtonIcon = ButtonIconFrame.styleable(
@@ -502,10 +476,10 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   name: BUTTON_NAME,
   context: ButtonContext,
 
+  animation: "slow",
+
   backgroundColor: "transparent",
   borderColor: "transparent",
-  borderRadius: "$4",
-  animation: "slow",
   borderWidth: 2,
   opacity: 0.6,
 
@@ -515,20 +489,16 @@ const ButtonGhostBackground = styled(ThemeableStack, {
         borderRadius: 1000_000_000
       }
     }
-  } as const,
-
-  defaultVariants: {
-    circular: false
-  }
+  } as const
 });
 
 const ButtonGlassBackground = styled(LinearGradient, {
   name: BUTTON_NAME,
   context: ButtonContext,
 
-  backgroundColor: "transparent",
-  borderRadius: "$4",
   animation: "slow",
+
+  backgroundColor: "transparent",
   overflow: "hidden",
   opacity: 0.5,
   colors: ["$muted", "$primary"],
@@ -541,25 +511,20 @@ const ButtonGlassBackground = styled(LinearGradient, {
         borderRadius: 1000_000_000
       }
     }
-  } as const,
-
-  defaultVariants: {
-    circular: false
-  }
+  } as const
 });
 
 const ButtonContainer = styled(ThemeableStack, {
   name: BUTTON_NAME,
   context: ButtonContext,
-  animation: "$slow",
+
+  animation: "slow",
+  cursor: "pointer",
 
   variants: {
     disabled: {
       true: {
         cursor: "not-allowed"
-      },
-      false: {
-        cursor: "pointer"
       }
     },
 
@@ -576,12 +541,7 @@ const ButtonContainer = styled(ThemeableStack, {
         }
       }
     }
-  } as const,
-
-  defaultVariants: {
-    circular: false,
-    animate: true
-  }
+  } as const
 });
 
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
@@ -657,8 +617,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
 
 export const Button = withStaticProperties(ButtonContainerImpl, {
   Text: ButtonText,
-  Icon: ButtonIcon,
-  Props: ButtonContext.Provider
+  Icon: ButtonIcon
 });
 
 export type { ButtonProps };

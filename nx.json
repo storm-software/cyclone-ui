@@ -4,24 +4,16 @@
     "projects": ["packages/*", "components/*", "apps/*"]
   },
   "plugins": [
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "previewTargetName": "preview",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "serveStaticTargetName": "serve-static"
-      }
-    },
+    // {
+    //   "plugin": "@nx/vite/plugin",
+    //   "options": {
+    //     "buildTargetName": "build",
+    //     "previewTargetName": "preview",
+    //     "testTargetName": "test",
+    //     "serveTargetName": "serve",
+    //     "serveStaticTargetName": "serve-static"
+    //   }
+    // },
     {
       "plugin": "@nx/storybook/plugin",
       "options": {

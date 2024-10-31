@@ -4,5 +4,19 @@
   "projectType": "application",
   "sourceRoot": "apps/storybook/src",
   "tags": [],
-  "targets": {}
+  "targets": {
+    // "storybook": {
+    //   "executor": "@nx/storybook:storybook",
+    //   "options": {
+    //     "port": 4400,
+    //     "configDir": "apps/storybook/.storybook",
+    //     "docsMode": true
+    //   },
+    //   "configurations": {
+    //     "ci": {
+    //       "quiet": true
+    //     }
+    //   }
+    // }
+  }
 }

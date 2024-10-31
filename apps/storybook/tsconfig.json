@@ -38,7 +38,6 @@
     ".storybook/*",
     "../../packages/font-mona-sans/*",
     "../../packages/font-permanent-marker/*",
-    "../../packages/font-space-grotesk/*",
-    "../../components/**/*.stories.tsx"
+    "../../packages/font-space-grotesk/*"
   ]
 }

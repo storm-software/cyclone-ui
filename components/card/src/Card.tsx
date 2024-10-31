@@ -15,12 +15,14 @@
 
  -------------------------------------------------------------------*/
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { ColorRole } from "@cyclone-ui/colors";
 import { Link } from "@cyclone-ui/link";
 import {
   createStyledContext,
   getVariable,
   styled,
+  Theme,
   useTheme,
   View
 } from "@tamagui/core";
@@ -60,8 +62,8 @@ export const CardFrame = styled(ThemeableStack, {
   name: CARD_NAME,
   context: CardContext,
 
+  animation: "slow",
   overflow: "hidden",
-  animation: "$slow",
   borderColor: "$borderColor",
   borderWidth: 1,
   cursor: "pointer",
@@ -107,9 +109,9 @@ const CardBackground = styled(YStack, {
   name: CARD_NAME,
   context: CardContext,
 
+  animation: "slow",
   fullscreen: true,
   backgroundColor: "$fg",
-  animation: "$slow",
   overflow: "hidden",
   zIndex: 0,
   opacity: 0.025
@@ -119,9 +121,9 @@ const CardBackgroundGradient = styled(LinearGradient, {
   name: CARD_NAME,
   context: CardContext,
 
+  animation: "slow",
   fullscreen: true,
   flexDirection: "row",
-  animation: "$slow",
   overflow: "hidden",
   opacity: 0,
   zIndex: 5,
@@ -134,8 +136,8 @@ const CardContent = styled(YStack, {
   name: CARD_NAME,
   context: CardContext,
 
+  animation: "slow",
   flexDirection: "column",
-  animation: "$slow",
   zIndex: 20,
 
   variants: {
@@ -182,10 +184,6 @@ export const CardHeader = styled(ThemeableStack, {
   backgroundColor: "transparent",
 
   variants: {
-    unstyled: {
-      false: {}
-    },
-
     size: {
       "...size": (val, { tokens }) => {
         return {
@@ -195,19 +193,16 @@ export const CardHeader = styled(ThemeableStack, {
         };
       }
     }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
-  }
+  } as const
 });
 
 export const CardIconFrame = styled(View, {
   name: "Card",
+  context: CardContext,
+
+  animation: "slow",
   justifyContent: "center",
   alignItems: "center",
-  context: CardContext,
-  animation: "$slow",
   backgroundColor: "$color4",
   padding: "$5",
 
@@ -286,9 +281,8 @@ const CardTitle = styled(SizableText, {
   name: "CardTitle",
   context: CardContext,
 
-  theme: "base",
   fontFamily: "$title",
-  color: "$base10",
+  color: "$primary",
   zIndex: 20,
   verticalAlign: "middle",
 
@@ -329,11 +323,27 @@ const CardTitle = styled(SizableText, {
   } as const
 });
 
+const CardTitleImpl = CardTitle.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    return (
+      <Theme name={ColorRole.BASE}>
+        <CardTitle ref={forwardedRef} {...rest}>
+          {children}
+        </CardTitle>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "CardTitle" }
+  }
+);
+
 const CardEyebrow = styled(SizableText, {
   name: "CardEyebrow",
   context: CardContext,
 
-  theme: "base",
   fontFamily: "$eyebrow",
   color: "$color",
   zIndex: 20,
@@ -375,13 +385,27 @@ const CardEyebrow = styled(SizableText, {
   } as const
 });
 
-const CardBody = styled(SizableText, {
+const CardEyebrowImpl = CardEyebrow.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    return (
+      <Theme name={ColorRole.BASE}>
+        <CardEyebrow ref={forwardedRef} {...rest}>
+          {children}
+        </CardEyebrow>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "CardEyebrow" }
+  }
+);
+
+const CardBody = styled(BodyText, {
   name: "CardBody",
   context: CardContext,
 
-  theme: "base",
-  fontFamily: "$body",
-  color: "$base9",
   zIndex: 20,
   paddingVertical: 0,
 
@@ -420,7 +444,24 @@ const CardBody = styled(SizableText, {
   } as const
 });
 
-export const CardFooter = styled(ThemeableStack, {
+const CardBodyImpl = CardBody.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    return (
+      <Theme name={ColorRole.BASE}>
+        <CardBody ref={forwardedRef} {...rest}>
+          {children}
+        </CardBody>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "CardBody" }
+  }
+);
+
+const CardFooter = styled(ThemeableStack, {
   name: "CardFooter",
   context: CardContext,
   zIndex: 20,
@@ -440,6 +481,7 @@ export const CardFooter = styled(ThemeableStack, {
 const CardLink = styled(Link, {
   name: "CardLink",
   context: CardContext,
+
   zIndex: 25,
   underline: "initial",
   color: "$primary",
@@ -480,27 +522,29 @@ const CardLink = styled(Link, {
 const CardLinkArrowRight = styled(ArrowRight, {
   name: "CardLink",
   context: CardContext,
+
   zIndex: 25,
   color: "$primary",
   marginTop: "$0.4"
 });
 
-export const CardLinkImpl = CardLink.styleable(
+const CardLinkImpl = CardLink.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     return (
       <XStack gap="$1.5" alignItems="center">
-        <CardLink ref={forwardedRef} size="$2" {...rest}>
+        <CardLink ref={forwardedRef} {...rest}>
           {children}
         </CardLink>
         <View
-          animation="$slow"
+          animation="slow"
+          flex={1}
           x={0}
           $group-card-hover={{
             x: 10
           }}>
-          <CardLinkArrowRight />
+          <CardLinkArrowRight size="$2" />
         </View>
       </XStack>
     );
@@ -516,10 +560,10 @@ export type CardFooterProps = GetProps<typeof CardFooter>;
 export const Card = withStaticProperties(CardFrameImpl, {
   Header: CardHeader,
   TitleSection: CardTitleSection,
-  Eyebrow: CardEyebrow,
-  Title: CardTitle,
+  Eyebrow: CardEyebrowImpl,
+  Title: CardTitleImpl,
   Icon: CardIcon,
   Footer: CardFooter,
-  Body: CardBody,
+  Body: CardBodyImpl,
   Link: CardLinkImpl
 });

@@ -20,28 +20,28 @@ import { create } from "@storybook/theming/create";
 const theme: any = create({
   base: "dark",
 
-  colorPrimary: "#1fb2a6",
-  colorSecondary: "#7434db",
+  colorPrimary: "#EFEFEF",
+  colorSecondary: "#1fb2a6",
 
   // UI
   appBg: "#17181b",
   appContentBg: "#17181b",
-  appBorderColor: "#1fb2a6",
+  appBorderColor: "#EFEFEF",
   appBorderRadius: 2,
 
   // Text colors
-  textColor: "#1fb2a6",
-  textInverseColor: "#1fb2a6",
+  textColor: "#EFEFEF",
+  textInverseColor: "#EFEFEF",
 
   // Toolbar default and active colors
-  barTextColor: "#1fb2a6",
-  barSelectedColor: "#1fb2a6",
+  barTextColor: "#EFEFEF",
+  barSelectedColor: "#EFEFEF",
   barBg: "#17181b",
 
   // Form colors
   inputBg: "#17181b",
-  inputBorder: "#1fb2a6",
-  inputTextColor: "#1fb2a6",
+  inputBorder: "#EFEFEF",
+  inputTextColor: "#EFEFEF",
   inputBorderRadius: 2,
 
   brandTitle: "Storm Software",

@@ -17,12 +17,14 @@
 
 "use client";
 
+import { ColorRole } from "@cyclone-ui/colors";
 import { PdfIcon } from "@cyclone-ui/icons";
+import { Spinner } from "@cyclone-ui/spinner";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import { isString } from "@storm-stack/types/type-checks/is-string";
 import { FileResult } from "@storm-stack/types/utility-types/file";
 import { styled, View, ViewProps } from "@tamagui/core";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import {
   DocumentCallback,
@@ -43,7 +45,7 @@ const StyledPdfIcon = styled(PdfIcon, {
   position: "absolute",
   top: 0,
   left: 0,
-  zIndex: 20,
+  zIndex: "$2",
 
   variants: {
     visible: {
@@ -123,17 +125,29 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
       [onLoadSuccess, setLoading]
     );
 
+    const file = useMemo(
+      () => (isString(src) ? { url: src } : src.file),
+      [src]
+    );
+
     return (
       <View ref={forwardedRef} {...props}>
-        <StyledPdfIcon
-          height="100%"
-          width="100%"
-          visible={loading || error !== null}
-        />
+        <VisuallyHidden visible={loading || error !== null} animate={true}>
+          <Spinner
+            theme={ColorRole.ACCENT}
+            size="large"
+            position="absolute"
+            top="35%"
+            margin="auto"
+            zIndex="$3"
+          />
+
+          <StyledPdfIcon visible={loading || error !== null} />
+        </VisuallyHidden>
 
         <VisuallyHidden visible={!loading && !error} animate={true}>
           <Document
-            file={isString(src) ? { url: src } : src.file}
+            file={file}
             onLoadProgress={onLoadProgress}
             onLoadSuccess={handleLoadSuccess}
             onLoadError={handleLoadError}>

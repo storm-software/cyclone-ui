@@ -50,6 +50,13 @@ export const createNodes: CreateNodes = [
 
       project.implicitDependencies ??= [];
       project.implicitDependencies.push(...getComponentProjectNames());
+      project.implicitDependencies.push("colors");
+      project.implicitDependencies.push("masks");
+      project.implicitDependencies.push("animations");
+      project.implicitDependencies.push("media-queries");
+      project.implicitDependencies.push("tokens");
+      project.implicitDependencies.push("themes");
+      project.implicitDependencies.push("providers");
 
       return project.name
         ? {

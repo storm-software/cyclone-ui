@@ -18,14 +18,7 @@
 import { Stack, styled } from "@tamagui/core";
 
 export const VisuallyHidden = styled(Stack, {
-  position: "absolute",
-  width: 1,
-  height: 1,
-  margin: -1,
-  zIndex: -10000,
-  overflow: "hidden",
-  opacity: 0.00000001,
-  pointerEvents: "none",
+  animateOnly: ["opacity"],
 
   variants: {
     preserveDimensions: {
@@ -34,7 +27,7 @@ export const VisuallyHidden = styled(Stack, {
         width: "auto",
         height: "auto"
       }
-    } as const,
+    },
 
     visible: {
       true: {
@@ -46,15 +39,28 @@ export const VisuallyHidden = styled(Stack, {
         overflow: "visible",
         opacity: 1,
         pointerEvents: "auto"
+      },
+      false: {
+        position: "absolute",
+        width: 1,
+        height: 1,
+        margin: -1,
+        zIndex: -10000,
+        overflow: "hidden",
+        opacity: 0.00000001,
+        pointerEvents: "none"
       }
-    } as const,
+    },
 
     animate: {
       true: {
-        animation: "200ms",
-        animateOnly: ["opacity"]
+        animation: "200ms"
       }
-    } as const
+    }
+  } as const,
+
+  defaultVariants: {
+    visible: false
   }
 });
 
