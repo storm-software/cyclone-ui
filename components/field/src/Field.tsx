@@ -126,7 +126,7 @@ const FieldValidationText = styled(ValidationText, {
 
   fontStyle: "italic",
   fontFamily: "$body",
-  marginTop: "$0.2",
+  marginTop: "$0.4",
 
   variants: {
     size: {
@@ -161,7 +161,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
           ref={forwardedRef}
           {...rest}
           disabled={store.get.disabled()}>
-          <YStack gap="$0.75">
+          <YStack gap="$0.7">
             {children}
             <FieldValidationText messages={store.get.messages()} size={size} />
           </YStack>
@@ -196,6 +196,7 @@ const FieldDetails = styled(BodyText, {
   animation: "normal",
   color: "$color",
   fontStyle: "italic",
+  marginTop: "$0.4",
 
   enterStyle: {
     opacity: 0,

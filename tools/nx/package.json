@@ -42,8 +42,8 @@
   ],
   "dependencies": {
     "@aws-sdk/client-s3": "^3.651.1",
-    "@nx/devkit": "19.7.3",
-    "@nx/js": "19.7.3",
+    "@nx/devkit": "20.0.6",
+    "@nx/js": "20.0.6",
     "@storm-software/build-tools": "latest",
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",

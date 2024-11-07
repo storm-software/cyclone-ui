@@ -27,20 +27,13 @@ import { StorybookDecorator } from "../src/StorybookDecorator";
 // import i18n from "./i18n";
 
 const preview: Preview = {
-  globalTypes: {
-    theme: {
-      name: "Theme",
-      title: "Theme",
-      description: "Theme for your components",
-      defaultValue: "dark",
-      toolbar: {
-        icon: "paintbrush",
-        dynamicTitle: true,
-        items: [
-          { value: "light", left: "☀️", title: "Light Mode" },
-          { value: "dark", left: "🌙", title: "Dark Mode" }
-        ]
-      }
+  parameters: {
+    backgrounds: {
+      values: [
+        { value: "#fafafa", left: "☀️", name: "Light Mode" },
+        { value: "#151718", left: "🌙", name: "Dark Mode" }
+      ],
+      default: "dark"
     }
   },
 

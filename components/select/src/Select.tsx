@@ -268,8 +268,9 @@ const SelectItemGroup = styled(XStack, {
   gap: "$2",
   alignItems: "center",
   paddingHorizontal: "$2",
-  paddingVertical: "$2.25",
+  paddingVertical: 0,
   borderRadius: "$3",
+  minHeight: "$4",
   width: "100%",
 
   hoverStyle: {
@@ -277,6 +278,10 @@ const SelectItemGroup = styled(XStack, {
   },
 
   focusStyle: {
+    backgroundColor: "$muted"
+  },
+
+  focusVisibleStyle: {
     backgroundColor: "$muted"
   },
 

@@ -24,7 +24,6 @@
  * @packageDocumentation
  */
 
-export * from "./adapters";
 export * from "./atoms";
 export * from "./base";
 export * from "./hooks";

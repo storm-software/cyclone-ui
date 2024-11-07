@@ -17,7 +17,7 @@
 
 import { isNumber, isSet } from "@storm-stack/types";
 import type { SizeTokens } from "@tamagui/core";
-import { getSize } from "@tamagui/get-token";
+import { getSize, getSpace } from "@tamagui/get-token";
 import { getNearestToken } from "./get-nearest-token";
 
 export interface GetSizedOptions {
@@ -51,4 +51,30 @@ export const getSized = (
   const scale = isSet(options.scale) ? options.scale : 1;
 
   return size.val * scale;
+};
+
+/**
+ * Get the space number from a size token value or number value and a scale
+ *
+ * @param val - The size token or number to use
+ * @param scale - The scale to use
+ * @returns The space number
+ */
+export const getSpaced = (
+  val: SizeTokens | number,
+  options: GetSizedOptions = {}
+): number => {
+  let value = val;
+  if (!value) {
+    value = "$true";
+  }
+
+  if (isNumber(value)) {
+    value = getNearestToken("space", value);
+  }
+
+  const space = getSpace(value, options);
+  const scale = isSet(options.scale) ? options.scale : 1;
+
+  return space.val * scale;
 };

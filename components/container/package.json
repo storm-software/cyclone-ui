@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/icons",
-  "version": "0.5.0",
+  "name": "@cyclone-ui/container",
+  "version": "0.6.0",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "Button component for Cyclone UI",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/icons"
+    "directory": "components/message"
   },
   "private": false,
   "main": "dist/cjs",
@@ -29,20 +29,17 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1",
-    "react-native-svg": ">=12"
+    "react-native": "0.74.1"
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
-    "@tamagui/helpers-icon": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5"
+    "@tamagui/linear-gradient": "^1.110.5",
+    "@tamagui/stacks": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1",
-    "react-native-svg": "^15.8.0"
+    "react-native": "0.74.1"
   },
   "publishConfig": {
     "access": "public"

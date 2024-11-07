@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Button } from "@cyclone-ui/button";
+import { ColorRole } from "@cyclone-ui/colors";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
 import type {
@@ -27,6 +28,7 @@ import {
   DatePickerProvider as RehookifyDatePickerProvider,
   useDatePickerContext
 } from "@rehookify/datepicker";
+import { StormDate } from "@storm-stack/date-time/storm-date";
 import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type { FontSizeTokens } from "@tamagui/core";
@@ -51,22 +53,20 @@ import { DimensionValue } from "react-native";
 
 export type DatePickerContextProps = {
   size: FontSizeTokens;
-  required: boolean;
   disabled: boolean;
 };
 
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   size: "$true",
-  required: false,
   disabled: false
 });
 
 export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 
-/** Rehookify internally return `onClick` and that's incompatible with native */
-const swapOnClick = <D extends any>(d: D) => {
-  // @ts-ignore
-  d.onPress = d.onClick;
+// Rehookify internally return `onClick` and that's incompatible with native
+const swapOnClick = <D extends any = any>(d: D) => {
+  (d as any).onPress = (d as any).onClick;
+
   return d;
 };
 
@@ -117,7 +117,9 @@ export function useDateAnimation({
 
   const prevNextAnimation = useCallback(() => {
     if (listenTo === "years") {
-      if (currentYearsSum === null) return { enterStyle: { opacity: 0 } };
+      if (currentYearsSum === null) {
+        return { enterStyle: { opacity: 0 } };
+      }
 
       return {
         enterStyle: { opacity: 0, x: sumYears() < currentYearsSum ? -15 : 15 },
@@ -131,8 +133,10 @@ export function useDateAnimation({
       }
 
       const isPreviousDate =
-        new Date(`${calendarListenTo} 1, ${calendar?.year}`) <
-        new Date(`${currentMonth} 1, ${calendar?.year}`);
+        StormDate.create(`${calendarListenTo} 1, ${calendar?.year}`)
+          .epochMilliseconds <
+        StormDate.create(`${currentMonth} 1, ${calendar?.year}`)
+          .epochMilliseconds;
 
       if (currentMonth === "December" && calendar?.month === "January") {
         return {
@@ -158,8 +162,10 @@ export function useDateAnimation({
       }
 
       const isPreviousDate =
-        new Date(`${calendar?.month} 1, ${calendar?.year}`) <
-        new Date(`${calendar?.month} 1, ${currentYear}`);
+        StormDate.create(`${calendar?.month} 1, ${calendar?.year}`)
+          .epochMilliseconds <
+        StormDate.create(`${calendar?.month} 1, ${currentYear}`)
+          .epochMilliseconds;
 
       return {
         enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
@@ -246,18 +252,18 @@ const DayPicker = () => {
                     justifyContent="center"
                     alignItems="center">
                     <Button
+                      theme={day.selected ? ColorRole.ACCENT : ColorRole.BASE}
                       variant={
                         !day.inCurrentMonth
                           ? "ghost"
                           : day.selected
                             ? "primary"
-                            : "secondary"
+                            : "outlined"
                       }
                       padding="$1"
                       width={45}
                       borderRadius={0}
                       {...swapOnClick(dayButton(day))}
-                      theme={day.selected ? "accent" : theme}
                       disabled={!day.inCurrentMonth}>
                       <Button.Text>{day.day}</Button.Text>
                     </Button>

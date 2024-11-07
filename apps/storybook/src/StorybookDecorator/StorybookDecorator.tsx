@@ -26,10 +26,10 @@ export const StorybookDecorator = (Story: any, args: any) => {
     <Provider
       theme={{
         config,
-        disableInjectCSS: !process.env.STORYBOOK,
+        disableInjectCSS: false,
         defaultMode: themeKey
       }}>
-      <YStack backgroundColor="$backgroundStrong" padding="$8" flexGrow={1}>
+      <YStack padding="$8">
         <Story />
       </YStack>
     </Provider>

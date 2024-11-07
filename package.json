@@ -241,6 +241,7 @@
       "@cyclone-ui/breadcrumb": "workspace:*",
       "@cyclone-ui/build": "workspace:*",
       "@cyclone-ui/button": "workspace:*",
+      "@cyclone-ui/container": "workspace:*",
       "@cyclone-ui/card": "workspace:*",
       "@cyclone-ui/checkbox": "workspace:*",
       "@cyclone-ui/checkbox-field": "workspace:*",
