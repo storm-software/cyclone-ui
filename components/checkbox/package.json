@@ -31,7 +31,7 @@
     "@tamagui/checkbox-headless": "^1.110.5",
     "@tamagui/constants": "^1.110.5",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/create-context": "^1.116.12",
     "@tamagui/get-token": "^1.110.5",
     "@tamagui/group": "^1.110.5",
     "@tamagui/lucide-icons": "^1.110.5",
