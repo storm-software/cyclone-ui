@@ -20,6 +20,7 @@ import type { AnimationDriver } from "@tamagui/web";
 
 const smoothBezier = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
 export const animations: AnimationDriver = createAnimations({
+  "50ms": "ease-in 50ms",
   "75ms": "ease-in 75ms",
   "100ms": "ease-in 100ms",
   "200ms": "ease-in 200ms",
@@ -32,6 +33,7 @@ export const animations: AnimationDriver = createAnimations({
   slowest: "ease-in 1000ms",
   slower: "ease-in 750ms",
   slow: "ease-in 500ms",
+  normal: "ease-in 300ms",
   fast: `${smoothBezier} 400ms`,
   faster: `${smoothBezier} 300ms`,
   fastest: `${smoothBezier} 200ms`,

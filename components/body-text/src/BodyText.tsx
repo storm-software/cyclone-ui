@@ -18,16 +18,13 @@
 import { GetProps, styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-export const BODY_TEXT_NAME = "BodyText";
-
 export const BodyText = styled(SizableText, {
-  name: BODY_TEXT_NAME,
+  name: "BodyText",
   tag: "p",
 
   color: "$color",
   fontFamily: "$body",
-  fontSize: "$true",
-  fontWeight: "$true"
+  size: "$true"
 });
 
 export type BodyTextProps = GetProps<typeof BodyText>;

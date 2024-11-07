@@ -21,13 +21,16 @@ const size = {
   1: 10,
   2: 11,
   3: 12,
+  sm: 12,
   4: 14,
   5: 15,
   6: 16,
   7: 20,
+  md: 20,
   8: 22,
   9: 30,
   10: 42,
+  lg: 42,
   11: 52,
   12: 62,
   13: 72,
@@ -53,8 +56,9 @@ export const createSpaceGroteskFont = <
 ) => {
   const fontSize = {
     ...size,
-    ...font.size,
-    true: defaultSize
+    true: defaultSize,
+    default: defaultSize,
+    ...font.size
   } as Record<string | number, number>;
 
   return createFont({
@@ -66,18 +70,24 @@ export const createSpaceGroteskFont = <
     ) as typeof fontSize,
     weight: {
       2: "200",
-      light: "200",
+      sm: "200",
       4: "300",
       true: defaultWeight,
+      default: defaultWeight,
+      md: defaultWeight,
       5: "500",
       6: "700",
-      bold: "700",
+      lg: "700",
       8: "900",
       ...font.weight
     },
     letterSpacing: {
+      sm: -0.25,
       4: -0.25,
       true: -0.25,
+      default: -0.25,
+      md: -0.25,
+      lg: -0.25,
       ...font.letterSpacing
     }
   });

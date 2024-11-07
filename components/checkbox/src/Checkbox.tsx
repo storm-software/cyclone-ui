@@ -17,21 +17,26 @@
 
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
-import { styled } from "@tamagui/core";
+import {
+  GetProps,
+  SizeTokens,
+  styled,
+  VariantSpreadExtras
+} from "@tamagui/core";
+import { getSize, getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
-import { Check } from "@tamagui/lucide-icons";
+import { Check, Minus } from "@tamagui/lucide-icons";
 
-export const defaultCheckboxGroupStyles = {
-  size: "$true",
-  fontFamily: "$body",
-  fontSize: "$4",
-  color: "$color",
-  backgroundColor: "$background",
-  borderRadius: "$radius",
+const CheckboxGroupFrame = styled(XGroup, {
+  name: "Checkbox",
+
+  animation: "normal",
+  justifyContent: "space-between",
+  alignContent: "center",
+  verticalAlign: "center",
+  backgroundColor: "transparent",
   borderWidth: 1,
   borderColor: "$borderColor",
-  outlineWidth: 0,
-  outlineColor: "transparent",
   outlineStyle: "none",
 
   ...(isWeb
@@ -51,135 +56,234 @@ export const defaultCheckboxGroupStyles = {
 
   focusStyle: {
     outlineColor: "$accent10",
-    outlineWidth: 2,
+    outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
     borderColor: "$borderColorFocus"
-  }
-} as const;
+  },
 
-export const CHECKBOX_NAME = "Checkbox";
-
-const CheckboxGroupFrame = styled(XGroup, {
-  name: CHECKBOX_NAME,
-
-  justifyContent: "space-between",
-  animation: "slow",
-  alignContent: "center",
-  verticalAlign: "center",
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 3,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColorFocus"
+  },
 
   variants: {
-    unstyled: {
-      false: defaultCheckboxGroupStyles
-    },
-
-    focused: {
-      ":boolean": (val, { props }) => {
-        if (val) {
-          return props.focusStyle ?? defaultCheckboxGroupStyles.focusStyle;
+    size: {
+      "...size": (
+        val: SizeTokens | number,
+        { tokens, props }: VariantSpreadExtras<any>
+      ) => {
+        if (!val || props.circular) {
+          return;
+        }
+        if (typeof val === "number") {
+          return {
+            height: val * 0.6,
+            width: val * 0.6,
+            borderRadius: props.circular ? 100_000 : val * 0.2
+          };
         }
 
-        return {};
+        const size = getSize(val);
+        const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+
+        return {
+          height: size.val * 0.6,
+          width: size.val * 0.6,
+          borderRadius: props.circular ? 100_000 : radiusToken
+        };
       }
     },
 
+    circular: {
+      true: {
+        borderRadius: 100_000
+      }
+    },
+
+    focused: {
+      true: {
+        outlineColor: "$accent10",
+        outlineWidth: 3,
+        outlineOffset: "$1.25",
+        outlineStyle: "solid",
+        borderColor: "$borderColorFocus"
+      }
+    },
+
+    disabled: {
+      true: {
+        userSelect: "none",
+        cursor: "not-allowed",
+        borderColor: "$borderColorDisabled",
+
+        hoverStyle: {
+          borderColor: "$borderColorDisabled"
+        },
+
+        focusStyle: {
+          borderColor: "$borderColorDisabled"
+        },
+
+        pressStyle: {
+          borderColor: "$borderColorDisabled"
+        }
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true",
+    circular: false,
+    focused: false,
+    disabled: false
+  }
+});
+
+type CheckboxGroupFrameProps = GetProps<typeof CheckboxGroupFrame>;
+
+const BaseCheckbox = styled(TamaguiCheckbox, {
+  name: "Checkbox",
+
+  unstyled: true,
+  verticalAlign: "center",
+  height: "100%",
+  width: "100%",
+
+  variants: {
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val: SizeTokens | number) => {
+        if (!val) {
+          return;
+        }
+
+        if (typeof val === "number") {
+          return {
+            padding: val * 0.05
+          };
+        }
+
+        const padding = getSpace(val);
+
         return {
-          borderRadius: tokens.radius[val]
+          padding: padding.val * 0.05
         };
       }
     },
 
     disabled: {
       true: {
-        color: "$disabled",
-        borderColor: "$disabled",
-        placeholderColor: "$disabled",
-        userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$disabled",
-          borderColor: "$disabled"
-        },
-
-        focusStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
-        },
-
-        pressStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
-        }
-      },
-      false: {
-        cursor: "pointer"
+        cursor: "not-allowed"
       }
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1",
-    focused: false,
+    size: "$true",
     disabled: false
   }
 });
 
-const BaseCheckbox = styled(TamaguiCheckbox, {
-  name: CHECKBOX_NAME,
-  unstyled: true,
+const CheckboxIcon = styled(Check, {
+  name: "CheckboxIcon",
 
-  verticalAlign: "center",
-  height: "$1.5",
-  width: "$1.5",
-  padding: "$0.5",
+  color: "$color",
 
   variants: {
-    focused: {
-      true: {
-        // borderColor: "$accent10"
-      },
-      false: {
-        // borderColor: "$borderColor"
-      }
-    },
+    size: {
+      "...size": (
+        val: SizeTokens | number,
+        { props }: VariantSpreadExtras<any>
+      ) => {
+        if (!val || props.circular) {
+          return;
+        }
+        if (typeof val === "number") {
+          return {
+            height: val * 0.5,
+            width: val * 0.5
+          };
+        }
 
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        placeholderTextColor: "$disabled",
-        color: "$disabled"
-      },
-      false: {
-        placeholderTextColor: "$placeholderColor"
+        const size = getSize(val);
+
+        return {
+          height: size.val * 0.5,
+          width: size.val * 0.5
+        };
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
-    focused: false
+    size: "$true"
   }
 });
 
-export const Checkbox = BaseCheckbox.styleable(
-  ({ focused, disabled, name, ...props }, forwardedRef) => {
+const MinusIcon = styled(Minus, {
+  name: "CheckboxIcon",
+
+  color: "$color",
+
+  variants: {
+    size: {
+      "...size": (
+        val: SizeTokens | number,
+        { props }: VariantSpreadExtras<any>
+      ) => {
+        if (!val || props.circular) {
+          return;
+        }
+        if (typeof val === "number") {
+          return {
+            height: val * 0.5,
+            width: val * 0.5
+          };
+        }
+
+        const size = getSize(val);
+
+        return {
+          height: size.val * 0.5,
+          width: size.val * 0.5
+        };
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
+});
+
+export const Checkbox = BaseCheckbox.styleable<{
+  focused?: CheckboxGroupFrameProps["focused"];
+}>(
+  (
+    {
+      focused = false,
+      disabled,
+      name,
+      size = "$true",
+      checked = false,
+      ...props
+    },
+    forwardedRef
+  ) => {
     return (
-      <CheckboxGroupFrame focused={focused} disabled={disabled}>
+      <CheckboxGroupFrame focused={focused} disabled={disabled} size={size}>
         <BaseCheckbox
           ref={forwardedRef}
           id={name}
           {...props}
-          focused={focused}
+          checked={checked}
+          size={size}
           disabled={disabled}>
           <TamaguiCheckbox.Indicator
-            animation="slow"
+            animation="normal"
             enterStyle={{
               scale: 0.8,
               y: 10,
@@ -192,10 +296,17 @@ export const Checkbox = BaseCheckbox.styleable(
             }}
             justifyContent="center"
             alignItems="center">
-            <Check color="$fg" height="$1" width="$1" />
+            {checked === "indeterminate" ? (
+              <MinusIcon size={size} />
+            ) : (
+              <CheckboxIcon size={size} />
+            )}
           </TamaguiCheckbox.Indicator>
         </BaseCheckbox>
       </CheckboxGroupFrame>
     );
+  },
+  {
+    staticConfig: { componentName: "Checkbox" }
   }
 );

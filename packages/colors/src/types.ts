@@ -40,21 +40,27 @@ export type ColorRole =
   | "brand"
   | "alternate"
   | "accent"
+  | "link"
   | "help"
   | "success"
   | "info"
   | "warning"
-  | "error";
+  | "error"
+  | "positive"
+  | "negative";
 export const ColorRole = {
   BASE: "base" as ColorRole,
   BRAND: "brand" as ColorRole,
   ALTERNATE: "alternate" as ColorRole,
   ACCENT: "accent" as ColorRole,
+  LINK: "link" as ColorRole,
   HELP: "help" as ColorRole,
   SUCCESS: "success" as ColorRole,
   INFO: "info" as ColorRole,
   WARNING: "warning" as ColorRole,
-  ERROR: "error" as ColorRole
+  ERROR: "error" as ColorRole,
+  POSITIVE: "positive" as ColorRole,
+  NEGATIVE: "negative" as ColorRole
 };
 
 export type ColorPaletteShade =

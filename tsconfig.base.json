@@ -80,6 +80,8 @@
       "@cyclone-ui/input/*": ["components/input/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
+      "@cyclone-ui/link-text": ["components/link-text/src/index.ts"],
+      "@cyclone-ui/link-text/*": ["components/link-text/src/*"],
       "@cyclone-ui/link": ["components/link/src/index.ts"],
       "@cyclone-ui/link/*": ["components/link/src/*"],
       "@cyclone-ui/masks": ["packages/masks/src/index.ts"],

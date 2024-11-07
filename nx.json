@@ -4,25 +4,6 @@
     "projects": ["packages/*", "components/*", "apps/*"]
   },
   "plugins": [
-    // {
-    //   "plugin": "@nx/vite/plugin",
-    //   "options": {
-    //     "buildTargetName": "build",
-    //     "previewTargetName": "preview",
-    //     "testTargetName": "test",
-    //     "serveTargetName": "serve",
-    //     "serveStaticTargetName": "serve-static"
-    //   }
-    // },
-    {
-      "plugin": "@nx/storybook/plugin",
-      "options": {
-        "buildStorybookTargetName": "build-storybook",
-        "serveStorybookTargetName": "storybook",
-        "testStorybookTargetName": "test-storybook",
-        "staticStorybookTargetName": "static-storybook"
-      }
-    },
     {
       "plugin": "@nx/eslint/plugin",
       "exclude": ["packages/**/__fixtures__/**/*"],

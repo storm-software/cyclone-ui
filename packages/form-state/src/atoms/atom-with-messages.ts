@@ -262,14 +262,6 @@ export const atomWithMessages = (
     return undefined;
   });
 
-const getTheme = (type: ColorRole, theme?: string) => {
-  if (!theme) {
-    return type;
-  }
-
-  return theme.toLowerCase().endsWith(type) ? theme : `${theme}_${type}`;
-};
-
 export const atomWithTheme = (
   optionsAtom: Atom<FieldOptions>,
   errorMessagesAtom: Atom<ErrorValidationDetails[]>,
@@ -282,30 +274,30 @@ export const atomWithTheme = (
     const options = get(optionsAtom);
     if (
       get(errorMessagesAtom).length > 0 ||
-      options.theme?.toLowerCase().includes(ColorRole.ERROR)
+      options.theme?.includes(ColorRole.ERROR)
     ) {
-      return getTheme(ColorRole.ERROR, options.theme);
+      return ColorRole.ERROR;
     } else if (
       get(warningMessagesAtom).length > 0 ||
-      options.theme?.toLowerCase().includes(ColorRole.WARNING)
+      options.theme?.includes(ColorRole.WARNING)
     ) {
-      return getTheme(ColorRole.WARNING, options.theme);
+      return ColorRole.WARNING;
     } else if (
       get(successMessagesAtom).length > 0 ||
-      options.theme?.toLowerCase().includes(ColorRole.SUCCESS)
+      options.theme?.includes(ColorRole.SUCCESS)
     ) {
-      return getTheme(ColorRole.SUCCESS, options.theme);
+      return ColorRole.SUCCESS;
     } else if (
       get(infoMessagesAtom).length > 0 ||
-      options.theme?.toLowerCase().includes(ColorRole.INFO)
+      options.theme?.includes(ColorRole.INFO)
     ) {
-      return getTheme(ColorRole.INFO, options.theme);
+      return ColorRole.INFO;
     } else if (
       get(helpMessagesAtom).length > 0 ||
-      options.theme?.toLowerCase().includes(ColorRole.HELP)
+      options.theme?.includes(ColorRole.HELP)
     ) {
-      return getTheme(ColorRole.HELP, options.theme);
+      return ColorRole.HELP;
     }
 
-    return getTheme(ColorRole.BASE, options.theme);
+    return ColorRole.BASE;
   });

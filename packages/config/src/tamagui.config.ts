@@ -26,7 +26,15 @@ import { tokens } from "@cyclone-ui/tokens";
 import { shorthands } from "@tamagui/shorthands";
 import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
-const titleFont = createMonaSansFont({}, 30, "700");
+const titleFont = createPermanentMarkerFont(
+  {
+    transform: {
+      6: "uppercase"
+    }
+  },
+  45,
+  "700"
+);
 const eyebrowFont = createPermanentMarkerFont(
   {
     transform: {
@@ -36,16 +44,20 @@ const eyebrowFont = createPermanentMarkerFont(
   12,
   "400"
 );
-const headingFont = createPermanentMarkerFont(
+
+const headingFont = createMonaSansFont({}, 32, "700");
+const labelFont = createMonaSansFont({}, 18, "550");
+const ctaFont = createMonaSansFont(
   {
     transform: {
       6: "uppercase"
     }
   },
-  20
+  18,
+  "550"
 );
-const labelFont = createMonaSansFont({}, 18, "550");
-const bodyFont = createSpaceGroteskFont();
+
+const bodyFont = createSpaceGroteskFont({}, 16, "300");
 
 export const options: CreateTamaguiProps = {
   defaultFont: "body",
@@ -70,7 +82,11 @@ export const options: CreateTamaguiProps = {
     mt: "marginTop",
     mb: "marginBottom",
     h: "height",
-    w: "width"
+    w: "width",
+    hmax: "maxHeight",
+    hmin: "minHeight",
+    wmax: "maxWidth",
+    wmin: "minWidth"
   } as const,
   fonts: {
     title: titleFont,
@@ -79,7 +95,7 @@ export const options: CreateTamaguiProps = {
     label: labelFont,
     body: bodyFont,
     link: bodyFont,
-    cta: labelFont
+    cta: ctaFont
   },
   tokens,
   themes: brand,
@@ -87,18 +103,30 @@ export const options: CreateTamaguiProps = {
   mediaQueryDefaultActive,
   selectionStyles: theme => ({
     backgroundColor: theme.color6,
-    color: theme.color12
+    color: theme.color10
   }),
   settings: {
-    // allowedStyleValues: "somewhat-strict-web",
+    allowedStyleValues: "somewhat-strict-web",
     autocompleteSpecificTokens: "except-special"
   },
   defaultProps: {
     Paragraph: {
       fontFamily: "body"
     },
-    Label: {
+    LabelText: {
       fontFamily: "label"
+    },
+    HeadingText: {
+      fontFamily: "heading"
+    },
+    EyebrowText: {
+      fontFamily: "eyebrow"
+    },
+    TitleText: {
+      fontFamily: "title"
+    },
+    LinkText: {
+      fontFamily: "link"
     }
   }
 } satisfies CreateTamaguiProps;

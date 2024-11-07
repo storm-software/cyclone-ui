@@ -15,62 +15,50 @@
 
  -------------------------------------------------------------------*/
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { ColorRole } from "@cyclone-ui/colors";
+import { HeadingText } from "@cyclone-ui/heading-text";
+import {
+  ThemeableIcon,
+  ThemedIcon,
+  type ThemeableIconProps
+} from "@cyclone-ui/themeable-icon";
 import {
   createStyledContext,
-  getVariable,
   styled,
-  useTheme,
-  View,
+  Theme,
   withStaticProperties
 } from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type {
-  ColorTokens,
-  FontSizeTokens,
   GetProps,
   SizeTokens,
   TextProps,
   VariantSpreadExtras
 } from "@tamagui/web";
 
-const defaultContextValues = {
-  size: "$3" as SizeTokens,
-  scaleIcon: 2,
-  color: undefined,
-  theme: ColorRole.BASE
-} as const;
-
-export const AlertContext = createStyledContext<{
+export type AlertContextProps = {
   size: SizeTokens;
-  scaleIcon: number;
-  color?: ColorTokens | string;
   theme: string;
-}>(defaultContextValues);
+};
 
-const ALERT_NAME = "Alert";
+export const AlertContext = createStyledContext<AlertContextProps>({
+  size: "$true" as SizeTokens,
+  theme: ColorRole.BASE
+});
 
-export const AlertFrame = styled(ThemeableStack, {
-  name: ALERT_NAME,
+const AlertFrame = styled(ThemeableStack, {
+  name: "Alert",
   context: AlertContext,
 
+  animation: "normal",
   overflow: "hidden",
-  animation: "$slow",
-  borderColor: "$borderColor",
   borderWidth: 1,
+  borderColor: "$borderColor",
+  position: "relative",
 
   variants: {
-    unstyled: {
-      false: {
-        size: "$true",
-        position: "relative"
-      }
-    },
-
     size: {
       "...size": (val, { tokens }) => {
         return {
@@ -81,29 +69,29 @@ export const AlertFrame = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
+    size: "$true"
   }
 });
 
 const AlertBackground = styled(YStack, {
-  name: ALERT_NAME,
+  name: "Alert",
   context: AlertContext,
 
   fullscreen: true,
   backgroundColor: "$fg",
-  animation: "$slow",
+  animation: "normal",
   overflow: "hidden",
   zIndex: 0,
   opacity: 0.025
 });
 
 const AlertBackgroundGradient = styled(LinearGradient, {
-  name: ALERT_NAME,
+  name: "Alert",
   context: AlertContext,
 
   fullscreen: true,
   flexDirection: "row",
-  animation: "$slow",
+  animation: "normal",
   overflow: "hidden",
   opacity: 0.8,
   zIndex: 5,
@@ -113,11 +101,11 @@ const AlertBackgroundGradient = styled(LinearGradient, {
 });
 
 const AlertContent = styled(YStack, {
-  name: ALERT_NAME,
+  name: "Alert",
   context: AlertContext,
 
   flexDirection: "column",
-  animation: "$slow",
+  animation: "normal",
   zIndex: 20,
 
   variants: {
@@ -150,12 +138,12 @@ const AlertFrameImpl = AlertFrame.styleable(
     );
   },
   {
-    staticConfig: { componentName: ALERT_NAME }
+    staticConfig: { componentName: "Alert" }
   }
 );
 
-export const AlertHeader = styled(ThemeableStack, {
-  name: ALERT_NAME,
+const AlertHeader = styled(ThemeableStack, {
+  name: "Alert",
   context: AlertContext,
 
   flexDirection: "row",
@@ -165,10 +153,6 @@ export const AlertHeader = styled(ThemeableStack, {
   alignItems: "center",
 
   variants: {
-    unstyled: {
-      false: {}
-    },
-
     size: {
       "...size": (val, { tokens }) => {
         return {
@@ -176,108 +160,33 @@ export const AlertHeader = styled(ThemeableStack, {
         };
       }
     }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
-  }
-});
-
-const AlertIconFrame = styled(View, {
-  name: ALERT_NAME,
-  context: AlertContext,
-
-  justifyContent: "center",
-  alignItems: "center",
-  animation: "$slow",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val] ?? val
-        };
-      }
-    }
   } as const
 });
 
-const getIconSize = (size: FontSizeTokens, scale: number) => {
-  return (
-    (typeof size === "number"
-      ? Number(size)
-      : getFontSize(size as FontSizeTokens)) * scale
-  );
-};
+const AlertIcon = ({ children, ...props }: ThemeableIconProps) => {
+  const { theme, size } = AlertContext.useStyledContext();
 
-const AlertIcon = AlertIconFrame.styleable<{
-  scaleIcon?: number;
-  color?: ColorTokens | string;
-}>((props: any, ref: any) => {
-  const { children, color: colorProp, ...rest } = props;
-  const context = AlertContext.useStyledContext();
-  const { size = "$true", color: contextColor, scaleIcon = 1 } = context;
-
-  const themeColors = useTheme({
-    name: context.theme
-  });
-  const color = getVariable(
-    colorProp ||
-      contextColor ||
-      themeColors[contextColor as any]?.get("web") ||
-      themeColors.primary?.get("web")
-  );
-  const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
-
-  const getThemedIcon = useGetThemedIcon({
-    size: iconSize,
-    color: color as any
-  });
-  return (
-    <AlertIconFrame ref={ref} theme={context.theme} {...rest}>
-      {getThemedIcon(children)}
-    </AlertIconFrame>
-  );
-});
-
-export const AlertIconWrapper = AlertIcon.styleable(
-  ({ children, ...props }: any, ref: any) => {
-    const { theme } = AlertContext.useStyledContext();
-
-    if (
-      theme &&
-      (theme.toLowerCase().includes(ColorRole.ERROR) ||
-        theme.toLowerCase().includes(ColorRole.WARNING) ||
-        theme.toLowerCase().includes(ColorRole.INFO) ||
-        theme.toLowerCase().includes(ColorRole.HELP) ||
-        theme.toLowerCase().includes(ColorRole.SUCCESS))
-    ) {
-      return null;
-    }
-
+  if (children) {
     return (
-      <AlertIcon ref={ref} {...props}>
+      <ThemeableIcon theme={theme} size={size} {...props}>
         {children}
-      </AlertIcon>
+      </ThemeableIcon>
     );
   }
-);
 
-const AlertHeading = styled(SizableText, {
-  name: "Alert",
+  return <ThemedIcon theme={theme} size={size} {...props} />;
+};
+
+const AlertHeaderHeading = styled(HeadingText, {
+  name: "AlertHeaderHeading",
   context: AlertContext,
 
-  theme: "base",
-  fontFamily: "$heading",
-  color: "$fg",
+  color: "$color",
   zIndex: 20,
 
   variants: {
     size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<TextProps>) => {
         if (!config.font) {
           return;
         }
@@ -309,22 +218,34 @@ const AlertHeading = styled(SizableText, {
   } as const
 });
 
-const AlertBody = styled(SizableText, {
-  name: ALERT_NAME,
+const AlertHeaderHeadingImpl = AlertHeaderHeading.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { size } = AlertContext.useStyledContext();
+
+    return (
+      <Theme name={ColorRole.BASE} shallow={true}>
+        <AlertHeaderHeading ref={forwardedRef} size={size} {...props}>
+          {children}
+        </AlertHeaderHeading>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "AlertHeaderHeading" }
+  }
+);
+
+const AlertBody = styled(BodyText, {
+  name: "AlertBody",
   context: AlertContext,
 
-  theme: "base",
-  fontFamily: "$body",
-  color: "$base9",
+  color: "$color",
   zIndex: 20,
   paddingVertical: 0,
 
   variants: {
     size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<TextProps>) => {
         if (!config.font) {
           return;
         }
@@ -349,19 +270,41 @@ const AlertBody = styled(SizableText, {
         };
       }
     }
-  } as const
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
 });
 
+const AlertBodyImpl = AlertBody.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { size } = AlertContext.useStyledContext();
+
+    return (
+      <Theme name={ColorRole.BASE} shallow={true}>
+        <AlertBody ref={forwardedRef} size={size} {...props}>
+          {children}
+        </AlertBody>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "AlertBody" }
+  }
+);
+
 export type AlertHeaderProps = GetProps<typeof AlertHeader>;
-export type AlertHeadingProps = GetProps<typeof AlertHeading>;
-export type AlertBodyProps = GetProps<typeof AlertBody>;
-export type AlertIconProps = GetProps<typeof AlertIconWrapper>;
+export type AlertHeadingProps = GetProps<typeof AlertHeaderHeadingImpl>;
+export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
+export type AlertIconProps = GetProps<typeof AlertIcon>;
 
 export type AlertProps = GetProps<typeof AlertFrameImpl>;
 
 export const Alert = withStaticProperties(AlertFrameImpl, {
-  Heading: AlertHeading,
-  Icon: AlertIconWrapper,
-  Header: AlertHeader,
-  Body: AlertBody
+  Header: withStaticProperties(AlertHeader, {
+    Heading: AlertHeaderHeadingImpl,
+    Icon: AlertIcon
+  }),
+  Body: AlertBodyImpl
 });

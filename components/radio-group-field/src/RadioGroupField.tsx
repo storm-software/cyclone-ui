@@ -18,11 +18,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
-import {
-  RADIO_GROUP_NAME,
-  RadioGroup,
-  RadioGroupContext
-} from "@cyclone-ui/radio-group";
+import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { SelectOption } from "@storm-stack/types/index";
 import { styled, withStaticProperties } from "@tamagui/core";
 import { Label } from "@tamagui/label";
@@ -40,13 +36,13 @@ const RadioGroupFieldGroup = Field.styleable(
   }
 );
 
-const RadioGroupItemLabel = styled(Label, {
-  name: RADIO_GROUP_NAME,
-
+const RadioGroupItemValue = styled(Label, {
+  name: "RadioGroupItemValue",
   tag: "label",
+
+  animation: "normal",
   cursor: "pointer",
-  animation: "100ms",
-  color: "$base10",
+  color: "$color",
   fontFamily: "$label",
   fontSize: "$6",
   fontWeight: "$4",
@@ -57,33 +53,28 @@ const RadioGroupItemLabel = styled(Label, {
   variants: {
     selected: {
       true: {
-        color: "$fg",
         fontWeight: "$6"
       }
     },
 
     disabled: {
       true: {
-        color: "$disabled",
-        placeholderColor: "$disabled",
+        color: "$colorDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         focusStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         pressStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         }
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
@@ -94,36 +85,34 @@ const RadioGroupItemLabel = styled(Label, {
   }
 });
 
-const RadioGroupItemDescription = styled(BodyText, {
-  name: RADIO_GROUP_NAME,
+const RadioGroupItemDetails = styled(BodyText, {
+  name: "RadioGroupItemDetails",
   context: RadioGroupContext,
 
-  animation: "slow",
+  animation: "normal",
+  cursor: "pointer",
   color: "$color",
   fontSize: "$5",
 
   variants: {
     disabled: {
       true: {
-        color: "$disabled",
+        color: "$colorDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         focusStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         pressStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         }
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
@@ -149,19 +138,16 @@ const RadioGroupItem = (
   return (
     <RadioGroup.Item {...item} onPress={handlePress}>
       <YStack gap="$1" justifyContent="flex-start" flex={1}>
-        <RadioGroupItemLabel
+        <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}
-          selected={selected}
-          $group-hover={{
-            color: disabled ? "$disabled" : selected ? "$fg" : "$base10"
-          }}>
+          selected={selected}>
           {name}
-        </RadioGroupItemLabel>
+        </RadioGroupItemValue>
         {description && (
-          <RadioGroupItemDescription disabled={disabled} display="flex">
+          <RadioGroupItemDetails disabled={disabled} display="flex">
             {description}
-          </RadioGroupItemDescription>
+          </RadioGroupItemDetails>
         )}
       </YStack>
 

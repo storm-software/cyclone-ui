@@ -23,6 +23,7 @@ import {
   SelectOption,
   ValidationDetails
 } from "@storm-stack/types";
+import { SizeTokens } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
 
 /**
@@ -245,6 +246,7 @@ export type FieldOptions<
   name: string;
   mode?: "value" | "array";
   theme?: string;
+  size?: SizeTokens;
   required?: boolean;
   disabled?: boolean;
   items?: Array<Partial<SelectOption> & Pick<SelectOption, "name" | "value">>;
@@ -360,6 +362,11 @@ export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {
    * The theme state value.
    */
   theme: string;
+
+  /**
+   * The size state value.
+   */
+  size: SizeTokens;
 
   /**
    * A flag that is `true` if the field's value has not been modified by the user. Opposite of `dirty`.

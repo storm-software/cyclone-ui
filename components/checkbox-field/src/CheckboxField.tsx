@@ -18,10 +18,9 @@
 import { Checkbox } from "@cyclone-ui/checkbox";
 import { Field } from "@cyclone-ui/field";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
-import { isSet } from "@storm-stack/types/type-checks/is-set";
+import { CheckedState } from "@tamagui/checkbox-headless";
 import { withStaticProperties } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
-import { useCallback } from "react";
 
 const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -51,16 +50,10 @@ const CheckboxFieldLabel = Field.Label.styleable(
 
 const CheckboxFieldControl = Checkbox.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { focus, change, blur } = useFieldActions<boolean>();
-    const handleCheckedChange = useCallback(
-      async (checked: boolean) => {
-        await change(checked);
-        await blur();
-      },
-      [blur, change]
-    );
+    const { focus, change, blur } = useFieldActions<CheckedState>();
+    const store = useFieldStore<CheckedState>();
 
-    const store = useFieldStore<boolean>();
+    const name = store.get.name();
     const disabled = store.get.disabled();
     const focused = store.get.focused();
     const value = store.get.value();
@@ -70,11 +63,12 @@ const CheckboxFieldControl = Checkbox.styleable(
       <Checkbox
         ref={forwardedRef}
         {...props}
+        name={name}
         onFocus={focus}
         onBlur={blur}
-        onCheckedChange={handleCheckedChange}
-        checked={isSet(value) ? value : "indeterminate"}
-        defaultChecked={isSet(initialValue) ? initialValue : "indeterminate"}
+        onCheckedChange={change}
+        checked={value || false}
+        defaultChecked={initialValue || false}
         focused={focused}
         disabled={disabled}>
         {children}

@@ -39,6 +39,8 @@ export const size = {
   "$0.3": 6,
   "$0.4": 8,
   "$0.5": 10,
+  "$0.6": 12,
+  "$0.7": 14,
   "$0.75": 15,
   "$0.8": 16,
   "$0.9": 18,
@@ -130,22 +132,28 @@ export const colorTokens = {
     brand: colors.brand,
     alternate: colors.alternate,
     accent: colors.accent,
+    link: colors.link,
     help: colors.help,
     success: colors.success,
     error: colors.error,
     warning: colors.warning,
-    info: colors.info
+    info: colors.info,
+    positive: colors.positive,
+    negative: colors.negative
   },
   dark: {
     base: colors.baseDark,
     brand: colors.brandDark,
     alternate: colors.alternateDark,
     accent: colors.accentDark,
+    link: colors.linkDark,
     help: colors.helpDark,
     success: colors.successDark,
     error: colors.errorDark,
     warning: colors.warningDark,
-    info: colors.infoDark
+    info: colors.infoDark,
+    positive: colors.positiveDark,
+    negative: colors.negativeDark
   }
 };
 
@@ -154,11 +162,14 @@ export const darkColors = {
   ...colorTokens.dark.brand,
   ...colorTokens.dark.alternate,
   ...colorTokens.dark.accent,
+  ...colorTokens.dark.link,
   ...colorTokens.dark.help,
   ...colorTokens.dark.success,
   ...colorTokens.dark.error,
   ...colorTokens.dark.warning,
-  ...colorTokens.dark.info
+  ...colorTokens.dark.info,
+  ...colorTokens.dark.positive,
+  ...colorTokens.dark.negative
 };
 
 export const lightColors = {
@@ -166,11 +177,14 @@ export const lightColors = {
   ...colorTokens.light.brand,
   ...colorTokens.light.alternate,
   ...colorTokens.light.accent,
+  ...colorTokens.light.link,
   ...colorTokens.light.help,
   ...colorTokens.light.success,
   ...colorTokens.light.error,
   ...colorTokens.light.warning,
-  ...colorTokens.light.info
+  ...colorTokens.light.info,
+  ...colorTokens.light.positive,
+  ...colorTokens.light.negative
 };
 
 export const color = {
@@ -226,12 +240,16 @@ export const tokens = createTokens({
 });
 
 export const ColorPaletteShades = {
-  PRIMARY: 10,
-  SECONDARY: 8,
-  MUTED: 4,
-  DISABLED: 6,
   BACKGROUND: 1,
   BACKGROUND_TRANSPARENT: 0,
   FOREGROUND: -1,
-  FOREGROUND_TRANSPARENT: -0
+  FOREGROUND_TRANSPARENT: -0,
+  PRIMARY: 10,
+  SECONDARY: 8,
+  TERTIARY: 6,
+  MUTED: 4,
+  SURFACE_PRIMARY: 3,
+  SURFACE_SECONDARY: 4,
+  SURFACE_TERTIARY: 5,
+  SURFACE_MUTED: 7
 } as const;

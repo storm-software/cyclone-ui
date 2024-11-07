@@ -48,8 +48,9 @@ export const createPermanentMarkerFont = <
 ) => {
   const fontSize = {
     ...size,
-    ...font.size,
-    true: defaultSize
+    true: defaultSize,
+    default: defaultSize,
+    ...font.size
   } as Record<string | number, number>;
 
   return createFont({
@@ -60,16 +61,22 @@ export const createPermanentMarkerFont = <
       Object.entries(fontSize).map(([k, v]) => [k, v * 1.3])
     ) as typeof fontSize,
     weight: {
-      light: "400",
+      sm: "400",
       5: "400",
       true: defaultWeight,
-      bold: "400",
+      default: defaultWeight,
+      md: defaultWeight,
+      lg: "400",
       ...font.weight
     },
     letterSpacing: {
       4: -0.25,
+      sm: -0.25,
       5: 0,
       true: 0,
+      default: 0,
+      md: 0,
+      lg: 0,
       ...font.letterSpacing
     }
   });

@@ -19,6 +19,10 @@ import { createAnimations } from "@tamagui/animations-moti";
 import type { AnimationDriver } from "@tamagui/web";
 
 export const animations: AnimationDriver = createAnimations({
+  "50ms": {
+    type: "timing",
+    duration: 50
+  },
   "75ms": {
     type: "timing",
     duration: 75
@@ -81,6 +85,10 @@ export const animations: AnimationDriver = createAnimations({
   slow: {
     type: "timing",
     duration: 500
+  },
+  normal: {
+    type: "timing",
+    duration: 300
   },
   fast: {
     type: "spring",

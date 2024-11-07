@@ -67,8 +67,9 @@ export const createMonaSansFont = <
 ) => {
   const fontSize = {
     ...size,
-    ...font.size,
-    true: defaultSize
+    true: defaultSize,
+    default: defaultSize,
+    ...font.size
   } as Record<string | number, number>;
 
   return createFont({
@@ -78,24 +79,30 @@ export const createMonaSansFont = <
       : "Mona Sans",
     size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(fontSize).map(([k, v]) => [k, v * 1.25])
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.15])
     ) as typeof fontSize,
     weight: {
       2: "200",
       3: "300",
-      light: "300",
+      sm: "300",
       4: "400",
       true: defaultWeight,
+      default: defaultWeight,
+      md: defaultWeight,
       5: "550",
       6: "600",
       7: "700",
-      bold: "700",
+      lg: "700",
       8: "900",
       ...font.weight
     },
     letterSpacing: {
+      sm: -0.25,
       4: -0.25,
       true: -0.25,
+      default: -0.25,
+      md: -0.25,
+      lg: -0.25,
       ...font.letterSpacing
     }
   });

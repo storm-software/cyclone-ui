@@ -17,19 +17,14 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { ColorRole } from "@cyclone-ui/colors";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
+import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import { styled } from "@tamagui/core";
 import { Dot } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
-  animation: "slow",
-  marginTop: "$0.5",
-
-  fontStyle: "italic",
-  fontSize: "$sm",
-  opacity: 1,
+  animation: "normal",
 
   enterStyle: {
     opacity: 0,
@@ -39,87 +34,57 @@ const ValidationBodyText = styled(BodyText, {
   exitStyle: {
     opacity: 0,
     y: 10
-  },
-
-  variants: {
-    size: {
-      "...fontSize": (val: any, { font }: any) => {
-        if (!font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (val !== undefined && val !== null) {
-          sizeToken = (font.size?.[val] as any)?.val;
-          heightToken = (font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.05;
-        const lineHeight = Number(heightToken ?? 1);
-        const fontWeight = font.weight?.["$3"];
-        const letterSpacing = font.letterSpacing?.[val];
-        const textTransform = font.transform?.[val];
-        const fontStyle = font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
+  }
 });
 
 export const ValidationText = ValidationBodyText.styleable<{
   messages?: ValidationDetails[];
-  theme?: string | null;
+  theme?: string;
   disabled?: boolean;
-}>(({ disabled, ...props }, forwardedRef) => {
-  const theme = props.theme || ColorRole.BASE;
-  const messages = props.messages ?? [];
+}>(
+  (
+    { disabled, theme = ColorRole.BASE, messages = [], ...props },
+    forwardedRef
+  ) => {
+    if ((messages.length === 1 && messages[0]?.message) || disabled) {
+      const message = messages[0]?.message || "This field is disabled";
 
-  if ((messages.length === 1 && messages[0]?.message) || disabled) {
-    const message = messages[0]?.message || "This field is disabled";
+      return (
+        <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+          {message}
+        </ValidationBodyText>
+      );
+    } else if (messages.length === 0) {
+      return null;
+    }
+
+    let heading = "Please review the following details: ";
+    if (theme?.includes(ColorRole.ERROR)) {
+      heading = "Please review the following errors: ";
+    } else if (theme?.includes(ColorRole.WARNING)) {
+      heading = "Please review the following warnings: ";
+    } else if (theme?.includes(ColorRole.SUCCESS)) {
+      heading = "Successfully completed the following: ";
+    }
+
     return (
-      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
-        {message}
-      </ValidationBodyText>
+      <YStack gap="$0.5">
+        <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
+          {heading}
+        </ValidationBodyText>
+        {messages
+          .filter(message => message.message)
+          .map(message => (
+            <XStack key={message.message} gap="$1" alignItems="center">
+              <ThemeableIcon theme={theme}>
+                <Dot />
+              </ThemeableIcon>
+              <ValidationBodyText {...props} theme={theme}>
+                {message.message}
+              </ValidationBodyText>
+            </XStack>
+          ))}
+      </YStack>
     );
-  } else if (messages.length === 0) {
-    return null;
   }
-
-  let heading = "Please review the following details: ";
-  if (theme.toLowerCase().includes(ColorRole.ERROR)) {
-    heading = "Please review the following errors: ";
-  } else if (theme.toLowerCase().includes(ColorRole.WARNING)) {
-    heading = "Please review the following warnings: ";
-  } else if (theme.toLowerCase().includes(ColorRole.SUCCESS)) {
-    heading = "Please review the following results: ";
-  }
-
-  return (
-    <YStack gap="$1">
-      <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
-        {heading}
-      </ValidationBodyText>
-      {messages
-        .filter(message => message.message)
-        .map(message => (
-          <XStack key={message.message} gap="$1" alignItems="center">
-            <ThemedIcon theme={theme}>
-              <Dot />
-            </ThemedIcon>
-            <ValidationBodyText {...props} theme={theme}>
-              {message.message}
-            </ValidationBodyText>
-          </XStack>
-        ))}
-    </YStack>
-  );
-});
+);

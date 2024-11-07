@@ -34,6 +34,7 @@
   "dependencies": {
     "@tamagui/core": "^1.110.5",
     "@tamagui/font-size": "^1.110.5",
+    "@tamagui/get-token": "^1.110.5",
     "@tamagui/helpers": "^1.110.5",
     "@tamagui/helpers-icon": "^1.110.5",
     "@tamagui/helpers-tamagui": "^1.110.5",

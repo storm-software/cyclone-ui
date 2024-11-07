@@ -27,68 +27,34 @@ import {
 } from "@cyclone-ui/form-state";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Spinner } from "@cyclone-ui/spinner";
+import { getSized } from "@cyclone-ui/theme-helpers";
 import { ThemeIcon } from "@cyclone-ui/themeable-icon";
 import { ValidationText } from "@cyclone-ui/validation-text";
-import { isBoolean } from "@storm-stack/types/type-checks/is-boolean";
 import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
-import type { ColorTokens, FontSizeTokens, GetProps } from "@tamagui/core";
-import {
-  createStyledContext,
-  isWeb,
-  styled,
-  View,
-  withStaticProperties
+import type {
+  GetProps,
+  SizeTokens,
+  TextProps,
+  VariantSpreadExtras
 } from "@tamagui/core";
+import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import { Tooltip } from "@tamagui/tooltip";
-import { Theme } from "@tamagui/web";
 import { ForwardedRef, useMemo } from "react";
 
-export const FieldContext = createStyledContext<{
-  size: FontSizeTokens;
-  scaleIcon: number;
-  color?: ColorTokens | string;
-  hideIcons: boolean;
-}>({
-  size: "$1",
-  scaleIcon: 1,
-  hideIcons: false
-});
-
-export const FIELD_NAME = "Field";
-
 const FieldGroupFrame = styled(ThemeableStack, {
-  name: FIELD_NAME,
+  name: "Field",
 
-  animation: "slow",
-  context: FieldContext,
+  animation: "normal",
+  cursor: "pointer",
+
+  // this fixes a flex bug where it overflows container
+  minWidth: 0,
   display: "flex",
 
   variants: {
-    unstyled: {
-      false: {
-        size: "$true",
-        fontFamily: "$body",
-        color: "$color",
-        outlineWidth: 0,
-        outlineColor: "transparent",
-        outlineStyle: "none",
-
-        ...(isWeb
-          ? {
-              tabIndex: 0
-            }
-          : {
-              focusable: true
-            }),
-
-        // this fixes a flex bug where it overflows container
-        minWidth: 0
-      }
-    },
-
     orientation: {
       vertical: {
         flexDirection: "column",
@@ -110,75 +76,108 @@ const FieldGroupFrame = styled(ThemeableStack, {
 
     disabled: {
       true: {
-        color: "$disabled",
-        borderColor: "$disabled",
-        placeholderColor: "$disabled",
         userSelect: "none",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$disabled",
-          borderColor: "$disabled"
-        },
-
-        focusStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
-        },
-
-        pressStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
-        }
-      },
-      false: {
-        cursor: "pointer"
+        cursor: "not-allowed"
       }
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1",
     size: "$true",
     orientation: "vertical",
     disabled: false
   }
 });
 
-const FieldGroupInnerImpl = FieldGroupFrame.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
+const getFieldDetailsFontSize = (
+  val: SizeTokens,
+  config: VariantSpreadExtras<TextProps>
+) => {
+  if (!config.font) {
+    return;
+  }
 
-  const store = useFieldStore();
+  let sizeToken = 1;
+  let heightToken = 1;
+  if (val !== undefined && val !== null) {
+    sizeToken = (config.font.size?.[val] as any)?.val;
+    heightToken = (config.font.lineHeight?.[val] as any)?.val;
+  }
 
-  const disabled = store.get.disabled();
-  const theme = store.get.theme();
-  const messages = store.get.messages();
+  const fontSize = (sizeToken ?? 1) * 0.85;
+  const lineHeight = Number(heightToken ?? 1) * 0.85;
+  const fontWeight = config.font.weight?.[val];
+  const letterSpacing = config.font.letterSpacing?.[val];
+  const textTransform = config.font.transform?.[val];
+  const fontStyle = config.font.style?.[val];
 
-  return (
-    <Theme name={theme}>
-      <FieldGroupFrame
-        ref={forwardedRef}
-        {...rest}
-        disabled={isBoolean(disabled) ? disabled : undefined}>
-        <YStack gap="$0.5">
-          {children}
-          <ValidationText theme={theme} messages={messages} />
-        </YStack>
-      </FieldGroupFrame>
-    </Theme>
-  );
+  return {
+    fontSize,
+    lineHeight,
+    fontWeight,
+    letterSpacing,
+    textTransform,
+    fontStyle
+  };
+};
+
+const FieldValidationText = styled(ValidationText, {
+  name: "FieldDetails",
+
+  fontStyle: "italic",
+  fontFamily: "$body",
+  marginTop: "$0.2",
+
+  variants: {
+    size: {
+      "...size": getFieldDetailsFontSize
+    },
+
+    disabled: {
+      true: {
+        userSelect: "none",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true",
+    disabled: false
+  }
 });
+
+const FieldGroupInnerImpl = FieldGroupFrame.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    const store = useFieldStore();
+    const theme = store.get.theme();
+    const size = store.get.size();
+
+    return (
+      <Theme name={theme}>
+        <FieldGroupFrame
+          ref={forwardedRef}
+          {...rest}
+          disabled={store.get.disabled()}>
+          <YStack gap="$0.75">
+            {children}
+            <FieldValidationText messages={store.get.messages()} size={size} />
+          </YStack>
+        </FieldGroupFrame>
+      </Theme>
+    );
+  },
+  { staticConfig: { componentName: "Field" } }
+);
 
 export type FieldProps<
   TFieldValue = any,
   TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
 > = FieldProviderOptions<TFieldValue, TValidator>;
 
-export const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
+const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
@@ -187,18 +186,16 @@ export const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
         <FieldGroupInnerImpl ref={forwardedRef}>{children}</FieldGroupInnerImpl>
       </FieldProvider>
     );
-  }
+  },
+  { staticConfig: { componentName: "Field" } }
 );
 
-export const FieldDetails = styled(BodyText, {
-  context: FieldContext,
+const FieldDetails = styled(BodyText, {
+  name: "FieldDetails",
 
-  animation: "slow",
-  marginTop: "$0.5",
-
+  animation: "normal",
+  color: "$color",
   fontStyle: "italic",
-  fontSize: "$sm",
-  opacity: 1,
 
   enterStyle: {
     opacity: 0,
@@ -212,39 +209,66 @@ export const FieldDetails = styled(BodyText, {
 
   variants: {
     size: {
-      "...fontSize": (val: any, { font }: any) => {
-        if (!font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (val !== undefined && val !== null) {
-          sizeToken = (font.size?.[val] as any)?.val;
-          heightToken = (font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.05;
-        const lineHeight = Number(heightToken ?? 1);
-        const fontWeight = font.weight?.["$3"];
-        const letterSpacing = font.letterSpacing?.[val];
-        const textTransform = font.transform?.[val];
-        const fontStyle = font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
+      "...size": getFieldDetailsFontSize
     },
 
     disabled: {
       true: {
-        color: "$disabled",
+        color: "$colorDisabled",
+        cursor: "not-allowed"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true",
+    disabled: false
+  }
+});
+
+const FieldDetailsImpl = FieldDetails.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    const store = useFieldStore();
+    const messages = store.get.messages();
+    const disabled = store.get.disabled();
+    const theme = store.get.theme();
+    const size = store.get.size();
+
+    if (messages && messages.length > 0) {
+      return null;
+    }
+
+    return (
+      <FieldDetails
+        ref={forwardedRef}
+        {...rest}
+        theme={theme}
+        size={size}
+        disabled={disabled}>
+        {children}
+      </FieldDetails>
+    );
+  },
+  { staticConfig: { componentName: "FieldDetails" } }
+);
+
+const FieldLabelText = styled(LabelText, {
+  name: "FieldLabel",
+
+  tag: "label",
+
+  animation: "normal",
+  cursor: "pointer",
+  wordWrap: "break-word",
+  verticalAlign: "middle",
+  color: "$color",
+
+  variants: {
+    disabled: {
+      true: {
+        color: "$colorDisabled",
         cursor: "not-allowed"
       }
     }
@@ -255,78 +279,8 @@ export const FieldDetails = styled(BodyText, {
   }
 });
 
-const FieldDetailsImpl = FieldDetails.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
-
-  const store = useFieldStore();
-  const messages = store.get.messages();
-  const disabled = store.get.disabled();
-  const name = store.get.name();
-
-  if (messages && messages.length > 0) {
-    return null;
-  }
-
-  return (
-    <FieldDetails
-      ref={forwardedRef}
-      disabled={Boolean(disabled)}
-      htmlFor={name}
-      {...rest}>
-      {children}
-    </FieldDetails>
-  );
-});
-
-const LABEL_NAME = "Label";
-
-const StyledLabelText = styled(LabelText, {
-  name: LABEL_NAME,
-
-  tag: "label",
-  animation: "100ms",
-  cursor: "pointer",
-  color: "$primary",
-  fontFamily: "$label",
-  fontSize: "$true",
-  fontWeight: "$true",
-  wordWrap: "break-word",
-  verticalAlign: "middle",
-
-  hoverStyle: {
-    color: "$colorHover"
-  },
-
-  variants: {
-    focused: {
-      true: {
-        color: "$colorFocus"
-      }
-    },
-
-    disabled: {
-      true: {
-        color: "$disabled",
-        cursor: "not-allowed",
-
-        hoverStyle: {
-          color: "$disabled"
-        }
-      },
-      false: {
-        cursor: "pointer"
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    focused: false,
-    disabled: false
-  }
-});
-
 const LabelXStack = styled(XStack, {
-  name: LABEL_NAME,
+  name: "FieldLabel",
 
   cursor: "pointer",
   gap: "$1.2",
@@ -336,9 +290,6 @@ const LabelXStack = styled(XStack, {
     disabled: {
       true: {
         cursor: "not-allowed"
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
@@ -348,103 +299,88 @@ const LabelXStack = styled(XStack, {
   }
 });
 
-export const FieldLabelText = StyledLabelText.styleable<{
+const FieldLabelTextImpl = FieldLabelText.styleable<{
   required?: boolean;
   disabled?: boolean;
-  focused?: boolean;
   htmlFor: string;
-}>((props, forwardedRef) => {
-  const { children, required, htmlFor, ...rest } = props;
+}>(
+  (props, forwardedRef) => {
+    const { children, required, htmlFor, ...rest } = props;
 
-  const store = useFieldStore();
-  const fieldDisabled = store.get.disabled();
+    const store = useFieldStore();
+    const fieldDisabled = store.get.disabled();
 
-  const disabled = useMemo(
-    () => Boolean(fieldDisabled || props.disabled),
-    [fieldDisabled, props.disabled]
-  );
-  const focused = useMemo(
-    () => Boolean(disabled ? false : props.focused),
-    [disabled, props.focused]
-  );
+    const disabled = useMemo(
+      () => Boolean(fieldDisabled || props.disabled),
+      [fieldDisabled, props.disabled]
+    );
 
-  return (
-    <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
-      <LabelXStack disabled={disabled}>
-        <StyledLabelText
-          {...rest}
-          focused={focused}
-          disabled={disabled}
-          theme={ColorRole.BASE}>
-          {children}
-        </StyledLabelText>
-        {required && (
-          <View position="relative">
-            <Asterisk
-              color="$error8"
-              size="$0.75"
-              position="absolute"
-              top={-2}
-            />
-          </View>
-        )}
-      </LabelXStack>
-    </TamaguiLabel>
-  );
-});
+    return (
+      <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
+        <LabelXStack disabled={disabled}>
+          <FieldLabelText {...rest} disabled={disabled} theme={ColorRole.BASE}>
+            {children}
+          </FieldLabelText>
+          {required && (
+            <View position="relative">
+              <Asterisk
+                color="$error8"
+                size="$0.75"
+                position="absolute"
+                top={-4}
+              />
+            </View>
+          )}
+        </LabelXStack>
+      </TamaguiLabel>
+    );
+  },
+  { staticConfig: { componentName: "FieldLabel" } }
+);
 
 export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
 
-export const FieldLabel = StyledLabelText.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
-  const store = useFieldStore();
+const FieldLabel = FieldLabelText.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const store = useFieldStore();
 
-  return (
-    <FieldLabelText
-      ref={forwardedRef as ForwardedRef<any>}
-      paddingBottom="$0.5"
-      htmlFor={store.get.name()}
-      {...rest}
-      disabled={Boolean(store.get.disabled())}
-      required={Boolean(store.get.required())}
-      focused={Boolean(store.get.focused())}>
-      {children}
-    </FieldLabelText>
-  );
-});
+    return (
+      <FieldLabelTextImpl
+        ref={forwardedRef as ForwardedRef<any>}
+        {...props}
+        htmlFor={store.get.name()}
+        disabled={store.get.disabled()}
+        required={store.get.required()}>
+        {children}
+      </FieldLabelTextImpl>
+    );
+  },
+  { staticConfig: { componentName: "FieldLabel" } }
+);
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
-const InnerFieldIcon = Button.styleable(
-  ({ children, color, ...rest }, forwardedRef) => {
+const FieldIconButtonImpl = Button.styleable(
+  ({ children, ...props }, forwardedRef) => {
     const store = useFieldStore();
-
-    const disabled = store.get.disabled();
-    const theme = store.get.theme();
+    const size = getSized(store.get.size(), { shift: -4 });
 
     return (
       <Button
         ref={forwardedRef}
         variant="ghost"
         circular={true}
-        color={
-          color ||
-          (disabled
-            ? "$disabled"
-            : theme.toLowerCase().includes(ColorRole.BASE)
-              ? "$base9"
-              : "$primary")
-        }
         padding="$2"
-        {...rest}
-        disabled={false}>
+        {...props}
+        size={size}>
         <Button.Icon>{children}</Button.Icon>
       </Button>
     );
-  }
+  },
+  { staticConfig: { componentName: "FieldIcon" } }
 );
 
-export const FieldIcon = InnerFieldIcon.styleable(
+const FieldIcon = FieldIconButtonImpl.styleable(
   ({ children, ...rest }, forwardedRef) => {
     const store = useFieldStore();
     if (store.get.disabled()) {
@@ -452,85 +388,94 @@ export const FieldIcon = InnerFieldIcon.styleable(
     }
 
     return (
-      <InnerFieldIcon ref={forwardedRef} {...rest}>
+      <FieldIconButtonImpl ref={forwardedRef} {...rest}>
         {children}
-      </InnerFieldIcon>
+      </FieldIconButtonImpl>
     );
-  }
+  },
+  { staticConfig: { componentName: "FieldIcon" } }
 );
 
-const InnerFieldThemeIcon = InnerFieldIcon.styleable<{
+const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
   messages?: ValidationDetails[];
-}>(({ children, theme, messages, disabled, ...rest }, forwardedRef) => {
-  if ((!messages || messages.length === 0) && !disabled) {
-    return (
-      <InnerFieldIcon ref={forwardedRef} {...rest}>
-        {children}
-      </InnerFieldIcon>
-    );
-  }
-
-  return (
-    <Tooltip groupId="field-icon">
-      <Tooltip.Content
-        enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
-        exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
-        animation={[
-          "quick",
-          {
-            opacity: {
-              overshootClamping: true
-            }
-          }
-        ]}
-        backgroundColor="$background">
-        <Tooltip.Arrow />
-        <ValidationText theme={theme} messages={messages} disabled={disabled} />
-      </Tooltip.Content>
-
-      <Tooltip.Trigger>
-        <InnerFieldIcon ref={forwardedRef} {...rest}>
+}>(
+  ({ children, messages, disabled, ...rest }, forwardedRef) => {
+    if ((!messages || messages.length === 0) && !disabled) {
+      return (
+        <FieldIconButtonImpl ref={forwardedRef} {...rest}>
           {children}
-        </InnerFieldIcon>
-      </Tooltip.Trigger>
-    </Tooltip>
-  );
-});
+        </FieldIconButtonImpl>
+      );
+    }
 
-const FieldThemeIcon = InnerFieldThemeIcon.styleable((props, forwardedRef) => {
-  const store = useFieldStore();
-  const { focus } = useFieldActions();
+    return (
+      <Tooltip groupId="field-icon">
+        <Tooltip.Content
+          enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+          exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
+          animation="normal"
+          backgroundColor="$base3"
+          borderWidth={1}
+          borderColor="$borderColor">
+          <Tooltip.Arrow
+            backgroundColor="$base3"
+            borderWidth={1}
+            borderColor="$borderColor"
+          />
+          <ValidationText
+            color="$primary"
+            messages={messages}
+            disabled={disabled}
+          />
+        </Tooltip.Content>
 
-  const disabled = store.get.disabled();
-  const validating = store.get.validating();
-  const theme = store.get.theme();
-  const messages = store.get.messages();
+        <Tooltip.Trigger>
+          <FieldIconButtonImpl ref={forwardedRef} {...rest}>
+            {children}
+          </FieldIconButtonImpl>
+        </Tooltip.Trigger>
+      </Tooltip>
+    );
+  },
+  { staticConfig: { componentName: "FieldIcon" } }
+);
 
-  if (validating) {
-    return <Spinner size="small" theme="$accent" />;
-  } else if (
-    !theme?.toLowerCase().includes(ColorRole.ERROR) &&
-    !theme?.toLowerCase().includes(ColorRole.WARNING) &&
-    !theme?.toLowerCase().includes(ColorRole.INFO) &&
-    !theme?.toLowerCase().includes(ColorRole.HELP) &&
-    !theme?.toLowerCase().includes(ColorRole.SUCCESS) &&
-    !disabled
-  ) {
-    return null;
-  }
+const FieldThemeIcon = InnerFieldThemeIcon.styleable(
+  (props, forwardedRef) => {
+    const store = useFieldStore();
+    const { focus } = useFieldActions();
 
-  return (
-    <InnerFieldThemeIcon
-      ref={forwardedRef}
-      {...props}
-      theme={theme}
-      disabled={disabled}
-      messages={messages}
-      onPress={focus}>
-      <ThemeIcon theme={theme} disabled={disabled} validating={validating} />
-    </InnerFieldThemeIcon>
-  );
-});
+    const disabled = store.get.disabled();
+    const validating = store.get.validating();
+    const theme = store.get.theme();
+    const messages = store.get.messages();
+
+    if (validating) {
+      return <Spinner size="small" theme="$accent" />;
+    } else if (
+      !theme?.includes(ColorRole.ERROR) &&
+      !theme?.includes(ColorRole.WARNING) &&
+      !theme?.includes(ColorRole.INFO) &&
+      !theme?.includes(ColorRole.HELP) &&
+      !theme?.includes(ColorRole.SUCCESS) &&
+      !disabled
+    ) {
+      return null;
+    }
+
+    return (
+      <InnerFieldThemeIcon
+        ref={forwardedRef}
+        {...props}
+        disabled={disabled}
+        messages={messages}
+        onPress={focus}>
+        <ThemeIcon theme={theme} disabled={disabled} />
+      </InnerFieldThemeIcon>
+    );
+  },
+  { staticConfig: { componentName: "FieldIcon" } }
+);
 
 export const Field = withStaticProperties(FieldGroup, {
   Label: FieldLabel,

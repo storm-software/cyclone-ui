@@ -117,6 +117,11 @@ export const createFieldStore = <TFieldValue>(name: string) => {
     );
     const itemsAtomsAtom = splitAtom(itemsAtom);
 
+    const sizeAtom = atom(get => {
+      const options = get(atoms.options);
+      return options.size || "$true";
+    });
+
     return {
       pristine: atom(get => !get(dirtyAtom)),
       dirty: dirtyAtom,
@@ -125,6 +130,8 @@ export const createFieldStore = <TFieldValue>(name: string) => {
 
       items: itemsAtom,
       itemsAtoms: itemsAtomsAtom,
+
+      size: sizeAtom,
 
       errors: errorsAtom,
       warnings: warningsAtom,

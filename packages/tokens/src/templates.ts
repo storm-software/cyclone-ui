@@ -37,14 +37,18 @@ const templateColorsSpecific = {
 };
 
 const brandColors = {
-  primary: ColorPaletteShades.PRIMARY,
-  secondary: ColorPaletteShades.SECONDARY,
-  muted: ColorPaletteShades.MUTED,
-  disabled: ColorPaletteShades.DISABLED,
   bg: ColorPaletteShades.BACKGROUND,
   bgTransparent: ColorPaletteShades.BACKGROUND_TRANSPARENT,
   fg: ColorPaletteShades.FOREGROUND,
-  fgTransparent: ColorPaletteShades.FOREGROUND_TRANSPARENT
+  fgTransparent: ColorPaletteShades.FOREGROUND_TRANSPARENT,
+  primary: ColorPaletteShades.PRIMARY,
+  secondary: ColorPaletteShades.SECONDARY,
+  tertiary: ColorPaletteShades.TERTIARY,
+  muted: ColorPaletteShades.MUTED,
+  surfacePrimary: ColorPaletteShades.SURFACE_PRIMARY,
+  surfaceSecondary: ColorPaletteShades.SURFACE_SECONDARY,
+  surfaceTertiary: ColorPaletteShades.SURFACE_TERTIARY,
+  surfaceMuted: ColorPaletteShades.SURFACE_MUTED
 };
 
 // templates use the palette and specify index
@@ -56,23 +60,25 @@ const template = {
   // can publish components for others to use without mandating a specific color scale
   // the @tamagui/button Button component looks for `$background`, so you set the
   // dark_red_Button theme to have a stronger background than the dark_red theme.
-  background: ColorPaletteShades.BACKGROUND,
-  backgroundRaised: ColorPaletteShades.BACKGROUND + 2,
-  backgroundHover: ColorPaletteShades.BACKGROUND + 2,
-  backgroundPress: ColorPaletteShades.BACKGROUND,
-  backgroundFocus: ColorPaletteShades.BACKGROUND,
+  background: ColorPaletteShades.SURFACE_PRIMARY,
+  backgroundHover: ColorPaletteShades.SURFACE_TERTIARY,
+  backgroundPress: ColorPaletteShades.SURFACE_PRIMARY,
+  backgroundFocus: ColorPaletteShades.SURFACE_PRIMARY,
+  backgroundDisabled: ColorPaletteShades.SURFACE_MUTED,
   backgroundStrong: ColorPaletteShades.BACKGROUND,
-  backgroundTransparent: ColorPaletteShades.BACKGROUND_TRANSPARENT,
-  color: ColorPaletteShades.SECONDARY,
-  colorHover: ColorPaletteShades.PRIMARY + 1,
-  colorPress: ColorPaletteShades.PRIMARY + 2,
-  colorFocus: ColorPaletteShades.PRIMARY + 2,
+  color: ColorPaletteShades.PRIMARY,
+  colorHover: ColorPaletteShades.FOREGROUND,
+  colorPress: ColorPaletteShades.SECONDARY,
+  colorFocus: ColorPaletteShades.SECONDARY,
+  colorDisabled: ColorPaletteShades.SECONDARY,
   colorTransparent: ColorPaletteShades.FOREGROUND_TRANSPARENT,
-  borderColor: ColorPaletteShades.SECONDARY,
-  borderColorHover: ColorPaletteShades.PRIMARY,
-  borderColorFocus: ColorPaletteShades.FOREGROUND,
-  borderColorPress: ColorPaletteShades.FOREGROUND,
+  borderColor: ColorPaletteShades.BACKGROUND + 5,
+  borderColorHover: ColorPaletteShades.BACKGROUND + 6,
+  borderColorFocus: ColorPaletteShades.BACKGROUND + 5,
+  borderColorPress: ColorPaletteShades.BACKGROUND + 6,
+  borderColorDisabled: ColorPaletteShades.BACKGROUND + 3,
   placeholderColor: ColorPaletteShades.SECONDARY,
+  placeholderColorDisabled: ColorPaletteShades.BACKGROUND + 3,
   outlineColor: ColorPaletteShades.PRIMARY
 };
 
@@ -80,6 +86,12 @@ export const templates = {
   base: template,
   colorLight: {
     ...template,
+
+    surfacePrimary: ColorPaletteShades.SURFACE_MUTED,
+    surfaceSecondary: ColorPaletteShades.SURFACE_TERTIARY,
+    surfaceTertiary: ColorPaletteShades.SURFACE_SECONDARY,
+    surfaceMuted: ColorPaletteShades.SURFACE_PRIMARY,
+
     // light color themes are a bit less sensitive
     borderColor: 4,
     borderColorHover: 5,
@@ -125,19 +137,27 @@ export const maskOptions = {
   alt: {
     ...baseMaskOptions
   },
-  button: {
+  body: {
     ...baseMaskOptions,
     overrideStrategy: "swap",
     override: {
       ...colors,
-      background: ColorPaletteShades.PRIMARY,
-      backgroundHover: ColorPaletteShades.PRIMARY - 3,
-      backgroundFocus: ColorPaletteShades.PRIMARY - 4,
-      backgroundPress: ColorPaletteShades.PRIMARY - 4,
-      color: ColorPaletteShades.BACKGROUND,
-      colorHover: ColorPaletteShades.BACKGROUND,
-      colorPress: ColorPaletteShades.BACKGROUND,
-      colorFocus: ColorPaletteShades.BACKGROUND
+      color: ColorPaletteShades.SECONDARY,
+      colorHover: ColorPaletteShades.SECONDARY,
+      colorPress: ColorPaletteShades.SECONDARY,
+      colorFocus: ColorPaletteShades.SECONDARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  label: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND,
+      colorHover: ColorPaletteShades.FOREGROUND,
+      colorPress: ColorPaletteShades.FOREGROUND,
+      colorFocus: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   },
@@ -147,23 +167,60 @@ export const maskOptions = {
     override: {
       ...colors,
       color: ColorPaletteShades.PRIMARY,
-      colorHover: ColorPaletteShades.SECONDARY
+      colorHover: ColorPaletteShades.SECONDARY,
+      colorPress: ColorPaletteShades.SECONDARY - 2,
+      colorFocus: ColorPaletteShades.SECONDARY - 2
     },
     skip: skipShadowsAndSpecificColors
   },
-  label: {
+  eyebrow: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY,
+      color: ColorPaletteShades.SECONDARY - 2,
+      colorHover: ColorPaletteShades.SECONDARY,
+      colorPress: ColorPaletteShades.SECONDARY,
+      colorFocus: ColorPaletteShades.SECONDARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  heading: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  title: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.FOREGROUND,
       colorHover: ColorPaletteShades.FOREGROUND,
       colorPress: ColorPaletteShades.FOREGROUND,
       colorFocus: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   },
+  button: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.PRIMARY,
+      colorHover: ColorPaletteShades.PRIMARY,
+      colorPress: ColorPaletteShades.PRIMARY,
+      colorFocus: ColorPaletteShades.PRIMARY
+    },
+    skip: skipShadowsAndSpecificColors
+  },
   table: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       color: ColorPaletteShades.PRIMARY - 4,
@@ -173,6 +230,7 @@ export const maskOptions = {
   },
   tableHeader: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       color: ColorPaletteShades.BACKGROUND + 4,
@@ -182,36 +240,16 @@ export const maskOptions = {
   },
   alert: {
     ...baseMaskOptions,
-    override: {
-      ...colors,
-      background: ColorPaletteShades.PRIMARY - 2,
-      color: ColorPaletteShades.PRIMARY - 4,
-      borderColor: ColorPaletteShades.PRIMARY
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  alertHeading: {
-    ...baseMaskOptions,
-    override: {
-      ...colors,
-      color: ColorPaletteShades.FOREGROUND
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  breadcrumb: {
-    ...baseMaskOptions,
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.FOREGROUND,
-      colorHover: ColorPaletteShades.PRIMARY - 1,
-      colorPress: ColorPaletteShades.PRIMARY - 2,
-      colorFocus: ColorPaletteShades.PRIMARY - 2
+      borderColor: ColorPaletteShades.PRIMARY
     },
     skip: skipShadowsAndSpecificColors
   },
   badge: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       background: ColorPaletteShades.PRIMARY,
@@ -223,6 +261,7 @@ export const maskOptions = {
   },
   card: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       background: ColorPaletteShades.PRIMARY,
@@ -237,6 +276,7 @@ export const maskOptions = {
   },
   cardTitle: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       color: ColorPaletteShades.FOREGROUND
@@ -245,6 +285,7 @@ export const maskOptions = {
   },
   cardEyebrow: {
     ...baseMaskOptions,
+    overrideStrategy: "swap",
     override: {
       ...colors,
       color: ColorPaletteShades.PRIMARY - 3

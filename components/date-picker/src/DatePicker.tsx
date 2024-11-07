@@ -16,7 +16,6 @@
  -------------------------------------------------------------------*/
 
 import { Button } from "@cyclone-ui/button";
-import { ColorRole } from "@cyclone-ui/colors";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
 import type {
@@ -30,8 +29,7 @@ import {
 } from "@rehookify/datepicker";
 import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import { isWeb } from "@tamagui/constants";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
+import type { FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
@@ -42,7 +40,6 @@ import {
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import {
   PropsWithChildren,
   useCallback,
@@ -52,61 +49,17 @@ import {
 } from "react";
 import { DimensionValue } from "react-native";
 
-export const DATE_PICKER_NAME = "DatePicker";
-
-const defaultContextValues = {
-  size: "$true",
-  scaleIcon: 1.3,
-  color: undefined,
-  required: false,
-  disabled: false,
-  theme: `${ColorRole.BASE}_DatePicker`
-} as const;
-
-export const DatePickerContext = createStyledContext<{
+export type DatePickerContextProps = {
   size: FontSizeTokens;
-  scaleIcon: number;
-  color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
-  theme: string;
-}>(defaultContextValues);
+};
 
-export const defaultDatePickerGroupStyles = {
+export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   size: "$true",
-  fontFamily: "$body",
-  color: "$color",
-  backgroundColor: "$background",
-  borderRadius: "$radius",
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  outlineWidth: 0,
-  outlineColor: "transparent",
-  outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
-
-  // this fixes a flex bug where it overflows container
-  minWidth: 0,
-
-  hoverStyle: {
-    borderColor: "$accent10"
-  },
-
-  focusStyle: {
-    outlineColor: "$accent10",
-    outlineWidth: 2,
-    outlineOffset: "$1.25",
-    outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
-  }
-} as const;
+  required: false,
+  disabled: false
+});
 
 export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
 
@@ -268,15 +221,15 @@ const DayPicker = () => {
   return (
     <AnimatePresence key={prevNextAnimationKey}>
       <YStack
-        animation="slow"
+        animation="normal"
         justifyContent="center"
         gap="$0.5"
         {...prevNextAnimation()}>
         <XStack gap="$1">
           {weekDays.map(day => (
-            <SizableText key={day} textAlign="center" width={45} size="$4">
+            <LabelText key={day} textAlign="center" width={45} size="$4">
               {day}
-            </SizableText>
+            </LabelText>
           ))}
         </XStack>
         <YStack gap="$1" flexWrap="wrap">
@@ -284,28 +237,29 @@ const DayPicker = () => {
             return (
               <XStack
                 key={days[0]?.$date.toString() ?? i}
-                gap="$1"
+                gap="$0.5"
                 alignItems="center">
                 {days.map(day => (
                   <View
                     key={day.$date.toString()}
                     width={45}
                     justifyContent="center"
-                    alignItems="center"
-                    padding="$0.5">
+                    alignItems="center">
                     <Button
-                      variant={day.selected ? undefined : "ghost"}
-                      circular={true}
-                      outlined={true}
-                      width={40}
-                      paddingVertical="$2.5"
+                      variant={
+                        !day.inCurrentMonth
+                          ? "ghost"
+                          : day.selected
+                            ? "primary"
+                            : "secondary"
+                      }
+                      padding="$1"
+                      width={45}
+                      borderRadius={0}
                       {...swapOnClick(dayButton(day))}
                       theme={day.selected ? "accent" : theme}
                       disabled={!day.inCurrentMonth}>
-                      <Button.Text
-                        color={day.inCurrentMonth ? "$fg" : "$disabled"}>
-                        {day.day}
-                      </Button.Text>
+                      <Button.Text>{day.day}</Button.Text>
                     </Button>
                   </View>
                 ))}
@@ -332,7 +286,7 @@ export function YearRangeSlider() {
       alignItems="center"
       justifyContent="space-between">
       <Button variant="ghost" size="$4" {...swapOnClick(previousYearsButton())}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
@@ -346,7 +300,7 @@ export function YearRangeSlider() {
         </LabelText>
       </View>
       <Button variant="ghost" size="$4" {...swapOnClick(nextYearsButton())}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronRight />
         </Button.Icon>
       </Button>
@@ -373,7 +327,7 @@ export function YearSlider() {
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: 12 }))}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
@@ -393,7 +347,7 @@ export function YearSlider() {
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: -12 }))}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronRight />
         </Button.Icon>
       </Button>
@@ -439,13 +393,13 @@ const CalendarHeader = () => {
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: 1 }))}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
       <YStack gap="$1" alignItems="center">
-        <SizableText
-          animation="slow"
+        <LabelText
+          animation="normal"
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
@@ -456,9 +410,9 @@ const CalendarHeader = () => {
             color: "$accent10"
           }}>
           {year}
-        </SizableText>
-        <SizableText
-          animation="slow"
+        </LabelText>
+        <LabelText
+          animation="normal"
           onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"
@@ -471,13 +425,13 @@ const CalendarHeader = () => {
             color: "$accent10"
           }}>
           {month}
-        </SizableText>
+        </LabelText>
       </YStack>
       <Button
         variant="ghost"
         size="$4"
         {...swapOnClick(subtractOffset({ months: -1 }))}>
-        <Button.Icon scaleIcon={1.5} color="$fg">
+        <Button.Icon>
           <ChevronRight />
         </Button.Icon>
       </Button>
@@ -503,9 +457,9 @@ export function ItemPicker({
   return (
     <View flexGrow={1} flexBasis={flexBasis}>
       <Button
-        variant={active ? undefined : "ghost"}
-        paddingVertical="$3"
         key={key}
+        variant={active ? "primary" : "secondary"}
+        paddingVertical="$3"
         {...rest}>
         <Button.Text>{children}</Button.Text>
       </Button>
@@ -631,7 +585,8 @@ const DatePickerControl = Input.styleable(
         </Input>
       </Popover.Trigger>
     );
-  }
+  },
+  { staticConfig: { componentName: "DatePickerValue" } }
 );
 
 const DatePickerControlValue = Input.Value.styleable(
@@ -644,7 +599,8 @@ const DatePickerControlValue = Input.Value.styleable(
         {children}
       </Input.Value>
     );
-  }
+  },
+  { staticConfig: { componentName: "DatePickerValue" } }
 );
 
 const DatePickerProvider =
@@ -657,10 +613,17 @@ const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
   });
 
 const DatePickerPopoverContent = styled(Popover.Content, {
-  name: DATE_PICKER_NAME,
+  name: "DatePickerPopover",
   context: DatePickerContext,
 
   justifyContent: "center",
+  backgroundColor: "$base3",
+  padding: 12,
+  borderWidth: 1,
+  borderColor: "$borderColor",
+  enterStyle: { y: -10, opacity: 0 },
+  exitStyle: { y: -10, opacity: 0 },
+  elevate: true,
 
   animation: [
     "100ms",
@@ -669,22 +632,16 @@ const DatePickerPopoverContent = styled(Popover.Content, {
         overshootClamping: true
       }
     }
-  ],
-  variants: {
-    unstyled: {
-      false: {
-        padding: 12,
-        borderWidth: 1,
-        borderColor: "$borderColor",
-        enterStyle: { y: -10, opacity: 0 },
-        exitStyle: { y: -10, opacity: 0 },
-        elevate: true
-      }
-    }
-  } as const,
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
-  }
+  ]
+});
+
+const DatePickerPopoverArrow = styled(Popover.Arrow, {
+  name: "DatePickerPopover",
+  context: DatePickerContext,
+
+  backgroundColor: "$background",
+  borderWidth: 1,
+  borderColor: "$borderColor"
 });
 
 const DatePickerControlImpl = DatePickerControl.styleable<{
@@ -749,13 +706,14 @@ const DatePickerControlImpl = DatePickerControl.styleable<{
           </DatePickerControl>
 
           <DatePickerPopoverContent>
-            <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
+            <DatePickerPopoverArrow />
             <DatePickerPopoverBody />
           </DatePickerPopoverContent>
         </Popover>
       </DatePickerProvider>
     );
-  }
+  },
+  { staticConfig: { componentName: "DatePicker" } }
 );
 
 export const DatePicker = withStaticProperties(DatePickerControlImpl, {

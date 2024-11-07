@@ -15,248 +15,76 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
-import { ThemedIcon, type ThemedIconProp } from "@cyclone-ui/themeable-icon";
+import { LinkText } from "@cyclone-ui/link-text";
+import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
-import { GetProps, styled, useThemeName } from "@tamagui/core";
+import { GetProps, styled } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons";
-import { Square } from "@tamagui/shapes";
-import { XStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
-import { useMemo } from "react";
 import { GestureResponderEvent, Linking } from "react-native";
 import { useLink, UseLinkProps } from "solito/link";
+
+const LinkFrame = styled(LinkText, {
+  name: "Link",
+  tag: "a",
+  accessibilityRole: "link",
+
+  cursor: "pointer",
+  flexDirection: "row",
+  gap: "$1"
+});
 
 export interface LinkExtraProps extends UseLinkProps {
   target?: string;
   rel?: string;
   download?: string;
-  underline?: "hover" | "initial" | "static" | "none";
   external?: boolean;
 }
 
-export const LINK_NAME = "Link";
-
-const LinkFrame = styled(SizableText, {
-  name: LINK_NAME,
-  tag: "a",
-  accessibilityRole: "link",
-
-  animation: "200ms",
-  textDecorationLine: "none",
-  color: "$fg",
-  fontFamily: "$link",
-  fontSize: "$true",
-  fontWeight: "$true",
-  cursor: "pointer",
-  whiteSpace: "nowrap",
-  zIndex: "$2",
-
-  hoverStyle: {
-    color: "$colorHover"
-  },
-
-  focusVisibleStyle: {
-    color: "$colorFocus"
-  },
-
-  pressStyle: {
-    color: "$colorPress"
-  },
-
-  variants: {
-    cta: {
-      true: {
-        fontFamily: "$cta",
-        fontWeight: "$bold",
-        textTransform: "uppercase"
-      }
-    },
-
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "$disabled",
-        textDecorationLine: "none"
-      }
-    }
-  } as const
-});
-
-const Underline = styled(Square, {
-  name: LINK_NAME,
-
-  animation: "lazy",
-  position: "absolute",
-  zIndex: -1,
-  width: "100%",
-  height: 2,
-  left: 0,
-  bottom: -1,
-  backgroundColor: "$primary",
-  borderRadius: 2,
-  display: "block",
-
-  variants: {
-    underline: {
-      hover: {
-        transformOrigin: "right",
-        scaleX: 0
-      },
-
-      initial: {
-        transformOrigin: "left",
-        scaleX: 1
-      },
-
-      static: {
-        transformOrigin: "left",
-        scaleX: 1
-      },
-
-      none: {}
-    },
-
-    cta: {
-      true: {
-        bottom: -3
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    underline: "initial",
-    cta: false
-  }
-});
-
 export const Link = LinkFrame.styleable<LinkExtraProps>(
   (
-    {
-      target,
-      children,
-      cta = false,
-      external = false,
-      disabled = false,
-      href,
-      color,
-      ...props
-    },
+    { target, children, href, external, size = "$true", ...props },
     forwardedRef
   ) => {
     const linkProps = useLink({ href, ...props });
-    const themeName = useThemeName({ parent: true });
-
-    const underline = useMemo(
-      () => (disabled ? "static" : props.underline || "initial"),
-      [disabled, props.underline]
-    );
 
     return (
-      <XStack group={"link" as any} gap="$0.25" alignItems="flex-end">
-        <LinkFrame
-          {...props}
-          {...linkProps}
-          {...(isWeb
-            ? {
-                href: linkProps.href,
-                target
-              }
-            : {
-                onPress: (event: GestureResponderEvent) => {
-                  props.onPress?.(event);
-                  if (linkProps.href !== undefined) {
-                    Linking.openURL(linkProps.href);
-                  }
+      <LinkFrame
+        group={"link" as any}
+        ref={forwardedRef}
+        size={size}
+        {...props}
+        {...linkProps}
+        {...(isWeb
+          ? {
+              href: linkProps.href,
+              target: external ? "_blank" : target
+            }
+          : {
+              onPress: (event: GestureResponderEvent) => {
+                props.onPress?.(event);
+                if (linkProps.href !== undefined) {
+                  Linking.openURL(linkProps.href);
                 }
-              })}
-          ref={forwardedRef}
-          cta={cta}
-          color={color}>
-          {children}
-          {underline !== "none" && (
-            <Underline
-              underline={underline}
-              cta={cta}
-              theme={
-                !themeName || themeName.toLowerCase().includes(ColorRole.BASE)
-                  ? ColorRole.BRAND
-                  : themeName
               }
-              $group-link-hover={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-card-hover={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-link-focus={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-              $group-link-pressed={
-                underline === "static"
-                  ? {}
-                  : underline === "initial"
-                    ? {
-                        transformOrigin: "right",
-                        scaleX: 0
-                      }
-                    : {
-                        transformOrigin: "left",
-                        scaleX: 1
-                      }
-              }
-            />
-          )}
-        </LinkFrame>
+            })}>
+        {children}
 
         {external && (
-          <ThemedIcon
-            animation="slow"
-            size="$1"
-            theme={themeName}
-            color={(color as ThemedIconProp["color"]) || "$fg"}
+          <ThemeableIcon
+            size={size}
+            color="$secondary"
             $group-link-hover={{
               color: "$colorHover",
               x: 5,
               y: -5
             }}>
             <ArrowUpRight />
-          </ThemedIcon>
+          </ThemeableIcon>
         )}
-      </XStack>
+      </LinkFrame>
     );
   },
-  { staticConfig: { componentName: LINK_NAME } }
+  { staticConfig: { componentName: "Link" } }
 );
 
 export type LinkProps = GetProps<typeof Link>;

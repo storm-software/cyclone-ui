@@ -15,7 +15,14 @@
 
  -------------------------------------------------------------------*/
 
-import { CreateNodes } from "@nx/devkit";
+import {
+  CreateNodes,
+  CreateNodesContext,
+  joinPathFragments,
+  TargetConfiguration
+} from "@nx/devkit";
+import { getNamedInputs } from "@nx/devkit/src/utils/get-named-inputs";
+import { readdirSync } from "fs";
 import { globSync } from "glob";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -25,51 +32,104 @@ import { type PackageJson } from "nx/src/utils/package-json";
 
 export const name = "storm-software/cyclone-ui/storybook";
 
-export const createNodes: CreateNodes = [
-  "**/storybook/project.json",
-  (file, _, ctx) => {
+export interface StorybookPluginOptions {
+  buildStorybookTargetName?: string;
+  serveStorybookTargetName?: string;
+  staticStorybookTargetName?: string;
+  testStorybookTargetName?: string;
+  port?: number;
+}
+
+export const createNodes: CreateNodes<StorybookPluginOptions | undefined> = [
+  "**/.storybook/main.{js,ts,mjs,mts,cjs,cts}",
+  async (configFilePath, options, ctx) => {
     // eslint-disable-next-line no-console
-    console.log(`Running Cyclone UI Storybook plugin - ${file}`);
+    console.log(`Running Cyclone UI Storybook plugin - ${configFilePath}`);
 
     try {
-      const packageJson = createPackageJson(file, ctx.workspaceRoot);
+      let projectRoot = "";
+      if (configFilePath.includes("/.storybook")) {
+        projectRoot = dirname(configFilePath).replace("/.storybook", "");
+      } else {
+        projectRoot = dirname(configFilePath).replace(".storybook", "");
+      }
+
+      if (projectRoot === "") {
+        projectRoot = ".";
+      }
+
+      const fullProjectRoot = join(ctx.workspaceRoot, projectRoot);
+
+      // Do not create a project if package.json and project.json isn't there.
+      const siblingFiles = readdirSync(fullProjectRoot);
+      if (
+        !siblingFiles.includes("package.json") &&
+        !siblingFiles.includes("project.json")
+      ) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `Unable to find package.json or project.json in ${fullProjectRoot}`
+        );
+
+        return {};
+      }
+
+      const packageJson = createPackageJson(fullProjectRoot);
       if (!packageJson) {
+        // eslint-disable-next-line no-console
+        console.warn(`Unable to find package.json in ${fullProjectRoot}`);
+
         return {};
       }
 
       let project = createProjectFromPackageJsonNextToProjectJson(
-        file,
+        projectRoot,
         packageJson
       );
       project ??= {
-        root: dirname(file)
+        root: projectRoot
       };
 
+      if (!project.name) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `Unable to determine the project name in ${fullProjectRoot}`
+        );
+
+        return {};
+      }
+
       project.tags ??= [];
-      project.tags.push("storybook");
+      project.tags.push("app:storybook");
 
       project.implicitDependencies ??= [];
       project.implicitDependencies.push(...getComponentProjectNames());
       project.implicitDependencies.push("colors");
-      project.implicitDependencies.push("masks");
-      project.implicitDependencies.push("animations");
-      project.implicitDependencies.push("media-queries");
-      project.implicitDependencies.push("tokens");
       project.implicitDependencies.push("themes");
-      project.implicitDependencies.push("providers");
+      project.implicitDependencies.push("config");
 
-      return project.name
-        ? {
-            projects: {
-              [project.name]: {
-                ...project
-              }
+      const targets = await buildStorybookTargets(
+        ctx.workspaceRoot,
+        projectRoot,
+        normalizeOptions(options),
+        ctx
+      );
+
+      return {
+        projects: {
+          [project.name]: {
+            ...project,
+            root: projectRoot,
+            targets: {
+              ...project.targets,
+              ...targets
             }
           }
-        : {};
+        }
+      };
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.log(error);
+      console.error(error);
 
       return {};
     }
@@ -91,13 +151,9 @@ function createProjectFromPackageJsonNextToProjectJson(
   } as ProjectConfiguration;
 }
 
-function createPackageJson(
-  projectJsonPath: string,
-  workspaceRoot: string
-): PackageJson | null {
+function createPackageJson(projectRoot: string): PackageJson | null {
   try {
-    const root = dirname(projectJsonPath);
-    const packageJsonPath = join(workspaceRoot, root, "package.json");
+    const packageJsonPath = join(projectRoot, "package.json");
     if (!existsSync(packageJsonPath)) {
       return null;
     }
@@ -105,7 +161,7 @@ function createPackageJson(
     return readJsonFile(packageJsonPath) as PackageJson;
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log(error);
+    console.error(error);
 
     return null;
   }
@@ -132,5 +188,165 @@ function getComponentProjectNames(): string[] {
     console.log(error);
 
     return [];
+  }
+}
+
+async function buildStorybookTargets(
+  workspaceRoot: string,
+  projectRoot: string,
+  options: Required<StorybookPluginOptions>,
+  context: CreateNodesContext
+) {
+  const buildOutputs = getOutputs();
+  const namedInputs = getNamedInputs(projectRoot, context);
+
+  const targets: Record<string, TargetConfiguration> = {};
+
+  targets.prepare = prepareTarget(workspaceRoot);
+
+  targets[options.buildStorybookTargetName] = buildTarget(
+    namedInputs,
+    buildOutputs,
+    projectRoot
+  );
+
+  targets[options.serveStorybookTargetName] = serveTarget(
+    projectRoot,
+    options.port
+  );
+
+  if (isStorybookTestRunnerInstalled()) {
+    targets[options.testStorybookTargetName] = testTarget(projectRoot);
+  }
+
+  targets[options.staticStorybookTargetName] = serveStaticTarget(
+    options,
+    projectRoot
+  );
+
+  return targets;
+}
+
+function prepareTarget(workspaceRoot: string): TargetConfiguration {
+  return {
+    executor: "nx:run-commands",
+    options: {
+      cwd: workspaceRoot,
+      commands: [
+        { command: "pnpm nx run colors:build" },
+        { command: "pnpm nx run themes:build" }
+      ],
+      parallel: false
+    }
+  };
+}
+
+function buildTarget(
+  namedInputs: {
+    [inputName: string]: any[];
+  },
+  outputs: string[],
+  projectRoot: string
+): TargetConfiguration {
+  return {
+    dependsOn: [{ target: "prepare" }],
+    command: `storybook build`,
+    options: { cwd: projectRoot },
+    cache: true,
+    outputs,
+    inputs: [
+      ...("production" in namedInputs
+        ? ["production", "^production"]
+        : ["default", "^default"]),
+      {
+        externalDependencies: [
+          "storybook",
+          isStorybookTestRunnerInstalled()
+            ? "@storybook/test-runner"
+            : undefined
+        ].filter(Boolean) as string[]
+      }
+    ]
+  };
+}
+
+function serveTarget(projectRoot: string, port = 4400): TargetConfiguration {
+  return {
+    dependsOn: [{ target: "prepare" }],
+    executor: "nx:run-commands",
+    options: { cwd: projectRoot, command: `storybook dev -p ${port}` },
+    defaultConfiguration: "local",
+    configurations: {
+      local: {
+        command: `storybook dev -p ${port}`
+      },
+      ci: {
+        command: `storybook dev -p ${port} --ci --no-open`
+      }
+    }
+  };
+}
+
+function testTarget(projectRoot: string) {
+  const targetConfig: TargetConfiguration = {
+    dependsOn: [{ target: "prepare" }],
+    command: `test-storybook`,
+    options: { cwd: projectRoot },
+    inputs: [
+      {
+        externalDependencies: ["storybook", "@storybook/test-runner"]
+      }
+    ]
+  };
+
+  return targetConfig;
+}
+
+function serveStaticTarget(
+  options: StorybookPluginOptions,
+  projectRoot: string
+) {
+  const targetConfig: TargetConfiguration = {
+    dependsOn: [{ target: "prepare" }],
+    executor: "@nx/web:file-server",
+    options: {
+      buildTarget: `${options.buildStorybookTargetName}`,
+      staticFilePath: joinPathFragments(projectRoot, "storybook-static")
+    }
+  };
+
+  return targetConfig;
+}
+
+function getOutputs(): string[] {
+  const outputs = [
+    `{projectRoot}/storybook-static`,
+    `{options.output-dir}`,
+    `{options.outputDir}`,
+    `{options.o}`
+  ];
+
+  return outputs;
+}
+
+function normalizeOptions(
+  options?: StorybookPluginOptions
+): Required<StorybookPluginOptions> {
+  options ??= {};
+  options.buildStorybookTargetName ??= "build";
+  options.serveStorybookTargetName ??= "serve";
+  options.testStorybookTargetName ??= "test";
+  options.staticStorybookTargetName ??= "static";
+  options.port ??= 4400;
+
+  return options as Required<StorybookPluginOptions>;
+}
+
+function isStorybookTestRunnerInstalled(): boolean {
+  try {
+    require.resolve("@storybook/test-runner");
+    return true;
+  } catch (e) {
+    return false;
   }
 }

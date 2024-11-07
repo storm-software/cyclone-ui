@@ -18,17 +18,13 @@
 import { GetProps, styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-export const LABEL_TEXT_NAME = "LabelText";
-
 export const LabelText = styled(SizableText, {
-  name: LABEL_TEXT_NAME,
+  name: "LabelText",
   tag: "p",
 
   color: "$color",
   fontFamily: "$label",
-  fontSize: "$true",
-  fontWeight: "$true",
-  lineHeight: "$true"
+  size: "$true"
 });
 
 export type LabelTextProps = GetProps<typeof LabelText>;

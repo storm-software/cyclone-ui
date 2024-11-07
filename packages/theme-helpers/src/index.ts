@@ -26,4 +26,8 @@
 
 export * from "./build-themes";
 export * from "./create-tamagui";
+export * from "./get-button-sized";
 export * from "./get-color-definition";
+export * from "./get-font-sized";
+export * from "./get-nearest-token";
+export * from "./get-sized";

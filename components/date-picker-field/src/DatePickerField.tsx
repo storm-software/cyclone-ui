@@ -27,7 +27,8 @@ import { StormDate } from "@storm-stack/date-time/storm-date";
 import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import { withStaticProperties } from "@tamagui/core";
 import { Calendar, X } from "@tamagui/lucide-icons";
-import { useCallback, useMemo } from "react";
+import { LegacyRef, useCallback, useMemo } from "react";
+import { TextInput } from "react-native";
 
 export const DATE_MASK = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
@@ -102,7 +103,7 @@ const DatePickerFieldControl = DatePicker.Value.styleable(
     const { blur, change, setFocused } = useFieldActions();
 
     const store = useFieldStore<Date>();
-    const ref = useFieldRef(forwardedRef);
+    const ref = useFieldRef(forwardedRef) as LegacyRef<TextInput>;
 
     const name = store.get.name();
     const disabled = store.get.disabled();

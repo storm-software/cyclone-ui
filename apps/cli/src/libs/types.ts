@@ -20,22 +20,28 @@ export type ColorPaletteType =
   | "brand"
   | "alternate"
   | "accent"
+  | "link"
   | "help"
   | "success"
   | "info"
   | "warning"
-  | "error";
+  | "error"
+  | "positive"
+  | "negative";
 
 export const ColorPaletteType = {
   BASE: "base" as ColorPaletteType,
   BRAND: "brand" as ColorPaletteType,
   ALTERNATE: "alternate" as ColorPaletteType,
   ACCENT: "accent" as ColorPaletteType,
+  LINK: "link" as ColorPaletteType,
   HELP: "help" as ColorPaletteType,
   SUCCESS: "success" as ColorPaletteType,
   INFO: "info" as ColorPaletteType,
   WARNING: "warning" as ColorPaletteType,
-  ERROR: "error" as ColorPaletteType
+  ERROR: "error" as ColorPaletteType,
+  POSITIVE: "positive" as ColorPaletteType,
+  NEGATIVE: "negative" as ColorPaletteType
 };
 
 export type ColorPaletteTypeIndexes =

@@ -14,20 +14,33 @@
   },
   "private": false,
   "peerDependencies": {
+    "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"
   },
+  "peerDependenciesMeta": {
+    "jotai": {
+      "optional": false
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
   "dependencies": {
+    "@storm-stack/utilities": "latest",
     "@tamagui/core": "^1.110.5",
     "@tamagui/portal": "^1.110.5",
-    "@tamagui/toast": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "tamagui": "^1.110.5",
-    "undici-types": "^6.18.1",
-    "zustand": ">=4.5.2"
+    "@tamagui/toast": "^1.110.5"
   },
   "devDependencies": {
+    "jotai": ">=2.8.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"

@@ -3,7 +3,10 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "esModuleInterop": true,
-    "jsx": "react-jsx"
+    "declaration": true,
+    "noImplicitAny": false,
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]

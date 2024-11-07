@@ -56,7 +56,32 @@ export const componentThemes = {
 
   BodyText: {
     mask: "identity",
+    ...maskOptions.body
+  },
+
+  HeadingText: {
+    mask: "identity",
+    ...maskOptions.heading
+  },
+
+  TitleText: {
+    mask: "identity",
+    ...maskOptions.title
+  },
+
+  LinkText: {
+    mask: "identity",
+    ...maskOptions.link
+  },
+
+  LabelText: {
+    mask: "identity",
     ...maskOptions.component
+  },
+
+  EyebrowText: {
+    mask: "identity",
+    ...maskOptions.eyebrow
   },
 
   Card: {
@@ -79,9 +104,14 @@ export const componentThemes = {
     ...maskOptions.alert
   },
 
-  AlertHeading: {
+  AlertHeaderHeading: {
     mask: "identity",
-    ...maskOptions.alertHeading
+    ...maskOptions.heading
+  },
+
+  AlertBody: {
+    mask: "identity",
+    ...maskOptions.body
   },
 
   Message: {
@@ -91,31 +121,36 @@ export const componentThemes = {
 
   MessageHeading: {
     mask: "identity",
-    ...maskOptions.alertHeading
+    ...maskOptions.heading
+  },
+
+  Link: {
+    mask: "identity",
+    ...maskOptions.link
   },
 
   Button: {
     mask: "identity",
+    ...maskOptions.component
+  },
+
+  ButtonText: {
+    mask: "identity",
     ...maskOptions.button
   },
 
-  Checkbox: {
-    mask: "softenBorder2",
-    ...maskOptions.component
-  },
-
-  Switch: {
-    mask: "soften2",
-    ...maskOptions.component
-  },
-
-  SwitchThumb: {
-    mask: "inverseStrengthen2",
-    ...maskOptions.component
+  ButtonIcon: {
+    mask: "identity",
+    ...maskOptions.button
   },
 
   TooltipContent: {
-    mask: "soften2",
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  TooltipArrow: {
+    mask: "identity",
     ...maskOptions.component
   },
 
@@ -125,16 +160,6 @@ export const componentThemes = {
   },
 
   Progress: {
-    mask: "soften",
-    ...maskOptions.component
-  },
-
-  RadioGroupItem: {
-    mask: "softenBorder",
-    ...maskOptions.component
-  },
-
-  TooltipArrow: {
     mask: "soften",
     ...maskOptions.component
   },
@@ -168,12 +193,82 @@ export const componentThemes = {
   DialogOverlay: overlayThemeDefinitions,
   ModalOverlay: overlayThemeDefinitions,
 
+  Field: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  FieldDetails: {
+    mask: "identity",
+    ...maskOptions.body
+  },
+
+  FieldLabel: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  FieldIcon: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  Checkbox: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  CheckboxIcon: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  Switch: {
+    mask: "soften2",
+    ...maskOptions.component
+  },
+
+  SwitchThumb: {
+    mask: "inverseStrengthen2",
+    ...maskOptions.component
+  },
+
   Input: {
     mask: "identity",
     ...maskOptions.component
   },
 
+  InputValue: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  TextArea: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  TextAreaValue: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
   Select: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  SelectTrigger: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  SelectTriggerValue: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  SelectItemsItem: {
     mask: "identity",
     ...maskOptions.component
   },
@@ -183,7 +278,32 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
+  RadioGroupItem: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  RadioGroupItemValue: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  RadioGroupItemDetails: {
+    mask: "identity",
+    ...maskOptions.body
+  },
+
   DatePicker: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  DatePickerValue: {
+    mask: "identity",
+    ...maskOptions.label
+  },
+
+  DatePickerPopover: {
     mask: "identity",
     ...maskOptions.component
   },
@@ -193,29 +313,24 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
-  Label: {
-    mask: "identity",
-    ...maskOptions.label
-  },
-
   Breadcrumb: {
     mask: "identity",
-    ...maskOptions.breadcrumb
+    ...maskOptions.component
   },
 
-  Link: {
+  BreadcrumbItem: {
     mask: "identity",
-    ...maskOptions.link
+    ...maskOptions.component
+  },
+
+  BreadcrumbCurrent: {
+    mask: "identity",
+    ...maskOptions.title
   },
 
   Badge: {
     mask: "identity",
     ...maskOptions.badge
-  },
-
-  TextArea: {
-    mask: "identity",
-    ...maskOptions.component
   },
 
   Table: {

@@ -48,6 +48,7 @@
     "@storm-software/config": "latest",
     "@storm-software/config-tools": "latest",
     "@storm-software/workspace-tools": "latest",
+    "@storybook/types": "^8.4.0",
     "glob": "^11.0.0",
     "tslib": "^2.6.2"
   },

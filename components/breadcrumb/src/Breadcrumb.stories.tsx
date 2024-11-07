@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Breadcrumb } from "./Breadcrumb";
 
 const meta: Meta<typeof Breadcrumb> = {
@@ -21,27 +20,76 @@ type Story = StoryObj<typeof Breadcrumb>;
 
 export const Base: Story = {
   args: {
-    current: "Current Page"
+    currentName: "Current Page"
   }
 };
 
 export const Slash: Story = {
   args: {
-    current: "Current Page",
+    currentName: "Current Page",
     divider: "slash"
   }
 };
 
 export const Chevron: Story = {
   args: {
-    current: "Current Page",
+    currentName: "Current Page",
     divider: "chevron"
   }
 };
 
 export const DoubleChevron: Story = {
   args: {
-    current: "Current Page",
+    currentName: "Current Page",
     divider: "double"
   }
+};
+
+export const BaseTheme: Story = {
+  args: {
+    currentName: "Current Page",
+    theme: "base"
+  }
+};
+
+export const BrandTheme: Story = {
+  args: {
+    currentName: "Current Page",
+    theme: "brand"
+  }
+};
+
+export const AlternateTheme: Story = {
+  args: { currentName: "Current Page", theme: "alternate" }
+};
+
+export const HelpTheme: Story = {
+  args: { currentName: "Current Page", theme: "help" }
+};
+
+export const ErrorTheme: Story = {
+  args: { currentName: "Current Page", theme: "error" }
+};
+
+export const WarningTheme: Story = {
+  args: { currentName: "Current Page", theme: "warning" }
+};
+
+export const InfoTheme: Story = {
+  args: { currentName: "Current Page", theme: "info" }
+};
+
+export const SuccessTheme: Story = {
+  args: { currentName: "Current Page", theme: "success" }
+};
+
+export const PositiveTheme: Story = {
+  args: {
+    currentName: "Current Page",
+    theme: "positive"
+  }
+};
+
+export const NegativeTheme: Story = {
+  args: { currentName: "Current Page", theme: "negative" }
 };

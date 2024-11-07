@@ -16,9 +16,19 @@
  -------------------------------------------------------------------*/
 
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+// import { setupDev } from "@tamagui/core";
 import { tamaguiPlugin } from "@tamagui/vite-plugin";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
+
+Error.stackTraceLimit = Number.POSITIVE_INFINITY;
+
+// setupDev({
+//   visualizer: {
+//     key: "Alt",
+//     delay: 800
+//   }
+// });
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -27,31 +37,16 @@ const profiling = isProduction && {
 };
 
 const tamaguiConfig = {
-  config: "apps/storybook/tamagui.config.ts",
+  config: "./tamagui.config.ts",
   components: [
     "@cyclone-ui/tokens",
     "@cyclone-ui/themes",
     "@cyclone-ui/config",
     "@cyclone-ui/provider",
-    "@cyclone-ui/button",
-    "@cyclone-ui/input",
-    "@cyclone-ui/collapsible",
     "tamagui"
   ]
-
-  /**
-   * these are mostly not necessary except for advanced cases:
-   * */
-  // outputCSS: "./public/tamagui.css"
-  // importsWhitelist: ["constants.js", "colors.js"],
-  // disableExtraction: process.env.NODE_ENV === "development"
-  // themeBuilder: {
-  //   input: "@cyclone-ui/themes/default-theme.ts",
-  //   output: "./generated-theme.ts"
-  // }
 };
 
-// https://vitejs.dev/config/
 export default defineConfig({
   root: __dirname,
   cacheDir: "../../node_modules/.cache/.vite/apps/storybook",
@@ -104,6 +99,9 @@ export default defineConfig({
     }
   },
   define: {
+    // "process.env.STORYBOOK": true,
     "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": false
+    // "process.env.DEBUG": "tamagui",
+    // "process.env.NODE_ENV": "development"
   }
 });

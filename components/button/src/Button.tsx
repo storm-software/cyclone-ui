@@ -15,32 +15,40 @@
 
  -------------------------------------------------------------------*/
 
+import { ColorRole } from "@cyclone-ui/colors";
 import { LabelText } from "@cyclone-ui/label-text";
-import { ThemedIcon } from "@cyclone-ui/themeable-icon";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
-import { View } from "@tamagui/core";
-import { getButtonSized } from "@tamagui/get-button-sized";
+import { getButtonSized, getSized } from "@cyclone-ui/theme-helpers";
+import {
+  ThemeableIcon,
+  type ThemeableIconProps
+} from "@cyclone-ui/themeable-icon";
+import type {
+  ColorTokens,
+  FontSizeTokens,
+  GetProps,
+  SizeTokens,
+  TextProps,
+  ThemeableProps,
+  UnionableNumber,
+  UnionableString,
+  Variable,
+  VariantSpreadExtras
+} from "@tamagui/core";
+import { Theme, View, createStyledContext, styled } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
-import type {
-  GetProps,
-  SizeTokens,
-  ThemeableProps,
-  UnionableNumber,
-  UnionableString,
-  Variable
-} from "@tamagui/web";
-import { createStyledContext, styled } from "@tamagui/web";
-import { useContext, type FunctionComponent } from "react";
+import { useCallback, useMemo, type FunctionComponent } from "react";
+import { GestureResponderEvent } from "react-native";
 
 type ButtonVariant =
   | "primary"
   | "secondary"
   | "tertiary"
+  | "quaternary"
   | "outlined"
-  | "inverse"
+  | "gradient"
   | "ghost"
   | "glass"
   | "link";
@@ -65,241 +73,234 @@ type BorderRadiusSizeTokens =
   | any
   | undefined;
 
+export type ButtonContextProps = TextContextStyles & {
+  /**
+   * The size of the button
+   *
+   * @defaultValue "$true"
+   */
+  size: SizeTokens;
+
+  /**
+   * The variant style of the button
+   *
+   * @defaultValue "secondary"
+   */
+  variant: ButtonVariant;
+
+  /**
+   * The radius of the button's border
+   *
+   * @defaultValue "$true"
+   */
+  borderRadius: BorderRadiusSizeTokens;
+
+  /**
+   * Override the font color of the button
+   */
+  color?: ColorTokens | string;
+
+  /**
+   * remove default styles
+   *
+   * @defaultValue false
+   */
+  unstyled: boolean;
+
+  /**
+   * Should the button have a circular shape
+   *
+   * @defaultValue false
+   */
+  circular: boolean;
+
+  /**
+   * Should the button have a ringed outline
+   *
+   * @defaultValue false
+   */
+  ringed: boolean;
+
+  /**
+   * Should the button be disabled
+   *
+   * @defaultValue false
+   */
+  disabled: boolean;
+
+  /**
+   * Should the default padding be removed
+   *
+   * @defaultValue false
+   */
+  noPadding: boolean;
+
+  /**
+   * Should the pressed, scale animation be applied
+   *
+   * @defaultValue true
+   */
+  animate: boolean;
+};
+
 type ButtonExtraProps = TextParentStyles &
-  ThemeableProps & {
-    /**
-     * add icon before, passes color and size automatically if Component
-     */
-    icon?: IconProp;
-
-    /**
-     * add icon after, passes color and size automatically if Component
-     */
-    iconAfter?: IconProp;
-
-    /**
-     * adjust icon relative to size
-     *
-     * @default 1
-     */
-    scaleIcon?: number;
-
-    /**
-     * make the spacing elements flex
-     */
-    spaceFlex?: number | boolean;
-
-    /**
-     * adjust internal space relative to icon size
-     */
-    scaleSpace?: number;
-
-    /**
-     * remove default styles
-     */
-    unstyled?: boolean;
-
-    /**
-     * make the button circular
-     */
-    circular?: boolean;
-
-    /**
-     * make the button disabled
-     */
-    disabled?: boolean;
-
-    /**
-     * The font color of the button
-     */
-    color?: ColorTokens | string;
-
-    /**
-     * The radius of the button's border
-     */
-    borderRadius?: BorderRadiusSizeTokens;
-
-    /**
-     * Should the pressed, scale animation be applied
-     */
-    animate?: boolean;
-
+  ThemeableProps &
+  Partial<ButtonContextProps> & {
     /**
      * An alternate way to provide an onPress handler
      */
     onClick?: null | ((event?: any) => void);
   };
 
-const BUTTON_NAME = "Button";
-
-export const ButtonContext = createStyledContext<
-  Partial<
-    TextContextStyles & {
-      size: SizeTokens;
-      variant?: ButtonVariant;
-      borderRadius?: BorderRadiusSizeTokens;
-      color?: ColorTokens | string;
-      unstyled?: boolean;
-      circular?: boolean;
-      disabled?: boolean;
-      animate?: boolean;
-      noPadding?: boolean;
-    }
-  >
->({
-  color: "$color",
-  ellipse: undefined,
-  size: undefined,
-  textAlign: undefined,
-  variant: undefined,
-  borderRadius: "$4",
+export const ButtonContext = createStyledContext<ButtonContextProps>({
+  size: "$true",
+  variant: "tertiary",
+  borderRadius: "$true",
   unstyled: false,
   circular: false,
+  ringed: false,
   disabled: false,
   noPadding: false,
   animate: true
 });
 
 const ButtonFrame = styled(View, {
-  name: BUTTON_NAME,
+  name: "Button",
   context: ButtonContext,
 
   tag: "button",
   role: "button",
-  animation: "slow",
+  focusable: false,
 
-  focusable: true,
-
+  animation: "normal",
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
   flexWrap: "nowrap",
-  borderWidth: 1,
   cursor: "pointer",
-  backgroundColor: "$background",
-  borderColor: "$borderColor",
 
-  // borderWidth: 0,
-  // borderColor: "transparent",
-
-  // focusVisibleStyle: {
-  //   outlineColor: "$outlineColor",
-  //   outlineStyle: "solid",
-  //   outlineWidth: 2
-  // }
-
-  hoverStyle: {
-    backgroundColor: "$backgroundHover",
-    borderColor: "$borderColorHover"
-  },
-
-  pressStyle: {
-    backgroundColor: "$backgroundPress",
-    borderColor: "$borderColorPress",
-    scale: 0.9
+  focusStyle: {
+    outlineWidth: 0
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$backgroundFocus",
-    borderColor: "$borderColorFocus"
+    outlineColor: "$accent10",
+    outlineStyle: "solid",
+    outlineWidth: 3,
+    outlineOffset: "$1.25"
   },
 
   variants: {
-    variant: {
-      secondary: {
-        backgroundColor: "transparent",
-        borderColor: "$primary",
-        borderWidth: 2,
-        color: "$primary",
+    bordered: {
+      false: {
+        borderColor: "transparent",
+        borderWidth: 0,
 
         hoverStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$backgroundHover",
-          color: "$backgroundHover"
-        },
+          borderColor: "transparent",
+          borderWidth: 0
+        }
+      },
+      true: {
+        borderWidth: 1,
 
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$backgroundPress",
-          color: "$backgroundPress"
-        },
+        hoverStyle: {
+          borderWidth: 1
+        }
+      }
+    },
 
-        focusVisibleStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$backgroundFocus",
-          color: "$backgroundFocus"
+    variant: {
+      primary: {
+        backgroundColor: "$primary",
+        borderColor: "$tertiary",
+
+        hoverStyle: {
+          backgroundColor: "$color9",
+          borderColor: "$borderColorHover"
+        }
+      },
+
+      secondary: {
+        backgroundColor: "$surfaceSecondary",
+
+        borderColor: "$borderColor",
+
+        hoverStyle: {
+          backgroundColor: "$surfaceTertiary",
+          borderColor: "$borderColorHover"
+        }
+      },
+
+      tertiary: {
+        backgroundColor: "$surfacePrimary",
+        borderColor: "$borderColor",
+
+        hoverStyle: {
+          backgroundColor: "$surfaceSecondary",
+          borderColor: "$borderColorHover"
+        }
+      },
+
+      quaternary: {
+        backgroundColor: "$backgroundStrong",
+        borderColor: "$borderColor",
+
+        hoverStyle: {
+          backgroundColor: "$surfacePrimary",
+          borderColor: "$borderColorHover"
+        }
+      },
+
+      outlined: {
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        borderColor: "$color",
+
+        hoverStyle: {
+          backgroundColor: "$surfacePrimary",
+          borderWidth: 2,
+          borderColor: "$colorHover"
         }
       },
 
       ghost: {
         backgroundColor: "transparent",
         borderWidth: 0,
-        borderColor: "transparent",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$borderColorHover"
-        },
+          borderWidth: 0
+        }
+      },
 
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorPress"
-        },
+      gradient: {
+        backgroundColor: "transparent",
+        borderWidth: 0,
 
-        focusVisibleStyle: {
+        hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$borderColorFocus"
+          borderWidth: 0
         }
       },
 
       glass: {
         backgroundColor: "transparent",
-        borderColor: "$borderColor",
+        borderColor: "$base4",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$borderColorHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorPress"
-        },
-
-        focusVisibleStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderColorFocus"
+          borderColor: "$primary"
         }
       },
 
       link: {
         backgroundColor: "transparent",
         borderWidth: 0,
-        borderColor: "transparent",
-        textDecoration: "underline",
-        textDecorationColor: "$borderColor",
-        textDecorationStyle: "solid",
-        textDecorationThickness: 1,
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "transparent",
-          color: "$borderColorHover",
-          textDecorationColor: "$borderColorHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-          color: "$borderColorPress",
-          textDecorationColor: "$borderColorPress"
-        },
-
-        focusVisibleStyle: {
-          backgroundColor: "transparent",
-          borderColor: "transparent",
-          color: "$borderColorFocus",
-          textDecorationColor: "$borderColorFocus"
+          borderWidth: 0
         }
       }
     },
@@ -311,32 +312,25 @@ const ButtonFrame = styled(View, {
 
     disabled: {
       true: {
-        opacity: 0.4,
-        borderColor: "$disabled",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+        pointerEvents: "none",
+        opacity: 0.5
       }
     },
 
-    outlined: {
+    ringed: {
       true: {
         hoverStyle: {
           outlineColor: "$primary",
           outlineStyle: "solid",
-          outlineWidth: 2,
+          outlineWidth: 3,
           outlineOffset: "$1.25"
         },
 
         pressStyle: {
           outlineColor: "$primary",
           outlineStyle: "solid",
-          outlineWidth: 2,
-          outlineOffset: "$1.25"
-        },
-
-        focusVisibleStyle: {
-          outlineColor: "$primary",
-          outlineStyle: "solid",
-          outlineWidth: 2,
+          outlineWidth: 3,
           outlineOffset: "$1.25"
         }
       }
@@ -353,77 +347,132 @@ const ButtonFrame = styled(View, {
       true: {
         padding: 0,
         height: "fit-content"
-      },
-      false: {
-        padding: "$3"
       }
     }
   } as const,
 
   defaultVariants: {
+    variant: "tertiary",
+    size: "$true",
+    disabled: false,
+    ringed: false,
+    circular: false,
+    bordered: true,
     noPadding: false
   }
 });
 
-const ButtonText = styled(LabelText, {
+const ButtonTextFrame = styled(LabelText, {
   name: "ButtonText",
   context: ButtonContext,
 
-  animation: "slow",
+  animation: "normal",
   userSelect: "none",
   // flexGrow 1 leads to inconsistent native style where text pushes to start of view
   flexGrow: 0,
   flexShrink: 1,
   ellipse: true,
   borderRadius: 0,
-  color: "$color",
   cursor: "pointer",
+  textAlign: "center",
 
   variants: {
-    unstyled: {
-      false: {}
-    },
-
     variant: {
+      primary: {
+        color: "$surfacePrimary",
+
+        hoverStyle: {
+          color: "$surfacePrimary"
+        }
+      },
+
       secondary: {
-        color: "$primary"
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
+      },
+
+      tertiary: {
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
+      },
+
+      quaternary: {
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
+      },
+
+      outlined: {
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
       },
 
       ghost: {
-        color: "$fg"
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
       },
 
       glass: {
-        color: "$fg"
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
+      },
+
+      gradient: {
+        color: "$color",
+
+        hoverStyle: {
+          color: "$colorHover"
+        }
       },
 
       link: {
-        color: "$borderColor",
-        textDecoration: "underline",
-        textDecorationColor: "$borderColor",
+        color: "$color",
+        textDecorationLine: "underline",
+        textDecorationColor: "$color",
         textDecorationStyle: "solid",
-        textDecorationThickness: 1,
 
         hoverStyle: {
-          color: "$borderColorHover",
-          textDecorationColor: "$borderColorHover"
-        },
-
-        pressStyle: {
-          color: "$borderColorPress",
-          textDecorationColor: "$borderColorPress"
-        },
-
-        focusVisibleStyle: {
-          color: "$borderColorFocus",
-          textDecorationColor: "$borderColorFocus"
+          color: "$colorHover",
+          textDecorationColor: "$colorHover"
         }
       }
     },
 
     disabled: {
       true: {
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+        pointerEvents: "none",
+        color: "$colorDisabled",
+        textDecoration: "none",
+
+        hoverStyle: {
+          color: "$colorDisabled",
+
+          textDecoration: "none"
+        },
+
+        pressStyle: {
+          color: "$colorDisabled",
+
+          textDecoration: "none"
+        }
       }
     },
 
@@ -431,57 +480,190 @@ const ButtonText = styled(LabelText, {
       true: {
         height: "fit-content"
       }
+    },
+
+    size: {
+      "...fontSize": (
+        val: FontSizeTokens,
+        config: VariantSpreadExtras<TextProps>
+      ) => {
+        if (!config.font) {
+          return;
+        }
+
+        let sizeToken = 1;
+        let heightToken = 1;
+        if (val !== undefined && val !== null) {
+          sizeToken = (config.font.size?.[val] as any)?.val;
+          heightToken = (config.font.lineHeight?.[val] as any)?.val;
+        }
+
+        const fontSize = (sizeToken ?? 1) * 0.9;
+        const lineHeight = Number(heightToken ?? 1) * 0.75;
+        const fontWeight = config.font.weight?.[val];
+        const letterSpacing = config.font.letterSpacing?.[val];
+        const textTransform = config.font.transform?.[val];
+        const fontStyle = config.font.style?.[val];
+
+        return {
+          fontSize,
+          lineHeight,
+          fontWeight,
+          letterSpacing,
+          textTransform,
+          fontStyle
+        };
+      }
     }
-  } as const
+  } as const,
+
+  defaultVariants: {
+    variant: "tertiary",
+    size: "$true",
+    disabled: false,
+    circular: false
+  }
 });
 
-const ButtonIconFrame = styled(ThemedIcon, {
-  name: BUTTON_NAME,
-  context: ButtonContext,
-
-  size: "$2",
-  borderRadius: 0,
-  color: "$color",
-  cursor: "pointer"
-});
-
-const ButtonIcon = ButtonIconFrame.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    const { variant, color, size } = useContext(ButtonContext);
+const ButtonText = ButtonTextFrame.styleable(
+  ({ children, theme, ...props }, forwardedRef) => {
+    const { variant, disabled, circular, color, size } =
+      ButtonContext.useStyledContext();
 
     return (
-      <ButtonIconFrame
-        ref={forwardedRef}
-        color={
-          color ||
-          (variant === "secondary"
-            ? "$primary"
-            : variant === "glass" || variant === "ghost"
-              ? "$fg"
-              : variant === "link"
-                ? "$borderColor"
-                : "$color")
+      <Theme
+        name={
+          variant === "primary" ||
+          variant === "secondary" ||
+          variant === "tertiary" ||
+          variant === "quaternary" ||
+          variant === "gradient"
+            ? ColorRole.BASE
+            : theme
         }
-        size={size as FontSizeTokens}
-        {...props}>
-        {children}
-      </ButtonIconFrame>
+        componentName="ButtonText">
+        <ButtonTextFrame
+          ref={forwardedRef}
+          variant={variant}
+          disabled={disabled}
+          circular={circular}
+          size={size as FontSizeTokens}
+          color={color}
+          $group-button-hover={{
+            color: disabled
+              ? "$colorDisabled"
+              : variant === "primary"
+                ? "$surfacePrimary"
+                : "$colorHover"
+          }}
+          {...props}>
+          {children}
+        </ButtonTextFrame>
+      </Theme>
     );
+  },
+  {
+    staticConfig: { componentName: "ButtonText" }
   }
 );
 
-type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
+const ButtonIcon = ButtonTextFrame.styleable(
+  ({ children, theme, ...props }) => {
+    const { variant, disabled, color, size } = ButtonContext.useStyledContext();
+
+    const themeName =
+      variant === "primary" ||
+      variant === "secondary" ||
+      variant === "tertiary" ||
+      variant === "quaternary" ||
+      variant === "gradient"
+        ? ColorRole.BASE
+        : theme;
+    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+
+    return (
+      <Theme name={themeName} componentName="ButtonIcon">
+        <ThemeableIcon
+          {...props}
+          disabled={disabled}
+          size={adjusted}
+          color={
+            (disabled
+              ? "$colorDisabled"
+              : color ||
+                (variant === "primary"
+                  ? "$surfacePrimary"
+                  : "$color")) as ThemeableIconProps["color"]
+          }
+          $group-button-hover={{
+            color: disabled
+              ? "$colorDisabled"
+              : variant === "primary"
+                ? "$surfacePrimary"
+                : "$colorHover"
+          }}>
+          {children}
+        </ThemeableIcon>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "ButtonIcon" }
+  }
+);
 
 const ButtonGhostBackground = styled(ThemeableStack, {
-  name: BUTTON_NAME,
+  name: "Button",
   context: ButtonContext,
 
-  animation: "slow",
+  animation: "normal",
+  opacity: 0,
 
-  backgroundColor: "transparent",
-  borderColor: "transparent",
-  borderWidth: 2,
-  opacity: 0.6,
+  backgroundColor: "$surfaceTertiary",
+  borderColor: "$primary",
+
+  variants: {
+    bordered: {
+      false: {
+        borderWidth: 0,
+
+        hoverStyle: {
+          borderWidth: 0
+        }
+      },
+      true: {
+        borderWidth: 1,
+
+        hoverStyle: {
+          borderWidth: 1
+        }
+      }
+    },
+
+    circular: {
+      true: {
+        borderRadius: 1000_000_000
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    bordered: true,
+    circular: false
+  }
+});
+
+const ButtonGlassBackground = styled(LinearGradient, {
+  name: "Button",
+  context: ButtonContext,
+
+  animation: "normal",
+  opacity: 0.15,
+
+  colors: ["$secondary", "$primary"],
+  // locations: [0.0, 1.0],
+  start: { x: 0, y: 0 },
+  end: { x: 1, y: 1 },
 
   variants: {
     circular: {
@@ -492,18 +674,15 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   } as const
 });
 
-const ButtonGlassBackground = styled(LinearGradient, {
-  name: BUTTON_NAME,
+const ButtonGradientBackground = styled(LinearGradient, {
+  name: "Button",
   context: ButtonContext,
 
-  animation: "slow",
-
-  backgroundColor: "transparent",
-  overflow: "hidden",
-  opacity: 0.5,
-  colors: ["$muted", "$primary"],
-  start: [0, 1],
-  end: [1, 1],
+  animation: "normal",
+  colors: ["$tertiary", "$primary"],
+  // locations: [0.0, 1.0],
+  start: { x: 0.1, y: 0.1 },
+  end: { x: 0.9, y: 0.9 },
 
   variants: {
     circular: {
@@ -515,11 +694,12 @@ const ButtonGlassBackground = styled(LinearGradient, {
 });
 
 const ButtonContainer = styled(ThemeableStack, {
-  name: BUTTON_NAME,
+  name: "Button",
   context: ButtonContext,
 
-  animation: "slow",
+  animation: "normal",
   cursor: "pointer",
+  overflow: "hidden",
 
   variants: {
     disabled: {
@@ -537,26 +717,41 @@ const ButtonContainer = styled(ThemeableStack, {
     animate: {
       true: {
         pressStyle: {
-          scale: 0.9
+          scale: 0.95
         }
       }
     }
   } as const
 });
 
+export type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
+
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (
     {
-      variant,
+      variant = "tertiary",
       disabled = false,
       circular = false,
+      bordered = true,
       noPadding = false,
+      ringed = false,
       animate = true,
+      children,
+      onPress,
+      onClick,
       ...props
     },
     forwardedRef
   ) => {
-    const { onPress, onClick, ...rest } = props;
+    const handlePress = useCallback(
+      (event: GestureResponderEvent) => {
+        if (!disabled) {
+          onPress?.(event);
+          onClick?.(event);
+        }
+      },
+      [disabled, onPress, onClick]
+    );
 
     return (
       <ButtonContainer
@@ -569,49 +764,49 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           disabled={disabled}
           circular={circular}
           noPadding={noPadding}
+          ringed={ringed}
           animate={animate}
           {...props}>
           {variant === "ghost" && (
             <ButtonGhostBackground
               fullscreen={true}
               circular={circular}
-              scale={1}
+              bordered={bordered}
               $group-button-hover={{
-                backgroundColor: disabled ? "transparent" : "$muted"
-              }}
-              $group-button-press={{
-                backgroundColor: disabled ? "transparent" : "$muted",
-                opacity: 1,
-                scale: 0.9
+                opacity: disabled ? 0 : 0.25
               }}
             />
           )}
           {variant === "glass" && (
             <ButtonGlassBackground
+              theme={ColorRole.BASE}
               fullscreen={true}
               circular={circular}
-              scale={1}
               style={{
-                filter: "blur(1px)"
+                filter: "blur(4px)"
               }}
-              $group-button-hover={{ opacity: disabled ? 0.5 : 0.7 }}
-              $group-button-press={{ opacity: disabled ? 0.5 : 1, scale: 0.9 }}
+              $group-button-hover={{ opacity: disabled ? 0.15 : 0.25 }}
             />
+          )}
+          {variant === "gradient" && (
+            <ButtonGradientBackground fullscreen={true} circular={circular} />
           )}
           <ButtonFrame
             ref={forwardedRef}
-            {...rest}
-            onPress={onPress || onClick}
+            {...props}
+            onPress={handlePress}
             circular={circular}
+            bordered={bordered}
             variant={variant}
-            disabled={disabled}
-          />
+            disabled={disabled}>
+            {children}
+          </ButtonFrame>
         </ButtonContext.Provider>
       </ButtonContainer>
     );
   },
   {
-    staticConfig: { componentName: BUTTON_NAME }
+    staticConfig: { componentName: "Button" }
   }
 );
 
@@ -619,5 +814,3 @@ export const Button = withStaticProperties(ButtonContainerImpl, {
   Text: ButtonText,
   Icon: ButtonIcon
 });
-
-export type { ButtonProps };

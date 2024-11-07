@@ -19,54 +19,79 @@ import { ColorRole } from "@cyclone-ui/colors";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
-import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
+import type {
+  ColorTokens,
+  FontSizeTokens,
+  SizeTokens,
+  VariantSpreadExtras
+} from "@tamagui/core";
 import {
   createStyledContext,
   styled,
   Theme,
-  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
+import { getSize, getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
+import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 
-const defaultContextValues = {
-  size: "$true",
-  color: undefined,
-  hideIcons: true,
-  disabled: false,
-  focused: false
-} as const;
-
 export type SelectContextProps = {
   name?: string;
   size: FontSizeTokens;
   color?: ColorTokens | string;
-  hideIcons?: boolean;
   disabled: boolean;
   focused: boolean;
 };
 
-export const SelectContext =
-  createStyledContext<SelectContextProps>(defaultContextValues);
-
-export const defaultSelectGroupStyles = {
+export const SelectContext = createStyledContext<SelectContextProps>({
   size: "$true",
-  fontFamily: "$body",
-  fontSize: "$4",
-  color: "$color",
-  // backgroundColor: "$background",
-  borderRadius: "$radius",
+  disabled: false,
+  focused: false
+});
+
+const getSelectSize = (
+  val: SizeTokens | number,
+  extras: VariantSpreadExtras<any>
+) => {
+  const { tokens, props } = extras;
+
+  if (!val || props.circular) {
+    return;
+  }
+  if (typeof val === "number") {
+    return {
+      paddingHorizontal: val * 0.25,
+      height: val,
+      borderRadius: props.circular ? 100_000 : val * 0.2
+    };
+  }
+
+  const xSize = getSpace(val);
+  const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+
+  return {
+    paddingHorizontal: xSize,
+    height: val,
+    borderRadius: props.circular ? 100_000 : radiusToken
+  };
+};
+
+const SelectGroupFrame = styled(XGroup, {
+  name: "Select",
+  context: SelectContext,
+
+  animation: "normal",
+  backgroundColor: "transparent",
+  justifyContent: "space-between",
+  cursor: "pointer",
   borderWidth: 1,
   borderColor: "$borderColor",
-  outlineWidth: 0,
-  outlineColor: "transparent",
   outlineStyle: "none",
 
   ...(isWeb
@@ -82,88 +107,73 @@ export const defaultSelectGroupStyles = {
 
   hoverStyle: {
     borderColor: "$accent10"
-  }
-} as const;
+  },
 
-export const SELECT_NAME = "Select";
-
-const SelectGroupFrame = styled(XGroup, {
-  name: SELECT_NAME,
-  context: SelectContext,
-
-  justifyContent: "space-between",
-  animation: "slow",
-  height: "$4.5",
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 3,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColorFocus"
+  },
 
   variants: {
-    unstyled: {
-      false: defaultSelectGroupStyles
-    },
-
-    scaleIcon: {
-      ":number": {} as any
+    focused: {
+      true: {
+        outlineColor: "$accent10",
+        outlineWidth: 3,
+        outlineOffset: "$1.25",
+        outlineStyle: "solid",
+        borderColor: "$borderColorFocus"
+      }
     },
 
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (
+        val: SizeTokens | number,
+        extras: VariantSpreadExtras<any>
+      ) => {
+        const result = getSelectSize(val, extras);
+
         return {
-          borderRadius: tokens.radius[val]
+          ...result,
+          paddingHorizontal: 0
         };
       }
     },
 
     disabled: {
       true: {
-        color: "$disabled",
-        borderColor: "$disabled",
-        placeholderColor: "$disabled",
+        borderColor: "$borderColorDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$disabled",
-          borderColor: "$disabled"
+          borderColor: "$borderColorDisabled"
         },
 
         focusStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
+          borderColor: "$borderColorDisabled",
+          outlineStyle: "none"
         },
 
         pressStyle: {
-          color: "$disabled",
-          borderColor: "$disabled",
-          outlineStyle: "none",
-          outlineColor: "transparent"
+          borderColor: "$borderColorDisabled",
+          outlineStyle: "none"
         }
-      },
-      false: {
-        cursor: "pointer"
-      }
-    },
-
-    focused: {
-      true: {
-        outlineColor: "$accent10",
-        outlineWidth: 2,
-        outlineOffset: "$1.25",
-        outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
       }
     }
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1",
+    size: "$true",
     disabled: false,
     focused: false
   }
 });
 
 const SelectTrigger = styled(TamaguiSelect.Trigger, {
-  name: SELECT_NAME,
+  name: "SelectTrigger",
   context: SelectContext,
 
   unstyled: true,
@@ -172,71 +182,74 @@ const SelectTrigger = styled(TamaguiSelect.Trigger, {
   pressTheme: true,
   focusable: true,
   backgrounded: false,
+  bordered: false,
 
+  animation: "normal",
+  cursor: "pointer",
   justifyContent: "space-between",
-  animation: "slow",
-  size: "$true",
-  fontFamily: "$body",
+  backgroundColor: "transparent",
   color: "$color",
+  fontFamily: "$body",
+  fontSize: "$4",
+  fontWeight: "$true",
   borderWidth: 0,
-  borderColor: "transparent",
-  borderStyle: "none" as any,
-  outlineWidth: 0,
-  outlineColor: "transparent",
   outlineStyle: "none",
-  paddingHorizontal: "$2",
   flexDirection: "row",
   alignItems: "center",
   flex: 1,
 
   variants: {
-    scaleIcon: {
-      ":number": {} as any
-    },
-
-    required: {
-      true: {}
+    size: {
+      "...size": getSelectSize
     },
 
     disabled: {
       true: {
-        color: "$disabled",
-        placeholderColor: "$disabled",
+        color: "$colorDisabled",
+        placeholderColor: "$colorDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         focusStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         },
 
         pressStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         }
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
 
   defaultVariants: {
-    required: false,
+    size: "$true",
     disabled: false
   }
 });
 
+const SelectTriggerImpl = SelectTrigger.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <SelectTrigger ref={forwardedRef} unstyled={true} {...props}>
+        {children}
+      </SelectTrigger>
+    );
+  },
+  { staticConfig: { componentName: "SelectTrigger" } }
+);
+
 const SelectItemFrame = styled(TamaguiSelect.Item, {
-  name: SELECT_NAME,
+  name: "SelectItemsItem",
   context: SelectContext,
 
   backgroundColor: "transparent",
+  marginVertical: 0,
   paddingVertical: 0,
   paddingHorizontal: "$2",
-  marginVertical: 0,
 
   focusStyle: {
     backgroundColor: "transparent"
@@ -248,9 +261,10 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
 });
 
 const SelectItemGroup = styled(XStack, {
-  name: SELECT_NAME,
+  name: "SelectItemsItem",
   context: SelectContext,
 
+  cursor: "pointer",
   gap: "$2",
   alignItems: "center",
   paddingHorizontal: "$2",
@@ -279,9 +293,6 @@ const SelectItemGroup = styled(XStack, {
         focusStyle: {
           backgroundColor: "transparent"
         }
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
@@ -292,14 +303,16 @@ const SelectItemGroup = styled(XStack, {
 });
 
 const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
-  name: SELECT_NAME,
+  name: "SelectItemsItem",
   context: SelectContext,
 
+  cursor: "pointer",
   color: "$color",
   fontFamily: "$body",
-  fontSize: "$true",
+  fontSize: "$4",
   fontWeight: "$true",
-  paddingVertical: "$1",
+  lineHeight: "$true",
+  letterSpacing: "$true",
   flex: 1,
 
   variants: {
@@ -312,14 +325,11 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$disabled",
+        color: "$colorDisabled",
 
         hoverStyle: {
-          color: "$disabled"
+          color: "$colorDisabled"
         }
-      },
-      false: {
-        cursor: "pointer"
       }
     }
   } as const,
@@ -342,6 +352,11 @@ const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         disabled={disabled}>
         <SelectItemGroup disabled={disabled}>
           <View width="$2" justifyContent="center">
+            {disabled && (
+              <Theme name={ColorRole.BASE}>
+                <Lock size="$1.5" color="$colorDisabled" />
+              </Theme>
+            )}
             <TamaguiSelect.ItemIndicator>
               <Theme name={ColorRole.ACCENT}>
                 <Check size="$2" color="$color" />
@@ -352,27 +367,39 @@ const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             selected={selected}
             disabled={disabled}
             $group-hover={{
-              color: disabled ? "$disabled" : selected ? "$fg" : "$colorHover"
+              color: disabled
+                ? "$colorDisabled"
+                : selected
+                  ? "$fg"
+                  : "$colorHover"
             }}>
             {children}
           </SelectItemTextFrame>
         </SelectItemGroup>
       </SelectItemFrame>
     );
+  },
+  {
+    staticConfig: { componentName: "SelectItemsItem" }
   }
 );
 
 const SelectValueFrame = styled(TamaguiSelect.Value, {
-  name: SELECT_NAME,
+  name: "SelectTriggerValue",
   context: SelectContext,
 
+  animation: "normal",
+  unstyled: true,
+  cursor: "pointer",
+  color: "$color",
   fontFamily: "$body",
-  fontSize: "$true",
+  fontSize: "$4",
   fontWeight: "$true",
-  color: "$fg",
-  backgroundColor: "transparent",
-  paddingHorizontal: "$2",
+  lineHeight: "$true",
+  letterSpacing: "$true",
+  display: "flex",
   flexGrow: 1,
+  verticalAlign: "center",
 
   hoverStyle: {
     backgroundColor: "transparent"
@@ -392,10 +419,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$disabled"
-      },
-      false: {
-        cursor: "pointer"
+        color: "$colorDisabled"
       }
     }
   } as const,
@@ -408,36 +432,42 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
 
 const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
-}>(({ children, placeholding, ...props }, forwardedRef) => {
-  const { disabled, name } = SelectContext.useStyledContext();
+}>(
+  ({ children, placeholding, ...props }, forwardedRef) => {
+    const { disabled, name } = SelectContext.useStyledContext();
 
-  return (
-    <SelectValueFrame
-      id={name}
-      ref={forwardedRef}
-      size={0}
-      {...props}
-      disabled={disabled}
-      placeholding={placeholding && !disabled}>
-      {children}
-    </SelectValueFrame>
-  );
-});
+    return (
+      <SelectValueFrame
+        id={name}
+        ref={forwardedRef}
+        size={0}
+        {...props}
+        disabled={disabled}
+        placeholding={placeholding && !disabled}>
+        {children}
+      </SelectValueFrame>
+    );
+  },
+  {
+    staticConfig: { componentName: "SelectTriggerValue" }
+  }
+);
 
 const BaseSelect = styled(TamaguiSelect, {
-  name: SELECT_NAME,
+  name: "Select",
   context: SelectContext,
 
+  animation: "normal",
   justifyContent: "center",
   alignItems: "center",
-  animation: "fast",
   borderColor: "transparent",
+  backgroundColor: "transparent",
 
   variants: {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$disabled",
+        color: "$colorDisabled",
         backgroundColor: "transparent"
       }
     }
@@ -449,41 +479,77 @@ const BaseSelect = styled(TamaguiSelect, {
 });
 
 const SelectChevron = styled(ChevronDown, {
-  name: SELECT_NAME,
+  name: "SelectTriggerValue",
   context: SelectContext,
 
-  animation: "500ms"
+  animation: "normal",
+  cursor: "pointer",
+  color: "$placeholderColor",
+
+  variants: {
+    size: {
+      "...size": (
+        val: SizeTokens | number,
+        { props }: VariantSpreadExtras<any>
+      ) => {
+        if (!val || props.circular) {
+          return;
+        }
+        if (typeof val === "number") {
+          return {
+            height: val * 0.5,
+            width: val * 0.5
+          };
+        }
+
+        const size = getSize(val);
+        return {
+          height: size.val * 0.5,
+          width: size.val * 0.7
+        };
+      }
+    },
+
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        color: "$colorDisabled"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true",
+    disabled: false
+  }
 });
 
 const SelectChevronImpl = SelectChevron.styleable<{
   rotateOnFocused?: boolean;
-}>(({ rotateOnFocused = true, ...props }, forwardedRef) => {
-  const { color, focused, disabled } = SelectContext.useStyledContext();
-  const theme = useThemeName();
+}>(
+  ({ rotateOnFocused = true, ...props }, forwardedRef) => {
+    const { focused, disabled, size } = SelectContext.useStyledContext();
 
-  const rotate = useMemo(
-    () => (rotateOnFocused ? focused : false),
-    [rotateOnFocused, focused]
-  );
+    const rotate = useMemo(
+      () => (rotateOnFocused ? focused : false),
+      [rotateOnFocused, focused]
+    );
 
-  return (
-    <View animation="500ms" rotate={rotate ? "180deg" : "0deg"}>
-      <SelectChevron
-        ref={forwardedRef}
-        theme={theme}
-        {...props}
-        color={
-          color ||
-          (disabled
-            ? "$disabled"
-            : theme.toLowerCase().includes(ColorRole.BASE)
-              ? "$base9"
-              : "$primary")
-        }
-      />
-    </View>
-  );
-});
+    return (
+      <View animation="500ms" rotate={rotate ? "180deg" : "0deg"}>
+        <SelectChevron
+          ref={forwardedRef}
+          {...props}
+          size={size}
+          disabled={disabled}
+        />
+      </View>
+    );
+  },
+  {
+    staticConfig: { componentName: "SelectTriggerValue" }
+  }
+);
 
 const SelectGroup = BaseSelect.styleable<Partial<SelectContextProps>>(
   ({ name, disabled, focused, children, ...props }, forwardedRef) => {
@@ -500,88 +566,94 @@ const SelectGroup = BaseSelect.styleable<Partial<SelectContextProps>>(
         </BaseSelect>
       </SelectGroupFrame>
     );
-  }
+  },
+  { staticConfig: { componentName: "Select" } }
 );
 
-const SelectItems = View.styleable(({ children, ...props }, forwardedRef) => {
-  return (
-    <View ref={forwardedRef} flex={1} {...props}>
-      <Adapt when={"sm" as any} platform="touch">
-        <Sheet
-          modal
-          dismissOnSnapToBottom
-          animationConfig={{
-            type: "spring",
-            damping: 20,
-            mass: 1.2,
-            stiffness: 250
-          }}>
-          <Sheet.Frame>
-            <Sheet.ScrollView>
-              <Adapt.Contents />
-            </Sheet.ScrollView>
-          </Sheet.Frame>
-          <Sheet.Overlay
-            animation="lazy"
-            enterStyle={{ opacity: 0 }}
-            exitStyle={{ opacity: 0 }}
-          />
-        </Sheet>
-      </Adapt>
+const SelectItems = View.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <View ref={forwardedRef} flex={1} {...props}>
+        <Adapt when={"sm" as any} platform="touch">
+          <Sheet
+            modal
+            dismissOnSnapToBottom
+            animationConfig={{
+              type: "spring",
+              damping: 20,
+              mass: 1.2,
+              stiffness: 250
+            }}>
+            <Sheet.Frame>
+              <Sheet.ScrollView>
+                <Adapt.Contents />
+              </Sheet.ScrollView>
+            </Sheet.Frame>
+            <Sheet.Overlay
+              animation="lazy"
+              enterStyle={{ opacity: 0 }}
+              exitStyle={{ opacity: 0 }}
+            />
+          </Sheet>
+        </Adapt>
 
-      <TamaguiSelect.Content zIndex={200000}>
-        <TamaguiSelect.ScrollUpButton
-          alignItems="center"
-          justifyContent="center"
-          position="relative"
-          height="$3">
-          <YStack zIndex={10}>
-            <ChevronUp size={20} />
-          </YStack>
-          <LinearGradient
-            start={[0, 0]}
-            end={[0, 1]}
-            fullscreen={true}
-            colors={["$background", "transparent"]}
-            borderRadius="$4"
-            marginTop="$0.2"
-          />
-        </TamaguiSelect.ScrollUpButton>
+        <TamaguiSelect.Content zIndex={200000}>
+          <TamaguiSelect.ScrollUpButton
+            alignItems="center"
+            justifyContent="center"
+            position="relative"
+            height="$3">
+            <YStack zIndex={10}>
+              <ChevronUp size={20} />
+            </YStack>
+            <LinearGradient
+              start={[0, 0]}
+              end={[0, 1]}
+              fullscreen={true}
+              colors={["$background", "transparent"]}
+              borderRadius="$4"
+              marginTop="$0.2"
+            />
+          </TamaguiSelect.ScrollUpButton>
 
-        <TamaguiSelect.Viewport
-          animation="quick"
-          animateOnly={["transform", "scale", "opacity"]}
-          enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
-          exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
-          minWidth={200}>
-          <TamaguiSelect.Group>{children}</TamaguiSelect.Group>
-        </TamaguiSelect.Viewport>
+          <TamaguiSelect.Viewport
+            animation="quick"
+            animateOnly={["transform", "scale", "opacity"]}
+            enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
+            exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
+            minWidth={200}>
+            <TamaguiSelect.Group paddingTop="$1.5">
+              {children}
+            </TamaguiSelect.Group>
+          </TamaguiSelect.Viewport>
 
-        <TamaguiSelect.ScrollDownButton
-          alignItems="center"
-          justifyContent="center"
-          position="relative"
-          width="100%"
-          height="$3">
-          <YStack zIndex={10}>
-            <ChevronDown size={20} />
-          </YStack>
-          <LinearGradient
-            start={[0, 0]}
-            end={[0, 1]}
-            fullscreen={true}
-            colors={["transparent", "$background"]}
-            borderRadius="$4"
-            marginBottom="$0.2"
-          />
-        </TamaguiSelect.ScrollDownButton>
-      </TamaguiSelect.Content>
-    </View>
-  );
-});
+          <TamaguiSelect.ScrollDownButton
+            alignItems="center"
+            justifyContent="center"
+            position="relative"
+            width="100%"
+            height="$3">
+            <YStack zIndex={10}>
+              <ChevronDown size={20} />
+            </YStack>
+            <LinearGradient
+              start={[0, 0]}
+              end={[0, 1]}
+              fullscreen={true}
+              colors={["transparent", "$background"]}
+              borderRadius="$4"
+              marginBottom="$0.2"
+            />
+          </TamaguiSelect.ScrollDownButton>
+        </TamaguiSelect.Content>
+      </View>
+    );
+  },
+  { staticConfig: { componentName: "SelectItems" } }
+);
 
 export const Select = withStaticProperties(SelectGroup, {
-  Trigger: withStaticProperties(SelectTrigger, {
+  Trigger: withStaticProperties(SelectTriggerImpl, {
     Value: SelectValue,
     Chevron: SelectChevronImpl
   }),

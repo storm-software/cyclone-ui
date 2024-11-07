@@ -49,6 +49,7 @@ const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
       <Input.Value
         ref={forwardedRef}
         {...props}
+        disabled={disabled}
         onFocus={focus}
         onBlur={blur}
         onChangeText={change}

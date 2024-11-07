@@ -55,11 +55,14 @@ export const buildThemes = () => {
       brand: getColorDefinition("brand"),
       alternate: getColorDefinition("alternate"),
       accent: getColorDefinition("accent"),
+      link: getColorDefinition("link"),
       help: getColorDefinition("help"),
       success: getColorDefinition("success"),
       warning: getColorDefinition("warning"),
       error: getColorDefinition("error"),
-      info: getColorDefinition("info")
+      info: getColorDefinition("info"),
+      positive: getColorDefinition("positive"),
+      negative: getColorDefinition("negative")
     })
     .addChildThemes(componentThemes, {
       // to save bundle size but make alt themes not work on components

@@ -259,6 +259,7 @@
       "@cyclone-ui/input-field": "workspace:*",
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/body-text": "workspace:*",
+      "@cyclone-ui/link-text": "workspace:*",
       "@cyclone-ui/label-text": "workspace:*",
       "@cyclone-ui/bytes-text": "workspace:*",
       "@cyclone-ui/heading-text": "workspace:*",
