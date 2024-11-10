@@ -97,7 +97,7 @@ export const Help: Story = {
 
 export const Error: Story = {
   args: {
-    theme: "error"
+    theme: "danger"
   }
 };
 

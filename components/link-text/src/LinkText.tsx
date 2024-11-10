@@ -17,8 +17,8 @@
 
 /* eslint-disable no-console */
 
-import { ColorRole } from "@cyclone-ui/colors";
-import { useThemeColorRole } from "@cyclone-ui/provider";
+import { ColorThemeName } from "@cyclone-ui/colors";
+import { useThemeColorThemeName } from "@cyclone-ui/provider";
 import { GetProps, styled, Theme } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
@@ -189,10 +189,10 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
     },
     forwardedRef
   ) => {
-    const colorRole = useThemeColorRole();
+    const colorRole = useThemeColorThemeName();
 
     return (
-      <Theme name={!colorRole ? ColorRole.LINK : colorRole}>
+      <Theme name={!colorRole ? ColorThemeName.LINK : colorRole}>
         <LinkTextFrame
           ref={forwardedRef}
           {...props}
@@ -201,8 +201,8 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
           disabled={disabled}
           variant={
             !colorRole ||
-            colorRole === ColorRole.LINK ||
-            colorRole === ColorRole.BASE
+            colorRole === ColorThemeName.LINK ||
+            colorRole === ColorThemeName.BASE
               ? inverse
                 ? "baseInverse"
                 : "base"

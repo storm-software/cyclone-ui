@@ -52,12 +52,12 @@ export default class Clean extends Command {
       summary: "Output directory",
       description: "The location to output the design token file",
       hidden: false,
-      env: "STORM_OUTPUT_DIRECTORY",
-      default: ".storm",
+      env: "STORM_THEMES_DIRECTORY",
+      default: ".storm/themes",
       defaultHelp:
         'The ".storm/themes" folder in the workspace\'s root directory',
       required: false,
-      aliases: ["outDir", "output-dir"],
+      aliases: ["outputPath", "outDir"],
       deprecateAliases: false,
       noCacheDefault: false,
       helpValue: "<directory>"

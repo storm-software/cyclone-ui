@@ -5,9 +5,8 @@
     "types": ["@cloudflare/workers-types", "node"],
     "declaration": true,
     "declarationMap": false,
-    "composite": false,
     "strict": false,
-    "incremental": false
+    "composite": false
   },
   "include": ["src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],

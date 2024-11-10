@@ -133,7 +133,7 @@ export const HelpExternal: Story = {
 export const Error: Story = {
   args: {
     href: "#",
-    theme: "error"
+    theme: "danger"
   }
 };
 
@@ -141,7 +141,7 @@ export const ErrorCallToAction: Story = {
   args: {
     href: "#",
     cta: true,
-    theme: "error"
+    theme: "danger"
   }
 };
 
@@ -149,7 +149,7 @@ export const ErrorExternal: Story = {
   args: {
     href: "#",
     external: true,
-    theme: "error"
+    theme: "danger"
   }
 };
 

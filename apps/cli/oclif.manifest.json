@@ -26,9 +26,9 @@
         }
       ],
       "flags": {
-        "outputPath": {
+        "output": {
           "aliases": [
-            "output",
+            "outputPath",
             "outDir",
             "output-dir"
           ],
@@ -36,7 +36,7 @@
           "deprecateAliases": false,
           "description": "The location to output the design token file",
           "hidden": false,
-          "name": "outputPath",
+          "name": "output",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",
@@ -116,6 +116,9 @@
       "isESM": true,
       "relativePath": [
         "dist",
+        "apps",
+        "cli",
+        "src",
         "commands",
         "build.js"
       ]
@@ -204,6 +207,9 @@
       "isESM": true,
       "relativePath": [
         "dist",
+        "apps",
+        "cli",
+        "src",
         "commands",
         "registry",
         "get.js"
@@ -238,19 +244,19 @@
       "flags": {
         "output": {
           "aliases": [
-            "outDir",
-            "output-dir"
+            "outputPath",
+            "outDir"
           ],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
-          "env": "STORM_OUTPUT_DIRECTORY",
+          "env": "STORM_THEMES_DIRECTORY",
           "hidden": false,
           "name": "output",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",
-          "default": ".storm",
+          "default": ".storm/themes",
           "hasDynamicHelp": false,
           "helpValue": "<directory>",
           "multiple": false,
@@ -281,6 +287,9 @@
       "isESM": true,
       "relativePath": [
         "dist",
+        "apps",
+        "cli",
+        "src",
         "commands",
         "theme",
         "clean.js"
@@ -313,16 +322,17 @@
         }
       ],
       "flags": {
-        "outputPath": {
+        "output": {
           "aliases": [
-            "outDir",
-            "output-dir"
+            "outputPath",
+            "outDir"
           ],
           "char": "o",
           "deprecateAliases": false,
           "description": "The location to output the design token file",
+          "env": "STORM_THEMES_DIRECTORY",
           "hidden": false,
-          "name": "outputPath",
+          "name": "output",
           "noCacheDefault": false,
           "required": false,
           "summary": "Output directory",
@@ -381,6 +391,9 @@
       "isESM": true,
       "relativePath": [
         "dist",
+        "apps",
+        "cli",
+        "src",
         "commands",
         "theme",
         "init.js"

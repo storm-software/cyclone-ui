@@ -735,7 +735,7 @@ export const ErrorPrimary: Story = {
   args: {
     children: "Button Text",
     variant: "primary",
-    theme: "error",
+    theme: "danger",
     disabled: false
   }
 };
@@ -743,7 +743,7 @@ export const ErrorPrimary: Story = {
 export const ErrorSecondary: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "secondary",
     disabled: false
   }
@@ -752,7 +752,7 @@ export const ErrorSecondary: Story = {
 export const ErrorTertiary: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "tertiary",
     disabled: false
   }
@@ -761,7 +761,7 @@ export const ErrorTertiary: Story = {
 export const ErrorQuaternary: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "quaternary",
     disabled: false
   }
@@ -770,7 +770,7 @@ export const ErrorQuaternary: Story = {
 export const ErrorOutlined: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "outlined",
     disabled: false
   }
@@ -779,7 +779,7 @@ export const ErrorOutlined: Story = {
 export const ErrorGradient: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "gradient",
     disabled: false
   }
@@ -788,7 +788,7 @@ export const ErrorGradient: Story = {
 export const ErrorGhost: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "ghost",
     disabled: false
   }
@@ -797,7 +797,7 @@ export const ErrorGhost: Story = {
 export const ErrorGlass: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "glass",
     disabled: false
   }
@@ -806,7 +806,7 @@ export const ErrorGlass: Story = {
 export const ErrorLink: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     variant: "link",
     disabled: false
   }
@@ -815,7 +815,7 @@ export const ErrorLink: Story = {
 export const ErrorDisabled: Story = {
   args: {
     children: "Button Text",
-    theme: "error",
+    theme: "danger",
     disabled: true
   }
 };

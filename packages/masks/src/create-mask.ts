@@ -54,7 +54,7 @@ export const combineMasks = (...masks: CreateMask[]) => {
             `Nothing returned from mask: ${current}, for template: ${template} and mask: ${mask.toString()}, given opts ${JSON.stringify(
               opts,
               null,
-              2,
+              2
             )}`
           );
         }

@@ -15,16 +15,16 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 
 /**
  * Get the color role scheme for the current theme name
  *
  * @example
- * getThemeColorRole('dark') // undefined
- * getThemeColorRole('dark_Input') // undefined
- * getThemeColorRole('dark_base_Input') // "base"
- * getThemeColorRole('dark_brand_Input') // "brand"
+ * getThemeColorThemeName('dark') // undefined
+ * getThemeColorThemeName('dark_Input') // undefined
+ * getThemeColorThemeName('dark_base_Input') // "base"
+ * getThemeColorThemeName('dark_brand_Input') // "brand"
  *
  * @remarks
  * The following color roles are checked:
@@ -36,7 +36,7 @@ import { ColorRole } from "@cyclone-ui/colors";
  * - help
  * - info
  * - warning
- * - error
+ * - danger
  * - success
  * - positive
  * - negative
@@ -44,32 +44,34 @@ import { ColorRole } from "@cyclone-ui/colors";
  * @param theme - The theme name
  * @returns The color role scheme for the theme name or undefined
  */
-export const getThemeColorRole = (theme?: string): ColorRole | undefined => {
+export const getThemeColorThemeName = (
+  theme?: string
+): ColorThemeName | undefined => {
   if (theme) {
-    if (theme.includes(ColorRole.BASE)) {
-      return ColorRole.BASE;
-    } else if (theme.includes(ColorRole.BRAND)) {
-      return ColorRole.BRAND;
-    } else if (theme.includes(ColorRole.ALTERNATE)) {
-      return ColorRole.ALTERNATE;
-    } else if (theme.includes(ColorRole.ACCENT)) {
-      return ColorRole.ACCENT;
-    } else if (theme.includes(ColorRole.LINK)) {
-      return ColorRole.LINK;
-    } else if (theme.includes(ColorRole.HELP)) {
-      return ColorRole.HELP;
-    } else if (theme.includes(ColorRole.INFO)) {
-      return ColorRole.INFO;
-    } else if (theme.includes(ColorRole.WARNING)) {
-      return ColorRole.WARNING;
-    } else if (theme.includes(ColorRole.ERROR)) {
-      return ColorRole.ERROR;
-    } else if (theme.includes(ColorRole.SUCCESS)) {
-      return ColorRole.SUCCESS;
-    } else if (theme.includes(ColorRole.POSITIVE)) {
-      return ColorRole.POSITIVE;
-    } else if (theme.includes(ColorRole.NEGATIVE)) {
-      return ColorRole.NEGATIVE;
+    if (theme.includes(ColorThemeName.BASE)) {
+      return ColorThemeName.BASE;
+    } else if (theme.includes(ColorThemeName.BRAND)) {
+      return ColorThemeName.BRAND;
+    } else if (theme.includes(ColorThemeName.ALTERNATE)) {
+      return ColorThemeName.ALTERNATE;
+    } else if (theme.includes(ColorThemeName.ACCENT)) {
+      return ColorThemeName.ACCENT;
+    } else if (theme.includes(ColorThemeName.LINK)) {
+      return ColorThemeName.LINK;
+    } else if (theme.includes(ColorThemeName.HELP)) {
+      return ColorThemeName.HELP;
+    } else if (theme.includes(ColorThemeName.INFO)) {
+      return ColorThemeName.INFO;
+    } else if (theme.includes(ColorThemeName.WARNING)) {
+      return ColorThemeName.WARNING;
+    } else if (theme.includes(ColorThemeName.DANGER)) {
+      return ColorThemeName.DANGER;
+    } else if (theme.includes(ColorThemeName.SUCCESS)) {
+      return ColorThemeName.SUCCESS;
+    } else if (theme.includes(ColorThemeName.POSITIVE)) {
+      return ColorThemeName.POSITIVE;
+    } else if (theme.includes(ColorThemeName.NEGATIVE)) {
+      return ColorThemeName.NEGATIVE;
     }
   }
 
@@ -80,10 +82,10 @@ export const getThemeColorRole = (theme?: string): ColorRole | undefined => {
  * Check if a color role scheme is set for the current theme name
  *
  * @example
- * themeColorRoleExists('dark') // false
- * themeColorRoleExists('dark_Input') // false
- * themeColorRoleExists('dark_base_Input') // true
- * themeColorRoleExists('dark_brand_Input') // true
+ * themeColorThemeNameExists('dark') // false
+ * themeColorThemeNameExists('dark_Input') // false
+ * themeColorThemeNameExists('dark_base_Input') // true
+ * themeColorThemeNameExists('dark_brand_Input') // true
  *
  * @remarks
  * The following color roles are checked:
@@ -95,7 +97,7 @@ export const getThemeColorRole = (theme?: string): ColorRole | undefined => {
  * - help
  * - info
  * - warning
- * - error
+ * - danger
  * - success
  * - positive
  * - negative
@@ -103,6 +105,6 @@ export const getThemeColorRole = (theme?: string): ColorRole | undefined => {
  * @param theme - The theme name
  * @returns An indication if a theme color scheme is set
  */
-export const themeColorRoleExists = (theme?: string): boolean => {
-  return Boolean(getThemeColorRole(theme));
+export const themeColorThemeNameExists = (theme?: string): boolean => {
+  return Boolean(getThemeColorThemeName(theme));
 };

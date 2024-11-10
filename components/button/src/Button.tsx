@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { LabelText } from "@cyclone-ui/label-text";
 import { getButtonSized, getSized } from "@cyclone-ui/theme-helpers";
 import {
@@ -538,7 +538,7 @@ const ButtonText = ButtonTextFrame.styleable(
           variant === "tertiary" ||
           variant === "quaternary" ||
           variant === "gradient"
-            ? ColorRole.BASE
+            ? ColorThemeName.BASE
             : theme
         }
         componentName="ButtonText">
@@ -577,7 +577,7 @@ const ButtonIcon = ButtonTextFrame.styleable(
       variant === "tertiary" ||
       variant === "quaternary" ||
       variant === "gradient"
-        ? ColorRole.BASE
+        ? ColorThemeName.BASE
         : theme;
     const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
 
@@ -779,7 +779,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           )}
           {variant === "glass" && (
             <ButtonGlassBackground
-              theme={ColorRole.BASE}
+              theme={ColorThemeName.BASE}
               fullscreen={true}
               circular={circular}
               style={{

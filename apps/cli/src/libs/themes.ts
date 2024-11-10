@@ -105,7 +105,7 @@ export const initialTheme = (
         ? [colors.light, colors.dark]
         : [colors.dark, colors.light]
     )
-    // .gamma(themeType === "dark" ? 1.75 : 1)
+    .gamma(themeType === ColorThemeType.DARK ? 1.5 : 0.5)
     .gamma(1)
     .colors(12)
     .slice(1, -3)
@@ -291,6 +291,18 @@ const prepareSingleThemeColorConfig = (
     config.accent = config.brand;
   }
 
+  if (!config.link) {
+    config.link = config.brand;
+  }
+
+  if (!config.positive) {
+    config.positive = config.success;
+  }
+
+  if (!config.negative) {
+    config.negative = config.danger;
+  }
+
   return config;
 };
 
@@ -305,6 +317,22 @@ const prepareMultiThemeColorConfig = (
   if (!config.dark?.accent) {
     config.dark ??= {} as MultiThemeColorConfig["dark"];
     config.dark.accent = config.dark.brand;
+  }
+
+  if (!config.light.link) {
+    config.light.link = config.light.brand;
+  }
+
+  if (!config.dark.link) {
+    config.dark.link = config.dark.brand;
+  }
+
+  if (!config.light.positive) {
+    config.light.positive = config.light.success;
+  }
+
+  if (!config.dark.negative) {
+    config.dark.negative = config.dark.danger;
   }
 
   return config;

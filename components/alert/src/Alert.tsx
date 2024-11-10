@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { HeadingText } from "@cyclone-ui/heading-text";
 import {
   ThemeableIcon,
@@ -45,7 +45,7 @@ export type AlertContextProps = {
 
 export const AlertContext = createStyledContext<AlertContextProps>({
   size: "$true" as SizeTokens,
-  theme: ColorRole.BASE
+  theme: ColorThemeName.BASE
 });
 
 const AlertFrame = styled(ThemeableStack, {
@@ -223,7 +223,7 @@ const AlertHeaderHeadingImpl = AlertHeaderHeading.styleable(
     const { size } = AlertContext.useStyledContext();
 
     return (
-      <Theme name={ColorRole.BASE} shallow={true}>
+      <Theme name={ColorThemeName.BASE} shallow={true}>
         <AlertHeaderHeading ref={forwardedRef} size={size} {...props}>
           {children}
         </AlertHeaderHeading>
@@ -282,7 +282,7 @@ const AlertBodyImpl = AlertBody.styleable(
     const { size } = AlertContext.useStyledContext();
 
     return (
-      <Theme name={ColorRole.BASE} shallow={true}>
+      <Theme name={ColorThemeName.BASE} shallow={true}>
         <AlertBody ref={forwardedRef} size={size} {...props}>
           {children}
         </AlertBody>

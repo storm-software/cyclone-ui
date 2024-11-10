@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { useToastController } from "@tamagui/toast";
 
 export interface MessageProps {
@@ -56,7 +56,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       toast.show(getMessageHeading(message, options), {
         message,
-        theme: ColorRole.INFO,
+        theme: ColorThemeName.INFO,
         ...options
       });
     },
@@ -66,7 +66,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       toast.show(getMessageHeading(message, options), {
         message,
-        theme: ColorRole.SUCCESS,
+        theme: ColorThemeName.SUCCESS,
         ...options
       });
     },
@@ -76,7 +76,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       toast.show(getMessageHeading(message, options), {
         message,
-        theme: ColorRole.WARNING,
+        theme: ColorThemeName.WARNING,
         ...options
       });
     },
@@ -86,7 +86,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       toast.show(getMessageHeading(message, options), {
         message,
-        theme: ColorRole.ERROR,
+        theme: ColorThemeName.DANGER,
         ...options
       });
     },
@@ -96,7 +96,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
     ) => {
       toast.show(getMessageHeading(message, options), {
         message,
-        theme: ColorRole.HELP,
+        theme: ColorThemeName.HELP,
         ...options
       });
     }
@@ -106,15 +106,15 @@ export const useMessageActions = (): UseMessageActionsResult => {
 export const getMessageHeading = (message: string, options: MessageOptions) => {
   return options.heading
     ? options.heading
-    : options.theme?.toLowerCase().includes(ColorRole.ERROR)
+    : options.theme?.includes(ColorThemeName.DANGER)
       ? "Error"
-      : options.theme?.toLowerCase().includes(ColorRole.WARNING)
+      : options.theme?.includes(ColorThemeName.WARNING)
         ? "Warning"
-        : options.theme?.toLowerCase().includes(ColorRole.INFO)
+        : options.theme?.includes(ColorThemeName.INFO)
           ? "Information"
-          : options.theme?.toLowerCase().includes(ColorRole.HELP)
+          : options.theme?.includes(ColorThemeName.HELP)
             ? "Help"
-            : options.theme?.toLowerCase().includes(ColorRole.SUCCESS)
+            : options.theme?.includes(ColorThemeName.SUCCESS)
               ? "Success"
               : "Message";
 };

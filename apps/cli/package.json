@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240909.0",
-    "@oclif/prettier-config": "^0.2.1",
     "@oclif/test": "^3.2.8",
     "@types/fs-extra": "^11.0.4",
     "eslint-config-oclif": "^5.1.1",
@@ -67,14 +66,7 @@
     "dirname": "cyclone-ui",
     "theme": "theme.json",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins",
-      "@oclif/plugin-version",
-      "@oclif/plugin-not-found",
-      "@oclif/plugin-update",
-      "@oclif/plugin-autocomplete",
-      "@oclif/plugin-search",
-      "@oclif/plugin-warn-if-update-available"
+      "@oclif/plugin-*"
     ],
     "topicSeparator": " ",
     "topics": {
@@ -82,18 +74,10 @@
         "description": "Manage the local UI theme configuration"
       },
       "registry": {
-        "description": "Manage local copies of files from the Cyclone remote registry"
+        "description": "Manage local copies of files from the Cyclone-UI remote registry"
       }
     },
-    "commands": "./dist/commands",
-    "hooks": {
-      "init": [
-        {
-          "target": "./dist/hooks/init/init.js",
-          "identifier": "INIT_HOOK"
-        }
-      ]
-    },
+    "commands": "./dist/apps/cli/src/commands",
     "additionalHelpFlags": [
       "-h"
     ],

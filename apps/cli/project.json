@@ -9,15 +9,26 @@
       "cache": true,
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm rimraf dist/apps/cli"
+        "commands": ["pnpm rimraf apps/cli/dist"],
+        "parallel": true
+      }
+    },
+    "build-base": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": ["typescript", "^production", "{projectRoot}/src/*"],
+      "outputs": ["{projectRoot}/dist/*"],
+      "dependsOn": ["clean"],
+      "options": {
+        "command": "pnpm tsc -b ./apps/cli/tsconfig.json"
       }
     },
     "refresh-manifests": {
       "cache": true,
       "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/src/*"],
+      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
       "outputs": ["{projectRoot}/oclif.manifest.json"],
-      "dependsOn": ["build-tsc"],
+      "dependsOn": ["build-base"],
       "options": {
         "command": "pnpm oclif manifest",
         "cwd": "apps/cli"
@@ -26,37 +37,22 @@
     "refresh-readme": {
       "cache": true,
       "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/src/*"],
+      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
       "outputs": ["{projectRoot}/README.md"],
-      "dependsOn": ["build-tsc"],
+      "dependsOn": ["build-base"],
       "options": {
         "command": "pnpm oclif readme",
         "cwd": "apps/cli"
       }
     },
-    "build-tsc": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/src/*"],
-      "outputs": ["{workspaceRoot}/dist/apps/cli"],
-      "dependsOn": ["clean"],
-      "options": {
-        "commands": [
-          "pnpm rimraf dist/apps/cli",
-          "pnpm tsc -b ./apps/cli/tsconfig.json"
-        ],
-        "parallel": false
-      }
-    },
     "build": {
       "cache": true,
       "executor": "nx:run-commands",
-      "inputs": ["{projectRoot}/src/*"],
+      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
       "outputs": ["{workspaceRoot}/dist/apps/cli"],
       "dependsOn": ["refresh-readme", "refresh-manifests"],
       "options": {
         "commands": [
-          "pnpm exec make-dir dist/apps/cli",
           "pnpm exec copyfiles -f LICENSE ./apps/cli/package.json ./apps/cli/oclif.manifest.json ./apps/cli/*.md ./dist/apps/cli",
           "pnpm exec copyfiles -f ./apps/cli/bin/* ./dist/apps/cli/bin",
           "pnpm exec copyfiles -u 3 ./apps/cli/dist/**/*.js ./dist/apps/cli/dist"

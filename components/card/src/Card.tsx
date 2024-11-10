@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { Link } from "@cyclone-ui/link";
 import {
   createStyledContext,
@@ -46,7 +46,7 @@ const defaultContextValues = {
   size: "$6" as SizeTokens,
   scaleIcon: 2,
   color: undefined,
-  theme: `${ColorRole.BASE}_Card`
+  theme: `${ColorThemeName.BASE}_Card`
 } as const;
 
 export const CardContext = createStyledContext<{
@@ -328,7 +328,7 @@ const CardTitleImpl = CardTitle.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorRole.BASE}>
+      <Theme name={ColorThemeName.BASE}>
         <CardTitle ref={forwardedRef} {...rest}>
           {children}
         </CardTitle>
@@ -390,7 +390,7 @@ const CardEyebrowImpl = CardEyebrow.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorRole.BASE}>
+      <Theme name={ColorThemeName.BASE}>
         <CardEyebrow ref={forwardedRef} {...rest}>
           {children}
         </CardEyebrow>
@@ -449,7 +449,7 @@ const CardBodyImpl = CardBody.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorRole.BASE}>
+      <Theme name={ColorThemeName.BASE}>
         <CardBody ref={forwardedRef} {...rest}>
           {children}
         </CardBody>

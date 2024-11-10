@@ -68,7 +68,7 @@ export const HelpTheme: Story = {
 };
 
 export const ErrorTheme: Story = {
-  args: { currentName: "Current Page", theme: "error" }
+  args: { currentName: "Current Page", theme: "danger" }
 };
 
 export const WarningTheme: Story = {

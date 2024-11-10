@@ -78,7 +78,7 @@ export const Help: Story = {
 export const Error: Story = {
   args: {
     children: bodyText,
-    theme: "error"
+    theme: "danger"
   }
 };
 

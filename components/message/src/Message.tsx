@@ -1,6 +1,6 @@
 import { Alert, AlertContext } from "@cyclone-ui/alert";
 import { Button } from "@cyclone-ui/button";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import {
   Toast,
   ToastViewport,
@@ -15,7 +15,7 @@ const defaultContextValues = {
   size: "$3" as SizeTokens,
   scaleIcon: 2,
   color: undefined,
-  theme: ColorRole.BASE
+  theme: ColorThemeName.BASE
 } as const;
 
 export const MessageContext = createStyledContext<{

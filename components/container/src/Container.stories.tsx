@@ -1134,7 +1134,7 @@ export const InfoCircularNoBorder: Story = {
 
 export const ErrorPrimary: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "primary"
   }
@@ -1142,7 +1142,7 @@ export const ErrorPrimary: Story = {
 
 export const ErrorPrimaryNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "primary",
     bordered: false
@@ -1151,7 +1151,7 @@ export const ErrorPrimaryNoBorder: Story = {
 
 export const ErrorSecondary: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "secondary"
   }
@@ -1159,7 +1159,7 @@ export const ErrorSecondary: Story = {
 
 export const ErrorSecondaryNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "secondary",
     bordered: false
@@ -1168,7 +1168,7 @@ export const ErrorSecondaryNoBorder: Story = {
 
 export const ErrorTertiary: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "tertiary"
   }
@@ -1176,7 +1176,7 @@ export const ErrorTertiary: Story = {
 
 export const ErrorTertiaryNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "tertiary",
     bordered: false
@@ -1185,7 +1185,7 @@ export const ErrorTertiaryNoBorder: Story = {
 
 export const ErrorQuaternary: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "quaternary"
   }
@@ -1193,7 +1193,7 @@ export const ErrorQuaternary: Story = {
 
 export const ErrorQuaternaryNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "quaternary",
     bordered: false
@@ -1202,7 +1202,7 @@ export const ErrorQuaternaryNoBorder: Story = {
 
 export const ErrorOutlined: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "outlined"
   }
@@ -1210,7 +1210,7 @@ export const ErrorOutlined: Story = {
 
 export const ErrorOutlinedNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "outlined",
     bordered: false
@@ -1219,7 +1219,7 @@ export const ErrorOutlinedNoBorder: Story = {
 
 export const ErrorGlass: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "glass"
   }
@@ -1227,7 +1227,7 @@ export const ErrorGlass: Story = {
 
 export const ErrorGlassNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "glass",
     bordered: false
@@ -1236,7 +1236,7 @@ export const ErrorGlassNoBorder: Story = {
 
 export const ErrorCircular: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "secondary",
     circular: true
@@ -1245,7 +1245,7 @@ export const ErrorCircular: Story = {
 
 export const ErrorCircularNoBorder: Story = {
   args: {
-    theme: "error",
+    theme: "danger",
     children: "Container Text",
     variant: "secondary",
     circular: true,

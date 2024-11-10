@@ -17,7 +17,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import {
   FieldProvider,
   FieldProviderOptions,
@@ -319,13 +319,16 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     return (
       <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
         <LabelXStack disabled={disabled}>
-          <FieldLabelText {...rest} disabled={disabled} theme={ColorRole.BASE}>
+          <FieldLabelText
+            {...rest}
+            disabled={disabled}
+            theme={ColorThemeName.BASE}>
             {children}
           </FieldLabelText>
           {required && (
             <View position="relative">
               <Asterisk
-                color="$error8"
+                color="$danger7"
                 size="$0.75"
                 position="absolute"
                 top={-4}
@@ -454,11 +457,11 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     if (validating) {
       return <Spinner size="small" theme="$accent" />;
     } else if (
-      !theme?.includes(ColorRole.ERROR) &&
-      !theme?.includes(ColorRole.WARNING) &&
-      !theme?.includes(ColorRole.INFO) &&
-      !theme?.includes(ColorRole.HELP) &&
-      !theme?.includes(ColorRole.SUCCESS) &&
+      !theme?.includes(ColorThemeName.DANGER) &&
+      !theme?.includes(ColorThemeName.WARNING) &&
+      !theme?.includes(ColorThemeName.INFO) &&
+      !theme?.includes(ColorThemeName.HELP) &&
+      !theme?.includes(ColorThemeName.SUCCESS) &&
       !disabled
     ) {
       return null;

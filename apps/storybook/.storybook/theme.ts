@@ -24,7 +24,7 @@ const theme: any = create({
   colorSecondary: "#1fb2a6",
 
   // UI
-  appBg: "#202223",
+  appBg: "#151718",
   appContentBg: "#151718",
   appBorderColor: "#363738",
   appBorderRadius: 2,
@@ -36,10 +36,10 @@ const theme: any = create({
   // Toolbar default and active colors
   barTextColor: "#EFEFEF",
   barSelectedColor: "#1fb2a6",
-  barBg: "#202223",
+  barBg: "#151718",
 
   // Form colors
-  inputBg: "#202223",
+  inputBg: "#151718",
   inputBorder: "#363738",
   inputTextColor: "#EFEFEF",
   inputBorderRadius: 2,

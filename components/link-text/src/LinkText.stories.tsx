@@ -108,7 +108,7 @@ export const LinkTheme: Story = {
 
 export const ErrorTheme: Story = {
   args: {
-    theme: "error"
+    theme: "danger"
   }
 };
 

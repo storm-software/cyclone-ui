@@ -18,7 +18,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import { ClientFileResult } from "@cyclone-ui/state";
@@ -75,7 +75,7 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   color: undefined,
   required: false,
   disabled: false,
-  theme: `${ColorRole.BASE}_FilePicker`
+  theme: `${ColorThemeName.BASE}_FilePicker`
 });
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;

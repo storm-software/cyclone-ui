@@ -17,7 +17,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
 import { InputField } from "@cyclone-ui/input-field";
 import { Pagination } from "@cyclone-ui/pagination";
@@ -302,7 +302,7 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
           <Popover.Trigger asChild={true}>
             <Button
               variant="ghost"
-              theme={ColorRole.BASE}
+              theme={ColorThemeName.BASE}
               circular={true}
               color="$primary"
               padding="$2">

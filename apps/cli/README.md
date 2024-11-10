@@ -8,9 +8,8 @@
 
 <div align="center">
 <b>
-<a href="https://stormsoftware.com" target="_blank">Website</a>  •
-<a href="https://github.com/storm-software/cyclone-ui" target="_blank">GitHub</a>  •
-<a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •   <a href="https://docs.stormsoftware.com/cyclone-ui" target="_blank">Docs</a>  •   <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •
+<a href="https://stormsoftware.com" target="_blank">Website</a>  •<a href="https://github.com/storm-software/cyclone-ui" target="_blank">GitHub</a>  •
+<a href="https://discord.gg/MQ6YVzakM5">Discord</a>  •  <a href="https://docs.stormsoftware.com/cyclone-ui" target="_blank">Docs</a>  •  <a href="https://stormsoftware.com/contact" target="_blank">Contact</a>  •
 <a href="https://github.com/storm-software/cyclone-ui/issues/new?assignees=&labels=bug&template=bug-report.yml&title=Bug Report%3A+">Report a Bug</a>
 </b>
 </div>
@@ -39,12 +38,14 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# cli
+# Cyclone-UI CLI
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Cyclone-UI CLI](#cyclone-ui-cli)
+  - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
 - [oclif-hello-world](#oclif-hello-world)
 - [Usage](#usage)
@@ -81,7 +82,6 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
   - [Changelog](#changelog)
   - [Contributing](#contributing)
   - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
 
@@ -119,7 +119,7 @@ oclif example Hello World CLI
 [![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
 
 <!-- toc -->
-* [cli](#cli)
+* [Cyclone-UI CLI](#cyclone-ui-cli)
 * [oclif-hello-world](#oclif-hello-world)
 * [Usage](#usage)
 * [Commands](#commands)
@@ -193,7 +193,7 @@ EXAMPLES
   $ cyclone-ui autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.1.5/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.8/src/commands/autocomplete/index.ts)_
 
 ## `cyclone-ui build PROJECTROOT`
 
@@ -208,11 +208,11 @@ ARGUMENTS
   PROJECTROOT...  The path of the project to build relative to the workspace root
 
 FLAGS
-  -b, --bundle                  Should Bundle
-  -c, --clean                   Clean Output
-  -o, --outputPath=<directory>  Output directory
-  -s, --skip                    Skip confirmation prompts
-  -t, --tsconfig=<file>         tsconfig.json File
+  -b, --bundle              Should Bundle
+  -c, --clean               Clean Output
+  -o, --output=<directory>  Output directory
+  -s, --skip                Skip confirmation prompts
+  -t, --tsconfig=<file>     tsconfig.json File
 
 DESCRIPTION
   Build a cyclone-ui package
@@ -241,7 +241,7 @@ FLAG DESCRIPTIONS
 
     Should the output directory be cleaned before building
 
-  -o, --outputPath=<directory>  Output directory
+  -o, --output=<directory>  Output directory
 
     The location to output the design token file
 
@@ -254,7 +254,7 @@ FLAG DESCRIPTIONS
     The path to the tsconfig.json file for the project
 ```
 
-_See code: [dist/commands/build.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/build.js)_
+_See code: [dist/apps/cli/src/commands/build.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/build.js)_
 
 ## `cyclone-ui help [COMMAND]`
 
@@ -274,7 +274,7 @@ DESCRIPTION
   Display help for cyclone-ui.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.11/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.16/src/commands/help.ts)_
 
 ## `cyclone-ui plugins`
 
@@ -297,7 +297,7 @@ EXAMPLES
   $ cyclone-ui plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/index.ts)_
 
 ## `cyclone-ui plugins add PLUGIN`
 
@@ -371,7 +371,7 @@ EXAMPLES
   $ cyclone-ui plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/inspect.ts)_
 
 ## `cyclone-ui plugins install PLUGIN`
 
@@ -420,7 +420,7 @@ EXAMPLES
     $ cyclone-ui plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/install.ts)_
 
 ## `cyclone-ui plugins link PATH`
 
@@ -440,6 +440,7 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
+
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
@@ -450,7 +451,7 @@ EXAMPLES
   $ cyclone-ui plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/link.ts)_
 
 ## `cyclone-ui plugins remove [PLUGIN]`
 
@@ -491,7 +492,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/reset.ts)_
 
 ## `cyclone-ui plugins uninstall [PLUGIN]`
 
@@ -519,7 +520,7 @@ EXAMPLES
   $ cyclone-ui plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/uninstall.ts)_
 
 ## `cyclone-ui plugins unlink [PLUGIN]`
 
@@ -563,7 +564,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.3/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/update.ts)_
 
 ## `cyclone-ui registry get [COMPONENT]`
 
@@ -614,7 +615,7 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/registry/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/registry/get.js)_
+_See code: [dist/apps/cli/src/commands/registry/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/registry/get.js)_
 
 ## `cyclone-ui search`
 
@@ -630,7 +631,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.2.1/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.2.14/src/commands/search.ts)_
 
 ## `cyclone-ui theme clean NAME`
 
@@ -644,7 +645,7 @@ ARGUMENTS
   NAME...  [default: default] The name of the specific theme to assign the design token to
 
 FLAGS
-  -o, --output=<directory>  [default: .storm] Output directory
+  -o, --output=<directory>  [default: .storm/themes] Output directory
   -s, --skip                Skip confirmation prompts
 
 DESCRIPTION
@@ -675,7 +676,7 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/clean.js)_
+_See code: [dist/apps/cli/src/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/theme/clean.js)_
 
 ## `cyclone-ui theme init NAME`
 
@@ -689,10 +690,10 @@ ARGUMENTS
   NAME...  [default: brand] The name of the specific theme to assign the design token to
 
 FLAGS
-  -c, --[no-]clean              Clean output directory
-  -j, --[no-]json               Generate JSON file
-  -o, --outputPath=<directory>  [default: .storm/themes] Output directory
-  -s, --[no-]skip               Skip confirmation prompts
+  -c, --[no-]clean          Clean output directory
+  -j, --[no-]json           Generate JSON file
+  -o, --output=<directory>  [default: .storm/themes] Output directory
+  -s, --[no-]skip           Skip confirmation prompts
 
 DESCRIPTION
   Initialize a theme configuration
@@ -722,7 +723,7 @@ FLAG DESCRIPTIONS
 
     Should the design token file be generated as a JSON file
 
-  -o, --outputPath=<directory>  Output directory
+  -o, --output=<directory>  Output directory
 
     The location to output the design token file
 
@@ -731,7 +732,7 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/commands/theme/init.js)_
+_See code: [dist/apps/cli/src/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/theme/init.js)_
 
 ## `cyclone-ui update [CHANNEL]`
 
@@ -739,10 +740,12 @@ update the cyclone-ui CLI
 
 ```
 USAGE
-  $ cyclone-ui update [CHANNEL] [--force |  | [-a | -v <value> | -i]]
+  $ cyclone-ui update [CHANNEL] [--force |  | [-a | -v <value> | -i]] [-b
+    ]
 
 FLAGS
   -a, --available        See available versions.
+  -b, --verbose          Show more details about the available versions.
   -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
   -v, --version=<value>  Install a specific version.
       --force            Force a re-download of the requested version.
@@ -768,7 +771,7 @@ EXAMPLES
     $ cyclone-ui update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.4.6/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.6.10/src/commands/update.ts)_
 
 ## `cyclone-ui version`
 
@@ -788,7 +791,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.5/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.15/src/commands/version.ts)_
 <!-- commandsstop -->
 
 ## Reduced Package Size

@@ -47,15 +47,15 @@ export default class Build extends Command {
       noCacheDefault: false
     })
   };
-
+  
   public static override flags = {
-    outputPath: Flags.directory({
+    output: Flags.directory({
       char: "o",
       summary: "Output directory",
       description: "The location to output the design token file",
       hidden: false,
       required: false,
-      aliases: ["output", "outDir", "output-dir"],
+      aliases: ["outputPath", "outDir", "output-dir"],
       deprecateAliases: false,
       noCacheDefault: false,
       helpValue: "<directory>"

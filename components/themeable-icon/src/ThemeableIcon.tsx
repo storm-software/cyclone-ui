@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { getSized } from "@cyclone-ui/theme-helpers";
 import type {
   GetProps,
@@ -63,15 +63,15 @@ export const ThemeIcon = ({
   if (disabled) {
     return <Lock {...props} />;
   } else if (
-    theme?.includes(ColorRole.ERROR) ||
-    theme?.includes(ColorRole.WARNING)
+    theme?.includes(ColorThemeName.DANGER) ||
+    theme?.includes(ColorThemeName.WARNING)
   ) {
     return <AlertCircle {...props} />;
-  } else if (theme?.includes(ColorRole.INFO)) {
+  } else if (theme?.includes(ColorThemeName.INFO)) {
     return <Info {...props} />;
-  } else if (theme?.includes(ColorRole.HELP)) {
+  } else if (theme?.includes(ColorThemeName.HELP)) {
     return <Lightbulb {...props} />;
-  } else if (theme?.includes(ColorRole.SUCCESS)) {
+  } else if (theme?.includes(ColorThemeName.SUCCESS)) {
     return <CheckCircle {...props} />;
   }
 

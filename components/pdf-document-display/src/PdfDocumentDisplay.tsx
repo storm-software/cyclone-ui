@@ -17,7 +17,7 @@
 
 "use client";
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { PdfIcon } from "@cyclone-ui/icons";
 import { Spinner } from "@cyclone-ui/spinner";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
@@ -134,7 +134,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
       <View ref={forwardedRef} {...props}>
         <VisuallyHidden visible={loading || error !== null} animate={true}>
           <Spinner
-            theme={ColorRole.ACCENT}
+            theme={ColorThemeName.ACCENT}
             size="large"
             position="absolute"
             top="35%"

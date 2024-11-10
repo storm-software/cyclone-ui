@@ -3,8 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": ["node"]
+    "types": ["@cloudflare/workers-types", "node"]
   },
-  "include": ["src/**/*.ts", "../../packages/registry-trpc/src/**/*.ts", "src/**/*.js"],
+  "include": ["src/**/*.ts", "src/**/*.js"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

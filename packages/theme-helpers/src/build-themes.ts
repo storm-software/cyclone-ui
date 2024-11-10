@@ -27,7 +27,7 @@ import {
 import { createThemeBuilder } from "@tamagui/theme-builder";
 import { getColorDefinition } from "./get-color-definition";
 
-export const buildThemes = () => {
+export const buildThemes = (): any => {
   const themesBuilder = createThemeBuilder()
     .addPalettes(palettes)
     .addTemplates(templates)
@@ -59,7 +59,7 @@ export const buildThemes = () => {
       help: getColorDefinition("help"),
       success: getColorDefinition("success"),
       warning: getColorDefinition("warning"),
-      error: getColorDefinition("error"),
+      danger: getColorDefinition("danger"),
       info: getColorDefinition("info"),
       positive: getColorDefinition("positive"),
       negative: getColorDefinition("negative")

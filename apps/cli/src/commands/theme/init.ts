@@ -57,16 +57,17 @@ export default class Init extends Command {
   };
 
   public static override flags = {
-    outputPath: Flags.directory({
+    output: Flags.directory({
       char: "o",
       summary: "Output directory",
       description: "The location to output the design token file",
       hidden: false,
+      env: "STORM_THEMES_DIRECTORY",
       default: ".storm/themes",
       defaultHelp:
         'The ".storm/themes" folder in the workspace\'s root directory',
       required: false,
-      aliases: ["outDir", "output-dir"],
+      aliases: ["outputPath", "outDir"],
       deprecateAliases: false,
       noCacheDefault: false,
       helpValue: "<directory>"
@@ -163,7 +164,7 @@ export default class Init extends Command {
 
     s1.stop("Loaded Storm configuration");
 
-    let output = flags.outputPath;
+    let output = flags.output;
     if (!output) {
       output = config.outputDirectory;
 

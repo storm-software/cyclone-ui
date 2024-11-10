@@ -109,14 +109,14 @@ export const HelpOutlined: Story = {
 export const Error: Story = {
   args: {
     children: "Badge Text",
-    theme: "error"
+    theme: "danger"
   }
 };
 
 export const ErrorRounded: Story = {
   args: {
     children: "Badge Text",
-    theme: "error",
+    theme: "danger",
     circular: true
   }
 };
@@ -124,7 +124,7 @@ export const ErrorRounded: Story = {
 export const ErrorOutlined: Story = {
   args: {
     children: "Badge Text",
-    theme: "error",
+    theme: "danger",
     outlined: true
   }
 };

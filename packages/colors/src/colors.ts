@@ -36,8 +36,8 @@ import {
 import { theme as darkTheme } from "./schemes/brand-dark";
 import { theme as lightTheme } from "./schemes/brand-light";
 import {
-  ColorRole,
   ColorTheme,
+  ColorThemeName,
   ColorThemeRole,
   ColorThemeTokens,
   ExtendedColorThemeTokens
@@ -62,7 +62,7 @@ export const external: ExtendedColorThemeTokens = {
   yellowDark
 };
 
-const getTheme = <TRole extends ColorRole = ColorRole>(
+const getTheme = <TRole extends ColorThemeName = ColorThemeName>(
   theme: ColorTheme<TRole>,
   dark = false
 ): ColorThemeTokens<TRole> => {

@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { getSpaced } from "@cyclone-ui/theme-helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { View, ViewProps, styled } from "@tamagui/core";
@@ -185,7 +185,10 @@ export const Container = ContainerFrame.styleable(
     return (
       <ContainerGroup group={true} size={size} circular={circular}>
         {variant === "glass" && (
-          <ContainerGlassBackground theme={ColorRole.BASE} fullscreen={true} />
+          <ContainerGlassBackground
+            theme={ColorThemeName.BASE}
+            fullscreen={true}
+          />
         )}
         <ContainerFrame
           ref={forwardedRef}

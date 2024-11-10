@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { isWeb } from "@tamagui/constants";
@@ -358,12 +358,12 @@ const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         <SelectItemGroup disabled={disabled}>
           <View width="$2" justifyContent="center">
             {disabled && (
-              <Theme name={ColorRole.BASE}>
+              <Theme name={ColorThemeName.BASE}>
                 <Lock size="$1.5" color="$colorDisabled" />
               </Theme>
             )}
             <TamaguiSelect.ItemIndicator>
-              <Theme name={ColorRole.ACCENT}>
+              <Theme name={ColorThemeName.ACCENT}>
                 <Check size="$2" color="$color" />
               </Theme>
             </TamaguiSelect.ItemIndicator>

@@ -25,7 +25,7 @@ export type ColorPaletteType =
   | "success"
   | "info"
   | "warning"
-  | "error"
+  | "danger"
   | "positive"
   | "negative";
 
@@ -39,7 +39,7 @@ export const ColorPaletteType = {
   SUCCESS: "success" as ColorPaletteType,
   INFO: "info" as ColorPaletteType,
   WARNING: "warning" as ColorPaletteType,
-  ERROR: "error" as ColorPaletteType,
+  DANGER: "danger" as ColorPaletteType,
   POSITIVE: "positive" as ColorPaletteType,
   NEGATIVE: "negative" as ColorPaletteType
 };

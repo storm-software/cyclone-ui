@@ -6,17 +6,13 @@
   "implicitDependencies": ["cli"],
   "targets": {
     "build-base": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
       "inputs": ["{workspaceRoot}/storm.json", "^production"],
       "outputs": ["{projectRoot}/src/schemes/*"],
       "dependsOn": ["^build"],
       "options": {
-        "commands": [
-          {
-            "command": "\"apps/cli/bin/run.cmd\" theme init --clean --outputPath \"packages/colors/src/schemes\""
-          }
-        ]
+        "command": "\"apps/cli/bin/run.cmd\" theme init --clean --output packages/colors/src/schemes"
       }
     },
     "build": {

@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import { styled } from "@tamagui/core";
@@ -43,7 +43,7 @@ export const ValidationText = ValidationBodyText.styleable<{
   disabled?: boolean;
 }>(
   (
-    { disabled, theme = ColorRole.BASE, messages = [], ...props },
+    { disabled, theme = ColorThemeName.BASE, messages = [], ...props },
     forwardedRef
   ) => {
     if ((messages.length === 1 && messages[0]?.message) || disabled) {
@@ -59,11 +59,11 @@ export const ValidationText = ValidationBodyText.styleable<{
     }
 
     let heading = "Please review the following details: ";
-    if (theme?.includes(ColorRole.ERROR)) {
+    if (theme?.includes(ColorThemeName.DANGER)) {
       heading = "Please review the following errors: ";
-    } else if (theme?.includes(ColorRole.WARNING)) {
+    } else if (theme?.includes(ColorThemeName.WARNING)) {
       heading = "Please review the following warnings: ";
-    } else if (theme?.includes(ColorRole.SUCCESS)) {
+    } else if (theme?.includes(ColorThemeName.SUCCESS)) {
       heading = "Successfully completed the following: ";
     }
 

@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
 import { MessageType } from "@storm-stack/types/utility-types/messages";
 import {
@@ -274,30 +274,30 @@ export const atomWithTheme = (
     const options = get(optionsAtom);
     if (
       get(errorMessagesAtom).length > 0 ||
-      options.theme?.includes(ColorRole.ERROR)
+      options.theme?.includes(ColorThemeName.DANGER)
     ) {
-      return ColorRole.ERROR;
+      return ColorThemeName.DANGER;
     } else if (
       get(warningMessagesAtom).length > 0 ||
-      options.theme?.includes(ColorRole.WARNING)
+      options.theme?.includes(ColorThemeName.WARNING)
     ) {
-      return ColorRole.WARNING;
+      return ColorThemeName.WARNING;
     } else if (
       get(successMessagesAtom).length > 0 ||
-      options.theme?.includes(ColorRole.SUCCESS)
+      options.theme?.includes(ColorThemeName.SUCCESS)
     ) {
-      return ColorRole.SUCCESS;
+      return ColorThemeName.SUCCESS;
     } else if (
       get(infoMessagesAtom).length > 0 ||
-      options.theme?.includes(ColorRole.INFO)
+      options.theme?.includes(ColorThemeName.INFO)
     ) {
-      return ColorRole.INFO;
+      return ColorThemeName.INFO;
     } else if (
       get(helpMessagesAtom).length > 0 ||
-      options.theme?.includes(ColorRole.HELP)
+      options.theme?.includes(ColorThemeName.HELP)
     ) {
-      return ColorRole.HELP;
+      return ColorThemeName.HELP;
     }
 
-    return ColorRole.BASE;
+    return ColorThemeName.BASE;
   });

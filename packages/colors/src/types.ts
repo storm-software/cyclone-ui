@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-export type ExtendedColorRole =
+export type ExtendedColorThemeName =
   | "blue"
   | "gray"
   | "green"
@@ -24,18 +24,18 @@ export type ExtendedColorRole =
   | "purple"
   | "red"
   | "yellow";
-export const ExtendedColorRole = {
-  BLUE: "blue" as ExtendedColorRole,
-  GRAY: "gray" as ExtendedColorRole,
-  GREEN: "green" as ExtendedColorRole,
-  ORANGE: "orange" as ExtendedColorRole,
-  PINK: "pink" as ExtendedColorRole,
-  PURPLE: "purple" as ExtendedColorRole,
-  RED: "red" as ExtendedColorRole,
-  YELLOW: "yellow" as ExtendedColorRole
+export const ExtendedColorThemeName = {
+  BLUE: "blue" as ExtendedColorThemeName,
+  GRAY: "gray" as ExtendedColorThemeName,
+  GREEN: "green" as ExtendedColorThemeName,
+  ORANGE: "orange" as ExtendedColorThemeName,
+  PINK: "pink" as ExtendedColorThemeName,
+  PURPLE: "purple" as ExtendedColorThemeName,
+  RED: "red" as ExtendedColorThemeName,
+  YELLOW: "yellow" as ExtendedColorThemeName
 };
 
-export type ColorRole =
+export type ColorThemeName =
   | "base"
   | "brand"
   | "alternate"
@@ -45,22 +45,22 @@ export type ColorRole =
   | "success"
   | "info"
   | "warning"
-  | "error"
+  | "danger"
   | "positive"
   | "negative";
-export const ColorRole = {
-  BASE: "base" as ColorRole,
-  BRAND: "brand" as ColorRole,
-  ALTERNATE: "alternate" as ColorRole,
-  ACCENT: "accent" as ColorRole,
-  LINK: "link" as ColorRole,
-  HELP: "help" as ColorRole,
-  SUCCESS: "success" as ColorRole,
-  INFO: "info" as ColorRole,
-  WARNING: "warning" as ColorRole,
-  ERROR: "error" as ColorRole,
-  POSITIVE: "positive" as ColorRole,
-  NEGATIVE: "negative" as ColorRole
+export const ColorThemeName = {
+  BASE: "base" as ColorThemeName,
+  BRAND: "brand" as ColorThemeName,
+  ALTERNATE: "alternate" as ColorThemeName,
+  ACCENT: "accent" as ColorThemeName,
+  LINK: "link" as ColorThemeName,
+  HELP: "help" as ColorThemeName,
+  SUCCESS: "success" as ColorThemeName,
+  INFO: "info" as ColorThemeName,
+  WARNING: "warning" as ColorThemeName,
+  DANGER: "danger" as ColorThemeName,
+  POSITIVE: "positive" as ColorThemeName,
+  NEGATIVE: "negative" as ColorThemeName
 };
 
 export type ColorPaletteShade =
@@ -78,35 +78,33 @@ export type ColorPaletteShade =
   | "12";
 
 export type ColorPalette<
-  TRole extends ColorRole = ColorRole,
+  TRole extends ColorThemeName = ColorThemeName,
   TKey extends string = `${TRole}${ColorPaletteShade}`
 > = {
   [key in TKey]?: string;
 };
 export type ExtendedColorPalette<
-  TRole extends ExtendedColorRole = ExtendedColorRole,
+  TRole extends ExtendedColorThemeName = ExtendedColorThemeName,
   TKey extends string = `${TRole}${ColorPaletteShade}`
 > = {
   [key in TKey]?: string;
 };
 
-export type ColorTheme<TRole extends ColorRole = ColorRole> = Record<
+export type ColorTheme<TRole extends ColorThemeName = ColorThemeName> = Record<
   TRole,
   ColorPalette<TRole>
 >;
 export type ExtendedColorTheme<
-  TRole extends ExtendedColorRole = ExtendedColorRole
+  TRole extends ExtendedColorThemeName = ExtendedColorThemeName
 > = Record<TRole, ExtendedColorPalette<TRole>>;
 
-export type ColorThemeRole<TRole extends ColorRole = ColorRole> =
+export type ColorThemeRole<TRole extends ColorThemeName = ColorThemeName> =
   | `${TRole}`
   | `${TRole}Dark`;
-export type ColorThemeTokens<TRole extends ColorRole = ColorRole> = Record<
-  ColorThemeRole<TRole>,
-  ColorPalette<TRole>
->;
+export type ColorThemeTokens<TRole extends ColorThemeName = ColorThemeName> =
+  Record<ColorThemeRole<TRole>, ColorPalette<TRole>>;
 export type ExtendedColorThemeTokens<
-  TRole extends ExtendedColorRole = ExtendedColorRole
+  TRole extends ExtendedColorThemeName = ExtendedColorThemeName
 > = Record<`${TRole}` | `${TRole}Dark`, ExtendedColorPalette<TRole>>;
 
 export type ColorThemeMode = "dark" | "light";

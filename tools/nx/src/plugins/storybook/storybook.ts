@@ -230,6 +230,7 @@ async function buildStorybookTargets(
 function prepareTarget(workspaceRoot: string): TargetConfiguration {
   return {
     executor: "nx:run-commands",
+    inputs: ["typescript", "^production"],
     options: {
       cwd: workspaceRoot,
       commands: [
@@ -255,9 +256,8 @@ function buildTarget(
     cache: true,
     outputs,
     inputs: [
-      ...("production" in namedInputs
-        ? ["production", "^production"]
-        : ["default", "^default"]),
+      "typescript",
+      "^production",
       {
         externalDependencies: [
           "storybook",
@@ -273,6 +273,7 @@ function buildTarget(
 function serveTarget(projectRoot: string, port = 4400): TargetConfiguration {
   return {
     dependsOn: [{ target: "prepare" }],
+    inputs: ["typescript", "^production"],
     executor: "nx:run-commands",
     options: { cwd: projectRoot, command: `storybook dev -p ${port}` },
     defaultConfiguration: "local",

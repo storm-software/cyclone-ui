@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Button } from "@cyclone-ui/button";
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
 import type {
@@ -29,6 +29,7 @@ import {
   useDatePickerContext
 } from "@rehookify/datepicker";
 import { StormDate } from "@storm-stack/date-time/storm-date";
+import { StormDateTime } from "@storm-stack/date-time/storm-date-time";
 import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type { FontSizeTokens } from "@tamagui/core";
@@ -133,10 +134,12 @@ export function useDateAnimation({
       }
 
       const isPreviousDate =
-        StormDate.create(`${calendarListenTo} 1, ${calendar?.year}`)
-          .epochMilliseconds <
-        StormDate.create(`${currentMonth} 1, ${calendar?.year}`)
-          .epochMilliseconds;
+        StormDate.create(
+          `${calendar?.year}-${StormDateTime.getMonthIndex(calendarListenTo)}-1`
+        ).epochMilliseconds <
+        StormDate.create(
+          `${calendar?.year}-${StormDateTime.getMonthIndex(currentMonth)}-1`
+        ).epochMilliseconds;
 
       if (currentMonth === "December" && calendar?.month === "January") {
         return {
@@ -162,10 +165,12 @@ export function useDateAnimation({
       }
 
       const isPreviousDate =
-        StormDate.create(`${calendar?.month} 1, ${calendar?.year}`)
-          .epochMilliseconds <
-        StormDate.create(`${calendar?.month} 1, ${currentYear}`)
-          .epochMilliseconds;
+        StormDate.create(
+          `${calendar?.year}-${StormDateTime.getMonthIndex(calendar?.month)}-1`
+        ).epochMilliseconds <
+        StormDate.create(
+          `${currentYear}-${StormDateTime.getMonthIndex(calendar?.month)}-1`
+        ).epochMilliseconds;
 
       return {
         enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
@@ -252,7 +257,11 @@ const DayPicker = () => {
                     justifyContent="center"
                     alignItems="center">
                     <Button
-                      theme={day.selected ? ColorRole.ACCENT : ColorRole.BASE}
+                      theme={
+                        day.selected
+                          ? ColorThemeName.ACCENT
+                          : ColorThemeName.BASE
+                      }
                       variant={
                         !day.inCurrentMonth
                           ? "ghost"

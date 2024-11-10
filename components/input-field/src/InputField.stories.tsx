@@ -23,7 +23,7 @@ const meta: Meta<typeof InputField> = {
   title: "Form/InputField",
   component: InputField,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props}: any) => (
+  render: ({ defaultValue = "", ...props }: any) => (
     <Form name="formName" defaultValues={{ inputFieldName: defaultValue }}>
       <InputField name="inputFieldName" {...props}>
         <InputField.Label>Label Text</InputField.Label>
@@ -70,7 +70,7 @@ export const Help: Story = {
 
 export const Error: Story = {
   args: {
-    theme: "error"
+    theme: "danger"
   }
 };
 

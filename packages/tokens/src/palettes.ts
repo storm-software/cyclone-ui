@@ -15,7 +15,8 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorPalette, ColorRole, colors } from "@cyclone-ui/colors";
+import { ColorPalette, ColorThemeName, colors } from "@cyclone-ui/colors";
+import { StormError } from "@storm-stack/errors";
 import { colorTokens } from "./tokens";
 
 type ObjectType = Record<PropertyKey, unknown>;
@@ -79,7 +80,7 @@ export const palettes = (() => {
   const darkestLightColor = colors.base.base12 ?? darkestDarkColor;
   const lightestDarkColor = colors.baseDark.base12 ?? lightestLightColor;
   if (!lightestLightColor || !darkestDarkColor) {
-    throw new Error("Missing transparent colors from palette");
+    throw StormError.create("Missing transparent colors from palette");
   }
 
   const transparent = (hsl: string, opacity = 0) =>
@@ -90,6 +91,10 @@ export const palettes = (() => {
     foregroundColor: string,
     backgroundColor: string
   ): string[] => {
+    if (!colorPalette) {
+      throw StormError.create("Missing color palette");
+    }
+
     const colorPaletteValues = Object.values(colorPalette);
 
     // were re-ordering these
@@ -124,7 +129,7 @@ export const palettes = (() => {
 
   const lightPalettes = objectFromEntries(
     objectKeys(colorTokens.light)
-      .filter(key => key !== ColorRole.BASE)
+      .filter(key => key !== ColorThemeName.BASE)
       .map(
         key =>
           [
@@ -140,7 +145,7 @@ export const palettes = (() => {
 
   const darkPalettes = objectFromEntries(
     objectKeys(colorTokens.dark)
-      .filter(key => key !== ColorRole.BASE)
+      .filter(key => key !== ColorThemeName.BASE)
       .map(
         key =>
           [

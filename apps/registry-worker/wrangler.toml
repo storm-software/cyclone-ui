@@ -5,11 +5,12 @@ main = "src/index.ts"
 account_id = "d011605e7391539ac2e021ab4399e116"
 workers_dev = true
 
+routes = [{ pattern = "registry.cyclone-ui.com", custom_domain = true }]
+
 [[r2_buckets]]
 binding = "STORAGE_BUCKET"
 bucket_name = "cyclone-ui-registry"
 
-routes = [{ pattern = "registry.cyclone-ui.com", custom_domain = true }]
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.

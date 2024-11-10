@@ -15,9 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable unicorn/no-null */
-
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { atom, Atom } from "jotai";
 import { FieldOptions, FieldStatus, InferFieldState } from "../types";
@@ -29,15 +27,15 @@ export const atomWithFieldStatus = (
     const theme = get(themeAtom);
 
     if (theme) {
-      if (theme.toLowerCase().includes(ColorRole.HELP)) {
+      if (theme?.includes(ColorThemeName.HELP)) {
         return FieldStatus.HELP;
-      } else if (theme.toLowerCase().includes(ColorRole.SUCCESS)) {
+      } else if (theme?.includes(ColorThemeName.SUCCESS)) {
         return FieldStatus.SUCCESS;
-      } else if (theme.toLowerCase().includes(ColorRole.INFO)) {
+      } else if (theme?.includes(ColorThemeName.INFO)) {
         return FieldStatus.INFO;
-      } else if (theme.toLowerCase().includes(ColorRole.WARNING)) {
+      } else if (theme?.includes(ColorThemeName.WARNING)) {
         return FieldStatus.WARNING;
-      } else if (theme.toLowerCase().includes(ColorRole.ERROR)) {
+      } else if (theme?.includes(ColorThemeName.DANGER)) {
         return FieldStatus.ERROR;
       }
     }

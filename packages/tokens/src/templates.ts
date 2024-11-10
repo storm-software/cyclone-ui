@@ -61,10 +61,10 @@ const template = {
   // the @tamagui/button Button component looks for `$background`, so you set the
   // dark_red_Button theme to have a stronger background than the dark_red theme.
   background: ColorPaletteShades.SURFACE_PRIMARY,
-  backgroundHover: ColorPaletteShades.SURFACE_TERTIARY,
-  backgroundPress: ColorPaletteShades.SURFACE_PRIMARY,
-  backgroundFocus: ColorPaletteShades.SURFACE_PRIMARY,
-  backgroundDisabled: ColorPaletteShades.SURFACE_MUTED,
+  backgroundHover: ColorPaletteShades.SURFACE_MUTED,
+  backgroundPress: ColorPaletteShades.SURFACE_SECONDARY,
+  backgroundFocus: ColorPaletteShades.SURFACE_SECONDARY,
+  backgroundDisabled: ColorPaletteShades.SURFACE_MUTED + 1,
   backgroundStrong: ColorPaletteShades.BACKGROUND,
   color: ColorPaletteShades.PRIMARY,
   colorHover: ColorPaletteShades.FOREGROUND,

@@ -15,13 +15,13 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole, ColorThemeMode } from "@cyclone-ui/colors";
+import { ColorThemeMode, ColorThemeName } from "@cyclone-ui/colors";
 import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { useThemeName } from "@tamagui/core";
 import { themeStore, ThemeStore } from "../stores/theme-store";
 import {
-  getThemeColorRole,
-  themeColorRoleExists
+  getThemeColorThemeName,
+  themeColorThemeNameExists
 } from "../utilities/theme-helpers";
 
 export const useThemeStore = (
@@ -43,17 +43,17 @@ export const useThemeStore = (
  * - help
  * - info
  * - warning
- * - error
+ * - danger
  * - success
  * - positive
  * - negative
  *
  * @returns The color role scheme for the theme name or undefined
  */
-export const useThemeColorRole = (): ColorRole | undefined => {
+export const useThemeColorThemeName = (): ColorThemeName | undefined => {
   const theme = useThemeName();
 
-  return getThemeColorRole(theme);
+  return getThemeColorThemeName(theme);
 };
 
 /**
@@ -69,17 +69,17 @@ export const useThemeColorRole = (): ColorRole | undefined => {
  * - help
  * - info
  * - warning
- * - error
+ * - danger
  * - success
  * - positive
  * - negative
  *
  * @returns An indication if a theme color scheme is set
  */
-export const useThemeColorRoleExists = (): boolean => {
+export const useThemeColorThemeNameExists = (): boolean => {
   const theme = useThemeName();
 
-  return themeColorRoleExists(theme);
+  return themeColorThemeNameExists(theme);
 };
 
 export const useThemeMode = (

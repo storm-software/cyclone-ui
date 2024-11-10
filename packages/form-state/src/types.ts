@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorRole } from "@cyclone-ui/colors";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import type { MaskitoOptions } from "@maskito/core";
 import {
   IsPlainObject,
@@ -66,12 +66,12 @@ export type FieldStatus =
   | "warning"
   | "error";
 export const FieldStatus = {
-  BASE: ColorRole.BASE as FieldStatus,
-  HELP: ColorRole.HELP as FieldStatus,
-  SUCCESS: ColorRole.SUCCESS as FieldStatus,
-  INFO: ColorRole.INFO as FieldStatus,
-  WARNING: ColorRole.WARNING as FieldStatus,
-  ERROR: ColorRole.ERROR as FieldStatus
+  BASE: ColorThemeName.BASE as FieldStatus,
+  HELP: ColorThemeName.HELP as FieldStatus,
+  SUCCESS: ColorThemeName.SUCCESS as FieldStatus,
+  INFO: ColorThemeName.INFO as FieldStatus,
+  WARNING: ColorThemeName.WARNING as FieldStatus,
+  ERROR: ColorThemeName.DANGER as FieldStatus
 };
 
 // export type FieldValueType =
