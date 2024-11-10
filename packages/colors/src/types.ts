@@ -114,12 +114,14 @@ export const ColorThemeMode = {
 };
 
 export type ColorScientificPalette =
+  | "surrounding"
   | "analogous"
   | "triadic"
   | "tetradic"
   | "complementary"
   | "splitComplementary";
 export const ColorScientificPalette = {
+  SURROUNDING: "surrounding" as ColorScientificPalette,
   ANALOGOUS: "analogous" as ColorScientificPalette,
   TRIADIC: "triadic" as ColorScientificPalette,
   TETRADIC: "tetradic" as ColorScientificPalette,
@@ -127,9 +129,11 @@ export const ColorScientificPalette = {
   SPLIT_COMPLEMENTARY: "splitComplementary" as ColorScientificPalette
 };
 
+export type LCHColor = { l: number; c: number; h: number; mode: "lch" };
+
 export type ColorScientificPaletteRecord = Record<
   ColorScientificPalette,
-  Array<{ l: number; c: number; h: number; mode: "lch" }>
+  LCHColor[]
 >;
 
 export type ColorStylePaletteRecord = Record<ColorScientificPalette, string[]>;

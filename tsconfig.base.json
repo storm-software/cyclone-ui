@@ -138,6 +138,12 @@
       "@cyclone-ui/theme-helpers/*": ["packages/theme-helpers/src/*"],
       "@cyclone-ui/themeable-icon": ["components/themeable-icon/src/index.ts"],
       "@cyclone-ui/themeable-icon/*": ["components/themeable-icon/src/*"],
+      "@cyclone-ui/themeable-gradient": [
+        "components/themeable-gradient/src/index.ts"
+      ],
+      "@cyclone-ui/themeable-gradient/*": [
+        "components/themeable-gradient/src/*"
+      ],
       "@cyclone-ui/themes": ["packages/themes/src/index.ts"],
       "@cyclone-ui/themes/*": ["packages/themes/src/*"],
       "@cyclone-ui/themes/brand": ["packages/themes/src/brand-theme.ts"],

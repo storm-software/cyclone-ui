@@ -133,12 +133,12 @@ const ContainerGlassBackground = styled(LinearGradient, {
   name: "Container",
 
   animation: "normal",
-  opacity: 0.4,
-  backdropFilter: "blur(15px)",
-  filter: "blur(15px)",
+  opacity: 0.6,
+  backdropFilter: "blur(35px)",
+  filter: "blur(35px)",
   colors: ["$secondary", "$primary"],
-  start: { x: 0, y: 0 },
-  end: { x: 1, y: 1 }
+  start: { x: 0.1, y: 0.5 },
+  end: { x: 0.9, y: 0.5 }
 });
 
 const ContainerGroup = styled(ThemeableStack, {

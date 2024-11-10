@@ -1,0 +1,46 @@
+{
+  "name": "themeable-gradient",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "components/themeable-gradient/src",
+  "targets": {
+    "build": {
+      "cache": true,
+      "executor": "@cyclone-ui/nx:build",
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "output": "{options.outputPath}",
+      "options": {
+        "outputPath": "dist/components/themeable-gradient",
+        "tsConfig": "components/themeable-gradient/tsconfig.json",
+        "project": "components/themeable-gradient/package.json",
+        "defaultConfiguration": "production",
+        "assets": [
+          {
+            "input": "components/themeable-gradient",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@cyclone-ui/tools-nx:component-publish"
+    }
+  }
+}

@@ -8,6 +8,7 @@ import {
 const toLCH = converter("lch");
 
 const COLOR_HUE_STEPS = {
+  [ColorScientificPalette.SURROUNDING]: [330, 0, 30],
   [ColorScientificPalette.ANALOGOUS]: [0, 30, 60],
   [ColorScientificPalette.TRIADIC]: [0, 120, 240],
   [ColorScientificPalette.TETRADIC]: [0, 90, 180, 270],
@@ -15,15 +16,24 @@ const COLOR_HUE_STEPS = {
   [ColorScientificPalette.SPLIT_COMPLEMENTARY]: [0, 150, 210]
 } as const;
 
+const cacheScientificPalettes = new Map<string, ColorScientificPaletteRecord>();
+
 export const createScientificPalettes = (
   color: string
 ): ColorScientificPaletteRecord => {
-  const baseColor = toLCH(color);
+  if (cacheScientificPalettes.has(color)) {
+    return cacheScientificPalettes.get(color)!;
+  }
 
-  return Object.keys(COLOR_HUE_STEPS).reduce(
+  const baseColor = toLCH(color);
+  if (!baseColor) {
+    throw new Error(`Unable to convert color "${color}" to LCH format`);
+  }
+
+  const result = Object.keys(COLOR_HUE_STEPS).reduce(
     (ret: ColorScientificPaletteRecord, type: string) => {
       ret[type as ColorScientificPalette] = COLOR_HUE_STEPS[type]!.map(step => {
-        let hue = baseColor.h + step;
+        let hue = (baseColor.h ?? 0.0) + step;
         if (hue < 0) {
           hue += Math.ceil(-hue / 360) * 360;
         }
@@ -36,21 +46,37 @@ export const createScientificPalettes = (
         };
       });
 
+      // ret[type as ColorScientificPalette] = (
+      //   colors.length === 3 ? [colors[1], colors[0], colors[2]] : colors
+      // ) as LCHColor[];
+
       return ret;
     },
     {} as ColorScientificPaletteRecord
   );
+
+  cacheScientificPalettes.set(color, result);
+  return result;
 };
 
+const cacheStylePalettes = new Map<string, ColorStylePaletteRecord>();
+
 export const createStylePalettes = (color: string): ColorStylePaletteRecord => {
-  return Object.entries(createScientificPalettes(color)).reduce(
+  if (cacheStylePalettes.has(color)) {
+    return cacheStylePalettes.get(color)!;
+  }
+
+  const result = Object.entries(createScientificPalettes(color)).reduce(
     (ret, [type, palette]) => {
       ret[type as ColorScientificPalette] = palette.map(colorLCH =>
-        formatCss(colorLCH, { mode: "lch" })
+        formatCss(colorLCH)
       );
 
       return ret;
     },
     {} as ColorStylePaletteRecord
   );
+
+  cacheStylePalettes.set(color, result);
+  return result;
 };
