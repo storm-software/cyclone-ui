@@ -808,8 +808,8 @@ importers:
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.116.12(react@18.3.1)
+        specifier: ^1.116.14
+        version: 1.116.14(react@18.3.1)
       '@tamagui/get-token':
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
@@ -1103,8 +1103,8 @@ importers:
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.116.12(react@18.3.1)
+        specifier: ^1.116.14
+        version: 1.116.14(react@18.3.1)
       '@tamagui/dialog':
         specifier: ^1.110.5
         version: 1.116.12(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
@@ -1764,8 +1764,8 @@ importers:
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.116.12(react@18.3.1)
+        specifier: ^1.116.14
+        version: 1.116.14(react@18.3.1)
       '@tamagui/focusable':
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
@@ -1840,8 +1840,8 @@ importers:
         specifier: ^1.110.5
         version: 1.116.12(react@18.3.1)
       '@tamagui/create-context':
-        specifier: ^1.110.5
-        version: 1.116.12(react@18.3.1)
+        specifier: ^1.116.14
+        version: 1.116.14(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.110.5
         version: 1.116.12
@@ -5201,7 +5201,7 @@ packages:
 
   '@expo/bunyan@4.0.1':
     resolution: {integrity: sha512-+Lla7nYSiHZirgK+U/uYzsLv/X+HaJienbD5AKX1UQZHYfWaP+9uuQluRB4GrEVWF0GZ7vEVp/jzaOT9k/SQlg==}
-    engines: {'0': node >=0.10.0}
+    engines: {node: '>=0.10.0'}
 
   '@expo/cli@0.18.14':
     resolution: {integrity: sha512-ke2IVs3MfIMe2NjXY11Ky9+r0+eav6NUa+cy61wpZNPe5QkwIJ56SdJ4wIMMKFPFhgLsy1vfaqhOcZo96U4wCg==}
@@ -5900,6 +5900,7 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
+    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -8624,6 +8625,11 @@ packages:
 
   '@tamagui/create-context@1.116.12':
     resolution: {integrity: sha512-/E5k++HUVG3MjGM+leXwBUG2/c21wNCaYivXaqAr55GrVyCM/cCn30c7IzWeFj1+SEfTYZA6PVqZXEbfgzYcOg==}
+    peerDependencies:
+      react: '*'
+
+  '@tamagui/create-context@1.116.14':
+    resolution: {integrity: sha512-agOx+KEYW/w8Ns1eybRmTK29ous7fl6Tvqn0zgxwVEAByfMU7p9PS7HJbmxPrOOUxw8hJHlG/wRRKYr2ktxtRw==}
     peerDependencies:
       react: '*'
 
@@ -26886,8 +26892,8 @@ snapshots:
       '@log4brains/cli-common': 1.0.0
       '@log4brains/core': 1.0.0
       '@material-ui/core': 4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@next/bundle-analyzer': 10.2.3(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       babel-plugin-import: 1.13.8
       badge-maker: 3.3.1
@@ -27001,7 +27007,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
-  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@material-ui/core': 4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -27010,7 +27016,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
-  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@material-ui/core': 4.12.4(@types/react@18.3.12)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -32229,6 +32235,10 @@ snapshots:
       react: 18.3.1
 
   '@tamagui/create-context@1.116.12(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
+  '@tamagui/create-context@1.116.14(react@18.3.1)':
     dependencies:
       react: 18.3.1
 

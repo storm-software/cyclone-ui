@@ -35,7 +35,7 @@
   "dependencies": {
     "@storm-stack/types": "latest",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/create-context": "^1.116.14",
     "@tamagui/web": "^1.110.5",
     "react-native-svg": "^15.8.0"
   },

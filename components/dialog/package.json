@@ -36,7 +36,7 @@
     "@tamagui/compose-refs": "^1.110.5",
     "@tamagui/constants": "^1.110.5",
     "@tamagui/core": "^1.110.5",
-    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/create-context": "^1.116.14",
     "@tamagui/dialog": "^1.110.5",
     "@tamagui/font-size": "^1.110.5",
     "@tamagui/get-font-sized": "^1.110.5",
