@@ -21,7 +21,7 @@ import { createPermanentMarkerFont } from "@cyclone-ui/font-permanent-marker";
 import { createSpaceGroteskFont } from "@cyclone-ui/font-space-grotesk";
 import { media, mediaQueryDefaultActive } from "@cyclone-ui/media-queries";
 import { createTamagui } from "@cyclone-ui/theme-helpers";
-import { brand } from "@cyclone-ui/themes";
+import { cyclone } from "@cyclone-ui/themes";
 import { tokens } from "@cyclone-ui/tokens";
 import { shorthands } from "@tamagui/shorthands";
 import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
@@ -98,7 +98,7 @@ export const options: CreateTamaguiProps = {
     cta: ctaFont
   },
   tokens,
-  themes: brand,
+  themes: cyclone,
   media,
   mediaQueryDefaultActive,
   selectionStyles: theme => ({

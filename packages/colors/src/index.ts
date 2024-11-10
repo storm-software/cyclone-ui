@@ -24,8 +24,8 @@
  * @packageDocumentation
  */
 
-import { theme as defaultDark } from "./schemes/brand-dark";
-import { theme as defaultLight } from "./schemes/brand-light";
+import { theme as defaultDark } from "./schemes/cyclone-dark";
+import { theme as defaultLight } from "./schemes/cyclone-light";
 
 export const colorSchemes = {
   default: {
@@ -35,4 +35,5 @@ export const colorSchemes = {
 };
 
 export * from "./colors";
+export * from "./get-colors";
 export * from "./types";

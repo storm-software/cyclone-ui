@@ -112,3 +112,24 @@ export const ColorThemeMode = {
   DARK: "dark" as ColorThemeMode,
   LIGHT: "light" as ColorThemeMode
 };
+
+export type ColorScientificPalette =
+  | "analogous"
+  | "triadic"
+  | "tetradic"
+  | "complementary"
+  | "splitComplementary";
+export const ColorScientificPalette = {
+  ANALOGOUS: "analogous" as ColorScientificPalette,
+  TRIADIC: "triadic" as ColorScientificPalette,
+  TETRADIC: "tetradic" as ColorScientificPalette,
+  COMPLEMENTARY: "complementary" as ColorScientificPalette,
+  SPLIT_COMPLEMENTARY: "splitComplementary" as ColorScientificPalette
+};
+
+export type ColorScientificPaletteRecord = Record<
+  ColorScientificPalette,
+  Array<{ l: number; c: number; h: number; mode: "lch" }>
+>;
+
+export type ColorStylePaletteRecord = Record<ColorScientificPalette, string[]>;

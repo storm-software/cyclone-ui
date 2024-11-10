@@ -47,7 +47,7 @@ const theme: any = create({
   brandTitle: "Storm Software",
   brandUrl: "https://stormsoftware.com",
   brandImage: "https://public.storm-cdn.com/transparent.svg",
-  brandTarget: "_self"
+  brandTarget: "_blank"
 });
 
 export default theme;

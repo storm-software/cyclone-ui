@@ -26,4 +26,4 @@
 
 export * from "./themes-input";
 
-export * as brand from "./brand-themes";
+export * as cyclone from "./cyclone";

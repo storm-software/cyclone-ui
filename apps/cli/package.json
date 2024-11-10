@@ -70,11 +70,14 @@
     ],
     "topicSeparator": " ",
     "topics": {
-      "theme": {
-        "description": "Manage the local UI theme configuration"
+      "colors": {
+        "description": "Manage the color token configuration"
       },
-      "registry": {
-        "description": "Manage local copies of files from the Cyclone-UI remote registry"
+      "themes": {
+        "description": "Manage the theme configuration files"
+      },
+      "components": {
+        "description": "Manage local components retrieved from the Cyclone-UI remote component registry"
       }
     },
     "commands": "./dist/apps/cli/src/commands",

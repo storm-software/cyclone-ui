@@ -28,21 +28,18 @@ import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
 import { isFunction } from "@storm-stack/types/type-checks/is-function";
 import { exists, remove } from "fs-extra";
+import { join } from "node:path";
 import { getThemePath } from "../../libs/themes.js";
 
 /**
- * A command to generate design tokens based on the colors provided by the user.
+ * A command to clean the existing theme configuration files.
  */
 export default class Clean extends Command {
   public static override args = {
     name: Args.string({
-      name: "Theme Name",
-      required: true,
-      description:
-        "The name of the specific theme to assign the design token to",
-      default: "default",
-      ignoreStdin: false,
-      noCacheDefault: false
+      name: "Theme name",
+      required: false,
+      description: "The name of the specific theme"
     })
   };
 
@@ -84,17 +81,35 @@ export default class Clean extends Command {
   public static override examples = [
     {
       description:
-        "Clean the themes using the output path from the Storm configuration file",
+        "Clean all the theme configurations using the output path from the Storm configuration file",
       command: "<%= config.bin %> <%= command.id %> clean"
     },
     {
-      description: "Clean the themes, and write the output to ./path/to/output",
+      description:
+        "Clean just the 'brand.ts' theme configuration file using the output path from the Storm configuration file",
+      command: "<%= config.bin %> <%= command.id %> clean brand"
+    },
+    {
+      description:
+        "Clean all the theme configurations in the output path './path/to/output'",
       command:
         "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
     },
     {
       description:
-        "Clean the themes, write the output to ./path/to/output, and skip confirmation prompts",
+        "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output'",
+      command:
+        "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
+    },
+    {
+      description:
+        "Clean all the theme configurations in the output path './path/to/output', and skip confirmation prompts",
+      command:
+        "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
+    },
+    {
+      description:
+        "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation prompts",
       command:
         "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
     }
@@ -120,7 +135,7 @@ export default class Clean extends Command {
         .join("\n")}\n\n`
     );
 
-    intro("Cyclone UI - Clean Themes");
+    intro("Cyclone UI - Clean theme configuration");
 
     const s1 = spinner();
     s1.start("Loading Storm configuration");
@@ -148,7 +163,7 @@ export default class Clean extends Command {
         if (!useConfigOutput) {
           const promptInput = await text({
             message: "Enter the themes output directory",
-            defaultValue: "./.storm"
+            defaultValue: "./.storm/themes"
           });
 
           if (isCancel(promptInput)) {
@@ -169,13 +184,42 @@ export default class Clean extends Command {
     }
 
     const s2 = spinner();
-    s2.start("Cleaning the themes output directory");
+    if (args.name) {
+      s2.start(
+        `Cleaning the '${args.name}.ts' theme file in the output directory`
+      );
+      if (
+        await exists(
+          `${join(getThemePath(config.workspaceRoot, output), args.name)}.ts`
+        )
+      ) {
+        await remove(
+          `${join(getThemePath(config.workspaceRoot, output), args.name)}.ts`
+        );
+      }
+      if (
+        await exists(
+          `${join(getThemePath(config.workspaceRoot, output), args.name)}.ts`
+        )
+      ) {
+        await remove(
+          `${join(getThemePath(config.workspaceRoot, output), args.name)}.ts`
+        );
+      }
 
-    if (await exists(getThemePath(config.workspaceRoot, output))) {
-      await remove(getThemePath(config.workspaceRoot, output));
+      s2.stop(
+        `Cleaned the '${args.name}.ts' theme file in the output directory`
+      );
+    } else {
+      s2.start("Cleaning the theme configuration output directory");
+
+      if (await exists(getThemePath(config.workspaceRoot, output))) {
+        await remove(getThemePath(config.workspaceRoot, output));
+      }
+
+      s2.stop("Cleaned the theme configuration output directory");
     }
 
-    s2.start("Cleaned the themes output directory");
     outro(
       "Theme configurations were successfully cleared out of the output directory"
     );

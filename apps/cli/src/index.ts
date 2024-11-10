@@ -15,18 +15,22 @@
 
  -------------------------------------------------------------------*/
 
-import Build from "./commands/build";
-import Get from "./commands/registry/get";
-import Clean from "./commands/theme/clean";
-import Init from "./commands/theme/init";
+import ColorsClean from "./commands/colors/clean";
+import ColorsGenerate from "./commands/colors/generate";
+import Get from "./commands/components/get";
+import ThemesClean from "./commands/themes/clean";
+import ThemesGenerate from "./commands/themes/generate";
 
 export const commands = {
-  build: Build,
-  theme: {
-    clean: Clean,
-    init: Init
+  colors: {
+    clean: ColorsClean,
+    generate: ColorsGenerate
   },
-  registry: {
+  themes: {
+    clean: ThemesClean,
+    generate: ThemesGenerate
+  },
+  components: {
     get: Get
   }
 };

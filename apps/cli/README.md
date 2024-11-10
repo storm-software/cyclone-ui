@@ -45,12 +45,17 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Cyclone-UI CLI](#cyclone-ui-cli)
+  - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
 - [oclif-hello-world](#oclif-hello-world)
 - [Usage](#usage)
 - [Commands](#commands)
   - [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
   - [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
+  - [`cyclone-ui colors clean [NAME]`](#cyclone-ui-colors-clean-name)
+  - [`cyclone-ui colors generate NAME`](#cyclone-ui-colors-generate-name)
+  - [`cyclone-ui components get [COMPONENT]`](#cyclone-ui-components-get-component)
   - [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
   - [`cyclone-ui plugins`](#cyclone-ui-plugins)
   - [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
@@ -62,10 +67,9 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
   - [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
   - [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
   - [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
-  - [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
   - [`cyclone-ui search`](#cyclone-ui-search)
-  - [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
-  - [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
+  - [`cyclone-ui themes clean [NAME]`](#cyclone-ui-themes-clean-name)
+  - [`cyclone-ui themes generate NAME`](#cyclone-ui-themes-generate-name)
   - [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
   - [`cyclone-ui version`](#cyclone-ui-version)
   - [Reduced Package Size](#reduced-package-size)
@@ -81,7 +85,6 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
   - [Changelog](#changelog)
   - [Contributing](#contributing)
   - [Contributors](#contributors)
-    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
 
 <!-- END doctoc -->
 
@@ -119,17 +122,15 @@ oclif example Hello World CLI
 [![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
 
 <!-- toc -->
-
-- [Cyclone-UI CLI](#cyclone-ui-cli)
-- [oclif-hello-world](#oclif-hello-world)
-- [Usage](#usage)
-- [Commands](#commands)
+* [Cyclone-UI CLI](#cyclone-ui-cli)
+* [oclif-hello-world](#oclif-hello-world)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @cyclone-ui/cli
 $ cyclone-ui COMMAND
@@ -141,32 +142,32 @@ USAGE
   $ cyclone-ui COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
-- [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
-- [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
-- [`cyclone-ui plugins`](#cyclone-ui-plugins)
-- [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
-- [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
-- [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
-- [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
-- [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
-- [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
-- [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
-- [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
-- [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
-- [`cyclone-ui registry get [COMPONENT]`](#cyclone-ui-registry-get-component)
-- [`cyclone-ui search`](#cyclone-ui-search)
-- [`cyclone-ui theme clean NAME`](#cyclone-ui-theme-clean-name)
-- [`cyclone-ui theme init NAME`](#cyclone-ui-theme-init-name)
-- [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
-- [`cyclone-ui version`](#cyclone-ui-version)
+* [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
+* [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
+* [`cyclone-ui colors clean [NAME]`](#cyclone-ui-colors-clean-name)
+* [`cyclone-ui colors generate NAME`](#cyclone-ui-colors-generate-name)
+* [`cyclone-ui components get [COMPONENT]`](#cyclone-ui-components-get-component)
+* [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
+* [`cyclone-ui plugins`](#cyclone-ui-plugins)
+* [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
+* [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
+* [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
+* [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
+* [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
+* [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
+* [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
+* [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
+* [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
+* [`cyclone-ui search`](#cyclone-ui-search)
+* [`cyclone-ui themes clean [NAME]`](#cyclone-ui-themes-clean-name)
+* [`cyclone-ui themes generate NAME`](#cyclone-ui-themes-generate-name)
+* [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
+* [`cyclone-ui version`](#cyclone-ui-version)
 
 ## `cyclone-ui autocomplete [SHELL]`
 
@@ -259,6 +260,173 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [dist/apps/cli/src/commands/build.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/build.js)_
+
+## `cyclone-ui colors clean [NAME]`
+
+Clean the workspace's color scheme configuration
+
+```
+USAGE
+  $ cyclone-ui colors clean [NAME...] [-o <directory>] [-s]
+
+ARGUMENTS
+  NAME...  The name of the specific color scheme to assign the design token to
+
+FLAGS
+  -o, --output=<directory>  [default: .storm/colors] Output directory
+  -s, --skip                Skip confirmation prompts
+
+DESCRIPTION
+  Clean the workspace's color scheme configuration
+
+  Clean the color scheme configuration for the client application based on the colors provided in the Storm
+  configuration file
+
+EXAMPLES
+  Clean all the color schemes using the output path from the Storm configuration file
+
+    $ cyclone-ui colors clean clean
+
+  Clean just the 'brand-light.ts' and 'brand-dark.ts' color scheme files using the output path from the Storm
+  configuration file
+
+    $ cyclone-ui colors clean clean brand
+
+  Clean all the color schemes in the output path './path/to/output'
+
+    $ cyclone-ui colors clean clean --output=./path/to/output
+
+  Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output'
+
+    $ cyclone-ui colors clean clean --output=./path/to/output
+
+  Clean all the color schemes in the output path './path/to/output', and skip confirmation prompts
+
+    $ cyclone-ui colors clean clean --output=./path/to/output --skip
+
+  Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output', and skip
+  confirmation prompts
+
+    $ cyclone-ui colors clean clean --output=./path/to/output --skip
+
+FLAG DESCRIPTIONS
+  -o, --output=<directory>  Output directory
+
+    The location to output the design token file
+
+  -s, --skip  Skip confirmation prompts
+
+    Skip all confirmation prompts and use the default values
+```
+
+_See code: [dist/apps/cli/src/commands/colors/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/colors/clean.js)_
+
+## `cyclone-ui colors generate NAME`
+
+Initialize a color token configuration
+
+```
+USAGE
+  $ cyclone-ui colors generate NAME... [-o <directory>] [-s] [-c] [-j]
+
+ARGUMENTS
+  NAME...  [default: brand] The name of the specific theme to assign the color tokens to
+
+FLAGS
+  -c, --[no-]clean          Clean output directory
+  -j, --[no-]json           Generate JSON
+  -o, --output=<directory>  [default: .storm/colors] Output directory
+  -s, --[no-]skip           Skip confirmation prompts
+
+DESCRIPTION
+  Initialize a color token configuration
+
+  Initialize the color token configuration for the client application based on the values provided in the Storm
+  configuration file
+
+EXAMPLES
+  Initialize the color tokens using the output path from the Storm configuration file
+
+    $ cyclone-ui colors generate generate
+
+  Initialize the color tokens, and write the output to ./path/to/output
+
+    $ cyclone-ui colors generate generate --output=./path/to/output
+
+  Initialize the color tokens, write the output to ./path/to/output, and skip confirmation prompts
+
+    $ cyclone-ui colors generate generate --output=./path/to/output --skip
+
+FLAG DESCRIPTIONS
+  -c, --[no-]clean  Clean output directory
+
+    Remove all theme files from the output directory before generating new color tokens
+
+  -j, --[no-]json  Generate JSON
+
+    Should the color token values be generated as a JSON
+
+  -o, --output=<directory>  Output directory
+
+    The location to output the color tokens file
+
+  -s, --[no-]skip  Skip confirmation prompts
+
+    Skip all confirmation prompts and use the default values
+```
+
+_See code: [dist/apps/cli/src/commands/colors/generate.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/colors/generate.js)_
+
+## `cyclone-ui components get [COMPONENT]`
+
+Get design component files from registry
+
+```
+USAGE
+  $ cyclone-ui components get [COMPONENT...] [-l <directory>] [-s] [-r <url>]
+
+ARGUMENTS
+  COMPONENT...  The name of the component to add to the local components library package
+
+FLAGS
+  -l, --library=<directory>  Components library directory
+  -r, --registry=<url>       Registry URL
+  -s, --[no-]skip            Skip confirmation prompts
+
+DESCRIPTION
+  Get design component files from registry
+
+  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library
+  package
+
+EXAMPLES
+  Initialize the themes using the output path from the Storm configuration file
+
+    $ cyclone-ui components get init
+
+  Initialize the themes, and write the output to ./path/to/output
+
+    $ cyclone-ui components get init --output=./path/to/output
+
+  Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts
+
+    $ cyclone-ui components get init --output=./path/to/output --skip
+
+FLAG DESCRIPTIONS
+  -l, --library=<directory>  Components library directory
+
+    The location of the local components library package directory
+
+  -r, --registry=<url>  Registry URL
+
+    The URL of the Cyclone UI remote registry to use for the components library package
+
+  -s, --[no-]skip  Skip confirmation prompts
+
+    Skip all confirmation prompts and use the default values
+```
+
+_See code: [dist/apps/cli/src/commands/components/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/components/get.js)_
 
 ## `cyclone-ui help [COMMAND]`
 
@@ -570,57 +738,6 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/update.ts)_
 
-## `cyclone-ui registry get [COMPONENT]`
-
-Get design component files from registry
-
-```
-USAGE
-  $ cyclone-ui registry get [COMPONENT...] [-l <directory>] [-s] [-r <url>]
-
-ARGUMENTS
-  COMPONENT...  The name of the component to add to the local components library package
-
-FLAGS
-  -l, --library=<directory>  Components library directory
-  -r, --registry=<url>       Registry URL
-  -s, --[no-]skip            Skip confirmation prompts
-
-DESCRIPTION
-  Get design component files from registry
-
-  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library
-  package
-
-EXAMPLES
-  Initialize the themes using the output path from the Storm configuration file
-
-    $ cyclone-ui registry get init
-
-  Initialize the themes, and write the output to ./path/to/output
-
-    $ cyclone-ui registry get init --output=./path/to/output
-
-  Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts
-
-    $ cyclone-ui registry get init --output=./path/to/output --skip
-
-FLAG DESCRIPTIONS
-  -l, --library=<directory>  Components library directory
-
-    The location of the local components library package directory
-
-  -r, --registry=<url>  Registry URL
-
-    The URL of the Cyclone UI remote registry to use for the components library package
-
-  -s, --[no-]skip  Skip confirmation prompts
-
-    Skip all confirmation prompts and use the default values
-```
-
-_See code: [dist/apps/cli/src/commands/registry/get.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/registry/get.js)_
-
 ## `cyclone-ui search`
 
 Search for a command.
@@ -637,16 +754,16 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v1.2.14/src/commands/search.ts)_
 
-## `cyclone-ui theme clean NAME`
+## `cyclone-ui themes clean [NAME]`
 
 Clean the workspace's theme configuration
 
 ```
 USAGE
-  $ cyclone-ui theme clean NAME... [-o <directory>] [-s]
+  $ cyclone-ui themes clean [NAME...] [-o <directory>] [-s]
 
 ARGUMENTS
-  NAME...  [default: default] The name of the specific theme to assign the design token to
+  NAME...  The name of the specific theme
 
 FLAGS
   -o, --output=<directory>  [default: .storm/themes] Output directory
@@ -658,17 +775,30 @@ DESCRIPTION
   Clean the theme configuration for the client application based on the colors provided in the Storm configuration file
 
 EXAMPLES
-  Clean the themes using the output path from the Storm configuration file
+  Clean all the theme configurations using the output path from the Storm configuration file
 
-    $ cyclone-ui theme clean clean
+    $ cyclone-ui themes clean clean
 
-  Clean the themes, and write the output to ./path/to/output
+  Clean just the 'brand.ts' theme configuration file using the output path from the Storm configuration file
 
-    $ cyclone-ui theme clean clean --output=./path/to/output
+    $ cyclone-ui themes clean clean brand
 
-  Clean the themes, write the output to ./path/to/output, and skip confirmation prompts
+  Clean all the theme configurations in the output path './path/to/output'
 
-    $ cyclone-ui theme clean clean --output=./path/to/output --skip
+    $ cyclone-ui themes clean clean --output=./path/to/output
+
+  Clean just the 'brand.ts' theme configuration file in the output path './path/to/output'
+
+    $ cyclone-ui themes clean clean --output=./path/to/output
+
+  Clean all the theme configurations in the output path './path/to/output', and skip confirmation prompts
+
+    $ cyclone-ui themes clean clean --output=./path/to/output --skip
+
+  Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation
+  prompts
+
+    $ cyclone-ui themes clean clean --output=./path/to/output --skip
 
 FLAG DESCRIPTIONS
   -o, --output=<directory>  Output directory
@@ -680,63 +810,68 @@ FLAG DESCRIPTIONS
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/apps/cli/src/commands/theme/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/theme/clean.js)_
+_See code: [dist/apps/cli/src/commands/themes/clean.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/themes/clean.js)_
 
-## `cyclone-ui theme init NAME`
+## `cyclone-ui themes generate NAME`
 
-Initialize a theme configuration
+Generate a theme configuration file
 
 ```
 USAGE
-  $ cyclone-ui theme init NAME... [-o <directory>] [-s] [-c] [-j]
+  $ cyclone-ui themes generate NAME... -i <file> [-o <directory>] [-s] [-c]
+    [-j]
 
 ARGUMENTS
-  NAME...  [default: brand] The name of the specific theme to assign the design token to
+  NAME...  [default: brand] The name of the specific theme
 
 FLAGS
   -c, --[no-]clean          Clean output directory
-  -j, --[no-]json           Generate JSON file
+  -i, --input=<file>        (required) Input file
+  -j, --[no-]json           Generate JSON
   -o, --output=<directory>  [default: .storm/themes] Output directory
   -s, --[no-]skip           Skip confirmation prompts
 
 DESCRIPTION
-  Initialize a theme configuration
+  Generate a theme configuration file
 
-  Initialize the theme configuration for the client application based on the colors provided in the Storm configuration
-  file
+  Generate a theme configuration for the client application based on the values provided in the Storm configuration file
 
 EXAMPLES
-  Initialize the themes using the output path from the Storm configuration file
+  Generate a theme using the output path from the Storm configuration file
 
-    $ cyclone-ui theme init init
+    $ cyclone-ui themes generate generate
 
-  Initialize the themes, and write the output to ./path/to/output
+  Generate a theme, and write the output to ./path/to/output
 
-    $ cyclone-ui theme init init --output=./path/to/output
+    $ cyclone-ui themes generate generate --output=./path/to/output
 
-  Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts
+  Generate a theme, write the output to ./path/to/output, and skip confirmation prompts
 
-    $ cyclone-ui theme init init --output=./path/to/output --skip
+    $ cyclone-ui themes generate generate --output=./path/to/output --skip
 
 FLAG DESCRIPTIONS
   -c, --[no-]clean  Clean output directory
 
-    Remove all theme files from the output directory before generating new themes
+    Remove all files from the output directory before generating new themes
 
-  -j, --[no-]json  Generate JSON file
+  -i, --input=<file>  Input file
 
-    Should the design token file be generated as a JSON file
+    The path to the theme input file
+
+  -j, --[no-]json  Generate JSON
+
+    Should the themes be generated as a JSON
 
   -o, --output=<directory>  Output directory
 
-    The location to output the design token file
+    The location to output the themes file
 
   -s, --[no-]skip  Skip confirmation prompts
 
     Skip all confirmation prompts and use the default values
 ```
 
-_See code: [dist/apps/cli/src/commands/theme/init.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/theme/init.js)_
+_See code: [dist/apps/cli/src/commands/themes/generate.js](https://github.com/storm-software/cyclone-ui/blob/v0.6.1/dist/apps/cli/src/commands/themes/generate.js)_
 
 ## `cyclone-ui update [CHANNEL]`
 
@@ -796,7 +931,6 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.15/src/commands/version.ts)_
-
 <!-- commandsstop -->
 
 ## Reduced Package Size

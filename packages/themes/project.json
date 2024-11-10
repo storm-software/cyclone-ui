@@ -9,18 +9,10 @@
       "executor": "nx:run-commands",
       "dependsOn": ["^build"],
       "inputs": ["{workspaceRoot}/packages/colors/src/*", "^production"],
-      "outputs": ["{projectRoot}/src/brand-themes.ts"],
+      "outputs": ["{projectRoot}/src/cyclone.ts"],
       "options": {
-        "commands": [
-          {
-            "command": "pnpm exec tamagui generate-themes ./src/themes-input.ts ./src/brand-themes.ts",
-            "forwardAllArgs": true,
-            "prefix": "Theme Generation:",
-            "color": "blue",
-            "description": "Generate brand themes from the input file"
-          }
-        ],
-        "cwd": "packages/themes"
+        "command": "pnpm exec tamagui generate-themes ./src/themes-input.ts ./src/cyclone.ts",
+        "cwd": "{projectRoot}"
       }
     },
     "build": {

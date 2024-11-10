@@ -33,8 +33,8 @@ import {
   yellow,
   yellowDark
 } from "@tamagui/colors";
-import { theme as darkTheme } from "./schemes/brand-dark";
-import { theme as lightTheme } from "./schemes/brand-light";
+import { theme as darkTheme } from "./schemes/cyclone-dark";
+import { theme as lightTheme } from "./schemes/cyclone-light";
 import {
   ColorTheme,
   ColorThemeName,

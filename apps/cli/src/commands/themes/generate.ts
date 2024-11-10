@@ -29,27 +29,21 @@ import {
 } from "@clack/prompts";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
+// import { CLICommandType, executeCommand } from "@storm-stack/cli";
+// import { StormLog } from "@storm-stack/logging";
 import { isFunction } from "@storm-stack/types/type-checks/is-function";
-import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
 import * as fs from "fs-extra";
-import {
-  getThemeFilePath,
-  getThemePath,
-  writeMultiTheme,
-  writeSingleTheme
-} from "../../libs/themes.js";
-import { ColorThemeType } from "../../libs/types.js";
+import { join } from "node:path";
 
 /**
- * A command to generate design tokens based on the colors provided by the user.
+ * A command to generate a Tamagui theme file based on the tokens provided by the user.
  */
-export default class Init extends Command {
+export default class Generate extends Command {
   public static override args = {
     name: Args.string({
-      name: "Theme Name",
+      name: "Theme name",
       required: true,
-      description:
-        "The name of the specific theme to assign the design token to",
+      description: "The name of the specific theme",
       default: "brand",
       ignoreStdin: false,
       noCacheDefault: false
@@ -57,10 +51,19 @@ export default class Init extends Command {
   };
 
   public static override flags = {
+    input: Flags.directory({
+      char: "i",
+      summary: "Input file",
+      description: "The path to the theme input file",
+      hidden: false,
+      required: true,
+      deprecateAliases: false,
+      helpValue: "<file>"
+    }),
     output: Flags.directory({
       char: "o",
       summary: "Output directory",
-      description: "The location to output the design token file",
+      description: "The location to output the themes file",
       hidden: false,
       env: "STORM_THEMES_DIRECTORY",
       default: ".storm/themes",
@@ -87,7 +90,7 @@ export default class Init extends Command {
       char: "c",
       summary: "Clean output directory",
       description:
-        "Remove all theme files from the output directory before generating new themes",
+        "Remove all files from the output directory before generating new themes",
       allowNo: true,
       hidden: false,
       default: false,
@@ -97,8 +100,8 @@ export default class Init extends Command {
     }),
     json: Flags.boolean({
       char: "j",
-      summary: "Generate JSON file",
-      description: "Should the design token file be generated as a JSON file",
+      summary: "Generate JSON",
+      description: "Should the themes be generated as a JSON",
       allowNo: true,
       hidden: false,
       default: false,
@@ -108,35 +111,34 @@ export default class Init extends Command {
     })
   };
 
-  public static override summary = "Initialize a theme configuration";
+  public static override summary = "Generate a theme configuration file";
 
   public static override description =
-    "Initialize the theme configuration for the client application based on the colors provided in the Storm configuration file";
+    "Generate a theme configuration for the client application based on the values provided in the Storm configuration file";
 
   public static override strict = false;
 
   public static override examples = [
     {
       description:
-        "Initialize the themes using the output path from the Storm configuration file",
-      command: "<%= config.bin %> <%= command.id %> init"
+        "Generate a theme using the output path from the Storm configuration file",
+      command: "<%= config.bin %> <%= command.id %> generate"
+    },
+    {
+      description: "Generate a theme, and write the output to ./path/to/output",
+      command:
+        "<%= config.bin %> <%= command.id %> generate --output=./path/to/output"
     },
     {
       description:
-        "Initialize the themes, and write the output to ./path/to/output",
+        "Generate a theme, write the output to ./path/to/output, and skip confirmation prompts",
       command:
-        "<%= config.bin %> <%= command.id %> init --output=./path/to/output"
-    },
-    {
-      description:
-        "Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts",
-      command:
-        "<%= config.bin %> <%= command.id %> init --output=./path/to/output --skip"
+        "<%= config.bin %> <%= command.id %> generate --output=./path/to/output --skip"
     }
   ];
 
   public override async run(): Promise<void> {
-    const { args, flags } = await this.parse(Init);
+    const { args, flags } = await this.parse(Generate);
 
     this.log(
       `Using the following args: \n${Object.keys(args)
@@ -155,7 +157,7 @@ export default class Init extends Command {
         .join("\n")}\n\n`
     );
 
-    intro("Cyclone UI - Initialize Themes");
+    intro(`Cyclone UI - Generate ${args.name} theme configurations`);
 
     const s1 = spinner();
     s1.start("Loading Storm configuration");
@@ -202,83 +204,33 @@ export default class Init extends Command {
       }
     }
 
-    try {
-      if (flags.clean) {
-        const s2 = spinner();
-        s2.start(`Cleaning themes from "${output}"`);
+    if (flags.clean) {
+      const s2 = spinner();
+      s2.start(`Cleaning themes from "${output}"`);
 
-        await fs.remove(getThemePath(config.workspaceRoot, output));
+      await fs.remove(join(config.workspaceRoot, output, `${args.name}.ts`));
 
-        s2.stop(`Cleaned themes from "${output}"`);
-      } else {
-        if (
-          await fs.exists(
-            getThemeFilePath(
-              config.workspaceRoot,
-              output,
-              ColorThemeType.LIGHT,
-              args.name
-            )
-          )
-        ) {
-          this.error(
-            `The theme file ${getThemeFilePath(config.workspaceRoot, output, ColorThemeType.LIGHT, args.name)} already exist! Please run "cyclone theme clean" then re-run "cyclone theme init"`
-          );
-        }
-
-        if (
-          await fs.exists(
-            getThemeFilePath(
-              config.workspaceRoot,
-              output,
-              ColorThemeType.DARK,
-              args.name
-            )
-          )
-        ) {
-          this.error(
-            `The theme file ${getThemeFilePath(config.workspaceRoot, output, ColorThemeType.DARK, args.name)} already exist! Please run "cyclone theme clean" then re-run "cyclone theme init"`
-          );
-        }
-      }
-    } catch {
-      // Do nothing
+      s2.stop(`Cleaned themes from "${output}"`);
     }
 
     const s3 = spinner();
-    s3.start(`Writing themes to "${output}"`);
+    s3.start(`Generating theme configuration to output directory`);
 
-    if (isSetObject((config.colors as any)?.base)) {
-      for (const key of Object.keys(config.colors)) {
-        await writeMultiTheme(
-          config.colors[key],
-          config.workspaceRoot,
-          output,
-          key === "base" ? args.name : key,
-          flags.json
-        );
-      }
-    } else if (isSetObject((config.colors as any)?.light)) {
-      await writeMultiTheme(
-        config.colors as any,
-        config.workspaceRoot,
-        output,
-        args.name,
-        flags.json
-      );
-    } else {
-      await writeSingleTheme(
-        config.colors as any,
-        config.workspaceRoot,
-        output,
-        args.name,
-        flags.json
-      );
-    }
+    // await executeCommand(
+    //   CLICommandType.EXECUTE,
+    //   [
+    //     "tamagui",
+    //     "generate-themes",
+    //     flags.input,
+    //     join(output, `${args.name}.ts`)
+    //   ],
+    //   config.workspaceRoot
+    // );
 
-    s3.stop(`Wrote themes to "${output}"`);
+    s3.stop(`Generated themes configuration to output directory`);
+
     outro(
-      `"${args.name}" theme configurations were successfully generated in "${output}"`
+      `${args.name} theme configurations were successfully generated and saved to "${join(output, `${args.name}.ts`)}"`
     );
   }
 
@@ -291,10 +243,10 @@ export default class Init extends Command {
   }
 
   public override async init(): Promise<void> {
-    this.log("Initializing Cyclone UI Theme Generator...");
+    this.log("Initializing Cyclone-UI theme generator...");
   }
 
   public override async finally(): Promise<void> {
-    this.log("Exiting Cyclone UI Theme Generator...");
+    this.log("Exiting Cyclone-UI theme generator...");
   }
 }
