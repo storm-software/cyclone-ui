@@ -36,6 +36,7 @@ const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
   const store = useFieldStore();
 
   const name = store.get.name();
+  const size = store.get.size();
   const disabled = store.get.disabled();
   const focused = store.get.focused();
   const validating = store.get.validating();
@@ -44,11 +45,10 @@ const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
 
   return (
     <Input name={name} focused={focused} disabled={disabled}>
-      {!disabled && <Field.ThemeIcon />}
-
       <Input.Value
         ref={forwardedRef}
         {...props}
+        size={size}
         disabled={disabled}
         onFocus={focus}
         onBlur={blur}
@@ -57,6 +57,7 @@ const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
         defaultValue={String(initialValue ?? "")}
       />
 
+      {!disabled && !validating && <Field.ThemeIcon />}
       {(disabled || validating) && <Field.ThemeIcon />}
     </Input>
   );

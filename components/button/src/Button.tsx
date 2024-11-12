@@ -178,7 +178,6 @@ const ButtonFrame = styled(View, {
   flexDirection: "row",
   flexWrap: "nowrap",
   cursor: "pointer",
-  flex: 1,
 
   focusStyle: {
     outlineWidth: 0
@@ -580,7 +579,7 @@ const ButtonIcon = ButtonTextFrame.styleable(
       variant === "gradient"
         ? ColorThemeName.BASE
         : theme;
-    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+    const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
 
     return (
       <Theme name={themeName} componentName="ButtonIcon">
@@ -619,7 +618,6 @@ const ButtonGhostBackground = styled(ThemeableStack, {
 
   animation: "normal",
   opacity: 0,
-
   backgroundColor: "$surfaceTertiary",
   borderColor: "$primary",
 
@@ -660,10 +658,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
 
   animation: "normal",
   opacity: 0.15,
-
   colors: ["$secondary", "$primary"],
-  start: { x: 0, y: 0 },
-  end: { x: 1, y: 1 },
 
   variants: {
     circular: {
@@ -751,19 +746,19 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
     );
 
     return (
-      <ButtonContainer
-        group={"button" as any}
-        circular={circular}
+      <ButtonContext.Provider
+        {...props}
+        variant={variant}
+        size={size}
         disabled={disabled}
+        circular={circular}
+        noPadding={noPadding}
+        ringed={ringed}
         animate={animate}>
-        <ButtonContext.Provider
-          {...props}
-          variant={variant}
-          size={size}
-          disabled={disabled}
+        <ButtonContainer
+          group={"button" as any}
           circular={circular}
-          noPadding={noPadding}
-          ringed={ringed}
+          disabled={disabled}
           animate={animate}>
           {variant === "ghost" && (
             <ButtonGhostBackground
@@ -799,8 +794,8 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
             disabled={disabled}>
             {children}
           </ButtonFrame>
-        </ButtonContext.Provider>
-      </ButtonContainer>
+        </ButtonContainer>
+      </ButtonContext.Provider>
     );
   },
   {

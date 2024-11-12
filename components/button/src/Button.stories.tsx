@@ -47,6 +47,20 @@ export const Icon: Story = {
   }
 };
 
+export const Sized: Story = {
+  args: {
+    children: "Button Text",
+    size: "$6"
+  }
+};
+
+export const SizedIcon: Story = {
+  args: {
+    icon: <X />,
+    size: "$6"
+  }
+};
+
 export const Primary: Story = {
   args: {
     children: "Button Text",

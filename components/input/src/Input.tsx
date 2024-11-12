@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { getSized } from "@cyclone-ui/theme-helpers";
 import { isWeb } from "@tamagui/constants";
 import type {
   ColorTokens,
@@ -27,8 +28,8 @@ import {
   styled,
   withStaticProperties
 } from "@tamagui/core";
-import { getSize } from "@tamagui/get-token";
-import { XGroup } from "@tamagui/group";
+import { getSpace } from "@tamagui/get-token";
+import { XStack } from "@tamagui/stacks";
 import { Input as TamaguiInput } from "tamagui";
 
 export type InputContextProps = {
@@ -46,7 +47,7 @@ export const InputContext = createStyledContext<InputContextProps>({
   focused: false
 });
 
-const InputGroup = styled(XGroup, {
+const InputGroup = styled(XStack, {
   name: "Input",
   context: InputContext,
 
@@ -101,18 +102,24 @@ const InputGroup = styled(XGroup, {
         if (!val || props.circular) {
           return;
         }
+
         if (typeof val === "number") {
           return {
             paddingHorizontal: val * 0.25,
+            gap: val * 0.25,
             height: val,
             borderRadius: props.circular ? 100_000 : val * 0.2
           };
         }
 
-        const height = getSize(val);
+        const size = getSized(val);
+        const space = getSpace(size);
         const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+
         return {
-          height: height.val,
+          paddingHorizontal: space.val * 0.25,
+          gap: space.val * 0.25,
+          height: size,
           borderRadius: props.circular ? 100_000 : radiusToken
         };
       }
@@ -152,7 +159,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
 
     return (
       <InputContext.Provider {...props}>
-        <InputGroup ref={forwardedRef} paddingHorizontal="$2" {...props}>
+        <InputGroup ref={forwardedRef} {...props}>
           {children}
         </InputGroup>
       </InputContext.Provider>
@@ -179,8 +186,7 @@ const InputValue = styled(TamaguiInput, {
   lineHeight: "$true",
   letterSpacing: "$true",
   verticalAlign: "center",
-  marginHorizontal: "$1.75",
-  marginVertical: 0,
+  margin: 0,
   paddingVertical: 0,
 
   variants: {
@@ -206,7 +212,6 @@ const InputValueImpl = InputValue.styleable(
       <InputValue
         id={name}
         ref={forwardedRef}
-        size={0}
         disabled={disabled}
         {...props}
         height={height}

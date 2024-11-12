@@ -370,7 +370,7 @@ const FieldIconButtonImpl = Button.styleable(
     const store = useFieldStore();
     const size = store.get.size() ?? "$true";
 
-    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+    const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
 
     console.log(adjusted);
 
