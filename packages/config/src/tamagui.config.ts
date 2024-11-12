@@ -103,7 +103,7 @@ export const options: CreateTamaguiProps = {
   mediaQueryDefaultActive,
   selectionStyles: theme => ({
     backgroundColor: theme.color6,
-    color: theme.color10
+    color: theme.color12
   }),
   settings: {
     allowedStyleValues: "somewhat-strict-web",

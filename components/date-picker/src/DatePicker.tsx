@@ -36,7 +36,7 @@ import type { FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
-  useThemeName,
+  Theme,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -135,10 +135,18 @@ export function useDateAnimation({
 
       const isPreviousDate =
         StormDate.create(
-          `${calendar?.year}-${StormDateTime.getMonthIndex(calendarListenTo)}-1`
+          new Date(
+            Number(calendar?.year ?? 0),
+            StormDateTime.getMonthIndex(calendarListenTo) + 1,
+            1
+          )
         ).epochMilliseconds <
         StormDate.create(
-          `${calendar?.year}-${StormDateTime.getMonthIndex(currentMonth)}-1`
+          new Date(
+            Number(calendar?.year ?? 0),
+            StormDateTime.getMonthIndex(currentMonth) + 1,
+            1
+          )
         ).epochMilliseconds;
 
       if (currentMonth === "December" && calendar?.month === "January") {
@@ -166,10 +174,18 @@ export function useDateAnimation({
 
       const isPreviousDate =
         StormDate.create(
-          `${calendar?.year}-${StormDateTime.getMonthIndex(calendar?.month)}-1`
+          new Date(
+            Number(calendar?.year ?? 0),
+            StormDateTime.getMonthIndex(calendar?.month) + 1,
+            1
+          )
         ).epochMilliseconds <
         StormDate.create(
-          `${currentYear}-${StormDateTime.getMonthIndex(calendar?.month)}-1`
+          new Date(
+            Number(currentYear),
+            StormDateTime.getMonthIndex(calendar?.month) + 1,
+            1
+          )
         ).epochMilliseconds;
 
       return {
@@ -204,7 +220,6 @@ const DayPicker = () => {
     data: { calendars, weekDays },
     propGetters: { dayButton }
   } = useDatePickerContext();
-  const theme = useThemeName();
 
   const days = calendars[0]?.days ?? [];
   const { prevNextAnimation, prevNextAnimationKey } = useDateAnimation({
@@ -238,7 +253,12 @@ const DayPicker = () => {
         {...prevNextAnimation()}>
         <XStack gap="$1">
           {weekDays.map(day => (
-            <LabelText key={day} textAlign="center" width={45} size="$4">
+            <LabelText
+              key={day}
+              textAlign="center"
+              width="$4"
+              size="$4"
+              color="$secondary">
               {day}
             </LabelText>
           ))}
@@ -253,10 +273,11 @@ const DayPicker = () => {
                 {days.map(day => (
                   <View
                     key={day.$date.toString()}
-                    width={45}
+                    width="$4"
                     justifyContent="center"
                     alignItems="center">
                     <Button
+                      {...swapOnClick(dayButton(day))}
                       theme={
                         day.selected
                           ? ColorThemeName.ACCENT
@@ -265,14 +286,11 @@ const DayPicker = () => {
                       variant={
                         !day.inCurrentMonth
                           ? "ghost"
-                          : day.selected
+                          : day.selected || day.now
                             ? "primary"
                             : "outlined"
                       }
-                      padding="$1"
-                      width={45}
-                      borderRadius={0}
-                      {...swapOnClick(dayButton(day))}
+                      size="$4"
                       disabled={!day.inCurrentMonth}>
                       <Button.Text>{day.day}</Button.Text>
                     </Button>
@@ -307,7 +325,7 @@ export function YearRangeSlider() {
       </Button>
       <View y={2} flexDirection="column" alignItems="center">
         <LabelText
-          color="$fg"
+          color="$color"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -352,7 +370,7 @@ export function YearSlider() {
         tabIndex={0}
         size="$6"
         cursor="pointer"
-        color="$fg"
+        color="$color"
         hoverStyle={{
           color: "$accent10"
         }}>
@@ -395,7 +413,7 @@ const CalendarHeader = () => {
           textAlign="center"
           userSelect="auto"
           tabIndex={0}
-          color="$fg">
+          color="$color">
           Select a month
         </LabelText>
       </XStack>
@@ -420,7 +438,7 @@ const CalendarHeader = () => {
           tabIndex={0}
           size="$5"
           cursor="pointer"
-          color="$fg"
+          color="$color"
           hoverStyle={{
             color: "$accent10"
           }}>
@@ -433,7 +451,7 @@ const CalendarHeader = () => {
           cursor="pointer"
           tabIndex={0}
           size="$8"
-          color="$fg"
+          color="$color"
           fontWeight="600"
           lineHeight="$1"
           hoverStyle={{
@@ -462,13 +480,13 @@ type ItemPickerProps = PropsWithChildren<
   }
 >;
 
-export function ItemPicker({
+const ItemPicker = ({
   active,
   flexBasis,
   key,
   children,
   ...rest
-}: ItemPickerProps) {
+}: ItemPickerProps) => {
   return (
     <View flexGrow={1} flexBasis={flexBasis}>
       <Button
@@ -480,13 +498,13 @@ export function ItemPicker({
       </Button>
     </View>
   );
-}
+};
 
-export function MonthPicker({
+const MonthPicker = ({
   onChange = (e, date) => {}
 }: {
   onChange?: (e: MouseEvent, date: Date) => void;
-}) {
+}) => {
   const {
     data: { months },
     propGetters: { monthButton }
@@ -525,7 +543,7 @@ export function MonthPicker({
       </View>
     </AnimatePresence>
   );
-}
+};
 
 export function YearPicker({
   onChange = () => {}
@@ -574,20 +592,22 @@ const DatePickerPopoverBody = () => {
   const [header, setHeader] = useState<"day" | "month" | "year">("day");
 
   return (
-    <HeaderTypeProvider type={header} setHeader={setHeader}>
-      <XStack justifyContent="center">
-        <YStack alignItems="center" gap="$2.5" maxWidth={425}>
-          <CalendarHeader />
-          {header === "month" && (
-            <MonthPicker onChange={() => setHeader("day")} />
-          )}
-          {header === "year" && (
-            <YearPicker onChange={() => setHeader("day")} />
-          )}
-          {header === "day" && <DayPicker />}
-        </YStack>
-      </XStack>
-    </HeaderTypeProvider>
+    <Theme name={ColorThemeName.BASE}>
+      <HeaderTypeProvider type={header} setHeader={setHeader}>
+        <XStack justifyContent="center">
+          <YStack alignItems="center" gap="$2.5" maxWidth={425}>
+            <CalendarHeader />
+            {header === "month" && (
+              <MonthPicker onChange={() => setHeader("day")} />
+            )}
+            {header === "year" && (
+              <YearPicker onChange={() => setHeader("day")} />
+            )}
+            {header === "day" && <DayPicker />}
+          </YStack>
+        </XStack>
+      </HeaderTypeProvider>
+    </Theme>
   );
 };
 
@@ -632,7 +652,7 @@ const DatePickerPopoverContent = styled(Popover.Content, {
   context: DatePickerContext,
 
   justifyContent: "center",
-  backgroundColor: "$base3",
+  backgroundColor: "$base2",
   padding: 12,
   borderWidth: 1,
   borderColor: "$borderColor",
@@ -654,7 +674,7 @@ const DatePickerPopoverArrow = styled(Popover.Arrow, {
   name: "DatePickerPopover",
   context: DatePickerContext,
 
-  backgroundColor: "$background",
+  backgroundColor: "$base2",
   borderWidth: 1,
   borderColor: "$borderColor"
 });

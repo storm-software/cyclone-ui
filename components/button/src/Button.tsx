@@ -178,6 +178,7 @@ const ButtonFrame = styled(View, {
   flexDirection: "row",
   flexWrap: "nowrap",
   cursor: "pointer",
+  flex: 1,
 
   focusStyle: {
     outlineWidth: 0
@@ -222,32 +223,31 @@ const ButtonFrame = styled(View, {
       },
 
       secondary: {
-        backgroundColor: "$surfaceSecondary",
-
+        backgroundColor: "$surfaceTertiary",
         borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfaceTertiary",
+          backgroundColor: "$surfaceMuted",
           borderColor: "$borderColorHover"
         }
       },
 
       tertiary: {
-        backgroundColor: "$surfacePrimary",
+        backgroundColor: "$surfaceSecondary",
         borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfaceSecondary",
+          backgroundColor: "$surfaceMuted",
           borderColor: "$borderColorHover"
         }
       },
 
       quaternary: {
-        backgroundColor: "$backgroundStrong",
+        backgroundColor: "$surfacePrimary",
         borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfacePrimary",
+          backgroundColor: "$surfaceMuted",
           borderColor: "$borderColorHover"
         }
       },
@@ -499,7 +499,7 @@ const ButtonTextFrame = styled(LabelText, {
         }
 
         const fontSize = (sizeToken ?? 1) * 0.9;
-        const lineHeight = Number(heightToken ?? 1) * 0.75;
+        const lineHeight = Number(heightToken ?? 1) * 0.7;
         const fontWeight = config.font.weight?.[val];
         const letterSpacing = config.font.letterSpacing?.[val];
         const textTransform = config.font.transform?.[val];
@@ -549,6 +549,7 @@ const ButtonText = ButtonTextFrame.styleable(
           circular={circular}
           size={size as FontSizeTokens}
           color={color}
+          borderRadius={0}
           $group-button-hover={{
             color: disabled
               ? "$colorDisabled"
@@ -661,7 +662,6 @@ const ButtonGlassBackground = styled(LinearGradient, {
   opacity: 0.15,
 
   colors: ["$secondary", "$primary"],
-  // locations: [0.0, 1.0],
   start: { x: 0, y: 0 },
   end: { x: 1, y: 1 },
 
@@ -680,9 +680,6 @@ const ButtonGradientBackground = styled(LinearGradient, {
 
   animation: "normal",
   colors: ["$tertiary", "$primary"],
-  // locations: [0.0, 1.0],
-  start: { x: 0.1, y: 0.1 },
-  end: { x: 0.9, y: 0.9 },
 
   variants: {
     circular: {
@@ -699,7 +696,6 @@ const ButtonContainer = styled(ThemeableStack, {
 
   animation: "normal",
   cursor: "pointer",
-  overflow: "hidden",
 
   variants: {
     disabled: {
@@ -730,6 +726,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (
     {
       variant = "tertiary",
+      size = "$true",
       disabled = false,
       circular = false,
       bordered = true,
@@ -760,13 +757,14 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         disabled={disabled}
         animate={animate}>
         <ButtonContext.Provider
+          {...props}
           variant={variant}
+          size={size}
           disabled={disabled}
           circular={circular}
           noPadding={noPadding}
           ringed={ringed}
-          animate={animate}
-          {...props}>
+          animate={animate}>
           {variant === "ghost" && (
             <ButtonGhostBackground
               fullscreen={true}
@@ -783,7 +781,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
               fullscreen={true}
               circular={circular}
               style={{
-                filter: "blur(4px)"
+                filter: "blur(26px)"
               }}
               $group-button-hover={{ opacity: disabled ? 0.15 : 0.25 }}
             />

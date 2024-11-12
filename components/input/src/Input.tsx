@@ -168,6 +168,9 @@ const InputValue = styled(TamaguiInput, {
   animation: "normal",
   unstyled: true,
   cursor: "pointer",
+  height: "100%",
+  flex: 1,
+  flexGrow: 1,
   color: "$color",
   placeholderTextColor: "$placeholderColor",
   fontFamily: "$body",
@@ -175,11 +178,10 @@ const InputValue = styled(TamaguiInput, {
   fontWeight: "$true",
   lineHeight: "$true",
   letterSpacing: "$true",
-  display: "flex",
-  flexGrow: 1,
   verticalAlign: "center",
   marginHorizontal: "$1.75",
   marginVertical: 0,
+  paddingVertical: 0,
 
   variants: {
     disabled: {

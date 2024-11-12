@@ -119,7 +119,7 @@ export const createFieldStore = <TFieldValue>(name: string) => {
 
     const sizeAtom = atom(get => {
       const options = get(atoms.options);
-      return options.size || "$true";
+      return options.size ?? "$true";
     });
 
     return {

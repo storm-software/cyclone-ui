@@ -262,7 +262,7 @@ const FieldLabelText = styled(LabelText, {
 
   animation: "normal",
   cursor: "pointer",
-  wordWrap: "break-word",
+  wordWrap: "normal",
   verticalAlign: "middle",
   color: "$color",
 
@@ -303,13 +303,13 @@ const LabelXStack = styled(XStack, {
 const FieldLabelTextImpl = FieldLabelText.styleable<{
   required?: boolean;
   disabled?: boolean;
-  htmlFor: string;
 }>(
   (props, forwardedRef) => {
-    const { children, required, htmlFor, ...rest } = props;
+    const { children, required, ...rest } = props;
 
     const store = useFieldStore();
     const fieldDisabled = store.get.disabled();
+    const name = store.get.name();
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -317,7 +317,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     );
 
     return (
-      <TamaguiLabel ref={forwardedRef} htmlFor={htmlFor}>
+      <TamaguiLabel ref={forwardedRef} htmlFor={name}>
         <LabelXStack disabled={disabled}>
           <FieldLabelText
             {...rest}
@@ -352,6 +352,7 @@ const FieldLabel = FieldLabelText.styleable(
       <FieldLabelTextImpl
         ref={forwardedRef as ForwardedRef<any>}
         {...props}
+        theme={ColorThemeName.BASE}
         htmlFor={store.get.name()}
         disabled={store.get.disabled()}
         required={store.get.required()}>
@@ -367,7 +368,11 @@ export type FieldLabelProps = GetProps<typeof FieldLabel>;
 const FieldIconButtonImpl = Button.styleable(
   ({ children, ...props }, forwardedRef) => {
     const store = useFieldStore();
-    const size = getSized(store.get.size(), { shift: -4 });
+    const size = store.get.size() ?? "$true";
+
+    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+
+    console.log(adjusted);
 
     return (
       <Button
@@ -376,7 +381,7 @@ const FieldIconButtonImpl = Button.styleable(
         circular={true}
         padding="$2"
         {...props}
-        size={size}>
+        size={adjusted}>
         <Button.Icon>{children}</Button.Icon>
       </Button>
     );
@@ -418,11 +423,11 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
           enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
           exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
           animation="normal"
-          backgroundColor="$base3"
+          backgroundColor="$base2"
           borderWidth={1}
           borderColor="$borderColor">
           <Tooltip.Arrow
-            backgroundColor="$base3"
+            backgroundColor="$base2"
             borderWidth={1}
             borderColor="$borderColor"
           />
@@ -433,7 +438,7 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
           />
         </Tooltip.Content>
 
-        <Tooltip.Trigger>
+        <Tooltip.Trigger asChild={true}>
           <FieldIconButtonImpl ref={forwardedRef} {...rest}>
             {children}
           </FieldIconButtonImpl>

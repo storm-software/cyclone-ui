@@ -15,6 +15,8 @@
 
  -------------------------------------------------------------------*/
 
+import { Color } from "chroma-js";
+
 export type ExtendedColorThemeName =
   | "blue"
   | "gray"
@@ -133,7 +135,7 @@ export type LCHColor = { l: number; c: number; h: number; mode: "lch" };
 
 export type ColorScientificPaletteRecord = Record<
   ColorScientificPalette,
-  LCHColor[]
+  Color[]
 >;
 
 export type ColorStylePaletteRecord = Record<ColorScientificPalette, string[]>;
