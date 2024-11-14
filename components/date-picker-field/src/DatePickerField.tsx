@@ -33,11 +33,12 @@ import { TextInput } from "react-native";
 
 export const DATE_MASK = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
-  separator: "/"
+  separator: "."
 });
 
 export const format = (value: any) => {
   return formatDate(value, {
+    format: "M.D.YYYY",
     returnEmptyIfNotSet: true,
     returnEmptyIfInvalid: true
   });

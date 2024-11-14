@@ -16,10 +16,16 @@
  -------------------------------------------------------------------*/
 
 import { Button } from "@cyclone-ui/button";
+import { ColorThemeName } from "@cyclone-ui/colors";
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/theme-helpers";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { styled, View, withStaticProperties } from "@tamagui/core";
+import {
+  styled,
+  useThemeName,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
@@ -286,6 +292,8 @@ const InputTrigger = Button.styleable<{
     const { circular } = InputContext.useStyledContext();
     const radius = getRadius("$true", { circular, scale: 0.75 });
 
+    const theme = useThemeName();
+
     return (
       <XGroup.Item>
         <View
@@ -297,6 +305,9 @@ const InputTrigger = Button.styleable<{
             ref={forwardedRef}
             variant="ghost"
             borderRadius={radius}
+            color={
+              theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
+            }
             {...props}>
             {children}
           </Button>

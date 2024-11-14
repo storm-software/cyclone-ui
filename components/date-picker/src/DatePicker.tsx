@@ -62,7 +62,7 @@ export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   disabled: false
 });
 
-export const DEFAULT_DATE_FORMAT = "MM/DD/YYYY";
+export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
 
 // Rehookify internally return `onClick` and that's incompatible with native
 const swapOnClick = <D extends any = any>(d: D) => {

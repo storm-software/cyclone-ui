@@ -189,6 +189,8 @@ const ButtonFrame = styled(XStack, {
   borderWidth: 1,
   flexWrap: "nowrap",
   flex: 1,
+  flexShrink: 1,
+  overflow: "hidden",
 
   hoverStyle: {
     borderWidth: 1,
@@ -545,7 +547,8 @@ const ButtonText = ButtonTextFrame.styleable(
           disabled={disabled}
           circular={circular}
           size={size}
-          color={color}
+          color={disabled ? "$colorDisabled" : color}
+          {...props}
           borderRadius={0}
           $group-button-hover={{
             color: disabled
@@ -553,8 +556,7 @@ const ButtonText = ButtonTextFrame.styleable(
               : variant === "primary"
                 ? "$surfacePrimary"
                 : "$colorHover"
-          }}
-          {...props}>
+          }}>
           {children}
         </ButtonTextFrame>
       </Theme>
@@ -568,7 +570,6 @@ const ButtonText = ButtonTextFrame.styleable(
 const ButtonIcon = View.styleable(
   ({ children, ...props }) => {
     const { variant, disabled, color, size } = ButtonContext.useStyledContext();
-
     const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
 
     const themeName = useThemeName();
@@ -662,7 +663,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
   context: ButtonContext,
 
   animation: "normal",
-  opacity: 0.25,
+  opacity: 0.5,
   zIndex: "$sm",
   colors: ["$secondary", "$primary"],
 
@@ -762,9 +763,9 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
               fullscreen={true}
               circular={circular}
               style={{
-                filter: "blur(26px)"
+                filter: "blur(15px)"
               }}
-              $group-button-hover={{ opacity: disabled ? 0.25 : 0.45 }}
+              $group-button-hover={{ opacity: disabled ? 0.5 : 0.75 }}
             />
           )}
           {variant === "gradient" && (
