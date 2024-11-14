@@ -200,7 +200,7 @@ export const componentThemes = {
 
   FieldDetails: {
     mask: "identity",
-    ...maskOptions.body
+    ...maskOptions.details
   },
 
   FieldLabel: {
@@ -218,9 +218,9 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
-  CheckboxIcon: {
+  CheckboxIndicator: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   Switch: {
@@ -240,7 +240,7 @@ export const componentThemes = {
 
   InputValue: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   TextArea: {
@@ -250,7 +250,7 @@ export const componentThemes = {
 
   TextAreaValue: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   Select: {
@@ -260,12 +260,12 @@ export const componentThemes = {
 
   SelectTrigger: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   SelectTriggerValue: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   SelectItemsItem: {
@@ -285,7 +285,7 @@ export const componentThemes = {
 
   RadioGroupItemValue: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   RadioGroupItemDetails: {
@@ -300,7 +300,7 @@ export const componentThemes = {
 
   DatePickerValue: {
     mask: "identity",
-    ...maskOptions.label
+    ...maskOptions.title
   },
 
   DatePickerPopover: {

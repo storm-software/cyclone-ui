@@ -249,18 +249,15 @@ const DayPicker = () => {
       <YStack
         animation="normal"
         justifyContent="center"
-        gap="$0.5"
+        gap="$1.75"
         {...prevNextAnimation()}>
         <XStack gap="$1">
           {weekDays.map(day => (
-            <LabelText
-              key={day}
-              textAlign="center"
-              width="$4"
-              size="$4"
-              color="$secondary">
-              {day}
-            </LabelText>
+            <View key={day} justifyContent="center" width="$4">
+              <LabelText textAlign="center" size="$4" color="$secondary">
+                {day}
+              </LabelText>
+            </View>
           ))}
         </XStack>
         <YStack gap="$1" flexWrap="wrap">
@@ -269,32 +266,29 @@ const DayPicker = () => {
               <XStack
                 key={days[0]?.$date.toString() ?? i}
                 gap="$0.5"
+                rowGap="$0.5"
                 alignItems="center">
                 {days.map(day => (
-                  <View
+                  <Button
                     key={day.$date.toString()}
-                    width="$4"
-                    justifyContent="center"
-                    alignItems="center">
-                    <Button
-                      {...swapOnClick(dayButton(day))}
-                      theme={
-                        day.selected
-                          ? ColorThemeName.ACCENT
-                          : ColorThemeName.BASE
-                      }
-                      variant={
-                        !day.inCurrentMonth
+                    {...swapOnClick(dayButton(day))}
+                    theme={ColorThemeName.BASE}
+                    variant={
+                      day.now
+                        ? "secondary"
+                        : !day.inCurrentMonth
                           ? "ghost"
-                          : day.selected || day.now
+                          : day.selected
                             ? "primary"
                             : "outlined"
-                      }
-                      size="$4"
-                      disabled={!day.inCurrentMonth}>
-                      <Button.Text>{day.day}</Button.Text>
-                    </Button>
-                  </View>
+                    }
+                    borderColor={day.now ? "$primary" : undefined}
+                    flexBasis="14%"
+                    padding="$1"
+                    borderRadius={0}
+                    disabled={!day.inCurrentMonth}>
+                    <Button.Text>{day.day}</Button.Text>
+                  </Button>
                 ))}
               </XStack>
             );
@@ -314,6 +308,7 @@ export function YearRangeSlider() {
   return (
     <View
       flexDirection="row"
+      gap="$3"
       width="100%"
       height={40}
       alignItems="center"
@@ -352,6 +347,7 @@ export function YearSlider() {
   return (
     <View
       flexDirection="row"
+      gap="$3"
       width="100%"
       height={40}
       alignItems="center"
@@ -421,7 +417,11 @@ const CalendarHeader = () => {
   }
 
   return (
-    <XStack width="100%" alignItems="center" justifyContent="space-between">
+    <XStack
+      width="100%"
+      alignItems="center"
+      gap="$3"
+      justifyContent="space-between">
       <Button
         variant="ghost"
         size="$4"
@@ -611,28 +611,28 @@ const DatePickerPopoverBody = () => {
   );
 };
 
-const DatePickerControl = Input.styleable(
+const DatePickerTextBox = Input.TextBox.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <Popover.Trigger asChild={true}>
-        <Input ref={forwardedRef} {...props}>
+        <Input.TextBox ref={forwardedRef} {...props}>
           {children}
-        </Input>
+        </Input.TextBox>
       </Popover.Trigger>
     );
   },
   { staticConfig: { componentName: "DatePickerValue" } }
 );
 
-const DatePickerControlValue = Input.Value.styleable(
+const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Input.Value
+      <Input.TextBox.Value
         ref={forwardedRef}
         placeholder={DEFAULT_DATE_FORMAT}
         {...props}>
         {children}
-      </Input.Value>
+      </Input.TextBox.Value>
     );
   },
   { staticConfig: { componentName: "DatePickerValue" } }
@@ -679,7 +679,7 @@ const DatePickerPopoverArrow = styled(Popover.Arrow, {
   borderColor: "$borderColor"
 });
 
-const DatePickerControlImpl = DatePickerControl.styleable<{
+const DatePickerControlImpl = Input.styleable<{
   onChange: (date?: Date | null) => any;
   onOpenChange: (opened: boolean) => any;
   open: boolean;
@@ -736,9 +736,9 @@ const DatePickerControlImpl = DatePickerControl.styleable<{
             </Popover.Sheet>
           </Adapt>
 
-          <DatePickerControl ref={forwardedRef} {...props}>
+          <Input ref={forwardedRef} {...props}>
             {children}
-          </DatePickerControl>
+          </Input>
 
           <DatePickerPopoverContent>
             <DatePickerPopoverArrow />
@@ -752,5 +752,9 @@ const DatePickerControlImpl = DatePickerControl.styleable<{
 );
 
 export const DatePicker = withStaticProperties(DatePickerControlImpl, {
-  Value: DatePickerControlValue
+  TextBox: withStaticProperties(DatePickerTextBox, {
+    Value: DatePickerTextBoxValue
+  }),
+  Separator: Input.Separator,
+  Trigger: Input.Trigger
 });

@@ -104,7 +104,7 @@ const getFieldDetailsFontSize = (
     heightToken = (config.font.lineHeight?.[val] as any)?.val;
   }
 
-  const fontSize = (sizeToken ?? 1) * 0.85;
+  const fontSize = (sizeToken ?? 1) * 0.9;
   const lineHeight = Number(heightToken ?? 1) * 0.85;
   const fontWeight = config.font.weight?.[val];
   const letterSpacing = config.font.letterSpacing?.[val];
@@ -147,13 +147,42 @@ const FieldValidationText = styled(ValidationText, {
   }
 });
 
+const FieldValidationTextImpl = FieldValidationText.styleable(
+  (props, forwardedRef) => {
+    const { children, ...rest } = props;
+
+    const store = useFieldStore();
+    const theme = store.get.theme();
+    const disabled = store.get.disabled();
+    const size = store.get.size();
+    const messages = store.get.messages();
+
+    return (
+      <FieldValidationText
+        ref={forwardedRef}
+        {...rest}
+        messages={messages}
+        size={size}
+        color={
+          disabled
+            ? "$colorDisabled"
+            : theme === ColorThemeName.BASE
+              ? "$color"
+              : "$primary"
+        }>
+        {children}
+      </FieldValidationText>
+    );
+  },
+  { staticConfig: { componentName: "FieldDetails" } }
+);
+
 const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     const store = useFieldStore();
     const theme = store.get.theme();
-    const size = store.get.size();
 
     return (
       <Theme name={theme}>
@@ -163,7 +192,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
           disabled={store.get.disabled()}>
           <YStack gap="$0.7">
             {children}
-            <FieldValidationText messages={store.get.messages()} size={size} />
+            <FieldValidationTextImpl />
           </YStack>
         </FieldGroupFrame>
       </Theme>
@@ -247,7 +276,14 @@ const FieldDetailsImpl = FieldDetails.styleable(
         {...rest}
         theme={theme}
         size={size}
-        disabled={disabled}>
+        disabled={disabled}
+        color={
+          disabled
+            ? "$colorDisabled"
+            : theme === ColorThemeName.BASE
+              ? "$color"
+              : "$primary"
+        }>
         {children}
       </FieldDetails>
     );
@@ -257,7 +293,6 @@ const FieldDetailsImpl = FieldDetails.styleable(
 
 const FieldLabelText = styled(LabelText, {
   name: "FieldLabel",
-
   tag: "label",
 
   animation: "normal",
@@ -286,6 +321,7 @@ const LabelXStack = styled(XStack, {
   cursor: "pointer",
   gap: "$1.2",
   flex: 1,
+  alignItems: "center",
 
   variants: {
     disabled: {
@@ -303,10 +339,9 @@ const LabelXStack = styled(XStack, {
 const FieldLabelTextImpl = FieldLabelText.styleable<{
   required?: boolean;
   disabled?: boolean;
+  hideAsterisk?: boolean;
 }>(
-  (props, forwardedRef) => {
-    const { children, required, ...rest } = props;
-
+  ({ children, hideAsterisk = false, required, ...props }, forwardedRef) => {
     const store = useFieldStore();
     const fieldDisabled = store.get.disabled();
     const name = store.get.name();
@@ -320,20 +355,35 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       <TamaguiLabel ref={forwardedRef} htmlFor={name}>
         <LabelXStack disabled={disabled}>
           <FieldLabelText
-            {...rest}
+            {...props}
             disabled={disabled}
             theme={ColorThemeName.BASE}>
             {children}
           </FieldLabelText>
-          {required && (
-            <View position="relative">
-              <Asterisk
-                color="$danger7"
-                size="$0.75"
-                position="absolute"
-                top={-4}
-              />
-            </View>
+          {hideAsterisk !== true && (
+            <>
+              {required ? (
+                <View position="relative" alignSelf="stretch">
+                  <Asterisk
+                    color="$danger7"
+                    size="$0.75"
+                    position="absolute"
+                    top={-4}
+                  />
+                </View>
+              ) : (
+                <FieldLabelText
+                  {...props}
+                  theme={ColorThemeName.BASE}
+                  disabled={disabled}
+                  color={disabled ? "$colorDisabled" : "$secondary"}
+                  size="$5"
+                  fontWeight="$4"
+                  marginLeft="$2">
+                  (Optional)
+                </FieldLabelText>
+              )}
+            </>
           )}
         </LabelXStack>
       </TamaguiLabel>
@@ -344,7 +394,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
 
 export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
 
-const FieldLabel = FieldLabelText.styleable(
+const FieldLabel = FieldLabelText.styleable<{ hideAsterisk?: boolean }>(
   ({ children, ...props }, forwardedRef) => {
     const store = useFieldStore();
 
@@ -370,36 +420,20 @@ const FieldIconButtonImpl = Button.styleable(
     const store = useFieldStore();
     const size = store.get.size() ?? "$true";
 
-    const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
-
-    console.log(adjusted);
+    const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
 
     return (
-      <Button
-        ref={forwardedRef}
-        variant="ghost"
-        circular={true}
-        padding="$2"
-        {...props}
-        size={adjusted}>
-        <Button.Icon>{children}</Button.Icon>
-      </Button>
-    );
-  },
-  { staticConfig: { componentName: "FieldIcon" } }
-);
-
-const FieldIcon = FieldIconButtonImpl.styleable(
-  ({ children, ...rest }, forwardedRef) => {
-    const store = useFieldStore();
-    if (store.get.disabled()) {
-      return null;
-    }
-
-    return (
-      <FieldIconButtonImpl ref={forwardedRef} {...rest}>
-        {children}
-      </FieldIconButtonImpl>
+      <View alignItems="center" flexDirection="row" flexBasis={adjusted}>
+        <Button
+          ref={forwardedRef}
+          variant="ghost"
+          circular={true}
+          padding="$1.5"
+          {...props}
+          size={adjusted}>
+          <Button.Icon>{children}</Button.Icon>
+        </Button>
+      </View>
     );
   },
   { staticConfig: { componentName: "FieldIcon" } }
@@ -489,6 +523,6 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
 export const Field = withStaticProperties(FieldGroup, {
   Label: FieldLabel,
   Details: FieldDetailsImpl,
-  Icon: FieldIcon,
+  Icon: FieldIconButtonImpl,
   ThemeIcon: FieldThemeIcon
 });

@@ -188,7 +188,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 });
 
 const CheckboxIcon = styled(Check, {
-  name: "CheckboxIcon",
+  name: "CheckboxIndicator",
 
   color: "$color",
 
@@ -224,7 +224,7 @@ const CheckboxIcon = styled(Check, {
 });
 
 const MinusIcon = styled(Minus, {
-  name: "CheckboxIcon",
+  name: "CheckboxIndicator",
 
   color: "$color",
 

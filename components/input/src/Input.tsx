@@ -15,39 +15,19 @@
 
  -------------------------------------------------------------------*/
 
-import { getSized } from "@cyclone-ui/theme-helpers";
+import { Button } from "@cyclone-ui/button";
+import { getRadius, getSized, getSpaced } from "@cyclone-ui/theme-helpers";
 import { isWeb } from "@tamagui/constants";
-import type {
-  ColorTokens,
-  FontSizeTokens,
-  SizeTokens,
-  VariantSpreadExtras
-} from "@tamagui/core";
-import {
-  createStyledContext,
-  styled,
-  withStaticProperties
-} from "@tamagui/core";
-import { getSpace } from "@tamagui/get-token";
+import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import { styled, View, withStaticProperties } from "@tamagui/core";
+import { XGroup } from "@tamagui/group";
+import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
-import { Input as TamaguiInput } from "tamagui";
+import { InputValue } from "./InputValue";
+import { InputContextProps } from "./types";
+import { InputContext } from "./utilities";
 
-export type InputContextProps = {
-  name?: string;
-  size: FontSizeTokens;
-  color?: ColorTokens | string;
-  disabled: boolean;
-  focused: boolean;
-};
-
-export const InputContext = createStyledContext<InputContextProps>({
-  size: "$true",
-  color: "$color",
-  disabled: false,
-  focused: false
-});
-
-const InputGroup = styled(XStack, {
+const InputGroup = styled(XGroup, {
   name: "Input",
   context: InputContext,
 
@@ -59,6 +39,7 @@ const InputGroup = styled(XStack, {
   borderColor: "$borderColor",
   outlineWidth: 0,
   outlineColor: "transparent",
+  gap: "$1.25",
 
   ...(isWeb
     ? {
@@ -105,20 +86,18 @@ const InputGroup = styled(XStack, {
 
         if (typeof val === "number") {
           return {
-            paddingHorizontal: val * 0.25,
-            gap: val * 0.25,
+            // gap: val * 0.25,
             height: val,
             borderRadius: props.circular ? 100_000 : val * 0.2
           };
         }
 
         const size = getSized(val);
-        const space = getSpace(size);
+        const space = getSpaced(size);
         const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
 
         return {
-          paddingHorizontal: space.val * 0.25,
-          gap: space.val * 0.25,
+          // gap: space * 0.25,
           height: size,
           borderRadius: props.circular ? 100_000 : radiusToken
         };
@@ -143,13 +122,20 @@ const InputGroup = styled(XStack, {
           borderColor: "$borderColorDisabled"
         }
       }
+    },
+
+    circular: {
+      true: {
+        borderRadius: 100_000
+      }
     }
   } as const,
 
   defaultVariants: {
     size: "$true",
     disabled: false,
-    focused: false
+    focused: false,
+    circular: false
   }
 });
 
@@ -159,7 +145,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
 
     return (
       <InputContext.Provider {...props}>
-        <InputGroup ref={forwardedRef} {...props}>
+        <InputGroup ref={forwardedRef} group={"input" as any} {...props}>
           {children}
         </InputGroup>
       </InputContext.Provider>
@@ -168,60 +154,166 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
   { staticConfig: { componentName: "Input" } }
 );
 
-const InputValue = styled(TamaguiInput, {
-  name: "InputValue",
+const InputSeparator = styled(Separator, {
+  name: "Input",
   context: InputContext,
 
   animation: "normal",
-  unstyled: true,
-  cursor: "pointer",
-  height: "100%",
-  flex: 1,
-  flexGrow: 1,
-  color: "$color",
-  placeholderTextColor: "$placeholderColor",
-  fontFamily: "$body",
-  fontSize: "$4",
-  fontWeight: "$true",
-  lineHeight: "$true",
-  letterSpacing: "$true",
-  verticalAlign: "center",
-  margin: 0,
-  paddingVertical: 0,
+  borderWidth: 1,
+  borderColor: "$borderColor",
+  vertical: true,
+  height: "50%",
+  marginVertical: "$0.25",
 
   variants: {
+    focused: {
+      true: {
+        borderColor: "$borderColorFocus"
+      }
+    },
+
     disabled: {
       true: {
-        cursor: "not-allowed",
-        color: "$colorDisabled",
-        placeholderTextColor: "$placeholderColorDisabled"
+        borderColor: "$borderColorDisabled",
+
+        hoverStyle: {
+          borderColor: "$borderColorDisabled"
+        },
+
+        focusStyle: {
+          borderColor: "$borderColorDisabled"
+        },
+
+        pressStyle: {
+          borderColor: "$borderColorDisabled"
+        }
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false
+    disabled: false,
+    focused: false
   }
 });
 
-const InputValueImpl = InputValue.styleable(
-  ({ autoComplete = "off", height = "100%", ...props }, forwardedRef) => {
-    const { disabled, name } = InputContext.useStyledContext();
+const InputSeparatorImpl = InputSeparator.styleable(
+  (props, forwardedRef) => {
+    const { disabled } = InputContext.useStyledContext();
 
     return (
+      <XGroup.Item>
+        <InputSeparator
+          ref={forwardedRef}
+          $group-input-hover={{
+            borderColor: disabled ? "$borderColorDisabled" : "$accent10"
+          }}
+          {...props}
+        />
+      </XGroup.Item>
+    );
+  },
+  { staticConfig: { componentName: "Input" } }
+);
+
+const InputTextBox = styled(XStack, {
+  name: "Input",
+  context: InputContext,
+
+  height: "100%",
+  flex: 1,
+
+  variants: {
+    size: {
+      "...size": (val: SizeTokens | number) => {
+        if (!val) {
+          return;
+        }
+
+        if (typeof val === "number") {
+          return {
+            paddingHorizontal: val * 0.25,
+            gap: val * 0.25
+          };
+        }
+
+        const space = getSpaced(val);
+        return {
+          paddingHorizontal: space * 0.25,
+          gap: space * 0.25
+        };
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
+});
+
+const InputTextBoxImpl = InputTextBox.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <XGroup.Item>
+        <InputTextBox ref={forwardedRef} {...props}>
+          {children}
+        </InputTextBox>
+      </XGroup.Item>
+    );
+  },
+  { staticConfig: { componentName: "Input" } }
+);
+
+const InputTextBoxValue = InputValue.styleable(
+  ({ children, enterKeyHint = "done", ...props }, forwardedRef) => {
+    return (
       <InputValue
-        id={name}
         ref={forwardedRef}
-        disabled={disabled}
         {...props}
-        height={height}
-        autoComplete={autoComplete}
-      />
+        enterKeyHint={enterKeyHint}
+        placeholderTextColor="$placeholderColor">
+        {children}
+      </InputValue>
     );
   },
   { staticConfig: { componentName: "InputValue" } }
 );
 
+const InputTrigger = Button.styleable<{
+  forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
+}>(
+  ({ children, flexBasis, ...props }, forwardedRef) => {
+    const { circular } = InputContext.useStyledContext();
+    const radius = getRadius("$true", { circular, scale: 0.75 });
+
+    return (
+      <XGroup.Item>
+        <View
+          paddingHorizontal="$1.25"
+          display="flex"
+          flexBasis={flexBasis}
+          flexShrink={1}>
+          <Button
+            ref={forwardedRef}
+            variant="ghost"
+            borderRadius={radius}
+            {...props}>
+            {children}
+          </Button>
+        </View>
+      </XGroup.Item>
+    );
+  },
+  { staticConfig: { componentName: "Input" } }
+);
+
 export const Input = withStaticProperties(InputGroupImpl, {
-  Value: InputValueImpl
+  TextBox: withStaticProperties(InputTextBoxImpl, {
+    Value: InputTextBoxValue
+  }),
+  Separator: InputSeparatorImpl,
+  Trigger: withStaticProperties(InputTrigger, {
+    Icon: Button.Icon,
+    Text: Button.Text
+  })
 });

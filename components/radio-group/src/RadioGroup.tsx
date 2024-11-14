@@ -368,6 +368,7 @@ const RadioGroupImpl = RadioGroupFrame.styleable<{
         <YStack
           justifyContent="flex-start"
           gap="$2.5"
+          width="100%"
           $sm={{
             paddingHorizontal: "$4",
             paddingVertical: "$4.5"

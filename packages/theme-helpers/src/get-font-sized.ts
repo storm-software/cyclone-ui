@@ -17,16 +17,26 @@
 
 /* eslint-disable no-console */
 
+import { sizeToFontSize } from "@cyclone-ui/tokens";
 import { isClient } from "@tamagui/constants";
 import type {
   FontSizeTokens,
   GenericFont,
+  SizeTokens,
   TextProps,
   TextStyle,
   VariantSpreadFunction
 } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
+import { getSized } from "./get-sized";
 
+/**
+ * Get the font size related styles
+ *
+ * @param sizeTokenIn - The size token to use
+ * @param extras - The extra props
+ * @returns The font size related styles
+ */
 export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
   sizeTokenIn = "$true",
   { font, fontFamily, props }
@@ -88,6 +98,20 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
   }
 
   return style;
+};
+
+/**
+ * Get the font size related styles from a size token
+ *
+ * @param sizeTokenIn - The size token to use
+ * @param extras - The extra props
+ * @returns The font size related styles
+ */
+export const getFontSizedFromSize: VariantSpreadFunction<
+  TextProps,
+  SizeTokens
+> = (sizeTokenIn = "$true", extras) => {
+  return getFontSized(sizeToFontSize(getSized(sizeTokenIn)), extras);
 };
 
 const cache = new WeakMap<any, FontSizeTokens>();

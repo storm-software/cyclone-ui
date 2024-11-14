@@ -51,7 +51,6 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          "next/router": getAbsolutePath("next-router-mock"),
           "react-native-svg": getAbsolutePath("@tamagui/react-native-svg")
         }
       },

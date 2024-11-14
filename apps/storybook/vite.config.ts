@@ -31,20 +31,8 @@ Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 // });
 
 const isProduction = process.env.NODE_ENV === "production";
-
 const profiling = isProduction && {
   "react-dom/client": "react-dom/profiling"
-};
-
-const tamaguiConfig = {
-  config: "./tamagui.config.ts",
-  components: [
-    "@cyclone-ui/tokens",
-    "@cyclone-ui/themes",
-    "@cyclone-ui/config",
-    "@cyclone-ui/provider",
-    "tamagui"
-  ]
 };
 
 export default defineConfig({
@@ -72,7 +60,16 @@ export default defineConfig({
   plugins: [
     nxViteTsPaths({ debug: false }),
     react(),
-    tamaguiPlugin(tamaguiConfig)
+    tamaguiPlugin({
+      config: "./tamagui.config.ts",
+      components: [
+        "@cyclone-ui/tokens",
+        "@cyclone-ui/themes",
+        "@cyclone-ui/config",
+        "@cyclone-ui/provider",
+        "tamagui"
+      ]
+    })
     // tamaguiExtractPlugin({
     //   ...tamaguiConfig,
     //   logTimings: true
@@ -80,7 +77,6 @@ export default defineConfig({
   ].filter(Boolean),
   server: {
     fs: {
-      // Load server-side code also from `src`
       allow: ["src"],
       strict: true
     },

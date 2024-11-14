@@ -9,16 +9,14 @@
       "cache": true,
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["pnpm rimraf apps/cli/dist"],
-        "parallel": true
+        "command": "pnpm rimraf apps/cli/dist"
       }
     },
     "build-base": {
-      "cache": true,
+      "cache": false,
       "executor": "nx:run-commands",
       "inputs": ["typescript", "^production", "{projectRoot}/src/*"],
       "outputs": ["{projectRoot}/dist/*"],
-      "dependsOn": ["clean"],
       "options": {
         "command": "pnpm tsc -b ./apps/cli/tsconfig.json"
       }

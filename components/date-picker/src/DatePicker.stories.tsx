@@ -54,7 +54,9 @@ const meta: Meta<typeof DatePicker> = {
           parse={handleParse}>
           <Field.Label>Label Text</Field.Label>
           <DatePicker>
-            <DatePicker.Value />
+            <DatePicker.TextBox>
+              <DatePicker.TextBox.Value />
+            </DatePicker.TextBox>
           </DatePicker>
           <Field.Details>
             This is an example detailed message for an date-picker

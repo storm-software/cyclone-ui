@@ -17,14 +17,17 @@
 
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { LabelText } from "@cyclone-ui/label-text";
-import { getButtonSized, getSized } from "@cyclone-ui/theme-helpers";
+import {
+  getButtonSized,
+  getFontSizedFromSize,
+  getSized
+} from "@cyclone-ui/theme-helpers";
 import {
   ThemeableIcon,
   type ThemeableIconProps
 } from "@cyclone-ui/themeable-icon";
 import type {
   ColorTokens,
-  FontSizeTokens,
   GetProps,
   SizeTokens,
   TextProps,
@@ -34,10 +37,16 @@ import type {
   Variable,
   VariantSpreadExtras
 } from "@tamagui/core";
-import { Theme, View, createStyledContext, styled } from "@tamagui/core";
+import {
+  Theme,
+  View,
+  createStyledContext,
+  styled,
+  useThemeName
+} from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { ThemeableStack } from "@tamagui/stacks";
+import { ThemeableStack, XStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo, type FunctionComponent } from "react";
 import { GestureResponderEvent } from "react-native";
@@ -164,7 +173,7 @@ export const ButtonContext = createStyledContext<ButtonContextProps>({
   animate: true
 });
 
-const ButtonFrame = styled(View, {
+const ButtonFrame = styled(XStack, {
   name: "Button",
   context: ButtonContext,
 
@@ -173,11 +182,18 @@ const ButtonFrame = styled(View, {
   focusable: false,
 
   animation: "normal",
-  justifyContent: "center",
   alignItems: "center",
-  flexDirection: "row",
-  flexWrap: "nowrap",
+  justifyContent: "center",
   cursor: "pointer",
+  borderColor: "$borderColor",
+  borderWidth: 1,
+  flexWrap: "nowrap",
+  flex: 1,
+
+  hoverStyle: {
+    borderWidth: 1,
+    borderColor: "$borderColorHover"
+  },
 
   focusStyle: {
     outlineWidth: 0
@@ -191,63 +207,37 @@ const ButtonFrame = styled(View, {
   },
 
   variants: {
-    bordered: {
-      false: {
-        borderColor: "transparent",
-        borderWidth: 0,
-
-        hoverStyle: {
-          borderColor: "transparent",
-          borderWidth: 0
-        }
-      },
-      true: {
-        borderWidth: 1,
-
-        hoverStyle: {
-          borderWidth: 1
-        }
-      }
-    },
-
     variant: {
       primary: {
         backgroundColor: "$primary",
         borderColor: "$tertiary",
 
         hoverStyle: {
-          backgroundColor: "$color9",
-          borderColor: "$borderColorHover"
+          backgroundColor: "$color9"
         }
       },
 
       secondary: {
         backgroundColor: "$surfaceTertiary",
-        borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted",
-          borderColor: "$borderColorHover"
+          backgroundColor: "$surfaceMuted"
         }
       },
 
       tertiary: {
         backgroundColor: "$surfaceSecondary",
-        borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted",
-          borderColor: "$borderColorHover"
+          backgroundColor: "$surfaceMuted"
         }
       },
 
       quaternary: {
         backgroundColor: "$surfacePrimary",
-        borderColor: "$borderColor",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted",
-          borderColor: "$borderColorHover"
+          backgroundColor: "$surfaceMuted"
         }
       },
 
@@ -257,7 +247,7 @@ const ButtonFrame = styled(View, {
         borderColor: "$color",
 
         hoverStyle: {
-          backgroundColor: "$surfacePrimary",
+          backgroundColor: "$surfaceMuted",
           borderWidth: 2,
           borderColor: "$colorHover"
         }
@@ -299,6 +289,18 @@ const ButtonFrame = styled(View, {
 
         hoverStyle: {
           backgroundColor: "transparent",
+          borderWidth: 0
+        }
+      }
+    },
+
+    bordered: {
+      false: {
+        borderColor: "transparent",
+        borderWidth: 0,
+
+        hoverStyle: {
+          borderColor: "transparent",
           borderWidth: 0
         }
       }
@@ -347,6 +349,14 @@ const ButtonFrame = styled(View, {
         padding: 0,
         height: "fit-content"
       }
+    },
+
+    animate: {
+      true: {
+        pressStyle: {
+          scale: 0.95
+        }
+      }
     }
   } as const,
 
@@ -357,7 +367,8 @@ const ButtonFrame = styled(View, {
     ringed: false,
     circular: false,
     bordered: true,
-    noPadding: false
+    noPadding: false,
+    animate: true
   }
 });
 
@@ -367,13 +378,19 @@ const ButtonTextFrame = styled(LabelText, {
 
   animation: "normal",
   userSelect: "none",
-  // flexGrow 1 leads to inconsistent native style where text pushes to start of view
-  flexGrow: 0,
-  flexShrink: 1,
   ellipse: true,
   borderRadius: 0,
   cursor: "pointer",
   textAlign: "center",
+  textTransform: "capitalize",
+  whiteSpace: "nowrap",
+  textOverflow: "ellipsis",
+  display: "inline-flex",
+
+  // flexGrow 1 leads to inconsistent native style where text pushes to start of view
+  flexGrow: 0,
+  flexShrink: 1,
+  zIndex: "$md",
 
   variants: {
     variant: {
@@ -482,35 +499,14 @@ const ButtonTextFrame = styled(LabelText, {
     },
 
     size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
+      "...size": (val: SizeTokens, extras: VariantSpreadExtras<TextProps>) => {
+        if (!extras.font) {
           return;
         }
 
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (val !== undefined && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 0.9;
-        const lineHeight = Number(heightToken ?? 1) * 0.7;
-        const fontWeight = config.font.weight?.[val];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
+        const font = getFontSizedFromSize(val, extras);
         return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
+          ...font
         };
       }
     }
@@ -525,20 +521,22 @@ const ButtonTextFrame = styled(LabelText, {
 });
 
 const ButtonText = ButtonTextFrame.styleable(
-  ({ children, theme, ...props }, forwardedRef) => {
+  ({ children, ...props }, forwardedRef) => {
     const { variant, disabled, circular, color, size } =
       ButtonContext.useStyledContext();
+    const theme = useThemeName();
 
     return (
       <Theme
         name={
-          variant === "primary" ||
-          variant === "secondary" ||
-          variant === "tertiary" ||
-          variant === "quaternary" ||
-          variant === "gradient"
-            ? ColorThemeName.BASE
-            : theme
+          theme &&
+          variant !== "primary" &&
+          variant !== "secondary" &&
+          variant !== "tertiary" &&
+          variant !== "quaternary" &&
+          variant !== "gradient"
+            ? theme
+            : ColorThemeName.BASE
         }
         componentName="ButtonText">
         <ButtonTextFrame
@@ -546,7 +544,7 @@ const ButtonText = ButtonTextFrame.styleable(
           variant={variant}
           disabled={disabled}
           circular={circular}
-          size={size as FontSizeTokens}
+          size={size}
           color={color}
           borderRadius={0}
           $group-button-hover={{
@@ -567,44 +565,50 @@ const ButtonText = ButtonTextFrame.styleable(
   }
 );
 
-const ButtonIcon = ButtonTextFrame.styleable(
-  ({ children, theme, ...props }) => {
+const ButtonIcon = View.styleable(
+  ({ children, ...props }) => {
     const { variant, disabled, color, size } = ButtonContext.useStyledContext();
 
-    const themeName =
-      variant === "primary" ||
-      variant === "secondary" ||
-      variant === "tertiary" ||
-      variant === "quaternary" ||
-      variant === "gradient"
-        ? ColorThemeName.BASE
-        : theme;
     const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
 
+    const themeName = useThemeName();
+    const theme =
+      themeName &&
+      variant !== "primary" &&
+      variant !== "secondary" &&
+      variant !== "tertiary" &&
+      variant !== "quaternary" &&
+      variant !== "gradient"
+        ? themeName
+        : ColorThemeName.BASE;
+
     return (
-      <Theme name={themeName} componentName="ButtonIcon">
-        <ThemeableIcon
-          {...props}
-          disabled={disabled}
-          size={adjusted}
-          color={
-            (disabled
-              ? "$colorDisabled"
-              : color ||
-                (variant === "primary"
+      <View zIndex="$md">
+        <Theme name={theme} componentName="ButtonIcon">
+          <ThemeableIcon
+            {...props}
+            theme={theme}
+            disabled={disabled}
+            size={adjusted}
+            color={
+              (disabled
+                ? "$colorDisabled"
+                : color ||
+                  (variant === "primary"
+                    ? "$surfacePrimary"
+                    : "$color")) as ThemeableIconProps["color"]
+            }
+            $group-button-hover={{
+              color: disabled
+                ? "$colorDisabled"
+                : variant === "primary"
                   ? "$surfacePrimary"
-                  : "$color")) as ThemeableIconProps["color"]
-          }
-          $group-button-hover={{
-            color: disabled
-              ? "$colorDisabled"
-              : variant === "primary"
-                ? "$surfacePrimary"
-                : "$colorHover"
-          }}>
-          {children}
-        </ThemeableIcon>
-      </Theme>
+                  : "$colorHover"
+            }}>
+            {children}
+          </ThemeableIcon>
+        </Theme>
+      </View>
     );
   },
   {
@@ -618,6 +622,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
 
   animation: "normal",
   opacity: 0,
+  zIndex: "$sm",
   backgroundColor: "$surfaceTertiary",
   borderColor: "$primary",
 
@@ -657,7 +662,8 @@ const ButtonGlassBackground = styled(LinearGradient, {
   context: ButtonContext,
 
   animation: "normal",
-  opacity: 0.15,
+  opacity: 0.25,
+  zIndex: "$sm",
   colors: ["$secondary", "$primary"],
 
   variants: {
@@ -674,42 +680,13 @@ const ButtonGradientBackground = styled(LinearGradient, {
   context: ButtonContext,
 
   animation: "normal",
+  zIndex: "$sm",
   colors: ["$tertiary", "$primary"],
 
   variants: {
     circular: {
       true: {
         borderRadius: 1000_000_000
-      }
-    }
-  } as const
-});
-
-const ButtonContainer = styled(ThemeableStack, {
-  name: "Button",
-  context: ButtonContext,
-
-  animation: "normal",
-  cursor: "pointer",
-
-  variants: {
-    disabled: {
-      true: {
-        cursor: "not-allowed"
-      }
-    },
-
-    circular: {
-      true: {
-        borderRadius: 1000_000_000
-      }
-    },
-
-    animate: {
-      true: {
-        pressStyle: {
-          scale: 0.95
-        }
       }
     }
   } as const
@@ -738,8 +715,12 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
         if (!disabled) {
-          onPress?.(event);
-          onClick?.(event);
+          if (onPress) {
+            onPress?.(event);
+          }
+          if (onClick) {
+            onClick?.(event);
+          }
         }
       },
       [disabled, onPress, onClick]
@@ -755,9 +736,14 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         noPadding={noPadding}
         ringed={ringed}
         animate={animate}>
-        <ButtonContainer
+        <ButtonFrame
           group={"button" as any}
+          ref={forwardedRef}
+          {...props}
+          onPress={handlePress}
           circular={circular}
+          bordered={bordered}
+          variant={variant}
           disabled={disabled}
           animate={animate}>
           {variant === "ghost" && (
@@ -778,23 +764,15 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
               style={{
                 filter: "blur(26px)"
               }}
-              $group-button-hover={{ opacity: disabled ? 0.15 : 0.25 }}
+              $group-button-hover={{ opacity: disabled ? 0.25 : 0.45 }}
             />
           )}
           {variant === "gradient" && (
             <ButtonGradientBackground fullscreen={true} circular={circular} />
           )}
-          <ButtonFrame
-            ref={forwardedRef}
-            {...props}
-            onPress={handlePress}
-            circular={circular}
-            bordered={bordered}
-            variant={variant}
-            disabled={disabled}>
-            {children}
-          </ButtonFrame>
-        </ButtonContainer>
+
+          {children}
+        </ButtonFrame>
       </ButtonContext.Provider>
     );
   },

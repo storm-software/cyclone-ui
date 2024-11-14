@@ -27,7 +27,11 @@ const meta: Meta<typeof InputField> = {
     <Form name="formName" defaultValues={{ inputFieldName: defaultValue }}>
       <InputField name="inputFieldName" {...props}>
         <InputField.Label>Label Text</InputField.Label>
-        <InputField.Control placeholder="email@example.com" />
+        <InputField.Control>
+          <InputField.Control.TextBox>
+            <InputField.Control.TextBox.Value placeholder="email@example.com" />
+          </InputField.Control.TextBox>
+        </InputField.Control>
         <InputField.Details>
           This is an example detailed message for an input field
         </InputField.Details>

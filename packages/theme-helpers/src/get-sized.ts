@@ -15,9 +15,14 @@
 
  -------------------------------------------------------------------*/
 
+import { fontSizeToSize } from "@cyclone-ui/tokens";
 import { isNumber, isSet } from "@storm-stack/types";
-import type { SizeTokens } from "@tamagui/core";
-import { getSize, getSpace } from "@tamagui/get-token";
+import type { FontSizeTokens, SizeTokens } from "@tamagui/core";
+import {
+  getRadius as getRadiusBase,
+  getSize,
+  getSpace
+} from "@tamagui/get-token";
 import { getNearestToken } from "./get-nearest-token";
 
 export interface GetSizedOptions {
@@ -31,7 +36,7 @@ export interface GetSizedOptions {
  * Get the size number from a token value or number value and a scale
  *
  * @param val - The size token or number to use
- * @param scale - The scale to use
+ * @param options - The scale to use
  * @returns The size number
  */
 export const getSized = (
@@ -54,10 +59,33 @@ export const getSized = (
 };
 
 /**
+ * Get the font size number from a token value or number value and a scale
+ *
+ * @param val - The size token or number to use
+ * @param options - The scale to use
+ * @returns The font size number
+ */
+export const getSizeFromFontSized = (
+  val: FontSizeTokens | number,
+  options: GetSizedOptions = {}
+) => {
+  let value = val;
+  if (!value) {
+    value = "$true";
+  }
+
+  if (isNumber(value)) {
+    value = fontSizeToSize(value);
+  }
+
+  return getSized(value, options);
+};
+
+/**
  * Get the space number from a size token value or number value and a scale
  *
  * @param val - The size token or number to use
- * @param scale - The scale to use
+ * @param options - The scale to use
  * @returns The space number
  */
 export const getSpaced = (
@@ -77,4 +105,34 @@ export const getSpaced = (
   const scale = isSet(options.scale) ? options.scale : 1;
 
   return space.val * scale;
+};
+
+export type GetRadiusOptions = GetSizedOptions & {
+  circular?: boolean;
+};
+
+/**
+ * Get the radius number from a size token value or number value and a scale
+ *
+ * @param val - The size token or number to use
+ * @param options - The options to use
+ * @returns The radius number
+ */
+export const getRadius = (
+  val: SizeTokens | number,
+  options: GetRadiusOptions = {}
+) => {
+  if (options.circular) {
+    return 100_000;
+  }
+
+  let value = val;
+  if (isNumber(value)) {
+    value = getNearestToken("radius", value);
+  }
+
+  const radius = getRadiusBase(value, options);
+  const scale = isSet(options.scale) ? options.scale : 1;
+
+  return radius.val * scale;
 };

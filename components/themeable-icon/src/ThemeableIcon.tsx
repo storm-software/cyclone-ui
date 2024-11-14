@@ -102,10 +102,8 @@ export const ThemeableIcon = forwardRef<
     }: ThemeableIconExtraProps,
     forwardedRef
   ) => {
-    const adjusted = getSized(size);
-
     const getThemedIcon = useGetThemedIcon({
-      size: adjusted,
+      size: getSized(size),
       color: disabled ? "$colorDisabled" : (color as ColorProp)
     });
 

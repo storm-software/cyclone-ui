@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.110.5",
-    "@tamagui/web": "^1.110.5",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/create-context": "^1.110.5",
+    "@tamagui/web": "^1.110.5"
   },
   "devDependencies": {
     "react": "18.3.1",

@@ -18,6 +18,7 @@
 import { colors } from "@cyclone-ui/colors";
 import type { Variable } from "@tamagui/web";
 import { createTokens } from "@tamagui/web";
+import { sizeToSpace } from "./conversion-helpers";
 
 // should roughly map to button/input etc height at each level
 // fonts should match that height/lineHeight at each stop
@@ -90,16 +91,6 @@ const spaces = Object.entries(size).map(([k, v]) => {
   return [k, sizeToSpace(v)] as const;
 });
 
-// a bit odd but keeping backward compat for values >8 while fixing below
-function sizeToSpace(v: number) {
-  if (v === 0) return 0;
-  if (v === 2) return 0.5;
-  if (v === 4) return 1;
-  if (v === 8) return 1.5;
-  if (v <= 16) return Math.round(v * 0.333);
-  return Math.floor(v * 0.7 - 12);
-}
-
 const spacesNegative = spaces.slice(1).map(([k, v]) => [`-${k.slice(1)}`, -v]);
 
 type SizeKeysWithNegatives =
@@ -117,12 +108,16 @@ export const zIndex = {
   0: 0,
   1: 100,
   2: 200,
+  sm: 200,
   3: 300,
   4: 400,
   5: 500,
+  md: 500,
+  true: 500,
   6: 600,
   7: 700,
   8: 800,
+  lg: 800,
   9: 900
 };
 

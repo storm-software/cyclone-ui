@@ -25,6 +25,7 @@
  */
 
 export * from "./component-themes";
+export * from "./conversion-helpers";
 export * from "./palettes";
 export * from "./shadows";
 export * from "./templates";

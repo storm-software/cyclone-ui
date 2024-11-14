@@ -70,14 +70,14 @@ const template = {
   colorHover: ColorPaletteShades.FOREGROUND,
   colorPress: ColorPaletteShades.SECONDARY,
   colorFocus: ColorPaletteShades.SECONDARY,
-  colorDisabled: ColorPaletteShades.SECONDARY,
+  colorDisabled: ColorPaletteShades.BACKGROUND + 3,
   colorTransparent: ColorPaletteShades.FOREGROUND_TRANSPARENT,
   borderColor: ColorPaletteShades.BACKGROUND + 5,
   borderColorHover: ColorPaletteShades.BACKGROUND + 6,
   borderColorFocus: ColorPaletteShades.BACKGROUND + 5,
   borderColorPress: ColorPaletteShades.BACKGROUND + 6,
   borderColorDisabled: ColorPaletteShades.BACKGROUND + 3,
-  placeholderColor: ColorPaletteShades.SECONDARY,
+  placeholderColor: ColorPaletteShades.BACKGROUND + 5,
   placeholderColorDisabled: ColorPaletteShades.BACKGROUND + 3,
   outlineColor: ColorPaletteShades.PRIMARY
 };
@@ -203,6 +203,18 @@ export const maskOptions = {
       colorHover: ColorPaletteShades.FOREGROUND,
       colorPress: ColorPaletteShades.FOREGROUND,
       colorFocus: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  details: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.BACKGROUND + 5,
+      colorHover: ColorPaletteShades.BACKGROUND + 5,
+      colorPress: ColorPaletteShades.BACKGROUND + 5,
+      colorFocus: ColorPaletteShades.BACKGROUND + 5
     },
     skip: skipShadowsAndSpecificColors
   },

@@ -29,7 +29,7 @@ export const StorybookDecorator = (Story: any, args: any) => {
         disableInjectCSS: false,
         defaultMode: themeKey
       }}>
-      <YStack padding="$8">
+      <YStack padding="$8" flexGrow={1}>
         <Story />
       </YStack>
     </Provider>

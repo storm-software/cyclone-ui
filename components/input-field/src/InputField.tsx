@@ -18,7 +18,8 @@
 import { Field } from "@cyclone-ui/field";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
-import { withStaticProperties } from "@tamagui/web";
+import { Theme, withStaticProperties } from "@tamagui/core";
+import { useCallback } from "react";
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -30,42 +31,101 @@ const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const InputFieldControl = Input.Value.styleable((props, forwardedRef) => {
-  const { focus, blur, change } = useFieldActions();
+const InputFieldControl = Input.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const store = useFieldStore();
+    const name = store.get.name();
+    const size = store.get.size();
+    const disabled = store.get.disabled();
+    const focused = store.get.focused();
 
-  const store = useFieldStore();
-
-  const name = store.get.name();
-  const size = store.get.size();
-  const disabled = store.get.disabled();
-  const focused = store.get.focused();
-  const validating = store.get.validating();
-  const formattedValue = store.get.formattedValue();
-  const initialValue = store.get.initialValue();
-
-  return (
-    <Input name={name} focused={focused} disabled={disabled}>
-      <Input.Value
+    return (
+      <Input
         ref={forwardedRef}
-        {...props}
-        size={size}
+        name={name}
+        focused={focused}
         disabled={disabled}
-        onFocus={focus}
-        onBlur={blur}
-        onChangeText={change}
-        value={formattedValue}
-        defaultValue={String(initialValue ?? "")}
-      />
+        size={size}
+        {...props}>
+        {children}
+      </Input>
+    );
+  }
+);
 
-      {!disabled && !validating && <Field.ThemeIcon />}
-      {(disabled || validating) && <Field.ThemeIcon />}
-    </Input>
-  );
-});
+const InputFieldControlTextBox = Input.TextBox.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const store = useFieldStore();
+    const disabled = store.get.disabled();
+    const validating = store.get.validating();
+
+    return (
+      <Input.TextBox ref={forwardedRef} {...props}>
+        {children}
+
+        {!disabled && !validating && <Field.ThemeIcon />}
+        {(disabled || validating) && <Field.ThemeIcon />}
+      </Input.TextBox>
+    );
+  }
+);
+
+const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const { focus, blur, change } = useFieldActions();
+
+    const store = useFieldStore();
+    const theme = store.get.theme();
+    const disabled = store.get.disabled();
+    const formattedValue = store.get.formattedValue();
+    const initialValue = store.get.initialValue();
+
+    const handleChange = useCallback(
+      (event: CustomEvent<{ text: string }>) => {
+        change(event.detail.text);
+      },
+      [change]
+    );
+
+    return (
+      <Theme name={theme}>
+        <Input.TextBox.Value
+          ref={forwardedRef}
+          {...props}
+          theme={theme}
+          disabled={disabled}
+          onFocus={focus}
+          onBlur={blur}
+          onChange={handleChange}
+          value={formattedValue}
+          defaultValue={String(initialValue ?? "")}
+        />
+      </Theme>
+    );
+  }
+);
+
+const InputFieldControlTrigger = Input.Trigger.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const store = useFieldStore();
+    const disabled = store.get.disabled();
+
+    return (
+      <Input.Trigger ref={forwardedRef} disabled={disabled} {...props}>
+        {children}
+      </Input.Trigger>
+    );
+  }
+);
 
 export const InputField = withStaticProperties(InputFieldGroup, {
   Label: Field.Label,
-  Control: InputFieldControl,
+  Control: withStaticProperties(InputFieldControl, {
+    TextBox: withStaticProperties(InputFieldControlTextBox, {
+      Value: InputFieldControlTextBoxValue
+    }),
+    Trigger: InputFieldControlTrigger
+  }),
   Details: Field.Details,
   Icon: Field.Icon
 });

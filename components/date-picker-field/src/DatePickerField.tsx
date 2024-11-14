@@ -22,11 +22,12 @@ import {
   useFieldRef,
   useFieldStore
 } from "@cyclone-ui/form-state";
+import { getSized } from "@cyclone-ui/theme-helpers";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { StormDate } from "@storm-stack/date-time/storm-date";
 import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import { withStaticProperties } from "@tamagui/core";
-import { Calendar, X } from "@tamagui/lucide-icons";
+import { Calendar } from "@tamagui/lucide-icons";
 import { LegacyRef, useCallback, useMemo } from "react";
 import { TextInput } from "react-native";
 
@@ -65,40 +66,36 @@ const DatePickerFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const DatePickerFieldIcon = Field.Icon.styleable((props, forwardedRef) => {
-  const { focus, blur, change } = useFieldActions();
+const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
+  (props, forwardedRef) => {
+    const { focus } = useFieldActions();
 
-  const store = useFieldStore();
+    const store = useFieldStore();
+    const size = store.get.size();
 
-  const disabled = store.get.disabled();
-  const validating = store.get.validating();
-  const value = store.get.value();
+    const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
 
-  const handleReset = useCallback(() => {
-    change(null);
-    blur();
-  }, [blur, change]);
+    // const handleReset = useCallback(() => {
+    //   change(null);
+    //   blur();
+    // }, [blur, change]);
 
-  if (disabled || validating) {
-    return <Field.ThemeIcon />;
-  }
-
-  return (
-    <>
-      {value ? (
-        <Field.Icon ref={forwardedRef} {...props} onPress={handleReset}>
-          <X />
-        </Field.Icon>
-      ) : (
-        <Field.Icon ref={forwardedRef} {...props} onPress={focus}>
+    return (
+      <DatePicker.Trigger
+        ref={forwardedRef}
+        flexBasis="10%"
+        {...props}
+        onPress={focus}
+        size={adjusted}>
+        <DatePicker.Trigger.Icon>
           <Calendar />
-        </Field.Icon>
-      )}
-    </>
-  );
-});
+        </DatePicker.Trigger.Icon>
+      </DatePicker.Trigger>
+    );
+  }
+);
 
-const DatePickerFieldControl = DatePicker.Value.styleable(
+const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { blur, change, setFocused } = useFieldActions();
 
@@ -131,17 +128,19 @@ const DatePickerFieldControl = DatePicker.Value.styleable(
         onChange={handleChange}
         open={focused}
         onOpenChange={setFocused}>
-        {!disabled && <Field.ThemeIcon />}
+        <DatePicker.TextBox>
+          {children}
+          <DatePicker.TextBox.Value
+            ref={ref}
+            {...props}
+            value={formattedValue}
+            defaultValue={defaultValue}
+          />
+          <Field.ThemeIcon />
+        </DatePicker.TextBox>
 
-        <DatePicker.Value
-          ref={ref}
-          {...props}
-          value={formattedValue}
-          defaultValue={defaultValue}
-        />
-
-        {children}
-        <DatePickerFieldIcon />
+        <DatePicker.Separator />
+        <DatePickerFieldTrigger />
       </DatePicker>
     );
   }
