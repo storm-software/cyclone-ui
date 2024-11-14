@@ -25,7 +25,7 @@ import { SizableText } from "@tamagui/text";
 type LinkTextExtraProps = {
   disabled?: boolean;
   underline?: "hover" | "initial" | "static" | "none";
-  variant?: "base" | "themed";
+  variant?: "base" | "mixed" | "themed";
   inverse?: boolean;
 };
 
@@ -34,8 +34,9 @@ const LinkTextFrame = styled(SizableText, {
 
   cursor: "pointer",
   fontFamily: "$link",
+  fontWeight: "$md",
   size: "$true",
-  whiteSpace: "normal",
+  whiteSpace: "nowrap",
 
   variants: {
     underline: {
@@ -96,6 +97,25 @@ const LinkTextFrame = styled(SizableText, {
           textDecorationColor: "$colorFocus"
         }
       },
+      mixed: {
+        color: "$fg",
+        textDecorationColor: "$color",
+
+        hoverStyle: {
+          color: "$colorHover",
+          textDecorationColor: "$fg"
+        },
+
+        pressStyle: {
+          color: "$colorPress",
+          textDecorationColor: "$fg"
+        },
+
+        focusStyle: {
+          color: "$colorFocus",
+          textDecorationColor: "$fg"
+        }
+      },
       themed: {
         color: "$color",
         textDecorationColor: "$color",
@@ -131,6 +151,25 @@ const LinkTextFrame = styled(SizableText, {
 
         focusStyle: {
           color: "$colorFocus",
+          textDecorationColor: "$colorFocus"
+        }
+      },
+      mixedInverse: {
+        color: "$color",
+        textDecorationColor: "$fg",
+
+        hoverStyle: {
+          color: "$fg",
+          textDecorationColor: "$colorHover"
+        },
+
+        pressStyle: {
+          color: "$fg",
+          textDecorationColor: "$colorPress"
+        },
+
+        focusStyle: {
+          color: "$fg",
           textDecorationColor: "$colorFocus"
         }
       },
@@ -177,6 +216,8 @@ const LinkTextFrame = styled(SizableText, {
   }
 });
 
+type BaseLinkTextVariant = GetProps<typeof LinkTextFrame>["variant"];
+
 export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
   (
     {
@@ -190,26 +231,31 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
     forwardedRef
   ) => {
     const colorRole = useThemeColorThemeName();
+    const isLinkThemed =
+      !colorRole ||
+      colorRole === ColorThemeName.LINK ||
+      colorRole === ColorThemeName.BASE;
+
+    let variant = props.variant as BaseLinkTextVariant;
+    if (!variant && isLinkThemed) {
+      variant = "base";
+    }
+    if (!variant) {
+      variant = "themed";
+    }
+    if (inverse) {
+      variant = `${variant}Inverse` as BaseLinkTextVariant;
+    }
 
     return (
-      <Theme name={!colorRole ? ColorThemeName.LINK : colorRole}>
+      <Theme name={isLinkThemed ? ColorThemeName.LINK : colorRole}>
         <LinkTextFrame
-          ref={forwardedRef}
           {...props}
+          ref={forwardedRef}
           underline={underline}
           cta={cta}
           disabled={disabled}
-          variant={
-            !colorRole ||
-            colorRole === ColorThemeName.LINK ||
-            colorRole === ColorThemeName.BASE
-              ? inverse
-                ? "baseInverse"
-                : "base"
-              : inverse
-                ? "themedInverse"
-                : "themed"
-          }>
+          variant={variant}>
           {children}
         </LinkTextFrame>
       </Theme>

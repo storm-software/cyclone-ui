@@ -1,12 +1,33 @@
-import type { Meta, StoryObj } from "@storybook/react";
+/*-------------------------------------------------------------------
 
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { BodyText } from "@cyclone-ui/body-text";
+import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "./Link";
 
 const meta: Meta<typeof Link> = {
   title: "Triggers/Link",
   component: Link,
   tags: ["autodocs"],
-  render: (args: any) => <Link {...args}>Link Text</Link>
+  render: (args: any) => (
+    <BodyText>
+      Lorem ipsum <Link {...args}>dolor sit</Link> amet
+    </BodyText>
+  )
 } satisfies Meta<typeof Link>;
 
 export default meta;

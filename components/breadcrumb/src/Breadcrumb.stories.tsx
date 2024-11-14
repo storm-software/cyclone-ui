@@ -27,21 +27,21 @@ export const Base: Story = {
 export const Slash: Story = {
   args: {
     currentName: "Current Page",
-    divider: "slash"
+    variant: "slash"
   }
 };
 
 export const Chevron: Story = {
   args: {
     currentName: "Current Page",
-    divider: "chevron"
+    variant: "chevron"
   }
 };
 
 export const DoubleChevron: Story = {
   args: {
     currentName: "Current Page",
-    divider: "double"
+    variant: "double"
   }
 };
 

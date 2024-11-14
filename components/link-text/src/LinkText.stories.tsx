@@ -63,6 +63,21 @@ export const BaseInverseVariant: Story = {
   }
 };
 
+export const MixedVariant: Story = {
+  args: {
+    variant: "mixed",
+    underline: "static"
+  }
+};
+
+export const MixedInverseVariant: Story = {
+  args: {
+    variant: "mixed",
+    inverse: true,
+    underline: "static"
+  }
+};
+
 export const ThemedVariant: Story = {
   args: {
     variant: "themed"

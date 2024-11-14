@@ -33,7 +33,7 @@ import {
   Lightbulb,
   Lock
 } from "@tamagui/lucide-icons";
-import { forwardRef, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { OpaqueColorValue } from "react-native";
 
 const ThemeableIconFrame = styled(View, {
@@ -87,37 +87,35 @@ type ThemeableIconExtraProps = PropsWithChildren<{
   color?: string | UnionableNumber | Variable<any> | OpaqueColorValue;
 }>;
 
-export const ThemeableIcon = forwardRef<
-  typeof ThemeableIconFrame,
-  ThemeableIconExtraProps
->(
-  (
-    {
-      theme,
-      disabled = false,
-      color,
-      size = "$true",
-      children,
-      ...props
-    }: ThemeableIconExtraProps,
-    forwardedRef
-  ) => {
-    const getThemedIcon = useGetThemedIcon({
-      size: getSized(size),
-      color: disabled ? "$colorDisabled" : (color as ColorProp)
-    });
+export const ThemeableIcon =
+  ThemeableIconFrame.styleable<ThemeableIconExtraProps>(
+    (
+      {
+        theme,
+        disabled = false,
+        color,
+        size = "$true",
+        children,
+        ...props
+      }: ThemeableIconExtraProps,
+      forwardedRef
+    ) => {
+      const getThemedIcon = useGetThemedIcon({
+        size: getSized(size),
+        color: disabled ? "$colorDisabled" : (color as ColorProp)
+      });
 
-    return (
-      <ThemeableIconFrame
-        ref={forwardedRef}
-        {...props}
-        theme={theme}
-        disabled={disabled}>
-        {getThemedIcon(children)}
-      </ThemeableIconFrame>
-    );
-  }
-);
+      return (
+        <ThemeableIconFrame
+          ref={forwardedRef}
+          {...props}
+          theme={theme}
+          disabled={disabled}>
+          {getThemedIcon(children)}
+        </ThemeableIconFrame>
+      );
+    }
+  );
 
 export type ThemeableIconProps = GetProps<typeof ThemeableIcon>;
 

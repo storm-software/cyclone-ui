@@ -15,57 +15,61 @@
 
  -------------------------------------------------------------------*/
 
+import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
+import { getSpaced } from "@cyclone-ui/theme-helpers";
 import {
   createStyledContext,
   FontSizeTokens,
   styled,
-  ThemeableProps
+  Theme,
+  ThemeableProps,
+  View
 } from "@tamagui/core";
+import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";
-import { ThemeableStack, XStack } from "@tamagui/stacks";
-import { SizableText, type TextContextStyles } from "@tamagui/text";
+import { type TextContextStyles } from "@tamagui/text";
 
-export type BreadcrumbDivider = "chevron" | "double" | "slash";
-export const BreadcrumbDivider = {
-  CHEVRON: "chevron" as BreadcrumbDivider,
-  DOUBLE: "double" as BreadcrumbDivider,
-  SLASH: "slash" as BreadcrumbDivider
+export type BreadcrumbVariant = "chevron" | "double" | "slash";
+export const BreadcrumbVariant = {
+  CHEVRON: "chevron" as BreadcrumbVariant,
+  DOUBLE: "double" as BreadcrumbVariant,
+  SLASH: "slash" as BreadcrumbVariant
 };
 
 export type BreadcrumbContextProps = TextContextStyles &
   ThemeableProps & {
     size: FontSizeTokens;
-    divider: BreadcrumbDivider;
+    variant: BreadcrumbVariant;
   };
 
 export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   size: "$true",
-  divider: BreadcrumbDivider.SLASH
+  variant: BreadcrumbVariant.SLASH
 });
 
-const BreadcrumbFrame = styled(ThemeableStack, {
+const BreadcrumbFrame = styled(XGroup, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
 
   animation: "normal",
-  flexDirection: "row",
-  flexWrap: "nowrap",
   alignItems: "center",
+  flexWrap: "nowrap",
+  flexShrink: 1,
 
   variants: {
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val = "$true") => {
         return {
-          gap: tokens.size[val]
+          gap: getSpaced(val) / 2
         };
       }
     }
   }
 });
 
-const BreadcrumbCurrent = styled(SizableText, {
+const BreadcrumbCurrent = styled(LabelText, {
   name: "BreadcrumbCurrent",
   context: BreadcrumbContext,
 
@@ -84,10 +88,12 @@ const BreadcrumbImpl = BreadcrumbFrame.styleable<{
     const { theme } = BreadcrumbContext.useStyledContext();
 
     return (
-      <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
-        {children}
-        <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
-      </BreadcrumbFrame>
+      <Theme name={theme}>
+        <BreadcrumbFrame ref={forwardRef} theme={theme} {...props}>
+          {children}
+          <BreadcrumbCurrent>{currentName || "Current"}</BreadcrumbCurrent>
+        </BreadcrumbFrame>
+      </Theme>
     );
   },
   {
@@ -95,57 +101,40 @@ const BreadcrumbImpl = BreadcrumbFrame.styleable<{
   }
 );
 
-const BreadcrumbItemFrame = styled(XStack, {
-  name: "BreadcrumbItem",
-  context: BreadcrumbContext,
-
-  animation: "normal",
-  flexDirection: "row",
-  flexWrap: "nowrap",
-  alignItems: "center",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          gap: tokens.size[val]
-        };
-      }
-    }
-  }
-});
-
 const BreadcrumbLink = styled(Link, {
   name: "BreadcrumbItem",
   context: BreadcrumbContext,
 
   animation: "normal",
-  underline: "initial",
-  flexGrow: 1,
-  flexShrink: 1,
-  ellipse: true
+  underline: "initial"
 });
 
 const BreadcrumbItemImpl = BreadcrumbLink.styleable(
-  (props, forwardRef) => {
-    const { children, ...rest } = props;
-    const { size, theme, divider } = BreadcrumbContext.useStyledContext();
+  ({ children, ...props }, forwardRef) => {
+    const { size, variant } = BreadcrumbContext.useStyledContext();
 
     return (
-      <BreadcrumbItemFrame size={size} theme={theme}>
-        <BreadcrumbLink ref={forwardRef} theme={theme} size={size} {...rest}>
-          {children}
-        </BreadcrumbLink>
-        {divider === BreadcrumbDivider.CHEVRON && (
+      <XGroup.Item>
+        <View display="block">
+          <BreadcrumbLink
+            ref={forwardRef}
+            size={size}
+            {...props}
+            variant="mixed">
+            {children}
+          </BreadcrumbLink>
+        </View>
+
+        {variant === BreadcrumbVariant.CHEVRON && (
           <ChevronRight color="$borderColor" size="$2" />
         )}
-        {divider === BreadcrumbDivider.DOUBLE && (
+        {variant === BreadcrumbVariant.DOUBLE && (
           <ChevronsRight color="$borderColor" size="$2" />
         )}
-        {divider === BreadcrumbDivider.SLASH && (
+        {variant === BreadcrumbVariant.SLASH && (
           <Slash color="$borderColor" size="$0.75" />
         )}
-      </BreadcrumbItemFrame>
+      </XGroup.Item>
     );
   },
   {

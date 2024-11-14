@@ -21,31 +21,27 @@ import { isWeb } from "@tamagui/constants";
 import { GetProps, styled } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons";
 import { GestureResponderEvent, Linking } from "react-native";
-import { useLink, UseLinkProps } from "solito/link";
 
 const LinkFrame = styled(LinkText, {
   name: "Link",
   tag: "a",
   accessibilityRole: "link",
 
-  cursor: "pointer",
-  flexDirection: "row",
-  gap: "$1"
+  cursor: "pointer"
 });
 
-export interface LinkExtraProps extends UseLinkProps {
+export const Link = LinkFrame.styleable<{
+  href?: string;
   target?: string;
   rel?: string;
   download?: string;
   external?: boolean;
-}
-
-export const Link = LinkFrame.styleable<LinkExtraProps>(
+}>(
   (
     { target, children, href, external, size = "$true", ...props },
     forwardedRef
   ) => {
-    const linkProps = useLink({ href, ...props });
+    // const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
 
     return (
       <LinkFrame
@@ -53,17 +49,16 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
         ref={forwardedRef}
         size={size}
         {...props}
-        {...linkProps}
         {...(isWeb
           ? {
-              href: linkProps.href,
+              href,
               target: external ? "_blank" : target
             }
           : {
               onPress: (event: GestureResponderEvent) => {
                 props.onPress?.(event);
-                if (linkProps.href !== undefined) {
-                  Linking.openURL(linkProps.href);
+                if (href !== undefined) {
+                  Linking.openURL(href);
                 }
               }
             })}>
@@ -71,12 +66,14 @@ export const Link = LinkFrame.styleable<LinkExtraProps>(
 
         {external && (
           <ThemeableIcon
-            size={size}
+            size="$1"
+            display="inline"
+            paddingTop={5}
             color="$secondary"
             $group-link-hover={{
               color: "$colorHover",
-              x: 5,
-              y: -5
+              x: 50,
+              y: -50
             }}>
             <ArrowUpRight />
           </ThemeableIcon>
