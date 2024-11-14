@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5"
+    "@tamagui/core": "^1.116.14",
+    "@tamagui/lucide-icons": "^1.116.14",
+    "@tamagui/stacks": "^1.116.14"
   },
   "devDependencies": {
     "react": "18.3.1",

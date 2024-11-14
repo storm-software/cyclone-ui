@@ -32,7 +32,7 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/core": "^1.110.5"
+    "@tamagui/core": "^1.116.14"
   },
   "devDependencies": {
     "react": "18.3.1",

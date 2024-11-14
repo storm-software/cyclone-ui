@@ -33,10 +33,10 @@
     "react-native-svg": ">=12"
   },
   "dependencies": {
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/helpers-icon": "^1.110.5",
-    "@tamagui/helpers-tamagui": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5"
+    "@tamagui/core": "^1.116.14",
+    "@tamagui/helpers-icon": "^1.116.14",
+    "@tamagui/helpers-tamagui": "^1.116.14",
+    "@tamagui/lucide-icons": "^1.116.14"
   },
   "devDependencies": {
     "react": "18.3.1",

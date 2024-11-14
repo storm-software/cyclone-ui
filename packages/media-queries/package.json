@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@tamagui/react-native-media-driver": "^1.110.5"
+    "@tamagui/react-native-media-driver": "^1.116.14"
   },
   "publishConfig": {
     "access": "public"

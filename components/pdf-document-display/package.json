@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.110.5",
+    "@tamagui/core": "^1.116.14",
     "pdfjs-dist": "^4.7.76",
     "react-pdf": "^9.1.1"
   },

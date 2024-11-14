@@ -9,14 +9,46 @@
     "directory": "components/breadcrumb"
   },
   "private": false,
+  "module": "dist/esm",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "react-native": "./dist/cjs/index.native.js"
+    }
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
+  "peerDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
+  },
   "dependencies": {
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/helpers": "^1.110.5",
-    "@tamagui/lucide-icons": "^1.110.5",
-    "@tamagui/stacks": "^1.110.5",
-    "@tamagui/text": "^1.110.5"
+    "@tamagui/core": "^1.116.14",
+    "@tamagui/create-context": "^1.116.14",
+    "@tamagui/group": "^1.116.14",
+    "@tamagui/helpers": "^1.116.14",
+    "@tamagui/lucide-icons": "^1.116.14",
+    "@tamagui/stacks": "^1.116.14",
+    "@tamagui/text": "^1.116.14"
+  },
+  "devDependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx"
 }

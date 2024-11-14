@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.110.5",
-    "@tamagui/portal": "^1.110.5",
-    "@tamagui/toast": "^1.110.5"
+    "@tamagui/core": "^1.116.14",
+    "@tamagui/portal": "^1.116.14",
+    "@tamagui/toast": "^1.116.14"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",

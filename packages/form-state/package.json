@@ -44,7 +44,7 @@
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.110.5",
+    "@tamagui/core": "^1.116.14",
     "jotai-optics": "^0.4.0",
     "maska": "^3.0.3",
     "optics-ts": "^2.4.1"
