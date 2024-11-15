@@ -258,17 +258,12 @@ export const componentThemes = {
     ...maskOptions.component
   },
 
-  SelectTrigger: {
+  SelectValue: {
     mask: "identity",
     ...maskOptions.title
   },
 
-  SelectTriggerValue: {
-    mask: "identity",
-    ...maskOptions.title
-  },
-
-  SelectItemsItem: {
+  SelectItems: {
     mask: "identity",
     ...maskOptions.component
   },

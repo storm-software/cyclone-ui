@@ -47,15 +47,14 @@ const SelectFieldItem = (
 };
 
 const SelectFieldControl = Select.styleable<
-  Pick<GetProps<typeof Select.Trigger.Value>, "placeholder">
->(({ placeholder, ...props }, forwardedRef) => {
+  Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">
+>(({ placeholder, children, ...props }, forwardedRef) => {
   const { focus, blur, change, toggleFocused } = useFieldActions();
 
   const store = useFieldStore();
   const name = store.get.name();
   const disabled = store.get.disabled();
   const focused = store.get.focused();
-  const validating = store.get.validating();
   const itemsAtoms = store.get.itemsAtoms();
   const value = store.get.value();
   const formattedValue = store.get.formattedValue();
@@ -72,23 +71,17 @@ const SelectFieldControl = Select.styleable<
       onValueChange={change}
       value={formattedValue}
       defaultValue={String(initialValue ?? "")}>
-      <Select.Trigger>
-        {!disabled && <Field.ThemeIcon />}
-
-        <Select.Trigger.Value
+      <Select.TextBox>
+        {children}
+        <Select.TextBox.Value
           onFocus={focus}
           onBlur={blur}
           placeholder={placeholder}
           placeholding={!value}
         />
 
-        {!disabled && !validating && (
-          <Field.Icon>
-            <Select.Trigger.Chevron />
-          </Field.Icon>
-        )}
-        {(disabled || validating) && <Field.ThemeIcon />}
-      </Select.Trigger>
+        <Field.ThemeIcon />
+      </Select.TextBox>
 
       <Select.Items>
         {itemsAtoms.map((itemAtom, index) => (

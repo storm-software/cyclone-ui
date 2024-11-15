@@ -71,7 +71,7 @@ export const Link = LinkFrame.styleable<{
             paddingTop={5}
             color="$secondary"
             $group-link-hover={{
-              color: "$colorHover",
+              color: "$secondary",
               x: 50,
               y: -50
             }}>

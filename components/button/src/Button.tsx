@@ -715,6 +715,9 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   ) => {
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         if (!disabled) {
           if (onPress) {
             onPress?.(event);

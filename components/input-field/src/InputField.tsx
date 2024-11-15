@@ -62,9 +62,7 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
     return (
       <Input.TextBox ref={forwardedRef} {...props}>
         {children}
-
-        {!disabled && !validating && <Field.ThemeIcon />}
-        {(disabled || validating) && <Field.ThemeIcon />}
+        <Field.ThemeIcon />
       </Input.TextBox>
     );
   }

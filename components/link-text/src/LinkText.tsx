@@ -41,6 +41,7 @@ const LinkTextFrame = styled(SizableText, {
   variants: {
     underline: {
       initial: {
+        animation: "normal",
         textDecorationLine: "underline",
         textDecorationStyle: "solid",
 
@@ -57,6 +58,7 @@ const LinkTextFrame = styled(SizableText, {
         }
       },
       static: {
+        animation: "normal",
         textDecorationLine: "underline",
         textDecorationStyle: "solid"
       },
@@ -102,7 +104,7 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$color",
 
         hoverStyle: {
-          color: "$colorHover",
+          color: "$color",
           textDecorationColor: "$fg"
         },
 
@@ -160,7 +162,7 @@ const LinkTextFrame = styled(SizableText, {
 
         hoverStyle: {
           color: "$fg",
-          textDecorationColor: "$colorHover"
+          textDecorationColor: "$color"
         },
 
         pressStyle: {

@@ -1750,34 +1750,16 @@ importers:
       '@tamagui/focusable':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/font-size':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/get-button-sized':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/get-font-sized':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/get-token':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/group':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/helpers':
-        specifier: ^1.116.14
-        version: 1.116.14(react@18.3.1)
       '@tamagui/helpers-icon':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
-      '@tamagui/helpers-tamagui':
+      '@tamagui/linear-gradient':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/label':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      '@tamagui/linear-gradient':
+      '@tamagui/list-item':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/lucide-icons':
@@ -1786,6 +1768,9 @@ importers:
       '@tamagui/select':
         specifier: ^1.116.14
         version: 1.116.14(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/separator':
+        specifier: ^1.116.14
+        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/sheet':
         specifier: ^1.116.14
         version: 1.116.14(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1798,9 +1783,6 @@ importers:
       '@tamagui/web':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.8.0
-        version: 15.8.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1

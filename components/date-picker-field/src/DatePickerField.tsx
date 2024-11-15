@@ -84,7 +84,7 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
     return (
       <DatePicker.Trigger
         ref={forwardedRef}
-        flexBasis="10%"
+        flexBasis="6%"
         {...props}
         onPress={focus}
         size={adjusted}>

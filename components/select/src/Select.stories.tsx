@@ -29,10 +29,9 @@ const meta: Meta<typeof Select> = {
       <Field name="selectName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <Select>
-          <Select.Trigger>
-            <Select.Trigger.Value placeholder="email@example.com" />
-            <Select.Trigger.Chevron />
-          </Select.Trigger>
+          <Select.TextBox>
+            <Select.TextBox.Value placeholder="email@example.com" />
+          </Select.TextBox>
 
           <Select.Items>
             {options.map((option, i) => (

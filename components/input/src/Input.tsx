@@ -92,18 +92,15 @@ const InputGroup = styled(XGroup, {
 
         if (typeof val === "number") {
           return {
-            // gap: val * 0.25,
             height: val,
             borderRadius: props.circular ? 100_000 : val * 0.2
           };
         }
 
         const size = getSized(val);
-        const space = getSpaced(size);
         const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
 
         return {
-          // gap: space * 0.25,
           height: size,
           borderRadius: props.circular ? 100_000 : radiusToken
         };
@@ -270,7 +267,7 @@ const InputTextBoxImpl = InputTextBox.styleable(
   { staticConfig: { componentName: "Input" } }
 );
 
-const InputTextBoxValue = InputValue.styleable(
+const InputValueImpl = InputValue.styleable(
   ({ children, enterKeyHint = "done", ...props }, forwardedRef) => {
     return (
       <InputValue
@@ -320,7 +317,7 @@ const InputTrigger = Button.styleable<{
 
 export const Input = withStaticProperties(InputGroupImpl, {
   TextBox: withStaticProperties(InputTextBoxImpl, {
-    Value: InputTextBoxValue
+    Value: InputValueImpl
   }),
   Separator: InputSeparatorImpl,
   Trigger: withStaticProperties(InputTrigger, {
