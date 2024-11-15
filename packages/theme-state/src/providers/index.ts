@@ -15,30 +15,5 @@
 
  -------------------------------------------------------------------*/
 
-import { PortalProvider } from "@tamagui/portal";
-import { PropsWithChildren } from "react";
-import {
-  ThemeStoreProvider,
-  type ThemeStoreProviderProps
-} from "./ThemeStoreProvider";
-import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
-
-export type ProviderProps = PropsWithChildren<{
-  toast?: ToastProviderProps;
-  theme: ThemeStoreProviderProps;
-}>;
-
-export const Provider = ({
-  children,
-  toast = {},
-  theme,
-  ...props
-}: ProviderProps) => {
-  return (
-    <ThemeStoreProvider {...theme}>
-      <PortalProvider shouldAddRootHost={true}>
-        <ToastProvider {...toast}>{children}</ToastProvider>
-      </PortalProvider>
-    </ThemeStoreProvider>
-  );
-};
+export * from "./ThemeStoreProvider";
+export * from "./ThemeStoreProvider.server";

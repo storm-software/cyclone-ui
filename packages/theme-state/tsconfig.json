@@ -2,15 +2,12 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "esModuleInterop": true,
+    "declaration": true,
+    "noImplicitAny": false,
     "jsx": "preserve",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts"
-    ],
-    "lib": ["ESnext", "DOM"]
+    "lib": ["ESNext", "DOM"]
   },
-  "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

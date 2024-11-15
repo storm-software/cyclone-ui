@@ -17,6 +17,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { Container } from "@cyclone-ui/container";
 import { HeadingText } from "@cyclone-ui/heading-text";
 import {
   ThemeableIcon,
@@ -40,22 +41,19 @@ import type {
 
 export type AlertContextProps = {
   size: SizeTokens;
-  theme: string;
+  theme?: string;
 };
 
 export const AlertContext = createStyledContext<AlertContextProps>({
-  size: "$true" as SizeTokens,
-  theme: ColorThemeName.BASE
+  size: "$true"
 });
 
-const AlertFrame = styled(ThemeableStack, {
+const AlertFrame = styled(Container, {
   name: "Alert",
   context: AlertContext,
 
   animation: "normal",
   overflow: "hidden",
-  borderWidth: 1,
-  borderColor: "$borderColor",
   position: "relative",
 
   variants: {
@@ -125,16 +123,17 @@ const AlertFrameImpl = AlertFrame.styleable(
     const { children, theme, ...rest } = props;
 
     return (
-      <AlertFrame ref={forwardedRef} {...rest} theme={theme}>
-        <AlertBackground
-          style={{
-            filter: "blur(2px)"
-          }}
-          theme={theme}
-        />
-        <AlertBackgroundGradient theme={theme} />
-        <AlertContent theme={theme}>{children}</AlertContent>
-      </AlertFrame>
+      <Theme name={theme}>
+        <AlertFrame ref={forwardedRef} {...rest}>
+          <AlertBackground
+            style={{
+              filter: "blur(2px)"
+            }}
+          />
+          <AlertBackgroundGradient />
+          <AlertContent>{children}</AlertContent>
+        </AlertFrame>
+      </Theme>
     );
   },
   {

@@ -15,23 +15,20 @@
 
  -------------------------------------------------------------------*/
 
-import { config } from "@cyclone-ui/config";
-import { YStack } from "@tamagui/stacks";
-import { Provider } from "../Provider/Provider";
+/**
+ * The provider library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A package containing the Provider component used to manage the applications theme state
+ *
+ * @packageDocumentation
+ */
 
-export const StorybookDecorator = (Story: any, args: any) => {
-  const { theme: themeKey } = args.globals;
-
-  return (
-    <Provider
-      theme={{
-        config,
-        disableInjectCSS: false,
-        defaultMode: themeKey
-      }}>
-      <YStack padding="$8" flexGrow={1}>
-        <Story />
-      </YStack>
-    </Provider>
-  );
-};
+export {
+  Toast,
+  ToastViewport,
+  useToastController,
+  useToastState
+} from "@tamagui/toast";
+export * from "./hooks";
+export * from "./providers";

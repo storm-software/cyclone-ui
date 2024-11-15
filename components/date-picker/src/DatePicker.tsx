@@ -284,7 +284,7 @@ const DayPicker = () => {
       <YStack
         animation="normal"
         justifyContent="center"
-        gap="$1.75"
+        gap="$2"
         {...prevNextAnimation()}>
         <XStack gap="$1">
           {weekDays.map(day => (
@@ -348,12 +348,17 @@ export function YearRangeSlider() {
       height={40}
       alignItems="center"
       justifyContent="space-between">
-      <Button variant="ghost" size="$4" {...swapOnClick(previousYearsButton())}>
+      <Button
+        variant="ghost"
+        size="$4"
+        width="$5"
+        flexShrink={1}
+        {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <View y={2} flexDirection="column" alignItems="center">
+      <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
         <LabelText
           color="$color"
           textAlign="center"
@@ -362,7 +367,12 @@ export function YearRangeSlider() {
           {`${years[0]?.year} - ${years[years.length - 1]?.year}`}
         </LabelText>
       </View>
-      <Button variant="ghost" size="$4" {...swapOnClick(nextYearsButton())}>
+      <Button
+        variant="ghost"
+        size="$4"
+        width="$5"
+        flexShrink={1}
+        {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
           <ChevronRight />
         </Button.Icon>
@@ -390,26 +400,32 @@ export function YearSlider() {
       <Button
         variant="ghost"
         size="$4"
+        width="$5"
+        flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <LabelText
-        onPress={() => setHeader("year")}
-        selectable={true}
-        tabIndex={0}
-        size="$6"
-        cursor="pointer"
-        color="$color"
-        hoverStyle={{
-          color: "$accent10"
-        }}>
-        {year}
-      </LabelText>
+      <View flexBasis="50%">
+        <LabelText
+          onPress={() => setHeader("year")}
+          selectable={true}
+          tabIndex={0}
+          size="$6"
+          cursor="pointer"
+          color="$color"
+          hoverStyle={{
+            color: "$accent10"
+          }}>
+          {year}
+        </LabelText>
+      </View>
       <Button
         variant="ghost"
         size="$4"
+        width="$5"
+        flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
           <ChevronRight />
@@ -460,12 +476,14 @@ const CalendarHeader = () => {
       <Button
         variant="ghost"
         size="$4"
+        width="$5"
+        flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <YStack gap="$1" alignItems="center">
+      <YStack gap="$1" alignItems="center" flexBasis="50%">
         <LabelText
           animation="normal"
           onPress={() => setHeader("year")}
@@ -498,6 +516,8 @@ const CalendarHeader = () => {
       <Button
         variant="ghost"
         size="$4"
+        width="$5"
+        flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
           <ChevronRight />
@@ -711,7 +731,18 @@ const DatePickerProvider = ({
         selectedDates,
         onDatesChange: handleChange,
         calendar: {
-          startDay: 1
+          startDay: 0
+        },
+        locale: {
+          locale: "en-US",
+          day: "numeric",
+          year: "numeric",
+          weekday: "short",
+          monthName: "long",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: undefined,
+          second: undefined
         }
       }}>
       <DatePickerContext.Provider

@@ -22,7 +22,7 @@ import { memo } from "react";
 import { Defs, Path, Pattern, Rect, Svg, SvgProps } from "react-native-svg";
 
 const Icon = (props: IconProps) => {
-  const color = useCurrentColor(props.color || "$color");
+  const color = useCurrentColor((props.color || "$color") as any);
 
   return (
     <Svg x="0" y="0" fill="none" {...(props as SvgProps)}>

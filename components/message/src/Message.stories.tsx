@@ -1,8 +1,7 @@
 import { Button } from "@cyclone-ui/button";
-import { useMessageActions } from "@cyclone-ui/provider";
+import { useMessageActions } from "@cyclone-ui/message-state";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack, YStack } from "@tamagui/stacks";
-// import { HelpCircle } from "@tamagui/lucide-icons";
 import { Message, MessageViewport } from "./Message";
 
 const meta: Meta<typeof Message> = {

@@ -39,7 +39,8 @@ overrides:
   '@cyclone-ui/message': workspace:*
   '@cyclone-ui/nx': workspace:*
   '@cyclone-ui/dialog': workspace:*
-  '@cyclone-ui/provider': workspace:*
+  '@cyclone-ui/message-state': workspace:*
+  '@cyclone-ui/theme-state': workspace:*
   '@cyclone-ui/radio-group': workspace:*
   '@cyclone-ui/radio-group-field': workspace:*
   '@cyclone-ui/registry-trpc': workspace:*
@@ -499,6 +500,9 @@ importers:
         specifier: ^6.3.20
         version: 6.4.1(cf6ocglsyr4mleopfyxz6d73pu)
       '@tamagui/core':
+        specifier: ^1.116.14
+        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/portal':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
@@ -1503,21 +1507,6 @@ importers:
       '@tamagui/core':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/font-size':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/get-font-sized':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/helpers':
-        specifier: ^1.116.14
-        version: 1.116.14(react@18.3.1)
-      '@tamagui/helpers-tamagui':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/linear-gradient':
-        specifier: ^1.116.14
-        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/lucide-icons':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.8.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
@@ -1527,12 +1516,12 @@ importers:
       '@tamagui/text':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/toast':
+        specifier: ^1.116.14
+        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/web':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.8.0
-        version: 15.8.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -2334,7 +2323,7 @@ importers:
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
 
-  packages/provider:
+  packages/message-state:
     dependencies:
       '@storm-stack/utilities':
         specifier: latest
@@ -2429,6 +2418,28 @@ importers:
       '@tamagui/web':
         specifier: ^1.116.14
         version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
+  packages/theme-state:
+    dependencies:
+      '@storm-stack/utilities':
+        specifier: latest
+        version: 1.35.0
+      '@tamagui/core':
+        specifier: ^1.116.14
+        version: 1.116.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      jotai:
+        specifier: '>=2.8.0'
+        version: 2.10.2(@types/react@18.3.12)(react@18.3.1)
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
 
   packages/themes:
     devDependencies:

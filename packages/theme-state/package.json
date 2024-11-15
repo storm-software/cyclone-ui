@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/theme-state",
+  "version": "0.6.0",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/theme-state"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "private": false,
+  "peerDependencies": {
+    "jotai": ">=2.8.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
+  },
+  "peerDependenciesMeta": {
+    "jotai": {
+      "optional": false
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@storm-stack/utilities": "latest",
+    "@tamagui/core": "^1.116.14"
+  },
+  "devDependencies": {
+    "jotai": ">=2.8.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -50,7 +50,7 @@ export const useThemeStore = (
  *
  * @returns The color role scheme for the theme name or undefined
  */
-export const useThemeColorThemeName = (): ColorThemeName | undefined => {
+export const useColorThemeName = (): ColorThemeName | undefined => {
   const theme = useThemeName();
 
   return getThemeColorThemeName(theme);
@@ -76,7 +76,7 @@ export const useThemeColorThemeName = (): ColorThemeName | undefined => {
  *
  * @returns An indication if a theme color scheme is set
  */
-export const useThemeColorThemeNameExists = (): boolean => {
+export const useColorThemeNameExists = (): boolean => {
   const theme = useThemeName();
 
   return themeColorThemeNameExists(theme);

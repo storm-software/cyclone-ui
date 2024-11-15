@@ -18,7 +18,7 @@
 /* eslint-disable no-console */
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { useThemeColorThemeName } from "@cyclone-ui/provider";
+import { useColorThemeName } from "@cyclone-ui/theme-state";
 import { GetProps, styled, Theme } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
@@ -232,7 +232,7 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
     },
     forwardedRef
   ) => {
-    const colorRole = useThemeColorThemeName();
+    const colorRole = useColorThemeName();
     const isLinkThemed =
       !colorRole ||
       colorRole === ColorThemeName.LINK ||

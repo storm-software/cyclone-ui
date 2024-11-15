@@ -1,18 +1,18 @@
 {
-  "name": "provider",
+  "name": "message-state",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/provider/src",
+  "sourceRoot": "packages/message-state/src",
   "targets": {
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
       "options": {
-        "entry": "packages/provider/src/index.ts",
-        "outputPath": "dist/packages/provider",
-        "tsConfig": "packages/provider/tsconfig.json",
-        "project": "packages/provider/package.json",
+        "entry": "packages/message-state/src/index.ts",
+        "outputPath": "dist/packages/message-state",
+        "tsConfig": "packages/message-state/tsconfig.json",
+        "project": "packages/message-state/package.json",
         "defaultConfiguration": "production"
       },
       "configurations": {

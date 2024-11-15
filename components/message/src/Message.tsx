@@ -6,7 +6,7 @@ import {
   ToastViewport,
   ToastViewportProps,
   useToastState
-} from "@cyclone-ui/provider";
+} from "@cyclone-ui/message-state";
 import { createStyledContext, styled } from "@tamagui/core";
 import { X } from "@tamagui/lucide-icons";
 import type { ColorTokens, SizeTokens } from "@tamagui/web";

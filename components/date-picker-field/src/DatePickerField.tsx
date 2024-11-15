@@ -28,8 +28,7 @@ import { StormDate } from "@storm-stack/date-time/storm-date";
 import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import { View, withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons";
-import { LegacyRef, useCallback, useMemo } from "react";
-import { TextInput } from "react-native";
+import { RefObject, useCallback, useMemo } from "react";
 
 export const DATE_MASK = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
@@ -81,11 +80,6 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
     );
     const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
 
-    // const handleReset = useCallback(() => {
-    //   change(null);
-    //   blur();
-    // }, [blur, change]);
-
     return (
       <View flexBasis="6%">
         <DatePicker.Trigger
@@ -107,7 +101,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const { blur, change, focus } = useFieldActions();
 
     const store = useFieldStore<Date>();
-    const ref = useFieldRef(forwardedRef) as LegacyRef<TextInput>;
+    const ref = useFieldRef(forwardedRef);
 
     const name = store.get.name();
     const disabled = store.get.disabled();
@@ -116,9 +110,9 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const initialValue = store.get.initialValue();
 
     const handleChange = useCallback(
-      (date?: Date | null) => {
-        change(date);
-        blur();
+      (event: CustomEvent<Date | null>) => {
+        change?.(event.detail);
+        blur?.();
       },
       [change, blur]
     );
@@ -136,7 +130,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         <DatePicker.TextBox>
           {children}
           <DatePicker.TextBox.Value
-            ref={ref}
+            ref={ref as RefObject<HTMLInputElement>}
             {...props}
             value={formattedValue}
             defaultValue={defaultValue}

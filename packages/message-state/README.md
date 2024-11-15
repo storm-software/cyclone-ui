@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# provider
+# Message state management package
 
 A package containing the ThemeProvider component used to manage the applications
 theme state
@@ -48,21 +48,22 @@ theme state
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [Message state management package](#message-state-management-package)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -71,14 +72,14 @@ theme state
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/provider
+pnpm add -D @cyclone-ui/message-state
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/provider
+npm install -D @cyclone-ui/message-state
 ```
 
 </details>
@@ -87,7 +88,7 @@ npm install -D @cyclone-ui/provider
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/provider
+yarn add -D @cyclone-ui/message-state
 ```
 
 </details>
@@ -106,15 +107,15 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build provider` to build the library.
+Run `nx build message-state` to build the library.
 
 ### Running unit tests
 
-Run `nx test provider` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test message-state` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint provider` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint message-state` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

@@ -15,23 +15,33 @@
 
  -------------------------------------------------------------------*/
 
-import { config } from "@cyclone-ui/config";
-import { YStack } from "@tamagui/stacks";
-import { Provider } from "../Provider/Provider";
+import {
+  ToastProvider,
+  type ToastProviderProps
+} from "@cyclone-ui/message-state";
+import {
+  ThemeStoreProvider,
+  type ThemeStoreProviderProps
+} from "@cyclone-ui/theme-state";
+import { PortalProvider } from "@tamagui/portal";
+import { PropsWithChildren } from "react";
 
-export const StorybookDecorator = (Story: any, args: any) => {
-  const { theme: themeKey } = args.globals;
+export type ProviderProps = PropsWithChildren<{
+  toast?: ToastProviderProps;
+  theme: ThemeStoreProviderProps;
+}>;
 
+export const Provider = ({
+  children,
+  toast = {},
+  theme,
+  ...props
+}: ProviderProps) => {
   return (
-    <Provider
-      theme={{
-        config,
-        disableInjectCSS: false,
-        defaultMode: themeKey
-      }}>
-      <YStack padding="$8" flexGrow={1}>
-        <Story />
-      </YStack>
-    </Provider>
+    <ThemeStoreProvider {...theme}>
+      <PortalProvider shouldAddRootHost={true}>
+        <ToastProvider {...toast}>{children}</ToastProvider>
+      </PortalProvider>
+    </ThemeStoreProvider>
   );
 };

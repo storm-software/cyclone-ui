@@ -66,7 +66,8 @@ export default defineConfig({
         "@cyclone-ui/tokens",
         "@cyclone-ui/themes",
         "@cyclone-ui/config",
-        "@cyclone-ui/provider",
+        "@cyclone-ui/theme-state",
+        "@cyclone-ui/message-state",
         "tamagui"
       ]
     })

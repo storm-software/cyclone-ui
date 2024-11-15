@@ -16,5 +16,3 @@
  -------------------------------------------------------------------*/
 
 export * from "./use-message-actions";
-export * from "./use-theme-actions";
-export * from "./use-theme-store";

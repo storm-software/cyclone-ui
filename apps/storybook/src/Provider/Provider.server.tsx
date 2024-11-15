@@ -15,8 +15,30 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./Provider";
-export * from "./Provider.server";
-export * from "./ThemeStoreProvider";
-export * from "./ThemeStoreProvider.server";
-export * from "./ToastProvider";
+import {
+  ToastProvider,
+  type ToastProviderProps
+} from "@cyclone-ui/message-state";
+import {
+  ThemeStoreProviderServer,
+  type ThemeStoreProviderServerProps
+} from "@cyclone-ui/theme-state/providers/ThemeStoreProvider.server";
+import { PropsWithChildren } from "react";
+
+export type ProviderServerProps = PropsWithChildren<{
+  toast?: ToastProviderProps;
+  theme: ThemeStoreProviderServerProps;
+}>;
+
+export const ProviderServer = ({
+  children,
+  toast = {},
+  theme,
+  ...props
+}: ProviderServerProps) => {
+  return (
+    <ThemeStoreProviderServer {...theme}>
+      <ToastProvider {...toast}>{children}</ToastProvider>
+    </ThemeStoreProviderServer>
+  );
+};

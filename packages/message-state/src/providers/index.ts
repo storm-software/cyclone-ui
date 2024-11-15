@@ -15,27 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-import { PropsWithChildren } from "react";
-import {
-  ThemeStoreProviderServer,
-  type ThemeStoreProviderServerProps
-} from "./ThemeStoreProvider.server";
-import { ToastProvider, type ToastProviderProps } from "./ToastProvider";
-
-export type ProviderServerProps = PropsWithChildren<{
-  toast?: ToastProviderProps;
-  theme: ThemeStoreProviderServerProps;
-}>;
-
-export const ProviderServer = ({
-  children,
-  toast = {},
-  theme,
-  ...props
-}: ProviderServerProps) => {
-  return (
-    <ThemeStoreProviderServer {...theme}>
-      <ToastProvider {...toast}>{children}</ToastProvider>
-    </ThemeStoreProviderServer>
-  );
-};
+export * from "./ToastProvider";
