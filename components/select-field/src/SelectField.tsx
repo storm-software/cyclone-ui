@@ -21,7 +21,7 @@ import { Select } from "@cyclone-ui/select";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { GetProps, withStaticProperties } from "@tamagui/core";
 import { Atom, useAtomValue } from "jotai";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useCallback } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -49,7 +49,13 @@ const SelectFieldItem = (
 const SelectFieldControl = Select.styleable<
   Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">
 >(({ placeholder, children, ...props }, forwardedRef) => {
-  const { focus, blur, change, toggleFocused } = useFieldActions();
+  const { focus, blur, change } = useFieldActions();
+  const handleChange = useCallback(
+    (event: CustomEvent<string | null>) => {
+      change(event.detail);
+    },
+    [change]
+  );
 
   const store = useFieldStore();
   const name = store.get.name();
@@ -67,18 +73,14 @@ const SelectFieldControl = Select.styleable<
       name={name}
       focused={focused}
       disabled={disabled}
-      onOpenChange={toggleFocused}
-      onValueChange={change}
+      onFocus={focus}
+      onBlur={blur}
+      onChange={handleChange}
       value={formattedValue}
       defaultValue={String(initialValue ?? "")}>
       <Select.TextBox>
         {children}
-        <Select.TextBox.Value
-          onFocus={focus}
-          onBlur={blur}
-          placeholder={placeholder}
-          placeholding={!value}
-        />
+        <Select.TextBox.Value placeholder={placeholder} placeholding={!value} />
 
         <Field.ThemeIcon />
       </Select.TextBox>

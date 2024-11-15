@@ -15,7 +15,8 @@ const InnerInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
 
 export const Input = InnerInputValue.styleable<InputProps>(
   (inProps, forwardedRef) => {
-    const { disabled, name } = InputContext.useStyledContext();
+    const { disabled, name, onChange, onInput, onBlur, onFocus } =
+      InputContext.useStyledContext();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
@@ -32,8 +33,6 @@ export const Input = InnerInputValue.styleable<InputProps>(
       disabled: _disabled,
       id,
       caretColor,
-      onChange,
-      onInput,
       rows,
       enterKeyHint,
       returnKeyType,
@@ -131,9 +130,7 @@ export const Input = InnerInputValue.styleable<InputProps>(
         if (onInput) {
           onInput(
             new CustomEvent("input", {
-              detail: {
-                text
-              }
+              detail: text
             })
           );
         }
@@ -141,9 +138,7 @@ export const Input = InnerInputValue.styleable<InputProps>(
         if (onChange) {
           onChange(
             new CustomEvent("change", {
-              detail: {
-                text
-              }
+              detail: text
             })
           );
         }
@@ -161,13 +156,22 @@ export const Input = InnerInputValue.styleable<InputProps>(
       return registerFocusable(name, {
         focusAndSelect: () => {
           ref.current?.focus();
+          onFocus?.();
         },
-        focus: () => {}
+        focus: () => {
+          onFocus?.();
+        }
       });
-    }, [name, disabled]);
+    }, [name, disabled, onFocus]);
 
     return (
-      <InnerInputValue onChange={e => {}} ref={composedRefs} {...finalProps} />
+      <InnerInputValue
+        onChange={e => {}}
+        ref={composedRefs}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        {...finalProps}
+      />
     );
   }
 );

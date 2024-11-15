@@ -1,4 +1,8 @@
-import { getFontSizedFromSize, getSized } from "@cyclone-ui/theme-helpers";
+import {
+  getFontSizedFromSize,
+  getSized,
+  getSpaced
+} from "@cyclone-ui/theme-helpers";
 import { sizeToSpace } from "@cyclone-ui/tokens";
 import {
   createStyledContext,
@@ -12,7 +16,6 @@ import { InputContextProps } from "./types";
 
 export const InputContext = createStyledContext<InputContextProps>({
   size: "$true",
-  color: "$color",
   circular: false,
   disabled: false,
   focused: false
@@ -95,3 +98,30 @@ export const baseInputStyle = [
     }
   }
 ];
+
+export const getInputSize = (
+  val: SizeTokens | number,
+  extras: VariantSpreadExtras<any>
+) => {
+  const { tokens, props } = extras;
+  if (!val || props.circular) {
+    return;
+  }
+
+  if (typeof val === "number") {
+    return {
+      paddingHorizontal: val * 0.25,
+      height: val,
+      borderRadius: props.circular ? 100_000 : val * 0.2
+    };
+  }
+
+  const xSize = getSpaced(val);
+  const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+
+  return {
+    paddingHorizontal: xSize,
+    height: val,
+    borderRadius: props.circular ? 100_000 : radiusToken
+  };
+};

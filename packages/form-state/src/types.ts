@@ -109,6 +109,10 @@ export type FormValuesState<TValues extends Record<string, any>> = {
     : TValues[TKey] | null;
 };
 
+export type FieldChangeEventHandler<TFieldValue = any> = (
+  event: CustomEvent<TFieldValue>
+) => any;
+
 /**
  * The form options.
  */

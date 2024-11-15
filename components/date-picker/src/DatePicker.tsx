@@ -17,13 +17,9 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { Input } from "@cyclone-ui/input";
+import { Input, InputContextProps } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
-import type {
-  DatePickerProviderProps,
-  DPDay,
-  DPPropGetter
-} from "@rehookify/datepicker";
+import type { DPDay, DPPropGetter } from "@rehookify/datepicker";
 import {
   DatePickerProvider as RehookifyDatePickerProvider,
   useDatePickerContext
@@ -32,7 +28,6 @@ import { StormDate } from "@storm-stack/date-time/storm-date";
 import { StormDateTime } from "@storm-stack/date-time/storm-date-time";
 import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
@@ -52,14 +47,54 @@ import {
 } from "react";
 import { DimensionValue } from "react-native";
 
-export type DatePickerContextProps = {
-  size: FontSizeTokens;
-  disabled: boolean;
+export type DatePickerChangeEventHandler = (
+  event: CustomEvent<Date | null>
+) => any;
+
+export type DatePickerExtraProps = {
+  /**
+   * Callback that is called when the text input's text changes.
+   *
+   * @remarks
+   * This is called after `onInput` and is useful for cases where you want to handle the input after it has been provided.
+   */
+  onChange?: DatePickerChangeEventHandler;
+
+  /**
+   * Callback that is called when the user provides input to the text field.
+   *
+   * @remarks
+   * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
+   */
+  onInput?: DatePickerChangeEventHandler;
+};
+
+export type DatePickerContextProps = Omit<
+  InputContextProps,
+  "onChange" | "onInput"
+> & {
+  /**
+   * Callback that is called when the text input's text changes.
+   *
+   * @remarks
+   * This is called after `onInput` and is useful for cases where you want to handle the input after it has been provided.
+   */
+  onChange?: DatePickerChangeEventHandler;
+
+  /**
+   * Callback that is called when the user provides input to the text field.
+   *
+   * @remarks
+   * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
+   */
+  onInput?: DatePickerChangeEventHandler;
 };
 
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   size: "$true",
-  disabled: false
+  circular: false,
+  disabled: false,
+  focused: false
 });
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
@@ -638,8 +673,57 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   { staticConfig: { componentName: "DatePickerValue" } }
 );
 
-const DatePickerProvider =
-  RehookifyDatePickerProvider as React.ComponentType<DatePickerProviderProps>;
+const DatePickerProvider = ({
+  children,
+  onChange,
+  onFocus,
+  focused,
+  ...props
+}: PropsWithChildren<Partial<DatePickerContextProps>>) => {
+  const [date, setDate] = useState<Date | null>(null);
+  const selectedDates = useMemo(() => {
+    if (!date) {
+      return [];
+    }
+
+    date.setMonth(date.getMonth() - 1);
+    return [date];
+  }, [date]);
+
+  const handleChange = useCallback(
+    (dates: Date[] | null) => {
+      const value =
+        Array.isArray(dates) && dates.length > 0 && dates[0] ? dates[0] : null;
+
+      setDate(value);
+      onChange?.(
+        new CustomEvent("change", {
+          detail: value
+        })
+      );
+    },
+    [onChange]
+  );
+
+  return (
+    <RehookifyDatePickerProvider
+      config={{
+        selectedDates,
+        onDatesChange: handleChange,
+        calendar: {
+          startDay: 1
+        }
+      }}>
+      <DatePickerContext.Provider
+        {...props}
+        onChange={onChange}
+        onFocus={onFocus}
+        focused={focused}>
+        {children}
+      </DatePickerContext.Provider>
+    </RehookifyDatePickerProvider>
+  );
+};
 
 const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
   createStyledContext({
@@ -679,47 +763,36 @@ const DatePickerPopoverArrow = styled(Popover.Arrow, {
   borderColor: "$borderColor"
 });
 
-const DatePickerControlImpl = Input.styleable<{
-  onChange: (date?: Date | null) => any;
-  onOpenChange: (opened: boolean) => any;
-  open: boolean;
-  date?: Date | null;
-}>(
+const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
   (
-    { children, onChange, onOpenChange, open, date, ...props },
+    { children, onChange, onInput, onFocus, onBlur, focused, ...props },
     forwardedRef
   ) => {
-    const handleDatesChange = useCallback(
-      (dates: Date[]) => {
-        onChange(Array.isArray(dates) && dates.length > 0 ? dates[0] : null);
+    const handleOpenChanged = useCallback(
+      (open: boolean, via?: "hover" | "press") => {
+        if (open) {
+          onFocus?.();
+        } else {
+          onBlur?.();
+        }
       },
-      [onChange]
+      [onFocus, onBlur]
     );
-
-    const selectedDates = useMemo(() => {
-      if (!date) {
-        return [];
-      }
-
-      date.setMonth(date.getMonth() - 1);
-      return [date];
-    }, [date]);
 
     return (
       <DatePickerProvider
-        config={{
-          selectedDates,
-          onDatesChange: handleDatesChange,
-          calendar: {
-            startDay: 1
-          }
-        }}>
+        {...props}
+        onChange={onChange}
+        onInput={onInput}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        focused={focused}>
         <Popover
           keepChildrenMounted={true}
           size="$5"
           allowFlip={true}
-          open={open}
-          onOpenChange={onOpenChange}>
+          open={!!focused}
+          onOpenChange={handleOpenChanged}>
           <Adapt when={"sm" as any} platform="touch">
             <Popover.Sheet
               modal={true}

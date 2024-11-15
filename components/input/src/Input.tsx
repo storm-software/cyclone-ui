@@ -17,7 +17,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { getRadius, getSized, getSpaced } from "@cyclone-ui/theme-helpers";
+import { getRadius, getSpaced } from "@cyclone-ui/theme-helpers";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
@@ -31,7 +31,7 @@ import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
 import { InputValue } from "./InputValue";
 import { InputContextProps } from "./types";
-import { InputContext } from "./utilities";
+import { getInputSize, InputContext } from "./utilities";
 
 const InputGroup = styled(XGroup, {
   name: "Input",
@@ -84,25 +84,13 @@ const InputGroup = styled(XGroup, {
     size: {
       "...size": (
         val: SizeTokens | number,
-        { tokens, props }: VariantSpreadExtras<any>
+        extras: VariantSpreadExtras<any>
       ) => {
-        if (!val || props.circular) {
-          return;
-        }
-
-        if (typeof val === "number") {
-          return {
-            height: val,
-            borderRadius: props.circular ? 100_000 : val * 0.2
-          };
-        }
-
-        const size = getSized(val);
-        const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+        const result = getInputSize(val, extras);
 
         return {
-          height: size,
-          borderRadius: props.circular ? 100_000 : radiusToken
+          ...result,
+          paddingHorizontal: 0
         };
       }
     },
@@ -288,7 +276,6 @@ const InputTrigger = Button.styleable<{
   ({ children, flexBasis, ...props }, forwardedRef) => {
     const { circular } = InputContext.useStyledContext();
     const radius = getRadius("$true", { circular, scale: 0.75 });
-
     const theme = useThemeName();
 
     return (

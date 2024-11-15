@@ -7,23 +7,12 @@ import type {
 } from "@tamagui/web";
 import type { InputModeOptions, TextInputProps } from "react-native";
 
-export type InputContextProps = {
-  name?: string;
-  size: SizeTokens;
-  color?: ColorTokens | string;
-  circular: boolean;
-  disabled: boolean;
-  focused: boolean;
-};
-
 type DetailedInputProps = React.DetailedHTMLProps<
   React.HTMLProps<HTMLInputElement>,
   HTMLInputElement
 >;
 
-export type InputChangeEventHandler = (
-  event: CustomEvent<{ text: string }>
-) => any;
+export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
 export type InputProps = StackProps &
   Omit<
@@ -52,22 +41,6 @@ export type InputProps = StackProps &
     | "selectionColor"
     | "numberOfLines"
   > & {
-    /**
-     * Callback that is called when the text input's text changes.
-     *
-     * @remarks
-     * This is called after `onInput` and is useful for cases where you want to handle the input after it has been provided.
-     */
-    onChange?: InputChangeEventHandler;
-
-    /**
-     * Callback that is called when the user provides input to the text field.
-     *
-     * @remarks
-     * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
-     */
-    onInput?: InputChangeEventHandler;
-
     /**
      * use `type` instead of inputMode for most cases, use `inputMode="none"` to disable the soft keyboard
      */
@@ -132,3 +105,56 @@ export type InputProps = StackProps &
      */
     numberOfLines?: number;
   };
+
+export type InputContextProps = {
+  /**
+   * The input's name.
+   */
+  name?: string;
+
+  /**
+   * The input's current size.
+   */
+  size: SizeTokens;
+
+  /**
+   * The input's current circular status value.
+   */
+  circular: boolean;
+
+  /**
+   * The input's current disabled status value.
+   */
+  disabled: boolean;
+
+  /**
+   * The input's current focused status value.
+   */
+  focused: boolean;
+
+  /**
+   * Callback that is called when the text input's text changes.
+   *
+   * @remarks
+   * This is called after `onInput` and is useful for cases where you want to handle the input after it has been provided.
+   */
+  onChange?: InputChangeEventHandler;
+
+  /**
+   * Callback that is called when the user provides input to the text field.
+   *
+   * @remarks
+   * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
+   */
+  onInput?: InputChangeEventHandler;
+
+  /**
+   * Callback that is called when the text input is focused.
+   */
+  onFocus?: () => any;
+
+  /**
+   * Callback that is called when the text input is blurred.
+   */
+  onBlur?: () => any;
+};

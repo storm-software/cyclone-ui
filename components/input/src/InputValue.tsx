@@ -14,7 +14,8 @@ const InnerInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
 
 export const InputValue = InnerInputValue.styleable<InputProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
-    const { disabled, name } = InputContext.useStyledContext();
+    const { disabled, name, onChange, onInput, onBlur, onFocus } =
+      InputContext.useStyledContext();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in web.
@@ -48,8 +49,6 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
       multiline,
       numberOfLines,
       onChangeText,
-      onChange,
-      onInput,
       onContentSizeChange,
       onEndEditing,
       onScroll,
@@ -138,19 +137,20 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
       return registerFocusable(name, {
         focusAndSelect: () => {
           ref.current?.focus();
+          onFocus?.();
         },
-        focus: () => {}
+        focus: () => {
+          onFocus?.();
+        }
       });
-    }, [name, disabled]);
+    }, [name, disabled, onFocus]);
 
     const handleChange = useCallback(
       (event: FormEvent<HTMLInputElement>) => {
         if (onChange) {
           onChange(
             new CustomEvent("change", {
-              detail: {
-                text: event.currentTarget.value
-              }
+              detail: event.currentTarget.value
             })
           );
         }
@@ -163,9 +163,7 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
         if (onInput) {
           onInput(
             new CustomEvent("input", {
-              detail: {
-                text: event.currentTarget.value
-              }
+              detail: event.currentTarget.value
             })
           );
         }
@@ -196,6 +194,8 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
           id={name}
           onChange={handleChange}
           onInput={handleInput}
+          onBlur={onBlur}
+          onFocus={onFocus}
           autoComplete={autoComplete}
         />
       </>

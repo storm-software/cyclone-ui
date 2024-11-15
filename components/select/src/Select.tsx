@@ -30,7 +30,7 @@ import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Separator } from "@tamagui/separator";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import { SelectContextProps } from "./types";
@@ -48,6 +48,7 @@ const SelectGroup = styled(XGroup, {
   borderWidth: 1,
   borderColor: "$borderColor",
   outlineStyle: "none",
+  gap: "$1.25",
 
   ...(isWeb
     ? {
@@ -175,14 +176,17 @@ const SelectTrigger = Button.styleable<{
   rotateOnFocused?: boolean;
 }>(
   ({ children, rotateOnFocused = true, ...props }, forwardedRef) => {
-    const { circular, focused, disabled, size } =
+    const { circular, focused, disabled, size, onFocus } =
       SelectContext.useStyledContext();
 
     const radius = useMemo(
       () => getRadius("$true", { circular, scale: 0.75 }),
       []
     );
-    const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
+    const adjustedTrigger = useMemo(
+      () => getSized(size, { shift: -3 }),
+      [size]
+    );
 
     const theme = useThemeName();
     const rotate = useMemo(
@@ -194,19 +198,22 @@ const SelectTrigger = Button.styleable<{
       <View
         animation="slow"
         rotate={rotate ? "180deg" : "0deg"}
-        paddingHorizontal="$1.25"
+        cursor={disabled ? "not-allowed" : "pointer"}
+        paddingHorizontal="$0.2"
         flexBasis="6%">
         <Button
           ref={forwardedRef}
           variant="ghost"
-          borderRadius={radius}
           {...props}
+          disabled={disabled}
+          borderRadius={radius}
+          onPress={onFocus}
+          size={adjustedTrigger}
           color={
             theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
-          }
-          size={adjusted}>
+          }>
           <Button.Icon>
-            <ChevronDown disabled={disabled} />
+            {children || <ChevronDown disabled={disabled} />}
           </Button.Icon>
         </Button>
       </View>
@@ -220,6 +227,7 @@ const BaseSelect = styled(TamaguiSelect, {
   context: SelectContext,
 
   animation: "normal",
+  cursor: "pointer",
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
@@ -243,45 +251,82 @@ const BaseSelect = styled(TamaguiSelect, {
 });
 
 const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
-  ({ name, disabled, focused, children, ...props }, forwardedRef) => {
+  (
+    { name, disabled, focused, children, onFocus, onBlur, onChange, ...props },
+    forwardedRef
+  ) => {
+    const handleOpenChanged = useCallback(
+      (open: boolean, via?: "hover" | "press") => {
+        if (open) {
+          onFocus?.();
+        } else {
+          onBlur?.();
+        }
+      },
+      [onFocus, onBlur]
+    );
+
+    const handleChanged = useCallback(
+      (value: string) => {
+        onChange?.(
+          new CustomEvent("change", {
+            detail: value
+          })
+        );
+        onBlur?.();
+      },
+      [onChange, onBlur]
+    );
+
     return (
-      <SelectGroup
-        group={"select" as any}
+      <SelectContext.Provider
+        {...props}
+        name={name}
+        disabled={disabled}
         focused={focused}
-        disabled={disabled}>
-        <XGroup.Item>
-          <View flex={1}>
-            <BaseSelect
-              id={name}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onChange={onChange}>
+        <SelectGroup
+          group={"select" as any}
+          focused={focused}
+          disabled={disabled}>
+          <XGroup.Item>
+            <View flex={1}>
+              <BaseSelect
+                id={name}
+                ref={forwardedRef}
+                disablePreventBodyScroll={true}
+                {...props}
+                onValueChange={handleChanged}
+                onOpenChange={handleOpenChanged}
+                open={focused}
+                disabled={disabled}>
+                {children}
+              </BaseSelect>
+            </View>
+          </XGroup.Item>
+
+          <XGroup.Item>
+            <SelectSeparator
               ref={forwardedRef}
-              disablePreventBodyScroll={true}
-              {...props}
-              open={focused}
-              disabled={disabled}>
-              {children}
-            </BaseSelect>
-          </View>
-        </XGroup.Item>
+              focused={focused}
+              disabled={disabled}
+              $group-select-hover={{
+                borderColor: disabled
+                  ? "$borderColorDisabled"
+                  : focused
+                    ? "$borderColorFocus"
+                    : "$accent10"
+              }}
+            />
+          </XGroup.Item>
 
-        <XGroup.Item>
-          <SelectSeparator
-            ref={forwardedRef}
-            focused={focused}
-            disabled={disabled}
-            $group-select-hover={{
-              borderColor: disabled
-                ? "$borderColorDisabled"
-                : focused
-                  ? "$borderColorFocus"
-                  : "$accent10"
-            }}
-          />
-        </XGroup.Item>
-
-        <XGroup.Item>
-          <SelectTrigger />
-        </XGroup.Item>
-      </SelectGroup>
+          <XGroup.Item>
+            <SelectTrigger />
+          </XGroup.Item>
+        </SelectGroup>
+      </SelectContext.Provider>
     );
   },
   { staticConfig: { componentName: "Select" } }

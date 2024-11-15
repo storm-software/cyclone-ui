@@ -33,7 +33,7 @@ import {
   Lightbulb,
   Lock
 } from "@tamagui/lucide-icons";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useMemo } from "react";
 import { OpaqueColorValue } from "react-native";
 
 const ThemeableIconFrame = styled(View, {
@@ -106,11 +106,7 @@ export const ThemeableIcon =
       });
 
       return (
-        <ThemeableIconFrame
-          ref={forwardedRef}
-          {...props}
-          theme={theme}
-          disabled={disabled}>
+        <ThemeableIconFrame ref={forwardedRef} {...props} theme={theme}>
           {getThemedIcon(children)}
         </ThemeableIconFrame>
       );
@@ -120,13 +116,21 @@ export const ThemeableIcon =
 export type ThemeableIconProps = GetProps<typeof ThemeableIcon>;
 
 export const ThemedIcon = ThemeableIconFrame.styleable<ThemeableIconExtraProps>(
-  ({ theme, disabled, size, color, ...props }, forwardedRef) => {
+  (
+    { theme, color, disabled = false, size = "$true", ...props },
+    forwardedRef
+  ) => {
+    const adjusted = useMemo(
+      () => (disabled ? getSized(size, { shift: -4 }) : size),
+      [size]
+    );
+
     return (
       <ThemeableIconFrame ref={forwardedRef} {...props} theme={theme}>
         <ThemeableIcon
           theme={theme}
           disabled={disabled}
-          size={size}
+          size={adjusted}
           color={color}>
           <ThemeIcon theme={theme} disabled={disabled} />
         </ThemeableIcon>

@@ -39,14 +39,25 @@ const InputFieldControl = Input.styleable(
     const disabled = store.get.disabled();
     const focused = store.get.focused();
 
+    const { focus, blur, change } = useFieldActions();
+    const handleChange = useCallback(
+      (event: CustomEvent<string>) => {
+        change(event.detail);
+      },
+      [change]
+    );
+
     return (
       <Input
         ref={forwardedRef}
+        {...props}
         name={name}
         focused={focused}
         disabled={disabled}
         size={size}
-        {...props}>
+        onFocus={focus}
+        onBlur={blur}
+        onChange={handleChange}>
         {children}
       </Input>
     );
@@ -55,10 +66,6 @@ const InputFieldControl = Input.styleable(
 
 const InputFieldControlTextBox = Input.TextBox.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const disabled = store.get.disabled();
-    const validating = store.get.validating();
-
     return (
       <Input.TextBox ref={forwardedRef} {...props}>
         {children}
@@ -70,31 +77,16 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
 
 const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { focus, blur, change } = useFieldActions();
-
     const store = useFieldStore();
     const theme = store.get.theme();
-    const disabled = store.get.disabled();
     const formattedValue = store.get.formattedValue();
     const initialValue = store.get.initialValue();
-
-    const handleChange = useCallback(
-      (event: CustomEvent<{ text: string }>) => {
-        change(event.detail.text);
-      },
-      [change]
-    );
 
     return (
       <Theme name={theme}>
         <Input.TextBox.Value
           ref={forwardedRef}
           {...props}
-          theme={theme}
-          disabled={disabled}
-          onFocus={focus}
-          onBlur={blur}
-          onChange={handleChange}
           value={formattedValue}
           defaultValue={String(initialValue ?? "")}
         />
