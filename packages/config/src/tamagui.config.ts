@@ -41,12 +41,12 @@ const eyebrowFont = createPermanentMarkerFont(
       6: "uppercase"
     }
   },
-  12,
-  "400"
+  22,
+  "500"
 );
 
 const headingFont = createMonaSansFont({}, 32, "700");
-const labelFont = createMonaSansFont({}, 18, "550");
+const labelFont = createMonaSansFont({}, 20, "550");
 const ctaFont = createMonaSansFont(
   {
     transform: {
@@ -57,7 +57,7 @@ const ctaFont = createMonaSansFont(
   "550"
 );
 
-const bodyFont = createSpaceGroteskFont({}, 16, "300");
+const bodyFont = createSpaceGroteskFont({}, 18, "300");
 
 export const options: CreateTamaguiProps = {
   defaultFont: "body",

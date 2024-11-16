@@ -58,7 +58,7 @@ export const createPermanentMarkerFont = <
     family: "Permanent Marker",
     size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(fontSize).map(([k, v]) => [k, v * 1.3])
+      Object.entries(fontSize).map(([k, v]) => [k, v * 1.0])
     ) as typeof fontSize,
     weight: {
       sm: "400",

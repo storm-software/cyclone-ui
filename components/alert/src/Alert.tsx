@@ -18,7 +18,9 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Container } from "@cyclone-ui/container";
-import { HeadingText } from "@cyclone-ui/heading-text";
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
+import { Heading3Text } from "@cyclone-ui/heading-text";
+import { Diagonal } from "@cyclone-ui/icons";
 import {
   ThemeableIcon,
   ThemedIcon,
@@ -31,109 +33,89 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { ThemeableStack, YStack } from "@tamagui/stacks";
-import type {
-  GetProps,
-  SizeTokens,
-  TextProps,
-  VariantSpreadExtras
-} from "@tamagui/web";
+import { XStack, YStack } from "@tamagui/stacks";
+import type { GetProps } from "@tamagui/web";
 
 export type AlertContextProps = {
-  size: SizeTokens;
-  theme?: string;
+  theme?: ColorThemeName;
 };
 
 export const AlertContext = createStyledContext<AlertContextProps>({
-  size: "$true"
+  theme: undefined
 });
 
-const AlertFrame = styled(Container, {
+const AlertBackgroundLowGradient = styled(LinearGradient, {
   name: "Alert",
-  context: AlertContext,
-
-  animation: "normal",
-  overflow: "hidden",
-  position: "relative",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val] ?? val
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "$true"
-  }
-});
-
-const AlertBackground = styled(YStack, {
-  name: "Alert",
-  context: AlertContext,
-
-  fullscreen: true,
-  backgroundColor: "$fg",
-  animation: "normal",
-  overflow: "hidden",
-  zIndex: 0,
-  opacity: 0.025
-});
-
-const AlertBackgroundGradient = styled(LinearGradient, {
-  name: "Alert",
-  context: AlertContext,
 
   fullscreen: true,
   flexDirection: "row",
   animation: "normal",
   overflow: "hidden",
-  opacity: 0.8,
+  borderRadius: "$true",
+  opacity: 0.9,
   zIndex: 5,
-  colors: ["transparent", "$backgroundHover"],
-  start: [0, 0],
-  end: [1.0, 1.0]
+  colors: ["transparent", "$base1"],
+  start: [1.0, 1.0],
+  end: [0, 0]
+});
+
+const AlertBackgroundHighGradient = styled(LinearGradient, {
+  name: "Alert",
+
+  fullscreen: true,
+  flexDirection: "row",
+  animation: "normal",
+  overflow: "hidden",
+  borderRadius: "$true",
+  opacity: 0.25,
+  zIndex: 8,
+  colors: ["transparent", "$secondary"],
+  start: [0, 1.0],
+  end: [0, 1.0]
+});
+
+const AlertBackgroundDiagonal = styled(Diagonal, {
+  name: "Alert",
+
+  position: "absolute",
+  borderRadius: "$true",
+  height: "100%",
+  width: "100%",
+  top: 0,
+  left: 0,
+  opacity: 0.05,
+  zIndex: 10
 });
 
 const AlertContent = styled(YStack, {
   name: "Alert",
-  context: AlertContext,
 
-  flexDirection: "column",
   animation: "normal",
+  flexDirection: "column",
   zIndex: 20,
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          gap: tokens.space[val] ?? val,
-          padding: tokens.space[val] ?? val
-        };
-      }
-    }
-  }
+  gap: "$2",
+  padding: "$1"
 });
 
-const AlertFrameImpl = AlertFrame.styleable(
+const AlertFrameImpl = Container.styleable<AlertContextProps>(
   (props, forwardedRef) => {
     const { children, theme, ...rest } = props;
 
     return (
-      <Theme name={theme}>
-        <AlertFrame ref={forwardedRef} {...rest}>
-          <AlertBackground
-            style={{
-              filter: "blur(2px)"
-            }}
-          />
-          <AlertBackgroundGradient />
+      <AlertContext.Provider theme={theme}>
+        <Container
+          ref={forwardedRef}
+          {...rest}
+          theme={theme}
+          position="relative"
+          variant="quaternary"
+          borderWidth={4}>
+          <AlertBackgroundLowGradient theme={theme} />
+          <AlertBackgroundHighGradient theme={theme} />
+          <AlertBackgroundDiagonal />
           <AlertContent>{children}</AlertContent>
-        </AlertFrame>
-      </Theme>
+        </Container>
+      </AlertContext.Provider>
     );
   },
   {
@@ -141,148 +123,87 @@ const AlertFrameImpl = AlertFrame.styleable(
   }
 );
 
-const AlertHeader = styled(ThemeableStack, {
+const AlertHeader = styled(XStack, {
   name: "Alert",
-  context: AlertContext,
 
-  flexDirection: "row",
   paddingBottom: 0,
   zIndex: 10,
   backgroundColor: "transparent",
   alignItems: "center",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          gap: tokens.space[val] ?? val
-        };
-      }
-    }
-  } as const
+  gap: "$2"
 });
 
 const AlertIcon = ({ children, ...props }: ThemeableIconProps) => {
-  const { theme, size } = AlertContext.useStyledContext();
+  const { theme } = AlertContext.useStyledContext();
 
   if (children) {
     return (
-      <ThemeableIcon theme={theme} size={size} {...props}>
+      <ThemeableIcon theme={theme} {...props}>
         {children}
       </ThemeableIcon>
     );
   }
 
-  return <ThemedIcon theme={theme} size={size} {...props} />;
+  console.log(theme);
+
+  return <ThemedIcon theme={theme} {...props} />;
 };
 
-const AlertHeaderHeading = styled(HeadingText, {
-  name: "AlertHeaderHeading",
-  context: AlertContext,
+const AlertHeading = styled(Heading3Text, {
+  name: "AlertHeading",
 
   color: "$color",
-  zIndex: 20,
-
-  variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<TextProps>) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 2.6;
-        const lineHeight = (heightToken ?? 1) * 2;
-        const fontWeight = config.font.weight?.["$6"];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
+  zIndex: 20
 });
 
-const AlertHeaderHeadingImpl = AlertHeaderHeading.styleable(
+const AlertHeadingImpl = AlertHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { size } = AlertContext.useStyledContext();
-
     return (
-      <Theme name={ColorThemeName.BASE} shallow={true}>
-        <AlertHeaderHeading ref={forwardedRef} size={size} {...props}>
-          {children}
-        </AlertHeaderHeading>
+      <Theme name={ColorThemeName.BASE}>
+        <AlertHeading ref={forwardedRef}>{children}</AlertHeading>
       </Theme>
     );
   },
   {
-    staticConfig: { componentName: "AlertHeaderHeading" }
+    staticConfig: { componentName: "AlertHeading" }
+  }
+);
+
+const AlertEyebrow = styled(EyebrowText, {
+  name: "AlertEyebrow",
+
+  color: "$tertiary",
+  zIndex: 20
+});
+
+const AlertEyebrowImpl = AlertEyebrow.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <Theme name={ColorThemeName.BASE}>
+        <AlertEyebrow ref={forwardedRef} {...props}>
+          {children}
+        </AlertEyebrow>
+      </Theme>
+    );
+  },
+  {
+    staticConfig: { componentName: "AlertEyebrow" }
   }
 );
 
 const AlertBody = styled(BodyText, {
   name: "AlertBody",
-  context: AlertContext,
 
-  color: "$color",
+  color: "$secondary",
   zIndex: 20,
-  paddingVertical: 0,
-
-  variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<TextProps>) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.5;
-        const lineHeight = (heightToken ?? 1) * 1.3;
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "$true"
-  }
+  paddingVertical: 0
 });
 
 const AlertBodyImpl = AlertBody.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { size } = AlertContext.useStyledContext();
-
     return (
-      <Theme name={ColorThemeName.BASE} shallow={true}>
-        <AlertBody ref={forwardedRef} size={size} {...props}>
+      <Theme name={ColorThemeName.BASE}>
+        <AlertBody ref={forwardedRef} {...props}>
           {children}
         </AlertBody>
       </Theme>
@@ -294,7 +215,7 @@ const AlertBodyImpl = AlertBody.styleable(
 );
 
 export type AlertHeaderProps = GetProps<typeof AlertHeader>;
-export type AlertHeadingProps = GetProps<typeof AlertHeaderHeadingImpl>;
+export type AlertHeadingProps = GetProps<typeof AlertHeadingImpl>;
 export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
 export type AlertIconProps = GetProps<typeof AlertIcon>;
 
@@ -302,7 +223,8 @@ export type AlertProps = GetProps<typeof AlertFrameImpl>;
 
 export const Alert = withStaticProperties(AlertFrameImpl, {
   Header: withStaticProperties(AlertHeader, {
-    Heading: AlertHeaderHeadingImpl,
+    Eyebrow: AlertEyebrowImpl,
+    Heading: AlertHeadingImpl,
     Icon: AlertIcon
   }),
   Body: AlertBodyImpl

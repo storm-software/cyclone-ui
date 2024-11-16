@@ -82,6 +82,8 @@
       "@cyclone-ui/input/*": ["components/input/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
+      "@cyclone-ui/eyebrow-text": ["components/eyebrow-text/src/index.ts"],
+      "@cyclone-ui/eyebrow-text/*": ["components/eyebrow-text/src/*"],
       "@cyclone-ui/link": ["components/link/src/index.ts"],
       "@cyclone-ui/link-text": ["components/link-text/src/index.ts"],
       "@cyclone-ui/link-text/*": ["components/link-text/src/*"],
@@ -91,6 +93,8 @@
       "@cyclone-ui/media-queries": ["packages/media-queries/src/index.ts"],
       "@cyclone-ui/media-queries/*": ["packages/media-queries/src/*"],
       "@cyclone-ui/message": ["components/message/src/index.ts"],
+      "@cyclone-ui/message-state": ["packages/message-state/src/index.ts"],
+      "@cyclone-ui/message-state/*": ["packages/message-state/src/*"],
       "@cyclone-ui/message/*": ["components/message/src/*"],
       "@cyclone-ui/next-button": ["components/next-button/src/index.ts"],
       "@cyclone-ui/next-button/*": ["components/next-button/src/*"],
@@ -108,10 +112,6 @@
         "components/previous-button/src/index.ts"
       ],
       "@cyclone-ui/previous-button/*": ["components/previous-button/src/*"],
-      "@cyclone-ui/message-state": ["packages/message-state/src/index.ts"],
-      "@cyclone-ui/message-state/*": ["packages/message-state/src/*"],
-      "@cyclone-ui/theme-state": ["packages/theme-state/src/index.ts"],
-      "@cyclone-ui/theme-state/*": ["packages/theme-state/src/*"],
       "@cyclone-ui/radio-group": ["components/radio-group/src/index.ts"],
       "@cyclone-ui/radio-group-field": [
         "components/radio-group-field/src/index.ts"
@@ -138,6 +138,8 @@
       "@cyclone-ui/tabs/*": ["components/tabs/src/*"],
       "@cyclone-ui/theme-helpers": ["packages/theme-helpers/src/index.ts"],
       "@cyclone-ui/theme-helpers/*": ["packages/theme-helpers/src/*"],
+      "@cyclone-ui/theme-state": ["packages/theme-state/src/index.ts"],
+      "@cyclone-ui/theme-state/*": ["packages/theme-state/src/*"],
       "@cyclone-ui/themeable-gradient": [
         "components/themeable-gradient/src/index.ts"
       ],

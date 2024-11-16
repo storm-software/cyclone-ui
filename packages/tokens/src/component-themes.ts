@@ -104,9 +104,14 @@ export const componentThemes = {
     ...maskOptions.alert
   },
 
-  AlertHeaderHeading: {
+  AlertHeading: {
     mask: "identity",
     ...maskOptions.heading
+  },
+
+  AlertEyebrow: {
+    mask: "identity",
+    ...maskOptions.eyebrow
   },
 
   AlertBody: {

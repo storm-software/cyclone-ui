@@ -17,6 +17,7 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { HelpCircle } from "@tamagui/lucide-icons";
+import { YStack } from "@tamagui/stacks";
 import { Alert } from "./Alert";
 
 const meta: Meta<typeof Alert> = {
@@ -27,8 +28,12 @@ const meta: Meta<typeof Alert> = {
     <Alert {...rest}>
       <Alert.Header>
         <Alert.Header.Icon>{icon}</Alert.Header.Icon>
-        <Alert.Header.Heading>Alert Heading</Alert.Header.Heading>
+        <YStack gap="$1">
+          <Alert.Header.Eyebrow>Alert Eyebrow</Alert.Header.Eyebrow>
+          <Alert.Header.Heading>Alert Heading</Alert.Header.Heading>
+        </YStack>
       </Alert.Header>
+
       <Alert.Body>{children}</Alert.Body>
     </Alert>
   )

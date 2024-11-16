@@ -43,19 +43,11 @@ const ContainerFrame = styled(View, {
     bordered: {
       false: {
         borderColor: "transparent",
-        borderWidth: 0,
-
-        hoverStyle: {
-          borderColor: "transparent",
-          borderWidth: 0
-        }
+        borderWidth: 0
       },
       true: {
         borderWidth: 1,
-
-        hoverStyle: {
-          borderWidth: 1
-        }
+        borderColor: "$borderColor"
       }
     },
 
@@ -145,7 +137,6 @@ const ContainerGroup = styled(ThemeableStack, {
   name: "Container",
 
   animation: "normal",
-  overflow: "hidden",
 
   variants: {
     size: {
@@ -177,6 +168,7 @@ export const Container = ContainerFrame.styleable(
       circular = false,
       bordered = true,
       noPadding = false,
+      borderWidth,
       children,
       ...props
     },
@@ -197,6 +189,7 @@ export const Container = ContainerFrame.styleable(
           size={size}
           circular={circular}
           bordered={bordered}
+          borderWidth={bordered ? borderWidth : 0}
           noPadding={noPadding}>
           {children}
         </ContainerFrame>
