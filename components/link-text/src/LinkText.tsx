@@ -15,10 +15,8 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable no-console */
-
+import { useColorThemeName } from "@cyclone-ui/client-state";
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { useColorThemeName } from "@cyclone-ui/theme-state";
 import { GetProps, styled, Theme } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 

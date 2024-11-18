@@ -10,12 +10,9 @@
   },
   "private": false,
   "dependencies": {
-    "@tamagui/colors": "^1.116.14",
-    "@tamagui/web": "^1.116.14",
-    "chroma-js": "^2.4.2"
-  },
-  "devDependencies": {
-    "@types/chroma-js": "^2.4.4"
+    "@tamagui/colors": "^1.116.15",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/create-theme": "^1.116.15"
   },
   "publishConfig": {
     "access": "public"

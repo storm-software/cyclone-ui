@@ -4,7 +4,6 @@
   "sourceRoot": "apps/nx/src",
   "projectType": "library",
   "tags": [],
-  "implicitDependencies": ["build"],
   "targets": {
     "build": {
       "cache": true,
@@ -35,14 +34,7 @@
             ".js": ".js"
           }
         },
-        "external": [
-          "nx",
-          "@nx/devkit",
-          "esbuild",
-          "vue-tsc",
-          "@swc/*",
-          "@cyclone-ui/build"
-        ],
+        "external": ["nx", "@nx/devkit", "esbuild", "vue-tsc", "@swc/*"],
         "assets": [
           {
             "input": "apps/nx",

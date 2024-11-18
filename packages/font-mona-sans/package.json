@@ -21,25 +21,12 @@
     "./css/800.css": "./css/800.css",
     "./css/900.css": "./css/900.css",
     "./css/style.css": "./css/style.css",
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      },
-      "default": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
+    "./ttf/*.ttf": "./ttf/*.ttf"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.116.14",
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/web": "^1.116.14"
+    "@tamagui/constants": "^1.116.15",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/web": "^1.116.15"
   },
   "publishConfig": {
     "access": "public"

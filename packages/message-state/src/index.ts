@@ -24,11 +24,8 @@
  * @packageDocumentation
  */
 
-export {
-  Toast,
-  ToastViewport,
-  useToastController,
-  useToastState
-} from "@tamagui/toast";
+export { Toast, useToastController, useToastState } from "@tamagui/toast";
+export * from "./components";
 export * from "./hooks";
 export * from "./providers";
+export * from "./types";

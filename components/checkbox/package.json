@@ -27,15 +27,15 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/checkbox": "^1.116.14",
-    "@tamagui/checkbox-headless": "^1.116.14",
-    "@tamagui/constants": "^1.116.14",
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/create-context": "^1.116.14",
-    "@tamagui/get-token": "^1.116.14",
-    "@tamagui/group": "^1.116.14",
-    "@tamagui/lucide-icons": "^1.116.14",
-    "@tamagui/stacks": "^1.116.14",
+    "@tamagui/checkbox": "^1.116.15",
+    "@tamagui/checkbox-headless": "^1.116.15",
+    "@tamagui/constants": "^1.116.15",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/create-context": "^1.116.15",
+    "@tamagui/get-token": "^1.116.15",
+    "@tamagui/group": "^1.116.15",
+    "@tamagui/lucide-icons": "^1.116.15",
+    "@tamagui/stacks": "^1.116.15",
     "react-native-svg": "^15.8.0"
   },
   "devDependencies": {

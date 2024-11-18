@@ -34,10 +34,14 @@
     }
   },
   "dependencies": {
+    "@storm-stack/hashing": "latest",
+    "@storm-stack/types": "latest",
+    "@storm-stack/unique-identifier": "latest",
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/portal": "^1.116.14",
-    "@tamagui/toast": "^1.116.14"
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/portal": "^1.116.15",
+    "@tamagui/toast": "^1.116.15",
+    "react-native-safe-area-context": "^4.14.0"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",

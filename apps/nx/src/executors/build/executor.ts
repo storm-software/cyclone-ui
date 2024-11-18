@@ -15,14 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import { build } from "@cyclone-ui/build/build/tamagui";
-import { type BuildOptions } from "@cyclone-ui/build/types";
+// import { build } from "@cyclone-ui/build/build/tamagui";
+// import { type BuildOptions } from "@cyclone-ui/build/types";
 import type { ExecutorContext } from "@nx/devkit";
-import { copyAssets } from "@nx/js";
-import type { AssetGlob } from "@nx/js/src/utils/assets/assets";
 import type { StormConfig } from "@storm-software/config";
 import { withRunExecutor } from "@storm-software/workspace-tools";
-import { join } from "node:path";
 import type { BuildExecutorSchema } from "./schema.d";
 
 export async function buildExecutorFn(
@@ -30,78 +27,78 @@ export async function buildExecutorFn(
   context: ExecutorContext,
   config?: StormConfig
 ) {
-  const { writeDebug, writeTrace } = await import(
-    "@storm-software/config-tools"
-  );
+  // const { writeDebug, writeTrace } = await import(
+  //   "@storm-software/config-tools"
+  // );
 
-  if (
-    !context.projectsConfigurations?.projects ||
-    !context.projectName ||
-    !context.projectsConfigurations.projects[context.projectName] ||
-    !context.projectsConfigurations.projects[context.projectName]!.root
-  ) {
-    throw new Error(
-      "The Build process failed because the context is not valid. Please run this command from a workspace."
-    );
-  }
+  // if (
+  //   !context.projectsConfigurations?.projects ||
+  //   !context.projectName ||
+  //   !context.projectsConfigurations.projects[context.projectName] ||
+  //   !context.projectsConfigurations.projects[context.projectName]!.root
+  // ) {
+  //   throw new Error(
+  //     "The Build process failed because the context is not valid. Please run this command from a workspace."
+  //   );
+  // }
 
-  const projectRoot = context.projectsConfigurations.projects[
-    context.projectName
-  ]!.root as string;
-  const outputPath = (options?.outputPath ||
-    join("dist", projectRoot)) as string;
+  // const projectRoot = context.projectsConfigurations.projects[
+  //   context.projectName
+  // ]!.root as string;
+  // const outputPath = (options?.outputPath ||
+  //   join("dist", projectRoot)) as string;
 
-  writeDebug(
-    `📦  Copying asset files to output directory: ${outputPath}`,
-    config
-  );
+  // writeDebug(
+  //   `📦  Copying asset files to output directory: ${outputPath}`,
+  //   config
+  // );
 
-  const assets = [...(options.assets ?? [])];
-  if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "*.md")) {
-    assets.push({
-      input: projectRoot,
-      glob: "*.md",
-      output: "."
-    });
-  }
+  // const assets = [...(options.assets ?? [])];
+  // if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "*.md")) {
+  //   assets.push({
+  //     input: projectRoot,
+  //     glob: "*.md",
+  //     output: "."
+  //   });
+  // }
 
-  if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "LICENSE")) {
-    assets.push({
-      input: "",
-      glob: "LICENSE",
-      output: "."
-    });
-  }
+  // if (!options.assets?.some((asset: AssetGlob) => asset?.glob === "LICENSE")) {
+  //   assets.push({
+  //     input: "",
+  //     glob: "LICENSE",
+  //     output: "."
+  //   });
+  // }
 
-  assets.push({
-    input: projectRoot,
-    glob: "**/package.json",
-    output: "."
-  });
+  // assets.push({
+  //   input: projectRoot,
+  //   glob: "**/package.json",
+  //   output: "."
+  // });
 
-  const result = await copyAssets(
-    {
-      assets,
-      watch: options.watch,
-      outputPath
-    },
-    context
-  );
-  if (!result.success) {
-    throw new Error("The Build process failed trying to copy assets");
-  }
+  // const result = await copyAssets(
+  //   {
+  //     assets,
+  //     watch: options.watch,
+  //     outputPath
+  //   },
+  //   context
+  // );
+  // if (!result.success) {
+  //   throw new Error("The Build process failed trying to copy assets");
+  // }
 
-  // #region Run the build process
+  // // #region Run the build process
 
-  writeTrace("⚡  Running Tamagui build on the package", config);
+  // writeTrace("⚡  Running Tamagui build on the package", config);
 
-  await build(config!, {
-    ...options,
-    clean: false,
-    projectRoot,
-    outputPath,
-    tsConfig: options.tsConfig as string
-  } as BuildOptions);
+  // await build(config!, {
+  //   ...options,
+  //   clean: false,
+  //   projectRoot,
+  //   outputPath,
+  //   tsConfig: options.tsConfig as string
+  // } as BuildOptions);
 
   // #endregion Run the build process
 
@@ -119,14 +116,7 @@ export default withRunExecutor<BuildExecutorSchema>(
       applyDefaultOptions: (
         options: Partial<BuildExecutorSchema>
       ): BuildExecutorSchema => {
-        options.projectRoot ??= "{projectRoot}";
-        options.outputPath ??= "dist/{projectRoot}";
-        options.tsConfig ??= "{projectRoot}/tsconfig.json";
-        options.bundle ??= true;
-        options.clean ??= true;
-        options.watch ??= false;
         options.assets ??= [];
-        options.minify ??= true;
         options.includeSrc ??= true;
 
         return options;

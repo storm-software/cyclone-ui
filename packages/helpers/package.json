@@ -1,0 +1,25 @@
+{
+  "name": "@cyclone-ui/helpers",
+  "version": "0.3.0",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "packages/helpers"
+  },
+  "private": false,
+  "dependencies": {
+    "@storm-stack/types": "latest",
+    "@tamagui/constants": "^1.116.15",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/get-token": "^1.116.15",
+    "chroma-js": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^2.4.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

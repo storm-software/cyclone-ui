@@ -15,9 +15,9 @@
 
  -------------------------------------------------------------------*/
 
+import { getSpaced } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
-import { getSpaced } from "@cyclone-ui/theme-helpers";
 import {
   createStyledContext,
   FontSizeTokens,

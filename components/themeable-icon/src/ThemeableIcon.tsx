@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { getSized } from "@cyclone-ui/theme-helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import type {
   GetProps,
   SizeTokens,
@@ -55,7 +55,7 @@ type BaseThemeIconProps = {
   disabled?: boolean;
 } & IconProps;
 
-export const ThemeIcon = ({
+export const getIconByTheme = ({
   theme,
   disabled,
   ...props
@@ -77,8 +77,6 @@ export const ThemeIcon = ({
 
   return null;
 };
-
-export type ThemeIconProps = GetProps<typeof ThemeIcon>;
 
 type ThemeableIconExtraProps = PropsWithChildren<{
   disabled?: boolean;
@@ -132,7 +130,7 @@ export const ThemedIcon = ThemeableIconFrame.styleable<ThemeableIconExtraProps>(
           disabled={disabled}
           size={adjusted}
           color={color}>
-          <ThemeIcon theme={theme} disabled={disabled} />
+          {getIconByTheme({ theme, disabled })}
         </ThemeableIcon>
       </ThemeableIconFrame>
     );

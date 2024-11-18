@@ -35,9 +35,9 @@
   "dependencies": {
     "@storm-stack/hooks": "latest",
     "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/label": "^1.116.14",
-    "@tamagui/stacks": "^1.116.14",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/label": "^1.116.15",
+    "@tamagui/stacks": "^1.116.15",
     "react-native-svg": "^15.8.0"
   },
   "devDependencies": {

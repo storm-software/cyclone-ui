@@ -92,7 +92,7 @@ jobs:
         shell: bash
 
       - name: Add permissions to CLI tools
-        run: chmod a=rwx apps/cli/bin/run.js
+        run: chmod a=rwx apps/cli/bin/run.cmd
 
       - name: Run build script
         run: pnpm build-all

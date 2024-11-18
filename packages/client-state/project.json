@@ -1,0 +1,33 @@
+{
+  "name": "client-state",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/client-state/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/client-state/src/index.ts",
+        "outputPath": "dist/packages/client-state",
+        "tsConfig": "packages/client-state/tsconfig.json",
+        "project": "packages/client-state/package.json",
+        "defaultConfiguration": "production"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

@@ -16,24 +16,28 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { MessageDetails, MessageType } from "@storm-stack/types";
 import { useToastController } from "@tamagui/toast";
+import { getEyebrowByType, getThemeByType } from "../utilities";
 
-export interface MessageProps {
-  theme?: string;
-  icon?: React.ReactNode;
+export type MessageOptions = Omit<MessageDetails, "message"> & {
   heading?: string;
-  message: string;
-}
-
-export type MessageOptions = Omit<MessageProps, "message">;
+  eyebrow?: string;
+};
 
 export interface UseMessageActionsResult {
-  show: (message: string, options: MessageOptions) => void;
-  showInfo: (message: string, options: MessageOptions) => void;
-  showSuccess: (message: string, options: MessageOptions) => void;
-  showWarning: (message: string, options: MessageOptions) => void;
-  showError: (message: string, options: MessageOptions) => void;
-  showHelp: (message: string, options: MessageOptions) => void;
+  show: (message: string, options?: Partial<MessageOptions>) => void;
+  showInfo: (message: string, options?: Omit<MessageOptions, "type">) => void;
+  showSuccess: (
+    message: string,
+    options?: Omit<MessageOptions, "type">
+  ) => void;
+  showWarning: (
+    message: string,
+    options?: Omit<MessageOptions, "type">
+  ) => void;
+  showError: (message: string, options?: Omit<MessageOptions, "type">) => void;
+  showHelp: (message: string, options?: Omit<MessageOptions, "type">) => void;
   hide: () => void;
   nativeToast: any;
   options?: any;
@@ -44,77 +48,89 @@ export const useMessageActions = (): UseMessageActionsResult => {
 
   return {
     ...toast,
-    show: (message: string, options: MessageOptions = {}) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        ...options
+    show: (message: string, options?: Partial<MessageOptions>) => {
+      toast.show(options?.heading || message, {
+        viewportName: "messages",
+        type: "foreground",
+        customData: {
+          eyebrow: getEyebrowByType(options?.type),
+          theme: getThemeByType(options?.type),
+          ...options,
+          message: options?.heading ? message : ""
+        }
       });
     },
-    showInfo: (
-      message: string,
-      options: Omit<MessageOptions, "theme"> = {}
-    ) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        theme: ColorThemeName.INFO,
-        ...options
+    showInfo: (message: string, options: Omit<MessageOptions, "type"> = {}) => {
+      toast.show(options.heading || message, {
+        viewportName: "messages",
+        type: "foreground",
+        customData: {
+          eyebrow: getEyebrowByType(MessageType.INFO),
+          theme: ColorThemeName.INFO,
+          ...options,
+          message: options.heading ? message : ""
+        }
       });
     },
     showSuccess: (
       message: string,
-      options: Omit<MessageOptions, "theme"> = {}
+      options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        theme: ColorThemeName.SUCCESS,
-        ...options
-      });
+      toast.show(
+        options.heading || message || "Process completed successfully",
+        {
+          viewportName: "messages",
+          type: "foreground",
+          customData: {
+            eyebrow: getEyebrowByType(MessageType.SUCCESS),
+            theme: ColorThemeName.SUCCESS,
+            ...options,
+            message: options.heading ? message : ""
+          }
+        }
+      );
     },
     showWarning: (
       message: string,
-      options: Omit<MessageOptions, "theme"> = {}
+      options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        theme: ColorThemeName.WARNING,
-        ...options
+      toast.show(options.heading || message, {
+        viewportName: "messages",
+        type: "foreground",
+        customData: {
+          eyebrow: getEyebrowByType(MessageType.WARNING),
+          theme: ColorThemeName.WARNING,
+          ...options,
+          message: options.heading ? message : ""
+        }
       });
     },
     showError: (
       message: string,
-      options: Omit<MessageOptions, "theme"> = {}
+      options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        theme: ColorThemeName.DANGER,
-        ...options
+      toast.show(options.heading || "An error occured during processing", {
+        viewportName: "messages",
+        type: "foreground",
+        customData: {
+          eyebrow: getEyebrowByType(MessageType.ERROR),
+          theme: ColorThemeName.DANGER,
+          ...options,
+          message
+        }
       });
     },
-    showHelp: (
-      message: string,
-      options: Omit<MessageOptions, "theme"> = {}
-    ) => {
-      toast.show(getMessageHeading(message, options), {
-        message,
-        theme: ColorThemeName.HELP,
-        ...options
+    showHelp: (message: string, options: Omit<MessageOptions, "type"> = {}) => {
+      toast.show(options.heading || message, {
+        viewportName: "messages",
+        type: "foreground",
+        customData: {
+          eyebrow: getEyebrowByType(MessageType.HELP),
+          theme: ColorThemeName.HELP,
+          ...options,
+          message: options.heading ? message : ""
+        }
       });
     }
   };
-};
-
-export const getMessageHeading = (message: string, options: MessageOptions) => {
-  return options.heading
-    ? options.heading
-    : options.theme?.includes(ColorThemeName.DANGER)
-      ? "Error"
-      : options.theme?.includes(ColorThemeName.WARNING)
-        ? "Warning"
-        : options.theme?.includes(ColorThemeName.INFO)
-          ? "Information"
-          : options.theme?.includes(ColorThemeName.HELP)
-            ? "Help"
-            : options.theme?.includes(ColorThemeName.SUCCESS)
-              ? "Success"
-              : "Message";
 };

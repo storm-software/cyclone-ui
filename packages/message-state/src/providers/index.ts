@@ -15,4 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./ToastProvider";
+export * from "./MessageProvider";

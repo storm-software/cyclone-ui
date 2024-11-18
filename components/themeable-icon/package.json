@@ -32,14 +32,14 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/font-size": "^1.116.14",
-    "@tamagui/get-token": "^1.116.14",
-    "@tamagui/helpers": "^1.116.14",
-    "@tamagui/helpers-icon": "^1.116.14",
-    "@tamagui/helpers-tamagui": "^1.116.14",
-    "@tamagui/lucide-icons": "^1.116.14",
-    "@tamagui/web": "^1.116.14",
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/font-size": "^1.116.15",
+    "@tamagui/get-token": "^1.116.15",
+    "@tamagui/helpers": "^1.116.15",
+    "@tamagui/helpers-icon": "^1.116.15",
+    "@tamagui/helpers-tamagui": "^1.116.15",
+    "@tamagui/lucide-icons": "^1.116.15",
+    "@tamagui/web": "^1.116.15",
     "react-native-svg": "^15.8.0"
   },
   "devDependencies": {

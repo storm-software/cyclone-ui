@@ -35,5 +35,6 @@ export const colorSchemes = {
 };
 
 export * from "./colors";
-export * from "./get-colors";
+export * from "./get-color-definition";
+export * from "./masks";
 export * from "./types";

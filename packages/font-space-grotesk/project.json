@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "packages/font-space-grotesk/src",
   "targets": {
-    "build": {
+    "build-base": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
@@ -24,6 +24,29 @@
           "debug": true,
           "verbose": true
         }
+      }
+    },
+    "build": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": [
+        "{projectRoot}/css/*",
+        "{projectRoot}/ttf/*",
+        "{projectRoot}/webfonts/*"
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/packages/font-space-grotesk/css/*",
+        "{workspaceRoot}/dist/packages/font-space-grotesk/ttf/*",
+        "{workspaceRoot}/dist/packages/font-space-grotesk/webfonts/*"
+      ],
+      "dependsOn": ["build-base"],
+      "options": {
+        "commands": [
+          "pnpm exec copyfiles -f ./packages/font-space-grotesk/css/* ./dist/packages/font-space-grotesk/css",
+          "pnpm exec copyfiles -f ./packages/font-space-grotesk/ttf/* ./dist/packages/font-space-grotesk/ttf",
+          "pnpm exec copyfiles -f ./packages/font-space-grotesk/webfonts/* ./dist/packages/font-space-grotesk/webfonts"
+        ],
+        "parallel": true
       }
     },
     "nx-release-publish": {

@@ -1,39 +1,56 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Button } from "@cyclone-ui/button";
 import { useMessageActions } from "@cyclone-ui/message-state";
 import type { Meta, StoryObj } from "@storybook/react";
 import { XStack, YStack } from "@tamagui/stacks";
-import { Message, MessageViewport } from "./Message";
+import { Message } from "./Message";
 
 const meta: Meta<typeof Message> = {
   title: "General/Message",
   component: Message,
   tags: ["autodocs"],
-  render: ({ message, theme, ...rest }: any) => {
+  render: ({ message, type, ...rest }: any) => {
     const { show, hide } = useMessageActions();
 
     return (
-      <YStack space={true} alignItems="center">
+      <YStack alignItems="center" width="100%">
         <Message />
 
-        <XStack alignItems="center" gap="$4" marginTop="400px">
+        <XStack alignItems="center" gap="$4" marginTop="400px" width={400}>
           <Button
-            variant="secondary"
+            variant="tertiary"
             onPress={() => {
               hide();
             }}>
-            Hide
+            <Button.Text>Hide</Button.Text>
           </Button>
           <Button
+            variant="primary"
             onPress={() => {
               show(message, {
-                theme
+                heading: "Message Heading",
+                type
               });
             }}>
-            Show
+            <Button.Text>Show</Button.Text>
           </Button>
         </XStack>
-
-        <MessageViewport portalToRoot={true} />
       </YStack>
     );
   }
@@ -54,7 +71,7 @@ export const Brand: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "brand"
+    type: "brand"
   }
 };
 
@@ -62,7 +79,7 @@ export const Alternate: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "alternate"
+    type: "alternate"
   }
 };
 
@@ -70,7 +87,7 @@ export const Help: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "help"
+    type: "help"
   }
 };
 
@@ -78,7 +95,7 @@ export const Error: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "danger"
+    type: "error"
   }
 };
 
@@ -86,7 +103,7 @@ export const Warning: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "warning"
+    type: "warning"
   }
 };
 
@@ -94,7 +111,7 @@ export const Info: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "info"
+    type: "info"
   }
 };
 
@@ -102,6 +119,6 @@ export const Success: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    theme: "success"
+    type: "success"
   }
 };

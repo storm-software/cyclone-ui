@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "packages/font-permanent-marker/src",
   "targets": {
-   "build": {
+    "build-base": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
@@ -24,6 +24,29 @@
           "debug": true,
           "verbose": true
         }
+      }
+    },
+    "build": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": [
+        "{projectRoot}/css/*",
+        "{projectRoot}/ttf/*",
+        "{projectRoot}/webfonts/*"
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/packages/font-permanent-marker/css/*",
+        "{workspaceRoot}/dist/packages/font-permanent-marker/ttf/*",
+        "{workspaceRoot}/dist/packages/font-permanent-marker/webfonts/*"
+      ],
+      "dependsOn": ["build-base"],
+      "options": {
+        "commands": [
+          "pnpm exec copyfiles -f ./packages/font-permanent-marker/css/* ./dist/packages/font-permanent-marker/css",
+          "pnpm exec copyfiles -f ./packages/font-permanent-marker/ttf/* ./dist/packages/font-permanent-marker/ttf",
+          "pnpm exec copyfiles -f ./packages/font-permanent-marker/webfonts/* ./dist/packages/font-permanent-marker/webfonts"
+        ],
+        "parallel": true
       }
     },
     "nx-release-publish": {

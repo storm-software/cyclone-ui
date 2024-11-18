@@ -1,0 +1,33 @@
+{
+  "name": "helpers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/helpers/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
+      "inputs": ["typescript", "^production"],
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": "packages/helpers/src/index.ts",
+        "outputPath": "dist/packages/helpers",
+        "tsConfig": "packages/helpers/tsconfig.json",
+        "project": "packages/helpers/package.json",
+        "defaultConfiguration": "production"
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

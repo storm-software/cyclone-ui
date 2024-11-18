@@ -104,9 +104,17 @@ export const createNodes: CreateNodes<StorybookPluginOptions | undefined> = [
 
       project.implicitDependencies ??= [];
       project.implicitDependencies.push(...getComponentProjectNames());
-      project.implicitDependencies.push("colors");
-      project.implicitDependencies.push("themes");
       project.implicitDependencies.push("config");
+
+      // project.implicitDependencies.push("font-space-grotesk");
+      // project.implicitDependencies.push("font-permanent-marker");
+      // project.implicitDependencies.push("font-mona-sans");
+      // project.implicitDependencies.push("tamagui");
+      // project.implicitDependencies.push("themes");
+      // project.implicitDependencies.push("state");
+      // project.implicitDependencies.push("client-state");
+      // project.implicitDependencies.push("message-state");
+      // project.implicitDependencies.push("form-state");
 
       const targets = await buildStorybookTargets(
         ctx.workspaceRoot,
@@ -234,6 +242,7 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
     options: {
       cwd: workspaceRoot,
       commands: [
+        { command: "pnpm nx run cli:build" },
         { command: "pnpm nx run colors:build" },
         { command: "pnpm nx run themes:build" }
       ],
@@ -251,7 +260,7 @@ function buildTarget(
 ): TargetConfiguration {
   return {
     dependsOn: [{ target: "prepare" }],
-    command: `storybook build`,
+    command: "storybook build",
     options: { cwd: projectRoot },
     cache: true,
     outputs,
@@ -279,9 +288,11 @@ function serveTarget(projectRoot: string, port = 4400): TargetConfiguration {
     defaultConfiguration: "local",
     configurations: {
       local: {
+        cwd: projectRoot,
         command: `storybook dev -p ${port}`
       },
       ci: {
+        cwd: projectRoot,
         command: `storybook dev -p ${port} --ci --no-open`
       }
     }
@@ -291,7 +302,7 @@ function serveTarget(projectRoot: string, port = 4400): TargetConfiguration {
 function testTarget(projectRoot: string) {
   const targetConfig: TargetConfiguration = {
     dependsOn: [{ target: "prepare" }],
-    command: `test-storybook`,
+    command: "test-storybook",
     options: { cwd: projectRoot },
     inputs: [
       {
@@ -321,10 +332,10 @@ function serveStaticTarget(
 
 function getOutputs(): string[] {
   const outputs = [
-    `{projectRoot}/storybook-static`,
-    `{options.output-dir}`,
-    `{options.outputDir}`,
-    `{options.o}`
+    "{projectRoot}/storybook-static",
+    "{options.output-dir}",
+    "{options.outputDir}",
+    "{options.o}"
   ];
 
   return outputs;
@@ -333,14 +344,15 @@ function getOutputs(): string[] {
 function normalizeOptions(
   options?: StorybookPluginOptions
 ): Required<StorybookPluginOptions> {
-  options ??= {};
-  options.buildStorybookTargetName ??= "build";
-  options.serveStorybookTargetName ??= "serve";
-  options.testStorybookTargetName ??= "test";
-  options.staticStorybookTargetName ??= "static";
-  options.port ??= 4400;
+  const normalizedOptions = (options ?? {}) as Required<StorybookPluginOptions>;
 
-  return options as Required<StorybookPluginOptions>;
+  normalizedOptions.buildStorybookTargetName ??= "build";
+  normalizedOptions.serveStorybookTargetName ??= "serve";
+  normalizedOptions.testStorybookTargetName ??= "test";
+  normalizedOptions.staticStorybookTargetName ??= "static";
+  normalizedOptions.port ??= 4400;
+
+  return normalizedOptions;
 }
 
 function isStorybookTestRunnerInstalled(): boolean {

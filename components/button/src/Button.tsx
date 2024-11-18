@@ -16,12 +16,12 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { LabelText } from "@cyclone-ui/label-text";
 import {
   getButtonSized,
   getFontSizedFromSize,
   getSized
-} from "@cyclone-ui/theme-helpers";
+} from "@cyclone-ui/helpers";
+import { LabelText } from "@cyclone-ui/label-text";
 import {
   ThemeableIcon,
   type ThemeableIconProps
@@ -568,7 +568,7 @@ const ButtonText = ButtonTextFrame.styleable(
 );
 
 const ButtonIcon = View.styleable(
-  ({ children, ...props }) => {
+  ({ children, ...props }, forwardedRef) => {
     const { variant, disabled, color, size } = ButtonContext.useStyledContext();
     const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
 
@@ -584,7 +584,7 @@ const ButtonIcon = View.styleable(
         : ColorThemeName.BASE;
 
     return (
-      <View zIndex="$md">
+      <View ref={forwardedRef} zIndex="$md">
         <Theme name={theme} componentName="ButtonIcon">
           <ThemeableIcon
             {...props}

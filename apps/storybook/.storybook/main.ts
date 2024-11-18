@@ -15,9 +15,12 @@
 
  -------------------------------------------------------------------*/
 
+import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import type { StorybookConfig } from "@storybook/react-vite";
+import react from "@vitejs/plugin-react-swc";
 import { dirname, join } from "node:path";
-import { mergeConfig } from "vite";
+
+Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -27,55 +30,125 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
 
+const dependencies = [
+  "@cyclone-ui/colors",
+  "@cyclone-ui/font-space-grotesk",
+  "@cyclone-ui/font-permanent-marker",
+  "@cyclone-ui/font-mona-sans",
+  "@cyclone-ui/tamagui",
+  "@cyclone-ui/themes",
+  "@cyclone-ui/helpers",
+  "@cyclone-ui/state",
+  "@cyclone-ui/client-state",
+  "@cyclone-ui/message-state",
+  "@cyclone-ui/form-state"
+];
+
+const isProduction = process.env.NODE_ENV === "production";
+const profiling = isProduction && {
+  "react-dom/client": "react-dom/profiling"
+};
+
 const config: StorybookConfig = {
   stories: ["../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    // getAbsolutePath("storybook-react-i18next"),
-    "@chromatic-com/storybook"
+    getAbsolutePath("@storybook/addon-interactions")
   ],
+  framework: getAbsolutePath("@storybook/react-vite"),
+  async viteFinal(config, { configType }) {
+    const { tamaguiPlugin } = await import("@tamagui/vite-plugin");
+    const { mergeConfig } = await import("vite");
 
-  framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
-    options: {
-      builder: {
-        viteConfigPath: "vite.config.ts"
-      }
-    }
-  },
+    // config.plugins.push(
+    //   tamaguiPlugin({
+    //     config: "../tamagui.config.ts",
+    //     components: ["tamagui"],
+    //   })
+    // );
 
-  viteFinal: async (config, { configType }) => {
     return mergeConfig(config, {
+      // root: __dirname,
+      // cacheDir: "../../node_modules/.cache/.vite/apps/storybook",
+      envPrefix: "NEXT_PUBLIC_",
+
+      // optimizeDeps: {
+      //   include: dependencies,
+      //   esbuildOptions: {
+      //     format: "esm"
+      //   }
+      // },
+
+      // optimizeDeps: {
+      //   esbuildOptions: {
+      //     format: "esm"
+      //   }
+      // },
+
       resolve: {
         alias: {
-          "react-native-svg": getAbsolutePath("@tamagui/react-native-svg")
-        }
+          "react-native-svg": getAbsolutePath("@tamagui/react-native-svg"),
+          "react-native/Libraries/Renderer/shims/ReactFabric": getAbsolutePath(
+            "@tamagui/proxy-worm"
+          ),
+          // "react-native/Libraries/Utilities/codegenNativeComponent":
+          //   getAbsolutePath("@tamagui/proxy-worm"),
+          // "react-native/Libraries/ReactNative/ReactFabricPublic":
+          //   getAbsolutePath("@tamagui/proxy-worm"),
+          "react-native/Libraries/Renderer/shims/ReactNative": getAbsolutePath(
+            "@tamagui/proxy-worm"
+          ),
+          "react-native": getAbsolutePath("react-native-web"),
+
+          ...profiling
+        },
+
+        dedupe: [
+          "react",
+          "react-dom",
+          "react-native",
+          "react-native-web",
+          "@tamagui/core",
+          "@tamagui/web",
+          "@tamagui/toast",
+          "@tamagui/use-presence"
+        ]
       },
+
+      plugins: [
+        nxViteTsPaths({ debug: false }),
+        react(),
+        tamaguiPlugin({
+          config: "./tamagui.config.ts",
+          disableServerOptimization: configType !== "PRODUCTION",
+          disableResolveConfig: true,
+          components: ["tamagui"]
+        })
+      ].filter(Boolean),
 
       define: {
         "process.env.STORYBOOK": "true",
         // "process.env.TAMAGUI_TARGET": "web",
+        "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": "false",
         "process.env.NODE_ENV":
-          configType === "PRODUCTION" ? "production" : "development",
-        "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": "false"
+          configType === "PRODUCTION" ? "production" : "development"
+      },
+
+      build: {
+        outDir: "../../../dist/apps/storybook",
+        reportCompressedSize: true
       }
     });
   },
-
-  env: {
-    "process.env.STORYBOOK": "true",
-    "process.env.TAMAGUI_BAIL_AFTER_SCANNING_X_CSS_RULES": "false"
-  },
-
   docs: {
     defaultName: "Documentation"
   },
-
   typescript: {
     reactDocgen: "react-docgen-typescript"
+  },
+  core: {
+    disableTelemetry: true
   }
 };
 

@@ -22,14 +22,15 @@ import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { Heading3Text } from "@cyclone-ui/heading-text";
 import { Diagonal } from "@cyclone-ui/icons";
 import {
+  getIconByTheme,
   ThemeableIcon,
-  ThemedIcon,
   type ThemeableIconProps
 } from "@cyclone-ui/themeable-icon";
 import {
   createStyledContext,
   styled,
   Theme,
+  useThemeName,
   withStaticProperties
 } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
@@ -91,6 +92,7 @@ const AlertContent = styled(YStack, {
   name: "Alert",
 
   animation: "normal",
+  width: "100%",
   flexDirection: "column",
   zIndex: 20,
   gap: "$2",
@@ -109,7 +111,7 @@ const AlertFrameImpl = Container.styleable<AlertContextProps>(
           theme={theme}
           position="relative"
           variant="quaternary"
-          borderWidth={4}>
+          borderWidth={3}>
           <AlertBackgroundLowGradient theme={theme} />
           <AlertBackgroundHighGradient theme={theme} />
           <AlertBackgroundDiagonal />
@@ -130,23 +132,22 @@ const AlertHeader = styled(XStack, {
   zIndex: 10,
   backgroundColor: "transparent",
   alignItems: "center",
-  gap: "$2"
+  gap: "$3"
 });
 
 const AlertIcon = ({ children, ...props }: ThemeableIconProps) => {
-  const { theme } = AlertContext.useStyledContext();
+  const theme = useThemeName();
 
-  if (children) {
-    return (
-      <ThemeableIcon theme={theme} {...props}>
-        {children}
-      </ThemeableIcon>
-    );
+  const icon = children || getIconByTheme({ theme });
+  if (!icon) {
+    return null;
   }
 
-  console.log(theme);
-
-  return <ThemedIcon theme={theme} {...props} />;
+  return (
+    <ThemeableIcon theme={theme} {...props} size="$6">
+      {icon}
+    </ThemeableIcon>
+  );
 };
 
 const AlertHeading = styled(Heading3Text, {

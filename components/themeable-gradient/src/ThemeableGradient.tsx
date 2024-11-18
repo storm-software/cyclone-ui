@@ -15,10 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import {
-  ColorScientificPalette,
-  createStylePalettes
-} from "@cyclone-ui/colors";
+import { createStylePalettes } from "@cyclone-ui/helpers";
 import {
   type GetProps,
   getVariableValue,
@@ -49,7 +46,7 @@ export const ThemeableGradient = themeable(
     const colors = useMemo(
       () =>
         createStylePalettes(
-          getVariableValue(theme[color as any] || color, "color")
+          getVariableValue(theme[color as any] ?? color, "color")
         ),
       [theme, color]
     );

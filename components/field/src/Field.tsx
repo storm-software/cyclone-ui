@@ -25,10 +25,10 @@ import {
   useFieldStore,
   Validator
 } from "@cyclone-ui/form-state";
+import { getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Spinner } from "@cyclone-ui/spinner";
-import { getSized } from "@cyclone-ui/theme-helpers";
-import { ThemeIcon } from "@cyclone-ui/themeable-icon";
+import { getIconByTheme } from "@cyclone-ui/themeable-icon";
 import { ValidationText } from "@cyclone-ui/validation-text";
 import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import type {
@@ -513,7 +513,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
         disabled={disabled}
         messages={messages}
         onPress={focus}>
-        <ThemeIcon theme={theme} disabled={disabled} />
+        {getIconByTheme({ theme, disabled })}
       </InnerFieldThemeIcon>
     );
   },

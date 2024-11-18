@@ -4,7 +4,7 @@
   "projectType": "library",
   "sourceRoot": "packages/font-mona-sans/src",
   "targets": {
-   "build": {
+    "build-base": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
@@ -24,6 +24,23 @@
           "debug": true,
           "verbose": true
         }
+      }
+    },
+    "build": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": ["{projectRoot}/css/*", "{projectRoot}/ttf/*"],
+      "outputs": [
+        "{workspaceRoot}/dist/packages/font-mona-sans/css/*",
+        "{workspaceRoot}/dist/packages/font-mona-sans/ttf/*"
+      ],
+      "dependsOn": ["build-base"],
+      "options": {
+        "commands": [
+          "pnpm exec copyfiles -f ./packages/font-mona-sans/css/* ./dist/packages/font-mona-sans/css",
+          "pnpm exec copyfiles -f ./packages/font-mona-sans/ttf/* ./dist/packages/font-mona-sans/ttf"
+        ],
+        "parallel": true
       }
     },
     "nx-release-publish": {

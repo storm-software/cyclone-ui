@@ -15,6 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-import { buildThemes } from "@cyclone-ui/theme-helpers";
+import { buildThemes } from "@cyclone-ui/tamagui";
 
 export const themes = buildThemes();

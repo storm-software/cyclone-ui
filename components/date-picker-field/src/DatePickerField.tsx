@@ -22,7 +22,7 @@ import {
   useFieldRef,
   useFieldStore
 } from "@cyclone-ui/form-state";
-import { getSized } from "@cyclone-ui/theme-helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { StormDate } from "@storm-stack/date-time/storm-date";
 import { formatDate } from "@storm-stack/date-time/utilities/format-date";

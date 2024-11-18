@@ -16,11 +16,10 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { getSpaced } from "@cyclone-ui/theme-helpers";
+import { getSpaced } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { View, ViewProps, styled } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { ThemeableStack } from "@tamagui/stacks";
 
 export type ContainerVariant =
   | "primary"
@@ -35,6 +34,7 @@ const ContainerFrame = styled(View, {
 
   focusable: false,
   userSelect: "none",
+  width: "100%",
   shadowColor: "$shadowColor",
   shadowOffset: { width: 0, height: 4 },
   shadowRadius: 30,
@@ -133,10 +133,11 @@ const ContainerGlassBackground = styled(LinearGradient, {
   end: { x: 0.9, y: 0.5 }
 });
 
-const ContainerGroup = styled(ThemeableStack, {
+const ContainerGroup = styled(View, {
   name: "Container",
 
   animation: "normal",
+  width: "100%",
 
   variants: {
     size: {

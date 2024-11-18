@@ -15,15 +15,18 @@
 
  -------------------------------------------------------------------*/
 
-import { config } from "@cyclone-ui/config/tamagui.config";
-import { createTamagui } from "@cyclone-ui/theme-helpers/create-tamagui";
+import { createTamagui } from "@cyclone-ui/tamagui";
+import { cyclone } from "@cyclone-ui/themes";
+import type { CreateTamaguiProps, InferTamaguiConfig } from "@tamagui/web";
 
-const tamaguiConf = createTamagui(config);
+export const config: InferTamaguiConfig<CreateTamaguiProps> = createTamagui({
+  themes: cyclone
+} as CreateTamaguiProps);
 
-export type Conf = typeof tamaguiConf;
+export type AppConfig = typeof config;
 
 declare module "tamagui" {
-  interface TamaguiCustomConfig extends Conf {}
+  interface TamaguiCustomConfig extends AppConfig {}
 }
 
-export default tamaguiConf;
+export default config;

@@ -34,8 +34,8 @@
     }
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/web": "^1.116.14"
+    "@tamagui/core": "^1.116.15",
+    "@tamagui/web": "^1.116.15"
   },
   "publishConfig": {
     "access": "public"

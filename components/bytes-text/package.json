@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@storm-stack/string-fns": "latest",
-    "@tamagui/core": "^1.116.14"
+    "@tamagui/core": "^1.116.15"
   },
   "devDependencies": {
     "react": "18.3.1",
