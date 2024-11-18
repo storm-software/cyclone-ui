@@ -16,7 +16,6 @@
  -------------------------------------------------------------------*/
 
 import type { MaskOptions } from "@cyclone-ui/colors";
-import { palettes } from "./palettes";
 import { ColorPaletteShades } from "./tokens";
 
 const templateColorsSpecific = {
@@ -119,7 +118,7 @@ const baseMaskOptions: MaskOptions = {
   override: shadows,
   skip: shadows,
   // avoids the transparent ends
-  max: palettes.light.length,
+  max: 12,
   min: 0
 };
 

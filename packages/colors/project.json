@@ -12,7 +12,7 @@
       "outputs": ["{projectRoot}/src/schemes/*"],
       "dependsOn": ["^build"],
       "options": {
-        "command": "\"apps/cli/bin/run.cmd\" colors generate cyclone --output packages/colors/src/schemes --clean"
+        "command": "node -r esbuild-register apps/cli/bin/run.js colors generate cyclone --output packages/colors/src/schemes --clean"
       }
     },
     "build": {

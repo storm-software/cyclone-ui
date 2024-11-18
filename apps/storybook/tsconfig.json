@@ -2,14 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-
-    // "baseUrl": ".",
-    // "rootDir": ".",
-    // "paths": {
-    //   "~/*": ["./*"],
-    //   "@cyclone-ui/*": ["../../packages/*", "../../components/*"]
-    // },
-
     "incremental": false,
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -45,6 +37,7 @@
     ".storybook/*",
     "../../packages/font-mona-sans/*",
     "../../packages/font-permanent-marker/*",
-    "../../packages/font-space-grotesk/*"
+    "../../packages/font-space-grotesk/*",
+    "../../packages/themes/*"
   ]
 }

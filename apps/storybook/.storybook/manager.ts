@@ -16,8 +16,9 @@
  -------------------------------------------------------------------*/
 
 import { addons } from "@storybook/manager-api";
-import theme from "./theme";
+import { create } from "@storybook/theming/create";
+import { storybook } from "../../../packages/themes/src/storybook";
 
 addons.setConfig({
-  theme
+  theme: create(storybook)
 });

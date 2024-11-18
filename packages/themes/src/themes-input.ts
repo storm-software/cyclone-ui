@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { colors } from "@cyclone-ui/colors";
 import { buildThemes } from "@cyclone-ui/tamagui";
 
-export const themes = buildThemes();
+export const themes = buildThemes(colors);

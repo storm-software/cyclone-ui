@@ -61,30 +61,10 @@ const config: StorybookConfig = {
     const { tamaguiPlugin } = await import("@tamagui/vite-plugin");
     const { mergeConfig } = await import("vite");
 
-    // config.plugins.push(
-    //   tamaguiPlugin({
-    //     config: "../tamagui.config.ts",
-    //     components: ["tamagui"],
-    //   })
-    // );
-
     return mergeConfig(config, {
       // root: __dirname,
       // cacheDir: "../../node_modules/.cache/.vite/apps/storybook",
       envPrefix: "NEXT_PUBLIC_",
-
-      // optimizeDeps: {
-      //   include: dependencies,
-      //   esbuildOptions: {
-      //     format: "esm"
-      //   }
-      // },
-
-      // optimizeDeps: {
-      //   esbuildOptions: {
-      //     format: "esm"
-      //   }
-      // },
 
       resolve: {
         alias: {
@@ -92,10 +72,6 @@ const config: StorybookConfig = {
           "react-native/Libraries/Renderer/shims/ReactFabric": getAbsolutePath(
             "@tamagui/proxy-worm"
           ),
-          // "react-native/Libraries/Utilities/codegenNativeComponent":
-          //   getAbsolutePath("@tamagui/proxy-worm"),
-          // "react-native/Libraries/ReactNative/ReactFabricPublic":
-          //   getAbsolutePath("@tamagui/proxy-worm"),
           "react-native/Libraries/Renderer/shims/ReactNative": getAbsolutePath(
             "@tamagui/proxy-worm"
           ),
@@ -121,8 +97,6 @@ const config: StorybookConfig = {
         react(),
         tamaguiPlugin({
           config: "./tamagui.config.ts",
-          disableServerOptimization: configType !== "PRODUCTION",
-          disableResolveConfig: true,
           components: ["tamagui"]
         })
       ].filter(Boolean),

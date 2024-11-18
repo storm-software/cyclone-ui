@@ -15,9 +15,40 @@
 
  -------------------------------------------------------------------*/
 
-import { create } from "@storybook/theming/create";
+export interface StorybookTheme {
+  base: "light" | "dark";
+  colorPrimary: string;
+  colorSecondary: string;
+  appBg: string;
+  appContentBg: string;
+  appPreviewBg: string;
+  appBorderColor: string;
+  appBorderRadius: number;
+  fontBase: string;
+  fontCode: string;
+  textColor: string;
+  textInverseColor: string;
+  textMutedColor: string;
+  barTextColor: string;
+  barHoverColor: string;
+  barSelectedColor: string;
+  barBg: string;
+  buttonBg: string;
+  buttonBorder: string;
+  booleanBg: string;
+  booleanSelectedBg: string;
+  inputBg: string;
+  inputBorder: string;
+  inputTextColor: string;
+  inputBorderRadius: number;
+  brandTitle?: string;
+  brandUrl?: string;
+  brandImage?: string;
+  brandTarget?: string;
+  gridCellSize?: number;
+}
 
-const theme: any = create({
+export const storybook: StorybookTheme = {
   base: "dark",
 
   colorPrimary: "#EFEFEF",
@@ -25,6 +56,7 @@ const theme: any = create({
 
   // UI
   appBg: "#151718",
+  appPreviewBg: "#151718",
   appContentBg: "#151718",
   appBorderColor: "#363738",
   appBorderRadius: 2,
@@ -32,22 +64,30 @@ const theme: any = create({
   // Text colors
   textColor: "#EFEFEF",
   textInverseColor: "#EFEFEF",
+  textMutedColor: "#99A1AA",
+  fontBase: "#EFEFEF",
+  fontCode: "#EFEFEF",
 
   // Toolbar default and active colors
   barTextColor: "#EFEFEF",
   barSelectedColor: "#1fb2a6",
   barBg: "#151718",
+  barHoverColor: "#1C887F",
+
+  // Button colors
+  buttonBg: "#EFEFEF",
+  buttonBorder: "#363738",
 
   // Form colors
   inputBg: "#151718",
   inputBorder: "#363738",
   inputTextColor: "#EFEFEF",
   inputBorderRadius: 2,
+  booleanBg: "#EFEFEF",
+  booleanSelectedBg: "#1fb2a6",
 
   brandTitle: "Storm Software",
   brandUrl: "https://stormsoftware.com",
   brandImage: "https://public.storm-cdn.com/transparent.svg",
   brandTarget: "_blank"
-});
-
-export default theme;
+};

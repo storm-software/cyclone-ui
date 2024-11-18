@@ -15,7 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorPalette, ColorThemeName, colors } from "@cyclone-ui/colors";
+import {
+  ColorPalette,
+  ColorThemeName,
+  type ColorThemeTokens
+} from "@cyclone-ui/colors";
 import { StormError } from "@storm-stack/errors";
 import { colorTokens } from "./tokens";
 
@@ -74,7 +78,7 @@ export function objectFromEntries<ARR_T extends EntriesType>(
   return Object.fromEntries(arr) as EntriesToObject<ARR_T>;
 }
 
-export const palettes = (() => {
+export const getPalettes = (colors: ColorThemeTokens) => {
   const lightestLightColor = colors.base.base1 as string;
   const darkestDarkColor = colors.baseDark.base1 as string;
   const darkestLightColor = colors.base.base12 ?? darkestDarkColor;
@@ -162,14 +166,10 @@ export const palettes = (() => {
   lightPalettes.light_base = lightBasePalette;
   darkPalettes.dark_base = darkBasePalette;
 
-  const colorPalettes = {
-    ...lightPalettes,
-    ...darkPalettes
-  };
-
   return {
     light: lightBasePalette,
     dark: darkBasePalette,
-    ...colorPalettes
+    ...lightPalettes,
+    ...darkPalettes
   };
-})();
+};

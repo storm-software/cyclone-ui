@@ -15,17 +15,21 @@
 
  -------------------------------------------------------------------*/
 
-import { defaultMasks, getColorDefinition } from "@cyclone-ui/colors";
+import {
+  defaultMasks,
+  getColorDefinition,
+  type ColorThemeTokens
+} from "@cyclone-ui/colors";
 import { createThemeBuilder } from "@tamagui/theme-builder";
 import { componentThemes } from "./tokens/component-themes";
-import { palettes } from "./tokens/palettes";
+import { getPalettes } from "./tokens/palettes";
 import { shadows } from "./tokens/shadows";
 import { templates } from "./tokens/templates";
 import { darkColors, lightColors } from "./tokens/tokens";
 
-export const buildThemes = (): any => {
+export const buildThemes = (colors: ColorThemeTokens): any => {
   const themesBuilder = createThemeBuilder()
-    .addPalettes(palettes)
+    .addPalettes(getPalettes(colors))
     .addTemplates(templates)
     .addMasks({
       identity: defaultMasks.identity,

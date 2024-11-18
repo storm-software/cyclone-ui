@@ -36,7 +36,7 @@
     "react-dom": "18.3.1",
     "react-native": "0.74.1",
     "react-native-reanimated": "^3.16.1",
-    "react-native-svg": "^15.7.1",
+    "react-native-svg": "^15.8.0",
     "react-native-web": "0.19.12",
     "tamagui": "^1.116.15"
   },
