@@ -119,6 +119,21 @@ export const componentThemes = {
     ...maskOptions.body
   },
 
+  Toast: {
+    mask: "identity",
+    ...maskOptions.alert
+  },
+
+  ToastHeading: {
+    mask: "identity",
+    ...maskOptions.heading
+  },
+
+  ToastBody: {
+    mask: "identity",
+    ...maskOptions.body
+  },
+
   Link: {
     mask: "identity",
     ...maskOptions.link

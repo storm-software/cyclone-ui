@@ -93,7 +93,6 @@
     "start": "nx serve"
   },
   "dependencies": {
-    "@chromatic-com/storybook": "1",
     "@expo/cli": "0.18.19",
     "@ls-lint/ls-lint": "^2.2.3",
     "@nx/devkit": "20.0.6",
@@ -244,6 +243,7 @@
       "@cyclone-ui/eyebrow-text": "workspace:*",
       "@cyclone-ui/link-text": "workspace:*",
       "@cyclone-ui/label-text": "workspace:*",
+      "@cyclone-ui/title-text": "workspace:*",
       "@cyclone-ui/bytes-text": "workspace:*",
       "@cyclone-ui/heading-text": "workspace:*",
       "@cyclone-ui/validation-text": "workspace:*",
@@ -265,6 +265,7 @@
       "@cyclone-ui/table": "workspace:*",
       "@cyclone-ui/tabs": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
+      "@cyclone-ui/toast": "workspace:*",
       "@cyclone-ui/tools-nx": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
       "@cyclone-ui/colors": "workspace:*",

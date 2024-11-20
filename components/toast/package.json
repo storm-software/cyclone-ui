@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/alert",
+  "name": "@cyclone-ui/toast",
   "version": "0.4.0",
   "type": "module",
   "description": "A package containing the Alert component used by Storm Software",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/alert"
+    "directory": "components/toast"
   },
   "private": false,
   "main": "dist/cjs",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.116.15",
+    "@tamagui/group": "^1.116.15",
     "@tamagui/helpers": "^1.116.15",
     "@tamagui/helpers-tamagui": "^1.116.15",
     "@tamagui/linear-gradient": "^1.116.15",

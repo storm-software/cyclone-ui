@@ -1,18 +1,18 @@
 {
-  "name": "theme-helpers",
+  "name": "tamagui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/theme-helpers/src",
+  "sourceRoot": "packages/tamagui/src",
   "targets": {
    "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "inputs": ["typescript", "^production"],
       "outputs": ["{options.outputPath}"],
       "options": {
-        "entry": "packages/theme-helpers/src/index.ts",
-        "outputPath": "dist/packages/theme-helpers",
-        "tsConfig": "packages/theme-helpers/tsconfig.json",
-        "project": "packages/theme-helpers/package.json",
+        "entry": "packages/tamagui/src/index.ts",
+        "outputPath": "dist/packages/tamagui",
+        "tsConfig": "packages/tamagui/tsconfig.json",
+        "project": "packages/tamagui/package.json",
         "defaultConfiguration": "production"
       },
       "configurations": {

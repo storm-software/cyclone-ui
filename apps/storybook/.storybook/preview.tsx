@@ -31,7 +31,7 @@ import "../../../packages/font-space-grotesk/css/style.css";
 import config from "../tamagui.config";
 
 const Decorator = (Story: any, args: any) => {
-  const { theme } = args.globals;
+  const { mode } = args.globals;
 
   return (
     <SafeAreaProvider>
@@ -39,7 +39,7 @@ const Decorator = (Story: any, args: any) => {
         <ThemeStoreProvider
           config={config}
           disableInjectCSS={false}
-          defaultMode={theme}>
+          defaultMode={mode}>
           <PortalProvider>
             <MessageProvider>
               <Story />
@@ -71,7 +71,7 @@ const preview: Preview = {
   decorators: [Decorator],
   tags: ["autodocs"],
   initialGlobals: {
-    theme: "dark",
+    mode: "dark",
     locale: "en",
     locales: {
       en: "English",

@@ -15,18 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-/**
- * The tamagui library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing helper code to generate UI themes via tokens
- *
- * @packageDocumentation
- */
-
-export * from "./animations";
-export * from "./build-themes";
-export * from "./create-tamagui";
-export * from "./fonts";
-export * from "./media-queries";
-export * from "./tokens";
+export * from "./TitleText";

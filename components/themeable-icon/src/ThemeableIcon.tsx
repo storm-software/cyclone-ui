@@ -31,7 +31,9 @@ import {
   CheckCircle,
   Info,
   Lightbulb,
-  Lock
+  Lock,
+  MinusCircle,
+  PlusCircle
 } from "@tamagui/lucide-icons";
 import { PropsWithChildren, useMemo } from "react";
 import { OpaqueColorValue } from "react-native";
@@ -73,6 +75,10 @@ export const getIconByTheme = ({
     return <Lightbulb {...props} />;
   } else if (theme?.includes(ColorThemeName.SUCCESS)) {
     return <CheckCircle {...props} />;
+  } else if (theme?.includes(ColorThemeName.POSITIVE)) {
+    return <PlusCircle {...props} />;
+  } else if (theme?.includes(ColorThemeName.NEGATIVE)) {
+    return <MinusCircle {...props} />;
   }
 
   return null;
