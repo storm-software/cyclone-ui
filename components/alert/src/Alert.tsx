@@ -16,108 +16,43 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
+import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { Container } from "@cyclone-ui/container";
-import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { Heading3Text } from "@cyclone-ui/heading-text";
-import { Diagonal } from "@cyclone-ui/icons";
+import { Container, type ContainerProps } from "@cyclone-ui/container";
+import { Heading5Text } from "@cyclone-ui/heading-text";
+import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
-  getIconByTheme,
-  ThemeableIcon,
-  type ThemeableIconProps
-} from "@cyclone-ui/themeable-icon";
-import {
-  createStyledContext,
   styled,
   Theme,
   useThemeName,
+  View,
   withStaticProperties
 } from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
+import { AlertCircle, X } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
-export type AlertContextProps = {
-  theme?: ColorThemeName;
-};
+const AlertClose = styled(Button, {
+  name: "AlertTrigger",
 
-export const AlertContext = createStyledContext<AlertContextProps>({
-  theme: undefined
+  theme: ColorThemeName.BASE,
+  variant: "ghost",
+  circular: true,
+  noPadding: true
 });
 
-const AlertBackgroundLowGradient = styled(LinearGradient, {
-  name: "Alert",
-
-  fullscreen: true,
-  flexDirection: "row",
-  animation: "normal",
-  overflow: "hidden",
-  borderRadius: "$true",
-  opacity: 0.9,
-  zIndex: 5,
-  colors: ["transparent", "$base1"],
-  start: [1.0, 1.0],
-  end: [0, 0]
-});
-
-const AlertBackgroundHighGradient = styled(LinearGradient, {
-  name: "Alert",
-
-  fullscreen: true,
-  flexDirection: "row",
-  animation: "normal",
-  overflow: "hidden",
-  borderRadius: "$true",
-  opacity: 0.25,
-  zIndex: 8,
-  colors: ["transparent", "$secondary"],
-  start: [0, 1.0],
-  end: [0, 1.0]
-});
-
-const AlertBackgroundDiagonal = styled(Diagonal, {
-  name: "Alert",
-
-  position: "absolute",
-  borderRadius: "$true",
-  height: "100%",
-  width: "100%",
-  top: 0,
-  left: 0,
-  opacity: 0.05,
-  zIndex: 10
-});
-
-const AlertContent = styled(YStack, {
-  name: "Alert",
-
-  animation: "normal",
-  width: "100%",
-  flexDirection: "column",
-  zIndex: 20,
-  gap: "$2",
-  padding: "$1"
-});
-
-const AlertFrameImpl = Container.styleable<AlertContextProps>(
-  (props, forwardedRef) => {
-    const { children, theme, ...rest } = props;
-
+const AlertCloseImpl = AlertClose.styleable(
+  ({ children, ...props }, forwardedRef) => {
     return (
-      <AlertContext.Provider theme={theme}>
-        <Container
-          ref={forwardedRef}
-          {...rest}
-          theme={theme}
-          position="relative"
-          variant="quaternary"
-          borderWidth={3}>
-          <AlertBackgroundLowGradient theme={theme} />
-          <AlertBackgroundHighGradient theme={theme} />
-          <AlertBackgroundDiagonal />
-          <AlertContent>{children}</AlertContent>
-        </Container>
-      </AlertContext.Provider>
+      <XStack minHeight="100%" alignItems="center" flexBasis={50}>
+        <AlertClose ref={forwardedRef} {...props} padding="$2.5" size="$6">
+          {children || (
+            <Button.Icon>
+              <X />
+            </Button.Icon>
+          )}
+        </AlertClose>
+      </XStack>
     );
   },
   {
@@ -125,43 +60,100 @@ const AlertFrameImpl = Container.styleable<AlertContextProps>(
   }
 );
 
-const AlertHeader = styled(XStack, {
-  name: "Alert",
-
-  paddingBottom: 0,
-  zIndex: 10,
-  backgroundColor: "transparent",
-  alignItems: "center",
-  gap: "$3"
-});
-
-const AlertIcon = ({ children, ...props }: ThemeableIconProps) => {
-  const theme = useThemeName();
-
-  const icon = children || getIconByTheme({ theme });
-  if (!icon) {
-    return null;
-  }
-
+const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
   return (
-    <ThemeableIcon theme={theme} {...props} size="$6">
-      {icon}
-    </ThemeableIcon>
+    <Container
+      {...props}
+      variant="tertiary"
+      theme={ColorThemeName.BASE}
+      themeShallow={true}
+      bordered={false}
+      noPadding={true}
+      overflow="hidden">
+      <Theme name={theme}>
+        <XStack gap="$3" paddingRight="$1">
+          {children}
+        </XStack>
+      </Theme>
+    </Container>
   );
 };
 
-const AlertHeading = styled(Heading3Text, {
+const AlertIcon = ThemeableIcon.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const theme = useThemeName();
+
+    return (
+      <XStack position="relative" minHeight="100%" alignItems="center">
+        <View
+          theme={theme}
+          animation="normal"
+          enterStyle={{
+            x: -200,
+            opacity: 0.6
+          }}
+          position="absolute"
+          display="block"
+          height="100%"
+          width="62%"
+          backgroundColor="$primary"
+          zIndex="$1"
+        />
+
+        <YStack zIndex="$2" justifyContent="center" paddingLeft="$3">
+          <View
+            theme={ColorThemeName.BASE}
+            padding="$1.5"
+            backgroundColor="$surfacePrimary"
+            borderRadius={1000_000_000}>
+            <ThemeableIcon
+              ref={forwardedRef}
+              {...props}
+              theme={theme}
+              size="$4">
+              {children || getIconByTheme({ theme }) || <AlertCircle />}
+            </ThemeableIcon>
+          </View>
+        </YStack>
+      </XStack>
+    );
+  },
+  {
+    staticConfig: { componentName: "Alert" }
+  }
+);
+
+const AlertContent = YStack.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    return (
+      <YStack
+        ref={forwardedRef}
+        flex={1}
+        gap="$0.1"
+        {...props}
+        paddingVertical="$3">
+        {children}
+      </YStack>
+    );
+  },
+  {
+    staticConfig: { componentName: "Alert" }
+  }
+);
+
+const AlertHeading = styled(Heading5Text, {
   name: "AlertHeading",
 
-  color: "$color",
-  zIndex: 20
+  color: "$primary"
 });
 
 const AlertHeadingImpl = AlertHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name={ColorThemeName.BASE}>
-        <AlertHeading ref={forwardedRef}>{children}</AlertHeading>
+        <AlertHeading ref={forwardedRef} {...props}>
+          {children}
+        </AlertHeading>
       </Theme>
     );
   },
@@ -170,34 +162,11 @@ const AlertHeadingImpl = AlertHeading.styleable(
   }
 );
 
-const AlertEyebrow = styled(EyebrowText, {
-  name: "AlertEyebrow",
-
-  color: "$tertiary",
-  zIndex: 20
-});
-
-const AlertEyebrowImpl = AlertEyebrow.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    return (
-      <Theme name={ColorThemeName.BASE}>
-        <AlertEyebrow ref={forwardedRef} {...props}>
-          {children}
-        </AlertEyebrow>
-      </Theme>
-    );
-  },
-  {
-    staticConfig: { componentName: "AlertEyebrow" }
-  }
-);
-
 const AlertBody = styled(BodyText, {
   name: "AlertBody",
 
   color: "$secondary",
-  zIndex: 20,
-  paddingVertical: 0
+  fontSize: "$6"
 });
 
 const AlertBodyImpl = AlertBody.styleable(
@@ -215,7 +184,7 @@ const AlertBodyImpl = AlertBody.styleable(
   }
 );
 
-export type AlertHeaderProps = GetProps<typeof AlertHeader>;
+export type AlertContentProps = GetProps<typeof AlertContent>;
 export type AlertHeadingProps = GetProps<typeof AlertHeadingImpl>;
 export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
 export type AlertIconProps = GetProps<typeof AlertIcon>;
@@ -223,10 +192,13 @@ export type AlertIconProps = GetProps<typeof AlertIcon>;
 export type AlertProps = GetProps<typeof AlertFrameImpl>;
 
 export const Alert = withStaticProperties(AlertFrameImpl, {
-  Header: withStaticProperties(AlertHeader, {
-    Eyebrow: AlertEyebrowImpl,
+  Icon: AlertIcon,
+  Content: withStaticProperties(AlertContent, {
     Heading: AlertHeadingImpl,
-    Icon: AlertIcon
+    Body: AlertBodyImpl
   }),
-  Body: AlertBodyImpl
+  Close: withStaticProperties(AlertCloseImpl, {
+    Text: Button.Text,
+    Icon: Button.Icon
+  })
 });

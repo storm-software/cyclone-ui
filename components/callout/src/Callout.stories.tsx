@@ -17,31 +17,34 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { HelpCircle } from "@tamagui/lucide-icons";
-import { Toast } from "./Toast";
+import { YStack } from "@tamagui/stacks";
+import { Callout } from "./Callout";
 
-const meta: Meta<typeof Toast> = {
-  title: "Containers/Toast",
-  component: Toast,
+const meta: Meta<typeof Callout> = {
+  title: "Containers/Callout",
+  component: Callout,
   tags: ["autodocs"],
-  render: ({ children, icon, theme, ...rest }: any) => (
-    <Toast {...rest} theme={theme}>
-      <Toast.Icon>{icon}</Toast.Icon>
-      <Toast.Content>
-        <Toast.Content.Heading>Toast Heading</Toast.Content.Heading>
-        <Toast.Content.Body>{children}</Toast.Content.Body>
-      </Toast.Content>
+  render: ({ children, icon, ...rest }: any) => (
+    <Callout {...rest}>
+      <Callout.Header>
+        <Callout.Header.Icon>{icon}</Callout.Header.Icon>
+        <YStack gap="$1">
+          <Callout.Header.Eyebrow>Callout Eyebrow</Callout.Header.Eyebrow>
+          <Callout.Header.Heading>Callout Heading</Callout.Header.Heading>
+        </YStack>
+      </Callout.Header>
 
-      <Toast.Close />
-    </Toast>
+      <Callout.Body>{children}</Callout.Body>
+    </Callout>
   )
-} satisfies Meta<typeof Toast>;
+} satisfies Meta<typeof Callout>;
 
 export default meta;
 
-type Story = StoryObj<typeof Toast>;
+type Story = StoryObj<typeof Callout>;
 
 const bodyText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.";
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 
 export const Base: Story = {
   args: {

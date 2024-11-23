@@ -35,18 +35,18 @@ const Decorator = (Story: any, args: any) => {
 
   return (
     <SafeAreaProvider>
-      <YStack padding="$8" flexGrow={1}>
-        <ThemeStoreProvider
-          config={config}
-          disableInjectCSS={false}
-          defaultMode={mode}>
-          <PortalProvider>
-            <MessageProvider>
+      <ThemeStoreProvider
+        config={config}
+        disableInjectCSS={false}
+        defaultMode={mode}>
+        <PortalProvider>
+          <MessageProvider>
+            <YStack padding="$8" flexGrow={1}>
               <Story />
-            </MessageProvider>
-          </PortalProvider>
-        </ThemeStoreProvider>
-      </YStack>
+            </YStack>
+          </MessageProvider>
+        </PortalProvider>
+      </ThemeStoreProvider>
     </SafeAreaProvider>
   );
 };

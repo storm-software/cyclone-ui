@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { getSpaced } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { View, ViewProps, styled } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
@@ -33,37 +33,32 @@ const ContainerFrame = styled(View, {
   name: "Container",
 
   focusable: false,
-  userSelect: "none",
   width: "100%",
-  shadowColor: "$shadowColor",
-  shadowOffset: { width: 0, height: 4 },
-  shadowRadius: 30,
+
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineStyle: "solid",
+    outlineWidth: 3,
+    outlineOffset: "$1.25"
+  },
 
   variants: {
-    bordered: {
-      false: {
-        borderColor: "transparent",
-        borderWidth: 0
-      },
-      true: {
-        borderWidth: 1,
-        borderColor: "$borderColor"
-      }
-    },
-
     variant: {
       primary: {
         backgroundColor: "$primary",
+        borderWidth: 1,
         borderColor: "$tertiary"
       },
 
       secondary: {
         backgroundColor: "$surfaceSecondary",
+        borderWidth: 1,
         borderColor: "$borderColor"
       },
 
       tertiary: {
         backgroundColor: "$surfacePrimary",
+        borderWidth: 1,
         borderColor: "$borderColor"
       },
 
@@ -86,6 +81,16 @@ const ContainerFrame = styled(View, {
       }
     },
 
+    bordered: {
+      false: {
+        borderColor: "transparent",
+        borderWidth: 0
+      },
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => ({
+        borderWidth: getSized(val)
+      })
+    },
+
     size: {
       "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
         const space = getSpaced(val);
@@ -94,6 +99,14 @@ const ContainerFrame = styled(View, {
           padding: space,
           borderRadius: config.tokens.radius[val]
         };
+      }
+    },
+
+    elevated: {
+      true: {
+        shadowColor: "$shadowColor",
+        shadowOffset: { width: 0, height: 4 },
+        shadowRadius: 30
       }
     },
 
@@ -115,6 +128,7 @@ const ContainerFrame = styled(View, {
   defaultVariants: {
     variant: "tertiary",
     size: "$true",
+    elevated: true,
     circular: false,
     bordered: true,
     noPadding: false
@@ -138,6 +152,8 @@ const ContainerGroup = styled(View, {
 
   animation: "normal",
   width: "100%",
+  display: "flex",
+  flex: 1,
 
   variants: {
     size: {
@@ -166,6 +182,7 @@ export const Container = ContainerFrame.styleable(
     {
       variant = "tertiary",
       size = "$true",
+      elevated = true,
       circular = false,
       bordered = true,
       noPadding = false,
@@ -188,6 +205,7 @@ export const Container = ContainerFrame.styleable(
           {...props}
           variant={variant}
           size={size}
+          elevated={elevated}
           circular={circular}
           bordered={bordered}
           borderWidth={bordered ? borderWidth : 0}

@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/toast",
+  "name": "@cyclone-ui/alert-dialog",
   "version": "0.4.0",
   "type": "module",
-  "description": "A package containing the Alert component used by Storm Software",
+  "description": "A package containing the AlertDialog component used by Storm Software",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/toast"
+    "directory": "components/alert-dialog"
   },
   "private": false,
   "main": "dist/cjs",
@@ -36,7 +36,6 @@
     "@tamagui/group": "^1.116.15",
     "@tamagui/helpers": "^1.116.15",
     "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15",
     "@tamagui/lucide-icons": "^1.116.15",
     "@tamagui/stacks": "^1.116.15",
     "@tamagui/text": "^1.116.15",

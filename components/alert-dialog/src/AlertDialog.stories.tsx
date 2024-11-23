@@ -15,33 +15,58 @@
 
  -------------------------------------------------------------------*/
 
+import { Button } from "@cyclone-ui/button";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HelpCircle } from "@tamagui/lucide-icons";
-import { Alert } from "./Alert";
+import { XStack } from "@tamagui/stacks";
+import { AlertDialog } from "./AlertDialog";
 
-const meta: Meta<typeof Alert> = {
-  title: "Containers/Alert",
-  component: Alert,
+const meta: Meta<typeof AlertDialog> = {
+  title: "Containers/AlertDialog",
+  component: AlertDialog,
   tags: ["autodocs"],
   render: ({ children, icon, theme, ...rest }: any) => (
-    <Alert {...rest} theme={theme}>
-      <Alert.Icon>{icon}</Alert.Icon>
-      <Alert.Content>
-        <Alert.Content.Heading>Alert Heading</Alert.Content.Heading>
-        <Alert.Content.Body>{children}</Alert.Content.Body>
-      </Alert.Content>
+    <AlertDialog {...rest} theme={theme}>
+      <AlertDialog.Trigger asChild={true}>
+        <Button>
+          <Button.Text>Show Dialog</Button.Text>
+        </Button>
+      </AlertDialog.Trigger>
 
-      <Alert.Close />
-    </Alert>
+      <AlertDialog.Container>
+        <AlertDialog.Container.Icon>{icon}</AlertDialog.Container.Icon>
+        <AlertDialog.Container.Content>
+          <AlertDialog.Container.Content.Heading>
+            AlertDialog Heading
+          </AlertDialog.Container.Content.Heading>
+          <AlertDialog.Container.Content.Body>
+            {children}
+          </AlertDialog.Container.Content.Body>
+
+          <XStack gap="$3" marginTop="$3" width="100%">
+            <AlertDialog.Container.Close>
+              <AlertDialog.Container.Close.Text>
+                Close
+              </AlertDialog.Container.Close.Text>
+            </AlertDialog.Container.Close>
+            <AlertDialog.Container.Action>
+              <AlertDialog.Container.Action.Text>
+                Action
+              </AlertDialog.Container.Action.Text>
+            </AlertDialog.Container.Action>
+          </XStack>
+        </AlertDialog.Container.Content>
+      </AlertDialog.Container>
+    </AlertDialog>
   )
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof AlertDialog>;
 
 export default meta;
 
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<typeof AlertDialog>;
 
 const bodyText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.";
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 
 export const Base: Story = {
   args: {

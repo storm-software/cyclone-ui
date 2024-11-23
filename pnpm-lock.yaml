@@ -6,6 +6,8 @@ settings:
 
 overrides:
   '@cyclone-ui/alert': workspace:*
+  '@cyclone-ui/alert-dialog': workspace:*
+  '@cyclone-ui/callout': workspace:*
   '@cyclone-ui/badge': workspace:*
   '@cyclone-ui/breadcrumb': workspace:*
   '@cyclone-ui/button': workspace:*
@@ -53,7 +55,6 @@ overrides:
   '@cyclone-ui/table': workspace:*
   '@cyclone-ui/tabs': workspace:*
   '@cyclone-ui/themes': workspace:*
-  '@cyclone-ui/toast': workspace:*
   '@cyclone-ui/tools-nx': workspace:*
   '@cyclone-ui/website': workspace:*
   '@cyclone-ui/colors': workspace:*
@@ -606,13 +607,50 @@ importers:
       '@tamagui/core':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/group':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/helpers':
         specifier: ^1.116.15
         version: 1.116.15(react@18.3.1)
       '@tamagui/helpers-tamagui':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/linear-gradient':
+      '@tamagui/lucide-icons':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/web':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/alert-dialog:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/group':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/helpers':
+        specifier: ^1.116.15
+        version: 1.116.15(react@18.3.1)
+      '@tamagui/helpers-tamagui':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/lucide-icons':
@@ -777,6 +815,43 @@ importers:
         specifier: latest
         version: 0.17.0
       '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/callout:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/helpers':
+        specifier: ^1.116.15
+        version: 1.116.15(react@18.3.1)
+      '@tamagui/helpers-tamagui':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/linear-gradient':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/lucide-icons':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/web':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
@@ -2116,46 +2191,6 @@ importers:
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/text':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      react:
-        specifier: 18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: 18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-native:
-        specifier: 0.74.1
-        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
-
-  components/toast:
-    dependencies:
-      '@tamagui/core':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/group':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/helpers':
-        specifier: ^1.116.15
-        version: 1.116.15(react@18.3.1)
-      '@tamagui/helpers-tamagui':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/linear-gradient':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/lucide-icons':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
-      '@tamagui/stacks':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/text':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/web':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:

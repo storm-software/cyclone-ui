@@ -218,6 +218,8 @@
   "pnpm": {
     "overrides": {
       "@cyclone-ui/alert": "workspace:*",
+      "@cyclone-ui/alert-dialog": "workspace:*",
+      "@cyclone-ui/callout": "workspace:*",
       "@cyclone-ui/badge": "workspace:*",
       "@cyclone-ui/breadcrumb": "workspace:*",
       "@cyclone-ui/button": "workspace:*",
@@ -265,7 +267,6 @@
       "@cyclone-ui/table": "workspace:*",
       "@cyclone-ui/tabs": "workspace:*",
       "@cyclone-ui/themes": "workspace:*",
-      "@cyclone-ui/toast": "workspace:*",
       "@cyclone-ui/tools-nx": "workspace:*",
       "@cyclone-ui/website": "workspace:*",
       "@cyclone-ui/colors": "workspace:*",

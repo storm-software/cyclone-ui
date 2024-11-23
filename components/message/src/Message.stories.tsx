@@ -22,7 +22,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import { Message } from "./Message";
 
 const meta: Meta<typeof Message> = {
-  title: "General/Message",
+  title: "Containers/Message",
   component: Message,
   tags: ["autodocs"],
   render: ({ message, type, ...rest }: any) => {

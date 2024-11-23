@@ -39,7 +39,7 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Toast
+# Callout
 
 A package containing the Alert component used by Storm Software
 
@@ -47,7 +47,7 @@ A package containing the Alert component used by Storm Software
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Toast](#toast)
+- [Callout](#callout)
   - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
@@ -71,14 +71,14 @@ A package containing the Alert component used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/toast
+pnpm add -D @cyclone-ui/callout
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/toast
+npm install -D @cyclone-ui/callout
 ```
 
 </details>
@@ -87,7 +87,7 @@ npm install -D @cyclone-ui/toast
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/toast
+yarn add -D @cyclone-ui/callout
 ```
 
 </details>
@@ -102,15 +102,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build toast` to build the library.
+Run `nx build callout` to build the library.
 
 ### Running unit tests
 
-Run `nx test toast` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test callout` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint toast` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint callout` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

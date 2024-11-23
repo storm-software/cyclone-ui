@@ -1,18 +1,30 @@
-import { useComposedRefs } from "@tamagui/compose-refs";
-import { isWeb, useIsomorphicLayoutEffect } from "@tamagui/constants";
-import type { TamaguiElement } from "@tamagui/core";
-import { Slottable, View, isTamaguiElement, styled } from "@tamagui/core";
-import type { Scope } from "@tamagui/create-context";
-import { createContextScope } from "@tamagui/create-context";
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { BodyText } from "@cyclone-ui/body-text";
+import { Button } from "@cyclone-ui/button";
+import { Container } from "@cyclone-ui/container";
+import { Heading3Text } from "@cyclone-ui/heading-text";
+import type { GetProps } from "@tamagui/core";
+import { Theme, styled } from "@tamagui/core";
 import type {
-  DialogCloseProps as TamaguiDialogCloseProps,
   DialogContentProps as TamaguiDialogContentProps,
-  DialogDescriptionProps as TamaguiDialogDescriptionProps,
   DialogOverlayProps as TamaguiDialogOverlayProps,
-  DialogPortalProps as TamaguiDialogPortalProps,
-  DialogProps as TamaguiDialogProps,
-  DialogTitleProps as TamaguiDialogTitleProps,
-  DialogTriggerProps as TamaguiDialogTriggerProps
+  DialogProps as TamaguiDialogProps
 } from "@tamagui/dialog";
 import {
   Dialog as TamaguiDialog,
@@ -22,401 +34,234 @@ import {
   DialogOverlay as TamaguiDialogOverlay,
   DialogPortal as TamaguiDialogPortal,
   DialogTitle as TamaguiDialogTitle,
-  DialogTrigger as TamaguiDialogTrigger,
-  createDialogScope
+  DialogTrigger as TamaguiDialogTrigger
 } from "@tamagui/dialog";
-import { composeEventHandlers, withStaticProperties } from "@tamagui/helpers";
+import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { useControllableState } from "@tamagui/use-controllable-state";
 import * as React from "react";
-import { Alert } from "react-native";
 
-const DIALOG_NAME = "Dialog";
+const DialogHeading = styled(Heading3Text, {
+  name: "DialogHeading",
 
-type ScopedProps<P> = P & { __scopeDialog?: Scope };
-const [createDialogContext] = createContextScope(DIALOG_NAME, [
-  createDialogScope
-]);
-
-const useDialogScope = createDialogScope();
-
-const TRIGGER_NAME = "DialogTrigger";
-
-interface DialogTriggerProps extends TamaguiDialogTriggerProps {
-  __native?: boolean;
-}
-
-const NativeDialogTriggerFrame = styled(View, {
-  name: TRIGGER_NAME
+  color: "$color"
 });
 
-const DialogTrigger = React.forwardRef<TamaguiElement, DialogTriggerProps>(
-  (props: ScopedProps<DialogTriggerProps>, forwardedRef) => {
-    if (props["__native"]) {
-      const { __native, onPress, __onPress, ...rest } = props as any;
-      return (
-        <NativeDialogTriggerFrame
-          {...rest}
-          onPress={composeEventHandlers(onPress, __onPress)}
-        />
-      );
-    }
-
-    const { __scopeDialog, ...triggerProps } = props;
-    const dialogScope = useDialogScope(__scopeDialog);
+const DialogHeadingImpl = DialogHeading.styleable(
+  ({ children, ...props }, forwardedRef) => {
     return (
-      <TamaguiDialogTrigger
-        {...dialogScope}
-        {...triggerProps}
-        ref={forwardedRef}
-      />
+      <TamaguiDialogTitle tag="span">
+        <DialogHeading ref={forwardedRef} {...props}>
+          {children}
+        </DialogHeading>
+      </TamaguiDialogTitle>
     );
+  },
+  {
+    staticConfig: { componentName: "DialogHeading" }
   }
 );
 
-DialogTrigger.displayName = TRIGGER_NAME;
+const DialogBody = styled(BodyText, {
+  name: "DialogBody",
 
-const TITLE_NAME = "DialogTitle";
-
-type DialogTitleProps = TamaguiDialogTitleProps;
-
-const DialogTitle = React.forwardRef<TamaguiElement, DialogTitleProps>(
-  (props: ScopedProps<DialogTitleProps>, forwardedRef) => {
-    const { __scopeDialog, ...titleProps } = props;
-    const dialogScope = useDialogScope(__scopeDialog);
-    return (
-      <TamaguiDialogTitle
-        {...dialogScope}
-        {...titleProps}
-        color="$fg"
-        ref={forwardedRef}
-      />
-    );
-  }
-);
-
-DialogTitle.displayName = TITLE_NAME;
-
-const DESCRIPTION_NAME = "DialogDescription";
-
-type DialogDescriptionProps = TamaguiDialogDescriptionProps;
-
-const DialogDescription = React.forwardRef<
-  TamaguiElement,
-  DialogDescriptionProps
->((props: ScopedProps<DialogDescriptionProps>, forwardedRef) => {
-  const { __scopeDialog, ...descriptionProps } = props;
-  const dialogScope = useDialogScope(__scopeDialog);
-  return (
-    <TamaguiDialogDescription
-      {...dialogScope}
-      {...descriptionProps}
-      ref={forwardedRef}
-    />
-  );
+  color: "$color"
 });
 
-DialogDescription.displayName = DESCRIPTION_NAME;
-
-const ACTION_NAME = "DialogAction";
-
-type DialogActionProps = TamaguiDialogCloseProps;
-
-const DialogAction = React.forwardRef<TamaguiElement, DialogActionProps>(
-  (props: ScopedProps<DialogActionProps>, forwardedRef) => {
-    const { __scopeDialog, ...actionProps } = props;
-    const dialogScope = useDialogScope(__scopeDialog);
+const DialogBodyImpl = DialogBody.styleable(
+  ({ children, ...props }, forwardedRef) => {
     return (
-      <TamaguiDialogClose
-        {...dialogScope}
-        {...actionProps}
-        ref={forwardedRef}
-      />
+      <TamaguiDialogDescription tag="span">
+        <DialogBody ref={forwardedRef} size="$6" {...props}>
+          {children}
+        </DialogBody>
+      </TamaguiDialogDescription>
     );
+  },
+  {
+    staticConfig: { componentName: "DialogBody" }
   }
 );
 
-DialogAction.displayName = ACTION_NAME;
-
-const CANCEL_NAME = "DialogCancel";
-
-interface DialogCancelProps extends TamaguiDialogCloseProps {}
-
-const DialogCancel = React.forwardRef<TamaguiElement, DialogCancelProps>(
-  (props: ScopedProps<DialogCancelProps>, forwardedRef) => {
-    const { __scopeDialog, ...cancelProps } = props;
-    const { cancelRef } = useDialogContentContext(CANCEL_NAME, __scopeDialog);
-    const dialogScope = useDialogScope(__scopeDialog);
-    const ref = useComposedRefs(forwardedRef, cancelRef);
-    return <TamaguiDialogClose {...dialogScope} {...cancelProps} ref={ref} />;
+const DialogAction = Button.styleable(
+  ({ children, onPress, variant = "primary", ...props }, forwardedRef) => {
+    return (
+      <TamaguiDialogClose onPress={onPress} asChild={true}>
+        <Button
+          ref={forwardedRef}
+          {...props}
+          variant={variant}
+          $sm={{
+            flexBasis: "100%"
+          }}>
+          {children}
+        </Button>
+      </TamaguiDialogClose>
+    );
+  },
+  {
+    staticConfig: { componentName: "Dialog" }
   }
 );
 
-DialogCancel.displayName = CANCEL_NAME;
-
-interface DialogPortalProps extends TamaguiDialogPortalProps {}
-
-const DialogPortal: React.FC<DialogPortalProps> = (
-  props: ScopedProps<DialogPortalProps>
-) => {
-  const { __scopeDialog, ...portalProps } = props;
-  const dialogScope = useDialogScope(__scopeDialog);
-  return <TamaguiDialogPortal {...dialogScope} {...portalProps} />;
-};
-
-const PORTAL_NAME = "DialogPortal";
-DialogPortal.displayName = PORTAL_NAME;
-
-const OVERLAY_NAME = "DialogOverlay";
+const DialogClose = Button.styleable(
+  ({ children, onPress, variant = "tertiary", ...props }, forwardedRef) => {
+    return (
+      <TamaguiDialogClose onPress={onPress} asChild={true}>
+        <Button
+          ref={forwardedRef}
+          {...props}
+          variant={variant}
+          $sm={{
+            flexBasis: "100%"
+          }}>
+          {children}
+        </Button>
+      </TamaguiDialogClose>
+    );
+  },
+  {
+    staticConfig: { componentName: "Dialog" }
+  }
+);
 
 const DialogOverlayFrame = styled(LinearGradient, {
-  name: OVERLAY_NAME,
-  animation: "fast",
-  opacity: 0.9,
+  name: "DialogOverlay",
+
+  animation: "normal",
+  fullscreen: true,
   pointerEvents: "auto",
-  colors: ["transparent", "black"],
+  opacity: 0.85,
+  backdropFilter: "blur(2px)",
+  filter: "blur(2px)",
+  colors: ["$tertiary", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],
 
-  variants: {
-    unstyled: {
-      false: {
-        fullscreen: true,
-        position: "absolute",
-        zIndex: 100_000 - 1,
-        pointerEvents: "auto"
-      }
-    }
-  } as const,
+  enterStyle: {
+    opacity: 0
+  },
 
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
+  exitStyle: {
+    opacity: 0
   }
 });
 
-interface DialogOverlayProps extends TamaguiDialogOverlayProps {}
+const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
+  name: "DialogOverlay",
 
-const DialogOverlay = DialogOverlayFrame.extractable(
-  React.forwardRef<TamaguiElement, DialogOverlayProps>(
-    (props: ScopedProps<DialogOverlayProps>, forwardedRef) => {
-      const { __scopeDialog, ...overlayProps } = props;
-      const dialogScope = useDialogScope(__scopeDialog);
+  animation: "normal",
+  pointerEvents: "auto",
+  opacity: 0.6,
+  backdropFilter: "blur(35px)",
+  filter: "blur(35px)",
+  backgroundColor: "base1",
 
+  enterStyle: {
+    opacity: 0
+  },
+
+  exitStyle: {
+    opacity: 0
+  }
+});
+
+const DialogOverlay =
+  DialogOverlayBackground.styleable<TamaguiDialogOverlayProps>(
+    (props, forwardedRef) => {
       return (
-        <DialogOverlayFrame>
-          <TamaguiDialogOverlay
-            {...dialogScope}
-            {...overlayProps}
-            opacity={0}
-            ref={forwardedRef}
-          />
-        </DialogOverlayFrame>
+        <DialogOverlayBackground ref={forwardedRef} {...props}>
+          <DialogOverlayFrame />
+        </DialogOverlayBackground>
       );
+    },
+    {
+      staticConfig: { componentName: "DialogOverlay" }
     }
-  )
-);
+  );
 
-DialogOverlay.displayName = OVERLAY_NAME;
-
-export type DialogProps = TamaguiDialogProps & {
-  native?: boolean;
-};
-
-function forEachChildDeep(
-  children: React.ReactNode[],
-  onChild: (el: React.ReactElement) => boolean
-) {
-  for (const child of children) {
-    if (!React.isValidElement(child)) {
-      continue;
-    }
-    if (!onChild(child)) {
-      continue;
-    }
-    if (child.props.children) {
-      forEachChildDeep(React.Children.toArray(child.props.children), onChild);
-    }
-  }
-}
-
-function getStringChildren(child: React.ReactElement) {
-  let string = "";
-  forEachChildDeep(React.Children.toArray(child), child => {
-    if (typeof child.props.children === "string") {
-      string = child.props.children;
-      return false;
-    }
-    return true;
-  });
-  return string;
-}
-
-const DialogInner: React.FC<DialogProps> = (
-  props: ScopedProps<DialogProps>
-) => {
-  const { __scopeDialog, native, children, ...rest } = props;
-  const dialogScope = useDialogScope(__scopeDialog);
-
-  if (process.env.TAMAGUI_TARGET === "native") {
-    const [open, setOpen] = useControllableState({
-      prop: props.open,
-      defaultProp: props.defaultOpen || false,
-      onChange: props.onOpenChange,
-      transition: true
-    });
-
-    let triggerElement: any = null;
-    let title = "";
-    let description = "";
-    const buttons: {
-      text: string;
-      onPress: (value?: string | undefined) => void;
-      style?: "default" | "cancel" | "destructive";
-    }[] = [];
-
-    forEachChildDeep(React.Children.toArray(props.children), child => {
-      if (!React.isValidElement(child)) {
-        return false;
-      }
-
-      const name = isTamaguiElement(child)
-        ? child.type.staticConfig.componentName
-        : typeof child.type === "object" && "displayName" in child.type
-          ? (child.type as any).displayName
-          : undefined;
-      switch (name) {
-        case TRIGGER_NAME: {
-          triggerElement = React.cloneElement(child as any, {
-            __native: true
-          });
-          return false;
-        }
-        case TITLE_NAME: {
-          title = getStringChildren(child);
-          return false;
-        }
-        case DESCRIPTION_NAME: {
-          description = getStringChildren(child);
-          return false;
-        }
-        case ACTION_NAME:
-        case CANCEL_NAME: {
-          const style = name === ACTION_NAME ? "default" : "cancel";
-          const text = getStringChildren(child);
-          const onPress = () => {
-            const childProps = child.props as any;
-            childProps?.onPress?.({ native: true });
-            setOpen(false);
-          };
-          buttons.push({
-            style,
-            text,
-            onPress
-          });
-          return false;
-        }
-        default: {
-          return true;
-        }
-      }
-    });
-
-    useIsomorphicLayoutEffect(() => {
-      if (!open || !native) {
-        return;
-      }
-      if (title || description) {
-        Alert.alert(title, description, buttons);
-      }
-    }, [native, open]);
-
-    if (native) {
-      return React.cloneElement(triggerElement, {
-        __onPress: () => {
-          setOpen(true);
-        }
-      });
-    }
-  }
-
+const DialogFrame: React.FC<TamaguiDialogProps & { theme?: string | null }> = ({
+  modal = true,
+  children,
+  theme,
+  ...props
+}) => {
   return (
-    <TamaguiDialog {...dialogScope} {...rest} modal={true}>
-      {children}
-    </TamaguiDialog>
+    <Theme name={theme}>
+      <TamaguiDialog modal={modal} {...props}>
+        {children}
+      </TamaguiDialog>
+    </Theme>
   );
 };
 
-const CONTENT_NAME = "DialogContent";
-
-type DialogContentContextValue = {
-  cancelRef: React.MutableRefObject<TamaguiElement | null>;
-};
-
-const [DialogContentProvider, useDialogContentContext] =
-  createDialogContext<DialogContentContextValue>(CONTENT_NAME);
-
-interface DialogContentProps
-  extends Omit<
-    TamaguiDialogContentProps,
-    "onPointerDownOutside" | "onInteractOutside"
-  > {}
-
-const DialogContent = React.forwardRef<TamaguiElement, DialogContentProps>(
-  (props: ScopedProps<DialogContentProps>, forwardedRef) => {
-    const { __scopeDialog, children, ...contentProps } = props;
-    const dialogScope = useDialogScope(__scopeDialog);
-    const contentRef = React.useRef<TamaguiElement>(null);
-    const composedRefs = useComposedRefs(forwardedRef, contentRef);
-    const cancelRef = React.useRef<TamaguiElement | null>(null);
-
+const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
+  (
+    {
+      children,
+      elevated = true,
+      bordered = true,
+      variant = "tertiary",
+      ...props
+    },
+    forwardedRef
+  ) => {
     return (
-      <DialogContentProvider scope={__scopeDialog} cancelRef={cancelRef}>
-        <TamaguiDialogContent
-          role="alertdialog"
-          animation={[
-            "quick",
-            {
-              opacity: {
-                overshootClamping: true
-              }
+      <TamaguiDialogContent
+        backgrounded={true}
+        width="95%"
+        flexDirection="row"
+        padding={0}
+        margin="$5"
+        animation={[
+          "fast",
+          {
+            opacity: {
+              overshootClamping: true
             }
-          ]}
-          enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
-          exitStyle={{ x: 0, y: 20, opacity: 0, scale: 0.95 }}
-          margin="$5"
-          {...dialogScope}
-          {...contentProps}
-          ref={composedRefs}
-          onOpenAutoFocus={composeEventHandlers(
-            contentProps.onOpenAutoFocus,
-            (event: Event) => {
-              event.preventDefault();
-              if (isWeb) {
-                cancelRef.current?.focus({ preventScroll: true });
-              }
-            }
-          )}
-          onPointerDownOutside={event => event.preventDefault()}
-          onInteractOutside={event => event.preventDefault()}>
-          <Slottable>{children}</Slottable>
-        </TamaguiDialogContent>
-      </DialogContentProvider>
+          }
+        ]}
+        enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
+        exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
+        focusVisibleStyle={{
+          outlineColor: "$accent10",
+          outlineStyle: "solid",
+          outlineWidth: 3,
+          outlineOffset: "$1.25"
+        }}>
+        <Container
+          ref={forwardedRef}
+          overflow="hidden"
+          themeShallow={true}
+          {...props}
+          variant={variant}
+          bordered={bordered}
+          elevated={elevated}>
+          {children}
+        </Container>
+      </TamaguiDialogContent>
     );
+  },
+  {
+    staticConfig: { componentName: "Dialog" }
   }
 );
 
-DialogContent.displayName = CONTENT_NAME;
-
-export const Dialog = withStaticProperties(DialogInner, {
-  Trigger: DialogTrigger,
-  Portal: DialogPortal,
+export const Dialog = withStaticProperties(DialogFrame, {
+  Trigger: TamaguiDialogTrigger,
+  Portal: TamaguiDialogPortal,
   Overlay: DialogOverlay,
-  Content: DialogContent,
-  Title: DialogTitle,
-  Description: DialogDescription,
-  Cancel: DialogCancel,
-  Action: DialogAction
+  Container: DialogContainer,
+  Heading: DialogHeadingImpl,
+  Body: DialogBodyImpl,
+  Close: withStaticProperties(DialogClose, {
+    Text: Button.Text,
+    Icon: Button.Icon
+  }),
+  Action: withStaticProperties(DialogAction, {
+    Text: Button.Text,
+    Icon: Button.Icon
+  })
 });
 
-Dialog.displayName = DIALOG_NAME;
+export type DialogProps = GetProps<typeof Dialog>;

@@ -15,16 +15,14 @@
 
  -------------------------------------------------------------------*/
 
-import { Alert, AlertContext } from "@cyclone-ui/alert";
+import { Alert } from "@cyclone-ui/alert";
 import { Button } from "@cyclone-ui/button";
 import { Toast, useToastState } from "@cyclone-ui/message-state";
-import { styled, View } from "@tamagui/core";
+import { styled } from "@tamagui/core";
 import { X } from "@tamagui/lucide-icons";
-import { YStack } from "@tamagui/stacks";
 
 const MessageClose = styled(Toast.Close, {
-  name: "Toast",
-  context: AlertContext,
+  name: "Alert",
 
   zIndex: 25,
   position: "absolute",
@@ -33,8 +31,7 @@ const MessageClose = styled(Toast.Close, {
 });
 
 const MessageFrame = styled(Toast, {
-  name: "Toast",
-  context: AlertContext,
+  name: "Alert",
 
   animation: "200ms",
   unstyled: true,
@@ -70,57 +67,43 @@ export const Message = () => {
       type="foreground"
       duration={30 * 1000}
       viewportName="messages">
-      <View display="block">
-        <Alert theme={data.theme}>
-          <YStack gap="$2">
-            <Alert.Header
-              theme={data.theme}
-              animation="slow"
+      <Alert theme={data.theme}>
+        <Alert.Icon>{current.icon}</Alert.Icon>
+
+        <Alert.Content
+          animation="slow"
+          enterStyle={{
+            opacity: 0,
+            y: 50
+          }}>
+          {data.heading && (
+            <Alert.Content.Heading>{data.heading}</Alert.Content.Heading>
+          )}
+
+          {current.message && (
+            <Alert.Content.Body
+              animation="lazy"
               enterStyle={{
                 opacity: 0,
                 y: 50
               }}>
-              <Alert.Header.Icon>{current.icon}</Alert.Header.Icon>
+              {current.message}
+            </Alert.Content.Body>
+          )}
+        </Alert.Content>
 
-              <YStack gap="$1">
-                {data.eyebrow && (
-                  <Alert.Header.Eyebrow theme={data.theme}>
-                    {data.eyebrow}
-                  </Alert.Header.Eyebrow>
-                )}
-                {data.heading && (
-                  <Alert.Header.Heading theme={data.theme}>
-                    {data.heading}
-                  </Alert.Header.Heading>
-                )}
-              </YStack>
-            </Alert.Header>
-
-            {current.message && (
-              <Alert.Body
-                animation="lazy"
-                enterStyle={{
-                  opacity: 0,
-                  y: 50
-                }}>
-                {current.message}
-              </Alert.Body>
-            )}
-
-            <MessageClose asChild={true}>
-              <Button
-                theme={data.theme}
-                variant="ghost"
-                circular={true}
-                padding="$0.75">
-                <Button.Icon>
-                  <X size="$1.5" />
-                </Button.Icon>
-              </Button>
-            </MessageClose>
-          </YStack>
-        </Alert>
-      </View>
+        <MessageClose asChild={true}>
+          <Button
+            theme={data.theme}
+            variant="ghost"
+            circular={true}
+            padding="$0.75">
+            <Button.Icon>
+              <X size="$1.5" />
+            </Button.Icon>
+          </Button>
+        </MessageClose>
+      </Alert>
     </MessageFrame>
   );
 };

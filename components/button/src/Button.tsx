@@ -179,7 +179,8 @@ const ButtonFrame = styled(XStack, {
 
   tag: "button",
   role: "button",
-  focusable: false,
+  // focusable: false,
+  userSelect: "none",
 
   animation: "normal",
   alignItems: "center",
@@ -215,7 +216,7 @@ const ButtonFrame = styled(XStack, {
         borderColor: "$tertiary",
 
         hoverStyle: {
-          backgroundColor: "$color9"
+          backgroundColor: "$tertiary"
         }
       },
 
@@ -251,7 +252,7 @@ const ButtonFrame = styled(XStack, {
         hoverStyle: {
           backgroundColor: "$surfaceMuted",
           borderWidth: 2,
-          borderColor: "$colorHover"
+          borderColor: "$surfaceMuted"
         }
       },
 
@@ -432,7 +433,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$color",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$surfacePrimary"
         }
       },
 
@@ -553,7 +554,7 @@ const ButtonText = ButtonTextFrame.styleable(
           $group-button-hover={{
             color: disabled
               ? "$colorDisabled"
-              : variant === "primary"
+              : variant === "primary" || variant === "outlined"
                 ? "$surfacePrimary"
                 : "$colorHover"
           }}>
@@ -592,12 +593,12 @@ const ButtonIcon = View.styleable(
             disabled={disabled}
             size={adjusted}
             color={
-              (disabled
-                ? "$colorDisabled"
-                : color ||
-                  (variant === "primary"
+              (color ||
+                (disabled
+                  ? "$colorDisabled"
+                  : variant === "primary" || variant === "outlined"
                     ? "$surfacePrimary"
-                    : "$color")) as ThemeableIconProps["color"]
+                    : "$colorHover")) as ThemeableIconProps["color"]
             }
             $group-button-hover={{
               color: disabled

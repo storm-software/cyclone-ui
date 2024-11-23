@@ -17,56 +17,53 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { Container } from "@cyclone-ui/container";
+import { EyebrowText } from "@cyclone-ui/eyebrow-text";
+import { Heading3Text } from "@cyclone-ui/heading-text";
+import { getSpaced } from "@cyclone-ui/helpers";
 import { Link } from "@cyclone-ui/link";
 import {
+  getIconByTheme,
+  ThemeableIcon,
+  ThemeableIconProps
+} from "@cyclone-ui/themeable-icon";
+import {
   createStyledContext,
-  getVariable,
   styled,
   Theme,
-  useTheme,
+  useThemeName,
   View
 } from "@tamagui/core";
-import { getFontSize } from "@tamagui/font-size";
 import { withStaticProperties } from "@tamagui/helpers";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import { ArrowRight } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type {
-  ColorTokens,
-  FontSizeTokens,
   GetProps,
   SizeTokens,
-  TextProps,
-  VariantSpreadExtras
+  VariantSpreadExtras,
+  ViewProps
 } from "@tamagui/web";
 
-const defaultContextValues = {
-  size: "$6" as SizeTokens,
-  scaleIcon: 2,
-  color: undefined,
-  theme: `${ColorThemeName.BASE}_Card`
-} as const;
-
-export const CardContext = createStyledContext<{
+export type CardContextProps = {
   size: SizeTokens;
-  scaleIcon: number;
-  color?: ColorTokens | string;
-  theme: string;
-}>(defaultContextValues);
+  theme: string | null | undefined;
+};
 
-const CARD_NAME = "Card";
+export const CardContext = createStyledContext<CardContextProps>({
+  size: "$true" as SizeTokens,
+  theme: `${ColorThemeName.BASE}_Card`
+});
 
-export const CardFrame = styled(ThemeableStack, {
-  name: CARD_NAME,
+const CardFrame = styled(Container, {
+  name: "Card",
   context: CardContext,
 
-  animation: "slow",
+  animation: "normal",
   overflow: "hidden",
   borderColor: "$borderColor",
-  borderWidth: 1,
   cursor: "pointer",
+  backgroundColor: "$background",
+  position: "relative",
 
   hoverStyle: {
     borderColor: "$borderColorHover"
@@ -78,311 +75,154 @@ export const CardFrame = styled(ThemeableStack, {
 
   focusVisibleStyle: {
     borderColor: "$borderColorFocus"
-  },
-
-  variants: {
-    unstyled: {
-      false: {
-        size: "$true",
-        backgroundColor: "$background",
-        position: "relative"
-      }
-    },
-
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val] ?? val
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
 export type CardProps = GetProps<typeof CardFrame>;
 
-const CardBackground = styled(YStack, {
-  name: CARD_NAME,
-  context: CardContext,
+// const CardBackground = styled(YStack, {
+//   name: "Card",
+//   context: CardContext,
 
-  animation: "slow",
-  fullscreen: true,
-  backgroundColor: "$fg",
-  overflow: "hidden",
-  zIndex: 0,
-  opacity: 0.025
-});
+//   animation: "normal",
+//   fullscreen: true,
+//   backgroundColor: "$fg",
+//   overflow: "hidden",
+//   zIndex: 0,
+//   opacity: 0.025
+// });
 
-const CardBackgroundGradient = styled(LinearGradient, {
-  name: CARD_NAME,
-  context: CardContext,
+// const CardBackgroundGradient = styled(LinearGradient, {
+//   name: "Card",
+//   context: CardContext,
 
-  animation: "slow",
-  fullscreen: true,
-  flexDirection: "row",
-  overflow: "hidden",
-  opacity: 0,
-  zIndex: 5,
-  colors: ["transparent", "$backgroundHover"],
-  start: [0, 0],
-  end: [1.0, 1.0]
-});
+//   animation: "normal",
+//   fullscreen: true,
+//   flexDirection: "row",
+//   overflow: "hidden",
+//   opacity: 0,
+//   zIndex: 5,
+//   colors: ["transparent", "$backgroundHover"],
+//   start: [0, 0],
+//   end: [1.0, 1.0]
+// });
 
 const CardContent = styled(YStack, {
-  name: CARD_NAME,
+  name: "Card",
   context: CardContext,
 
-  animation: "slow",
-  flexDirection: "column",
+  animation: "normal",
   zIndex: 20,
 
   variants: {
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
+        const space = getSpaced(val);
+
         return {
-          gap: tokens.space[val] ?? val
+          gap: space
         };
       }
     }
+  },
+
+  defaultVariants: {
+    size: "$true"
   }
 });
 
 const CardFrameImpl = CardFrame.styleable(
   (props, forwardedRef) => {
-    const { children, size, ...rest } = props;
+    const { children, theme, size, ...rest } = props;
 
     return (
-      <CardFrame ref={forwardedRef} group={"card" as any} {...rest} size={size}>
-        <CardBackground
-          style={{
-            filter: "blur(2px)"
-          }}
-        />
-        <CardBackgroundGradient
-          $group-card-hover={{ opacity: 0.8 }}
-          $group-card-press={{ opacity: 0.9 }}
-        />
-        <CardContent>{children}</CardContent>
-      </CardFrame>
+      <CardContext.Provider theme={theme} size={size}>
+        <CardFrame
+          ref={forwardedRef}
+          group={"card" as any}
+          {...rest}
+          theme={theme}
+          size={size}>
+          <CardContent>{children}</CardContent>
+        </CardFrame>
+      </CardContext.Provider>
     );
   },
   {
-    staticConfig: { componentName: CARD_NAME }
+    staticConfig: { componentName: "Card" }
   }
 );
 
-export const CardHeader = styled(ThemeableStack, {
+const CardHeader = styled(XStack, {
   name: "CardHeader",
   context: CardContext,
-  flexDirection: "row",
+
   paddingBottom: 0,
   zIndex: 10,
-  backgroundColor: "transparent",
-
-  variants: {
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          paddingHorizontal: tokens.space[val] ?? val,
-          paddingTop: tokens.space[val] ?? val,
-          gap: tokens.space[val] ?? val
-        };
-      }
-    }
-  } as const
-});
-
-export const CardIconFrame = styled(View, {
-  name: "Card",
-  context: CardContext,
-
-  animation: "slow",
-  justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "$color4",
-  padding: "$5",
 
   variants: {
     size: {
-      "...size": (val, { tokens }) => {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
+        const space = getSpaced(val);
+
         return {
-          borderRadius: tokens.radius[val] ?? val
+          gap: space
         };
       }
     }
-  } as const
-});
-
-const getIconSize = (size: FontSizeTokens, scale: number) => {
-  return (
-    (typeof size === "number"
-      ? size * 0.6
-      : getFontSize(size as FontSizeTokens)) * scale
-  );
-};
-
-const CardIcon = CardIconFrame.styleable<{
-  scaleIcon?: number;
-  color?: ColorTokens | string;
-}>((props: any, ref: any) => {
-  const { children, color: colorProp, ...rest } = props;
-  const context = CardContext.useStyledContext();
-  const { size = "$true", color: contextColor, scaleIcon = 1 } = context;
-
-  const themeColors = useTheme({
-    name: context.theme
-  });
-  const color = getVariable(
-    colorProp ||
-      contextColor ||
-      themeColors[contextColor as any]?.get("web") ||
-      themeColors.primary?.get("web")
-  );
-  const iconSize = getIconSize(size as FontSizeTokens, scaleIcon);
-
-  const getThemedIcon = useGetThemedIcon({
-    size: iconSize,
-    color: color as any
-  });
-  return (
-    <CardIconFrame ref={ref} theme={context.theme} {...rest}>
-      {getThemedIcon(children)}
-    </CardIconFrame>
-  );
-});
-
-export const CardTitleSection = styled(ThemeableStack, {
-  context: CardContext,
-  flexDirection: "column",
-  paddingVertical: 0,
-  gap: "$2",
-  alignContent: "space-between",
-
-  variants: {
-    unstyled: {
-      false: {
-        zIndex: 15,
-        backgroundColor: "transparent",
-        marginBottom: "auto"
-      }
-    }
-  } as const,
+  },
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
+    size: "$true"
   }
 });
 
-const CardTitle = styled(SizableText, {
-  name: "CardTitle",
+const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
+  const theme = useThemeName();
+
+  const icon = children || getIconByTheme({ theme });
+  if (!icon) {
+    return null;
+  }
+
+  return (
+    <ThemeableIcon theme={theme} {...props} size="$6">
+      {icon}
+    </ThemeableIcon>
+  );
+};
+
+const CardHeading = styled(Heading3Text, {
+  name: "CardHeading",
   context: CardContext,
 
-  fontFamily: "$title",
-  color: "$primary",
   zIndex: 20,
-  verticalAlign: "middle",
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 2.8;
-        const lineHeight = (heightToken ?? 1) * 2;
-        const fontWeight = config.font.weight?.["$6"];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
+  verticalAlign: "middle"
 });
 
-const CardTitleImpl = CardTitle.styleable(
+const CardHeadingImpl = CardHeading.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
     return (
       <Theme name={ColorThemeName.BASE}>
-        <CardTitle ref={forwardedRef} {...rest}>
+        <CardHeading ref={forwardedRef} {...rest}>
           {children}
-        </CardTitle>
+        </CardHeading>
       </Theme>
     );
   },
   {
-    staticConfig: { componentName: "CardTitle" }
+    staticConfig: { componentName: "CardHeading" }
   }
 );
 
-const CardEyebrow = styled(SizableText, {
+const CardEyebrow = styled(EyebrowText, {
   name: "CardEyebrow",
   context: CardContext,
 
-  fontFamily: "$eyebrow",
-  color: "$color",
-  zIndex: 20,
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.4;
-        const lineHeight = (heightToken ?? 1) * 1.4;
-        const fontWeight = config.font.weight?.["$6"];
-        const letterSpacing = config.font.letterSpacing?.[val];
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          letterSpacing,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
+  zIndex: 20
 });
 
 const CardEyebrowImpl = CardEyebrow.styleable(
@@ -407,41 +247,7 @@ const CardBody = styled(BodyText, {
   context: CardContext,
 
   zIndex: 20,
-  paddingVertical: 0,
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 1.3;
-        const lineHeight = (heightToken ?? 1) * 1.3;
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-        const paddingHorizontal = config.tokens.space[val] ?? val;
-
-        return {
-          fontSize,
-          lineHeight,
-          textTransform,
-          fontStyle,
-          paddingHorizontal
-        };
-      }
-    }
-  } as const
+  paddingVertical: 0
 });
 
 const CardBodyImpl = CardBody.styleable(
@@ -464,59 +270,14 @@ const CardBodyImpl = CardBody.styleable(
 const CardFooter = styled(ThemeableStack, {
   name: "CardFooter",
   context: CardContext,
-  zIndex: 20,
-
-  variants: {
-    size: {
-      "...fontSize": (val, { tokens }) => {
-        return {
-          paddingHorizontal: tokens.space[val] ?? val,
-          paddingBottom: tokens.space[val] ?? val
-        };
-      }
-    }
-  } as const
+  zIndex: 20
 });
 
 const CardLink = styled(Link, {
   name: "CardLink",
   context: CardContext,
 
-  zIndex: 25,
-  underline: "initial",
-  color: "$primary",
-
-  variants: {
-    size: {
-      "...fontSize": (
-        val: FontSizeTokens,
-        config: VariantSpreadExtras<TextProps>
-      ) => {
-        if (!config.font) {
-          return;
-        }
-
-        let sizeToken = 1;
-        let heightToken = 1;
-        if (typeof val !== "undefined" && val !== null) {
-          sizeToken = (config.font.size?.[val] as any)?.val;
-          heightToken = (config.font.lineHeight?.[val] as any)?.val;
-        }
-
-        const fontSize = (sizeToken ?? 1) * 2;
-        const lineHeight = (heightToken ?? 1) * 2;
-        const textTransform = config.font.transform?.[val];
-        const fontStyle = config.font.style?.[val];
-
-        return {
-          fontSize,
-          lineHeight,
-          textTransform,
-          fontStyle
-        };
-      }
-    }
-  } as const
+  zIndex: 25
 });
 
 const CardLinkArrowRight = styled(ArrowRight, {
@@ -534,12 +295,9 @@ const CardLinkImpl = CardLink.styleable(
 
     return (
       <XStack gap="$1.5" alignItems="center">
-        <CardLink ref={forwardedRef} {...rest}>
-          {children}
-        </CardLink>
+        <CardLink {...rest}>{children}</CardLink>
         <View
-          animation="slow"
-          flex={1}
+          animation="normal"
           x={0}
           $group-card-hover={{
             x: 10
@@ -558,12 +316,13 @@ export type CardHeaderProps = GetProps<typeof CardHeader>;
 export type CardFooterProps = GetProps<typeof CardFooter>;
 
 export const Card = withStaticProperties(CardFrameImpl, {
-  Header: CardHeader,
-  TitleSection: CardTitleSection,
-  Eyebrow: CardEyebrowImpl,
-  Title: CardTitleImpl,
-  Icon: CardIcon,
-  Footer: CardFooter,
+  Header: withStaticProperties(CardHeader, {
+    Eyebrow: CardEyebrowImpl,
+    Heading: CardHeadingImpl,
+    Icon: CardIcon
+  }),
   Body: CardBodyImpl,
-  Link: CardLinkImpl
+  Footer: withStaticProperties(CardFooter, {
+    Link: CardLinkImpl
+  })
 });

@@ -39,15 +39,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Alert
+# Alert Dialog
 
-A package containing the Alert component used by Storm Software
+A package containing the AlertDialog component used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Alert](#alert)
+- [Alert Dialog](#alert-dialog)
   - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
@@ -71,14 +71,14 @@ A package containing the Alert component used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/alert
+pnpm add -D @cyclone-ui/alert-dialog
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/alert
+npm install -D @cyclone-ui/alert-dialog
 ```
 
 </details>
@@ -87,7 +87,7 @@ npm install -D @cyclone-ui/alert
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/alert
+yarn add -D @cyclone-ui/alert-dialog
 ```
 
 </details>
@@ -102,15 +102,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build alert` to build the library.
+Run `nx build alert-dialog` to build the library.
 
 ### Running unit tests
 
-Run `nx test alert` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test alert-dialog` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint alert` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint alert-dialog` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

@@ -1,8 +1,8 @@
 {
-  "name": "toast",
+  "name": "callout",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/toast/src",
+  "sourceRoot": "components/callout/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/components/toast",
-        "tsConfig": "components/toast/tsconfig.json",
-        "project": "components/toast/package.json",
+        "outputPath": "dist/components/callout",
+        "tsConfig": "components/callout/tsconfig.json",
+        "project": "components/callout/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/toast",
+            "input": "components/callout",
             "glob": "*.md",
             "output": "/"
           },

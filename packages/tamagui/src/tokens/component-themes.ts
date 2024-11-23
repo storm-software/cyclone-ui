@@ -86,22 +86,47 @@ export const componentThemes = {
 
   Card: {
     mask: "identity",
-    ...maskOptions.card
+    ...maskOptions.component
   },
 
   CardEyebrow: {
     mask: "identity",
-    ...maskOptions.cardEyebrow
+    ...maskOptions.eyebrow
   },
 
-  CardTitle: {
+  CardHeading: {
     mask: "identity",
-    ...maskOptions.cardTitle
+    ...maskOptions.heading
+  },
+
+  CardBody: {
+    mask: "identity",
+    ...maskOptions.body
+  },
+
+  Callout: {
+    mask: "identity",
+    ...maskOptions.callout
+  },
+
+  CalloutHeading: {
+    mask: "identity",
+    ...maskOptions.heading
+  },
+
+  CalloutEyebrow: {
+    mask: "identity",
+    ...maskOptions.eyebrow
+  },
+
+  CalloutBody: {
+    mask: "identity",
+    ...maskOptions.body
   },
 
   Alert: {
     mask: "identity",
-    ...maskOptions.alert
+    ...maskOptions.component
   },
 
   AlertHeading: {
@@ -109,27 +134,39 @@ export const componentThemes = {
     ...maskOptions.heading
   },
 
-  AlertEyebrow: {
-    mask: "identity",
-    ...maskOptions.eyebrow
-  },
-
   AlertBody: {
     mask: "identity",
     ...maskOptions.body
   },
 
-  Toast: {
+  Dialog: {
     mask: "identity",
-    ...maskOptions.alert
+    ...maskOptions.component
   },
 
-  ToastHeading: {
+  DialogHeading: {
     mask: "identity",
     ...maskOptions.heading
   },
 
-  ToastBody: {
+  DialogBody: {
+    mask: "identity",
+    ...maskOptions.body
+  },
+
+  DialogOverlay: overlayThemeDefinitions,
+
+  AlertDialog: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  AlertDialogHeading: {
+    mask: "identity",
+    ...maskOptions.heading
+  },
+
+  AlertDialogBody: {
     mask: "identity",
     ...maskOptions.body
   },
@@ -170,7 +207,7 @@ export const componentThemes = {
   },
 
   SheetOverlay: overlayThemeDefinitions,
-  DialogOverlay: overlayThemeDefinitions,
+
   ModalOverlay: overlayThemeDefinitions,
 
   Field: {
