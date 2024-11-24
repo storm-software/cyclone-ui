@@ -1,37 +1,60 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
+import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text } from "@tamagui/core";
 import { Tabs } from "./Tabs";
 
 const meta: Meta<typeof Tabs> = {
-  title: "General/Tabs",
+  title: "Containers/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-  render: ({ children, ...rest }: any) => (
-    <Tabs gap="$2" {...rest}>
+  render: ({ theme, ...rest }: any) => (
+    <Tabs {...rest} theme={theme}>
       <Tabs.Header>
-        <Tabs.Header.Item value="tab1">Tab One</Tabs.Header.Item>
-        <Tabs.Header.Item value="tab2">Tab Two</Tabs.Header.Item>
-        <Tabs.Header.Item value="tab3">Tab Three</Tabs.Header.Item>
+        <Tabs.Header.Item key="tab1" value="tab1">
+          Tab One
+        </Tabs.Header.Item>
+        <Tabs.Header.Item key="tab2" value="tab2">
+          Tab Two
+        </Tabs.Header.Item>
+        <Tabs.Header.Item key="tab3" value="tab3">
+          Tab Three
+        </Tabs.Header.Item>
       </Tabs.Header>
 
       <Tabs.Content>
-        <Tabs.Content.Item value="tab1">
-          <Text minWidth="$10">
+        <Tabs.Content.Item key="tab1" value="tab1">
+          <BodyText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Text>
+          </BodyText>
         </Tabs.Content.Item>
-        <Tabs.Content.Item value="tab2">
-          <Text minWidth="$10">
+        <Tabs.Content.Item key="tab2" value="tab2">
+          <BodyText>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
-          </Text>
+          </BodyText>
         </Tabs.Content.Item>
-        <Tabs.Content.Item value="tab3">
-          <Text minWidth="$10">
+        <Tabs.Content.Item key="tab3" value="tab3">
+          <BodyText>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.
-          </Text>
+          </BodyText>
         </Tabs.Content.Item>
       </Tabs.Content>
     </Tabs>
@@ -43,72 +66,65 @@ export default meta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Base: Story = {
-  args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-  }
+  args: {}
 };
 
 export const Horizontal: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     orientation: "horizontal"
   }
 };
 
 export const Vertical: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     orientation: "vertical"
   }
 };
 
 export const Brand: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "brand"
   }
 };
 
 export const Help: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "help"
   }
 };
 
 export const Error: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "danger"
   }
 };
 
 export const Warning: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "warning"
   }
 };
 
 export const Info: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "info"
   }
 };
 
 export const Success: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     theme: "success"
+  }
+};
+
+export const Positive: Story = {
+  args: {
+    theme: "positive"
+  }
+};
+
+export const Negative: Story = {
+  args: {
+    theme: "negative"
   }
 };

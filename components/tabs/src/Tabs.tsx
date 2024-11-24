@@ -15,12 +15,15 @@
 
  -------------------------------------------------------------------*/
 
-import { LabelText } from "@cyclone-ui/label-text";
+import { Heading4Text } from "@cyclone-ui/heading-text";
+import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
   createStyledContext,
+  SizeTokens,
   StackProps,
   styled,
+  VariantSpreadExtras,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -28,252 +31,249 @@ import { YStack } from "@tamagui/stacks";
 import type {
   TabLayout as TamaguiTabLayout,
   TabsContentProps as TamaguiTabsContentProps,
-  TabsProps as TamaguiTabsProps,
   TabsTabProps as TamaguiTabsTabProps
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
-import { SizableText } from "@tamagui/text";
 import {
   Dispatch,
   PropsWithChildren,
   SetStateAction,
+  useCallback,
   useLayoutEffect,
+  useMemo,
   useState
 } from "react";
 
+export type TabOrientation = "horizontal" | "vertical";
+export const TabOrientation = {
+  HORIZONTAL: "horizontal" as TabOrientation,
+  VERTICAL: "vertical" as TabOrientation
+} as const;
+
+export type TabVariant = "underline" | "background";
+export const TabVariant = {
+  UNDERLINE: "underline" as TabVariant,
+  BACKGROUND: "background" as TabVariant
+} as const;
+
 export interface TabsState {
+  /**
+   * The current tab user is on
+   */
   currentTab: string;
+
   /**
    * Layout of the Tab user might intend to select (hovering / focusing)
    */
   intentAt: TamaguiTabLayout | null;
+
   /**
    * Layout of the Tab user selected
    */
   activeAt: TamaguiTabLayout | null;
+
   /**
    * Used to get the direction of activation for animating the active indicator
    */
   prevActiveAt: TamaguiTabLayout | null;
+
   /**
    * List of step names
    */
   steps: string[];
-  /**
-   * The direction of the tabs list (i.e. horizontal or vertical)
-   */
-  orientation?: TamaguiTabsProps["orientation"];
 }
 
-const defaultContextValues = {
+const initialState: TabsState = {
+  currentTab: "",
+  activeAt: null,
+  intentAt: null,
+  prevActiveAt: null,
+  steps: [] as string[]
+};
+
+export type TabsContextProps = {
+  /**
+   * The internal state of the tabs
+   */
+  state: TabsState;
+
+  /**
+   * The function to update the state
+   */
+  setState: Dispatch<SetStateAction<TabsState>>;
+
+  /**
+   * The function to handle the interaction on the tabs
+   */
+  onInteraction: TamaguiTabsTabProps["onInteraction"];
+
+  /**
+   * The direction of the tabs list (i.e. horizontal or vertical)
+   *
+   * @default "horizontal"
+   */
+  orientation: TabOrientation;
+
+  /**
+   * The theme of the tabs
+   */
+  theme?: string | null;
+
+  /**
+   * The variant of the tabs
+   *
+   * @default "underline"
+   */
+  variant: TabVariant;
+
+  /**
+   * The size of the tabs
+   *
+   * @default "$true"
+   */
+  size: SizeTokens;
+};
+
+export const TabsContext = createStyledContext<TabsContextProps>({
   state: {
-    activeAt: null,
-    currentTab: "",
-    intentAt: null,
-    prevActiveAt: null,
-    steps: [] as string[],
-    orientation: "horizontal"
+    ...initialState
   },
   setState: ((next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
-  handleOnInteraction: (type: any, layout: any) => {},
-  theme: "base"
-} as const;
+  onInteraction: (type: any, layout: any) => {},
+  orientation: TabOrientation.HORIZONTAL,
+  variant: TabVariant.UNDERLINE,
+  size: "$true"
+});
 
-export const InternalStateContext = createStyledContext<{
-  state: TabsState;
-  setState: Dispatch<SetStateAction<TabsState>>;
-  handleOnInteraction: TamaguiTabsTabProps["onInteraction"];
-  theme: string;
-}>(defaultContextValues);
+const TabsFrame = styled(TamaguiTabs, {
+  name: "Tabs",
+  context: TabsContext,
 
-export const TabsFrame = TamaguiTabs.styleable(
+  activationMode: "manual",
+  borderRadius: "$true",
+  position: "relative",
+
+  variants: {
+    size: {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+        const size = getSized(val);
+        const padding = getSpaced(val);
+
+        return {
+          size,
+          padding,
+          borderRadius: config.tokens.radius[size]
+        };
+      }
+    },
+
+    orientation: {
+      horizontal: {
+        flexDirection: "column"
+      },
+      vertical: {
+        flexDirection: "row"
+      }
+    },
+
+    variant: {
+      underline: {},
+      background: {}
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true",
+    orientation: TabOrientation.HORIZONTAL,
+    variant: TabVariant.UNDERLINE
+  }
+});
+
+const TabsFrameImpl = TabsFrame.styleable(
   (
-    { children, orientation, onValueChange, ...rest }: TamaguiTabsProps,
+    {
+      children,
+      orientation = TabOrientation.HORIZONTAL,
+      variant = TabVariant.UNDERLINE,
+      size = "$true",
+      onValueChange,
+      theme,
+      ...rest
+    },
     forwardedRef
   ) => {
     const [state, setState] = useState<TabsState>({
-      ...defaultContextValues.state,
-      orientation
+      ...initialState
     });
     const { steps, currentTab } = state;
 
-    const setCurrentTab = (currentTab: string) => {
-      onValueChange?.(currentTab);
-      setState({ ...state, currentTab });
-    };
-    const setIntentIndicator = intentAt => setState({ ...state, intentAt });
-    const setActiveIndicator = activeAt =>
-      setState({ ...state, prevActiveAt: state.activeAt, activeAt });
+    const handleSetCurrentTab = useCallback(
+      (currentTab: string) => {
+        onValueChange?.(currentTab);
+        setState(prev => ({ ...prev, currentTab }));
+      },
+      [setState, onValueChange]
+    );
+    const handleSetIntentIndicator = useCallback(
+      (intentAt: TamaguiTabLayout) => setState(prev => ({ ...prev, intentAt })),
+      [setState]
+    );
+    const handleSetActiveIndicator = useCallback(
+      (activeAt: TamaguiTabLayout) =>
+        setState(prev => ({ ...prev, prevActiveAt: prev.activeAt, activeAt })),
+      [setState]
+    );
 
-    const handleOnInteraction: TamaguiTabsTabProps["onInteraction"] = (
-      type,
-      layout
-    ) => {
-      if (type === "select") {
-        setActiveIndicator(layout);
-      } else {
-        setIntentIndicator(layout);
-      }
-    };
+    const handleInteraction: TamaguiTabsTabProps["onInteraction"] = useCallback(
+      (type: "select" | "focus" | "hover", layout: TamaguiTabLayout | null) => {
+        if (layout) {
+          if (type === "select") {
+            handleSetActiveIndicator(layout);
+          } else {
+            handleSetIntentIndicator(layout);
+          }
+        }
+      },
+      [handleSetActiveIndicator, handleSetIntentIndicator]
+    );
 
     useLayoutEffect(() => {
       if (!currentTab) {
-        setState(next => ({ ...next, currentTab: next.steps[0] }));
+        setState(prev => ({ ...prev, currentTab: prev.steps[0] as string }));
       }
     }, [currentTab, steps]);
 
     return (
-      <InternalStateContext.Provider
+      <TabsContext.Provider
         state={state}
         setState={setState}
-        handleOnInteraction={handleOnInteraction}
-        theme="base">
-        <TamaguiTabs
+        onInteraction={handleInteraction}
+        theme={theme}
+        size={size}
+        variant={variant}
+        orientation={orientation}>
+        <TabsFrame
           ref={forwardedRef}
           value={currentTab}
-          size="$4"
-          padding="$2"
-          height={150}
-          flexDirection={orientation === "horizontal" ? "column" : "row"}
-          activationMode="manual"
-          backgroundColor="$background"
-          borderRadius="$4"
-          position="relative"
+          size={size}
+          gap="$2"
           {...rest}
-          onValueChange={setCurrentTab}
+          onValueChange={handleSetCurrentTab}
+          variant={variant}
           orientation={orientation}>
           {children}
-        </TamaguiTabs>
-      </InternalStateContext.Provider>
+        </TabsFrame>
+      </TabsContext.Provider>
     );
   }
 );
-
-export const TabsHeaderList = YStack.styleable(
-  ({ children, ...rest }: StackProps, forwardedRef) => {
-    const { state } = InternalStateContext.useStyledContext();
-    const { activeAt, intentAt, prevActiveAt, currentTab } = state;
-
-    // 1 = right, 0 = nowhere, -1 = left
-    const direction = (() => {
-      if (!activeAt || !prevActiveAt || activeAt.x === prevActiveAt.x) {
-        return 0;
-      }
-      return activeAt.x > prevActiveAt.x ? -1 : 1;
-    })();
-
-    return (
-      <YStack ref={forwardedRef} {...rest}>
-        <AnimatePresence>
-          {intentAt && (
-            <TabsRovingIndicatorImpl
-              borderRadius="$4"
-              width={intentAt.width}
-              height={intentAt.height}
-              x={intentAt.x}
-              y={intentAt.y}
-              intent={true}
-              orientation={state.orientation}
-            />
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {activeAt && (
-            <TabsRovingIndicatorImpl
-              borderRadius="$4"
-              width={activeAt.width}
-              height={activeAt.height}
-              x={activeAt.x}
-              y={activeAt.y}
-              active={true}
-              orientation={state.orientation}
-            />
-          )}
-        </AnimatePresence>
-
-        <TamaguiTabs.List
-          disablePassBorderRadius={true}
-          loop={false}
-          aria-label="Tabs"
-          gap="$2"
-          backgroundColor="transparent">
-          <AnimatePresence
-            exitBeforeEnter={true}
-            custom={{ direction }}
-            initial={false}>
-            {children}
-          </AnimatePresence>
-        </TamaguiTabs.List>
-      </YStack>
-    );
-  }
-);
-
-export const TabsHeaderItem = TamaguiTabs.Tab.styleable(
-  ({ children, value, ...rest }: TamaguiTabsTabProps, forwardedRef) => {
-    const { handleOnInteraction, setState, state } =
-      InternalStateContext.useStyledContext();
-
-    useLayoutEffect(() => {
-      setState(next => ({ ...next, steps: [...next.steps, value] }));
-    }, []);
-
-    return (
-      <TamaguiTabs.Tab
-        ref={forwardedRef}
-        unstyled={true}
-        paddingVertical="$2"
-        paddingHorizontal="$3"
-        {...rest}
-        value={value}
-        onInteraction={handleOnInteraction}>
-        <LabelText color={state.currentTab === value ? "$primary" : "$color9"}>
-          {children}
-        </LabelText>
-      </TamaguiTabs.Tab>
-    );
-  }
-);
-
-export const TabsContentList = ({ children }: PropsWithChildren) => {
-  return <View position="relative">{children}</View>;
-};
-
-export const TabsContentItem = TamaguiTabs.Content.styleable(
-  ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
-    return (
-      <AnimatedView key={value}>
-        <TamaguiTabs.Content
-          ref={forwardedRef}
-          {...rest}
-          value={value}
-          flex={1}
-          justifyContent="center">
-          <SizableText textAlign="center">{children}</SizableText>
-        </TamaguiTabs.Content>
-      </AnimatedView>
-    );
-  }
-);
-
-export const TabsHeader = withStaticProperties(TabsHeaderList, {
-  Item: TabsHeaderItem
-});
-
-export const TabsContent = withStaticProperties(TabsContentList, {
-  Item: TabsContentItem
-});
-
-export const Tabs = withStaticProperties(TabsFrame, {
-  Header: TabsHeader,
-  Content: TabsContent
-});
 
 const TabsRovingIndicator = styled(YStack, {
-  position: "absolute",
-  backgroundColor: "$color8",
-  opacity: 1,
+  name: "TabsIndicator",
+  context: TabsContext,
+
   animation: "200ms",
+  position: "absolute",
 
   enterStyle: {
     opacity: 0
@@ -285,62 +285,107 @@ const TabsRovingIndicator = styled(YStack, {
 
   variants: {
     active: {
-      true: {
-        backgroundColor: "$accent10",
-        opacity: 1,
-        color: "$color12"
+      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
+        if (!val) {
+          return {};
+        }
+
+        return {
+          backgroundColor: "$primary"
+        };
       }
     },
 
     intent: {
-      true: {
-        backgroundColor: "$color8",
-        opacity: 1,
-        color: "$color9"
+      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
+        if (!val) {
+          return {};
+        }
+
+        return {
+          backgroundColor: "$accent10"
+        };
       }
     },
 
     orientation: {
       horizontal: {
-        bottom: 0,
-        height: "$0.25"
+        bottom: -2
       },
       vertical: {
-        right: 0,
-        width: "$0.25"
+        right: -2
+      }
+    },
+
+    size: {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+        const size = getSized(val);
+
+        return config.props.orientation === TabOrientation.HORIZONTAL
+          ? {
+              height: size * 0.1
+            }
+          : {
+              width: size * 0.1
+            };
+      }
+    },
+
+    variant: {
+      underline: {
+        borderRadius: 0
+      },
+      background: {
+        borderRadius: "$true"
       }
     }
-  },
+  } as const,
 
   defaultVariants: {
+    size: "$true",
+    orientation: TabOrientation.HORIZONTAL,
+    variant: TabVariant.UNDERLINE,
     active: false,
-    intent: false,
-    orientation: "horizontal"
+    intent: false
   }
 });
 
 const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
-  ({ height, width, orientation, ...props }, forwardedRef) => {
+  ({ children, height, width, ...rest }, forwardedRef) => {
+    const { orientation, variant } = TabsContext.useStyledContext();
+
     return (
       <TabsRovingIndicator
         ref={forwardedRef}
-        animation="200ms"
-        {...props}
-        orientation={orientation}
-        height={orientation === "horizontal" ? "$0.25" : height}
-        width={orientation === "vertical" ? "$0.25" : width}
-      />
+        {...rest}
+        width={
+          orientation === TabOrientation.HORIZONTAL ||
+          variant === TabVariant.BACKGROUND
+            ? width
+            : undefined
+        }
+        height={
+          orientation === TabOrientation.VERTICAL ||
+          variant === TabVariant.BACKGROUND
+            ? height
+            : undefined
+        }>
+        {children}
+      </TabsRovingIndicator>
     );
   }
 );
 
 const AnimatedView = styled(View, {
+  name: "TabsIndicator",
+  context: TabsContext,
+
+  animation: "200ms",
   flex: 1,
   x: 0,
   opacity: 1,
   position: "absolute",
 
-  animation: "slow",
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
     direction: {
@@ -357,4 +402,212 @@ const AnimatedView = styled(View, {
       })
     }
   } as const
+});
+
+const TabsHeaderList = styled(YStack, {
+  name: "Tabs",
+  context: TabsContext,
+
+  animation: "200ms",
+  borderStyle: "solid",
+  borderColor: "transparent",
+
+  variants: {
+    orientation: {
+      horizontal: {},
+      vertical: {}
+    },
+
+    variant: {
+      underline: {
+        borderBottomColor: "$borderColor",
+        borderBottomWidth: "$0.2"
+      },
+      background: {}
+    }
+  } as const,
+
+  defaultVariants: {
+    orientation: TabOrientation.HORIZONTAL,
+    variant: TabVariant.UNDERLINE
+  }
+});
+
+const TabsHeaderListImpl = TabsHeaderList.styleable(
+  ({ children, ...rest }: StackProps, forwardedRef) => {
+    const {
+      state: { activeAt, intentAt, prevActiveAt },
+      orientation,
+      variant
+    } = TabsContext.useStyledContext();
+
+    // 1 = right, 0 = nowhere, -1 = left
+    const direction = useMemo(
+      () =>
+        !activeAt || !prevActiveAt || activeAt.x === prevActiveAt.x
+          ? 0
+          : activeAt.x > prevActiveAt.x
+            ? -1
+            : 1,
+      [activeAt, prevActiveAt]
+    );
+
+    return (
+      <TabsHeaderList
+        ref={forwardedRef}
+        orientation={orientation}
+        variant={variant}
+        {...rest}>
+        <AnimatePresence>
+          {intentAt && (
+            <TabsRovingIndicatorImpl
+              width={intentAt.width}
+              height={intentAt.height}
+              x={intentAt.x}
+              y={intentAt.y}
+              intent={true}
+              orientation={orientation}
+              variant={variant}
+            />
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {activeAt && (
+            <TabsRovingIndicatorImpl
+              width={activeAt.width}
+              height={activeAt.height}
+              x={activeAt.x}
+              y={activeAt.y}
+              active={true}
+              orientation={orientation}
+              variant={variant}
+            />
+          )}
+        </AnimatePresence>
+
+        <TamaguiTabs.List
+          disablePassBorderRadius={
+            orientation === TabOrientation.HORIZONTAL ? "bottom" : "end"
+          }
+          loop={false}
+          aria-label="Tabs"
+          backgroundColor="transparent">
+          <AnimatePresence
+            exitBeforeEnter={true}
+            custom={{ direction }}
+            initial={false}>
+            {children}
+          </AnimatePresence>
+        </TamaguiTabs.List>
+      </TabsHeaderList>
+    );
+  }
+);
+
+const TabsHeaderItemHeading = styled(Heading4Text, {
+  name: "TabsHeading",
+  context: TabsContext,
+
+  animation: "200ms",
+
+  variants: {
+    size: {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+        return getFontSizedFromSize(val, config);
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
+});
+
+const TabsHeaderItem = styled(TamaguiTabs.Tab, {
+  name: "TabsHeading",
+  context: TabsContext,
+
+  animation: "200ms",
+  unstyled: true,
+  flex: 1,
+
+  variants: {
+    size: {
+      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+        const space = getSpaced(val);
+
+        return {
+          paddingVertical: space * 0.5,
+          paddingHorizontal: space
+        };
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
+});
+
+const TabsHeaderItemImpl = TabsHeaderItem.styleable(
+  ({ children, value, ...rest }, forwardedRef) => {
+    const {
+      onInteraction,
+      setState,
+      state: { currentTab },
+      size
+    } = TabsContext.useStyledContext();
+
+    useLayoutEffect(() => {
+      setState(next => ({ ...next, steps: [...next.steps, value] }));
+    }, []);
+
+    return (
+      <TabsHeaderItem
+        ref={forwardedRef}
+        group={true}
+        size={size}
+        {...rest}
+        value={value}
+        onInteraction={onInteraction}>
+        <TabsHeaderItemHeading
+          size={size}
+          color={currentTab === value ? "$primary" : "$muted"}
+          $group-hover={{
+            color: currentTab === value ? "$primary" : "$accent10"
+          }}>
+          {children}
+        </TabsHeaderItemHeading>
+      </TabsHeaderItem>
+    );
+  }
+);
+
+const TabsContentList = ({ children }: PropsWithChildren) => {
+  return <View position="relative">{children}</View>;
+};
+
+const TabsContentItem = TamaguiTabs.Content.styleable(
+  ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
+    return (
+      <AnimatedView key={value}>
+        <TamaguiTabs.Content
+          ref={forwardedRef}
+          {...rest}
+          value={value}
+          flex={1}>
+          {children}
+        </TamaguiTabs.Content>
+      </AnimatedView>
+    );
+  }
+);
+
+export const Tabs = withStaticProperties(TabsFrameImpl, {
+  Header: withStaticProperties(TabsHeaderListImpl, {
+    Item: TabsHeaderItemImpl
+  }),
+  Content: withStaticProperties(TabsContentList, {
+    Item: TabsContentItem
+  })
 });
