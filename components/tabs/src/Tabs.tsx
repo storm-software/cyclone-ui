@@ -86,7 +86,12 @@ export interface TabsState {
 const initialState: TabsState = {
   currentTab: "",
   activeAt: null,
-  intentAt: null,
+  intentAt: {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 10
+  },
   prevActiveAt: null,
   steps: [] as string[]
 };
@@ -152,16 +157,16 @@ const TabsFrame = styled(TamaguiTabs, {
   activationMode: "manual",
   borderRadius: "$true",
   position: "relative",
+  height: "100%",
+  width: "100%",
 
   variants: {
     size: {
       "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
         const size = getSized(val);
-        const padding = getSpaced(val);
 
         return {
           size,
-          padding,
           borderRadius: config.tokens.radius[size]
         };
       }
@@ -253,6 +258,7 @@ const TabsFrameImpl = TabsFrame.styleable(
         variant={variant}
         orientation={orientation}>
         <TabsFrame
+          group={"tabs" as any}
           ref={forwardedRef}
           value={currentTab}
           size={size}
@@ -465,9 +471,11 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
               height={intentAt.height}
               x={intentAt.x}
               y={intentAt.y}
-              intent={true}
               orientation={orientation}
               variant={variant}
+              $group-tabs-hover={{
+                intent: true
+              }}
             />
           )}
         </AnimatePresence>
