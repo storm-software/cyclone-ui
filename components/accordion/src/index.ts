@@ -15,10 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./CheckCircle";
-export * from "./Diagonal";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
+export * from "./Accordion";

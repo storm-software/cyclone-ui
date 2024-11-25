@@ -39,29 +39,30 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# collapsible
+# Accordion
 
-A package containing the Collapsible component used by Storm Software
+A package containing the Accordion component used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [Accordion](#accordion)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -70,14 +71,14 @@ A package containing the Collapsible component used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/collapsible
+pnpm add -D @cyclone-ui/accordion
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/collapsible
+npm install -D @cyclone-ui/accordion
 ```
 
 </details>
@@ -86,7 +87,7 @@ npm install -D @cyclone-ui/collapsible
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/collapsible
+yarn add -D @cyclone-ui/accordion
 ```
 
 </details>
@@ -101,15 +102,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build collapsible` to build the library.
+Run `nx build accordion` to build the library.
 
 ### Running unit tests
 
-Run `nx test collapsible` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test accordion` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint collapsible` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint accordion` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

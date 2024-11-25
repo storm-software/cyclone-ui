@@ -228,7 +228,7 @@
       "@cyclone-ui/checkbox": "workspace:*",
       "@cyclone-ui/checkbox-field": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
-      "@cyclone-ui/collapsible": "workspace:*",
+      "@cyclone-ui/accordion": "workspace:*",
       "@cyclone-ui/data-table": "workspace:*",
       "@cyclone-ui/date-picker": "workspace:*",
       "@cyclone-ui/date-picker-field": "workspace:*",

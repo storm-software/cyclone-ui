@@ -94,7 +94,7 @@ const Icon = ({
   const expandOpacityPosition = useMotionValue(1);
   const expandOpacityPlayback = animate(expandOpacityPosition, 0, {
     type: "spring",
-    duration: 0.5,
+    duration: 0.75,
     bounce: 0
   });
 
@@ -115,7 +115,7 @@ const Icon = ({
       compressLengthPlayback.stop();
       compressLengthPosition.set(0);
       compressOpacityPlayback.stop();
-      compressOpacityPosition.set(1);
+      compressOpacityPosition.set(0);
       expandLengthPlayback.play();
     }
   }, [compressLengthPlayback, expandLengthPlayback, isExpanded]);
@@ -160,4 +160,4 @@ const Icon = ({
 
 Icon.displayName = "AccordionToggle";
 
-export const AccordionToggle = memo<IconProps>(themed(Icon));
+export const AccordionToggle = memo<AccordionToggleProps>(themed(Icon));

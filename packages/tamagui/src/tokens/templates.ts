@@ -153,7 +153,7 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY + 1,
+      color: ColorPaletteShades.PRIMARY,
       colorHover: ColorPaletteShades.PRIMARY + 1,
       colorPress: ColorPaletteShades.PRIMARY + 1,
       colorFocus: ColorPaletteShades.PRIMARY + 1
@@ -189,7 +189,8 @@ export const maskOptions = {
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY
+      color: ColorPaletteShades.PRIMARY,
+      colorFocus: ColorPaletteShades.FOREGROUND
     },
     skip: skipShadowsAndSpecificColors
   },
@@ -279,6 +280,18 @@ export const maskOptions = {
       borderColorHover: ColorPaletteShades.FOREGROUND,
       borderColorFocus: ColorPaletteShades.FOREGROUND,
       borderColorPress: ColorPaletteShades.FOREGROUND
+    },
+    skip: skipShadowsAndSpecificColors
+  },
+  accordionHeader: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      color: ColorPaletteShades.SECONDARY,
+      colorHover: ColorPaletteShades.PRIMARY,
+      colorPress: ColorPaletteShades.PRIMARY,
+      colorFocus: ColorPaletteShades.PRIMARY
     },
     skip: skipShadowsAndSpecificColors
   }

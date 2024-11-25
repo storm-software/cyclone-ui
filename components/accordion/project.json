@@ -1,8 +1,8 @@
 {
-  "name": "collapsible",
+  "name": "accordion",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/collapsible/src",
+  "sourceRoot": "components/accordion/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/components/collapsible",
-        "tsConfig": "components/collapsible/tsconfig.json",
-        "project": "components/collapsible/package.json",
+        "outputPath": "dist/components/accordion",
+        "tsConfig": "components/accordion/tsconfig.json",
+        "project": "components/accordion/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/collapsible",
+            "input": "components/accordion",
             "glob": "*.md",
             "output": "/"
           },

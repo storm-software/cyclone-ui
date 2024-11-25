@@ -104,6 +104,21 @@ export const componentThemes = {
     ...maskOptions.body
   },
 
+  Accordion: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  AccordionHeader: {
+    mask: "identity",
+    ...maskOptions.accordionHeader
+  },
+
+  AccordionContent: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
   Callout: {
     mask: "identity",
     ...maskOptions.callout
