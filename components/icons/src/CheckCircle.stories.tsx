@@ -15,7 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./Arrow";
-export * from "./CheckCircle";
-export * from "./Diagonal";
-export * from "./PdfIcon";
+import type { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useState } from "react";
+import { CheckCircle } from "./CheckCircle";
+
+const meta: Meta<typeof CheckCircle> = {
+  title: "Icons/CheckCircle",
+  component: CheckCircle,
+  tags: ["autodocs"],
+  render: (args: any) => {
+    const [isComplete, setIsComplete] = useState(false);
+    useEffect(() => {
+      setInterval(() => {
+        setIsComplete((prev: boolean) => !prev);
+      }, 5000);
+    }, [setIsComplete]);
+
+    return <CheckCircle {...args} isComplete={isComplete} />;
+  }
+} satisfies Meta<typeof CheckCircle>;
+
+export default meta;
+
+type Story = StoryObj<typeof CheckCircle>;
+
+export const Base: Story = {
+  args: {
+    size: "$6"
+  }
+};

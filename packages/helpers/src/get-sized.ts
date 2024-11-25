@@ -30,6 +30,7 @@ export interface GetSizedOptions {
   shift?: number;
   bounds?: [number] | [number, number];
   excludeHalfSteps?: boolean;
+  nearest?: boolean;
 }
 
 /**
@@ -49,7 +50,10 @@ export const getSized = (
   }
 
   if (isNumber(value)) {
-    value = getNearestToken("size", value);
+    value = options.nearest === false ? value : getNearestToken("size", value);
+    if (!options.scale && !options.shift && !options.bounds) {
+      return value as number;
+    }
   }
 
   const size = getSize(value, options);
@@ -75,7 +79,10 @@ export const getSizeFromFontSized = (
   }
 
   if (isNumber(value)) {
-    value = fontSizeToSize(value);
+    value = options.nearest === false ? value : fontSizeToSize(value);
+    if (!options.scale && !options.shift && !options.bounds) {
+      return value as number;
+    }
   }
 
   return getSized(value, options);
@@ -98,7 +105,10 @@ export const getSpaced = (
   }
 
   if (isNumber(value)) {
-    value = getNearestToken("space", value);
+    value = options.nearest === false ? value : getNearestToken("space", value);
+    if (!options.scale && !options.shift && !options.bounds) {
+      return value as number;
+    }
   }
 
   const space = getSpace(value, options);
@@ -128,7 +138,11 @@ export const getRadius = (
 
   let value = val;
   if (isNumber(value)) {
-    value = getNearestToken("radius", value);
+    value =
+      options.nearest === false ? value : getNearestToken("radius", value);
+    if (!options.scale && !options.shift && !options.bounds) {
+      return value as number;
+    }
   }
 
   const radius = getRadiusBase(value, options);
