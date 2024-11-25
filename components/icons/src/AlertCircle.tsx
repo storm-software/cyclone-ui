@@ -22,7 +22,7 @@ import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import { Circle, Path, Svg, SvgProps } from "react-native-svg";
 
-export type CheckCircleProps = IconProps & {
+export type AlertCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
@@ -30,7 +30,7 @@ const Icon = ({
   isComplete = false,
   size = 24,
   ...props
-}: CheckCircleProps) => {
+}: AlertCircleProps) => {
   const color = useCurrentColor((props.color || "$color") as any);
 
   const diameter = 24;
@@ -40,7 +40,7 @@ const Icon = ({
   const circumference = 2 * Math.PI * innerRadius;
 
   const motionCircle = useMotionValue(circumference);
-  const playbackCircle = animate(motionCircle, 14, {
+  const playbackCircle = animate(motionCircle, 0, {
     type: "spring",
     duration: 1.25,
     bounce: 0
@@ -52,9 +52,9 @@ const Icon = ({
   });
 
   const motionLine1 = useMotionValue(0);
-  const playbackLine1 = animate(motionLine1, 3, {
+  const playbackLine1 = animate(motionLine1, -5, {
     type: "spring",
-    duration: 0.25,
+    duration: 1,
     bounce: 0
   });
 
@@ -63,36 +63,23 @@ const Icon = ({
     setLine1(latest);
   });
 
-  const motionLine2x = useMotionValue(12);
-  const playbackLine2x = animate(motionLine2x, 22, {
+  const motionLine2 = useMotionValue(0);
+  const playbackLine2 = animate(motionLine2, 0.1, {
     type: "spring",
     duration: 1,
     bounce: 0
   });
 
-  const [line2x, setLine2x] = useState(12);
-  useMotionValueEvent(motionLine2x, "change", latest => {
-    setLine2x(latest);
-  });
-
-  const motionLine2y = useMotionValue(14);
-  const playbackLine2y = animate(motionLine2y, 4, {
-    type: "spring",
-    duration: 1,
-    bounce: 0
-  });
-
-  const [line2y, setLine2y] = useState(14);
-  useMotionValueEvent(motionLine2y, "change", latest => {
-    setLine2y(latest);
+  const [line2, setLine2] = useState(12);
+  useMotionValueEvent(motionLine2, "change", latest => {
+    setLine2(latest);
   });
 
   useEffect(() => {
     if (isComplete) {
       playbackCircle.play();
       playbackLine1.play();
-      playbackLine2x.play();
-      playbackLine2y.play();
+      playbackLine2.play();
     } else {
       playbackCircle.stop();
       motionCircle.set(circumference);
@@ -100,13 +87,10 @@ const Icon = ({
       playbackLine1.stop();
       motionLine1.set(0);
 
-      playbackLine2x.stop();
-      motionLine2x.set(12);
-
-      playbackLine2y.stop();
-      motionLine2y.set(14);
+      playbackLine2.stop();
+      motionLine2.set(0);
     }
-  }, [playbackCircle, playbackLine2x, circumference, isComplete]);
+  }, [playbackCircle, playbackLine2, circumference, isComplete]);
 
   return (
     <Svg
@@ -133,14 +117,17 @@ const Icon = ({
             strokeLinecap="round"
           />
 
-          <Path d={`m9 11 ${line1} ${line1}`} stroke={color} />
-          <Path d={`M12 14 ${line2x} ${line2y}`} stroke={color} />
+          <Path d={`m12 12 0 ${line1}`} stroke={color} />
+          <Path d={`m12 16 0 ${line2}`} stroke={color} />
         </>
       )}
     </Svg>
   );
 };
 
-Icon.displayName = "CheckCircle";
+Icon.displayName = "AlertCircle";
 
-export const CheckCircle = memo<IconProps>(themed(Icon));
+export const AlertCircle = memo<IconProps>(themed(Icon));
+
+/* <Line x1="12" x2="12" y1="8" y2="12" stroke={color} />
+      <Line x1="12" x2="12.01" y1="16" y2="16" stroke={color} /> */
