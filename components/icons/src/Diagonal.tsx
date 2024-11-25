@@ -33,7 +33,7 @@ const Icon = (props: IconProps) => {
           width="24"
           height="48"
           patternTransform="rotate(-45 2 2)">
-          <Path d="M -1,16 l 48,0" stroke={color} stroke-width="24" />
+          <Path d="M -1,16 l 48,0" stroke={color} strokeWidth="24" />
         </Pattern>
       </Defs>
       <Rect x="0" y="0" width="100%" height="100%" fill="url(#diag_p)" />

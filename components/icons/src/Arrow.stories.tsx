@@ -15,6 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./Arrow";
-export * from "./Diagonal";
-export * from "./PdfIcon";
+import type { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useState } from "react";
+import { Arrow } from "./Arrow";
+
+const meta: Meta<typeof Arrow> = {
+  title: "Icons/Arrow",
+  component: Arrow,
+  tags: ["autodocs"],
+  render: (args: any) => {
+    const [isComplete, setIsComplete] = useState(false);
+    useEffect(() => {
+      setInterval(() => {
+        setIsComplete((prev: boolean) => !prev);
+      }, 2000);
+    }, [setIsComplete]);
+
+    return <Arrow {...args} isComplete={isComplete} />;
+  }
+} satisfies Meta<typeof Arrow>;
+
+export default meta;
+
+type Story = StoryObj<typeof Arrow>;
+
+export const Base: Story = {
+  args: {
+    size: "$6"
+  }
+};

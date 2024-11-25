@@ -1467,6 +1467,9 @@ importers:
 
   components/icons:
     dependencies:
+      '@tamagui/animations-moti':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-reanimated@3.16.1(@babel/core@7.26.0)(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/core':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1479,6 +1482,9 @@ importers:
       '@tamagui/lucide-icons':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
+      motion:
+        specifier: ^11.11.17
+        version: 11.11.17(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -13393,6 +13399,20 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
+  framer-motion@11.11.17:
+    resolution: {integrity: sha512-O8QzvoKiuzI5HSAHbcYuL6xU+ZLXbrH7C8Akaato4JzQbX2ULNeniqC2Vo5eiCtFktX9XsJ+7nUhxcl2E2IjpA==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   framer-motion@6.5.1:
     resolution: {integrity: sha512-o1BGqqposwi7cgDrtg0dNONhkmPsUFDaLcKXigzuTFC5x58mE8iyTazxSudFzmT6MEyJKfjjU8ItoMe3W+3fiw==}
     peerDependencies:
@@ -16552,6 +16572,20 @@ packages:
     resolution: {integrity: sha512-o/blVE3lm0i/6E5X0RLK59SVWEGxo7pQh8dTm+JykVCYY9bcz0lWyZFCO1s+MMNq+nMsSZBX8lkp4im/AZmhyw==}
     peerDependencies:
       react-native-reanimated: '*'
+
+  motion@11.11.17:
+    resolution: {integrity: sha512-y6mXYElvJ5HHwPBUpYG/5wclKVGW4hJhqPkTjWccib5/WrcRM185adg3+4aSmG5iD10XKFt5uBOAiKwuzMHPPQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mqtt-packet@9.0.1:
     resolution: {integrity: sha512-koZF1V/X2RZUI6uD9wN5OK1JxxcG1ofAR4H3LjCw1FkeKzruZQ26aAA6v2m1lZyWONZIR5wMMJFrZJDRNzbiQw==}
@@ -38489,6 +38523,14 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
+  framer-motion@11.11.17(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      tslib: 2.8.1
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   framer-motion@6.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@motionone/dom': 10.12.0
@@ -43013,6 +43055,15 @@ snapshots:
     transitivePeerDependencies:
       - react
       - react-dom
+
+  motion@11.11.17(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      framer-motion: 11.11.17(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      tslib: 2.8.1
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   mqtt-packet@9.0.1:
     dependencies:

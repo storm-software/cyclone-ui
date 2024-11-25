@@ -121,17 +121,15 @@ oclif example Hello World CLI
 [![GitHub license](https://img.shields.io/github/license/oclif/hello-world)](https://github.com/oclif/hello-world/blob/main/LICENSE)
 
 <!-- toc -->
-
-- [Cyclone-UI CLI](#cyclone-ui-cli)
-- [oclif-hello-world](#oclif-hello-world)
-- [Usage](#usage)
-- [Commands](#commands)
+* [Cyclone-UI CLI](#cyclone-ui-cli)
+* [oclif-hello-world](#oclif-hello-world)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @cyclone-ui/cli
 $ cyclone-ui COMMAND
@@ -143,34 +141,32 @@ USAGE
   $ cyclone-ui COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
-- [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
-- [`cyclone-ui colors clean [NAME]`](#cyclone-ui-colors-clean-name)
-- [`cyclone-ui colors generate NAME`](#cyclone-ui-colors-generate-name)
-- [`cyclone-ui components get [COMPONENT]`](#cyclone-ui-components-get-component)
-- [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
-- [`cyclone-ui plugins`](#cyclone-ui-plugins)
-- [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
-- [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
-- [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
-- [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
-- [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
-- [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
-- [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
-- [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
-- [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
-- [`cyclone-ui search`](#cyclone-ui-search)
-- [`cyclone-ui themes clean [NAME]`](#cyclone-ui-themes-clean-name)
-- [`cyclone-ui themes generate NAME`](#cyclone-ui-themes-generate-name)
-- [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
-- [`cyclone-ui version`](#cyclone-ui-version)
+* [`cyclone-ui autocomplete [SHELL]`](#cyclone-ui-autocomplete-shell)
+* [`cyclone-ui build PROJECTROOT`](#cyclone-ui-build-projectroot)
+* [`cyclone-ui colors clean [NAME]`](#cyclone-ui-colors-clean-name)
+* [`cyclone-ui colors generate NAME`](#cyclone-ui-colors-generate-name)
+* [`cyclone-ui components get [COMPONENT]`](#cyclone-ui-components-get-component)
+* [`cyclone-ui help [COMMAND]`](#cyclone-ui-help-command)
+* [`cyclone-ui plugins`](#cyclone-ui-plugins)
+* [`cyclone-ui plugins add PLUGIN`](#cyclone-ui-plugins-add-plugin)
+* [`cyclone-ui plugins:inspect PLUGIN...`](#cyclone-ui-pluginsinspect-plugin)
+* [`cyclone-ui plugins install PLUGIN`](#cyclone-ui-plugins-install-plugin)
+* [`cyclone-ui plugins link PATH`](#cyclone-ui-plugins-link-path)
+* [`cyclone-ui plugins remove [PLUGIN]`](#cyclone-ui-plugins-remove-plugin)
+* [`cyclone-ui plugins reset`](#cyclone-ui-plugins-reset)
+* [`cyclone-ui plugins uninstall [PLUGIN]`](#cyclone-ui-plugins-uninstall-plugin)
+* [`cyclone-ui plugins unlink [PLUGIN]`](#cyclone-ui-plugins-unlink-plugin)
+* [`cyclone-ui plugins update`](#cyclone-ui-plugins-update)
+* [`cyclone-ui search`](#cyclone-ui-search)
+* [`cyclone-ui themes clean [NAME]`](#cyclone-ui-themes-clean-name)
+* [`cyclone-ui themes generate NAME`](#cyclone-ui-themes-generate-name)
+* [`cyclone-ui update [CHANNEL]`](#cyclone-ui-update-channel)
+* [`cyclone-ui version`](#cyclone-ui-version)
 
 ## `cyclone-ui autocomplete [SHELL]`
 
@@ -934,7 +930,6 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.16/src/commands/version.ts)_
-
 <!-- commandsstop -->
 
 ## Reduced Package Size

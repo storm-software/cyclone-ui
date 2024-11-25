@@ -33,10 +33,12 @@
     "react-native-svg": "^15.8.0"
   },
   "dependencies": {
+    "@tamagui/animations-moti": "^1.116.15",
     "@tamagui/core": "^1.116.15",
     "@tamagui/helpers-icon": "^1.116.15",
     "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15"
+    "@tamagui/lucide-icons": "^1.116.15",
+    "motion": "^11.11.17"
   },
   "devDependencies": {
     "react": "18.3.1",
