@@ -27,7 +27,7 @@ export type ArrowProps = IconProps & {
   isComplete?: boolean;
 };
 
-const Icon = ({ isComplete = false, size = 24, ...props }: ArrowProps) => {
+const Icon = ({ isComplete = true, size = 24, ...props }: ArrowProps) => {
   const color = useCurrentColor((props.color || "$color") as any);
 
   const motionPosition = useMotionValue(1);

@@ -15,9 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./CheckCircle";
-export * from "./Diagonal";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
+import type { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useState } from "react";
+import { InfoCircle } from "./InfoCircle";
+
+const meta: Meta<typeof InfoCircle> = {
+  title: "Icons/InfoCircle",
+  component: InfoCircle,
+  tags: ["autodocs"],
+  render: (args: any) => {
+    const [isComplete, setIsComplete] = useState(false);
+    useEffect(() => {
+      setInterval(() => {
+        setIsComplete((prev: boolean) => !prev);
+      }, 5000);
+    }, [setIsComplete]);
+
+    return <InfoCircle {...args} isComplete={isComplete} />;
+  }
+} satisfies Meta<typeof InfoCircle>;
+
+export default meta;
+
+type Story = StoryObj<typeof InfoCircle>;
+
+export const Base: Story = {
+  args: {
+    size: "$6"
+  }
+};

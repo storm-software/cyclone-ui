@@ -15,9 +15,19 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./CheckCircle";
-export * from "./Diagonal";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
+import type { IconProps } from "@tamagui/helpers-icon";
+import { themed } from "@tamagui/helpers-icon";
+import { memo } from "react";
+import { AlertCircle } from "./AlertCircle";
+
+export type InfoCircleProps = IconProps & {
+  isComplete?: boolean;
+};
+
+const Icon = ({ ...props }: InfoCircleProps) => {
+  return <AlertCircle rotateX="180deg" {...props} />;
+};
+
+Icon.displayName = "InfoCircle";
+
+export const InfoCircle = memo<IconProps>(themed(Icon));

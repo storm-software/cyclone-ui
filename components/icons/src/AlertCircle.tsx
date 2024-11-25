@@ -26,11 +26,7 @@ export type AlertCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
-const Icon = ({
-  isComplete = false,
-  size = 24,
-  ...props
-}: AlertCircleProps) => {
+const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
   const color = useCurrentColor((props.color || "$color") as any);
 
   const diameter = 24;
@@ -128,6 +124,3 @@ const Icon = ({
 Icon.displayName = "AlertCircle";
 
 export const AlertCircle = memo<IconProps>(themed(Icon));
-
-/* <Line x1="12" x2="12" y1="8" y2="12" stroke={color} />
-      <Line x1="12" x2="12.01" y1="16" y2="16" stroke={color} /> */

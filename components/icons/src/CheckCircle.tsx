@@ -26,11 +26,7 @@ export type CheckCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
-const Icon = ({
-  isComplete = false,
-  size = 24,
-  ...props
-}: CheckCircleProps) => {
+const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
   const color = useCurrentColor((props.color || "$color") as any);
 
   const diameter = 24;
