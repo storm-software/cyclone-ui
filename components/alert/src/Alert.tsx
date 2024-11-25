@@ -103,7 +103,7 @@ const AlertIcon = ThemeableIcon.styleable(
         <YStack zIndex="$2" justifyContent="center" paddingLeft="$3">
           <View
             theme={ColorThemeName.BASE}
-            padding="$1.5"
+            padding="$1.75"
             backgroundColor="$surfacePrimary"
             borderRadius={1000_000_000}>
             <ThemeableIcon

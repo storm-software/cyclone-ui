@@ -39,7 +39,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
 
-    const padding = theme?.includes(ColorThemeName.SUCCESS) ? "$3" : "$1.75";
+    const padding = theme?.includes(ColorThemeName.SUCCESS) ? "$3" : "$2";
 
     return (
       <YStack position="relative" minWidth="100%" alignItems="center">

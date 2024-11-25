@@ -17,6 +17,7 @@
 
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { getSized } from "@cyclone-ui/helpers";
+import { AlertCircle, CheckCircle, InfoCircle } from "@cyclone-ui/icons";
 import type {
   GetProps,
   SizeTokens,
@@ -27,9 +28,6 @@ import { styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
 import { ColorProp, useGetThemedIcon } from "@tamagui/helpers-tamagui";
 import {
-  AlertCircle,
-  CheckCircle,
-  Info,
   Lightbulb,
   Lock,
   MinusCircle,
@@ -70,7 +68,7 @@ export const getIconByTheme = ({
   ) {
     return <AlertCircle {...props} />;
   } else if (theme?.includes(ColorThemeName.INFO)) {
-    return <Info {...props} />;
+    return <InfoCircle {...props} />;
   } else if (theme?.includes(ColorThemeName.HELP)) {
     return <Lightbulb {...props} />;
   } else if (theme?.includes(ColorThemeName.SUCCESS)) {

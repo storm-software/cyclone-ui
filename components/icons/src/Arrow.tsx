@@ -15,7 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-import { getSized } from "@cyclone-ui/helpers";
 import type { IconProps } from "@tamagui/helpers-icon";
 import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
@@ -51,16 +50,15 @@ const Icon = ({ isComplete = true, size = 24, ...props }: ArrowProps) => {
     setPosition(latest);
   });
 
-  const adjusted = getSized(size || "$true");
-
   return (
     <Svg
-      fill="none"
+      width={size}
+      height={size}
       viewBox="0 0 22 24"
+      fill="none"
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
-      height={adjusted}
-      width={adjusted}
       {...(props as SvgProps)}>
       {isComplete && (
         <Path d={`M6 12h${position}`} stroke={color} strokeWidth="1.5" />
