@@ -208,7 +208,8 @@ const TableHeader = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 1,
   borderTopLeftRadius: "$true",
-  borderTopRightRadius: "$true"
+  borderTopRightRadius: "$true",
+  overflow: "hidden"
 });
 
 const TableHeaderImpl = TableHeader.styleable(
@@ -244,7 +245,8 @@ const TableFooter = styled(ThemeableStack, {
   borderWidth: 1,
   borderTopWidth: 0,
   borderBottomLeftRadius: "$true",
-  borderBottomRightRadius: "$true"
+  borderBottomRightRadius: "$true",
+  overflow: "hidden"
 });
 
 const TableFooterImpl = TableFooter.styleable(

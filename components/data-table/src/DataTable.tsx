@@ -54,23 +54,23 @@ import {
 } from "react";
 import { titleCase } from "title-case";
 
-const defaultContextValues = {
-  sorting: [] as SortingState,
-  setSorting: () => {},
-  columnFilters: [] as ColumnFiltersState,
-  setColumnFilters: () => {},
-  pagination: { pageIndex: 0, pageSize: 10 },
-  setPagination: () => {}
-} as const;
-
-export const InternalStateContext = createStyledContext<{
+export type DataTableContextProps = {
   sorting: SortingState;
   setSorting: Dispatch<SetStateAction<SortingState>>;
   columnFilters: ColumnFiltersState;
   setColumnFilters: Dispatch<SetStateAction<ColumnFiltersState>>;
   pagination: PaginationState;
   setPagination: Dispatch<SetStateAction<PaginationState>>;
-}>(defaultContextValues);
+};
+
+export const DataTableContext = createStyledContext<DataTableContextProps>({
+  sorting: [] as SortingState,
+  setSorting: () => {},
+  columnFilters: [] as ColumnFiltersState,
+  setColumnFilters: () => {},
+  pagination: { pageIndex: 0, pageSize: 10 },
+  setPagination: () => {}
+} as const);
 
 export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
   Omit<TableOptions<TData>, "getCoreRowModel">;
@@ -123,7 +123,7 @@ export function DataTable<TData extends RowData>({
   }, [pageSize, data.length]);
 
   return (
-    <InternalStateContext.Provider
+    <DataTableContext.Provider
       sorting={sorting}
       setSorting={setSorting}
       columnFilters={columnFilters}
@@ -137,7 +137,7 @@ export function DataTable<TData extends RowData>({
           cellWidth="$18"
           cellHeight="$7"
           {...rest}>
-          <Table.Head>
+          <Table.Header>
             {headerGroups.map(headerGroup => {
               return (
                 <Table.Row key={headerGroup.id} header={true}>
@@ -154,7 +154,7 @@ export function DataTable<TData extends RowData>({
                 </Table.Row>
               );
             })}
-          </Table.Head>
+          </Table.Header>
           <Table.Body>
             {tableRows.map(row => {
               return (
@@ -171,21 +171,23 @@ export function DataTable<TData extends RowData>({
               );
             })}
           </Table.Body>
+          <Table.Footer>
+            {pageCount > 1 && (
+              <DataTablePagination
+                setPageIndex={table.setPageIndex}
+                nextPage={table.nextPage}
+                previousPage={table.previousPage}
+                firstPage={table.firstPage}
+                lastPage={table.lastPage}
+                pageIndex={pagination.pageIndex}
+                pageSize={pagination.pageSize}
+                pageCount={pageCount}
+              />
+            )}
+          </Table.Footer>
         </Table>
-        {pageCount > 1 && (
-          <DataTablePagination
-            setPageIndex={table.setPageIndex}
-            nextPage={table.nextPage}
-            previousPage={table.previousPage}
-            firstPage={table.firstPage}
-            lastPage={table.lastPage}
-            pageIndex={pagination.pageIndex}
-            pageSize={pagination.pageSize}
-            pageCount={pageCount}
-          />
-        )}
       </YStack>
-    </InternalStateContext.Provider>
+    </DataTableContext.Provider>
   );
 }
 
@@ -199,9 +201,9 @@ export type DataTableHeaderProps<
   TValue = any
 > = HeaderContext<TData, TValue>;
 
-export function DataTableCell<TData extends RowData, TValue = any>(
+const DataTableCell = <TData extends RowData, TValue = any>(
   props: DataTableCellProps<TData, TValue>
-) {
+) => {
   const value = props.value ? props.value : props.renderValue();
   return (
     <SizableText
@@ -212,14 +214,14 @@ export function DataTableCell<TData extends RowData, TValue = any>(
       {value}
     </SizableText>
   );
-}
+};
 
-export function DataTableHeader<TData extends RowData, TValue = any>(
+const DataTableHeader = <TData extends RowData, TValue = any>(
   props: DataTableHeaderProps<TData, TValue>
-) {
+) => {
   const [currentFilter, setCurrentFilter] = useState("");
 
-  const { sorting } = InternalStateContext.useStyledContext();
+  const { sorting } = DataTableContext.useStyledContext();
   const id = props.header.id;
   const { toggleSorting, clearSorting, setFilterValue } = props.column;
 
@@ -338,10 +340,15 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
                   name="search"
                   value={currentFilter}
                   onChange={handleFilterChanged}>
-                  <InputField.Control placeholder="Search" />
-                  <InputField.Icon onPress={handleFilterClear}>
-                    <X />
-                  </InputField.Icon>
+                  <InputField.Control>
+                    <InputField.Control.TextBox>
+                      <InputField.Control.TextBox.Value placeholder="Search" />
+
+                      <InputField.Icon onPress={handleFilterClear}>
+                        <X />
+                      </InputField.Icon>
+                    </InputField.Control.TextBox>
+                  </InputField.Control>
                 </InputField>
 
                 <CheckboxField name="filter" value={true}>
@@ -365,7 +372,7 @@ export function DataTableHeader<TData extends RowData, TValue = any>(
       </View>
     </XStack>
   );
-}
+};
 
 export type DataTablePaginationProps<TData extends RowData> = Pick<
   ReactTable<TData>,
