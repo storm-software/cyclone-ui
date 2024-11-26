@@ -6,6 +6,8 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
+      "@cyclone-ui/accordion": ["components/accordion/src/index.ts"],
+      "@cyclone-ui/accordion/*": ["components/accordion/src/*"],
       "@cyclone-ui/alert": ["components/alert/src/index.ts"],
       "@cyclone-ui/alert-dialog": ["components/alert-dialog/src/index.ts"],
       "@cyclone-ui/alert-dialog/*": ["components/alert-dialog/src/*"],
@@ -32,8 +34,6 @@
       "@cyclone-ui/cli/*": ["apps/cli/src/*"],
       "@cyclone-ui/client-state": ["packages/client-state/src/index.ts"],
       "@cyclone-ui/client-state/*": ["packages/client-state/src/*"],
-      "@cyclone-ui/accordion": ["components/accordion/src/index.ts"],
-      "@cyclone-ui/accordion/*": ["components/accordion/src/*"],
       "@cyclone-ui/colors": ["packages/colors/src/index.ts"],
       "@cyclone-ui/colors/*": ["packages/colors/src/*"],
       "@cyclone-ui/config": ["packages/config/src/index.ts"],

@@ -94,7 +94,7 @@ const Icon = ({
   const expandOpacityPosition = useMotionValue(1);
   const expandOpacityPlayback = animate(expandOpacityPosition, 0, {
     type: "spring",
-    duration: 0.75,
+    duration: 0.5,
     bounce: 0
   });
 

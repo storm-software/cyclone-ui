@@ -19,9 +19,9 @@ import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
+  View,
   withStaticProperties
 } from "@tamagui/core";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 
 export type AlignCells = {
@@ -56,21 +56,28 @@ export const TABLE_HEADER_NAME = "TableHeader";
 
 const TableRow = styled(ThemeableStack, {
   name: TABLE_NAME,
-  tag: "tr",
   context: TableContext,
+
+  tag: "tr",
 
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$color4",
-  borderBottomWidth: 0.5,
+  borderColor: "$borderColor",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
+  overflow: "hidden",
+  backgroundColor: "transparent",
+  paddingHorizontal: "$4",
+
+  hoverStyle: {
+    backgroundColor: "transparent"
+  },
 
   variants: {
     header: {
-      true: {
-        backgroundColor: "$background"
+      false: {
+        borderBottomWidth: 1
       }
     }
   },
@@ -80,40 +87,41 @@ const TableRow = styled(ThemeableStack, {
   }
 });
 
-const TableRowSelected = styled(LinearGradient, {
-  name: TABLE_NAME,
-  context: TableContext,
-
-  fullscreen: true,
-  opacity: 0,
-  zIndex: 5,
-  colors: ["transparent", "$color8"],
-  start: [0, 0],
-  end: [1.0, 1.0]
-});
-
 const TableRowImpl = TableRow.styleable(
-  ({ children, header, ...rest }, forwardedRef) => {
+  ({ children, header = false, ...props }, forwardRef) => {
     return (
       <TableRow
-        {...rest}
+        ref={forwardRef}
+        group={"row" as any}
         header={header}
-        ref={forwardedRef}
-        group={"row" as any}>
-        <TableRowSelected
-          animation="medium"
-          $group-row-hover={{ opacity: header ? 0 : 0.1 }}
+        position="relative"
+        {...props}>
+        <ThemeableStack
+          fullscreen={true}
+          animation="normal"
+          opacity={0}
+          backgroundColor="$primary"
+          $group-row-hover={{
+            opacity: header ? 0 : 0.1
+          }}
+          style={{
+            filter: "blur(1px)"
+          }}
         />
         {children}
       </TableRow>
     );
+  },
+  {
+    staticConfig: { componentName: TABLE_NAME }
   }
 );
 
 const TableCell = styled(ThemeableStack, {
   name: TABLE_NAME,
-  tag: "td",
   context: TableContext,
+
+  tag: "td",
 
   flexDirection: "row",
   flexGrow: 0,
@@ -149,17 +157,16 @@ const TableCell = styled(ThemeableStack, {
 
 const TableHeaderCell = styled(ThemeableStack, {
   name: TABLE_HEADER_NAME,
-  tag: "th",
   context: TableContext,
+
+  tag: "th",
 
   zIndex: 10,
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
-  paddingVertical: "$2",
   borderWidth: 0,
   justifyContent: "flex-start",
-  backgroundColor: "$background",
 
   variants: {
     cellWidth: {
@@ -181,38 +188,97 @@ const TableHeaderCell = styled(ThemeableStack, {
 
 const TableBody = styled(ThemeableStack, {
   name: TABLE_NAME,
+  context: TableContext,
+
   tag: "tbody",
-  flexDirection: "column",
-  context: TableContext,
 
-  flexShrink: 1
+  flexDirection: "column",
+  flexShrink: 1,
+  borderLeftWidth: 1,
+  borderRightWidth: 1
 });
 
-const TableHead = styled(ThemeableStack, {
+const TableHeader = styled(ThemeableStack, {
   name: TABLE_NAME,
+  context: TableContext,
+
   tag: "thead",
-  context: TableContext,
 
   flexDirection: "column",
-  flexShrink: 1
+  flexShrink: 1,
+  borderWidth: 1,
+  borderTopLeftRadius: "$true",
+  borderTopRightRadius: "$true"
 });
 
-const TableFoot = styled(ThemeableStack, {
+const TableHeaderImpl = TableHeader.styleable(
+  ({ children, ...props }, forwardRef) => {
+    return (
+      <TableHeader ref={forwardRef} position="relative" {...props}>
+        <ThemeableStack
+          fullscreen={true}
+          animation="fast"
+          opacity={0.05}
+          backgroundColor="$primary"
+          style={{
+            filter: "blur(1px)"
+          }}
+        />
+        <View paddingVertical="$2.5">{children}</View>
+      </TableHeader>
+    );
+  },
+  {
+    staticConfig: { componentName: TABLE_NAME }
+  }
+);
+
+const TableFooter = styled(ThemeableStack, {
   name: TABLE_NAME,
+  context: TableContext,
+
   tag: "tfoot",
-  flexDirection: "column",
-  context: TableContext,
 
-  flexShrink: 1
+  flexDirection: "column",
+  flexShrink: 1,
+  borderWidth: 1,
+  borderTopWidth: 0,
+  borderBottomLeftRadius: "$true",
+  borderBottomRightRadius: "$true"
 });
 
-const TableComp = styled(ThemeableStack, {
+const TableFooterImpl = TableFooter.styleable(
+  ({ children, ...props }, forwardRef) => {
+    return (
+      <TableFooter ref={forwardRef} position="relative" {...props}>
+        <ThemeableStack
+          fullscreen={true}
+          animation="fast"
+          opacity={0.05}
+          backgroundColor="$primary"
+          style={{
+            filter: "blur(1px)"
+          }}
+        />
+        <View paddingVertical="$2.5">{children}</View>
+      </TableFooter>
+    );
+  },
+  {
+    staticConfig: { componentName: TABLE_NAME }
+  }
+);
+
+const TableFrame = styled(ThemeableStack, {
   name: TABLE_NAME,
-  tag: "table",
   context: TableContext,
+
+  tag: "table",
+  backgrounded: false,
+
   borderWidth: 0,
-  backgrounded: true,
   maxWidth: "100%",
+  overflow: "hidden",
 
   variants: {
     cellWidth: {
@@ -232,13 +298,13 @@ const TableComp = styled(ThemeableStack, {
   }
 });
 
-export type TableProps = GetProps<typeof TableComp>;
+export type TableProps = GetProps<typeof TableFrame>;
 
-export const Table = withStaticProperties(TableComp, {
-  Head: TableHead,
+export const Table = withStaticProperties(TableFrame, {
+  Header: TableHeaderImpl,
   Body: TableBody,
   Row: TableRowImpl,
   Cell: TableCell,
   HeaderCell: TableHeaderCell,
-  Foot: TableFoot
+  Footer: TableFooterImpl
 });

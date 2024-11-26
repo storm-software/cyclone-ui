@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
@@ -34,7 +51,7 @@ const meta: Meta<typeof Table> = {
         cellWidth="$18"
         cellHeight="$7"
         {...rest}>
-        <Table.Head>
+        <Table.Header>
           {headerGroups.map(headerGroup => {
             return (
               <Table.Row key={headerGroup.id} header={true}>
@@ -48,7 +65,7 @@ const meta: Meta<typeof Table> = {
                       : {
                           flexShrink: 3
                         })}>
-                    <SizableText fontFamily="$label" size="$6">
+                    <SizableText fontFamily="$label" color="$primary" size="$6">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -61,7 +78,7 @@ const meta: Meta<typeof Table> = {
               </Table.Row>
             );
           })}
-        </Table.Head>
+        </Table.Header>
         <Table.Body>
           {tableRows.map(row => {
             return (
@@ -92,6 +109,13 @@ const meta: Meta<typeof Table> = {
             );
           })}
         </Table.Body>
+        <Table.Footer>
+          <Table.Row header={true}>
+            <SizableText fontFamily="$label" color="$primary" size="$6">
+              Table footer information is populated here
+            </SizableText>
+          </Table.Row>
+        </Table.Footer>
       </Table>
     );
   }
