@@ -126,7 +126,7 @@ const FieldValidationText = styled(ValidationText, {
 
   fontStyle: "italic",
   fontFamily: "$body",
-  marginTop: "$0.4",
+  marginTop: "$0.5",
 
   variants: {
     size: {
@@ -225,7 +225,7 @@ const FieldDetails = styled(BodyText, {
   animation: "normal",
   color: "$color",
   fontStyle: "italic",
-  marginTop: "$0.4",
+  marginTop: "$0.5",
 
   enterStyle: {
     opacity: 0,
@@ -339,9 +339,21 @@ const LabelXStack = styled(XStack, {
 const FieldLabelTextImpl = FieldLabelText.styleable<{
   required?: boolean;
   disabled?: boolean;
+  hideRequired?: boolean;
   hideAsterisk?: boolean;
+  hideOptional?: boolean;
 }>(
-  ({ children, hideAsterisk = false, required, ...props }, forwardedRef) => {
+  (
+    {
+      children,
+      hideRequired = false,
+      hideAsterisk = false,
+      hideOptional = false,
+      required,
+      ...props
+    },
+    forwardedRef
+  ) => {
     const store = useFieldStore();
     const fieldDisabled = store.get.disabled();
     const name = store.get.name();
@@ -360,28 +372,36 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
             theme={ColorThemeName.BASE}>
             {children}
           </FieldLabelText>
-          {hideAsterisk !== true && (
+          {hideRequired !== true && (
             <>
               {required ? (
-                <View position="relative" alignSelf="stretch">
-                  <Asterisk
-                    color="$danger7"
-                    size="$0.75"
-                    position="absolute"
-                    top={-4}
-                  />
-                </View>
+                <>
+                  {hideAsterisk !== true && (
+                    <View position="relative" alignSelf="stretch">
+                      <Asterisk
+                        color="$danger7"
+                        size="$0.75"
+                        position="absolute"
+                        top={-4}
+                      />
+                    </View>
+                  )}
+                </>
               ) : (
-                <FieldLabelText
-                  {...props}
-                  theme={ColorThemeName.BASE}
-                  disabled={disabled}
-                  color={disabled ? "$colorDisabled" : "$secondary"}
-                  size="$5"
-                  fontWeight="$4"
-                  marginLeft="$2">
-                  (Optional)
-                </FieldLabelText>
+                <>
+                  {hideOptional !== true && (
+                    <FieldLabelText
+                      {...props}
+                      theme={ColorThemeName.BASE}
+                      disabled={disabled}
+                      color={disabled ? "$colorDisabled" : "$secondary"}
+                      size="$5"
+                      fontWeight="$4"
+                      marginLeft="$2">
+                      (Optional)
+                    </FieldLabelText>
+                  )}
+                </>
               )}
             </>
           )}
@@ -394,7 +414,11 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
 
 export type FieldLabelTextProps = GetProps<typeof FieldLabelText>;
 
-const FieldLabel = FieldLabelText.styleable<{ hideAsterisk?: boolean }>(
+const FieldLabel = FieldLabelText.styleable<{
+  hideRequired?: boolean;
+  hideAsterisk?: boolean;
+  hideOptional?: boolean;
+}>(
   ({ children, ...props }, forwardedRef) => {
     const store = useFieldStore();
 

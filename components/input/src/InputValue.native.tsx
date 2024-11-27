@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import { useEffect, useRef } from "react";
@@ -11,9 +28,9 @@ import { TextInput } from "react-native";
 import type { InputProps } from "./types";
 import { baseInputStyle, InputContext } from "./utilities";
 
-const InnerInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
+const BaseInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
 
-export const Input = InnerInputValue.styleable<InputProps>(
+export const Input = BaseInputValue.styleable<InputProps>(
   (inProps, forwardedRef) => {
     const { disabled, name, onChange, onInput, onBlur, onFocus } =
       InputContext.useStyledContext();
@@ -21,7 +38,7 @@ export const Input = InnerInputValue.styleable<InputProps>(
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
       type,
-      //@ts-ignore
+      // @ts-ignore
       dirname,
       max,
       min,
@@ -165,7 +182,7 @@ export const Input = InnerInputValue.styleable<InputProps>(
     }, [name, disabled, onFocus]);
 
     return (
-      <InnerInputValue
+      <BaseInputValue
         onChange={e => {}}
         ref={composedRefs}
         onBlur={onBlur}

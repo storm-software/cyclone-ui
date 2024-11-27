@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/input-field",
+  "name": "@cyclone-ui/search-input-field",
   "version": "0.1.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/input-field"
+    "directory": "components/search-input-field"
   },
   "private": false,
   "main": "dist/cjs",
@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15"
+    "@tamagui/create-context": "^1.116.15",
+    "@tamagui/lucide-icons": "^1.116.15"
   },
   "devDependencies": {
     "react": "18.3.1",

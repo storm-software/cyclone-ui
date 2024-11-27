@@ -10,9 +10,9 @@ import { FormEvent, useCallback, useEffect, useRef } from "react";
 import { InputProps } from "./types";
 import { InputContext, baseInputStyle } from "./utilities";
 
-const InnerInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
+const BaseInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
 
-export const InputValue = InnerInputValue.styleable<InputProps>(
+export const InputValue = BaseInputValue.styleable<InputProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
     const { disabled, name, onChange, onInput, onBlur, onFocus } =
       InputContext.useStyledContext();
@@ -147,6 +147,8 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
 
     const handleChange = useCallback(
       (event: FormEvent<HTMLInputElement>) => {
+        event.stopPropagation();
+
         if (onChange) {
           onChange(
             new CustomEvent("change", {
@@ -187,7 +189,7 @@ export const InputValue = InnerInputValue.styleable<InputProps>(
           </style>
         )}
 
-        <InnerInputValue
+        <BaseInputValue
           ref={composedRefs}
           disabled={disabled}
           {...finalProps}

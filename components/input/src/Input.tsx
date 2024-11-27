@@ -27,6 +27,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
+import { X } from "@tamagui/lucide-icons";
 import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
 import { InputValue } from "./InputValue";
@@ -255,16 +256,53 @@ const InputTextBoxImpl = InputTextBox.styleable(
   { staticConfig: { componentName: "Input" } }
 );
 
-const InputValueImpl = InputValue.styleable(
-  ({ children, enterKeyHint = "done", ...props }, forwardedRef) => {
+type InputValueExtraProps = {
+  clearable?: boolean;
+  onClear?: () => void;
+};
+
+const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
+  (
+    {
+      children,
+      enterKeyHint = "done",
+      clearable = false,
+      onClear,
+      value,
+      ...props
+    },
+    forwardedRef
+  ) => {
     return (
-      <InputValue
-        ref={forwardedRef}
-        {...props}
-        enterKeyHint={enterKeyHint}
-        placeholderTextColor="$placeholderColor">
-        {children}
-      </InputValue>
+      <View position="relative" flex={1}>
+        <InputValue
+          ref={forwardedRef}
+          {...props}
+          value={value}
+          enterKeyHint={enterKeyHint}
+          placeholderTextColor="$placeholderColor">
+          {children}
+        </InputValue>
+        {clearable && onClear && value && (
+          <View
+            position="absolute"
+            top={0}
+            right={0}
+            height="100%"
+            display="flex"
+            alignItems="center">
+            <Button
+              variant="ghost"
+              circular={true}
+              width="$3.5"
+              onClick={onClear}>
+              <Button.Icon>
+                <X size="$1" />
+              </Button.Icon>
+            </Button>
+          </View>
+        )}
+      </View>
     );
   },
   { staticConfig: { componentName: "InputValue" } }
@@ -302,6 +340,8 @@ const InputTrigger = Button.styleable<{
   { staticConfig: { componentName: "Input" } }
 );
 
+export type InputValueProps = GetProps<typeof InputValue>;
+
 export const Input = withStaticProperties(InputGroupImpl, {
   TextBox: withStaticProperties(InputTextBoxImpl, {
     Value: InputValueImpl
@@ -312,3 +352,5 @@ export const Input = withStaticProperties(InputGroupImpl, {
     Text: Button.Text
   })
 });
+
+export type InputProps = GetProps<typeof Input>;

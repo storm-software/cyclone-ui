@@ -17,32 +17,32 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-import { InputField } from "./InputField";
+import { SearchInputField } from "./SearchInputField";
 
-const meta: Meta<typeof InputField> = {
-  title: "Form/InputField",
-  component: InputField,
+const meta: Meta<typeof SearchInputField> = {
+  title: "Form/SearchInputField",
+  component: SearchInputField,
   tags: ["autodocs"],
   render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" defaultValues={{ inputFieldName: defaultValue }}>
-      <InputField name="inputFieldName" {...props}>
-        <InputField.Label>Label Text</InputField.Label>
-        <InputField.Control>
-          <InputField.Control.TextBox>
-            <InputField.Control.TextBox.Value placeholder="email@example.com" />
-          </InputField.Control.TextBox>
-        </InputField.Control>
-        <InputField.Details>
-          This is an example detailed message for an input field
-        </InputField.Details>
-      </InputField>
+    <Form
+      name="formName"
+      defaultValues={{ searchInputFieldName: defaultValue }}>
+      <SearchInputField name="searchInputFieldName" {...props}>
+        <SearchInputField.Label>Label Text</SearchInputField.Label>
+        <SearchInputField.Control>
+          <SearchInputField.Control.TextBox />
+        </SearchInputField.Control>
+        <SearchInputField.Details>
+          This is an example detailed message for a search input field
+        </SearchInputField.Details>
+      </SearchInputField>
     </Form>
   )
-} satisfies Meta<typeof InputField>;
+} satisfies Meta<typeof SearchInputField>;
 
 export default meta;
 
-type Story = StoryObj<typeof InputField>;
+type Story = StoryObj<typeof SearchInputField>;
 
 export const Base: Story = {
   args: {}

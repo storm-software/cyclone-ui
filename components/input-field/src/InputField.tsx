@@ -76,11 +76,17 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
 );
 
 const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
-  ({ children, ...props }, forwardedRef) => {
+  ({ clearable = false, ...props }, forwardedRef) => {
     const store = useFieldStore();
     const theme = store.get.theme();
     const formattedValue = store.get.formattedValue();
     const initialValue = store.get.initialValue();
+    const options = store.get.options();
+
+    const { change } = useFieldActions();
+    const handleClear = useCallback(() => {
+      change(options?.defaultValue);
+    }, [change, options?.defaultValue]);
 
     return (
       <Theme name={theme}>
@@ -89,6 +95,8 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
           {...props}
           value={formattedValue}
           defaultValue={String(initialValue ?? "")}
+          clearable={clearable}
+          onClear={handleClear}
         />
       </Theme>
     );

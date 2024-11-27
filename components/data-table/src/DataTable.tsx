@@ -201,7 +201,7 @@ export type DataTableHeaderProps<
   TValue = any
 > = HeaderContext<TData, TValue>;
 
-const DataTableCell = <TData extends RowData, TValue = any>(
+export const DataTableCell = <TData extends RowData, TValue = any>(
   props: DataTableCellProps<TData, TValue>
 ) => {
   const value = props.value ? props.value : props.renderValue();
@@ -216,7 +216,7 @@ const DataTableCell = <TData extends RowData, TValue = any>(
   );
 };
 
-const DataTableHeader = <TData extends RowData, TValue = any>(
+export const DataTableHeader = <TData extends RowData, TValue = any>(
   props: DataTableHeaderProps<TData, TValue>
 ) => {
   const [currentFilter, setCurrentFilter] = useState("");
@@ -263,19 +263,19 @@ const DataTableHeader = <TData extends RowData, TValue = any>(
         <SizableText
           animation="medium"
           fontFamily="$label"
-          color="$color"
+          color="$primary"
           size="$6"
-          $group-header-hover={{ color: "$primary" }}>
+          $group-header-hover={{ color: "$fg" }}>
           {titleCase(id.replaceAll("_", " "))}
         </SizableText>
         {isSorted && !desc && (
           <XStack gap="$0.25" alignItems="center">
-            <ArrowDownAZ size="$1" color="$color" />
+            <ArrowDownAZ size="$1" color="$primary" />
             <SizableText
               animation="medium"
               fontFamily="$label"
               fontWeight="$6"
-              color="$color"
+              color="$primary"
               size="$2">
               {sortIndex + 1}
             </SizableText>
@@ -283,12 +283,12 @@ const DataTableHeader = <TData extends RowData, TValue = any>(
         )}
         {isSorted && desc && (
           <XStack gap="$0.25" alignItems="center">
-            <ArrowUpZA size="$1" color="$color" />
+            <ArrowUpZA size="$1" color="$primary" />
             <SizableText
               animation="medium"
               fontFamily="$label"
               fontWeight="$6"
-              color="$color"
+              color="$primary"
               size="$2">
               {sortIndex + 1}
             </SizableText>
@@ -297,7 +297,7 @@ const DataTableHeader = <TData extends RowData, TValue = any>(
       </XStack>
 
       <View
-        animation="slow"
+        animation="normal"
         opacity={!currentFilter ? 0 : 1}
         $group-header-hover={{ opacity: 1 }}>
         <Popover size="$5" allowFlip={true}>
@@ -320,7 +320,7 @@ const DataTableHeader = <TData extends RowData, TValue = any>(
                 <Adapt.Contents />
               </Popover.Sheet.Frame>
               <Popover.Sheet.Overlay
-                animation="slow"
+                animation="normal"
                 enterStyle={{ opacity: 0 }}
                 exitStyle={{ opacity: 0 }}
               />
@@ -328,10 +328,11 @@ const DataTableHeader = <TData extends RowData, TValue = any>(
           </Adapt>
 
           <Popover.Content
+          animation="normal"
             borderWidth={1}
             borderColor="$borderColor"
             elevate={true}
-            animation="slow">
+            >
             <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
 
             <Form name="columnFilter" onSubmit={handleFilterSubmit}>

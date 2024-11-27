@@ -97,6 +97,12 @@
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],
+      "@cyclone-ui/search-input-field": [
+        "components/search-input-field/src/index.ts"
+      ],
+      "@cyclone-ui/search-input-field/*": [
+        "components/search-input-field/src/*"
+      ],
       "@cyclone-ui/input/*": ["components/input/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],

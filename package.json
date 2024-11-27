@@ -193,6 +193,16 @@
       ]
     }
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "warn"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "warn"
+    }
+  },
   "licenses": [
     {
       "type": "Apache-2.0",
@@ -240,6 +250,7 @@
       "@cyclone-ui/icons": "workspace:*",
       "@cyclone-ui/input": "workspace:*",
       "@cyclone-ui/input-field": "workspace:*",
+      "@cyclone-ui/search-input-field": "workspace:*",
       "@cyclone-ui/link": "workspace:*",
       "@cyclone-ui/body-text": "workspace:*",
       "@cyclone-ui/eyebrow-text": "workspace:*",

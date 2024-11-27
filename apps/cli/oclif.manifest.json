@@ -123,6 +123,213 @@
         "build.js"
       ]
     },
+    "themes:clean": {
+      "aliases": [],
+      "args": {
+        "name": {
+          "description": "The name of the specific theme",
+          "name": "name",
+          "required": false
+        }
+      },
+      "description": "Clean the theme configuration for the client application based on the colors provided in the Storm configuration file",
+      "examples": [
+        {
+          "description": "Clean all the theme configurations using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> clean"
+        },
+        {
+          "description": "Clean just the 'brand.ts' theme configuration file using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> clean brand"
+        },
+        {
+          "description": "Clean all the theme configurations in the output path './path/to/output'",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
+        },
+        {
+          "description": "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output'",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
+        },
+        {
+          "description": "Clean all the theme configurations in the output path './path/to/output', and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
+        },
+        {
+          "description": "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "output": {
+          "aliases": [
+            "outputPath",
+            "outDir"
+          ],
+          "char": "o",
+          "deprecateAliases": false,
+          "description": "The location to output the design token file",
+          "env": "STORM_THEMES_DIRECTORY",
+          "hidden": false,
+          "name": "output",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Output directory",
+          "default": ".storm/themes",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "themes:clean",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Clean the workspace's theme configuration",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "apps",
+        "cli",
+        "src",
+        "commands",
+        "themes",
+        "clean.js"
+      ]
+    },
+    "themes:generate": {
+      "aliases": [],
+      "args": {
+        "name": {
+          "default": "brand",
+          "description": "The name of the specific theme",
+          "name": "name",
+          "noCacheDefault": false,
+          "required": true
+        }
+      },
+      "description": "Generate a theme configuration for the client application based on the values provided in the Storm configuration file",
+      "examples": [
+        {
+          "description": "Generate a theme using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> generate"
+        },
+        {
+          "description": "Generate a theme, and write the output to ./path/to/output",
+          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output"
+        },
+        {
+          "description": "Generate a theme, write the output to ./path/to/output, and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "input": {
+          "char": "i",
+          "deprecateAliases": false,
+          "description": "The path to the theme input file",
+          "hidden": false,
+          "name": "input",
+          "required": true,
+          "summary": "Input file",
+          "hasDynamicHelp": false,
+          "helpValue": "<file>",
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "aliases": [
+            "outputPath",
+            "outDir"
+          ],
+          "char": "o",
+          "deprecateAliases": false,
+          "description": "The location to output the themes file",
+          "env": "STORM_THEMES_DIRECTORY",
+          "hidden": false,
+          "name": "output",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Output directory",
+          "default": ".storm/themes",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "clean": {
+          "char": "c",
+          "deprecateAliases": false,
+          "description": "Remove all files from the output directory before generating new themes",
+          "hidden": false,
+          "name": "clean",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Clean output directory",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "json": {
+          "char": "j",
+          "deprecateAliases": false,
+          "description": "Should the themes be generated as a JSON",
+          "hidden": false,
+          "name": "json",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Generate JSON",
+          "allowNo": true,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "themes:generate",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Generate a theme configuration file",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "apps",
+        "cli",
+        "src",
+        "commands",
+        "themes",
+        "generate.js"
+      ]
+    },
     "colors:clean": {
       "aliases": [],
       "args": {
@@ -407,213 +614,6 @@
         "commands",
         "components",
         "get.js"
-      ]
-    },
-    "themes:clean": {
-      "aliases": [],
-      "args": {
-        "name": {
-          "description": "The name of the specific theme",
-          "name": "name",
-          "required": false
-        }
-      },
-      "description": "Clean the theme configuration for the client application based on the colors provided in the Storm configuration file",
-      "examples": [
-        {
-          "description": "Clean all the theme configurations using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> clean"
-        },
-        {
-          "description": "Clean just the 'brand.ts' theme configuration file using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> clean brand"
-        },
-        {
-          "description": "Clean all the theme configurations in the output path './path/to/output'",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
-        },
-        {
-          "description": "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output'",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
-        },
-        {
-          "description": "Clean all the theme configurations in the output path './path/to/output', and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
-        },
-        {
-          "description": "Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "output": {
-          "aliases": [
-            "outputPath",
-            "outDir"
-          ],
-          "char": "o",
-          "deprecateAliases": false,
-          "description": "The location to output the design token file",
-          "env": "STORM_THEMES_DIRECTORY",
-          "hidden": false,
-          "name": "output",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Output directory",
-          "default": ".storm/themes",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": false,
-          "type": "boolean"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "themes:clean",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Clean the workspace's theme configuration",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "apps",
-        "cli",
-        "src",
-        "commands",
-        "themes",
-        "clean.js"
-      ]
-    },
-    "themes:generate": {
-      "aliases": [],
-      "args": {
-        "name": {
-          "default": "brand",
-          "description": "The name of the specific theme",
-          "name": "name",
-          "noCacheDefault": false,
-          "required": true
-        }
-      },
-      "description": "Generate a theme configuration for the client application based on the values provided in the Storm configuration file",
-      "examples": [
-        {
-          "description": "Generate a theme using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> generate"
-        },
-        {
-          "description": "Generate a theme, and write the output to ./path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output"
-        },
-        {
-          "description": "Generate a theme, write the output to ./path/to/output, and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "input": {
-          "char": "i",
-          "deprecateAliases": false,
-          "description": "The path to the theme input file",
-          "hidden": false,
-          "name": "input",
-          "required": true,
-          "summary": "Input file",
-          "hasDynamicHelp": false,
-          "helpValue": "<file>",
-          "multiple": false,
-          "type": "option"
-        },
-        "output": {
-          "aliases": [
-            "outputPath",
-            "outDir"
-          ],
-          "char": "o",
-          "deprecateAliases": false,
-          "description": "The location to output the themes file",
-          "env": "STORM_THEMES_DIRECTORY",
-          "hidden": false,
-          "name": "output",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Output directory",
-          "default": ".storm/themes",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "clean": {
-          "char": "c",
-          "deprecateAliases": false,
-          "description": "Remove all files from the output directory before generating new themes",
-          "hidden": false,
-          "name": "clean",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Clean output directory",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "json": {
-          "char": "j",
-          "deprecateAliases": false,
-          "description": "Should the themes be generated as a JSON",
-          "hidden": false,
-          "name": "json",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Generate JSON",
-          "allowNo": true,
-          "type": "boolean"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "themes:generate",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Generate a theme configuration file",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "apps",
-        "cli",
-        "src",
-        "commands",
-        "themes",
-        "generate.js"
       ]
     }
   },
