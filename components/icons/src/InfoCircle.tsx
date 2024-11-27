@@ -30,4 +30,4 @@ const Icon = ({ ...props }: InfoCircleProps) => {
 
 Icon.displayName = "InfoCircle";
 
-export const InfoCircle = memo<IconProps>(themed(Icon));
+export const InfoCircle = memo<InfoCircleProps>(themed(Icon));

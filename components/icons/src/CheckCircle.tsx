@@ -139,4 +139,4 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
 Icon.displayName = "CheckCircle";
 
-export const CheckCircle = memo<IconProps>(themed(Icon));
+export const CheckCircle = memo<CheckCircleProps>(themed(Icon));

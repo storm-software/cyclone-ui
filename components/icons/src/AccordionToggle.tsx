@@ -23,7 +23,7 @@ import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import { Path, Svg, SvgProps } from "react-native-svg";
 
-export const AccordionToggleContainer = styled(View, {
+const AccordionToggleContainer = styled(View, {
   name: "AccordionToggle",
 
   animation: "fast",

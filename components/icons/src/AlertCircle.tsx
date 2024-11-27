@@ -123,4 +123,4 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
 
 Icon.displayName = "AlertCircle";
 
-export const AlertCircle = memo<IconProps>(themed(Icon));
+export const AlertCircle = memo<AlertCircleProps>(themed(Icon));

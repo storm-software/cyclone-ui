@@ -39,6 +39,8 @@ import { OpaqueColorValue } from "react-native";
 const ThemeableIconFrame = styled(View, {
   animation: "normal",
 
+  alignItems: "center",
+
   enterStyle: {
     opacity: 0,
     scale: 0.5

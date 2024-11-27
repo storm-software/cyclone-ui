@@ -19,13 +19,13 @@ import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
-import { InputField } from "@cyclone-ui/input-field";
 import { Pagination } from "@cyclone-ui/pagination";
+import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
-import { ArrowDownAZ, ArrowUpZA, Filter, X } from "@tamagui/lucide-icons";
+import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
@@ -171,8 +171,8 @@ export function DataTable<TData extends RowData>({
               );
             })}
           </Table.Body>
-          <Table.Footer>
-            {pageCount > 1 && (
+          {pageCount > 1 && (
+            <Table.Footer>
               <DataTablePagination
                 setPageIndex={table.setPageIndex}
                 nextPage={table.nextPage}
@@ -183,8 +183,8 @@ export function DataTable<TData extends RowData>({
                 pageSize={pagination.pageSize}
                 pageCount={pageCount}
               />
-            )}
-          </Table.Footer>
+            </Table.Footer>
+          )}
         </Table>
       </YStack>
     </DataTableContext.Provider>
@@ -328,31 +328,25 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
           </Adapt>
 
           <Popover.Content
-          animation="normal"
+            animation="normal"
             borderWidth={1}
             borderColor="$borderColor"
-            elevate={true}
-            >
+            elevate={true}>
             <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
 
             <Form name="columnFilter" onSubmit={handleFilterSubmit}>
               <YStack gap="$4">
-                <InputField
-                  name="search"
+                <SearchInputField
+                  name="filter"
                   value={currentFilter}
                   onChange={handleFilterChanged}>
-                  <InputField.Control>
-                    <InputField.Control.TextBox>
-                      <InputField.Control.TextBox.Value placeholder="Search" />
+                  <SearchInputField.Label>Filter</SearchInputField.Label>
+                  <SearchInputField.Control>
+                    <SearchInputField.Control.TextBox placeholder="Filter..." />
+                  </SearchInputField.Control>
+                </SearchInputField>
 
-                      <InputField.Icon onPress={handleFilterClear}>
-                        <X />
-                      </InputField.Icon>
-                    </InputField.Control.TextBox>
-                  </InputField.Control>
-                </InputField>
-
-                <CheckboxField name="filter" value={true}>
+                <CheckboxField name="row1" value={true}>
                   <XStack gap="$2">
                     <CheckboxField.Control />
                     <CheckboxField.Label>Filter</CheckboxField.Label>
@@ -407,7 +401,9 @@ export function DataTablePagination<TData extends RowData>({
             { name: "10", value: 10 },
             { name: "25", value: 25 },
             { name: "50", value: 50 },
-            { name: "100", value: 100 }
+            { name: "100", value: 100 },
+            { name: "500", value: 500 },
+            { name: "1000", value: 1000 }
           ]}
           value={pageSize}
           defaultValue={10}>

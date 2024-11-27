@@ -54,7 +54,7 @@ const SearchInputFieldControl = InputField.Control.styleable(
 );
 
 const SearchInputFieldControlTextBox = InputField.Control.TextBox.styleable<
-  Pick<InputValueProps, "placeholder" | "clearable">
+  Partial<Pick<InputValueProps, "placeholder" | "clearable">>
 >(
   (
     { children, placeholder = "Search...", clearable = true, ...props },

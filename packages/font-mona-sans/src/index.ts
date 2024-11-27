@@ -79,7 +79,7 @@ export const createMonaSansFont = <
       : "Mona Sans",
     size: fontSize,
     lineHeight: Object.fromEntries(
-      Object.entries(fontSize).map(([k, v]) => [k, v * 1.1])
+      Object.entries(fontSize).map(([k, v]) => [k, v * 0.8])
     ) as typeof fontSize,
     weight: {
       2: "200",

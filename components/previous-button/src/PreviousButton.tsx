@@ -16,31 +16,27 @@
  -------------------------------------------------------------------*/
 
 import { Button, type ButtonProps } from "@cyclone-ui/button";
-import { View } from "@tamagui/core";
-import { ChevronLeft } from "@tamagui/lucide-icons";
+import { LeftArrow } from "@cyclone-ui/icons";
+import { useHover } from "@storm-stack/hooks";
+import { useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
 export type PreviousButtonProps = ButtonProps;
 
 export const PreviousButton = Button.styleable(
   ({ children, ...props }: ButtonProps, forwardedRef) => {
+    const [hoverRef, hovering] = useHover();
+    const ref = useComposedRefs(forwardedRef, hoverRef);
+
     return (
       <Button
-        ref={forwardedRef}
-        group={"previous" as any}
+        ref={ref}
         aria-label="Previous"
         justifyContent="center"
         {...props}>
-        <XStack gap="$0.5" alignItems="center">
+        <XStack gap="$0.75" alignItems="center">
           <Button.Icon>
-            <View
-              animation="normal"
-              x={0}
-              $group-previous-hover={{
-                x: -8
-              }}>
-              <ChevronLeft marginBottom="$0.2" />
-            </View>
+            <LeftArrow isComplete={hovering} />
           </Button.Icon>
           <Button.Text>{children || "Previous"}</Button.Text>
         </XStack>

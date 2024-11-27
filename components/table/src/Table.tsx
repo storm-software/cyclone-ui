@@ -66,12 +66,19 @@ const TableRow = styled(ThemeableStack, {
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
-  overflow: "hidden",
   backgroundColor: "transparent",
-  paddingHorizontal: "$4",
+  paddingHorizontal: "$2",
 
   hoverStyle: {
     backgroundColor: "transparent"
+  },
+
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 3,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColorFocus"
   },
 
   variants: {
@@ -128,6 +135,15 @@ const TableCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   justifyContent: "flex-start",
+  paddingHorizontal: "$2",
+
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 3,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColorFocus"
+  },
 
   variants: {
     cellWidth: {
@@ -167,6 +183,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   justifyContent: "flex-start",
+  paddingHorizontal: "$2",
 
   variants: {
     cellWidth: {

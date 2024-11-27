@@ -44,3 +44,31 @@ export const Base: Story = {
     size: "$6"
   }
 };
+
+export const Up: Story = {
+  args: {
+    size: "$6",
+    pointing: "up"
+  }
+};
+
+export const Right: Story = {
+  args: {
+    size: "$6",
+    pointing: "right"
+  }
+};
+
+export const Down: Story = {
+  args: {
+    size: "$6",
+    pointing: "down"
+  }
+};
+
+export const Left: Story = {
+  args: {
+    size: "$6",
+    pointing: "left"
+  }
+};

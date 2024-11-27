@@ -97,12 +97,6 @@
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],
-      "@cyclone-ui/search-input-field": [
-        "components/search-input-field/src/index.ts"
-      ],
-      "@cyclone-ui/search-input-field/*": [
-        "components/search-input-field/src/*"
-      ],
       "@cyclone-ui/input/*": ["components/input/src/*"],
       "@cyclone-ui/label-text": ["components/label-text/src/index.ts"],
       "@cyclone-ui/label-text/*": ["components/label-text/src/*"],
@@ -136,6 +130,12 @@
       "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
       "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
       "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
+      "@cyclone-ui/search-input-field": [
+        "components/search-input-field/src/index.ts"
+      ],
+      "@cyclone-ui/search-input-field/*": [
+        "components/search-input-field/src/*"
+      ],
       "@cyclone-ui/select": ["components/select/src/index.ts"],
       "@cyclone-ui/select-field": ["components/select-field/src/index.ts"],
       "@cyclone-ui/select-field/*": ["components/select-field/src/*"],

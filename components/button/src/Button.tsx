@@ -585,7 +585,7 @@ const ButtonIcon = View.styleable(
         : ColorThemeName.BASE;
 
     return (
-      <View ref={forwardedRef} zIndex="$md">
+      <View ref={forwardedRef} zIndex="$md" alignItems="center">
         <Theme name={theme} componentName="ButtonIcon">
           <ThemeableIcon
             {...props}

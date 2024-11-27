@@ -16,32 +16,24 @@
  -------------------------------------------------------------------*/
 
 import { Button, type ButtonProps } from "@cyclone-ui/button";
-import { View } from "@tamagui/core";
-import { ChevronRight } from "@tamagui/lucide-icons";
+import { RightArrow } from "@cyclone-ui/icons";
+import { useHover } from "@storm-stack/hooks";
+import { useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
 export type NextButtonProps = ButtonProps;
 
 export const NextButton = Button.styleable(
   ({ children, ...props }: ButtonProps, forwardedRef) => {
+    const [hoverRef, hovering] = useHover();
+    const ref = useComposedRefs(forwardedRef, hoverRef);
+
     return (
-      <Button
-        ref={forwardedRef}
-        group={"next" as any}
-        aria-label="Next"
-        justifyContent="center"
-        {...props}>
-        <XStack gap="$0.5" alignItems="center">
+      <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
+        <XStack gap="$0.75" alignItems="center">
           <Button.Text>{children || "Next"}</Button.Text>
           <Button.Icon>
-            <View
-              animation="normal"
-              x={0}
-              $group-next-hover={{
-                x: 8
-              }}>
-              <ChevronRight marginBottom="$0.2" />
-            </View>
+            <RightArrow isComplete={hovering} />
           </Button.Icon>
         </XStack>
       </Button>
