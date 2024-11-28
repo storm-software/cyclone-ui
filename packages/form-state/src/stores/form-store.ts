@@ -21,7 +21,9 @@ import {
   StoreAtomsWithoutSelectors
 } from "@cyclone-ui/state";
 import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
+import { TamaguiElement } from "@tamagui/core";
 import { Atom, atom } from "jotai";
+import { LegacyRef } from "react";
 import {
   atomWithFieldsMessageList,
   atomWithFieldsMessageTypes,
@@ -217,6 +219,7 @@ export const formStore = createAtomStore<
       ValidationResults
     >,
     tabIndexes: {} as InferFormState<Record<string, any>, number>,
+    refs: {} as InferFormState<Record<string, any>, LegacyRef<TamaguiElement>>,
     options: {} as FormOptions
   },
   selectors: formStoreSelectors

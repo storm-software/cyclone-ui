@@ -1,11 +1,12 @@
-import { useCallback } from "react";
 import { Button } from "@cyclone-ui/button";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
 import { XStack, XStackProps } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
+import { useCallback } from "react";
 
 type ExtraPaginationProps = {
+  hideText?: boolean;
   pageCount: number;
   pageIndex: number;
   setPageIndex: (pageIndex: number) => void;
@@ -22,6 +23,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
     pageCount,
     pageIndex,
     theme,
+    hideText = false,
     setPageIndex,
     onFirst,
     onLast,
@@ -72,32 +74,40 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
     }, [setPageIndex, currentPage, pageCount]);
 
     return (
-      <XStack gap="$3" alignItems="center">
+      <XStack gap="$3" alignItems="center" flex={1}>
         <PreviousButton
           {...props}
+          hideText={true}
+          variant="tertiary"
           theme={theme}
+          size="$3.5"
+          paddingHorizontal="$0"
           disabled={currentPage === 1}
           onClick={onPrevious ?? handlePrevious}
         />
 
         <Button
-          variant="secondary"
-          theme={currentPage === 1 ? "accent" : theme}
+          variant={currentPage === 1 ? "secondary" : "tertiary"}
+          theme={theme}
+          size="$3.5"
+          paddingHorizontal="$0"
           {...props}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <SizableText color="$primary" size="$6">
+          <SizableText color="$secondary" size="$6">
             . . .
           </SizableText>
         )}
 
         {pageCount > 1 && (
           <Button
-            variant="secondary"
-            theme={currentPage === 2 ? "accent" : theme}
+            variant={currentPage === 2 ? "secondary" : "tertiary"}
+            theme={theme}
+            size="$3.5"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleSecond}>
             <Button.Text>
@@ -112,13 +122,15 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
 
         {pageCount > 2 && (
           <Button
-            variant="secondary"
-            theme={
+            variant={
               currentPage === 3 ||
               (currentPage > 3 && currentPage < pageCount - 1 && pageCount > 5)
-                ? "accent"
-                : theme
+                ? "secondary"
+                : "tertiary"
             }
+            theme={theme}
+            size="$3.5"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleThird}>
             <Button.Text>
@@ -133,13 +145,15 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
 
         {pageCount > 3 && (
           <Button
-            variant="secondary"
-            theme={
+            variant={
               (currentPage === 4 && pageCount < 5) ||
               currentPage === pageCount - 1
-                ? "accent"
-                : theme
+                ? "secondary"
+                : "tertiary"
             }
+            theme={theme}
+            size="$3.5"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleFourth}>
             <Button.Text>
@@ -153,23 +167,29 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <SizableText color="$primary" size="$6">
+          <SizableText color="$secondary" size="$6">
             . . .
           </SizableText>
         )}
 
         {pageCount > 4 && (
           <Button
-            variant="secondary"
-            theme={currentPage === pageCount ? "accent" : theme}
+            variant={currentPage === pageCount ? "secondary" : "tertiary"}
+            theme={theme}
             {...props}
+            size="$3.5"
+            paddingHorizontal="$0"
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>
         )}
         <NextButton
           {...props}
+          hideText={true}
+          variant="tertiary"
           theme={theme}
+          size="$3.5"
+          paddingHorizontal="$0"
           disabled={currentPage === pageCount}
           onClick={onNext ?? handleNext}
         />

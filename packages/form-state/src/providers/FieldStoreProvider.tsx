@@ -58,8 +58,11 @@ export const FieldProvider = <
   const formName = formStore.get.name();
 
   const defaultValue = useMemo(
-    () => getField(formOptions.defaultValues, options.name),
-    [formOptions.defaultValues, options.name]
+    () =>
+      (options.defaultValue !== undefined
+        ? options.defaultValue
+        : getField(formOptions.defaultValues, options.name)) ?? null,
+    [formOptions.defaultValues, options.defaultValue, options.name]
   );
   const fieldOptions = useMemo(
     () => deepMerge(formOptions.defaultFieldOptions, options),
@@ -110,7 +113,8 @@ export const FieldProvider = <
                 ...(fieldOptions.validate?.onBlur ?? ([] as TValidator[])),
                 ...(fieldOptions.required ? [requiredValidator] : [])
               ]
-            }
+            },
+            defaultValue
           } as FieldOptions<TFieldValue, TValidator>
         }}>
         {children}

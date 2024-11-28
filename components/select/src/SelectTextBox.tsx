@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { useComposedRefs } from "@tamagui/compose-refs";
 import {
   isClient,
@@ -19,8 +36,8 @@ import { getSelectSize, SelectContext } from "./utilities";
 const isPointerCoarse =
   isWeb && isClient ? window.matchMedia("(pointer:coarse)").matches : true;
 
-const InnerSelectTextBox = styled(View, {
-  name: "Select",
+const BaseSelectTextBox = styled(View, {
+  name: "SelectTrigger",
   context: SelectContext,
 
   tag: "button",
@@ -56,15 +73,15 @@ const InnerSelectTextBox = styled(View, {
   }
 });
 
-const SelectTextBoxImpl = InnerSelectTextBox.styleable(
+const SelectTextBoxImpl = BaseSelectTextBox.styleable(
   (
     { __scopeSelect, children, ...props }: SelectScopedProps<ViewProps>,
     forwardedRef
   ) => {
     const { disabled, size } = SelectContext.useStyledContext();
-    const context = useSelectContext("Select", __scopeSelect);
+    const context = useSelectContext("SelectTrigger", __scopeSelect);
     const itemParentContext = useSelectItemParentContext(
-      "Select",
+      "SelectTrigger",
       __scopeSelect
     );
     const composedRefs = useComposedRefs(
@@ -77,7 +94,7 @@ const SelectTextBoxImpl = InnerSelectTextBox.styleable(
     }
 
     return (
-      <InnerSelectTextBox
+      <BaseSelectTextBox
         type="button"
         id={itemParentContext.id}
         // aria-controls={context.contentId}
@@ -112,8 +129,11 @@ const SelectTextBoxImpl = InnerSelectTextBox.styleable(
               }
             })}>
         {children}
-      </InnerSelectTextBox>
+      </BaseSelectTextBox>
     );
+  },
+  {
+    staticConfig: { componentName: "SelectTrigger" }
   }
 );
 

@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
@@ -123,7 +140,11 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
           value={String(value)}
           textValue={String(value)}
           disabled={disabled}>
-          <SelectItemGroup disabled={disabled}>
+          <SelectItemGroup
+            disabled={disabled}
+            $sm={{
+              justifyContent: "space-between"
+            }}>
             <View width="$2" justifyContent="center">
               {disabled && <Lock size="$1.5" color="$colorDisabled" />}
               <TamaguiSelect.ItemIndicator>
@@ -183,6 +204,9 @@ const SelectItemsGroup = View.styleable(
 
         <TamaguiSelect.Content zIndex={200000}>
           <TamaguiSelect.ScrollUpButton
+            animation="quick"
+            animateOnly={["scale", "opacity"]}
+            enterStyle={{ opacity: 0.2, scale: 0.5 }}
             alignItems="center"
             justifyContent="center"
             position="relative"
@@ -203,16 +227,23 @@ const SelectItemsGroup = View.styleable(
           <TamaguiSelect.Viewport
             animation="quick"
             animateOnly={["transform", "scale", "opacity"]}
-            enterStyle={{ opacity: 0, scale: 0.9, y: -10 }}
-            exitStyle={{ opacity: 0, scale: 0.95, y: 10 }}
+            enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
+            exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
             backgroundColor="$base2"
-            minWidth={200}>
+            minWidth="$10"
+            borderRadius="$true"
+            shadowColor="$shadowColor"
+            shadowOffset={{ width: 0, height: 4 }}
+            shadowRadius={30}>
             <TamaguiSelect.Group paddingVertical="$2">
               {children}
             </TamaguiSelect.Group>
           </TamaguiSelect.Viewport>
 
           <TamaguiSelect.ScrollDownButton
+            animation="quick"
+            animateOnly={["scale", "opacity"]}
+            enterStyle={{ opacity: 0.2, scale: 0.5 }}
             alignItems="center"
             justifyContent="center"
             position="relative"

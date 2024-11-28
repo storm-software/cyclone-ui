@@ -46,7 +46,7 @@ import {
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { ThemeableStack, XStack } from "@tamagui/stacks";
+import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo, type FunctionComponent } from "react";
 import { GestureResponderEvent } from "react-native";
@@ -173,7 +173,7 @@ export const ButtonContext = createStyledContext<ButtonContextProps>({
   animate: true
 });
 
-const ButtonFrame = styled(XStack, {
+const ButtonFrame = styled(View, {
   name: "Button",
   context: ButtonContext,
 
@@ -189,8 +189,9 @@ const ButtonFrame = styled(XStack, {
   borderColor: "$borderColor",
   borderWidth: 1,
   flexWrap: "nowrap",
+  flexDirection: "row",
   flex: 1,
-  flexShrink: 1,
+  // flexShrink: 1,
   overflow: "hidden",
 
   hoverStyle: {
@@ -388,7 +389,6 @@ const ButtonTextFrame = styled(LabelText, {
   textTransform: "capitalize",
   whiteSpace: "nowrap",
   textOverflow: "ellipsis",
-  display: "inline-flex",
 
   // flexGrow 1 leads to inconsistent native style where text pushes to start of view
   flexGrow: 0,
@@ -585,7 +585,13 @@ const ButtonIcon = View.styleable(
         : ColorThemeName.BASE;
 
     return (
-      <View ref={forwardedRef} zIndex="$md" alignItems="center">
+      <View
+        ref={forwardedRef}
+        zIndex="$md"
+        alignItems="center"
+        // flexGrow 1 leads to inconsistent native style where text pushes to start of view
+        flexGrow={0}
+        flexShrink={1}>
         <Theme name={theme} componentName="ButtonIcon">
           <ThemeableIcon
             {...props}

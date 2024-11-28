@@ -19,9 +19,13 @@ import { Field } from "@cyclone-ui/field";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Select } from "@cyclone-ui/select";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
-import { GetProps, withStaticProperties } from "@tamagui/core";
+import {
+  GetProps,
+  TamaguiTextElement,
+  withStaticProperties
+} from "@tamagui/core";
 import { Atom, useAtomValue } from "jotai";
-import { PropsWithChildren, useCallback } from "react";
+import { PropsWithChildren, useCallback, useLayoutEffect, useRef } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -49,7 +53,7 @@ const SelectFieldItem = (
 const SelectFieldControl = Select.styleable<
   Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">
 >(({ placeholder, children, ...props }, forwardedRef) => {
-  const { focus, blur, change } = useFieldActions();
+  const { focus, blur, change, mount } = useFieldActions();
   const handleChange = useCallback(
     (event: CustomEvent<string | null>) => {
       change(event.detail);
@@ -66,6 +70,11 @@ const SelectFieldControl = Select.styleable<
   const formattedValue = store.get.formattedValue();
   const initialValue = store.get.initialValue();
 
+  const selectRef = useRef<TamaguiTextElement | null>(null);
+  useLayoutEffect(() => {
+    mount(selectRef);
+  }, [mount]);
+
   return (
     <Select
       ref={forwardedRef}
@@ -80,7 +89,11 @@ const SelectFieldControl = Select.styleable<
       defaultValue={String(initialValue ?? "")}>
       <Select.TextBox>
         {children}
-        <Select.TextBox.Value placeholder={placeholder} placeholding={!value} />
+        <Select.TextBox.Value
+          ref={selectRef}
+          placeholder={placeholder}
+          placeholding={!value}
+        />
 
         <Field.ThemeIcon />
       </Select.TextBox>

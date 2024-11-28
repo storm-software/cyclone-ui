@@ -48,7 +48,7 @@ const SelectGroup = styled(XGroup, {
   borderWidth: 1,
   borderColor: "$borderColor",
   outlineStyle: "none",
-  gap: "$1.25",
+  gap: "$0",
 
   ...(isWeb
     ? {
@@ -199,8 +199,9 @@ const SelectTrigger = Button.styleable<{
         animation="slow"
         rotate={rotate ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
-        paddingHorizontal="$0.2"
-        flexBasis="6%">
+        paddingHorizontal="$0.6"
+        flexBasis="6%"
+        minWidth="$4">
         <Button
           ref={forwardedRef}
           variant="ghost"
@@ -230,8 +231,6 @@ const BaseSelect = styled(TamaguiSelect, {
   cursor: "pointer",
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
-  flex: 1,
   borderColor: "transparent",
   backgroundColor: "transparent",
 
@@ -249,6 +248,46 @@ const BaseSelect = styled(TamaguiSelect, {
     disabled: false
   }
 });
+
+const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
+  ({ children, ...props }, forwardedRef) => {
+    const { focused, disabled } = SelectContext.useStyledContext();
+
+    return (
+      <SelectGroup
+        group={"select" as any}
+        focused={focused}
+        disabled={disabled}
+        minWidth="$10">
+        <SelectTextBox {...props}>
+          <XGroup.Item>
+            <View flex={1}>{children}</View>
+          </XGroup.Item>
+
+          <XGroup.Item>
+            <SelectSeparator
+              ref={forwardedRef}
+              focused={focused}
+              disabled={disabled}
+              $group-select-hover={{
+                borderColor: disabled
+                  ? "$borderColorDisabled"
+                  : focused
+                    ? "$borderColorFocus"
+                    : "$accent10"
+              }}
+            />
+          </XGroup.Item>
+
+          <XGroup.Item>
+            <SelectTrigger />
+          </XGroup.Item>
+        </SelectTextBox>
+      </SelectGroup>
+    );
+  },
+  { staticConfig: { componentName: "Select" } }
+);
 
 const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
   (
@@ -287,45 +326,17 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>
-        <SelectGroup
-          group={"select" as any}
-          focused={focused}
+        <BaseSelect
+          id={name}
+          ref={forwardedRef}
+          disablePreventBodyScroll={true}
+          {...props}
+          onValueChange={handleChanged}
+          onOpenChange={handleOpenChanged}
+          open={focused}
           disabled={disabled}>
-          <XGroup.Item>
-            <View flex={1}>
-              <BaseSelect
-                id={name}
-                ref={forwardedRef}
-                disablePreventBodyScroll={true}
-                {...props}
-                onValueChange={handleChanged}
-                onOpenChange={handleOpenChanged}
-                open={focused}
-                disabled={disabled}>
-                {children}
-              </BaseSelect>
-            </View>
-          </XGroup.Item>
-
-          <XGroup.Item>
-            <SelectSeparator
-              ref={forwardedRef}
-              focused={focused}
-              disabled={disabled}
-              $group-select-hover={{
-                borderColor: disabled
-                  ? "$borderColorDisabled"
-                  : focused
-                    ? "$borderColorFocus"
-                    : "$accent10"
-              }}
-            />
-          </XGroup.Item>
-
-          <XGroup.Item>
-            <SelectTrigger />
-          </XGroup.Item>
-        </SelectGroup>
+          {children}
+        </BaseSelect>
       </SelectContext.Provider>
     );
   },
@@ -333,6 +344,8 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
 );
 
 export const Select = withStaticProperties(SelectGroupImpl, {
-  TextBox: SelectTextBox,
+  TextBox: withStaticProperties(SelectTextBoxImpl, {
+    Value: SelectTextBox.Value
+  }),
   Items: SelectItems
 });

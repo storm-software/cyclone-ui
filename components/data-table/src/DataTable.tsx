@@ -23,6 +23,8 @@ import { Pagination } from "@cyclone-ui/pagination";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
+import { titleCase } from "@storm-stack/string-fns/title-case";
+import type { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
@@ -50,9 +52,9 @@ import {
   SetStateAction,
   useCallback,
   useLayoutEffect,
+  useMemo,
   useState
 } from "react";
-import { titleCase } from "title-case";
 
 export type DataTableContextProps = {
   sorting: SortingState;
@@ -173,16 +175,19 @@ export function DataTable<TData extends RowData>({
           </Table.Body>
           {pageCount > 1 && (
             <Table.Footer>
-              <DataTablePagination
-                setPageIndex={table.setPageIndex}
-                nextPage={table.nextPage}
-                previousPage={table.previousPage}
-                firstPage={table.firstPage}
-                lastPage={table.lastPage}
-                pageIndex={pagination.pageIndex}
-                pageSize={pagination.pageSize}
-                pageCount={pageCount}
-              />
+              <Table.Row header={true}>
+                <DataTablePagination
+                  setPageIndex={table.setPageIndex}
+                  nextPage={table.nextPage}
+                  previousPage={table.previousPage}
+                  firstPage={table.firstPage}
+                  lastPage={table.lastPage}
+                  rowCount={data.length}
+                  pageIndex={pagination.pageIndex}
+                  pageSize={pagination.pageSize}
+                  pageCount={pageCount}
+                />
+              </Table.Row>
             </Table.Footer>
           )}
         </Table>
@@ -207,7 +212,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
   return (
     <SizableText
-      animation="medium"
+      animation="normal"
       fontFamily="$body"
       color="$color"
       $group-row-hover={{ color: "$primary" }}>
@@ -261,18 +266,18 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
       borderRightWidth={1}>
       <XStack gap="$2" onPress={handleSorting} flex={1} cursor="pointer">
         <SizableText
-          animation="medium"
+          animation="normal"
           fontFamily="$label"
           color="$primary"
           size="$6"
           $group-header-hover={{ color: "$fg" }}>
-          {titleCase(id.replaceAll("_", " "))}
+          {titleCase(id.replaceAll("_", "  "))}
         </SizableText>
         {isSorted && !desc && (
           <XStack gap="$0.25" alignItems="center">
             <ArrowDownAZ size="$1" color="$primary" />
             <SizableText
-              animation="medium"
+              animation="normal"
               fontFamily="$label"
               fontWeight="$6"
               color="$primary"
@@ -285,7 +290,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
           <XStack gap="$0.25" alignItems="center">
             <ArrowUpZA size="$1" color="$primary" />
             <SizableText
-              animation="medium"
+              animation="normal"
               fontFamily="$label"
               fontWeight="$6"
               color="$primary"
@@ -375,6 +380,7 @@ export type DataTablePaginationProps<TData extends RowData> = Pick<
 > &
   Pick<PaginationState, "pageIndex" | "pageSize"> & {
     pageCount: number;
+    rowCount: number;
   };
 
 export function DataTablePagination<TData extends RowData>({
@@ -383,36 +389,114 @@ export function DataTablePagination<TData extends RowData>({
   previousPage,
   firstPage,
   lastPage,
+  rowCount,
   pageIndex,
   pageSize,
-  pageCount
+  pageCount,
+  ...props
 }: DataTablePaginationProps<TData>) {
+  const pageSizes = useMemo(() => {
+    const result = [] as SelectOption<number>[];
+    if (rowCount >= 5) {
+      result.push({
+        index: result.length,
+        name: "5",
+        value: 5,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 10) {
+      result.push({
+        index: result.length,
+        name: "10",
+        value: 10,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 25) {
+      result.push({
+        index: result.length,
+        name: "25",
+        value: 25,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 50) {
+      result.push({
+        index: result.length,
+        name: "50",
+        value: 50,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 100) {
+      result.push({
+        index: result.length,
+        name: "100",
+        value: 100,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 500) {
+      result.push({
+        index: result.length,
+        name: "500",
+        value: 500,
+        selected: false,
+        disabled: false
+      });
+    }
+    if (rowCount >= 1000) {
+      result.push({
+        index: result.length,
+        name: "1000",
+        value: 1000,
+        selected: false,
+        disabled: false
+      });
+    }
+
+    result.push({
+      index: result.length,
+      name: String(rowCount),
+      value: rowCount,
+      selected: false,
+      disabled: false
+    });
+
+    result.sort((a, b) => a.value - b.value);
+
+    return result;
+  }, []);
+
   return (
     <XStack
       group={"header" as any}
       flexGrow={1}
       justifyContent="space-between"
-      alignItems="center">
-      <Form name="pageSizing">
-        <SelectField
-          name="pageSize"
-          options={[
-            { name: "5", value: 5 },
-            { name: "10", value: 10 },
-            { name: "25", value: 25 },
-            { name: "50", value: 50 },
-            { name: "100", value: 100 },
-            { name: "500", value: 500 },
-            { name: "1000", value: 1000 }
-          ]}
-          value={pageSize}
-          defaultValue={10}>
-          <XStack alignItems="center" gap="$3">
-            <SelectField.Label>Items per page</SelectField.Label>
-            <SelectField.Control placeholder="Size" />
-          </XStack>
-        </SelectField>
-      </Form>
+      alignItems="center"
+      paddingHorizontal="$1">
+      <View flex={1}>
+        <Form
+          name="pageSizing"
+          defaultValues={{
+            pageSize
+          }}>
+          <SelectField name="pageSize" items={pageSizes} size="$4">
+            <XStack alignItems="center" gap="$4">
+              <SelectField.Label hideOptional={true}>
+                Per page
+              </SelectField.Label>
+              <SelectField.Control placeholder="Size" />
+            </XStack>
+          </SelectField>
+        </Form>
+      </View>
 
       <Pagination
         pageIndex={pageIndex}

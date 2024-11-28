@@ -1041,6 +1041,12 @@ importers:
 
   components/data-table:
     dependencies:
+      '@storm-stack/string-fns':
+        specifier: latest
+        version: 0.17.0
+      '@storm-stack/types':
+        specifier: latest
+        version: 0.30.0
       '@tamagui/adapt':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1080,9 +1086,6 @@ importers:
       '@tanstack/table-core':
         specifier: ^8.17.3
         version: 8.20.5
-      react-native-svg:
-        specifier: ^15.8.0
-        version: 15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       title-case:
         specifier: ^4.3.1
         version: 4.3.2
@@ -1664,12 +1667,12 @@ importers:
 
   components/next-button:
     dependencies:
+      '@storm-stack/hooks':
+        specifier: latest
+        version: 0.21.0(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
       '@tamagui/core':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/lucide-icons':
-        specifier: ^1.116.15
-        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

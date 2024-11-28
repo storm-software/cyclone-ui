@@ -23,8 +23,9 @@ import {
   SelectOption,
   ValidationDetails
 } from "@storm-stack/types";
-import { SizeTokens } from "@tamagui/core";
+import { SizeTokens, TamaguiElement } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
+import { LegacyRef } from "react";
 
 /**
  * "server" is only intended for SSR/SSG validation and should not execute anything
@@ -220,6 +221,11 @@ export type FormBaseState<
   tabIndexes: InferFormState<TFormValues, number>;
 
   /**
+   * The references of the form's fields.
+   */
+  refs: InferFormState<TFormValues, LegacyRef<TamaguiElement>>;
+
+  /**
    * The field group's initial values.
    */
   initialValues: FormValuesState<TFormValues>;
@@ -339,6 +345,16 @@ export type FieldBaseState<TFieldValue = any> = {
    * The results of the field validation.
    */
   validationResults: InferFieldState<TFieldValue, ValidationResults>;
+
+  /**
+   * The tab index of the field.
+   */
+  tabIndex: InferFieldState<TFieldValue, number>;
+
+  /**
+   * The reference of the field.
+   */
+  ref: InferFieldState<TFieldValue, LegacyRef<TamaguiElement>>;
 
   /**
    * The field group's initial values.

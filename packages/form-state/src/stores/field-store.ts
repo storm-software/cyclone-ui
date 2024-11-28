@@ -201,6 +201,10 @@ export const createFieldStore = <TFieldValue>(name: string) => {
         formStore.api.atom.validationResultsFields,
         optic => optic.path(...path)
       ),
+      tabIndex: focusAtom(formStore.api.atom.tabIndexes, optic =>
+        optic.path(...path)
+      ),
+      ref: focusAtom(formStore.api.atom.refs, optic => optic.path(...path)),
       initialValue: focusAtom(formStore.api.atom.initialValues, optic =>
         optic.path(...path)
       ),
@@ -208,7 +212,10 @@ export const createFieldStore = <TFieldValue>(name: string) => {
         optic.path(...path)
       ),
       value: focusAtom(formStore.api.atom.values, optic => optic.path(...path)),
-      options: {} as FieldOptions
+      options: {
+        name,
+        defaultValue: null
+      } as FieldOptions
     },
     selectors: fieldStoreSelectors
   });

@@ -25,7 +25,7 @@ import {
   useFieldStore,
   Validator
 } from "@cyclone-ui/form-state";
-import { getSized } from "@cyclone-ui/helpers";
+import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Spinner } from "@cyclone-ui/spinner";
 import { getIconByTheme } from "@cyclone-ui/themeable-icon";
@@ -307,11 +307,16 @@ const FieldLabelText = styled(LabelText, {
         color: "$colorDisabled",
         cursor: "not-allowed"
       }
+    },
+
+    size: {
+      "...size": getFontSizedFromSize
     }
   } as const,
 
   defaultVariants: {
-    disabled: false
+    disabled: false,
+    size: "$true"
   }
 });
 
@@ -322,6 +327,7 @@ const LabelXStack = styled(XStack, {
   gap: "$1.2",
   flex: 1,
   alignItems: "center",
+  paddingBottom: "$0.25",
 
   variants: {
     disabled: {
@@ -357,6 +363,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     const store = useFieldStore();
     const fieldDisabled = store.get.disabled();
     const name = store.get.name();
+    const size = store.get.size();
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -368,6 +375,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <LabelXStack disabled={disabled}>
           <FieldLabelText
             {...props}
+            size={size}
             disabled={disabled}
             theme={ColorThemeName.BASE}>
             {children}

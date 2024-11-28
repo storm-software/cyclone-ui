@@ -44,11 +44,11 @@ export const getSelectSize = (
     };
   }
 
-  const xSize = getSpaced(val);
+  const paddingHorizontal = getSpaced(val);
   const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
 
   return {
-    paddingHorizontal: xSize,
+    paddingHorizontal: 0,
     height: val,
     borderRadius: props.circular ? 100_000 : radiusToken
   };

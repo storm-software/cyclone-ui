@@ -19,7 +19,7 @@ import { Field } from "@cyclone-ui/field";
 import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { Theme, withStaticProperties } from "@tamagui/core";
-import { useCallback } from "react";
+import { useCallback, useLayoutEffect } from "react";
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -83,10 +83,14 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const initialValue = store.get.initialValue();
     const options = store.get.options();
 
-    const { change } = useFieldActions();
+    const { change, mount } = useFieldActions();
     const handleClear = useCallback(() => {
       change(options?.defaultValue);
     }, [change, options?.defaultValue]);
+
+    useLayoutEffect(() => {
+      mount(forwardedRef);
+    }, [mount]);
 
     return (
       <Theme name={theme}>

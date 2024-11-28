@@ -31,7 +31,7 @@ export type AlignCells = {
 
 export type AlignHeaderCells = AlignCells;
 
-const TableContext = createStyledContext<{
+export type TableContextProps = {
   cellWidth: SizeTokens | number;
   cellHeight: SizeTokens | number;
   alignHeaderCells: {
@@ -43,7 +43,9 @@ const TableContext = createStyledContext<{
     x: "center" | "start" | "end";
   };
   borderColor: string;
-}>({
+};
+
+const TableContext = createStyledContext<TableContextProps>({
   cellWidth: "$8",
   cellHeight: "$8",
   alignHeaderCells: { x: "start", y: "center" },

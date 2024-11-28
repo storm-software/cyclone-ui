@@ -21,10 +21,17 @@ import { useHover } from "@storm-stack/hooks";
 import { useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
-export type PreviousButtonProps = ButtonProps;
+export type PreviousButtonProps = ButtonProps & {
+  hideText?: boolean;
+};
 
-export const PreviousButton = Button.styleable(
-  ({ children, ...props }: ButtonProps, forwardedRef) => {
+export const PreviousButton = Button.styleable<{
+  hideText?: boolean;
+}>(
+  (
+    { children, hideText = false, ...props }: PreviousButtonProps,
+    forwardedRef
+  ) => {
     const [hoverRef, hovering] = useHover();
     const ref = useComposedRefs(forwardedRef, hoverRef);
 
@@ -38,7 +45,7 @@ export const PreviousButton = Button.styleable(
           <Button.Icon>
             <LeftArrow isComplete={hovering} />
           </Button.Icon>
-          <Button.Text>{children || "Previous"}</Button.Text>
+          {!hideText && <Button.Text>{children || "Previous"}</Button.Text>}
         </XStack>
       </Button>
     );
