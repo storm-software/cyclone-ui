@@ -20,6 +20,7 @@ import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
 import { Pagination } from "@cyclone-ui/pagination";
+import { Popover } from "@cyclone-ui/popover";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
@@ -27,7 +28,6 @@ import { titleCase } from "@storm-stack/string-fns/title-case";
 import type { SelectOption } from "@storm-stack/types/utility-types/form";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
-import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import {
@@ -333,12 +333,14 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
                   </SearchInputField.Control>
                 </SearchInputField>
 
-                <CheckboxField name="selectAll" value={true}>
-                  <XStack gap="$2">
-                    <CheckboxField.Control />
-                    <CheckboxField.Label>Filter</CheckboxField.Label>
-                  </XStack>
-                </CheckboxField>
+                <Popover.Content.ScrollView maxHeight={300}>
+                  <CheckboxField name="selectAll" value={true}>
+                    <XStack gap="$2">
+                      <CheckboxField.Control />
+                      <CheckboxField.Label>Filter</CheckboxField.Label>
+                    </XStack>
+                  </CheckboxField>
+                </Popover.Content.ScrollView>
 
                 <Popover.Content.Close asChild={true}>
                   <Form.Reset asChild={true}>

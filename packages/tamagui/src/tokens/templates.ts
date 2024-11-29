@@ -230,23 +230,12 @@ export const maskOptions = {
     },
     skip: skipShadowsAndSpecificColors
   },
-  table: {
+  popover: {
     ...baseMaskOptions,
     overrideStrategy: "swap",
     override: {
       ...colors,
-      color: ColorPaletteShades.PRIMARY - 4,
-      borderColor: ColorPaletteShades.BACKGROUND + 2
-    },
-    skip: skipShadowsAndSpecificColors
-  },
-  tableHeader: {
-    ...baseMaskOptions,
-    overrideStrategy: "swap",
-    override: {
-      ...colors,
-      color: ColorPaletteShades.BACKGROUND + 4,
-      borderColor: ColorPaletteShades.BACKGROUND + 2
+      borderColor: ColorPaletteShades.PRIMARY
     },
     skip: skipShadowsAndSpecificColors
   },

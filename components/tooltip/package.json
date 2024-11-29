@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/field",
+  "name": "@cyclone-ui/tooltip",
   "version": "0.5.0",
   "type": "module",
-  "description": "A Next Button component meant to be shared in many other components",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/field"
+    "directory": "components/tooltip"
   },
   "private": false,
   "main": "dist/cjs",
@@ -32,12 +32,11 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
+    "@floating-ui/react": "0.26.28",
     "@tamagui/core": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/label": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@tamagui/create-context": "^1.116.15",
+    "@tamagui/popover": "^1.116.15",
+    "@tamagui/tooltip": "^1.116.15"
   },
   "devDependencies": {
     "react": "18.3.1",

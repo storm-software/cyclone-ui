@@ -15,14 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import { getSpaced } from "@cyclone-ui/helpers";
 import { Adapt } from "@tamagui/adapt";
 import {
   createStyledContext,
   SizeTokens,
   styled,
-  VariantSpreadExtras,
-  ViewProps,
   withStaticProperties
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
@@ -96,10 +93,10 @@ const PopoverContent = styled(TamaguiPopover.Content, {
 
   justifyContent: "center",
   backgroundColor: "$base3",
-  padding: 12,
+  padding: "$3",
   borderWidth: 1,
   borderColor: "$borderColor",
-  // maxWidth: "90%",
+  borderRadius: "$true",
   marginHorizontal: "auto",
 
   enterStyle: { y: -10, opacity: 0 },
@@ -115,17 +112,6 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   ],
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
-        const space = getSpaced(val);
-
-        return {
-          padding: space * 0.5,
-          borderRadius: config.tokens.radius[val]
-        };
-      }
-    },
-
     elevated: {
       true: {
         shadowColor: "$shadowColor",
@@ -137,7 +123,6 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     elevated: true
   }
 });

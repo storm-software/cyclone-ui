@@ -29,6 +29,7 @@ import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Spinner } from "@cyclone-ui/spinner";
 import { getIconByTheme } from "@cyclone-ui/themeable-icon";
+import { Tooltip } from "@cyclone-ui/tooltip";
 import { ValidationText } from "@cyclone-ui/validation-text";
 import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import type {
@@ -41,7 +42,6 @@ import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import { Tooltip } from "@tamagui/tooltip";
 import { ForwardedRef, useMemo } from "react";
 
 const FieldGroupFrame = styled(ThemeableStack, {
@@ -485,18 +485,7 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
 
     return (
       <Tooltip groupId="field-icon">
-        <Tooltip.Content
-          enterStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
-          exitStyle={{ x: 0, y: -5, opacity: 0, scale: 0.9 }}
-          animation="normal"
-          backgroundColor="$base2"
-          borderWidth={1}
-          borderColor="$borderColor">
-          <Tooltip.Arrow
-            backgroundColor="$base2"
-            borderWidth={1}
-            borderColor="$borderColor"
-          />
+        <Tooltip.Content>
           <ValidationText
             color="$primary"
             messages={messages}

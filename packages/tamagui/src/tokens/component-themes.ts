@@ -208,17 +208,12 @@ export const componentThemes = {
 
   Tooltip: {
     mask: "inverse",
-    ...maskOptions.component
+    ...maskOptions.popover
   },
 
-  TooltipContent: {
-    mask: "identity",
-    ...maskOptions.component
-  },
-
-  TooltipArrow: {
-    mask: "identity",
-    ...maskOptions.component
+  Popover: {
+    mask: "inverse",
+    ...maskOptions.popover
   },
 
   SheetOverlay: overlayThemeDefinitions,
@@ -352,11 +347,11 @@ export const componentThemes = {
 
   Table: {
     mask: "identity",
-    ...maskOptions.table
+    ...maskOptions.component
   },
 
   TableHeader: {
     mask: "identity",
-    ...maskOptions.tableHeader
+    ...maskOptions.component
   }
 } satisfies ThemeDefinitions<keyof Masks>;
