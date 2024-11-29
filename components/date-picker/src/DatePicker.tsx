@@ -317,10 +317,17 @@ const DayPicker = () => {
                             : "outlined"
                     }
                     borderColor={day.now ? "$primary" : undefined}
-                    flexBasis="14%"
                     padding="$1"
+                    flexBasis="14%"
                     borderRadius={0}
-                    disabled={!day.inCurrentMonth}>
+                    disabled={!day.inCurrentMonth}
+                    hoverStyle={
+                      day.inCurrentMonth
+                        ? {
+                            backgroundColor: "$accent10"
+                          }
+                        : {}
+                    }>
                     <Button.Text>{day.day}</Button.Text>
                   </Button>
                 ))}
@@ -542,11 +549,15 @@ const ItemPicker = ({
   ...rest
 }: ItemPickerProps) => {
   return (
-    <View flexGrow={1} flexBasis={flexBasis}>
+    <View group={"item" as any} flexGrow={1} flexBasis={flexBasis}>
       <Button
         key={key}
         variant={active ? "primary" : "secondary"}
         paddingVertical="$3"
+        $group-item-hover={{
+          theme: ColorThemeName.ACCENT,
+          variant: "primary"
+        }}
         {...rest}>
         <Button.Text>{children}</Button.Text>
       </Button>
@@ -705,7 +716,6 @@ const DatePickerProvider = ({
       return [];
     }
 
-    date.setMonth(date.getMonth() - 1);
     return [date];
   }, [date]);
 

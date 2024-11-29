@@ -73,20 +73,11 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
     const store = useFieldStore();
 
     const size = store.get.size();
-
-    const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -1 }),
-      [size]
-    );
     const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
 
     return (
       <View flexBasis="6%">
-        <DatePicker.Trigger
-          ref={forwardedRef}
-          {...props}
-          size={adjustedTrigger}
-          onPress={focus}>
+        <DatePicker.Trigger ref={forwardedRef} {...props} onPress={focus}>
           <DatePicker.Trigger.Icon>
             <Calendar size={adjustedIcon} />
           </DatePicker.Trigger.Icon>

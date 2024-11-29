@@ -17,7 +17,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { getRadius, getSpaced } from "@cyclone-ui/helpers";
+import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
@@ -30,6 +30,7 @@ import { XGroup } from "@tamagui/group";
 import { X } from "@tamagui/lucide-icons";
 import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
+import { useMemo } from "react";
 import { InputValue } from "./InputValue";
 import { InputContextProps } from "./types";
 import { getInputSize, InputContext } from "./utilities";
@@ -46,7 +47,7 @@ const InputGroup = styled(XGroup, {
   borderColor: "$borderColor",
   outlineWidth: 0,
   outlineColor: "transparent",
-  gap: "$1.25",
+  gap: "$0.6",
 
   ...(isWeb
     ? {
@@ -311,18 +312,24 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
 const InputTrigger = Button.styleable<{
   forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
 }>(
-  ({ children, flexBasis, ...props }, forwardedRef) => {
-    const { circular } = InputContext.useStyledContext();
+  ({ children, flexBasis = "6%", ...props }, forwardedRef) => {
+    const { circular, size } = InputContext.useStyledContext();
     const radius = getRadius("$true", { circular, scale: 0.75 });
     const theme = useThemeName();
+
+    const adjustedTrigger = useMemo(
+      () => getSized(size, { shift: -3 }),
+      [size]
+    );
 
     return (
       <XGroup.Item>
         <View
-          paddingHorizontal="$1.25"
+          paddingRight="$0.6"
           display="flex"
           flexBasis={flexBasis}
-          flexShrink={1}>
+          flexShrink={1}
+          minWidth="$4">
           <Button
             ref={forwardedRef}
             variant="ghost"
@@ -330,7 +337,8 @@ const InputTrigger = Button.styleable<{
             color={
               theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
             }
-            {...props}>
+            {...props}
+            size={adjustedTrigger}>
             {children}
           </Button>
         </View>
