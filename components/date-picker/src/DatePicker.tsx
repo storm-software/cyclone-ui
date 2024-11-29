@@ -105,7 +105,7 @@ const swapOnClick = <D extends any = any>(d: D) => {
   return d;
 };
 
-export function useDateAnimation({
+function useDateAnimation({
   listenTo
 }: {
   listenTo: "years" | "year" | "month";
@@ -324,7 +324,7 @@ const DayPicker = () => {
                     hoverStyle={
                       day.inCurrentMonth
                         ? {
-                            backgroundColor: "$accent10"
+                            backgroundColor: "$fg"
                           }
                         : {}
                     }>
@@ -340,7 +340,7 @@ const DayPicker = () => {
   );
 };
 
-export function YearRangeSlider() {
+function YearRangeSlider() {
   const {
     data: { years },
     propGetters: { previousYearsButton, nextYearsButton }
@@ -387,7 +387,7 @@ export function YearRangeSlider() {
   );
 }
 
-export function YearSlider() {
+function YearSlider() {
   const {
     data: { calendars },
     propGetters: { subtractOffset }
@@ -549,19 +549,14 @@ const ItemPicker = ({
   ...rest
 }: ItemPickerProps) => {
   return (
-    <View group={"item" as any} flexGrow={1} flexBasis={flexBasis}>
-      <Button
-        key={key}
-        variant={active ? "primary" : "secondary"}
-        paddingVertical="$3"
-        $group-item-hover={{
-          theme: ColorThemeName.ACCENT,
-          variant: "primary"
-        }}
-        {...rest}>
-        <Button.Text>{children}</Button.Text>
-      </Button>
-    </View>
+    <Button
+      key={key}
+      variant={active ? "primary" : "secondary"}
+      flexGrow={1}
+      flexBasis={flexBasis}
+      {...rest}>
+      <Button.Text>{children}</Button.Text>
+    </Button>
   );
 };
 
@@ -597,6 +592,7 @@ const MonthPicker = ({
             active={month.active}
             key={month.$date.toString()}
             flexBasis="30%"
+            minWidth={150}
             {...swapOnClick(
               monthButton(month, {
                 onClick: onChange as any
@@ -610,7 +606,7 @@ const MonthPicker = ({
   );
 };
 
-export function YearPicker({
+function YearPicker({
   onChange = () => {}
 }: {
   onChange?: (e: MouseEvent, date: Date) => void;
