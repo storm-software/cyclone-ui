@@ -15,8 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-/* eslint-disable no-restricted-syntax */
-
 import type {
   MultiThemeColorConfig,
   SingleThemeColorConfig
@@ -106,7 +104,6 @@ export const initialTheme = (
         : [colors.dark, colors.light]
     )
     .gamma(themeType === ColorThemeType.DARK ? 1.5 : 0.5)
-    .gamma(1)
     .colors(12)
     .slice(1, -3)
     .reduce(
@@ -235,7 +232,6 @@ export const writeMultiTheme = async (
       light: preparedColors.light.background,
       dark: preparedColors.light.foreground
     },
-
     ColorThemeType.LIGHT
   );
   for (const type of Object.keys(preparedColors.light).filter(
@@ -262,7 +258,6 @@ export const writeMultiTheme = async (
       dark: preparedColors.dark.background,
       light: preparedColors.dark.foreground
     },
-
     ColorThemeType.DARK
   );
   for (const type of Object.keys(preparedColors.dark).filter(

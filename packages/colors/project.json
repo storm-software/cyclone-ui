@@ -6,7 +6,7 @@
   "implicitDependencies": ["cli"],
   "targets": {
     "build-base": {
-      "cache": true,
+      "cache": false,
       "executor": "nx:run-commands",
       "inputs": ["{workspaceRoot}/storm.json", "^production"],
       "outputs": ["{projectRoot}/src/schemes/*"],

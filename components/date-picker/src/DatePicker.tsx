@@ -19,6 +19,7 @@ import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Input, InputContextProps } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
+import { Popover } from "@cyclone-ui/popover";
 import type { DPDay, DPPropGetter } from "@rehookify/datepicker";
 import {
   DatePickerProvider as RehookifyDatePickerProvider,
@@ -26,7 +27,6 @@ import {
 } from "@rehookify/datepicker";
 import { StormDate } from "@storm-stack/date-time/storm-date";
 import { StormDateTime } from "@storm-stack/date-time/storm-date-time";
-import { Adapt } from "@tamagui/adapt";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
   createStyledContext,
@@ -36,7 +36,6 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
-import { Popover } from "@tamagui/popover";
 import { XStack, YStack } from "@tamagui/stacks";
 import {
   PropsWithChildren,
@@ -764,34 +763,7 @@ const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
 
 const DatePickerPopoverContent = styled(Popover.Content, {
   name: "DatePickerPopover",
-  context: DatePickerContext,
-
-  justifyContent: "center",
-  backgroundColor: "$base2",
-  padding: 12,
-  borderWidth: 1,
-  borderColor: "$borderColor",
-  enterStyle: { y: -10, opacity: 0 },
-  exitStyle: { y: -10, opacity: 0 },
-  elevate: true,
-
-  animation: [
-    "100ms",
-    {
-      opacity: {
-        overshootClamping: true
-      }
-    }
-  ]
-});
-
-const DatePickerPopoverArrow = styled(Popover.Arrow, {
-  name: "DatePickerPopover",
-  context: DatePickerContext,
-
-  backgroundColor: "$base2",
-  borderWidth: 1,
-  borderColor: "$borderColor"
+  context: DatePickerContext
 });
 
 const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
@@ -820,32 +792,13 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
         focused={focused}>
         <Popover
           keepChildrenMounted={true}
-          size="$5"
-          allowFlip={true}
           open={!!focused}
           onOpenChange={handleOpenChanged}>
-          <Adapt when={"sm" as any} platform="touch">
-            <Popover.Sheet
-              modal={true}
-              dismissOnSnapToBottom={true}
-              snapPointsMode="fit">
-              <Popover.Sheet.Frame padding="$4">
-                <Adapt.Contents />
-              </Popover.Sheet.Frame>
-              <Popover.Sheet.Overlay
-                animation="lazy"
-                enterStyle={{ opacity: 0 }}
-                exitStyle={{ opacity: 0 }}
-              />
-            </Popover.Sheet>
-          </Adapt>
-
-          <Input ref={forwardedRef} {...props}>
+          <Input ref={forwardedRef} {...props} focused={focused}>
             {children}
           </Input>
 
           <DatePickerPopoverContent>
-            <DatePickerPopoverArrow />
             <DatePickerPopoverBody />
           </DatePickerPopoverContent>
         </Popover>

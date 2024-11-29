@@ -25,7 +25,6 @@ import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { titleCase } from "@storm-stack/string-fns/title-case";
 import type { SelectOption } from "@storm-stack/types/utility-types/form";
-import { Adapt } from "@tamagui/adapt";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
 import { Popover } from "@tamagui/popover";
@@ -319,52 +318,35 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
             </Button>
           </Popover.Trigger>
 
-          <Adapt when={"sm" as any} platform="touch">
-            <Popover.Sheet modal={true} dismissOnSnapToBottom={true}>
-              <Popover.Sheet.Frame padding="$2">
-                <Adapt.Contents />
-              </Popover.Sheet.Frame>
-              <Popover.Sheet.Overlay
-                animation="normal"
-                enterStyle={{ opacity: 0 }}
-                exitStyle={{ opacity: 0 }}
-              />
-            </Popover.Sheet>
-          </Adapt>
-
-          <Popover.Content
-            animation="normal"
-            borderWidth={1}
-            borderColor="$borderColor"
-            elevate={true}>
-            <Popover.Arrow borderWidth={1} borderColor="$borderColor" />
-
-            <Form name="columnFilter" onSubmit={handleFilterSubmit}>
+          <Popover.Content>
+            <Form
+              name="columnFilter"
+              onSubmit={handleFilterSubmit}
+              defaultValues={{
+                filter: currentFilter,
+                selectAll: false
+              }}>
               <YStack gap="$4">
-                <SearchInputField
-                  name="filter"
-                  value={currentFilter}
-                  onChange={handleFilterChanged}>
-                  <SearchInputField.Label>Filter</SearchInputField.Label>
+                <SearchInputField name="filter" onChange={handleFilterChanged}>
                   <SearchInputField.Control>
                     <SearchInputField.Control.TextBox placeholder="Filter..." />
                   </SearchInputField.Control>
                 </SearchInputField>
 
-                <CheckboxField name="row1" value={true}>
+                <CheckboxField name="selectAll" value={true}>
                   <XStack gap="$2">
                     <CheckboxField.Control />
                     <CheckboxField.Label>Filter</CheckboxField.Label>
                   </XStack>
                 </CheckboxField>
 
-                <Popover.Close asChild={true}>
+                <Popover.Content.Close asChild={true}>
                   <Form.Reset asChild={true}>
                     <Button animate={false}>
                       <Button.Text>Clear</Button.Text>
                     </Button>
                   </Form.Reset>
-                </Popover.Close>
+                </Popover.Content.Close>
               </YStack>
             </Form>
           </Popover.Content>
@@ -499,6 +481,7 @@ export function DataTablePagination<TData extends RowData>({
       </View>
 
       <Pagination
+        hideText={true}
         pageIndex={pageIndex}
         pageCount={pageCount}
         setPageIndex={setPageIndex}

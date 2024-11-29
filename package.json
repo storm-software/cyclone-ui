@@ -284,6 +284,7 @@
       "@cyclone-ui/tamagui": "workspace:*",
       "@cyclone-ui/animations": "workspace:*",
       "@cyclone-ui/pagination": "workspace:*",
+      "@cyclone-ui/popover": "workspace:*",
       "@cyclone-ui/next-button": "workspace:*",
       "@cyclone-ui/previous-button": "workspace:*",
       "@cyclone-ui/pdf-document-display": "workspace:*",

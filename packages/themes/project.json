@@ -11,7 +11,7 @@
       "inputs": ["{workspaceRoot}/packages/colors/src/*", "^production"],
       "outputs": ["{projectRoot}/src/cyclone.ts"],
       "options": {
-        "command": "pnpm exec tamagui generate-themes ./src/themes-input.ts ./src/cyclone.ts",
+        "command": "pnpm exec tamagui generate-themes ./src/cyclone/themes-input.ts ./src/cyclone/theme.ts",
         "cwd": "{projectRoot}"
       }
     },

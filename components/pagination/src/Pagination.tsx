@@ -77,7 +77,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
       <XStack gap="$3" alignItems="center" flex={1}>
         <PreviousButton
           {...props}
-          hideText={true}
+          hideText={hideText}
           variant="tertiary"
           theme={theme}
           size="$3.5"
@@ -185,7 +185,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         )}
         <NextButton
           {...props}
-          hideText={true}
+          hideText={hideText}
           variant="tertiary"
           theme={theme}
           size="$3.5"

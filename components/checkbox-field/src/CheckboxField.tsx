@@ -26,7 +26,7 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
 
   return (
-    <Field ref={forwardedRef} {...rest}>
+    <Field ref={forwardedRef} hideOptional={true} {...rest}>
       {children}
     </Field>
   );

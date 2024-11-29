@@ -62,6 +62,7 @@ overrides:
   '@cyclone-ui/tamagui': workspace:*
   '@cyclone-ui/animations': workspace:*
   '@cyclone-ui/pagination': workspace:*
+  '@cyclone-ui/popover': workspace:*
   '@cyclone-ui/next-button': workspace:*
   '@cyclone-ui/previous-button': workspace:*
   '@cyclone-ui/pdf-document-display': workspace:*
@@ -1174,9 +1175,6 @@ importers:
       '@tamagui/web':
         specifier: ^1.116.15
         version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-native-svg:
-        specifier: ^15.8.0
-        version: 15.9.0(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1
@@ -1732,6 +1730,49 @@ importers:
       react-pdf:
         specifier: ^9.1.1
         version: 9.1.1(@types/react@18.3.12)(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/popover:
+    dependencies:
+      '@floating-ui/react':
+        specifier: 0.26.28
+        version: 0.26.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/adapt':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/animate-presence':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/create-context':
+        specifier: ^1.116.15
+        version: 1.116.15(react@18.3.1)
+      '@tamagui/popover':
+        specifier: ^1.116.15
+        version: 1.116.15(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/popper':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      '@tamagui/sheet':
+        specifier: ^1.116.15
+        version: 1.116.15(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/text':
+        specifier: ^1.116.15
+        version: 1.116.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1

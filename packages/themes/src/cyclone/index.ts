@@ -15,13 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-/**
- * The themes library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing the Cyclone UI theme files - repositories should create their own themes with their own colors
- *
- * @packageDocumentation
- */
+export * from "./themes-input";
 
-export * from "./cyclone";
+export * from "./storybook";
+export * as cyclone from "./theme";

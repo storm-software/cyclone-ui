@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/date-picker",
+  "name": "@cyclone-ui/popover",
   "version": "0.5.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/date-picker"
+    "directory": "components/popover"
   },
   "private": false,
   "main": "dist/cjs",
@@ -32,29 +32,16 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@rehookify/datepicker": "^6.6.1",
-    "@storm-stack/date-time": "latest",
-    "@storm-stack/hooks": "latest",
+    "@floating-ui/react": "0.26.28",
     "@tamagui/adapt": "^1.116.15",
     "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/compose-refs": "^1.116.15",
-    "@tamagui/constants": "^1.116.15",
     "@tamagui/core": "^1.116.15",
     "@tamagui/create-context": "^1.116.15",
-    "@tamagui/focusable": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/label": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
     "@tamagui/popover": "^1.116.15",
-    "@tamagui/separator": "^1.116.15",
+    "@tamagui/popper": "^1.116.15",
     "@tamagui/sheet": "^1.116.15",
     "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@tamagui/text": "^1.116.15"
   },
   "devDependencies": {
     "react": "18.3.1",
