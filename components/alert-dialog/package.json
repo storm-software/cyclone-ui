@@ -29,22 +29,22 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/group": "^1.117.2",
+    "@tamagui/helpers": "^1.117.2",
+    "@tamagui/helpers-tamagui": "^1.117.2",
+    "@tamagui/lucide-icons": "^1.117.2",
+    "@tamagui/stacks": "^1.117.2",
+    "@tamagui/text": "^1.117.2",
+    "@tamagui/web": "^1.117.2"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"

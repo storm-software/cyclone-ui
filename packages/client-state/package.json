@@ -14,10 +14,10 @@
   },
   "private": false,
   "peerDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.10.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "peerDependenciesMeta": {
     "jotai": {
@@ -35,13 +35,13 @@
   },
   "dependencies": {
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.116.15"
+    "@tamagui/core": "^1.117.2"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.10.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"

@@ -14,13 +14,13 @@
   "private": false,
   "dependencies": {
     "@storm-stack/errors": "latest",
-    "@tamagui/animations-css": "^1.116.15",
-    "@tamagui/animations-moti": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/react-native-media-driver": "^1.116.15",
-    "@tamagui/shorthands": "^1.116.15",
-    "@tamagui/theme-builder": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@tamagui/animations-css": "^1.117.2",
+    "@tamagui/animations-moti": "^1.117.2",
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/react-native-media-driver": "^1.117.2",
+    "@tamagui/shorthands": "^1.117.2",
+    "@tamagui/theme-builder": "^1.117.2",
+    "@tamagui/web": "^1.117.2"
   },
   "publishConfig": {
     "access": "public"

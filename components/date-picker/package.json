@@ -29,37 +29,37 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
-    "@rehookify/datepicker": "^6.6.1",
+    "@rehookify/datepicker": "^6.6.7",
     "@storm-stack/date-time": "latest",
     "@storm-stack/hooks": "latest",
-    "@tamagui/adapt": "^1.116.15",
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/compose-refs": "^1.116.15",
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/focusable": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/label": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/popover": "^1.116.15",
-    "@tamagui/separator": "^1.116.15",
-    "@tamagui/sheet": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15"
+    "@tamagui/adapt": "^1.117.2",
+    "@tamagui/animate-presence": "^1.117.2",
+    "@tamagui/compose-refs": "^1.117.2",
+    "@tamagui/constants": "^1.117.2",
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/create-context": "^1.117.2",
+    "@tamagui/focusable": "^1.117.2",
+    "@tamagui/font-size": "^1.117.2",
+    "@tamagui/get-token": "^1.117.2",
+    "@tamagui/group": "^1.117.2",
+    "@tamagui/helpers": "^1.117.2",
+    "@tamagui/helpers-tamagui": "^1.117.2",
+    "@tamagui/label": "^1.117.2",
+    "@tamagui/lucide-icons": "^1.117.2",
+    "@tamagui/popover": "^1.117.2",
+    "@tamagui/separator": "^1.117.2",
+    "@tamagui/sheet": "^1.117.2",
+    "@tamagui/stacks": "^1.117.2",
+    "@tamagui/text": "^1.117.2",
+    "@tamagui/web": "^1.117.2"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"

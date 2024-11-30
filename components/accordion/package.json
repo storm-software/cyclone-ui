@@ -24,22 +24,22 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
     "@storm-stack/types": "latest",
-    "@tamagui/accordion": "^1.116.15",
-    "@tamagui/collapsible": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/separator": "^1.116.15"
+    "@tamagui/accordion": "^1.117.2",
+    "@tamagui/collapsible": "^1.117.2",
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/group": "^1.117.2",
+    "@tamagui/helpers": "^1.117.2",
+    "@tamagui/stacks": "^1.117.2",
+    "@tamagui/separator": "^1.117.2"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"
