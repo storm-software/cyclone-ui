@@ -24,24 +24,24 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
-    "@tamagui/checkbox": "^1.116.15",
-    "@tamagui/checkbox-headless": "^1.116.15",
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "@tamagui/group": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/checkbox": "^1.117.2",
+    "@tamagui/checkbox-headless": "^1.117.2",
+    "@tamagui/constants": "^1.117.2",
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/create-context": "^1.117.2",
+    "@tamagui/get-token": "^1.117.2",
+    "@tamagui/group": "^1.117.2",
+    "@tamagui/lucide-icons": "^1.117.2",
+    "@tamagui/stacks": "^1.117.2",
+    "react-native-svg": "^15.9.0"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"

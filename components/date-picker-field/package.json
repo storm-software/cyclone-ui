@@ -29,20 +29,20 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
-    "@maskito/core": "^3.1.2",
-    "@maskito/kit": "^3.1.2",
+    "@maskito/core": "^3.2.0",
+    "@maskito/kit": "^3.2.0",
     "@storm-stack/date-time": "latest",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/lucide-icons": "^1.117.2",
+    "react-native-svg": "^15.9.0"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"

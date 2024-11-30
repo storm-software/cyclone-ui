@@ -13,10 +13,10 @@
     "jotai"
   ],
   "peerDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.10.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "peerDependenciesMeta": {
     "jotai": {
@@ -36,24 +36,24 @@
     }
   },
   "dependencies": {
-    "@maskito/core": "^3.1.2",
-    "@maskito/react": "^3.1.2",
+    "@maskito/core": "^3.2.0",
+    "@maskito/react": "^3.2.0",
     "@storm-stack/errors": "latest",
     "@storm-stack/hooks": "latest",
     "@storm-stack/serialization": "latest",
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
-    "@tamagui/core": "^1.116.15",
+    "@tamagui/core": "^1.117.2",
     "jotai-optics": "^0.4.0",
-    "maska": "^3.0.3",
+    "maska": "^3.0.4",
     "optics-ts": "^2.4.1"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.10.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1",
+    "react-native": "0.76.3",
     "valibot": "^0.42.1"
   },
   "publishConfig": {

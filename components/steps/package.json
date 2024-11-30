@@ -29,30 +29,30 @@
   "peerDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "dependencies": {
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/button": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/font-size": "^1.116.15",
-    "@tamagui/get-font-sized": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/linear-gradient": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/shapes": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/tabs": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/use-controllable-state": "^1.116.15",
-    "@tamagui/web": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/animate-presence": "^1.117.2",
+    "@tamagui/button": "^1.117.2",
+    "@tamagui/core": "^1.117.2",
+    "@tamagui/font-size": "^1.117.2",
+    "@tamagui/get-font-sized": "^1.117.2",
+    "@tamagui/helpers": "^1.117.2",
+    "@tamagui/helpers-tamagui": "^1.117.2",
+    "@tamagui/linear-gradient": "^1.117.2",
+    "@tamagui/lucide-icons": "^1.117.2",
+    "@tamagui/shapes": "^1.117.2",
+    "@tamagui/stacks": "^1.117.2",
+    "@tamagui/tabs": "^1.117.2",
+    "@tamagui/text": "^1.117.2",
+    "@tamagui/use-controllable-state": "^1.117.2",
+    "@tamagui/web": "^1.117.2",
+    "react-native-svg": "^15.9.0"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react-native": "0.76.3"
   },
   "publishConfig": {
     "access": "public"
