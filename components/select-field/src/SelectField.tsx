@@ -16,16 +16,16 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import {
+  useFieldActions,
+  useFieldRef,
+  useFieldStore
+} from "@cyclone-ui/form-state";
 import { Select } from "@cyclone-ui/select";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
-import {
-  GetProps,
-  TamaguiTextElement,
-  withStaticProperties
-} from "@tamagui/core";
+import { GetProps, Unspaced, withStaticProperties } from "@tamagui/core";
 import { Atom, useAtomValue } from "jotai";
-import { PropsWithChildren, useCallback, useLayoutEffect, useRef } from "react";
+import { PropsWithChildren, useCallback, useLayoutEffect } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -65,12 +65,13 @@ const SelectFieldControl = Select.styleable<
   const name = store.get.name();
   const disabled = store.get.disabled();
   const focused = store.get.focused();
+  const size = store.get.size();
   const itemsAtoms = store.get.itemsAtoms();
   const value = store.get.value();
   const formattedValue = store.get.formattedValue();
   const initialValue = store.get.initialValue();
 
-  const selectRef = useRef<TamaguiTextElement | null>(null);
+  const selectRef = useFieldRef();
   useLayoutEffect(() => {
     mount(selectRef);
   }, [mount]);
@@ -82,6 +83,7 @@ const SelectFieldControl = Select.styleable<
       name={name}
       focused={focused}
       disabled={disabled}
+      size={size}
       onFocus={focus}
       onBlur={blur}
       onChange={handleChange}
@@ -98,11 +100,13 @@ const SelectFieldControl = Select.styleable<
         <Field.ThemeIcon />
       </Select.TextBox>
 
-      <Select.Items>
-        {itemsAtoms.map((itemAtom, index) => (
-          <SelectFieldItem key={index} itemAtom={itemAtom} />
-        ))}
-      </Select.Items>
+      <Unspaced>
+        <Select.Items>
+          {itemsAtoms.map((itemAtom, index) => (
+            <SelectFieldItem key={index} itemAtom={itemAtom} />
+          ))}
+        </Select.Items>
+      </Unspaced>
     </Select>
   );
 });

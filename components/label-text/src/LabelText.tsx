@@ -15,16 +15,25 @@
 
  -------------------------------------------------------------------*/
 
-import { GetProps, styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
+import { getFontSizedFromSize } from "@cyclone-ui/helpers";
+import { GetProps, styled, Text } from "@tamagui/core";
 
-export const LabelText = styled(SizableText, {
+export const LabelText = styled(Text, {
   name: "LabelText",
   tag: "p",
 
   color: "$color",
   fontFamily: "$label",
-  size: "$true"
+
+  variants: {
+    size: {
+      "...size": getFontSizedFromSize
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
 });
 
 export type LabelTextProps = GetProps<typeof LabelText>;

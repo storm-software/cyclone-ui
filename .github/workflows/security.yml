@@ -1,0 +1,37 @@
+name: Security
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - canary
+      - experimental
+    paths-ignore:
+      - "**/*.md"
+      - ".all-contributorsrc"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+permissions: write-all
+
+jobs:
+  file-system-scan:
+    name: Vulnerability scanning - File system
+    uses: storm-ops/.github/workflows/security-reusable.yml
+    with:
+      scan-type: "fs"
+      format: "sarif"
+      exit-code: 0
+      publish: true
+
+  config-scan:
+    name: Vulnerability scanning - Config
+    uses: storm-ops/.github/workflows/security-reusable.yml
+    with:
+      scan-type: "config"
+      format: "sarif"
+      exit-code: 0
+      publish: true

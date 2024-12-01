@@ -50,7 +50,7 @@ export const getSized = (
   }
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken("size", value);
+    value = options.nearest === false ? value : getNearestToken(value, "size");
     if (!options.scale && !options.shift && !options.bounds) {
       return value as number;
     }
@@ -105,7 +105,7 @@ export const getSpaced = (
   }
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken("space", value);
+    value = options.nearest === false ? value : getNearestToken(value, "space");
     if (!options.scale && !options.shift && !options.bounds) {
       return value as number;
     }
@@ -139,7 +139,7 @@ export const getRadius = (
   let value = val;
   if (isNumber(value)) {
     value =
-      options.nearest === false ? value : getNearestToken("radius", value);
+      options.nearest === false ? value : getNearestToken(value, "radius");
     if (!options.scale && !options.shift && !options.bounds) {
       return value as number;
     }

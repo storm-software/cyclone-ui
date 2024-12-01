@@ -56,24 +56,24 @@ commit-msg:
 pre-push:
   piped: true
   commands:
-    format:
-      glob: "**/*.*"
-      run: "pnpm format"
-      stage_fixed: true
-    format-prettier:
-      glob: "!packages/workspace-tools/src/generators/*/files/**/*"
-      run: "pnpm exec prettier {staged_files} --write --ignore-unknown
-        --no-error-on-unmatched-pattern --cache && git update-index"
-      stage_fixed: true
-    format-toml:
-      glob: "**/*.toml"
-      run: 'pnpm exec taplo format
-        --config="./node_modules/@storm-software/linting-tools/taplo/config.toml" && git
-        update-index'
-    format-readme:
-      glob: "**/{README.md,package.json,executors.json,generators.json}"
-      run: 'pnpm exec storm-git readme-gen --templates="./tools/readme-templates"'
-      stage_fixed: true
+    # format:
+    #   glob: "**/*.*"
+    #   run: "pnpm format"
+    #   stage_fixed: true
+    # format-prettier:
+    #   glob: "!packages/workspace-tools/src/generators/*/files/**/*"
+    #   run: "pnpm exec prettier {staged_files} --write --ignore-unknown
+    #     --no-error-on-unmatched-pattern --cache && git update-index"
+    #   stage_fixed: true
+    # format-toml:
+    #   glob: "**/*.toml"
+    #   run: 'pnpm exec taplo format
+    #     --config="./node_modules/@storm-software/linting-tools/taplo/config.toml" && git
+    #     update-index'
+    # format-readme:
+    #   glob: "**/{README.md,package.json,executors.json,generators.json}"
+    #   run: 'pnpm exec storm-git readme-gen --templates="./tools/readme-templates"'
+    #   stage_fixed: true
     build:
       glob: "**/*.*"
       run: "pnpm build-all"

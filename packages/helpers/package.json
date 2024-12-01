@@ -10,6 +10,7 @@
   },
   "private": false,
   "dependencies": {
+    "@storm-stack/hashing": "latest",
     "@storm-stack/types": "latest",
     "@tamagui/constants": "^1.116.15",
     "@tamagui/core": "^1.116.15",

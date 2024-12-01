@@ -18,8 +18,8 @@
 "use client";
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { PdfIcon } from "@cyclone-ui/icons";
 import { Spinner } from "@cyclone-ui/spinner";
+import { PdfIcon } from "@cyclone-ui/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
 import { isString } from "@storm-stack/types/type-checks/is-string";
 import { FileResult } from "@storm-stack/types/utility-types/file";

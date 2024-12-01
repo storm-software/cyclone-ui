@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { getFontSizedFromSize } from "@cyclone-ui/helpers";
 import { styled, Theme, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { SelectContext } from "./utilities";
@@ -29,10 +30,6 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   cursor: "pointer",
   color: "$color",
   fontFamily: "$body",
-  fontSize: "$4",
-  fontWeight: "$true",
-  lineHeight: "$true",
-  letterSpacing: "$true",
   display: "flex",
   flexGrow: 1,
   verticalAlign: "center",
@@ -71,10 +68,15 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
           color: "$colorDisabled"
         }
       }
+    },
+
+    size: {
+      "...size": getFontSizedFromSize
     }
   } as const,
 
   defaultVariants: {
+    size: "$true",
     disabled: false,
     placeholding: false
   }

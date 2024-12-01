@@ -15,7 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-import { getSpaced } from "@cyclone-ui/helpers";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { createStyledContext } from "@tamagui/core";
 import { SelectContextProps } from "./types";
@@ -38,17 +37,14 @@ export const getSelectSize = (
 
   if (typeof val === "number") {
     return {
-      paddingHorizontal: val * 0.25,
       height: val,
       borderRadius: props.circular ? 100_000 : val * 0.2
     };
   }
 
-  const paddingHorizontal = getSpaced(val);
   const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
 
   return {
-    paddingHorizontal: 0,
     height: val,
     borderRadius: props.circular ? 100_000 : radiusToken
   };

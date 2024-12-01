@@ -205,11 +205,11 @@ function postfixObjKeys<
 
 export const radius = {
   0: 0,
-  1: 3,
-  sm: 5,
-  2: 5,
-  3: 7,
-  4: 9,
+  1: 2,
+  sm: 4,
+  2: 4,
+  3: 6,
+  4: 8,
   true: 10,
   md: 10,
   5: 10,

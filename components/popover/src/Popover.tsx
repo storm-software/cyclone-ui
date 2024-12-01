@@ -30,7 +30,7 @@ export type PopoverContextProps = {
 };
 
 export const PopoverContext = createStyledContext<PopoverContextProps>({
-  size: "$5",
+  size: "$true",
   shouldAdapt: true
 });
 
@@ -83,7 +83,7 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
 
   backgroundColor: "$base3",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$primary",
   top: -12
 });
 
@@ -91,11 +91,11 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   name: "Popover",
   context: PopoverContext,
 
-  justifyContent: "center",
+  flex: 1,
   backgroundColor: "$base3",
   padding: "$3",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$primary",
   borderRadius: "$true",
   marginHorizontal: "auto",
 
@@ -110,6 +110,14 @@ const PopoverContent = styled(TamaguiPopover.Content, {
       }
     }
   ],
+
+  focusVisibleStyle: {
+    outlineColor: "$accent10",
+    outlineWidth: 3,
+    outlineOffset: "$1.25",
+    outlineStyle: "solid",
+    borderColor: "$borderColorFocus"
+  },
 
   variants: {
     elevated: {

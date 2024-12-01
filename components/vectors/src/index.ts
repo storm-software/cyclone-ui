@@ -15,20 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
-import { Diagonal } from "./Diagonal";
-
-const meta: Meta<typeof Diagonal> = {
-  title: "Icons/Diagonal",
-  component: Diagonal,
-  tags: ["autodocs"],
-  render: (args: any) => <Diagonal {...args} height="200" width="600" />
-} satisfies Meta<typeof Diagonal>;
-
-export default meta;
-
-type Story = StoryObj<typeof Diagonal>;
-
-export const Base: Story = {
-  args: {}
-};
+export * from "./AccordionToggle";
+export * from "./AlertCircle";
+export * from "./Arrow";
+export * from "./CheckCircle";
+export * from "./CheckerBoard";
+export * from "./Diagonal";
+export * from "./InfoCircle";
+export * from "./PdfIcon";

@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/icons",
+  "name": "@cyclone-ui/vectors",
   "version": "0.5.0",
   "type": "module",
   "description": "A Next Button component meant to be shared in many other components",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/icons"
+    "directory": "components/vectors"
   },
   "private": false,
   "main": "dist/cjs",

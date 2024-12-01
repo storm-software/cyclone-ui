@@ -16,18 +16,18 @@
  -------------------------------------------------------------------*/
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { CheckerBoard } from "./CheckerBoard";
+import { PdfIcon } from "./PdfIcon";
 
-const meta: Meta<typeof CheckerBoard> = {
-  title: "Icons/CheckerBoard",
-  component: CheckerBoard,
+const meta: Meta<typeof PdfIcon> = {
+  title: "Vectors/PdfIcon",
+  component: PdfIcon,
   tags: ["autodocs"],
-  render: (args: any) => <CheckerBoard {...args} width="790" height="640" />
-} satisfies Meta<typeof CheckerBoard>;
+  render: (args: any) => <PdfIcon {...args} />
+} satisfies Meta<typeof PdfIcon>;
 
 export default meta;
 
-type Story = StoryObj<typeof CheckerBoard>;
+type Story = StoryObj<typeof PdfIcon>;
 
 export const Base: Story = {
   args: {}

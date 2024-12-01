@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { Adapt } from "@tamagui/adapt";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
@@ -24,6 +25,7 @@ import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
+import { useMemo } from "react";
 import { SelectContext } from "./utilities";
 
 const SelectItemFrame = styled(TamaguiSelect.Item, {
@@ -98,10 +100,6 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   cursor: "pointer",
   color: "$color",
   fontFamily: "$body",
-  fontSize: "$4",
-  fontWeight: "$true",
-  lineHeight: "$true",
-  letterSpacing: "$true",
   flex: 1,
 
   variants: {
@@ -120,17 +118,27 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
           color: "$colorDisabled"
         }
       }
+    },
+
+    size: {
+      "...size": getFontSizedFromSize
     }
   } as const,
 
+  fontWeight: "$6",
+
   defaultVariants: {
     disabled: false,
-    selected: false
+    selected: false,
+    size: "$true"
   }
 });
 
 export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
   ({ children, value, selected, disabled, ...props }, forwardedRef) => {
+    const { size } = SelectContext.useStyledContext();
+    const isSmall = useMemo(() => getSized(size) < getSized("$md"), [size]);
+
     return (
       <Theme name={ColorThemeName.BASE}>
         <SelectItemFrame
@@ -142,9 +150,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
           disabled={disabled}>
           <SelectItemGroup
             disabled={disabled}
-            $sm={{
-              justifyContent: "space-between"
-            }}>
+            justifyContent={isSmall ? "space-between" : "center"}>
             <View width="$2" justifyContent="center">
               {disabled && <Lock size="$1.5" color="$colorDisabled" />}
               <TamaguiSelect.ItemIndicator>
@@ -182,7 +188,7 @@ const SelectItemsGroup = View.styleable(
         <Adapt when={"sm" as any} platform="touch">
           <Sheet
             modal={true}
-            dismissOnSnapToBottom
+            dismissOnSnapToBottom={true}
             animationConfig={{
               type: "spring",
               damping: 20,
@@ -218,7 +224,7 @@ const SelectItemsGroup = View.styleable(
               start={[0, 0]}
               end={[0, 1]}
               fullscreen={true}
-              colors={["$base2", "transparent"]}
+              colors={["$base3", "transparent"]}
               borderRadius="$4"
               marginTop="$0.2"
             />
@@ -229,7 +235,7 @@ const SelectItemsGroup = View.styleable(
             animateOnly={["transform", "scale", "opacity"]}
             enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
             exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-            backgroundColor="$base2"
+            backgroundColor="$base3"
             minWidth="$10"
             borderRadius="$true"
             shadowColor="$shadowColor"
@@ -256,7 +262,7 @@ const SelectItemsGroup = View.styleable(
               start={[0, 0]}
               end={[0, 1]}
               fullscreen={true}
-              colors={["transparent", "$base2"]}
+              colors={["transparent", "$base3"]}
               borderRadius="$4"
               marginBottom="$0.2"
             />

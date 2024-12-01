@@ -197,7 +197,7 @@ EXAMPLES
   $ cyclone-ui autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.10/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.2.11/src/commands/autocomplete/index.ts)_
 
 ## `cyclone-ui build PROJECTROOT`
 
@@ -468,7 +468,7 @@ EXAMPLES
   $ cyclone-ui plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/index.ts)_
 
 ## `cyclone-ui plugins add PLUGIN`
 
@@ -542,7 +542,7 @@ EXAMPLES
   $ cyclone-ui plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/inspect.ts)_
 
 ## `cyclone-ui plugins install PLUGIN`
 
@@ -591,7 +591,7 @@ EXAMPLES
     $ cyclone-ui plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/install.ts)_
 
 ## `cyclone-ui plugins link PATH`
 
@@ -622,7 +622,7 @@ EXAMPLES
   $ cyclone-ui plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/link.ts)_
 
 ## `cyclone-ui plugins remove [PLUGIN]`
 
@@ -663,7 +663,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/reset.ts)_
 
 ## `cyclone-ui plugins uninstall [PLUGIN]`
 
@@ -691,7 +691,7 @@ EXAMPLES
   $ cyclone-ui plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/uninstall.ts)_
 
 ## `cyclone-ui plugins unlink [PLUGIN]`
 
@@ -735,7 +735,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.17/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.19/src/commands/plugins/update.ts)_
 
 ## `cyclone-ui search`
 
@@ -909,7 +909,7 @@ EXAMPLES
     $ cyclone-ui update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.6.12/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.6.14/src/commands/update.ts)_
 
 ## `cyclone-ui version`
 

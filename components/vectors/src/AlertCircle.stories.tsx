@@ -17,11 +17,11 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import { CheckCircle } from "./CheckCircle";
+import { AlertCircle } from "./AlertCircle";
 
-const meta: Meta<typeof CheckCircle> = {
-  title: "Icons/CheckCircle",
-  component: CheckCircle,
+const meta: Meta<typeof AlertCircle> = {
+  title: "Vectors/AlertCircle",
+  component: AlertCircle,
   tags: ["autodocs"],
   render: (args: any) => {
     const [isComplete, setIsComplete] = useState(false);
@@ -31,13 +31,13 @@ const meta: Meta<typeof CheckCircle> = {
       }, 5000);
     }, [setIsComplete]);
 
-    return <CheckCircle {...args} isComplete={isComplete} />;
+    return <AlertCircle {...args} isComplete={isComplete} />;
   }
-} satisfies Meta<typeof CheckCircle>;
+} satisfies Meta<typeof AlertCircle>;
 
 export default meta;
 
-type Story = StoryObj<typeof CheckCircle>;
+type Story = StoryObj<typeof AlertCircle>;
 
 export const Base: Story = {
   args: {

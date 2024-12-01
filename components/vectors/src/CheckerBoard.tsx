@@ -29,7 +29,7 @@ import {
   Stop,
   Svg,
   SvgProps
-} from "react-native-Svg";
+} from "react-native-svg";
 
 const Icon = (props: IconProps) => {
   const color = useCurrentColor((props.color || "$color") as any);

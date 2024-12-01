@@ -17,30 +17,58 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import { InfoCircle } from "./InfoCircle";
+import { Arrow } from "./Arrow";
 
-const meta: Meta<typeof InfoCircle> = {
-  title: "Icons/InfoCircle",
-  component: InfoCircle,
+const meta: Meta<typeof Arrow> = {
+  title: "Vectors/Arrow",
+  component: Arrow,
   tags: ["autodocs"],
   render: (args: any) => {
     const [isComplete, setIsComplete] = useState(false);
     useEffect(() => {
       setInterval(() => {
         setIsComplete((prev: boolean) => !prev);
-      }, 5000);
+      }, 2000);
     }, [setIsComplete]);
 
-    return <InfoCircle {...args} isComplete={isComplete} />;
+    return <Arrow {...args} isComplete={isComplete} />;
   }
-} satisfies Meta<typeof InfoCircle>;
+} satisfies Meta<typeof Arrow>;
 
 export default meta;
 
-type Story = StoryObj<typeof InfoCircle>;
+type Story = StoryObj<typeof Arrow>;
 
 export const Base: Story = {
   args: {
     size: "$6"
+  }
+};
+
+export const Up: Story = {
+  args: {
+    size: "$6",
+    pointing: "up"
+  }
+};
+
+export const Right: Story = {
+  args: {
+    size: "$6",
+    pointing: "right"
+  }
+};
+
+export const Down: Story = {
+  args: {
+    size: "$6",
+    pointing: "down"
+  }
+};
+
+export const Left: Story = {
+  args: {
+    size: "$6",
+    pointing: "left"
   }
 };

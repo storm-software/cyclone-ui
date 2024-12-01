@@ -15,16 +15,25 @@
 
  -------------------------------------------------------------------*/
 
-import { GetProps, styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
+import { getFontSizedFromSize } from "@cyclone-ui/helpers";
+import { GetProps, styled, Text } from "@tamagui/core";
 
-export const BodyText = styled(SizableText, {
+export const BodyText = styled(Text, {
   name: "BodyText",
   tag: "p",
 
   color: "$color",
   fontFamily: "$body",
-  size: "$true"
+
+  variants: {
+    size: {
+      "...size": getFontSizedFromSize
+    }
+  } as const,
+
+  defaultVariants: {
+    size: "$true"
+  }
 });
 
 export type BodyTextProps = GetProps<typeof BodyText>;

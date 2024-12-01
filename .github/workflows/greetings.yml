@@ -1,23 +1,31 @@
 name: "Greetings"
 
-on: [pull_request_target, issues]
-
-env:
-  CI: true
-  NX_DAEMON: false
-  NX_VERBOSE_LOGGING: true
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+on:
+  pull_request_target:
+  issues:
+    branches:
+      - main
+      - canary
+      - experimental
 
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    if: github.actor != 'Stormie-Bot' && github.actor != 'dependabot[bot]' && github.actor != 'mend-bolt-for-github[bot]'
     permissions:
       issues: write
       pull-requests: write
     steps:
       - uses: actions/first-interaction@v1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "Hello, I'm 🤖 Stormie-Bot! Thank you for your interest in this project! The Storm team will review this issue and reach out to you ASAP."
-          pr-message: "Hello, I'm 🤖 Stormie-Bot! The Storm team sincerely appreciates your effort/interest in contributing to this project. A Storm developer will review this change and get back to you ASAP. Please feel free to reach out to the Storm team (support@stormsoftware.com) if you have any questions/comments."
+          repo-token: ${{ github.token }}
+          issue-message:
+            "Hello, I'm 🤖 Stormie-Bot! Thank you for your interest in this
+            project! The Storm team will review this issue and reach out to you
+            ASAP."
+          pr-message:
+            "Hello, I'm 🤖 Stormie-Bot! The Storm team sincerely appreciates
+            your effort/interest in contributing to this project. A Storm
+            developer will review this change and get back to you ASAP. Please
+            feel free to reach out to the Storm team (contact@stormsoftware.com)
+            if you have any questions/comments."

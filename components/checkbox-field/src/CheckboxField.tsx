@@ -41,9 +41,10 @@ const CheckboxFieldLabel = Field.Label.styleable(
       <Field.Label
         ref={forwardedRef}
         paddingBottom={0}
-        hideAsterisk={true}
+        hideRequired={true}
+        textAlign="center"
         {...props}>
-        <XStack gap="$0.5" alignContent="center" verticalAlign="center">
+        <XStack gap="$0.5" alignContent="center">
           {children}
           {disabled && <Field.ThemeIcon disabled={true} />}
         </XStack>

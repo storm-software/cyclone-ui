@@ -12,18 +12,21 @@
 name: "CodeQL"
 
 on:
+  pull_request:
   push:
     branches:
       - main
       - canary
       - experimental
-  pull_request:
-    branches:
-      - main
-      - canary
-      - experimental
+    paths-ignore:
+      - "**/*.md"
+      - ".all-contributorsrc"
   schedule:
     - cron: "37 16 * * 6"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   analyze:
@@ -33,6 +36,7 @@ jobs:
     #   - https://gh.io/supported-runners-and-hardware-resources
     #   - https://gh.io/using-larger-runners
     # Consider using larger runners for possible analysis time improvements.
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'dependencies') }}
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
@@ -50,17 +54,31 @@ jobs:
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
         with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          all_but_latest: true
+          access_token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+          workflow_id: ${{ github.event.workflow.id }}
+
+      - name: Setup workspace
+        uses: storm-software/action-setup@main
+        with:
+          package-manager: pnpm
+          package-manager-version: 9.10.0
+          storm-bot: Stormie-Bot
+          storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+
+      - name: Build Storm Nx-Plugin packages
+        run: pnpm build-plugins
+        shell: bash
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
+
           # If you wish to specify custom queries, you can do so here or in a config file.
           # By default, queries listed here will override any specified in a config file.
           # Prefix the list here with "+" to use these queries and those in the config file.
@@ -70,8 +88,8 @@ jobs:
 
       # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
       # If this step fails, then you should remove it and run the build manually (see below)
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+      # - name: Autobuild
+      #   uses: github/codeql-action/autobuild@v3
 
       # ℹ️ Command-line programs to run using the OS shell.
       # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -82,6 +100,10 @@ jobs:
       # - run: |
       #     echo "Run, Build Application using script"
       #     ./location_of_script_within_repo/buildscript.sh
+
+      - name: Run build script
+        run: pnpm build-all
+        shell: bash
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

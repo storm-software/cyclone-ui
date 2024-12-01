@@ -18,7 +18,7 @@
 import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns";
 import { MessageDetails, isPromise } from "@storm-stack/types";
-import { TamaguiElement } from "@tamagui/core";
+import { TamaguiTextElement } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
 import { RESET, useAtomCallback } from "jotai/utils";
 import { LegacyRef, useCallback } from "react";
@@ -292,7 +292,7 @@ export const useFieldActions = <
       async (
         get: Getter,
         set: Setter,
-        ref: LegacyRef<TamaguiElement>,
+        ref: LegacyRef<TamaguiTextElement>,
         tabIndex?: number
       ) => {
         set(fieldApi.atom.ref, ref);

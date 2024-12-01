@@ -17,58 +17,30 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import { Arrow } from "./Arrow";
+import { AccordionToggle } from "./AccordionToggle";
 
-const meta: Meta<typeof Arrow> = {
-  title: "Icons/Arrow",
-  component: Arrow,
+const meta: Meta<typeof AccordionToggle> = {
+  title: "Vectors/AccordionToggle",
+  component: AccordionToggle,
   tags: ["autodocs"],
   render: (args: any) => {
-    const [isComplete, setIsComplete] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
     useEffect(() => {
       setInterval(() => {
-        setIsComplete((prev: boolean) => !prev);
+        setIsExpanded((prev: boolean) => !prev);
       }, 2000);
-    }, [setIsComplete]);
+    }, [setIsExpanded]);
 
-    return <Arrow {...args} isComplete={isComplete} />;
+    return <AccordionToggle {...args} isExpanded={isExpanded} />;
   }
-} satisfies Meta<typeof Arrow>;
+} satisfies Meta<typeof AccordionToggle>;
 
 export default meta;
 
-type Story = StoryObj<typeof Arrow>;
+type Story = StoryObj<typeof AccordionToggle>;
 
 export const Base: Story = {
   args: {
     size: "$6"
-  }
-};
-
-export const Up: Story = {
-  args: {
-    size: "$6",
-    pointing: "up"
-  }
-};
-
-export const Right: Story = {
-  args: {
-    size: "$6",
-    pointing: "right"
-  }
-};
-
-export const Down: Story = {
-  args: {
-    size: "$6",
-    pointing: "down"
-  }
-};
-
-export const Left: Story = {
-  args: {
-    size: "$6",
-    pointing: "left"
   }
 };

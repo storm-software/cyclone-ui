@@ -20,12 +20,12 @@ import { ColorThemeName } from "@cyclone-ui/colors";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { Heading3Text } from "@cyclone-ui/heading-text";
-import { Diagonal } from "@cyclone-ui/icons";
 import {
   getIconByTheme,
   ThemeableIcon,
   type ThemeableIconProps
 } from "@cyclone-ui/themeable-icon";
+import { Diagonal } from "@cyclone-ui/vectors";
 import {
   createStyledContext,
   styled,

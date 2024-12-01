@@ -11,7 +11,7 @@ env:
   NX_DAEMON: false
   NX_VERBOSE_LOGGING: true
   SKIP_ENV_VALIDATION: true
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
 jobs:
   lock:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: dessant/lock-threads@v5
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
           issue-inactive-days: "30"
           issue-lock-reason: ""
           pr-inactive-days: "1"

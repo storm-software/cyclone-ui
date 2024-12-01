@@ -1,0 +1,79 @@
+# Note: this pipelines is for the `storm-ops` repository, it should be used to build and release the Storm Nx-Plugin packages.
+name: "autofix.ci"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: override release tag
+        required: false
+  push:
+    branches:
+      - main
+      - canary
+      - experimental
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: true
+  STORM_REPOSITORY: ${{ github.repositoryUrl }}
+  STORM_WORKSPACE_ROOT: ${{ github.workspace }}
+  GITHUB_ACTOR: ${{ github.actor }}
+  GITHUB_TOKEN: ${{ github.token }}
+  NPM_TOKEN: ${{ secrets.STORM_BOT_NPM_TOKEN }}
+  CARGO_REGISTRY_TOKEN: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  autofix:
+    name: "Autofix"
+    runs-on: ubuntu-latest
+    if: github.repository == 'storm-software/storm-ops' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/canary' || github.ref == 'refs/heads/experimental')
+    steps:
+      - name: Setup workspace
+        uses: storm-software/action-setup@main
+        with:
+          package-manager: pnpm
+          package-manager-version: 9.10.0
+          storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+
+      - name: Build Storm Nx-Plugin packages
+        run: pnpm build-plugins
+        shell: bash
+
+      - uses: nrwl/nx-set-shas@v4
+        with:
+          main-branch-name: main
+
+      - name: Run formatters scripts
+        run: pnpm nx run-many -t format,build --parallel=5
+        shell: bash
+
+      - name: Run TOML linter
+        run: pnpm format-toml
+
+      - name: Run Prettier linter
+        run: pnpm format-prettier
+
+      # - name: Run Knip linter
+      #   run: pnpm lint-knip
+
+      - name: Run README formatter
+        run: pnpm format-readme
+
+      - name: Run Nx formatter
+        run: pnpm nx format:write
+
+      - name: Run Sherif linter
+        run: pnpm lint-sherif
+
+      - name: Apply fixes
+        uses: autofix-ci/action@dd55f44df8f7cdb7a6bf74c78677eb8acd40cd0a
+        with:
+          commit-message: "ci(monorepo): Apply automated CI fixes"

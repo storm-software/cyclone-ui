@@ -27,7 +27,6 @@ import {
   type Tree
 } from "@nx/devkit";
 import { determineProjectNameAndRootOptions } from "@nx/devkit/src/generators/project-name-and-root-utils";
-import { Bundler } from "@nx/js/src/utils/schema";
 import type { StormConfig } from "@storm-software/config";
 import {
   typeScriptLibraryGeneratorFn,
@@ -48,16 +47,19 @@ export async function generatorFn(
   const filesDir = joinPathFragments(__dirname, "./files");
   const tsLibraryGeneratorOptions: TypeScriptLibraryGeneratorSchema = {
     ...schema,
+    name: schema.name,
+    description: schema.description ?? "",
+    buildExecutor: "tsc",
     platform: "browser",
     devDependencies: {
       react: "18.3.1",
       "react-dom": "18.3.1",
-      "react-native": "0.73.2"
+      "react-native": "0.74.1"
     },
     peerDependencies: {
       react: "18.3.1",
       "react-dom": "18.3.1",
-      "react-native": "0.73.2"
+      "react-native": "0.74.1"
     }
   };
 
@@ -192,7 +194,7 @@ export async function normalizeOptions(
     );
   }
 
-  let bundler: Bundler = "tsc";
+  let bundler = "tsc";
   if (options.publishable === false && options.buildable === false) {
     bundler = "none";
   }
@@ -208,9 +210,7 @@ export async function normalizeOptions(
     projectType: "library",
     directory: options.directory,
     importPath: options.importPath,
-    projectNameAndRootFormat: options.projectNameAndRootFormat,
-    rootProject: options.rootProject,
-    callingGenerator: "@nx/js:library"
+    rootProject: options.rootProject
   });
   options.rootProject = projectRoot === ".";
 

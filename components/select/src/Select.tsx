@@ -291,7 +291,17 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
 
 const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
   (
-    { name, disabled, focused, children, onFocus, onBlur, onChange, ...props },
+    {
+      name,
+      disabled,
+      focused,
+      children,
+      onFocus,
+      onBlur,
+      onChange,
+      size = "$true",
+      ...props
+    },
     forwardedRef
   ) => {
     const handleOpenChanged = useCallback(
@@ -323,6 +333,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         name={name}
         disabled={disabled}
         focused={focused}
+        size={size}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>
@@ -334,7 +345,8 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
           onValueChange={handleChanged}
           onOpenChange={handleOpenChanged}
           open={focused}
-          disabled={disabled}>
+          disabled={disabled}
+          size={size}>
           {children}
         </BaseSelect>
       </SelectContext.Provider>

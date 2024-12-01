@@ -15,14 +15,10 @@
 
  -------------------------------------------------------------------*/
 
-import { isSet } from "@storm-stack/types";
-import type { Variable } from "@tamagui/core";
+import { hash } from "@storm-stack/hashing";
+import { isSet } from "@storm-stack/types/type-checks/is-set";
+import type { UnionableString, Variable } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
-
-const getCacheKey = (
-  type: "size" | "space" | "zIndex" | "radius",
-  value: number
-) => `${type}-${value}`;
 
 const binarySearch = (
   tokens: Variable<number>[],
@@ -46,24 +42,67 @@ const binarySearch = (
   return binarySearch(tokens, value, mid + 1, end);
 };
 
-const cache: Record<string, string> = {};
-const cacheSortedTokens: Record<string, [string, Variable<number>][]> = {};
+type CacheKey = {
+  type: string;
+  value: number;
+};
+const cache: Map<CacheKey, string> = new Map();
 
-export const getNearestToken = (
-  type: "size" | "space" | "zIndex" | "radius",
-  value: number
-): string => {
-  if (cache[getCacheKey(type, value)]) {
-    return cache[getCacheKey(type, value)]!;
+type SortedTokensCacheKey = {
+  type: string;
+};
+const cacheSortedTokens: Map<
+  SortedTokensCacheKey,
+  [string, Variable<number>][]
+> = new Map();
+
+export const getNearestToken = <
+  TToken extends
+    | number
+    | `$${string}`
+    | `$${number}`
+    | UnionableString
+    | `$${string}.${string}`
+    | `$${string}.${number}` =
+    | number
+    | `$${string}`
+    | `$${number}`
+    | UnionableString
+    | `$${string}.${string}`
+    | `$${string}.${number}`
+>(
+  value: number,
+  type?: "size" | "space" | "zIndex" | "radius" | string,
+  tokensMap?: Record<string, Variable<number>>
+): TToken => {
+  if (!type && !tokensMap) {
+    // eslint-disable-next-line no-console
+    console.warn("getNearestToken: type or tokensMap is required");
+
+    return "$true" as TToken;
   }
 
-  if (!cacheSortedTokens[type]) {
-    const tokens = getTokens({ prefixed: true })[type] as Record<
-      string,
-      Variable<number>
-    >;
+  let _type = type;
+  if (!_type) {
+    _type = hash(tokensMap);
+  }
+
+  const cacheSortedTokensKey = { type: _type };
+  const cacheKey = { type: _type, value };
+
+  if (cache.has(cacheKey)) {
+    return cache.get(cacheKey)! as TToken;
+  }
+
+  if (!cacheSortedTokens.has(cacheSortedTokensKey)) {
+    const tokens =
+      tokensMap ??
+      (getTokens({ prefixed: true })[_type] as Record<
+        string,
+        Variable<number>
+      >);
     if (!tokens || Object.values(tokens).length === 0) {
-      return "$true";
+      return "$true" as TToken;
     }
 
     const deduplicated = Object.entries(tokens).reduce(
@@ -79,12 +118,15 @@ export const getNearestToken = (
       },
       [] as [string, Variable<number>][]
     );
-    cacheSortedTokens[type] = deduplicated.sort((a, b) => a[1].val - b[1].val);
+    cacheSortedTokens.set(
+      cacheSortedTokensKey,
+      deduplicated.sort((a, b) => a[1].val - b[1].val)
+    );
   }
 
-  const sortedTokens = cacheSortedTokens[type];
+  const sortedTokens = cacheSortedTokens.get(cacheSortedTokensKey);
   if (!sortedTokens) {
-    return "$true";
+    return "$true" as TToken;
   }
 
   const values = sortedTokens.map(token => token[1]);
@@ -95,11 +137,11 @@ export const getNearestToken = (
     sortedTokens.length <= index ||
     !sortedTokens[index]?.[0]
   ) {
-    return "$true";
+    return "$true" as TToken;
   }
 
   const result = sortedTokens[index][0];
-  cache[getCacheKey(type, value)] = result;
+  cache.set(cacheKey, result);
 
-  return result;
+  return result as TToken;
 };

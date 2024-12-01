@@ -16,23 +16,30 @@
  -------------------------------------------------------------------*/
 
 import { useMaskito } from "@maskito/react";
-import { ReactRef, useComposedRefs } from "@storm-stack/hooks";
-import { useRef } from "react";
+// import { useComposedRefs } from "@storm-stack/hooks";
+import { useComposedRefs, type TamaguiTextElement } from "@tamagui/core";
+import { useRef, type LegacyRef } from "react";
 import { useFieldStore } from "./use-field-store";
 
+type PossibleRef<T> =
+  | React.Ref<T>
+  | React.ForwardedRef<T>
+  | React.RefObject<T>
+  | undefined;
+
 export const useFieldRef = <TFieldValue>(
-  forwardedRef?: ReactRef<HTMLElement | null>
-): ReactRef<HTMLInputElement | null> => {
-  const ref = useRef<HTMLInputElement | null>(null);
+  forwardedRef?: LegacyRef<TamaguiTextElement>
+): LegacyRef<TamaguiTextElement> => {
+  const ref = useRef<TamaguiTextElement | null>(null);
 
   const store = useFieldStore<TFieldValue>();
   const options = store.get.options();
 
   const inputRef = useMaskito({ options: options.mask });
 
-  const refs = [ref, inputRef] as ReactRef<HTMLInputElement | null>[];
+  const refs = [ref, inputRef] as PossibleRef<TamaguiTextElement>[];
   if (forwardedRef) {
-    refs.push(forwardedRef);
+    refs.push(forwardedRef as PossibleRef<TamaguiTextElement>);
   }
 
   return useComposedRefs(...refs);

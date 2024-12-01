@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
 import {
@@ -23,7 +24,6 @@ import {
   styled,
   VariantSpreadExtras
 } from "@tamagui/core";
-import { getSize, getSpace } from "@tamagui/get-token";
 import { XGroup } from "@tamagui/group";
 import { Check, Minus } from "@tamagui/lucide-icons";
 
@@ -74,26 +74,21 @@ const CheckboxGroupFrame = styled(XGroup, {
     size: {
       "...size": (
         val: SizeTokens | number,
-        { tokens, props }: VariantSpreadExtras<any>
+        { props, tokens }: VariantSpreadExtras<any>
       ) => {
         if (!val || props.circular) {
           return;
         }
-        if (typeof val === "number") {
-          return {
-            height: val * 0.6,
-            width: val * 0.6,
-            borderRadius: props.circular ? 100_000 : val * 0.2
-          };
-        }
 
-        const size = getSize(val);
-        const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+        const size = getSized(val, {
+          scale: 0.5
+        });
+        const radius = getRadius(val, { circular: props.circular, scale: 0.5 });
 
         return {
-          height: size.val * 0.6,
-          width: size.val * 0.6,
-          borderRadius: props.circular ? 100_000 : radiusToken
+          height: size,
+          width: size,
+          borderRadius: radius
         };
       }
     },
@@ -160,16 +155,10 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
           return;
         }
 
-        if (typeof val === "number") {
-          return {
-            padding: val * 0.05
-          };
-        }
-
-        const padding = getSpace(val);
+        const space = getSpaced(val, { scale: 0.05 });
 
         return {
-          padding: padding.val * 0.05
+          padding: space
         };
       }
     },
@@ -201,18 +190,14 @@ const CheckboxIcon = styled(Check, {
         if (!val || props.circular) {
           return;
         }
-        if (typeof val === "number") {
-          return {
-            height: val * 0.5,
-            width: val * 0.5
-          };
-        }
 
-        const size = getSize(val);
+        const size = getSized(val, {
+          scale: 0.4
+        });
 
         return {
-          height: size.val * 0.5,
-          width: size.val * 0.5
+          height: size,
+          width: size
         };
       }
     }
@@ -237,18 +222,14 @@ const MinusIcon = styled(Minus, {
         if (!val || props.circular) {
           return;
         }
-        if (typeof val === "number") {
-          return {
-            height: val * 0.5,
-            width: val * 0.5
-          };
-        }
 
-        const size = getSize(val);
+        const size = getSized(val, {
+          scale: 0.4
+        });
 
         return {
-          height: size.val * 0.5,
-          width: size.val * 0.5
+          height: size,
+          width: size
         };
       }
     }

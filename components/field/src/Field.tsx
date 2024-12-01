@@ -25,7 +25,7 @@ import {
   useFieldStore,
   Validator
 } from "@cyclone-ui/form-state";
-import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Spinner } from "@cyclone-ui/spinner";
 import { getIconByTheme } from "@cyclone-ui/themeable-icon";
@@ -58,7 +58,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$1.5"
+        gap: "$2"
       },
       horizontal: {
         flexDirection: "row",
@@ -126,7 +126,6 @@ const FieldValidationText = styled(ValidationText, {
 
   fontStyle: "italic",
   fontFamily: "$body",
-  marginTop: "$0.5",
 
   variants: {
     size: {
@@ -186,15 +185,15 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
 
     return (
       <Theme name={theme}>
-        <FieldGroupFrame
-          ref={forwardedRef}
-          {...rest}
-          disabled={store.get.disabled()}>
-          <YStack gap="$0.7">
+        <YStack gap="$2">
+          <FieldGroupFrame
+            ref={forwardedRef}
+            {...rest}
+            disabled={store.get.disabled()}>
             {children}
-            <FieldValidationTextImpl />
-          </YStack>
-        </FieldGroupFrame>
+          </FieldGroupFrame>
+          <FieldValidationTextImpl />
+        </YStack>
       </Theme>
     );
   },
@@ -225,7 +224,6 @@ const FieldDetails = styled(BodyText, {
   animation: "normal",
   color: "$color",
   fontStyle: "italic",
-  marginTop: "$0.5",
 
   enterStyle: {
     opacity: 0,
@@ -307,16 +305,11 @@ const FieldLabelText = styled(LabelText, {
         color: "$colorDisabled",
         cursor: "not-allowed"
       }
-    },
-
-    size: {
-      "...size": getFontSizedFromSize
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
-    size: "$true"
+    disabled: false
   }
 });
 
@@ -327,7 +320,6 @@ const LabelXStack = styled(XStack, {
   gap: "$1.2",
   flex: 1,
   alignItems: "center",
-  paddingBottom: "$0.25",
 
   variants: {
     disabled: {

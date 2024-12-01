@@ -39,29 +39,30 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# ValidationText
+# Scalable Vector Graphics 
 
-A Next Button component meant to be shared in many other components
+A package containing shared Scalable Vector Graphic (SVG) components used in many other packages
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [Scalable Vector Graphics](#scalable-vector-graphics)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -70,14 +71,14 @@ A Next Button component meant to be shared in many other components
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/validation-text
+pnpm add -D @cyclone-ui/vectors
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/validation-text
+npm install -D @cyclone-ui/vectors
 ```
 
 </details>
@@ -86,7 +87,7 @@ npm install -D @cyclone-ui/validation-text
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/validation-text
+yarn add -D @cyclone-ui/vectors
 ```
 
 </details>
@@ -105,16 +106,16 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build validation-text` to build the library.
+Run `nx build vectors` to build the library.
 
 ### Running unit tests
 
-Run `nx test validation-text` to execute the unit tests via
+Run `nx test vectors` to execute the unit tests via
 [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint validation-text` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint vectors` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

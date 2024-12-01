@@ -17,7 +17,7 @@
 
 /* eslint-disable no-console */
 
-import { sizeToFontSize } from "@cyclone-ui/tamagui";
+import { isNumber } from "@storm-stack/types/type-checks/is-number";
 import { isClient } from "@tamagui/constants";
 import type {
   FontSizeTokens,
@@ -28,7 +28,7 @@ import type {
   VariantSpreadFunction
 } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
-import { getSized } from "./get-sized";
+import { getNearestToken } from "./get-nearest-token";
 
 /**
  * Get the font size related styles
@@ -111,12 +111,31 @@ export const getFontSizedFromSize: VariantSpreadFunction<
   TextProps,
   SizeTokens
 > = (sizeTokenIn = "$true", extras) => {
-  return getFontSized(sizeToFontSize(getSized(sizeTokenIn)), extras);
+  const font = extras.font;
+  if (!font) {
+    return {
+      fontSize: sizeTokenIn
+    };
+  }
+
+  const sizeToken = (
+    isNumber(sizeTokenIn)
+      ? getNearestToken<SizeTokens>(sizeTokenIn, "size")
+      : sizeTokenIn
+  ) as `$${string}`;
+
+  const value = getFontSized(sizeToken, extras);
+
+  // console.log(
+  //   `font: ${extras.fontFamily}, token: ${sizeTokenIn}, size: ${getSized(sizeTokenIn)}, value: ${JSON.stringify(value)}`
+  // );
+
+  return value;
 };
 
 const cache = new WeakMap<any, FontSizeTokens>();
 
-function getDefaultSizeToken(font: GenericFont) {
+function getDefaultSizeToken(font: GenericFont): FontSizeTokens {
   if (typeof font === "object" && cache.has(font)) {
     return cache.get(font)!;
   }
@@ -139,9 +158,9 @@ function getDefaultSizeToken(font: GenericFont) {
       Fix this by having consistent tokens across fonts and sizes and setting a true key for your size tokens, or
       set true keys for all your font tokens: "size", "lineHeight", "fontStyle", etc.`);
     }
-    return Object.keys(font.size)[3];
+    return Object.keys(font.size)[3] as FontSizeTokens;
   }
 
   cache.set(font, sizeDefaultSpecific as FontSizeTokens);
-  return sizeDefaultSpecific;
+  return sizeDefaultSpecific as FontSizeTokens;
 }

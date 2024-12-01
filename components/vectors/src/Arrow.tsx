@@ -51,10 +51,12 @@ type ArrowContainerProps = GetProps<typeof ArrowContainer>;
 export type ArrowProps = IconProps &
   Pick<ArrowContainerProps, "pointing"> & {
     isComplete?: boolean;
+    animateShrink?: boolean;
   };
 
 const Icon = ({
   isComplete = true,
+  animateShrink = true,
   size = 24,
   pointing = "right",
   ...props
@@ -113,13 +115,13 @@ const Icon = ({
         strokeLinecap="round"
         strokeLinejoin="round"
         {...(props as SvgProps)}>
-        {isComplete && (
+        {(isComplete || !animateShrink) && (
           <>
             <Path d={`M7 8h${position}`} stroke={color} strokeWidth="3" />
             <Path stroke={color} d={`m${position} 1 7 7-7 7`} strokeWidth="3" />
           </>
         )}
-        {!isComplete && (
+        {!isComplete && animateShrink && (
           <>
             <Path d={`M7 8h${reverse}`} stroke={color} strokeWidth="3" />
             <Path stroke={color} d={`m${reverse} 1 7 7-7 7`} strokeWidth="3" />
@@ -134,15 +136,28 @@ Icon.displayName = "Arrow";
 
 export const Arrow = memo<ArrowProps>(themed(Icon));
 
-export const RightArrow = (props: ArrowProps) => (
+type DirectionalArrowProps = Omit<ArrowProps, "pointing">;
+
+export const RightArrow = (props: DirectionalArrowProps) => (
   <Arrow pointing="right" {...props} />
 );
-export const LeftArrow = (props: ArrowProps) => (
+
+export type RightArrowProps = GetProps<typeof RightArrow>;
+
+export const LeftArrow = (props: DirectionalArrowProps) => (
   <Arrow pointing="left" {...props} />
 );
-export const UpArrow = (props: ArrowProps) => (
+
+export type LeftArrowProps = GetProps<typeof LeftArrow>;
+
+export const UpArrow = (props: DirectionalArrowProps) => (
   <Arrow pointing="up" {...props} />
 );
-export const DownArrow = (props: ArrowProps) => (
+
+export type UpArrowProps = GetProps<typeof UpArrow>;
+
+export const DownArrow = (props: DirectionalArrowProps) => (
   <Arrow pointing="down" {...props} />
 );
+
+export type DownArrowProps = GetProps<typeof DownArrow>;

@@ -47,6 +47,7 @@ export const baseInputStyle = [
     color: "$color",
     placeholderTextColor: "$placeholderColor",
     fontFamily: "$body",
+    fontSize: "$true",
     verticalAlign: "center",
     margin: 0,
     padding: 0,
@@ -87,7 +88,7 @@ export const baseInputStyle = [
           const size = getSized(val);
           const space = sizeToSpace(size);
           return {
-            ...getFontSizedFromSize(size, extras),
+            ...getFontSizedFromSize(val, extras),
             paddingHorizontal: Math.round(space * 0.4)
           };
         }

@@ -16,18 +16,18 @@
  -------------------------------------------------------------------*/
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { PdfIcon } from "./PdfIcon";
+import { Diagonal } from "./Diagonal";
 
-const meta: Meta<typeof PdfIcon> = {
-  title: "Icons/PdfIcon",
-  component: PdfIcon,
+const meta: Meta<typeof Diagonal> = {
+  title: "Vectors/Diagonal",
+  component: Diagonal,
   tags: ["autodocs"],
-  render: (args: any) => <PdfIcon {...args} />
-} satisfies Meta<typeof PdfIcon>;
+  render: (args: any) => <Diagonal {...args} height="200" width="600" />
+} satisfies Meta<typeof Diagonal>;
 
 export default meta;
 
-type Story = StoryObj<typeof PdfIcon>;
+type Story = StoryObj<typeof Diagonal>;
 
 export const Base: Story = {
   args: {}

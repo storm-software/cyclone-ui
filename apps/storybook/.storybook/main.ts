@@ -19,6 +19,7 @@ import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import type { StorybookConfig } from "@storybook/react-vite";
 import react from "@vitejs/plugin-react-swc";
 import { dirname, join } from "node:path";
+import reactNativeWeb from "vite-plugin-react-native-web";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
@@ -94,6 +95,7 @@ const config: StorybookConfig = {
 
       plugins: [
         nxViteTsPaths({ debug: false }),
+        reactNativeWeb(),
         react(),
         tamaguiPlugin({
           config: "./tamagui.config.ts",

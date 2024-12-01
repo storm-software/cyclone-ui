@@ -17,7 +17,7 @@
 
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { getSized } from "@cyclone-ui/helpers";
-import { AlertCircle, CheckCircle, InfoCircle } from "@cyclone-ui/icons";
+import { AlertCircle, CheckCircle, InfoCircle } from "@cyclone-ui/vectors";
 import type {
   GetProps,
   SizeTokens,

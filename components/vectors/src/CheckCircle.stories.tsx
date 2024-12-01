@@ -17,27 +17,27 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
-import { AccordionToggle } from "./AccordionToggle";
+import { CheckCircle } from "./CheckCircle";
 
-const meta: Meta<typeof AccordionToggle> = {
-  title: "Icons/AccordionToggle",
-  component: AccordionToggle,
+const meta: Meta<typeof CheckCircle> = {
+  title: "Vectors/CheckCircle",
+  component: CheckCircle,
   tags: ["autodocs"],
   render: (args: any) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isComplete, setIsComplete] = useState(false);
     useEffect(() => {
       setInterval(() => {
-        setIsExpanded((prev: boolean) => !prev);
-      }, 2000);
-    }, [setIsExpanded]);
+        setIsComplete((prev: boolean) => !prev);
+      }, 5000);
+    }, [setIsComplete]);
 
-    return <AccordionToggle {...args} isExpanded={isExpanded} />;
+    return <CheckCircle {...args} isComplete={isComplete} />;
   }
-} satisfies Meta<typeof AccordionToggle>;
+} satisfies Meta<typeof CheckCircle>;
 
 export default meta;
 
-type Story = StoryObj<typeof AccordionToggle>;
+type Story = StoryObj<typeof CheckCircle>;
 
 export const Base: Story = {
   args: {

@@ -16,31 +16,19 @@
  -------------------------------------------------------------------*/
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { useEffect, useState } from "react";
-import { AlertCircle } from "./AlertCircle";
+import { CheckerBoard } from "./CheckerBoard";
 
-const meta: Meta<typeof AlertCircle> = {
-  title: "Icons/AlertCircle",
-  component: AlertCircle,
+const meta: Meta<typeof CheckerBoard> = {
+  title: "Vectors/CheckerBoard",
+  component: CheckerBoard,
   tags: ["autodocs"],
-  render: (args: any) => {
-    const [isComplete, setIsComplete] = useState(false);
-    useEffect(() => {
-      setInterval(() => {
-        setIsComplete((prev: boolean) => !prev);
-      }, 5000);
-    }, [setIsComplete]);
-
-    return <AlertCircle {...args} isComplete={isComplete} />;
-  }
-} satisfies Meta<typeof AlertCircle>;
+  render: (args: any) => <CheckerBoard {...args} width="790" height="640" />
+} satisfies Meta<typeof CheckerBoard>;
 
 export default meta;
 
-type Story = StoryObj<typeof AlertCircle>;
+type Story = StoryObj<typeof CheckerBoard>;
 
 export const Base: Story = {
-  args: {
-    size: "$6"
-  }
+  args: {}
 };

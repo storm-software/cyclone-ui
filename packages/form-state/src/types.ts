@@ -23,7 +23,7 @@ import {
   SelectOption,
   ValidationDetails
 } from "@storm-stack/types";
-import { SizeTokens, TamaguiElement } from "@tamagui/core";
+import { SizeTokens, TamaguiTextElement } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
 import { LegacyRef } from "react";
 
@@ -354,7 +354,7 @@ export type FieldBaseState<TFieldValue = any> = {
   /**
    * The reference of the field.
    */
-  ref: InferFieldState<TFieldValue, LegacyRef<TamaguiElement>>;
+  ref: InferFieldState<TFieldValue, LegacyRef<TamaguiTextElement>>;
 
   /**
    * The field group's initial values.

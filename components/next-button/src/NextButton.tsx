@@ -16,19 +16,28 @@
  -------------------------------------------------------------------*/
 
 import { Button, type ButtonProps } from "@cyclone-ui/button";
-import { RightArrow } from "@cyclone-ui/icons";
+import { RightArrow, type RightArrowProps } from "@cyclone-ui/vectors";
 import { useHover } from "@storm-stack/hooks";
 import { useComposedRefs, View } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
 
-export type NextButtonProps = ButtonProps & {
-  hideText?: boolean;
-};
+export type NextButtonProps = ButtonProps &
+  Pick<RightArrowProps, "animateShrink"> & {
+    hideText?: boolean;
+  };
 
 export const NextButton = Button.styleable<{
   hideText?: boolean;
 }>(
-  ({ children, hideText = false, ...props }: NextButtonProps, forwardedRef) => {
+  (
+    {
+      children,
+      hideText = false,
+      animateShrink = false,
+      ...props
+    }: NextButtonProps,
+    forwardedRef
+  ) => {
     const [hoverRef, hovering] = useHover();
     const ref = useComposedRefs(forwardedRef, hoverRef);
 
@@ -38,7 +47,7 @@ export const NextButton = Button.styleable<{
           <XStack gap="$0.75" alignItems="center">
             {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
             <Button.Icon>
-              <RightArrow isComplete={hovering} />
+              <RightArrow isComplete={hovering} animateShrink={animateShrink} />
             </Button.Icon>
           </XStack>
         </View>

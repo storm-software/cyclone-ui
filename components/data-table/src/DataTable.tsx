@@ -19,6 +19,7 @@ import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
+import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
@@ -35,6 +36,8 @@ import {
   ColumnFiltersState,
   flexRender,
   getCoreRowModel,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
@@ -102,6 +105,8 @@ export function DataTable<TData extends RowData>({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getFacetedRowModel: getFacetedRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
     state: {
       sorting,
       columnFilters,
@@ -225,12 +230,14 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
 ) => {
   const [currentFilter, setCurrentFilter] = useState("");
 
-  const { sorting } = DataTableContext.useStyledContext();
-  const id = props.header.id;
-  const { toggleSorting, clearSorting, setFilterValue } = props.column;
+  const { column, header } = props;
 
-  const isSorted = props.column.getIsSorted();
-  const sortIndex = props.column.getSortIndex();
+  const { sorting } = DataTableContext.useStyledContext();
+  const id = header.id;
+  const { toggleSorting, clearSorting, setFilterValue } = column;
+
+  const isSorted = column.getIsSorted();
+  const sortIndex = column.getSortIndex();
   const desc = sorting.find(sort => sort.id === id)?.desc;
 
   const handleSorting = useCallback(() => {
@@ -300,60 +307,82 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
         )}
       </XStack>
 
-      <View
-        animation="normal"
-        opacity={!currentFilter ? 0 : 1}
-        $group-header-hover={{ opacity: 1 }}>
-        <Popover size="$5" allowFlip={true}>
-          <Popover.Trigger asChild={true}>
-            <Button
-              variant="ghost"
-              theme={ColorThemeName.BASE}
-              circular={true}
-              color="$primary"
-              padding="$2">
-              <Button.Icon>
-                <Filter size="$1" />
-              </Button.Icon>
-            </Button>
-          </Popover.Trigger>
+      {column.getCanFilter() && (
+        <View
+          animation="normal"
+          opacity={1}
+          $group-header-hover={{ opacity: 1 }}
+          $platform-web={{
+            opacity: !currentFilter ? 0 : 1
+          }}>
+          <Popover allowFlip={true}>
+            <Popover.Trigger asChild={true}>
+              <Button
+                variant="ghost"
+                theme={ColorThemeName.BASE}
+                circular={true}
+                color="$primary"
+                padding="$2"
+                width="$3">
+                <Button.Icon>
+                  <Filter size="$1" />
+                </Button.Icon>
+              </Button>
+            </Popover.Trigger>
 
-          <Popover.Content>
-            <Form
-              name="columnFilter"
-              onSubmit={handleFilterSubmit}
-              defaultValues={{
-                filter: currentFilter,
-                selectAll: false
-              }}>
-              <YStack gap="$4">
-                <SearchInputField name="filter" onChange={handleFilterChanged}>
-                  <SearchInputField.Control>
-                    <SearchInputField.Control.TextBox placeholder="Filter..." />
-                  </SearchInputField.Control>
-                </SearchInputField>
+            <Popover.Content width="$16">
+              <View flex={1} minWidth="100%">
+                <Form
+                  name="columnFilter"
+                  onSubmit={handleFilterSubmit}
+                  defaultValues={{
+                    filter: currentFilter,
+                    selectAll: false
+                  }}>
+                  <YStack gap="$3" width="100%">
+                    <SearchInputField
+                      name="filter"
+                      size="$3"
+                      width="$15"
+                      onChange={handleFilterChanged}>
+                      <SearchInputField.Control>
+                        <SearchInputField.Control.TextBox placeholder="Filter..." />
+                      </SearchInputField.Control>
+                    </SearchInputField>
 
-                <Popover.Content.ScrollView maxHeight={300}>
-                  <CheckboxField name="selectAll" value={true}>
-                    <XStack gap="$2">
-                      <CheckboxField.Control />
-                      <CheckboxField.Label>Filter</CheckboxField.Label>
-                    </XStack>
-                  </CheckboxField>
-                </Popover.Content.ScrollView>
+                    <Popover.Content.ScrollView>
+                      <CheckboxField name="selectAll" size="$3">
+                        <XStack gap="$3">
+                          <CheckboxField.Control />
+                          <CheckboxField.Label>
+                            (Select All)
+                          </CheckboxField.Label>
+                        </XStack>
+                      </CheckboxField>
 
-                <Popover.Content.Close asChild={true}>
-                  <Form.Reset asChild={true}>
-                    <Button animate={false}>
-                      <Button.Text>Clear</Button.Text>
-                    </Button>
-                  </Form.Reset>
-                </Popover.Content.Close>
-              </YStack>
-            </Form>
-          </Popover.Content>
-        </Popover>
-      </View>
+                      {column
+                        .getFacetedUniqueValues()
+                        .entries()
+                        .map(([value, count]) => {
+                          return (
+                            <CheckboxField key={value} name={value} size="$3">
+                              <XStack gap="$3">
+                                <CheckboxField.Control />
+                                <CheckboxField.Label>
+                                  {value} ({count})
+                                </CheckboxField.Label>
+                              </XStack>
+                            </CheckboxField>
+                          );
+                        })}
+                    </Popover.Content.ScrollView>
+                  </YStack>
+                </Form>
+              </View>
+            </Popover.Content>
+          </Popover>
+        </View>
+      )}
     </XStack>
   );
 };
@@ -379,6 +408,15 @@ export function DataTablePagination<TData extends RowData>({
   pageCount,
   ...props
 }: DataTablePaginationProps<TData>) {
+  const { setPagination } = DataTableContext.useStyledContext();
+
+  const handlePageSizeChange = useCallback(
+    (value: number) => {
+      setPagination(state => ({ ...state, pageSize: value }));
+    },
+    [setPagination]
+  );
+
   const pageSizes = useMemo(() => {
     const result = [] as SelectOption<number>[];
     if (rowCount >= 5) {
@@ -464,22 +502,30 @@ export function DataTablePagination<TData extends RowData>({
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingHorizontal="$1">
+      paddingHorizontal="$2">
       <View flex={1}>
-        <Form
-          name="pageSizing"
-          defaultValues={{
-            pageSize
-          }}>
-          <SelectField name="pageSize" items={pageSizes} size="$4">
-            <XStack alignItems="center" gap="$4">
-              <SelectField.Label hideOptional={true}>
-                Per page
-              </SelectField.Label>
-              <SelectField.Control placeholder="Size" />
-            </XStack>
-          </SelectField>
-        </Form>
+        <XStack alignItems="center" gap="$4">
+          <Form
+            name="pageSizing"
+            defaultValues={{
+              pageSize
+            }}>
+            <SelectField
+              name="pageSize"
+              items={pageSizes}
+              size="$4"
+              onChange={handlePageSizeChange}>
+              <XStack alignItems="center" gap="$4">
+                <SelectField.Label hideOptional={true}>
+                  Per page
+                </SelectField.Label>
+                <SelectField.Control placeholder="Size" flex={1} />
+              </XStack>
+            </SelectField>
+          </Form>
+
+          <LabelText size="$4">Total: {rowCount}</LabelText>
+        </XStack>
       </View>
 
       <Pagination

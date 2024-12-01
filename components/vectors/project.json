@@ -1,8 +1,8 @@
 {
-  "name": "icons",
+  "name": "vectors",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/icons/src",
+  "sourceRoot": "components/vectors/src",
   "targets": {
     "build": {
       "cache": true,
@@ -11,13 +11,13 @@
       "dependsOn": ["^build"],
       "output": "{options.outputPath}",
       "options": {
-        "outputPath": "dist/components/icons",
-        "tsConfig": "components/icons/tsconfig.json",
-        "project": "components/icons/package.json",
+        "outputPath": "dist/components/vectors",
+        "tsConfig": "components/vectors/tsconfig.json",
+        "project": "components/vectors/package.json",
         "defaultConfiguration": "production",
         "assets": [
           {
-            "input": "components/icons",
+            "input": "components/vectors",
             "glob": "*.md",
             "output": "/"
           },

@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Heading6Text } from "@cyclone-ui/heading-text";
-import { AccordionToggle } from "@cyclone-ui/icons";
+import { AccordionToggle } from "@cyclone-ui/vectors";
 import { isString } from "@storm-stack/types/type-checks/is-string";
 import {
   AccordionMultipleProps,

@@ -16,7 +16,11 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import {
+  useFieldActions,
+  useFieldRef,
+  useFieldStore
+} from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { Theme, withStaticProperties } from "@tamagui/core";
 import { useCallback, useLayoutEffect } from "react";
@@ -88,14 +92,15 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
       change(options?.defaultValue);
     }, [change, options?.defaultValue]);
 
+    const inputRef = useFieldRef(forwardedRef);
     useLayoutEffect(() => {
-      mount(forwardedRef);
+      mount(inputRef);
     }, [mount]);
 
     return (
       <Theme name={theme}>
         <Input.TextBox.Value
-          ref={forwardedRef}
+          ref={inputRef}
           {...props}
           value={formattedValue}
           defaultValue={String(initialValue ?? "")}
