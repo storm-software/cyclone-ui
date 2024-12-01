@@ -17,6 +17,7 @@ overrides:
   '@cyclone-ui/checkbox-field': workspace:*
   '@cyclone-ui/cli': workspace:*
   '@cyclone-ui/accordion': workspace:*
+  '@cyclone-ui/scroll-view': workspace:*
   '@cyclone-ui/data-table': workspace:*
   '@cyclone-ui/date-picker': workspace:*
   '@cyclone-ui/date-picker-field': workspace:*
@@ -1840,6 +1841,25 @@ importers:
       jotai:
         specifier: '>=2.8.0'
         version: 2.10.3(@types/react@18.3.12)(react@18.3.1)
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/scroll-view:
+    dependencies:
+      '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -5372,7 +5392,7 @@ packages:
 
   '@expo/bunyan@4.0.1':
     resolution: {integrity: sha512-+Lla7nYSiHZirgK+U/uYzsLv/X+HaJienbD5AKX1UQZHYfWaP+9uuQluRB4GrEVWF0GZ7vEVp/jzaOT9k/SQlg==}
-    engines: {node: '>=0.10.0'}
+    engines: {'0': node >=0.10.0}
 
   '@expo/cli@0.18.14':
     resolution: {integrity: sha512-ke2IVs3MfIMe2NjXY11Ky9+r0+eav6NUa+cy61wpZNPe5QkwIJ56SdJ4wIMMKFPFhgLsy1vfaqhOcZo96U4wCg==}
@@ -5981,7 +6001,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 

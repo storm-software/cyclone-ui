@@ -94,6 +94,8 @@
       "@cyclone-ui/helpers/*": ["packages/helpers/src/*"],
       "@cyclone-ui/vectors": ["components/vectors/src/index.ts"],
       "@cyclone-ui/vectors/*": ["components/vectors/src/*"],
+      "@cyclone-ui/scroll-view": ["components/scroll-view/src/index.ts"],
+      "@cyclone-ui/scroll-view/*": ["components/scroll-view/src/*"],
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],

@@ -221,12 +221,14 @@
   },
   "nx": {
     "includedScripts": [
+      "lint-sherif",
       "lint-ls",
       "lint",
       "format",
       "format-readme",
       "format-prettier",
       "format-toml",
+      "format-sherif",
       "commit",
       "release"
     ]
@@ -245,6 +247,7 @@
       "@cyclone-ui/checkbox-field": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/accordion": "workspace:*",
+      "@cyclone-ui/scroll-view": "workspace:*",
       "@cyclone-ui/data-table": "workspace:*",
       "@cyclone-ui/date-picker": "workspace:*",
       "@cyclone-ui/date-picker-field": "workspace:*",
