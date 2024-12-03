@@ -41,6 +41,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  Row,
   useReactTable,
   type HeaderContext,
   type PaginationState,
@@ -57,6 +58,22 @@ import {
   useMemo,
   useState
 } from "react";
+
+declare module "@tanstack/react-table" {
+  interface ColumnMeta<TData extends RowData, TValue> {
+    facetFn?: (data: TData) => string;
+  }
+}
+
+const defaultFilterFn = <TData extends RowData>(
+  row: Row<TData>,
+  columnId: string,
+  filterValues: string[]
+) => {
+  return filterValues
+    .map(filterValue => filterValue.toLowerCase())
+    .includes(String(row.getValue(columnId)).toLowerCase());
+};
 
 export type DataTableContextProps = {
   sorting: SortingState;
@@ -117,6 +134,10 @@ export function DataTable<TData extends RowData>({
     onPaginationChange: setPagination,
     manualPagination: false,
     ...options,
+    columns: options.columns.map(column => ({
+      filterFn: defaultFilterFn,
+      ...column
+    })),
     rowCount: data.length,
     data
   });
@@ -225,16 +246,76 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   );
 };
 
+const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
+  props: DataTableHeaderProps<TData, TValue>["column"]
+) => {
+  const {
+    setFilterValue,
+    getFacetedUniqueValues,
+    columnDef: { meta }
+  } = props;
+
+  const sortedUniqueValues = useMemo(
+    () => Array.from(getFacetedUniqueValues().keys()).sort().slice(0, 5000),
+    [getFacetedUniqueValues()]
+  );
+
+  const handleFilterChanged = useCallback(
+    (value: string) => {
+      setFilterValue(value);
+    },
+    [setFilterValue]
+  );
+
+  return (
+    <YStack gap="$3" width="100%">
+      <SearchInputField
+        name="search"
+        size="$3"
+        width="$15"
+        onChange={handleFilterChanged}>
+        <SearchInputField.Control>
+          <SearchInputField.Control.TextBox placeholder="Filter..." />
+        </SearchInputField.Control>
+      </SearchInputField>
+
+      <Popover.Content.ScrollView maxHeight="$16" padding={5}>
+        <YStack gap="$2">
+          <CheckboxField name="selectAll" size="$3">
+            <XStack gap="$3">
+              <CheckboxField.Control />
+              <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
+            </XStack>
+          </CheckboxField>
+
+          {sortedUniqueValues.map(value => {
+            return (
+              <CheckboxField key={value} name={String(value)} size="$3">
+                <XStack gap="$3">
+                  <CheckboxField.Control />
+                  <CheckboxField.Label>
+                    {meta?.facetFn?.(value) ?? value}
+                  </CheckboxField.Label>
+                </XStack>
+              </CheckboxField>
+            );
+          })}
+        </YStack>
+      </Popover.Content.ScrollView>
+    </YStack>
+  );
+};
+
 export const DataTableHeader = <TData extends RowData, TValue = any>(
   props: DataTableHeaderProps<TData, TValue>
 ) => {
-  const [currentFilter, setCurrentFilter] = useState("");
+  const [currentSearch, setCurrentSearch] = useState("");
 
   const { column, header } = props;
 
   const { sorting } = DataTableContext.useStyledContext();
-  const id = header.id;
-  const { toggleSorting, clearSorting, setFilterValue } = column;
+  const { toggleSorting, clearSorting, setFilterValue, getFilterValue, id } =
+    column;
 
   const isSorted = column.getIsSorted();
   const sortIndex = column.getSortIndex();
@@ -247,19 +328,21 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
       toggleSorting(!desc, true);
     }
   }, [toggleSorting, clearSorting, desc]);
-  const handleFilterSubmit = useCallback(() => {
-    setFilterValue(currentFilter);
-  }, [setFilterValue, currentFilter]);
-  const handleFilterClear = useCallback(() => {
-    setFilterValue("");
-    setCurrentFilter("");
-  }, [setFilterValue, setCurrentFilter]);
-  const handleFilterChanged = useCallback(
-    (value: string) => {
-      setCurrentFilter(value ?? "");
-    },
-    [setCurrentFilter]
-  );
+  // const handleFilterSubmit = useCallback(() => {
+  //   setFilterValue(currentFilter);
+  // }, [setFilterValue, currentFilter]);
+  // const handleFilterClear = useCallback(() => {
+  //   setFilterValue("");
+  //   setCurrentFilter("");
+  // }, [setFilterValue, setCurrentFilter]);
+  // const handleFilterChanged = useCallback(
+  //   (value: string) => {
+  //     setCurrentFilter(value ?? "");
+  //   },
+  //   [setCurrentFilter]
+  // );
+
+  const filterValue = getFilterValue();
 
   return (
     <XStack
@@ -277,7 +360,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
           color="$primary"
           size="$6"
           $group-header-hover={{ color: "$fg" }}>
-          {titleCase(id.replaceAll("_", "  "))}
+          {titleCase(id)}
         </SizableText>
         {isSorted && !desc && (
           <XStack gap="$0.25" alignItems="center">
@@ -310,17 +393,15 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
       {column.getCanFilter() && (
         <View
           animation="normal"
-          opacity={1}
-          $group-header-hover={{ opacity: 1 }}
-          $platform-web={{
-            opacity: !currentFilter ? 0 : 1
-          }}>
+          opacity={!filterValue ? 0 : 1}
+          $group-header-hover={{ opacity: 1 }}>
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
               <Button
                 variant="ghost"
                 theme={ColorThemeName.BASE}
                 circular={true}
+                bordered={false}
                 color="$primary"
                 padding="$2"
                 width="$3">
@@ -333,50 +414,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
             <Popover.Content width="$16">
               <View flex={1} minWidth="100%">
                 <Form
-                  name="columnFilter"
-                  onSubmit={handleFilterSubmit}
+                  name={`${id}_columnFilter`}
                   defaultValues={{
-                    filter: currentFilter,
-                    selectAll: false
+                    search: filterValue,
+                    selectAll: true
                   }}>
-                  <YStack gap="$3" width="100%">
-                    <SearchInputField
-                      name="filter"
-                      size="$3"
-                      width="$15"
-                      onChange={handleFilterChanged}>
-                      <SearchInputField.Control>
-                        <SearchInputField.Control.TextBox placeholder="Filter..." />
-                      </SearchInputField.Control>
-                    </SearchInputField>
-
-                    <Popover.Content.ScrollView>
-                      <CheckboxField name="selectAll" size="$3">
-                        <XStack gap="$3">
-                          <CheckboxField.Control />
-                          <CheckboxField.Label>
-                            (Select All)
-                          </CheckboxField.Label>
-                        </XStack>
-                      </CheckboxField>
-
-                      {column
-                        .getFacetedUniqueValues()
-                        .entries()
-                        .map(([value, count]) => {
-                          return (
-                            <CheckboxField key={value} name={value} size="$3">
-                              <XStack gap="$3">
-                                <CheckboxField.Control />
-                                <CheckboxField.Label>
-                                  {value} ({count})
-                                </CheckboxField.Label>
-                              </XStack>
-                            </CheckboxField>
-                          );
-                        })}
-                    </Popover.Content.ScrollView>
-                  </YStack>
+                  <DataTableHeaderFilterFields {...column} />
                 </Form>
               </View>
             </Popover.Content>
@@ -504,7 +547,7 @@ export function DataTablePagination<TData extends RowData>({
       alignItems="center"
       paddingHorizontal="$2">
       <View flex={1}>
-        <XStack alignItems="center" gap="$4">
+        <XStack alignItems="center" gap="$2">
           <Form
             name="pageSizing"
             defaultValues={{
@@ -517,7 +560,7 @@ export function DataTablePagination<TData extends RowData>({
               onChange={handlePageSizeChange}>
               <XStack alignItems="center" gap="$4">
                 <SelectField.Label hideOptional={true}>
-                  Per page
+                  Per page:
                 </SelectField.Label>
                 <SelectField.Control placeholder="Size" flex={1} />
               </XStack>

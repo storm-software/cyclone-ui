@@ -20,7 +20,7 @@ permissions:
 jobs:
   syncpack:
     name: Syncpack
-    uses: storm-ops/.github/workflows/syncpack-reusable.yml
+    uses: storm-ops/.github/workflows/syncpack-reusable.yml@main
     secrets:
       STORM_BOT_GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
       STORM_BOT_NPM_TOKEN: ${{ secrets.STORM_BOT_NPM_TOKEN }}

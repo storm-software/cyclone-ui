@@ -223,7 +223,7 @@ export type FormBaseState<
   /**
    * The references of the form's fields.
    */
-  refs: InferFormState<TFormValues, LegacyRef<TamaguiElement>>;
+  refs: InferFormState<TFormValues, LegacyRef<TamaguiTextElement>>;
 
   /**
    * The field group's initial values.

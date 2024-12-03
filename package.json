@@ -79,7 +79,7 @@
     "lighthouse:live": "npx lighthouse https://cyclone-ui.com --view --chrome-flags='--headless' --throttling.cpuSlowdownMultiplier=16 --output-path=/tmp/report.html",
     "lint": "pnpm storm-lint all --skip-circular-deps",
     "lint-knip": "pnpx knip",
-    "lint-sherif": "pnpx sherif -i typescript",
+    "lint-sherif": "pnpx sherif -i typescript -i react -i react-dom -i react-native",
     "local-registry": "nx local-registry @cyclone-ui/monorepo",
     "nuke": "pnpm nuke:cache && pnpm nuke:node_modules",
     "nuke:cache": "pnpm exec rimraf --no-interactive -- ./dist ./tmp ./pnpm-lock.yaml ./.tamagui",

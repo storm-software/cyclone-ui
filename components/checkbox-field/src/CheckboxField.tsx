@@ -38,17 +38,17 @@ const CheckboxFieldLabel = Field.Label.styleable(
     const disabled = store.get.disabled();
 
     return (
-      <Field.Label
-        ref={forwardedRef}
-        paddingBottom={0}
-        hideRequired={true}
-        textAlign="center"
-        {...props}>
-        <XStack gap="$0.5" alignContent="center">
+      <XStack gap="$0.5" alignContent="center">
+        <Field.Label
+          ref={forwardedRef}
+          paddingBottom={0}
+          hideRequired={true}
+          textAlign="center"
+          {...props}>
           {children}
-          {disabled && <Field.ThemeIcon disabled={true} />}
-        </XStack>
-      </Field.Label>
+        </Field.Label>
+        {disabled && <Field.ThemeIcon disabled={true} />}
+      </XStack>
     );
   }
 );

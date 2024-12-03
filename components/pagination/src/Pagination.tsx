@@ -95,13 +95,14 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
           bordered={false}
           theme={theme}
           size="$3"
+          paddingHorizontal="$0"
           {...props}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
         </Button>
 
         {currentPage > 3 && pageCount > 5 && (
-          <SizableText color="$secondary" size="$6" paddingHorizontal="$1">
+          <SizableText color="$primary" size="$6" paddingHorizontal="$1">
             . . .
           </SizableText>
         )}
@@ -112,6 +113,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             bordered={false}
             theme={theme}
             size="$3"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleSecond}>
             <Button.Text>
@@ -135,6 +137,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             bordered={false}
             theme={theme}
             size="$3"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleThird}>
             <Button.Text>
@@ -158,6 +161,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             bordered={false}
             theme={theme}
             size="$3"
+            paddingHorizontal="$0"
             {...props}
             onClick={handleFourth}>
             <Button.Text>
@@ -171,7 +175,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         )}
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
-          <SizableText color="$secondary" size="$6" paddingHorizontal="$1">
+          <SizableText color="$primary" size="$6" paddingHorizontal="$1">
             . . .
           </SizableText>
         )}
@@ -183,6 +187,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             theme={theme}
             {...props}
             size="$3"
+            paddingHorizontal="$0"
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>

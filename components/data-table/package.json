@@ -34,12 +34,12 @@
   "dependencies": {
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
+    "@storm-stack/utilities": "latest",
     "@tamagui/adapt": "^1.116.15",
     "@tamagui/animate-presence": "^1.116.15",
     "@tamagui/core": "^1.116.15",
     "@tamagui/helpers": "^1.116.15",
     "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/scroll-view": "^1.116.15",
     "@tamagui/stacks": "^1.116.15",
     "@tamagui/text": "^1.116.15",
     "@tanstack/react-table": "^8.17.3",

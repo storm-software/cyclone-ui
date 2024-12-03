@@ -16,16 +16,18 @@
  -------------------------------------------------------------------*/
 
 import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import { upperCaseFirst } from "@storm-stack/string-fns/upper-case-first";
+import { isPromise } from "@storm-stack/types/type-checks/is-promise";
+import { MessageDetails } from "@storm-stack/types/utility-types/messages";
 import { Getter, Setter } from "jotai";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
 import { UseFieldStore } from "../stores/field-store";
 import { formStore } from "../stores/form-store";
-import { Validator } from "../types";
+import { ValidationCause } from "../types";
 
 export const useFormActions = <
-  TFormValues extends Record<string, any> = Record<string, any>,
-  TValidator extends Validator<TFormValues> = Validator<TFormValues>
+  TFormValues extends Record<string, any> = Record<string, any>
 >(
   opts?: UseAtomOptionsOrScope
 ) => {
@@ -60,6 +62,86 @@ export const useFormActions = <
       //   }, {})
       // );
     }, [])
+  );
+
+  const validate = useAtomCallback(
+    useCallback(
+      async (
+        get: Getter,
+        set: Setter,
+        nextValues: TFormValues,
+        cause: ValidationCause
+      ) => {
+        const options = get(formStore.api.atom.options);
+        if (
+          (options.validate?.[`on${upperCaseFirst(cause)}`] &&
+            options.validate[`on${upperCaseFirst(cause)}`].length > 0) ||
+          (options.validate?.[
+            `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+          ] &&
+            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
+              .length > 0)
+        ) {
+          const previousValues = get(formStore.api.atom.previousValues);
+
+          const results = [] as any[];
+          if (
+            options.validate?.[`on${upperCaseFirst(cause)}`] &&
+            options.validate[`on${upperCaseFirst(cause)}`].length > 0
+          ) {
+            results.push(
+              ...options.validate[`on${upperCaseFirst(cause)}`].map(validator =>
+                validator(nextValues, previousValues, cause, get, set)
+              )
+            );
+          }
+          if (
+            cause !== ValidationCause.INITIALIZE &&
+            options.validate?.[
+              `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+            ] &&
+            options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
+              .length > 0
+          ) {
+            results.push(
+              ...options.validate[
+                `on${upperCaseFirst(ValidationCause.INITIALIZE)}`
+              ].map(validator =>
+                validator(nextValues, previousValues, cause, get, set)
+              )
+            );
+          }
+
+          const messages = [] as MessageDetails[];
+          const promises = [] as Promise<MessageDetails[]>[];
+          for (const result of results) {
+            if (result) {
+              if (isPromise(result)) {
+                promises.push(result as Promise<MessageDetails[]>);
+              } else {
+                messages.push(...result);
+              }
+            }
+          }
+
+          if (promises.length > 0) {
+            set(formStore.api.atom.validating, true);
+            for (const result of await Promise.all(promises)) {
+              if (result && result.length > 0) {
+                messages.push(...result);
+              }
+            }
+            set(formStore.api.atom.validating, false);
+          }
+
+          set(formStore.api.atom.validationResults, prev => ({
+            ...prev,
+            [cause]: messages
+          }));
+        }
+      },
+      []
+    )
   );
 
   const submit = useAtomCallback(
@@ -103,6 +185,7 @@ export const useFormActions = <
   return {
     initializeField,
     uninitializeField,
+    validate,
     submit,
     reset
   };

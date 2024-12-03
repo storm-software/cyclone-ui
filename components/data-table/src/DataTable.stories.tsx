@@ -48,7 +48,7 @@ type Story = StoryObj<typeof DataTable>;
 
 type Person = {
   fullName: string;
-  username: string;
+  userName: string;
   age: number;
   visits: number;
   status: string;
@@ -59,7 +59,7 @@ type Person = {
 const defaultData: Person[] = [
   {
     fullName: "Sara Smith",
-    username: "@harry",
+    userName: "@harry",
     age: 24,
     visits: 100,
     status: "Offline",
@@ -67,7 +67,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Andy loren",
-    username: "@andy_dev",
+    userName: "@andy_dev",
     age: 40,
     visits: 40,
     status: "Active",
@@ -75,7 +75,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Bob marley",
-    username: "@massouddd",
+    userName: "@massouddd",
     age: 45,
     visits: 20,
     status: "Active",
@@ -83,7 +83,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Adam henry",
-    username: "@john",
+    userName: "@john",
     age: 24,
     visits: 100,
     status: "Active",
@@ -91,7 +91,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Andy loren",
-    username: "@andy",
+    userName: "@andy",
     age: 40,
     visits: 40,
     status: "Offline",
@@ -99,7 +99,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Massoud karimi",
-    username: "@massoud",
+    userName: "@massoud",
     age: 45,
     visits: 20,
     status: "Active",
@@ -107,7 +107,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "John",
-    username: "@john",
+    userName: "@john",
     age: 24,
     visits: 100,
     status: "Active",
@@ -115,7 +115,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Andy Doe",
-    username: "@andy",
+    userName: "@andy",
     age: 40,
     visits: 40,
     status: "Offline",
@@ -123,7 +123,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Preston bennet",
-    username: "@outworld",
+    userName: "@outworld",
     age: 45,
     visits: 20,
     status: "Active",
@@ -131,7 +131,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Jack anderson",
-    username: "@j_anderson",
+    userName: "@j_anderson",
     age: 45,
     visits: 20,
     status: "Offline",
@@ -139,7 +139,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "John peterson",
-    username: "@john",
+    userName: "@john",
     age: 24,
     visits: 100,
     status: "Active",
@@ -147,7 +147,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Tommy resse",
-    username: "@tommy",
+    userName: "@tommy",
     age: 40,
     visits: 40,
     status: "Offline",
@@ -155,7 +155,7 @@ const defaultData: Person[] = [
   },
   {
     fullName: "Manuel loren",
-    username: "@manuel",
+    userName: "@manuel",
     age: 40,
     visits: 40,
     status: "Offline",
@@ -200,12 +200,13 @@ const columns = [
   columnHelper.accessor(
     row => ({
       fullName: row.fullName,
-      userName: row.username,
+      userName: row.userName,
       image: row.avatar
     }),
     {
       cell: info => {
         const { fullName, userName, image } = info.getValue();
+
         return (
           <View
             flexDirection="row"
@@ -226,7 +227,8 @@ const columns = [
         );
       },
       header: DataTableHeader,
-      id: "user_base"
+      id: "user_base",
+      meta: { facetFn: data => data.userName }
     }
   ),
   columnHelper.accessor("age", {

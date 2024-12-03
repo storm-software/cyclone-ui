@@ -33,9 +33,7 @@ const meta: Meta<typeof ScrollView> = {
       alignItems="center"
       justifyContent="center">
       <ScrollView {...args} maxHeight={400} width="90%">
-        <View width="100%" height={2000} backgroundColor="blue">
-          <Diagonal height="100%" width="100%" />
-        </View>
+        <Diagonal width="100%" height={2000} />
       </ScrollView>
     </View>
   )

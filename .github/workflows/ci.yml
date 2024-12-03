@@ -77,7 +77,7 @@ jobs:
       - name: Configure git
         run: |
           git config user.name "Stormie-Bot"
-          git config user.email "Stormie-Bot@users.noreply.github.com"
+          git config user.email "bot@stormsoftware.com"
           git config lfs.allowincompletepush true
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
         shell: bash

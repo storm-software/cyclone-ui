@@ -523,10 +523,15 @@ const ButtonTextFrame = styled(LabelText, {
   }
 });
 
-const ButtonText = ButtonTextFrame.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    const { variant, disabled, circular, color, size } =
-      ButtonContext.useStyledContext();
+const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
+  ({ children, size, ...props }, forwardedRef) => {
+    const {
+      variant,
+      disabled,
+      circular,
+      color,
+      size: contextSize
+    } = ButtonContext.useStyledContext();
     const theme = useThemeName();
 
     return (
@@ -547,7 +552,7 @@ const ButtonText = ButtonTextFrame.styleable(
           variant={variant}
           disabled={disabled}
           circular={circular}
-          size={size}
+          size={size ?? contextSize}
           color={disabled ? "$colorDisabled" : color}
           {...props}
           borderRadius={0}
@@ -568,10 +573,18 @@ const ButtonText = ButtonTextFrame.styleable(
   }
 );
 
-const ButtonIcon = View.styleable(
-  ({ children, ...props }, forwardedRef) => {
-    const { variant, disabled, color, size } = ButtonContext.useStyledContext();
-    const adjusted = useMemo(() => getSized(size, { shift: -6 }), [size]);
+const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
+  ({ children, size, ...props }, forwardedRef) => {
+    const {
+      variant,
+      disabled,
+      color,
+      size: contextSize
+    } = ButtonContext.useStyledContext();
+    const adjusted = useMemo(
+      () => getSized(size ?? contextSize, { shift: -6 }),
+      [size, contextSize]
+    );
 
     const themeName = useThemeName();
     const theme =

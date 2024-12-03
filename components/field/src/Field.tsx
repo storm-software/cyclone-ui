@@ -455,7 +455,7 @@ const FieldIconButtonImpl = Button.styleable(
           padding="$1.5"
           {...props}
           size={adjusted}>
-          <Button.Icon>{children}</Button.Icon>
+          <Button.Icon size={adjusted}>{children}</Button.Icon>
         </Button>
       </View>
     );

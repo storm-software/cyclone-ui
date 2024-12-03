@@ -15,6 +15,7 @@
 
  -------------------------------------------------------------------*/
 
+import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Adapt } from "@tamagui/adapt";
 import {
   createStyledContext,
@@ -153,7 +154,7 @@ const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
 
 export const Popover = withStaticProperties(PopoverFrameImpl, {
   Content: withStaticProperties(PopoverContentImpl, {
-    ScrollView: TamaguiPopover.ScrollView,
+    ScrollView,
     Close: TamaguiPopover.Close
   }),
   Anchor: TamaguiPopover.Anchor,

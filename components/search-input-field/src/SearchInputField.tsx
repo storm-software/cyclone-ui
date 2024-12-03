@@ -15,10 +15,13 @@
 
  -------------------------------------------------------------------*/
 
+import { useFieldStore } from "@cyclone-ui/form-state";
+import { getSized } from "@cyclone-ui/helpers";
 import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { withStaticProperties } from "@tamagui/core";
 import { Search } from "@tamagui/lucide-icons";
+import { useMemo } from "react";
 
 const SearchInputFieldGroup = InputField.styleable(
   ({ children, ...props }, forwardedRef) => {
@@ -60,9 +63,14 @@ const SearchInputFieldControlTextBox = InputField.Control.TextBox.styleable<
     { children, placeholder = "Search...", clearable = true, ...props },
     forwardedRef
   ) => {
+    const store = useFieldStore();
+    const size = store.get.size();
+
+    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+
     return (
       <InputField.Control.TextBox ref={forwardedRef} {...props}>
-        <InputField.Icon>
+        <InputField.Icon size={adjusted}>
           <Search />
         </InputField.Icon>
 

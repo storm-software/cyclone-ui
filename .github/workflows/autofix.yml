@@ -1,4 +1,4 @@
-# Note: this pipelines is for the `storm-ops` repository, it should be used to build and release the Storm Nx-Plugin packages.
+# Note: this pipelines is for the `cyclone-ui` repository, it should be used to build and release the Storm Nx-Plugin packages.
 name: "autofix.ci"
 
 on:
@@ -34,7 +34,7 @@ jobs:
   autofix:
     name: "Autofix"
     runs-on: ubuntu-latest
-    if: github.repository == 'storm-software/storm-ops' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/canary' || github.ref == 'refs/heads/experimental')
+    if: github.repository == 'storm-software/cyclone-ui' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/canary' || github.ref == 'refs/heads/experimental')
     steps:
       - name: Setup workspace
         uses: storm-software/action-setup@main
