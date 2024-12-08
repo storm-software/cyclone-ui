@@ -1,15 +1,16 @@
 {
-  "name": "@cyclone-ui/registry-trpc",
+  "name": "@cyclone-ui/registry-api",
   "version": "0.3.0",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "packages/registry-trpc"
+    "directory": "packages/registry-api"
   },
   "private": true,
   "dependencies": {
     "@storm-stack/errors": "latest",
+    "@storm-stack/serialization": "latest",
     "@trpc/client": "npm:@trpc/client@next",
     "@trpc/server": "npm:@trpc/server@next",
     "zod": "^3.23.8"

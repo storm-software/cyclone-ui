@@ -1,0 +1,8 @@
+{
+  "name": "registry-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/registry-api/src",
+  "// targets": "to see all targets run: nx show project registry-api --web",
+  "targets": {}
+}

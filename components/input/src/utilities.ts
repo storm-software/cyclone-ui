@@ -46,9 +46,10 @@ export const baseInputStyle = [
     flex: 1,
     color: "$color",
     placeholderTextColor: "$placeholderColor",
+    selectionColor: "$color6",
     fontFamily: "$body",
     fontSize: "$true",
-    verticalAlign: "center",
+    alignItems: "center",
     margin: 0,
     padding: 0,
 

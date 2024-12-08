@@ -92,10 +92,6 @@
       "@cyclone-ui/heading-text/*": ["components/heading-text/src/*"],
       "@cyclone-ui/helpers": ["packages/helpers/src/index.ts"],
       "@cyclone-ui/helpers/*": ["packages/helpers/src/*"],
-      "@cyclone-ui/vectors": ["components/vectors/src/index.ts"],
-      "@cyclone-ui/vectors/*": ["components/vectors/src/*"],
-      "@cyclone-ui/scroll-view": ["components/scroll-view/src/index.ts"],
-      "@cyclone-ui/scroll-view/*": ["components/scroll-view/src/*"],
       "@cyclone-ui/input": ["components/input/src/index.ts"],
       "@cyclone-ui/input-field": ["components/input-field/src/index.ts"],
       "@cyclone-ui/input-field/*": ["components/input-field/src/*"],
@@ -132,8 +128,10 @@
       ],
       "@cyclone-ui/radio-group-field/*": ["components/radio-group-field/src/*"],
       "@cyclone-ui/radio-group/*": ["components/radio-group/src/*"],
-      "@cyclone-ui/registry-trpc": ["packages/registry-trpc/src/index.ts"],
-      "@cyclone-ui/registry-trpc/*": ["packages/registry-trpc/src/*"],
+      "@cyclone-ui/registry-api": ["packages/registry-api/src/index.ts"],
+      "@cyclone-ui/registry-api/*": ["packages/registry-api/src/*"],
+      "@cyclone-ui/scroll-view": ["components/scroll-view/src/index.ts"],
+      "@cyclone-ui/scroll-view/*": ["components/scroll-view/src/*"],
       "@cyclone-ui/search-input-field": [
         "components/search-input-field/src/index.ts"
       ],
@@ -178,6 +176,8 @@
         "components/validation-text/src/index.ts"
       ],
       "@cyclone-ui/validation-text/*": ["components/validation-text/src/*"],
+      "@cyclone-ui/vectors": ["components/vectors/src/index.ts"],
+      "@cyclone-ui/vectors/*": ["components/vectors/src/*"],
       "@cyclone-ui/visually-hidden": [
         "components/visually-hidden/src/index.ts"
       ],

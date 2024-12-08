@@ -15,11 +15,12 @@
 
  -------------------------------------------------------------------*/
 
-import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
-import { formStore, FormStore } from "../stores";
+import { useMemoStable } from "@storm-stack/hooks/use-memo-stable";
+import { atomEffect } from "jotai-effect";
+import { useAtomValue } from "jotai/react";
 
-export const useFormStore = (
-  options?: UseAtomOptionsOrScope
-): ReturnType<FormStore["useStore"]> => {
-  return formStore.useStore(options);
-};
+type EffectFn = Parameters<typeof atomEffect>[0];
+
+export function useAtomEffect(effectFn: EffectFn) {
+  useAtomValue(useMemoStable(() => atomEffect(effectFn), [effectFn]));
+}

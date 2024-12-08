@@ -15,9 +15,9 @@
 
  -------------------------------------------------------------------*/
 
-import { createContext } from "@cyclone-ui/registry-trpc/context";
-import { router } from "@cyclone-ui/registry-trpc/router";
-import type { Env } from "@cyclone-ui/registry-trpc/types";
+import { createContext } from "@cyclone-ui/registry-api/context";
+import { router } from "@cyclone-ui/registry-api/router";
+import type { Env } from "@cyclone-ui/registry-api/types";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 export default {

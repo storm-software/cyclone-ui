@@ -33,7 +33,6 @@ const CheckboxGroupFrame = styled(XGroup, {
   animation: "normal",
   justifyContent: "space-between",
   alignContent: "center",
-  verticalAlign: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
   borderColor: "$borderColor",
@@ -144,7 +143,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   name: "Checkbox",
 
   unstyled: true,
-  verticalAlign: "center",
+  alignItems: "center",
   height: "100%",
   width: "100%",
 
@@ -258,8 +257,8 @@ export const Checkbox = BaseCheckbox.styleable<{
       <CheckboxGroupFrame focused={focused} disabled={disabled} size={size}>
         <BaseCheckbox
           ref={forwardedRef}
-          id={name}
           {...props}
+          id={name}
           checked={checked}
           size={size}
           disabled={disabled}>
@@ -268,12 +267,12 @@ export const Checkbox = BaseCheckbox.styleable<{
             enterStyle={{
               scale: 0.8,
               y: 10,
-              opacity: 0
+              opacity: 0.2
             }}
             exitStyle={{
               scale: 0.8,
               y: -10,
-              opacity: 0
+              opacity: 0.5
             }}
             justifyContent="center"
             alignItems="center">

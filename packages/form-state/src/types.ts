@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { AtomStoreApi } from "@cyclone-ui/state/utilities/create-atom-store";
 import type { MaskitoOptions } from "@maskito/core";
 import {
   IsPlainObject,
@@ -114,6 +115,14 @@ export type FieldChangeEventHandler<TFieldValue = any> = (
   event: CustomEvent<TFieldValue>
 ) => any;
 
+export type CallbackContext<
+  TStore extends AtomStoreApi<any, any> = AtomStoreApi<any, any>
+> = {
+  get: Getter;
+  set: Setter;
+  store: TStore;
+};
+
 /**
  * The form options.
  */
@@ -125,21 +134,51 @@ export type FormOptions<
   theme?: string;
   disabled?: boolean;
   defaultValues?: FormValuesState<TFormValues>;
+
+  /**
+   * The validations to run on the form when certain events occur.
+   */
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
     TValidator[] | undefined
   >;
+
+  /**
+   * How long to debounce the `onChange` event and validation calls in milliseconds.
+   *
+   * @defaultValue 250
+   */
   debounceMs?: number;
-  onInitialize?: () => MaybePromise<void>;
-  onBlur?: () => MaybePromise<void>;
-  onFocus?: () => MaybePromise<void>;
-  onChange?: (values: TFormValues) => MaybePromise<void>;
-  onSubmit?: (values: TFormValues) => MaybePromise<void>;
+
+  /**
+   * A function that compares two sets of form values to determine if they are equal.
+   *
+   * @remarks
+   * The default `isEqual` function is provided by the `@storm-stack/utilities` package.
+   *
+   * @defaultValue `isEqual`
+   */
+  isEqual?: (value1: TFormValues, value2: TFormValues) => boolean;
 
   /**
    * The default options provided to all fields when they are created.
    */
   defaultFieldOptions?: Partial<Omit<FieldOptions, "name" | "mode">>;
+
+  /**
+   * A callback that is called when the form is initialized.
+   */
+  onInitialize?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the form is changed.
+   */
+  onChange?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the form is submitted.
+   */
+  onSubmit?: (context: CallbackContext) => MaybePromise<void>;
 };
 
 export type FormBaseState<
@@ -156,9 +195,9 @@ export type FormBaseState<
   disabled: boolean;
 
   /**
-   * A flag indicating whether the field is currently being validated.
+   * A flag indicating whether the form is currently being validated.
    */
-  validating: boolean;
+  formValidating: boolean;
 
   /**
    * The results of the form validation.
@@ -231,11 +270,6 @@ export type FormBaseState<
   initialValues: FormValuesState<TFormValues>;
 
   /**
-   * The field group's previous values.
-   */
-  previousValues: FormValuesState<TFormValues>;
-
-  /**
    * The field group's current values.
    */
   values: FormValuesState<TFormValues>;
@@ -243,7 +277,10 @@ export type FormBaseState<
   /**
    * The options provided when creating the form.
    */
-  options: FormOptions<TFormValues>;
+  options: FormOptions<TFormValues> &
+    Required<
+      Pick<FormOptions<TFormValues>, "isEqual" | "debounceMs" | "validate">
+    >;
 };
 
 /**
@@ -253,24 +290,69 @@ export type FieldOptions<
   TFieldValue = any,
   TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
 > = {
+  /**
+   * The name of the field.
+   */
   name: string;
-  mode?: "value" | "array";
+
+  /**
+   * The default theme of the field.
+   */
   theme?: string;
+
+  /**
+   * The default size of the field.
+   *
+   * @defaultValue "$true"
+   */
   size?: SizeTokens;
+
+  /**
+   * The default required status of the field.
+   *
+   * @defaultValue false
+   */
   required?: boolean;
+
+  /**
+   * The default disabled status of the field.
+   *
+   * @defaultValue false
+   */
   disabled?: boolean;
+
+  /**
+   * The options to be used as potential values for the field.
+   *
+   * @remarks
+   * This is only used for certain fields (e.g. `Select`, `RadioGroup`, etc.).
+   */
   items?: Array<Partial<SelectOption> & Pick<SelectOption, "name" | "value">>;
+
+  /**
+   * The validations to run on the field when certain events occur.
+   */
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
     TValidator[] | undefined
   >;
+
+  /**
+   * How long to debounce the `onChange` event and validation calls in milliseconds.
+   *
+   * @defaultValue 250
+   */
   debounceMs?: number;
-  onInitialize?: () => MaybePromise<void>;
-  onBlur?: () => MaybePromise<void>;
-  onFocus?: () => MaybePromise<void>;
-  onChange?: (value: TFieldValue) => MaybePromise<void>;
-  format?: (value: TFieldValue) => string;
-  parse?: (value: any) => TFieldValue;
+
+  /**
+   * A function that compares two field values to determine if they are equal.
+   *
+   * @remarks
+   * The default `isEqual` function is provided by the `@storm-stack/utilities` package.
+   *
+   * @defaultValue `isEqual`
+   */
+  isEqual?: (value1: TFieldValue, value2: TFieldValue) => boolean;
 
   /**
    * The options provided to the Maskito library when masking user input
@@ -281,6 +363,41 @@ export type FieldOptions<
    * API reference: https://github.com/taiga-family/maskito/blob/main/projects/core/src/lib/types/mask-options.ts
    */
   mask?: MaskitoOptions;
+
+  /**
+   * A callback that is called when the field is initialized.
+   */
+  onInitialize?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the field is blurred.
+   */
+  onBlur?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the field is focused.
+   */
+  onFocus?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the field is changed.
+   */
+  onChange?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A callback that is called when the field is submitted.
+   */
+  onSubmit?: (context: CallbackContext) => MaybePromise<void>;
+
+  /**
+   * A function that formats the field value for display.
+   */
+  format?: (value: TFieldValue) => string;
+
+  /**
+   * A function that parses the field value for storage.
+   */
+  parse?: (value: any) => TFieldValue;
 
   [key: string]: any;
 };
@@ -362,11 +479,6 @@ export type FieldBaseState<TFieldValue = any> = {
   initialValue: TFieldValue | null;
 
   /**
-   * The field group's previous values.
-   */
-  previousValue: TFieldValue | null;
-
-  /**
    * The field group's current values.
    */
   value: TFieldValue | null;
@@ -374,7 +486,13 @@ export type FieldBaseState<TFieldValue = any> = {
   /**
    * The options provided when creating the field.
    */
-  options: FieldOptions<TFieldValue>;
+  options: FieldOptions<TFieldValue> &
+    Required<
+      Pick<
+        FieldOptions<TFieldValue>,
+        "size" | "disabled" | "required" | "isEqual" | "debounceMs" | "validate"
+      >
+    >;
 };
 
 export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {

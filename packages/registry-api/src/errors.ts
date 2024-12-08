@@ -15,11 +15,10 @@
 
  -------------------------------------------------------------------*/
 
-import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
-import { formStore, FormStore } from "../stores";
+import { ErrorCode } from "@storm-stack/errors";
 
-export const useFormStore = (
-  options?: UseAtomOptionsOrScope
-): ReturnType<FormStore["useStore"]> => {
-  return formStore.useStore(options);
+export type CycloneRegistryErrorCode = ErrorCode | "metadata_not_found";
+export const CycloneRegistryErrorCode = {
+  ...ErrorCode,
+  metadata_not_found: "metadata_not_found" as CycloneRegistryErrorCode
 };

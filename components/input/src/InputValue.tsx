@@ -179,7 +179,7 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
           <style>
             {`
       input::selection, textarea::selection {
-        background-color: var(--selectionBackground) !important;
+        background-color: var(--selectionColor) !important;
       }
 
       input::placeholder, textarea::placeholder {

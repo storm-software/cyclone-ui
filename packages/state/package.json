@@ -19,14 +19,11 @@
     "react-native": "0.74.1"
   },
   "peerDependenciesMeta": {
-    "@tanstack/store": {
-      "optional": true
-    },
     "jotai": {
       "optional": false
     },
     "react": {
-      "optional": true
+      "optional": false
     },
     "react-dom": {
       "optional": true
@@ -36,10 +33,12 @@
     }
   },
   "dependencies": {
+    "@storm-stack/hooks": "latest",
     "@storm-stack/serialization": "latest",
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
-    "@storm-stack/utilities": "latest"
+    "@storm-stack/utilities": "latest",
+    "jotai-effect": "^1.0.4"
   },
   "devDependencies": {
     "jotai": ">=2.8.0",

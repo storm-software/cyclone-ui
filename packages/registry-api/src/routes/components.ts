@@ -20,15 +20,10 @@ import type {
   R2ObjectBody,
   R2Objects
 } from "@cloudflare/workers-types";
-import { initTRPC } from "@trpc/server";
+import { StormError } from "@storm-stack/errors";
 import { z } from "zod";
-import { Context } from "./context";
-import { ComponentDetails, ComponentMeta, ComponentSummary } from "./types";
-
-const t = initTRPC.context<Context>().create();
-
-const publicProcedure = t.procedure;
-const createRouter = t.router;
+import { createRouter, publicProcedure } from "../trpc";
+import { ComponentDetails, ComponentMeta, ComponentSummary } from "../types";
 
 type RegistryStorageFile = {
   name: string;
@@ -36,7 +31,7 @@ type RegistryStorageFile = {
   updatedOn: Date;
 };
 
-const componentsRouter = createRouter({
+export const componentsRouter = createRouter({
   list: publicProcedure.query<ComponentSummary[]>(async ({ ctx }) => {
     const storageList: R2Objects = await ctx.storage.list({
       prefix: "registry/components"
@@ -130,7 +125,7 @@ const componentsRouter = createRouter({
         (file: RegistryStorageFile) => file.name === "meta.json"
       );
       if (!metaFile || !metaFile.content) {
-        throw new Error("Component meta not found");
+        throw StormError.createNotFound("Metadata file");
       }
 
       const meta = await metaFile.content.json<ComponentMeta>();
@@ -152,10 +147,3 @@ const componentsRouter = createRouter({
       };
     })
 });
-
-export const router = createRouter({
-  components: componentsRouter
-});
-
-// export type definition of API
-export type Router = typeof router;

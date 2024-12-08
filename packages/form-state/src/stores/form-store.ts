@@ -20,9 +20,10 @@ import {
   CreateAtomStoreOptions,
   StoreAtomsWithoutSelectors
 } from "@cyclone-ui/state";
-import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
+import { flattenObject } from "@storm-stack/utilities/helper-fns/flatten-object";
 import { TamaguiElement } from "@tamagui/core";
 import { Atom, atom } from "jotai";
+import { withHistory } from "jotai-history";
 import { LegacyRef } from "react";
 import {
   atomWithFieldsMessageList,
@@ -33,7 +34,6 @@ import {
 } from "../atoms/atom-with-messages";
 import {
   FormBaseState,
-  FormOptions,
   InferFieldState,
   InferFormState,
   ValidationResults
@@ -44,10 +44,29 @@ const formStoreSelectors = <
 >(
   atoms: StoreAtomsWithoutSelectors<FormBaseState<TFormValues>>
 ) => {
-  const dirtyAtom = atom(get =>
-    isEqual(get(atoms.values), get(atoms.initialValues))
-  );
+  const dirtyAtom = atom(get => {
+    const options = get(atoms.options);
+    return options.isEqual(get(atoms.values), get(atoms.initialValues));
+  });
+
   const pristineAtom = atom(get => !get(dirtyAtom));
+
+  const blurredAtom = atom(get => {
+    const blurredFields = flattenObject(get(atoms.blurredFields));
+    return Object.keys(blurredFields).some(key => blurredFields[key]);
+  });
+  const touchedAtom = atom(get => {
+    const touchedFields = flattenObject(get(atoms.touchedFields));
+    return Object.keys(touchedFields).some(key => touchedFields[key]);
+  });
+  const validatingAtom = atom(get => {
+    if (get(atoms.formValidating)) {
+      return true;
+    }
+
+    const validatingFields = flattenObject(get(atoms.validatingFields));
+    return Object.keys(validatingFields).some(key => validatingFields[key]);
+  });
 
   const formErrorsAtom = atomWithMessageTypes(atoms.validationResults, "error");
   const formWarningsAtom = atomWithMessageTypes(
@@ -137,14 +156,24 @@ const formStoreSelectors = <
   const canSubmitAtom = atom(
     get =>
       get(validAtom) &&
+      !get(validatingAtom) &&
       !get(atoms.submitting) &&
       !get(atoms.submitted) &&
       !get(atoms.disabled)
   );
 
+  const historyAtom = withHistory(atoms.values, 2);
+  const previousValuesAtom = atom(get => get(historyAtom)[1] ?? {});
+
   return {
     dirty: dirtyAtom,
     pristine: pristineAtom,
+
+    blurred: blurredAtom,
+    touched: touchedAtom,
+    validating: validatingAtom,
+
+    previousValues: previousValuesAtom,
 
     errorMessages: formErrorsAtom,
     warningMessages: formWarningsAtom,
@@ -194,7 +223,7 @@ export const formStore = createAtomStore<
   initialState: {
     name: "form",
     disabled: false,
-    validating: false,
+    formValidating: false,
     validationResults: {
       initialize: [],
       change: [],
@@ -206,7 +235,6 @@ export const formStore = createAtomStore<
     submitted: false,
     submitAttempts: 0,
     initialValues: {} as Record<string, any>,
-    previousValues: {} as Record<string, any>,
     values: {} as Record<string, any>,
     focusedFields: {} as InferFormState<Record<string, any>, boolean>,
     requiredFields: {} as InferFormState<Record<string, any>, boolean>,
@@ -220,7 +248,7 @@ export const formStore = createAtomStore<
     >,
     tabIndexes: {} as InferFormState<Record<string, any>, number>,
     refs: {} as InferFormState<Record<string, any>, LegacyRef<TamaguiElement>>,
-    options: {} as FormOptions
+    options: {} as FormBaseState["options"]
   },
   selectors: formStoreSelectors
 });

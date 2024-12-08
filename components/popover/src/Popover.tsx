@@ -83,9 +83,9 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
   context: PopoverContext,
 
   backgroundColor: "$base3",
-  borderWidth: 1,
+  borderWidth: 2,
   borderColor: "$primary",
-  top: -12
+  top: -11
 });
 
 const PopoverContent = styled(TamaguiPopover.Content, {
@@ -95,7 +95,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   flex: 1,
   backgroundColor: "$base3",
   padding: "$3",
-  borderWidth: 1,
+  borderWidth: 2,
   borderColor: "$primary",
   borderRadius: "$true",
   marginHorizontal: "auto",

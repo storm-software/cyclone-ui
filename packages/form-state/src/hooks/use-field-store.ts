@@ -15,11 +15,11 @@
 
  -------------------------------------------------------------------*/
 
-import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { useContext } from "react";
 import { FieldStoreContext } from "../providers/FieldStoreProvider";
-import {
+import type {
   FieldStore,
   FieldStoreApi,
   UseFieldStore

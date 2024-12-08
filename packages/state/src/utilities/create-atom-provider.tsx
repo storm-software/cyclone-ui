@@ -1,6 +1,6 @@
 import type { MaybePromise } from "@storm-stack/types";
 import { Provider as AtomProvider } from "jotai";
-import { Atom, createStore } from "jotai/vanilla";
+import { createStore } from "jotai/vanilla";
 import React, {
   useContext,
   useEffect,
@@ -103,7 +103,7 @@ export const createAtomProvider = <T extends object, N extends string = "">(
 ): React.FC<ProviderProps<T>> => {
   const Effect = options.effect;
 
-  function AtomProviderComponent({
+  return function AtomProviderComponent({
     children,
     resetKey,
     scope,
@@ -155,9 +155,7 @@ export const createAtomProvider = <T extends object, N extends string = "">(
         </AtomProvider>
       </AtomStoreContext.Provider>
     );
-  }
-
-  return AtomProviderComponent;
+  };
 };
 
 type InnerAtomProviderComponentProps<TState extends object> = {

@@ -27,7 +27,7 @@ const meta: Meta<typeof CheckboxField> = {
   render: ({ defaultValue, ...props }: any) => (
     <Form name="formName" defaultValues={{ checkboxFieldName: defaultValue }}>
       <CheckboxField name="checkboxFieldName" {...props}>
-        <XStack gap="$2.5" alignContent="center" verticalAlign="center">
+        <XStack gap="$2.5" alignContent="center" alignItems="center">
           <CheckboxField.Control />
           <CheckboxField.Label>
             This is an example label message for a checkbox field

@@ -187,6 +187,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
         ref={composedRefs}
         onBlur={onBlur}
         onFocus={onFocus}
+        editable={!disabled}
         {...finalProps}
       />
     );

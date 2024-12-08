@@ -23,12 +23,22 @@ import { Preview } from "@storybook/react";
 import "@tamagui/core/reset.css";
 import { PortalProvider } from "@tamagui/portal";
 import { YStack } from "@tamagui/stacks";
+import { DevTools, useAtomsDebugValue } from "jotai-devtools";
+import "jotai-devtools/styles.css";
 import "raf/polyfill";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../../../packages/font-mona-sans/css/style.css";
 import "../../../packages/font-permanent-marker/css/style.css";
 import "../../../packages/font-space-grotesk/css/style.css";
 import config from "../tamagui.config";
+
+const DebugAtoms = () => {
+  useAtomsDebugValue({
+    enabled: true
+  });
+
+  return null;
+};
 
 const Decorator = (Story: any, args: any) => {
   const { mode } = args.globals;
@@ -41,6 +51,8 @@ const Decorator = (Story: any, args: any) => {
         defaultMode={mode}>
         <PortalProvider>
           <MessageProvider>
+            <DevTools theme={mode} position="bottom-right" />
+            <DebugAtoms />
             <YStack padding="$8" flexGrow={1}>
               <Story />
             </YStack>

@@ -15,10 +15,12 @@
 
  -------------------------------------------------------------------*/
 
-import { ErrorCode } from "@storm-stack/errors/errors";
+import { initTRPC } from "@trpc/server";
+import { Context } from "./context";
 
-export type CycloneErrorCode = ErrorCode | "metadata_not_found";
-export const CycloneErrorCode = {
-  ...ErrorCode,
-  metadata_not_found: "metadata_not_found" as CycloneErrorCode
-};
+export const t = initTRPC.context<Context>().create();
+
+export const publicProcedure = t.procedure;
+export const protectedProcedure = t.procedure;
+
+export const createRouter = t.router;

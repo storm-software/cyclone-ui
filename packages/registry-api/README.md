@@ -39,12 +39,13 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# registry-trpc
+# registry-api
 
 A package containing the shared TRPC router code used by the Cyclone Registry
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)
@@ -70,14 +71,14 @@ A package containing the shared TRPC router code used by the Cyclone Registry
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/registry-trpc
+pnpm add -D @cyclone-ui/registry-api
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/registry-trpc
+npm install -D @cyclone-ui/registry-api
 ```
 
 </details>
@@ -86,7 +87,7 @@ npm install -D @cyclone-ui/registry-trpc
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/registry-trpc
+yarn add -D @cyclone-ui/registry-api
 ```
 
 </details>
@@ -105,16 +106,16 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build registry-trpc` to build the library.
+Run `nx build registry-api` to build the library.
 
 ### Running unit tests
 
-Run `nx test registry-trpc` to execute the unit tests via
+Run `nx test registry-api` to execute the unit tests via
 [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint registry-trpc` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint registry-api` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

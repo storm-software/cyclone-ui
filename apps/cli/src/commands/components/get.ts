@@ -16,7 +16,6 @@
  -------------------------------------------------------------------*/
 
 /* eslint-disable no-await-in-loop */
-/* eslint-disable no-restricted-syntax */
 
 import {
   cancel,
@@ -28,7 +27,7 @@ import {
   spinner,
   text
 } from "@clack/prompts";
-import type { Router } from "@cyclone-ui/registry-trpc/router";
+import type { Router } from "@cyclone-ui/registry-api/router";
 import { Args, Command, Flags } from "@oclif/core";
 import { loadStormConfig } from "@storm-software/config-tools";
 import { isString } from "@storm-stack/types/type-checks/is-string";

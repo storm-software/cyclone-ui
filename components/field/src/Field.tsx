@@ -296,7 +296,7 @@ const FieldLabelText = styled(LabelText, {
   animation: "normal",
   cursor: "pointer",
   wordWrap: "normal",
-  verticalAlign: "middle",
+  alignItems: "middle",
   color: "$color",
 
   variants: {

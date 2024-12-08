@@ -19,6 +19,7 @@ import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
+import { CallbackContext, FieldStore, FormStore } from "@cyclone-ui/form-state";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
@@ -197,6 +198,17 @@ export function DataTable<TData extends RowData>({
                 </Table.Row>
               );
             })}
+            {tableRows.length === 0 && (
+              <Table.Row>
+                <View
+                  flex={1}
+                  justifyContent="center"
+                  alignItems="center"
+                  padding="$5">
+                  <LabelText size="$6">No data to display</LabelText>
+                </View>
+              </Table.Row>
+            )}
           </Table.Body>
           {pageCount > 1 && (
             <Table.Footer>
@@ -246,6 +258,9 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   );
 };
 
+const SEARCH_FIELD_NAME = "__search";
+const SELECT_ALL_FIELD_NAME = "__selectAll";
+
 const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
   props: DataTableHeaderProps<TData, TValue>["column"]
 ) => {
@@ -269,11 +284,7 @@ const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
 
   return (
     <YStack gap="$3" width="100%">
-      <SearchInputField
-        name="search"
-        size="$3"
-        width="$15"
-        onChange={handleFilterChanged}>
+      <SearchInputField name={SEARCH_FIELD_NAME} size="$3" width="$15">
         <SearchInputField.Control>
           <SearchInputField.Control.TextBox placeholder="Filter..." />
         </SearchInputField.Control>
@@ -281,7 +292,7 @@ const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
 
       <Popover.Content.ScrollView maxHeight="$16" padding={5}>
         <YStack gap="$2">
-          <CheckboxField name="selectAll" size="$3">
+          <CheckboxField name={SELECT_ALL_FIELD_NAME} size="$3">
             <XStack gap="$3">
               <CheckboxField.Control />
               <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
@@ -328,6 +339,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
       toggleSorting(!desc, true);
     }
   }, [toggleSorting, clearSorting, desc]);
+
   // const handleFilterSubmit = useCallback(() => {
   //   setFilterValue(currentFilter);
   // }, [setFilterValue, currentFilter]);
@@ -343,6 +355,47 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
   // );
 
   const filterValue = getFilterValue();
+
+  const handleChange = useCallback(
+    ({ get, set, store }: CallbackContext<FormStore>) => {
+      const values = get(store.api.atom.values);
+      const keys = Object.keys(values).filter(
+        key => key !== SEARCH_FIELD_NAME && key !== SELECT_ALL_FIELD_NAME
+      );
+
+      const selectAll = keys.some(key => values[key] === false)
+        ? keys.some(key => values[key] === true)
+          ? "indeterminate"
+          : false
+        : true;
+      set(store.api.atom.values, {
+        ...values,
+        [SELECT_ALL_FIELD_NAME]: selectAll
+      });
+    },
+    []
+  );
+
+  const sortedUniqueValues = useMemo(
+    () =>
+      Array.from(column.getFacetedUniqueValues().keys()).sort().slice(0, 5000),
+    [column.getFacetedUniqueValues()]
+  );
+
+  const defaultValues = useMemo(
+    () =>
+      sortedUniqueValues.reduce(
+        (ret, key) => ({
+          ...ret,
+          [key]: true
+        }),
+        {
+          [SEARCH_FIELD_NAME]: filterValue ?? null,
+          [SELECT_ALL_FIELD_NAME]: true
+        } as Record<string, any>
+      ),
+    [sortedUniqueValues]
+  );
 
   return (
     <XStack
@@ -414,11 +467,9 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
             <Popover.Content width="$16">
               <View flex={1} minWidth="100%">
                 <Form
-                  name={`${id}_columnFilter`}
-                  defaultValues={{
-                    search: filterValue,
-                    selectAll: true
-                  }}>
+                  name={`${id}_filter`}
+                  defaultValues={defaultValues}
+                  onChange={handleChange}>
                   <DataTableHeaderFilterFields {...column} />
                 </Form>
               </View>
@@ -451,11 +502,14 @@ export function DataTablePagination<TData extends RowData>({
   pageCount,
   ...props
 }: DataTablePaginationProps<TData>) {
-  const { setPagination } = DataTableContext.useStyledContext();
+  const { setPagination, } = DataTableContext.useStyledContext();
 
   const handlePageSizeChange = useCallback(
-    (value: number) => {
-      setPagination(state => ({ ...state, pageSize: value }));
+    ({ get, store }: CallbackContext<FieldStore<any>>) => {
+      setPagination(state => ({
+        ...state,
+        pageSize: get(store.api.atom.value)
+      }));
     },
     [setPagination]
   );

@@ -15,14 +15,14 @@
 
  -------------------------------------------------------------------*/
 
-import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns/upper-case-first";
 import { isPromise } from "@storm-stack/types/type-checks/is-promise";
-import { MessageDetails } from "@storm-stack/types/utility-types/messages";
-import { Getter, Setter } from "jotai";
+import type { MessageDetails } from "@storm-stack/types/utility-types/messages";
+import type { Getter, Setter } from "jotai";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
-import { UseFieldStore } from "../stores/field-store";
+import type { UseFieldStore } from "../stores/field-store";
 import { formStore } from "../stores/form-store";
 import { ValidationCause } from "../types";
 
@@ -125,13 +125,13 @@ export const useFormActions = <
           }
 
           if (promises.length > 0) {
-            set(formStore.api.atom.validating, true);
+            set(formStore.api.atom.formValidating, true);
             for (const result of await Promise.all(promises)) {
               if (result && result.length > 0) {
                 messages.push(...result);
               }
             }
-            set(formStore.api.atom.validating, false);
+            set(formStore.api.atom.formValidating, false);
           }
 
           set(formStore.api.atom.validationResults, prev => ({
@@ -142,6 +142,17 @@ export const useFormActions = <
       },
       []
     )
+  );
+
+  const change = useAtomCallback(
+    useCallback(async (get: Getter, set: Setter, nextValues: TFormValues) => {
+      const options = get(formStore.api.atom.options);
+      const values = get(formStore.api.atom.values);
+
+      if (!options.isEqual(nextValues, values)) {
+        set(formStore.api.atom.values, nextValues);
+      }
+    }, [])
   );
 
   const submit = useAtomCallback(
@@ -171,11 +182,13 @@ export const useFormActions = <
       } else if (get(formStore.api.atom.invalid)) {
         if (get(formStore.api.atom.invalid)) {
           // set(fieldStore.api.atom.touched, true);
-        } else if (get(formStore.api.atom.invalid)) {
-          // const invalidFields = get(formStore.api.atom.invalidFields);
-          // const name = Object.keys(invalidFields)[0];
-          // const fieldStoreAtom = get(formStore.api.atom.fields);
         }
+
+        // else if (get(formStore.api.atom.invalid)) {
+        // const invalidFields = get(formStore.api.atom.invalidFields);
+        // const name = Object.keys(invalidFields)[0];
+        // const fieldStoreAtom = get(formStore.api.atom.fields);
+        // }
       }
     }, [])
   );
@@ -186,6 +199,7 @@ export const useFormActions = <
     initializeField,
     uninitializeField,
     validate,
+    change,
     submit,
     reset
   };

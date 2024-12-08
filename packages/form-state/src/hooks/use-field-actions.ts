@@ -15,14 +15,13 @@
 
  -------------------------------------------------------------------*/
 
-import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns";
 import { MessageDetails, isPromise } from "@storm-stack/types";
 import { TamaguiTextElement } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
 import { RESET, useAtomCallback } from "jotai/utils";
 import { LegacyRef, useCallback } from "react";
-import { formStore } from "../stores/form-store";
 import { ValidationCause, Validator } from "../types";
 import { useFieldApi } from "./use-field-store";
 
@@ -119,7 +118,6 @@ export const useFieldActions = <
       set(fieldApi.atom.disabled, RESET);
       set(fieldApi.atom.touched, RESET);
       set(fieldApi.atom.blurred, RESET);
-      set(fieldApi.atom.previousValue, RESET);
       set(fieldApi.atom.value, get(fieldApi.atom.initialValue));
       set(fieldApi.atom.options, RESET);
       set(fieldApi.atom.validating, RESET);
@@ -139,31 +137,11 @@ export const useFieldActions = <
           return;
         }
 
-        set(fieldApi.atom.previousValue, RESET);
-        set(fieldApi.atom.options, prev => ({
-          ...prev,
-          defaultValue: initialValue
-        }));
-
         if (initialValue !== get(fieldApi.atom.initialValue)) {
           set(fieldApi.atom.initialValue, initialValue);
-          set(fieldApi.atom.value, initialValue);
-
-          set(fieldApi.atom.validating, RESET);
-          set(fieldApi.atom.validationResults, RESET);
-
-          const options = get(fieldApi.atom.options);
-
-          const promises = [] as Promise<void>[];
-          if (options.onInitialize) {
-            promises.push(Promise.resolve(options.onInitialize()));
-          }
-
-          promises.push(validate(initialValue, ValidationCause.INITIALIZE));
-          await Promise.all(promises);
         }
       },
-      [validate]
+      []
     )
   );
 
@@ -188,32 +166,12 @@ export const useFieldActions = <
             nextParsed = options.parse(nextValue) as TFieldValue;
           }
 
-          if (nextParsed !== value) {
+          if (!options.isEqual(nextParsed, value)) {
             set(fieldApi.atom.value, nextParsed);
-            set(fieldApi.atom.previousValue, value);
-
-            const promises = [] as Promise<void>[];
-            if (options.onChange) {
-              promises.push(Promise.resolve(options.onChange(nextParsed)));
-            }
-
-            promises.push(validate(nextParsed, ValidationCause.CHANGE));
-
-            const blurred = get(fieldApi.atom.blurred);
-            if (blurred) {
-              promises.push(validate(nextParsed, ValidationCause.BLUR));
-            }
-
-            const submitAttempts = get(formStore.api.atom.submitAttempts);
-            if (submitAttempts > 0) {
-              promises.push(validate(nextParsed, ValidationCause.SUBMIT));
-            }
-
-            await Promise.all(promises);
           }
         }
       },
-      [validate]
+      []
     )
   );
 
@@ -225,49 +183,21 @@ export const useFieldActions = <
         }
 
         set(fieldApi.atom.focused, true);
-
-        const options = get(fieldApi.atom.options);
-        if (options.onFocus) {
-          await Promise.resolve(options.onFocus());
-        }
       }
     }, [])
   );
 
   const blur = useAtomCallback(
-    useCallback(
-      async (get: Getter, set: Setter) => {
-        if (!get(fieldApi.atom.disabled)) {
-          if (!get(fieldApi.atom.touched)) {
-            set(fieldApi.atom.touched, true);
-          }
-
-          set(fieldApi.atom.focused, false);
-          set(fieldApi.atom.blurred, true);
-
-          const options = get(fieldApi.atom.options);
-
-          const promises = [] as Promise<void>[];
-          if (options.onBlur) {
-            promises.push(Promise.resolve(options.onBlur()));
-          }
-
-          const value = get(fieldApi.atom.value);
-
-          promises.push(validate(value as TFieldValue, ValidationCause.BLUR));
-
-          const submitAttempts = get(formStore.api.atom.submitAttempts);
-          if (submitAttempts > 0) {
-            promises.push(
-              validate(value as TFieldValue, ValidationCause.SUBMIT)
-            );
-          }
-
-          await Promise.all(promises);
+    useCallback(async (get: Getter, set: Setter) => {
+      if (!get(fieldApi.atom.disabled)) {
+        if (!get(fieldApi.atom.touched)) {
+          set(fieldApi.atom.touched, true);
         }
-      },
-      [validate]
-    )
+
+        set(fieldApi.atom.focused, false);
+        set(fieldApi.atom.blurred, true);
+      }
+    }, [])
   );
 
   const setFocused = useCallback(
@@ -304,7 +234,7 @@ export const useFieldActions = <
           set(fieldApi.atom.initialValue, options.defaultValue ?? null);
         }
       },
-      [validate]
+      []
     )
   );
 

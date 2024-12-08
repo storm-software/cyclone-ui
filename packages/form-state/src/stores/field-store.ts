@@ -22,7 +22,7 @@ import {
 } from "@cyclone-ui/state";
 import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { isString } from "@storm-stack/types/type-checks/is-string";
-import { isEqual } from "@storm-stack/utilities/helper-fns/is-deep-equal";
+import { getField } from "@storm-stack/utilities/helper-fns/get-field";
 import { toPath } from "@storm-stack/utilities/helper-fns/to-path";
 import { Atom, atom } from "jotai";
 import { focusAtom } from "jotai-optics";
@@ -34,16 +34,17 @@ import {
   atomWithMessages,
   atomWithTheme
 } from "../atoms/atom-with-messages";
-import { FieldBaseState, FieldOptions } from "../types";
+import { FieldBaseState } from "../types";
 import { formStore } from "./form-store";
 
 export const createFieldStore = <TFieldValue>(name: string) => {
   const fieldStoreSelectors = (
     atoms: StoreAtomsWithoutSelectors<FieldBaseState<TFieldValue>>
   ) => {
-    const dirtyAtom = atom(get =>
-      isEqual(get(atoms.value), get(atoms.initialValue))
-    );
+    const dirtyAtom = atom(get => {
+      const options = get(atoms.options);
+      return options.isEqual(get(atoms.value), get(atoms.initialValue));
+    });
 
     const errorsAtom = atomWithFieldsMessageTypes(
       atoms.validationResults,
@@ -122,10 +123,16 @@ export const createFieldStore = <TFieldValue>(name: string) => {
       return options.size ?? "$true";
     });
 
+    const previousValueAtom = atom(get => {
+      const previousValues = get(formStore.api.atom.previousValues);
+      return getField(previousValues, get(atoms.path).join(".")) ?? null;
+    });
+
     return {
       pristine: atom(get => !get(dirtyAtom)),
       dirty: dirtyAtom,
 
+      previousValue: previousValueAtom,
       formattedValue: formattedValueAtom,
 
       items: itemsAtom,
@@ -175,7 +182,7 @@ export const createFieldStore = <TFieldValue>(name: string) => {
       typeof fieldStoreSelectors
     >
   >({
-    name: "fieldGroup",
+    name: "field",
     initialState: {
       name,
       path,
@@ -208,14 +215,8 @@ export const createFieldStore = <TFieldValue>(name: string) => {
       initialValue: focusAtom(formStore.api.atom.initialValues, optic =>
         optic.path(...path)
       ),
-      previousValue: focusAtom(formStore.api.atom.previousValues, optic =>
-        optic.path(...path)
-      ),
       value: focusAtom(formStore.api.atom.values, optic => optic.path(...path)),
-      options: {
-        name,
-        defaultValue: null
-      } as FieldOptions
+      options: {} as FieldBaseState<TFieldValue>["options"]
     },
     selectors: fieldStoreSelectors
   });
