@@ -43,12 +43,16 @@ import {
 } from "jotai";
 import { RESET } from "jotai/utils";
 import { useCallback } from "react";
-import { EffectCallback } from "../atoms/atom-with-effect";
-import { useAtomEffect } from "../hooks/use-atom-effect";
-import { AtomRecord, IsResetAtom, SetStateActionWithReset } from "../types";
+import { useSyncMolecule } from "../hooks/use-sync-molecule";
+import {
+  AtomRecord,
+  ExtractAtomRecordValues,
+  IsResetAtom,
+  SetStateActionWithReset
+} from "../types";
 import { isResetAtom, isWritableAtom } from "./is-atom";
 
-export type Molecule<TState> = {
+export type Molecule<TValue> = {
   displayName?: string;
 } & Record<symbol, unknown>;
 
@@ -57,7 +61,8 @@ export type BaseMoleculeState = AtomRecord<{
   __typename: string;
 }>;
 
-export type MoleculeState<TState> = BaseMoleculeState & TState;
+export type MoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> =
+  BaseMoleculeState & TState;
 
 export const DEFAULT_SCOPE = "__global__";
 
@@ -89,7 +94,7 @@ export function use<TValue>(
   return useBase<TValue>(dependency);
 }
 
-type UseMoleculeState<TState> = {
+type UseMoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> = {
   [TKey in keyof TState]: {
     get: TState[TKey] extends Atom<infer TValue>
       ? (opts?: MoleculeScopeOptions) => TValue
@@ -109,9 +114,9 @@ type UseMoleculeState<TState> = {
 
 export type MoleculeScopeOptions = MoleculeScopeOptionsBase;
 
-export type MoleculeApi<TState> = {
+export type MoleculeApi<TState extends AtomRecord<any> = AtomRecord<any>> = {
   Molecule: Molecule<MoleculeState<TState>>;
-  Provider: React.FC<MoleculeProviderProps>;
+  Provider: React.FC<MoleculeProviderProps<TState>>;
   Scope: MoleculeScope<string>;
   useMolecule: (opts?: MoleculeScopeOptions) => MoleculeState<TState>;
   use: (opts?: MoleculeScopeOptions) => UseMoleculeState<TState>;
@@ -120,23 +125,25 @@ export type MoleculeApi<TState> = {
 export type GetMoleculeState<TMoleculeApi extends MoleculeApi<any>> =
   ReturnType<TMoleculeApi["useMolecule"]>;
 
-export type MoleculeProviderProps = Omit<
-  ProviderProps<string>,
-  "scope" | "value"
-> & { scope: string };
+export type MoleculeProviderProps<
+  TState extends AtomRecord<any> = AtomRecord<any>
+> = Omit<ProviderProps<string>, "scope" | "value"> & {
+  scope: string;
+  initialState?: Partial<ExtractAtomRecordValues<TState>>;
+};
 
 export type CleanupCallback = () => unknown;
-export type MountCallback<TState> = (
+export type MountCallback<TState extends AtomRecord<any> = AtomRecord<any>> = (
   state: MoleculeState<TState>
 ) => CleanupCallback | void;
 
-export type MoleculeOptions<TState> = {
-  type: string;
-  scope?: MoleculeScope<string> | string;
-  onMount?: MountCallback<TState>;
-  onUnmount?: CleanupCallback;
-  onEffect?: EffectCallback;
-};
+export type MoleculeOptions<TState extends AtomRecord<any> = AtomRecord<any>> =
+  {
+    type: string;
+    scope?: MoleculeScope<string> | string;
+    onMount?: MountCallback<TState>;
+    onUnmount?: CleanupCallback;
+  };
 
 /**
  * Create a new Molecule with the given constructor function.
@@ -145,7 +152,9 @@ export type MoleculeOptions<TState> = {
  * @param options - The options for the Molecule.
  * @returns The new Molecule.
  */
-export function createMoleculeApi<TState>(
+export function createMoleculeApi<
+  TState extends AtomRecord<any> = AtomRecord<any>
+>(
   constructFn: (scope: string) => TState,
   options: MoleculeOptions<TState>
 ): MoleculeApi<TState> {
@@ -233,16 +242,30 @@ export function createMoleculeApi<TState>(
     });
   };
 
-  function MoleculeStateManager() {
-    useAtomEffect(options.onEffect!);
+  function MoleculeStateManager<
+    TState extends AtomRecord<any> = AtomRecord<any>
+  >({
+    initialState
+  }: {
+    initialState: Partial<ExtractAtomRecordValues<TState>>;
+  }) {
+    const atoms = useMolecule();
+    useSyncMolecule(atoms, initialState);
 
     return null;
   }
 
-  function Provider({ children, scope, ...props }: MoleculeProviderProps) {
+  function Provider<TState extends AtomRecord<any> = AtomRecord<any>>({
+    children,
+    scope,
+    initialState,
+    ...props
+  }: MoleculeProviderProps<TState>) {
     return (
       <ScopeProvider {...props} scope={Scope} value={scope}>
-        {options.onEffect && <MoleculeStateManager />}
+        {initialState && (
+          <MoleculeStateManager<TState> initialState={initialState} />
+        )}
         {children}
       </ScopeProvider>
     );

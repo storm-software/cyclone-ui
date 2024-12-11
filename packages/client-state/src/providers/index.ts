@@ -15,5 +15,5 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./ThemeStoreProvider";
-export * from "./ThemeStoreProvider.server";
+export * from "./ThemeProvider";
+export * from "./ThemeProvider.server";

@@ -16,6 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
+import { AtomRecord } from "@cyclone-ui/state";
 import { MoleculeState } from "@cyclone-ui/state/utilities/create-molecule";
 import type { MaskitoOptions } from "@maskito/core";
 import {
@@ -115,11 +116,12 @@ export type FieldChangeEventHandler<TFieldValue = any> = (
   event: CustomEvent<TFieldValue>
 ) => any;
 
-export type CallbackContext<TState = any> = {
-  get: Getter;
-  set: Setter;
-  atoms: MoleculeState<TState>;
-};
+export type CallbackContext<TState extends AtomRecord<any> = AtomRecord<any>> =
+  {
+    get: Getter;
+    set: Setter;
+    atoms: MoleculeState<TState>;
+  };
 
 /**
  * The form options.
@@ -187,10 +189,7 @@ export type FormOptions<
   /**
    * A callback that is called when the form is changed.
    */
-  onChange?: (
-    values: TFormValues,
-    context: CallbackContext
-  ) => MaybePromise<void>;
+  onChange?: (context: CallbackContext) => MaybePromise<void>;
 
   /**
    * A callback that is called when the form is submitted.

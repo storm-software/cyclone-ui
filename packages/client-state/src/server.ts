@@ -17,6 +17,6 @@
 
 export * from "./hooks";
 export * from "./molecules";
-export * from "./providers/ThemeStoreProvider.server";
+export * from "./providers/ThemeProvider.server";
 export * from "./types";
 export * from "./utilities";

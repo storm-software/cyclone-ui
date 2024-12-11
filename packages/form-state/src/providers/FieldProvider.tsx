@@ -22,9 +22,9 @@ import { AbortError } from "@storm-stack/utilities/types";
 import { useThemeName } from "@tamagui/core";
 import { SetStateAction, WritableAtom } from "jotai";
 import { RESET } from "jotai/utils";
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren } from "react";
 import { useFieldActions } from "../hooks/use-field-actions";
-import { FieldApi } from "../molecules/field-molecule";
+import { FieldApi, FieldOptionsState } from "../molecules/field-molecule";
 import { FormApi } from "../molecules/form-molecule";
 import { FieldOptions, ValidationCause } from "../types";
 
@@ -37,15 +37,8 @@ function FieldStateManager<TFieldValue = any>(
 ) {
   const { validate } = useFieldActions();
 
-  const theme = useThemeName();
-
   const form = FormApi.useMolecule();
   const field = FieldApi.useMolecule();
-
-  const setOptions = FieldApi.use().options.set();
-  useEffect(() => {
-    setOptions({ theme, ...props } as FieldOptions<Record<string, any>>);
-  }, [setOptions]);
 
   // Handle initialize events
   // useAtomValue(
@@ -352,8 +345,14 @@ export function FieldProvider<TFieldValue = any>({
   //   [options.name]
   // );
 
+  const theme = useThemeName();
+
   return (
-    <FieldApi.Provider scope={name}>
+    <FieldApi.Provider
+      scope={name}
+      initialState={{
+        options: { theme, ...props } as FieldOptionsState<TFieldValue>
+      }}>
       <FieldStateManager<TFieldValue> {...props} />
       {children}
     </FieldApi.Provider>

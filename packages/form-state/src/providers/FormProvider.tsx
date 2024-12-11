@@ -43,12 +43,11 @@ function FormStateManager<
   useAtomEffect(
     (get, set) => {
       const values = get(molecule.values);
+      const options = get(molecule.options);
 
       const abortController = new AbortController();
       (async () => {
         try {
-          const options = get(molecule.options);
-
           await delay(options.debounceMs);
           abortController.signal.throwIfAborted();
 

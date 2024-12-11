@@ -16,53 +16,33 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeMode } from "@cyclone-ui/colors";
-import { isRuntimeClient } from "@storm-stack/utilities/helper-fns/is-runtime-server";
 import {
   CreateTamaguiProps,
   InferTamaguiConfig,
   TamaguiProvider,
   type TamaguiProviderProps
 } from "@tamagui/core";
-import { PropsWithChildren, useEffect, useMemo } from "react";
+import { PropsWithChildren } from "react";
 import { ThemeApi } from "../molecules/theme-molecule";
 import { ThemeOptions } from "../types";
 
-export type ThemeStoreProviderProps = PropsWithChildren<
-  Partial<ThemeOptions> &
-    Omit<TamaguiProviderProps, "defaultTheme"> & {
-      disableInjectCSS?: boolean;
-      config: InferTamaguiConfig<CreateTamaguiProps>;
-    }
+type ThemeStateManagerServerProps = PropsWithChildren<
+  Omit<TamaguiProviderProps, "defaultTheme"> & {
+    disableInjectCSS?: boolean;
+    config: InferTamaguiConfig<CreateTamaguiProps>;
+  }
 >;
 
-const ThemeStateManager = ({
+export type ThemeProviderServerProps = PropsWithChildren<
+  Partial<ThemeOptions> & ThemeStateManagerServerProps
+>;
+
+const ThemeStateManagerServer = ({
   children,
-  defaultMode = ColorThemeMode.DARK,
-  items = [ColorThemeMode.LIGHT, ColorThemeMode.DARK],
   disableInjectCSS = true,
   ...props
-}: ThemeStoreProviderProps) => {
-  const userMode = useMemo(() => {
-    if (isRuntimeClient() && window?.matchMedia) {
-      if (window?.matchMedia("(prefers-color-scheme: light)").matches) {
-        return ColorThemeMode.LIGHT;
-      } else if (window?.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return ColorThemeMode.DARK;
-      }
-    }
-
-    return defaultMode;
-  }, [defaultMode]);
-
+}: ThemeStateManagerServerProps) => {
   const theme = ThemeApi.use();
-  const setMode = theme.mode.set();
-  const setItems = theme.items.set();
-
-  useEffect(() => {
-    setMode(userMode!);
-    setItems(items!);
-  }, [userMode, items, setMode, setItems]);
-
   const mode = theme.mode.get();
 
   return (
@@ -75,13 +55,17 @@ const ThemeStateManager = ({
   );
 };
 
-export const ThemeStoreProvider = ({
+export const ThemeProviderServer = ({
   children,
+  defaultMode = ColorThemeMode.DARK,
+  items = [ColorThemeMode.LIGHT, ColorThemeMode.DARK],
   ...props
-}: ThemeStoreProviderProps) => {
+}: ThemeProviderServerProps) => {
   return (
-    <ThemeApi.Provider scope="theme">
-      <ThemeStateManager {...props}>{children}</ThemeStateManager>
+    <ThemeApi.Provider
+      scope="theme"
+      initialState={{ mode: defaultMode, items }}>
+      <ThemeStateManagerServer {...props}>{children}</ThemeStateManagerServer>
     </ThemeApi.Provider>
   );
 };

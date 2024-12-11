@@ -17,18 +17,20 @@
 
 import type { SetStateAction, WritableAtom } from "jotai";
 import { useHydrateAtoms } from "jotai/utils";
-import type {
-  SimpleWritableAtomRecord,
-  UseHydrateAtoms
-} from "../utilities/create-atom-store";
+import { JotaiStore, WritableAtomRecord } from "../types";
+
+export type UseHydrateAtoms<T> = (
+  initialValues: Partial<Record<keyof T, any>>,
+  options?: Parameters<typeof useHydrateAtoms>[1]
+) => void;
 
 /**
  * Hydrate atoms with initial values for SSR.
  */
-export const useHydrateStore = (
-  atoms: SimpleWritableAtomRecord<unknown>,
-  initialValues: Parameters<UseHydrateAtoms<unknown>>[0],
-  options: Parameters<UseHydrateAtoms<unknown>>[1] = {}
+export const useHydrateMolecule = (
+  atoms: WritableAtomRecord<unknown>,
+  initialValues: Partial<Record<keyof unknown, any>>,
+  store?: JotaiStore
 ) => {
   const values: [
     WritableAtom<unknown, [SetStateAction<unknown>], void>,
@@ -43,5 +45,5 @@ export const useHydrateStore = (
     }
   }
 
-  useHydrateAtoms(values, options);
+  useHydrateAtoms(values, { store });
 };

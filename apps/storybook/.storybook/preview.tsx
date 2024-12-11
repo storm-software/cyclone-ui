@@ -17,7 +17,7 @@
 
 /* eslint-disable @nx/enforce-module-boundaries */
 
-import { ThemeStoreProvider } from "@cyclone-ui/client-state";
+import { ThemeProvider } from "@cyclone-ui/client-state";
 import { MessageProvider } from "@cyclone-ui/message-state";
 import { Preview } from "@storybook/react";
 import "@tamagui/core/reset.css";
@@ -45,7 +45,7 @@ const Decorator = (Story: any, args: any) => {
 
   return (
     <SafeAreaProvider>
-      <ThemeStoreProvider
+      <ThemeProvider
         config={config}
         disableInjectCSS={false}
         defaultMode={mode}>
@@ -58,7 +58,7 @@ const Decorator = (Story: any, args: any) => {
             </YStack>
           </MessageProvider>
         </PortalProvider>
-      </ThemeStoreProvider>
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 };

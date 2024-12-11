@@ -18,12 +18,16 @@
 import type { FileResult } from "@storm-stack/types/utility-types/file";
 import type {
   Atom,
+  createStore,
   ExtractAtomArgs,
+  ExtractAtomValue,
   PrimitiveAtom,
   SetStateAction,
   WritableAtom
 } from "jotai";
 import { RESET } from "jotai/utils";
+
+export type JotaiStore = ReturnType<typeof createStore>;
 
 export type SetStateActionWithReset<Value> =
   | Value
@@ -82,6 +86,10 @@ export type WritableAtomRecord<T> = {
     [SetStateAction<T[K]> | typeof RESET],
     void
   >;
+};
+
+export type ExtractAtomRecordValues<T extends AtomRecord<any>> = {
+  [K in keyof T]: ExtractAtomValue<T[K]>;
 };
 
 export type ClientFileResult = FileResult & {

@@ -17,30 +17,33 @@
 
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect } from "react";
-import type {
-  SimpleWritableAtomRecord,
-  UseSyncAtoms
-} from "../utilities/create-atom-store";
+import { JotaiStore, WritableAtomRecord } from "../types";
 import { isAtom } from "../utilities/is-atom";
+
+export type UseSyncAtoms<T> = (
+  values: Partial<Record<keyof T, any>>,
+  store?: JotaiStore
+) => void;
 
 /**
  * Update atoms with new values on changes.
  */
-export const useSyncStore = (
-  atoms: SimpleWritableAtomRecord<unknown>,
+export const useSyncMolecule = (
+  atoms: WritableAtomRecord<unknown>,
   values: Record<number | string, unknown>,
-  { store }: Parameters<UseSyncAtoms<unknown>>[1] = {}
+  store?: JotaiStore
 ) => {
   for (const key of Object.keys(atoms)) {
     let value = values[key];
     if (isAtom(value)) {
       value = useAtomValue(value);
     }
-    const set = useSetAtom(atoms[key], { store });
+
+    const setAtom = useSetAtom(atoms[key], { store });
     useEffect(() => {
-      if (value !== undefined && value !== null) {
-        set(value);
+      if (value !== undefined) {
+        setAtom(value);
       }
-    }, [set, value]);
+    }, [setAtom, value]);
   }
 };
