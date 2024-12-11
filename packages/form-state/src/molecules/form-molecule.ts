@@ -59,7 +59,7 @@ export type FormOptionsState<
 
 export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
   theme: "base",
-  debounceMs: 250,
+  debounceMs: 100,
   isEqual,
   disabled: false,
   initialValues: {},

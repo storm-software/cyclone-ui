@@ -45,8 +45,6 @@
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
     "@tamagui/core": "^1.116.15",
-    "jotai-effect": "^1.0.4",
-    "jotai-history": "^0.2.1",
     "jotai-optics": "^0.4.0",
     "maska": "^3.0.3",
     "optics-ts": "^2.4.1"

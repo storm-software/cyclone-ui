@@ -68,7 +68,7 @@ export type FieldOptionsState<TFieldValue = any> = FieldOptions<TFieldValue> &
 export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   theme: "base",
   size: "$true",
-  debounceMs: 250,
+  debounceMs: 100,
   isEqual,
   required: false,
   disabled: false,
