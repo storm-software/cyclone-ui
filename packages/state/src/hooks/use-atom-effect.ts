@@ -16,11 +16,15 @@
  -------------------------------------------------------------------*/
 
 import { useMemoStable } from "@storm-stack/hooks/use-memo-stable";
-import { atomEffect } from "jotai-effect";
 import { useAtomValue } from "jotai/react";
+import { loadable } from "jotai/utils";
+import { atomWithEffect, type EffectCallback } from "../atoms/atom-with-effect";
 
-type EffectFn = Parameters<typeof atomEffect>[0];
-
-export function useAtomEffect(effectFn: EffectFn) {
-  useAtomValue(useMemoStable(() => atomEffect(effectFn), [effectFn]));
+/**
+ * A hook that runs a side effect when the component mounts.
+ *
+ * @param effectFn - The side effect function.
+ */
+export function useAtomEffect(effectFn: EffectCallback, deps: any[] = []) {
+  useAtomValue(loadable(useMemoStable(() => atomWithEffect(effectFn), deps)));
 }

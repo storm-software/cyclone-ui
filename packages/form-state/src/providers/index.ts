@@ -15,5 +15,5 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./FieldStoreProvider";
-export * from "./FormStoreProvider";
+export * from "./FieldProvider";
+export * from "./FormProvider";

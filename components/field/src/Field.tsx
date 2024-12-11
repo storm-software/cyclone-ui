@@ -19,11 +19,10 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import {
+  FieldApi,
   FieldProvider,
   FieldProviderOptions,
-  useFieldActions,
-  useFieldStore,
-  Validator
+  useFieldActions
 } from "@cyclone-ui/form-state";
 import { getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
@@ -150,11 +149,11 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
-    const store = useFieldStore();
-    const theme = store.get.theme();
-    const disabled = store.get.disabled();
-    const size = store.get.size();
-    const messages = store.get.messages();
+    const field = FieldApi.use();
+    const theme = field.theme.get();
+    const disabled = field.disabled.get();
+    const size = field.size.get();
+    const messages = field.messages.get();
 
     return (
       <FieldValidationText
@@ -180,16 +179,14 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
-    const store = useFieldStore();
-    const theme = store.get.theme();
+    const field = FieldApi.use();
+    const theme = field.theme.get();
+    const disabled = field.disabled.get();
 
     return (
       <Theme name={theme}>
         <YStack gap="$2">
-          <FieldGroupFrame
-            ref={forwardedRef}
-            {...rest}
-            disabled={store.get.disabled()}>
+          <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
             {children}
           </FieldGroupFrame>
           <FieldValidationTextImpl />
@@ -200,10 +197,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   { staticConfig: { componentName: "Field" } }
 );
 
-export type FieldProps<
-  TFieldValue = any,
-  TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
-> = FieldProviderOptions<TFieldValue, TValidator>;
+export type FieldProps<TFieldValue = any> = FieldProviderOptions<TFieldValue>;
 
 const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
@@ -258,11 +252,11 @@ const FieldDetailsImpl = FieldDetails.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
 
-    const store = useFieldStore();
-    const messages = store.get.messages();
-    const disabled = store.get.disabled();
-    const theme = store.get.theme();
-    const size = store.get.size();
+    const field = FieldApi.use();
+    const messages = field.messages.get();
+    const disabled = field.disabled.get();
+    const theme = field.theme.get();
+    const size = field.size.get();
 
     if (messages && messages.length > 0) {
       return null;
@@ -296,7 +290,6 @@ const FieldLabelText = styled(LabelText, {
   animation: "normal",
   cursor: "pointer",
   wordWrap: "normal",
-  alignItems: "middle",
   color: "$color",
 
   variants: {
@@ -352,10 +345,10 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     },
     forwardedRef
   ) => {
-    const store = useFieldStore();
-    const fieldDisabled = store.get.disabled();
-    const name = store.get.name();
-    const size = store.get.size();
+    const field = FieldApi.use();
+    const fieldDisabled = field.disabled.get();
+    const name = field.name.get();
+    const size = field.size.get();
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -420,16 +413,19 @@ const FieldLabel = FieldLabelText.styleable<{
   hideOptional?: boolean;
 }>(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const disabled = field.disabled.get();
+    const required = field.required.get();
 
     return (
       <FieldLabelTextImpl
         ref={forwardedRef as ForwardedRef<any>}
         {...props}
         theme={ColorThemeName.BASE}
-        htmlFor={store.get.name()}
-        disabled={store.get.disabled()}
-        required={store.get.required()}>
+        htmlFor={name}
+        disabled={disabled}
+        required={required}>
         {children}
       </FieldLabelTextImpl>
     );
@@ -441,8 +437,8 @@ export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
 const FieldIconButtonImpl = Button.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const size = store.get.size() ?? "$true";
+    const field = FieldApi.use();
+    const size = field.size.get() ?? "$true";
 
     const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
 
@@ -498,13 +494,13 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
 
 const FieldThemeIcon = InnerFieldThemeIcon.styleable(
   (props, forwardedRef) => {
-    const store = useFieldStore();
     const { focus } = useFieldActions();
 
-    const disabled = store.get.disabled();
-    const validating = store.get.validating();
-    const theme = store.get.theme();
-    const messages = store.get.messages();
+    const field = FieldApi.use();
+    const disabled = field.disabled.get();
+    const validating = field.validating.get();
+    const theme = field.theme.get();
+    const messages = field.messages.get();
 
     if (validating) {
       return <Spinner size="small" theme="$accent" />;

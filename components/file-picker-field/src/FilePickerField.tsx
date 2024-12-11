@@ -17,7 +17,7 @@
 
 import { Field } from "@cyclone-ui/field";
 import { FilePicker } from "@cyclone-ui/file-picker";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions } from "@cyclone-ui/form-state";
 import { ClientFileResult } from "@cyclone-ui/state";
 import { withStaticProperties } from "@tamagui/core";
 
@@ -35,22 +35,10 @@ const FilePickerFieldControl = FilePicker.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { change } = useFieldActions();
 
-    const store = useFieldStore<ClientFileResult[]>();
-
-    // const name = store.get.name();
-    const disabled = store.get.disabled();
-    const options = store.get.options();
-    const value = store.get.value();
-    // const formattedValue = store.get.formattedValue();
-    // const initialValue = store.get.initialValue();
-
-    // const handleChange = useCallback(
-    //   (files: FileResult[]) => {
-    //     change(files);
-    //     blur();
-    //   },
-    //   [change, blur]
-    // );
+    const field = FieldApi.use();
+    const disabled = field.disabled.get();
+    const options = field.options.get();
+    const value = field.value.get();
 
     return (
       <FilePicker
@@ -62,7 +50,7 @@ const FilePickerFieldControl = FilePicker.styleable(
         onChange={change}>
         <FilePicker.Files>
           {value &&
-            value?.map(file => (
+            value?.map((file: ClientFileResult) => (
               <FilePicker.Files.File key={file.id} {...file} />
             ))}
         </FilePicker.Files>

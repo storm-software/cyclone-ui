@@ -16,17 +16,19 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeMode } from "@cyclone-ui/colors";
-import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import { MoleculeScopeOptions } from "@cyclone-ui/state";
 import { Getter, Setter } from "jotai";
-import { useAtomCallback } from "jotai/utils";
+import { RESET, useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
-import { themeStore } from "../stores/theme-store";
+import { ThemeApi } from "../molecules/theme-molecule";
 
-export const useThemeActions = (opts?: UseAtomOptionsOrScope) => {
+export const useThemeActions = (opts?: MoleculeScopeOptions) => {
+  const themeMolecule = ThemeApi.useMolecule(opts);
+
   const changeMode = useAtomCallback(
     useCallback((get: Getter, set: Setter, mode: ColorThemeMode) => {
-      if (get(themeStore.api.atom.mode) !== mode) {
-        set(themeStore.api.atom.mode, mode);
+      if (get(themeMolecule.mode) !== mode) {
+        set(themeMolecule.mode, mode);
       }
     }, [])
   );
@@ -35,7 +37,7 @@ export const useThemeActions = (opts?: UseAtomOptionsOrScope) => {
     useCallback(
       (get: Getter) =>
         changeMode(
-          get(themeStore.api.atom.mode) === ColorThemeMode.LIGHT
+          get(themeMolecule.mode) === ColorThemeMode.LIGHT
             ? ColorThemeMode.DARK
             : ColorThemeMode.LIGHT
         ),
@@ -43,7 +45,11 @@ export const useThemeActions = (opts?: UseAtomOptionsOrScope) => {
     )
   );
 
-  const reset = useCallback(() => {}, []);
+  const reset = useAtomCallback(
+    useCallback((get: Getter, set: Setter) => {
+      set(themeMolecule.mode, RESET);
+    }, [])
+  );
 
   return {
     changeMode,

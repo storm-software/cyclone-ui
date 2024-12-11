@@ -15,21 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorThemeMode } from "@cyclone-ui/colors";
-import { createAtomStore } from "@cyclone-ui/state";
-import { ThemeBaseState } from "../types";
-
-export const themeStore = createAtomStore<ThemeBaseState>({
-  name: "theme",
-  initialState: {
-    options: {
-      items: [ColorThemeMode.LIGHT, ColorThemeMode.DARK],
-      defaultMode: ColorThemeMode.DARK
-    },
-    mode: ColorThemeMode.DARK
-  }
-});
-
-export type ThemeStore = typeof themeStore;
-export type ThemeStoreApi = ThemeStore["api"];
-export type ThemeStoreAtom = ThemeStoreApi["atom"];
+export * from "./theme-molecule";

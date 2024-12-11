@@ -2605,9 +2605,15 @@ importers:
       '@storm-stack/types':
         specifier: latest
         version: 0.33.0
+      '@storm-stack/unique-identifier':
+        specifier: ^1.33.0
+        version: 1.33.0
       '@storm-stack/utilities':
         specifier: latest
         version: 1.38.1
+      bunshi:
+        specifier: ^2.1.5
+        version: 2.1.5(react@18.3.1)(vue@3.5.13(typescript@5.7.2))
       jotai-effect:
         specifier: ^1.0.4
         version: 1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@18.3.1))
@@ -10848,6 +10854,18 @@ packages:
     resolution: {integrity: sha512-w8w4K8RdrsHMZD9Ss4Ailfsrax/0zSIgh25GCaiudNHg45xXuh/u/xezzjbu+WCQJGjL9O1Fg9k9TEdS/XkZFA==}
     engines: {node: '>=16'}
     hasBin: true
+
+  bunshi@2.1.5:
+    resolution: {integrity: sha512-zO+qxwd2aBV+XUIf7LjL1G3lx5CtvbtXZD+WMkM9KD+RN0iFtitDVX2QDu/wzdQIj8hyXJlGDfVEfeoqhAVEfA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      vue: '>=3'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
 
   busboy@1.6.0:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
@@ -35314,6 +35332,11 @@ snapshots:
       read-pkg-up: 7.0.1
     transitivePeerDependencies:
       - debug
+
+  bunshi@2.1.5(react@18.3.1)(vue@3.5.13(typescript@5.7.2)):
+    optionalDependencies:
+      react: 18.3.1
+      vue: 3.5.13(typescript@5.7.2)
 
   busboy@1.6.0:
     dependencies:

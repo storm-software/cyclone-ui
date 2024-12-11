@@ -43,7 +43,6 @@ export function atomWithBroadcast<TValue>(
 
   const channel = isRuntimeServer() ? undefined : new BroadcastChannel(key);
   if (channel) {
-    // eslint-disable-next-line unicorn/prefer-add-event-listener
     channel.onmessage = (message: unknown) => {
       for (const listener of listeners) {
         listener(message as MessageEvent);

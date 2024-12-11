@@ -19,7 +19,7 @@ import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
-import { CallbackContext, FieldStore, FormStore } from "@cyclone-ui/form-state";
+import { CallbackContext, FieldAtoms, FormAtoms } from "@cyclone-ui/form-state";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
@@ -28,6 +28,7 @@ import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { titleCase } from "@storm-stack/string-fns/title-case";
 import type { SelectOption } from "@storm-stack/types/utility-types/form";
+import { deepClone } from "@storm-stack/utilities/helper-fns/deep-clone";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -357,21 +358,36 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
   const filterValue = getFilterValue();
 
   const handleChange = useCallback(
-    ({ get, set, store }: CallbackContext<FormStore>) => {
-      const values = get(store.api.atom.values);
+    ({ get, set, atoms }: CallbackContext<FormAtoms>) => {
+      const values = get(atoms.values);
+      const previousValues = get(atoms.previousValues);
+
       const keys = Object.keys(values).filter(
         key => key !== SEARCH_FIELD_NAME && key !== SELECT_ALL_FIELD_NAME
       );
 
-      const selectAll = keys.some(key => values[key] === false)
-        ? keys.some(key => values[key] === true)
-          ? "indeterminate"
-          : false
-        : true;
-      set(store.api.atom.values, {
-        ...values,
-        [SELECT_ALL_FIELD_NAME]: selectAll
-      });
+      if (
+        values[SELECT_ALL_FIELD_NAME] !== "indeterminate" &&
+        values[SELECT_ALL_FIELD_NAME] !== previousValues[SELECT_ALL_FIELD_NAME]
+      ) {
+        set(atoms.values, prev =>
+          keys.reduce((ret, key) => {
+            ret[key] = values[SELECT_ALL_FIELD_NAME];
+
+            return ret;
+          }, deepClone(prev))
+        );
+      } else {
+        const selectAll = keys.some(key => values[key] === false)
+          ? keys.some(key => values[key] === true)
+            ? "indeterminate"
+            : false
+          : true;
+        set(atoms.values, prev => ({
+          ...prev,
+          [SELECT_ALL_FIELD_NAME]: selectAll
+        }));
+      }
     },
     []
   );
@@ -382,7 +398,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
     [column.getFacetedUniqueValues()]
   );
 
-  const defaultValues = useMemo(
+  const initialValues = useMemo(
     () =>
       sortedUniqueValues.reduce(
         (ret, key) => ({
@@ -468,7 +484,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
               <View flex={1} minWidth="100%">
                 <Form
                   name={`${id}_filter`}
-                  defaultValues={defaultValues}
+                  initialValues={initialValues}
                   onChange={handleChange}>
                   <DataTableHeaderFilterFields {...column} />
                 </Form>
@@ -502,13 +518,13 @@ export function DataTablePagination<TData extends RowData>({
   pageCount,
   ...props
 }: DataTablePaginationProps<TData>) {
-  const { setPagination, } = DataTableContext.useStyledContext();
+  const { setPagination } = DataTableContext.useStyledContext();
 
   const handlePageSizeChange = useCallback(
-    ({ get, store }: CallbackContext<FieldStore<any>>) => {
+    ({ get, atoms }: CallbackContext<FieldAtoms<number>>) => {
       setPagination(state => ({
         ...state,
-        pageSize: get(store.api.atom.value)
+        pageSize: get(atoms.value)
       }));
     },
     [setPagination]
@@ -604,7 +620,7 @@ export function DataTablePagination<TData extends RowData>({
         <XStack alignItems="center" gap="$2">
           <Form
             name="pageSizing"
-            defaultValues={{
+            initialValues={{
               pageSize
             }}>
             <SelectField

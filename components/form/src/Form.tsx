@@ -16,10 +16,10 @@
  -------------------------------------------------------------------*/
 
 import {
+  FormApi,
   FormProvider,
   FormProviderOptions,
-  useFormActions,
-  useFormStore
+  useFormActions
 } from "@cyclone-ui/form-state";
 import type { GetProps, StackProps } from "@tamagui/core";
 import { Stack, View, styled } from "@tamagui/core";
@@ -47,9 +47,9 @@ type FormFrameProps = GetProps<typeof FormFrame> & FormFrameExtraProps;
 
 const FormImpl = FormFrame.styleable<FormFrameExtraProps>(
   ({ children, ...props }: FormFrameProps) => {
-    const store = useFormStore();
-    const name = store.get.name();
-    const disabled = store.get.disabled();
+    const form = FormApi.use();
+    const name = form.name.get();
+    const disabled = form.disabled.get();
 
     return (
       <FormFrame {...props} id={name} disabled={disabled}>
@@ -100,15 +100,17 @@ export const FormSubmit = FormTriggerFrame.styleable(
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
 
-    const store = useFormStore();
     const { submit } = useFormActions();
+
+    const form = FormApi.use();
+    const canSubmit = form.canSubmit.get();
 
     return (
       <FormTriggerFrame
         tag="button"
         {...(triggerProps as any)}
         ref={forwardedRef}
-        disabled={store.get.canSubmit()}
+        disabled={canSubmit}
         onPress={composeEventHandlers(onPress, submit)}>
         {children}
       </FormTriggerFrame>
@@ -119,16 +121,17 @@ export const FormSubmit = FormTriggerFrame.styleable(
 export const FormReset = FormTriggerFrame.styleable(
   (props: FormSubmitProps, forwardedRef) => {
     const { children, onPress, ...triggerProps } = props;
-
-    const store = useFormStore();
     const { reset } = useFormActions();
+
+    const form = FormApi.use();
+    const canSubmit = form.canSubmit.get();
 
     return (
       <FormTriggerFrame
         tag="button"
         {...(triggerProps as any)}
         ref={forwardedRef}
-        disabled={store.get.canSubmit()}
+        disabled={canSubmit}
         onPress={composeEventHandlers(onPress, reset)}>
         {children}
       </FormTriggerFrame>

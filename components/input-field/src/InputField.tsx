@@ -16,11 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import {
-  useFieldActions,
-  useFieldRef,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/form-state";
 import { Input } from "@cyclone-ui/input";
 import { Theme, withStaticProperties } from "@tamagui/core";
 import { useCallback, useLayoutEffect } from "react";
@@ -37,11 +33,11 @@ const InputFieldGroup = Field.styleable((props, forwardedRef) => {
 
 const InputFieldControl = Input.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const name = store.get.name();
-    const size = store.get.size();
-    const disabled = store.get.disabled();
-    const focused = store.get.focused();
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const size = field.size.get();
+    const disabled = field.disabled.get();
+    const focused = field.focused.get();
 
     const { focus, blur, change } = useFieldActions();
     const handleChange = useCallback(
@@ -81,11 +77,11 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
 
 const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
   ({ clearable = false, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const theme = store.get.theme();
-    const formattedValue = store.get.formattedValue();
-    const initialValue = store.get.initialValue();
-    const options = store.get.options();
+    const field = FieldApi.use();
+    const theme = field.theme.get();
+    const formattedValue = field.formattedValue.get();
+    const initialValue = field.initialValue.get();
+    const options = field.options.get();
 
     const { change, mount } = useFieldActions();
     const handleClear = useCallback(() => {
@@ -114,8 +110,8 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
 
 const InputFieldControlTrigger = Input.Trigger.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const disabled = store.get.disabled();
+    const field = FieldApi.use();
+    const disabled = field.disabled.get();
 
     return (
       <Input.Trigger ref={forwardedRef} disabled={disabled} {...props}>

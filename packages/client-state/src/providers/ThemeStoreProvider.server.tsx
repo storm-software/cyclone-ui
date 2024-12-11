@@ -22,8 +22,8 @@ import {
   TamaguiProvider,
   type TamaguiProviderProps
 } from "@tamagui/core";
-import { PropsWithChildren } from "react";
-import { themeStore } from "../stores/theme-store";
+import { PropsWithChildren, useEffect } from "react";
+import { ThemeApi } from "../molecules/theme-molecule";
 import { ThemeOptions } from "../types";
 
 export type ThemeStoreProviderServerProps = PropsWithChildren<
@@ -34,30 +34,41 @@ export type ThemeStoreProviderServerProps = PropsWithChildren<
     }
 >;
 
-export const ThemeStoreProviderServer = ({
+const ThemeStateManagerServer = ({
   children,
   defaultMode = ColorThemeMode.DARK,
   items = [ColorThemeMode.LIGHT, ColorThemeMode.DARK],
   disableInjectCSS = true,
-  config,
+  ...props
+}: ThemeStoreProviderServerProps) => {
+  const theme = ThemeApi.use();
+  const setMode = theme.mode.set();
+  const setItems = theme.items.set();
+
+  useEffect(() => {
+    setMode(defaultMode!);
+    setItems(items!);
+  }, [defaultMode, items, setMode, setItems]);
+
+  const mode = theme.mode.get();
+
+  return (
+    <TamaguiProvider
+      {...props}
+      defaultTheme={mode}
+      disableInjectCSS={disableInjectCSS}>
+      {children}
+    </TamaguiProvider>
+  );
+};
+
+export const ThemeStoreProviderServer = ({
+  children,
   ...props
 }: ThemeStoreProviderServerProps) => {
   return (
-    <themeStore.Provider
-      initialValues={{
-        options: {
-          items,
-          defaultMode
-        } as ThemeOptions,
-        mode: defaultMode
-      }}>
-      <TamaguiProvider
-        {...props}
-        config={config}
-        disableInjectCSS={disableInjectCSS}
-        defaultTheme={defaultMode}>
-        {children}
-      </TamaguiProvider>
-    </themeStore.Provider>
+    <ThemeApi.Provider scope="theme">
+      <ThemeStateManagerServer {...props}>{children}</ThemeStateManagerServer>
+    </ThemeApi.Provider>
   );
 };

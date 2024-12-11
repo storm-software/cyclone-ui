@@ -16,8 +16,12 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { SelectOption } from "@storm-stack/types/utility-types/form";
-import { atom, Atom } from "jotai";
+import {
+  SelectOption,
+  SelectOptionValue
+} from "@storm-stack/types/utility-types/form";
+import { atom, Atom, SetStateAction, WritableAtom } from "jotai";
+import { atomWithDefault, RESET } from "jotai/utils";
 import { FieldOptions, FieldStatus, InferFieldState } from "../types";
 
 export const atomWithFieldStatus = (
@@ -48,8 +52,12 @@ export const atomWithFieldItems = <TFieldValue = any>(
   optionsAtom: Atom<FieldOptions>,
   valueAtom: Atom<TFieldValue | null>,
   disabledAtom: Atom<InferFieldState<TFieldValue, boolean>>
-): Atom<SelectOption[]> => {
-  return atom<SelectOption[]>(get => {
+): WritableAtom<
+  SelectOption<SelectOptionValue, string>[],
+  [typeof RESET | SetStateAction<SelectOption<SelectOptionValue, string>[]>],
+  void
+> => {
+  return atomWithDefault(get => {
     const options = get(optionsAtom);
     const value = get(valueAtom);
     const disabled = get(disabledAtom);

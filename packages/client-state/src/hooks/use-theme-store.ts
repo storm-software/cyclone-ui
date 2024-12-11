@@ -15,20 +15,14 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorThemeMode, ColorThemeName } from "@cyclone-ui/colors";
-import { UseAtomOptionsOrScope } from "@cyclone-ui/state";
+import { ColorThemeName } from "@cyclone-ui/colors";
+import { MoleculeScopeOptions } from "@cyclone-ui/state";
 import { useThemeName } from "@tamagui/core";
-import { themeStore, ThemeStore } from "../stores/theme-store";
+import { ThemeApi } from "../molecules/theme-molecule";
 import {
   getThemeColorThemeName,
   themeColorThemeNameExists
 } from "../utilities/theme-helpers";
-
-export const useThemeStore = (
-  options?: UseAtomOptionsOrScope
-): ReturnType<ThemeStore["useStore"]> => {
-  return themeStore.useStore(options);
-};
 
 /**
  * Get the color role scheme for the current theme name
@@ -82,10 +76,8 @@ export const useColorThemeNameExists = (): boolean => {
   return themeColorThemeNameExists(theme);
 };
 
-export const useThemeMode = (
-  options?: UseAtomOptionsOrScope
-): ColorThemeMode => {
-  const store = useThemeStore(options);
+export const useThemeMode = (options?: MoleculeScopeOptions): string => {
+  const theme = ThemeApi.use(options);
 
-  return store.get.mode();
+  return theme.mode.get();
 };

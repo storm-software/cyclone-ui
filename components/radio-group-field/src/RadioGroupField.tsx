@@ -17,7 +17,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions } from "@cyclone-ui/form-state";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { SelectOption } from "@storm-stack/types/index";
 import { styled, withStaticProperties } from "@tamagui/core";
@@ -159,12 +159,12 @@ const RadioGroupItem = (
 const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
   const { focus, blur, change } = useFieldActions();
 
-  const store = useFieldStore<string>();
-  const name = store.get.name();
-  const disabled = store.get.disabled();
-  const formattedValue = store.get.formattedValue();
-  const initialValue = store.get.initialValue();
-  const itemsAtoms = store.get.itemsAtoms();
+  const field = FieldApi.use();
+  const name = field.name.get();
+  const disabled = field.disabled.get();
+  const formattedValue = field.formattedValue.get();
+  const initialValue = field.initialValue.get();
+  const itemsAtoms = field.itemsAtoms.get();
 
   return (
     <RadioGroup

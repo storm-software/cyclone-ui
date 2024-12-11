@@ -37,7 +37,9 @@
     "@storm-stack/serialization": "latest",
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
+    "@storm-stack/unique-identifier": "^1.33.0",
     "@storm-stack/utilities": "latest",
+    "bunshi": "^2.1.5",
     "jotai-effect": "^1.0.4"
   },
   "devDependencies": {

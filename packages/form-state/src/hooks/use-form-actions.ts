@@ -15,40 +15,30 @@
 
  -------------------------------------------------------------------*/
 
-import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns/upper-case-first";
 import { isPromise } from "@storm-stack/types/type-checks/is-promise";
 import type { MessageDetails } from "@storm-stack/types/utility-types/messages";
 import type { Getter, Setter } from "jotai";
 import { useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
-import type { UseFieldStore } from "../stores/field-store";
-import { formStore } from "../stores/form-store";
+import { FormApi } from "../molecules/form-molecule";
 import { ValidationCause } from "../types";
 
 export const useFormActions = <
   TFormValues extends Record<string, any> = Record<string, any>
->(
-  opts?: UseAtomOptionsOrScope
-) => {
+>() => {
+  const form = FormApi.useMolecule();
+
   const initializeField = useAtomCallback(
-    useCallback(
-      async (
-        get: Getter,
-        set: Setter,
-        name: string,
-        fieldStoreAtoms: ReturnType<UseFieldStore>
-      ) => {
-        // set(formStore.api.atom.fields, prev => {
-        //   return {
-        //     ...prev,
-        //     [fieldStoreAtoms.get.atom(fieldStore.api.atom.formName)]:
-        //       fieldStoreAtoms
-        //   };
-        // });
-      },
-      []
-    )
+    useCallback(async (get: Getter, set: Setter, name: string) => {
+      // set(form.fields, prev => {
+      //   return {
+      //     ...prev,
+      //     [fieldStoreAtoms.get.atom(fieldStore.api.atom.formName)]:
+      //       fieldStoreAtoms
+      //   };
+      // });
+    }, [])
   );
 
   const uninitializeField = useAtomCallback(
@@ -72,7 +62,7 @@ export const useFormActions = <
         nextValues: TFormValues,
         cause: ValidationCause
       ) => {
-        const options = get(formStore.api.atom.options);
+        const options = get(form.options);
         if (
           (options.validate?.[`on${upperCaseFirst(cause)}`] &&
             options.validate[`on${upperCaseFirst(cause)}`].length > 0) ||
@@ -82,7 +72,7 @@ export const useFormActions = <
             options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
               .length > 0)
         ) {
-          const previousValues = get(formStore.api.atom.previousValues);
+          const previousValues = get(form.previousValues);
 
           const results = [] as any[];
           if (
@@ -125,16 +115,16 @@ export const useFormActions = <
           }
 
           if (promises.length > 0) {
-            set(formStore.api.atom.formValidating, true);
+            set(form.formValidating, true);
             for (const result of await Promise.all(promises)) {
               if (result && result.length > 0) {
                 messages.push(...result);
               }
             }
-            set(formStore.api.atom.formValidating, false);
+            set(form.formValidating, false);
           }
 
-          set(formStore.api.atom.validationResults, prev => ({
+          set(form.validationResults, prev => ({
             ...prev,
             [cause]: messages
           }));
@@ -146,48 +136,48 @@ export const useFormActions = <
 
   const change = useAtomCallback(
     useCallback(async (get: Getter, set: Setter, nextValues: TFormValues) => {
-      const options = get(formStore.api.atom.options);
-      const values = get(formStore.api.atom.values);
+      const options = get(form.options);
+      const values = get(form.values);
 
       if (!options.isEqual(nextValues, values)) {
-        set(formStore.api.atom.values, nextValues);
+        set(form.values, nextValues);
       }
     }, [])
   );
 
   const submit = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      if (get(formStore.api.atom.canSubmit)) {
-        if (!get(formStore.api.atom.submitting)) {
-          set(formStore.api.atom.submitting, true);
+      if (get(form.canSubmit)) {
+        if (!get(form.submitting)) {
+          set(form.submitting, true);
         }
 
-        set(formStore.api.atom.submitAttempts, prev => prev + 1);
+        set(form.submitAttempts, prev => prev + 1);
 
-        const options = get(formStore.api.atom.options);
+        const options = get(form.options);
 
         const promises = [] as Promise<void>[];
-        const values = get(formStore.api.atom.values);
+        const values = get(form.values);
 
         // promises.push(validate(value, ValidationCause.SUBMIT));
         // await Promise.all(promises);
 
-        if (get(formStore.api.atom.valid)) {
-          await options.onSubmit?.(
-            get(formStore.api.atom.values) as TFormValues
-          );
+        if (get(form.valid)) {
+          // await options.onSubmit?.(
+          //   get(form.values) as TFormValues
+          // );
         }
 
-        set(formStore.api.atom.submitting, false);
-      } else if (get(formStore.api.atom.invalid)) {
-        if (get(formStore.api.atom.invalid)) {
+        set(form.submitting, false);
+      } else if (get(form.invalid)) {
+        if (get(form.invalid)) {
           // set(fieldStore.api.atom.touched, true);
         }
 
-        // else if (get(formStore.api.atom.invalid)) {
-        // const invalidFields = get(formStore.api.atom.invalidFields);
+        // else if (get(form.invalid)) {
+        // const invalidFields = get(form.invalidFields);
         // const name = Object.keys(invalidFields)[0];
-        // const fieldStoreAtom = get(formStore.api.atom.fields);
+        // const fieldStoreAtom = get(form.fields);
         // }
       }
     }, [])

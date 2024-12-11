@@ -15,5 +15,25 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./field-store";
-export * from "./form-store";
+import { ColorThemeMode } from "@cyclone-ui/colors";
+import { createMoleculeApi } from "@cyclone-ui/state";
+import { atom } from "jotai";
+import { atomWithReset } from "jotai/utils";
+
+export const ThemeApi = createMoleculeApi(
+  () => {
+    const itemsAtom = atom<string[]>([
+      ColorThemeMode.LIGHT,
+      ColorThemeMode.DARK
+    ]);
+    const modeAtom = atomWithReset<string>(ColorThemeMode.DARK);
+
+    return {
+      items: itemsAtom,
+      mode: modeAtom
+    };
+  },
+  {
+    type: "theme"
+  }
+);

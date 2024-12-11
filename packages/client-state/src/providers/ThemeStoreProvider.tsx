@@ -23,8 +23,8 @@ import {
   TamaguiProvider,
   type TamaguiProviderProps
 } from "@tamagui/core";
-import { PropsWithChildren, useMemo } from "react";
-import { themeStore } from "../stores/theme-store";
+import { PropsWithChildren, useEffect, useMemo } from "react";
+import { ThemeApi } from "../molecules/theme-molecule";
 import { ThemeOptions } from "../types";
 
 export type ThemeStoreProviderProps = PropsWithChildren<
@@ -35,15 +35,14 @@ export type ThemeStoreProviderProps = PropsWithChildren<
     }
 >;
 
-export const ThemeStoreProvider = ({
+const ThemeStateManager = ({
   children,
   defaultMode = ColorThemeMode.DARK,
   items = [ColorThemeMode.LIGHT, ColorThemeMode.DARK],
   disableInjectCSS = true,
-  config,
   ...props
 }: ThemeStoreProviderProps) => {
-  const mode = useMemo(() => {
+  const userMode = useMemo(() => {
     if (isRuntimeClient() && window?.matchMedia) {
       if (window?.matchMedia("(prefers-color-scheme: light)").matches) {
         return ColorThemeMode.LIGHT;
@@ -55,22 +54,34 @@ export const ThemeStoreProvider = ({
     return defaultMode;
   }, [defaultMode]);
 
+  const theme = ThemeApi.use();
+  const setMode = theme.mode.set();
+  const setItems = theme.items.set();
+
+  useEffect(() => {
+    setMode(userMode!);
+    setItems(items!);
+  }, [userMode, items, setMode, setItems]);
+
+  const mode = theme.mode.get();
+
   return (
-    <themeStore.Provider
-      initialValues={{
-        options: {
-          items,
-          defaultMode: mode
-        } as ThemeOptions,
-        mode
-      }}>
-      <TamaguiProvider
-        {...props}
-        config={config}
-        disableInjectCSS={disableInjectCSS}
-        defaultTheme={defaultMode}>
-        {children}
-      </TamaguiProvider>
-    </themeStore.Provider>
+    <TamaguiProvider
+      {...props}
+      defaultTheme={mode}
+      disableInjectCSS={disableInjectCSS}>
+      {children}
+    </TamaguiProvider>
+  );
+};
+
+export const ThemeStoreProvider = ({
+  children,
+  ...props
+}: ThemeStoreProviderProps) => {
+  return (
+    <ThemeApi.Provider scope="theme">
+      <ThemeStateManager {...props}>{children}</ThemeStateManager>
+    </ThemeApi.Provider>
   );
 };

@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { useFieldStore } from "@cyclone-ui/form-state";
+import { FieldApi } from "@cyclone-ui/form-state";
 import { getSized } from "@cyclone-ui/helpers";
 import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
@@ -63,8 +63,8 @@ const SearchInputFieldControlTextBox = InputField.Control.TextBox.styleable<
     { children, placeholder = "Search...", clearable = true, ...props },
     forwardedRef
   ) => {
-    const store = useFieldStore();
-    const size = store.get.size();
+    const field = FieldApi.use();
+    const size = field.size.get();
 
     const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
 

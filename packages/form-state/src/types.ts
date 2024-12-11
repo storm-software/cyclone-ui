@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { AtomStoreApi } from "@cyclone-ui/state/utilities/create-atom-store";
+import { MoleculeState } from "@cyclone-ui/state/utilities/create-molecule";
 import type { MaskitoOptions } from "@maskito/core";
 import {
   IsPlainObject,
@@ -105,7 +105,7 @@ export type InferFormState<TValues extends Record<string, any>, TState> = {
   [TKey in keyof TValues]: InferFieldState<TValues[TKey], TState>;
 };
 
-export type FormValuesState<TValues extends Record<string, any>> = {
+export type FormValuesState<TValues extends Record<string, any>> = TValues & {
   [TKey in keyof TValues]: IsPlainObject<TValues[TKey]> extends true
     ? FormValuesState<TValues[TKey]>
     : TValues[TKey] | null;
@@ -115,32 +115,41 @@ export type FieldChangeEventHandler<TFieldValue = any> = (
   event: CustomEvent<TFieldValue>
 ) => any;
 
-export type CallbackContext<
-  TStore extends AtomStoreApi<any, any> = AtomStoreApi<any, any>
-> = {
+export type CallbackContext<TState = any> = {
   get: Getter;
   set: Setter;
-  store: TStore;
+  atoms: MoleculeState<TState>;
 };
 
 /**
  * The form options.
  */
 export type FormOptions<
-  TFormValues extends Record<string, any> = Record<string, any>,
-  TValidator extends Validator<TFormValues> = Validator<TFormValues>
+  TFormValues extends Record<string, any> = Record<string, any>
 > = {
-  name: string;
+  /**
+   * The theme of the form.
+   */
   theme?: string;
+
+  /**
+   * The disabled state value.
+   *
+   * @defaultValue false
+   */
   disabled?: boolean;
-  defaultValues?: FormValuesState<TFormValues>;
+
+  /**
+   * The initial values of the form.
+   */
+  initialValues?: FormValuesState<TFormValues>;
 
   /**
    * The validations to run on the form when certain events occur.
    */
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
-    TValidator[] | undefined
+    Validator<FormValuesState<TFormValues>>[] | undefined
   >;
 
   /**
@@ -158,12 +167,17 @@ export type FormOptions<
    *
    * @defaultValue `isEqual`
    */
-  isEqual?: (value1: TFormValues, value2: TFormValues) => boolean;
+  isEqual?: (
+    value1: FormValuesState<TFormValues>,
+    value2: FormValuesState<TFormValues>
+  ) => boolean;
 
   /**
    * The default options provided to all fields when they are created.
    */
-  defaultFieldOptions?: Partial<Omit<FieldOptions, "name" | "mode">>;
+  defaultFieldOptions?: Partial<
+    Omit<FieldOptions<TFormValues>, "name" | "mode">
+  >;
 
   /**
    * A callback that is called when the form is initialized.
@@ -173,7 +187,10 @@ export type FormOptions<
   /**
    * A callback that is called when the form is changed.
    */
-  onChange?: (context: CallbackContext) => MaybePromise<void>;
+  onChange?: (
+    values: TFormValues,
+    context: CallbackContext
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the form is submitted.
@@ -184,11 +201,6 @@ export type FormOptions<
 export type FormBaseState<
   TFormValues extends Record<string, any> = Record<string, any>
 > = {
-  /**
-   * The name of the form.
-   */
-  name: string;
-
   /**
    * The disabled state value.
    */
@@ -286,15 +298,7 @@ export type FormBaseState<
 /**
  * The field options.
  */
-export type FieldOptions<
-  TFieldValue = any,
-  TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
-> = {
-  /**
-   * The name of the field.
-   */
-  name: string;
-
+export type FieldOptions<TFieldValue> = {
   /**
    * The default theme of the field.
    */
@@ -305,7 +309,11 @@ export type FieldOptions<
    *
    * @defaultValue "$true"
    */
-  size?: SizeTokens;
+  size?:
+    | `$${string}`
+    | `$${string}.${string}`
+    | `$${string}.${number}`
+    | `$${number}`;
 
   /**
    * The default required status of the field.
@@ -334,7 +342,7 @@ export type FieldOptions<
    */
   validate?: Record<
     `on${Capitalize<ValidationCause>}`,
-    TValidator[] | undefined
+    Validator<TFieldValue>[] | undefined
   >;
 
   /**
@@ -382,7 +390,10 @@ export type FieldOptions<
   /**
    * A callback that is called when the field is changed.
    */
-  onChange?: (context: CallbackContext) => MaybePromise<void>;
+  onChange?: (
+    value: TFieldValue,
+    context: CallbackContext
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the field is submitted.

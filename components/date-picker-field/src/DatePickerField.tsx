@@ -17,11 +17,7 @@
 
 import { DatePicker } from "@cyclone-ui/date-picker";
 import { Field } from "@cyclone-ui/field";
-import {
-  useFieldActions,
-  useFieldRef,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/form-state";
 import { getSized } from "@cyclone-ui/helpers";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { StormDate } from "@storm-stack/date-time/storm-date";
@@ -70,9 +66,9 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
   (props, forwardedRef) => {
     const { focus } = useFieldActions();
 
-    const store = useFieldStore();
+    const field = FieldApi.use();
+    const size = field.size.get();
 
-    const size = store.get.size();
     const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
 
     return (
@@ -90,15 +86,14 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
 const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { blur, change, focus } = useFieldActions();
-
-    const store = useFieldStore<Date>();
     const ref = useFieldRef(forwardedRef);
 
-    const name = store.get.name();
-    const disabled = store.get.disabled();
-    const focused = store.get.focused();
-    const formattedValue = store.get.formattedValue();
-    const initialValue = store.get.initialValue();
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const disabled = field.disabled.get();
+    const focused = field.focused.get();
+    const formattedValue = field.formattedValue.get();
+    const initialValue = field.initialValue.get();
 
     const handleChange = useCallback(
       (event: CustomEvent<Date | null>) => {

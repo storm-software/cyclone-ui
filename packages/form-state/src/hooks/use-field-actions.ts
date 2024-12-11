@@ -15,23 +15,16 @@
 
  -------------------------------------------------------------------*/
 
-import type { UseAtomOptionsOrScope } from "@cyclone-ui/state";
 import { upperCaseFirst } from "@storm-stack/string-fns";
 import { MessageDetails, isPromise } from "@storm-stack/types";
-import { TamaguiTextElement } from "@tamagui/core";
 import { Getter, Setter } from "jotai";
 import { RESET, useAtomCallback } from "jotai/utils";
-import { LegacyRef, useCallback } from "react";
-import { ValidationCause, Validator } from "../types";
-import { useFieldApi } from "./use-field-store";
+import { Ref, useCallback } from "react";
+import { FieldApi } from "../molecules/field-molecule";
+import { ValidationCause } from "../types";
 
-export const useFieldActions = <
-  TFieldValue = any,
-  TValidator extends Validator<TFieldValue> = Validator<TFieldValue>
->(
-  opts?: UseAtomOptionsOrScope
-) => {
-  const fieldApi = useFieldApi();
+export const useFieldActions = <TFieldValue = any>() => {
+  const field = FieldApi.useMolecule();
 
   const validate = useAtomCallback(
     useCallback(
@@ -41,7 +34,7 @@ export const useFieldActions = <
         nextValue: TFieldValue,
         cause: ValidationCause
       ) => {
-        const options = get(fieldApi.atom.options);
+        const options = get(field.options);
         if (
           (options.validate?.[`on${upperCaseFirst(cause)}`] &&
             options.validate[`on${upperCaseFirst(cause)}`].length > 0) ||
@@ -51,7 +44,7 @@ export const useFieldActions = <
             options.validate[`on${upperCaseFirst(ValidationCause.INITIALIZE)}`]
               .length > 0)
         ) {
-          const previousValue = get(fieldApi.atom.previousValue);
+          const previousValue = get(field.previousValue);
 
           const results = [] as any[];
           if (
@@ -94,16 +87,16 @@ export const useFieldActions = <
           }
 
           if (promises.length > 0) {
-            set(fieldApi.atom.validating, true);
+            set(field.validating, true);
             for (const result of await Promise.all(promises)) {
               if (result && result.length > 0) {
                 messages.push(...result);
               }
             }
-            set(fieldApi.atom.validating, false);
+            set(field.validating, false);
           }
 
-          set(fieldApi.atom.validationResults, prev => ({
+          set(field.validationResults, prev => ({
             ...prev,
             [cause]: messages
           }));
@@ -115,13 +108,13 @@ export const useFieldActions = <
 
   const reset = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      set(fieldApi.atom.disabled, RESET);
-      set(fieldApi.atom.touched, RESET);
-      set(fieldApi.atom.blurred, RESET);
-      set(fieldApi.atom.value, get(fieldApi.atom.initialValue));
-      set(fieldApi.atom.options, RESET);
-      set(fieldApi.atom.validating, RESET);
-      set(fieldApi.atom.validationResults, RESET);
+      // set(field.disabled, RESET);
+      // set(field.touched, RESET);
+      // set(field.blurred, RESET);
+      set(field.value, get(field.initialValue));
+      set(field.options, RESET);
+      // set(field.validating, RESET);
+      // set(field.validationResults, RESET);
     }, [])
   );
 
@@ -133,12 +126,12 @@ export const useFieldActions = <
         initialValue: TFieldValue,
         skipIfDirty = true
       ) => {
-        if (skipIfDirty && get(fieldApi.atom.dirty)) {
+        if (skipIfDirty && get(field.dirty)) {
           return;
         }
 
-        if (initialValue !== get(fieldApi.atom.initialValue)) {
-          set(fieldApi.atom.initialValue, initialValue);
+        if (initialValue !== get(field.initialValue)) {
+          set(field.initialValue, initialValue);
         }
       },
       []
@@ -153,13 +146,13 @@ export const useFieldActions = <
         nextValue: TFieldValue,
         touch = false
       ) => {
-        if (!get(fieldApi.atom.disabled)) {
-          if (!get(fieldApi.atom.touched) && touch) {
-            set(fieldApi.atom.touched, touch);
+        if (!get(field.disabled)) {
+          if (!get(field.touched) && touch) {
+            set(field.touched, touch);
           }
 
-          const options = get(fieldApi.atom.options);
-          const value = get(fieldApi.atom.value);
+          const options = get(field.options);
+          const value = get(field.value);
 
           let nextParsed = nextValue as TFieldValue;
           if (options.parse) {
@@ -167,7 +160,7 @@ export const useFieldActions = <
           }
 
           if (!options.isEqual(nextParsed, value)) {
-            set(fieldApi.atom.value, nextParsed);
+            set(field.value, nextParsed);
           }
         }
       },
@@ -177,25 +170,25 @@ export const useFieldActions = <
 
   const focus = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      if (!get(fieldApi.atom.disabled)) {
-        if (!get(fieldApi.atom.touched)) {
-          set(fieldApi.atom.touched, true);
+      if (!get(field.disabled)) {
+        if (!get(field.touched)) {
+          set(field.touched, true);
         }
 
-        set(fieldApi.atom.focused, true);
+        set(field.focused, true);
       }
     }, [])
   );
 
   const blur = useAtomCallback(
     useCallback(async (get: Getter, set: Setter) => {
-      if (!get(fieldApi.atom.disabled)) {
-        if (!get(fieldApi.atom.touched)) {
-          set(fieldApi.atom.touched, true);
+      if (!get(field.disabled)) {
+        if (!get(field.touched)) {
+          set(field.touched, true);
         }
 
-        set(fieldApi.atom.focused, false);
-        set(fieldApi.atom.blurred, true);
+        set(field.focused, false);
+        set(field.blurred, true);
       }
     }, [])
   );
@@ -211,10 +204,7 @@ export const useFieldActions = <
   );
 
   const toggleFocused = useAtomCallback(
-    useCallback(
-      (get: Getter) => setFocused(!get(fieldApi.atom.focused)),
-      [setFocused]
-    )
+    useCallback((get: Getter) => setFocused(!get(field.focused)), [setFocused])
   );
 
   const mount = useAtomCallback(
@@ -222,16 +212,16 @@ export const useFieldActions = <
       async (
         get: Getter,
         set: Setter,
-        ref: LegacyRef<TamaguiTextElement>,
+        ref: Ref<HTMLInputElement>,
         tabIndex?: number
       ) => {
-        set(fieldApi.atom.ref, ref);
-        set(fieldApi.atom.tabIndex, tabIndex ?? 0);
+        set(field.ref, ref);
+        set(field.tabIndex, tabIndex ?? 0);
 
-        if (!get(fieldApi.atom.initialValue)) {
-          const options = get(fieldApi.atom.options);
+        if (!get(field.initialValue)) {
+          const options = get(field.options);
 
-          set(fieldApi.atom.initialValue, options.defaultValue ?? null);
+          set(field.initialValue, options.defaultValue ?? null);
         }
       },
       []

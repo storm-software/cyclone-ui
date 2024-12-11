@@ -27,7 +27,7 @@ import {
   WarningValidationDetails
 } from "@storm-stack/types/utility-types/validations";
 import { Atom, atom } from "jotai";
-import { FieldOptions, InferFieldState, ValidationResults } from "../types";
+import { InferFieldState, ValidationResults } from "../types";
 import { isValidationResults } from "../utilities/is-validation-results";
 
 export const getMessageType = <
@@ -197,6 +197,23 @@ export const getFieldsMessageList = <
   }, [] as TValidationDetails[]);
 };
 
+/* export const atomWithFormFieldsMessageTypes = <
+  TMessageType extends MessageType,
+  TValidationDetails extends
+    ValidationDetails<TMessageType> = ValidationDetails<TMessageType>
+>(
+  validationResultsFieldsAtom: Atom<
+    InferFormState<Record<string, any>, ValidationResults>
+  >,
+  type: TMessageType
+): Atom<InferFormState<Record<string, any>, TValidationDetails[]>> => {
+  return atom<InferFormState<Record<string, any>, TValidationDetails[]>>(
+    get => {
+      return getFieldsMessageTypes(get(validationResultsFieldsAtom), type);
+    }
+  );
+}; */
+
 export const atomWithFieldsMessageList = <
   TFieldValue,
   TMessageType extends MessageType,
@@ -237,7 +254,7 @@ export const atomWithMessages = (
   helpMessagesAtom: Atom<HelpValidationDetails[]>,
   successMessagesAtom: Atom<SuccessValidationDetails[]>
 ) =>
-  atom<ValidationDetails[] | undefined>(get => {
+  atom<ValidationDetails[]>(get => {
     const errorMessages = get(errorMessagesAtom);
     if (errorMessages.length > 0) {
       return errorMessages as ValidationDetails[];
@@ -259,11 +276,11 @@ export const atomWithMessages = (
       return successMessages as ValidationDetails[];
     }
 
-    return undefined;
+    return [];
   });
 
 export const atomWithTheme = (
-  optionsAtom: Atom<FieldOptions>,
+  optionsAtom: Atom<{ theme?: string }>,
   errorMessagesAtom: Atom<ErrorValidationDetails[]>,
   warningMessagesAtom: Atom<WarningValidationDetails[]>,
   infoMessagesAtom: Atom<InfoValidationDetails[]>,

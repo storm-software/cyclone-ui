@@ -16,11 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Field } from "@cyclone-ui/field";
-import {
-  useFieldActions,
-  useFieldRef,
-  useFieldStore
-} from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/form-state";
 import { Select } from "@cyclone-ui/select";
 import { SelectOption } from "@storm-stack/types/utility-types/form";
 import { GetProps, Unspaced, withStaticProperties } from "@tamagui/core";
@@ -61,15 +57,15 @@ const SelectFieldControl = Select.styleable<
     [change]
   );
 
-  const store = useFieldStore();
-  const name = store.get.name();
-  const disabled = store.get.disabled();
-  const focused = store.get.focused();
-  const size = store.get.size();
-  const itemsAtoms = store.get.itemsAtoms();
-  const value = store.get.value();
-  const formattedValue = store.get.formattedValue();
-  const initialValue = store.get.initialValue();
+  const field = FieldApi.use();
+  const name = field.name.get();
+  const disabled = field.disabled.get();
+  const focused = field.focused.get();
+  const size = field.size.get();
+  const itemsAtoms = field.itemsAtoms.get();
+  const value = field.value.get();
+  const formattedValue = field.formattedValue.get();
+  const initialValue = field.initialValue.get();
 
   const selectRef = useFieldRef();
   useLayoutEffect(() => {

@@ -113,9 +113,12 @@ type Ref = {
   set: Setter;
 };
 
-export function atomWithEffect(
-  effect: (get: GetterWithPeek, set: SetterWithRecurse) => void | Cleanup
-): Atom<void> {
+export type EffectCallback = (
+  get: GetterWithPeek,
+  set: SetterWithRecurse
+) => void | Cleanup;
+
+export function atomWithEffect(effect: EffectCallback): Atom<void> {
   const refreshAtom = atom(0);
   const refAtom = atom(
     (): Ref => ({

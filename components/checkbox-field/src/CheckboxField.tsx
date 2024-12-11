@@ -17,7 +17,7 @@
 
 import { Checkbox } from "@cyclone-ui/checkbox";
 import { Field } from "@cyclone-ui/field";
-import { useFieldActions, useFieldStore } from "@cyclone-ui/form-state";
+import { FieldApi, useFieldActions } from "@cyclone-ui/form-state";
 import { CheckedState } from "@tamagui/checkbox-headless";
 import { withStaticProperties } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
@@ -34,8 +34,8 @@ const CheckboxFieldGroup = Field.styleable((props, forwardedRef) => {
 
 const CheckboxFieldLabel = Field.Label.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const store = useFieldStore();
-    const disabled = store.get.disabled();
+    const field = FieldApi.use();
+    const disabled = field.disabled.get();
 
     return (
       <XStack gap="$0.5" alignContent="center">
@@ -56,13 +56,13 @@ const CheckboxFieldLabel = Field.Label.styleable(
 const CheckboxFieldControl = Checkbox.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { focus, change, blur } = useFieldActions<CheckedState>();
-    const store = useFieldStore<CheckedState>();
 
-    const name = store.get.name();
-    const disabled = store.get.disabled();
-    const focused = store.get.focused();
-    const value = store.get.value();
-    const initialValue = store.get.initialValue();
+    const field = FieldApi.use();
+    const name = field.name.get();
+    const disabled = field.disabled.get();
+    const focused = field.focused.get();
+    const value = field.value.get();
+    const initialValue = field.initialValue.get();
 
     return (
       <Checkbox
