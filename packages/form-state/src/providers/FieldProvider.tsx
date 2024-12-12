@@ -24,9 +24,9 @@ import { SetStateAction, WritableAtom } from "jotai";
 import { RESET } from "jotai/utils";
 import { PropsWithChildren } from "react";
 import { useFieldActions } from "../hooks/use-field-actions";
-import { FieldApi, FieldOptionsState } from "../molecules/field-molecule";
+import { FieldApi } from "../molecules/field-molecule";
 import { FormApi } from "../molecules/form-molecule";
-import { FieldOptions, ValidationCause } from "../types";
+import { FieldOptions, FieldOptionsState, ValidationCause } from "../types";
 
 type FieldStateManagerProps<TFieldValue = any> = PropsWithChildren<
   FieldOptions<TFieldValue>
@@ -297,59 +297,14 @@ export function FieldProvider<TFieldValue = any>({
 }: FieldProviderOptions<TFieldValue>) {
   // const theme = useThemeName();
 
-  // const form = FormApi.use();
-  // const formOptions = form.options.get();
-
-  // const defaultValue = useMemo(
-  //   () =>
-  //     (props.defaultValue !== undefined
-  //       ? props.defaultValue
-  //       : getField(formOptions.initialValues, props.name)) ?? null,
-  //   [formOptions.initialValues, props.defaultValue, props.name]
-  // );
-
-  // const options = useMemo(() => {
-  //   const result = deepMerge(
-  //     { ...formOptions.defaultFieldOptions, theme },
-  //     props
-  //   ) as FieldBaseState<TFieldValue>["options"];
-
-  //   result.defaultValue = defaultValue;
-  //   result.validate.onBlur = [
-  //     ...(result.validate?.onBlur ?? ([] as Validator[])),
-  //     ...(result.required ? [requiredValidator] : [])
-  //   ];
-
-  //   return result;
-  // }, [theme, formOptions.defaultFieldOptions, props]);
-
-  // const items = useMemo(
-  //   () =>
-  //     (fieldOptions.items ?? []).reduce((ret, item, index) => {
-  //       if (!ret.some(existing => existing.value === item.value)) {
-  //         ret.push({
-  //           index,
-  //           disabled: Boolean(fieldOptions.disabled),
-  //           selected: item.value === defaultValue,
-  //           ...item
-  //         });
-  //       }
-
-  //       return ret;
-  //     }, [] as SelectOption[]),
-  //   [fieldOptions.items, fieldOptions.disabled, defaultValue]
-  // );
-
-  // const fieldStore = useMemo(
-  //   () => createFieldStore<TFieldValue>(options.name),
-  //   [options.name]
-  // );
+  const form = FormApi.use();
+  const formName = form.name.get();
 
   const theme = useThemeName();
 
   return (
     <FieldApi.Provider
-      scope={name}
+      scope={`${formName}-${name}`}
       initialState={{
         options: { theme, ...props } as FieldOptionsState<TFieldValue>
       }}>

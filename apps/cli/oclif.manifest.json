@@ -123,292 +123,6 @@
         "build.js"
       ]
     },
-    "colors:clean": {
-      "aliases": [],
-      "args": {
-        "name": {
-          "description": "The name of the specific color scheme to assign the design token to",
-          "name": "name",
-          "required": false
-        }
-      },
-      "description": "Clean the color scheme configuration for the client application based on the colors provided in the Storm configuration file",
-      "examples": [
-        {
-          "description": "Clean all the color schemes using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> clean"
-        },
-        {
-          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color scheme files using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> clean brand"
-        },
-        {
-          "description": "Clean all the color schemes in the output path './path/to/output'",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
-        },
-        {
-          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output'",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
-        },
-        {
-          "description": "Clean all the color schemes in the output path './path/to/output', and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
-        },
-        {
-          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output', and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "output": {
-          "aliases": [
-            "outputPath",
-            "outDir"
-          ],
-          "char": "o",
-          "deprecateAliases": false,
-          "description": "The location to output the design token file",
-          "env": "STORM_COLORS_DIRECTORY",
-          "hidden": false,
-          "name": "output",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Output directory",
-          "default": ".storm/colors",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": false,
-          "type": "boolean"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "colors:clean",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Clean the workspace's color scheme configuration",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "apps",
-        "cli",
-        "src",
-        "commands",
-        "colors",
-        "clean.js"
-      ]
-    },
-    "colors:generate": {
-      "aliases": [],
-      "args": {
-        "name": {
-          "default": "brand",
-          "description": "The name of the specific theme to assign the color tokens to",
-          "name": "name",
-          "noCacheDefault": false,
-          "required": true
-        }
-      },
-      "description": "Initialize the color token configuration for the client application based on the values provided in the Storm configuration file",
-      "examples": [
-        {
-          "description": "Initialize the color tokens using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> generate"
-        },
-        {
-          "description": "Initialize the color tokens, and write the output to ./path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output"
-        },
-        {
-          "description": "Initialize the color tokens, write the output to ./path/to/output, and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "output": {
-          "aliases": [
-            "outputPath",
-            "outDir"
-          ],
-          "char": "o",
-          "deprecateAliases": false,
-          "description": "The location to output the color tokens file",
-          "env": "STORM_COLORS_DIRECTORY",
-          "hidden": false,
-          "name": "output",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Output directory",
-          "default": ".storm/colors",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "clean": {
-          "char": "c",
-          "deprecateAliases": false,
-          "description": "Remove all theme files from the output directory before generating new color tokens",
-          "hidden": false,
-          "name": "clean",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Clean output directory",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "json": {
-          "char": "j",
-          "deprecateAliases": false,
-          "description": "Should the color token values be generated as a JSON",
-          "hidden": false,
-          "name": "json",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Generate JSON",
-          "allowNo": true,
-          "type": "boolean"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "colors:generate",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Initialize a color token configuration",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "apps",
-        "cli",
-        "src",
-        "commands",
-        "colors",
-        "generate.js"
-      ]
-    },
-    "components:get": {
-      "aliases": [],
-      "args": {
-        "component": {
-          "description": "The name of the component to add to the local components library package",
-          "name": "component",
-          "noCacheDefault": false,
-          "required": false
-        }
-      },
-      "description": "A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package",
-      "examples": [
-        {
-          "description": "Initialize the themes using the output path from the Storm configuration file",
-          "command": "<%= config.bin %> <%= command.id %> init"
-        },
-        {
-          "description": "Initialize the themes, and write the output to ./path/to/output",
-          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output"
-        },
-        {
-          "description": "Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts",
-          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output --skip"
-        }
-      ],
-      "flags": {
-        "library": {
-          "aliases": [
-            "lib"
-          ],
-          "char": "l",
-          "deprecateAliases": false,
-          "description": "The location of the local components library package directory",
-          "hidden": false,
-          "name": "library",
-          "required": false,
-          "summary": "Components library directory",
-          "hasDynamicHelp": false,
-          "helpValue": "<directory>",
-          "multiple": false,
-          "type": "option"
-        },
-        "skip": {
-          "char": "s",
-          "deprecateAliases": false,
-          "description": "Skip all confirmation prompts and use the default values",
-          "hidden": false,
-          "name": "skip",
-          "noCacheDefault": false,
-          "required": false,
-          "summary": "Skip confirmation prompts",
-          "allowNo": true,
-          "type": "boolean"
-        },
-        "registry": {
-          "aliases": [
-            "registryUrl",
-            "registry-url"
-          ],
-          "char": "r",
-          "deprecateAliases": false,
-          "description": "The URL of the Cyclone UI remote registry to use for the components library package",
-          "hidden": false,
-          "name": "registry",
-          "required": false,
-          "summary": "Registry URL",
-          "hasDynamicHelp": false,
-          "helpValue": "<url>",
-          "multiple": false,
-          "type": "option"
-        }
-      },
-      "hasDynamicHelp": false,
-      "hiddenAliases": [],
-      "id": "components:get",
-      "pluginAlias": "@cyclone-ui/cli",
-      "pluginName": "@cyclone-ui/cli",
-      "pluginType": "core",
-      "strict": false,
-      "summary": "Get design component files from registry",
-      "enableJsonFlag": false,
-      "isESM": true,
-      "relativePath": [
-        "dist",
-        "apps",
-        "cli",
-        "src",
-        "commands",
-        "components",
-        "get.js"
-      ]
-    },
     "themes:clean": {
       "aliases": [],
       "args": {
@@ -613,6 +327,292 @@
         "src",
         "commands",
         "themes",
+        "generate.js"
+      ]
+    },
+    "components:get": {
+      "aliases": [],
+      "args": {
+        "component": {
+          "description": "The name of the component to add to the local components library package",
+          "name": "component",
+          "noCacheDefault": false,
+          "required": false
+        }
+      },
+      "description": "A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package",
+      "examples": [
+        {
+          "description": "Initialize the themes using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> init"
+        },
+        {
+          "description": "Initialize the themes, and write the output to ./path/to/output",
+          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output"
+        },
+        {
+          "description": "Initialize the themes, write the output to ./path/to/output, and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> init --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "library": {
+          "aliases": [
+            "lib"
+          ],
+          "char": "l",
+          "deprecateAliases": false,
+          "description": "The location of the local components library package directory",
+          "hidden": false,
+          "name": "library",
+          "required": false,
+          "summary": "Components library directory",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "registry": {
+          "aliases": [
+            "registryUrl",
+            "registry-url"
+          ],
+          "char": "r",
+          "deprecateAliases": false,
+          "description": "The URL of the Cyclone UI remote registry to use for the components library package",
+          "hidden": false,
+          "name": "registry",
+          "required": false,
+          "summary": "Registry URL",
+          "hasDynamicHelp": false,
+          "helpValue": "<url>",
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "components:get",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Get design component files from registry",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "apps",
+        "cli",
+        "src",
+        "commands",
+        "components",
+        "get.js"
+      ]
+    },
+    "colors:clean": {
+      "aliases": [],
+      "args": {
+        "name": {
+          "description": "The name of the specific color scheme to assign the design token to",
+          "name": "name",
+          "required": false
+        }
+      },
+      "description": "Clean the color scheme configuration for the client application based on the colors provided in the Storm configuration file",
+      "examples": [
+        {
+          "description": "Clean all the color schemes using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> clean"
+        },
+        {
+          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color scheme files using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> clean brand"
+        },
+        {
+          "description": "Clean all the color schemes in the output path './path/to/output'",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
+        },
+        {
+          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output'",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output"
+        },
+        {
+          "description": "Clean all the color schemes in the output path './path/to/output', and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
+        },
+        {
+          "description": "Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output', and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> clean --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "output": {
+          "aliases": [
+            "outputPath",
+            "outDir"
+          ],
+          "char": "o",
+          "deprecateAliases": false,
+          "description": "The location to output the design token file",
+          "env": "STORM_COLORS_DIRECTORY",
+          "hidden": false,
+          "name": "output",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Output directory",
+          "default": ".storm/colors",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "colors:clean",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Clean the workspace's color scheme configuration",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "apps",
+        "cli",
+        "src",
+        "commands",
+        "colors",
+        "clean.js"
+      ]
+    },
+    "colors:generate": {
+      "aliases": [],
+      "args": {
+        "name": {
+          "default": "brand",
+          "description": "The name of the specific theme to assign the color tokens to",
+          "name": "name",
+          "noCacheDefault": false,
+          "required": true
+        }
+      },
+      "description": "Initialize the color token configuration for the client application based on the values provided in the Storm configuration file",
+      "examples": [
+        {
+          "description": "Initialize the color tokens using the output path from the Storm configuration file",
+          "command": "<%= config.bin %> <%= command.id %> generate"
+        },
+        {
+          "description": "Initialize the color tokens, and write the output to ./path/to/output",
+          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output"
+        },
+        {
+          "description": "Initialize the color tokens, write the output to ./path/to/output, and skip confirmation prompts",
+          "command": "<%= config.bin %> <%= command.id %> generate --output=./path/to/output --skip"
+        }
+      ],
+      "flags": {
+        "output": {
+          "aliases": [
+            "outputPath",
+            "outDir"
+          ],
+          "char": "o",
+          "deprecateAliases": false,
+          "description": "The location to output the color tokens file",
+          "env": "STORM_COLORS_DIRECTORY",
+          "hidden": false,
+          "name": "output",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Output directory",
+          "default": ".storm/colors",
+          "hasDynamicHelp": false,
+          "helpValue": "<directory>",
+          "multiple": false,
+          "type": "option"
+        },
+        "skip": {
+          "char": "s",
+          "deprecateAliases": false,
+          "description": "Skip all confirmation prompts and use the default values",
+          "hidden": false,
+          "name": "skip",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Skip confirmation prompts",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "clean": {
+          "char": "c",
+          "deprecateAliases": false,
+          "description": "Remove all theme files from the output directory before generating new color tokens",
+          "hidden": false,
+          "name": "clean",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Clean output directory",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "json": {
+          "char": "j",
+          "deprecateAliases": false,
+          "description": "Should the color token values be generated as a JSON",
+          "hidden": false,
+          "name": "json",
+          "noCacheDefault": false,
+          "required": false,
+          "summary": "Generate JSON",
+          "allowNo": true,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "colors:generate",
+      "pluginAlias": "@cyclone-ui/cli",
+      "pluginName": "@cyclone-ui/cli",
+      "pluginType": "core",
+      "strict": false,
+      "summary": "Initialize a color token configuration",
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "apps",
+        "cli",
+        "src",
+        "commands",
+        "colors",
         "generate.js"
       ]
     }

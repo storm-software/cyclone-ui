@@ -19,12 +19,11 @@ import { createMoleculeApi, SetStateActionWithReset } from "@cyclone-ui/state";
 import { isFunction } from "@storm-stack/types/type-checks/is-function";
 import { isNumber } from "@storm-stack/types/type-checks/is-number";
 import { isString } from "@storm-stack/types/type-checks/is-string";
-import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import { deepMerge } from "@storm-stack/utilities/helper-fns/deep-merge";
 import { flattenObject } from "@storm-stack/utilities/helper-fns/flatten-object";
 import { isEqual } from "@storm-stack/utilities/helper-fns/is-equal";
 import { setField } from "@storm-stack/utilities/helper-fns/set-field";
-import { Atom, atom, SetStateAction, WritableAtom } from "jotai";
+import { atom } from "jotai";
 import { atomWithDefault, atomWithReset, RESET } from "jotai/utils";
 import { Ref } from "react";
 import {
@@ -35,27 +34,13 @@ import {
   atomWithTheme
 } from "../atoms/atom-with-messages";
 import {
+  FormAtoms,
   FormOptions,
+  FormOptionsState,
   FormValuesState,
-  InferFieldState,
   InferFormState,
   ValidationResults
 } from "../types";
-
-export type FormOptionsState<
-  TFormValues extends Record<string, any> = Record<string, any>
-> = FormOptions<TFormValues> &
-  Required<
-    Pick<
-      FormOptions<TFormValues>,
-      | "theme"
-      | "debounceMs"
-      | "isEqual"
-      | "disabled"
-      | "initialValues"
-      | "defaultFieldOptions"
-    >
-  >;
 
 export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
   theme: "base",
@@ -65,137 +50,6 @@ export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
   initialValues: {},
   defaultFieldOptions: {}
 } as const;
-
-export type FormAtoms<
-  TFormValues extends Record<string, any> = Record<string, any>
-> = {
-  options: WritableAtom<
-    FormOptionsState<TFormValues>,
-    [SetStateActionWithReset<FormOptions<TFormValues>>],
-    void
-  >;
-
-  name: Atom<string>;
-
-  initialValues: WritableAtom<
-    FormValuesState<TFormValues>,
-    [typeof RESET | SetStateAction<FormValuesState<TFormValues>>],
-    void
-  >;
-  previousValues: Atom<FormValuesState<TFormValues>>;
-  values: WritableAtom<
-    FormValuesState<TFormValues>,
-    [typeof RESET | SetStateAction<FormValuesState<TFormValues>>],
-    void
-  >;
-
-  disabled: WritableAtom<
-    boolean,
-    [typeof RESET | SetStateAction<boolean>],
-    void
-  >;
-  formValidating: WritableAtom<
-    boolean,
-    [SetStateActionWithReset<boolean>],
-    void
-  >;
-  validationResults: WritableAtom<
-    ValidationResults,
-    [SetStateActionWithReset<ValidationResults>],
-    void
-  >;
-  submitting: WritableAtom<boolean, [SetStateActionWithReset<boolean>], void>;
-  submitted: WritableAtom<boolean, [SetStateActionWithReset<boolean>], void>;
-  submitAttempts: WritableAtom<number, [SetStateActionWithReset<number>], void>;
-
-  focusedFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  requiredFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  disabledFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  touchedFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  blurredFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  validatingFields: WritableAtom<
-    InferFormState<TFormValues, boolean>,
-    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
-    void
-  >;
-  validationResultsFields: WritableAtom<
-    InferFormState<TFormValues, ValidationResults>,
-    [SetStateActionWithReset<InferFormState<TFormValues, ValidationResults>>],
-    void
-  >;
-  tabIndexes: WritableAtom<
-    InferFormState<TFormValues, number>,
-    [
-      | { field: string; tabIndex?: number }
-      | SetStateActionWithReset<InferFormState<TFormValues, number>>
-    ],
-    void
-  >;
-  refs: WritableAtom<
-    InferFormState<TFormValues, Ref<HTMLInputElement>>,
-    [
-      SetStateActionWithReset<
-        InferFormState<TFormValues, Ref<HTMLInputElement>>
-      >
-    ],
-    void
-  >;
-
-  dirty: Atom<boolean>;
-  pristine: Atom<boolean>;
-
-  blurred: Atom<boolean>;
-  touched: Atom<boolean>;
-  validating: Atom<boolean>;
-
-  errorMessages: Atom<ValidationDetails<"error">[]>;
-  warningMessages: Atom<ValidationDetails<"warning">[]>;
-  infoMessages: Atom<ValidationDetails<"info">[]>;
-  helpMessages: Atom<ValidationDetails<"help">[]>;
-  successMessages: Atom<ValidationDetails<"success">[]>;
-  messages: Atom<ValidationDetails[]>;
-
-  errorFields: Atom<InferFieldState<TFormValues, ValidationDetails<"error">[]>>;
-  warningFields: Atom<
-    InferFieldState<TFormValues, ValidationDetails<"warning">[]>
-  >;
-  infoFields: Atom<InferFieldState<TFormValues, ValidationDetails<"info">[]>>;
-  helpFields: Atom<InferFieldState<TFormValues, ValidationDetails<"help">[]>>;
-  successFields: Atom<
-    InferFieldState<TFormValues, ValidationDetails<"success">[]>
-  >;
-
-  fieldErrorMessages: Atom<ValidationDetails<"error">[]>;
-  fieldWarningMessages: Atom<ValidationDetails<"warning">[]>;
-  fieldInfoMessages: Atom<ValidationDetails<"info">[]>;
-  fieldHelpMessages: Atom<ValidationDetails<"help">[]>;
-  fieldsSuccessMessages: Atom<ValidationDetails<"success">[]>;
-
-  valid: Atom<boolean>;
-  invalid: Atom<boolean>;
-  canSubmit: Atom<boolean>;
-  theme: Atom<string>;
-};
 
 export const FormApi = createMoleculeApi(
   <TFormValues extends Record<string, any> = Record<string, any>>(

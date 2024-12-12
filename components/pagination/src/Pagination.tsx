@@ -1,3 +1,20 @@
+/*-------------------------------------------------------------------
+
+                   ⚡ Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 License, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page.
+
+ Website:         https://stormsoftware.com
+ Repository:      https://github.com/storm-software/cyclone-ui
+ Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
+ Contact:         https://stormsoftware.com/contact
+ License:         https://stormsoftware.com/projects/cyclone-ui/license
+
+ -------------------------------------------------------------------*/
+
 import { Button } from "@cyclone-ui/button";
 import { NextButton } from "@cyclone-ui/next-button";
 import { PreviousButton } from "@cyclone-ui/previous-button";
@@ -34,12 +51,14 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
     onNext,
     ...props
   }: PaginationProps) => {
+    const currentPage = Math.min(pageCount, Math.max(1, pageIndex + 1));
+
     const handleFirst = useCallback(() => {
       setPageIndex(0);
     }, [setPageIndex]);
     const handleLast = useCallback(() => {
       setPageIndex(pageCount - 1);
-    }, [setPageIndex, pageIndex]);
+    }, [setPageIndex, pageCount]);
     const handlePrevious = useCallback(() => {
       setPageIndex(pageIndex - 1);
     }, [setPageIndex, pageIndex]);
@@ -47,7 +66,6 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
       setPageIndex(pageIndex + 1);
     }, [setPageIndex, pageIndex]);
 
-    const currentPage = Math.min(pageCount, Math.max(1, pageIndex + 1));
     const handleSecond = useCallback(() => {
       setPageIndex(
         currentPage < 4

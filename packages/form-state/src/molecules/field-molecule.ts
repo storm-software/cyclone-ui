@@ -18,17 +18,11 @@
 import {
   createMoleculeApi,
   SetStateActionWithReset,
-  SplitAtomAction,
   use
 } from "@cyclone-ui/state";
 import { isFunction } from "@storm-stack/types/type-checks/is-function";
 import { isSet } from "@storm-stack/types/type-checks/is-set";
 import { isString } from "@storm-stack/types/type-checks/is-string";
-import {
-  SelectOption,
-  SelectOptionValue
-} from "@storm-stack/types/utility-types/form";
-import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
 import { deepMerge } from "@storm-stack/utilities/helper-fns/deep-merge";
 import {
   GetField,
@@ -36,10 +30,9 @@ import {
 } from "@storm-stack/utilities/helper-fns/get-field";
 import { isEqual } from "@storm-stack/utilities/helper-fns/is-equal";
 import { toPath } from "@storm-stack/utilities/helper-fns/to-path";
-import { atom, Atom, PrimitiveAtom, SetStateAction, WritableAtom } from "jotai";
+import { atom } from "jotai";
 import { focusAtom } from "jotai-optics";
 import { atomWithDefault, RESET, splitAtom } from "jotai/utils";
-import { Ref } from "react";
 import { atomWithFieldItems } from "../atoms/atom-with-field";
 import {
   atomWithFieldsMessageList,
@@ -47,23 +40,14 @@ import {
   atomWithMessages,
   atomWithTheme
 } from "../atoms/atom-with-messages";
-import { FieldOptions, InferFieldState, ValidationResults } from "../types";
+import {
+  FieldAtoms,
+  FieldOptions,
+  FieldOptionsState,
+  FormAtoms
+} from "../types";
 import { requiredValidator } from "../utilities/validators";
-import { FormApi, FormAtoms } from "./form-molecule";
-
-export type FieldOptionsState<TFieldValue = any> = FieldOptions<TFieldValue> &
-  Required<
-    Pick<
-      FieldOptions<TFieldValue>,
-      | "theme"
-      | "size"
-      | "debounceMs"
-      | "isEqual"
-      | "disabled"
-      | "required"
-      | "initialValue"
-    >
-  >;
+import { FormApi } from "./form-molecule";
 
 export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   theme: "base",
@@ -74,117 +58,6 @@ export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   disabled: false,
   initialValue: null
 } as const;
-
-export type FieldAtoms<TFieldValue> = {
-  options: WritableAtom<
-    FieldOptionsState<TFieldValue>,
-    [SetStateActionWithReset<FieldOptions<TFieldValue>>],
-    void
-  >;
-
-  form: Atom<string>;
-  name: Atom<string>;
-  path: Atom<string[]>;
-
-  focused: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  required: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  disabled: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  touched: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  blurred: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  validating: WritableAtom<
-    InferFieldState<TFieldValue, boolean>,
-    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
-    void
-  >;
-  validationResults: WritableAtom<
-    InferFieldState<TFieldValue, ValidationResults>,
-    [SetStateAction<InferFieldState<TFieldValue, ValidationResults>>],
-    void
-  >;
-  tabIndex: WritableAtom<
-    InferFieldState<TFieldValue, number>,
-    [SetStateAction<InferFieldState<TFieldValue, number>>],
-    void
-  >;
-  ref: WritableAtom<
-    InferFieldState<TFieldValue, Ref<HTMLInputElement>>,
-    [SetStateAction<InferFieldState<TFieldValue, Ref<HTMLInputElement>>>],
-    void
-  >;
-
-  pristine: Atom<boolean>;
-  dirty: Atom<boolean>;
-
-  previousValue: Atom<TFieldValue | null>;
-  initialValue: WritableAtom<TFieldValue, [SetStateAction<TFieldValue>], void>;
-  value: WritableAtom<TFieldValue, [SetStateAction<TFieldValue>], void>;
-  formattedValue: Atom<string>;
-
-  items: WritableAtom<
-    SelectOption<SelectOptionValue, string>[],
-    [SetStateAction<SelectOption<SelectOptionValue, string>[]>],
-    void
-  >;
-  itemsAtoms: WritableAtom<
-    PrimitiveAtom<SelectOption<SelectOptionValue, string>>[],
-    [SplitAtomAction<SelectOption<SelectOptionValue, string>>],
-    void
-  >;
-
-  size: WritableAtom<
-    | `$${string}`
-    | `$${string}.${string}`
-    | `$${string}.${number}`
-    | `$${number}`,
-    [
-      SetStateAction<
-        | `$${string}`
-        | `$${string}.${string}`
-        | `$${string}.${number}`
-        | `$${number}`
-      >
-    ],
-    void
-  >;
-
-  errors: Atom<ValidationDetails<"error">[]>;
-  warnings: Atom<ValidationDetails<"warning">[]>;
-  info: Atom<ValidationDetails<"info">[]>;
-  help: Atom<ValidationDetails<"help">[]>;
-  success: Atom<ValidationDetails<"success">[]>;
-
-  errorMessages: Atom<ValidationDetails<"error">[]>;
-  warningMessages: Atom<ValidationDetails<"warning">[]>;
-  infoMessages: Atom<ValidationDetails<"info">[]>;
-  helpMessages: Atom<ValidationDetails<"help">[]>;
-  successMessages: Atom<ValidationDetails<"success">[]>;
-
-  theme: Atom<string>;
-  messages: Atom<ValidationDetails[]>;
-
-  invalid: Atom<boolean>;
-  valid: Atom<boolean>;
-};
 
 export const FieldApi = createMoleculeApi(
   <
@@ -237,7 +110,9 @@ export const FieldApi = createMoleculeApi(
       }
     );
 
-    const path = toPath(scope);
+    const path = toPath(
+      scope.includes("-") ? scope.slice(scope.indexOf("-") + 1) : scope
+    );
     const pathAtom = atom(() => path);
 
     const nameAtom = atom(get => get(pathAtom).slice(-1)[0]!);

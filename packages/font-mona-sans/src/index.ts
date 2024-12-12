@@ -31,8 +31,8 @@ import { createFont } from "@tamagui/core";
 export const size = {
   1: 10,
   2: 11,
-  3: 12,
-  sm: 12,
+  3: 13,
+  sm: 13,
   4: 16,
   5: 17,
   6: 18,
@@ -81,7 +81,7 @@ export const createMonaSansFont = <
     lineHeight: Object.fromEntries(
       Object.entries(fontSize).map(([key, value]) => {
         if (value < 16) {
-          return [key, value * 1.0];
+          return [key, value];
         }
 
         return [key, value * 0.8];

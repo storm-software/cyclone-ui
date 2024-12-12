@@ -16,18 +16,30 @@
  -------------------------------------------------------------------*/
 
 import { ColorThemeName } from "@cyclone-ui/colors";
-import { AtomRecord } from "@cyclone-ui/state";
+import {
+  AtomRecord,
+  SetStateActionWithReset,
+  SplitAtomAction
+} from "@cyclone-ui/state";
 import { MoleculeState } from "@cyclone-ui/state/utilities/create-molecule";
 import type { MaskitoOptions } from "@maskito/core";
 import {
   IsPlainObject,
   MaybePromise,
   SelectOption,
+  SelectOptionValue,
   ValidationDetails
 } from "@storm-stack/types";
-import { SizeTokens, TamaguiTextElement } from "@tamagui/core";
-import { Getter, Setter } from "jotai";
-import { LegacyRef } from "react";
+import type {
+  Atom,
+  Getter,
+  PrimitiveAtom,
+  SetStateAction,
+  Setter,
+  WritableAtom
+} from "jotai";
+import { RESET } from "jotai/utils";
+import { Ref } from "react";
 
 /**
  * "server" is only intended for SSR/SSG validation and should not execute anything
@@ -184,115 +196,267 @@ export type FormOptions<
   /**
    * A callback that is called when the form is initialized.
    */
-  onInitialize?: (context: CallbackContext) => MaybePromise<void>;
+  onInitialize?: (
+    context: CallbackContext<FormAtoms<TFormValues>>
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the form is changed.
    */
-  onChange?: (context: CallbackContext) => MaybePromise<void>;
+  onChange?: (
+    context: CallbackContext<FormAtoms<TFormValues>>
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the form is submitted.
    */
-  onSubmit?: (context: CallbackContext) => MaybePromise<void>;
+  onSubmit?: (
+    context: CallbackContext<FormAtoms<TFormValues>>
+  ) => MaybePromise<void>;
 };
 
-export type FormBaseState<
+export type FormOptionsState<
+  TFormValues extends Record<string, any> = Record<string, any>
+> = FormOptions<TFormValues> &
+  Required<
+    Pick<
+      FormOptions<TFormValues>,
+      | "theme"
+      | "debounceMs"
+      | "isEqual"
+      | "disabled"
+      | "initialValues"
+      | "defaultFieldOptions"
+    >
+  >;
+
+export type FormAtoms<
   TFormValues extends Record<string, any> = Record<string, any>
 > = {
-  /**
-   * The disabled state value.
-   */
-  disabled: boolean;
+  options: WritableAtom<
+    FormOptionsState<TFormValues>,
+    [SetStateActionWithReset<FormOptions<TFormValues>>],
+    void
+  >;
 
-  /**
-   * A flag indicating whether the form is currently being validated.
-   */
-  formValidating: boolean;
+  name: Atom<string>;
 
-  /**
-   * The results of the form validation.
-   */
-  validationResults: ValidationResults;
+  initialValues: WritableAtom<
+    FormValuesState<TFormValues>,
+    [typeof RESET | SetStateAction<FormValuesState<TFormValues>>],
+    void
+  >;
+  previousValues: Atom<FormValuesState<TFormValues>>;
+  values: WritableAtom<
+    FormValuesState<TFormValues>,
+    [typeof RESET | SetStateAction<FormValuesState<TFormValues>>],
+    void
+  >;
 
-  /**
-   * A flag indicating whether the form is currently being submitted.
-   */
-  submitting: boolean;
+  disabled: WritableAtom<
+    boolean,
+    [typeof RESET | SetStateAction<boolean>],
+    void
+  >;
+  formValidating: WritableAtom<
+    boolean,
+    [SetStateActionWithReset<boolean>],
+    void
+  >;
+  validationResults: WritableAtom<
+    ValidationResults,
+    [SetStateActionWithReset<ValidationResults>],
+    void
+  >;
+  submitting: WritableAtom<boolean, [SetStateActionWithReset<boolean>], void>;
+  submitted: WritableAtom<boolean, [SetStateActionWithReset<boolean>], void>;
+  submitAttempts: WritableAtom<number, [SetStateActionWithReset<number>], void>;
 
-  /**
-   * A flag indicating whether the form has been submitted.
-   */
-  submitted: boolean;
+  focusedFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  requiredFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  disabledFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  touchedFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  blurredFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  validatingFields: WritableAtom<
+    InferFormState<TFormValues, boolean>,
+    [SetStateActionWithReset<InferFormState<TFormValues, boolean>>],
+    void
+  >;
+  validationResultsFields: WritableAtom<
+    InferFormState<TFormValues, ValidationResults>,
+    [SetStateActionWithReset<InferFormState<TFormValues, ValidationResults>>],
+    void
+  >;
+  tabIndexes: WritableAtom<
+    InferFormState<TFormValues, number>,
+    [
+      | { field: string; tabIndex?: number }
+      | SetStateActionWithReset<InferFormState<TFormValues, number>>
+    ],
+    void
+  >;
+  refs: WritableAtom<
+    InferFormState<TFormValues, Ref<HTMLInputElement>>,
+    [
+      SetStateActionWithReset<
+        InferFormState<TFormValues, Ref<HTMLInputElement>>
+      >
+    ],
+    void
+  >;
 
-  /**
-   * The number of times the form has been submitted.
-   */
-  submitAttempts: number;
+  dirty: Atom<boolean>;
+  pristine: Atom<boolean>;
 
-  /**
-   * The disabled state value.
-   */
-  disabledFields: InferFormState<TFormValues, boolean>;
+  blurred: Atom<boolean>;
+  touched: Atom<boolean>;
+  validating: Atom<boolean>;
 
-  /**
-   * The required state value.
-   */
-  requiredFields: InferFormState<TFormValues, boolean>;
+  errorMessages: Atom<ValidationDetails<"error">[]>;
+  warningMessages: Atom<ValidationDetails<"warning">[]>;
+  infoMessages: Atom<ValidationDetails<"info">[]>;
+  helpMessages: Atom<ValidationDetails<"help">[]>;
+  successMessages: Atom<ValidationDetails<"success">[]>;
+  messages: Atom<ValidationDetails[]>;
 
-  /**
-   * The focused state value.
-   */
-  focusedFields: InferFormState<TFormValues, boolean>;
+  errorFields: Atom<InferFieldState<TFormValues, ValidationDetails<"error">[]>>;
+  warningFields: Atom<
+    InferFieldState<TFormValues, ValidationDetails<"warning">[]>
+  >;
+  infoFields: Atom<InferFieldState<TFormValues, ValidationDetails<"info">[]>>;
+  helpFields: Atom<InferFieldState<TFormValues, ValidationDetails<"help">[]>>;
+  successFields: Atom<
+    InferFieldState<TFormValues, ValidationDetails<"success">[]>
+  >;
 
-  /**
-   * A flag indicating whether the field has been touched.
-   */
-  touchedFields: InferFormState<TFormValues, boolean>;
+  fieldErrorMessages: Atom<ValidationDetails<"error">[]>;
+  fieldWarningMessages: Atom<ValidationDetails<"warning">[]>;
+  fieldInfoMessages: Atom<ValidationDetails<"info">[]>;
+  fieldHelpMessages: Atom<ValidationDetails<"help">[]>;
+  fieldsSuccessMessages: Atom<ValidationDetails<"success">[]>;
 
-  /**
-   * A flag indicating whether the field has been blurred.
-   */
-  blurredFields: InferFormState<TFormValues, boolean>;
-
-  /**
-   * A flag indicating whether the field is currently being validated.
-   */
-  validatingFields: InferFormState<TFormValues, boolean>;
-
-  /**
-   * The results of the field validation.
-   */
-  validationResultsFields: InferFormState<TFormValues, ValidationResults>;
-
-  /**
-   * The tab indexes for the fields.
-   */
-  tabIndexes: InferFormState<TFormValues, number>;
-
-  /**
-   * The references of the form's fields.
-   */
-  refs: InferFormState<TFormValues, LegacyRef<TamaguiTextElement>>;
-
-  /**
-   * The field group's initial values.
-   */
-  initialValues: FormValuesState<TFormValues>;
-
-  /**
-   * The field group's current values.
-   */
-  values: FormValuesState<TFormValues>;
-
-  /**
-   * The options provided when creating the form.
-   */
-  options: FormOptions<TFormValues> &
-    Required<
-      Pick<FormOptions<TFormValues>, "isEqual" | "debounceMs" | "validate">
-    >;
+  valid: Atom<boolean>;
+  invalid: Atom<boolean>;
+  canSubmit: Atom<boolean>;
+  theme: Atom<string>;
 };
+
+// export type FormBaseState<
+//   TFormValues extends Record<string, any> = Record<string, any>
+// > = {
+//   /**
+//    * The disabled state value.
+//    */
+//   disabled: boolean;
+
+//   /**
+//    * A flag indicating whether the form is currently being validated.
+//    */
+//   formValidating: boolean;
+
+//   /**
+//    * The results of the form validation.
+//    */
+//   validationResults: ValidationResults;
+
+//   /**
+//    * A flag indicating whether the form is currently being submitted.
+//    */
+//   submitting: boolean;
+
+//   /**
+//    * A flag indicating whether the form has been submitted.
+//    */
+//   submitted: boolean;
+
+//   /**
+//    * The number of times the form has been submitted.
+//    */
+//   submitAttempts: number;
+
+//   /**
+//    * The disabled state value.
+//    */
+//   disabledFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * The required state value.
+//    */
+//   requiredFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * The focused state value.
+//    */
+//   focusedFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * A flag indicating whether the field has been touched.
+//    */
+//   touchedFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * A flag indicating whether the field has been blurred.
+//    */
+//   blurredFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * A flag indicating whether the field is currently being validated.
+//    */
+//   validatingFields: InferFormState<TFormValues, boolean>;
+
+//   /**
+//    * The results of the field validation.
+//    */
+//   validationResultsFields: InferFormState<TFormValues, ValidationResults>;
+
+//   /**
+//    * The tab indexes for the fields.
+//    */
+//   tabIndexes: InferFormState<TFormValues, number>;
+
+//   /**
+//    * The references of the form's fields.
+//    */
+//   refs: InferFormState<TFormValues, LegacyRef<TamaguiTextElement>>;
+
+//   /**
+//    * The field group's initial values.
+//    */
+//   initialValues: FormValuesState<TFormValues>;
+
+//   /**
+//    * The field group's current values.
+//    */
+//   values: FormValuesState<TFormValues>;
+
+//   /**
+//    * The options provided when creating the form.
+//    */
+//   options: FormOptions<TFormValues> &
+//     Required<
+//       Pick<FormOptions<TFormValues>, "isEqual" | "debounceMs" | "validate">
+//     >;
+// };
 
 /**
  * The field options.
@@ -374,30 +538,37 @@ export type FieldOptions<TFieldValue> = {
   /**
    * A callback that is called when the field is initialized.
    */
-  onInitialize?: (context: CallbackContext) => MaybePromise<void>;
+  onInitialize?: (
+    context: CallbackContext<FieldAtoms<TFieldValue>>
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the field is blurred.
    */
-  onBlur?: (context: CallbackContext) => MaybePromise<void>;
+  onBlur?: (
+    context: CallbackContext<FieldAtoms<TFieldValue>>
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the field is focused.
    */
-  onFocus?: (context: CallbackContext) => MaybePromise<void>;
+  onFocus?: (
+    context: CallbackContext<FieldAtoms<TFieldValue>>
+  ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the field is changed.
    */
   onChange?: (
-    value: TFieldValue,
-    context: CallbackContext
+    context: CallbackContext<FieldAtoms<TFieldValue>>
   ) => MaybePromise<void>;
 
   /**
    * A callback that is called when the field is submitted.
    */
-  onSubmit?: (context: CallbackContext) => MaybePromise<void>;
+  onSubmit?: (
+    context: CallbackContext<FieldAtoms<TFieldValue>>
+  ) => MaybePromise<void>;
 
   /**
    * A function that formats the field value for display.
@@ -412,117 +583,235 @@ export type FieldOptions<TFieldValue> = {
   [key: string]: any;
 };
 
-// export type InferFieldValue<TFieldOptions extends FieldOptions> =
-//   TFieldOptions["valueType"] extends "string"
-//     ? string
-//     : TFieldOptions["valueType"] extends "boolean"
-//       ? boolean
-//       : NonNullable<TFieldOptions["defaultValue"]> | null;
+export type FieldOptionsState<TFieldValue = any> = FieldOptions<TFieldValue> &
+  Required<
+    Pick<
+      FieldOptions<TFieldValue>,
+      | "theme"
+      | "size"
+      | "debounceMs"
+      | "isEqual"
+      | "disabled"
+      | "required"
+      | "initialValue"
+    >
+  >;
 
-export type FieldBaseState<TFieldValue = any> = {
-  /**
-   * Internal value used by the Framework to identify the field.
-   */
-  // scope: string | null;
+export type FieldAtoms<TFieldValue> = {
+  options: WritableAtom<
+    FieldOptionsState<TFieldValue>,
+    [SetStateActionWithReset<FieldOptions<TFieldValue>>],
+    void
+  >;
 
-  /**
-   * The name of the field.
-   *
-   * @remarks
-   * This is the name of the field nested inside internal objects/arrays (if they exist).
-   */
-  name: string;
+  form: Atom<string>;
+  name: Atom<string>;
+  path: Atom<string[]>;
 
-  /**
-   * The path segments of the name of the field.
-   */
-  path: string[];
+  focused: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  required: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  disabled: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  touched: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  blurred: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  validating: WritableAtom<
+    InferFieldState<TFieldValue, boolean>,
+    [SetStateAction<InferFieldState<TFieldValue, boolean>>],
+    void
+  >;
+  validationResults: WritableAtom<
+    InferFieldState<TFieldValue, ValidationResults>,
+    [SetStateAction<InferFieldState<TFieldValue, ValidationResults>>],
+    void
+  >;
+  tabIndex: WritableAtom<
+    InferFieldState<TFieldValue, number>,
+    [SetStateAction<InferFieldState<TFieldValue, number>>],
+    void
+  >;
+  ref: WritableAtom<
+    InferFieldState<TFieldValue, Ref<HTMLInputElement>>,
+    [SetStateAction<InferFieldState<TFieldValue, Ref<HTMLInputElement>>>],
+    void
+  >;
 
-  /**
-   * The disabled state value.
-   */
-  disabled: InferFieldState<TFieldValue, boolean>;
+  pristine: Atom<boolean>;
+  dirty: Atom<boolean>;
 
-  /**
-   * The required state value.
-   */
-  required: InferFieldState<TFieldValue, boolean>;
+  previousValue: Atom<TFieldValue | null>;
+  initialValue: WritableAtom<TFieldValue, [SetStateAction<TFieldValue>], void>;
+  value: WritableAtom<TFieldValue, [SetStateAction<TFieldValue>], void>;
+  formattedValue: Atom<string>;
 
-  /**
-   * The focused state value.
-   */
-  focused: InferFieldState<TFieldValue, boolean>;
+  items: WritableAtom<
+    SelectOption<SelectOptionValue, string>[],
+    [SetStateAction<SelectOption<SelectOptionValue, string>[]>],
+    void
+  >;
+  itemsAtoms: WritableAtom<
+    PrimitiveAtom<SelectOption<SelectOptionValue, string>>[],
+    [SplitAtomAction<SelectOption<SelectOptionValue, string>>],
+    void
+  >;
 
-  /**
-   * A flag indicating whether the field has been touched.
-   */
-  touched: InferFieldState<TFieldValue, boolean>;
-
-  /**
-   * A flag indicating whether the field has been blurred.
-   */
-  blurred: InferFieldState<TFieldValue, boolean>;
-
-  /**
-   * A flag indicating whether the field is currently being validated.
-   */
-  validating: InferFieldState<TFieldValue, boolean>;
-
-  /**
-   * The results of the field validation.
-   */
-  validationResults: InferFieldState<TFieldValue, ValidationResults>;
-
-  /**
-   * The tab index of the field.
-   */
-  tabIndex: InferFieldState<TFieldValue, number>;
-
-  /**
-   * The reference of the field.
-   */
-  ref: InferFieldState<TFieldValue, LegacyRef<TamaguiTextElement>>;
-
-  /**
-   * The field group's initial values.
-   */
-  initialValue: TFieldValue | null;
-
-  /**
-   * The field group's current values.
-   */
-  value: TFieldValue | null;
-
-  /**
-   * The options provided when creating the field.
-   */
-  options: FieldOptions<TFieldValue> &
-    Required<
-      Pick<
-        FieldOptions<TFieldValue>,
-        "size" | "disabled" | "required" | "isEqual" | "debounceMs" | "validate"
+  size: WritableAtom<
+    | `$${string}`
+    | `$${string}.${string}`
+    | `$${string}.${number}`
+    | `$${number}`,
+    [
+      SetStateAction<
+        | `$${string}`
+        | `$${string}.${string}`
+        | `$${string}.${number}`
+        | `$${number}`
       >
-    >;
+    ],
+    void
+  >;
+
+  errors: Atom<ValidationDetails<"error">[]>;
+  warnings: Atom<ValidationDetails<"warning">[]>;
+  info: Atom<ValidationDetails<"info">[]>;
+  help: Atom<ValidationDetails<"help">[]>;
+  success: Atom<ValidationDetails<"success">[]>;
+
+  errorMessages: Atom<ValidationDetails<"error">[]>;
+  warningMessages: Atom<ValidationDetails<"warning">[]>;
+  infoMessages: Atom<ValidationDetails<"info">[]>;
+  helpMessages: Atom<ValidationDetails<"help">[]>;
+  successMessages: Atom<ValidationDetails<"success">[]>;
+
+  theme: Atom<string>;
+  messages: Atom<ValidationDetails[]>;
+
+  invalid: Atom<boolean>;
+  valid: Atom<boolean>;
 };
 
-export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {
-  /**
-   * The theme state value.
-   */
-  theme: string;
+// export type FieldBaseState<TFieldValue = any> = {
+//   /**
+//    * Internal value used by the Framework to identify the field.
+//    */
+//   // scope: string | null;
 
-  /**
-   * The size state value.
-   */
-  size: SizeTokens;
+//   /**
+//    * The name of the field.
+//    *
+//    * @remarks
+//    * This is the name of the field nested inside internal objects/arrays (if they exist).
+//    */
+//   name: string;
 
-  /**
-   * A flag that is `true` if the field's value has not been modified by the user. Opposite of `dirty`.
-   */
-  pristine: boolean;
+//   /**
+//    * The path segments of the name of the field.
+//    */
+//   path: string[];
 
-  /**
-   * A flag that is `true` if the field's value has been modified by the user. Opposite of `pristine`.
-   */
-  dirty: boolean;
-};
+//   /**
+//    * The disabled state value.
+//    */
+//   disabled: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * The required state value.
+//    */
+//   required: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * The focused state value.
+//    */
+//   focused: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * A flag indicating whether the field has been touched.
+//    */
+//   touched: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * A flag indicating whether the field has been blurred.
+//    */
+//   blurred: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * A flag indicating whether the field is currently being validated.
+//    */
+//   validating: InferFieldState<TFieldValue, boolean>;
+
+//   /**
+//    * The results of the field validation.
+//    */
+//   validationResults: InferFieldState<TFieldValue, ValidationResults>;
+
+//   /**
+//    * The tab index of the field.
+//    */
+//   tabIndex: InferFieldState<TFieldValue, number>;
+
+//   /**
+//    * The reference of the field.
+//    */
+//   ref: InferFieldState<TFieldValue, LegacyRef<TamaguiTextElement>>;
+
+//   /**
+//    * The field group's initial values.
+//    */
+//   initialValue: TFieldValue | null;
+
+//   /**
+//    * The field group's current values.
+//    */
+//   value: TFieldValue | null;
+
+//   /**
+//    * The options provided when creating the field.
+//    */
+//   options: FieldOptions<TFieldValue> &
+//     Required<
+//       Pick<
+//         FieldOptions<TFieldValue>,
+//         "size" | "disabled" | "required" | "isEqual" | "debounceMs" | "validate"
+//       >
+//     >;
+// };
+
+// export type FieldState<TFieldValue = any> = FieldBaseState<TFieldValue> & {
+//   /**
+//    * The theme state value.
+//    */
+//   theme: string;
+
+//   /**
+//    * The size state value.
+//    */
+//   size: SizeTokens;
+
+//   /**
+//    * A flag that is `true` if the field's value has not been modified by the user. Opposite of `dirty`.
+//    */
+//   pristine: boolean;
+
+//   /**
+//    * A flag that is `true` if the field's value has been modified by the user. Opposite of `pristine`.
+//    */
+//   dirty: boolean;
+// };

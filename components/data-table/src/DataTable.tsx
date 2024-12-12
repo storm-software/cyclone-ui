@@ -27,8 +27,11 @@ import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
 import { Table, type TableProps } from "@cyclone-ui/table";
 import { titleCase } from "@storm-stack/string-fns/title-case";
+import { isNumber } from "@storm-stack/types/type-checks/is-number";
 import type { SelectOption } from "@storm-stack/types/utility-types/form";
 import { deepClone } from "@storm-stack/utilities/helper-fns/deep-clone";
+import { isEqual } from "@storm-stack/utilities/helper-fns/is-equal";
+import { matchSorter } from "@storm-stack/utilities/helper-fns/match-sorter";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -56,7 +59,6 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
-  useLayoutEffect,
   useMemo,
   useState
 } from "react";
@@ -70,11 +72,11 @@ declare module "@tanstack/react-table" {
 const defaultFilterFn = <TData extends RowData>(
   row: Row<TData>,
   columnId: string,
-  filterValues: string[]
+  filterValues: any[] = []
 ) => {
-  return filterValues
-    .map(filterValue => filterValue.toLowerCase())
-    .includes(String(row.getValue(columnId)).toLowerCase());
+  return !filterValues.some(filterValue =>
+    isEqual(row.getValue(columnId), filterValue)
+  );
 };
 
 export type DataTableContextProps = {
@@ -113,9 +115,8 @@ export function DataTable<TData extends RowData>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: typeof pageSize === "number" && pageSize > 0 ? pageSize : 100
+    pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
   });
-  const [pageCount, setPageCount] = useState<number>(1);
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -146,10 +147,7 @@ export function DataTable<TData extends RowData>({
 
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
-
-  useLayoutEffect(() => {
-    setPageCount(table.getPageCount());
-  }, [pageSize, data.length]);
+  const pageCount = table.getPageCount();
 
   return (
     <DataTableContext.Provider
@@ -220,7 +218,8 @@ export function DataTable<TData extends RowData>({
                   previousPage={table.previousPage}
                   firstPage={table.firstPage}
                   lastPage={table.lastPage}
-                  rowCount={data.length}
+                  totalCount={data.length}
+                  unfilteredCount={table.getFilteredRowModel().rows.length}
                   pageIndex={pagination.pageIndex}
                   pageSize={pagination.pageSize}
                   pageCount={pageCount}
@@ -262,30 +261,37 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
 const SEARCH_FIELD_NAME = "__search";
 const SELECT_ALL_FIELD_NAME = "__selectAll";
 
-const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
-  props: DataTableHeaderProps<TData, TValue>["column"]
-) => {
-  const {
-    setFilterValue,
-    getFacetedUniqueValues,
-    columnDef: { meta }
-  } = props;
-
-  const sortedUniqueValues = useMemo(
-    () => Array.from(getFacetedUniqueValues().keys()).sort().slice(0, 5000),
-    [getFacetedUniqueValues()]
+const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>({
+  valuesMap = new Map(),
+  onSearchChange
+}: {
+  valuesMap: Map<string, { value: any; count: number }>;
+  onSearchChange: (context: CallbackContext<FieldAtoms<string>>) => void;
+}) => {
+  const [searchResults, setSearchResults] = useState(
+    useMemo(() => Array.from(valuesMap.keys()), [valuesMap])
   );
 
-  const handleFilterChanged = useCallback(
-    (value: string) => {
-      setFilterValue(value);
+  const handleSearchChange = useCallback(
+    (context: CallbackContext<FieldAtoms<string>>) => {
+      const { get, atoms } = context;
+      onSearchChange(context);
+
+      const keys = Array.from(valuesMap.keys());
+      const value = get(atoms.value);
+
+      setSearchResults(!value ? keys : matchSorter(keys, value));
     },
-    [setFilterValue]
+    [valuesMap]
   );
 
   return (
     <YStack gap="$3" width="100%">
-      <SearchInputField name={SEARCH_FIELD_NAME} size="$3" width="$15">
+      <SearchInputField
+        name={SEARCH_FIELD_NAME}
+        size="$3"
+        width="$15"
+        onChange={handleSearchChange}>
         <SearchInputField.Control>
           <SearchInputField.Control.TextBox placeholder="Filter..." />
         </SearchInputField.Control>
@@ -300,34 +306,35 @@ const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>(
             </XStack>
           </CheckboxField>
 
-          {sortedUniqueValues.map(value => {
-            return (
-              <CheckboxField key={value} name={String(value)} size="$3">
-                <XStack gap="$3">
-                  <CheckboxField.Control />
-                  <CheckboxField.Label>
-                    {meta?.facetFn?.(value) ?? value}
-                  </CheckboxField.Label>
-                </XStack>
-              </CheckboxField>
-            );
-          })}
+          {searchResults.map(searchResult => (
+            <CheckboxField key={searchResult} name={searchResult} size="$3">
+              <XStack gap="$3">
+                <CheckboxField.Control />
+                <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
+              </XStack>
+            </CheckboxField>
+          ))}
         </YStack>
       </Popover.Content.ScrollView>
     </YStack>
   );
 };
 
-export const DataTableHeader = <TData extends RowData, TValue = any>(
-  props: DataTableHeaderProps<TData, TValue>
-) => {
+export const DataTableHeader = <TData extends RowData, TValue = any>({
+  column,
+  ...props
+}: DataTableHeaderProps<TData, TValue>) => {
   const [currentSearch, setCurrentSearch] = useState("");
 
-  const { column, header } = props;
-
   const { sorting } = DataTableContext.useStyledContext();
-  const { toggleSorting, clearSorting, setFilterValue, getFilterValue, id } =
-    column;
+  const {
+    toggleSorting,
+    clearSorting,
+    setFilterValue,
+    getFilterValue,
+    id,
+    columnDef: { meta }
+  } = column;
 
   const isSorted = column.getIsSorted();
   const sortIndex = column.getSortIndex();
@@ -341,21 +348,22 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
     }
   }, [toggleSorting, clearSorting, desc]);
 
-  // const handleFilterSubmit = useCallback(() => {
-  //   setFilterValue(currentFilter);
-  // }, [setFilterValue, currentFilter]);
-  // const handleFilterClear = useCallback(() => {
-  //   setFilterValue("");
-  //   setCurrentFilter("");
-  // }, [setFilterValue, setCurrentFilter]);
-  // const handleFilterChanged = useCallback(
-  //   (value: string) => {
-  //     setCurrentFilter(value ?? "");
-  //   },
-  //   [setCurrentFilter]
-  // );
+  const filterValues = (getFilterValue() ?? []) as any[];
 
-  const filterValue = getFilterValue();
+  const valuesMap = useMemo<Map<string, { value: any; count: number }>>(() => {
+    const facetedUniqueValues = column.getFacetedUniqueValues();
+
+    return Array.from(facetedUniqueValues.keys())
+      .slice(0, 5000)
+      .reduce((ret, value) => {
+        ret.set(String(meta?.facetFn?.(value) ?? value), {
+          value,
+          count: facetedUniqueValues.get(value)
+        });
+
+        return ret;
+      }, new Map());
+  }, [filterValues, meta]);
 
   const handleChange = useCallback(
     ({ get, set, atoms }: CallbackContext<FormAtoms>) => {
@@ -377,6 +385,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
             return ret;
           }, deepClone(prev))
         );
+
+        setFilterValue(
+          values[SELECT_ALL_FIELD_NAME]
+            ? []
+            : Array.from(valuesMap.values()).map(item => item.value)
+        );
       } else {
         const selectAll = keys.some(key => values[key] === false)
           ? keys.some(key => values[key] === true)
@@ -387,31 +401,45 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
           ...prev,
           [SELECT_ALL_FIELD_NAME]: selectAll
         }));
+
+        setFilterValue(
+          keys
+            .filter(key => values[key] === false && valuesMap.has(key))
+            .map(key => valuesMap.get(key)!.value)
+        );
       }
+    },
+    [valuesMap]
+  );
+
+  const handleSearchChange = useCallback(
+    ({ get, set, atoms }: CallbackContext<FieldAtoms<string>>) => {
+      setCurrentSearch(get(atoms.value));
     },
     []
   );
 
-  const sortedUniqueValues = useMemo(
-    () =>
-      Array.from(column.getFacetedUniqueValues().keys()).sort().slice(0, 5000),
-    [column.getFacetedUniqueValues()]
-  );
+  const initialValues = useMemo(() => {
+    const keys = Array.from(valuesMap.keys());
 
-  const initialValues = useMemo(
-    () =>
-      sortedUniqueValues.reduce(
-        (ret, key) => ({
-          ...ret,
-          [key]: true
-        }),
-        {
-          [SEARCH_FIELD_NAME]: filterValue ?? null,
-          [SELECT_ALL_FIELD_NAME]: true
-        } as Record<string, any>
-      ),
-    [sortedUniqueValues]
-  );
+    return keys.reduce(
+      (ret, key) => ({
+        ...ret,
+        [key]: !filterValues.some(filterValue =>
+          isEqual(filterValue, valuesMap.get(key)!.value)
+        )
+      }),
+      {
+        [SEARCH_FIELD_NAME]: currentSearch,
+        [SELECT_ALL_FIELD_NAME]:
+          filterValues.length === 0
+            ? true
+            : filterValues.length === keys.length
+              ? false
+              : "indeterminate"
+      } as Record<string, any>
+    );
+  }, [valuesMap]);
 
   return (
     <XStack
@@ -462,7 +490,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
       {column.getCanFilter() && (
         <View
           animation="normal"
-          opacity={!filterValue ? 0 : 1}
+          opacity={filterValues.length > 0 ? 1 : 0}
           $group-header-hover={{ opacity: 1 }}>
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
@@ -486,7 +514,10 @@ export const DataTableHeader = <TData extends RowData, TValue = any>(
                   name={`${id}_filter`}
                   initialValues={initialValues}
                   onChange={handleChange}>
-                  <DataTableHeaderFilterFields {...column} />
+                  <DataTableHeaderFilterFields
+                    valuesMap={valuesMap}
+                    onSearchChange={handleSearchChange}
+                  />
                 </Form>
               </View>
             </Popover.Content>
@@ -503,7 +534,8 @@ export type DataTablePaginationProps<TData extends RowData> = Pick<
 > &
   Pick<PaginationState, "pageIndex" | "pageSize"> & {
     pageCount: number;
-    rowCount: number;
+    totalCount: number;
+    unfilteredCount: number;
   };
 
 export function DataTablePagination<TData extends RowData>({
@@ -512,7 +544,8 @@ export function DataTablePagination<TData extends RowData>({
   previousPage,
   firstPage,
   lastPage,
-  rowCount,
+  totalCount,
+  unfilteredCount,
   pageIndex,
   pageSize,
   pageCount,
@@ -532,7 +565,7 @@ export function DataTablePagination<TData extends RowData>({
 
   const pageSizes = useMemo(() => {
     const result = [] as SelectOption<number>[];
-    if (rowCount >= 5) {
+    if (unfilteredCount >= 5) {
       result.push({
         index: result.length,
         name: "5",
@@ -541,7 +574,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 10) {
+    if (unfilteredCount >= 10) {
       result.push({
         index: result.length,
         name: "10",
@@ -550,7 +583,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 25) {
+    if (unfilteredCount >= 25) {
       result.push({
         index: result.length,
         name: "25",
@@ -559,7 +592,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 50) {
+    if (unfilteredCount >= 50) {
       result.push({
         index: result.length,
         name: "50",
@@ -568,7 +601,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 100) {
+    if (unfilteredCount >= 100) {
       result.push({
         index: result.length,
         name: "100",
@@ -577,7 +610,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 500) {
+    if (unfilteredCount >= 500) {
       result.push({
         index: result.length,
         name: "500",
@@ -586,7 +619,7 @@ export function DataTablePagination<TData extends RowData>({
         disabled: false
       });
     }
-    if (rowCount >= 1000) {
+    if (unfilteredCount >= 1000) {
       result.push({
         index: result.length,
         name: "1000",
@@ -598,8 +631,8 @@ export function DataTablePagination<TData extends RowData>({
 
     result.push({
       index: result.length,
-      name: String(rowCount),
-      value: rowCount,
+      name: String(unfilteredCount),
+      value: unfilteredCount,
       selected: false,
       disabled: false
     });
@@ -607,7 +640,7 @@ export function DataTablePagination<TData extends RowData>({
     result.sort((a, b) => a.value - b.value);
 
     return result;
-  }, []);
+  }, [unfilteredCount]);
 
   return (
     <XStack
@@ -637,7 +670,23 @@ export function DataTablePagination<TData extends RowData>({
             </SelectField>
           </Form>
 
-          <LabelText size="$4">Total: {rowCount}</LabelText>
+          <YStack gap="$2">
+            <XStack justifyContent="space-between" alignItems="center" gap="$4">
+              <LabelText size="$4">Total:</LabelText>
+              <LabelText size="$3">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
+            </XStack>
+            {unfilteredCount !== totalCount && (
+              <XStack
+                justifyContent="space-between"
+                alignItems="center"
+                gap="$4">
+                <LabelText size="$4">Filtering:</LabelText>
+                <LabelText size="$3">
+                  {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
+                </LabelText>
+              </XStack>
+            )}
+          </YStack>
         </XStack>
       </View>
 

@@ -50,7 +50,8 @@ import {
   IsResetAtom,
   SetStateActionWithReset
 } from "../types";
-import { isResetAtom, isWritableAtom } from "./is-atom";
+import { isAtom, isResetAtom, isWritableAtom } from "./is-atom";
+import { setAtomDebugLabel } from "./set-atom-debug";
 
 export type Molecule<TValue> = {
   displayName?: string;
@@ -170,6 +171,15 @@ export function createMoleculeApi<
       const result = constructFn(currentScope) as MoleculeState<TState>;
       result.__scope = atom(() => currentScope);
       result.__typename = atom(() => options.type);
+
+      for (const key of Object.keys(result)) {
+        if (isAtom(result[key])) {
+          setAtomDebugLabel(
+            result[key],
+            `${options.type}/${currentScope}:${key}`
+          );
+        }
+      }
 
       onMount(() => {
         if (options.onMount) {
