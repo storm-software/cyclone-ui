@@ -274,6 +274,14 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
     },
     forwardedRef
   ) => {
+    const { size } = InputContext.useStyledContext();
+    const theme = useThemeName();
+
+    const adjustedTrigger = useMemo(
+      () => getSized(size, { shift: -3 }),
+      [size]
+    );
+
     return (
       <View position="relative" flex={1}>
         <InputValue
@@ -291,12 +299,17 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             right={0}
             height="100%"
             display="flex"
-            alignItems="center">
+            alignItems="center"
+            minWidth="$4">
             <Button
+              ref={forwardedRef}
               variant="ghost"
               circular={true}
-              width="$3.5"
-              onClick={onClear}>
+              color={
+                theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
+              }
+              onClick={onClear}
+              size={adjustedTrigger}>
               <Button.Icon>
                 <X size="$1" />
               </Button.Icon>

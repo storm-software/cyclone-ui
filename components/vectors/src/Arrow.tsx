@@ -66,7 +66,7 @@ const Icon = ({
   const motionPosition = useMotionValue(1);
   const playback = animate(motionPosition, 24, {
     type: "spring",
-    duration: 0.5,
+    duration: 0.25,
     bounce: 0
   });
 
@@ -78,7 +78,7 @@ const Icon = ({
   const motionReverse = useMotionValue(24);
   const playbackReverse = animate(motionReverse, 1, {
     type: "spring",
-    duration: 0.5,
+    duration: 0.25,
     bounce: 0
   });
 
@@ -109,7 +109,7 @@ const Icon = ({
       <Svg
         width={size}
         height={(size as number) * 0.6}
-        viewBox="0 0 33 16"
+        viewBox="-1 0 34 16"
         fill="none"
         stroke={color}
         strokeLinecap="round"

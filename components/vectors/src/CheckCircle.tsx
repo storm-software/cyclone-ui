@@ -38,7 +38,7 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
   const motionCircle = useMotionValue(circumference);
   const playbackCircle = animate(motionCircle, 14, {
     type: "spring",
-    duration: 1.25,
+    duration: 0.75,
     bounce: 0
   });
 

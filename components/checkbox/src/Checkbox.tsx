@@ -16,16 +16,18 @@
  -------------------------------------------------------------------*/
 
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
+import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
 import {
   GetProps,
   SizeTokens,
   styled,
-  VariantSpreadExtras
+  VariantSpreadExtras,
+  View
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { Check, Minus } from "@tamagui/lucide-icons";
+import { Minus } from "@tamagui/lucide-icons";
 
 const CheckboxGroupFrame = styled(XGroup, {
   name: "Checkbox",
@@ -73,7 +75,7 @@ const CheckboxGroupFrame = styled(XGroup, {
     size: {
       "...size": (
         val: SizeTokens | number,
-        { props, tokens }: VariantSpreadExtras<any>
+        { props }: VariantSpreadExtras<any>
       ) => {
         if (!val || props.circular) {
           return;
@@ -143,6 +145,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   name: "Checkbox",
 
   unstyled: true,
+  display: "flex",
   alignItems: "center",
   height: "100%",
   width: "100%",
@@ -179,64 +182,18 @@ const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
   color: "$color",
-
-  variants: {
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        { props }: VariantSpreadExtras<any>
-      ) => {
-        if (!val || props.circular) {
-          return;
-        }
-
-        const size = getSized(val, {
-          scale: 0.4
-        });
-
-        return {
-          height: size,
-          width: size
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "$true"
-  }
+  height: "95%",
+  width: "90%",
+  strokeWidth: 3
 });
 
 const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
   color: "$color",
-
-  variants: {
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        { props }: VariantSpreadExtras<any>
-      ) => {
-        if (!val || props.circular) {
-          return;
-        }
-
-        const size = getSized(val, {
-          scale: 0.4
-        });
-
-        return {
-          height: size,
-          width: size
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "$true"
-  }
+  width: "90%",
+  height: "100%",
+  strokeWidth: 5
 });
 
 export const Checkbox = BaseCheckbox.styleable<{
@@ -263,23 +220,28 @@ export const Checkbox = BaseCheckbox.styleable<{
           size={size}
           disabled={disabled}>
           <TamaguiCheckbox.Indicator
-            animation="normal"
-            enterStyle={{
-              scale: 0.8,
-              y: 10,
-              opacity: 0.2
-            }}
-            exitStyle={{
-              scale: 0.8,
-              y: -10,
-              opacity: 0.5
-            }}
             justifyContent="center"
             alignItems="center">
             {checked === "indeterminate" ? (
-              <MinusIcon size={size} />
+              <View
+                animation="normal"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                enterStyle={{
+                  scale: 0.8,
+                  y: 10,
+                  opacity: 0.2
+                }}
+                exitStyle={{
+                  scale: 0.8,
+                  y: -10,
+                  opacity: 0.5
+                }}>
+                <MinusIcon />
+              </View>
             ) : (
-              <CheckboxIcon size={size} />
+              <CheckboxIcon />
             )}
           </TamaguiCheckbox.Indicator>
         </BaseCheckbox>
