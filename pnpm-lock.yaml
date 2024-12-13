@@ -15,6 +15,7 @@ overrides:
   '@cyclone-ui/card': workspace:*
   '@cyclone-ui/checkbox': workspace:*
   '@cyclone-ui/switch': workspace:*
+  '@cyclone-ui/switch-field': workspace:*
   '@cyclone-ui/checkbox-field': workspace:*
   '@cyclone-ui/cli': workspace:*
   '@cyclone-ui/accordion': workspace:*
@@ -2103,6 +2104,28 @@ importers:
       '@tamagui/switch-headless':
         specifier: ^1.116.15
         version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/switch-field:
+    dependencies:
+      '@storm-stack/types':
+        specifier: latest
+        version: 0.33.0
+      '@tamagui/core':
+        specifier: ^1.116.15
+        version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       react:
         specifier: 18.3.1

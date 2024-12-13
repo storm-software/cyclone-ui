@@ -261,7 +261,7 @@ const BaseSwitch = createSwitch({
   Thumb: SwitchThumb
 });
 
-const BaseSwitchImpl = BaseSwitch.styleable(
+const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
   (
     {
       name,
