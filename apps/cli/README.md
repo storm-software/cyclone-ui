@@ -205,8 +205,7 @@ Build a cyclone-ui package
 
 ```
 USAGE
-  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b]
-    [-c] [-s]
+  $ cyclone-ui build PROJECTROOT... [-o <directory>] [-t <file>] [-b] [-c] [-s]
 
 ARGUMENTS
   PROJECTROOT...  The path of the project to build relative to the workspace root
@@ -278,16 +277,14 @@ FLAGS
 DESCRIPTION
   Clean the workspace's color scheme configuration
 
-  Clean the color scheme configuration for the client application based on the colors provided in the Storm
-  configuration file
+  Clean the color scheme configuration for the client application based on the colors provided in the Storm configuration file
 
 EXAMPLES
   Clean all the color schemes using the output path from the Storm configuration file
 
     $ cyclone-ui colors clean clean
 
-  Clean just the 'brand-light.ts' and 'brand-dark.ts' color scheme files using the output path from the Storm
-  configuration file
+  Clean just the 'brand-light.ts' and 'brand-dark.ts' color scheme files using the output path from the Storm configuration file
 
     $ cyclone-ui colors clean clean brand
 
@@ -303,8 +300,7 @@ EXAMPLES
 
     $ cyclone-ui colors clean clean --output=./path/to/output --skip
 
-  Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output', and skip
-  confirmation prompts
+  Clean just the 'brand-light.ts' and 'brand-dark.ts' color schemes in the output path './path/to/output', and skip confirmation prompts
 
     $ cyclone-ui colors clean clean --output=./path/to/output --skip
 
@@ -340,8 +336,7 @@ FLAGS
 DESCRIPTION
   Initialize a color token configuration
 
-  Initialize the color token configuration for the client application based on the values provided in the Storm
-  configuration file
+  Initialize the color token configuration for the client application based on the values provided in the Storm configuration file
 
 EXAMPLES
   Initialize the color tokens using the output path from the Storm configuration file
@@ -395,8 +390,7 @@ FLAGS
 DESCRIPTION
   Get design component files from registry
 
-  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library
-  package
+  A command to add a copy of a design component from the remote Cyclone UI registry to the local components library package
 
 EXAMPLES
   Initialize the themes using the output path from the Storm configuration file
@@ -614,8 +608,8 @@ DESCRIPTION
 
   Installation of a linked plugin will override a user-installed or core plugin.
 
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
-  command will override the user-installed or core plugin implementation. This is useful for development work.
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' command will override the
+  user-installed or core plugin implementation. This is useful for development work.
 
 
 EXAMPLES
@@ -794,8 +788,7 @@ EXAMPLES
 
     $ cyclone-ui themes clean clean --output=./path/to/output --skip
 
-  Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation
-  prompts
+  Clean just the 'brand.ts' theme configuration file in the output path './path/to/output', and skip confirmation prompts
 
     $ cyclone-ui themes clean clean --output=./path/to/output --skip
 
@@ -817,8 +810,7 @@ Generate a theme configuration file
 
 ```
 USAGE
-  $ cyclone-ui themes generate NAME... -i <file> [-o <directory>] [-s] [-c]
-    [-j]
+  $ cyclone-ui themes generate NAME... -i <file> [-o <directory>] [-s] [-c] [-j]
 
 ARGUMENTS
   NAME...  [default: brand] The name of the specific theme
@@ -878,8 +870,7 @@ update the cyclone-ui CLI
 
 ```
 USAGE
-  $ cyclone-ui update [CHANNEL] [--force |  | [-a | -v <value> | -i]] [-b
-    ]
+  $ cyclone-ui update [CHANNEL] [--force |  | [-a | -v <value> | -i]] [-b ]
 
 FLAGS
   -a, --available        See available versions.
