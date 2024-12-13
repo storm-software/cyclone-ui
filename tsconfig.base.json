@@ -52,6 +52,8 @@
       "@cyclone-ui/dialog/*": ["components/dialog/src/*"],
       "@cyclone-ui/eyebrow-text": ["components/eyebrow-text/src/index.ts"],
       "@cyclone-ui/eyebrow-text/*": ["components/eyebrow-text/src/*"],
+      "@cyclone-ui/switch": ["components/switch/src/index.ts"],
+      "@cyclone-ui/switch/*": ["components/switch/src/*"],
       "@cyclone-ui/field": ["components/field/src/index.ts"],
       "@cyclone-ui/field/*": ["components/field/src/*"],
       "@cyclone-ui/file-picker": ["components/file-picker/src/index.ts"],

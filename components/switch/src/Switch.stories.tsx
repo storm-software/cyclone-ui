@@ -15,34 +15,36 @@
 
  -------------------------------------------------------------------*/
 
+import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react";
-import { InputField } from "./InputField";
+import { XStack } from "@tamagui/stacks";
+import { Switch } from "./Switch";
 
-const meta: Meta<typeof InputField> = {
-  title: "Form/InputField",
-  component: InputField,
+const meta: Meta<typeof Switch> = {
+  title: "Base/Switch",
+  component: Switch,
   tags: ["autodocs"],
-  render: ({ defaultValue = "", ...props }: any) => (
-    <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
-      <InputField name="inputFieldName" {...props}>
-        <InputField.Label>Label Text</InputField.Label>
-        <InputField.Control>
-          <InputField.Control.TextBox>
-            <InputField.Control.TextBox.Value placeholder="email@example.com" />
-          </InputField.Control.TextBox>
-        </InputField.Control>
-        <InputField.Details>
-          This is an example detailed message for an input field
-        </InputField.Details>
-      </InputField>
+  render: (props: any) => (
+    <Form name="formName" initialValues={{ switchName: false }}>
+      <Field name="switchName" {...props}>
+        <XStack gap="$3" alignContent="center" alignItems="center">
+          <Switch />
+          <Field.Label paddingBottom={0}>
+            This is an example label message for a switch
+          </Field.Label>
+        </XStack>
+        <Field.Details>
+          This is an example detailed message for a switch
+        </Field.Details>
+      </Field>
     </Form>
   )
-} satisfies Meta<typeof InputField>;
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 
-type Story = StoryObj<typeof InputField>;
+type Story = StoryObj<typeof Switch>;
 
 export const Base: Story = {
   args: {}
@@ -62,7 +64,7 @@ export const Disabled: Story = {
 
 export const DefaultValue: Story = {
   args: {
-    defaultValue: "Defaulted Text"
+    defaultValue: true
   }
 };
 
@@ -93,17 +95,5 @@ export const Info: Story = {
 export const Success: Story = {
   args: {
     theme: "success"
-  }
-};
-
-export const Positive: Story = {
-  args: {
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    theme: "negative"
   }
 };

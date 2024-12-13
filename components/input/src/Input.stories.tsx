@@ -25,7 +25,7 @@ const meta: Meta<typeof Input> = {
   component: Input,
   tags: ["autodocs"],
   render: ({ defaultValue, ...props }: any) => (
-    <Form name="formName" defaultValues={{ inputName: defaultValue }}>
+    <Form name="formName" initialValues={{ inputName: defaultValue }}>
       <Field name="inputName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <Input>
