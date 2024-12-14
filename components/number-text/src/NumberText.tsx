@@ -15,19 +15,23 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { GetProps, styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
+import { LabelText } from "@cyclone-ui/label-text";
+import NumberFlow from "@number-flow/react";
+import { GetProps } from "@tamagui/core";
 
-export const EyebrowText = styled(SizableText, {
-  name: "EyebrowText",
-  tag: "h5",
+export const NumberText = LabelText.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    let value = Number(children);
+    if (isNaN(value)) {
+      value = 0;
+    }
 
-  theme: ColorThemeName.BASE,
-  color: "$tertiary",
-  fontFamily: "$eyebrow",
-  size: "$true",
-  textTransform: "uppercase"
-});
+    return (
+      <LabelText ref={forwardedRef} {...props}>
+        <NumberFlow value={value} />
+      </LabelText>
+    );
+  }
+);
 
-export type EyebrowTextProps = GetProps<typeof EyebrowText>;
+export type NumberTextProps = GetProps<typeof NumberText>;

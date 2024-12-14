@@ -15,19 +15,4 @@
 
  -------------------------------------------------------------------*/
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { GetProps, styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
-
-export const EyebrowText = styled(SizableText, {
-  name: "EyebrowText",
-  tag: "h5",
-
-  theme: ColorThemeName.BASE,
-  color: "$tertiary",
-  fontFamily: "$eyebrow",
-  size: "$true",
-  textTransform: "uppercase"
-});
-
-export type EyebrowTextProps = GetProps<typeof EyebrowText>;
+export * from "./NumberText";

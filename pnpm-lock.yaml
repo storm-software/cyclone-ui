@@ -40,6 +40,7 @@ overrides:
   '@cyclone-ui/link-text': workspace:*
   '@cyclone-ui/label-text': workspace:*
   '@cyclone-ui/title-text': workspace:*
+  '@cyclone-ui/number-text': workspace:*
   '@cyclone-ui/bytes-text': workspace:*
   '@cyclone-ui/heading-text': workspace:*
   '@cyclone-ui/validation-text': workspace:*
@@ -1640,6 +1641,25 @@ importers:
         specifier: ^1.116.15
         version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tamagui/stacks':
+        specifier: ^1.116.15
+        version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.1
+        version: 0.74.1(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@18.3.1)(utf-8-validate@5.0.10)
+
+  components/number-text:
+    dependencies:
+      '@number-flow/react':
+        specifier: ^0.4.2
+        version: 0.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tamagui/core':
         specifier: ^1.116.15
         version: 1.117.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
@@ -6580,6 +6600,12 @@ packages:
 
   '@nrwl/workspace@19.8.13':
     resolution: {integrity: sha512-NT9bnVx4GR1H7NyO7b043G2PeEa+9LKrZvjpHCop1nxuOeFiFv48Y/o6Msl2oFDFF4/sAo5XcqgEv6PE2EoncA==}
+
+  '@number-flow/react@0.4.2':
+    resolution: {integrity: sha512-lCAkLuK/3+Nlhb/oy1tpRnadp1vvfc/cWTtWUL9hMksHsJOGh+1T5Y/dyeQhyCD0heaWTjNYWX2ndBKLJwuC0A==}
+    peerDependencies:
+      react: ^18 || ^19.0.0-rc-915b914b3a-20240515
+      react-dom: ^18
 
   '@nx/cypress@20.0.6':
     resolution: {integrity: sha512-b26Ucgf+dAdTRlBGhFi8Xjeqw1mbUrxn3nwAOYNwuivc+CZCeokba5/orldNAlBlJKvHe0QmSAI3wpDjdU05Ww==}
@@ -13050,6 +13076,9 @@ packages:
       jiti:
         optional: true
 
+  esm-env@1.2.1:
+    resolution: {integrity: sha512-U9JedYYjCnadUlXk7e1Kr+aENQhtUaoaV9+gZm1T8LC/YBAPJx3NSPIAurFOC0U5vrdSevnUJS2/wUVxGwPhng==}
+
   esm-resolve@1.0.11:
     resolution: {integrity: sha512-LxF0wfUQm3ldUDHkkV2MIbvvY0TgzIpJ420jHSV1Dm+IlplBEWiJTKWM61GtxUfvjV6iD4OtTYFGAGM2uuIUWg==}
 
@@ -17355,6 +17384,9 @@ packages:
 
   number-allocator@1.0.14:
     resolution: {integrity: sha512-OrL44UTVAvkKdOdRQZIJpLkAdjXGTRda052sN4sO77bKEzYYqWKMBjQvrJFzqygI99gL6Z4u2xctPW1tB8ErvA==}
+
+  number-flow@0.4.1:
+    resolution: {integrity: sha512-d39o1tWL7mMMBLuOfHswtQ8r0fj9eUcatb4G1Spdv0ZO/I30kg9DBdSzSPjNG6hrj1slQ6KA3TQXk1RmOq4qOA==}
 
   nwsapi@2.2.16:
     resolution: {integrity: sha512-F1I/bimDpj3ncaNDhfyMWuFqmQDBwDB0Fogc2qpL3BWvkQteFD/8BzWuIRl83rq0DXfm8SGt/HFhLXZyljTXcQ==}
@@ -27848,6 +27880,13 @@ snapshots:
       - '@swc/core'
       - debug
 
+  '@number-flow/react@0.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      esm-env: 1.2.1
+      number-flow: 0.4.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@nx/cypress@20.0.6(@babel/traverse@7.25.9)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@22.5.5)(@zkochan/js-yaml@0.0.7)(eslint@9.16.0(jiti@2.4.1))(nx@20.0.6(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.5.29(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.33.0(encoding@0.1.13)(typanion@3.14.0))':
     dependencies:
       '@nx/devkit': 20.0.6(nx@20.0.6(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.5.29(@swc/helpers@0.5.15)))
@@ -38168,6 +38207,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  esm-env@1.2.1: {}
+
   esm-resolve@1.0.11: {}
 
   esm@3.2.25: {}
@@ -44049,6 +44090,10 @@ snapshots:
       js-sdsl: 4.3.0
     transitivePeerDependencies:
       - supports-color
+
+  number-flow@0.4.1:
+    dependencies:
+      esm-env: 1.2.1
 
   nwsapi@2.2.16: {}
 

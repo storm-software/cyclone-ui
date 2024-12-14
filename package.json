@@ -270,6 +270,7 @@
       "@cyclone-ui/link-text": "workspace:*",
       "@cyclone-ui/label-text": "workspace:*",
       "@cyclone-ui/title-text": "workspace:*",
+      "@cyclone-ui/number-text": "workspace:*",
       "@cyclone-ui/bytes-text": "workspace:*",
       "@cyclone-ui/heading-text": "workspace:*",
       "@cyclone-ui/validation-text": "workspace:*",
