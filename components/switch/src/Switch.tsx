@@ -174,39 +174,6 @@ const SwitchThumb = styled(View, {
   }
 });
 
-// const SwitchThumbFrame = styled(View, {
-//   name: "SwitchThumb",
-
-//   animation: "normal",
-//   height: "100%",
-//   alignItems: "center",
-
-//   variants: {
-//     size: {
-//       "...size": val => {
-//         const width = getSwitchHeight(val);
-
-//         return {
-//           width
-//         };
-//       }
-//     }
-//   } as const,
-
-//   defaultVariants: {
-//     size: "$true"
-//   }
-// });
-
-// const SwitchThumbBinary = styled(Binary, {
-//   name: "SwitchThumb",
-
-//   color: "$accent2",
-//   height: "85%",
-//   width: "85%",
-//   margin: "auto"
-// });
-
 const SwitchThumbImpl = SwitchThumb.styleable(
   (props, forwardedRef) => {
     const { checked } = SwitchContext.useStyledContext();

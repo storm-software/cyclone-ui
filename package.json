@@ -249,6 +249,7 @@
       "@cyclone-ui/checkbox-field": "workspace:*",
       "@cyclone-ui/cli": "workspace:*",
       "@cyclone-ui/accordion": "workspace:*",
+      "@cyclone-ui/progress": "workspace:*",
       "@cyclone-ui/scroll-view": "workspace:*",
       "@cyclone-ui/data-table": "workspace:*",
       "@cyclone-ui/date-picker": "workspace:*",
