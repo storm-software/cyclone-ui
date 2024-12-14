@@ -340,6 +340,16 @@ export const componentThemes = {
     ...maskOptions.title
   },
 
+  Switch: {
+    mask: "identity",
+    ...maskOptions.component
+  },
+
+  SwitchThumb: {
+    mask: "identity",
+    ...maskOptions.switchThumb
+  },
+
   Badge: {
     mask: "identity",
     ...maskOptions.badge

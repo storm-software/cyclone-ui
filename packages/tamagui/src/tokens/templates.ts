@@ -283,5 +283,23 @@ export const maskOptions = {
       colorFocus: ColorPaletteShades.PRIMARY
     },
     skip: skipShadowsAndSpecificColors
+  },
+  switchThumb: {
+    ...baseMaskOptions,
+    overrideStrategy: "swap",
+    override: {
+      ...colors,
+      background: template.color,
+      backgroundHover: template.colorHover,
+      backgroundPress: template.colorPress,
+      backgroundFocus: template.colorFocus,
+      backgroundDisabled: template.colorDisabled,
+      color: template.background,
+      colorHover: template.backgroundHover,
+      colorPress: template.backgroundPress,
+      colorFocus: template.backgroundFocus,
+      colorDisabled: template.backgroundDisabled
+    },
+    skip: skipShadowsAndSpecificColors
   }
 } satisfies Record<string, MaskOptions>;

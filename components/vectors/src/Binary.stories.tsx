@@ -15,13 +15,32 @@
 
  -------------------------------------------------------------------*/
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./Binary";
-export * from "./Check";
-export * from "./CheckCircle";
-export * from "./CheckerBoard";
-export * from "./Diagonal";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
+import type { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useState } from "react";
+import { Binary } from "./Binary";
+
+const meta: Meta<typeof Binary> = {
+  title: "Vectors/Binary",
+  component: Binary,
+  tags: ["autodocs"],
+  render: (args: any) => {
+    const [state, setState] = useState("off");
+    useEffect(() => {
+      setInterval(() => {
+        setState((prev: string) => (prev === "off" ? "on" : "off"));
+      }, 3000);
+    }, [setState]);
+
+    return <Binary {...args} state={state} />;
+  }
+} satisfies Meta<typeof Binary>;
+
+export default meta;
+
+type Story = StoryObj<typeof Binary>;
+
+export const Base: Story = {
+  args: {
+    size: "$6"
+  }
+};

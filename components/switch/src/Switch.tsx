@@ -34,6 +34,7 @@ import { useMemo } from "react";
 export type SwitchContextProps = {
   size: SizeTokens;
   name: string;
+  checked: boolean;
   required: boolean;
   disabled: boolean;
   theme: string;
@@ -42,6 +43,7 @@ export type SwitchContextProps = {
 export const SwitchContext = createStyledContext<SwitchContextProps>({
   size: "$true",
   name: "",
+  checked: false,
   required: false,
   disabled: false,
   theme: `${ColorThemeName.BASE}_Switch`
@@ -55,7 +57,9 @@ const getSwitchWidth = (val: SizeTokens) => getSwitchHeight(val) * 2;
 const SwitchFrame = styled(View, {
   name: "Switch",
   tag: "button",
+  context: SwitchContext,
 
+  animation: "normal",
   borderRadius: 100_000,
   backgroundColor: "transparent",
   borderWidth: 2,
@@ -93,17 +97,14 @@ const SwitchFrame = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$green10"
-      },
-      false: {
-        backgroundColor: "$red10"
+        backgroundColor: "$accent2"
       }
     },
 
     size: {
       "...size": val => {
-        const height = getSwitchHeight(val) + 4;
-        const width = getSwitchWidth(val) + 4;
+        const height = getSwitchHeight(val);
+        const width = getSwitchWidth(val);
 
         return {
           height,
@@ -142,9 +143,14 @@ const SwitchFrame = styled(View, {
 const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
-  animation: "quick",
-  backgroundColor: "$primary",
+  animation: "normal",
+  backgroundColor: "$color",
   borderRadius: 100_000,
+  borderWidth: 1,
+  borderColor: "$background",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100%",
 
   variants: {
     checked: {
@@ -153,22 +159,64 @@ const SwitchThumb = styled(View, {
 
     size: {
       "...size": val => {
-        const size = getSwitchHeight(val) * 0.85;
-        const margin = getSwitchHeight(val) * 0.15;
+        const width = getSwitchHeight(val);
+
         return {
-          height: size,
-          width: size,
-          margin
+          width
         };
       }
     }
   } as const,
 
   defaultVariants: {
-    size: "$true",
-    checked: false
+    checked: false,
+    size: "$true"
   }
 });
+
+// const SwitchThumbFrame = styled(View, {
+//   name: "SwitchThumb",
+
+//   animation: "normal",
+//   height: "100%",
+//   alignItems: "center",
+
+//   variants: {
+//     size: {
+//       "...size": val => {
+//         const width = getSwitchHeight(val);
+
+//         return {
+//           width
+//         };
+//       }
+//     }
+//   } as const,
+
+//   defaultVariants: {
+//     size: "$true"
+//   }
+// });
+
+// const SwitchThumbBinary = styled(Binary, {
+//   name: "SwitchThumb",
+
+//   color: "$accent2",
+//   height: "85%",
+//   width: "85%",
+//   margin: "auto"
+// });
+
+const SwitchThumbImpl = SwitchThumb.styleable(
+  (props, forwardedRef) => {
+    const { checked } = SwitchContext.useStyledContext();
+
+    return <SwitchThumb ref={forwardedRef} {...props} checked={checked} />;
+  },
+  {
+    staticConfig: { componentName: "SwitchThumb" }
+  }
+);
 
 const SwitchIconFrame = styled(View, {
   position: "absolute",
@@ -258,7 +306,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
 
 const BaseSwitch = createSwitch({
   Frame: SwitchFrame,
-  Thumb: SwitchThumb
+  Thumb: SwitchThumbImpl
 });
 
 const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
@@ -274,22 +322,28 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
     forwardedRef
   ) => {
     return (
-      <BaseSwitch
-        ref={forwardedRef}
-        {...props}
-        id={name}
+      <SwitchContext.Provider
+        name={name}
         size={size}
         checked={checked}
         disabled={disabled}>
-        {children}
-        <View
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          height="100%">
-          <BaseSwitch.Thumb checked={checked} />
-        </View>
-      </BaseSwitch>
+        <BaseSwitch
+          ref={forwardedRef}
+          {...props}
+          id={name}
+          size={size}
+          checked={checked}
+          disabled={disabled}>
+          {children}
+          <View
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="100%">
+            <BaseSwitch.Thumb checked={checked} />
+          </View>
+        </BaseSwitch>
+      </SwitchContext.Provider>
     );
   },
   {
