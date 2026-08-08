@@ -34,9 +34,9 @@
   "dependencies": {
     "@storm-stack/date-time": "latest",
     "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/lucide-icons": "^1.144.4",
+    "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
     "react": "18.3.1",

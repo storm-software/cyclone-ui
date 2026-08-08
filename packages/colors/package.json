@@ -10,9 +10,9 @@
   },
   "private": false,
   "dependencies": {
-    "@tamagui/colors": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-theme": "^1.116.15"
+    "@tamagui/colors": "^1.144.4",
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/create-theme": "^1.144.4"
   },
   "publishConfig": {
     "access": "public"
