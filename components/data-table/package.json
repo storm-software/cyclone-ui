@@ -35,18 +35,18 @@
     "@storm-stack/string-fns": "latest",
     "@storm-stack/types": "latest",
     "@storm-stack/utilities": "latest",
-    "@tamagui/adapt": "^1.116.15",
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/helpers": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tanstack/react-table": "^8.17.3",
-    "@tanstack/table-core": "^8.17.3"
+    "@tamagui/adapt": "^1.144.4",
+    "@tamagui/animate-presence": "^1.144.4",
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/helpers": "^1.144.4",
+    "@tamagui/lucide-icons": "^1.144.4",
+    "@tamagui/stacks": "^1.144.4",
+    "@tamagui/text": "^1.144.4",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/table-core": "^8.21.3"
   },
   "devDependencies": {
-    "@tamagui/avatar": "^1.116.15",
+    "@tamagui/avatar": "^1.144.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"

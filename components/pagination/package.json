@@ -32,12 +32,12 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15",
-    "@tamagui/web": "^1.116.15",
-    "react-native-svg": "^15.8.0"
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/lucide-icons": "^1.144.4",
+    "@tamagui/stacks": "^1.144.4",
+    "@tamagui/text": "^1.144.4",
+    "@tamagui/web": "^1.144.4",
+    "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
     "react": "18.3.1",
