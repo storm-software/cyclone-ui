@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@storm-stack/hooks": "latest",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15"
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/stacks": "^1.144.4"
   },
   "devDependencies": {
     "react": "18.3.1",

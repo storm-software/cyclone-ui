@@ -12,13 +12,13 @@
   "dependencies": {
     "@storm-stack/hashing": "latest",
     "@storm-stack/types": "latest",
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "chroma-js": "^2.4.2"
+    "@tamagui/constants": "^1.144.4",
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/get-token": "^1.144.4",
+    "chroma-js": "^2.6.0"
   },
   "devDependencies": {
-    "@types/chroma-js": "^2.4.4"
+    "@types/chroma-js": "^2.4.5"
   },
   "publishConfig": {
     "access": "public"

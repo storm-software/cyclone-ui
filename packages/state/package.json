@@ -13,7 +13,7 @@
     "jotai"
   ],
   "peerDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.20.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"
@@ -39,10 +39,10 @@
     "@storm-stack/types": "latest",
     "@storm-stack/unique-identifier": "latest",
     "@storm-stack/utilities": "latest",
-    "bunshi": "^2.1.5"
+    "bunshi": "^2.2.0"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
+    "jotai": ">=2.20.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1"
