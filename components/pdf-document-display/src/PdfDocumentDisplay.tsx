@@ -134,7 +134,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
       <View ref={forwardedRef} {...props}>
         <VisuallyHidden visible={loading || error !== null} animate={true}>
           <Spinner
-            theme={ColorThemeName.ACCENT}
+            theme={"accent"}
             size="large"
             position="absolute"
             top="35%"

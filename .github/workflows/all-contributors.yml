@@ -1,0 +1,31 @@
+name: All Contributors Auto Action
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - experimental
+
+jobs:
+  contributors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    if: github.repository == 'storm-software/cyclone-ui' && (github.ref ==
+      'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref ==
+      'refs/heads/experimental') && github.event.pull_request.draft == false
+    steps:
+      - name: Setup workspace
+        uses: storm-software/action-setup@main
+        with:
+          gpg-sign-key: ${{ secrets.STORM_BOT_GPG_SIGN_KEY }}
+          gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
+          storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+
+      - name: Run all-contributors-auto-action
+        uses: JoshuaKGoldberg/all-contributors-auto-action@587a3a5844b0104abb911a69a1a84ec645292f5e # v0.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}

@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { BodyText } from "@cyclone-ui/body-text";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { LinkText } from "./LinkText";
 
 const meta: Meta<typeof LinkText> = {

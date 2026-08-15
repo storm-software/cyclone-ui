@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - canary
+      - next
       - experimental
     paths:
       - .github/labels.yml
@@ -21,10 +21,12 @@ jobs:
     name: ♻️ Sync labels
     runs-on: ubuntu-latest
     steps:
-      - name: ⤵️ Check out code from GitHub
+      - name: Checkout Code
         uses: actions/checkout@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: 🚀 Run Label Syncer
         uses: micnncim/action-label-syncer@v1.3.0

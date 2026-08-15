@@ -35,7 +35,7 @@ import type { GetProps } from "@tamagui/web";
 const AlertClose = styled(Button, {
   name: "AlertTrigger",
 
-  theme: ColorThemeName.BASE,
+  theme: "base",
   variant: "ghost",
   circular: true,
   noPadding: true
@@ -65,7 +65,7 @@ const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
     <Container
       {...props}
       variant="tertiary"
-      theme={ColorThemeName.BASE}
+      theme={"base"}
       themeShallow={true}
       bordered={false}
       noPadding={true}
@@ -102,7 +102,7 @@ const AlertIcon = ThemeableIcon.styleable(
 
         <YStack zIndex="$2" justifyContent="center" paddingLeft="$3">
           <View
-            theme={ColorThemeName.BASE}
+            theme={"base"}
             padding="$1.75"
             backgroundColor="$surfacePrimary"
             borderRadius={1000_000_000}>
@@ -150,7 +150,7 @@ const AlertHeading = styled(Heading5Text, {
 const AlertHeadingImpl = AlertHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <AlertHeading ref={forwardedRef} {...props}>
           {children}
         </AlertHeading>
@@ -172,7 +172,7 @@ const AlertBody = styled(BodyText, {
 const AlertBodyImpl = AlertBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <AlertBody ref={forwardedRef} {...props}>
           {children}
         </AlertBody>

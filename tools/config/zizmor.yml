@@ -1,0 +1,26 @@
+rules:
+  template-injection:
+    ignore:
+      - release.yml
+  dangerous-triggers:
+    ignore:
+      - greetings.yml:3:1
+  unpinned-uses:
+    ignore:
+      - release.yml
+      - zizmor.yml
+      - sync-labels.yml
+      - lock.yml
+      - git-guardian.yml
+      - contributors.yml
+      - codeql.yml
+      - greetings.yml
+      - schedule-stale.yml
+      - security.yml
+  excessive-permissions:
+    ignore:
+      - release.yml
+      - zizmor.yml
+      - sync-labels.yml
+      - lock.yml
+      - git-guardian.yml

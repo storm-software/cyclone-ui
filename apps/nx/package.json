@@ -1,7 +1,7 @@
 {
   "name": "@cyclone-ui/nx",
   "version": "0.3.0",
-  "description": "⚡ A Nx plugin package that contains various executors and generators used in a Storm workspaces.",
+  "description": "🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui",
@@ -30,24 +30,32 @@
     "./executors/*/schema.json": "./src/executors/*/schema.json"
   },
   "typings": "./declarations.d.ts",
-  "keywords": [
-    "storm",
-    "storm-ops",
-    "stormstack",
-    "storm-stack",
-    "sullivanpj",
-    "open-system",
-    "monorepo"
-  ],
+  "keywords": ["nx", "nx-plugin", "storm-software"],
   "dependencies": {
-    "@nx/devkit": "20.0.6",
-    "@nx/js": "20.0.6",
-    "@storm-software/build-tools": "latest",
-    "@storm-software/config": "latest",
-    "@storm-software/config-tools": "latest",
-    "@storm-software/workspace-tools": "latest",
-    "@storm-stack/types": "latest",
-    "tslib": "^2.6.2"
+    "@nx/devkit": "catalog:",
+    "@powerlines/nx": "catalog:",
+    "@storm-software/config": "catalog:",
+    "@storm-software/config-tools": "catalog:",
+    "@storm-software/workspace-tools": "catalog:",
+    "@stryke/hash": "catalog:",
+    "@stryke/path": "catalog:",
+    "@stryke/string-format": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "defu": "catalog:",
+    "jiti": "catalog:",
+    "powerlines": "catalog:",
+    "untyped": "catalog:"
+  },
+  "devDependencies": {
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@powerlines/plugin-untyped": "catalog:",
+    "@storm-software/testing-tools": "catalog:",
+    "@types/node": "catalog:",
+    "eslint-flat-config-utils": "catalog:",
+    "jsonc-eslint-parser": "catalog:"
+  },
+  "peerDependencies": {
+    "nx": ">=22.7.0"
   },
   "publishConfig": {
     "access": "public"

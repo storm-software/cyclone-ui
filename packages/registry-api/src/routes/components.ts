@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type {
   R2Object,
@@ -23,13 +24,17 @@ import type {
 import { StormError } from "@storm-stack/errors";
 import { z } from "zod";
 import { createRouter, publicProcedure } from "../trpc";
-import { ComponentDetails, ComponentMeta, ComponentSummary } from "../types";
+import type {
+  ComponentDetails,
+  ComponentMeta,
+  ComponentSummary
+} from "../types";
 
-type RegistryStorageFile = {
+interface RegistryStorageFile {
   name: string;
   content: R2ObjectBody | null;
   updatedOn: Date;
-};
+}
 
 export const componentsRouter = createRouter({
   list: publicProcedure.query<ComponentSummary[]>(async ({ ctx }) => {
@@ -39,7 +44,7 @@ export const componentsRouter = createRouter({
 
     const metaFiles = (
       await Promise.all(
-        storageList.objects.map((storageObject: R2Object) => {
+        storageList.objects.map(async (storageObject: R2Object) => {
           let componentName = storageObject.key.replace(
             "registry/components/",
             ""
@@ -53,7 +58,7 @@ export const componentsRouter = createRouter({
 
           return ctx.storage
             .get(`registry/components/${componentName}/meta.json`)
-            .then((content: R2ObjectBody | null) =>
+            .then(async (content: R2ObjectBody | null) =>
               content ? content.json<ComponentMeta>() : undefined
             );
         })
@@ -74,7 +79,7 @@ export const componentsRouter = createRouter({
         }
 
         const metaJson = metaFiles.find(
-          (metaFile: ComponentMeta) => metaFile!.name === componentName
+          (metaFile: ComponentMeta) => metaFile.name === componentName
         );
         if (
           metaJson &&
@@ -106,7 +111,7 @@ export const componentsRouter = createRouter({
 
       const storageFiles = (
         await Promise.all(
-          storageList.objects.map((storageObject: R2Object) =>
+          storageList.objects.map(async (storageObject: R2Object) =>
             ctx.storage
               .get(storageObject.key)
               .then((content: R2ObjectBody | null) => ({
@@ -135,7 +140,7 @@ export const componentsRouter = createRouter({
       const componentContent = await Promise.all(
         componentFiles
           .filter(file => file.name !== "meta.json" && file.content)
-          .map(file => Promise.resolve(file.content!.text()))
+          .map(async file => Promise.resolve(file.content!.text()))
       );
 
       return {

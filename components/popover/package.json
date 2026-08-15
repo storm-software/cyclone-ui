@@ -33,15 +33,15 @@
   },
   "dependencies": {
     "@floating-ui/react": "0.26.28",
-    "@tamagui/adapt": "^1.116.15",
-    "@tamagui/animate-presence": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/popover": "^1.116.15",
-    "@tamagui/popper": "^1.116.15",
-    "@tamagui/sheet": "^1.116.15",
-    "@tamagui/stacks": "^1.116.15",
-    "@tamagui/text": "^1.116.15"
+    "@tamagui/adapt": "^1.144.4",
+    "@tamagui/animate-presence": "^1.144.4",
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/create-context": "^1.144.4",
+    "@tamagui/popover": "^1.144.4",
+    "@tamagui/popper": "^1.144.4",
+    "@tamagui/sheet": "^1.144.4",
+    "@tamagui/stacks": "^1.144.4",
+    "@tamagui/text": "^1.144.4"
   },
   "devDependencies": {
     "react": "18.3.1",

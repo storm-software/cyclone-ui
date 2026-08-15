@@ -17,7 +17,7 @@
 
 import { Button } from "@cyclone-ui/button";
 import { useMessageActions } from "@cyclone-ui/message-state";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
 import { Message } from "./Message";
 

@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Button } from "@cyclone-ui/button";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack, YStack } from "@tamagui/stacks";
 import { Dialog, type DialogProps } from "./Dialog";
 

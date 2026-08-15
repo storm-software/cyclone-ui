@@ -75,7 +75,7 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   color: undefined,
   required: false,
   disabled: false,
-  theme: `${ColorThemeName.BASE}_FilePicker`
+  theme: `${"base"}_FilePicker`
 });
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;

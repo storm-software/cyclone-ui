@@ -4,13 +4,12 @@ on:
   schedule:
     - cron: "3 2 1 * *"
 
-permissions:
-  issues: write
-
 jobs:
   contributor_report:
     name: contributor report
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Get dates for last month
         shell: bash
@@ -36,7 +35,8 @@ jobs:
       - name: Create issue
         uses: peter-evans/create-issue-from-file@v5
         with:
-          title: Thank you Storm-Ops contributors (${{ env.START_DATE }}..${{
+          title:
+            Thank you Storm Stack contributors (${{ env.START_DATE }}..${{
             env.END_DATE }})
           token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
           content-filepath: ./contributors.md

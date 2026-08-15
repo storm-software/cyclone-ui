@@ -21,7 +21,7 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import { StormDate } from "@storm-stack/date-time/storm-date";
 import { formatDate } from "@storm-stack/date-time/utilities/format-date";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useCallback } from "react";
 import { DatePicker } from "./DatePicker";
 

@@ -32,8 +32,8 @@
     "react-native": "0.74.1"
   },
   "dependencies": {
-    "@number-flow/react": "^0.4.2",
-    "@tamagui/core": "^1.116.15"
+    "@number-flow/react": "^0.4.4",
+    "@tamagui/core": "^1.144.4"
   },
   "devDependencies": {
     "react": "18.3.1",

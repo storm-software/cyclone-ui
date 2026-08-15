@@ -1,41 +1,22 @@
 {
   "name": "themes",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/themes/src",
   "projectType": "library",
+  "sourceRoot": "packages/themes/src",
   "targets": {
     "build-base": {
-      "cache": false,
-      "executor": "nx:run-commands",
-      "dependsOn": ["^build"],
-      "inputs": ["{workspaceRoot}/packages/colors/src/*", "^production"],
-      "outputs": ["{projectRoot}/src/cyclone.ts"],
+      "executor": "@powerlines/nx:build",
       "options": {
-        "command": "pnpm exec tamagui generate-themes ./src/cyclone/themes-input.ts ./src/cyclone/theme.ts",
-        "cwd": "{projectRoot}"
+        "configFile": "powerlines.config.ts"
       }
     },
     "build": {
-      "executor": "@storm-software/workspace-tools:unbuild",
-      "inputs": ["typescript", "^production"],
-      "outputs": ["{options.outputPath}"],
       "dependsOn": ["build-base"],
+      "executor": "nx:run-commands",
       "options": {
-        "entry": "packages/themes/src/index.ts",
-        "outputPath": "dist/packages/themes",
-        "tsConfig": "packages/themes/tsconfig.json",
-        "project": "packages/themes/package.json",
-        "defaultConfiguration": "production"
-      },
-      "configurations": {
-        "production": {
-          "debug": false,
-          "verbose": false
-        },
-        "development": {
-          "debug": true,
-          "verbose": true
-        }
+        "commands": [
+          "pnpm exec copyfiles -u 1 packages/themes/dist/**/* dist/packages/themes/dist"
+        ]
       }
     },
     "nx-release-publish": {

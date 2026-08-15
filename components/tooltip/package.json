@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@floating-ui/react": "0.26.28",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/create-context": "^1.116.15",
-    "@tamagui/popover": "^1.116.15",
-    "@tamagui/popper": "^1.116.15",
-    "@tamagui/tooltip": "^1.116.15"
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/create-context": "^1.144.4",
+    "@tamagui/popover": "^1.144.4",
+    "@tamagui/popper": "^1.144.4",
+    "@tamagui/tooltip": "^1.144.4"
   },
   "devDependencies": {
     "react": "18.3.1",

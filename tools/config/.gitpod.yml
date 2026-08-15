@@ -1,0 +1,15 @@
+tasks:
+  - init: |
+      npx pnpm install
+      pnpm build
+    command: pnpm start
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+
+env:
+  STORM_NAME: cyclone-ui
+  STORM_ORG: storm-software
+  STORM_ENV: staging

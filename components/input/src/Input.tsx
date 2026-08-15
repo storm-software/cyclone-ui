@@ -306,7 +306,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
               variant="ghost"
               circular={true}
               color={
-                theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
+                theme?.includes("base") ? "$borderColor" : "$color"
               }
               onClick={onClear}
               size={adjustedTrigger}>
@@ -348,7 +348,7 @@ const InputTrigger = Button.styleable<{
             variant="ghost"
             borderRadius={radius}
             color={
-              theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
+              theme?.includes("base") ? "$borderColor" : "$color"
             }
             {...props}
             size={adjustedTrigger}>

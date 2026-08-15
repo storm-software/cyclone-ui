@@ -38,12 +38,16 @@ yarn-error.log
 testem.log
 /typings
 
+.pnpm-store
+
 # System Files
 .DS_Store
 Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+.nx/data
+.nx/socket
 
 # React Native
 
@@ -133,3 +137,14 @@ npm-debug.*
 web-build/
 cache/
 
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+.nx/migrate-runs

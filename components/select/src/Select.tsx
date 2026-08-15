@@ -211,7 +211,7 @@ const SelectTrigger = Button.styleable<{
           onPress={onFocus}
           size={adjustedTrigger}
           color={
-            theme?.includes(ColorThemeName.BASE) ? "$borderColor" : "$color"
+            theme?.includes("base") ? "$borderColor" : "$color"
           }>
           <Button.Icon>
             {children || <ChevronDown disabled={disabled} />}

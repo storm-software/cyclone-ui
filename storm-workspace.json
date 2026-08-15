@@ -1,0 +1,16 @@
+{
+  "$schema": "https://public.storm-cdn.com/schemas/storm-workspace.schema.json",
+  "extends": "@storm-software/config/presets/storm-software.json",
+  "name": "cyclone-ui",
+  "namespace": "cyclone-ui",
+  "repository": "https://github.com/storm-software/cyclone-ui",
+  "packageManager": "pnpm",
+  "logLevel": "info",
+  "docs": "https://docs.stormsoftware.com/projects/cyclone-ui",
+  "release": {
+    "banner": {
+      "url": "https://public.storm-cdn.com/cyclone-ui/banner-1280x320-dark.gif",
+      "alt": "Cyclone UI's logo banner"
+    }
+  }
+}

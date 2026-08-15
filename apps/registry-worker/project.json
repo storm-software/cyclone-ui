@@ -5,40 +5,40 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/esbuild:esbuild",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/apps/registry-worker",
-        "tsConfig": "apps/registry-worker/tsconfig.json",
-        "project": "apps/registry-worker/package.json",
-        "main": "apps/registry-worker/src/index.ts",
-        "platform": "neutral",
-        "format": ["esm"],
-        "deleteOutputPath": true,
-        "bundle": true,
-        "thirdParty": true,
-        "skipTypeCheck": false,
-        "metafile": false,
-        "minify": true,
-        "esbuildOptions": {
-          "sourcemap": false
-        }
-      },
-      "configurations": {
-        "development": {
-          "esbuildOptions": {
-            "sourcemap": true
-          }
-        },
-        "production": {
-          "esbuildOptions": {
-            "sourcemap": false
-          }
-        }
-      }
-    },
+    // "build": {
+    //   "executor": "@nx/esbuild:esbuild",
+    //   "outputs": ["{options.outputPath}"],
+    //   "defaultConfiguration": "production",
+    //   "options": {
+    //     "outputPath": "dist/apps/registry-worker",
+    //     "tsConfig": "apps/registry-worker/tsconfig.json",
+    //     "project": "apps/registry-worker/package.json",
+    //     "main": "apps/registry-worker/src/index.ts",
+    //     "platform": "neutral",
+    //     "format": ["esm"],
+    //     "deleteOutputPath": true,
+    //     "bundle": true,
+    //     "thirdParty": true,
+    //     "skipTypeCheck": false,
+    //     "metafile": false,
+    //     "minify": true,
+    //     "esbuildOptions": {
+    //       "sourcemap": false
+    //     }
+    //   },
+    //   "configurations": {
+    //     "development": {
+    //       "esbuildOptions": {
+    //         "sourcemap": true
+    //       }
+    //     },
+    //     "production": {
+    //       "esbuildOptions": {
+    //         "sourcemap": false
+    //       }
+    //     }
+    //   }
+    // },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",

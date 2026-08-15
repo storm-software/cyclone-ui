@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ThemeableGradient } from "./ThemeableGradient";
 
 const meta: Meta<typeof ThemeableGradient> = {

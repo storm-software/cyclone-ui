@@ -1,7 +1,12 @@
-# tools-nx
+# Cyclone UI - Internal Nx Plugins
 
-This library was generated with [Nx](https://nx.dev).
+An internal collection of Nx plugins used in the Cyclone UI monorepo.
 
-## Building
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
-Run `nx build tools-nx` to build the library.
+> [!IMPORTANT] 
+> This is an internal Cyclone UI tooling package, and should not be used outside of the Cyclone UI monorepo. It is not intended for public consumption, and may change or be removed at any time without notice. 
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->

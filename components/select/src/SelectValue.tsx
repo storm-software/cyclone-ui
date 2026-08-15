@@ -90,7 +90,7 @@ export const SelectValue = SelectValueFrame.styleable<{
 
     return (
       <View flex={1} paddingHorizontal="$3">
-        <Theme name={ColorThemeName.BASE}>
+        <Theme name={"base"}>
           <SelectValueFrame
             id={name}
             ref={forwardedRef}

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
+inputs:
+  storm-ops:
+    url: github:storm-software/storm-ops?ref=main
+    flake: false
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+imports:
+  - storm-ops/devenv-modules/pnpm
+  - storm-ops/devenv-modules/claude

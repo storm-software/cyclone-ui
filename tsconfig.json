@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Cyclone UI - Monorepo",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0"
+  },
+  "references": [
+    {
+      "path": "./tools/nx"
+    },
+    {
+      "path": "./tools/razorwind"
+    },
+    {
+      "path": "./packages/themes"
+    },
+    {
+      "path": "./packages/state"
+    },
+    {
+      "path": "./apps/cli"
+    },
+    {
+      "path": "./components/pdf-document-display"
+    },
+    {
+      "path": "./components/search-input-field"
+    },
+    {
+      "path": "./components/themeable-gradient"
+    },
+    {
+      "path": "./components/date-picker-field"
+    },
+    {
+      "path": "./components/file-picker-field"
+    },
+    {
+      "path": "./components/radio-group-field"
+    },
+    {
+      "path": "./components/previous-button"
+    },
+    {
+      "path": "./components/validation-text"
+    },
+    {
+      "path": "./components/visually-hidden"
+    },
+    {
+      "path": "./components/checkbox-field"
+    },
+    {
+      "path": "./components/themeable-icon"
+    },
+    {
+      "path": "./components/alert-dialog"
+    },
+    {
+      "path": "./components/eyebrow-text"
+    },
+    {
+      "path": "./components/heading-text"
+    },
+    {
+      "path": "./components/select-field"
+    },
+    {
+      "path": "./components/switch-field"
+    },
+    {
+      "path": "./components/date-picker"
+    },
+    {
+      "path": "./components/file-picker"
+    },
+    {
+      "path": "./components/input-field"
+    },
+    {
+      "path": "./components/next-button"
+    },
+    {
+      "path": "./components/number-text"
+    },
+    {
+      "path": "./components/radio-group"
+    },
+    {
+      "path": "./components/scroll-view"
+    },
+    {
+      "path": "./components/breadcrumb"
+    },
+    {
+      "path": "./components/bytes-text"
+    },
+    {
+      "path": "./components/data-table"
+    },
+    {
+      "path": "./components/label-text"
+    },
+    {
+      "path": "./components/pagination"
+    },
+    {
+      "path": "./packages/registry-api"
+    },
+    {
+      "path": "./components/title-text"
+    },
+    {
+      "path": "./components/accordion"
+    },
+    {
+      "path": "./components/body-text"
+    },
+    {
+      "path": "./components/container"
+    },
+    {
+      "path": "./components/link-text"
+    },
+    {
+      "path": "./apps/registry-worker"
+    },
+    {
+      "path": "./components/checkbox"
+    },
+    {
+      "path": "./components/progress"
+    },
+    {
+      "path": "./components/callout"
+    },
+    {
+      "path": "./components/message"
+    },
+    {
+      "path": "./components/popover"
+    },
+    {
+      "path": "./components/spinner"
+    },
+    {
+      "path": "./components/tooltip"
+    },
+    {
+      "path": "./components/vectors"
+    },
+    {
+      "path": "./components/button"
+    },
+    {
+      "path": "./components/dialog"
+    },
+    {
+      "path": "./components/select"
+    },
+    {
+      "path": "./components/switch"
+    },
+    {
+      "path": "./components/alert"
+    },
+    {
+      "path": "./components/badge"
+    },
+    {
+      "path": "./components/field"
+    },
+    {
+      "path": "./packages/helpers"
+    },
+    {
+      "path": "./components/input"
+    },
+    {
+      "path": "./components/steps"
+    },
+    {
+      "path": "./components/table"
+    },
+    {
+      "path": "./components/card"
+    },
+    {
+      "path": "./components/form"
+    },
+    {
+      "path": "./components/link"
+    },
+    {
+      "path": "./components/tabs"
+    },
+    {
+      "path": "./tools/config"
+    },
+    {
+      "path": "./apps/nx"
+    },
+    {
+      "path": "./apps/storybook"
+    }
+  ],
+  "files": []
+}

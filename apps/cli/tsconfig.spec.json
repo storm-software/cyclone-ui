@@ -1,13 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "types": ["jest", "node"]
+    "types": ["node"],
+    "outDir": "../../../dist/out-tsc",
+    "rootDir": "."
   },
   "include": [
-    "jest.config.ts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
+    "vitest.config.mts",
+    "tests/**/*.test.ts",
+    "tests/**/*.spec.ts",
     "src/**/*.d.ts"
   ]
 }

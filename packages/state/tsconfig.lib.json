@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
+    "jsx": "preserve",
+    "rootDir": ".",
+    "outDir": "./out-tsc"
+  },
+  "references": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.cjs",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.mts",
+    "src/**/*.cts",
+    "types/*.d.ts",
+    "package.json",
+    "powerlines.config.ts",
+    "powerlines.d.ts"
+  ],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

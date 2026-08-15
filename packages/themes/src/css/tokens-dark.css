@@ -1,0 +1,405 @@
+@font-face {
+  font-family: Assets;
+  src: url("./fonts/banner-short.svg") format("svg");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Assets;
+  src: url("./fonts/banner-tight.svg") format("svg");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Assets;
+  src: url("./fonts/icon.svg") format("svg");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Assets;
+  src: url("./fonts/transparent.svg") format("svg");
+  font-display: swap;
+}
+
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-transparent: rgba(255, 255, 255, 0); /** A transparent color */
+  --color-black: #0c0c0d; /** A almost black color */
+  --color-white: #ffffff; /** A completely white color */
+  --color-brand-1: #36dec0; /** The Storm Software brand teal color */
+  --color-brand-2: #003832; /** The Storm Software brand teal color */
+  --color-surface-1: #1a1c1f; /** The lowest level surface of the palette - used for the background of the page */
+  --color-surface-2: #1e2023; /** The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.) */
+  --color-surface-3: #242629; /** The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.) */
+  --color-base-1: #fbfbfb; /** A near-white base gray color */
+  --color-base-2: #f6f6f6; /** A very light base gray color */
+  --color-base-3: #eaeaea; /** A light base gray color */
+  --color-base-4: #d5d6d6; /** A soft base gray color */
+  --color-base-5: #babbbb; /** A mid base gray color */
+  --color-base-6: #999a9b; /** A medium base gray color */
+  --color-base-7: #727476; /** A dark base gray color */
+  --color-base-8: #494b4d; /** A deep charcoal gray color */
+  --color-base-9: #1e2023; /** An almost-black base gray color */
+  --color-red-1: #ffc0bf; /** A pale warm coral red color */
+  --color-red-2: #ffb3b2; /** A light salmon red color */
+  --color-red-3: #ffa4a3; /** A soft coral red color */
+  --color-red-4: #fe9a9a; /** A muted warm coral color */
+  --color-red-5: #ff8d8f; /** A medium salmon red color */
+  --color-red-6: #fb8083; /** A vivid coral red color */
+  --color-red-7: #f57377; /** A rich dusty red color */
+  --color-red-8: #e66d71; /** A deep brick red color */
+  --color-red-9: #b75357; /** A dark brownish red color */
+  --color-orange-1: #ffc5a8; /** A pale peach orange color */
+  --color-orange-2: #fcb998; /** A light apricot orange color */
+  --color-orange-3: #fcab83; /** A soft sandy orange color */
+  --color-orange-4: #f69f73; /** A muted warm orange color */
+  --color-orange-5: #f9935f; /** A medium tangerine orange color */
+  --color-orange-6: #f3874e; /** A bright amber orange color */
+  --color-orange-7: #ec7a3b; /** A rich burnt orange color */
+  --color-orange-8: #de743a; /** A deep rust orange color */
+  --color-orange-9: #b45b2b; /** A dark brownish orange color */
+  --color-yellow-1: #eccc95; /** A pale wheat gold color */
+  --color-yellow-2: #e5c283; /** A light sandy gold color */
+  --color-yellow-3: #e2b667; /** A soft golden yellow color */
+  --color-yellow-4: #dfaf56; /** A muted amber gold color */
+  --color-yellow-5: #dba330; /** A medium honey gold color */
+  --color-yellow-6: #d79c05; /** A vivid golden yellow color */
+  --color-yellow-7: #cd8e00; /** A rich ochre gold color */
+  --color-yellow-8: #c08600; /** A deep bronze gold color */
+  --color-yellow-9: #9b6a00; /** A dark brownish gold color */
+  --color-green-1: #a4deb7; /** A pale mint green color */
+  --color-green-2: #95d6ab; /** A light seafoam green color */
+  --color-green-3: #7bcc98; /** A soft spring green color */
+  --color-green-4: #6dc88f; /** A muted jade green color */
+  --color-green-5: #52c180; /** A medium emerald green color */
+  --color-green-6: #3bb974; /** A vivid emerald green color */
+  --color-green-7: #19b168; /** A rich forest green color */
+  --color-green-8: #1ea662; /** A deep pine green color */
+  --color-green-9: #14874e; /** A dark evergreen color */
+  --color-sky-1: #91dbf2; /** A pale sky blue color */
+  --color-sky-2: #7ed2ed; /** A light aqua sky color */
+  --color-sky-3: #5ccbeb; /** A soft bright sky color */
+  --color-sky-4: #42c2e6; /** A vivid sky blue color */
+  --color-sky-5: #00bee7; /** A medium electric sky color */
+  --color-sky-6: #00b5e2; /** A bright azure sky color */
+  --color-sky-7: #00a8d1; /** A rich ocean sky color */
+  --color-sky-8: #009ec5; /** A deep teal sky color */
+  --color-sky-9: #0080a2; /** A dark steel sky color */
+  --color-blue-1: #afd4ff; /** A pale periwinkle blue color */
+  --color-blue-2: #a1caff; /** A light sky blue color */
+  --color-blue-3: #8ec1ff; /** A soft cornflower blue color */
+  --color-blue-4: #80b7ff; /** A muted bright blue color */
+  --color-blue-5: #70b0ff; /** A medium azure blue color */
+  --color-blue-6: #61a6ff; /** A vivid sky blue color */
+  --color-blue-7: #529cfc; /** A rich cerulean blue color */
+  --color-blue-8: #4f93ec; /** A deep navy blue color */
+  --color-blue-9: #3c75bf; /** A dark midnight blue color */
+  --color-purple-1: #c8cbff; /** A pale lavender purple color */
+  --color-purple-2: #bdc1ff; /** A light periwinkle purple color */
+  --color-purple-3: #b2b5ff; /** A soft violet purple color */
+  --color-purple-4: #abaeff; /** A muted indigo purple color */
+  --color-purple-5: #a4a5ff; /** A medium periwinkle purple color */
+  --color-purple-6: #9a9aff; /** A vivid soft indigo color */
+  --color-purple-7: #908ffe; /** A rich slate indigo color */
+  --color-purple-8: #8887ee; /** A deep muted indigo color */
+  --color-purple-9: #6c6bc1; /** A dark navy indigo color */
+  --color-pink-1: #ffbfd6; /** A pale blush pink color */
+  --color-pink-2: #fbb2cc; /** A light rose pink color */
+  --color-pink-3: #faa3c3; /** A soft coral pink color */
+  --color-pink-4: #f899bd; /** A muted bright pink color */
+  --color-pink-5: #f98cb7; /** A medium hot pink color */
+  --color-pink-6: #f37fae; /** A vivid magenta pink color */
+  --color-pink-7: #ed72a5; /** A rich fuchsia pink color */
+  --color-pink-8: #de6d9b; /** A deep berry pink color */
+  --color-pink-9: #b4567d; /** A dark plum pink color */
+  --color-foreground-primary: #fbfbfb; /** The primary foreground color for the dark theme */
+  --color-foreground-secondary: #494b4d; /** The secondary foreground color for the dark theme */
+  --color-foreground-tertiary: #1e2023; /** The tertiary foreground color for the dark theme */
+  --color-foreground-accent: #36dec0; /** The accent foreground color for the dark theme */
+  --color-foreground-danger: #f57377; /** The danger foreground color for the dark theme */
+  --color-foreground-warning: #dfaf56; /** The warning foreground color for the dark theme */
+  --color-foreground-success: #3bb974; /** The success foreground color for the dark theme */
+  --color-foreground-info: #5ccbeb; /** The info foreground color for the dark theme */
+  --color-foreground-discovery: #908ffe; /** The discovery foreground color for the dark theme */
+  --color-foreground-link: #529cfc; /** The link foreground color for the dark theme */
+  --color-foreground-on-primary: #1e2023; /** The primary foreground color for the dark theme */
+  --color-foreground-on-secondary: #fbfbfb; /** The secondary foreground color for the dark theme */
+  --color-foreground-on-tertiary: #fbfbfb; /** The tertiary foreground color for the dark theme */
+  --color-foreground-on-accent: #fbfbfb; /** The accent foreground color for the dark theme */
+  --color-foreground-on-danger: #fbfbfb; /** The danger foreground color for the dark theme */
+  --color-foreground-on-warning: #1e2023; /** The warning foreground color for the dark theme */
+  --color-foreground-on-success: #fbfbfb; /** The success foreground color for the dark theme */
+  --color-foreground-on-info: #fbfbfb; /** The info foreground color for the dark theme */
+  --color-foreground-on-discovery: #fbfbfb; /** The discovery foreground color for the dark theme */
+  --color-background-page: #1a1c1f; /** The page background color for the dark theme */
+  --color-background-elevated: #1e2023; /** The elevated background color for the dark theme */
+  --color-background-floating: #242629; /** The floating background color for the dark theme */
+  --color-background-primary: #fbfbfb; /** The primary foreground color for the dark theme */
+  --color-background-secondary: #494b4d; /** The secondary foreground color for the dark theme */
+  --color-background-tertiary: #1e2023; /** The tertiary foreground color for the dark theme */
+  --color-background-link: #529cfc; /** The link foreground color for the dark theme */
+  --color-background-accent: #36dec0; /** The accent foreground color for the dark theme */
+  --color-background-danger: #f57377; /** The danger foreground color for the dark theme */
+  --color-background-warning: #dfaf56; /** The warning foreground color for the dark theme */
+  --color-background-success: #3bb974; /** The success foreground color for the dark theme */
+  --color-background-info: #5ccbeb; /** The info foreground color for the dark theme */
+  --color-background-discovery: #908ffe; /** The discovery foreground color for the dark theme */
+  --color-background-accent-subtle: #003832; /** The accent foreground color for the dark theme */
+  --color-background-danger-subtle: #b75357; /** The danger foreground color for the dark theme */
+  --color-background-warning-subtle: #9b6a00; /** The warning foreground color for the dark theme */
+  --color-background-success-subtle: #14874e; /** The success foreground color for the dark theme */
+  --color-background-info-subtle: #0080a2; /** The info foreground color for the dark theme */
+  --color-background-discovery-subtle: #6c6bc1; /** The discovery foreground color for the dark theme */
+  --color-border-primary: #727476; /** The primary foreground color for the dark theme */
+  --color-border-secondary: #494b4d; /** The secondary foreground color for the dark theme */
+  --color-border-tertiary: #1e2023; /** The tertiary foreground color for the dark theme */
+  --color-border-accent: #36dec0; /** The accent foreground color for the dark theme */
+  --color-border-danger: #f57377; /** The danger foreground color for the dark theme */
+  --color-border-warning: #dfaf56; /** The warning foreground color for the dark theme */
+  --color-border-success: #3bb974; /** The success foreground color for the dark theme */
+  --color-border-info: #5ccbeb; /** The info foreground color for the dark theme */
+  --color-border-discovery: #908ffe; /** The discovery foreground color for the dark theme */
+  --color-border-accent-subtle: #003832; /** The accent foreground color for the dark theme */
+  --color-border-danger-subtle: #b75357; /** The danger foreground color for the dark theme */
+  --color-border-warning-subtle: #9b6a00; /** The warning foreground color for the dark theme */
+  --color-border-success-subtle: #14874e; /** The success foreground color for the dark theme */
+  --color-border-info-subtle: #0080a2; /** The info foreground color for the dark theme */
+  --color-border-discovery-subtle: #6c6bc1; /** The discovery foreground color for the dark theme */
+  --color-overlay-background: #242629; /** The overlay background color for the dark theme */
+  --color-overlay-border: #727476; /** The overlay border color for the dark theme */
+  --color-overlay-backdrop: rgba(12, 12, 13, 0.4); /** The overlay backdrop background color for the dark theme */
+  --color-shadow-resting-xsmall: 0px 1px 0px 0px rgb(0% 0% 0% / 0.05); /** The xsmall resting shadow for the dark theme */
+  --color-shadow-resting-small: 0px 1px 2px 0px rgb(0% 0% 0% / 0.05); /** The small resting shadow for the dark theme */
+  --color-shadow-resting-medium: 0px 1px 3px 0px rgb(0% 0% 0% / 0.1), 0px 1px 2px -1px rgb(0% 0% 0% / 0.1); /** The medium resting shadow for the dark theme */
+  --color-shadow-floating-small: 0px 4px 6px -1px rgb(0% 0% 0% / 0.1), 0px 2px 4px -2px rgb(0% 0% 0% / 0.1); /** The small floating shadow for the dark theme */
+  --color-shadow-floating-medium: 0px 10px 15px -3px rgb(0% 0% 0% / 0.1), 0px 4px 6px -4px rgb(0% 0% 0% / 0.1); /** The medium floating shadow for the dark theme */
+  --color-shadow-floating-large: 0px 20px 25px -5px rgb(0% 0% 0% / 0.1), 0px 8px 10px -6px rgb(0% 0% 0% / 0.1); /** The large floating shadow for the dark theme */
+  --color-shadow-floating-xlarge: 0px 25px 50px -12px rgb(0% 0% 0% / 0.25); /** The xlarge floating shadow for the dark theme */
+  --color-shadow-inset: inset 0px 1px 1px 0px rgb(0% 0% 0% / 0.05); /** The inset shadow for the dark theme */
+  --color-data-base-emphasis: #fbfbfb; /** The base data visualization emphasis color for the dark theme */
+  --color-data-base-subtle: #494b4d; /** The base data visualization subtle color for the dark theme */
+  --color-data-brand-emphasis: #36dec0; /** The brand data visualization emphasis color for the dark theme */
+  --color-data-brand-subtle: #003832; /** The brand data visualization subtle color for the dark theme */
+  --color-data-red-emphasis: #ff8d8f; /** The red data visualization emphasis color for the dark theme */
+  --color-data-red-subtle: #b75357; /** The red data visualization subtle color for the dark theme */
+  --color-data-orange-emphasis: #f9935f; /** The orange data visualization emphasis color for the dark theme */
+  --color-data-orange-subtle: #b45b2b; /** The orange data visualization subtle color for the dark theme */
+  --color-data-yellow-emphasis: #dba330; /** The yellow data visualization emphasis color for the dark theme */
+  --color-data-yellow-subtle: #9b6a00; /** The yellow data visualization subtle color for the dark theme */
+  --color-data-green-emphasis: #52c180; /** The green data visualization emphasis color for the dark theme */
+  --color-data-green-subtle: #14874e; /** The green data visualization subtle color for the dark theme */
+  --color-data-sky-emphasis: #00bee7; /** The sky blue data visualization emphasis color for the dark theme */
+  --color-data-sky-subtle: #0080a2; /** The sky blue data visualization subtle color for the dark theme */
+  --color-data-blue-emphasis: #70b0ff; /** The blue data visualization emphasis color for the dark theme */
+  --color-data-blue-subtle: #3c75bf; /** The blue data visualization subtle color for the dark theme */
+  --color-data-purple-emphasis: #a4a5ff; /** The purple data visualization emphasis color for the dark theme */
+  --color-data-purple-subtle: #6c6bc1; /** The purple data visualization subtle color for the dark theme */
+  --color-data-pink-emphasis: #f98cb7; /** The pink data visualization emphasis color for the dark theme */
+  --color-data-pink-subtle: #b4567d; /** The pink data visualization subtle color for the dark theme */
+  --size-none: 0px; /** No size */
+  --size-xxs: 2px; /** A 2px xxs size step */
+  --size-xs: 4px; /** A 4px xs size step */
+  --size-sm: 8px; /** A 8px sm size step */
+  --size-md: 20px; /** A 20px md size step */
+  --size-lg: 24px; /** A 24px lg size step */
+  --size-xl: 28px; /** A 28px xl size step */
+  --size-2xl: 32px; /** A 32px 2xl size step */
+  --size-3xl: 36px; /** A 36px 3xl size step */
+  --size-4xl: 40px; /** A 40px 4xl size step */
+  --size-5xl: 44px; /** A 44px 5xl size step */
+  --size-6xl: 48px; /** A 48px 6xl size step */
+  --size-7xl: 52px; /** A 52px 7xl size step */
+  --size-8xl: 64px; /** A 64px 8xl size step */
+  --size-9xl: 74px; /** A 74px 9xl size step */
+  --size-10xl: 84px; /** A 84px 10xl size step */
+  --size-11xl: 94px; /** A 94px 11xl size step */
+  --size-12xl: 104px; /** A 104px 12xl size step */
+  --size-13xl: 124px; /** A 124px 13xl size step */
+  --size-14xl: 144px; /** A 144px 14xl size step */
+  --size-15xl: 164px; /** A 164px 15xl size step */
+  --size-16xl: 184px; /** A 184px 16xl size step */
+  --size-17xl: 204px; /** A 204px 17xl size step */
+  --size-18xl: 224px; /** A 224px 18xl size step */
+  --size-19xl: 224px; /** A 224px 19xl size step */
+  --size-20xl: 244px; /** A 244px 20xl size step */
+  --size-21xl: 264px; /** A 264px 21xl size step */
+  --size-22xl: 284px; /** A 284px 22xl size step */
+  --z-index-0: 0; /** Base stacking level */
+  --z-index-10: 100; /** Low stacking level */
+  --z-index-20: 200; /** Raised stacking level */
+  --z-index-30: 300; /** Elevated stacking level */
+  --z-index-40: 400; /** High stacking level */
+  --z-index-50: 500; /** Overlay stacking level */
+  --z-index-60: 600; /** Modal stacking level */
+  --z-index-70: 700; /** Popover stacking level */
+  --z-index-80: 800; /** Toast stacking level */
+  --z-index-90: 900; /** Topmost stacking level */
+  --spacing-none: 0px; /** No spacing */
+  --spacing-xxs: 0.5px; /** A 0.5px xxs spacing step (from size.xxs via sizeToSpace) */
+  --spacing-xs: 1px; /** A 1px xs spacing step (from size.xs via sizeToSpace) */
+  --spacing-sm: 1.5px; /** A 1.5px sm spacing step (from size.sm via sizeToSpace) */
+  --spacing-md: 2px; /** A 2px md spacing step (from size.md via sizeToSpace) */
+  --spacing-lg: 4px; /** A 4px lg spacing step (from size.lg via sizeToSpace) */
+  --spacing-xl: 7px; /** A 7px xl spacing step (from size.xl via sizeToSpace) */
+  --spacing-2xl: 10px; /** A 10px 2xl spacing step (from size.2xl via sizeToSpace) */
+  --spacing-3xl: 13px; /** A 13px 3xl spacing step (from size.3xl via sizeToSpace) */
+  --spacing-4xl: 16px; /** A 16px 4xl spacing step (from size.4xl via sizeToSpace) */
+  --spacing-5xl: 18px; /** A 18px 5xl spacing step (from size.5xl via sizeToSpace) */
+  --spacing-6xl: 21px; /** A 21px 6xl spacing step (from size.6xl via sizeToSpace) */
+  --spacing-7xl: 24px; /** A 24px 7xl spacing step (from size.7xl via sizeToSpace) */
+  --spacing-8xl: 32px; /** A 32px 8xl spacing step (from size.8xl via sizeToSpace) */
+  --spacing-9xl: 39px; /** A 39px 9xl spacing step (from size.9xl via sizeToSpace) */
+  --spacing-10xl: 46px; /** A 46px 10xl spacing step (from size.10xl via sizeToSpace) */
+  --spacing-11xl: 53px; /** A 53px 11xl spacing step (from size.11xl via sizeToSpace) */
+  --spacing-12xl: 60px; /** A 60px 12xl spacing step (from size.12xl via sizeToSpace) */
+  --spacing-13xl: 74px; /** A 74px 13xl spacing step (from size.13xl via sizeToSpace) */
+  --spacing-14xl: 88px; /** A 88px 14xl spacing step (from size.14xl via sizeToSpace) */
+  --spacing-15xl: 102px; /** A 102px 15xl spacing step (from size.15xl via sizeToSpace) */
+  --spacing-16xl: 116px; /** A 116px 16xl spacing step (from size.16xl via sizeToSpace) */
+  --spacing-17xl: 130px; /** A 130px 17xl spacing step (from size.17xl via sizeToSpace) */
+  --spacing-18xl: 144px; /** A 144px 18xl spacing step (from size.18xl via sizeToSpace) */
+  --spacing-19xl: 144px; /** A 144px 19xl spacing step (from size.19xl via sizeToSpace) */
+  --spacing-20xl: 158px; /** A 158px 20xl spacing step (from size.20xl via sizeToSpace) */
+  --spacing-21xl: 172px; /** A 172px 21xl spacing step (from size.21xl via sizeToSpace) */
+  --spacing-22xl: 186px; /** A 186px 22xl spacing step (from size.22xl via sizeToSpace) */
+  --font-size-xs: 0.75rem; /** Extra small font size (0.75rem) */
+  --font-size-sm: 0.875rem; /** Small font size (0.875rem) */
+  --font-size-md: 1rem; /** Medium font size (1rem) */
+  --font-size-lg: 1.125rem; /** Large font size (1.125rem) */
+  --font-size-xl: 1.25rem; /** Extra large font size (1.25rem) */
+  --font-size-2xl: 1.5rem; /** 2X large font size (1.5rem) */
+  --font-size-3xl: 1.875rem; /** 3X large font size (1.875rem) */
+  --font-size-4xl: 2.25rem; /** 4X large font size (2.25rem) */
+  --font-size-5xl: 3rem; /** 5X large font size (3rem) */
+  --font-size-6xl: 3.75rem; /** 6X large font size (3.75rem) */
+  --font-size-7xl: 4.5rem; /** 7X large font size (4.5rem) */
+  --font-size-8xl: 6rem; /** 8X large font size (6rem) */
+  --font-size-9xl: 8rem; /** 9X large font size (8rem) */
+  --font-weight-thin: 100; /** Thin font weight (100) */
+  --font-weight-extralight: 200; /** Extra light font weight (200) */
+  --font-weight-light: 300; /** Light font weight (300) */
+  --font-weight-normal: 400; /** Normal font weight (400) */
+  --font-weight-medium: 500; /** Medium font weight (500) */
+  --font-weight-semibold: 600; /** Semibold font weight (600) */
+  --font-weight-bold: 700; /** Bold font weight (700) */
+  --font-weight-extrabold: 800; /** Extra bold font weight (800) */
+  --font-weight-black: 900; /** Black font weight (900) */
+  --letter-spacing-tighter: -0.05rem; /** Tighter letter spacing (-0.05em) */
+  --letter-spacing-tight: -0.025rem; /** Tight letter spacing (-0.025em) */
+  --letter-spacing-normal: 0rem; /** Normal letter spacing (0em) */
+  --letter-spacing-wide: 0.025rem; /** Wide letter spacing (0.025em) */
+  --letter-spacing-wider: 0.05rem; /** Wider letter spacing (0.05em) */
+  --letter-spacing-widest: 0.1rem; /** Widest letter spacing (0.1em) */
+  --line-height-tight: 1.25; /** Tight line height (1.25) */
+  --line-height-snug: 1.375; /** Snug line height (1.375) */
+  --line-height-normal: 1.5; /** Normal line height (1.5) */
+  --line-height-relaxed: 1.625; /** Relaxed line height (1.625) */
+  --line-height-loose: 2; /** Loose line height (2) */
+  --line-height-xs: 1.333333; /** Line height for text-xs (calc(1 / 0.75)) */
+  --line-height-sm: 1.428571; /** Line height for text-sm (calc(1.25 / 0.875)) */
+  --line-height-md: 1.5; /** Line height for text-md (calc(1.5 / 1)) */
+  --line-height-lg: 1.555556; /** Line height for text-lg (calc(1.75 / 1.125)) */
+  --line-height-xl: 1.4; /** Line height for text-xl (calc(1.75 / 1.25)) */
+  --line-height-2xl: 1.333333; /** Line height for text-2xl (calc(2 / 1.5)) */
+  --line-height-3xl: 1.2; /** Line height for text-3xl (calc(2.25 / 1.875)) */
+  --line-height-4xl: 1.111111; /** Line height for text-4xl (calc(2.5 / 2.25)) */
+  --line-height-5xl: 1; /** Line height for text-5xl */
+  --line-height-6xl: 1; /** Line height for text-6xl */
+  --line-height-7xl: 1; /** Line height for text-7xl */
+  --line-height-8xl: 1; /** Line height for text-8xl */
+  --line-height-9xl: 1; /** Line height for text-9xl */
+  --border-radius-none: 0rem; /** No radius */
+  --border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
+  --border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
+  --border-radius-md: 0.375rem; /** Medium radius (0.375rem) */
+  --border-radius-lg: 0.5rem; /** Large radius (0.5rem) */
+  --border-radius-xl: 0.75rem; /** Extra large radius (0.75rem) */
+  --border-radius-2xl: 1rem; /** 2X large radius (1rem) */
+  --border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
+  --border-radius-4xl: 2rem; /** 4X large radius (2rem) */
+  --border-radius-full: 100%; /** Full radius (100%) */
+  --shadow-2xs: 0px 1px 0px 0px rgb(0% 0% 0% / 0.05); /** 2X small shadow */
+  --shadow-xs: 0px 1px 2px 0px rgb(0% 0% 0% / 0.05); /** Extra small shadow */
+  --shadow-sm: 0px 1px 3px 0px rgb(0% 0% 0% / 0.1), 0px 1px 2px -1px rgb(0% 0% 0% / 0.1); /** Small shadow */
+  --shadow-md: 0px 4px 6px -1px rgb(0% 0% 0% / 0.1), 0px 2px 4px -2px rgb(0% 0% 0% / 0.1); /** Medium shadow */
+  --shadow-lg: 0px 10px 15px -3px rgb(0% 0% 0% / 0.1), 0px 4px 6px -4px rgb(0% 0% 0% / 0.1); /** Large shadow */
+  --shadow-xl: 0px 20px 25px -5px rgb(0% 0% 0% / 0.1), 0px 8px 10px -6px rgb(0% 0% 0% / 0.1); /** Extra large shadow */
+  --shadow-2xl: 0px 25px 50px -12px rgb(0% 0% 0% / 0.25); /** 2X large shadow */
+  --inset-shadow-2xs: inset 0px 1px 0px 0px rgb(0% 0% 0% / 0.05); /** 2X small inset shadow */
+  --inset-shadow-xs: inset 0px 1px 1px 0px rgb(0% 0% 0% / 0.05); /** Extra small inset shadow */
+  --inset-shadow-sm: inset 0px 2px 4px 0px rgb(0% 0% 0% / 0.05); /** Small inset shadow */
+  --drop-shadow-xs: 0px 1px 1px 0px rgb(0% 0% 0% / 0.05); /** Extra small drop shadow */
+  --drop-shadow-sm: 0px 1px 2px 0px rgb(0% 0% 0% / 0.15); /** Small drop shadow */
+  --drop-shadow-md: 0px 3px 3px 0px rgb(0% 0% 0% / 0.12); /** Medium drop shadow */
+  --drop-shadow-lg: 0px 4px 4px 0px rgb(0% 0% 0% / 0.15); /** Large drop shadow */
+  --drop-shadow-xl: 0px 9px 7px 0px rgb(0% 0% 0% / 0.1); /** Extra large drop shadow */
+  --drop-shadow-2xl: 0px 25px 25px 0px rgb(0% 0% 0% / 0.15); /** 2X large drop shadow */
+  --text-shadow-2xs: 0px 1px 0px 0px rgb(0% 0% 0% / 0.15); /** 2X small text shadow */
+  --text-shadow-xs: 0px 1px 1px 0px rgb(0% 0% 0% / 0.2); /** Extra small text shadow */
+  --text-shadow-sm: 0px 1px 0px 0px rgb(0% 0% 0% / 0.075), 0px 1px 1px 0px rgb(0% 0% 0% / 0.075), 0px 2px 2px 0px rgb(0% 0% 0% / 0.075); /** Small text shadow */
+  --text-shadow-md: 0px 1px 1px 0px rgb(0% 0% 0% / 0.1), 0px 1px 2px 0px rgb(0% 0% 0% / 0.1), 0px 2px 4px 0px rgb(0% 0% 0% / 0.1); /** Medium text shadow */
+  --text-shadow-lg: 0px 1px 2px 0px rgb(0% 0% 0% / 0.1), 0px 3px 2px 0px rgb(0% 0% 0% / 0.1), 0px 4px 8px 0px rgb(0% 0% 0% / 0.1); /** Large text shadow */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /** Ease-in cubic bezier */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /** Ease-out cubic bezier */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /** Ease-in-out cubic bezier */
+  --durations-instant: [object Object]; /** Instant duration */
+  --durations-short: [object Object]; /** Short duration */
+  --durations-medium: [object Object]; /** Medium duration */
+  --durations-long: [object Object]; /** Long duration */
+  --blur-xs: 4px; /** Extra small blur (4px) */
+  --blur-sm: 8px; /** Small blur (8px) */
+  --blur-md: 12px; /** Medium blur (12px) */
+  --blur-lg: 16px; /** Large blur (16px) */
+  --blur-xl: 24px; /** Extra large blur (24px) */
+  --blur-2xl: 40px; /** 2X large blur (40px) */
+  --blur-3xl: 64px; /** 3X large blur (64px) */
+  --border-primary: 2px solid #727476; /** The primary border variant for the dark theme */
+  --border-primary-subtle: 1px solid #727476; /** The primary subtle border variant for the dark theme */
+  --border-secondary: 2px solid #494b4d; /** The secondary border variant for the dark theme */
+  --border-secondary-subtle: 1px solid #494b4d; /** The secondary subtle border variant for the dark theme */
+  --border-tertiary: 2px solid #1e2023; /** The tertiary border variant for the dark theme */
+  --border-tertiary-subtle: 1px solid #1e2023; /** The tertiary subtle border variant for the dark theme */
+  --border-accent: 2px solid #36dec0; /** The accent border variant for the dark theme */
+  --border-accent-subtle: 1px solid #36dec0; /** The accent subtle border variant for the dark theme */
+  --border-danger: 2px solid #f57377; /** The danger border variant for the dark theme */
+  --border-danger-subtle: 1px solid #f57377; /** The danger subtle border variant for the dark theme */
+  --border-warning: 2px solid #dfaf56; /** The warning border variant for the dark theme */
+  --border-warning-subtle: 1px solid #dfaf56; /** The warning subtle border variant for the dark theme */
+  --border-success: 2px solid #3bb974; /** The success border variant for the dark theme */
+  --border-success-subtle: 1px solid #3bb974; /** The success subtle border variant for the dark theme */
+  --border-info: 2px solid #5ccbeb; /** The info border variant for the dark theme */
+  --border-info-subtle: 1px solid #5ccbeb; /** The info subtle border variant for the dark theme */
+  --border-discovery: 2px solid #908ffe; /** The discovery border variant for the dark theme */
+  --border-discovery-subtle: 1px solid #908ffe; /** The discovery subtle border variant for the dark theme */
+  --ring-primary: 0px 0px 0px 3px #727476; /** The primary ring variant for the dark theme */
+  --ring-primary-subtle: 0px 0px 0px 1px #727476; /** The primary subtle ring variant for the dark theme */
+  --ring-secondary: 0px 0px 0px 3px #494b4d; /** The secondary ring variant for the dark theme */
+  --ring-secondary-subtle: 0px 0px 0px 1px #494b4d; /** The secondary subtle ring variant for the dark theme */
+  --ring-tertiary: 0px 0px 0px 3px #1e2023; /** The tertiary ring variant for the dark theme */
+  --ring-tertiary-subtle: 0px 0px 0px 1px #1e2023; /** The tertiary subtle ring variant for the dark theme */
+  --ring-accent: 0px 0px 0px 3px #36dec0; /** The accent ring variant for the dark theme */
+  --ring-accent-subtle: 0px 0px 0px 1px #36dec0; /** The accent subtle ring variant for the dark theme */
+  --ring-danger: 0px 0px 0px 3px #f57377; /** The danger ring variant for the dark theme */
+  --ring-danger-subtle: 0px 0px 0px 1px #f57377; /** The danger subtle ring variant for the dark theme */
+  --ring-warning: 0px 0px 0px 3px #dfaf56; /** The warning ring variant for the dark theme */
+  --ring-warning-subtle: 0px 0px 0px 1px #dfaf56; /** The warning subtle ring variant for the dark theme */
+  --ring-success: 0px 0px 0px 3px #3bb974; /** The success ring variant for the dark theme */
+  --ring-success-subtle: 0px 0px 0px 1px #3bb974; /** The success subtle ring variant for the dark theme */
+  --ring-info: 0px 0px 0px 3px #5ccbeb; /** The info ring variant for the dark theme */
+  --ring-info-subtle: 0px 0px 0px 1px #5ccbeb; /** The info subtle ring variant for the dark theme */
+  --ring-discovery: 0px 0px 0px 3px #908ffe; /** The discovery ring variant for the dark theme */
+  --ring-discovery-subtle: 0px 0px 0px 1px #908ffe; /** The discovery subtle ring variant for the dark theme */
+  --typography-display-lg: 400 3rem/1 'Permanent Marker'; /** The display large typography variant for the dark theme */
+  --typography-display-md: 400 1.875rem/1.2 'Permanent Marker'; /** The display medium typography variant for the dark theme */
+  --typography-display-sm: 400 1.5rem/1.333333 'Permanent Marker'; /** The display small typography variant for the dark theme */
+  --typography-title-lg: 300 1rem/1.5 'Space Grotesk'; /** The title large typography variant for the dark theme */
+  --typography-title-md: 300 1rem/1.5 'Space Grotesk'; /** The title medium typography variant for the dark theme */
+  --typography-title-sm: 300 1rem/1.5 'Space Grotesk'; /** The title small typography variant for the dark theme */
+  --typography-body: 300 1rem/1.5 'Space Grotesk'; /** The body typography variant for the dark theme */
+  --typography-caption: 300 0.75rem/1.333333 'Space Grotesk'; /** The caption typography variant for the dark theme */
+  --typography-code: 400 0.875rem/1.428571 'Space Mono'; /** The code typography variant for the dark theme */
+}

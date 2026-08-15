@@ -1,10 +1,23 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "declaration": true,
-    "types": ["node"]
+    "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
+    "rootDir": ".",
+    "types": ["node"],
+    "outDir": "./out-tsc"
   },
-  "include": ["src/**/*.ts", "index.ts"],
+  "references": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.cjs",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.mts",
+    "src/**/*.cts",
+    "types/*.d.ts",
+    "package.json"
+  ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 // import type { BuildOptions } from "@cyclone-ui/build";
-import type { AssetGlob } from "@nx/js/src/utils/assets/assets";
+import type { AssetGlob } from "@nx/js/internal";
 
 export type BuildExecutorSchema = {
   assets?: AssetGlob[];

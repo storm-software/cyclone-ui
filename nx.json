@@ -1,19 +1,35 @@
 {
-  "extends": "@storm-software/workspace-tools/config/nx-default.json",
+  "$schema": "https://cdn.jsdelivr.net/npm/nx/schemas/nx-schema.json",
+  "extends": "@storm-software/workspace-tools/config/recommended.json",
   "release": {
-    "projects": ["packages/*", "components/*", "apps/*"]
+    "groups": {
+      "packages": {
+        "projects": ["packages/*", "components/*", "apps/*"],
+        "projectsRelationship": "independent"
+      }
+    }
   },
   "plugins": [
     {
-      "plugin": "@nx/eslint/plugin",
-      "exclude": ["packages/**/__fixtures__/**/*"],
+      "plugin": "@nx/js/typescript",
       "options": {
-        "targetName": "lint",
-        "useFlatConfig": true
+        "compiler": "tsgo",
+        "typecheck": true,
+        "build": false,
+        "verboseOutput": false
       }
     },
     "@storm-software/workspace-tools/plugins/typescript",
-    "./dist/plugins/components/index.js",
-    "./dist/plugins/storybook/index.js"
-  ]
+    "@storm-software/workspace-tools/plugins/typescript/untyped",
+    "@storm-software/workspace-tools/plugins/typescript/tsdown",
+    "@powerlines/nx/plugin",
+    "@razorwind/nx/plugin",
+    "./dist/nx-plugins/components.js",
+    "./dist/nx-plugins/storybook.js"
+  ],
+  "sync": {
+    "applyChanges": true,
+    "globalGenerators": ["@nx/js:typescript-sync"]
+  },
+  "analytics": false
 }

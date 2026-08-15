@@ -1,0 +1,83 @@
+{
+  "nodes": {
+    "devenv": {
+      "locked": {
+        "dir": "src/modules",
+        "lastModified": 1786716869,
+        "narHash": "sha256-9h444mp8VVq6jMqSL85uUJgQADFEeWyt8bdBakLvwUQ=",
+        "owner": "cachix",
+        "repo": "devenv",
+        "rev": "694a8d5b61520a2a546c89fa5966396cebd6b99e",
+        "type": "github"
+      },
+      "original": {
+        "dir": "src/modules",
+        "owner": "cachix",
+        "repo": "devenv",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "inputs": {
+        "nixpkgs-src": "nixpkgs-src"
+      },
+      "locked": {
+        "lastModified": 1786472144,
+        "narHash": "sha256-W1wLGKZKGtnTWGRFgjbsVQleuO6jgMweaSAbFltLkN0=",
+        "owner": "cachix",
+        "repo": "devenv-nixpkgs",
+        "rev": "ea21d30f66a051c7cd750692a2af8d56e0ec4bfb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "ref": "rolling",
+        "repo": "devenv-nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786098110,
+        "narHash": "sha256-shi1tjDhCGGd0kIgVPNY03V8NBWSTzhMSFDb7IqSoec=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "afb4584a80bbf779ce0f691509ff902d188c2b3d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "devenv": "devenv",
+        "nixpkgs": "nixpkgs",
+        "storm-ops": "storm-ops"
+      }
+    },
+    "storm-ops": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786382218,
+        "narHash": "sha256-Y6lSKXMjSUND3qdp6m2HCnYhS6sdSlKZxAT6YVnnEiM=",
+        "owner": "storm-software",
+        "repo": "storm-ops",
+        "rev": "7302cd6416daad63ba041a3be4076bcde2637373",
+        "type": "github"
+      },
+      "original": {
+        "owner": "storm-software",
+        "ref": "main",
+        "repo": "storm-ops",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

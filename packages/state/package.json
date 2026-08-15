@@ -9,9 +9,7 @@
     "directory": "packages/state"
   },
   "private": false,
-  "keywords": [
-    "jotai"
-  ],
+  "keywords": ["jotai"],
   "peerDependencies": {
     "jotai": ">=2.8.0",
     "react": "18.3.1",
@@ -33,19 +31,31 @@
     }
   },
   "dependencies": {
-    "@storm-stack/hooks": "latest",
-    "@storm-stack/serialization": "latest",
-    "@storm-stack/string-fns": "latest",
-    "@storm-stack/types": "latest",
-    "@storm-stack/unique-identifier": "latest",
-    "@storm-stack/utilities": "latest",
-    "bunshi": "^2.1.5"
+    "@maskito/core": "catalog:",
+    "@maskito/react": "catalog:",
+    "@stryke/hooks": "catalog:",
+    "@stryke/string-format": "catalog:",
+    "@stryke/types": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/env": "catalog:",
+    "@stryke/unique-id": "catalog:",
+    "@stryke/helpers": "catalog:",
+    "@tamagui/core": "catalog:",
+    "jotai-optics": "catalog:",
+    "valibot": "catalog:",
+    "maska": "catalog:",
+    "optics-ts": "catalog:",
+    "bunshi": "catalog:",
+    "@tamagui/portal": "catalog:",
+    "@tamagui/toast": "catalog:",
+    "react-native-safe-area-context": "catalog:"
   },
   "devDependencies": {
-    "jotai": ">=2.8.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "@powerlines/plugin-vite": "catalog:",
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

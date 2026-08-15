@@ -1,0 +1,23 @@
+codeship
+truecolor
+pathext
+colorterm
+cfonts
+pjson
+linkify
+mdurl
+maska
+bunshi
+dtcg
+demi
+zindex
+oklch
+
+# Shorthands
+maxh
+maxw
+minh
+minw
+
+# Ignore in Regex
+ommands

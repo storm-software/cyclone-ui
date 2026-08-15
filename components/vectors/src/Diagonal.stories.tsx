@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Diagonal } from "./Diagonal";
 
 const meta: Meta<typeof Diagonal> = {

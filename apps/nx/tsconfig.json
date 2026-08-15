@@ -1,21 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": false,
-    "declaration": false,
-    "composite": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "exclude": ["src/generators/**/files/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "exclude": ["src/generators/**/files/**/*.ts"],
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0"
+  }
 }

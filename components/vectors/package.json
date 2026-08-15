@@ -33,18 +33,18 @@
     "react-native-svg": "^15.8.0"
   },
   "dependencies": {
-    "@tamagui/animations-moti": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/helpers-icon": "^1.116.15",
-    "@tamagui/helpers-tamagui": "^1.116.15",
-    "@tamagui/lucide-icons": "^1.116.15",
-    "motion": "^11.11.17"
+    "@tamagui/animations-moti": "^1.144.4",
+    "@tamagui/core": "^1.144.4",
+    "@tamagui/helpers-icon": "^1.144.4",
+    "@tamagui/helpers-tamagui": "^1.144.4",
+    "@tamagui/lucide-icons": "^1.144.4",
+    "motion": "^11.18.2"
   },
   "devDependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.74.1",
-    "react-native-svg": "^15.8.0"
+    "react-native-svg": "^15.15.5"
   },
   "publishConfig": {
     "access": "public"

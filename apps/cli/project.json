@@ -3,62 +3,14 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/cli/src",
-  "implicitDependencies": ["registry-api"],
   "targets": {
-    "clean": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "pnpm rimraf apps/cli/dist"
-      }
-    },
-    "build-base": {
-      "cache": false,
-      "executor": "nx:run-commands",
-      "inputs": ["typescript", "^production", "{projectRoot}/src/*"],
-      "outputs": ["{projectRoot}/dist/*"],
-      "options": {
-        "command": "pnpm tsc -b ./apps/cli/tsconfig.json"
-      }
-    },
-    "refresh-manifests": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
-      "outputs": ["{projectRoot}/oclif.manifest.json"],
-      "dependsOn": ["build-base"],
-      "options": {
-        "command": "pnpm oclif manifest",
-        "cwd": "apps/cli"
-      }
-    },
-    "refresh-readme": {
-      "cache": true,
-      "executor": "nx:run-commands",
-      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
-      "outputs": ["{projectRoot}/README.md"],
-      "dependsOn": ["build-base"],
-      "options": {
-        "command": "pnpm oclif readme",
-        "cwd": "apps/cli"
-      }
-    },
     "build": {
-      "cache": true,
       "executor": "nx:run-commands",
-      "inputs": ["typescript", "^production", "{projectRoot}/dist/*"],
-      "outputs": ["{workspaceRoot}/dist/apps/cli"],
-      "dependsOn": ["refresh-readme", "refresh-manifests"],
       "options": {
-        "commands": [
-          "pnpm exec copyfiles -f LICENSE ./apps/cli/package.json ./apps/cli/oclif.manifest.json ./apps/cli/*.md ./dist/apps/cli",
-          "pnpm exec copyfiles -f ./apps/cli/bin/* ./dist/apps/cli/bin",
-          "pnpm exec copyfiles -u 3 ./apps/cli/dist/**/*.js ./dist/apps/cli/dist"
-        ],
-        "parallel": false
+        "command": "echo 'Building CLI'"
       }
     },
-    "nx-release-publish": {
+   "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
   }

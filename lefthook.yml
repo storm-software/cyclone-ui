@@ -1,107 +1,29 @@
-#
-#   Refer for explanation to following link:
-#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
-#
+#                                                                                #
+#                          Lefthook configuration file:                          #
+#   This file is used to configure Lefthook, a tool for managing Git hooks.      #
+#                                                                                #
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md   #
 
+$schema: https://raw.githubusercontent.com/evilmartians/lefthook/refs/heads/master/schema.json
 assert_lefthook_installed: true
-colors: true
 no_tty: false
-min_version: 1.5.0
-
-pre-install:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-pre-install"
-
-prepare:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-prepare"
+min_version: "1.5.0"
+remotes:
+  - git_url: https://github.com/storm-software/storm-ops
+    ref: main
+    configs:
+      - packages/git-tools/src/lefthook/pnpm/recommended.yml
 
 pre-commit:
-  piped: true
   commands:
-    install:
-      glob: "./{pnpm-lock.yaml,lefthook.yml}"
-      run: "pnpm install && pnpm lefthook install && git update-index"
+    nx-sync:
+      glob: "**/*"
+      run: "pnpm nx sync"
       stage_fixed: true
-    prepare:
-      glob: "**/{lefthook.yml,biome.json}"
-      run: "pnpm exec storm-prepare"
-    # validate:
-    #   glob: "**/*.*"
-    #   run: "pnpm exec storm-pre-commit {staged_files}"
-    #   stage_fixed: true
-    # lint:
-    #   glob: "**/*.*"
-    #   run: "pnpm lint"
-    #   stage_fixed: true
-    lint-toml:
-      glob: "**/*.toml"
-      run: 'pnpm exec taplo format --check
-        --config="./node_modules/@storm-software/linting-tools/taplo/config.toml"'
-    lint-filename:
-      glob: "**/*.*"
-      run: 'pnpm exec ls-lint --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
-
-commit-msg:
-  commands:
-    validate:
-      run: 'pnpm exec commitlint
-        --config="./node_modules/@storm-software/git-tools/commitlint/config.cjs"
-        --edit {1}'
 
 pre-push:
-  piped: true
   commands:
-    # format:
-    #   glob: "**/*.*"
-    #   run: "pnpm format"
-    #   stage_fixed: true
-    # format-prettier:
-    #   glob: "!packages/workspace-tools/src/generators/*/files/**/*"
-    #   run: "pnpm exec prettier {staged_files} --write --ignore-unknown
-    #     --no-error-on-unmatched-pattern --cache && git update-index"
-    #   stage_fixed: true
-    # format-toml:
-    #   glob: "**/*.toml"
-    #   run: 'pnpm exec taplo format
-    #     --config="./node_modules/@storm-software/linting-tools/taplo/config.toml" && git
-    #     update-index'
-    # format-readme:
-    #   glob: "**/{README.md,package.json,executors.json,generators.json}"
-    #   run: 'pnpm exec storm-git readme-gen --templates="./tools/readme-templates"'
-    #   stage_fixed: true
-    build:
-      glob: "**/*.*"
-      run: "pnpm build-all"
+    nx-sync:
+      glob: "**/*"
+      run: pnpm nx sync
       stage_fixed: true
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-pre-push {staged_files}"
-      stage_fixed: true
-    lint:
-      glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,yaml,yml,md,mdx,markdown,css,scss,sass,less,styl,stylus,graphql,gql,xml,svg,txt,log,env,env.example,env.local,env.development,env.test,env.production,env.staging,env.local.example,env.development.example,env.test.example,env.production.example,env.staging.example}"
-      run: "pnpm lint"
-      stage_fixed: true
-
-post-merge:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-merge {staged_files}"
-      stage_fixed: true
-
-post-checkout:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-checkout {staged_files}"
-
-post-commit:
-  commands:
-    validate:
-      glob: "**/*.*"
-      run: "pnpm exec storm-post-commit {staged_files}"

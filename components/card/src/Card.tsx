@@ -51,7 +51,7 @@ export type CardContextProps = {
 
 export const CardContext = createStyledContext<CardContextProps>({
   size: "$true" as SizeTokens,
-  theme: `${ColorThemeName.BASE}_Card`
+  theme: `${"base"}_Card`
 });
 
 const CardFrame = styled(Container, {
@@ -206,7 +206,7 @@ const CardHeadingImpl = CardHeading.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CardHeading ref={forwardedRef} {...rest}>
           {children}
         </CardHeading>
@@ -230,7 +230,7 @@ const CardEyebrowImpl = CardEyebrow.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CardEyebrow ref={forwardedRef} {...rest}>
           {children}
         </CardEyebrow>
@@ -255,7 +255,7 @@ const CardBodyImpl = CardBody.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CardBody ref={forwardedRef} {...rest}>
           {children}
         </CardBody>

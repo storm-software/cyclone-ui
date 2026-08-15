@@ -1,49 +1,48 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import type { StorybookConfig } from "@storybook/react-vite";
 import react from "@vitejs/plugin-react-swc";
+import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import reactNativeWeb from "vite-plugin-react-native-web";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
 /**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
+ * Resolve a package directory in ESM (Storybook 10 loads `main.ts` as ESM).
+ * Walks up from the resolved entry because many packages do not export `package.json`.
  */
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
-}
+function getAbsolutePath(value: string): string {
+  let dir = dirname(fileURLToPath(import.meta.resolve(value)));
 
-const dependencies = [
-  "@cyclone-ui/colors",
-  "@cyclone-ui/font-space-grotesk",
-  "@cyclone-ui/font-permanent-marker",
-  "@cyclone-ui/font-mona-sans",
-  "@cyclone-ui/tamagui",
-  "@cyclone-ui/themes",
-  "@cyclone-ui/helpers",
-  "@cyclone-ui/state",
-  "@cyclone-ui/client-state",
-  "@cyclone-ui/message-state",
-  "@cyclone-ui/form-state"
-];
+  while (dir !== dirname(dir)) {
+    if (existsSync(join(dir, "package.json"))) {
+      return dir;
+    }
+
+    dir = dirname(dir);
+  }
+
+  throw new Error(`Unable to resolve package directory for ${value}`);
+}
 
 const isProduction = process.env.NODE_ENV === "production";
 const profiling = isProduction && {
@@ -52,12 +51,11 @@ const profiling = isProduction && {
 
 const config: StorybookConfig = {
   stories: ["../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions")
-  ],
-  framework: getAbsolutePath("@storybook/react-vite"),
+  addons: [getAbsolutePath("@storybook/addon-docs")],
+  framework: {
+    name: getAbsolutePath("@storybook/react-vite"),
+    options: {}
+  },
   async viteFinal(config, { configType }) {
     const { tamaguiPlugin } = await import("@tamagui/vite-plugin");
     const { mergeConfig } = await import("vite");

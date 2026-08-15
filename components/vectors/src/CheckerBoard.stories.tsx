@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { CheckerBoard } from "./CheckerBoard";
 
 const meta: Meta<typeof CheckerBoard> = {

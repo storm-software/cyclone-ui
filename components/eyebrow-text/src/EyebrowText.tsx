@@ -23,7 +23,7 @@ export const EyebrowText = styled(SizableText, {
   name: "EyebrowText",
   tag: "h5",
 
-  theme: ColorThemeName.BASE,
+  theme: "base",
   color: "$tertiary",
   fontFamily: "$eyebrow",
   size: "$true",

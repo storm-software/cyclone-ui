@@ -7,9 +7,40 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "ignoreDeprecations": "6.0",
+    "rootDir": "."
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../table"
+    },
+    {
+      "path": "../select-field"
+    },
+    {
+      "path": "../search-input-field"
+    },
+    {
+      "path": "../popover"
+    },
+    {
+      "path": "../pagination"
+    },
+    {
+      "path": "../label-text"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../checkbox-field"
+    },
+    {
+      "path": "../button"
+    }
+  ]
 }

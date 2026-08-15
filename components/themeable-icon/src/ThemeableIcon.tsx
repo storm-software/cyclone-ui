@@ -65,19 +65,19 @@ export const getIconByTheme = ({
   if (disabled) {
     return <Lock {...props} />;
   } else if (
-    theme?.includes(ColorThemeName.DANGER) ||
-    theme?.includes(ColorThemeName.WARNING)
+    theme?.includes("danger") ||
+    theme?.includes("warning")
   ) {
     return <AlertCircle {...props} />;
-  } else if (theme?.includes(ColorThemeName.INFO)) {
+  } else if (theme?.includes("info")) {
     return <InfoCircle {...props} />;
-  } else if (theme?.includes(ColorThemeName.HELP)) {
+  } else if (theme?.includes("discovery")) {
     return <Lightbulb {...props} />;
-  } else if (theme?.includes(ColorThemeName.SUCCESS)) {
+  } else if (theme?.includes("success")) {
     return <CheckCircle {...props} />;
-  } else if (theme?.includes(ColorThemeName.POSITIVE)) {
+  } else if (theme?.includes("positive")) {
     return <PlusCircle {...props} />;
-  } else if (theme?.includes(ColorThemeName.NEGATIVE)) {
+  } else if (theme?.includes("negative")) {
     return <MinusCircle {...props} />;
   }
 

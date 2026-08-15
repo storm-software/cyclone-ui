@@ -17,7 +17,7 @@
 
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Select } from "./Select";
 
 const meta: Meta<typeof Select> = {

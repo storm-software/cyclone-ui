@@ -196,7 +196,7 @@ export const Container = ContainerFrame.styleable(
       <ContainerGroup group={true} size={size} circular={circular}>
         {variant === "glass" && (
           <ContainerGlassBackground
-            theme={ColorThemeName.BASE}
+            theme={"base"}
             fullscreen={true}
           />
         )}

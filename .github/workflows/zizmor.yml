@@ -1,0 +1,45 @@
+name: Zizmor Scan
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - experimental
+  pull_request:
+    branches:
+      - "**"
+
+permissions: {}
+
+jobs:
+  zizmor:
+    name: zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: false
+
+      - name: Run zizmor
+        run:
+          uvx zizmor --config="./tools/config/zizmor.yml" .github/workflows -v
+          -p --min-severity=medium --format sarif . > results.sarif
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
+          category: zizmor

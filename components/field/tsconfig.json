@@ -7,9 +7,37 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "ignoreDeprecations": "6.0",
+    "rootDir": "."
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../validation-text"
+    },
+    {
+      "path": "../tooltip"
+    },
+    {
+      "path": "../themeable-icon"
+    },
+    {
+      "path": "../spinner"
+    },
+    {
+      "path": "../label-text"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../form"
+    },
+    {
+      "path": "../body-text"
+    }
+  ]
 }

@@ -164,7 +164,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         color={
           disabled
             ? "$colorDisabled"
-            : theme === ColorThemeName.BASE
+            : theme === "base"
               ? "$color"
               : "$primary"
         }>
@@ -272,7 +272,7 @@ const FieldDetailsImpl = FieldDetails.styleable(
         color={
           disabled
             ? "$colorDisabled"
-            : theme === ColorThemeName.BASE
+            : theme === "base"
               ? "$color"
               : "$primary"
         }>
@@ -362,7 +362,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
             {...props}
             size={size}
             disabled={disabled}
-            theme={ColorThemeName.BASE}>
+            theme={"base"}>
             {children}
           </FieldLabelText>
           {hideRequired !== true && (
@@ -385,7 +385,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {hideOptional !== true && (
                     <FieldLabelText
                       {...props}
-                      theme={ColorThemeName.BASE}
+                      theme={"base"}
                       disabled={disabled}
                       color={disabled ? "$colorDisabled" : "$secondary"}
                       size="$5"
@@ -422,7 +422,7 @@ const FieldLabel = FieldLabelText.styleable<{
       <FieldLabelTextImpl
         ref={forwardedRef as ForwardedRef<any>}
         {...props}
-        theme={ColorThemeName.BASE}
+        theme={"base"}
         htmlFor={name}
         disabled={disabled}
         required={required}>
@@ -505,11 +505,11 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     if (validating) {
       return <Spinner size="small" theme="$accent" />;
     } else if (
-      !theme?.includes(ColorThemeName.DANGER) &&
-      !theme?.includes(ColorThemeName.WARNING) &&
-      !theme?.includes(ColorThemeName.INFO) &&
-      !theme?.includes(ColorThemeName.HELP) &&
-      !theme?.includes(ColorThemeName.SUCCESS) &&
+      !theme?.includes("danger") &&
+      !theme?.includes("warning") &&
+      !theme?.includes("info") &&
+      !theme?.includes("discovery") &&
+      !theme?.includes("success") &&
       !disabled
     ) {
       return null;

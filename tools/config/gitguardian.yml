@@ -1,0 +1,10 @@
+# Required, otherwise ggshield considers the file to use the deprecated v1 format
+version: 2
+verbose: false
+instance: https://dashboard.gitguardian.com
+
+secret:
+  # Exclude files and paths by globbing
+  ignored_paths:
+    - "nx.json"
+    - "tools/config/verdaccio.yml"

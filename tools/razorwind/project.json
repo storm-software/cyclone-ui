@@ -1,0 +1,7 @@
+{
+  "name": "tools-razorwind",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/razorwind/src",
+  "projectType": "library",
+  "targets": {}
+}

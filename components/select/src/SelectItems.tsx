@@ -140,7 +140,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
     const isSmall = useMemo(() => getSized(size) < getSized("$md"), [size]);
 
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <SelectItemFrame
           {...props}
           group={true}
@@ -154,7 +154,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             <View width="$2" justifyContent="center">
               {disabled && <Lock size="$1.5" color="$colorDisabled" />}
               <TamaguiSelect.ItemIndicator>
-                <Theme name={ColorThemeName.ACCENT}>
+                <Theme name={"accent"}>
                   <Check size="$2" color="$color" />
                 </Theme>
               </TamaguiSelect.ItemIndicator>

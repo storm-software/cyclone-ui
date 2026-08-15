@@ -10,15 +10,15 @@
   },
   "private": false,
   "dependencies": {
-    "@storm-stack/hashing": "latest",
-    "@storm-stack/types": "latest",
-    "@tamagui/constants": "^1.116.15",
-    "@tamagui/core": "^1.116.15",
-    "@tamagui/get-token": "^1.116.15",
-    "chroma-js": "^2.4.2"
+    "@storm-stack/hashing": "catalog:",
+    "@storm-stack/types": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "chroma-js": "catalog:"
   },
   "devDependencies": {
-    "@types/chroma-js": "^2.4.4"
+    "@types/chroma-js": "catalog:"
   },
   "publishConfig": {
     "access": "public"

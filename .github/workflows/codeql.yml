@@ -9,14 +9,15 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+
+name: "CodeQL Scan"
 
 on:
   pull_request:
   push:
     branches:
       - main
-      - canary
+      - next
       - experimental
     paths-ignore:
       - "**/*.md"
@@ -62,16 +63,12 @@ jobs:
           workflow_id: ${{ github.event.workflow.id }}
 
       - name: Setup workspace
-        uses: storm-software/action-setup@main
+        uses: storm-software/action-devenv-setup@main
         with:
-          package-manager: pnpm
-          package-manager-version: 9.10.0
-          storm-bot: Stormie-Bot
+          gpg-sign-key: ${{ secrets.STORM_BOT_GPG_SIGN_KEY }}
+          gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-
-      - name: Build Storm Nx-Plugin packages
-        run: pnpm build-plugins
-        shell: bash
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
@@ -102,8 +99,7 @@ jobs:
       #     ./location_of_script_within_repo/buildscript.sh
 
       - name: Run build script
-        run: pnpm build-all
-        shell: bash
+        run: devenv build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

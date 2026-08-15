@@ -1,14 +1,89 @@
 {
-  "relay.autoStartCompiler": true,
-  "relay.rootDirectory": "../",
-  "relay.pathToConfig": "../packages/graphql-tools/config/relay.config.js",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "**/.nx/data/**": true,
+    "**/.nx/socket/**": true
+  },
+  "search.exclude": {
+    "**/.agents/**": true,
+    "**/.claude/**": true,
+    "**/.codex/**": true,
+    "**/.devenv": true,
+    "**/.devenv/**": true,
+    "**/.direnv/**": true,
+    "**/.docusaurus": true,
+    "**/.docusaurus/**": true,
+    "**/.git": true,
+    "**/.github/skills": true,
+    "**/.github/agents": true,
+    "**/.next": true,
+    "**/.next/**": true,
+    "**/.next-dev": true,
+    "**/.next-dev/**": true,
+    "**/.nx": true,
+    "**/.opencode/**": true,
+    "**/.tamagui": true,
+    "**/.tsbuildinfo": true,
+    "**/*.code-search": true,
+    "**/CHANGELOG.json": true,
+    "**/CHANGELOG.md": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/dist/**": true,
+    "**/dist-dev": true,
+    "**/dist-dev/**": true,
+    "**/docs/spec.html": true,
+    "**/node_modules": true,
+    "**/node_modules/**": true,
+    "**/out": true,
+    "**/out-dev": true,
+    "**/out-tsc": true,
+    "**/public": true,
+    "**/public-dev": true,
+    "**/storybook-static": true,
+    "**/storybook-static-dev": true,
+    "**/temp": true,
+    "**/tmp": true,
+    "docs/spec.html": true,
+    "pnpm-lock.yaml": true
+  },
+  "files.exclude": {
+    "**/common/temp/**": true,
+    "**/obj/**": true,
+    "**/bin/**": true,
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
   "rust-analyzer.procMacro.ignored": {
     "napi-derive": ["napi"]
   },
-  "rust-analyzer.linkedProjects": [
-    "crates\\storm-workspace\\Cargo.toml",
-    "crates\\storm-config\\Cargo.toml"
-  ],
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd", // or "nil"
+  "nix.serverSettings": {
+    // check https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md for all nixd config
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "options": {
+        // By default, this entry will be read from `import <nixpkgs> { }`.
+        // You can write arbitrary Nix expressions here, to produce valid "options" declaration result.
+        // Tip: for flake-based configuration, utilize `builtins.getFlake`
+        "nixos": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}/flake.nix\").nixosConfigurations.<name>.options"
+        },
+        "home-manager": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}/flake.nix\").homeConfigurations.<name>.options"
+        },
+        // Tip: use ${workspaceFolder} variable to define path
+        "nix-darwin": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}/flake.nix\").darwinConfigurations.<name>.options"
+        }
+      }
+    }
+  },
   "json.schemas": [
     {
       "url": "https://cdn.jsdelivr.net/npm/tsup/schema.json",
@@ -27,23 +102,13 @@
     "url": "https://json.schemastore.org/github-action.json",
     "fileMatch": [".github/actions/setup/action.yml"]
   },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/*.code-search": true,
-    "**/.tamagui": true,
-    "**/.next": true,
-    "**/dist": true
-  },
+
   "workbench.colorCustomizations": {
     "statusBar.background": "#1d232a",
     "statusBarItem.hoverBackground": "#313C47",
     "statusBar.foreground": "#1fb2a6"
   },
   "peacock.color": "#1fb2a6",
-  // "typescript.tsserver.log": "verbose",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
   "tailwindCSS.experimental.classRegex": [
     [
       "cva(?:<[^>]*>)?(([^)]*))",
@@ -53,15 +118,19 @@
   ],
   "i18n-ally.localesPaths": ["./assets/locales"],
   "i18n-ally.keystyle": "nested",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
   "prettier.requireConfig": true,
   "prettier.bracketSameLine": true,
+  "prettier.configPath": "./node_modules/@storm-software/prettier/recommended.mjs",
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",
-  "prettier.enableDebugLogs": true,
-  "eslint.nodeEnv": "development",
-  "eslint.useFlatConfig": true,
-  "eslint.run": "onSave",
-  "eslint.format.enable": true,
+  "prettier.enableDebugLogs": false,
+  "prettier.enable": true,
+  "evenBetterToml.taplo.configFile.enabled": true,
+  "evenBetterToml.taplo.configFile.path": "./node_modules/@storm-software/linting-tools/taplo/config.toml",
+  "markdownlint.configFile": "~/repos/cyclone-ui/node_modules/@storm-software/markdownlint/config/recommended.markdownlint-cli2.jsonc",
   "eslint.debug": true,
+  "eslint.useRealpaths": true,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,
     "location": "separateLine"
@@ -69,13 +138,18 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
-  "eslint.execArgv": ["--max-old-space-size=4096"],
+  "eslint.useFlatConfig": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.tabCompletion": "on",
   "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
+    "*.json": "jsonc",
     "*.hbs": "handlebars",
     "*.acid": "acidic",
     "*.acidic": "acidic"
@@ -100,7 +174,7 @@
   },
   "[typescript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "quickfix.biome": "explicit",
@@ -109,7 +183,7 @@
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "quickfix.biome": "explicit",
@@ -118,11 +192,11 @@
   },
   "[json]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[jsonc]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[markdown]": {
     "editor.formatOnSave": true,
@@ -150,6 +224,10 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
   "[toml]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -158,12 +236,18 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "[rust]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
   "[css]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[nix]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+  },
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "chat.mcp.gallery.enabled": true,
+  "typescript.native-preview.tsdk": "./node_modules/@typescript/native-preview"
 }

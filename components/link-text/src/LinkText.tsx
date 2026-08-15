@@ -233,8 +233,8 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
     const colorRole = useColorThemeName();
     const isLinkThemed =
       !colorRole ||
-      colorRole === ColorThemeName.LINK ||
-      colorRole === ColorThemeName.BASE;
+      colorRole === "link" ||
+      colorRole === "base";
 
     let variant = props.variant as BaseLinkTextVariant;
     if (!variant && isLinkThemed) {
@@ -248,7 +248,7 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
     }
 
     return (
-      <Theme name={isLinkThemed ? ColorThemeName.LINK : colorRole}>
+      <Theme name={isLinkThemed ? "link" : colorRole}>
         <LinkTextFrame
           {...props}
           ref={forwardedRef}

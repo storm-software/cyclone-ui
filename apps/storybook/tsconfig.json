@@ -1,43 +1,15 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "incremental": false,
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "composite": false,
-    "target": "es2020",
-    "types": ["node", "react", "vite/client"],
-    "lib": ["dom", "esnext"],
-
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "ignoreDeprecations": "6.0"
   },
-  "files": [
-    "../../node_modules/@nx/react/typings/styled-jsx.d.ts",
-    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
-    "../../node_modules/@nx/react/typings/image.d.ts"
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
   ],
-  "include": [
-    "tamagui.config.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    ".storybook/*",
-    "../../packages/font-mona-sans/*",
-    "../../packages/font-permanent-marker/*",
-    "../../packages/font-space-grotesk/*",
-    "../../packages/themes/*"
-  ]
+  "files": []
 }

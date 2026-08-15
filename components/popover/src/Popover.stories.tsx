@@ -18,7 +18,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { HeadingText } from "@cyclone-ui/heading-text";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
 import { Popover } from "./Popover";
 

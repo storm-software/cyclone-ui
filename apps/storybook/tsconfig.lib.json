@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
+    "rootDir": ".",
+    "types": ["node", "react", "vite/client"],
+    "outDir": "./out-tsc"
+  },
+  "references": [
+    {
+      "path": "../../packages/themes"
+    }
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.cjs",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.mts",
+    "src/**/*.cts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "types/*.d.ts",
+    "package.json"
+  ],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

@@ -8,9 +8,22 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "lib": ["ESnext", "DOM"]
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": "."
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../select"
+    },
+    {
+      "path": "../field"
+    },
+    {
+      "path": "../form"
+    }
+  ]
 }

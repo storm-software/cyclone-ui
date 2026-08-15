@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { X } from "@tamagui/lucide-icons";
 import { Button } from "./Button";
 

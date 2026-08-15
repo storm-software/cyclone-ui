@@ -1,21 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import type { FileResult } from "@storm-stack/types/utility-types/file";
+ ------------------------------------------------------------------- */
+
+import type { FileResult } from "@stryke/types/file";
 import type {
   Atom,
   createStore,
@@ -25,7 +26,7 @@ import type {
   SetStateAction,
   WritableAtom
 } from "jotai";
-import { RESET } from "jotai/utils";
+import type { RESET } from "jotai/utils";
 
 export type JotaiStore = ReturnType<typeof createStore>;
 
@@ -33,9 +34,9 @@ export type SetStateActionWithReset<Value> =
   | Value
   | typeof RESET
   | ((prev: Value) => Value | typeof RESET);
-export type WithInitialValue<Value> = {
+export interface WithInitialValue<Value> {
   init: Value;
-};
+}
 
 /**
  * A type that checks if the value is a [Jotai](https://jotai.org) `Atom` object

@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TitleText } from "./TitleText";
 
 const meta: Meta<typeof TitleText> = {

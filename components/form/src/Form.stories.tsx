@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Form } from "./Form";
 
 const meta: Meta<typeof Form> = {

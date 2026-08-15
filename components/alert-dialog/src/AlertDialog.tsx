@@ -39,7 +39,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
 
-    const padding = theme?.includes(ColorThemeName.SUCCESS) ? "$3" : "$2";
+    const padding = theme?.includes("success") ? "$3" : "$2";
 
     return (
       <YStack position="relative" minWidth="100%" alignItems="center">
@@ -60,7 +60,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
 
         <XStack zIndex="$2" justifyContent="center" paddingTop="$3">
           <View
-            theme={ColorThemeName.BASE}
+            theme={"base"}
             themeShallow={true}
             padding={padding}
             backgroundColor="$surfacePrimary"
@@ -94,7 +94,7 @@ const AlertDialogContainer = Dialog.Container.styleable(
           key="content"
           variant="tertiary"
           {...props}
-          theme={ColorThemeName.BASE}
+          theme={"base"}
           themeShallow={true}
           backgroundColor="$surfacePrimary"
           bordered={false}
@@ -132,7 +132,7 @@ const AlertDialogContent = YStack.styleable(
 const AlertDialogHeading = Dialog.Heading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <Dialog.Heading ref={forwardedRef} {...props}>
           {children}
         </Dialog.Heading>
@@ -147,7 +147,7 @@ const AlertDialogHeading = Dialog.Heading.styleable(
 const AlertDialogBody = Dialog.Body.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <Dialog.Body ref={forwardedRef} color="$secondary" size="$7" {...props}>
           {children}
         </Dialog.Body>

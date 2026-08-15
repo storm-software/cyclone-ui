@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HelpCircle } from "@tamagui/lucide-icons";
 import { YStack } from "@tamagui/stacks";
 import { Card } from "./Card";

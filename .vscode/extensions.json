@@ -1,13 +1,17 @@
 {
   "recommendations": [
     "nrwl.angular-console",
-    "storm-software.acidic",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
     "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint",
+    "mikestead.dotenv",
+    "bbenoist.nix",
+    "antfu.pnpm-catalog-lens",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml",
     "ambar.bundle-size",
-    "vscode-icons-team.vscode-icons"
+    "vitest.explorer"
   ]
 }

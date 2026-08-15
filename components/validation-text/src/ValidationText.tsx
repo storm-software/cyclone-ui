@@ -43,7 +43,7 @@ export const ValidationText = ValidationBodyText.styleable<{
   disabled?: boolean;
 }>(
   (
-    { disabled, theme = ColorThemeName.BASE, messages = [], ...props },
+    { disabled, theme = "base", messages = [], ...props },
     forwardedRef
   ) => {
     if ((messages.length === 1 && messages[0]?.message) || disabled) {
@@ -59,11 +59,11 @@ export const ValidationText = ValidationBodyText.styleable<{
     }
 
     let heading = "Please review the following details: ";
-    if (theme?.includes(ColorThemeName.DANGER)) {
+    if (theme?.includes("danger")) {
       heading = "Please review the following errors: ";
-    } else if (theme?.includes(ColorThemeName.WARNING)) {
+    } else if (theme?.includes("warning")) {
       heading = "Please review the following warnings: ";
-    } else if (theme?.includes(ColorThemeName.SUCCESS)) {
+    } else if (theme?.includes("success")) {
       heading = "Successfully completed the following: ";
     }
 

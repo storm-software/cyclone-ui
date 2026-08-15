@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { Form } from "@cyclone-ui/form";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { DatePickerField } from "./DatePickerField";
 
 const meta: Meta<typeof DatePickerField> = {

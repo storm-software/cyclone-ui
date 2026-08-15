@@ -1,0 +1,574 @@
+{
+  "color": {
+    "black": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "#0C0C0D",
+      "$description": "A almost black color"
+    },
+    "white": {
+      "$type": "color",
+      "colorSpace": "display-p3",
+      "$value": "#FFFFFF",
+      "$description": "A completely white color"
+    },
+    "brand": {
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.8108 0.139 177.33)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.301 0.066 184.397587)",
+        "$description": "The Storm Software brand teal color"
+      }
+    },
+    "surface": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#1A1C1F",
+        "$description": "The lowest level surface of the palette - used for the background of the page"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#1E2023",
+        "$description": "The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.)"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#242629",
+        "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)"
+      },
+      "$description": "The surface color palette - used for background colors"
+    },
+    "base": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#FBFBFB",
+        "$description": "A near-white base gray color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#F6F6F6",
+        "$description": "A very light base gray color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#EAEAEA",
+        "$description": "A light base gray color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#D5D6D6",
+        "$description": "A soft base gray color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#BABBBB",
+        "$description": "A mid base gray color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#999A9B",
+        "$description": "A medium base gray color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#727476",
+        "$description": "A dark base gray color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#494B4D",
+        "$description": "A deep charcoal gray color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#1E2023",
+        "$description": "An almost-black base gray color"
+      },
+      "$description": "The base color palette"
+    },
+    "red": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.87 0.08 20)",
+        "$description": "A pale warm coral red color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.84 0.09 20)",
+        "$description": "A light salmon red color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.81 0.11 20)",
+        "$description": "A soft coral red color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.79 0.12 20)",
+        "$description": "A muted warm coral color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.77 0.14 20)",
+        "$description": "A medium salmon red color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.74 0.15 20)",
+        "$description": "A vivid coral red color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.71 0.16 20)",
+        "$description": "A rich dusty red color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.68 0.15 20)",
+        "$description": "A deep brick red color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.57 0.13 20)",
+        "$description": "A dark brownish red color"
+      },
+      "$description": "The red color palette"
+    },
+    "orange": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.87 0.08 47)",
+        "$description": "A pale peach orange color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.84 0.09 47)",
+        "$description": "A light apricot orange color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.81 0.11 47)",
+        "$description": "A soft sandy orange color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.78 0.12 47)",
+        "$description": "A muted warm orange color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.76 0.14 47)",
+        "$description": "A medium tangerine orange color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.73 0.15 47)",
+        "$description": "A bright amber orange color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.7 0.16 47)",
+        "$description": "A rich burnt orange color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.67 0.15 47)",
+        "$description": "A deep rust orange color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.57 0.13 47)",
+        "$description": "A dark brownish orange color"
+      },
+      "$description": "The orange color palette"
+    },
+    "yellow": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.86 0.08 81)",
+        "$description": "A pale wheat gold color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.83 0.09 81)",
+        "$description": "A light sandy gold color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.8 0.11 81)",
+        "$description": "A soft golden yellow color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.78 0.12 81)",
+        "$description": "A muted amber gold color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.75 0.14 81)",
+        "$description": "A medium honey gold color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.73 0.15 81)",
+        "$description": "A vivid golden yellow color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.69 0.16 81)",
+        "$description": "A rich ochre gold color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.66 0.15 81)",
+        "$description": "A deep bronze gold color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.56 0.13 81)",
+        "$description": "A dark brownish gold color"
+      },
+      "$description": "The yellow color palette"
+    },
+    "green": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.85 0.08 155)",
+        "$description": "A pale mint green color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.82 0.09 155)",
+        "$description": "A light seafoam green color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.78 0.11 155)",
+        "$description": "A soft spring green color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.76 0.12 155)",
+        "$description": "A muted jade green color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.73 0.14 155)",
+        "$description": "A medium emerald green color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.7 0.15 155)",
+        "$description": "A vivid emerald green color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.67 0.16 155)",
+        "$description": "A rich forest green color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.64 0.15 155)",
+        "$description": "A deep pine green color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.55 0.13 155)",
+        "$description": "A dark evergreen color"
+      },
+      "$description": "The green color palette"
+    },
+    "sky": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.85 0.08 220)",
+        "$description": "A pale sky blue color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.82 0.09 220)",
+        "$description": "A light aqua sky color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.79 0.11 220)",
+        "$description": "A soft bright sky color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.76 0.12 220)",
+        "$description": "A vivid sky blue color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.74 0.14 220)",
+        "$description": "A medium electric sky color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.71 0.15 220)",
+        "$description": "A bright azure sky color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.67 0.16 220)",
+        "$description": "A rich ocean sky color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.64 0.15 220)",
+        "$description": "A deep teal sky color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.55 0.13 220)",
+        "$description": "A dark steel sky color"
+      },
+      "$description": "The sky color palette"
+    },
+    "blue": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.86 0.08 256)",
+        "$description": "A pale periwinkle blue color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.83 0.09 256)",
+        "$description": "A light sky blue color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.8 0.11 256)",
+        "$description": "A soft cornflower blue color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.77 0.12 256)",
+        "$description": "A muted bright blue color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.75 0.14 256)",
+        "$description": "A medium azure blue color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.72 0.15 256)",
+        "$description": "A vivid sky blue color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.69 0.16 256)",
+        "$description": "A rich cerulean blue color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.66 0.15 256)",
+        "$description": "A deep navy blue color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.56 0.13 256)",
+        "$description": "A dark midnight blue color"
+      },
+      "$description": "The blue color palette"
+    },
+    "purple": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.86 0.08 282)",
+        "$description": "A pale lavender purple color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.83 0.09 282)",
+        "$description": "A light periwinkle purple color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.8 0.11 282)",
+        "$description": "A soft violet purple color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.78 0.12 282)",
+        "$description": "A muted indigo purple color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.76 0.14 282)",
+        "$description": "A medium periwinkle purple color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.73 0.15 282)",
+        "$description": "A vivid soft indigo color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.7 0.16 282)",
+        "$description": "A rich slate indigo color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.67 0.15 282)",
+        "$description": "A deep muted indigo color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.57 0.13 282)",
+        "$description": "A dark navy indigo color"
+      },
+      "$description": "The purple color palette"
+    },
+    "pink": {
+      "primitive": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.87 0.08 356)",
+        "$description": "A pale blush pink color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.84 0.09 356)",
+        "$description": "A light rose pink color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.81 0.11 356)",
+        "$description": "A soft coral pink color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.79 0.12 356)",
+        "$description": "A muted bright pink color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.77 0.14 356)",
+        "$description": "A medium hot pink color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.74 0.15 356)",
+        "$description": "A vivid magenta pink color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.71 0.16 356)",
+        "$description": "A rich fuchsia pink color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.68 0.15 356)",
+        "$description": "A deep berry pink color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.58 0.13 356)",
+        "$description": "A dark plum pink color"
+      },
+      "$description": "The pink color palette"
+    }
+  }
+}

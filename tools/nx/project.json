@@ -3,78 +3,45 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "tools/nx/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
+    "build-untyped": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "dependsOn": ["^build"],
+      "inputs": [
+        "{projectRoot}/src/**/untyped.ts",
+        "{projectRoot}/src/**/*.untyped.ts"
+      ],
+      "outputs": [
+        "{projectRoot}/src/**/schema.d.ts",
+        "{projectRoot}/src/**/*.schema.d.ts",
+        "{projectRoot}/src/**/schema.md",
+        "{projectRoot}/src/**/*.schema.md",
+        "{projectRoot}/src/**/schema.json",
+        "{projectRoot}/src/**/*.schema.json"
+      ],
+      "options": {
+        "commands": [
+          "storm-untyped generate --entry=\"tools/nx/src/**/{untyped.ts,*.untyped.ts}\""
+        ]
+      }
+    },
     "build": {
       "cache": true,
-      "executor": "@nx/esbuild:esbuild",
-      "inputs": ["default", "^production"],
-      "dependsOn": ["clean", "^build"],
-      "outputs": ["{options.outputPath}"],
+      "inputs": ["typescript", "^production"],
+      "outputs": ["{projectRoot}/dist", "{workspaceRoot}/dist/tools/nx"],
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-base", "build-untyped", "typecheck"],
       "options": {
-        "outputPath": "dist/tools/nx",
-        "tsConfig": "tools/nx/tsconfig.lib.json",
-        "project": "tools/nx/package.json",
-        "main": "tools/nx/index.ts",
-        "additionalEntryPoints": [
-          "tools/nx/src/index.ts",
-          "tools/nx/src/executors/component-publish/executor.ts",
-          "tools/nx/src/plugins/components/index.ts",
-          "tools/nx/src/plugins/storybook/index.ts"
+        "commands": [
+          "pnpm copyfiles LICENSE dist/tools/nx",
+          "pnpm copyfiles --up=3 \"tools/nx/*.md\" tools/nx/executors.json tools/nx/generators.json tools/nx/package.json dist/tools/nx",
+          "pnpm copyfiles --up=4 \"tools/nx/src/executors/*/schema.json\" \"tools/nx/src/executors/*/schema.d.ts\" \"tools/nx/src/generators/*/schema.json\" \"tools/nx/src/generators/*/schema.d.ts\" tools/nx/dist/src",
+          "pnpm copyfiles --up=4 \"tools/nx/src/base/*.schema.json\" \"tools/nx/src/base/*.schema.d.ts\" dist/tools/nx/dist/src",
+          "pnpm copyfiles --up=4 \"tools/nx/dist/src/**/*\" dist/tools/nx/dist",
+          "pnpm copyfiles --up=5 \"tools/nx/src/**/*.md\" dist/tools/nx/docs/api"
         ],
-        "platform": "node",
-        "deleteOutputPath": true,
-        "bundle": true,
-        "thirdParty": true,
-        "skipTypeCheck": false,
-        "metafile": true,
-        "minify": false,
-        "format": ["cjs"],
-        "esbuildOptions": {
-          "outExtension": {
-            ".js": ".js"
-          }
-        },
-        "external": ["nx", "@nx/devkit", "esbuild", "vue-tsc", "@swc/*"],
-        "assets": [
-          {
-            "input": "tools/nx",
-            "glob": "**/files/**",
-            "output": "/"
-          },
-          {
-            "input": "tools/nx",
-            "glob": "**/files/**/.gitkeep",
-            "output": "/"
-          },
-          {
-            "input": "tools/nx",
-            "glob": "**/*.json",
-            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc"],
-            "output": "."
-          },
-          {
-            "input": "tools/nx",
-            "glob": "**/*.js",
-            "ignore": ["**/jest.config.js"],
-            "output": "."
-          },
-          {
-            "input": "tools/nx",
-            "glob": "**/*.d.ts",
-            "output": "."
-          },
-          {
-            "input": "tools/nx",
-            "glob": "*.md",
-            "output": "."
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "."
-          }
-        ]
+        "parallel": false
       }
     }
   }

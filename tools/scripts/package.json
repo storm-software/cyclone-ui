@@ -1,0 +1,17 @@
+{
+  "name": "@cyclone-ui/tools-scripts",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@storm-software/config-tools": "catalog:",
+    "defu": "catalog:",
+    "esbuild": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "rimraf": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "^6.0.3"
+  }
+}

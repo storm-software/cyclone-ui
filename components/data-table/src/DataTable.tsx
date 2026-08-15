@@ -496,7 +496,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
             <Popover.Trigger asChild={true}>
               <Button
                 variant="ghost"
-                theme={ColorThemeName.BASE}
+                theme={"base"}
                 circular={true}
                 bordered={false}
                 color="$primary"

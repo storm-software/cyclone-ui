@@ -544,7 +544,7 @@ const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
           variant !== "quaternary" &&
           variant !== "gradient"
             ? theme
-            : ColorThemeName.BASE
+            : "base"
         }
         componentName="ButtonText">
         <ButtonTextFrame
@@ -595,7 +595,7 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
       variant !== "quaternary" &&
       variant !== "gradient"
         ? themeName
-        : ColorThemeName.BASE;
+        : "base";
 
     return (
       <View
@@ -782,7 +782,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           )}
           {variant === "glass" && (
             <ButtonGlassBackground
-              theme={ColorThemeName.BASE}
+              theme={"base"}
               fullscreen={true}
               circular={circular}
               style={{

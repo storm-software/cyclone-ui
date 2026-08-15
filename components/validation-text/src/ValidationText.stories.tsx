@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { MessageType } from "@storm-stack/types/utility-types/messages";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ValidationText } from "./ValidationText";
 
 const meta: Meta<typeof ValidationText> = {

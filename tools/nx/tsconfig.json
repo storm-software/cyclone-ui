@@ -1,18 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "strict": false,
-    "declaration": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "files": [],
-  "include": [],
   "references": [
     {
       "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "files": []
 }

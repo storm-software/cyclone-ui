@@ -1,26 +1,25 @@
 {
   "name": "@cyclone-ui/tools-nx",
   "version": "0.0.1",
-  "type": "commonjs",
+  "private": true,
   "description": "⚡ A Nx plugin package that contains various executors and generators used in a Storm workspaces.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/cyclone-ui",
-    "directory": "tools/nx"
-  },
   "homepage": "https://stormsoftware.com",
   "bugs": {
     "url": "https://github.com/storm-software/cyclone-ui/issues",
     "email": "support@stormsoftware.com"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui",
+    "directory": "tools/nx"
+  },
+  "license": "Apache-2.0",
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
     "url": "https://stormsoftware.com"
   },
-  "license": "Apache-2.0",
-  "private": true,
-  "main": "./index.js",
+  "type": "commonjs",
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json",
@@ -30,27 +29,28 @@
     "./executors.json": "./executors.json",
     "./executors/*/schema.json": "./src/executors/*/schema.json"
   },
+  "main": "./index.js",
   "typings": "./declarations.d.ts",
-  "keywords": [
-    "storm",
-    "storm-ops",
-    "stormstack",
-    "storm-stack",
-    "sullivanpj",
-    "open-system",
-    "monorepo"
-  ],
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.651.1",
-    "@nx/devkit": "20.0.6",
-    "@nx/js": "20.0.6",
-    "@storm-software/build-tools": "latest",
-    "@storm-software/config": "latest",
-    "@storm-software/config-tools": "latest",
-    "@storm-software/workspace-tools": "latest",
-    "@storybook/types": "^8.4.0",
-    "glob": "^11.0.0",
-    "tslib": "^2.6.2"
+    "@nx/devkit": "catalog:",
+    "@storm-software/config-tools": "catalog:",
+    "@storm-software/workspace-tools": "catalog:",
+    "@stryke/path": "catalog:",
+    "defu": "catalog:",
+    "nx": "catalog:",
+    "@storm-software/cloudflare-tools": "catalog:",
+    "untyped": "catalog:",
+    "glob": "catalog:",
+    "@storybook/test-runner": "catalog:"
+  },
+  "devDependencies": {
+    "@nx/workspace": "catalog:",
+    "@types/node": "catalog:",
+    "eslint-flat-config-utils": "catalog:",
+    "jsonc-eslint-parser": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "executors": "./executors.json"
 }

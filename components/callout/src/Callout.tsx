@@ -160,7 +160,7 @@ const CalloutHeading = styled(Heading3Text, {
 const CalloutHeadingImpl = CalloutHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CalloutHeading ref={forwardedRef}>{children}</CalloutHeading>
       </Theme>
     );
@@ -180,7 +180,7 @@ const CalloutEyebrow = styled(EyebrowText, {
 const CalloutEyebrowImpl = CalloutEyebrow.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CalloutEyebrow ref={forwardedRef} {...props}>
           {children}
         </CalloutEyebrow>
@@ -203,7 +203,7 @@ const CalloutBody = styled(BodyText, {
 const CalloutBodyImpl = CalloutBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={ColorThemeName.BASE}>
+      <Theme name={"base"}>
         <CalloutBody ref={forwardedRef} {...props}>
           {children}
         </CalloutBody>

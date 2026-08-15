@@ -7,9 +7,28 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "ignoreDeprecations": "6.0",
+    "rootDir": "."
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../themeable-icon"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../container"
+    },
+    {
+      "path": "../button"
+    },
+    {
+      "path": "../body-text"
+    }
+  ]
 }
