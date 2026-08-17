@@ -16,6 +16,9 @@
       "path": "../alert"
     },
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../button"
     }
   ],

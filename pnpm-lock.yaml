@@ -1055,7 +1055,7 @@ importers:
         version: link:../../packages/helpers
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state/out-tsc
+        version: link:../../packages/state
       '@cyclone-ui/themes':
         specifier: workspace:*
         version: link:../../packages/themes
@@ -2236,7 +2236,7 @@ importers:
         version: link:../button
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state/out-tsc
+        version: link:../../packages/state
       '@storybook/react-vite':
         specifier: 'catalog:'
         version: 10.5.8(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(esbuild@0.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.62.4)(storybook@10.5.8(@types/react@19.2.18)(prettier@3.9.6)(react@18.3.1))(typescript@6.0.3)(vite@5.4.21(@types/node@26.2.0)(less@4.5.1)(lightningcss@1.33.0)(sass-embedded@1.102.0)(sass@1.102.0)(terser@5.50.0))(webpack@5.105.2(@swc/core@1.15.41(@swc/helpers@0.5.23))(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.2.13))
@@ -3272,85 +3272,6 @@ importers:
         version: 4.20260702.1
 
   packages/state:
-    dependencies:
-      '@maskito/core':
-        specifier: 'catalog:'
-        version: 3.11.1
-      '@maskito/react':
-        specifier: 'catalog:'
-        version: 3.11.1(@maskito/core@3.11.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@stryke/async':
-        specifier: 'catalog:'
-        version: 0.1.38
-      '@stryke/env':
-        specifier: 'catalog:'
-        version: 0.20.129(@nx/jest@23.1.1(@babel/traverse@7.29.8)(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23))(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(magicast@0.5.4)(zod@4.4.3)
-      '@stryke/helpers':
-        specifier: 'catalog:'
-        version: 0.10.50
-      '@stryke/hooks':
-        specifier: 'catalog:'
-        version: 0.4.127(@nx/jest@23.1.1(@babel/traverse@7.29.8)(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23))(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(magicast@0.5.4)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.1(@babel/core@8.0.1)(@babel/preset-env@7.29.7(@babel/core@8.0.1))(@types/react@19.2.18)(encoding@0.1.13)(react@18.3.1))(react@18.3.1)(zod@4.4.3)
-      '@stryke/json':
-        specifier: 'catalog:'
-        version: 0.15.34
-      '@stryke/string-format':
-        specifier: 'catalog:'
-        version: 0.17.52(@nx/jest@23.1.1(@babel/traverse@7.29.8)(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23))(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))
-      '@stryke/type-checks':
-        specifier: 'catalog:'
-        version: 0.6.43
-      '@stryke/types':
-        specifier: 'catalog:'
-        version: 0.12.38
-      '@stryke/unique-id':
-        specifier: 'catalog:'
-        version: 0.3.123(@nx/jest@23.1.1(@babel/traverse@7.29.8)(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23))(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.16.0(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.16.0(@swc/helpers@0.5.23)))(typescript@6.0.3)(verdaccio@6.7.2(encoding@0.1.13)(typanion@3.14.0)))(jest@30.0.5(@types/node@26.2.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.28.2)))(magicast@0.5.4)(zod@4.4.3)
-      '@tamagui/core':
-        specifier: 'catalog:'
-        version: 2.7.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/portal':
-        specifier: 'catalog:'
-        version: 2.7.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tamagui/toast':
-        specifier: 'catalog:'
-        version: 2.7.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      bunshi:
-        specifier: 'catalog:'
-        version: 2.2.0(react@18.3.1)
-      jotai-optics:
-        specifier: 'catalog:'
-        version: 0.4.0(jotai@2.20.2(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.18)(react@18.3.1))(optics-ts@2.4.1)
-      maska:
-        specifier: 'catalog:'
-        version: 3.2.0
-      optics-ts:
-        specifier: 'catalog:'
-        version: 2.4.1
-      react-native-safe-area-context:
-        specifier: 'catalog:'
-        version: 4.14.1(react-native@0.74.1(@babel/core@8.0.1)(@babel/preset-env@7.29.7(@babel/core@8.0.1))(@types/react@19.2.18)(encoding@0.1.13)(react@18.3.1))(react@18.3.1)
-      valibot:
-        specifier: 'catalog:'
-        version: 0.42.1(typescript@6.0.3)
-    devDependencies:
-      '@powerlines/plugin-tsdown':
-        specifier: 'catalog:'
-        version: 0.1.612(723f8bf3adcbf45d4ab8c904b341e263)
-      jotai:
-        specifier: 'catalog:'
-        version: 2.20.2(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.18)(react@18.3.1)
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
-      react-native:
-        specifier: 'catalog:'
-        version: 0.74.1(@babel/core@8.0.1)(@babel/preset-env@7.29.7(@babel/core@8.0.1))(@types/react@19.2.18)(encoding@0.1.13)(react@18.3.1)
-
-  packages/state/out-tsc:
     dependencies:
       '@maskito/core':
         specifier: 'catalog:'

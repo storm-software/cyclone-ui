@@ -4,7 +4,7 @@
 dist
 tmp
 .tamagui
-/out-tsc
+out-tsc
 tsconfig.tsbuildinfo
 .env.local
 __generated__

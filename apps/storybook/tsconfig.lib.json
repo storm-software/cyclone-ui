@@ -20,6 +20,9 @@
       "path": "../../packages/helpers"
     },
     {
+      "path": "../../packages/state/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/themes"
     }
   ],
