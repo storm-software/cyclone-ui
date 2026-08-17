@@ -22,25 +22,25 @@
   },
   "types": "./types/index.d.ts",
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/constants": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/create-context": "^1.144.4",
-    "@tamagui/get-token": "^1.144.4",
-    "@tamagui/group": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
-    "@tamagui/switch": "^1.144.4",
-    "@tamagui/switch-headless": "^1.144.4"
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/switch": "catalog:",
+    "@tamagui/switch-headless": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

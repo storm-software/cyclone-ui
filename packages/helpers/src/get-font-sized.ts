@@ -18,7 +18,7 @@
 
 /* eslint-disable no-console */
 
-import { isNumber } from "@storm-stack/types/type-checks/is-number";
+import { isNumber } from "@stryke/type-checks/is-number";
 import { isClient } from "@tamagui/constants";
 import type {
   FontSizeTokens,

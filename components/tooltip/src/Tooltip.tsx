@@ -1,31 +1,32 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
-  SizeTokens,
   styled,
   withStaticProperties
 } from "@tamagui/core";
 import { Tooltip as TamaguiTooltip } from "@tamagui/tooltip";
 
-export type TooltipContextProps = {
+export interface TooltipContextProps {
   size: SizeTokens;
-};
+}
 
 export const TooltipContext = createStyledContext<TooltipContextProps>({
   size: "$5"
@@ -53,9 +54,9 @@ const TooltipArrow = styled(TamaguiTooltip.Arrow, {
   name: "Tooltip",
   context: TooltipContext,
 
-  backgroundColor: "$base3",
+  backgroundColor: "$backgroundFloating",
   borderWidth: 2,
-  borderColor: "$borderColor"
+  borderColor: "$overlayBorder"
 });
 
 const TooltipContent = styled(TamaguiTooltip.Content, {
@@ -65,28 +66,28 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   animation: "normal",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "$base3",
+  backgroundColor: "$backgroundFloating",
   paddingVertical: "$3",
   paddingHorizontal: "$2.5",
   borderWidth: 2,
-  borderColor: "$borderColor",
+  borderColor: "$overlayBorder",
   borderRadius: "$3",
 
   enterStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
   exitStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     elevated: {
       true: {
-        shadowColor: "$shadowColor",
+        shadowColor: "$overlayBackdrop",
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 30,
         elevate: true
@@ -99,9 +100,9 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   }
 });
 
-type TooltipContentExtraProps = {
+interface TooltipContentExtraProps {
   hasArrow?: boolean;
-};
+}
 
 const TooltipContentImpl = TooltipContent.styleable<TooltipContentExtraProps>(
   ({ children, hasArrow = true, ...props }, forwardedRef) => {

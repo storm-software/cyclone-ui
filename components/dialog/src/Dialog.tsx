@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
@@ -43,7 +44,7 @@ import * as React from "react";
 const DialogHeading = styled(Heading3Text, {
   name: "DialogHeading",
 
-  color: "$color"
+  color: "$foregroundOnPrimary"
 });
 
 const DialogHeadingImpl = DialogHeading.styleable(
@@ -64,7 +65,7 @@ const DialogHeadingImpl = DialogHeading.styleable(
 const DialogBody = styled(BodyText, {
   name: "DialogBody",
 
-  color: "$color"
+  color: "$foregroundOnPrimary"
 });
 
 const DialogBodyImpl = DialogBody.styleable(
@@ -133,7 +134,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
   opacity: 0.85,
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
-  colors: ["$tertiary", "transparent"],
+  colors: ["$backgroundTertiary", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],
@@ -155,7 +156,7 @@ const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  backgroundColor: "base1",
+  backgroundColor: "$overlayBackdrop",
 
   enterStyle: {
     opacity: 0
@@ -224,7 +225,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
         exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
         focusVisibleStyle={{
-          outlineColor: "$accent10",
+          outlineColor: "$borderAccent",
           outlineStyle: "solid",
           outlineWidth: 3,
           outlineOffset: "$1.25"

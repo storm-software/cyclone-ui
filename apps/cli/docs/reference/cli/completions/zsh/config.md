@@ -66,17 +66,10 @@ bun x powerlines completions zsh config [options] <path>
 
 </details>
 
-
-
 ## Positional Arguments
 
 The following positional arguments are available for the `config` command:
 
-
-
 ## Options
 
 The following options are available for the `config` command:
-
-
-

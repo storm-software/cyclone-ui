@@ -1,34 +1,35 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { ScrollView } from "@cyclone-ui/scroll-view";
 import { Adapt } from "@tamagui/adapt";
+import type { SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
-  SizeTokens,
   styled,
   withStaticProperties
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
 
-export type PopoverContextProps = {
+export interface PopoverContextProps {
   size: SizeTokens;
   shouldAdapt: true;
-};
+}
 
 export const PopoverContext = createStyledContext<PopoverContextProps>({
   size: "$true",
@@ -84,7 +85,7 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
 
   backgroundColor: "$base3",
   borderWidth: 2,
-  borderColor: "$primary",
+  borderColor: "$borderPrimary",
   top: -11
 });
 
@@ -93,10 +94,10 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   context: PopoverContext,
 
   flex: 1,
-  backgroundColor: "$base3",
+  backgroundColor: "$backgroundFloating",
   padding: "$3",
   borderWidth: 2,
-  borderColor: "$primary",
+  borderColor: "$overlayBorder",
   borderRadius: "$true",
   marginHorizontal: "auto",
 
@@ -113,17 +114,17 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   ],
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     elevated: {
       true: {
-        shadowColor: "$shadowColor",
+        shadowColor: "$overlayBackdrop",
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 30,
         elevate: true
@@ -136,9 +137,9 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   }
 });
 
-type PopoverContentExtraProps = {
+interface PopoverContentExtraProps {
   hasArrow?: boolean;
-};
+}
 
 const PopoverContentImpl = PopoverContent.styleable<PopoverContentExtraProps>(
   ({ children, hasArrow = true, ...props }, forwardedRef) => {

@@ -7,11 +7,29 @@
       "skillPath": "skills/caveman/SKILL.md",
       "computedHash": "d18cdf73a5f5c496d681a43a6846336b110223bdffa6817b8992529c57f1a815"
     },
+    "react-components": {
+      "source": "langchain-ai/skills-benchmarks",
+      "sourceType": "github",
+      "skillPath": "skills/noise/react_components/SKILL.md",
+      "computedHash": "650b6077d364f595990c81ad780355ed85bc5dfd5efe9ec0eab961677c840364"
+    },
     "react-email": {
       "source": "resend/react-email",
       "sourceType": "github",
       "skillPath": "skills/react-email/SKILL.md",
       "computedHash": "da0feefc6ddf4aaeff930ab203d269774da464429e35b178d2403d69d2dc2fb3"
+    },
+    "storybook": {
+      "source": "dalestudy/skills",
+      "sourceType": "github",
+      "skillPath": "skills/storybook/SKILL.md",
+      "computedHash": "cd915223b409a385fd9a41965b2835c2244d256801fe3d401764fd21f75c8e31"
+    },
+    "tamagui": {
+      "source": "tamagui/tamagui",
+      "sourceType": "github",
+      "skillPath": "plans/tamagui-skill/skills/tamagui/SKILL.md",
+      "computedHash": "c16ef17b45cf188289a72600898110f6245c295c41cf5493b8ead3fd45027544"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",

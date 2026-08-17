@@ -1,26 +1,27 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type {
   ColorTokens,
   SizeTokens,
-  StackProps,
   TamaguiComponentPropsBase,
-  TextProps
+  TextProps,
+  ViewProps
 } from "@tamagui/web";
 import type { InputModeOptions, TextInputProps } from "react-native";
 
@@ -31,7 +32,7 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
-export type InputProps = StackProps &
+export type InputProps = ViewProps &
   Omit<
     DetailedInputProps,
     | "className"
@@ -40,7 +41,7 @@ export type InputProps = StackProps &
     | "size"
     | "onChange"
     | "onInput"
-    | keyof StackProps
+    | keyof ViewProps
   > &
   Pick<TextProps, "color"> &
   Omit<DetailedInputProps["style"], "color"> &
@@ -84,13 +85,7 @@ export type InputProps = StackProps &
      * @defaultValue "done"
      */
     enterKeyHint?:
-      | "done"
-      | "go"
-      | "next"
-      | "search"
-      | "send"
-      | "enter"
-      | "previous";
+      "done" | "go" | "next" | "search" | "send" | "enter" | "previous";
 
     /**
      * @deprecated - use `type` instead
@@ -123,7 +118,7 @@ export type InputProps = StackProps &
     numberOfLines?: number;
   };
 
-export type InputContextProps = {
+export interface InputContextProps {
   /**
    * The input's name.
    */
@@ -174,4 +169,4 @@ export type InputContextProps = {
    * Callback that is called when the text input is blurred.
    */
   onBlur?: () => any;
-};
+}

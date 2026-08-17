@@ -16,8 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { MessageDetails } from "@storm-stack/types";
-import { MessageType } from "@storm-stack/types";
+import type { MessageDetails } from "@stryke/types/messages";
 import { useToastController } from "@tamagui/toast";
 import { getEyebrowByType, getThemeByType } from "../utilities";
 
@@ -66,7 +65,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
         viewportName: "messages",
         type: "foreground",
         customData: {
-          eyebrow: getEyebrowByType(MessageType.INFO),
+          eyebrow: getEyebrowByType("info"),
           theme: "info",
           ...options,
           message: options.heading ? message : ""
@@ -83,7 +82,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
           viewportName: "messages",
           type: "foreground",
           customData: {
-            eyebrow: getEyebrowByType(MessageType.SUCCESS),
+            eyebrow: getEyebrowByType("success"),
             theme: "success",
             ...options,
             message: options.heading ? message : ""
@@ -99,7 +98,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
         viewportName: "messages",
         type: "foreground",
         customData: {
-          eyebrow: getEyebrowByType(MessageType.WARNING),
+          eyebrow: getEyebrowByType("warning"),
           theme: "warning",
           ...options,
           message: options.heading ? message : ""
@@ -114,7 +113,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
         viewportName: "messages",
         type: "foreground",
         customData: {
-          eyebrow: getEyebrowByType(MessageType.ERROR),
+          eyebrow: getEyebrowByType("error"),
           theme: "danger",
           ...options,
           message
@@ -126,7 +125,7 @@ export const useMessageActions = (): UseMessageActionsResult => {
         viewportName: "messages",
         type: "foreground",
         customData: {
-          eyebrow: getEyebrowByType(MessageType.HELP),
+          eyebrow: getEyebrowByType("help"),
           theme: "discovery",
           ...options,
           message: options.heading ? message : ""

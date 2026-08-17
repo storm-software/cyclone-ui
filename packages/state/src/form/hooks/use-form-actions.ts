@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-unsafe-call -- validator callbacks are dynamically keyed */
+
 import { upperCaseFirst } from "@stryke/string-format/upper-case-first";
 import { isPromise } from "@stryke/type-checks/is-promise";
 import type { MessageDetails } from "@stryke/types/messages";
@@ -31,7 +33,7 @@ export const useFormActions = <
   const form = FormApi.useMolecule();
 
   const initializeField = useAtomCallback(
-    useCallback(async (get: Getter, set: Setter, name: string) => {
+    useCallback(async (_get: Getter, _set: Setter, _name: string) => {
       // set(form.fields, prev => {
       //   return {
       //     ...prev,
@@ -43,7 +45,7 @@ export const useFormActions = <
   );
 
   const uninitializeField = useAtomCallback(
-    useCallback(async (get: Getter, set: Setter, name: string) => {
+    useCallback(async (_get: Getter, _set: Setter, _name: string) => {
       // set(fieldApi.atom., prev =>
       //   Object.keys(prev).reduce((ret, key) => {
       //     if (key !== name) {
@@ -155,10 +157,10 @@ export const useFormActions = <
 
         set(form.submitAttempts, prev => prev + 1);
 
-        const options = get(form.options);
+        const _options = get(form.options);
 
-        const promises = [] as Promise<void>[];
-        const values = get(form.values);
+        const _promises = [] as Promise<void>[];
+        const _values = get(form.values);
 
         // promises.push(validate(value, ValidationCause.SUBMIT));
         // await Promise.all(promises);

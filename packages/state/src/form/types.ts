@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { MoleculeState } from "@cyclone-ui/state/utilities/create-molecule";
 import type { MaskitoOptions } from "@maskito/core";
 import type { IsPlainObject } from "@stryke/type-checks/is-plain-object";
 import type { MaybePromise } from "@stryke/types/base";
@@ -31,6 +30,7 @@ import type {
 } from "jotai";
 import type { RESET } from "jotai/utils";
 import type { Ref } from "react";
+import type { MoleculeState } from "../../base/utilities/create-molecule";
 import type {
   AtomRecord,
   SetStateActionWithReset,
@@ -41,11 +41,8 @@ import type {
  * "server" is only intended for SSR/SSG validation and should not execute anything
  */
 export type ValidationCause =
-  | "initialize"
-  | "change"
-  | "blur"
-  | "submit"
-  | "server";
+  "initialize" | "change" | "blur" | "submit" | "server";
+// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
 export const ValidationCause = {
   INITIALIZE: "initialize" as ValidationCause,
   CHANGE: "change" as ValidationCause,
@@ -70,12 +67,8 @@ export type ValidationResults = Partial<
  * The field status.
  */
 export type FieldStatus =
-  | "base"
-  | "help"
-  | "success"
-  | "info"
-  | "warning"
-  | "error";
+  "base" | "help" | "success" | "info" | "warning" | "error";
+// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
 export const FieldStatus = {
   BASE: "base" as FieldStatus,
   HELP: "discovery" as FieldStatus,
@@ -174,7 +167,7 @@ export interface FormOptions<
    * A function that compares two sets of form values to determine if they are equal.
    *
    * @remarks
-   * The default `isEqual` function is provided by the `@storm-stack/utilities` package.
+   * The default `isEqual` function is provided by the `@stryke/helpers` package.
    *
    * @defaultValue `isEqual`
    */
@@ -516,7 +509,7 @@ export interface FieldOptions<TFieldValue> {
    * A function that compares two field values to determine if they are equal.
    *
    * @remarks
-   * The default `isEqual` function is provided by the `@storm-stack/utilities` package.
+   * The default `isEqual` function is provided by the `@stryke/helpers` package.
    *
    * @defaultValue `isEqual`
    */

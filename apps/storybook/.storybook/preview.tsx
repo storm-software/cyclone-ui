@@ -18,6 +18,7 @@
 
 import { ThemeProvider } from "@cyclone-ui/state/client";
 import { MessageProvider } from "@cyclone-ui/state/message";
+import { config } from "@cyclone-ui/themes/tamagui";
 import type { Preview } from "@storybook/react-vite";
 import "@tamagui/core/reset.css";
 import { PortalProvider } from "@tamagui/portal";
@@ -25,8 +26,15 @@ import { YStack } from "@tamagui/stacks";
 import { DevTools, useAtomsDebugValue } from "jotai-devtools";
 import "jotai-devtools/styles.css";
 import "raf/polyfill";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { config } from "@cyclone-ui/themes/tamagui";
+import {
+  SafeAreaProvider,
+  initialWindowMetrics
+} from "react-native-safe-area-context";
+
+const FALLBACK_SAFE_AREA_METRICS = {
+  frame: { x: 0, y: 0, width: 0, height: 0 },
+  insets: { top: 0, left: 0, right: 0, bottom: 0 }
+};
 
 const DebugAtoms = () => {
   useAtomsDebugValue({
@@ -54,12 +62,12 @@ const preview: Preview = {
     }
   },
   decorators: [
-    // eslint-disable-next-line ts/naming-convention
     (Story, args) => {
-      const { mode } = args.globals;
+      const mode = args.globals.mode === "light" ? "light" : "dark";
 
       return (
-        <SafeAreaProvider>
+        <SafeAreaProvider
+          initialMetrics={initialWindowMetrics ?? FALLBACK_SAFE_AREA_METRICS}>
           <ThemeProvider
             config={config}
             disableInjectCSS={false}
@@ -68,7 +76,7 @@ const preview: Preview = {
               <MessageProvider>
                 <DevTools theme={mode} position="bottom-right" />
                 <DebugAtoms />
-                <YStack padding="$8" flexGrow={1}>
+                <YStack p="$8" width="100%" minH="100%">
                   <Story />
                 </YStack>
               </MessageProvider>

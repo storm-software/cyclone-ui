@@ -1,22 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { getRadius, getSized } from "@cyclone-ui/helpers";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
@@ -33,7 +33,7 @@ import { Separator } from "@tamagui/separator";
 import { useCallback, useMemo } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
-import { SelectContextProps } from "./types";
+import type { SelectContextProps } from "./types";
 import { getSelectSize, SelectContext } from "./utilities";
 
 const SelectGroup = styled(XGroup, {
@@ -46,7 +46,7 @@ const SelectGroup = styled(XGroup, {
   cursor: "pointer",
   backgroundColor: "transparent",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   outlineStyle: "none",
   gap: "$0",
 
@@ -62,25 +62,25 @@ const SelectGroup = styled(XGroup, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     focused: {
       true: {
-        outlineColor: "$accent10",
+        outlineColor: "$borderAccent",
         outlineWidth: 3,
         outlineOffset: "$1.25",
         outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
+        borderColor: "$borderAccent"
       }
     },
 
@@ -100,21 +100,21 @@ const SelectGroup = styled(XGroup, {
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled",
+          borderColor: "$base4",
           outlineStyle: "none"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled",
+          borderColor: "$base4",
           outlineStyle: "none"
         }
       }
@@ -134,7 +134,7 @@ const SelectSeparator = styled(Separator, {
 
   animation: "normal",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   vertical: true,
   height: "50%",
   marginVertical: "$0.25",
@@ -142,24 +142,24 @@ const SelectSeparator = styled(Separator, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderColorFocus"
+        borderColor: "$borderAccent"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     }
@@ -211,7 +211,7 @@ const SelectTrigger = Button.styleable<{
           onPress={onFocus}
           size={adjustedTrigger}
           color={
-            theme?.includes("base") ? "$borderColor" : "$color"
+            theme?.includes("base") ? "$borderPrimary" : "$foregroundOnPrimary"
           }>
           <Button.Icon>
             {children || <ChevronDown disabled={disabled} />}
@@ -238,7 +238,7 @@ const BaseSelect = styled(TamaguiSelect, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$colorDisabled",
+        color: "$base4",
         backgroundColor: "transparent"
       }
     }
@@ -271,10 +271,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
               disabled={disabled}
               $group-select-hover={{
                 borderColor: disabled
-                  ? "$borderColorDisabled"
+                  ? "$base4"
                   : focused
-                    ? "$borderColorFocus"
-                    : "$accent10"
+                    ? "$borderAccent"
+                    : "$borderAccent"
               }}
             />
           </XGroup.Item>
@@ -305,7 +305,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
     forwardedRef
   ) => {
     const handleOpenChanged = useCallback(
-      (open: boolean, via?: "hover" | "press") => {
+      (open: boolean, _via?: "hover" | "press") => {
         if (open) {
           onFocus?.();
         } else {

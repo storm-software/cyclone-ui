@@ -16,19 +16,15 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable react-hooks/refs -- composed input refs are collected during render */
+
 import { useMaskito } from "@maskito/react";
 import { useComposedRefs } from "@tamagui/core";
 import type { Ref } from "react";
 import { useRef } from "react";
 import { FieldApi } from "../molecules/field-molecule";
 
-type PossibleRef<T> =
-  | React.Ref<T>
-  | React.ForwardedRef<T>
-  | React.RefObject<T>
-  | undefined;
-
-export const useFieldRef = <TFieldValue>(
+export const useFieldRef = (
   forwardedRef?: Ref<HTMLInputElement>
 ): Ref<HTMLInputElement> => {
   const ref = useRef<HTMLInputElement | null>(null);

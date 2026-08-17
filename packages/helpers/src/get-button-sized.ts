@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isNumber } from "@storm-stack/types";
+import { isNumber } from "@stryke/type-checks/is-number";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { getSpace } from "@tamagui/get-token";
 

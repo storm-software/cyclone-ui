@@ -1,27 +1,31 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Field } from "@cyclone-ui/field";
-import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/form-state";
 import { Select } from "@cyclone-ui/select";
-import { SelectOption } from "@storm-stack/types/utility-types/form";
-import { GetProps, Unspaced, withStaticProperties } from "@tamagui/core";
-import { Atom, useAtomValue } from "jotai";
-import { PropsWithChildren, useCallback, useLayoutEffect } from "react";
+import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
+import type { SelectOption } from "@stryke/types/form";
+import type { GetProps } from "@tamagui/core";
+import { withStaticProperties } from "@tamagui/core";
+import type { Atom } from "jotai";
+import { useAtomValue } from "jotai";
+import type { PropsWithChildren } from "react";
+import { useCallback, useLayoutEffect } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -96,13 +100,11 @@ const SelectFieldControl = Select.styleable<
         <Field.ThemeIcon />
       </Select.TextBox>
 
-      <Unspaced>
-        <Select.Items>
-          {itemsAtoms.map((itemAtom, index) => (
-            <SelectFieldItem key={index} itemAtom={itemAtom} />
-          ))}
-        </Select.Items>
-      </Unspaced>
+      <Select.Items>
+        {itemsAtoms.map((itemAtom, index) => (
+          <SelectFieldItem key={index} itemAtom={itemAtom} />
+        ))}
+      </Select.Items>
     </Select>
   );
 });

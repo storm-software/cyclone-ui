@@ -1,23 +1,42 @@
-import { Dispatch, SetStateAction, useLayoutEffect, useState } from "react";
-import type {
-  TabsProps as TamaguiTabsProps,
-  TabLayout as TamaguiTabLayout,
-  TabsTabProps as TamaguiTabsTabProps,
-  TabsContentProps as TamaguiTabsContentProps
-} from "@tamagui/tabs";
-import { Tabs as TamaguiTabs } from "@tamagui/tabs";
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
 import { AnimatePresence } from "@tamagui/animate-presence";
-import { SizableText } from "@tamagui/text";
-import { XStack, YStack } from "@tamagui/stacks";
+import type { ViewProps } from "@tamagui/core";
 import {
-  StackProps,
   createStyledContext,
   styled,
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { Circle } from "@tamagui/shapes";
 import { CheckCircle, Edit3, Lock } from "@tamagui/lucide-icons";
+import { Circle } from "@tamagui/shapes";
+import { XStack, YStack } from "@tamagui/stacks";
+import type {
+  TabLayout as TamaguiTabLayout,
+  TabsContentProps as TamaguiTabsContentProps,
+  TabsProps as TamaguiTabsProps,
+  TabsTabProps as TamaguiTabsTabProps
+} from "@tamagui/tabs";
+import { Tabs as TamaguiTabs } from "@tamagui/tabs";
+import { SizableText } from "@tamagui/text";
+import type { Dispatch, SetStateAction } from "react";
+import { useLayoutEffect, useState } from "react";
 
 export interface StepsState {
   currentStep: string;
@@ -51,8 +70,8 @@ const defaultContextValues = {
     prevActiveAt: null,
     steps: [] as string[]
   },
-  setState: ((next: StepsState) => {}) as Dispatch<SetStateAction<StepsState>>,
-  handleOnInteraction: (type, layout) => {},
+  setState: ((_next: StepsState) => {}) as Dispatch<SetStateAction<StepsState>>,
+  handleOnInteraction: (_type, _layout) => {},
   theme: "base"
 } as const;
 
@@ -108,7 +127,7 @@ export const StepsFrame = TamaguiTabs.styleable(
           height={150}
           flexDirection="row"
           activationMode="manual"
-          backgroundColor="$background"
+          backgroundColor="$backgroundPrimary"
           borderRadius="$4"
           position="relative"
           {...rest}
@@ -122,9 +141,14 @@ export const StepsFrame = TamaguiTabs.styleable(
 );
 
 export const StepsHeaderList = YStack.styleable(
-  ({ children, ...rest }: StackProps, forwardedRef) => {
+  ({ children, ...rest }: ViewProps, forwardedRef) => {
     const { state } = InternalStateContext.useStyledContext();
-    const { activeAt, intentAt, prevActiveAt, currentStep } = state;
+    const {
+      activeAt,
+      intentAt: _intentAt,
+      prevActiveAt,
+      currentStep: _currentStep
+    } = state;
 
     // 1 = right, 0 = nowhere, -1 = left
     const direction = (() => {
@@ -136,7 +160,7 @@ export const StepsHeaderList = YStack.styleable(
 
     return (
       <YStack ref={forwardedRef} {...rest}>
-        {/*<AnimatePresence>
+        {/* <AnimatePresence>
           {intentAt && (
             <StepsRovingIndicatorImpl
               width={intentAt.width}
@@ -157,7 +181,7 @@ export const StepsHeaderList = YStack.styleable(
               active={true}
             />
           )}
-        </AnimatePresence>*/}
+        </AnimatePresence> */}
 
         <TamaguiTabs.List
           disablePassBorderRadius={true}
@@ -181,7 +205,12 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
   ({ children, value, ...rest }: TamaguiTabsTabProps, forwardedRef) => {
     const { handleOnInteraction, setState, state } =
       InternalStateContext.useStyledContext();
-    const { activeAt, intentAt, prevActiveAt, currentStep } = state;
+    const {
+      activeAt: _activeAt,
+      intentAt: _intentAt,
+      prevActiveAt: _prevActiveAt,
+      currentStep
+    } = state;
 
     const index = state.steps.indexOf(value);
     const currentIndex = state.steps.indexOf(currentStep);
@@ -210,7 +239,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             padding="$3"
             borderRadius={1000_000_000}
             borderWidth="$0.5"
-            borderColor={index === currentIndex ? "$primary" : "$color5"}
+            borderColor={index === currentIndex ? "$borderPrimary" : "$color5"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
@@ -218,7 +247,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
               <CheckCircle animation="slow" color="$color5" size="$1" />
             )}
             {index === currentIndex && (
-              <Edit3 animation="slow" color="$primary" size="$1" />
+              <Edit3 animation="slow" color="$foregroundPrimary" size="$1" />
             )}
             {index > currentIndex && (
               <Lock animation="slow" color="$color5" size="$1" />
@@ -228,7 +257,9 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
           <SizableText
             animation="slow"
             fontFamily="$heading"
-            color={state.currentStep === value ? "$primary" : "$color5"}>
+            color={
+              state.currentStep === value ? "$foregroundPrimary" : "$color5"
+            }>
             {children}
           </SizableText>
         </XStack>
@@ -289,7 +320,7 @@ const StepsRovingIndicator = styled(YStack, {
   variants: {
     active: {
       true: {
-        backgroundColor: "$accent10",
+        backgroundColor: "$backgroundAccent",
         opacity: 1,
         color: "$color12"
       }
@@ -310,7 +341,7 @@ const StepsRovingIndicator = styled(YStack, {
   }
 });
 
-const StepsRovingIndicatorImpl = StepsRovingIndicator.styleable(
+const _StepsRovingIndicatorImpl = StepsRovingIndicator.styleable(
   (props, forwardedRef) => {
     return (
       <StepsRovingIndicator ref={forwardedRef} animation="200ms" {...props} />

@@ -27,39 +27,39 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@rehookify/datepicker": "^6.6.8",
-    "@storm-stack/date-time": "latest",
-    "@storm-stack/hooks": "latest",
-    "@tamagui/adapt": "^1.144.4",
-    "@tamagui/animate-presence": "^1.144.4",
-    "@tamagui/compose-refs": "^1.144.4",
-    "@tamagui/constants": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/create-context": "^1.144.4",
-    "@tamagui/focusable": "^1.144.4",
-    "@tamagui/font-size": "^1.144.4",
-    "@tamagui/get-token": "^1.144.4",
-    "@tamagui/group": "^1.144.4",
-    "@tamagui/helpers": "^1.144.4",
-    "@tamagui/helpers-tamagui": "^1.144.4",
-    "@tamagui/label": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
-    "@tamagui/popover": "^1.144.4",
-    "@tamagui/separator": "^1.144.4",
-    "@tamagui/sheet": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
-    "@tamagui/text": "^1.144.4",
-    "@tamagui/web": "^1.144.4"
+    "@rehookify/datepicker": "catalog:",
+    "@stryke/date": "catalog:",
+    "@stryke/hooks": "catalog:",
+    "@tamagui/adapt": "catalog:",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/compose-refs": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/focusable": "catalog:",
+    "@tamagui/font-size": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/label": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/popover": "catalog:",
+    "@tamagui/separator": "catalog:",
+    "@tamagui/sheet": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

@@ -15,9 +15,10 @@
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
+
 import { initTRPC } from "@trpc/server";
 export const t = initTRPC.context().create();
 export const publicProcedure = t.procedure;
 export const protectedProcedure = t.procedure;
 export const createRouter = t.router;
-//# sourceMappingURL=trpc.js.map
+// # sourceMappingURL=trpc.js.map

@@ -1,30 +1,28 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
 import { Heading3Text } from "@cyclone-ui/heading-text";
-import {
-  getIconByTheme,
-  ThemeableIcon,
-  type ThemeableIconProps
-} from "@cyclone-ui/themeable-icon";
+import type { ColorThemeName } from "@cyclone-ui/state/theme";
+import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
+import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Diagonal } from "@cyclone-ui/vectors";
 import {
   createStyledContext,
@@ -37,9 +35,9 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
-export type CalloutContextProps = {
+export interface CalloutContextProps {
   theme?: ColorThemeName;
-};
+}
 
 export const CalloutContext = createStyledContext<CalloutContextProps>({
   theme: undefined
@@ -70,7 +68,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   borderRadius: "$true",
   opacity: 0.25,
   zIndex: 8,
-  colors: ["transparent", "$secondary"],
+  colors: ["transparent", "$backgroundSecondary"],
   start: [0, 1.0],
   end: [0, 1.0]
 });
@@ -153,7 +151,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 const CalloutHeading = styled(Heading3Text, {
   name: "CalloutHeading",
 
-  color: "$color",
+  color: "$foregroundOnPrimary",
   zIndex: 20
 });
 
@@ -161,7 +159,9 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name={"base"}>
-        <CalloutHeading ref={forwardedRef}>{children}</CalloutHeading>
+        <CalloutHeading ref={forwardedRef} {...props}>
+          {children}
+        </CalloutHeading>
       </Theme>
     );
   },
@@ -173,7 +173,7 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
 const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
-  color: "$tertiary",
+  color: "$foregroundTertiary",
   zIndex: 20
 });
 
@@ -195,7 +195,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$secondary",
+  color: "$foregroundSecondary",
   zIndex: 20,
   paddingVertical: 0
 });

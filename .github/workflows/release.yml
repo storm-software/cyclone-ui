@@ -63,7 +63,7 @@ jobs:
       - start
     steps:
       - name: Checkout [Pull Request]
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         if: ${{ github.event_name == 'pull_request' }}
         with:
           # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
@@ -74,7 +74,7 @@ jobs:
           persist-credentials: false
 
       - name: Checkout `main` branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         if: ${{ github.event_name != 'pull_request' }}
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
@@ -91,7 +91,7 @@ jobs:
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       - name: Get appropriate base and head commits for `nx affected` commands
-        uses: nrwl/nx-set-shas@v4
+        uses: nrwl/nx-set-shas@3e9ad7370203c1e93d109be57f3b72eb0eb511b1 # v4.4.0
         with:
           main-branch-name: "main"
 

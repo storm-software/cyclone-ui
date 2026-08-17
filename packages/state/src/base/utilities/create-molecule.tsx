@@ -16,8 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { isFunction } from "@storm-stack/types/type-checks/is-function";
-import { isString } from "@storm-stack/types/type-checks/is-string";
+/* eslint-disable react-compiler/react-compiler -- bunshi proxy accessors call hooks on demand */
+/* eslint-disable react-hooks/rules-of-hooks -- bunshi proxy accessors call hooks on demand */
+/* eslint-disable react/rules-of-hooks -- bunshi proxy accessors call hooks on demand */
+
+import { isFunction } from "@stryke/type-checks/is-function";
+import { isString } from "@stryke/type-checks/is-string";
 import type { MoleculeGetter, MoleculeScope, ScopeGetter } from "bunshi";
 import {
   createScope as createScopeBase,
@@ -45,6 +49,7 @@ import type {
 import { isAtom, isResetAtom, isWritableAtom } from "./is-atom";
 import { setAtomDebugLabel } from "./set-atom-debug";
 
+// eslint-disable-next-line ts/no-unused-vars, unused-imports/no-unused-vars -- phantom type parameter for bunshi molecules
 export type Molecule<TValue> = {
   displayName?: string;
 } & Record<symbol, unknown>;
@@ -93,7 +98,7 @@ type UseMoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> = {
       ? (opts?: MoleculeScopeOptions) => TValue
       : never;
     set: TState[TKey] extends WritableAtom<
-      infer TValue,
+      infer _TValue,
       infer TArgs,
       infer TReturn
     >

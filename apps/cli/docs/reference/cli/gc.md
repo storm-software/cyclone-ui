@@ -68,17 +68,10 @@ bun x powerlines gc [options] <type>
 
 </details>
 
-
-
 ## Positional Arguments
 
 The following positional arguments are available for the `gc` command:
 
-
-
 ## Options
 
 The following options are available for the `gc` command:
-
-
-

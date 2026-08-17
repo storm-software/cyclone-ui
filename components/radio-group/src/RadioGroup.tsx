@@ -1,21 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { SelectOption } from "@storm-stack/types/utility-types/form";
+ ------------------------------------------------------------------- */
+
+import type { SelectOption } from "@stryke/types/form";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
 import {
@@ -29,14 +30,14 @@ import { getSize, getSpace } from "@tamagui/get-token";
 import { RadioGroup as TamaguiRadioGroup } from "@tamagui/radio-group";
 import { XStack, YStack } from "@tamagui/stacks";
 
-export type RadioGroupContextProps = {
+export interface RadioGroupContextProps {
   name?: string;
   size: FontSizeTokens;
   color?: ColorTokens | string;
   disabled: boolean;
   focused: boolean;
   required: boolean;
-};
+}
 
 export const RadioGroupContext = createStyledContext<RadioGroupContextProps>({
   size: "$true",
@@ -62,7 +63,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$accent10",
+    borderColor: "$borderAccent",
     backgroundColor: "transparent"
   },
 
@@ -90,20 +91,20 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     }
@@ -122,7 +123,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   animation: "normal",
   cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "$color",
+  backgroundColor: "$foregroundOnPrimary",
   height: "65%",
   width: "65%",
 
@@ -139,22 +140,22 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        color: "$colorDisabled",
-        placeholderColor: "$colorDisabled",
+        color: "$base4",
+        placeholderColor: "$base4",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         focusStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         pressStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         }
       }
     }
@@ -175,7 +176,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   backgroundColor: "transparent",
   borderRadius: "$4",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   paddingHorizontal: "$3",
   paddingVertical: "$2.5",
   alignItems: "center",
@@ -189,23 +190,23 @@ const RadioGroupItemContainerFrame = styled(XStack, {
       }),
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   focusStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
@@ -232,23 +233,23 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled",
+          borderColor: "$base4",
           backgroundColor: "transparent"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled",
+          borderColor: "$base4",
           backgroundColor: "transparent"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled",
+          borderColor: "$base4",
           backgroundColor: "transparent"
         }
       }
@@ -284,14 +285,14 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             value={String(value)}
             disabled={disabled}
             $group-hover={{
-              borderColor: disabled ? "$borderColorDisabled" : "$accent10"
+              borderColor: disabled ? "$base4" : "$borderAccent"
             }}
             $group-focus={{
-              outlineColor: "$accent10",
+              outlineColor: "$borderAccent",
               outlineWidth: 3,
               outlineOffset: "$1.25",
               outlineStyle: "solid",
-              borderColor: "$borderColorFocus"
+              borderColor: "$borderAccent"
             }}>
             {selected && <RadioGroupItemIndicator />}
           </RadioGroupItem>
@@ -323,7 +324,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
         const fontStyle = getFontSized(val as any, extras as any);
         // lineHeight messes up select on native
         if (!isWeb && fontStyle) {
-          delete fontStyle["lineHeight"];
+          delete fontStyle.lineHeight;
         }
 
         return {
@@ -335,7 +336,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$colorDisabled",
+        color: "$base4",
         backgroundColor: "transparent"
       }
     }

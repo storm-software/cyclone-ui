@@ -30,7 +30,11 @@
     "./executors/*/schema.json": "./src/executors/*/schema.json"
   },
   "typings": "./declarations.d.ts",
-  "keywords": ["nx", "nx-plugin", "storm-software"],
+  "keywords": [
+    "nx",
+    "nx-plugin",
+    "storm-software"
+  ],
   "dependencies": {
     "@nx/devkit": "catalog:",
     "@powerlines/nx": "catalog:",
@@ -52,7 +56,8 @@
     "@storm-software/testing-tools": "catalog:",
     "@types/node": "catalog:",
     "eslint-flat-config-utils": "catalog:",
-    "jsonc-eslint-parser": "catalog:"
+    "jsonc-eslint-parser": "catalog:",
+    "nx": ">=22.7.0"
   },
   "peerDependencies": {
     "nx": ">=22.7.0"

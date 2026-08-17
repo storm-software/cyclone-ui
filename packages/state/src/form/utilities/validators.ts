@@ -16,8 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { MessageDetails } from "@storm-stack/types/utility-types/messages";
-import { MessageType } from "@storm-stack/types/utility-types/messages";
+import type { MessageDetails } from "@stryke/types/messages";
 
 export const requiredValidator = (value): MessageDetails[] =>
-  value ? [] : [{ message: "This field is required", type: MessageType.ERROR }];
+  value ? [] : [{ message: "This field is required", type: "error" }];

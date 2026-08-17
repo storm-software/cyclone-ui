@@ -15,13 +15,14 @@
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
+
 export const ComponentPlatform = {
-    WEB: "web",
-    MOBILE: "mobile",
-    ALL: "all"
+  WEB: "web",
+  MOBILE: "mobile",
+  ALL: "all"
 };
 export const HttpHeaders = {
-    Version: "x-cyclone-version",
-    Checksum: "x-cyclone-checksum"
+  Version: "x-cyclone-version",
+  Checksum: "x-cyclone-checksum"
 };
-//# sourceMappingURL=types.js.map
+// # sourceMappingURL=types.js.map

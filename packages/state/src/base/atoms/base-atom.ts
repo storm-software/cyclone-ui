@@ -85,11 +85,11 @@ export function baseAtom<TValue, TArgs extends unknown[], TResult>(
   write?: Write<TArgs, TResult>
 ) {
   const result = jotaiAtom<TValue, TArgs, TResult>(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line ts/no-explicit-any
     readOrInitialValue as any,
     write as Write<TArgs, TResult>
   );
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line ts/no-explicit-any
   (result as any).setDebugLabel = (label: string) => {
     setAtomDebugLabel(result, label);
   };

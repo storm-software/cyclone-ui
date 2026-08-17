@@ -65,6 +65,3 @@ bun x powerlines prepare [options]
 ## Options
 
 The following options are available for the `prepare` command:
-
-
-

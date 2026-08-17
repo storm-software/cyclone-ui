@@ -1,23 +1,24 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
+ ------------------------------------------------------------------- */
+
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
-import { ThemeableIcon, ThemeableIconProps } from "@cyclone-ui/themeable-icon";
+import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
+import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, SizeTokens } from "@tamagui/core";
 import {
@@ -31,14 +32,14 @@ import { getSize } from "@tamagui/get-token";
 import { createSwitch } from "@tamagui/switch";
 import { useMemo } from "react";
 
-export type SwitchContextProps = {
+export interface SwitchContextProps {
   size: SizeTokens;
   name: string;
   checked: boolean;
   required: boolean;
   disabled: boolean;
   theme: string;
-};
+}
 
 export const SwitchContext = createStyledContext<SwitchContextProps>({
   size: "$true",
@@ -63,7 +64,7 @@ const SwitchFrame = styled(View, {
   borderRadius: 100_000,
   backgroundColor: "transparent",
   borderWidth: 2,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   outlineStyle: "none",
 
   ...(isWeb
@@ -75,29 +76,29 @@ const SwitchFrame = styled(View, {
       }),
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   focusStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     checked: {
       true: {
-        backgroundColor: "$accent2"
+        backgroundColor: "$backgroundAccentSubtle"
       }
     },
 
@@ -118,18 +119,18 @@ const SwitchFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     }
@@ -144,10 +145,10 @@ const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
   animation: "normal",
-  backgroundColor: "$color",
+  backgroundColor: "$foregroundOnPrimary",
   borderRadius: 100_000,
   borderWidth: 1,
-  borderColor: "$background",
+  borderColor: "$backgroundPrimary",
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
@@ -255,11 +256,11 @@ const SwitchIcon = SwitchIconFrame.styleable<{
           color={
             (color ||
               (disabled
-                ? "$colorDisabled"
-                : "$color")) as ThemeableIconProps["color"]
+                ? "$base4"
+                : "$foregroundOnPrimary")) as ThemeableIconProps["color"]
           }
           $group-switch-hover={{
-            color: disabled ? "$colorDisabled" : "$colorHover"
+            color: disabled ? "$base4" : "$foregroundSecondary"
           }}>
           {children}
         </ThemeableIcon>

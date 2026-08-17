@@ -10,7 +10,7 @@
         "command": "echo 'Building CLI'"
       }
     },
-   "nx-release-publish": {
+    "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
   }

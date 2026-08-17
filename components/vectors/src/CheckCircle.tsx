@@ -1,33 +1,34 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type { IconProps } from "@tamagui/helpers-icon";
 import { themed } from "@tamagui/helpers-icon";
 import { useCurrentColor } from "@tamagui/helpers-tamagui";
 import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
-import { Circle, Path, Svg, SvgProps } from "react-native-svg";
-
+import type { SvgProps } from "react-native-svg";
+import { Circle, Path, Svg } from "react-native-svg";
 export type CheckCircleProps = IconProps & {
   isComplete?: boolean;
 };
 
 const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
-  const color = useCurrentColor((props.color || "$color") as any);
+  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
 
   const diameter = 24;
   const strokeWidth = 2;

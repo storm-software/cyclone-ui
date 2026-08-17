@@ -1,50 +1,50 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
-import { ClientFileResult } from "@cyclone-ui/state";
-import { formatDateTime } from "@storm-stack/date-time/utilities/format-date-time";
-import { useComposedRefs } from "@storm-stack/hooks";
-import { FileStatus } from "@storm-stack/types/utility-types/file";
+import type { ClientFileResult } from "@cyclone-ui/state";
+import { formatDate } from "@stryke/date/format";
+import { useComposedRefs } from "@stryke/hooks";
+import type { FileStatus } from "@stryke/types/file";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
-  FontSizeTokens,
   isWeb,
   styled,
   View,
-  withStaticProperties,
-  type ColorTokens
+  withStaticProperties
 } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
-import { DocumentPickerResult } from "expo-document-picker";
-import { PropsWithChildren, useCallback } from "react";
+import type { DocumentPickerResult } from "expo-document-picker";
+import type { PropsWithChildren } from "react";
+import { useCallback } from "react";
 import { MediaTypeOptions } from "./file-picker-types";
 import { useFilePicker } from "./useFilePicker";
 
-export type FilePickerContextProps = {
+export interface FilePickerContextProps {
   size: FontSizeTokens;
   typeOfPicker: "image" | "file";
   max: number;
@@ -59,16 +59,16 @@ export type FilePickerContextProps = {
   required: boolean;
   disabled: boolean;
   theme: string;
-};
+}
 
 export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   size: "$4",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
-  onPick: (props: PickFileProps) => {},
+  onPick: (_props: PickFileProps) => {},
   onOpen: () => {},
-  onChange: (files: ClientFileResult[]) => {},
+  onChange: (_files: ClientFileResult[]) => {},
   files: [] as ClientFileResult[],
   name: "",
   scaleIcon: 1.3,
@@ -97,7 +97,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "$4",
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   backgroundColor: "transparent",
   outlineWidth: 0,
   outlineColor: "transparent",
@@ -112,20 +112,20 @@ const FilePickerGroupFrame = styled(View, {
       }),
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     active: {
       true: {
-        outlineColor: "$accent10",
+        outlineColor: "$borderAccent",
         outlineWidth: 2,
         outlineOffset: "$1.25",
         outlineStyle: "solid",
-        borderColor: "$borderColorPress",
+        borderColor: "$borderSecondary",
 
         hoverStyle: {
-          borderColor: "$borderColorFocus"
+          borderColor: "$borderAccent"
         }
       }
     },
@@ -134,10 +134,10 @@ const FilePickerGroupFrame = styled(View, {
       true: {
         opacity: 0.8,
         cursor: "not-allowed",
-        borderColor: "$disabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$disabled"
+          borderColor: "$base4"
         }
       },
       false: {
@@ -152,10 +152,10 @@ const FilePickerGroupFrame = styled(View, {
   }
 });
 
-type PickFileProps = {
+interface PickFileProps {
   webFiles?: File[] | null;
   nativeFiles?: DocumentPickerResult[] | null;
-};
+}
 
 const FilePickerGroup = FilePickerGroupFrame.styleable<
   Partial<FilePickerContextProps>
@@ -185,7 +185,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
                     ret.push({
                       ...file,
                       id: files.length + index,
-                      status: FileStatus.INITIALIZED,
+                      status: "initialized" satisfies FileStatus,
                       mimeType: file.type,
                       name: file.name,
                       size: file.size > 0 ? file.size : 0,
@@ -211,7 +211,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
                         ...file.assets.map((asset, i) => ({
                           ...asset,
                           id: files.length + index + i,
-                          status: FileStatus.INITIALIZED
+                          status: "initialized" satisfies FileStatus
                         }))
                       );
                     }
@@ -295,7 +295,7 @@ const FilePickerTrigger = YStack.styleable(
         {files.length === 0 && (
           <Upload
             size="$5"
-            color={disabled ? "$disabled" : "$color"}
+            color={disabled ? "$base4" : "$foregroundOnPrimary"}
             animation="100ms"
             opacity={1}
             scale={1}
@@ -374,7 +374,7 @@ const FilePickerViewLink = ({
         fontFamily="$label"
         fontSize="$7"
         fontWeight="$true"
-        color="$fg"
+        color="$foregroundOnPrimary"
         {...props}
         href={uri}
         target="_blank">
@@ -384,7 +384,11 @@ const FilePickerViewLink = ({
   }
 
   return (
-    <LabelText fontFamily="$label" fontSize="$7" color="$fg" {...props}>
+    <LabelText
+      fontFamily="$label"
+      fontSize="$7"
+      color="$foregroundOnPrimary"
+      {...props}>
       {children}
     </LabelText>
   );
@@ -429,7 +433,7 @@ const FilePickerFile = ({
         scale: 0.5
       }}
       hoverStyle={{
-        outlineColor: "$accent10",
+        outlineColor: "$borderAccent",
         outlineWidth: 2,
         outlineStyle: "solid",
         outlineOffset: 3
@@ -466,7 +470,7 @@ const FilePickerFile = ({
             <Button
               variant="ghost"
               theme="base"
-              color="$primary"
+              color="$foregroundPrimary"
               size="$6"
               padding="$2"
               circular={true}>
@@ -492,7 +496,7 @@ const FilePickerFile = ({
           <Button
             variant="ghost"
             theme="base"
-            color="$primary"
+            color="$foregroundPrimary"
             onPress={handleRemove}
             size="$6"
             padding="$2"
@@ -533,10 +537,7 @@ const FilePickerFile = ({
 
             {lastModified && (
               <BodyText zIndex={25} color="$base9" fontWeight="$5">
-                {formatDateTime(new Date(lastModified), {
-                  returnEmptyIfNotSet: true,
-                  returnEmptyIfInvalid: true
-                })}
+                {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
               </BodyText>
             )}
 
@@ -555,7 +556,7 @@ const FilePickerFile = ({
         animation="slow"
         fullscreen={true}
         zIndex={10}
-        colors={["transparent", "$accent4"]}
+        colors={["transparent", "$backgroundAccentSubtle"]}
         locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}
@@ -576,7 +577,7 @@ const FilePickerFile = ({
         $group-file-hover={{
           scale: 1.2
         }}>
-        <Image key={id} height={500} source={{ height: 500, uri: uri }} />
+        <Image key={id} height={500} source={{ height: 500, uri }} />
       </View>
     </View>
   );

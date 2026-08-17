@@ -16,36 +16,38 @@
 
  ------------------------------------------------------------------- */
 
-import { MessageType } from "@storm-stack/types";
+import type { MessageType } from "@stryke/types/messages";
+import type { ColorThemeName } from "../../theme/types";
 
 export const getEyebrowByType = (type?: MessageType): string => {
   switch (type) {
-    case MessageType.ERROR:
+    case "error":
       return "Error";
-    case MessageType.WARNING:
+    case "warning":
       return "Warning";
-    case MessageType.INFO:
+    case "info":
       return "Information";
-    case MessageType.SUCCESS:
+    case "success":
       return "Success";
-    default:
+    case "help":
+    case undefined:
       return "Attention";
   }
 };
 
 export const getThemeByType = (type?: MessageType): ColorThemeName => {
   switch (type) {
-    case MessageType.ERROR:
+    case "error":
       return "danger";
-    case MessageType.WARNING:
+    case "warning":
       return "warning";
-    case MessageType.INFO:
+    case "info":
       return "info";
-    case MessageType.HELP:
+    case "help":
       return "discovery";
-    case MessageType.SUCCESS:
+    case "success":
       return "success";
-    default:
+    case undefined:
       return "brand";
   }
 };

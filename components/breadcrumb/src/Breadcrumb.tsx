@@ -1,36 +1,30 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { getSpaced } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
-import {
-  createStyledContext,
-  FontSizeTokens,
-  styled,
-  Theme,
-  ThemeableProps,
-  View
-} from "@tamagui/core";
+import type { FontSizeTokens, ThemeableProps } from "@tamagui/core";
+import { createStyledContext, styled, Theme, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";
-import { type TextContextStyles } from "@tamagui/text";
-
+import type { TextContextStyles } from "@tamagui/text";
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
 export const BreadcrumbVariant = {
   CHEVRON: "chevron" as BreadcrumbVariant,
@@ -75,7 +69,7 @@ const BreadcrumbCurrent = styled(LabelText, {
 
   animation: "normal",
   cursor: "default",
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontFamily: "$link",
   fontWeight: "$lg",
   verticalAlign: "middle"
@@ -126,13 +120,13 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
         </View>
 
         {variant === BreadcrumbVariant.CHEVRON && (
-          <ChevronRight color="$borderColor" size="$2" />
+          <ChevronRight color="$borderPrimary" size="$2" />
         )}
         {variant === BreadcrumbVariant.DOUBLE && (
-          <ChevronsRight color="$borderColor" size="$2" />
+          <ChevronsRight color="$borderPrimary" size="$2" />
         )}
         {variant === BreadcrumbVariant.SLASH && (
-          <Slash color="$borderColor" size="$0.75" />
+          <Slash color="$borderPrimary" size="$0.75" />
         )}
       </XGroup.Item>
     );

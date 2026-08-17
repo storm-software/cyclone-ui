@@ -1,38 +1,38 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 "use client";
 
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { Spinner } from "@cyclone-ui/spinner";
 import { PdfIcon } from "@cyclone-ui/vectors";
 import { VisuallyHidden } from "@cyclone-ui/visually-hidden";
-import { isString } from "@storm-stack/types/type-checks/is-string";
-import { FileResult } from "@storm-stack/types/utility-types/file";
-import { styled, View, ViewProps } from "@tamagui/core";
+import { isString } from "@stryke/type-checks/is-string";
+import type { FileResult } from "@stryke/types/file";
+import type { ViewProps } from "@tamagui/core";
+import { styled, View } from "@tamagui/core";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import {
+import type {
   DocumentCallback,
   OnDocumentLoadError,
   OnDocumentLoadProgress,
   OnDocumentLoadSuccess
 } from "react-pdf/dist/esm/shared/types.js";
-
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
   import.meta.url
@@ -63,14 +63,14 @@ const StyledPdfIcon = styled(PdfIcon, {
   }
 });
 
-type PdfDocumentDisplayExtraProps = {
+interface PdfDocumentDisplayExtraProps {
   src: FileResult | string;
   onLoadProgress?: OnDocumentLoadProgress;
   onLoadSuccess?: OnDocumentLoadSuccess;
   onLoadError?: OnDocumentLoadError;
   pageNumber?: number;
   hideContextMenu?: boolean;
-};
+}
 
 export type PdfDocumentDisplayProps = PdfDocumentDisplayExtraProps & ViewProps;
 

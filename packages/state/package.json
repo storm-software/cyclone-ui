@@ -9,12 +9,25 @@
     "directory": "packages/state"
   },
   "private": false,
-  "keywords": ["jotai"],
+  "keywords": [
+    "jotai"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client/index.ts",
+    "./form": "./src/form/index.ts",
+    "./message": "./src/message/index.ts",
+    "./theme": "./src/theme/index.ts",
+    "./utilities/create-molecule": "./src/base/utilities/create-molecule.tsx",
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "peerDependencies": {
-    "jotai": ">=2.8.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "peerDependenciesMeta": {
     "jotai": {
@@ -33,22 +46,24 @@
   "dependencies": {
     "@maskito/core": "catalog:",
     "@maskito/react": "catalog:",
-    "@stryke/hooks": "catalog:",
-    "@stryke/string-format": "catalog:",
-    "@stryke/types": "catalog:",
-    "@stryke/type-checks": "catalog:",
+    "@stryke/async": "catalog:",
     "@stryke/env": "catalog:",
-    "@stryke/unique-id": "catalog:",
     "@stryke/helpers": "catalog:",
+    "@stryke/hooks": "catalog:",
+    "@stryke/json": "catalog:",
+    "@stryke/string-format": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@stryke/unique-id": "catalog:",
     "@tamagui/core": "catalog:",
-    "jotai-optics": "catalog:",
-    "valibot": "catalog:",
-    "maska": "catalog:",
-    "optics-ts": "catalog:",
-    "bunshi": "catalog:",
     "@tamagui/portal": "catalog:",
     "@tamagui/toast": "catalog:",
-    "react-native-safe-area-context": "catalog:"
+    "bunshi": "catalog:",
+    "jotai-optics": "catalog:",
+    "maska": "catalog:",
+    "optics-ts": "catalog:",
+    "react-native-safe-area-context": "catalog:",
+    "valibot": "catalog:"
   },
   "devDependencies": {
     "@powerlines/plugin-vite": "catalog:",

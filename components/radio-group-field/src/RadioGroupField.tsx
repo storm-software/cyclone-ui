@@ -1,30 +1,33 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
-import { FieldApi, useFieldActions } from "@cyclone-ui/form-state";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
-import { SelectOption } from "@storm-stack/types/index";
+import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
+import type { SelectOption } from "@stryke/types/form";
 import { styled, withStaticProperties } from "@tamagui/core";
 import { Label } from "@tamagui/label";
 import { YStack } from "@tamagui/stacks";
-import { Atom, useAtomValue } from "jotai";
-import { PropsWithChildren, useCallback } from "react";
+import type { Atom } from "jotai";
+import { useAtomValue } from "jotai";
+import type { PropsWithChildren } from "react";
+import { useCallback } from "react";
 
 const RadioGroupFieldGroup = Field.styleable(
   ({ children, ...props }, forwardedRef) => {
@@ -42,7 +45,7 @@ const RadioGroupItemValue = styled(Label, {
 
   animation: "normal",
   cursor: "pointer",
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontFamily: "$label",
   fontSize: "$6",
   fontWeight: "$4",
@@ -59,21 +62,21 @@ const RadioGroupItemValue = styled(Label, {
 
     disabled: {
       true: {
-        color: "$colorDisabled",
+        color: "$base4",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         focusStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         pressStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         }
       }
     }
@@ -91,27 +94,27 @@ const RadioGroupItemDetails = styled(BodyText, {
 
   animation: "normal",
   cursor: "pointer",
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontSize: "$5",
 
   variants: {
     disabled: {
       true: {
-        color: "$colorDisabled",
+        color: "$base4",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         focusStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         },
 
         pressStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         }
       }
     }

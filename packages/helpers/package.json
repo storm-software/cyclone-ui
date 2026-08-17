@@ -9,9 +9,15 @@
     "directory": "packages/helpers"
   },
   "private": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "dependencies": {
-    "@storm-stack/hashing": "catalog:",
-    "@storm-stack/types": "catalog:",
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/get-token": "catalog:",

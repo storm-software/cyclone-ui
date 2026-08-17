@@ -16,11 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { StormParser } from "@storm-stack/serialization/storm-parser";
-import {
-  isPromise,
-  isPromiseLike
-} from "@storm-stack/types/type-checks/is-promise";
+import { StormJSON as StormParser } from "@stryke/json/storm-json";
+import { isPromise, isPromiseLike } from "@stryke/type-checks/is-promise";
 import type {
   AsyncStorage,
   AsyncStringStorage,

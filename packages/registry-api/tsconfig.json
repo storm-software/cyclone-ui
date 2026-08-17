@@ -1,12 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "rootDir": ".",
     "types": ["@cloudflare/workers-types"],
     "strict": true,
     "declaration": true,
     "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0",
-    "rootDir": "."
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]

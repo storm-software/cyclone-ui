@@ -1,47 +1,59 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { DatePicker } from "@cyclone-ui/date-picker";
 import { Field } from "@cyclone-ui/field";
-import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/form-state";
 import { getSized } from "@cyclone-ui/helpers";
+import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { formatDate } from "@storm-stack/date-time/utilities/format-date";
+import { formatDate } from "@stryke/date/format";
 import { View, withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons";
-import { RefObject, useCallback, useMemo } from "react";
+import type { RefObject } from "react";
+import { useCallback, useMemo } from "react";
 
 export const DATE_MASK = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
   separator: "."
 });
 
+const toDate = (value: unknown) => {
+  if (value == null || value === "") {
+    return null;
+  }
+
+  const date =
+    value instanceof Date ? value : new Date(value as string | number);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
 export const format = (value: any) => {
-  return formatDate(value, {
-    format: "M.D.YYYY",
-    returnEmptyIfNotSet: true,
-    returnEmptyIfInvalid: true
-  });
+  const date = toDate(value);
+  if (!date) {
+    return "";
+  }
+
+  return formatDate(date, "MM.DD.YYYY");
 };
 
 export const parse = (value: any) => {
-  const date = StormDate.create(value);
-  return date.valid ? date : null;
+  return toDate(value);
 };
 
 const DatePickerFieldGroup = Field.styleable((props, forwardedRef) => {

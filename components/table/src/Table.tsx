@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type { GetProps, SizeTokens } from "@tamagui/core";
 import {
@@ -24,14 +25,14 @@ import {
 } from "@tamagui/core";
 import { ThemeableStack } from "@tamagui/stacks";
 
-export type AlignCells = {
+export interface AlignCells {
   y: "center" | "start" | "end";
   x: "center" | "start" | "end";
-};
+}
 
 export type AlignHeaderCells = AlignCells;
 
-export type TableContextProps = {
+export interface TableContextProps {
   cellWidth: SizeTokens | number;
   cellHeight: SizeTokens | number;
   alignHeaderCells: {
@@ -43,14 +44,14 @@ export type TableContextProps = {
     x: "center" | "start" | "end";
   };
   borderColor: string;
-};
+}
 
 const TableContext = createStyledContext<TableContextProps>({
   cellWidth: "$8",
   cellHeight: "$8",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
-  borderColor: "$borderColor"
+  borderColor: "$borderPrimary"
 });
 
 export const TABLE_NAME = "Table";
@@ -64,7 +65,7 @@ const TableRow = styled(ThemeableStack, {
 
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -76,11 +77,11 @@ const TableRow = styled(ThemeableStack, {
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
@@ -109,7 +110,7 @@ const TableRowImpl = TableRow.styleable(
           fullscreen={true}
           animation="normal"
           opacity={0}
-          backgroundColor="$primary"
+          backgroundColor="$backgroundPrimary"
           $group-row-hover={{
             opacity: header ? 0 : 0.1
           }}
@@ -140,11 +141,11 @@ const TableCell = styled(ThemeableStack, {
   paddingHorizontal: "$2",
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
@@ -239,7 +240,7 @@ const TableHeaderImpl = TableHeader.styleable(
           fullscreen={true}
           animation="fast"
           opacity={0.05}
-          backgroundColor="$primary"
+          backgroundColor="$backgroundPrimary"
           style={{
             filter: "blur(1px)"
           }}
@@ -276,7 +277,7 @@ const TableFooterImpl = TableFooter.styleable(
           fullscreen={true}
           animation="fast"
           opacity={0.05}
-          backgroundColor="$primary"
+          backgroundColor="$backgroundPrimary"
           style={{
             filter: "blur(1px)"
           }}
@@ -314,8 +315,8 @@ const TableFrame = styled(ThemeableStack, {
       }
     },
 
-    alignHeaderCells: val => ({}),
-    alignCells: val => ({})
+    alignHeaderCells: _val => ({}),
+    alignCells: _val => ({})
   }
 });
 

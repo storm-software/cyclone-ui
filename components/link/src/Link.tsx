@@ -1,27 +1,29 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { LinkText } from "@cyclone-ui/link-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
-import { GetProps, styled } from "@tamagui/core";
+import type { GetProps } from "@tamagui/core";
+import { styled } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons";
-import { GestureResponderEvent, Linking } from "react-native";
-
+import type { GestureResponderEvent } from "react-native";
+import { Linking } from "react-native";
 const LinkFrame = styled(LinkText, {
   name: "Link",
   tag: "a",
@@ -58,7 +60,7 @@ export const Link = LinkFrame.styleable<{
               onPress: (event: GestureResponderEvent) => {
                 props.onPress?.(event);
                 if (href !== undefined) {
-                  Linking.openURL(href);
+                  void Linking.openURL(href);
                 }
               }
             })}>
@@ -69,9 +71,9 @@ export const Link = LinkFrame.styleable<{
             size="$1"
             display="inline"
             paddingTop={5}
-            color="$secondary"
+            color="$foregroundSecondary"
             $group-link-hover={{
-              color: "$secondary",
+              color: "$foregroundSecondary",
               x: 50,
               y: -50
             }}>

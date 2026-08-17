@@ -22,26 +22,26 @@
   },
   "types": "./types/index.d.ts",
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/checkbox": "^1.144.4",
-    "@tamagui/checkbox-headless": "^1.144.4",
-    "@tamagui/constants": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/create-context": "^1.144.4",
-    "@tamagui/get-token": "^1.144.4",
-    "@tamagui/group": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
+    "@tamagui/checkbox": "catalog:",
+    "@tamagui/checkbox-headless": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/get-token": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/stacks": "catalog:",
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

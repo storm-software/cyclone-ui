@@ -65,6 +65,3 @@ bun x powerlines build [options]
 ## Options
 
 The following options are available for the `build` command:
-
-
-

@@ -66,8 +66,6 @@ bun x powerlines help [options] <commands...>
 
 </details>
 
-
-
 ## Positional Arguments
 
 The following positional arguments are available for the `help` command:
@@ -79,4 +77,3 @@ This command does not have any arguments.
 The following options are available for the `help` command:
 
 This command does not have any options.
-

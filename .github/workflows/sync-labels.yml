@@ -22,13 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
           fetch-depth: 0
           persist-credentials: false
 
       - name: 🚀 Run Label Syncer
-        uses: micnncim/action-label-syncer@v1.3.0
+        uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c # v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}

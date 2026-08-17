@@ -1,24 +1,25 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Container, type ContainerProps } from "@cyclone-ui/container";
+import type { ContainerProps } from "@cyclone-ui/container";
+import { Container } from "@cyclone-ui/container";
 import { Heading5Text } from "@cyclone-ui/heading-text";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
@@ -96,7 +97,7 @@ const AlertIcon = ThemeableIcon.styleable(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$primary"
+          backgroundColor="$backgroundPrimary"
           zIndex="$1"
         />
 
@@ -104,7 +105,7 @@ const AlertIcon = ThemeableIcon.styleable(
           <View
             theme={"base"}
             padding="$1.75"
-            backgroundColor="$surfacePrimary"
+            backgroundColor="$surface1"
             borderRadius={1000_000_000}>
             <ThemeableIcon
               ref={forwardedRef}
@@ -144,7 +145,7 @@ const AlertContent = YStack.styleable(
 const AlertHeading = styled(Heading5Text, {
   name: "AlertHeading",
 
-  color: "$primary"
+  color: "$foregroundPrimary"
 });
 
 const AlertHeadingImpl = AlertHeading.styleable(
@@ -165,7 +166,7 @@ const AlertHeadingImpl = AlertHeading.styleable(
 const AlertBody = styled(BodyText, {
   name: "AlertBody",
 
-  color: "$secondary",
+  color: "$foregroundSecondary",
   fontSize: "$6"
 });
 

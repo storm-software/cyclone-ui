@@ -65,6 +65,3 @@ bun x powerlines clean [options]
 ## Options
 
 The following options are available for the `clean` command:
-
-
-

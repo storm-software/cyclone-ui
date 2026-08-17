@@ -25,6 +25,7 @@ export type ColorScientificPalette =
   | "tetradic"
   | "complementary"
   | "splitComplementary";
+
 export const ColorScientificPalette = {
   SURROUNDING: "surrounding" as ColorScientificPalette,
   ANALOGOUS: "analogous" as ColorScientificPalette,

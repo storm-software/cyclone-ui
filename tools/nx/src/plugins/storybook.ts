@@ -113,10 +113,12 @@ export const createNodesV2: CreateNodes<StorybookPluginOptions> = [
           targets.prepare = prepareTarget(contextV2.workspaceRoot);
           targets[normalizedOptions.buildStorybookTargetName] = buildTarget(
             buildOutputs,
-            projectRoot
+            projectRoot,
+            context.workspaceRoot
           );
           targets[normalizedOptions.serveStorybookTargetName] = serveTarget(
             projectRoot,
+            context.workspaceRoot,
             normalizedOptions.port
           );
 
@@ -220,13 +222,25 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
   };
 }
 
+function storybookConfigDir(workspaceRoot: string, projectRoot: string) {
+  return join(workspaceRoot, projectRoot, ".storybook");
+}
+
+function storybookOutputDir(workspaceRoot: string, projectRoot: string) {
+  return join(workspaceRoot, projectRoot, "storybook-static");
+}
+
 function buildTarget(
   outputs: string[],
-  projectRoot: string
+  projectRoot: string,
+  workspaceRoot: string
 ): TargetConfiguration {
+  const configDir = storybookConfigDir(workspaceRoot, projectRoot);
+  const outputDir = storybookOutputDir(workspaceRoot, projectRoot);
+
   return {
     dependsOn: [{ target: "prepare" }],
-    command: "storybook build",
+    command: `storybook build --config-dir ${configDir} --output-dir ${outputDir}`,
     options: { cwd: projectRoot },
     cache: true,
     outputs,
@@ -245,21 +259,30 @@ function buildTarget(
   };
 }
 
-function serveTarget(projectRoot: string, port = 4400): TargetConfiguration {
+function serveTarget(
+  projectRoot: string,
+  workspaceRoot: string,
+  port = 4400
+): TargetConfiguration {
+  const configDir = storybookConfigDir(workspaceRoot, projectRoot);
+
   return {
     dependsOn: [{ target: "prepare" }],
     inputs: ["typescript", "documentation"],
     executor: "nx:run-commands",
-    options: { cwd: projectRoot, command: `storybook dev -p ${port}` },
+    options: {
+      cwd: projectRoot,
+      command: `storybook dev -p ${port} --config-dir ${configDir}`
+    },
     defaultConfiguration: "local",
     configurations: {
       local: {
         cwd: projectRoot,
-        command: `storybook dev -p ${port}`
+        command: `storybook dev -p ${port} --config-dir ${configDir}`
       },
       ci: {
         cwd: projectRoot,
-        command: `storybook dev -p ${port} --ci --no-open`
+        command: `storybook dev -p ${port} --ci --no-open --config-dir ${configDir}`
       }
     }
   };

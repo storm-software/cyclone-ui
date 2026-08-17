@@ -1,31 +1,29 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
+ ------------------------------------------------------------------- */
+
 import {
   getButtonSized,
   getFontSizedFromSize,
   getSized
 } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
-import {
-  ThemeableIcon,
-  type ThemeableIconProps
-} from "@cyclone-ui/themeable-icon";
+import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
+import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type {
   ColorTokens,
   GetProps,
@@ -48,9 +46,8 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
-import { useCallback, useMemo, type FunctionComponent } from "react";
-import { GestureResponderEvent } from "react-native";
-
+import { useCallback, useMemo } from "react";
+import type { GestureResponderEvent } from "react-native";
 type ButtonVariant =
   | "primary"
   | "secondary"
@@ -61,13 +58,6 @@ type ButtonVariant =
   | "ghost"
   | "glass"
   | "link";
-
-type ButtonIconProps = { color?: any; size?: any };
-type IconProp =
-  | JSX.Element
-  | FunctionComponent<ButtonIconProps>
-  | ((props: ButtonIconProps) => any)
-  | null;
 
 type BorderRadiusSizeTokens =
   | number
@@ -186,7 +176,7 @@ const ButtonFrame = styled(View, {
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   borderWidth: 1,
   flexWrap: "nowrap",
   flexDirection: "row",
@@ -196,7 +186,7 @@ const ButtonFrame = styled(View, {
 
   hoverStyle: {
     borderWidth: 1,
-    borderColor: "$borderColorHover"
+    borderColor: "$borderSecondary"
   },
 
   focusStyle: {
@@ -204,7 +194,7 @@ const ButtonFrame = styled(View, {
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineStyle: "solid",
     outlineWidth: 3,
     outlineOffset: "$1.25"
@@ -213,47 +203,47 @@ const ButtonFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "$primary",
-        borderColor: "$tertiary",
+        backgroundColor: "$backgroundPrimary",
+        borderColor: "$borderTertiary",
 
         hoverStyle: {
-          backgroundColor: "$tertiary"
+          backgroundColor: "$backgroundTertiary"
         }
       },
 
       secondary: {
-        backgroundColor: "$surfaceTertiary",
+        backgroundColor: "$surface3",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted"
+          backgroundColor: "$base2"
         }
       },
 
       tertiary: {
-        backgroundColor: "$surfaceSecondary",
+        backgroundColor: "$surface2",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted"
+          backgroundColor: "$base2"
         }
       },
 
       quaternary: {
-        backgroundColor: "$surfacePrimary",
+        backgroundColor: "$surface1",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted"
+          backgroundColor: "$base2"
         }
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 2,
-        borderColor: "$color",
+        borderColor: "$borderPrimary",
 
         hoverStyle: {
-          backgroundColor: "$surfaceMuted",
+          backgroundColor: "$base2",
           borderWidth: 2,
-          borderColor: "$surfaceMuted"
+          borderColor: "$base2"
         }
       },
 
@@ -283,7 +273,7 @@ const ButtonFrame = styled(View, {
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$primary"
+          borderColor: "$borderPrimary"
         }
       },
 
@@ -326,14 +316,14 @@ const ButtonFrame = styled(View, {
     ringed: {
       true: {
         hoverStyle: {
-          outlineColor: "$primary",
+          outlineColor: "$borderPrimary",
           outlineStyle: "solid",
           outlineWidth: 3,
           outlineOffset: "$1.25"
         },
 
         pressStyle: {
-          outlineColor: "$primary",
+          outlineColor: "$borderPrimary",
           outlineStyle: "solid",
           outlineWidth: 3,
           outlineOffset: "$1.25"
@@ -398,78 +388,78 @@ const ButtonTextFrame = styled(LabelText, {
   variants: {
     variant: {
       primary: {
-        color: "$surfacePrimary",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$surfacePrimary"
+          color: "$foregroundOnPrimary"
         }
       },
 
       secondary: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       tertiary: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       quaternary: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       outlined: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$surfacePrimary"
+          color: "$foregroundOnPrimary"
         }
       },
 
       ghost: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       glass: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       gradient: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$colorHover"
+          color: "$foregroundSecondary"
         }
       },
 
       link: {
-        color: "$color",
+        color: "$foregroundOnPrimary",
         textDecorationLine: "underline",
-        textDecorationColor: "$color",
+        textDecorationColor: "$foregroundOnPrimary",
         textDecorationStyle: "solid",
 
         hoverStyle: {
-          color: "$colorHover",
-          textDecorationColor: "$colorHover"
+          color: "$foregroundSecondary",
+          textDecorationColor: "$foregroundSecondary"
         }
       }
     },
@@ -478,17 +468,17 @@ const ButtonTextFrame = styled(LabelText, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "$colorDisabled",
+        color: "$base4",
         textDecoration: "none",
 
         hoverStyle: {
-          color: "$colorDisabled",
+          color: "$base4",
 
           textDecoration: "none"
         },
 
         pressStyle: {
-          color: "$colorDisabled",
+          color: "$base4",
 
           textDecoration: "none"
         }
@@ -508,6 +498,7 @@ const ButtonTextFrame = styled(LabelText, {
         }
 
         const font = getFontSizedFromSize(val, extras);
+
         return {
           ...font
         };
@@ -553,15 +544,15 @@ const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
           disabled={disabled}
           circular={circular}
           size={size ?? contextSize}
-          color={disabled ? "$colorDisabled" : color}
+          color={disabled ? "$base4" : color}
           {...props}
           borderRadius={0}
           $group-button-hover={{
             color: disabled
-              ? "$colorDisabled"
+              ? "$base4"
               : variant === "primary" || variant === "outlined"
-                ? "$surfacePrimary"
-                : "$colorHover"
+                ? "$foregroundOnPrimary"
+                : "$foregroundSecondary"
           }}>
           {children}
         </ButtonTextFrame>
@@ -614,17 +605,17 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
             color={
               (color ||
                 (disabled
-                  ? "$colorDisabled"
+                  ? "$base4"
                   : variant === "primary" || variant === "outlined"
-                    ? "$surfacePrimary"
-                    : "$colorHover")) as ThemeableIconProps["color"]
+                    ? "$foregroundOnPrimary"
+                    : "$foregroundSecondary")) as ThemeableIconProps["color"]
             }
             $group-button-hover={{
               color: disabled
-                ? "$colorDisabled"
+                ? "$base4"
                 : variant === "primary"
-                  ? "$surfacePrimary"
-                  : "$colorHover"
+                  ? "$foregroundOnPrimary"
+                  : "$foregroundSecondary"
             }}>
             {children}
           </ThemeableIcon>
@@ -644,8 +635,8 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   animation: "normal",
   opacity: 0,
   zIndex: "$sm",
-  backgroundColor: "$surfaceTertiary",
-  borderColor: "$primary",
+  backgroundColor: "$surface3",
+  borderColor: "$borderPrimary",
 
   variants: {
     bordered: {
@@ -685,7 +676,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
   animation: "normal",
   opacity: 0.5,
   zIndex: "$sm",
-  colors: ["$secondary", "$primary"],
+  colors: ["$backgroundSecondary", "$backgroundPrimary"],
 
   variants: {
     circular: {
@@ -702,7 +693,7 @@ const ButtonGradientBackground = styled(LinearGradient, {
 
   animation: "normal",
   zIndex: "$sm",
-  colors: ["$tertiary", "$primary"],
+  colors: ["$backgroundTertiary", "$backgroundPrimary"],
 
   variants: {
     circular: {

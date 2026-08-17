@@ -1,16 +1,28 @@
-import { getFontSized } from "@tamagui/get-font-sized";
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
+import { View, createStyledContext, styled } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
-import { SizableText } from "@tamagui/text";
-import {
-  View,
-  FontSizeTokens,
-  SizeTokens,
-  ColorTokens,
-  createStyledContext,
-  styled
-} from "@tamagui/core";
-import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
+import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
+import { SizableText } from "@tamagui/text";
 
 const BadgeContext = createStyledContext({
   size: "$true" as SizeTokens,
@@ -24,7 +36,7 @@ const BadgeFrame = styled(View, {
   flexDirection: "row",
   context: BadgeContext,
   width: "fit-content",
-  backgroundColor: "$primary",
+  backgroundColor: "$backgroundPrimary",
 
   variants: {
     circular: {
@@ -45,7 +57,7 @@ const BadgeFrame = styled(View, {
     outlined: {
       true: {
         backgroundColor: "transparent",
-        borderColor: "$primary",
+        borderColor: "$borderPrimary",
         borderWidth: 1
       }
     },
@@ -53,10 +65,12 @@ const BadgeFrame = styled(View, {
     size: {
       "...size": (val: any, allTokens: any) => {
         const { tokens } = allTokens;
+        const space = tokens.space[val];
+        const spaceValue = space?.val ?? 0;
 
         return {
-          paddingHorizontal: tokens.space[val],
-          paddingVertical: tokens.space[val]?.val * 0.2
+          paddingHorizontal: space,
+          paddingVertical: spaceValue * 0.2
         };
       }
     },
@@ -67,11 +81,11 @@ const BadgeFrame = styled(View, {
         role: "button",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover"
+          backgroundColor: "$backgroundElevated"
         },
 
         focusVisibleStyle: {
-          outlineColor: "$outlineColor",
+          outlineColor: "$borderAccent",
           outlineStyle: "solid",
           outlineWidth: 2
         }
@@ -80,14 +94,14 @@ const BadgeFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
 const BadgeText = styled(SizableText, {
   name: BADGE_NAME,
   context: BadgeContext,
-  color: "$bg",
+  color: "$foregroundOnPrimary",
 
   variants: {
     unstyled: {
@@ -100,7 +114,7 @@ const BadgeText = styled(SizableText, {
 
     outlined: {
       true: {
-        color: "$primary"
+        color: "$foregroundPrimary"
       }
     },
 
@@ -110,16 +124,16 @@ const BadgeText = styled(SizableText, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 
-type BadgeIconProps = {
+interface BadgeIconProps {
   color?: ColorTokens | string;
   scaleIcon?: number;
   size?: SizeTokens;
   children: React.ReactNode;
-};
+}
 
 const BadgeIconFrame = styled(View, {
   name: BADGE_NAME,
@@ -157,6 +171,7 @@ const BadgeIcon = BadgeIconFrame.styleable<BadgeIconProps>((props, ref) => {
     size: iconSize,
     color: color as any
   });
+
   return (
     <BadgeIconFrame ref={ref} {...rest}>
       {getThemedIcon(children)}
@@ -175,25 +190,25 @@ const ButtonComp = styled(View, {
     unstyled: {
       false: {
         borderRadius: 1000_000_000,
-        backgroundColor: "$background",
+        backgroundColor: "$backgroundPrimary",
         justifyContent: "center",
         alignItems: "center",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover"
+          backgroundColor: "$backgroundElevated"
         },
         pressStyle: {
-          backgroundColor: "$backgroundPress"
+          backgroundColor: "$backgroundFloating"
         },
         focusStyle: {
-          backgroundColor: "$backgroundFocus"
+          backgroundColor: "$backgroundElevated"
         }
       }
     },
     alignRight: {
       ":boolean": (val: any, { props, tokens }: any) => {
         if (val) {
-          const size = (props as any).size as SizeTokens;
+          const size = props.size as SizeTokens;
           if (typeof size === "number") {
             return {
               x: size * 0.55
@@ -208,7 +223,7 @@ const ButtonComp = styled(View, {
     alignLeft: {
       ":boolean": (val: any, { props, tokens }: any) => {
         if (val) {
-          const size = (props as any).size as SizeTokens;
+          const size = props.size as SizeTokens;
           if (typeof size === "number") {
             return {
               x: size * -0.55
@@ -223,7 +238,7 @@ const ButtonComp = styled(View, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1" ? true : false
+    unstyled: process.env.TAMAGUI_HEADLESS === "1"
   }
 });
 

@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-unsafe-call -- @stryke/helpers merge/path helpers */
+
 import type { GetField } from "@stryke/helpers/get-field";
 import { getField } from "@stryke/helpers/get-field";
 import { isEqual } from "@stryke/helpers/is-equal";

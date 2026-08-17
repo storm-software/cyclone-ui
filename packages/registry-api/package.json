@@ -9,8 +9,6 @@
   },
   "private": true,
   "dependencies": {
-    "@storm-stack/errors": "catalog:",
-    "@storm-stack/serialization": "catalog:",
     "@trpc/client": "catalog:",
     "@trpc/server": "catalog:",
     "zod": "catalog:"

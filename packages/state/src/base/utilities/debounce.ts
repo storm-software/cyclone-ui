@@ -65,8 +65,8 @@ export function debounce<TArgs extends unknown[], TReturn>(
 
   const applyFn = async (_this: any, args: any[]) => {
     currentPromise = _applyPromised(fn, _this, args);
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    currentPromise.finally(async () => {
+    // eslint-disable-next-line ts/no-floating-promises
+    void currentPromise.finally(async () => {
       currentPromise = undefined;
       if (options.trailing && trailingArgs && !timeout) {
         const promise = applyFn(_this, trailingArgs);

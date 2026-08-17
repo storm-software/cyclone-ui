@@ -27,24 +27,24 @@
     "types"
   ],
   "peerDependencies": {
-    "jotai": ">=2.8.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@storm-stack/hooks": "latest",
-    "@storm-stack/types": "latest",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/label": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
+    "@stryke/hooks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/label": "catalog:",
+    "@tamagui/stacks": "catalog:",
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
-    "jotai": "^2.20.2",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "jotai": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

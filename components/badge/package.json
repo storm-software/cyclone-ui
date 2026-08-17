@@ -27,23 +27,23 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/font-size": "^1.144.4",
-    "@tamagui/get-font-sized": "^1.144.4",
-    "@tamagui/helpers": "^1.144.4",
-    "@tamagui/helpers-tamagui": "^1.144.4",
-    "@tamagui/text": "^1.144.4",
-    "@tamagui/web": "^1.144.4"
+    "@tamagui/core": "catalog:",
+    "@tamagui/font-size": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

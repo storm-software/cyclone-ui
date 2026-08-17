@@ -16,10 +16,22 @@
 
  ------------------------------------------------------------------- */
 
-import { hash } from "@storm-stack/hashing";
-import { isSet } from "@storm-stack/types/type-checks/is-set";
+import { isSet } from "@stryke/type-checks/is-set";
 import type { UnionableString, Variable } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
+
+/**
+ * Stable cache key for a token map. Avoids `@stryke/hash`, whose barrel
+ * imports Node `fs`/`glob` and cannot be bundled for the browser.
+ */
+function tokensMapCacheKey(
+  tokensMap: Record<string, Variable<number>>
+): string {
+  return Object.entries(tokensMap)
+    .map(([key, token]) => `${key}:${token.val}`)
+    .toSorted()
+    .join("|");
+}
 
 const binarySearch = (
   tokens: Variable<number>[],
@@ -85,7 +97,11 @@ export const getNearestToken = <
 
   let _type = type;
   if (!_type) {
-    _type = hash(tokensMap);
+    if (!tokensMap) {
+      return "$true" as TToken;
+    }
+
+    _type = tokensMapCacheKey(tokensMap);
   }
 
   const cacheSortedTokensKey = { type: _type };

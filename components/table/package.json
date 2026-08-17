@@ -27,29 +27,29 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@tamagui/animate-presence": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/helpers": "^1.144.4",
-    "@tamagui/linear-gradient": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
-    "@tamagui/text": "^1.144.4",
-    "@tamagui/use-controllable-state": "^1.144.4",
-    "@tamagui/web": "^1.144.4",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/use-controllable-state": "catalog:",
+    "@tamagui/web": "catalog:",
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
-    "@tamagui/avatar": "^1.144.4",
+    "@tamagui/avatar": "catalog:",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/table-core": "^8.21.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

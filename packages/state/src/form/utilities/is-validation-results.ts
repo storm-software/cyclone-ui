@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isSetObject } from "@storm-stack/types/type-checks/is-set-object";
+import { isSetObject } from "@stryke/type-checks/is-set-object";
 import type { ValidationResults } from "../types";
 
 export const isValidationResults = (value: any): value is ValidationResults => {

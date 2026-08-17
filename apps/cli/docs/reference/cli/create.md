@@ -65,6 +65,3 @@ bun x powerlines create [options]
 ## Options
 
 The following options are available for the `create` command:
-
-
-

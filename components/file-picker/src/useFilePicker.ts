@@ -1,28 +1,29 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type * as DocumentPicker from "expo-document-picker";
 import type * as ImagePicker from "expo-image-picker/src/ImagePicker";
 import { useCallback } from "react";
 import type { DropzoneInputProps, DropzoneRootProps } from "react-dropzone";
-import { MediaTypeOptions } from "./file-picker-types";
+import type { MediaTypeOptions } from "./file-picker-types";
 import { useDropZone } from "./useDropZone";
 
-export type UseFilePickerControl = {
+export interface UseFilePickerControl {
   onOpen: () => void;
   getInputProps: <TProps extends DropzoneInputProps>(props?: TProps) => TProps;
   getRootProps: <TProps extends DropzoneRootProps>(props?: TProps) => TProps;
@@ -31,7 +32,7 @@ export type UseFilePickerControl = {
     isDragActive: boolean;
     isDragReject: boolean;
   };
-};
+}
 
 export type NativeFiles<TMediaTypeOptions extends MediaTypeOptions[]> =
   TMediaTypeOptions[number] extends "Images"
@@ -43,13 +44,13 @@ export type OnPickType<TMediaTypeOptions extends MediaTypeOptions[]> = (param: {
   nativeFiles: NativeFiles<TMediaTypeOptions> | null;
 }) => void | Promise<void>;
 
-type UseFilePickerProps<TMediaTypeOptions extends MediaTypeOptions[]> = {
+interface UseFilePickerProps<TMediaTypeOptions extends MediaTypeOptions[]> {
   mediaTypes: TMediaTypeOptions;
   onPick: OnPickType<TMediaTypeOptions>;
   /** multiple only works for image only types on native, but on web it works regarding the media types */
   multiple: boolean;
   typeOfPicker: "file" | "image";
-};
+}
 
 export function useFilePicker<TMediaTypeOptions extends MediaTypeOptions[]>(
   props: UseFilePickerProps<TMediaTypeOptions>
@@ -59,7 +60,7 @@ export function useFilePicker<TMediaTypeOptions extends MediaTypeOptions[]>(
   const onDrop = useCallback(
     (webFiles: any) => {
       if (onPick) {
-        onPick({ webFiles, nativeFiles: null });
+        void onPick({ webFiles, nativeFiles: null });
       }
     },
     [onPick]
@@ -68,7 +69,7 @@ export function useFilePicker<TMediaTypeOptions extends MediaTypeOptions[]>(
   const onOpen = useCallback(
     (nativeFiles: any) => {
       if (onPick) {
-        onPick({ webFiles: null, nativeFiles });
+        void onPick({ webFiles: null, nativeFiles });
       }
     },
     [onPick]

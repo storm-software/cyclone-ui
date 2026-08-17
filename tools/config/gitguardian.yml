@@ -6,5 +6,5 @@ instance: https://dashboard.gitguardian.com
 secret:
   # Exclude files and paths by globbing
   ignored_paths:
-    - "nx.json"
-    - "tools/config/verdaccio.yml"
+    - nx.json
+    - tools/config/verdaccio.yml

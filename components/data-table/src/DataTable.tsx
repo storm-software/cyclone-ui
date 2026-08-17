@@ -1,44 +1,58 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { Form } from "@cyclone-ui/form";
-import { CallbackContext, FieldAtoms, FormAtoms } from "@cyclone-ui/form-state";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
-import { Table, type TableProps } from "@cyclone-ui/table";
-import { titleCase } from "@storm-stack/string-fns/title-case";
-import { isNumber } from "@storm-stack/types/type-checks/is-number";
-import type { SelectOption } from "@storm-stack/types/utility-types/form";
-import { deepClone } from "@storm-stack/utilities/helper-fns/deep-clone";
-import { isEqual } from "@storm-stack/utilities/helper-fns/is-equal";
-import { matchSorter } from "@storm-stack/utilities/helper-fns/match-sorter";
+import type {
+  CallbackContext,
+  FieldAtoms,
+  FormAtoms
+} from "@cyclone-ui/state/form";
+import type { TableProps } from "@cyclone-ui/table";
+import { Table } from "@cyclone-ui/table";
+import { deepClone } from "@stryke/helpers/deep-clone";
+import { isEqual } from "@stryke/helpers/is-equal";
+import { matchSorter } from "@stryke/helpers/match-sorter";
+import { titleCase } from "@stryke/string-format/title-case";
+import { isNumber } from "@stryke/type-checks/is-number";
+import type { SelectOption } from "@stryke/types/form";
 import { createStyledContext, View } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
-import {
+import type {
   CellContext,
   ColumnFiltersState,
+  HeaderContext,
+  PaginationState,
+  Table as ReactTable,
+  Row,
+  RowData,
+  SortingState,
+  TableOptions
+} from "@tanstack/react-table";
+import {
   flexRender,
   getCoreRowModel,
   getFacetedRowModel,
@@ -46,25 +60,13 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  Row,
-  useReactTable,
-  type HeaderContext,
-  type PaginationState,
-  type Table as ReactTable,
-  type RowData,
-  type SortingState,
-  type TableOptions
+  useReactTable
 } from "@tanstack/react-table";
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useMemo,
-  useState
-} from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 declare module "@tanstack/react-table" {
-  interface ColumnMeta<TData extends RowData, TValue> {
+  interface ColumnMeta<TData extends RowData, _TValue> {
     facetFn?: (data: TData) => string;
   }
 }
@@ -79,14 +81,14 @@ const defaultFilterFn = <TData extends RowData>(
   );
 };
 
-export type DataTableContextProps = {
+export interface DataTableContextProps {
   sorting: SortingState;
   setSorting: Dispatch<SetStateAction<SortingState>>;
   columnFilters: ColumnFiltersState;
   setColumnFilters: Dispatch<SetStateAction<ColumnFiltersState>>;
   pagination: PaginationState;
   setPagination: Dispatch<SetStateAction<PaginationState>>;
-};
+}
 
 export const DataTableContext = createStyledContext<DataTableContextProps>({
   sorting: [] as SortingState,
@@ -110,7 +112,7 @@ export function DataTable<TData extends RowData>({
   pageSize = 100,
   ...rest
 }: DataTableProps<TData>) {
-  const [data, setData] = useState<TData[]>(() => [...options.data]);
+  const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [pagination, setPagination] = useState<PaginationState>({
@@ -233,8 +235,10 @@ export function DataTable<TData extends RowData>({
   );
 }
 
-export interface DataTableCellProps<TData extends RowData, TValue = any>
-  extends CellContext<TData, TValue> {
+export interface DataTableCellProps<
+  TData extends RowData,
+  TValue = any
+> extends CellContext<TData, TValue> {
   value?: string;
 }
 
@@ -247,12 +251,13 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   props: DataTableCellProps<TData, TValue>
 ) => {
   const value = props.value ? props.value : props.renderValue();
+
   return (
     <SizableText
       animation="normal"
       fontFamily="$body"
-      color="$color"
-      $group-row-hover={{ color: "$primary" }}>
+      color="$foregroundOnPrimary"
+      $group-row-hover={{ color: "$foregroundPrimary" }}>
       {value}
     </SizableText>
   );
@@ -261,7 +266,7 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
 const SEARCH_FIELD_NAME = "__search";
 const SELECT_ALL_FIELD_NAME = "__selectAll";
 
-const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>({
+const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   valuesMap = new Map(),
   onSearchChange
 }: {
@@ -322,7 +327,7 @@ const DataTableHeaderFilterFields = <TData extends RowData, TValue = any>({
 
 export const DataTableHeader = <TData extends RowData, TValue = any>({
   column,
-  ...props
+  ..._props
 }: DataTableHeaderProps<TData, TValue>) => {
   const [currentSearch, setCurrentSearch] = useState("");
 
@@ -413,7 +418,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
   );
 
   const handleSearchChange = useCallback(
-    ({ get, set, atoms }: CallbackContext<FieldAtoms<string>>) => {
+    ({ get, set: _set, atoms }: CallbackContext<FieldAtoms<string>>) => {
       setCurrentSearch(get(atoms.value));
     },
     []
@@ -448,25 +453,25 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       justifyContent="space-between"
       alignItems="center"
       paddingRight="$3"
-      borderRightColor="$borderColor"
+      borderRightColor="$borderPrimary"
       borderRightWidth={1}>
       <XStack gap="$2" onPress={handleSorting} flex={1} cursor="pointer">
         <SizableText
           animation="normal"
           fontFamily="$label"
-          color="$primary"
+          color="$foregroundPrimary"
           size="$6"
-          $group-header-hover={{ color: "$fg" }}>
+          $group-header-hover={{ color: "$foregroundOnPrimary" }}>
           {titleCase(id)}
         </SizableText>
         {isSorted && !desc && (
           <XStack gap="$0.25" alignItems="center">
-            <ArrowDownAZ size="$1" color="$primary" />
+            <ArrowDownAZ size="$1" color="$foregroundPrimary" />
             <SizableText
               animation="normal"
               fontFamily="$label"
               fontWeight="$6"
-              color="$primary"
+              color="$foregroundPrimary"
               size="$2">
               {sortIndex + 1}
             </SizableText>
@@ -474,12 +479,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="$0.25" alignItems="center">
-            <ArrowUpZA size="$1" color="$primary" />
+            <ArrowUpZA size="$1" color="$foregroundPrimary" />
             <SizableText
               animation="normal"
               fontFamily="$label"
               fontWeight="$6"
-              color="$primary"
+              color="$foregroundPrimary"
               size="$2">
               {sortIndex + 1}
             </SizableText>
@@ -499,7 +504,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 theme={"base"}
                 circular={true}
                 bordered={false}
-                color="$primary"
+                color="$foregroundPrimary"
                 padding="$2"
                 width="$3">
                 <Button.Icon>
@@ -549,7 +554,7 @@ export function DataTablePagination<TData extends RowData>({
   pageIndex,
   pageSize,
   pageCount,
-  ...props
+  ..._props
 }: DataTablePaginationProps<TData>) {
   const { setPagination } = DataTableContext.useStyledContext();
 

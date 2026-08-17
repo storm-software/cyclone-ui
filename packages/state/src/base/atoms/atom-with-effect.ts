@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-use-before-define -- debug labels reference the returned effect atom */
+
 import { isEqual } from "@stryke/helpers/is-equal";
 import type { Atom, Getter, Setter } from "jotai/vanilla";
 import { atom } from "jotai/vanilla";

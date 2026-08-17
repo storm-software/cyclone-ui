@@ -18,7 +18,7 @@
 
 /* eslint-disable unicorn/no-null */
 
-import { isFunction } from "@storm-stack/types";
+import { isFunction } from "@stryke/type-checks/is-function";
 import type { Atom, PrimitiveAtom, SetStateAction, WritableAtom } from "jotai";
 import { RESET } from "jotai/utils";
 import { atomWithWrapper } from "../atoms/atom-with-wrapper";

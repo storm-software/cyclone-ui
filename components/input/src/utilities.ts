@@ -1,32 +1,35 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
-import { sizeToSpace } from "@cyclone-ui/tamagui";
+ ------------------------------------------------------------------- */
+
+import {
+  getFontSizedFromSize,
+  getSized,
+  getSpaced,
+  sizeToSpace
+} from "@cyclone-ui/helpers";
+import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   createStyledContext,
   isWeb,
-  SizeTokens,
   stylePropsTextOnly,
-  validStyles,
-  VariantSpreadExtras
+  validStyles
 } from "@tamagui/core";
-import { InputContextProps } from "./types";
-
+import type { InputContextProps } from "./types";
 export const InputContext = createStyledContext<InputContextProps>({
   size: "$true",
   circular: false,
@@ -44,8 +47,8 @@ export const baseInputStyle = [
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "$color",
-    placeholderTextColor: "$placeholderColor",
+    color: "$foregroundOnPrimary",
+    placeholderTextColor: "$base4",
     selectionColor: "$color6",
     fontFamily: "$body",
     fontSize: "$true",
@@ -68,8 +71,8 @@ export const baseInputStyle = [
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "$colorDisabled",
-          placeholderTextColor: "$placeholderColorDisabled"
+          color: "$base4",
+          placeholderTextColor: "$base4"
         }
       },
 
@@ -80,6 +83,7 @@ export const baseInputStyle = [
         ) => {
           if (typeof val === "number") {
             const space = sizeToSpace(val);
+
             return {
               ...getFontSizedFromSize(val, extras),
               paddingHorizontal: Math.round(space * 0.4)
@@ -88,6 +92,7 @@ export const baseInputStyle = [
 
           const size = getSized(val);
           const space = sizeToSpace(size);
+
           return {
             ...getFontSizedFromSize(val, extras),
             paddingHorizontal: Math.round(space * 0.4)
@@ -132,7 +137,7 @@ export const getInputSize = (
   }
 
   const xSize = getSpaced(val);
-  const radiusToken = tokens.radius[val] ?? tokens.radius["$true"];
+  const radiusToken = tokens.radius[val] ?? tokens.radius.$true;
 
   return {
     paddingHorizontal: xSize,

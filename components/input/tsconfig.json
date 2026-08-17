@@ -1,21 +1,21 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
+    "ignoreDeprecations": "6.0",
+    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "lib": ["ESnext", "DOM"],
-    "ignoreDeprecations": "6.0",
-    "rootDir": "."
+    "outDir": "../../dist/out-tsc"
   },
-  "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
+    {
+      "path": "../../packages/helpers"
+    },
     {
       "path": "../button"
     },
@@ -25,5 +25,8 @@
     {
       "path": "../field"
     }
-  ]
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

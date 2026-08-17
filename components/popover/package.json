@@ -27,26 +27,26 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
     "@floating-ui/react": "0.26.28",
-    "@tamagui/adapt": "^1.144.4",
-    "@tamagui/animate-presence": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/create-context": "^1.144.4",
-    "@tamagui/popover": "^1.144.4",
-    "@tamagui/popper": "^1.144.4",
-    "@tamagui/sheet": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
-    "@tamagui/text": "^1.144.4"
+    "@tamagui/adapt": "catalog:",
+    "@tamagui/animate-presence": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/popover": "catalog:",
+    "@tamagui/popper": "catalog:",
+    "@tamagui/sheet": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

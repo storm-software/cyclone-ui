@@ -67,6 +67,3 @@ bun x powerlines update [options]
 ## Options
 
 The following options are available for the `update` command:
-
-
-

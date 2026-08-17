@@ -16,7 +16,37 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorThemeMode } from "../../colors/src/types";
+export type ColorThemeMode = "light" | "dark";
+
+export type ColorThemeName =
+  | "base"
+  | "brand"
+  | "alternate"
+  | "accent"
+  | "link"
+  | "discovery"
+  | "info"
+  | "warning"
+  | "danger"
+  | "success"
+  | "positive"
+  | "negative";
+
+// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
+export const ColorThemeName = {
+  BASE: "base",
+  BRAND: "brand",
+  ALTERNATE: "alternate",
+  ACCENT: "accent",
+  LINK: "link",
+  DISCOVERY: "discovery",
+  INFO: "info",
+  WARNING: "warning",
+  DANGER: "danger",
+  SUCCESS: "success",
+  POSITIVE: "positive",
+  NEGATIVE: "negative"
+} as const satisfies Record<string, ColorThemeName>;
 
 export interface ThemeOptions {
   /**

@@ -16,7 +16,7 @@ import config from "./packages/themes/src/tamagui/config.ts";
 export default config;
 ```
 
-2. Wrap your app with Tamagui. The generated file includes both `light` and `dark` themes:
+1. Wrap your app with Tamagui. The generated file includes both `light` and `dark` themes:
 
 ```tsx
 import { TamaguiProvider } from "tamagui";
@@ -31,7 +31,7 @@ export function App() {
 }
 ```
 
-3. Use generated tokens with Tamagui style props
+1. Use generated tokens with Tamagui style props
    ([styles](https://tamagui.dev/docs/intro/styles), [tokens](https://tamagui.dev/docs/core/tokens)):
 
 - `color="$primary"` / `padding="$sm"` / `borderRadius="$md"`

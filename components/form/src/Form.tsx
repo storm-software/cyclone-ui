@@ -1,34 +1,31 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import {
-  FormApi,
-  FormProvider,
-  FormProviderOptions,
-  useFormActions
-} from "@cyclone-ui/form-state";
-import type { GetProps, StackProps } from "@tamagui/core";
-import { Stack, View, styled } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+import type { FormProviderOptions } from "@cyclone-ui/state/form";
+import { FormApi, FormProvider, useFormActions } from "@cyclone-ui/state/form";
+import type { GetProps, ViewProps } from "@tamagui/core";
+import { View, styled } from "@tamagui/core";
 import { composeEventHandlers, withStaticProperties } from "@tamagui/helpers";
-import { FormHTMLAttributes } from "react";
+import type { FormHTMLAttributes } from "react";
 
 const FORM_NAME = "Form";
 
-const FormFrame = styled(Stack, {
+const FormFrame = styled(View, {
   name: FORM_NAME,
   tag: "form"
 });
@@ -94,7 +91,7 @@ const FormTriggerFrame = styled(View, {
   name: FORM_NAME
 });
 
-export interface FormSubmitProps extends StackProps {}
+export interface FormSubmitProps extends ViewProps {}
 
 export const FormSubmit = FormTriggerFrame.styleable(
   (props: FormSubmitProps, forwardedRef) => {
@@ -108,7 +105,7 @@ export const FormSubmit = FormTriggerFrame.styleable(
     return (
       <FormTriggerFrame
         tag="button"
-        {...(triggerProps as any)}
+        {...triggerProps}
         ref={forwardedRef}
         disabled={canSubmit}
         onPress={composeEventHandlers(onPress, submit)}>
@@ -129,7 +126,7 @@ export const FormReset = FormTriggerFrame.styleable(
     return (
       <FormTriggerFrame
         tag="button"
-        {...(triggerProps as any)}
+        {...triggerProps}
         ref={forwardedRef}
         disabled={canSubmit}
         onPress={composeEventHandlers(onPress, reset)}>

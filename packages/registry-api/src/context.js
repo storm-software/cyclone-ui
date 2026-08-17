@@ -15,13 +15,15 @@
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
+
 import { HttpHeaders } from "./types";
-export const createContext = (env) => (options) => {
-    const version = options.req.headers.get(HttpHeaders.Version);
-    return {
-        ...options,
-        version: version ? String(version) : undefined,
-        storage: env.STORAGE_BUCKET
-    };
+export const createContext = env => options => {
+  const version = options.req.headers.get(HttpHeaders.Version);
+
+  return {
+    ...options,
+    version: version ? String(version) : undefined,
+    storage: env.STORAGE_BUCKET
+  };
 };
-//# sourceMappingURL=context.js.map
+// # sourceMappingURL=context.js.map

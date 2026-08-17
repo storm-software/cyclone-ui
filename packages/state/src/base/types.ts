@@ -31,9 +31,7 @@ import type { RESET } from "jotai/utils";
 export type JotaiStore = ReturnType<typeof createStore>;
 
 export type SetStateActionWithReset<Value> =
-  | Value
-  | typeof RESET
-  | ((prev: Value) => Value | typeof RESET);
+  Value | typeof RESET | ((prev: Value) => Value | typeof RESET);
 export interface WithInitialValue<Value> {
   init: Value;
 }

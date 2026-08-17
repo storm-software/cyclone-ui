@@ -67,6 +67,3 @@ bun x powerlines deploy [options]
 ## Options
 
 The following options are available for the `deploy` command:
-
-
-

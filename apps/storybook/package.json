@@ -11,6 +11,7 @@
     "@storybook/react-vite": "catalog:",
     "@storybook/test-runner": "catalog:",
     "@tamagui/animations-moti": "catalog:",
+    "@tamagui/config": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/portal": "catalog:",
     "@tamagui/proxy-worm": "catalog:",
@@ -28,16 +29,20 @@
     "react-dom": "catalog:",
     "react-native": "catalog:",
     "react-native-reanimated": "catalog:",
+    "react-native-safe-area-context": "catalog:",
     "react-native-web": "catalog:",
     "tamagui": "catalog:",
     "vite-plugin-react-native-web": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
     "@cyclone-ui/themes": "workspace:*",
     "@tamagui/vite-plugin": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",
+    "jotai": "catalog:",
     "storybook": "catalog:",
     "typescript": "^6.0.3",
     "vite": "catalog:"

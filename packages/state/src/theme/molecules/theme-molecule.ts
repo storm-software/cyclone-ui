@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import { createMoleculeApi } from "@cyclone-ui/state";
 import { atom } from "jotai";
 import { atomWithReset } from "jotai/utils";
+import { createMoleculeApi } from "../../base/utilities/create-molecule";
 
 export const ThemeApi = createMoleculeApi(
   () => {

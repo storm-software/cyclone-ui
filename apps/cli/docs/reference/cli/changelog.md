@@ -67,4 +67,3 @@ bun x powerlines changelog [options]
 The following options are available for the `changelog` command:
 
 This command does not have any options.
-

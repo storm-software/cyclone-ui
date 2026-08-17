@@ -1,31 +1,27 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import { isWeb } from "@tamagui/constants";
-import {
-  GetProps,
-  SizeTokens,
-  styled,
-  VariantSpreadExtras,
-  View
-} from "@tamagui/core";
+import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import { styled, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { Minus } from "@tamagui/lucide-icons";
 
@@ -37,7 +33,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   alignContent: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   outlineStyle: "none",
 
   ...(isWeb
@@ -52,23 +48,23 @@ const CheckboxGroupFrame = styled(XGroup, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   focusStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
@@ -102,11 +98,11 @@ const CheckboxGroupFrame = styled(XGroup, {
 
     focused: {
       true: {
-        outlineColor: "$accent10",
+        outlineColor: "$borderAccent",
         outlineWidth: 3,
         outlineOffset: "$1.25",
         outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
+        borderColor: "$borderAccent"
       }
     },
 
@@ -114,18 +110,18 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     }
@@ -181,7 +177,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
-  color: "$color",
+  color: "$foregroundOnPrimary",
   height: "95%",
   width: "90%",
   strokeWidth: 3
@@ -190,7 +186,7 @@ const CheckboxIcon = styled(Check, {
 const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
-  color: "$color",
+  color: "$foregroundOnPrimary",
   width: "90%",
   height: "100%",
   strokeWidth: 5

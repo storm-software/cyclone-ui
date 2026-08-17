@@ -1,29 +1,28 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Heading4Text } from "@cyclone-ui/heading-text";
 import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import type { SizeTokens, VariantSpreadExtras, ViewProps } from "@tamagui/core";
 import {
   createStyledContext,
-  SizeTokens,
-  StackProps,
   styled,
-  VariantSpreadExtras,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -34,15 +33,8 @@ import type {
   TabsTabProps as TamaguiTabsTabProps
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
-import {
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
-  useCallback,
-  useLayoutEffect,
-  useMemo,
-  useState
-} from "react";
+import type { Dispatch, PropsWithChildren, SetStateAction } from "react";
+import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 
 export type TabOrientation = "horizontal" | "vertical";
 export const TabOrientation = {
@@ -96,7 +88,7 @@ const initialState: TabsState = {
   steps: [] as string[]
 };
 
-export type TabsContextProps = {
+export interface TabsContextProps {
   /**
    * The internal state of the tabs
    */
@@ -137,14 +129,14 @@ export type TabsContextProps = {
    * @default "$true"
    */
   size: SizeTokens;
-};
+}
 
 export const TabsContext = createStyledContext<TabsContextProps>({
   state: {
     ...initialState
   },
-  setState: ((next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
-  onInteraction: (type: any, layout: any) => {},
+  setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
+  onInteraction: (_type: any, _layout: any) => {},
   orientation: TabOrientation.HORIZONTAL,
   variant: TabVariant.UNDERLINE,
   size: "$true"
@@ -291,25 +283,25 @@ const TabsRovingIndicator = styled(YStack, {
 
   variants: {
     active: {
-      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
+      ":boolean": (val: boolean, _config: VariantSpreadExtras<any>) => {
         if (!val) {
           return {};
         }
 
         return {
-          backgroundColor: "$primary"
+          backgroundColor: "$backgroundPrimary"
         };
       }
     },
 
     intent: {
-      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
+      ":boolean": (val: boolean, _config: VariantSpreadExtras<any>) => {
         if (!val) {
           return {};
         }
 
         return {
-          backgroundColor: "$accent10"
+          backgroundColor: "$backgroundAccent"
         };
       }
     },
@@ -426,7 +418,7 @@ const TabsHeaderList = styled(YStack, {
 
     variant: {
       underline: {
-        borderBottomColor: "$borderColor",
+        borderBottomColor: "$borderPrimary",
         borderBottomWidth: "$0.2"
       },
       background: {}
@@ -440,7 +432,7 @@ const TabsHeaderList = styled(YStack, {
 });
 
 const TabsHeaderListImpl = TabsHeaderList.styleable(
-  ({ children, ...rest }: StackProps, forwardedRef) => {
+  ({ children, ...rest }: ViewProps, forwardedRef) => {
     const {
       state: { activeAt, intentAt, prevActiveAt },
       orientation,
@@ -541,7 +533,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
 
   variants: {
     size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+      "...size": (val: SizeTokens, _config: VariantSpreadExtras<any>) => {
         const space = getSpaced(val);
 
         return {
@@ -580,9 +572,9 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
           size={size}
-          color={currentTab === value ? "$primary" : "$muted"}
+          color={currentTab === value ? "$foregroundPrimary" : "$base4"}
           $group-hover={{
-            color: currentTab === value ? "$primary" : "$accent10"
+            color: currentTab === value ? "$foregroundPrimary" : "$borderAccent"
           }}>
           {children}
         </TabsHeaderItemHeading>

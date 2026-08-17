@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import tsdown from "@powerlines/plugin-tsdown";
-import untyped from "@powerlines/plugin-untyped";
+import { plugin as tsdown } from "@powerlines/plugin-tsdown";
+import { plugin as untyped } from "@powerlines/plugin-untyped";
 import { defineConfig } from "powerlines/config";
 
 const config = defineConfig([

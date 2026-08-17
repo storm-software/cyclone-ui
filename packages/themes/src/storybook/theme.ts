@@ -1,3 +1,21 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
 import { create } from "storybook/theming";
 
 /**
@@ -9,8 +27,24 @@ export default {
   dark: create({
     brandTarget: "_blank",
     base: "dark",
-    barBg: {"$type":"color","colorSpace":"display-p3","$value":"{color.base.1}","$description":"The primary foreground color for the dark theme","filePath":"/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json","isSource":true},
-    barHoverColor: {"$type":"color","colorSpace":"display-p3","$value":"{color.base.8}","$description":"The secondary foreground color for the dark theme","filePath":"/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json","isSource":true},
+    barBg: {
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "{color.base.1}",
+      $description: "The primary foreground color for the dark theme",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json",
+      isSource: true
+    },
+    barHoverColor: {
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "{color.base.8}",
+      $description: "The secondary foreground color for the dark theme",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/dark.tokens.json",
+      isSource: true
+    },
     brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
     brandTitle: "Cyclone UI",
     brandUrl: "https://cyclone-ui.com"
@@ -18,8 +52,24 @@ export default {
   light: create({
     brandTarget: "_blank",
     base: "light",
-    barBg: {"$type":"color","colorSpace":"display-p3","$value":"{color.base.1}","$description":"The primary foreground color for the light theme","filePath":"/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/light.tokens.json","isSource":true},
-    barHoverColor: {"$type":"color","colorSpace":"display-p3","$value":"{color.base.8}","$description":"The secondary foreground color for the light theme","filePath":"/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/light.tokens.json","isSource":true},
+    barBg: {
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "{color.base.1}",
+      $description: "The primary foreground color for the light theme",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/light.tokens.json",
+      isSource: true
+    },
+    barHoverColor: {
+      $type: "color",
+      colorSpace: "display-p3",
+      $value: "{color.base.8}",
+      $description: "The secondary foreground color for the light theme",
+      filePath:
+        "/home/development/repos/cyclone-ui/packages/themes/src/tokens/semantic/light.tokens.json",
+      isSource: true
+    },
     brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/light-logo.svg",
     brandTitle: "Cyclone UI",
     brandUrl: "https://cyclone-ui.com"

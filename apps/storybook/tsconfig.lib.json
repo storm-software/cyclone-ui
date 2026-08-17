@@ -8,6 +8,12 @@
   },
   "references": [
     {
+      "path": "../../packages/helpers"
+    },
+    {
+      "path": "../../packages/state/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/themes"
     }
   ],
@@ -22,6 +28,7 @@
     "src/**/*.cts",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
+    "tamagui.config.ts",
     "types/*.d.ts",
     "package.json"
   ],

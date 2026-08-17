@@ -32,8 +32,8 @@ import { atomWithEffect } from "./atom-with-effect";
 import { baseAtom } from "./base-atom";
 
 export const getWebStorage = <TValue>():
-  | AsyncStorage<TValue>
-  | SyncStorage<TValue> => createWebStorage<TValue>(() => localStorage);
+  AsyncStorage<TValue> | SyncStorage<TValue> =>
+  createWebStorage<TValue>(() => localStorage);
 
 /**
  * Creates an atom that persists its state in external storage and sends a broadcast message to other tabs/windows when the state changes.
@@ -50,8 +50,7 @@ export function atomWithWebStorage<TValue>(
     | TValue
     | WritableAtom<TValue, [SetStateAction<TValue>], void>,
   webStorage:
-    | AsyncStorage<TValue>
-    | SyncStorage<TValue> = getWebStorage<TValue>(),
+    AsyncStorage<TValue> | SyncStorage<TValue> = getWebStorage<TValue>(),
   options?: { debounceMs?: number } & Parameters<typeof atomWithStorage>[3]
 ): WritableAtom<TValue, [SetStateAction<TValue>], void> {
   const debounceMs = options?.debounceMs ?? 500;

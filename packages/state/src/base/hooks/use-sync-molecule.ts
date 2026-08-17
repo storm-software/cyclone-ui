@@ -16,6 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable react-compiler/react-compiler -- jotai atom maps require per-key hook calls */
+/* eslint-disable react-hooks/rules-of-hooks -- jotai atom maps require per-key hook calls */
+/* eslint-disable react/rules-of-hooks -- jotai atom maps require per-key hook calls */
+
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect } from "react";
 import type { JotaiStore, WritableAtomRecord } from "../types";

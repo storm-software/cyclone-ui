@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isDevelopment } from "@storm-stack/utilities";
+import { isDevelopment } from "@stryke/env/environment-checks";
 import type { Atom } from "jotai/vanilla";
 
 /**
@@ -26,7 +26,7 @@ import type { Atom } from "jotai/vanilla";
  * @param label - The label to apply to the atom
  */
 export const setAtomDebugLabel = (atom: Atom<unknown>, label: string) => {
-  if (isDevelopment()) {
+  if (isDevelopment) {
     atom.debugLabel = label;
   }
 };
@@ -37,7 +37,7 @@ export const setAtomDebugLabel = (atom: Atom<unknown>, label: string) => {
  * @param atom - The atom to mark as private
  */
 export const setAtomDebugPrivate = (atom: Atom<unknown>) => {
-  if (isDevelopment()) {
+  if (isDevelopment) {
     atom.debugPrivate = true;
   }
 };

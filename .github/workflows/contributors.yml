@@ -25,7 +25,7 @@ jobs:
           echo "END_DATE=$end_date" >> "$GITHUB_ENV"
 
       - name: Run contributor action
-        uses: github/contributors@v1
+        uses: github/contributors@2f4fe0a7cf2cd2fc48fea2e78007eccd78340922 # v1.8.0
         env:
           GH_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
           START_DATE: ${{ env.START_DATE }}
@@ -33,7 +33,7 @@ jobs:
           REPOSITORY: storm-software/cyclone-ui
 
       - name: Create issue
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@e8ef132d6df98ed982188e460ebb3b5d4ef3a9cd # v5.0.1
         with:
           title:
             Thank you Storm Stack contributors (${{ env.START_DATE }}..${{

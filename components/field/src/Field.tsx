@@ -1,36 +1,33 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
+import type { FieldProviderOptions } from "@cyclone-ui/state/form";
 import {
   FieldApi,
   FieldProvider,
-  FieldProviderOptions,
   useFieldActions
-} from "@cyclone-ui/form-state";
-import { getSized } from "@cyclone-ui/helpers";
-import { LabelText } from "@cyclone-ui/label-text";
-import { Spinner } from "@cyclone-ui/spinner";
+} from "@cyclone-ui/state/form";
 import { getIconByTheme } from "@cyclone-ui/themeable-icon";
 import { Tooltip } from "@cyclone-ui/tooltip";
 import { ValidationText } from "@cyclone-ui/validation-text";
-import { ValidationDetails } from "@storm-stack/types/utility-types/validations";
+import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import type {
   GetProps,
   SizeTokens,
@@ -41,7 +38,8 @@ import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import { ForwardedRef, useMemo } from "react";
+import type { ForwardedRef } from "react";
+import { useMemo } from "react";
 
 const FieldGroupFrame = styled(ThemeableStack, {
   name: "Field",
@@ -163,10 +161,10 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         size={size}
         color={
           disabled
-            ? "$colorDisabled"
+            ? "$base4"
             : theme === "base"
-              ? "$color"
-              : "$primary"
+              ? "$foregroundOnPrimary"
+              : "$foregroundPrimary"
         }>
         {children}
       </FieldValidationText>
@@ -216,7 +214,7 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   animation: "normal",
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontStyle: "italic",
 
   enterStyle: {
@@ -236,7 +234,7 @@ const FieldDetails = styled(BodyText, {
 
     disabled: {
       true: {
-        color: "$colorDisabled",
+        color: "$base4",
         cursor: "not-allowed"
       }
     }
@@ -271,10 +269,10 @@ const FieldDetailsImpl = FieldDetails.styleable(
         disabled={disabled}
         color={
           disabled
-            ? "$colorDisabled"
+            ? "$base4"
             : theme === "base"
-              ? "$color"
-              : "$primary"
+              ? "$foregroundOnPrimary"
+              : "$foregroundPrimary"
         }>
         {children}
       </FieldDetails>
@@ -290,12 +288,12 @@ const FieldLabelText = styled(LabelText, {
   animation: "normal",
   cursor: "pointer",
   wordWrap: "normal",
-  color: "$color",
+  color: "$foregroundOnPrimary",
 
   variants: {
     disabled: {
       true: {
-        color: "$colorDisabled",
+        color: "$base4",
         cursor: "not-allowed"
       }
     }
@@ -372,7 +370,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {hideAsterisk !== true && (
                     <View position="relative" alignSelf="stretch">
                       <Asterisk
-                        color="$danger7"
+                        color="$foregroundDanger"
                         size="$0.75"
                         position="absolute"
                         top={-4}
@@ -387,7 +385,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                       {...props}
                       theme={"base"}
                       disabled={disabled}
-                      color={disabled ? "$colorDisabled" : "$secondary"}
+                      color={disabled ? "$base4" : "$foregroundSecondary"}
                       size="$5"
                       fontWeight="$4"
                       marginLeft="$2">
@@ -475,7 +473,7 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
       <Tooltip groupId="field-icon">
         <Tooltip.Content>
           <ValidationText
-            color="$primary"
+            color="$foregroundPrimary"
             messages={messages}
             disabled={disabled}
           />

@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@tamagui/config": "catalog:",
+    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/shorthands": "catalog:"
   },

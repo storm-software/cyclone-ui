@@ -65,6 +65,3 @@ bun x powerlines types [options]
 ## Options
 
 The following options are available for the `types` command:
-
-
-

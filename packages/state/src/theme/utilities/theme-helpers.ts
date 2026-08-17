@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorThemeName } from "../../../colors/src/types";
+import type { ColorThemeName } from "../types";
 
 /**
  * Get the color role scheme for the current theme name

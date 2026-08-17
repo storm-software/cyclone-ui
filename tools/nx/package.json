@@ -33,15 +33,15 @@
   "typings": "./declarations.d.ts",
   "dependencies": {
     "@nx/devkit": "catalog:",
+    "@storm-software/cloudflare-tools": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@storm-software/workspace-tools": "catalog:",
+    "@storybook/test-runner": "catalog:",
     "@stryke/path": "catalog:",
     "defu": "catalog:",
-    "nx": "catalog:",
-    "@storm-software/cloudflare-tools": "catalog:",
-    "untyped": "catalog:",
     "glob": "catalog:",
-    "@storybook/test-runner": "catalog:"
+    "nx": ">=22.7.0",
+    "untyped": "catalog:"
   },
   "devDependencies": {
     "@nx/workspace": "catalog:",

@@ -1,20 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
+ ------------------------------------------------------------------- */
+
+import type { Tree } from "@nx/devkit";
 import {
   ensurePackage,
   formatFiles,
@@ -23,8 +25,7 @@ import {
   names,
   offsetFromRoot,
   updateJson,
-  writeJson,
-  type Tree
+  writeJson
 } from "@nx/devkit";
 import { determineProjectNameAndRootOptions } from "@nx/devkit/internal";
 import type { StormConfig } from "@storm-software/config";
@@ -36,7 +37,7 @@ import type {
   TypeScriptLibraryGeneratorNormalizedSchema,
   TypeScriptLibraryGeneratorSchema
 } from "@storm-software/workspace-tools/declarations";
-import type { PackageJson } from "@storm-stack/types";
+import type { PackageJson } from "@stryke/types/package-json";
 import type { ComponentsLibraryGeneratorSchema } from "./schema";
 
 export async function generatorFn(
@@ -52,14 +53,14 @@ export async function generatorFn(
     buildExecutor: "tsc",
     platform: "browser",
     devDependencies: {
-      react: "18.3.1",
-      "react-dom": "18.3.1",
-      "react-native": "0.74.1"
+      react: "catalog:",
+      "react-dom": "catalog:",
+      "react-native": "catalog:"
     },
     peerDependencies: {
-      react: "18.3.1",
-      "react-dom": "18.3.1",
-      "react-native": "0.74.1"
+      react: "catalog:",
+      "react-dom": "catalog:",
+      "react-native": "catalog:"
     }
   };
 
@@ -126,7 +127,7 @@ export async function generatorFn(
           "@cyclone-ui/media-queries": "latest",
           "@cyclone-ui/shorthands": "latest",
           "@cyclone-ui/themes": "latest",
-          "@tamagui/web": "^1.116.14",
+          "@tamagui/web": "catalog:",
           ...json.dependencies
         },
         main: "dist/cjs",
@@ -134,7 +135,7 @@ export async function generatorFn(
         types: "./types/index.d.ts",
         files: ["types", "src", "dist"],
         "module:jsx": "dist/jsx"
-      } as unknown as PackageJson;
+      };
     });
   } else {
     writeJson<PackageJson>(tree, packageJsonPath, {
@@ -161,7 +162,7 @@ export async function generatorFn(
         "@cyclone-ui/media-queries": "latest",
         "@cyclone-ui/shorthands": "latest",
         "@cyclone-ui/themes": "latest",
-        "@tamagui/web": "^1.116.14"
+        "@tamagui/web": "catalog:"
       },
       main: "dist/cjs",
       module: "dist/esm",
@@ -171,7 +172,7 @@ export async function generatorFn(
       publishConfig: {
         access: "public"
       }
-    } as unknown as PackageJson);
+    });
   }
 
   await formatFiles(tree);

@@ -1,22 +1,22 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
@@ -32,7 +32,7 @@ import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { InputValue } from "./InputValue";
-import { InputContextProps } from "./types";
+import type { InputContextProps } from "./types";
 import { getInputSize, InputContext } from "./utilities";
 
 const InputGroup = styled(XGroup, {
@@ -44,7 +44,7 @@ const InputGroup = styled(XGroup, {
   alignItems: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   outlineWidth: 0,
   outlineColor: "transparent",
   gap: "$0.6",
@@ -61,25 +61,25 @@ const InputGroup = styled(XGroup, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$accent10"
+    borderColor: "$borderAccent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineWidth: 3,
     outlineOffset: "$1.25",
     outlineStyle: "solid",
-    borderColor: "$borderColorFocus"
+    borderColor: "$borderAccent"
   },
 
   variants: {
     focused: {
       true: {
-        outlineColor: "$accent10",
+        outlineColor: "$borderAccent",
         outlineWidth: 3,
         outlineOffset: "$1.25",
         outlineStyle: "solid",
-        borderColor: "$borderColorFocus"
+        borderColor: "$borderAccent"
       }
     },
 
@@ -101,18 +101,18 @@ const InputGroup = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     },
@@ -153,7 +153,7 @@ const InputSeparator = styled(Separator, {
 
   animation: "normal",
   borderWidth: 1,
-  borderColor: "$borderColor",
+  borderColor: "$borderPrimary",
   vertical: true,
   height: "50%",
   marginVertical: "$0.25",
@@ -161,24 +161,24 @@ const InputSeparator = styled(Separator, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderColorFocus"
+        borderColor: "$borderAccent"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$borderColorDisabled",
+        borderColor: "$base4",
 
         hoverStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         focusStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         },
 
         pressStyle: {
-          borderColor: "$borderColorDisabled"
+          borderColor: "$base4"
         }
       }
     }
@@ -199,7 +199,7 @@ const InputSeparatorImpl = InputSeparator.styleable(
         <InputSeparator
           ref={forwardedRef}
           $group-input-hover={{
-            borderColor: disabled ? "$borderColorDisabled" : "$accent10"
+            borderColor: disabled ? "$base4" : "$borderAccent"
           }}
           {...props}
         />
@@ -231,6 +231,7 @@ const InputTextBox = styled(XStack, {
         }
 
         const space = getSpaced(val);
+
         return {
           paddingHorizontal: space * 0.25,
           gap: space * 0.25
@@ -257,10 +258,10 @@ const InputTextBoxImpl = InputTextBox.styleable(
   { staticConfig: { componentName: "Input" } }
 );
 
-type InputValueExtraProps = {
+interface InputValueExtraProps {
   clearable?: boolean;
   onClear?: () => void;
-};
+}
 
 const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
   (
@@ -289,7 +290,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           {...props}
           value={value}
           enterKeyHint={enterKeyHint}
-          placeholderTextColor="$placeholderColor">
+          placeholderTextColor="$base4">
           {children}
         </InputValue>
         {clearable && onClear && value && (
@@ -306,7 +307,9 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
               variant="ghost"
               circular={true}
               color={
-                theme?.includes("base") ? "$borderColor" : "$color"
+                theme?.includes("base")
+                  ? "$borderPrimary"
+                  : "$foregroundOnPrimary"
               }
               onClick={onClear}
               size={adjustedTrigger}>
@@ -348,7 +351,9 @@ const InputTrigger = Button.styleable<{
             variant="ghost"
             borderRadius={radius}
             color={
-              theme?.includes("base") ? "$borderColor" : "$color"
+              theme?.includes("base")
+                ? "$borderPrimary"
+                : "$foregroundOnPrimary"
             }
             {...props}
             size={adjustedTrigger}>

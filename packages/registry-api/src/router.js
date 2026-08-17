@@ -15,9 +15,10 @@
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
+
 import { componentsRouter } from "./routes/components";
 import { createRouter } from "./trpc";
 export const router = createRouter({
-    components: componentsRouter
+  components: componentsRouter
 });
-//# sourceMappingURL=router.js.map
+// # sourceMappingURL=router.js.map

@@ -1,31 +1,32 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { useColorThemeName } from "@cyclone-ui/client-state";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { GetProps, styled, Theme } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+import { useColorThemeName } from "@cyclone-ui/state/theme";
+import type { GetProps } from "@tamagui/core";
+import { styled, Theme } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-type LinkTextExtraProps = {
+interface LinkTextExtraProps {
   disabled?: boolean;
   underline?: "hover" | "initial" | "static" | "none";
   variant?: "base" | "mixed" | "themed";
   inverse?: boolean;
-};
+}
 
 const LinkTextFrame = styled(SizableText, {
   name: "LinkText",
@@ -79,117 +80,117 @@ const LinkTextFrame = styled(SizableText, {
 
     variant: {
       base: {
-        color: "$color",
-        textDecorationColor: "$color",
+        color: "$foregroundLink",
+        textDecorationColor: "$foregroundLink",
 
         hoverStyle: {
-          color: "$colorHover",
-          textDecorationColor: "$colorHover"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         },
 
         pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         },
 
         focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         }
       },
       mixed: {
-        color: "$fg",
-        textDecorationColor: "$color",
+        color: "$foregroundOnPrimary",
+        textDecorationColor: "$foregroundLink",
 
         hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$fg"
+          color: "$foregroundLink",
+          textDecorationColor: "$foregroundOnPrimary"
         },
 
         pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$fg"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundOnPrimary"
         },
 
         focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$fg"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundOnPrimary"
         }
       },
       themed: {
-        color: "$color",
-        textDecorationColor: "$color",
+        color: "$foregroundOnPrimary",
+        textDecorationColor: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         },
 
         pressStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         },
 
         focusStyle: {
-          color: "$fg",
-          textDecorationColor: "$fg"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         }
       },
       baseInverse: {
-        color: "$colorHover",
-        textDecorationColor: "$colorHover",
+        color: "$foregroundAccent",
+        textDecorationColor: "$foregroundAccent",
 
         hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$color"
+          color: "$foregroundLink",
+          textDecorationColor: "$foregroundLink"
         },
 
         pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         },
 
         focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         }
       },
       mixedInverse: {
-        color: "$color",
-        textDecorationColor: "$fg",
+        color: "$foregroundLink",
+        textDecorationColor: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$fg",
-          textDecorationColor: "$color"
+          color: "$foregroundOnPrimary",
+          textDecorationColor: "$foregroundLink"
         },
 
         pressStyle: {
-          color: "$fg",
-          textDecorationColor: "$colorPress"
+          color: "$foregroundOnPrimary",
+          textDecorationColor: "$foregroundAccent"
         },
 
         focusStyle: {
-          color: "$fg",
-          textDecorationColor: "$colorFocus"
+          color: "$foregroundOnPrimary",
+          textDecorationColor: "$foregroundAccent"
         }
       },
       themedInverse: {
-        color: "$fg",
-        textDecorationColor: "$fg",
+        color: "$foregroundAccent",
+        textDecorationColor: "$foregroundAccent",
 
         hoverStyle: {
-          color: "$color",
-          textDecorationColor: "$color"
+          color: "$foregroundOnPrimary",
+          textDecorationColor: "$foregroundOnPrimary"
         },
 
         pressStyle: {
-          color: "$colorPress",
-          textDecorationColor: "$colorPress"
+          color: "$foregroundTertiary",
+          textDecorationColor: "$foregroundTertiary"
         },
 
         focusStyle: {
-          color: "$colorFocus",
-          textDecorationColor: "$colorFocus"
+          color: "$foregroundAccent",
+          textDecorationColor: "$foregroundAccent"
         }
       }
     },
@@ -197,11 +198,11 @@ const LinkTextFrame = styled(SizableText, {
     disabled: {
       true: {
         cursor: "default",
-        color: "$colorDisabled",
+        color: "$base4",
         textDecorationLine: "none",
 
         hoverStyle: {
-          color: "$colorDisabled",
+          color: "$base4",
           textDecorationLine: "none"
         }
       }
@@ -232,9 +233,7 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
   ) => {
     const colorRole = useColorThemeName();
     const isLinkThemed =
-      !colorRole ||
-      colorRole === "link" ||
-      colorRole === "base";
+      !colorRole || colorRole === "link" || colorRole === "base";
 
     let variant = props.variant as BaseLinkTextVariant;
     if (!variant && isLinkThemed) {

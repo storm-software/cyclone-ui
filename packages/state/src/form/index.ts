@@ -20,5 +20,5 @@ export * from "./hooks";
 
 export * from "./molecules";
 export * from "./providers";
-export type * from "./types";
+export * from "./types";
 export * from "./utilities";

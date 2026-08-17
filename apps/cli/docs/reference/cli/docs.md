@@ -65,6 +65,3 @@ bun x powerlines docs [options]
 ## Options
 
 The following options are available for the `docs` command:
-
-
-

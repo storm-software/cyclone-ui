@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isString } from "@storm-stack/types/type-checks/is-string";
+import { isString } from "@stryke/type-checks/is-string";
 import type {
   AccordionMultipleProps,
   AccordionSingleProps
@@ -40,7 +40,7 @@ export interface AccordionContextProps {
 
 export const AccordionContext = createStyledContext<AccordionContextProps>({
   open: [],
-  setOpen: (open: string[]) => {}
+  setOpen: (_open: string[]) => {}
 });
 
 const AccordionFrameImpl = forwardRef<
@@ -68,7 +68,7 @@ const AccordionFrameImpl = forwardRef<
 
   return (
     <>
-      {/* eslint-disable-next-line react/no-context-provider */}
+      {}
       <AccordionContext.Provider open={open} setOpen={setOpen}>
         <TamaguiAccordion
           ref={forwardedRef}
@@ -76,7 +76,7 @@ const AccordionFrameImpl = forwardRef<
           {...props}
           borderRadius="$true"
           onValueChange={handleValueChange}>
-          <YGroup separator={<Separator color="$borderColor" />}>
+          <YGroup separator={<Separator color="$borderPrimary" />}>
             {children}
           </YGroup>
         </TamaguiAccordion>
@@ -105,7 +105,7 @@ const AccordionItemImpl = AccordionItem.styleable(
 
     return (
       <YGroup.Item>
-        {/* eslint-disable-next-line react/no-context-provider */}
+        {}
         <AccordionItemContext.Provider open={open.includes(value)}>
           <AccordionItem
             ref={forwardedRef}
@@ -126,14 +126,14 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
   animation: "normal",
   padding: "$3",
-  backgroundColor: "$background",
+  backgroundColor: "$backgroundPrimary",
   zIndex: "$6",
   borderStyle: "solid",
   borderWidth: 0,
   borderColor: "transparent",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$backgroundElevated"
   },
 
   focusStyle: {
@@ -145,8 +145,8 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$backgroundHover",
-    outlineColor: "$accent10",
+    backgroundColor: "$backgroundElevated",
+    outlineColor: "$borderAccent",
     outlineStyle: "solid",
     outlineWidth: 3,
     outlineOffset: "$1.25"
@@ -155,10 +155,10 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   variants: {
     open: {
       true: {
-        backgroundColor: "$backgroundFocus",
+        backgroundColor: "$backgroundElevated",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover"
+          backgroundColor: "$backgroundElevated"
         },
 
         focusStyle: {
@@ -192,9 +192,9 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         {children}
         <AccordionToggle
           isExpanded={open}
-          color={open ? "$primary" : "$secondary"}
+          color={open ? "$foregroundPrimary" : "$foregroundSecondary"}
           $group-accordion-hover={{
-            color: "$primary"
+            color: "$foregroundPrimary"
           }}
           size="$2.5"
         />
@@ -214,9 +214,9 @@ const AccordionItemHeaderHeading = Heading6Text.styleable(
       <Heading6Text
         ref={forwardedRef}
         animation="normal"
-        color={open ? "$primary" : "$secondary"}
+        color={open ? "$foregroundPrimary" : "$foregroundSecondary"}
         $group-accordion-hover={{
-          color: "$primary"
+          color: "$foregroundPrimary"
         }}
         {...props}>
         {children}

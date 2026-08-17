@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-unsafe-call -- bunshi molecule APIs and @stryke/helpers merge types */
+
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
 import type { Atom, SetStateAction, WritableAtom } from "jotai";
 import { atom } from "jotai";

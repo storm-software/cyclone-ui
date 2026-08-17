@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import vite from "@powerlines/plugin-vite";
+import { plugin as vite } from "@powerlines/plugin-vite";
 import type { UserConfig } from "powerlines";
 import { defineConfig } from "powerlines/config";
 

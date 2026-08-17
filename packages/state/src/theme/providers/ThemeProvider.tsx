@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-unsafe-call -- window.matchMedia is unresolved without DOM lib */
+
 import { isRuntimeClient } from "@stryke/env/runtime-checks";
 import type {
   CreateTamaguiProps,
@@ -25,9 +27,8 @@ import type {
 import { TamaguiProvider } from "@tamagui/core";
 import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
-import type { ColorThemeMode } from "../../../colors/src/types";
 import { ThemeApi } from "../molecules/theme-molecule";
-import type { ThemeOptions } from "../types";
+import type { ColorThemeMode, ThemeOptions } from "../types";
 
 type ThemeStateManagerProps = PropsWithChildren<
   Omit<TamaguiProviderProps, "defaultTheme"> & {

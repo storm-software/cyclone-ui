@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import type { StackProps } from "@tamagui/core";
+import type { ViewProps } from "@tamagui/core";
 
-export type BaseMessageViewportProps = StackProps & {
+export type BaseMessageViewportProps = ViewProps & {
   /**
    * The keys to use as the keyboard shortcut that will move focus to the toast viewport.
    * @defaultValue ['F8']
@@ -27,8 +27,8 @@ export type BaseMessageViewportProps = StackProps & {
 
   /**
    * An author-localized label for the toast viewport to provide context for screen reader users
-   * when navigating page landmarks. The available `{hotkey}` placeholder will be replaced for you.
-   * @defaultValue 'Storm Notifications ({hotkey})'
+   * when navigating page landmarks. The available `\{hotkey\}` placeholder will be replaced for you.
+   * @defaultValue 'Storm Notifications (\{hotkey\})'
    */
   label?: string;
 

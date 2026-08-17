@@ -50,7 +50,7 @@ export function atomWithListeners<TValue>(
     get => get(rootAtom),
     (get, set, arg: SetStateAction<TValue>) => {
       const prevVal = get(rootAtom);
-      set(rootAtom, arg);
+      void set(rootAtom, arg);
 
       const newVal = get(rootAtom);
       for (const callback of get(listenersAtom)) {

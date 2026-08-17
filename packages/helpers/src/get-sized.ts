@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { fontSizeToSize } from "@cyclone-ui/tamagui";
-import { isNumber, isSet } from "@storm-stack/types";
+import { isNumber } from "@stryke/type-checks/is-number";
+import { isSet } from "@stryke/type-checks/is-set";
 import type { FontSizeTokens, SizeTokens } from "@tamagui/core";
 import {
   getRadius as getRadiusBase,
@@ -80,7 +80,7 @@ export const getSizeFromFontSized = (
   }
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : fontSizeToSize(value);
+    value = options.nearest === false ? value : getNearestToken(value, "size");
     if (!options.scale && !options.shift && !options.bounds) {
       return value;
     }
@@ -88,6 +88,15 @@ export const getSizeFromFontSized = (
 
   return getSized(value, options);
 };
+
+/**
+ * Map a numeric font size to the nearest size token.
+ *
+ * @param fontSize - The font size in pixels
+ * @returns The nearest size token
+ */
+export const fontSizeToSize = (fontSize: number) =>
+  getNearestToken(fontSize, "size");
 
 /**
  * Get the space number from a size token value or number value and a scale
@@ -117,6 +126,14 @@ export const getSpaced = (
 
   return space.val * scale;
 };
+
+/**
+ * Map a size token or numeric size to the corresponding space value.
+ *
+ * @param val - The size token or number to use
+ * @returns The space number
+ */
+export const sizeToSpace = (val: SizeTokens | number): number => getSpaced(val);
 
 export type GetRadiusOptions = GetSizedOptions & {
   circular?: boolean;

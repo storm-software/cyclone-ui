@@ -21,7 +21,6 @@ import type {
   R2ObjectBody,
   R2Objects
 } from "@cloudflare/workers-types";
-import { StormError } from "@storm-stack/errors";
 import { z } from "zod";
 import { createRouter, publicProcedure } from "../trpc";
 import type {
@@ -130,7 +129,7 @@ export const componentsRouter = createRouter({
         (file: RegistryStorageFile) => file.name === "meta.json"
       );
       if (!metaFile || !metaFile.content) {
-        throw StormError.createNotFound("Metadata file");
+        throw new Error("Metadata file not found");
       }
 
       const meta = await metaFile.content.json<ComponentMeta>();

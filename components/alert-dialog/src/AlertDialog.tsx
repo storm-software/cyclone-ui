@@ -1,22 +1,23 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Dialog, type DialogProps } from "@cyclone-ui/dialog";
+ ------------------------------------------------------------------- */
+
+import type { DialogProps } from "@cyclone-ui/dialog";
+import { Dialog } from "@cyclone-ui/dialog";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Theme, useThemeName, View, withStaticProperties } from "@tamagui/core";
 import { AlertCircle } from "@tamagui/lucide-icons";
@@ -54,7 +55,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$primary"
+          backgroundColor="$backgroundPrimary"
           zIndex="$1"
         />
 
@@ -63,7 +64,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
             theme={"base"}
             themeShallow={true}
             padding={padding}
-            backgroundColor="$surfacePrimary"
+            backgroundColor="$surface1"
             borderRadius={1000_000_000}>
             <ThemeableIcon
               ref={forwardedRef}
@@ -96,7 +97,7 @@ const AlertDialogContainer = Dialog.Container.styleable(
           {...props}
           theme={"base"}
           themeShallow={true}
-          backgroundColor="$surfacePrimary"
+          backgroundColor="$surface1"
           bordered={false}
           noPadding={true}>
           <Theme name={theme}>{children}</Theme>
@@ -148,7 +149,11 @@ const AlertDialogBody = Dialog.Body.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name={"base"}>
-        <Dialog.Body ref={forwardedRef} color="$secondary" size="$7" {...props}>
+        <Dialog.Body
+          ref={forwardedRef}
+          color="$foregroundSecondary"
+          size="$7"
+          {...props}>
           {children}
         </Dialog.Body>
       </Theme>

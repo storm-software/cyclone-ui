@@ -1,21 +1,23 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { GetProps, styled } from "@tamagui/core";
+ ------------------------------------------------------------------- */
+
+import type { GetProps } from "@tamagui/core";
+import { styled } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
 const BaseTitleText = styled(SizableText, {
@@ -23,7 +25,7 @@ const BaseTitleText = styled(SizableText, {
   tag: "span",
   accessibilityRole: "header",
 
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontFamily: "$title",
   size: "$true"
 });

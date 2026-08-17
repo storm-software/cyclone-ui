@@ -1,33 +1,33 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
+ ------------------------------------------------------------------- */
+
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { View, ViewProps, styled } from "@tamagui/core";
+import type {
+  GetProps,
+  SizeTokens,
+  VariantSpreadExtras,
+  ViewProps
+} from "@tamagui/core";
+import { View, styled } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 
 export type ContainerVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "quaternary"
-  | "outlined"
-  | "glass";
+  "primary" | "secondary" | "tertiary" | "quaternary" | "outlined" | "glass";
 
 const ContainerFrame = styled(View, {
   name: "Container",
@@ -36,7 +36,7 @@ const ContainerFrame = styled(View, {
   width: "100%",
 
   focusVisibleStyle: {
-    outlineColor: "$accent10",
+    outlineColor: "$borderAccent",
     outlineStyle: "solid",
     outlineWidth: 3,
     outlineOffset: "$1.25"
@@ -45,33 +45,33 @@ const ContainerFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "$primary",
+        backgroundColor: "$backgroundPrimary",
         borderWidth: 1,
-        borderColor: "$tertiary"
+        borderColor: "$borderTertiary"
       },
 
       secondary: {
-        backgroundColor: "$surfaceSecondary",
+        backgroundColor: "$surface2",
         borderWidth: 1,
-        borderColor: "$borderColor"
+        borderColor: "$borderPrimary"
       },
 
       tertiary: {
-        backgroundColor: "$surfacePrimary",
+        backgroundColor: "$surface1",
         borderWidth: 1,
-        borderColor: "$borderColor"
+        borderColor: "$borderPrimary"
       },
 
       quaternary: {
-        backgroundColor: "$backgroundStrong",
+        backgroundColor: "$backgroundElevated",
         borderWidth: 2,
-        borderColor: "$borderColor"
+        borderColor: "$borderPrimary"
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "$color"
+        borderColor: "$borderPrimary"
       },
 
       glass: {
@@ -86,7 +86,10 @@ const ContainerFrame = styled(View, {
         borderColor: "transparent",
         borderWidth: 0
       },
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => ({
+      "...size": (
+        val: SizeTokens,
+        _config: VariantSpreadExtras<ViewProps>
+      ) => ({
         borderWidth: getSized(val)
       })
     },
@@ -104,7 +107,7 @@ const ContainerFrame = styled(View, {
 
     elevated: {
       true: {
-        shadowColor: "$shadowColor",
+        shadowColor: "$overlayBackdrop",
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 30
       }
@@ -142,7 +145,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  colors: ["$secondary", "$primary"],
+  colors: ["$backgroundSecondary", "$backgroundPrimary"],
   start: { x: 0.1, y: 0.5 },
   end: { x: 0.9, y: 0.5 }
 });
@@ -195,10 +198,7 @@ export const Container = ContainerFrame.styleable(
     return (
       <ContainerGroup group={true} size={size} circular={circular}>
         {variant === "glass" && (
-          <ContainerGlassBackground
-            theme={"base"}
-            fullscreen={true}
-          />
+          <ContainerGlassBackground theme={"base"} fullscreen={true} />
         )}
         <ContainerFrame
           ref={forwardedRef}

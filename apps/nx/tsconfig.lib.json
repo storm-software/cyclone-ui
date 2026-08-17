@@ -1,16 +1,16 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "rootDir": ".",
     "types": ["node"],
-    "outDir": "../../dist/out-tsc",
-    "rootDir": "."
+    "outDir": "../../dist/out-tsc"
   },
-  "include": ["src/**/*.ts", "powerlines.config.ts"],
+  "references": [],
+  "include": ["src/**/*.ts", "powerlines.config.ts", "powerlines.d.ts"],
   "exclude": [
     "jest.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "src/generators/**/files/**/*.ts"
-  ],
-  "references": []
+  ]
 }

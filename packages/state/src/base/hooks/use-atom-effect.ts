@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { useMemoStable } from "@storm-stack/hooks/use-memo-stable";
+import { useMemoStable } from "@stryke/hooks/use-memo-stable";
 import { useAtomValue } from "jotai/react";
 import { loadable } from "jotai/utils";
 import type { EffectCallback } from "../atoms/atom-with-effect";

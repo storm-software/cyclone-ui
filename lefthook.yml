@@ -8,22 +8,22 @@ $schema: https://raw.githubusercontent.com/evilmartians/lefthook/refs/heads/mast
 assert_lefthook_installed: true
 no_tty: false
 min_version: "1.5.0"
-remotes:
-  - git_url: https://github.com/storm-software/storm-ops
-    ref: main
-    configs:
-      - packages/git-tools/src/lefthook/pnpm/recommended.yml
+# remotes:
+#   - git_url: https://github.com/storm-software/storm-ops
+#     ref: main
+#     configs:
+#       - packages/git-tools/src/lefthook/pnpm/recommended.yml
 
-pre-commit:
-  commands:
-    nx-sync:
-      glob: "**/*"
-      run: "pnpm nx sync"
-      stage_fixed: true
+# pre-commit:
+#   commands:
+#     nx-sync:
+#       glob: "**/*"
+#       run: "pnpm nx sync"
+#       stage_fixed: true
 
-pre-push:
-  commands:
-    nx-sync:
-      glob: "**/*"
-      run: pnpm nx sync
-      stage_fixed: true
+# pre-push:
+#   commands:
+#     nx-sync:
+#       glob: "**/*"
+#       run: pnpm nx sync
+#       stage_fixed: true

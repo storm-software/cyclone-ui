@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
@@ -46,7 +47,7 @@ export default meta;
 
 type Story = StoryObj<typeof DataTable>;
 
-type Person = {
+interface Person {
   fullName: string;
   userName: string;
   age: number;
@@ -54,7 +55,7 @@ type Person = {
   status: string;
   role: string;
   avatar?: string;
-};
+}
 
 const defaultData: Person[] = [
   {
@@ -161,13 +162,10 @@ const defaultData: Person[] = [
     status: "Offline",
     role: "Admin"
   }
-].map(
-  (row, index) =>
-    ({
-      ...row,
-      avatar: `https://i.pravatar.cc/150?img=${index + 1}`
-    }) as Person
-);
+].map((row, index) => ({
+  ...row,
+  avatar: `https://i.pravatar.cc/150?img=${index + 1}`
+}));
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -176,11 +174,13 @@ const StatusButton = ({ status }: { status: string }) => {
     <View
       borderRadius={1000_000_000}
       backgroundColor={
-        status?.toLocaleLowerCase() === "active" ? "$brand10" : "$base10"
+        status?.toLocaleLowerCase() === "active"
+          ? "$backgroundAccent"
+          : "$base9"
       }
       paddingHorizontal="$2">
       <Text
-        color="$bg"
+        color="$foregroundOnPrimary"
         $gtXs={{
           fontSize: "$2",
           lineHeight: "$1",
@@ -241,6 +241,7 @@ const columns = [
     footer: info => info.column.id,
     cell: info => {
       const val = info.renderValue();
+
       return <StatusButton status={val?.toLocaleLowerCase() ?? ""} />;
     }
   }),

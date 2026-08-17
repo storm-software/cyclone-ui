@@ -1,23 +1,23 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-import { ColorThemeName } from "@cyclone-ui/colors";
+ ------------------------------------------------------------------- */
+
 import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
-import { SelectOption } from "@storm-stack/types/utility-types/form";
+import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
@@ -60,15 +60,15 @@ const SelectItemGroup = styled(XStack, {
   width: "100%",
 
   hoverStyle: {
-    backgroundColor: "$muted"
+    backgroundColor: "$base2"
   },
 
   focusStyle: {
-    backgroundColor: "$muted"
+    backgroundColor: "$base2"
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$muted"
+    backgroundColor: "$base2"
   },
 
   variants: {
@@ -98,24 +98,24 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   context: SelectContext,
 
   cursor: "pointer",
-  color: "$color",
+  color: "$foregroundOnPrimary",
   fontFamily: "$body",
   flex: 1,
 
   variants: {
     selected: {
       true: {
-        color: "$fg"
+        color: "$foregroundAccent"
       }
     },
 
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$colorDisabled",
+        color: "$base4",
 
         hoverStyle: {
-          color: "$colorDisabled"
+          color: "$base4"
         }
       }
     },
@@ -152,10 +152,10 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             disabled={disabled}
             justifyContent={isSmall ? "space-between" : "center"}>
             <View width="$2" justifyContent="center">
-              {disabled && <Lock size="$1.5" color="$colorDisabled" />}
+              {disabled && <Lock size="$1.5" color="$base4" />}
               <TamaguiSelect.ItemIndicator>
                 <Theme name={"accent"}>
-                  <Check size="$2" color="$color" />
+                  <Check size="$2" color="$foregroundOnPrimary" />
                 </Theme>
               </TamaguiSelect.ItemIndicator>
             </View>
@@ -164,10 +164,10 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               disabled={disabled}
               $group-hover={{
                 color: disabled
-                  ? "$colorDisabled"
+                  ? "$base4"
                   : selected
-                    ? "$fg"
-                    : "$colorHover"
+                    ? "$foregroundAccent"
+                    : "$foregroundSecondary"
               }}>
               {children}
             </SelectItemTextFrame>
@@ -235,10 +235,10 @@ const SelectItemsGroup = View.styleable(
             animateOnly={["transform", "scale", "opacity"]}
             enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
             exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-            backgroundColor="$base3"
+            backgroundColor="$backgroundFloating"
             minWidth="$10"
             borderRadius="$true"
-            shadowColor="$shadowColor"
+            shadowColor="$overlayBackdrop"
             shadowOffset={{ width: 0, height: 4 }}
             shadowRadius={30}>
             <TamaguiSelect.Group paddingVertical="$2">

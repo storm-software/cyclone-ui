@@ -54,48 +54,48 @@ export default defineConfig({
         return {
           dark: {
             base: "dark",
-            colorPrimary: tokens.dark?.color?.forground?.primary,
-            colorSecondary: tokens.dark?.color?.forground?.secondary,
+            colorPrimary: tokens?.dark?.color?.foreground?.primary,
+            colorSecondary: tokens?.dark?.color?.foreground?.secondary,
 
-            barTextColor: tokens.dark?.color?.forground?.primary,
-            barSelectedColor: tokens.dark?.color?.forground?.secondary,
-            barBg: tokens.dark?.color?.background?.primary,
-            barHoverColor: tokens.dark?.color?.background?.secondary,
+            barTextColor: tokens?.dark?.color?.foreground?.primary,
+            barSelectedColor: tokens?.dark?.color?.foreground?.accent,
+            barBg: tokens?.dark?.color?.surface2,
+            barHoverColor: tokens?.dark?.color?.surface3,
 
-            buttonBg: tokens.dark?.button?.primary?.background,
-            buttonBorder: tokens.dark?.button?.primary?.border,
+            buttonBg: tokens?.dark?.color?.background?.primary,
+            buttonBorder: tokens?.dark?.color?.border?.primary,
 
-            inputBg: tokens.dark?.control?.primary?.background,
-            inputBorder: tokens.dark?.control?.primary?.border,
-            inputTextColor: tokens.dark?.control?.primary?.foreground,
-            inputBorderRadius: tokens.dark?.radius?.md,
+            inputBg: tokens?.dark?.color?.background?.primary,
+            inputBorder: tokens?.dark?.color?.border?.primary,
+            inputTextColor: tokens?.dark?.color?.foreground?.primary,
+            inputBorderRadius: tokens?.dark?.radius?.md,
 
-            booleanBg: tokens.dark?.control?.primary?.background,
-            booleanSelectedBg: tokens.dark?.control?.primary?.background,
+            booleanBg: tokens?.dark?.color?.background?.primary,
+            booleanSelectedBg: tokens?.dark?.color?.background?.primary,
 
             brandImage:
               "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg"
           },
           light: {
             base: "light",
-            colorPrimary: tokens.light?.color?.forground?.primary,
-            colorSecondary: tokens.light?.color?.forground?.secondary,
+            colorPrimary: tokens?.light?.color?.foreground?.primary,
+            colorSecondary: tokens?.light?.color?.foreground?.secondary,
 
-            barTextColor: tokens.light?.color?.forground?.primary,
-            barSelectedColor: tokens.light?.color?.forground?.secondary,
-            barBg: tokens.light?.color?.background?.primary,
-            barHoverColor: tokens.light?.color?.background?.secondary,
+            barTextColor: tokens?.light?.color?.foreground?.secondary,
+            barSelectedColor: tokens?.light?.color?.foreground?.primary,
+            barBg: tokens?.light?.color?.surface2,
+            barHoverColor: tokens?.light?.color?.surface3,
 
-            buttonBg: tokens.light?.button?.primary?.background,
-            buttonBorder: tokens.light?.button?.primary?.border,
+            buttonBg: tokens?.light?.color?.background?.primary,
+            buttonBorder: tokens?.light?.color?.border?.primary,
 
-            inputBg: tokens.light?.background?.elevated,
-            inputBorder: tokens.light?.control?.primary?.border,
-            inputTextColor: tokens.light?.control?.primary?.foreground,
-            inputBorderRadius: tokens.light?.radius?.md,
+            inputBg: tokens?.light?.color?.background?.primary,
+            inputBorder: tokens?.light?.color?.border?.primary,
+            inputTextColor: tokens?.light?.color?.foreground?.primary,
+            inputBorderRadius: tokens?.light?.radius?.md,
 
-            booleanBg: tokens.light?.control?.primary?.background,
-            booleanSelectedBg: tokens.light?.control?.primary?.background,
+            booleanBg: tokens?.light?.color?.background?.primary,
+            booleanSelectedBg: tokens?.light?.color?.background?.primary,
 
             // //
             // colorPrimary: "#3A10E5",

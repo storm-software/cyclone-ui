@@ -16,10 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import { ErrorCode } from "@storm-stack/errors";
-
-export type CycloneRegistryErrorCode = ErrorCode | "metadata_not_found";
 export const CycloneRegistryErrorCode = {
-  ...ErrorCode,
-  metadata_not_found: "metadata_not_found" as CycloneRegistryErrorCode
-};
+  not_found: "not_found",
+  metadata_not_found: "metadata_not_found"
+} as const;
+
+export type CycloneRegistryErrorCode =
+  (typeof CycloneRegistryErrorCode)[keyof typeof CycloneRegistryErrorCode];

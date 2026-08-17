@@ -19,12 +19,12 @@
 import { isSetObject } from "@stryke/type-checks/is-set-object";
 import type { MessageType } from "@stryke/types/messages";
 import type {
-  ErrorValidationDetails,
-  HelpValidationDetails,
-  InfoValidationDetails,
-  SuccessValidationDetails,
-  ValidationDetails,
-  WarningValidationDetails
+  ErrorValidationDetail as ErrorValidationDetails,
+  HelpValidationDetail as HelpValidationDetails,
+  InfoValidationDetail as InfoValidationDetails,
+  SuccessValidationDetail as SuccessValidationDetails,
+  ValidationDetail as ValidationDetails,
+  WarningValidationDetail as WarningValidationDetails
 } from "@stryke/types/validations";
 import type { Atom } from "jotai";
 import { atom } from "jotai";
@@ -255,23 +255,23 @@ export const atomWithMessages = (
   atom<ValidationDetails[]>(get => {
     const errorMessages = get(errorMessagesAtom);
     if (errorMessages.length > 0) {
-      return errorMessages as ValidationDetails[];
+      return errorMessages;
     }
     const warningMessages = get(warningMessagesAtom);
     if (warningMessages.length > 0) {
-      return warningMessages as ValidationDetails[];
+      return warningMessages;
     }
     const infoMessages = get(infoMessagesAtom);
     if (infoMessages.length > 0) {
-      return infoMessages as ValidationDetails[];
+      return infoMessages;
     }
     const helpMessages = get(helpMessagesAtom);
     if (helpMessages.length > 0) {
-      return helpMessages as ValidationDetails[];
+      return helpMessages;
     }
     const successMessages = get(successMessagesAtom);
     if (successMessages.length > 0) {
-      return successMessages as ValidationDetails[];
+      return successMessages;
     }
 
     return [];

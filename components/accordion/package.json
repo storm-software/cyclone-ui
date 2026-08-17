@@ -22,24 +22,25 @@
   },
   "types": "./types/index.d.ts",
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/accordion": "^1.144.4",
-    "@tamagui/collapsible": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/group": "^1.144.4",
-    "@tamagui/helpers": "^1.144.4",
-    "@tamagui/separator": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4"
+    "@stryke/type-checks": "catalog:",
+    "@stryke/types": "catalog:",
+    "@tamagui/accordion": "catalog:",
+    "@tamagui/collapsible": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/separator": "catalog:",
+    "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

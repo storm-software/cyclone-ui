@@ -13,7 +13,4 @@ The powerlines package uses various configuration parameters to control the beha
 
 ## Configuration
 
-
-
 The below list of configuration parameters are **not** considered sensitive or confidential. Any values provided in these variables will be available in plain text locally.
-

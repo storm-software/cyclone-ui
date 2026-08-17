@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 // import { build } from "@cyclone-ui/build/build/tamagui";
 // import { type BuildOptions } from "@cyclone-ui/build/types";
@@ -23,9 +24,9 @@ import { withRunExecutor } from "@storm-software/workspace-tools";
 import type { BuildExecutorSchema } from "./schema.d";
 
 export async function buildExecutorFn(
-  options: BuildExecutorSchema,
-  context: ExecutorContext,
-  config?: StormConfig
+  _options: BuildExecutorSchema,
+  _context: ExecutorContext,
+  _config?: StormConfig
 ) {
   // const { writeDebug, writeTrace } = await import(
   //   "@storm-software/config-tools"

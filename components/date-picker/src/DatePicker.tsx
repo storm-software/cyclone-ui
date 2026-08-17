@@ -1,23 +1,24 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { ColorThemeName } from "@cyclone-ui/colors";
-import { Input, InputContextProps } from "@cyclone-ui/input";
+import type { InputContextProps } from "@cyclone-ui/input";
+import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Popover } from "@cyclone-ui/popover";
 import type { DPDay, DPPropGetter } from "@rehookify/datepicker";
@@ -25,8 +26,6 @@ import {
   DatePickerProvider as RehookifyDatePickerProvider,
   useDatePickerContext
 } from "@rehookify/datepicker";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { StormDateTime } from "@storm-stack/date-time/storm-date-time";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import {
   createStyledContext,
@@ -37,20 +36,14 @@ import {
 } from "@tamagui/core";
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
-import {
-  PropsWithChildren,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState
-} from "react";
-import { DimensionValue } from "react-native";
-
+import type { PropsWithChildren } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { DimensionValue } from "react-native";
 export type DatePickerChangeEventHandler = (
   event: CustomEvent<Date | null>
 ) => any;
 
-export type DatePickerExtraProps = {
+export interface DatePickerExtraProps {
   /**
    * Callback that is called when the text input's text changes.
    *
@@ -66,7 +59,7 @@ export type DatePickerExtraProps = {
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
   onInput?: DatePickerChangeEventHandler;
-};
+}
 
 export type DatePickerContextProps = Omit<
   InputContextProps,
@@ -98,8 +91,31 @@ export const DatePickerContext = createStyledContext<DatePickerContextProps>({
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
 
+const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+] as const;
+
+const getMonthIndex = (month?: string | null) => {
+  if (!month) {
+    return -1;
+  }
+
+  return (MONTH_NAMES as readonly string[]).indexOf(month);
+};
+
 // Rehookify internally return `onClick` and that's incompatible with native
-const swapOnClick = <D extends any = any>(d: D) => {
+const swapOnClick = <D = any,>(d: D) => {
   (d as any).onPress = (d as any).onClick;
 
   return d;
@@ -118,78 +134,66 @@ function useDateAnimation({
   const calendarListenTo =
     calendar && listenTo !== "years" ? calendar[listenTo] : undefined;
 
-  const [currentMonth, setCurrentMonth] = useState<string | null>(null);
-  const [currentYear, setCurrentYear] = useState<string | null>(null);
-  const [currentYearsSum, setCurrentYearsSum] = useState<number | null>(null);
+  const yearsSum = years.reduce((ret, date) => ret + date.year, 0);
+  const month = calendar?.month ?? null;
+  const year = calendar?.year ?? null;
 
-  const sumYears = useCallback(() => {
-    return years.reduce((ret, date) => ret + date.year, 0);
-  }, [years]);
+  const previousYearsSumRef = useRef<number | null>(null);
+  const previousMonthRef = useRef<string | null>(null);
+  const previousYearRef = useRef<string | null>(null);
 
-  useEffect(() => {
-    if (listenTo === "years") {
-      if (currentYearsSum !== sumYears()) {
-        setCurrentYearsSum(sumYears());
-      }
-    }
-  }, [years, sumYears, listenTo, currentYearsSum]);
+  const previousYearsSum = previousYearsSumRef.current;
+  const previousMonth = previousMonthRef.current;
+  const previousYear = previousYearRef.current;
 
   useEffect(() => {
-    if (listenTo === "month") {
-      if (calendar && currentMonth !== calendar.month) {
-        setCurrentMonth(calendar.month);
-      }
-    }
-  }, [listenTo, currentMonth]);
-
-  useEffect(() => {
-    if (listenTo === "year") {
-      if (calendar?.year && currentYear !== calendar?.year) {
-        setCurrentYear(calendar?.year);
-      }
-    }
-  }, [listenTo, currentYear]);
+    previousYearsSumRef.current = yearsSum;
+    previousMonthRef.current = month;
+    previousYearRef.current = year;
+  });
 
   const prevNextAnimation = useCallback(() => {
     if (listenTo === "years") {
-      if (currentYearsSum === null) {
+      if (previousYearsSum === null) {
         return { enterStyle: { opacity: 0 } };
       }
 
       return {
-        enterStyle: { opacity: 0, x: sumYears() < currentYearsSum ? -15 : 15 },
-        exitStyle: { opacity: 0, x: sumYears() < currentYearsSum ? -15 : 15 }
+        enterStyle: {
+          opacity: 0,
+          x: yearsSum < previousYearsSum ? -15 : 15
+        },
+        exitStyle: {
+          opacity: 0,
+          x: yearsSum < previousYearsSum ? -15 : 15
+        }
       };
     }
 
     if (listenTo === "month") {
-      if (currentMonth === null) {
+      if (previousMonth === null) {
         return { enterStyle: { opacity: 0 } };
       }
 
       const isPreviousDate =
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(calendarListenTo) + 1,
-            1
-          )
-        ).epochMilliseconds <
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(currentMonth) + 1,
-            1
-          )
-        ).epochMilliseconds;
+        new Date(
+          Number(calendar?.year ?? 0),
+          getMonthIndex(calendarListenTo) + 1,
+          1
+        ).getTime() <
+        new Date(
+          Number(calendar?.year ?? 0),
+          getMonthIndex(previousMonth) + 1,
+          1
+        ).getTime();
 
-      if (currentMonth === "December" && calendar?.month === "January") {
+      if (previousMonth === "December" && calendar?.month === "January") {
         return {
           enterStyle: { opacity: 0, x: 15 },
           exitStyle: { opacity: 0, x: 15 }
         };
       }
-      if (currentMonth === "January" && calendar?.month === "December") {
+      if (previousMonth === "January" && calendar?.month === "December") {
         return {
           enterStyle: { opacity: 0, x: -15 },
           exitStyle: { opacity: 0, x: -15 }
@@ -202,25 +206,21 @@ function useDateAnimation({
     }
 
     if (listenTo === "year") {
-      if (currentYear === null) {
+      if (previousYear === null) {
         return { enterStyle: { opacity: 0 } };
       }
 
       const isPreviousDate =
-        StormDate.create(
-          new Date(
-            Number(calendar?.year ?? 0),
-            StormDateTime.getMonthIndex(calendar?.month) + 1,
-            1
-          )
-        ).epochMilliseconds <
-        StormDate.create(
-          new Date(
-            Number(currentYear),
-            StormDateTime.getMonthIndex(calendar?.month) + 1,
-            1
-          )
-        ).epochMilliseconds;
+        new Date(
+          Number(calendar?.year ?? 0),
+          getMonthIndex(calendar?.month) + 1,
+          1
+        ).getTime() <
+        new Date(
+          Number(previousYear),
+          getMonthIndex(calendar?.month) + 1,
+          1
+        ).getTime();
 
       return {
         enterStyle: { opacity: 0, x: isPreviousDate ? -15 : 15 },
@@ -234,18 +234,17 @@ function useDateAnimation({
     };
   }, [
     listenTo,
-    currentYearsSum,
-    sumYears,
-    currentMonth,
-    calendarListenTo,
-    calendar?.year,
-    calendar?.month,
-    currentYear
+    yearsSum,
+    previousYearsSum,
+    previousMonth,
+    previousYear,
+    calendar,
+    calendarListenTo
   ]);
 
   return {
     prevNextAnimation,
-    prevNextAnimationKey: listenTo === "years" ? sumYears() : calendarListenTo
+    prevNextAnimationKey: listenTo === "years" ? yearsSum : calendarListenTo
   };
 }
 
@@ -288,7 +287,10 @@ const DayPicker = () => {
         <XStack gap="$1">
           {weekDays.map(day => (
             <View key={day} justifyContent="center" width="$4">
-              <LabelText textAlign="center" size="$4" color="$secondary">
+              <LabelText
+                textAlign="center"
+                size="$4"
+                color="$foregroundSecondary">
                 {day}
               </LabelText>
             </View>
@@ -316,7 +318,7 @@ const DayPicker = () => {
                             ? "primary"
                             : "outlined"
                     }
-                    borderColor={day.now ? "$primary" : undefined}
+                    borderColor={day.now ? "$borderPrimary" : undefined}
                     padding="$1"
                     flexBasis="14%"
                     borderRadius={0}
@@ -324,7 +326,7 @@ const DayPicker = () => {
                     hoverStyle={
                       day.inCurrentMonth
                         ? {
-                            backgroundColor: "$fg"
+                            backgroundColor: "$backgroundElevated"
                           }
                         : {}
                     }>
@@ -366,7 +368,7 @@ function YearRangeSlider() {
       </Button>
       <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
         <LabelText
-          color="$color"
+          color="$foregroundOnPrimary"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -420,9 +422,9 @@ function YearSlider() {
           tabIndex={0}
           size="$6"
           cursor="pointer"
-          color="$color"
+          color="$foregroundOnPrimary"
           hoverStyle={{
-            color: "$accent10"
+            color: "$foregroundAccent"
           }}>
           {year}
         </LabelText>
@@ -456,21 +458,7 @@ const CalendarHeader = () => {
   }
 
   if (header === "month") {
-    return (
-      <XStack
-        width="100%"
-        alignItems="center"
-        justifyContent="center"
-        height={40}>
-        <LabelText
-          textAlign="center"
-          userSelect="auto"
-          tabIndex={0}
-          color="$color">
-          Select a month
-        </LabelText>
-      </XStack>
-    );
+    return <YearSlider />;
   }
 
   return (
@@ -497,9 +485,9 @@ const CalendarHeader = () => {
           tabIndex={0}
           size="$5"
           cursor="pointer"
-          color="$color"
+          color="$foregroundOnPrimary"
           hoverStyle={{
-            color: "$accent10"
+            color: "$foregroundAccent"
           }}>
           {year}
         </LabelText>
@@ -510,11 +498,11 @@ const CalendarHeader = () => {
           cursor="pointer"
           tabIndex={0}
           size="$8"
-          color="$color"
+          color="$foregroundOnPrimary"
           fontWeight="600"
           lineHeight="$1"
           hoverStyle={{
-            color: "$accent10"
+            color: "$foregroundAccent"
           }}>
           {month}
         </LabelText>
@@ -561,7 +549,7 @@ const ItemPicker = ({
 };
 
 const MonthPicker = ({
-  onChange = (e, date) => {}
+  onChange = (_e, _date) => {}
 }: {
   onChange?: (e: MouseEvent, date: Date) => void;
 }) => {
@@ -778,7 +766,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
     forwardedRef
   ) => {
     const handleOpenChanged = useCallback(
-      (open: boolean, via?: "hover" | "press") => {
+      (open: boolean, _via?: "hover" | "press") => {
         if (open) {
           onFocus?.();
         } else {

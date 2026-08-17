@@ -7,7 +7,11 @@
  */
 
 import { isWeb } from '@tamagui/constants';
-import { createV5Theme, defaultConfig, type CreateV5ThemeOptions } from "@tamagui/config/v5";
+import type { CreateV5ThemeOptions } from "@tamagui/config/v5";
+import {
+  createV5Theme,
+  defaultConfig
+} from "@tamagui/config/v5";
 import { animations } from "@tamagui/config/v5-motion";
 import { createTamagui, px, createTokens, createFont } from "@tamagui/core";
 
@@ -589,7 +593,7 @@ const themes = createV5Theme({
       }
     }
   },
-  getTheme: ({ theme, scheme }: { theme: any; scheme: "light" | "dark" }) => {
+  getTheme: ({ theme, scheme }: { theme: any; scheme: "light" | "dark" | undefined }) => {
     return scheme === "dark"
       ? {
         ...theme,

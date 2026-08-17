@@ -27,22 +27,22 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@maskito/core": "^3.11.1",
+    "@maskito/core": "catalog:",
     "@maskito/kit": "^3.11.1",
-    "@storm-stack/date-time": "latest",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
+    "@stryke/date": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorThemeMode } from "@cyclone-ui/colors/src/types";
 import type {
   CreateTamaguiProps,
   InferTamaguiConfig,
@@ -25,7 +24,7 @@ import type {
 import { TamaguiProvider } from "@tamagui/core";
 import type { PropsWithChildren } from "react";
 import { ThemeApi } from "../molecules/theme-molecule";
-import type { ThemeOptions } from "../types";
+import type { ColorThemeMode, ThemeOptions } from "../types";
 
 type ThemeStateManagerServerProps = PropsWithChildren<
   Omit<TamaguiProviderProps, "defaultTheme"> & {

@@ -16,12 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import type { MoleculeScopeOptions } from "@cyclone-ui/state";
 import type { Getter, Setter } from "jotai";
 import { RESET, useAtomCallback } from "jotai/utils";
 import { useCallback } from "react";
-import type { ColorThemeMode } from "../../../colors/src/types";
+import type { MoleculeScopeOptions } from "../../base/utilities/create-molecule";
 import { ThemeApi } from "../molecules/theme-molecule";
+import type { ColorThemeMode } from "../types";
 
 export const useThemeActions = (opts?: MoleculeScopeOptions) => {
   const themeMolecule = ThemeApi.useMolecule(opts);

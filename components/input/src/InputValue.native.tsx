@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
@@ -27,6 +28,10 @@ import type {
 import { TextInput } from "react-native";
 import type { InputProps } from "./types";
 import { baseInputStyle, InputContext } from "./utilities";
+
+/* eslint-disable ts/no-unused-vars --
+ * Web-only props are destructured so they are not forwarded to the native input.
+ */
 
 const BaseInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
 
@@ -63,7 +68,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
     const composedRefs = useComposedRefs<any>(forwardedRef, ref);
 
     let secureTextEntry = false;
-    let cursorColor = caretColor;
+    const cursorColor = caretColor;
     let _returnKeyType = returnKeyType;
     let _enterKeyHint = enterKeyHint;
     if (enterKeyHint === "go") {
@@ -105,7 +110,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
       returnKeyType: _returnKeyType,
       secureTextEntry,
       numberOfLines: rows || rest.numberOfLines
-    } as any;
+    };
 
     if (tag === "textarea") {
       finalProps.multiline = true;
@@ -129,7 +134,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
       };
 
       finalProps.onSubmitEditing = (
-        e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
+        _e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
       ) => {
         onKeyDown({
           key: "Enter",
@@ -183,7 +188,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
 
     return (
       <BaseInputValue
-        onChange={e => {}}
+        onChange={_e => {}}
         ref={composedRefs}
         onBlur={onBlur}
         onFocus={onFocus}

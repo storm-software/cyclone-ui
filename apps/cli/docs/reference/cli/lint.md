@@ -65,6 +65,3 @@ bun x powerlines lint [options]
 ## Options
 
 The following options are available for the `lint` command:
-
-
-

@@ -1,29 +1,38 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                   ⚡ Storm Software - Cyclone UI
+                   🗲 Storm Software - Cyclone UI
 
  This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/cyclone-ui
- Documentation:   https://stormsoftware.com/projects/cyclone-ui/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/cyclone-ui/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
 
-/* eslint-disable react-hooks/rules-of-hooks */
+ ------------------------------------------------------------------- */
 
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
-import { StormDate } from "@storm-stack/date-time/storm-date";
-import { formatDate } from "@storm-stack/date-time/utilities/format-date";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { formatDate } from "@stryke/date/format";
 import { useCallback } from "react";
 import { DatePicker } from "./DatePicker";
+
+const toDate = (value: unknown) => {
+  if (value == null || value === "") {
+    return null;
+  }
+
+  const date =
+    value instanceof Date ? value : new Date(value as string | number);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+};
 
 const meta: Meta<typeof DatePicker> = {
   title: "Base/DatePicker",
@@ -31,18 +40,16 @@ const meta: Meta<typeof DatePicker> = {
   tags: ["autodocs"],
   render: (props: any) => {
     const handleFormat = useCallback((value: any) => {
-      return formatDate(StormDate.create(value), {
-        returnEmptyIfNotSet: true,
-        returnEmptyIfInvalid: true
-      });
+      const date = toDate(value);
+      if (!date) {
+        return "";
+      }
+
+      return formatDate(date, "MM.DD.YYYY");
     }, []);
 
     const handleParse = useCallback((value: any) => {
-      const date = StormDate.create(value);
-
-      const invalid = date.validate();
-
-      return !invalid ? date : null;
+      return toDate(value);
     }, []);
 
     return (

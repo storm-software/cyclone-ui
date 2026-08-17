@@ -31,9 +31,7 @@ import type { RESET } from "jotai/utils";
 export type JotaiStore = ReturnType<typeof createStore>;
 
 export type SetStateActionWithReset<Value> =
-  | Value
-  | typeof RESET
-  | ((prev: Value) => Value | typeof RESET);
+  Value | typeof RESET | ((prev: Value) => Value | typeof RESET);
 export interface WithInitialValue<Value> {
   init: Value;
 }
@@ -66,7 +64,7 @@ export type IsWriteOnlyAtom<T> = [T] extends [
  */
 export type IsResetAtom<T> =
   IsWritableAtom<T> extends true
-    ? ExtractAtomArgs<T> extends [SetStateActionWithReset<infer U>]
+    ? ExtractAtomArgs<T> extends [SetStateActionWithReset<infer _U>]
       ? true
       : false
     : false;

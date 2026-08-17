@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { isFunction, isPlainObject } from "@storm-stack/types";
+import { isFunction } from "@stryke/type-checks/is-function";
+import { isPlainObject } from "@stryke/type-checks/is-plain-object";
 import type { Atom, WritableAtom } from "jotai";
 
 /**

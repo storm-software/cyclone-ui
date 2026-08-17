@@ -66,17 +66,10 @@ bun x powerlines completions fish script [options] <path>
 
 </details>
 
-
-
 ## Positional Arguments
 
 The following positional arguments are available for the `script` command:
 
-
-
 ## Options
 
 The following options are available for the `script` command:
-
-
-

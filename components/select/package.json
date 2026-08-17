@@ -27,34 +27,34 @@
     "types"
   ],
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "dependencies": {
-    "@storm-stack/types": "latest",
-    "@tamagui/adapt": "^1.144.4",
-    "@tamagui/compose-refs": "^1.144.4",
-    "@tamagui/constants": "^1.144.4",
-    "@tamagui/core": "^1.144.4",
-    "@tamagui/create-context": "^1.144.4",
-    "@tamagui/focusable": "^1.144.4",
-    "@tamagui/group": "^1.144.4",
-    "@tamagui/helpers-icon": "^1.144.4",
-    "@tamagui/linear-gradient": "^1.144.4",
-    "@tamagui/list-item": "^1.144.4",
-    "@tamagui/lucide-icons": "^1.144.4",
-    "@tamagui/select": "^1.144.4",
-    "@tamagui/separator": "^1.144.4",
-    "@tamagui/sheet": "^1.144.4",
-    "@tamagui/stacks": "^1.144.4",
-    "@tamagui/text": "^1.144.4",
-    "@tamagui/web": "^1.144.4"
+    "@stryke/types": "catalog:",
+    "@tamagui/adapt": "catalog:",
+    "@tamagui/compose-refs": "catalog:",
+    "@tamagui/constants": "catalog:",
+    "@tamagui/core": "catalog:",
+    "@tamagui/create-context": "catalog:",
+    "@tamagui/focusable": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers-icon": "catalog:",
+    "@tamagui/linear-gradient": "catalog:",
+    "@tamagui/list-item": "catalog:",
+    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/select": "catalog:",
+    "@tamagui/separator": "catalog:",
+    "@tamagui/sheet": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.74.1"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "publishConfig": {
     "access": "public"

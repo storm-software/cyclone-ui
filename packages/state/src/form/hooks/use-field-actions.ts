@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-unsafe-call -- validator callbacks are dynamically keyed */
+
 import { upperCaseFirst } from "@stryke/string-format/upper-case-first";
 import { isPromise } from "@stryke/type-checks/is-promise";
 import type { MessageDetails } from "@stryke/types/messages";

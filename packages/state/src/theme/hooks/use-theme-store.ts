@@ -16,10 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import type { MoleculeScopeOptions } from "@cyclone-ui/state";
 import { useThemeName } from "@tamagui/core";
-import type { ColorThemeName } from "../../../colors/src/types";
+import type { MoleculeScopeOptions } from "../../base/utilities/create-molecule";
 import { ThemeApi } from "../molecules/theme-molecule";
+import type { ColorThemeName } from "../types";
 import {
   getThemeColorThemeName,
   themeColorThemeNameExists
