@@ -44,6 +44,7 @@
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "@tamagui/avatar": "catalog:",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/table-core": "^8.21.3",

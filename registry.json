@@ -7,20 +7,20 @@
       "title": "@cyclone-ui/accordion",
       "description": "A package containing the Accordion component used by Storm Software",
       "dependencies": [
-        "@stryke/type-checks@latest",
-        "@stryke/types@latest",
-        "@tamagui/accordion@^1.144.4",
-        "@tamagui/collapsible@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/separator@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/type-checks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/accordion@catalog:",
+        "@tamagui/collapsible@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/separator@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -36,19 +36,19 @@
       "title": "@cyclone-ui/alert",
       "description": "A package containing the Alert component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -64,19 +64,19 @@
       "title": "@cyclone-ui/alert-dialog",
       "description": "A package containing the AlertDialog component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -92,18 +92,18 @@
       "title": "@cyclone-ui/badge",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -119,13 +119,13 @@
       "title": "@cyclone-ui/body-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -141,18 +141,18 @@
       "title": "@cyclone-ui/breadcrumb",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -168,22 +168,22 @@
       "title": "@cyclone-ui/button",
       "description": "Button component for Cyclone UI",
       "dependencies": [
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "@tamagui/lucide-icons@^1.144.4",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "@tamagui/lucide-icons@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -199,13 +199,13 @@
       "title": "@cyclone-ui/bytes-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/string-format@latest",
-        "@tamagui/core@^1.144.4"
+        "@stryke/string-format@catalog:",
+        "@tamagui/core@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -221,19 +221,19 @@
       "title": "@cyclone-ui/callout",
       "description": "A package containing the Alert component used by Storm Software",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -249,21 +249,21 @@
       "title": "@cyclone-ui/card",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "@tamagui/lucide-icons@^1.144.4",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1",
+        "@tamagui/lucide-icons@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "files": [
@@ -280,21 +280,21 @@
       "title": "@cyclone-ui/checkbox",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/checkbox@^1.144.4",
-        "@tamagui/checkbox-headless@^1.144.4",
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
+        "@tamagui/checkbox@catalog:",
+        "@tamagui/checkbox-headless@catalog:",
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -310,15 +310,15 @@
       "title": "@cyclone-ui/checkbox-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/checkbox-headless@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/types@catalog:",
+        "@tamagui/checkbox-headless@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -334,14 +334,14 @@
       "title": "@cyclone-ui/container",
       "description": "Button component for Cyclone UI",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -357,25 +357,25 @@
       "title": "@cyclone-ui/data-table",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/helpers@latest",
-        "@stryke/string-format@latest",
-        "@stryke/type-checks@latest",
-        "@stryke/types@latest",
-        "@tamagui/adapt@^1.144.4",
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
+        "@stryke/helpers@catalog:",
+        "@stryke/string-format@catalog:",
+        "@stryke/type-checks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/adapt@catalog:",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3"
       ],
       "devDependencies": [
-        "@tamagui/avatar@^1.144.4",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "@tamagui/avatar@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -434,17 +434,17 @@
       "title": "@cyclone-ui/date-picker-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@maskito/core@^3.11.1",
+        "@maskito/core@catalog:",
         "@maskito/kit@^3.11.1",
-        "@stryke/date@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
+        "@stryke/date@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -460,28 +460,28 @@
       "title": "@cyclone-ui/dialog",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/alert-dialog@^1.144.4",
-        "@tamagui/compose-refs@^1.144.4",
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/dialog@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/use-controllable-state@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/alert-dialog@catalog:",
+        "@tamagui/compose-refs@catalog:",
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/dialog@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/use-controllable-state@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -497,13 +497,13 @@
       "title": "@cyclone-ui/eyebrow-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -519,17 +519,17 @@
       "title": "@cyclone-ui/field",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/label@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/label@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -545,31 +545,31 @@
       "title": "@cyclone-ui/file-picker",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/date@latest",
-        "@stryke/hooks@latest",
-        "@stryke/types@latest",
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/image@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/separator@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4",
-        "expo-document-picker@^11.10.1",
+        "@stryke/date@catalog:",
+        "@stryke/hooks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/image@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/separator@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:",
+        "expo-document-picker@catalog:",
         "expo-image-picker@^15.1.0",
         "react-dropzone@^14.4.1",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -585,15 +585,15 @@
       "title": "@cyclone-ui/file-picker-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -609,13 +609,13 @@
       "title": "@cyclone-ui/form",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -631,13 +631,13 @@
       "title": "@cyclone-ui/heading-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -653,19 +653,19 @@
       "title": "@cyclone-ui/input",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/focusable@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/separator@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/focusable@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/separator@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -681,13 +681,13 @@
       "title": "@cyclone-ui/input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -703,13 +703,13 @@
       "title": "@cyclone-ui/label-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -725,18 +725,18 @@
       "title": "@cyclone-ui/link",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/shapes@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/shapes@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -752,13 +752,13 @@
       "title": "@cyclone-ui/link-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -774,16 +774,16 @@
       "title": "@cyclone-ui/message",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -799,14 +799,14 @@
       "title": "@cyclone-ui/next-button",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/hooks@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/hooks@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -823,12 +823,12 @@
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
         "@number-flow/react@^0.4.4",
-        "@tamagui/core@^1.144.4"
+        "@tamagui/core@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -844,17 +844,17 @@
       "title": "@cyclone-ui/pagination",
       "description": "A component to support page navigation, next and previous links",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -870,16 +870,16 @@
       "title": "@cyclone-ui/pdf-document-display",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/type-checks@latest",
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
+        "@stryke/type-checks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
         "pdfjs-dist@^4.10.38",
         "react-pdf@^9.2.1"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -896,20 +896,20 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@floating-ui/react@0.26.28",
-        "@tamagui/adapt@^1.144.4",
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/popover@^1.144.4",
-        "@tamagui/popper@^1.144.4",
-        "@tamagui/sheet@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/adapt@catalog:",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/popover@catalog:",
+        "@tamagui/popper@catalog:",
+        "@tamagui/sheet@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -925,14 +925,14 @@
       "title": "@cyclone-ui/previous-button",
       "description": "A Previous Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/hooks@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/hooks@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -948,14 +948,14 @@
       "title": "@cyclone-ui/progress",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/progress@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/progress@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -971,23 +971,23 @@
       "title": "@cyclone-ui/radio-group",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/hooks@latest",
-        "@stryke/types@latest",
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/label@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/radio-group@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@stryke/hooks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/label@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/radio-group@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1003,18 +1003,18 @@
       "title": "@cyclone-ui/radio-group-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/hooks@latest",
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/label@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
+        "@stryke/hooks@catalog:",
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/label@catalog:",
+        "@tamagui/stacks@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "jotai@^2.20.2",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "jotai@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1035,13 +1035,13 @@
       "title": "@cyclone-ui/scroll-view",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1057,14 +1057,14 @@
       "title": "@cyclone-ui/search-input-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/lucide-icons@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1080,29 +1080,29 @@
       "title": "@cyclone-ui/select",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/adapt@^1.144.4",
-        "@tamagui/compose-refs@^1.144.4",
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/focusable@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/helpers-icon@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/list-item@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/select@^1.144.4",
-        "@tamagui/separator@^1.144.4",
-        "@tamagui/sheet@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/web@^1.144.4"
+        "@stryke/types@catalog:",
+        "@tamagui/adapt@catalog:",
+        "@tamagui/compose-refs@catalog:",
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/focusable@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers-icon@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/list-item@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/select@catalog:",
+        "@tamagui/separator@catalog:",
+        "@tamagui/sheet@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1118,17 +1118,17 @@
       "title": "@cyclone-ui/select-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "jotai@^2.20.2",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "jotai@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1149,13 +1149,13 @@
       "title": "@cyclone-ui/spinner",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1171,27 +1171,27 @@
       "title": "@cyclone-ui/steps",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/button@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/shapes@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/tabs@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/use-controllable-state@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/button@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/shapes@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/tabs@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/use-controllable-state@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1207,20 +1207,20 @@
       "title": "@cyclone-ui/switch",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/constants@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/group@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/switch@^1.144.4",
-        "@tamagui/switch-headless@^1.144.4"
+        "@tamagui/constants@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/switch@catalog:",
+        "@tamagui/switch-headless@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1236,15 +1236,15 @@
       "title": "@cyclone-ui/switch-field",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/switch-headless@^1.144.4"
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/switch-headless@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1260,24 +1260,24 @@
       "title": "@cyclone-ui/table",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/use-controllable-state@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/use-controllable-state@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "@tamagui/avatar@^1.144.4",
+        "@tamagui/avatar@catalog:",
         "@tanstack/react-table@^8.21.3",
         "@tanstack/table-core@^8.21.3",
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1293,26 +1293,26 @@
       "title": "@cyclone-ui/tabs",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/animate-presence@^1.144.4",
-        "@tamagui/button@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-font-sized@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4",
-        "@tamagui/tabs@^1.144.4",
-        "@tamagui/text@^1.144.4",
-        "@tamagui/use-controllable-state@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/animate-presence@catalog:",
+        "@tamagui/button@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/tabs@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/use-controllable-state@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1328,14 +1328,14 @@
       "title": "@cyclone-ui/themeable-gradient",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/linear-gradient@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/linear-gradient@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1351,20 +1351,20 @@
       "title": "@cyclone-ui/themeable-icon",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/font-size@^1.144.4",
-        "@tamagui/get-token@^1.144.4",
-        "@tamagui/helpers@^1.144.4",
-        "@tamagui/helpers-icon@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/web@^1.144.4",
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-token@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-icon@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/web@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1380,13 +1380,13 @@
       "title": "@cyclone-ui/title-text",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
-        "@tamagui/core@^1.144.4",
-        "@tamagui/text@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/text@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1403,16 +1403,16 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@floating-ui/react@0.26.28",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/create-context@^1.144.4",
-        "@tamagui/popover@^1.144.4",
-        "@tamagui/popper@^1.144.4",
-        "@tamagui/tooltip@^1.144.4"
+        "@tamagui/core@catalog:",
+        "@tamagui/create-context@catalog:",
+        "@tamagui/popover@catalog:",
+        "@tamagui/popper@catalog:",
+        "@tamagui/tooltip@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1428,15 +1428,15 @@
       "title": "@cyclone-ui/validation-text",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@stryke/types@latest",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
-        "@tamagui/stacks@^1.144.4"
+        "@stryke/types@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/stacks@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {
@@ -1452,17 +1452,17 @@
       "title": "@cyclone-ui/vectors",
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/animations-moti@^1.144.4",
-        "@tamagui/core@^1.144.4",
-        "@tamagui/helpers-icon@^1.144.4",
-        "@tamagui/helpers-tamagui@^1.144.4",
-        "@tamagui/lucide-icons@^1.144.4",
+        "@tamagui/animations-moti@catalog:",
+        "@tamagui/core@catalog:",
+        "@tamagui/helpers-icon@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/lucide-icons@catalog:",
         "motion@^11.18.2"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:",
         "react-native-svg@^15.15.5"
       ],
       "files": [
@@ -1479,12 +1479,12 @@
       "title": "@cyclone-ui/visually-hidden",
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
-        "@tamagui/core@^1.144.4"
+        "@tamagui/core@catalog:"
       ],
       "devDependencies": [
-        "react@18.3.1",
-        "react-dom@18.3.1",
-        "react-native@0.74.1"
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:"
       ],
       "files": [
         {

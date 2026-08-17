@@ -70,14 +70,14 @@ A package containing the Cyclone UI default color scheme
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/colors
+pnpm add -D @cyclone-ui/themes
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/colors
+npm install -D @cyclone-ui/themes
 ```
 
 </details>
@@ -86,7 +86,7 @@ npm install -D @cyclone-ui/colors
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/colors
+yarn add -D @cyclone-ui/themes
 ```
 
 </details>
@@ -105,15 +105,15 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build colors` to build the library.
+Run `nx build themes` to build the library.
 
 ### Running unit tests
 
-Run `nx test colors` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test themes` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint colors` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint themes` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

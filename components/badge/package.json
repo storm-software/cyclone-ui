@@ -41,6 +41,7 @@
     "@tamagui/web": "catalog:"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

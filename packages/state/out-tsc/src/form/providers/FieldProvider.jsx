@@ -1,0 +1,244 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+/* eslint-disable ts/no-unsafe-call -- bunshi/jotai molecule APIs and @stryke/async types */
+import { delay } from "@stryke/async";
+import { isBoolean } from "@stryke/type-checks/is-boolean";
+import { useThemeName } from "@tamagui/core";
+import { useAtomEffect } from "../../base/hooks/use-atom-effect";
+import { useFieldActions } from "../hooks/use-field-actions";
+import { FieldApi } from "../molecules/field-molecule";
+import { FormApi } from "../molecules/form-molecule";
+import { ValidationCause } from "../types";
+import { AbortError } from "../utilities/abort-error";
+function FieldStateManager(_props) {
+    const { validate } = useFieldActions();
+    const form = FormApi.useMolecule();
+    const field = FieldApi.useMolecule();
+    // Handle initialize events
+    // useAtomValue(
+    //   loadable(
+    //     useMemoStable(
+    //       () =>
+    //         atomWithEffect((get, set) => {
+    //           const initialValue = get(field.initialValue);
+    //           const abortController = new AbortController();
+    //           void (async () => {
+    //             try {
+    //               const options = get(field.options);
+    //               await delay(options.debounceMs);
+    //               abortController.signal.throwIfAborted();
+    //               if (get(field.dirty)) {
+    //                 return;
+    //               }
+    //               set(
+    //                 field.value as WritableAtom<
+    //                   TFieldValue,
+    //                   [SetStateAction<TFieldValue> | typeof RESET],
+    //                   void
+    //                 >,
+    //                 initialValue
+    //               );
+    //               set(
+    //                 field.blurred as WritableAtom<
+    //                   InferFieldState<TFieldValue, boolean>,
+    //                   [
+    //                     | SetStateAction<InferFieldState<TFieldValue, boolean>>
+    //                     | typeof RESET
+    //                   ],
+    //                   void
+    //                 >,
+    //                 RESET
+    //               );
+    //               set(
+    //                 field.validating as WritableAtom<
+    //                   InferFieldState<TFieldValue, boolean>,
+    //                   [
+    //                     | SetStateAction<InferFieldState<TFieldValue, boolean>>
+    //                     | typeof RESET
+    //                   ],
+    //                   void
+    //                 >,
+    //                 RESET
+    //               );
+    //               set(
+    //                 field.validationResults as WritableAtom<
+    //                   InferFieldState<
+    //                     TFieldValue,
+    //                     Partial<Record<ValidationCause, ValidationDetails[]>>
+    //                   >,
+    //                   [
+    //                     | SetStateAction<
+    //                         InferFieldState<
+    //                           TFieldValue,
+    //                           Partial<
+    //                             Record<ValidationCause, ValidationDetails[]>
+    //                           >
+    //                         >
+    //                       >
+    //                     | typeof RESET
+    //                   ],
+    //                   void
+    //                 >,
+    //                 RESET
+    //               );
+    //               if (options.onInitialize) {
+    //                 await Promise.resolve(
+    //                   options.onInitialize({
+    //                     get,
+    //                     set,
+    //                     store
+    //                   })
+    //                 );
+    //                 // Do not perform validation if the field if changed by the onChange callback
+    //                 abortController.signal.throwIfAborted();
+    //               }
+    //               await Promise.resolve(
+    //                 validate(initialValue, ValidationCause.INITIALIZE)
+    //               );
+    //             } catch (e) {
+    //               if (e instanceof AbortError) {
+    //                 // async cleanup logic here
+    //               } else {
+    //                 // console.error(e);
+    //               }
+    //             }
+    //           })();
+    //           return () => {
+    //             abortController.abort(new AbortError());
+    //           };
+    //         }),
+    //       [validate]
+    //     )
+    //   )
+    // );
+    // Handle value change event
+    useAtomEffect((get, set) => {
+        const value = get(field.value);
+        const abortController = new AbortController();
+        void (async () => {
+            try {
+                const options = get(field.options);
+                await delay(options.debounceMs);
+                abortController.signal.throwIfAborted();
+                if (options.onChange) {
+                    await Promise.resolve(options.onChange({
+                        get,
+                        set,
+                        atoms: field
+                    }));
+                    // Do not perform validation if the field if changed by the onChange callback
+                    abortController.signal.throwIfAborted();
+                }
+                const promises = [];
+                promises.push(validate(value, ValidationCause.CHANGE));
+                const blurred = get(field.blurred);
+                if (blurred) {
+                    promises.push(validate(value, ValidationCause.BLUR));
+                }
+                const submitAttempts = get(form.submitAttempts);
+                if (submitAttempts > 0) {
+                    promises.push(validate(value, ValidationCause.SUBMIT));
+                }
+                await Promise.all(promises);
+            }
+            catch (e) {
+                if (e instanceof AbortError) {
+                    // async cleanup logic here
+                }
+                else {
+                    // console.error(e);
+                }
+            }
+        })();
+        return () => {
+            abortController.abort(new AbortError());
+        };
+    }, [validate]);
+    // Handle focus and blur events
+    useAtomEffect((get, set) => {
+        const focused = get(field.focused);
+        const abortController = new AbortController();
+        void (async () => {
+            try {
+                const options = get(field.options);
+                await delay(options.debounceMs);
+                abortController.signal.throwIfAborted();
+                if (isBoolean(focused)) {
+                    if (!get(field.touched)) {
+                        set(field.touched, true);
+                    }
+                    if (focused) {
+                        if (options.onFocus) {
+                            await Promise.resolve(options.onFocus({
+                                get,
+                                set,
+                                atoms: field
+                            }));
+                            // Do not perform validation if the field if changed by the onFocus callback
+                            abortController.signal.throwIfAborted();
+                        }
+                    }
+                    else {
+                        if (options.onBlur) {
+                            await Promise.resolve(options.onBlur({
+                                get,
+                                set,
+                                atoms: field
+                            }));
+                            // Do not perform validation if the field if changed by the onBlur callback
+                            abortController.signal.throwIfAborted();
+                        }
+                        const value = get(field.value);
+                        const promises = [];
+                        promises.push(validate(value, ValidationCause.BLUR));
+                        const submitAttempts = get(form.submitAttempts);
+                        if (submitAttempts > 0) {
+                            promises.push(validate(value, ValidationCause.SUBMIT));
+                        }
+                        await Promise.all(promises);
+                    }
+                }
+            }
+            catch (e) {
+                if (e instanceof AbortError) {
+                    // async cleanup logic here
+                }
+                else {
+                    // console.error(e);
+                }
+            }
+        })();
+        return () => {
+            abortController.abort(new AbortError());
+        };
+    }, [validate]);
+    return null;
+}
+export function FieldProvider({ children, name, ...props }) {
+    // const theme = useThemeName();
+    const form = FormApi.use();
+    const formName = form.name.get();
+    const theme = useThemeName();
+    return (<FieldApi.Provider scope={`${formName}-${name}`} initialState={{
+            options: { theme, ...props }
+        }}>
+      <FieldStateManager {...props}/>
+      {children}
+    </FieldApi.Provider>);
+}
+//# sourceMappingURL=FieldProvider.jsx.map

@@ -42,7 +42,6 @@ export function debounce<TArgs extends unknown[], TReturn>(
   options: DebounceOptions = {}
 ) {
   // Validate options
-  // eslint-disable-next-line no-param-reassign
   options = { ...DEBOUNCE_DEFAULTS, ...options };
   if (!Number.isFinite(wait)) {
     throw new TypeError("Expected `wait` to be a finite number");
@@ -65,7 +64,7 @@ export function debounce<TArgs extends unknown[], TReturn>(
 
   const applyFn = async (_this: any, args: any[]) => {
     currentPromise = _applyPromised(fn, _this, args);
-    // eslint-disable-next-line ts/no-floating-promises
+
     void currentPromise.finally(async () => {
       currentPromise = undefined;
       if (options.trailing && trailingArgs && !timeout) {
@@ -80,7 +79,6 @@ export function debounce<TArgs extends unknown[], TReturn>(
     return currentPromise;
   };
 
-  // eslint-disable-next-line func-names
   return async (...args: TArgs) => {
     if (currentPromise) {
       if (options.trailing) {
@@ -112,6 +110,5 @@ export function debounce<TArgs extends unknown[], TReturn>(
 }
 
 async function _applyPromised(fn: () => any, _this: any, args: any[]) {
-  // eslint-disable-next-line no-return-await
   return await fn.apply(_this, args as []);
 }

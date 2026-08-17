@@ -38,6 +38,9 @@
     "@tamagui/switch-headless": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

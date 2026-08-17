@@ -47,6 +47,7 @@
     "@tanstack/table-core": "^8.21.3"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "@tamagui/avatar": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

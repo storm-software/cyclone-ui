@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { plugin as vite } from "@powerlines/plugin-vite";
+import { plugin as tsdown } from "@powerlines/plugin-tsdown";
 import type { UserConfig } from "powerlines";
 import { defineConfig } from "powerlines/config";
 
@@ -26,14 +26,14 @@ const config: UserConfig = defineConfig({
     "src/client/index.ts",
     "src/form/index.ts",
     "src/message/index.ts",
-    "src/theme/index.ts",
-    "src/types/*.ts",
-    "src/utils/index.ts"
+    "src/theme/index.ts"
   ],
-  output: {
-    sourceMap: true
-  },
-  plugins: [vite()]
+  platform: "browser",
+  plugins: [
+    tsdown({
+      unbundle: true
+    })
+  ]
 });
 
 export default config;

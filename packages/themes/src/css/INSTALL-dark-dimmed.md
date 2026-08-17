@@ -22,9 +22,9 @@ SCSS example:
 @import "packages/themes/src/css/tokens.css";
 ```
 
-1. Reference token variables from the generated file names above (e.g. CSS custom properties or SCSS variables).
+2. Reference token variables from the generated file names above (e.g. CSS custom properties or SCSS variables).
 
-1. Re-run Razorwind generate when tokens change.
+3. Re-run Razorwind generate when tokens change.
 
 ## Regenerate
 

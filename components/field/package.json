@@ -32,6 +32,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/label-text": "workspace:*",
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/get-token": "catalog:",
@@ -40,6 +41,9 @@
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

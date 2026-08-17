@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import { LabelText } from "@cyclone-ui/label-text";
 import type { FieldProviderOptions } from "@cyclone-ui/state/form";
 import {
   FieldApi,

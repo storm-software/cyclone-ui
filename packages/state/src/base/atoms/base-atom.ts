@@ -20,6 +20,7 @@
 
 import type { Atom, PrimitiveAtom, WritableAtom } from "jotai/vanilla";
 import { atom as jotaiAtom } from "jotai/vanilla";
+import type { WithInitialValue } from "../../types";
 import { setAtomDebugLabel } from "../utilities/set-atom-debug";
 
 type Getter = <Value>(atom: Atom<Value>) => Value;
@@ -45,9 +46,6 @@ type Write<Args extends unknown[], Result> = (
   set: Setter,
   ...args: Args
 ) => Result;
-interface WithInitialValue<Value> {
-  init: Value;
-}
 
 // writable derived atom
 export function baseAtom<TValue, TArgs extends unknown[], TResult>(

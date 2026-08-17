@@ -17,9 +17,10 @@
  ------------------------------------------------------------------- */
 
 import type { MaskitoOptions } from "@maskito/core";
-import type { IsPlainObject } from "@stryke/type-checks/is-plain-object";
 import type { MaybePromise } from "@stryke/types/base";
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
+import type { IsPlainObject } from "@stryke/types/object";
+import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import type {
   Atom,
   Getter,
@@ -30,9 +31,9 @@ import type {
 } from "jotai";
 import type { RESET } from "jotai/utils";
 import type { Ref } from "react";
-import type { MoleculeState } from "../../base/utilities/create-molecule";
+import type { MoleculeState } from "../base/utilities/create-molecule";
 import type {
-  AtomRecord,
+  AtomRecordConstraint,
   SetStateActionWithReset,
   SplitAtomAction
 } from "../types";
@@ -42,7 +43,7 @@ import type {
  */
 export type ValidationCause =
   "initialize" | "change" | "blur" | "submit" | "server";
-// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
+
 export const ValidationCause = {
   INITIALIZE: "initialize" as ValidationCause,
   CHANGE: "change" as ValidationCause,
@@ -68,7 +69,7 @@ export type ValidationResults = Partial<
  */
 export type FieldStatus =
   "base" | "help" | "success" | "info" | "warning" | "error";
-// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
+
 export const FieldStatus = {
   BASE: "base" as FieldStatus,
   HELP: "discovery" as FieldStatus,
@@ -118,7 +119,7 @@ export type FieldChangeEventHandler<TFieldValue = any> = (
 ) => any;
 
 export interface CallbackContext<
-  TState extends AtomRecord<any> = AtomRecord<any>
+  TState extends AtomRecordConstraint<TState> = Record<string, Atom<unknown>>
 > {
   get: Getter;
   set: Setter;

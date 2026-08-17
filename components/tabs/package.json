@@ -49,6 +49,8 @@
     "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

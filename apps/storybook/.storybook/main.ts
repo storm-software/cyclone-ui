@@ -58,18 +58,70 @@ function resolvePackageFile(value: string): string {
   return fileURLToPath(import.meta.resolve(value));
 }
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function exportFilePath(value: unknown): string | undefined {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (!value || typeof value !== "object") {
+    return undefined;
+  }
+
+  const record = value as Record<string, unknown>;
+  for (const key of ["import", "default", "require", "types"] as const) {
+    const nested = exportFilePath(record[key]);
+    if (nested) {
+      return nested;
+    }
+  }
+
+  return undefined;
+}
+
+function resolveSourceFile(
+  pkgDir: string,
+  exportPath: string
+): string | undefined {
+  const relative = exportPath.replace(/^\.\//, "");
+  const absolute = join(pkgDir, relative);
+  if (
+    existsSync(absolute) &&
+    /\.(?:[cm]?tsx?|jsx?)$/.test(absolute) &&
+    !relative.startsWith("dist/") &&
+    !relative.endsWith(".d.ts")
+  ) {
+    return absolute;
+  }
+
+  const withoutExt = relative
+    .replace(/\.(?:d\.)?[cm]?tsx?$/, "")
+    .replace(/\.(?:mjs|cjs|js)$/, "")
+    .replace(/^(?:dist\/(?:esm|cjs|jsx)\/|dist\/|types\/)/, "");
+
+  return [
+    join(pkgDir, "src", `${withoutExt}.ts`),
+    join(pkgDir, "src", `${withoutExt}.tsx`),
+    join(pkgDir, "src", withoutExt, "index.ts"),
+    join(pkgDir, "src", withoutExt, "index.tsx")
+  ].find(existsSync);
+}
+
 /**
  * Point workspace packages at source so Storybook does not require a prior
- * `dist` build, and map retired package names onto the consolidated state package.
- *
- * More specific subpaths are listed first so Vite does not rewrite
- * `@cyclone-ui/state/client` through the `@cyclone-ui/state` package alias.
+ * `dist` build. Export subpaths (`@cyclone-ui/state/client`) are aliased
+ * independently, and every `find` is an exact regex so Vite does not rewrite
+ * `@cyclone-ui/state/message` through the `@cyclone-ui/state` package alias.
  */
 function cycloneUiSourceAliases(): Array<{
-  find: string;
+  find: string | RegExp;
   replacement: string;
 }> {
-  const packageAliases: Array<{ find: string; replacement: string }> = [];
+  const packageAliases: Array<{ find: string | RegExp; replacement: string }> =
+    [];
 
   for (const workspaceDir of ["packages", "components"] as const) {
     const root = join(workspaceRoot, workspaceDir);
@@ -86,76 +138,56 @@ function cycloneUiSourceAliases(): Array<{
 
       const pkg = JSON.parse(readFileSync(pkgJsonPath, "utf8")) as {
         name?: string;
+        exports?: Record<string, unknown>;
       };
       if (!pkg.name) {
         continue;
       }
 
-      for (const entry of ["src/index.ts", "src/index.tsx"] as const) {
-        const entryPath = join(pkgDir, entry);
-        if (existsSync(entryPath)) {
-          packageAliases.push({ find: pkg.name, replacement: entryPath });
-          break;
+      const aliases = new Map<string, string>();
+
+      if (pkg.exports) {
+        for (const [exportPath, exportValue] of Object.entries(pkg.exports)) {
+          if (exportPath.includes("*") || exportPath === "./package.json") {
+            continue;
+          }
+
+          const filePath = exportFilePath(exportValue);
+          if (!filePath) {
+            continue;
+          }
+
+          const sourceFile = resolveSourceFile(pkgDir, filePath);
+          if (!sourceFile) {
+            continue;
+          }
+
+          const specifier =
+            exportPath === "." ? pkg.name : `${pkg.name}${exportPath.slice(1)}`;
+          aliases.set(specifier, sourceFile);
         }
+      }
+
+      if (!aliases.has(pkg.name)) {
+        for (const entry of ["src/index.ts", "src/index.tsx"] as const) {
+          const entryPath = join(pkgDir, entry);
+          if (existsSync(entryPath)) {
+            aliases.set(pkg.name, entryPath);
+            break;
+          }
+        }
+      }
+
+      for (const [specifier, replacement] of aliases) {
+        packageAliases.push({
+          find: new RegExp(`^${escapeRegExp(specifier)}$`),
+          replacement
+        });
       }
     }
   }
 
-  const specificAliases = [
-    {
-      find: "@cyclone-ui/state/utilities/create-molecule",
-      replacement: join(
-        workspaceRoot,
-        "packages/state/src/base/utilities/create-molecule.tsx"
-      )
-    },
-    {
-      find: "@cyclone-ui/state/client",
-      replacement: join(workspaceRoot, "packages/state/src/client/index.ts")
-    },
-    {
-      find: "@cyclone-ui/state/message",
-      replacement: join(workspaceRoot, "packages/state/src/message/index.ts")
-    },
-    {
-      find: "@cyclone-ui/state/form",
-      replacement: join(workspaceRoot, "packages/state/src/form/index.ts")
-    },
-    {
-      find: "@cyclone-ui/state/theme",
-      replacement: join(workspaceRoot, "packages/state/src/theme/index.ts")
-    },
-    {
-      find: "@cyclone-ui/themes/tamagui",
-      replacement: join(workspaceRoot, "packages/themes/src/tamagui/index.ts")
-    },
-    {
-      find: "@cyclone-ui/themes/storybook",
-      replacement: join(workspaceRoot, "packages/themes/src/storybook/theme.ts")
-    },
-    {
-      find: "@cyclone-ui/colors",
-      replacement: join(workspaceRoot, "packages/state/src/theme/types.ts")
-    },
-    {
-      find: "@cyclone-ui/client-state",
-      replacement: join(workspaceRoot, "packages/state/src/client/index.ts")
-    },
-    {
-      find: "@cyclone-ui/form-state",
-      replacement: join(workspaceRoot, "packages/state/src/form/index.ts")
-    },
-    {
-      find: "@cyclone-ui/message-state",
-      replacement: join(workspaceRoot, "packages/state/src/message/index.ts")
-    },
-    {
-      find: "@cyclone-ui/tamagui",
-      replacement: join(workspaceRoot, "packages/helpers/src/index.ts")
-    }
-  ];
-
-  return [...specificAliases, ...packageAliases];
+  return packageAliases;
 }
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -182,6 +214,13 @@ const config: StorybookConfig = {
       resolve: {
         alias: [
           ...cycloneUiSourceAliases(),
+          {
+            find: "@stryke/env/runtime-checks",
+            replacement: join(
+              dirname(fileURLToPath(import.meta.url)),
+              "shims/stryke-env-runtime-checks.ts"
+            )
+          },
           {
             find: "node:buffer",
             replacement: join(
@@ -255,7 +294,8 @@ const config: StorybookConfig = {
           "@tamagui/proxy-worm",
           "react-native-web",
           "expo-linear-gradient"
-        ]
+        ],
+        exclude: ["@stryke/env/runtime-checks"]
       },
 
       plugins: [
@@ -265,7 +305,24 @@ const config: StorybookConfig = {
         tamaguiPlugin({
           config: join(workspaceRoot, "packages/themes/src/tamagui/config.ts"),
           components: ["tamagui"]
-        })
+        }),
+        {
+          name: "cyclone-ui-oklch-create-v5-theme",
+          transform(code: string, id: string) {
+            if (
+              !id
+                .replaceAll("\\", "/")
+                .endsWith("packages/themes/src/tamagui/config.ts")
+            ) {
+              return null;
+            }
+
+            return code.replace(
+              'from "@tamagui/config/v5"',
+              'from "./create-v5-theme"'
+            );
+          }
+        }
       ].filter(Boolean),
 
       define: {
@@ -274,7 +331,14 @@ const config: StorybookConfig = {
           JSON.stringify("false"),
         "process.env.NODE_ENV": JSON.stringify(
           configType === "PRODUCTION" ? "production" : "development"
-        )
+        ),
+        // `@stryke/env` reads these as free identifiers. Leave them undefined
+        // in the browser so Boolean(Bun) does not throw ReferenceError.
+        Bun: "undefined",
+        Deno: "undefined",
+        fastly: "undefined",
+        Netlify: "undefined",
+        EdgeRuntime: "undefined"
       },
 
       server: {

@@ -132,7 +132,7 @@
     "lefthook": "catalog:",
     "log4brains": "catalog:",
     "next": "catalog:",
-    "nx": ">=22.7.0",
+    "nx": "^23.1.1",
     "parse-github-url": "catalog:",
     "powerlines": "catalog:",
     "prettier": "catalog:",
@@ -164,7 +164,11 @@
       }
     ],
     "ci": {
-      "trackBranches": ["main", "next", "experimental"]
+      "trackBranches": [
+        "main",
+        "next",
+        "experimental"
+      ]
     }
   },
   "licenses": [

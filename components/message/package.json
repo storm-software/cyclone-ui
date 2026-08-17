@@ -21,11 +21,7 @@
     }
   },
   "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
+  "files": ["dist", "src", "types"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -39,6 +35,9 @@
     "@tamagui/web": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
@@ -46,8 +45,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx"
 }

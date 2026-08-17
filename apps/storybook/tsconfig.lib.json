@@ -3,15 +3,21 @@
   "compilerOptions": {
     "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
     "rootDir": ".",
+    "paths": {
+      "@cyclone-ui/state": ["../../packages/state/src/index.ts"],
+      "@cyclone-ui/state/client": ["../../packages/state/src/client/index.ts"],
+      "@cyclone-ui/state/form": ["../../packages/state/src/form/index.ts"],
+      "@cyclone-ui/state/message": [
+        "../../packages/state/src/message/index.ts"
+      ],
+      "@cyclone-ui/state/theme": ["../../packages/state/src/theme/index.ts"]
+    },
     "types": ["node", "react", "vite/client"],
     "outDir": "./out-tsc"
   },
   "references": [
     {
       "path": "../../packages/helpers"
-    },
-    {
-      "path": "../../packages/state/tsconfig.lib.json"
     },
     {
       "path": "../../packages/themes"

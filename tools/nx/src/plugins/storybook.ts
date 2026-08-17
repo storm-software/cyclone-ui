@@ -215,7 +215,8 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
       cwd: workspaceRoot,
       commands: [
         { command: "pnpm nx run cli:build" },
-        { command: "pnpm nx run themes:build" }
+        { command: "pnpm nx run themes:build" },
+        { command: "pnpm nx run state:build" }
       ],
       parallel: false
     }

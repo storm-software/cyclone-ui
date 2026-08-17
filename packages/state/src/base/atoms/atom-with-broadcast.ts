@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { isRuntimeServer } from "@stryke/env/runtime-checks";
 import { isFunction } from "@stryke/type-checks/is-function";
 import type { PrimitiveAtom, SetStateAction, WritableAtom } from "jotai";
 import { isAtom } from "../utilities/is-atom";
@@ -41,7 +40,10 @@ export function atomWithBroadcast<TValue>(
     : baseAtom(initialValueOrAtom);
   const listeners = new Set<(_: MessageEvent) => void>();
 
-  const channel = isRuntimeServer ? undefined : new BroadcastChannel(key);
+  const channel =
+    typeof BroadcastChannel === "undefined"
+      ? undefined
+      : new BroadcastChannel(key);
   if (channel) {
     channel.onmessage = (message: unknown) => {
       for (const listener of listeners) {
@@ -62,7 +64,7 @@ export function atomWithBroadcast<TValue>(
         isFunction(update.value) ? update.value(get(valueAtom)) : update.value
       );
 
-      if (!update.isEvent && !isRuntimeServer && channel) {
+      if (!update.isEvent && channel) {
         channel.postMessage(JSON.stringify(get(valueAtom)));
       }
     }

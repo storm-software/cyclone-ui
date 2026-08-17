@@ -41,6 +41,7 @@
     "motion": "^11.18.2"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:",

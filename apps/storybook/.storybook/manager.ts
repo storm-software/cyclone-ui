@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import theme from "@cyclone-ui/themes/storybook";
 import { addons } from "storybook/manager-api";
-import { create } from "storybook/theming";
 
 /**
  * Storybook `create()` requires CSS color strings. The generated Razorwind
@@ -25,24 +25,5 @@ import { create } from "storybook/theming";
  * manager and leave a blank page.
  */
 addons.setConfig({
-  theme: create({
-    base: "dark",
-    brandTitle: "Cyclone UI",
-    brandUrl: "https://cyclone-ui.com",
-    brandImage: "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg",
-    brandTarget: "_blank",
-    appBg: "#1A1C1F",
-    appContentBg: "#1A1C1F",
-    appPreviewBg: "#1A1C1F",
-    appBorderColor: "#494B4D",
-    barBg: "#1A1C1F",
-    barTextColor: "#BABBBB",
-    barSelectedColor: "#F8F8F7",
-    barHoverColor: "#F8F8F7",
-    textColor: "#F8F8F7",
-    textMutedColor: "#999A9B",
-    inputBg: "#1E2023",
-    inputBorder: "#494B4D",
-    inputTextColor: "#F8F8F7"
-  })
+  theme: theme.dark
 });

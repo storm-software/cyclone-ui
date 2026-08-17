@@ -33,7 +33,16 @@ export function atomWithDebounce<TValue = unknown>(
     | WritableAtom<TValue, [SetStateAction<TValue> | typeof RESET], void>,
   debounceMs = 500,
   shouldDebounceOnReset = false
-) {
+): {
+  clearTimeoutAtom: WritableAtom<null, [], void>;
+  currentValueAtom: Atom<TValue>;
+  debouncedValueAtom: WritableAtom<
+    TValue,
+    [SetStateAction<TValue> | typeof RESET],
+    void
+  >;
+  isDebouncingAtom: PrimitiveAtom<boolean>;
+} {
   const prevTimeoutAtom = baseAtom<ReturnType<typeof setTimeout> | undefined>(
     undefined
   );

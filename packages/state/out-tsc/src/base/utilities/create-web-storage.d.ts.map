@@ -1,0 +1,1 @@
+{"version":3,"file":"create-web-storage.d.ts","sourceRoot":"","sources":["../../../../src/base/utilities/create-web-storage.ts"],"names":[],"mappings":"AAoBA,OAAO,KAAK,EACV,YAAY,EACZ,kBAAkB,EAClB,WAAW,EACX,iBAAiB,EAClB,MAAM,qCAAqC,CAAC;AAE7C,wBAAgB,gBAAgB,CAAC,MAAM,EACrC,gBAAgB,EAAE,MAAM,kBAAkB,GAAG,iBAAiB,GAAG,SAAS,GACzE,YAAY,CAAC,MAAM,CAAC,GAAG,WAAW,CAAC,MAAM,CAAC,CAqE5C"}

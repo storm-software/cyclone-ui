@@ -20,14 +20,16 @@
 
 import type { GetField } from "@stryke/helpers/get-field";
 import { getField } from "@stryke/helpers/get-field";
+import { deepMerge } from "@stryke/helpers/deep-merge";
 import { isEqual } from "@stryke/helpers/is-equal";
 import { toPath } from "@stryke/helpers/to-path";
+import { isFunction } from "@stryke/type-checks/is-function";
 import { isSet } from "@stryke/type-checks/is-set";
 import { isString } from "@stryke/type-checks/is-string";
 import { atom } from "jotai";
 import { focusAtom } from "jotai-optics";
 import { atomWithDefault, RESET, splitAtom } from "jotai/utils";
-import type { SetStateActionWithReset } from "../../base";
+import type { SetStateActionWithReset } from "../../types";
 import { createMoleculeApi, use } from "../../base";
 import { atomWithFieldItems } from "../atoms/atom-with-field";
 import {

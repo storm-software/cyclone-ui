@@ -76,7 +76,7 @@ const preview: Preview = {
               <MessageProvider>
                 <DevTools theme={mode} position="bottom-right" />
                 <DebugAtoms />
-                <YStack p="$8" width="100%" minH="100%">
+                <YStack p="$8" w="100%" minh="100%">
                   <Story />
                 </YStack>
               </MessageProvider>

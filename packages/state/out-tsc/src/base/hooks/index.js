@@ -15,30 +15,8 @@
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
-
-import { shorthands as base } from "@tamagui/shorthands";
-
-export const shorthands = {
-  ...base,
-  p: "padding",
-  px: "paddingHorizontal",
-  py: "paddingVertical",
-  pl: "paddingLeft",
-  pr: "paddingRight",
-  pt: "paddingTop",
-  pb: "paddingBottom",
-  f: "flex",
-  m: "margin",
-  mx: "marginHorizontal",
-  my: "marginVertical",
-  ml: "marginLeft",
-  mr: "marginRight",
-  mt: "marginTop",
-  mb: "marginBottom",
-  h: "height",
-  w: "width",
-  maxh: "maxHeight",
-  minh: "minHeight",
-  maxw: "maxWidth",
-  minw: "minWidth"
-} as const;
+export * from "./use-atom-effect";
+export * from "./use-hydrate-molecule";
+export * from "./use-prepare-atoms";
+export * from "./use-sync-molecule";
+//# sourceMappingURL=index.js.map

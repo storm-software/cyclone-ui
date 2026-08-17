@@ -57,7 +57,7 @@
     "@types/node": "catalog:",
     "eslint-flat-config-utils": "catalog:",
     "jsonc-eslint-parser": "catalog:",
-    "nx": ">=22.7.0"
+    "nx": "^23.1.1"
   },
   "peerDependencies": {
     "nx": ">=22.7.0"

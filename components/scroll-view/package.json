@@ -36,6 +36,8 @@
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {
+    "@cyclone-ui/vectors": "workspace:*",
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

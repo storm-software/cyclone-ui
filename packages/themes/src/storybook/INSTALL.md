@@ -37,13 +37,13 @@ export default {
 };
 ```
 
-1. Import doc blocks in MDX as needed:
+2. Import doc blocks in MDX as needed:
 
 ```mdx
 import { ColorPaletteBlock } from "./blocks";
 ```
 
-1. Start Storybook and open **Cyclone UI** in the sidebar.
+3. Start Storybook and open **Cyclone UI** in the sidebar.
 
 ## Regenerate
 

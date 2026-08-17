@@ -43,6 +43,7 @@
     "@tamagui/web": "catalog:"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "@tamagui/lucide-icons": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

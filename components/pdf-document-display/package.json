@@ -39,6 +39,7 @@
     "react-pdf": "^9.2.1"
   },
   "devDependencies": {
+    "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

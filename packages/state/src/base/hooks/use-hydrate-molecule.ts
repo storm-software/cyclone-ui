@@ -18,7 +18,7 @@
 
 import type { SetStateAction, WritableAtom } from "jotai";
 import { useHydrateAtoms } from "jotai/utils";
-import type { JotaiStore, WritableAtomRecord } from "../types";
+import type { JotaiStore, WritableAtomRecord } from "../../types";
 
 export type UseHydrateAtoms<T> = (
   initialValues: Partial<Record<keyof T, any>>,
@@ -28,21 +28,24 @@ export type UseHydrateAtoms<T> = (
 /**
  * Hydrate atoms with initial values for SSR.
  */
-export const useHydrateMolecule = (
-  atoms: WritableAtomRecord<unknown>,
-  initialValues: Partial<Record<keyof unknown, any>>,
+export const useHydrateMolecule = <T extends object>(
+  atoms: WritableAtomRecord<T>,
+  initialValues: Partial<Record<keyof T, unknown>>,
   store?: JotaiStore
 ) => {
   const values: [
     WritableAtom<unknown, [SetStateAction<unknown>], void>,
-    Parameters<UseHydrateAtoms<unknown>>[0]
+    unknown
   ][] = [];
 
-  for (const key of Object.keys(atoms)) {
+  for (const key of Object.keys(atoms) as (keyof T)[]) {
     const initialValue = initialValues[key];
 
     if (initialValue !== undefined) {
-      values.push([atoms[key], initialValue]);
+      values.push([
+        atoms[key] as WritableAtom<unknown, [SetStateAction<unknown>], void>,
+        initialValue
+      ]);
     }
   }
 

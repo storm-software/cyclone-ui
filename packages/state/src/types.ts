@@ -79,7 +79,18 @@ export type AtomRecord<T> = {
   [K in keyof T]: Atom<T[K]>;
 };
 
-export type WritableAtomRecord<T> = {
+/**
+ * Constraint for objects whose values are Jotai atoms.
+ *
+ * Prefer `TState extends AtomRecordConstraint<TState>` over
+ * `TState extends AtomRecord<any>` — the latter requires a string index
+ * signature and rejects fixed-key interfaces such as `FormAtoms`.
+ */
+export type AtomRecordConstraint<T extends object = object> = {
+  [K in keyof T]: Atom<unknown>;
+};
+
+export type WritableAtomRecord<T extends object = object> = {
   [K in keyof T]: WritableAtom<
     T[K],
     [SetStateAction<T[K]> | typeof RESET],
@@ -87,7 +98,7 @@ export type WritableAtomRecord<T> = {
   >;
 };
 
-export type ExtractAtomRecordValues<T extends AtomRecord<any>> = {
+export type ExtractAtomRecordValues<T extends AtomRecordConstraint<T>> = {
   [K in keyof T]: ExtractAtomValue<T[K]>;
 };
 

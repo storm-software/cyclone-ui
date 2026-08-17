@@ -18,7 +18,6 @@
 
 /* eslint-disable ts/no-unsafe-call -- window.matchMedia is unresolved without DOM lib */
 
-import { isRuntimeClient } from "@stryke/env/runtime-checks";
 import type {
   CreateTamaguiProps,
   InferTamaguiConfig,
@@ -68,10 +67,12 @@ export const ThemeProvider = ({
   ...props
 }: ThemeProviderProps) => {
   const mode = useMemo(() => {
-    if (isRuntimeClient && window?.matchMedia) {
-      if (window?.matchMedia("(prefers-color-scheme: light)").matches) {
+    if (typeof window !== "undefined" && window.matchMedia) {
+      if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         return "light";
-      } else if (window?.matchMedia("(prefers-color-scheme: dark)").matches) {
+      }
+
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         return "dark";
       }
     }

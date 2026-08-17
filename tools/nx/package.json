@@ -40,7 +40,7 @@
     "@stryke/path": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",
-    "nx": ">=22.7.0",
+    "nx": "catalog:",
     "untyped": "catalog:"
   },
   "devDependencies": {

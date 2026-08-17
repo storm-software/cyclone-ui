@@ -32,6 +32,9 @@
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../label-text"
     }
   ],
   "files": [],

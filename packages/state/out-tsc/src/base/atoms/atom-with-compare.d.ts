@@ -1,0 +1,2 @@
+export declare function atomWithCompare<TValue>(initialValue: TValue, areEqual: (prev: TValue, next: TValue) => boolean): import("jotai").WritableAtom<TValue, [TValue], void>;
+//# sourceMappingURL=atom-with-compare.d.ts.map

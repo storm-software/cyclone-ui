@@ -39,13 +39,13 @@ import type { Atom, SetStateAction, WritableAtom } from "jotai";
 import { atom, useAtomValue, useSetAtom } from "jotai";
 import { RESET } from "jotai/utils";
 import { useCallback } from "react";
-import { useSyncMolecule } from "../hooks/use-sync-molecule";
 import type {
   AtomRecord,
+  AtomRecordConstraint,
   ExtractAtomRecordValues,
-  IsResetAtom,
-  SetStateActionWithReset
-} from "../types";
+  IsResetAtom
+} from "../../types";
+import { useSyncMolecule } from "../hooks/use-sync-molecule";
 import { isAtom, isResetAtom, isWritableAtom } from "./is-atom";
 import { setAtomDebugLabel } from "./set-atom-debug";
 
@@ -59,8 +59,9 @@ export type BaseMoleculeState = AtomRecord<{
   __typename: string;
 }>;
 
-export type MoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> =
-  BaseMoleculeState & TState;
+export type MoleculeState<
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
+> = BaseMoleculeState & TState;
 
 export const DEFAULT_SCOPE = "__global__";
 
@@ -92,7 +93,9 @@ export function use<TValue>(
   return useBase<TValue>(dependency);
 }
 
-type UseMoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> = {
+type UseMoleculeState<
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
+> = {
   [TKey in keyof TState]: {
     get: TState[TKey] extends Atom<infer TValue>
       ? (opts?: MoleculeScopeOptions) => TValue
@@ -112,7 +115,9 @@ type UseMoleculeState<TState extends AtomRecord<any> = AtomRecord<any>> = {
 
 export type MoleculeScopeOptions = MoleculeScopeOptionsBase;
 
-export interface MoleculeApi<TState extends AtomRecord<any> = AtomRecord<any>> {
+export interface MoleculeApi<
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
+> {
   Molecule: Molecule<MoleculeState<TState>>;
   Provider: React.FC<MoleculeProviderProps<TState>>;
   Scope: MoleculeScope<string>;
@@ -124,19 +129,19 @@ export type GetMoleculeState<TMoleculeApi extends MoleculeApi<any>> =
   ReturnType<TMoleculeApi["useMolecule"]>;
 
 export type MoleculeProviderProps<
-  TState extends AtomRecord<any> = AtomRecord<any>
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
 > = Omit<ProviderProps<string>, "scope" | "value"> & {
   scope: string;
   initialState?: Partial<ExtractAtomRecordValues<TState>>;
 };
 
 export type CleanupCallback = () => unknown;
-export type MountCallback<TState extends AtomRecord<any> = AtomRecord<any>> = (
-  state: MoleculeState<TState>
-) => CleanupCallback | void;
+export type MountCallback<
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
+> = (state: MoleculeState<TState>) => CleanupCallback | void;
 
 export interface MoleculeOptions<
-  TState extends AtomRecord<any> = AtomRecord<any>
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
 > {
   type: string;
   scope?: MoleculeScope<string> | string;
@@ -152,7 +157,7 @@ export interface MoleculeOptions<
  * @returns The new Molecule.
  */
 export function createMoleculeApi<
-  TState extends AtomRecord<any> = AtomRecord<any>
+  TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
 >(
   constructFn: (scope: string) => TState,
   options: MoleculeOptions<TState>
@@ -170,11 +175,13 @@ export function createMoleculeApi<
       result.__scope = atom(() => currentScope);
       result.__typename = atom(() => options.type);
 
-      for (const key of Object.keys(result)) {
+      for (const key of Object.keys(
+        result
+      ) as (keyof MoleculeState<TState>)[]) {
         if (isAtom(result[key])) {
           setAtomDebugLabel(
             result[key],
-            `${options.type}/${currentScope}:${key}`
+            `${options.type}/${currentScope}:${String(key)}`
           );
         }
       }
@@ -209,7 +216,7 @@ export function createMoleculeApi<
         if (
           keys
             .filter(k => k !== "__scope" && k !== "__typename")
-            .includes(proxyKey)
+            .includes(proxyKey as keyof TState)
         ) {
           const key = proxyKey as keyof TState;
 
@@ -230,7 +237,7 @@ export function createMoleculeApi<
                   const setAtom = useSetAtom(
                     atoms[key] as WritableAtom<
                       TState[typeof key],
-                      [SetStateActionWithReset<TState[typeof key]>],
+                      [SetStateAction<TState[typeof key]>],
                       void
                     >
                   );
@@ -249,7 +256,7 @@ export function createMoleculeApi<
   };
 
   function MoleculeStateManager<
-    TState extends AtomRecord<any> = AtomRecord<any>
+    TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
   >({
     initialState
   }: {
@@ -261,7 +268,9 @@ export function createMoleculeApi<
     return null;
   }
 
-  function Provider<TState extends AtomRecord<any> = AtomRecord<any>>({
+  function Provider<
+    TState extends AtomRecordConstraint<TState> = AtomRecordConstraint
+  >({
     children,
     scope,
     initialState,

@@ -42,6 +42,7 @@ export default defineConfig({
     tamagui({
       animations: "motion",
       defaultFont: "Space Grotesk",
+      importConfig: "./default-config",
       outputPath: "packages/themes/src/tamagui/config.ts"
     }),
     designMD(),
@@ -54,48 +55,49 @@ export default defineConfig({
         return {
           dark: {
             base: "dark",
-            colorPrimary: tokens?.dark?.color?.foreground?.primary,
-            colorSecondary: tokens?.dark?.color?.foreground?.secondary,
+            colorPrimary: tokens?.dark?.color?.foreground?.primary?.$value,
+            colorSecondary: tokens?.dark?.color?.foreground?.secondary?.$value,
 
-            barTextColor: tokens?.dark?.color?.foreground?.primary,
-            barSelectedColor: tokens?.dark?.color?.foreground?.accent,
-            barBg: tokens?.dark?.color?.surface2,
-            barHoverColor: tokens?.dark?.color?.surface3,
+            barTextColor: tokens?.dark?.color?.foreground?.primary?.$value,
+            barSelectedColor: tokens?.dark?.color?.foreground?.accent?.$value,
+            barBg: tokens?.dark?.color?.surface2?.$value,
+            barHoverColor: tokens?.dark?.color?.surface3?.$value,
 
-            buttonBg: tokens?.dark?.color?.background?.primary,
-            buttonBorder: tokens?.dark?.color?.border?.primary,
+            buttonBg: tokens?.dark?.color?.background?.primary?.$value,
+            buttonBorder: tokens?.dark?.color?.border?.primary?.$value,
 
-            inputBg: tokens?.dark?.color?.background?.primary,
-            inputBorder: tokens?.dark?.color?.border?.primary,
-            inputTextColor: tokens?.dark?.color?.foreground?.primary,
-            inputBorderRadius: tokens?.dark?.radius?.md,
+            inputBg: tokens?.dark?.color?.background?.primary?.$value,
+            inputBorder: tokens?.dark?.color?.border?.primary?.$value,
+            inputTextColor: tokens?.dark?.color?.foreground?.primary?.$value,
+            inputBorderRadius: tokens?.dark?.radius?.md?.$value,
 
-            booleanBg: tokens?.dark?.color?.background?.primary,
-            booleanSelectedBg: tokens?.dark?.color?.background?.primary,
+            booleanBg: tokens?.dark?.color?.background?.primary?.$value,
+            booleanSelectedBg: tokens?.dark?.color?.background?.primary?.$value,
 
             brandImage:
               "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg"
           },
           light: {
             base: "light",
-            colorPrimary: tokens?.light?.color?.foreground?.primary,
-            colorSecondary: tokens?.light?.color?.foreground?.secondary,
+            colorPrimary: tokens?.light?.color?.foreground?.primary?.$value,
+            colorSecondary: tokens?.light?.color?.foreground?.secondary?.$value,
 
-            barTextColor: tokens?.light?.color?.foreground?.secondary,
-            barSelectedColor: tokens?.light?.color?.foreground?.primary,
-            barBg: tokens?.light?.color?.surface2,
-            barHoverColor: tokens?.light?.color?.surface3,
+            barTextColor: tokens?.light?.color?.foreground?.secondary?.$value,
+            barSelectedColor: tokens?.light?.color?.foreground?.primary?.$value,
+            barBg: tokens?.light?.color?.surface2?.$value,
+            barHoverColor: tokens?.light?.color?.surface3?.$value,
 
-            buttonBg: tokens?.light?.color?.background?.primary,
-            buttonBorder: tokens?.light?.color?.border?.primary,
+            buttonBg: tokens?.light?.color?.background?.primary?.$value,
+            buttonBorder: tokens?.light?.color?.border?.primary?.$value,
 
-            inputBg: tokens?.light?.color?.background?.primary,
-            inputBorder: tokens?.light?.color?.border?.primary,
-            inputTextColor: tokens?.light?.color?.foreground?.primary,
-            inputBorderRadius: tokens?.light?.radius?.md,
+            inputBg: tokens?.light?.color?.background?.primary?.$value,
+            inputBorder: tokens?.light?.color?.border?.primary?.$value,
+            inputTextColor: tokens?.light?.color?.foreground?.primary?.$value,
+            inputBorderRadius: tokens?.light?.radius?.md?.$value,
 
-            booleanBg: tokens?.light?.color?.background?.primary,
-            booleanSelectedBg: tokens?.light?.color?.background?.primary,
+            booleanBg: tokens?.light?.color?.background?.primary?.$value,
+            booleanSelectedBg:
+              tokens?.light?.color?.background?.primary?.$value,
 
             // //
             // colorPrimary: "#3A10E5",

@@ -17,6 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { noop } from "@stryke/helpers/noop";
+import type { PrimitiveAtom } from "jotai";
+import type { WithInitialValue } from "../../types";
 import { baseAtom } from "./base-atom";
 
 const pendingPromise = new Promise<never>(noop);
@@ -26,5 +28,5 @@ const pendingPromise = new Promise<never>(noop);
  *
  * @returns An atom that always returns a pending promise.
  */
-export const atomWithPending = <Value>() =>
-  baseAtom(pendingPromise as unknown as Value);
+export const atomWithPending = <Value>(): PrimitiveAtom<Value> &
+  WithInitialValue<Value> => baseAtom(pendingPromise as unknown as Value);

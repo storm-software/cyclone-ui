@@ -20,9 +20,10 @@
 /* eslint-disable react-hooks/rules-of-hooks -- jotai atom maps require per-key hook calls */
 /* eslint-disable react/rules-of-hooks -- jotai atom maps require per-key hook calls */
 
+import type { SetStateAction, WritableAtom } from "jotai";
 import { useAtomValue, useSetAtom } from "jotai";
 import { useEffect } from "react";
-import type { JotaiStore, WritableAtomRecord } from "../types";
+import type { JotaiStore, WritableAtomRecord } from "../../types";
 import { isAtom } from "../utilities/is-atom";
 
 export type UseSyncAtoms<T> = (
@@ -33,21 +34,24 @@ export type UseSyncAtoms<T> = (
 /**
  * Update atoms with new values on changes.
  */
-export const useSyncMolecule = (
-  atoms: WritableAtomRecord<unknown>,
-  values: Record<number | string, unknown>,
+export const useSyncMolecule = <T extends object>(
+  atoms: WritableAtomRecord<T>,
+  values: Partial<Record<keyof T, unknown>>,
   store?: JotaiStore
 ) => {
-  for (const key of Object.keys(atoms)) {
+  for (const key of Object.keys(atoms) as (keyof T)[]) {
     let value = values[key];
     if (isAtom(value)) {
       value = useAtomValue(value);
     }
 
-    const setAtom = useSetAtom(atoms[key], { store });
+    const setAtom = useSetAtom(
+      atoms[key] as WritableAtom<T[keyof T], [SetStateAction<T[keyof T]>], void>,
+      { store }
+    );
     useEffect(() => {
       if (value !== undefined) {
-        setAtom(value);
+        setAtom(value as SetStateAction<T[keyof T]>);
       }
     }, [setAtom, value]);
   }

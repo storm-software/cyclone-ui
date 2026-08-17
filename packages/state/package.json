@@ -9,20 +9,96 @@
     "directory": "packages/state"
   },
   "private": false,
-  "keywords": [
-    "jotai"
-  ],
+  "keywords": ["jotai"],
   "exports": {
-    ".": "./src/index.ts",
-    "./client": "./src/client/index.ts",
-    "./form": "./src/form/index.ts",
-    "./message": "./src/message/index.ts",
-    "./theme": "./src/theme/index.ts",
-    "./utilities/create-molecule": "./src/base/utilities/create-molecule.tsx",
-    "./package.json": "./package.json"
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./client": {
+      "require": {
+        "types": "./dist/client/index.d.cts",
+        "default": "./dist/client/index.cjs"
+      },
+      "import": {
+        "types": "./dist/client/index.d.mts",
+        "default": "./dist/client/index.mjs"
+      },
+      "default": {
+        "types": "./dist/client/index.d.mts",
+        "default": "./dist/client/index.mjs"
+      }
+    },
+    "./form": {
+      "require": {
+        "types": "./dist/form/index.d.cts",
+        "default": "./dist/form/index.cjs"
+      },
+      "import": {
+        "types": "./dist/form/index.d.mts",
+        "default": "./dist/form/index.mjs"
+      },
+      "default": {
+        "types": "./dist/form/index.d.mts",
+        "default": "./dist/form/index.mjs"
+      }
+    },
+    "./message": {
+      "require": {
+        "types": "./dist/message/index.d.cts",
+        "default": "./dist/message/index.cjs"
+      },
+      "import": {
+        "types": "./dist/message/index.d.mts",
+        "default": "./dist/message/index.mjs"
+      },
+      "default": {
+        "types": "./dist/message/index.d.mts",
+        "default": "./dist/message/index.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./theme": {
+      "require": {
+        "types": "./dist/theme/index.d.cts",
+        "default": "./dist/theme/index.cjs"
+      },
+      "import": {
+        "types": "./dist/theme/index.d.mts",
+        "default": "./dist/theme/index.mjs"
+      },
+      "default": {
+        "types": "./dist/theme/index.d.mts",
+        "default": "./dist/theme/index.mjs"
+      }
+    },
+    "./types": {
+      "require": {
+        "types": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "import": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      },
+      "default": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      }
+    }
   },
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "peerDependencies": {
     "jotai": "catalog:",
     "react": "catalog:",
@@ -66,7 +142,7 @@
     "valibot": "catalog:"
   },
   "devDependencies": {
-    "@powerlines/plugin-vite": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
     "jotai": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -74,5 +150,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "module": "./dist/index.mjs"
 }
