@@ -20,10 +20,12 @@ import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Accordion } from "./Accordion";
 
-const meta: Meta<typeof Accordion> = {
-  title: "Containers/Accordion",
+const meta = {
   component: Accordion,
   tags: ["autodocs"],
+  args: {
+    variant: "default"
+  },
   render: (args: any) => (
     <Accordion {...args}>
       <Accordion.Item value="item1">
@@ -79,10 +81,38 @@ const meta: Meta<typeof Accordion> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Accordion>;
+type Story = StoryObj<typeof meta>;
 
-export const Base: Story = {
+export const Default: Story = {
   args: {
+    children: "Some collapsed content"
+  }
+};
+
+export const Surface: Story = {
+  args: {
+    variant: "surface",
+    children: "Some collapsed content"
+  }
+};
+
+export const Separated: Story = {
+  args: {
+    variant: "separated",
+    children: "Some collapsed content"
+  }
+};
+
+export const Bordered: Story = {
+  args: {
+    variant: "bordered",
+    children: "Some collapsed content"
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: "ghost",
     children: "Some collapsed content"
   }
 };
