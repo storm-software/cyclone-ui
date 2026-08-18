@@ -42,34 +42,34 @@ type Story = StoryObj<typeof Arrow>;
 
 export const Base: Story = {
   args: {
-    size: "$6"
+    size: "$8xl"
   }
 };
 
 export const Up: Story = {
   args: {
-    size: "$6",
+    size: "$8xl",
     pointing: "up"
   }
 };
 
 export const Right: Story = {
   args: {
-    size: "$6",
+    size: "$8xl",
     pointing: "right"
   }
 };
 
 export const Down: Story = {
   args: {
-    size: "$6",
+    size: "$8xl",
     pointing: "down"
   }
 };
 
 export const Left: Story = {
   args: {
-    size: "$6",
+    size: "$8xl",
     pointing: "left"
   }
 };

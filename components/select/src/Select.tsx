@@ -18,7 +18,6 @@
 
 import { Button } from "@cyclone-ui/button";
 import { getRadius, getSized } from "@cyclone-ui/helpers";
-import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   styled,
@@ -40,7 +39,7 @@ const SelectGroup = styled(XGroup, {
   name: "Select",
   context: SelectContext,
 
-  animation: "normal",
+  transition: "medium",
   justifyContent: "space-between",
   alignItems: "center",
   cursor: "pointer",
@@ -48,27 +47,20 @@ const SelectGroup = styled(XGroup, {
   borderWidth: 1,
   borderColor: "$borderPrimary",
   outlineStyle: "none",
-  gap: "$0",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  gap: "$none",
+  tabIndex: 0,
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -78,7 +70,7 @@ const SelectGroup = styled(XGroup, {
       true: {
         outlineColor: "$borderAccent",
         outlineWidth: 3,
-        outlineOffset: "$1.25",
+        outlineOffset: "$lg",
         outlineStyle: "solid",
         borderColor: "$borderAccent"
       }
@@ -100,21 +92,21 @@ const SelectGroup = styled(XGroup, {
 
     disabled: {
       true: {
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4",
+          borderColor: "$borderPrimaryDisabled",
           outlineStyle: "none"
         },
 
         pressStyle: {
-          borderColor: "$base4",
+          borderColor: "$borderPrimaryDisabled",
           outlineStyle: "none"
         }
       }
@@ -132,12 +124,12 @@ const SelectSeparator = styled(Separator, {
   name: "Select",
   context: SelectContext,
 
-  animation: "normal",
+  transition: "medium",
   borderWidth: 1,
   borderColor: "$borderPrimary",
   vertical: true,
   height: "50%",
-  marginVertical: "$0.25",
+  marginVertical: "$xxs",
 
   variants: {
     focused: {
@@ -148,18 +140,18 @@ const SelectSeparator = styled(Separator, {
 
     disabled: {
       true: {
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     }
@@ -196,12 +188,12 @@ const SelectTrigger = Button.styleable<{
 
     return (
       <View
-        animation="slow"
+        transition="slow"
         rotate={rotate ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
-        paddingHorizontal="$0.6"
+        paddingHorizontal="$sm"
         flexBasis="6%"
-        minWidth="$4">
+        minWidth="$5xl">
         <Button
           ref={forwardedRef}
           variant="ghost"
@@ -227,7 +219,7 @@ const BaseSelect = styled(TamaguiSelect, {
   name: "Select",
   context: SelectContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   justifyContent: "center",
   alignItems: "center",
@@ -238,7 +230,7 @@ const BaseSelect = styled(TamaguiSelect, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
         backgroundColor: "transparent"
       }
     }
@@ -258,7 +250,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         group={"select" as any}
         focused={focused}
         disabled={disabled}
-        minWidth="$10">
+        minWidth="$12xl">
         <SelectTextBox {...props}>
           <XGroup.Item>
             <View flex={1}>{children}</View>
@@ -271,10 +263,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
               disabled={disabled}
               $group-select-hover={{
                 borderColor: disabled
-                  ? "$base4"
+                  ? "$borderPrimaryDisabled"
                   : focused
                     ? "$borderAccent"
-                    : "$borderAccent"
+                    : "$borderPrimaryHover"
               }}
             />
           </XGroup.Item>

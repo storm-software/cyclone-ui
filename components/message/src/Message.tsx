@@ -25,16 +25,16 @@ import { X } from "@tamagui/lucide-icons";
 const MessageClose = styled(Toast.Close, {
   name: "Alert",
 
-  zIndex: 25,
+  zIndex: "$20",
   position: "absolute",
-  top: "$1.5",
-  right: "$1.5"
+  top: "$lg",
+  right: "$lg"
 });
 
 const MessageFrame = styled(Toast, {
   name: "Alert",
 
-  animation: "200ms",
+  transition: "200ms",
   unstyled: true,
 
   flexGrow: 1,
@@ -48,7 +48,7 @@ const MessageFrame = styled(Toast, {
   exitStyle: { opacity: 0, scale: 1, y: -20 },
 
   hoverStyle: {
-    backgroundColor: "$backgroundElevated"
+    backgroundColor: "$backgroundPrimaryHover"
   }
 });
 
@@ -72,7 +72,7 @@ export const Message = () => {
         <Alert.Icon>{current.icon}</Alert.Icon>
 
         <Alert.Content
-          animation="slow"
+          transition="slow"
           enterStyle={{
             opacity: 0,
             y: 50
@@ -83,7 +83,7 @@ export const Message = () => {
 
           {current.message && (
             <Alert.Content.Body
-              animation="lazy"
+              transition="lazy"
               enterStyle={{
                 opacity: 0,
                 y: 50
@@ -98,9 +98,9 @@ export const Message = () => {
             theme={data.theme}
             variant="ghost"
             circular={true}
-            padding="$0.75">
+            padding="$sm">
             <Button.Icon>
-              <X size="$1.5" />
+              <X size="$lg" />
             </Button.Icon>
           </Button>
         </MessageClose>

@@ -159,12 +159,12 @@ export function DataTable<TData extends RowData>({
       setColumnFilters={setColumnFilters}
       pagination={pagination}
       setPagination={setPagination}>
-      <YStack gap="$3">
+      <YStack gap="$3xl">
         <Table
           alignCells={{ x: "start", y: "center" }}
           alignHeaderCells={{ x: "start", y: "center" }}
-          cellWidth="$18"
-          cellHeight="$7"
+          cellWidth="$20xl"
+          cellHeight="$9xl"
           {...rest}>
           <Table.Header>
             {headerGroups.map(headerGroup => {
@@ -205,8 +205,8 @@ export function DataTable<TData extends RowData>({
                   flex={1}
                   justifyContent="center"
                   alignItems="center"
-                  padding="$5">
-                  <LabelText size="$6">No data to display</LabelText>
+                  padding="$7xl">
+                  <LabelText size="$lg">No data to display</LabelText>
                 </View>
               </Table.Row>
             )}
@@ -254,10 +254,10 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
 
   return (
     <SizableText
-      animation="normal"
+      transition="medium"
       fontFamily="$body"
       color="$foregroundOnPrimary"
-      $group-row-hover={{ color: "$foregroundPrimary" }}>
+      $group-row-hover={{ color: "$foregroundOnPrimaryHover" }}>
       {value}
     </SizableText>
   );
@@ -291,29 +291,29 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   );
 
   return (
-    <YStack gap="$3" width="100%">
+    <YStack gap="$3xl" width="100%">
       <SearchInputField
         name={SEARCH_FIELD_NAME}
-        size="$3"
-        width="$15"
+        size="$3xl"
+        width="$17xl"
         onChange={handleSearchChange}>
         <SearchInputField.Control>
           <SearchInputField.Control.TextBox placeholder="Filter..." />
         </SearchInputField.Control>
       </SearchInputField>
 
-      <Popover.Content.ScrollView maxHeight="$16" padding={5}>
-        <YStack gap="$2">
-          <CheckboxField name={SELECT_ALL_FIELD_NAME} size="$3">
-            <XStack gap="$3">
+      <Popover.Content.ScrollView maxHeight="$18xl" padding={5}>
+        <YStack gap="$xl">
+          <CheckboxField name={SELECT_ALL_FIELD_NAME} size="$3xl">
+            <XStack gap="$3xl">
               <CheckboxField.Control />
               <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
             </XStack>
           </CheckboxField>
 
           {searchResults.map(searchResult => (
-            <CheckboxField key={searchResult} name={searchResult} size="$3">
-              <XStack gap="$3">
+            <CheckboxField key={searchResult} name={searchResult} size="$3xl">
+              <XStack gap="$3xl">
                 <CheckboxField.Control />
                 <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
               </XStack>
@@ -452,40 +452,40 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingRight="$3"
+      paddingRight="$3xl"
       borderRightColor="$borderPrimary"
       borderRightWidth={1}>
-      <XStack gap="$2" onPress={handleSorting} flex={1} cursor="pointer">
+      <XStack gap="$xl" onPress={handleSorting} flex={1} cursor="pointer">
         <SizableText
-          animation="normal"
+          transition="medium"
           fontFamily="$label"
           color="$foregroundPrimary"
-          size="$6"
-          $group-header-hover={{ color: "$foregroundOnPrimary" }}>
+          size="$lg"
+          $group-header-hover={{ color: "$foregroundPrimaryHover" }}>
           {titleCase(id)}
         </SizableText>
         {isSorted && !desc && (
-          <XStack gap="$0.25" alignItems="center">
-            <ArrowDownAZ size="$1" color="$foregroundPrimary" />
+          <XStack gap="$xxs" alignItems="center">
+            <ArrowDownAZ size="$md" color="$foregroundPrimary" />
             <SizableText
-              animation="normal"
+              transition="medium"
               fontFamily="$label"
-              fontWeight="$6"
+              fontWeight="$semibold"
               color="$foregroundPrimary"
-              size="$2">
+              size="$xs">
               {sortIndex + 1}
             </SizableText>
           </XStack>
         )}
         {isSorted && desc && (
-          <XStack gap="$0.25" alignItems="center">
-            <ArrowUpZA size="$1" color="$foregroundPrimary" />
+          <XStack gap="$xxs" alignItems="center">
+            <ArrowUpZA size="$md" color="$foregroundPrimary" />
             <SizableText
-              animation="normal"
+              transition="medium"
               fontFamily="$label"
-              fontWeight="$6"
+              fontWeight="$semibold"
               color="$foregroundPrimary"
-              size="$2">
+              size="$xs">
               {sortIndex + 1}
             </SizableText>
           </XStack>
@@ -494,7 +494,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
 
       {column.getCanFilter() && (
         <View
-          animation="normal"
+          transition="medium"
           opacity={filterValues.length > 0 ? 1 : 0}
           $group-header-hover={{ opacity: 1 }}>
           <Popover allowFlip={true}>
@@ -505,15 +505,15 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 circular={true}
                 bordered={false}
                 color="$foregroundPrimary"
-                padding="$2"
-                width="$3">
+                padding="$xl"
+                width="$3xl">
                 <Button.Icon>
-                  <Filter size="$1" />
+                  <Filter size="$md" />
                 </Button.Icon>
               </Button>
             </Popover.Trigger>
 
-            <Popover.Content width="$16">
+            <Popover.Content width="$18xl">
               <View flex={1} minWidth="100%">
                 <Form
                   name={`${id}_filter`}
@@ -653,9 +653,9 @@ export function DataTablePagination<TData extends RowData>({
       flexGrow={1}
       justifyContent="space-between"
       alignItems="center"
-      paddingHorizontal="$2">
+      paddingHorizontal="$xl">
       <View flex={1}>
-        <XStack alignItems="center" gap="$2">
+        <XStack alignItems="center" gap="$xl">
           <Form
             name="pageSizing"
             initialValues={{
@@ -664,9 +664,9 @@ export function DataTablePagination<TData extends RowData>({
             <SelectField
               name="pageSize"
               items={pageSizes}
-              size="$4"
+              size="$5xl"
               onChange={handlePageSizeChange}>
-              <XStack alignItems="center" gap="$4">
+              <XStack alignItems="center" gap="$5xl">
                 <SelectField.Label hideOptional={true}>
                   Per page:
                 </SelectField.Label>
@@ -675,18 +675,18 @@ export function DataTablePagination<TData extends RowData>({
             </SelectField>
           </Form>
 
-          <YStack gap="$2">
-            <XStack justifyContent="space-between" alignItems="center" gap="$4">
-              <LabelText size="$4">Total:</LabelText>
-              <LabelText size="$3">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
+          <YStack gap="$xl">
+            <XStack justifyContent="space-between" alignItems="center" gap="$5xl">
+              <LabelText size="$sm">Total:</LabelText>
+              <LabelText size="$sm">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
             </XStack>
             {unfilteredCount !== totalCount && (
               <XStack
                 justifyContent="space-between"
                 alignItems="center"
-                gap="$4">
-                <LabelText size="$4">Filtering:</LabelText>
-                <LabelText size="$3">
+                gap="$5xl">
+                <LabelText size="$sm">Filtering:</LabelText>
+                <LabelText size="$sm">
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </LabelText>
               </XStack>

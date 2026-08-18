@@ -131,8 +131,7 @@
     "expo-modules-core": "catalog:",
     "lefthook": "catalog:",
     "log4brains": "catalog:",
-    "next": "catalog:",
-    "nx": "^23.1.1",
+    "nx": "catalog:",
     "parse-github-url": "catalog:",
     "powerlines": "catalog:",
     "prettier": "catalog:",
@@ -164,11 +163,7 @@
       }
     ],
     "ci": {
-      "trackBranches": [
-        "main",
-        "next",
-        "experimental"
-      ]
+      "trackBranches": ["main", "next", "experimental"]
     }
   },
   "licenses": [

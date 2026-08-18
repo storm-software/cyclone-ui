@@ -6,102 +6,18 @@ colors:
   transparent: "#ffffff00"
   black: "#0c0c0d"
   white: "#ffffff"
-  brand-1: "oklch(0.6897 0.1156 186.1)"
-  brand-2: "oklch(0.301 0.066 184.397587)"
-  surface-1: "#ffffff"
-  surface-2: "#f4f4f3"
-  surface-3: "#e8e7e6"
-  base-1: "#f4f4f4"
-  base-2: "#c1c1c1"
-  base-3: "#949494"
-  base-4: "#6e6e6e"
-  base-5: "#4f4f4f"
-  base-6: "#373737"
-  base-7: "#262626"
-  base-8: "#1c1c1c"
-  base-9: "#181818"
-  red-1: "oklch(0.8 0.12 21)"
-  red-2: "oklch(0.78 0.13 21)"
-  red-3: "oklch(0.75 0.15 21)"
-  red-4: "oklch(0.72 0.16 21)"
-  red-5: "oklch(0.7 0.16 21)"
-  red-6: "oklch(0.67 0.15 21)"
-  red-7: "oklch(0.64 0.15 21)"
-  red-8: "oklch(0.61 0.14 21)"
-  red-9: "oklch(0.54 0.12 21)"
-  orange-1: "oklch(0.79 0.12 47)"
-  orange-2: "oklch(0.78 0.13 47)"
-  orange-3: "oklch(0.75 0.15 47)"
-  orange-4: "oklch(0.72 0.16 47)"
-  orange-5: "oklch(0.69 0.16 47)"
-  orange-6: "oklch(0.67 0.15 47)"
-  orange-7: "oklch(0.64 0.15 47)"
-  orange-8: "oklch(0.6 0.14 47)"
-  orange-9: "oklch(0.53 0.12 47)"
-  yellow-1: "oklch(0.79 0.12 81)"
-  yellow-2: "oklch(0.77 0.13 81)"
-  yellow-3: "oklch(0.74 0.15 81)"
-  yellow-4: "oklch(0.71 0.16 81)"
-  yellow-5: "oklch(0.68 0.16 81)"
-  yellow-6: "oklch(0.66 0.15 81)"
-  yellow-7: "oklch(0.63 0.15 81)"
-  yellow-8: "oklch(0.59 0.14 81)"
-  yellow-9: "oklch(0.53 0.12 81)"
-  green-1: "oklch(0.77 0.12 160)"
-  green-2: "oklch(0.75 0.13 160)"
-  green-3: "oklch(0.72 0.15 160)"
-  green-4: "oklch(0.68 0.16 160)"
-  green-5: "oklch(0.66 0.16 160)"
-  green-6: "oklch(0.63 0.15 160)"
-  green-7: "oklch(0.61 0.15 160)"
-  green-8: "oklch(0.57 0.14 160)"
-  green-9: "oklch(0.51 0.12 160)"
-  sky-1: "oklch(0.77 0.12 221)"
-  sky-2: "oklch(0.76 0.13 221)"
-  sky-3: "oklch(0.72 0.15 221)"
-  sky-4: "oklch(0.69 0.16 221)"
-  sky-5: "oklch(0.66 0.16 221)"
-  sky-6: "oklch(0.64 0.15 221)"
-  sky-7: "oklch(0.61 0.15 221)"
-  sky-8: "oklch(0.58 0.14 221)"
-  sky-9: "oklch(0.51 0.12 221)"
-  blue-1: "oklch(0.78 0.12 256)"
-  blue-2: "oklch(0.77 0.13 256)"
-  blue-3: "oklch(0.74 0.15 256)"
-  blue-4: "oklch(0.71 0.16 256)"
-  blue-5: "oklch(0.68 0.16 256)"
-  blue-6: "oklch(0.65 0.15 256)"
-  blue-7: "oklch(0.63 0.15 256)"
-  blue-8: "oklch(0.59 0.14 256)"
-  blue-9: "oklch(0.52 0.12 256)"
-  purple-1: "oklch(0.79 0.12 282)"
-  purple-2: "oklch(0.77 0.13 282)"
-  purple-3: "oklch(0.75 0.15 282)"
-  purple-4: "oklch(0.72 0.16 282)"
-  purple-5: "oklch(0.69 0.16 282)"
-  purple-6: "oklch(0.66 0.15 282)"
-  purple-7: "oklch(0.64 0.15 282)"
-  purple-8: "oklch(0.6 0.14 282)"
-  purple-9: "oklch(0.53 0.12 282)"
-  pink-1: "oklch(0.8 0.12 356)"
-  pink-2: "oklch(0.78 0.13 356)"
-  pink-3: "oklch(0.75 0.15 356)"
-  pink-4: "oklch(0.72 0.16 356)"
-  pink-5: "oklch(0.7 0.16 356)"
-  pink-6: "oklch(0.67 0.15 356)"
-  pink-7: "oklch(0.64 0.15 356)"
-  pink-8: "oklch(0.61 0.14 356)"
-  pink-9: "oklch(0.54 0.12 356)"
+  brand-1: "#1fb2a6"
+  brand-2: "#003832"
   foreground-primary: "#f4f4f4"
   foreground-secondary: "#1c1c1c"
   foreground-tertiary: "#181818"
-  foreground-accent: "oklch(0.6897 0.1156 186.1)"
-  foreground-danger: "oklch(0.64 0.15 21)"
-  foreground-warning: "oklch(0.71 0.16 81)"
-  foreground-success: "oklch(0.63 0.15 160)"
-  foreground-info: "oklch(0.72 0.15 221)"
-  foreground-discovery: "oklch(0.64 0.15 282)"
-  foreground-link: "oklch(0.63 0.15 256)"
+  foreground-accent: "#1fb2a6"
+  foreground-danger: "#d86164"
+  foreground-warning: "#d49400"
+  foreground-success: "#00a469"
+  foreground-info: "#00b8e6"
+  foreground-discovery: "#7f7ee4"
+  foreground-link: "#468ae2"
   foreground-on-primary: "#181818"
   foreground-on-secondary: "#f4f4f4"
   foreground-on-tertiary: "#f4f4f4"
@@ -111,63 +27,173 @@ colors:
   foreground-on-success: "#f4f4f4"
   foreground-on-info: "#f4f4f4"
   foreground-on-discovery: "#f4f4f4"
+  foreground-primary-hover: "#d4d4d4"
+  foreground-primary-disabled: "#f4f4f499"
+  foreground-secondary-hover: "#212121"
+  foreground-secondary-disabled: "#1c1c1c99"
+  foreground-tertiary-hover: "#1d1d1d"
+  foreground-tertiary-disabled: "#18181899"
+  foreground-accent-hover: "#009c91"
+  foreground-accent-disabled: "#1fb2a699"
+  foreground-danger-hover: "#c24d52"
+  foreground-danger-disabled: "#d8616499"
+  foreground-warning-hover: "#bd7e00"
+  foreground-warning-disabled: "#d4940099"
+  foreground-success-hover: "#009057"
+  foreground-success-disabled: "#00a46999"
+  foreground-info-hover: "#00a1ce"
+  foreground-info-disabled: "#00b8e699"
+  foreground-discovery-hover: "#6d6ace"
+  foreground-discovery-disabled: "#7f7ee499"
+  foreground-link-hover: "#3276cd"
+  foreground-link-disabled: "#468ae299"
+  foreground-on-primary-hover: "#1d1d1d"
+  foreground-on-primary-disabled: "#18181899"
+  foreground-on-secondary-hover: "#d4d4d4"
+  foreground-on-secondary-disabled: "#f4f4f499"
+  foreground-on-tertiary-hover: "#d4d4d4"
+  foreground-on-tertiary-disabled: "#f4f4f499"
+  foreground-on-accent-hover: "#d4d4d4"
+  foreground-on-accent-disabled: "#f4f4f499"
+  foreground-on-danger-hover: "#d4d4d4"
+  foreground-on-danger-disabled: "#f4f4f499"
+  foreground-on-warning-hover: "#1d1d1d"
+  foreground-on-warning-disabled: "#18181899"
+  foreground-on-success-hover: "#d4d4d4"
+  foreground-on-success-disabled: "#f4f4f499"
+  foreground-on-info-hover: "#d4d4d4"
+  foreground-on-info-disabled: "#f4f4f499"
+  foreground-on-discovery-hover: "#d4d4d4"
+  foreground-on-discovery-disabled: "#f4f4f499"
   background-page: "#ffffff"
   background-elevated: "#f4f4f3"
   background-floating: "#e8e7e6"
   background-primary: "#f4f4f4"
   background-secondary: "#1c1c1c"
   background-tertiary: "#181818"
-  background-link: "oklch(0.63 0.15 256)"
-  background-accent: "oklch(0.6897 0.1156 186.1)"
-  background-danger: "oklch(0.64 0.15 21)"
-  background-warning: "oklch(0.71 0.16 81)"
-  background-success: "oklch(0.63 0.15 160)"
-  background-info: "oklch(0.72 0.15 221)"
-  background-discovery: "oklch(0.64 0.15 282)"
-  background-accent-subtle: "oklch(0.301 0.066 184.397587)"
-  background-danger-subtle: "oklch(0.54 0.12 21)"
-  background-warning-subtle: "oklch(0.53 0.12 81)"
-  background-success-subtle: "oklch(0.51 0.12 160)"
-  background-info-subtle: "oklch(0.51 0.12 221)"
-  background-discovery-subtle: "oklch(0.53 0.12 282)"
+  background-link: "#468ae2"
+  background-accent: "#1fb2a6"
+  background-danger: "#d86164"
+  background-warning: "#d49400"
+  background-success: "#00a469"
+  background-info: "#00b8e6"
+  background-discovery: "#7f7ee4"
+  background-accent-subtle: "#003832"
+  background-danger-subtle: "#a94e50"
+  background-warning-subtle: "#8f6300"
+  background-success-subtle: "#007a4d"
+  background-info-subtle: "#007496"
+  background-discovery-subtle: "#6261af"
+  background-page-hover: "#dedede"
+  background-page-disabled: "#ffffff99"
+  background-elevated-hover: "#d4d4d3"
+  background-elevated-disabled: "#f4f4f399"
+  background-floating-hover: "#cac9c8"
+  background-floating-disabled: "#e8e7e699"
+  background-primary-hover: "#d4d4d4"
+  background-primary-disabled: "#f4f4f499"
+  background-secondary-hover: "#212121"
+  background-secondary-disabled: "#1c1c1c99"
+  background-tertiary-hover: "#1d1d1d"
+  background-tertiary-disabled: "#18181899"
+  background-link-hover: "#3276cd"
+  background-link-disabled: "#468ae299"
+  background-accent-hover: "#009c91"
+  background-accent-disabled: "#1fb2a699"
+  background-danger-hover: "#c24d52"
+  background-danger-disabled: "#d8616499"
+  background-warning-hover: "#bd7e00"
+  background-warning-disabled: "#d4940099"
+  background-success-hover: "#009057"
+  background-success-disabled: "#00a46999"
+  background-info-hover: "#00a1ce"
+  background-info-disabled: "#00b8e699"
+  background-discovery-hover: "#6d6ace"
+  background-discovery-disabled: "#7f7ee499"
+  background-accent-subtle-hover: "#0b403a"
+  background-accent-subtle-disabled: "#00383299"
+  background-danger-subtle-hover: "#973e41"
+  background-danger-subtle-disabled: "#a94e5099"
+  background-warning-subtle-hover: "#7f5400"
+  background-warning-subtle-disabled: "#8f630099"
+  background-success-subtle-hover: "#006b3f"
+  background-success-subtle-disabled: "#007a4d99"
+  background-info-subtle-hover: "#006586"
+  background-info-subtle-disabled: "#00749699"
+  background-discovery-subtle-hover: "#54529e"
+  background-discovery-subtle-disabled: "#6261af99"
   border-primary: "#262626"
   border-secondary: "#1c1c1c"
   border-tertiary: "#181818"
-  border-accent: "oklch(0.6897 0.1156 186.1)"
-  border-danger: "oklch(0.64 0.15 21)"
-  border-warning: "oklch(0.71 0.16 81)"
-  border-success: "oklch(0.63 0.15 160)"
-  border-info: "oklch(0.72 0.15 221)"
-  border-discovery: "oklch(0.64 0.15 282)"
-  border-accent-subtle: "oklch(0.301 0.066 184.397587)"
-  border-danger-subtle: "oklch(0.54 0.12 21)"
-  border-warning-subtle: "oklch(0.53 0.12 81)"
-  border-success-subtle: "oklch(0.51 0.12 160)"
-  border-info-subtle: "oklch(0.51 0.12 221)"
-  border-discovery-subtle: "oklch(0.53 0.12 282)"
+  border-accent: "#1fb2a6"
+  border-danger: "#d86164"
+  border-warning: "#d49400"
+  border-success: "#00a469"
+  border-info: "#00b8e6"
+  border-discovery: "#7f7ee4"
+  border-accent-subtle: "#003832"
+  border-danger-subtle: "#a94e50"
+  border-warning-subtle: "#8f6300"
+  border-success-subtle: "#007a4d"
+  border-info-subtle: "#007496"
+  border-discovery-subtle: "#6261af"
+  border-primary-hover: "#2d2d2d"
+  border-primary-disabled: "#26262699"
+  border-secondary-hover: "#212121"
+  border-secondary-disabled: "#1c1c1c99"
+  border-tertiary-hover: "#1d1d1d"
+  border-tertiary-disabled: "#18181899"
+  border-accent-hover: "#009c91"
+  border-accent-disabled: "#1fb2a699"
+  border-danger-hover: "#c24d52"
+  border-danger-disabled: "#d8616499"
+  border-warning-hover: "#bd7e00"
+  border-warning-disabled: "#d4940099"
+  border-success-hover: "#009057"
+  border-success-disabled: "#00a46999"
+  border-info-hover: "#00a1ce"
+  border-info-disabled: "#00b8e699"
+  border-discovery-hover: "#6d6ace"
+  border-discovery-disabled: "#7f7ee499"
+  border-accent-subtle-hover: "#0b403a"
+  border-accent-subtle-disabled: "#00383299"
+  border-danger-subtle-hover: "#973e41"
+  border-danger-subtle-disabled: "#a94e5099"
+  border-warning-subtle-hover: "#7f5400"
+  border-warning-subtle-disabled: "#8f630099"
+  border-success-subtle-hover: "#006b3f"
+  border-success-subtle-disabled: "#007a4d99"
+  border-info-subtle-hover: "#006586"
+  border-info-subtle-disabled: "#00749699"
+  border-discovery-subtle-hover: "#54529e"
+  border-discovery-subtle-disabled: "#6261af99"
   overlay-background: "#e8e7e6"
   overlay-border: "#262626"
   overlay-backdrop: "#1a1c1f66"
+  overlay-background-hover: "#cac9c8"
+  overlay-background-disabled: "#e8e7e699"
+  overlay-border-hover: "#2d2d2d"
+  overlay-border-disabled: "#26262699"
   data-base-emphasis: "#4f4f4f"
   data-base-subtle: "#f4f4f4"
-  data-brand-emphasis: "oklch(0.6897 0.1156 186.1)"
-  data-brand-subtle: "oklch(0.301 0.066 184.397587)"
-  data-red-emphasis: "oklch(0.67 0.15 21)"
-  data-red-subtle: "oklch(0.8 0.12 21)"
-  data-orange-emphasis: "oklch(0.67 0.15 47)"
-  data-orange-subtle: "oklch(0.79 0.12 47)"
-  data-yellow-emphasis: "oklch(0.66 0.15 81)"
-  data-yellow-subtle: "oklch(0.79 0.12 81)"
-  data-green-emphasis: "oklch(0.63 0.15 160)"
-  data-green-subtle: "oklch(0.77 0.12 160)"
-  data-sky-emphasis: "oklch(0.64 0.15 221)"
-  data-sky-subtle: "oklch(0.77 0.12 221)"
-  data-blue-emphasis: "oklch(0.65 0.15 256)"
-  data-blue-subtle: "oklch(0.78 0.12 256)"
-  data-purple-emphasis: "oklch(0.66 0.15 282)"
-  data-purple-subtle: "oklch(0.79 0.12 282)"
-  data-pink-emphasis: "oklch(0.67 0.15 356)"
-  data-pink-subtle: "oklch(0.8 0.12 356)"
+  data-brand-emphasis: "#1fb2a6"
+  data-brand-subtle: "#003832"
+  data-red-emphasis: "#e26a6c"
+  data-red-subtle: "#ff9e9c"
+  data-orange-emphasis: "#de743a"
+  data-orange-subtle: "#faa276"
+  data-yellow-emphasis: "#c08600"
+  data-yellow-subtle: "#e2b259"
+  data-green-emphasis: "#00a469"
+  data-green-subtle: "#67cc9a"
+  data-sky-emphasis: "#009ecb"
+  data-sky-subtle: "#47c5ea"
+  data-blue-emphasis: "#4c90e8"
+  data-blue-subtle: "#83baff"
+  data-purple-emphasis: "#8584eb"
+  data-purple-subtle: "#aeb1ff"
+  data-pink-emphasis: "#db6a98"
+  data-pink-subtle: "#fb9cc0"
 typography:
   display-lg:
     fontFamily: "Permanent Marker"
@@ -184,20 +210,30 @@ typography:
     fontSize: "1.5rem"
     fontWeight: "400"
     lineHeight: "1.333333"
-  title-lg:
+  heading-2xl:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.875rem"
+    fontWeight: "700"
+    lineHeight: "1.2"
+  heading-xl:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.5rem"
+    fontWeight: "700"
+    lineHeight: "1.333333"
+  heading-lg:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.25rem"
+    fontWeight: "700"
+    lineHeight: "1.4"
+  heading-md:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.125rem"
+    fontWeight: "600"
+    lineHeight: "1.555556"
+  heading-sm:
     fontFamily: "Space Grotesk"
     fontSize: "1rem"
-    fontWeight: "300"
-    lineHeight: "1.5"
-  title-md:
-    fontFamily: "Space Grotesk"
-    fontSize: "1rem"
-    fontWeight: "300"
-    lineHeight: "1.5"
-  title-sm:
-    fontFamily: "Space Grotesk"
-    fontSize: "1rem"
-    fontWeight: "300"
+    fontWeight: "600"
     lineHeight: "1.5"
   body:
     fontFamily: "Space Grotesk"
@@ -247,109 +283,25 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 165 color tokens, 9 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
 - **Transparent (#ffffff00):** A transparent color
 - **Black (#0c0c0d):** A near black color
 - **White (#ffffff):** A completely white color
-- **Brand 1 (oklch(0.6897 0.1156 186.1)):** The Storm Software brand teal color
-- **Brand 2 (oklch(0.301 0.066 184.397587)):** The Storm Software brand teal color
-- **Surface 1 (#ffffff):** The lowest level surface of the palette - used for the background of the page
-- **Surface 2 (#f4f4f3):** The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.)
-- **Surface 3 (#e8e7e6):** The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)
-- **Base 1 (#f4f4f4):** A warm near-white gray color
-- **Base 2 (#c1c1c1):** A soft warm gray color
-- **Base 3 (#949494):** A light warm gray color
-- **Base 4 (#6e6e6e):** A muted warm gray color
-- **Base 5 (#4f4f4f):** A mid cool gray color
-- **Base 6 (#373737):** A slate cool gray color
-- **Base 7 (#262626):** A deep slate gray color
-- **Base 8 (#1c1c1c):** A very dark slate gray color
-- **Base 9 (#181818):** An almost-black cool gray color
-- **Red 1 (oklch(0.8 0.12 21)):** A pale warm coral red color
-- **Red 2 (oklch(0.78 0.13 21)):** A light salmon red color
-- **Red 3 (oklch(0.75 0.15 21)):** A soft coral red color
-- **Red 4 (oklch(0.72 0.16 21)):** A muted warm coral color
-- **Red 5 (oklch(0.7 0.16 21)):** A medium salmon red color
-- **Red 6 (oklch(0.67 0.15 21)):** A vivid coral red color
-- **Red 7 (oklch(0.64 0.15 21)):** A rich dusty red color
-- **Red 8 (oklch(0.61 0.14 21)):** A deep brick red color
-- **Red 9 (oklch(0.54 0.12 21)):** A dark brownish red color
-- **Orange 1 (oklch(0.79 0.12 47)):** A pale peach orange color
-- **Orange 2 (oklch(0.78 0.13 47)):** A light apricot orange color
-- **Orange 3 (oklch(0.75 0.15 47)):** A soft sandy orange color
-- **Orange 4 (oklch(0.72 0.16 47)):** A muted warm orange color
-- **Orange 5 (oklch(0.69 0.16 47)):** A medium tangerine orange color
-- **Orange 6 (oklch(0.67 0.15 47)):** A bright amber orange color
-- **Orange 7 (oklch(0.64 0.15 47)):** A rich burnt orange color
-- **Orange 8 (oklch(0.6 0.14 47)):** A deep rust orange color
-- **Orange 9 (oklch(0.53 0.12 47)):** A dark brownish orange color
-- **Yellow 1 (oklch(0.79 0.12 81)):** A pale wheat gold color
-- **Yellow 2 (oklch(0.77 0.13 81)):** A light sandy gold color
-- **Yellow 3 (oklch(0.74 0.15 81)):** A soft golden yellow color
-- **Yellow 4 (oklch(0.71 0.16 81)):** A muted amber gold color
-- **Yellow 5 (oklch(0.68 0.16 81)):** A medium honey gold color
-- **Yellow 6 (oklch(0.66 0.15 81)):** A vivid golden yellow color
-- **Yellow 7 (oklch(0.63 0.15 81)):** A rich ochre gold color
-- **Yellow 8 (oklch(0.59 0.14 81)):** A deep bronze gold color
-- **Yellow 9 (oklch(0.53 0.12 81)):** A dark brownish gold color
-- **Green 1 (oklch(0.77 0.12 160)):** A pale mint green color
-- **Green 2 (oklch(0.75 0.13 160)):** A light seafoam green color
-- **Green 3 (oklch(0.72 0.15 160)):** A soft spring green color
-- **Green 4 (oklch(0.68 0.16 160)):** A muted jade green color
-- **Green 5 (oklch(0.66 0.16 160)):** A medium emerald green color
-- **Green 6 (oklch(0.63 0.15 160)):** A vivid emerald green color
-- **Green 7 (oklch(0.61 0.15 160)):** A rich forest green color
-- **Green 8 (oklch(0.57 0.14 160)):** A deep pine green color
-- **Green 9 (oklch(0.51 0.12 160)):** A dark evergreen color
-- **Sky 1 (oklch(0.77 0.12 221)):** A pale sky blue color
-- **Sky 2 (oklch(0.76 0.13 221)):** A light aqua sky color
-- **Sky 3 (oklch(0.72 0.15 221)):** A soft bright sky color
-- **Sky 4 (oklch(0.69 0.16 221)):** A vivid sky blue color
-- **Sky 5 (oklch(0.66 0.16 221)):** A medium electric sky color
-- **Sky 6 (oklch(0.64 0.15 221)):** A bright azure sky color
-- **Sky 7 (oklch(0.61 0.15 221)):** A rich ocean sky color
-- **Sky 8 (oklch(0.58 0.14 221)):** A deep teal sky color
-- **Sky 9 (oklch(0.51 0.12 221)):** A dark steel sky color
-- **Blue 1 (oklch(0.78 0.12 256)):** A pale periwinkle blue color
-- **Blue 2 (oklch(0.77 0.13 256)):** A light sky blue color
-- **Blue 3 (oklch(0.74 0.15 256)):** A soft cornflower blue color
-- **Blue 4 (oklch(0.71 0.16 256)):** A muted bright blue color
-- **Blue 5 (oklch(0.68 0.16 256)):** A medium azure blue color
-- **Blue 6 (oklch(0.65 0.15 256)):** A vivid sky blue color
-- **Blue 7 (oklch(0.63 0.15 256)):** A rich cerulean blue color
-- **Blue 8 (oklch(0.59 0.14 256)):** A deep navy blue color
-- **Blue 9 (oklch(0.52 0.12 256)):** A dark midnight blue color
-- **Purple 1 (oklch(0.79 0.12 282)):** A pale lavender purple color
-- **Purple 2 (oklch(0.77 0.13 282)):** A light periwinkle purple color
-- **Purple 3 (oklch(0.75 0.15 282)):** A soft violet purple color
-- **Purple 4 (oklch(0.72 0.16 282)):** A muted indigo purple color
-- **Purple 5 (oklch(0.69 0.16 282)):** A medium periwinkle purple color
-- **Purple 6 (oklch(0.66 0.15 282)):** A vivid soft indigo color
-- **Purple 7 (oklch(0.64 0.15 282)):** A rich slate indigo color
-- **Purple 8 (oklch(0.6 0.14 282)):** A deep muted indigo color
-- **Purple 9 (oklch(0.53 0.12 282)):** A dark navy indigo color
-- **Pink 1 (oklch(0.8 0.12 356)):** A pale blush pink color
-- **Pink 2 (oklch(0.78 0.13 356)):** A light rose pink color
-- **Pink 3 (oklch(0.75 0.15 356)):** A soft coral pink color
-- **Pink 4 (oklch(0.72 0.16 356)):** A muted bright pink color
-- **Pink 5 (oklch(0.7 0.16 356)):** A medium hot pink color
-- **Pink 6 (oklch(0.67 0.15 356)):** A vivid magenta pink color
-- **Pink 7 (oklch(0.64 0.15 356)):** A rich fuchsia pink color
-- **Pink 8 (oklch(0.61 0.14 356)):** A deep berry pink color
-- **Pink 9 (oklch(0.54 0.12 356)):** A dark plum pink color
+- **Brand 1 (#1fb2a6):** The Storm Software brand teal color
+- **Brand 2 (#003832):** The Storm Software brand teal color
 - **Foreground Primary (#f4f4f4):** The primary foreground color for the light theme
 - **Foreground Secondary (#1c1c1c):** The secondary foreground color for the light theme
 - **Foreground Tertiary (#181818):** The tertiary foreground color for the light theme
-- **Foreground Accent (oklch(0.6897 0.1156 186.1)):** The accent foreground color for the light theme
-- **Foreground Danger (oklch(0.64 0.15 21)):** The danger foreground color for the light theme
-- **Foreground Warning (oklch(0.71 0.16 81)):** The warning foreground color for the light theme
-- **Foreground Success (oklch(0.63 0.15 160)):** The success foreground color for the light theme
-- **Foreground Info (oklch(0.72 0.15 221)):** The info foreground color for the light theme
-- **Foreground Discovery (oklch(0.64 0.15 282)):** The discovery foreground color for the light theme
-- **Foreground Link (oklch(0.63 0.15 256)):** The link foreground color for the light theme
+- **Foreground Accent (#1fb2a6):** The accent foreground color for the light theme
+- **Foreground Danger (#d86164):** The danger foreground color for the light theme
+- **Foreground Warning (#d49400):** The warning foreground color for the light theme
+- **Foreground Success (#00a469):** The success foreground color for the light theme
+- **Foreground Info (#00b8e6):** The info foreground color for the light theme
+- **Foreground Discovery (#7f7ee4):** The discovery foreground color for the light theme
+- **Foreground Link (#468ae2):** The link foreground color for the light theme
 - **Foreground On Primary (#181818):** The primary foreground color for the light theme
 - **Foreground On Secondary (#f4f4f4):** The secondary foreground color for the light theme
 - **Foreground On Tertiary (#f4f4f4):** The tertiary foreground color for the light theme
@@ -359,72 +311,184 @@ Cyclone UI design tokens — 165 color tokens, 9 typography tokens, 28 spacing t
 - **Foreground On Success (#f4f4f4):** The success foreground color for the light theme
 - **Foreground On Info (#f4f4f4):** The info foreground color for the light theme
 - **Foreground On Discovery (#f4f4f4):** The discovery foreground color for the light theme
+- **Foreground Primary Hover (#d4d4d4):** The primary foreground color for the light theme (hover, 10% darker)
+- **Foreground Primary Disabled (#f4f4f499):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Secondary Hover (#212121):** The secondary foreground color for the light theme (hover, 10% brighter)
+- **Foreground Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Tertiary Hover (#1d1d1d):** The tertiary foreground color for the light theme (hover, 10% brighter)
+- **Foreground Tertiary Disabled (#18181899):** The tertiary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Accent Hover (#009c91):** The accent foreground color for the light theme (hover, 10% darker)
+- **Foreground Accent Disabled (#1fb2a699):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Danger Hover (#c24d52):** The danger foreground color for the light theme (hover, 10% darker)
+- **Foreground Danger Disabled (#d8616499):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Warning Hover (#bd7e00):** The warning foreground color for the light theme (hover, 10% darker)
+- **Foreground Warning Disabled (#d4940099):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Success Hover (#009057):** The success foreground color for the light theme (hover, 10% darker)
+- **Foreground Success Disabled (#00a46999):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Info Hover (#00a1ce):** The info foreground color for the light theme (hover, 10% darker)
+- **Foreground Info Disabled (#00b8e699):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Discovery Hover (#6d6ace):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Foreground Discovery Disabled (#7f7ee499):** The discovery foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Link Hover (#3276cd):** The link foreground color for the light theme (hover, 10% darker)
+- **Foreground Link Disabled (#468ae299):** The link foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Primary Hover (#1d1d1d):** The primary foreground color for the light theme (hover, 10% brighter)
+- **Foreground On Primary Disabled (#18181899):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Secondary Hover (#d4d4d4):** The secondary foreground color for the light theme (hover, 10% darker)
+- **Foreground On Secondary Disabled (#f4f4f499):** The secondary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Tertiary Hover (#d4d4d4):** The tertiary foreground color for the light theme (hover, 10% darker)
+- **Foreground On Tertiary Disabled (#f4f4f499):** The tertiary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Accent Hover (#d4d4d4):** The accent foreground color for the light theme (hover, 10% darker)
+- **Foreground On Accent Disabled (#f4f4f499):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Danger Hover (#d4d4d4):** The danger foreground color for the light theme (hover, 10% darker)
+- **Foreground On Danger Disabled (#f4f4f499):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Warning Hover (#1d1d1d):** The warning foreground color for the light theme (hover, 10% brighter)
+- **Foreground On Warning Disabled (#18181899):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Success Hover (#d4d4d4):** The success foreground color for the light theme (hover, 10% darker)
+- **Foreground On Success Disabled (#f4f4f499):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Info Hover (#d4d4d4):** The info foreground color for the light theme (hover, 10% darker)
+- **Foreground On Info Disabled (#f4f4f499):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Foreground On Discovery Hover (#d4d4d4):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Foreground On Discovery Disabled (#f4f4f499):** The discovery foreground color for the light theme (disabled, 60% opacity)
 - **Background Page (#ffffff):** The page background color for the light theme
 - **Background Elevated (#f4f4f3):** The elevated background color for the light theme
 - **Background Floating (#e8e7e6):** The floating background color for the light theme
 - **Background Primary (#f4f4f4):** The primary foreground color for the light theme
 - **Background Secondary (#1c1c1c):** The secondary foreground color for the light theme
 - **Background Tertiary (#181818):** The tertiary foreground color for the light theme
-- **Background Link (oklch(0.63 0.15 256)):** The link foreground color for the light theme
-- **Background Accent (oklch(0.6897 0.1156 186.1)):** The accent foreground color for the light theme
-- **Background Danger (oklch(0.64 0.15 21)):** The danger foreground color for the light theme
-- **Background Warning (oklch(0.71 0.16 81)):** The warning foreground color for the light theme
-- **Background Success (oklch(0.63 0.15 160)):** The success foreground color for the light theme
-- **Background Info (oklch(0.72 0.15 221)):** The info foreground color for the light theme
-- **Background Discovery (oklch(0.64 0.15 282)):** The discovery foreground color for the light theme
-- **Background Accent Subtle (oklch(0.301 0.066 184.397587)):** The accent foreground color for the light theme
-- **Background Danger Subtle (oklch(0.54 0.12 21)):** The danger foreground color for the light theme
-- **Background Warning Subtle (oklch(0.53 0.12 81)):** The warning foreground color for the light theme
-- **Background Success Subtle (oklch(0.51 0.12 160)):** The success foreground color for the light theme
-- **Background Info Subtle (oklch(0.51 0.12 221)):** The info foreground color for the light theme
-- **Background Discovery Subtle (oklch(0.53 0.12 282)):** The discovery foreground color for the light theme
+- **Background Link (#468ae2):** The link foreground color for the light theme
+- **Background Accent (#1fb2a6):** The accent foreground color for the light theme
+- **Background Danger (#d86164):** The danger foreground color for the light theme
+- **Background Warning (#d49400):** The warning foreground color for the light theme
+- **Background Success (#00a469):** The success foreground color for the light theme
+- **Background Info (#00b8e6):** The info foreground color for the light theme
+- **Background Discovery (#7f7ee4):** The discovery foreground color for the light theme
+- **Background Accent Subtle (#003832):** The accent foreground color for the light theme
+- **Background Danger Subtle (#a94e50):** The danger foreground color for the light theme
+- **Background Warning Subtle (#8f6300):** The warning foreground color for the light theme
+- **Background Success Subtle (#007a4d):** The success foreground color for the light theme
+- **Background Info Subtle (#007496):** The info foreground color for the light theme
+- **Background Discovery Subtle (#6261af):** The discovery foreground color for the light theme
+- **Background Page Hover (#dedede):** The page background color for the light theme (hover, 10% darker)
+- **Background Page Disabled (#ffffff99):** The page background color for the light theme (disabled, 60% opacity)
+- **Background Elevated Hover (#d4d4d3):** The elevated background color for the light theme (hover, 10% darker)
+- **Background Elevated Disabled (#f4f4f399):** The elevated background color for the light theme (disabled, 60% opacity)
+- **Background Floating Hover (#cac9c8):** The floating background color for the light theme (hover, 10% darker)
+- **Background Floating Disabled (#e8e7e699):** The floating background color for the light theme (disabled, 60% opacity)
+- **Background Primary Hover (#d4d4d4):** The primary foreground color for the light theme (hover, 10% darker)
+- **Background Primary Disabled (#f4f4f499):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Background Secondary Hover (#212121):** The secondary foreground color for the light theme (hover, 10% brighter)
+- **Background Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
+- **Background Tertiary Hover (#1d1d1d):** The tertiary foreground color for the light theme (hover, 10% brighter)
+- **Background Tertiary Disabled (#18181899):** The tertiary foreground color for the light theme (disabled, 60% opacity)
+- **Background Link Hover (#3276cd):** The link foreground color for the light theme (hover, 10% darker)
+- **Background Link Disabled (#468ae299):** The link foreground color for the light theme (disabled, 60% opacity)
+- **Background Accent Hover (#009c91):** The accent foreground color for the light theme (hover, 10% darker)
+- **Background Accent Disabled (#1fb2a699):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Background Danger Hover (#c24d52):** The danger foreground color for the light theme (hover, 10% darker)
+- **Background Danger Disabled (#d8616499):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Background Warning Hover (#bd7e00):** The warning foreground color for the light theme (hover, 10% darker)
+- **Background Warning Disabled (#d4940099):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Background Success Hover (#009057):** The success foreground color for the light theme (hover, 10% darker)
+- **Background Success Disabled (#00a46999):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Background Info Hover (#00a1ce):** The info foreground color for the light theme (hover, 10% darker)
+- **Background Info Disabled (#00b8e699):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Background Discovery Hover (#6d6ace):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Background Discovery Disabled (#7f7ee499):** The discovery foreground color for the light theme (disabled, 60% opacity)
+- **Background Accent Subtle Hover (#0b403a):** The accent foreground color for the light theme (hover, 10% brighter)
+- **Background Accent Subtle Disabled (#00383299):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Background Danger Subtle Hover (#973e41):** The danger foreground color for the light theme (hover, 10% darker)
+- **Background Danger Subtle Disabled (#a94e5099):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Background Warning Subtle Hover (#7f5400):** The warning foreground color for the light theme (hover, 10% darker)
+- **Background Warning Subtle Disabled (#8f630099):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Background Success Subtle Hover (#006b3f):** The success foreground color for the light theme (hover, 10% darker)
+- **Background Success Subtle Disabled (#007a4d99):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Background Info Subtle Hover (#006586):** The info foreground color for the light theme (hover, 10% darker)
+- **Background Info Subtle Disabled (#00749699):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Background Discovery Subtle Hover (#54529e):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Background Discovery Subtle Disabled (#6261af99):** The discovery foreground color for the light theme (disabled, 60% opacity)
 - **Border Primary (#262626):** The primary foreground color for the light theme
 - **Border Secondary (#1c1c1c):** The secondary foreground color for the light theme
 - **Border Tertiary (#181818):** The tertiary foreground color for the light theme
-- **Border Accent (oklch(0.6897 0.1156 186.1)):** The accent foreground color for the light theme
-- **Border Danger (oklch(0.64 0.15 21)):** The danger foreground color for the light theme
-- **Border Warning (oklch(0.71 0.16 81)):** The warning foreground color for the light theme
-- **Border Success (oklch(0.63 0.15 160)):** The success foreground color for the light theme
-- **Border Info (oklch(0.72 0.15 221)):** The info foreground color for the light theme
-- **Border Discovery (oklch(0.64 0.15 282)):** The discovery foreground color for the light theme
-- **Border Accent Subtle (oklch(0.301 0.066 184.397587)):** The accent foreground color for the light theme
-- **Border Danger Subtle (oklch(0.54 0.12 21)):** The danger foreground color for the light theme
-- **Border Warning Subtle (oklch(0.53 0.12 81)):** The warning foreground color for the light theme
-- **Border Success Subtle (oklch(0.51 0.12 160)):** The success foreground color for the light theme
-- **Border Info Subtle (oklch(0.51 0.12 221)):** The info foreground color for the light theme
-- **Border Discovery Subtle (oklch(0.53 0.12 282)):** The discovery foreground color for the light theme
+- **Border Accent (#1fb2a6):** The accent foreground color for the light theme
+- **Border Danger (#d86164):** The danger foreground color for the light theme
+- **Border Warning (#d49400):** The warning foreground color for the light theme
+- **Border Success (#00a469):** The success foreground color for the light theme
+- **Border Info (#00b8e6):** The info foreground color for the light theme
+- **Border Discovery (#7f7ee4):** The discovery foreground color for the light theme
+- **Border Accent Subtle (#003832):** The accent foreground color for the light theme
+- **Border Danger Subtle (#a94e50):** The danger foreground color for the light theme
+- **Border Warning Subtle (#8f6300):** The warning foreground color for the light theme
+- **Border Success Subtle (#007a4d):** The success foreground color for the light theme
+- **Border Info Subtle (#007496):** The info foreground color for the light theme
+- **Border Discovery Subtle (#6261af):** The discovery foreground color for the light theme
+- **Border Primary Hover (#2d2d2d):** The primary foreground color for the light theme (hover, 10% brighter)
+- **Border Primary Disabled (#26262699):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Border Secondary Hover (#212121):** The secondary foreground color for the light theme (hover, 10% brighter)
+- **Border Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
+- **Border Tertiary Hover (#1d1d1d):** The tertiary foreground color for the light theme (hover, 10% brighter)
+- **Border Tertiary Disabled (#18181899):** The tertiary foreground color for the light theme (disabled, 60% opacity)
+- **Border Accent Hover (#009c91):** The accent foreground color for the light theme (hover, 10% darker)
+- **Border Accent Disabled (#1fb2a699):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Border Danger Hover (#c24d52):** The danger foreground color for the light theme (hover, 10% darker)
+- **Border Danger Disabled (#d8616499):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Border Warning Hover (#bd7e00):** The warning foreground color for the light theme (hover, 10% darker)
+- **Border Warning Disabled (#d4940099):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Border Success Hover (#009057):** The success foreground color for the light theme (hover, 10% darker)
+- **Border Success Disabled (#00a46999):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Border Info Hover (#00a1ce):** The info foreground color for the light theme (hover, 10% darker)
+- **Border Info Disabled (#00b8e699):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Border Discovery Hover (#6d6ace):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Border Discovery Disabled (#7f7ee499):** The discovery foreground color for the light theme (disabled, 60% opacity)
+- **Border Accent Subtle Hover (#0b403a):** The accent foreground color for the light theme (hover, 10% brighter)
+- **Border Accent Subtle Disabled (#00383299):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Border Danger Subtle Hover (#973e41):** The danger foreground color for the light theme (hover, 10% darker)
+- **Border Danger Subtle Disabled (#a94e5099):** The danger foreground color for the light theme (disabled, 60% opacity)
+- **Border Warning Subtle Hover (#7f5400):** The warning foreground color for the light theme (hover, 10% darker)
+- **Border Warning Subtle Disabled (#8f630099):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Border Success Subtle Hover (#006b3f):** The success foreground color for the light theme (hover, 10% darker)
+- **Border Success Subtle Disabled (#007a4d99):** The success foreground color for the light theme (disabled, 60% opacity)
+- **Border Info Subtle Hover (#006586):** The info foreground color for the light theme (hover, 10% darker)
+- **Border Info Subtle Disabled (#00749699):** The info foreground color for the light theme (disabled, 60% opacity)
+- **Border Discovery Subtle Hover (#54529e):** The discovery foreground color for the light theme (hover, 10% darker)
+- **Border Discovery Subtle Disabled (#6261af99):** The discovery foreground color for the light theme (disabled, 60% opacity)
 - **Overlay Background (#e8e7e6):** The overlay background color for the light theme
 - **Overlay Border (#262626):** The overlay border color for the light theme
 - **Overlay Backdrop (#1a1c1f66):** The overlay backdrop background color for the light theme
+- **Overlay Background Hover (#cac9c8):** The overlay background color for the light theme (hover, 10% darker)
+- **Overlay Background Disabled (#e8e7e699):** The overlay background color for the light theme (disabled, 60% opacity)
+- **Overlay Border Hover (#2d2d2d):** The overlay border color for the light theme (hover, 10% brighter)
+- **Overlay Border Disabled (#26262699):** The overlay border color for the light theme (disabled, 60% opacity)
 - **Data Base Emphasis (#4f4f4f):** The base data visualization emphasis color for the light theme
 - **Data Base Subtle (#f4f4f4):** The base data visualization subtle color for the light theme
-- **Data Brand Emphasis (oklch(0.6897 0.1156 186.1)):** The brand data visualization emphasis color for the light theme
-- **Data Brand Subtle (oklch(0.301 0.066 184.397587)):** The brand data visualization subtle color for the light theme
-- **Data Red Emphasis (oklch(0.67 0.15 21)):** The red data visualization emphasis color for the light theme
-- **Data Red Subtle (oklch(0.8 0.12 21)):** The red data visualization subtle color for the light theme
-- **Data Orange Emphasis (oklch(0.67 0.15 47)):** The orange data visualization emphasis color for the light theme
-- **Data Orange Subtle (oklch(0.79 0.12 47)):** The orange data visualization subtle color for the light theme
-- **Data Yellow Emphasis (oklch(0.66 0.15 81)):** The yellow data visualization emphasis color for the light theme
-- **Data Yellow Subtle (oklch(0.79 0.12 81)):** The yellow data visualization subtle color for the light theme
-- **Data Green Emphasis (oklch(0.63 0.15 160)):** The green data visualization emphasis color for the light theme
-- **Data Green Subtle (oklch(0.77 0.12 160)):** The green data visualization subtle color for the light theme
-- **Data Sky Emphasis (oklch(0.64 0.15 221)):** The sky blue data visualization emphasis color for the light theme
-- **Data Sky Subtle (oklch(0.77 0.12 221)):** The sky blue data visualization subtle color for the light theme
-- **Data Blue Emphasis (oklch(0.65 0.15 256)):** The blue data visualization emphasis color for the light theme
-- **Data Blue Subtle (oklch(0.78 0.12 256)):** The blue data visualization subtle color for the light theme
-- **Data Purple Emphasis (oklch(0.66 0.15 282)):** The purple data visualization emphasis color for the light theme
-- **Data Purple Subtle (oklch(0.79 0.12 282)):** The purple data visualization subtle color for the light theme
-- **Data Pink Emphasis (oklch(0.67 0.15 356)):** The pink data visualization emphasis color for the light theme
-- **Data Pink Subtle (oklch(0.8 0.12 356)):** The pink data visualization subtle color for the light theme
+- **Data Brand Emphasis (#1fb2a6):** The brand data visualization emphasis color for the light theme
+- **Data Brand Subtle (#003832):** The brand data visualization subtle color for the light theme
+- **Data Red Emphasis (#e26a6c):** The red data visualization emphasis color for the light theme
+- **Data Red Subtle (#ff9e9c):** The red data visualization subtle color for the light theme
+- **Data Orange Emphasis (#de743a):** The orange data visualization emphasis color for the light theme
+- **Data Orange Subtle (#faa276):** The orange data visualization subtle color for the light theme
+- **Data Yellow Emphasis (#c08600):** The yellow data visualization emphasis color for the light theme
+- **Data Yellow Subtle (#e2b259):** The yellow data visualization subtle color for the light theme
+- **Data Green Emphasis (#00a469):** The green data visualization emphasis color for the light theme
+- **Data Green Subtle (#67cc9a):** The green data visualization subtle color for the light theme
+- **Data Sky Emphasis (#009ecb):** The sky blue data visualization emphasis color for the light theme
+- **Data Sky Subtle (#47c5ea):** The sky blue data visualization subtle color for the light theme
+- **Data Blue Emphasis (#4c90e8):** The blue data visualization emphasis color for the light theme
+- **Data Blue Subtle (#83baff):** The blue data visualization subtle color for the light theme
+- **Data Purple Emphasis (#8584eb):** The purple data visualization emphasis color for the light theme
+- **Data Purple Subtle (#aeb1ff):** The purple data visualization subtle color for the light theme
+- **Data Pink Emphasis (#db6a98):** The pink data visualization emphasis color for the light theme
+- **Data Pink Subtle (#fb9cc0):** The pink data visualization subtle color for the light theme
 
 ## Typography
 
 - **display-lg:** fontFamily: Permanent Marker, fontSize: 3rem, fontWeight: 400, lineHeight: 1
 - **display-md:** fontFamily: Permanent Marker, fontSize: 1.875rem, fontWeight: 400, lineHeight: 1.2
 - **display-sm:** fontFamily: Permanent Marker, fontSize: 1.5rem, fontWeight: 400, lineHeight: 1.333333
-- **title-lg:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
-- **title-md:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
-- **title-sm:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
+- **heading-2xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
+- **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
+- **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
+- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
+- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
 - **body:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
 - **caption:** fontFamily: Space Grotesk, fontSize: 0.75rem, fontWeight: 300, lineHeight: 1.333333
 - **code:** fontFamily: Space Mono, fontSize: 0.875rem, fontWeight: 400, lineHeight: 1.428571

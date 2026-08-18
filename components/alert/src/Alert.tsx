@@ -46,7 +46,7 @@ const AlertCloseImpl = AlertClose.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <XStack minHeight="100%" alignItems="center" flexBasis={50}>
-        <AlertClose ref={forwardedRef} {...props} padding="$2.5" size="$6">
+        <AlertClose ref={forwardedRef} {...props} padding="$2xl" size="$8xl">
           {children || (
             <Button.Icon>
               <X />
@@ -72,7 +72,7 @@ const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
       noPadding={true}
       overflow="hidden">
       <Theme name={theme}>
-        <XStack gap="$3" paddingRight="$1">
+        <XStack gap="$3xl" paddingRight="$md">
           {children}
         </XStack>
       </Theme>
@@ -88,7 +88,7 @@ const AlertIcon = ThemeableIcon.styleable(
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
           theme={theme}
-          animation="normal"
+          transition="medium"
           enterStyle={{
             x: -200,
             opacity: 0.6
@@ -98,20 +98,20 @@ const AlertIcon = ThemeableIcon.styleable(
           height="100%"
           width="62%"
           backgroundColor="$backgroundPrimary"
-          zIndex="$1"
+          zIndex="$10"
         />
 
-        <YStack zIndex="$2" justifyContent="center" paddingLeft="$3">
+        <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
           <View
             theme={"base"}
-            padding="$1.75"
+            padding="$xl"
             backgroundColor="$surface1"
             borderRadius={1000_000_000}>
             <ThemeableIcon
               ref={forwardedRef}
               {...props}
               theme={theme}
-              size="$4">
+              size="$5xl">
               {children || getIconByTheme({ theme }) || <AlertCircle />}
             </ThemeableIcon>
           </View>
@@ -130,9 +130,9 @@ const AlertContent = YStack.styleable(
       <YStack
         ref={forwardedRef}
         flex={1}
-        gap="$0.1"
+        gap="$xxs"
         {...props}
-        paddingVertical="$3">
+        paddingVertical="$3xl">
         {children}
       </YStack>
     );
@@ -167,7 +167,7 @@ const AlertBody = styled(BodyText, {
   name: "AlertBody",
 
   color: "$foregroundSecondary",
-  fontSize: "$6"
+  fontSize: "$lg"
 });
 
 const AlertBodyImpl = AlertBody.styleable(

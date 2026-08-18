@@ -40,7 +40,7 @@ const meta: Meta<typeof Dialog> = {
             <Dialog.Heading>Dialog Heading</Dialog.Heading>
             <Dialog.Body>{children}</Dialog.Body>
 
-            <XStack gap="$3" justifyContent="flex-end">
+            <XStack gap="$3xl" justifyContent="flex-end">
               <Dialog.Close>
                 <Dialog.Close.Text>Cancel</Dialog.Close.Text>
               </Dialog.Close>

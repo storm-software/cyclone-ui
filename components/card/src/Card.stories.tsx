@@ -29,7 +29,7 @@ const meta: Meta<typeof Card> = {
     <Card {...args} width="500px">
       <Card.Header>
         <Card.Header.Icon>{icon}</Card.Header.Icon>
-        <YStack gap="$1">
+        <YStack gap="$md">
           <Card.Header.Eyebrow>Card Eyebrow</Card.Header.Eyebrow>
           <Card.Header.Heading>Card Heading</Card.Header.Heading>
         </YStack>

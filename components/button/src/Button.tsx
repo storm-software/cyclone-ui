@@ -167,12 +167,12 @@ const ButtonFrame = styled(View, {
   name: "Button",
   context: ButtonContext,
 
-  tag: "button",
+  render: "button",
   role: "button",
-  // focusable: false,
+  // tabIndex: -1,
   userSelect: "none",
 
-  animation: "normal",
+  transition: "medium",
   alignItems: "center",
   justifyContent: "center",
   cursor: "pointer",
@@ -186,7 +186,7 @@ const ButtonFrame = styled(View, {
 
   hoverStyle: {
     borderWidth: 1,
-    borderColor: "$borderSecondary"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusStyle: {
@@ -197,7 +197,7 @@ const ButtonFrame = styled(View, {
     outlineColor: "$borderAccent",
     outlineStyle: "solid",
     outlineWidth: 3,
-    outlineOffset: "$1.25"
+    outlineOffset: "$lg"
   },
 
   variants: {
@@ -207,7 +207,8 @@ const ButtonFrame = styled(View, {
         borderColor: "$borderTertiary",
 
         hoverStyle: {
-          backgroundColor: "$backgroundTertiary"
+          backgroundColor: "$backgroundPrimaryHover",
+          borderColor: "$borderTertiaryHover"
         }
       },
 
@@ -215,7 +216,7 @@ const ButtonFrame = styled(View, {
         backgroundColor: "$surface3",
 
         hoverStyle: {
-          backgroundColor: "$base2"
+          backgroundColor: "$backgroundPrimaryHover"
         }
       },
 
@@ -223,7 +224,7 @@ const ButtonFrame = styled(View, {
         backgroundColor: "$surface2",
 
         hoverStyle: {
-          backgroundColor: "$base2"
+          backgroundColor: "$backgroundPrimaryHover"
         }
       },
 
@@ -231,7 +232,7 @@ const ButtonFrame = styled(View, {
         backgroundColor: "$surface1",
 
         hoverStyle: {
-          backgroundColor: "$base2"
+          backgroundColor: "$backgroundPrimaryHover"
         }
       },
 
@@ -241,9 +242,9 @@ const ButtonFrame = styled(View, {
         borderColor: "$borderPrimary",
 
         hoverStyle: {
-          backgroundColor: "$base2",
+          backgroundColor: "$backgroundPrimaryHover",
           borderWidth: 2,
-          borderColor: "$base2"
+          borderColor: "$borderPrimaryHover"
         }
       },
 
@@ -273,7 +274,7 @@ const ButtonFrame = styled(View, {
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$borderPrimary"
+          borderColor: "$borderPrimaryHover"
         }
       },
 
@@ -306,27 +307,62 @@ const ButtonFrame = styled(View, {
     },
 
     disabled: {
-      true: {
-        cursor: "not-allowed",
-        pointerEvents: "none",
-        opacity: 0.5
+      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => {
+        const variant = props.variant as ButtonVariant | undefined;
+        const filled =
+          variant === "primary" ||
+          variant === "secondary" ||
+          variant === "tertiary" ||
+          variant === "quaternary";
+        const hideBorder =
+          variant === "ghost" || variant === "link" || variant === "gradient";
+
+        return {
+          cursor: "not-allowed",
+          pointerEvents: "none",
+          ...(filled
+            ? {
+                backgroundColor: "$backgroundPrimaryDisabled",
+                borderColor:
+                  variant === "primary"
+                    ? "$borderTertiaryDisabled"
+                    : "$borderPrimaryDisabled",
+                hoverStyle: {
+                  backgroundColor: "$backgroundPrimaryDisabled",
+                  borderColor:
+                    variant === "primary"
+                      ? "$borderTertiaryDisabled"
+                      : "$borderPrimaryDisabled"
+                }
+              }
+            : {
+                borderColor: hideBorder
+                  ? "transparent"
+                  : "$borderPrimaryDisabled",
+                hoverStyle: {
+                  borderColor: hideBorder
+                    ? "transparent"
+                    : "$borderPrimaryDisabled"
+                }
+              })
+        };
       }
     },
 
     ringed: {
       true: {
         hoverStyle: {
-          outlineColor: "$borderPrimary",
+          outlineColor: "$borderPrimaryHover",
           outlineStyle: "solid",
           outlineWidth: 3,
-          outlineOffset: "$1.25"
+          outlineOffset: "$lg"
         },
 
         pressStyle: {
-          outlineColor: "$borderPrimary",
+          outlineColor: "$borderPrimaryHover",
           outlineStyle: "solid",
           outlineWidth: 3,
-          outlineOffset: "$1.25"
+          outlineOffset: "$lg"
         }
       }
     },
@@ -370,9 +406,9 @@ const ButtonTextFrame = styled(LabelText, {
   name: "ButtonText",
   context: ButtonContext,
 
-  animation: "normal",
+  transition: "medium",
   userSelect: "none",
-  ellipse: true,
+  ellipsis: true,
   borderRadius: 0,
   cursor: "pointer",
   textAlign: "center",
@@ -391,7 +427,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundOnPrimary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -399,7 +435,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -407,7 +443,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -415,7 +451,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -423,7 +459,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundOnPrimary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -431,7 +467,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -439,7 +475,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -447,7 +483,7 @@ const ButtonTextFrame = styled(LabelText, {
         color: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover"
         }
       },
 
@@ -458,8 +494,8 @@ const ButtonTextFrame = styled(LabelText, {
         textDecorationStyle: "solid",
 
         hoverStyle: {
-          color: "$foregroundSecondary",
-          textDecorationColor: "$foregroundSecondary"
+          color: "$foregroundOnPrimaryHover",
+          textDecorationColor: "$foregroundOnPrimaryHover"
         }
       }
     },
@@ -468,17 +504,17 @@ const ButtonTextFrame = styled(LabelText, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
         textDecoration: "none",
 
         hoverStyle: {
-          color: "$base4",
+          color: "$foregroundOnPrimaryDisabled",
 
           textDecoration: "none"
         },
 
         pressStyle: {
-          color: "$base4",
+          color: "$foregroundOnPrimaryDisabled",
 
           textDecoration: "none"
         }
@@ -544,15 +580,13 @@ const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
           disabled={disabled}
           circular={circular}
           size={size ?? contextSize}
-          color={disabled ? "$base4" : color}
+          color={disabled ? "$foregroundOnPrimaryDisabled" : color}
           {...props}
           borderRadius={0}
           $group-button-hover={{
             color: disabled
-              ? "$base4"
-              : variant === "primary" || variant === "outlined"
-                ? "$foregroundOnPrimary"
-                : "$foregroundSecondary"
+              ? "$foregroundOnPrimaryDisabled"
+              : "$foregroundOnPrimaryHover"
           }}>
           {children}
         </ButtonTextFrame>
@@ -605,17 +639,13 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
             color={
               (color ||
                 (disabled
-                  ? "$base4"
-                  : variant === "primary" || variant === "outlined"
-                    ? "$foregroundOnPrimary"
-                    : "$foregroundSecondary")) as ThemeableIconProps["color"]
+                  ? "$foregroundOnPrimaryDisabled"
+                  : "$foregroundOnPrimary")) as ThemeableIconProps["color"]
             }
             $group-button-hover={{
               color: disabled
-                ? "$base4"
-                : variant === "primary"
-                  ? "$foregroundOnPrimary"
-                  : "$foregroundSecondary"
+                ? "$foregroundOnPrimaryDisabled"
+                : "$foregroundOnPrimaryHover"
             }}>
             {children}
           </ThemeableIcon>
@@ -632,10 +662,10 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   name: "Button",
   context: ButtonContext,
 
-  animation: "normal",
+  transition: "medium",
   opacity: 0,
   zIndex: "$sm",
-  backgroundColor: "$surface3",
+  backgroundColor: "$backgroundPrimaryHover",
   borderColor: "$borderPrimary",
 
   variants: {
@@ -651,7 +681,8 @@ const ButtonGhostBackground = styled(ThemeableStack, {
         borderWidth: 1,
 
         hoverStyle: {
-          borderWidth: 1
+          borderWidth: 1,
+          borderColor: "$borderPrimaryHover"
         }
       }
     },
@@ -673,7 +704,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
   name: "Button",
   context: ButtonContext,
 
-  animation: "normal",
+  transition: "medium",
   opacity: 0.5,
   zIndex: "$sm",
   colors: ["$backgroundSecondary", "$backgroundPrimary"],
@@ -691,7 +722,7 @@ const ButtonGradientBackground = styled(LinearGradient, {
   name: "Button",
   context: ButtonContext,
 
-  animation: "normal",
+  transition: "medium",
   zIndex: "$sm",
   colors: ["$backgroundTertiary", "$backgroundPrimary"],
 

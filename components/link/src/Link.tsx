@@ -26,8 +26,8 @@ import type { GestureResponderEvent } from "react-native";
 import { Linking } from "react-native";
 const LinkFrame = styled(LinkText, {
   name: "Link",
-  tag: "a",
-  accessibilityRole: "link",
+  render: "a",
+  role: "link",
 
   cursor: "pointer"
 });
@@ -68,12 +68,12 @@ export const Link = LinkFrame.styleable<{
 
         {external && (
           <ThemeableIcon
-            size="$1"
+            size="$md"
             display="inline"
             paddingTop={5}
             color="$foregroundSecondary"
             $group-link-hover={{
-              color: "$foregroundSecondary",
+              color: "$foregroundSecondaryHover",
               x: 50,
               y: -50
             }}>

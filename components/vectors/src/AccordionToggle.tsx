@@ -27,7 +27,7 @@ import { Path, Svg } from "react-native-svg";
 const AccordionToggleContainer = styled(View, {
   name: "AccordionToggle",
 
-  animation: "fast",
+  transition: "quick",
 
   variants: {
     isExpanded: {

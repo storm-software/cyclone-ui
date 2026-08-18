@@ -29,7 +29,7 @@ const meta: Meta<typeof Switch> = {
   render: (props: any) => (
     <Form name="formName" initialValues={{ switchName: false }}>
       <Field name="switchName" {...props}>
-        <XStack gap="$3" alignContent="center" alignItems="center">
+        <XStack gap="$3xl" alignContent="center" alignItems="center">
           <Switch />
           <Field.Label paddingBottom={0}>
             This is an example label message for a switch

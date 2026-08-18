@@ -28,7 +28,7 @@ const meta: Meta<typeof SwitchField> = {
   render: ({ defaultValue, ...props }: any) => (
     <Form name="formName" initialValues={{ switchFieldName: defaultValue }}>
       <SwitchField name="switchFieldName" {...props}>
-        <XStack gap="$2.5" alignContent="center" alignItems="center">
+        <XStack gap="$2xl" alignContent="center" alignItems="center">
           <SwitchField.Control />
           <SwitchField.Label>
             This is an example label message for a switch field

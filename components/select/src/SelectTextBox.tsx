@@ -38,9 +38,9 @@ const BaseSelectTextBox = styled(View, {
   name: "SelectTrigger",
   context: SelectContext,
 
-  tag: "button",
+  render: "button",
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   justifyContent: "space-between",
   alignItems: "center",

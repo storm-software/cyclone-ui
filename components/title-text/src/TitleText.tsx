@@ -22,8 +22,8 @@ import { SizableText } from "@tamagui/text";
 
 const BaseTitleText = styled(SizableText, {
   name: "TitleText",
-  tag: "span",
-  accessibilityRole: "header",
+  render: "span",
+  role: "heading",
 
   color: "$foregroundOnPrimary",
   fontFamily: "$title",
@@ -83,36 +83,36 @@ export const TitleText = BaseTitleText.styleable<{ level?: number }>(
 
 export const Title1Text = styled(BaseTitleText, {
   name: "Title1Text",
-  tag: "h1",
-  size: "$12"
+  render: "h1",
+  size: "$7xl"
 });
 
 export const Title2Text = styled(BaseTitleText, {
   name: "Title2Text",
-  tag: "h2",
-  size: "$11"
+  render: "h2",
+  size: "$6xl"
 });
 
 export const Title3Text = styled(BaseTitleText, {
   name: "Title3Text",
-  tag: "h3",
-  size: "$10"
+  render: "h3",
+  size: "$5xl"
 });
 
 export const Title4Text = styled(BaseTitleText, {
   name: "Title4Text",
-  tag: "h4",
-  size: "$9"
+  render: "h4",
+  size: "$3xl"
 });
 
 export const Title5Text = styled(BaseTitleText, {
   name: "Title5Text",
-  tag: "h5",
-  size: "$8"
+  render: "h5",
+  size: "$2xl"
 });
 
 export const Title6Text = styled(BaseTitleText, {
   name: "Title6Text",
-  tag: "h6",
-  size: "$7"
+  render: "h6",
+  size: "$xl"
 });

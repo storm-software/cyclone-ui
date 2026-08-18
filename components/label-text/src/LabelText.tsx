@@ -21,7 +21,7 @@ import type { GetProps } from "@tamagui/core";
 import { styled, Text } from "@tamagui/core";
 export const LabelText = styled(Text, {
   name: "LabelText",
-  tag: "p",
+  render: "p",
 
   color: "$foregroundOnPrimary",
   fontFamily: "$label",

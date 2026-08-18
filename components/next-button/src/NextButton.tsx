@@ -47,7 +47,7 @@ export const NextButton = Button.styleable<{
     return (
       <Button ref={ref} aria-label="Next" justifyContent="center" {...props}>
         <View display="unset">
-          <XStack gap="$0.75" alignItems="center">
+          <XStack gap="$sm" alignItems="center">
             {!hideText && <Button.Text>{children || "Next"}</Button.Text>}
             <Button.Icon>
               <RightArrow isComplete={hovering} animateShrink={animateShrink} />

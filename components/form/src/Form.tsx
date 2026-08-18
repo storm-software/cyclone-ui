@@ -27,7 +27,7 @@ const FORM_NAME = "Form";
 
 const FormFrame = styled(View, {
   name: FORM_NAME,
-  tag: "form"
+  render: "form"
 });
 
 type FormFrameExtraProps = Pick<
@@ -104,7 +104,7 @@ export const FormSubmit = FormTriggerFrame.styleable(
 
     return (
       <FormTriggerFrame
-        tag="button"
+        render="button"
         {...triggerProps}
         ref={forwardedRef}
         disabled={canSubmit}
@@ -125,7 +125,7 @@ export const FormReset = FormTriggerFrame.styleable(
 
     return (
       <FormTriggerFrame
-        tag="button"
+        render="button"
         {...triggerProps}
         ref={forwardedRef}
         disabled={canSubmit}

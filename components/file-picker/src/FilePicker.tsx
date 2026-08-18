@@ -29,7 +29,6 @@ import { AnimatePresence } from "@tamagui/animate-presence";
 import type { ColorTokens, FontSizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
-  isWeb,
   styled,
   View,
   withStaticProperties
@@ -62,7 +61,7 @@ export interface FilePickerContextProps {
 }
 
 export const FilePickerContext = createStyledContext<FilePickerContextProps>({
-  size: "$4",
+  size: "$5xl",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
@@ -86,33 +85,26 @@ const FilePickerGroupFrame = styled(View, {
   name: FILE_PICKER_NAME,
   context: FilePickerContext,
 
-  animation: "slow",
+  transition: "slow",
   flexDirection: "column",
   width: "100%",
-  minHeight: "$15",
+  minHeight: "$17xl",
   justifyContent: "center",
   alignItems: "center",
-  gap: "$1",
-  paddingVertical: "$4",
+  gap: "$md",
+  paddingVertical: "$5xl",
   borderStyle: "dashed",
   borderWidth: 2,
-  borderRadius: "$4",
+  borderRadius: "$lg",
   borderColor: "$borderPrimary",
   backgroundColor: "transparent",
   outlineWidth: 0,
   outlineColor: "transparent",
   outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   variants: {
@@ -120,24 +112,22 @@ const FilePickerGroupFrame = styled(View, {
       true: {
         outlineColor: "$borderAccent",
         outlineWidth: 2,
-        outlineOffset: "$1.25",
+        outlineOffset: "$lg",
         outlineStyle: "solid",
         borderColor: "$borderSecondary",
 
         hoverStyle: {
-          borderColor: "$borderAccent"
+          borderColor: "$borderSecondaryHover"
         }
       }
     },
 
     disabled: {
       true: {
-        opacity: 0.8,
-        cursor: "not-allowed",
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       },
       false: {
@@ -260,7 +250,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           {/* @ts-ignore */}
           <View
             id={name}
-            tag="input"
+            render="input"
             width={0}
             height={0}
             {...getInputProps()}
@@ -287,16 +277,18 @@ const FilePickerTrigger = YStack.styleable(
         ref={forwardedRef}
         justifyContent="center"
         alignItems="center"
-        gap="$1"
+        gap="$md"
         onPress={onOpen}
         width="100%"
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
         {files.length === 0 && (
           <Upload
-            size="$5"
-            color={disabled ? "$base4" : "$foregroundOnPrimary"}
-            animation="100ms"
+            size="$7xl"
+            color={
+              disabled ? "$foregroundOnPrimaryDisabled" : "$foregroundOnPrimary"
+            }
+            transition="100ms"
             opacity={1}
             scale={1}
             exitStyle={{
@@ -351,8 +343,8 @@ const FilePickerFiles = YStack.styleable(
         {files?.length && (
           <YStack
             ref={forwardedRef}
-            gap="$4"
-            paddingHorizontal="$4"
+            gap="$5xl"
+            paddingHorizontal="$5xl"
             width="100%"
             {...props}>
             {children}
@@ -372,7 +364,7 @@ const FilePickerViewLink = ({
     return (
       <Link
         fontFamily="$label"
-        fontSize="$7"
+        fontSize="$xl"
         fontWeight="$true"
         color="$foregroundOnPrimary"
         {...props}
@@ -386,7 +378,7 @@ const FilePickerViewLink = ({
   return (
     <LabelText
       fontFamily="$label"
-      fontSize="$7"
+      fontSize="$xl"
       color="$foregroundOnPrimary"
       {...props}>
       {children}
@@ -415,7 +407,7 @@ const FilePickerFile = ({
     <View
       group={"file" as any}
       flexDirection="column"
-      animation="100ms"
+      transition="100ms"
       opacity={1}
       scale={1}
       height={100}
@@ -433,20 +425,20 @@ const FilePickerFile = ({
         scale: 0.5
       }}
       hoverStyle={{
-        outlineColor: "$borderAccent",
+        outlineColor: "$borderPrimaryHover",
         outlineWidth: 2,
         outlineStyle: "solid",
         outlineOffset: 3
       }}>
       <View
-        animation="100ms"
+        transition="100ms"
         position="absolute"
         top={0}
         bottom={0}
         left={0}
         right={0}
         zIndex={10}
-        backgroundColor="$base2"
+        backgroundColor="$backgroundPrimaryHover"
         opacity={0.6}
         $group-file-hover={{
           opacity: 0.8,
@@ -456,7 +448,7 @@ const FilePickerFile = ({
         }}
       />
       <View
-        animation="100ms"
+        transition="100ms"
         position="absolute"
         zIndex={20}
         left={16}
@@ -471,8 +463,8 @@ const FilePickerFile = ({
               variant="ghost"
               theme="base"
               color="$foregroundPrimary"
-              size="$6"
-              padding="$2"
+              size="$8xl"
+              padding="$xl"
               circular={true}>
               <Button.Icon>
                 <Download />
@@ -484,7 +476,7 @@ const FilePickerFile = ({
 
       {!disabled && (
         <View
-          animation="100ms"
+          transition="100ms"
           position="absolute"
           zIndex={20}
           right={16}
@@ -498,8 +490,8 @@ const FilePickerFile = ({
             theme="base"
             color="$foregroundPrimary"
             onPress={handleRemove}
-            size="$6"
-            padding="$2"
+            size="$8xl"
+            padding="$xl"
             circular={true}>
             <Button.Icon>
               <Trash2 />
@@ -509,7 +501,7 @@ const FilePickerFile = ({
       )}
 
       <View
-        animation="100ms"
+        transition="100ms"
         position="absolute"
         zIndex={15}
         top={0}
@@ -518,7 +510,7 @@ const FilePickerFile = ({
         right={0}
         alignItems="center"
         justifyContent="center">
-        <YStack width="75%" gap="$1.75">
+        <YStack width="75%" gap="$xl">
           <View zIndex={25} justifyContent="center" alignItems="center">
             <FilePickerViewLink uri={uri}>
               {name
@@ -528,23 +520,23 @@ const FilePickerFile = ({
                 : "Unnamed File"}
             </FilePickerViewLink>
           </View>
-          <XStack gap="$1.5" justifyContent="center" alignItems="center">
-            <BytesText zIndex={25} color="$base9" fontWeight="$5">
+          <XStack gap="$lg" justifyContent="center" alignItems="center">
+            <BytesText zIndex={25} color="$base9" fontWeight="$medium">
               {size}
             </BytesText>
 
-            {lastModified && <Dot size="$1.25" color="$base9" />}
+            {lastModified && <Dot size="$lg" color="$base9" />}
 
             {lastModified && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$5">
+              <BodyText zIndex={25} color="$base9" fontWeight="$medium">
                 {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
               </BodyText>
             )}
 
-            {mimeType && <Dot size="$1.25" color="$base9" />}
+            {mimeType && <Dot size="$lg" color="$base9" />}
 
             {mimeType && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$5">
+              <BodyText zIndex={25} color="$base9" fontWeight="$medium">
                 {mimeType}
               </BodyText>
             )}
@@ -553,7 +545,7 @@ const FilePickerFile = ({
       </View>
 
       <LinearGradient
-        animation="slow"
+        transition="slow"
         fullscreen={true}
         zIndex={10}
         colors={["transparent", "$backgroundAccentSubtle"]}
@@ -567,7 +559,7 @@ const FilePickerFile = ({
       />
 
       <View
-        animation="slow"
+        transition="slow"
         position="absolute"
         top={-240}
         left={0}
@@ -577,7 +569,7 @@ const FilePickerFile = ({
         $group-file-hover={{
           scale: 1.2
         }}>
-        <Image key={id} height={500} source={{ height: 500, uri }} />
+        <Image key={id} height={500} src={uri} />
       </View>
     </View>
   );

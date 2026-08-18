@@ -41,42 +41,46 @@ const RadioGroupFieldGroup = Field.styleable(
 
 const RadioGroupItemValue = styled(Label, {
   name: "RadioGroupItemValue",
-  tag: "label",
+  render: "label",
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   color: "$foregroundOnPrimary",
   fontFamily: "$label",
-  fontSize: "$6",
-  fontWeight: "$4",
+  fontSize: "$lg",
+  fontWeight: "$normal",
   lineHeight: "$true",
   wordWrap: "break-word",
   verticalAlign: "middle",
 
+  hoverStyle: {
+    color: "$foregroundOnPrimaryHover"
+  },
+
   variants: {
     selected: {
       true: {
-        fontWeight: "$6"
+        fontWeight: "$semibold"
       }
     },
 
     disabled: {
       true: {
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         focusStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         pressStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     }
@@ -92,29 +96,33 @@ const RadioGroupItemDetails = styled(BodyText, {
   name: "RadioGroupItemDetails",
   context: RadioGroupContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   color: "$foregroundOnPrimary",
-  fontSize: "$5",
+  fontSize: "$md",
+
+  hoverStyle: {
+    color: "$foregroundOnPrimaryHover"
+  },
 
   variants: {
     disabled: {
       true: {
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         focusStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         pressStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     }
@@ -140,7 +148,7 @@ const RadioGroupItem = (
 
   return (
     <RadioGroup.Item {...item} onPress={handlePress}>
-      <YStack gap="$1" justifyContent="flex-start" flex={1}>
+      <YStack gap="$md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}

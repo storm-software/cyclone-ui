@@ -19,7 +19,6 @@
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { isWeb } from "@tamagui/constants";
 import type { ColorTokens, SizeTokens } from "@tamagui/core";
 import {
   createStyledContext,
@@ -57,32 +56,25 @@ const getSwitchWidth = (val: SizeTokens) => getSwitchHeight(val) * 2;
 
 const SwitchFrame = styled(View, {
   name: "Switch",
-  tag: "button",
+  render: "button",
   context: SwitchContext,
 
-  animation: "normal",
+  transition: "medium",
   borderRadius: 100_000,
   backgroundColor: "transparent",
   borderWidth: 2,
   borderColor: "$borderPrimary",
   outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -90,7 +82,7 @@ const SwitchFrame = styled(View, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -98,7 +90,12 @@ const SwitchFrame = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundAccentSubtle"
+        backgroundColor: "$backgroundAccentSubtle",
+
+        hoverStyle: {
+          backgroundColor: "$backgroundAccentSubtleHover",
+          borderColor: "$borderAccentHover"
+        }
       }
     },
 
@@ -119,18 +116,18 @@ const SwitchFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     }
@@ -144,7 +141,7 @@ const SwitchFrame = styled(View, {
 const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
-  animation: "normal",
+  transition: "medium",
   backgroundColor: "$foregroundOnPrimary",
   borderRadius: 100_000,
   borderWidth: 1,
@@ -256,11 +253,13 @@ const SwitchIcon = SwitchIconFrame.styleable<{
           color={
             (color ||
               (disabled
-                ? "$base4"
+                ? "$foregroundOnPrimaryDisabled"
                 : "$foregroundOnPrimary")) as ThemeableIconProps["color"]
           }
           $group-switch-hover={{
-            color: disabled ? "$base4" : "$foregroundSecondary"
+            color: disabled
+              ? "$foregroundOnPrimaryDisabled"
+              : "$foregroundOnPrimaryHover"
           }}>
           {children}
         </ThemeableIcon>

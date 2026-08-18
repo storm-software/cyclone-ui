@@ -75,9 +75,9 @@ export type InputProps = ViewProps &
     selectionColor?: ColorTokens;
 
     /**
-     * The HTML tag to render when on web
+     * The HTML element to render when on web
      */
-    tag?: TamaguiComponentPropsBase["tag"];
+    render?: TamaguiComponentPropsBase["render"];
 
     /**
      * The enter key to display in the mobile keyboard
@@ -108,7 +108,7 @@ export type InputProps = ViewProps &
     onChangeText?: TextInputProps["onChange"];
 
     /**
-     * @deprecated - use `tag='textarea'` instead
+     * @deprecated - use `render='textarea'` instead
      */
     multiline?: boolean;
 

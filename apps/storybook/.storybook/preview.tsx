@@ -16,35 +16,28 @@
 
  ------------------------------------------------------------------- */
 
-import { ThemeProvider } from "@cyclone-ui/state/client";
-import { MessageProvider } from "@cyclone-ui/state/message";
-import { config } from "@cyclone-ui/themes/tamagui";
 import type { Preview } from "@storybook/react-vite";
 import "@tamagui/core/reset.css";
-import { PortalProvider } from "@tamagui/portal";
-import { YStack } from "@tamagui/stacks";
-import { DevTools, useAtomsDebugValue } from "jotai-devtools";
 import "jotai-devtools/styles.css";
 import "raf/polyfill";
-import {
-  SafeAreaProvider,
-  initialWindowMetrics
-} from "react-native-safe-area-context";
-
-const FALLBACK_SAFE_AREA_METRICS = {
-  frame: { x: 0, y: 0, width: 0, height: 0 },
-  insets: { top: 0, left: 0, right: 0, bottom: 0 }
-};
-
-const DebugAtoms = () => {
-  useAtomsDebugValue({
-    enabled: true
-  });
-
-  return null;
-};
+import { CycloneDocsContainer, withCycloneTheme } from "./preview-decorators";
+import { storybookThemes } from "./storybook-themes";
 
 const preview: Preview = {
+  globalTypes: {
+    mode: {
+      description: "Color theme",
+      toolbar: {
+        title: "Theme",
+        icon: "circlehollow",
+        items: [
+          { value: "dark", title: "Dark", icon: "moon" },
+          { value: "light", title: "Light", icon: "sun" }
+        ],
+        dynamicTitle: true
+      }
+    }
+  },
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -53,39 +46,12 @@ const preview: Preview = {
         date: /Date$/
       }
     },
-    backgrounds: {
-      values: [
-        { value: "#F8F8F7", left: "☀️", name: "Light Mode" },
-        { value: "#1A1C1F", left: "🌙", name: "Dark Mode" }
-      ],
-      default: "Dark Mode"
+    docs: {
+      theme: storybookThemes.dark,
+      container: CycloneDocsContainer
     }
   },
-  decorators: [
-    (Story, args) => {
-      const mode = args.globals.mode === "light" ? "light" : "dark";
-
-      return (
-        <SafeAreaProvider
-          initialMetrics={initialWindowMetrics ?? FALLBACK_SAFE_AREA_METRICS}>
-          <ThemeProvider
-            config={config}
-            disableInjectCSS={false}
-            defaultMode={mode}>
-            <PortalProvider>
-              <MessageProvider>
-                <DevTools theme={mode} position="bottom-right" />
-                <DebugAtoms />
-                <YStack p="$8" w="100%" minh="100%">
-                  <Story />
-                </YStack>
-              </MessageProvider>
-            </PortalProvider>
-          </ThemeProvider>
-        </SafeAreaProvider>
-      );
-    }
-  ],
+  decorators: [withCycloneTheme],
   tags: ["autodocs"],
   initialGlobals: {
     mode: "dark",

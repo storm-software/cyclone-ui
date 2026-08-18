@@ -47,8 +47,8 @@ export interface TableContextProps {
 }
 
 const TableContext = createStyledContext<TableContextProps>({
-  cellWidth: "$8",
-  cellHeight: "$8",
+  cellWidth: "$10xl",
+  cellHeight: "$10xl",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
   borderColor: "$borderPrimary"
@@ -61,7 +61,7 @@ const TableRow = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "tr",
+  render: "tr",
 
   flexDirection: "row",
   borderWidth: 0,
@@ -70,7 +70,7 @@ const TableRow = styled(ThemeableStack, {
   justifyContent: "flex-start",
   position: "relative",
   backgroundColor: "transparent",
-  paddingHorizontal: "$2",
+  paddingHorizontal: "$xl",
 
   hoverStyle: {
     backgroundColor: "transparent"
@@ -79,7 +79,7 @@ const TableRow = styled(ThemeableStack, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -108,11 +108,11 @@ const TableRowImpl = TableRow.styleable(
         {...props}>
         <ThemeableStack
           fullscreen={true}
-          animation="normal"
+          transition="medium"
           opacity={0}
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$backgroundPrimaryHover"
           $group-row-hover={{
-            opacity: header ? 0 : 0.1
+            opacity: header ? 0 : 1
           }}
           style={{
             filter: "blur(1px)"
@@ -131,19 +131,19 @@ const TableCell = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "td",
+  render: "td",
 
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
   justifyContent: "flex-start",
-  paddingHorizontal: "$2",
+  paddingHorizontal: "$xl",
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -178,7 +178,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   name: TABLE_HEADER_NAME,
   context: TableContext,
 
-  tag: "th",
+  render: "th",
 
   zIndex: 10,
   flexDirection: "row",
@@ -186,7 +186,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   justifyContent: "flex-start",
-  paddingHorizontal: "$2",
+  paddingHorizontal: "$xl",
 
   variants: {
     cellWidth: {
@@ -210,7 +210,7 @@ const TableBody = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "tbody",
+  render: "tbody",
 
   flexDirection: "column",
   flexShrink: 1,
@@ -222,7 +222,7 @@ const TableHeader = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "thead",
+  render: "thead",
 
   flexDirection: "column",
   flexShrink: 1,
@@ -238,14 +238,14 @@ const TableHeaderImpl = TableHeader.styleable(
       <TableHeader ref={forwardRef} position="relative" {...props}>
         <ThemeableStack
           fullscreen={true}
-          animation="fast"
+          transition="quick"
           opacity={0.05}
           backgroundColor="$backgroundPrimary"
           style={{
             filter: "blur(1px)"
           }}
         />
-        <View paddingVertical="$2.5">{children}</View>
+        <View paddingVertical="$2xl">{children}</View>
       </TableHeader>
     );
   },
@@ -258,7 +258,7 @@ const TableFooter = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "tfoot",
+  render: "tfoot",
 
   flexDirection: "column",
   flexShrink: 1,
@@ -275,14 +275,14 @@ const TableFooterImpl = TableFooter.styleable(
       <TableFooter ref={forwardRef} position="relative" {...props}>
         <ThemeableStack
           fullscreen={true}
-          animation="fast"
+          transition="quick"
           opacity={0.05}
           backgroundColor="$backgroundPrimary"
           style={{
             filter: "blur(1px)"
           }}
         />
-        <View paddingVertical="$2.5">{children}</View>
+        <View paddingVertical="$2xl">{children}</View>
       </TableFooter>
     );
   },
@@ -295,8 +295,7 @@ const TableFrame = styled(ThemeableStack, {
   name: TABLE_NAME,
   context: TableContext,
 
-  tag: "table",
-  backgrounded: false,
+  render: "table",
 
   borderWidth: 0,
   maxWidth: "100%",

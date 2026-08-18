@@ -16,14 +16,21 @@
 
  ------------------------------------------------------------------- */
 
-import theme from "@cyclone-ui/themes/storybook";
+import { GLOBALS_UPDATED } from "storybook/internal/core-events";
 import { addons } from "storybook/manager-api";
+import { resolveStorybookTheme, storybookThemes } from "./storybook-themes";
 
-/**
- * Storybook `create()` requires CSS color strings. The generated Razorwind
- * theme currently emits unresolved DTCG token objects, which crash the
- * manager and leave a blank page.
- */
 addons.setConfig({
-  theme: theme.dark
+  theme: storybookThemes.dark
+});
+
+addons.register("cyclone-ui/theme", api => {
+  const syncManagerTheme = () => {
+    addons.setConfig({
+      theme: resolveStorybookTheme(api.getGlobals().mode)
+    });
+  };
+
+  syncManagerTheme();
+  api.on(GLOBALS_UPDATED, syncManagerTheme);
 });

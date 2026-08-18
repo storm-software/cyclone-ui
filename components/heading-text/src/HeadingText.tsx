@@ -22,12 +22,11 @@ import { SizableText } from "@tamagui/text";
 
 const BaseHeadingText = styled(SizableText, {
   name: "HeadingText",
-  tag: "span",
-  accessibilityRole: "header",
+  render: "span",
+  role: "heading",
 
-  color: "$foregroundOnPrimary",
-  fontFamily: "$heading",
-  size: "$true"
+  color: "$foregroundPrimary",
+  fontFamily: "$heading-md"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
@@ -83,36 +82,36 @@ export const HeadingText = BaseHeadingText.styleable<{ level?: number }>(
 
 export const Heading1Text = styled(BaseHeadingText, {
   name: "Heading1Text",
-  tag: "h1",
-  size: "$12"
+  render: "h1",
+  size: "$7xl"
 });
 
 export const Heading2Text = styled(BaseHeadingText, {
   name: "Heading2Text",
-  tag: "h2",
-  size: "$11"
+  render: "h2",
+  size: "$6xl"
 });
 
 export const Heading3Text = styled(BaseHeadingText, {
   name: "Heading3Text",
-  tag: "h3",
-  size: "$10"
+  render: "h3",
+  size: "$5xl"
 });
 
 export const Heading4Text = styled(BaseHeadingText, {
   name: "Heading4Text",
-  tag: "h4",
-  size: "$9"
+  render: "h4",
+  size: "$3xl"
 });
 
 export const Heading5Text = styled(BaseHeadingText, {
   name: "Heading5Text",
-  tag: "h5",
-  size: "$8"
+  render: "h5",
+  size: "$2xl"
 });
 
 export const Heading6Text = styled(BaseHeadingText, {
   name: "Heading6Text",
-  tag: "h6",
-  size: "$7"
+  render: "h6",
+  size: "$xl"
 });

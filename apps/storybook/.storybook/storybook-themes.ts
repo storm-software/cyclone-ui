@@ -16,32 +16,16 @@
 
  ------------------------------------------------------------------- */
 
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useEffect, useState } from "react";
-import { Check } from "./Check";
+import themes from "@cyclone-ui/themes/storybook";
 
-const meta: Meta<typeof Check> = {
-  title: "Vectors/Check",
-  component: Check,
-  tags: ["autodocs"],
-  render: (args: any) => {
-    const [isComplete, setIsComplete] = useState(false);
-    useEffect(() => {
-      setInterval(() => {
-        setIsComplete((prev: boolean) => !prev);
-      }, 3000);
-    }, [setIsComplete]);
+export const storybookThemes = themes;
 
-    return <Check {...args} isComplete={isComplete} />;
-  }
-} satisfies Meta<typeof Check>;
+export type StorybookColorMode = keyof typeof storybookThemes;
 
-export default meta;
+export function resolveStorybookMode(value: unknown): StorybookColorMode {
+  return value === "light" ? "light" : "dark";
+}
 
-type Story = StoryObj<typeof Check>;
-
-export const Base: Story = {
-  args: {
-    size: "$8xl"
-  }
-};
+export function resolveStorybookTheme(value: unknown) {
+  return storybookThemes[resolveStorybookMode(value)];
+}

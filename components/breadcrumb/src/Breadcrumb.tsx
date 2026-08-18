@@ -47,7 +47,7 @@ const BreadcrumbFrame = styled(XGroup, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
 
-  animation: "normal",
+  transition: "medium",
   alignItems: "center",
   flexWrap: "nowrap",
   flexShrink: 1,
@@ -67,7 +67,7 @@ const BreadcrumbCurrent = styled(LabelText, {
   name: "BreadcrumbCurrent",
   context: BreadcrumbContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "default",
   color: "$foregroundOnPrimary",
   fontFamily: "$link",
@@ -99,7 +99,7 @@ const BreadcrumbLink = styled(Link, {
   name: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  animation: "normal",
+  transition: "medium",
   underline: "initial"
 });
 
@@ -120,13 +120,13 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
         </View>
 
         {variant === BreadcrumbVariant.CHEVRON && (
-          <ChevronRight color="$borderPrimary" size="$2" />
+          <ChevronRight color="$borderPrimary" size="$xl" />
         )}
         {variant === BreadcrumbVariant.DOUBLE && (
-          <ChevronsRight color="$borderPrimary" size="$2" />
+          <ChevronsRight color="$borderPrimary" size="$xl" />
         )}
         {variant === BreadcrumbVariant.SLASH && (
-          <Slash color="$borderPrimary" size="$0.75" />
+          <Slash color="$borderPrimary" size="$sm" />
         )}
       </XGroup.Item>
     );

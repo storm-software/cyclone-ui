@@ -23,7 +23,10 @@
     "@storm-software/workspace-tools/plugins/typescript/untyped",
     "@storm-software/workspace-tools/plugins/typescript/tsdown",
     "@powerlines/nx/plugin",
-    "@razorwind/nx/plugin",
+    {
+      "plugin": "@razorwind/nx/plugin",
+      "options": { "targetName": "generate-tokens" }
+    },
     "./dist/nx-plugins/components.js",
     "./dist/nx-plugins/storybook.js"
   ],

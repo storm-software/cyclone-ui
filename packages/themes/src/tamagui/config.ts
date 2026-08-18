@@ -7,16 +7,84 @@
  */
 
 import { isWeb } from '@tamagui/constants';
-import { createV5Theme, type CreateV5ThemeOptions } from "./create-v5-theme";
+import { createV5Theme, type CreateV5ThemeOptions } from "@tamagui/config/v5";
 import { animations } from "@tamagui/config/v5-motion";
 import userConfig from "./default-config";
 import { createTamagui, px, createTokens, createFont } from "@tamagui/core";
 
 const tokens = createTokens({
   color: {
+    backgroundAccentDisabled: "#1fb2a699",
+    backgroundAccentHover: "#009c91",
+    backgroundAccentSubtleDisabled: "#00383299",
+    backgroundAccentSubtleHover: "#0b403a",
+    backgroundDangerDisabled: "#d8616499",
+    backgroundDangerHover: "#c24d52",
+    backgroundDangerSubtleDisabled: "#a94e5099",
+    backgroundDangerSubtleHover: "#973e41",
+    backgroundDiscoveryDisabled: "#7f7ee499",
+    backgroundDiscoveryHover: "#6d6ace",
+    backgroundDiscoverySubtleDisabled: "#6261af99",
+    backgroundDiscoverySubtleHover: "#54529e",
+    backgroundElevatedDisabled: "#f4f4f399",
+    backgroundElevatedHover: "#d4d4d3",
+    backgroundFloatingDisabled: "#e8e7e699",
+    backgroundFloatingHover: "#cac9c8",
+    backgroundInfoDisabled: "#00b8e699",
+    backgroundInfoHover: "#00a1ce",
+    backgroundInfoSubtleDisabled: "#00749699",
+    backgroundInfoSubtleHover: "#006586",
+    backgroundLinkDisabled: "#468ae299",
+    backgroundLinkHover: "#3276cd",
+    backgroundPageDisabled: "#ffffff99",
+    backgroundPageHover: "#dedede",
+    backgroundPrimaryDisabled: "#f4f4f499",
+    backgroundPrimaryHover: "#d4d4d4",
+    backgroundSecondaryDisabled: "#1c1c1c99",
+    backgroundSecondaryHover: "#212121",
+    backgroundSuccessDisabled: "#00a46999",
+    backgroundSuccessHover: "#009057",
+    backgroundSuccessSubtleDisabled: "#007a4d99",
+    backgroundSuccessSubtleHover: "#006b3f",
+    backgroundTertiaryDisabled: "#18181899",
+    backgroundTertiaryHover: "#1d1d1d",
+    backgroundWarningDisabled: "#d4940099",
+    backgroundWarningHover: "#bd7e00",
+    backgroundWarningSubtleDisabled: "#8f630099",
+    backgroundWarningSubtleHover: "#7f5400",
     black: "#0c0c0d",
-    brand1: "oklch(0.6897 0.1156 186.1)",
-    brand2: "oklch(0.301 0.066 184.397587)",
+    borderAccentDisabled: "#1fb2a699",
+    borderAccentHover: "#009c91",
+    borderAccentSubtleDisabled: "#00383299",
+    borderAccentSubtleHover: "#0b403a",
+    borderDangerDisabled: "#d8616499",
+    borderDangerHover: "#c24d52",
+    borderDangerSubtleDisabled: "#a94e5099",
+    borderDangerSubtleHover: "#973e41",
+    borderDiscoveryDisabled: "#7f7ee499",
+    borderDiscoveryHover: "#6d6ace",
+    borderDiscoverySubtleDisabled: "#6261af99",
+    borderDiscoverySubtleHover: "#54529e",
+    borderInfoDisabled: "#00b8e699",
+    borderInfoHover: "#00a1ce",
+    borderInfoSubtleDisabled: "#00749699",
+    borderInfoSubtleHover: "#006586",
+    borderPrimaryDisabled: "#26262699",
+    borderPrimaryHover: "#2d2d2d",
+    borderSecondaryDisabled: "#1c1c1c99",
+    borderSecondaryHover: "#212121",
+    borderSuccessDisabled: "#00a46999",
+    borderSuccessHover: "#009057",
+    borderSuccessSubtleDisabled: "#007a4d99",
+    borderSuccessSubtleHover: "#006b3f",
+    borderTertiaryDisabled: "#18181899",
+    borderTertiaryHover: "#1d1d1d",
+    borderWarningDisabled: "#d4940099",
+    borderWarningHover: "#bd7e00",
+    borderWarningSubtleDisabled: "#8f630099",
+    borderWarningSubtleHover: "#7f5400",
+    brand1: "#1fb2a6",
+    brand2: "#003832",
     dark_base1: "#fbfbfb",
     dark_base2: "#f6f6f6",
     dark_base3: "#eaeaea",
@@ -26,81 +94,119 @@ const tokens = createTokens({
     dark_base7: "#727476",
     dark_base8: "#494b4d",
     dark_base9: "#1e2023",
-    dark_blue1: "oklch(0.86 0.08 256)",
-    dark_blue2: "oklch(0.83 0.09 256)",
-    dark_blue3: "oklch(0.8 0.11 256)",
-    dark_blue4: "oklch(0.77 0.12 256)",
-    dark_blue5: "oklch(0.75 0.14 256)",
-    dark_blue6: "oklch(0.72 0.15 256)",
-    dark_blue7: "oklch(0.69 0.16 256)",
-    dark_blue8: "oklch(0.66 0.15 256)",
-    dark_blue9: "oklch(0.56 0.13 256)",
-    dark_green1: "oklch(0.85 0.08 155)",
-    dark_green2: "oklch(0.82 0.09 155)",
-    dark_green3: "oklch(0.78 0.11 155)",
-    dark_green4: "oklch(0.76 0.12 155)",
-    dark_green5: "oklch(0.73 0.14 155)",
-    dark_green6: "oklch(0.7 0.15 155)",
-    dark_green7: "oklch(0.67 0.16 155)",
-    dark_green8: "oklch(0.64 0.15 155)",
-    dark_green9: "oklch(0.55 0.13 155)",
-    dark_orange1: "oklch(0.87 0.08 47)",
-    dark_orange2: "oklch(0.84 0.09 47)",
-    dark_orange3: "oklch(0.81 0.11 47)",
-    dark_orange4: "oklch(0.78 0.12 47)",
-    dark_orange5: "oklch(0.76 0.14 47)",
-    dark_orange6: "oklch(0.73 0.15 47)",
-    dark_orange7: "oklch(0.7 0.16 47)",
-    dark_orange8: "oklch(0.67 0.15 47)",
-    dark_orange9: "oklch(0.57 0.13 47)",
-    dark_pink1: "oklch(0.87 0.08 356)",
-    dark_pink2: "oklch(0.84 0.09 356)",
-    dark_pink3: "oklch(0.81 0.11 356)",
-    dark_pink4: "oklch(0.79 0.12 356)",
-    dark_pink5: "oklch(0.77 0.14 356)",
-    dark_pink6: "oklch(0.74 0.15 356)",
-    dark_pink7: "oklch(0.71 0.16 356)",
-    dark_pink8: "oklch(0.68 0.15 356)",
-    dark_pink9: "oklch(0.58 0.13 356)",
-    dark_purple1: "oklch(0.86 0.08 282)",
-    dark_purple2: "oklch(0.83 0.09 282)",
-    dark_purple3: "oklch(0.8 0.11 282)",
-    dark_purple4: "oklch(0.78 0.12 282)",
-    dark_purple5: "oklch(0.76 0.14 282)",
-    dark_purple6: "oklch(0.73 0.15 282)",
-    dark_purple7: "oklch(0.7 0.16 282)",
-    dark_purple8: "oklch(0.67 0.15 282)",
-    dark_purple9: "oklch(0.57 0.13 282)",
-    dark_red1: "oklch(0.87 0.08 20)",
-    dark_red2: "oklch(0.84 0.09 20)",
-    dark_red3: "oklch(0.81 0.11 20)",
-    dark_red4: "oklch(0.79 0.12 20)",
-    dark_red5: "oklch(0.77 0.14 20)",
-    dark_red6: "oklch(0.74 0.15 20)",
-    dark_red7: "oklch(0.71 0.16 20)",
-    dark_red8: "oklch(0.68 0.15 20)",
-    dark_red9: "oklch(0.57 0.13 20)",
-    dark_sky1: "oklch(0.85 0.08 220)",
-    dark_sky2: "oklch(0.82 0.09 220)",
-    dark_sky3: "oklch(0.79 0.11 220)",
-    dark_sky4: "oklch(0.76 0.12 220)",
-    dark_sky5: "oklch(0.74 0.14 220)",
-    dark_sky6: "oklch(0.71 0.15 220)",
-    dark_sky7: "oklch(0.67 0.16 220)",
-    dark_sky8: "oklch(0.64 0.15 220)",
-    dark_sky9: "oklch(0.55 0.13 220)",
+    dark_blue1: "#afd4ff",
+    dark_blue2: "#a1caff",
+    dark_blue3: "#8ec1ff",
+    dark_blue4: "#80b7ff",
+    dark_blue5: "#70b0ff",
+    dark_blue6: "#61a6ff",
+    dark_blue7: "#529cfc",
+    dark_blue8: "#4f93ec",
+    dark_blue9: "#3c75bf",
+    dark_green1: "#a4deb7",
+    dark_green2: "#95d6ab",
+    dark_green3: "#7bcc98",
+    dark_green4: "#6dc88f",
+    dark_green5: "#52c180",
+    dark_green6: "#3bb974",
+    dark_green7: "#19b168",
+    dark_green8: "#1ea662",
+    dark_green9: "#14874e",
+    dark_orange1: "#ffc5a8",
+    dark_orange2: "#fcb998",
+    dark_orange3: "#fcab83",
+    dark_orange4: "#f69f73",
+    dark_orange5: "#f9935f",
+    dark_orange6: "#f3874e",
+    dark_orange7: "#ec7a3b",
+    dark_orange8: "#de743a",
+    dark_orange9: "#b45b2b",
+    dark_pink1: "#ffbfd6",
+    dark_pink2: "#fbb2cc",
+    dark_pink3: "#faa3c3",
+    dark_pink4: "#f899bd",
+    dark_pink5: "#f98cb7",
+    dark_pink6: "#f37fae",
+    dark_pink7: "#ed72a5",
+    dark_pink8: "#de6d9b",
+    dark_pink9: "#b4567d",
+    dark_purple1: "#c8cbff",
+    dark_purple2: "#bdc1ff",
+    dark_purple3: "#b2b5ff",
+    dark_purple4: "#abaeff",
+    dark_purple5: "#a4a5ff",
+    dark_purple6: "#9a9aff",
+    dark_purple7: "#908ffe",
+    dark_purple8: "#8887ee",
+    dark_purple9: "#6c6bc1",
+    dark_red1: "#ffc0bf",
+    dark_red2: "#ffb3b2",
+    dark_red3: "#ffa4a3",
+    dark_red4: "#fe9a9a",
+    dark_red5: "#ff8d8f",
+    dark_red6: "#fb8083",
+    dark_red7: "#f57377",
+    dark_red8: "#e66d71",
+    dark_red9: "#b75357",
+    dark_sky1: "#91dbf2",
+    dark_sky2: "#7ed2ed",
+    dark_sky3: "#5ccbeb",
+    dark_sky4: "#42c2e6",
+    dark_sky5: "#00bee7",
+    dark_sky6: "#00b5e2",
+    dark_sky7: "#00a9d8",
+    dark_sky8: "#009fca",
+    dark_sky9: "#0081a5",
     dark_surface1: "#1a1c1f",
     dark_surface2: "#1e2023",
     dark_surface3: "#242629",
-    dark_yellow1: "oklch(0.86 0.08 81)",
-    dark_yellow2: "oklch(0.83 0.09 81)",
-    dark_yellow3: "oklch(0.8 0.11 81)",
-    dark_yellow4: "oklch(0.78 0.12 81)",
-    dark_yellow5: "oklch(0.75 0.14 81)",
-    dark_yellow6: "oklch(0.73 0.15 81)",
-    dark_yellow7: "oklch(0.69 0.16 81)",
-    dark_yellow8: "oklch(0.66 0.15 81)",
-    dark_yellow9: "oklch(0.56 0.13 81)",
+    dark_yellow1: "#eccc95",
+    dark_yellow2: "#e5c283",
+    dark_yellow3: "#e2b667",
+    dark_yellow4: "#dfaf56",
+    dark_yellow5: "#dba330",
+    dark_yellow6: "#d79c05",
+    dark_yellow7: "#cd8e00",
+    dark_yellow8: "#c08600",
+    dark_yellow9: "#9b6a00",
+    foregroundAccentDisabled: "#1fb2a699",
+    foregroundAccentHover: "#009c91",
+    foregroundDangerDisabled: "#d8616499",
+    foregroundDangerHover: "#c24d52",
+    foregroundDiscoveryDisabled: "#7f7ee499",
+    foregroundDiscoveryHover: "#6d6ace",
+    foregroundInfoDisabled: "#00b8e699",
+    foregroundInfoHover: "#00a1ce",
+    foregroundLinkDisabled: "#468ae299",
+    foregroundLinkHover: "#3276cd",
+    foregroundOnAccentDisabled: "#f4f4f499",
+    foregroundOnAccentHover: "#d4d4d4",
+    foregroundOnDangerDisabled: "#f4f4f499",
+    foregroundOnDangerHover: "#d4d4d4",
+    foregroundOnDiscoveryDisabled: "#f4f4f499",
+    foregroundOnDiscoveryHover: "#d4d4d4",
+    foregroundOnInfoDisabled: "#f4f4f499",
+    foregroundOnInfoHover: "#d4d4d4",
+    foregroundOnPrimaryDisabled: "#18181899",
+    foregroundOnPrimaryHover: "#1d1d1d",
+    foregroundOnSecondaryDisabled: "#f4f4f499",
+    foregroundOnSecondaryHover: "#d4d4d4",
+    foregroundOnSuccessDisabled: "#f4f4f499",
+    foregroundOnSuccessHover: "#d4d4d4",
+    foregroundOnTertiaryDisabled: "#f4f4f499",
+    foregroundOnTertiaryHover: "#d4d4d4",
+    foregroundOnWarningDisabled: "#18181899",
+    foregroundOnWarningHover: "#1d1d1d",
+    foregroundPrimaryDisabled: "#f4f4f499",
+    foregroundPrimaryHover: "#d4d4d4",
+    foregroundSecondaryDisabled: "#1c1c1c99",
+    foregroundSecondaryHover: "#212121",
+    foregroundSuccessDisabled: "#00a46999",
+    foregroundSuccessHover: "#009057",
+    foregroundTertiaryDisabled: "#18181899",
+    foregroundTertiaryHover: "#1d1d1d",
+    foregroundWarningDisabled: "#d4940099",
+    foregroundWarningHover: "#bd7e00",
     light_base1: "#f4f4f4",
     light_base2: "#c1c1c1",
     light_base3: "#949494",
@@ -110,82 +216,86 @@ const tokens = createTokens({
     light_base7: "#262626",
     light_base8: "#1c1c1c",
     light_base9: "#181818",
-    light_blue1: "oklch(0.78 0.12 256)",
-    light_blue2: "oklch(0.77 0.13 256)",
-    light_blue3: "oklch(0.74 0.15 256)",
-    light_blue4: "oklch(0.71 0.16 256)",
-    light_blue5: "oklch(0.68 0.16 256)",
-    light_blue6: "oklch(0.65 0.15 256)",
-    light_blue7: "oklch(0.63 0.15 256)",
-    light_blue8: "oklch(0.59 0.14 256)",
-    light_blue9: "oklch(0.52 0.12 256)",
-    light_green1: "oklch(0.77 0.12 160)",
-    light_green2: "oklch(0.75 0.13 160)",
-    light_green3: "oklch(0.72 0.15 160)",
-    light_green4: "oklch(0.68 0.16 160)",
-    light_green5: "oklch(0.66 0.16 160)",
-    light_green6: "oklch(0.63 0.15 160)",
-    light_green7: "oklch(0.61 0.15 160)",
-    light_green8: "oklch(0.57 0.14 160)",
-    light_green9: "oklch(0.51 0.12 160)",
-    light_orange1: "oklch(0.79 0.12 47)",
-    light_orange2: "oklch(0.78 0.13 47)",
-    light_orange3: "oklch(0.75 0.15 47)",
-    light_orange4: "oklch(0.72 0.16 47)",
-    light_orange5: "oklch(0.69 0.16 47)",
-    light_orange6: "oklch(0.67 0.15 47)",
-    light_orange7: "oklch(0.64 0.15 47)",
-    light_orange8: "oklch(0.6 0.14 47)",
-    light_orange9: "oklch(0.53 0.12 47)",
-    light_pink1: "oklch(0.8 0.12 356)",
-    light_pink2: "oklch(0.78 0.13 356)",
-    light_pink3: "oklch(0.75 0.15 356)",
-    light_pink4: "oklch(0.72 0.16 356)",
-    light_pink5: "oklch(0.7 0.16 356)",
-    light_pink6: "oklch(0.67 0.15 356)",
-    light_pink7: "oklch(0.64 0.15 356)",
-    light_pink8: "oklch(0.61 0.14 356)",
-    light_pink9: "oklch(0.54 0.12 356)",
-    light_purple1: "oklch(0.79 0.12 282)",
-    light_purple2: "oklch(0.77 0.13 282)",
-    light_purple3: "oklch(0.75 0.15 282)",
-    light_purple4: "oklch(0.72 0.16 282)",
-    light_purple5: "oklch(0.69 0.16 282)",
-    light_purple6: "oklch(0.66 0.15 282)",
-    light_purple7: "oklch(0.64 0.15 282)",
-    light_purple8: "oklch(0.6 0.14 282)",
-    light_purple9: "oklch(0.53 0.12 282)",
-    light_red1: "oklch(0.8 0.12 21)",
-    light_red2: "oklch(0.78 0.13 21)",
-    light_red3: "oklch(0.75 0.15 21)",
-    light_red4: "oklch(0.72 0.16 21)",
-    light_red5: "oklch(0.7 0.16 21)",
-    light_red6: "oklch(0.67 0.15 21)",
-    light_red7: "oklch(0.64 0.15 21)",
-    light_red8: "oklch(0.61 0.14 21)",
-    light_red9: "oklch(0.54 0.12 21)",
-    light_sky1: "oklch(0.77 0.12 221)",
-    light_sky2: "oklch(0.76 0.13 221)",
-    light_sky3: "oklch(0.72 0.15 221)",
-    light_sky4: "oklch(0.69 0.16 221)",
-    light_sky5: "oklch(0.66 0.16 221)",
-    light_sky6: "oklch(0.64 0.15 221)",
-    light_sky7: "oklch(0.61 0.15 221)",
-    light_sky8: "oklch(0.58 0.14 221)",
-    light_sky9: "oklch(0.51 0.12 221)",
+    light_blue1: "#83baff",
+    light_blue2: "#7bb7ff",
+    light_blue3: "#68acff",
+    light_blue4: "#59a2ff",
+    light_blue5: "#4f99f9",
+    light_blue6: "#4c90e8",
+    light_blue7: "#468ae2",
+    light_blue8: "#3f7ecf",
+    light_blue9: "#3669ac",
+    light_green1: "#67cc9a",
+    light_green2: "#57c791",
+    light_green3: "#2fc183",
+    light_green4: "#00b575",
+    light_green5: "#00af6f",
+    light_green6: "#00a469",
+    light_green7: "#009d63",
+    light_green8: "#008f5a",
+    light_green9: "#007a4d",
+    light_orange1: "#faa276",
+    light_orange2: "#fb9c6c",
+    light_orange3: "#fa8d54",
+    light_orange4: "#f38042",
+    light_orange5: "#e97737",
+    light_orange6: "#de743a",
+    light_orange7: "#d36b2f",
+    light_orange8: "#c2612b",
+    light_orange9: "#a25226",
+    light_pink1: "#fb9cc0",
+    light_pink2: "#f993ba",
+    light_pink3: "#f782b1",
+    light_pink4: "#f075a8",
+    light_pink5: "#e96fa2",
+    light_pink6: "#db6a98",
+    light_pink7: "#d1608f",
+    light_pink8: "#c25b86",
+    light_pink9: "#a34e71",
+    light_purple1: "#aeb1ff",
+    light_purple2: "#a7a9ff",
+    light_purple3: "#a0a0ff",
+    light_purple4: "#9695ff",
+    light_purple5: "#8d8cfb",
+    light_purple6: "#8584eb",
+    light_purple7: "#7f7ee4",
+    light_purple8: "#7473d1",
+    light_purple9: "#6261af",
+    light_red1: "#ff9e9c",
+    light_red2: "#ff9493",
+    light_red3: "#ff8484",
+    light_red4: "#f97678",
+    light_red5: "#f17072",
+    light_red6: "#e26a6c",
+    light_red7: "#d86164",
+    light_red8: "#c95c5e",
+    light_red9: "#a94e50",
+    light_sky1: "#47c5ea",
+    light_sky2: "#2ec3eb",
+    light_sky3: "#00b8e6",
+    light_sky4: "#00afe0",
+    light_sky5: "#00a6d6",
+    light_sky6: "#009ecb",
+    light_sky7: "#0095c2",
+    light_sky8: "#008bb4",
+    light_sky9: "#007496",
     light_surface1: "#ffffff",
     light_surface2: "#f4f4f3",
     light_surface3: "#e8e7e6",
-    light_yellow1: "oklch(0.79 0.12 81)",
-    light_yellow2: "oklch(0.77 0.13 81)",
-    light_yellow3: "oklch(0.74 0.15 81)",
-    light_yellow4: "oklch(0.71 0.16 81)",
-    light_yellow5: "oklch(0.68 0.16 81)",
-    light_yellow6: "oklch(0.66 0.15 81)",
-    light_yellow7: "oklch(0.63 0.15 81)",
-    light_yellow8: "oklch(0.59 0.14 81)",
-    light_yellow9: "oklch(0.53 0.12 81)",
+    light_yellow1: "#e2b259",
+    light_yellow2: "#deab47",
+    light_yellow3: "#db9f10",
+    light_yellow4: "#d49400",
+    light_yellow5: "#ca8b00",
+    light_yellow6: "#c08600",
+    light_yellow7: "#b77d00",
+    light_yellow8: "#a77200",
+    light_yellow9: "#8f6300",
     overlayBackdrop: "#1a1c1f66",
+    overlayBackgroundDisabled: "#e8e7e699",
+    overlayBackgroundHover: "#cac9c8",
+    overlayBorderDisabled: "#26262699",
+    overlayBorderHover: "#2d2d2d",
     transparent: "#ffffff00",
     white: "#ffffff"
   },
@@ -302,24 +412,6 @@ const tokens = createTokens({
     "2xs": "0px 1px 0px 0px #0000000d",
     lg: "0px 10px 15px -3px #0000001a, 0px 4px 6px -4px #0000001a",
     md: "0px 4px 6px -1px #0000001a, 0px 2px 4px -2px #0000001a",
-    ringAccent: "0px 0px 0px 3px var(--color-border-accent)",
-    ringAccentSubtle: "0px 0px 0px 1px var(--color-border-accent)",
-    ringDanger: "0px 0px 0px 3px var(--color-border-danger)",
-    ringDangerSubtle: "0px 0px 0px 1px var(--color-border-danger)",
-    ringDiscovery: "0px 0px 0px 3px var(--color-border-discovery)",
-    ringDiscoverySubtle: "0px 0px 0px 1px var(--color-border-discovery)",
-    ringInfo: "0px 0px 0px 2px var(--color-border-info)",
-    ringInfoSubtle: "0px 0px 0px 1px var(--color-border-info)",
-    ringPrimary: "0px 0px 0px 3px var(--color-border-primary)",
-    ringPrimarySubtle: "0px 0px 0px 1px var(--color-border-primary)",
-    ringSecondary: "0px 0px 0px 1px var(--color-border-secondary)",
-    ringSecondarySubtle: "0px 0px 0px 1px var(--color-border-secondary)",
-    ringSuccess: "0px 0px 0px 3px var(--color-border-success)",
-    ringSuccessSubtle: "0px 0px 0px 1px var(--color-border-success)",
-    ringTertiary: "0px 0px 0px 3px var(--color-border-tertiary)",
-    ringTertiarySubtle: "0px 0px 0px 1px var(--color-border-tertiary)",
-    ringWarning: "0px 0px 0px 3px var(--color-border-warning)",
-    ringWarningSubtle: "0px 0px 0px 1px var(--color-border-warning)",
     sm: "0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a",
     xl: "0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a",
     xs: "0px 1px 2px 0px #0000000d"
@@ -387,170 +479,170 @@ const themes = createV5Theme({
     },
     blue: {
       light: {
-        blue1: "oklch(0.78 0.12 256)",
-        blue2: "oklch(0.77 0.13 256)",
-        blue3: "oklch(0.74 0.15 256)",
-        blue4: "oklch(0.71 0.16 256)",
-        blue5: "oklch(0.68 0.16 256)",
-        blue6: "oklch(0.65 0.15 256)",
-        blue7: "oklch(0.63 0.15 256)",
-        blue8: "oklch(0.59 0.14 256)",
-        blue9: "oklch(0.52 0.12 256)"
+        blue1: "#83baff",
+        blue2: "#7bb7ff",
+        blue3: "#68acff",
+        blue4: "#59a2ff",
+        blue5: "#4f99f9",
+        blue6: "#4c90e8",
+        blue7: "#468ae2",
+        blue8: "#3f7ecf",
+        blue9: "#3669ac"
       },
       dark: {
-        blue1: "oklch(0.56 0.13 256)",
-        blue2: "oklch(0.66 0.15 256)",
-        blue3: "oklch(0.69 0.16 256)",
-        blue4: "oklch(0.72 0.15 256)",
-        blue5: "oklch(0.75 0.14 256)",
-        blue6: "oklch(0.77 0.12 256)",
-        blue7: "oklch(0.8 0.11 256)",
-        blue8: "oklch(0.83 0.09 256)",
-        blue9: "oklch(0.86 0.08 256)"
+        blue1: "#3c75bf",
+        blue2: "#4f93ec",
+        blue3: "#529cfc",
+        blue4: "#61a6ff",
+        blue5: "#70b0ff",
+        blue6: "#80b7ff",
+        blue7: "#8ec1ff",
+        blue8: "#a1caff",
+        blue9: "#afd4ff"
       }
     },
     green: {
       light: {
-        green1: "oklch(0.77 0.12 160)",
-        green2: "oklch(0.75 0.13 160)",
-        green3: "oklch(0.72 0.15 160)",
-        green4: "oklch(0.68 0.16 160)",
-        green5: "oklch(0.66 0.16 160)",
-        green6: "oklch(0.63 0.15 160)",
-        green7: "oklch(0.61 0.15 160)",
-        green8: "oklch(0.57 0.14 160)",
-        green9: "oklch(0.51 0.12 160)"
+        green1: "#67cc9a",
+        green2: "#57c791",
+        green3: "#2fc183",
+        green4: "#00b575",
+        green5: "#00af6f",
+        green6: "#00a469",
+        green7: "#009d63",
+        green8: "#008f5a",
+        green9: "#007a4d"
       },
       dark: {
-        green1: "oklch(0.55 0.13 155)",
-        green2: "oklch(0.64 0.15 155)",
-        green3: "oklch(0.67 0.16 155)",
-        green4: "oklch(0.7 0.15 155)",
-        green5: "oklch(0.73 0.14 155)",
-        green6: "oklch(0.76 0.12 155)",
-        green7: "oklch(0.78 0.11 155)",
-        green8: "oklch(0.82 0.09 155)",
-        green9: "oklch(0.85 0.08 155)"
+        green1: "#14874e",
+        green2: "#1ea662",
+        green3: "#19b168",
+        green4: "#3bb974",
+        green5: "#52c180",
+        green6: "#6dc88f",
+        green7: "#7bcc98",
+        green8: "#95d6ab",
+        green9: "#a4deb7"
       }
     },
     orange: {
       light: {
-        orange1: "oklch(0.79 0.12 47)",
-        orange2: "oklch(0.78 0.13 47)",
-        orange3: "oklch(0.75 0.15 47)",
-        orange4: "oklch(0.72 0.16 47)",
-        orange5: "oklch(0.69 0.16 47)",
-        orange6: "oklch(0.67 0.15 47)",
-        orange7: "oklch(0.64 0.15 47)",
-        orange8: "oklch(0.6 0.14 47)",
-        orange9: "oklch(0.53 0.12 47)"
+        orange1: "#faa276",
+        orange2: "#fb9c6c",
+        orange3: "#fa8d54",
+        orange4: "#f38042",
+        orange5: "#e97737",
+        orange6: "#de743a",
+        orange7: "#d36b2f",
+        orange8: "#c2612b",
+        orange9: "#a25226"
       },
       dark: {
-        orange1: "oklch(0.57 0.13 47)",
-        orange2: "oklch(0.67 0.15 47)",
-        orange3: "oklch(0.7 0.16 47)",
-        orange4: "oklch(0.73 0.15 47)",
-        orange5: "oklch(0.76 0.14 47)",
-        orange6: "oklch(0.78 0.12 47)",
-        orange7: "oklch(0.81 0.11 47)",
-        orange8: "oklch(0.84 0.09 47)",
-        orange9: "oklch(0.87 0.08 47)"
+        orange1: "#b45b2b",
+        orange2: "#de743a",
+        orange3: "#ec7a3b",
+        orange4: "#f3874e",
+        orange5: "#f9935f",
+        orange6: "#f69f73",
+        orange7: "#fcab83",
+        orange8: "#fcb998",
+        orange9: "#ffc5a8"
       }
     },
     pink: {
       light: {
-        pink1: "oklch(0.8 0.12 356)",
-        pink2: "oklch(0.78 0.13 356)",
-        pink3: "oklch(0.75 0.15 356)",
-        pink4: "oklch(0.72 0.16 356)",
-        pink5: "oklch(0.7 0.16 356)",
-        pink6: "oklch(0.67 0.15 356)",
-        pink7: "oklch(0.64 0.15 356)",
-        pink8: "oklch(0.61 0.14 356)",
-        pink9: "oklch(0.54 0.12 356)"
+        pink1: "#fb9cc0",
+        pink2: "#f993ba",
+        pink3: "#f782b1",
+        pink4: "#f075a8",
+        pink5: "#e96fa2",
+        pink6: "#db6a98",
+        pink7: "#d1608f",
+        pink8: "#c25b86",
+        pink9: "#a34e71"
       },
       dark: {
-        pink1: "oklch(0.58 0.13 356)",
-        pink2: "oklch(0.68 0.15 356)",
-        pink3: "oklch(0.71 0.16 356)",
-        pink4: "oklch(0.74 0.15 356)",
-        pink5: "oklch(0.77 0.14 356)",
-        pink6: "oklch(0.79 0.12 356)",
-        pink7: "oklch(0.81 0.11 356)",
-        pink8: "oklch(0.84 0.09 356)",
-        pink9: "oklch(0.87 0.08 356)"
+        pink1: "#b4567d",
+        pink2: "#de6d9b",
+        pink3: "#ed72a5",
+        pink4: "#f37fae",
+        pink5: "#f98cb7",
+        pink6: "#f899bd",
+        pink7: "#faa3c3",
+        pink8: "#fbb2cc",
+        pink9: "#ffbfd6"
       }
     },
     purple: {
       light: {
-        purple1: "oklch(0.79 0.12 282)",
-        purple2: "oklch(0.77 0.13 282)",
-        purple3: "oklch(0.75 0.15 282)",
-        purple4: "oklch(0.72 0.16 282)",
-        purple5: "oklch(0.69 0.16 282)",
-        purple6: "oklch(0.66 0.15 282)",
-        purple7: "oklch(0.64 0.15 282)",
-        purple8: "oklch(0.6 0.14 282)",
-        purple9: "oklch(0.53 0.12 282)"
+        purple1: "#aeb1ff",
+        purple2: "#a7a9ff",
+        purple3: "#a0a0ff",
+        purple4: "#9695ff",
+        purple5: "#8d8cfb",
+        purple6: "#8584eb",
+        purple7: "#7f7ee4",
+        purple8: "#7473d1",
+        purple9: "#6261af"
       },
       dark: {
-        purple1: "oklch(0.57 0.13 282)",
-        purple2: "oklch(0.67 0.15 282)",
-        purple3: "oklch(0.7 0.16 282)",
-        purple4: "oklch(0.73 0.15 282)",
-        purple5: "oklch(0.76 0.14 282)",
-        purple6: "oklch(0.78 0.12 282)",
-        purple7: "oklch(0.8 0.11 282)",
-        purple8: "oklch(0.83 0.09 282)",
-        purple9: "oklch(0.86 0.08 282)"
+        purple1: "#6c6bc1",
+        purple2: "#8887ee",
+        purple3: "#908ffe",
+        purple4: "#9a9aff",
+        purple5: "#a4a5ff",
+        purple6: "#abaeff",
+        purple7: "#b2b5ff",
+        purple8: "#bdc1ff",
+        purple9: "#c8cbff"
       }
     },
     red: {
       light: {
-        red1: "oklch(0.8 0.12 21)",
-        red2: "oklch(0.78 0.13 21)",
-        red3: "oklch(0.75 0.15 21)",
-        red4: "oklch(0.72 0.16 21)",
-        red5: "oklch(0.7 0.16 21)",
-        red6: "oklch(0.67 0.15 21)",
-        red7: "oklch(0.64 0.15 21)",
-        red8: "oklch(0.61 0.14 21)",
-        red9: "oklch(0.54 0.12 21)"
+        red1: "#ff9e9c",
+        red2: "#ff9493",
+        red3: "#ff8484",
+        red4: "#f97678",
+        red5: "#f17072",
+        red6: "#e26a6c",
+        red7: "#d86164",
+        red8: "#c95c5e",
+        red9: "#a94e50"
       },
       dark: {
-        red1: "oklch(0.57 0.13 20)",
-        red2: "oklch(0.68 0.15 20)",
-        red3: "oklch(0.71 0.16 20)",
-        red4: "oklch(0.74 0.15 20)",
-        red5: "oklch(0.77 0.14 20)",
-        red6: "oklch(0.79 0.12 20)",
-        red7: "oklch(0.81 0.11 20)",
-        red8: "oklch(0.84 0.09 20)",
-        red9: "oklch(0.87 0.08 20)"
+        red1: "#b75357",
+        red2: "#e66d71",
+        red3: "#f57377",
+        red4: "#fb8083",
+        red5: "#ff8d8f",
+        red6: "#fe9a9a",
+        red7: "#ffa4a3",
+        red8: "#ffb3b2",
+        red9: "#ffc0bf"
       }
     },
     sky: {
       light: {
-        sky1: "oklch(0.77 0.12 221)",
-        sky2: "oklch(0.76 0.13 221)",
-        sky3: "oklch(0.72 0.15 221)",
-        sky4: "oklch(0.69 0.16 221)",
-        sky5: "oklch(0.66 0.16 221)",
-        sky6: "oklch(0.64 0.15 221)",
-        sky7: "oklch(0.61 0.15 221)",
-        sky8: "oklch(0.58 0.14 221)",
-        sky9: "oklch(0.51 0.12 221)"
+        sky1: "#47c5ea",
+        sky2: "#2ec3eb",
+        sky3: "#00b8e6",
+        sky4: "#00afe0",
+        sky5: "#00a6d6",
+        sky6: "#009ecb",
+        sky7: "#0095c2",
+        sky8: "#008bb4",
+        sky9: "#007496"
       },
       dark: {
-        sky1: "oklch(0.55 0.13 220)",
-        sky2: "oklch(0.64 0.15 220)",
-        sky3: "oklch(0.67 0.16 220)",
-        sky4: "oklch(0.71 0.15 220)",
-        sky5: "oklch(0.74 0.14 220)",
-        sky6: "oklch(0.76 0.12 220)",
-        sky7: "oklch(0.79 0.11 220)",
-        sky8: "oklch(0.82 0.09 220)",
-        sky9: "oklch(0.85 0.08 220)"
+        sky1: "#0081a5",
+        sky2: "#009fca",
+        sky3: "#00a9d8",
+        sky4: "#00b5e2",
+        sky5: "#00bee7",
+        sky6: "#42c2e6",
+        sky7: "#5ccbeb",
+        sky8: "#7ed2ed",
+        sky9: "#91dbf2"
       }
     },
     surface: {
@@ -567,26 +659,26 @@ const themes = createV5Theme({
     },
     yellow: {
       light: {
-        yellow1: "oklch(0.79 0.12 81)",
-        yellow2: "oklch(0.77 0.13 81)",
-        yellow3: "oklch(0.74 0.15 81)",
-        yellow4: "oklch(0.71 0.16 81)",
-        yellow5: "oklch(0.68 0.16 81)",
-        yellow6: "oklch(0.66 0.15 81)",
-        yellow7: "oklch(0.63 0.15 81)",
-        yellow8: "oklch(0.59 0.14 81)",
-        yellow9: "oklch(0.53 0.12 81)"
+        yellow1: "#e2b259",
+        yellow2: "#deab47",
+        yellow3: "#db9f10",
+        yellow4: "#d49400",
+        yellow5: "#ca8b00",
+        yellow6: "#c08600",
+        yellow7: "#b77d00",
+        yellow8: "#a77200",
+        yellow9: "#8f6300"
       },
       dark: {
-        yellow1: "oklch(0.56 0.13 81)",
-        yellow2: "oklch(0.66 0.15 81)",
-        yellow3: "oklch(0.69 0.16 81)",
-        yellow4: "oklch(0.73 0.15 81)",
-        yellow5: "oklch(0.75 0.14 81)",
-        yellow6: "oklch(0.78 0.12 81)",
-        yellow7: "oklch(0.8 0.11 81)",
-        yellow8: "oklch(0.83 0.09 81)",
-        yellow9: "oklch(0.86 0.08 81)"
+        yellow1: "#9b6a00",
+        yellow2: "#c08600",
+        yellow3: "#cd8e00",
+        yellow4: "#d79c05",
+        yellow5: "#dba330",
+        yellow6: "#dfaf56",
+        yellow7: "#e2b667",
+        yellow8: "#e5c283",
+        yellow9: "#eccc95"
       }
     }
   },
@@ -594,133 +686,329 @@ const themes = createV5Theme({
     return scheme === "dark"
       ? {
         ...theme,
-        backgroundAccent: "oklch(0.8108 0.139 177.33)",
-        backgroundAccentSubtle: "oklch(0.301 0.066 184.397587)",
-        backgroundDanger: theme.red7,
-        backgroundDangerSubtle: theme.red9,
-        backgroundDiscovery: theme.purple7,
-        backgroundDiscoverySubtle: theme.purple9,
+        backgroundAccent: "#36dec0",
+        backgroundAccentDisabled: "#36dec099",
+        backgroundAccentHover: "#00c3a6",
+        backgroundAccentSubtle: "#003832",
+        backgroundAccentSubtleDisabled: "#00383299",
+        backgroundAccentSubtleHover: "#0b403a",
+        backgroundDanger: theme.red3,
+        backgroundDangerDisabled: "#f5737799",
+        backgroundDangerHover: "#dc5d62",
+        backgroundDangerSubtle: theme.red1,
+        backgroundDangerSubtleDisabled: "#b7535799",
+        backgroundDangerSubtleHover: "#a44247",
+        backgroundDiscovery: theme.purple3,
+        backgroundDiscoveryDisabled: "#908ffe99",
+        backgroundDiscoveryHover: "#7c79e6",
+        backgroundDiscoverySubtle: theme.purple1,
+        backgroundDiscoverySubtleDisabled: "#6c6bc199",
+        backgroundDiscoverySubtleHover: "#5c5aae",
         backgroundElevated: theme.surface2,
+        backgroundElevatedDisabled: "#1e202399",
+        backgroundElevatedHover: "#242629",
         backgroundFloating: theme.surface3,
-        backgroundInfo: theme.sky3,
-        backgroundInfoSubtle: theme.sky9,
-        backgroundLink: theme.blue7,
+        backgroundFloatingDisabled: "#24262999",
+        backgroundFloatingHover: "#2b2d30",
+        backgroundInfo: theme.sky7,
+        backgroundInfoDisabled: "#5ccbeb99",
+        backgroundInfoHover: "#3fb2d1",
+        backgroundInfoSubtle: theme.sky1,
+        backgroundInfoSubtleDisabled: "#0081a599",
+        backgroundInfoSubtleHover: "#007093",
+        backgroundLink: theme.blue3,
+        backgroundLinkDisabled: "#529cfc99",
+        backgroundLinkHover: "#3c86e4",
         backgroundPage: theme.surface1,
-        backgroundPrimary: theme.color1,
-        backgroundSecondary: theme.color8,
-        backgroundSuccess: theme.green6,
-        backgroundSuccessSubtle: theme.green9,
-        backgroundTertiary: theme.color9,
-        backgroundWarning: theme.yellow4,
-        backgroundWarningSubtle: theme.yellow9,
+        backgroundPageDisabled: "#1a1c1f99",
+        backgroundPageHover: "#1f2124",
+        backgroundPrimary: theme.color9,
+        backgroundPrimaryDisabled: "#fbfbfb99",
+        backgroundPrimaryHover: "#dadada",
+        backgroundSecondary: theme.color2,
+        backgroundSecondaryDisabled: "#494b4d99",
+        backgroundSecondaryHover: "#545658",
+        backgroundSuccess: theme.green4,
+        backgroundSuccessDisabled: "#3bb97499",
+        backgroundSuccessHover: "#18a35f",
+        backgroundSuccessSubtle: theme.green1,
+        backgroundSuccessSubtleDisabled: "#14874e99",
+        backgroundSuccessSubtleHover: "#00763f",
+        backgroundTertiary: theme.color1,
+        backgroundTertiaryDisabled: "#1e202399",
+        backgroundTertiaryHover: "#242629",
+        backgroundWarning: theme.yellow6,
+        backgroundWarningDisabled: "#dfaf5699",
+        backgroundWarningHover: "#c5963b",
+        backgroundWarningSubtle: theme.yellow1,
+        backgroundWarningSubtleDisabled: "#9b6a0099",
+        backgroundWarningSubtleHover: "#8a5a00",
         black: "#0c0c0d",
-        borderAccent: "oklch(0.8108 0.139 177.33)",
-        borderAccentSubtle: "oklch(0.301 0.066 184.397587)",
-        borderDanger: theme.red7,
-        borderDangerSubtle: theme.red9,
-        borderDiscovery: theme.purple7,
-        borderDiscoverySubtle: theme.purple9,
-        borderInfo: theme.sky3,
-        borderInfoSubtle: theme.sky9,
-        borderPrimary: theme.color7,
-        borderSecondary: theme.color8,
-        borderSuccess: theme.green6,
-        borderSuccessSubtle: theme.green9,
-        borderTertiary: theme.color9,
-        borderWarning: theme.yellow4,
-        borderWarningSubtle: theme.yellow9,
-        brand1: "oklch(0.8108 0.139 177.33)",
-        brand2: "oklch(0.301 0.066 184.397587)",
-        dataBaseEmphasis: theme.color1,
-        dataBaseSubtle: theme.color8,
+        borderAccent: "#36dec0",
+        borderAccentDisabled: "#36dec099",
+        borderAccentHover: "#00c3a6",
+        borderAccentSubtle: "#003832",
+        borderAccentSubtleDisabled: "#00383299",
+        borderAccentSubtleHover: "#0b403a",
+        borderDanger: theme.red3,
+        borderDangerDisabled: "#f5737799",
+        borderDangerHover: "#dc5d62",
+        borderDangerSubtle: theme.red1,
+        borderDangerSubtleDisabled: "#b7535799",
+        borderDangerSubtleHover: "#a44247",
+        borderDiscovery: theme.purple3,
+        borderDiscoveryDisabled: "#908ffe99",
+        borderDiscoveryHover: "#7c79e6",
+        borderDiscoverySubtle: theme.purple1,
+        borderDiscoverySubtleDisabled: "#6c6bc199",
+        borderDiscoverySubtleHover: "#5c5aae",
+        borderInfo: theme.sky7,
+        borderInfoDisabled: "#5ccbeb99",
+        borderInfoHover: "#3fb2d1",
+        borderInfoSubtle: theme.sky1,
+        borderInfoSubtleDisabled: "#0081a599",
+        borderInfoSubtleHover: "#007093",
+        borderPrimary: theme.color3,
+        borderPrimaryDisabled: "#72747699",
+        borderPrimaryHover: "#626466",
+        borderSecondary: theme.color2,
+        borderSecondaryDisabled: "#494b4d99",
+        borderSecondaryHover: "#545658",
+        borderSuccess: theme.green4,
+        borderSuccessDisabled: "#3bb97499",
+        borderSuccessHover: "#18a35f",
+        borderSuccessSubtle: theme.green1,
+        borderSuccessSubtleDisabled: "#14874e99",
+        borderSuccessSubtleHover: "#00763f",
+        borderTertiary: theme.color1,
+        borderTertiaryDisabled: "#1e202399",
+        borderTertiaryHover: "#242629",
+        borderWarning: theme.yellow6,
+        borderWarningDisabled: "#dfaf5699",
+        borderWarningHover: "#c5963b",
+        borderWarningSubtle: theme.yellow1,
+        borderWarningSubtleDisabled: "#9b6a0099",
+        borderWarningSubtleHover: "#8a5a00",
+        brand1: "#36dec0",
+        brand2: "#003832",
+        dataBaseEmphasis: theme.color9,
+        dataBaseSubtle: theme.color2,
         dataBlueEmphasis: theme.blue5,
-        dataBlueSubtle: theme.blue9,
-        dataBrandEmphasis: "oklch(0.8108 0.139 177.33)",
-        dataBrandSubtle: "oklch(0.301 0.066 184.397587)",
+        dataBlueSubtle: theme.blue1,
+        dataBrandEmphasis: "#36dec0",
+        dataBrandSubtle: "#003832",
         dataGreenEmphasis: theme.green5,
-        dataGreenSubtle: theme.green9,
+        dataGreenSubtle: theme.green1,
         dataOrangeEmphasis: theme.orange5,
-        dataOrangeSubtle: theme.orange9,
+        dataOrangeSubtle: theme.orange1,
         dataPinkEmphasis: theme.pink5,
-        dataPinkSubtle: theme.pink9,
+        dataPinkSubtle: theme.pink1,
         dataPurpleEmphasis: theme.purple5,
-        dataPurpleSubtle: theme.purple9,
+        dataPurpleSubtle: theme.purple1,
         dataRedEmphasis: theme.red5,
-        dataRedSubtle: theme.red9,
+        dataRedSubtle: theme.red1,
         dataSkyEmphasis: theme.sky5,
-        dataSkySubtle: theme.sky9,
+        dataSkySubtle: theme.sky1,
         dataYellowEmphasis: theme.yellow5,
-        dataYellowSubtle: theme.yellow9,
-        foregroundAccent: "oklch(0.8108 0.139 177.33)",
-        foregroundDanger: theme.red7,
-        foregroundDiscovery: theme.purple7,
-        foregroundInfo: theme.sky3,
-        foregroundLink: theme.blue7,
-        foregroundOnAccent: theme.color1,
-        foregroundOnDanger: theme.color1,
-        foregroundOnDiscovery: theme.color1,
-        foregroundOnInfo: theme.color1,
-        foregroundOnPrimary: theme.color9,
-        foregroundOnSecondary: theme.color1,
-        foregroundOnSuccess: theme.color1,
-        foregroundOnTertiary: theme.color1,
-        foregroundOnWarning: theme.color9,
-        foregroundPrimary: theme.color1,
-        foregroundSecondary: theme.color8,
-        foregroundSuccess: theme.green6,
-        foregroundTertiary: theme.color9,
-        foregroundWarning: theme.yellow4,
+        dataYellowSubtle: theme.yellow1,
+        foregroundAccent: "#36dec0",
+        foregroundAccentDisabled: "#36dec099",
+        foregroundAccentHover: "#00c3a6",
+        foregroundDanger: theme.red3,
+        foregroundDangerDisabled: "#f5737799",
+        foregroundDangerHover: "#dc5d62",
+        foregroundDiscovery: theme.purple3,
+        foregroundDiscoveryDisabled: "#908ffe99",
+        foregroundDiscoveryHover: "#7c79e6",
+        foregroundInfo: theme.sky7,
+        foregroundInfoDisabled: "#5ccbeb99",
+        foregroundInfoHover: "#3fb2d1",
+        foregroundLink: theme.blue3,
+        foregroundLinkDisabled: "#529cfc99",
+        foregroundLinkHover: "#3c86e4",
+        foregroundOnAccent: theme.color9,
+        foregroundOnAccentDisabled: "#fbfbfb99",
+        foregroundOnAccentHover: "#dadada",
+        foregroundOnDanger: theme.color9,
+        foregroundOnDangerDisabled: "#fbfbfb99",
+        foregroundOnDangerHover: "#dadada",
+        foregroundOnDiscovery: theme.color9,
+        foregroundOnDiscoveryDisabled: "#fbfbfb99",
+        foregroundOnDiscoveryHover: "#dadada",
+        foregroundOnInfo: theme.color9,
+        foregroundOnInfoDisabled: "#fbfbfb99",
+        foregroundOnInfoHover: "#dadada",
+        foregroundOnPrimary: theme.color1,
+        foregroundOnPrimaryDisabled: "#1e202399",
+        foregroundOnPrimaryHover: "#242629",
+        foregroundOnSecondary: theme.color9,
+        foregroundOnSecondaryDisabled: "#fbfbfb99",
+        foregroundOnSecondaryHover: "#dadada",
+        foregroundOnSuccess: theme.color9,
+        foregroundOnSuccessDisabled: "#fbfbfb99",
+        foregroundOnSuccessHover: "#dadada",
+        foregroundOnTertiary: theme.color9,
+        foregroundOnTertiaryDisabled: "#fbfbfb99",
+        foregroundOnTertiaryHover: "#dadada",
+        foregroundOnWarning: theme.color1,
+        foregroundOnWarningDisabled: "#1e202399",
+        foregroundOnWarningHover: "#242629",
+        foregroundPrimary: theme.color9,
+        foregroundPrimaryDisabled: "#fbfbfb99",
+        foregroundPrimaryHover: "#dadada",
+        foregroundSecondary: theme.color2,
+        foregroundSecondaryDisabled: "#494b4d99",
+        foregroundSecondaryHover: "#545658",
+        foregroundSuccess: theme.green4,
+        foregroundSuccessDisabled: "#3bb97499",
+        foregroundSuccessHover: "#18a35f",
+        foregroundTertiary: theme.color1,
+        foregroundTertiaryDisabled: "#1e202399",
+        foregroundTertiaryHover: "#242629",
+        foregroundWarning: theme.yellow6,
+        foregroundWarningDisabled: "#dfaf5699",
+        foregroundWarningHover: "#c5963b",
         overlayBackdrop: "#0c0c0d66",
         overlayBackground: theme.surface3,
-        overlayBorder: theme.color7,
+        overlayBackgroundDisabled: "#24262999",
+        overlayBackgroundHover: "#2b2d30",
+        overlayBorder: theme.color3,
+        overlayBorderDisabled: "#72747699",
+        overlayBorderHover: "#626466",
+        ringAccent: "0px 0px 0px 3px #36dec0",
+        ringAccentSubtle: "0px 0px 0px 1px #36dec0",
+        ringDanger: `0px 0px 0px 3px ${theme.red3}`,
+        ringDangerSubtle: `0px 0px 0px 1px ${theme.red3}`,
+        ringDiscovery: `0px 0px 0px 3px ${theme.purple3}`,
+        ringDiscoverySubtle: `0px 0px 0px 1px ${theme.purple3}`,
+        ringInfo: `0px 0px 0px 3px ${theme.sky7}`,
+        ringInfoSubtle: `0px 0px 0px 1px ${theme.sky7}`,
+        ringPrimary: `0px 0px 0px 3px ${theme.color3}`,
+        ringPrimarySubtle: `0px 0px 0px 1px ${theme.color3}`,
+        ringSecondary: `0px 0px 0px 3px ${theme.color2}`,
+        ringSecondarySubtle: `0px 0px 0px 1px ${theme.color2}`,
+        ringSuccess: `0px 0px 0px 3px ${theme.green4}`,
+        ringSuccessSubtle: `0px 0px 0px 1px ${theme.green4}`,
+        ringTertiary: `0px 0px 0px 3px ${theme.color1}`,
+        ringTertiarySubtle: `0px 0px 0px 1px ${theme.color1}`,
+        ringWarning: `0px 0px 0px 3px ${theme.yellow6}`,
+        ringWarningSubtle: `0px 0px 0px 1px ${theme.yellow6}`,
         transparent: "#ffffff00",
         white: "#ffffff"
       }
       : {
         ...theme,
-        backgroundAccent: "oklch(0.6897 0.1156 186.1)",
-        backgroundAccentSubtle: "oklch(0.301 0.066 184.397587)",
+        backgroundAccent: "#1fb2a6",
+        backgroundAccentDisabled: "#1fb2a699",
+        backgroundAccentHover: "#009c91",
+        backgroundAccentSubtle: "#003832",
+        backgroundAccentSubtleDisabled: "#00383299",
+        backgroundAccentSubtleHover: "#0b403a",
         backgroundDanger: theme.red7,
+        backgroundDangerDisabled: "#d8616499",
+        backgroundDangerHover: "#c24d52",
         backgroundDangerSubtle: theme.red9,
+        backgroundDangerSubtleDisabled: "#a94e5099",
+        backgroundDangerSubtleHover: "#973e41",
         backgroundDiscovery: theme.purple7,
+        backgroundDiscoveryDisabled: "#7f7ee499",
+        backgroundDiscoveryHover: "#6d6ace",
         backgroundDiscoverySubtle: theme.purple9,
+        backgroundDiscoverySubtleDisabled: "#6261af99",
+        backgroundDiscoverySubtleHover: "#54529e",
         backgroundElevated: theme.surface2,
+        backgroundElevatedDisabled: "#f4f4f399",
+        backgroundElevatedHover: "#d4d4d3",
         backgroundFloating: theme.surface3,
+        backgroundFloatingDisabled: "#e8e7e699",
+        backgroundFloatingHover: "#cac9c8",
         backgroundInfo: theme.sky3,
+        backgroundInfoDisabled: "#00b8e699",
+        backgroundInfoHover: "#00a1ce",
         backgroundInfoSubtle: theme.sky9,
+        backgroundInfoSubtleDisabled: "#00749699",
+        backgroundInfoSubtleHover: "#006586",
         backgroundLink: theme.blue7,
+        backgroundLinkDisabled: "#468ae299",
+        backgroundLinkHover: "#3276cd",
         backgroundPage: theme.surface1,
+        backgroundPageDisabled: "#ffffff99",
+        backgroundPageHover: "#dedede",
         backgroundPrimary: theme.color1,
+        backgroundPrimaryDisabled: "#f4f4f499",
+        backgroundPrimaryHover: "#d4d4d4",
         backgroundSecondary: theme.color8,
+        backgroundSecondaryDisabled: "#1c1c1c99",
+        backgroundSecondaryHover: "#212121",
         backgroundSuccess: theme.green6,
+        backgroundSuccessDisabled: "#00a46999",
+        backgroundSuccessHover: "#009057",
         backgroundSuccessSubtle: theme.green9,
+        backgroundSuccessSubtleDisabled: "#007a4d99",
+        backgroundSuccessSubtleHover: "#006b3f",
         backgroundTertiary: theme.color9,
+        backgroundTertiaryDisabled: "#18181899",
+        backgroundTertiaryHover: "#1d1d1d",
         backgroundWarning: theme.yellow4,
+        backgroundWarningDisabled: "#d4940099",
+        backgroundWarningHover: "#bd7e00",
         backgroundWarningSubtle: theme.yellow9,
+        backgroundWarningSubtleDisabled: "#8f630099",
+        backgroundWarningSubtleHover: "#7f5400",
         black: "#0c0c0d",
-        borderAccent: "oklch(0.6897 0.1156 186.1)",
-        borderAccentSubtle: "oklch(0.301 0.066 184.397587)",
+        borderAccent: "#1fb2a6",
+        borderAccentDisabled: "#1fb2a699",
+        borderAccentHover: "#009c91",
+        borderAccentSubtle: "#003832",
+        borderAccentSubtleDisabled: "#00383299",
+        borderAccentSubtleHover: "#0b403a",
         borderDanger: theme.red7,
+        borderDangerDisabled: "#d8616499",
+        borderDangerHover: "#c24d52",
         borderDangerSubtle: theme.red9,
+        borderDangerSubtleDisabled: "#a94e5099",
+        borderDangerSubtleHover: "#973e41",
         borderDiscovery: theme.purple7,
+        borderDiscoveryDisabled: "#7f7ee499",
+        borderDiscoveryHover: "#6d6ace",
         borderDiscoverySubtle: theme.purple9,
+        borderDiscoverySubtleDisabled: "#6261af99",
+        borderDiscoverySubtleHover: "#54529e",
         borderInfo: theme.sky3,
+        borderInfoDisabled: "#00b8e699",
+        borderInfoHover: "#00a1ce",
         borderInfoSubtle: theme.sky9,
+        borderInfoSubtleDisabled: "#00749699",
+        borderInfoSubtleHover: "#006586",
         borderPrimary: theme.color7,
+        borderPrimaryDisabled: "#26262699",
+        borderPrimaryHover: "#2d2d2d",
         borderSecondary: theme.color8,
+        borderSecondaryDisabled: "#1c1c1c99",
+        borderSecondaryHover: "#212121",
         borderSuccess: theme.green6,
+        borderSuccessDisabled: "#00a46999",
+        borderSuccessHover: "#009057",
         borderSuccessSubtle: theme.green9,
+        borderSuccessSubtleDisabled: "#007a4d99",
+        borderSuccessSubtleHover: "#006b3f",
         borderTertiary: theme.color9,
+        borderTertiaryDisabled: "#18181899",
+        borderTertiaryHover: "#1d1d1d",
         borderWarning: theme.yellow4,
+        borderWarningDisabled: "#d4940099",
+        borderWarningHover: "#bd7e00",
         borderWarningSubtle: theme.yellow9,
-        brand1: "oklch(0.6897 0.1156 186.1)",
-        brand2: "oklch(0.301 0.066 184.397587)",
+        borderWarningSubtleDisabled: "#8f630099",
+        borderWarningSubtleHover: "#7f5400",
+        brand1: "#1fb2a6",
+        brand2: "#003832",
         dataBaseEmphasis: theme.color5,
         dataBaseSubtle: theme.color1,
         dataBlueEmphasis: theme.blue6,
         dataBlueSubtle: theme.blue1,
-        dataBrandEmphasis: "oklch(0.6897 0.1156 186.1)",
-        dataBrandSubtle: "oklch(0.301 0.066 184.397587)",
+        dataBrandEmphasis: "#1fb2a6",
+        dataBrandSubtle: "#003832",
         dataGreenEmphasis: theme.green6,
         dataGreenSubtle: theme.green1,
         dataOrangeEmphasis: theme.orange6,
@@ -735,28 +1023,88 @@ const themes = createV5Theme({
         dataSkySubtle: theme.sky1,
         dataYellowEmphasis: theme.yellow6,
         dataYellowSubtle: theme.yellow1,
-        foregroundAccent: "oklch(0.6897 0.1156 186.1)",
+        foregroundAccent: "#1fb2a6",
+        foregroundAccentDisabled: "#1fb2a699",
+        foregroundAccentHover: "#009c91",
         foregroundDanger: theme.red7,
+        foregroundDangerDisabled: "#d8616499",
+        foregroundDangerHover: "#c24d52",
         foregroundDiscovery: theme.purple7,
+        foregroundDiscoveryDisabled: "#7f7ee499",
+        foregroundDiscoveryHover: "#6d6ace",
         foregroundInfo: theme.sky3,
+        foregroundInfoDisabled: "#00b8e699",
+        foregroundInfoHover: "#00a1ce",
         foregroundLink: theme.blue7,
+        foregroundLinkDisabled: "#468ae299",
+        foregroundLinkHover: "#3276cd",
         foregroundOnAccent: theme.color1,
+        foregroundOnAccentDisabled: "#f4f4f499",
+        foregroundOnAccentHover: "#d4d4d4",
         foregroundOnDanger: theme.color1,
+        foregroundOnDangerDisabled: "#f4f4f499",
+        foregroundOnDangerHover: "#d4d4d4",
         foregroundOnDiscovery: theme.color1,
+        foregroundOnDiscoveryDisabled: "#f4f4f499",
+        foregroundOnDiscoveryHover: "#d4d4d4",
         foregroundOnInfo: theme.color1,
+        foregroundOnInfoDisabled: "#f4f4f499",
+        foregroundOnInfoHover: "#d4d4d4",
         foregroundOnPrimary: theme.color9,
+        foregroundOnPrimaryDisabled: "#18181899",
+        foregroundOnPrimaryHover: "#1d1d1d",
         foregroundOnSecondary: theme.color1,
+        foregroundOnSecondaryDisabled: "#f4f4f499",
+        foregroundOnSecondaryHover: "#d4d4d4",
         foregroundOnSuccess: theme.color1,
+        foregroundOnSuccessDisabled: "#f4f4f499",
+        foregroundOnSuccessHover: "#d4d4d4",
         foregroundOnTertiary: theme.color1,
+        foregroundOnTertiaryDisabled: "#f4f4f499",
+        foregroundOnTertiaryHover: "#d4d4d4",
         foregroundOnWarning: theme.color9,
+        foregroundOnWarningDisabled: "#18181899",
+        foregroundOnWarningHover: "#1d1d1d",
         foregroundPrimary: theme.color1,
+        foregroundPrimaryDisabled: "#f4f4f499",
+        foregroundPrimaryHover: "#d4d4d4",
         foregroundSecondary: theme.color8,
+        foregroundSecondaryDisabled: "#1c1c1c99",
+        foregroundSecondaryHover: "#212121",
         foregroundSuccess: theme.green6,
+        foregroundSuccessDisabled: "#00a46999",
+        foregroundSuccessHover: "#009057",
         foregroundTertiary: theme.color9,
+        foregroundTertiaryDisabled: "#18181899",
+        foregroundTertiaryHover: "#1d1d1d",
         foregroundWarning: theme.yellow4,
+        foregroundWarningDisabled: "#d4940099",
+        foregroundWarningHover: "#bd7e00",
         overlayBackdrop: "#1a1c1f66",
         overlayBackground: theme.surface3,
+        overlayBackgroundDisabled: "#e8e7e699",
+        overlayBackgroundHover: "#cac9c8",
         overlayBorder: theme.color7,
+        overlayBorderDisabled: "#26262699",
+        overlayBorderHover: "#2d2d2d",
+        ringAccent: "0px 0px 0px 3px #1fb2a6",
+        ringAccentSubtle: "0px 0px 0px 1px #1fb2a6",
+        ringDanger: `0px 0px 0px 3px ${theme.red7}`,
+        ringDangerSubtle: `0px 0px 0px 1px ${theme.red7}`,
+        ringDiscovery: `0px 0px 0px 3px ${theme.purple7}`,
+        ringDiscoverySubtle: `0px 0px 0px 1px ${theme.purple7}`,
+        ringInfo: `0px 0px 0px 3px ${theme.sky3}`,
+        ringInfoSubtle: `0px 0px 0px 1px ${theme.sky3}`,
+        ringPrimary: `0px 0px 0px 3px ${theme.color7}`,
+        ringPrimarySubtle: `0px 0px 0px 1px ${theme.color7}`,
+        ringSecondary: `0px 0px 0px 3px ${theme.color8}`,
+        ringSecondarySubtle: `0px 0px 0px 1px ${theme.color8}`,
+        ringSuccess: `0px 0px 0px 3px ${theme.green6}`,
+        ringSuccessSubtle: `0px 0px 0px 1px ${theme.green6}`,
+        ringTertiary: `0px 0px 0px 3px ${theme.color9}`,
+        ringTertiarySubtle: `0px 0px 0px 1px ${theme.color9}`,
+        ringWarning: `0px 0px 0px 3px ${theme.yellow4}`,
+        ringWarningSubtle: `0px 0px 0px 1px ${theme.yellow4}`,
         transparent: "#ffffff00",
         white: "#ffffff"
       };
@@ -766,58 +1114,16 @@ const themes = createV5Theme({
 const assetsFont = createFont({
   family: "Assets",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    xl: 20,
-    xs: 12
-  },
-  lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    xl: 28,
-    xs: 16
-  },
-  weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
+    1: 12,
+    2: 14,
+    3: 16,
+    4: 18,
+    5: 20,
+    6: 24,
+    7: 28,
+    8: 32,
+    9: 40,
+    10: 48
   },
   face: {
     400: { normal: "transparent" }
@@ -827,305 +1133,85 @@ const assetsFont = createFont({
 const bodyFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
     md: 16,
-    sm: 14,
-    true: 16,
-    xl: 20,
-    xs: 12
+    true: 16
   },
   lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
     md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 24,
-    xl: 28,
-    xs: 16
+    true: 24
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
     light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100",
+    md: "300",
     true: "300"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
   }
 });
 
 const captionFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
     true: 12,
-    xl: 20,
     xs: 12
   },
   lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
     true: 16,
-    xl: 28,
     xs: 16
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
     light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100",
-    true: "300"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
+    true: "300",
+    xs: "300"
   }
 });
 
 const codeFont = createFont({
   family: "Space Mono",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
     sm: 14,
-    true: 14,
-    xl: 20,
-    xs: 12
+    true: 14
   },
   lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
     sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 20,
-    xl: 28,
-    xs: 16
+    true: 20
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
     normal: "400",
-    semibold: "600",
-    thin: "100",
+    sm: "400",
     true: "400"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
   }
 });
 
 const displayLgFont = createFont({
   family: "Permanent Marker",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
     "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 48,
-    xl: 20,
-    xs: 12
+    true: 48
   },
   lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
     "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 48,
-    xl: 28,
-    xs: 16
+    true: 48
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
+    "5xl": "400",
     normal: "400",
-    semibold: "600",
-    thin: "100",
     true: "400"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
   }
 });
 
 const displayMdFont = createFont({
   family: "Permanent Marker",
   size: {
-    "2xl": 24,
     "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 30,
-    xl: 20,
-    xs: 12
+    true: 30
   },
   lineHeight: {
-    "2xl": 32,
     "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 36,
-    xl: 28,
-    xs: 16
+    true: 36
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
+    "3xl": "400",
     normal: "400",
-    semibold: "600",
-    thin: "100",
     true: "400"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
   }
 });
 
@@ -1133,243 +1219,101 @@ const displaySmFont = createFont({
   family: "Permanent Marker",
   size: {
     "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 24,
-    xl: 20,
-    xs: 12
+    true: 24
   },
   lineHeight: {
     "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 32,
-    xl: 28,
-    xs: 16
+    true: 32
   },
   weight: {
-    black: "900",
-    bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
+    "2xl": "400",
     normal: "400",
-    semibold: "600",
-    thin: "100",
     true: "400"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
   }
 });
 
-const titleLgFont = createFont({
+const heading2xlFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 24,
     "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 16,
-    xl: 20,
-    xs: 12
+    true: 30
   },
   lineHeight: {
-    "2xl": 32,
     "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 24,
-    xl: 28,
-    xs: 16
+    true: 36
   },
   weight: {
-    black: "900",
+    "3xl": "700",
     bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100",
-    true: "300"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
+    true: "700"
   }
 });
 
-const titleMdFont = createFont({
+const headingLgFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 16,
-    xl: 20,
-    xs: 12
+    true: 20,
+    xl: 20
   },
   lineHeight: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 24,
-    xl: 28,
-    xs: 16
+    true: 28,
+    xl: 28
   },
   weight: {
-    black: "900",
     bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100",
-    true: "300"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
+    true: "700",
+    xl: "700"
   }
 });
 
-const titleSmFont = createFont({
+const headingMdFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    lg: 18,
+    true: 18
+  },
+  lineHeight: {
+    lg: 28,
+    true: 28
+  },
+  weight: {
+    lg: "600",
+    semibold: "600",
+    true: "600"
+  }
+});
+
+const headingSmFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    md: 16,
+    true: 16
+  },
+  lineHeight: {
+    md: 24,
+    true: 24
+  },
+  weight: {
+    md: "600",
+    semibold: "600",
+    true: "600"
+  }
+});
+
+const headingXlFont = createFont({
   family: "Space Grotesk",
   size: {
     "2xl": 24,
-    "3xl": 30,
-    "4xl": 36,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 18,
-    md: 16,
-    sm: 14,
-    true: 16,
-    xl: 20,
-    xs: 12
+    true: 24
   },
   lineHeight: {
     "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 48,
-    "6xl": 60,
-    "7xl": 72,
-    "8xl": 96,
-    "9xl": 128,
-    lg: 28,
-    loose: 24,
-    md: 24,
-    normal: 18,
-    relaxed: 19.5,
-    sm: 20,
-    snug: 16.5,
-    tight: 15,
-    true: 24,
-    xl: 28,
-    xs: 16
+    true: 32
   },
   weight: {
-    black: "900",
+    "2xl": "700",
     bold: "700",
-    extrabold: "800",
-    extralight: "200",
-    light: "300",
-    medium: "500",
-    normal: "400",
-    semibold: "600",
-    thin: "100",
-    true: "300"
-  },
-  letterSpacing: {
-    normal: 0,
-    tight: -0.4,
-    tighter: -0.8,
-    wide: 0.4,
-    wider: 0.8,
-    widest: 1.6
+    true: "700"
   }
 });
 
@@ -1383,24 +1327,62 @@ const titleSmFont = createFont({
  */
 export interface AppTheme {
   backgroundAccent: string;
+  backgroundAccentDisabled: string;
+  backgroundAccentHover: string;
   backgroundAccentSubtle: string;
+  backgroundAccentSubtleDisabled: string;
+  backgroundAccentSubtleHover: string;
   backgroundDanger: string;
+  backgroundDangerDisabled: string;
+  backgroundDangerHover: string;
   backgroundDangerSubtle: string;
+  backgroundDangerSubtleDisabled: string;
+  backgroundDangerSubtleHover: string;
   backgroundDiscovery: string;
+  backgroundDiscoveryDisabled: string;
+  backgroundDiscoveryHover: string;
   backgroundDiscoverySubtle: string;
+  backgroundDiscoverySubtleDisabled: string;
+  backgroundDiscoverySubtleHover: string;
   backgroundElevated: string;
+  backgroundElevatedDisabled: string;
+  backgroundElevatedHover: string;
   backgroundFloating: string;
+  backgroundFloatingDisabled: string;
+  backgroundFloatingHover: string;
   backgroundInfo: string;
+  backgroundInfoDisabled: string;
+  backgroundInfoHover: string;
   backgroundInfoSubtle: string;
+  backgroundInfoSubtleDisabled: string;
+  backgroundInfoSubtleHover: string;
   backgroundLink: string;
+  backgroundLinkDisabled: string;
+  backgroundLinkHover: string;
   backgroundPage: string;
+  backgroundPageDisabled: string;
+  backgroundPageHover: string;
   backgroundPrimary: string;
+  backgroundPrimaryDisabled: string;
+  backgroundPrimaryHover: string;
   backgroundSecondary: string;
+  backgroundSecondaryDisabled: string;
+  backgroundSecondaryHover: string;
   backgroundSuccess: string;
+  backgroundSuccessDisabled: string;
+  backgroundSuccessHover: string;
   backgroundSuccessSubtle: string;
+  backgroundSuccessSubtleDisabled: string;
+  backgroundSuccessSubtleHover: string;
   backgroundTertiary: string;
+  backgroundTertiaryDisabled: string;
+  backgroundTertiaryHover: string;
   backgroundWarning: string;
+  backgroundWarningDisabled: string;
+  backgroundWarningHover: string;
   backgroundWarningSubtle: string;
+  backgroundWarningSubtleDisabled: string;
+  backgroundWarningSubtleHover: string;
   base1: string;
   base2: string;
   base3: string;
@@ -1421,20 +1403,50 @@ export interface AppTheme {
   blue8: string;
   blue9: string;
   borderAccent: string;
+  borderAccentDisabled: string;
+  borderAccentHover: string;
   borderAccentSubtle: string;
+  borderAccentSubtleDisabled: string;
+  borderAccentSubtleHover: string;
   borderDanger: string;
+  borderDangerDisabled: string;
+  borderDangerHover: string;
   borderDangerSubtle: string;
+  borderDangerSubtleDisabled: string;
+  borderDangerSubtleHover: string;
   borderDiscovery: string;
+  borderDiscoveryDisabled: string;
+  borderDiscoveryHover: string;
   borderDiscoverySubtle: string;
+  borderDiscoverySubtleDisabled: string;
+  borderDiscoverySubtleHover: string;
   borderInfo: string;
+  borderInfoDisabled: string;
+  borderInfoHover: string;
   borderInfoSubtle: string;
+  borderInfoSubtleDisabled: string;
+  borderInfoSubtleHover: string;
   borderPrimary: string;
+  borderPrimaryDisabled: string;
+  borderPrimaryHover: string;
   borderSecondary: string;
+  borderSecondaryDisabled: string;
+  borderSecondaryHover: string;
   borderSuccess: string;
+  borderSuccessDisabled: string;
+  borderSuccessHover: string;
   borderSuccessSubtle: string;
+  borderSuccessSubtleDisabled: string;
+  borderSuccessSubtleHover: string;
   borderTertiary: string;
+  borderTertiaryDisabled: string;
+  borderTertiaryHover: string;
   borderWarning: string;
+  borderWarningDisabled: string;
+  borderWarningHover: string;
   borderWarningSubtle: string;
+  borderWarningSubtleDisabled: string;
+  borderWarningSubtleHover: string;
   brand1: string;
   brand2: string;
   color1: string;
@@ -1470,24 +1482,62 @@ export interface AppTheme {
   dataYellowEmphasis: string;
   dataYellowSubtle: string;
   foregroundAccent: string;
+  foregroundAccentDisabled: string;
+  foregroundAccentHover: string;
   foregroundDanger: string;
+  foregroundDangerDisabled: string;
+  foregroundDangerHover: string;
   foregroundDiscovery: string;
+  foregroundDiscoveryDisabled: string;
+  foregroundDiscoveryHover: string;
   foregroundInfo: string;
+  foregroundInfoDisabled: string;
+  foregroundInfoHover: string;
   foregroundLink: string;
+  foregroundLinkDisabled: string;
+  foregroundLinkHover: string;
   foregroundOnAccent: string;
+  foregroundOnAccentDisabled: string;
+  foregroundOnAccentHover: string;
   foregroundOnDanger: string;
+  foregroundOnDangerDisabled: string;
+  foregroundOnDangerHover: string;
   foregroundOnDiscovery: string;
+  foregroundOnDiscoveryDisabled: string;
+  foregroundOnDiscoveryHover: string;
   foregroundOnInfo: string;
+  foregroundOnInfoDisabled: string;
+  foregroundOnInfoHover: string;
   foregroundOnPrimary: string;
+  foregroundOnPrimaryDisabled: string;
+  foregroundOnPrimaryHover: string;
   foregroundOnSecondary: string;
+  foregroundOnSecondaryDisabled: string;
+  foregroundOnSecondaryHover: string;
   foregroundOnSuccess: string;
+  foregroundOnSuccessDisabled: string;
+  foregroundOnSuccessHover: string;
   foregroundOnTertiary: string;
+  foregroundOnTertiaryDisabled: string;
+  foregroundOnTertiaryHover: string;
   foregroundOnWarning: string;
+  foregroundOnWarningDisabled: string;
+  foregroundOnWarningHover: string;
   foregroundPrimary: string;
+  foregroundPrimaryDisabled: string;
+  foregroundPrimaryHover: string;
   foregroundSecondary: string;
+  foregroundSecondaryDisabled: string;
+  foregroundSecondaryHover: string;
   foregroundSuccess: string;
+  foregroundSuccessDisabled: string;
+  foregroundSuccessHover: string;
   foregroundTertiary: string;
+  foregroundTertiaryDisabled: string;
+  foregroundTertiaryHover: string;
   foregroundWarning: string;
+  foregroundWarningDisabled: string;
+  foregroundWarningHover: string;
   green1: string;
   green2: string;
   green3: string;
@@ -1508,7 +1558,11 @@ export interface AppTheme {
   orange9: string;
   overlayBackdrop: string;
   overlayBackground: string;
+  overlayBackgroundDisabled: string;
+  overlayBackgroundHover: string;
   overlayBorder: string;
+  overlayBorderDisabled: string;
+  overlayBorderHover: string;
   pink1: string;
   pink2: string;
   pink3: string;
@@ -1536,6 +1590,24 @@ export interface AppTheme {
   red7: string;
   red8: string;
   red9: string;
+  ringAccent: string;
+  ringAccentSubtle: string;
+  ringDanger: string;
+  ringDangerSubtle: string;
+  ringDiscovery: string;
+  ringDiscoverySubtle: string;
+  ringInfo: string;
+  ringInfoSubtle: string;
+  ringPrimary: string;
+  ringPrimarySubtle: string;
+  ringSecondary: string;
+  ringSecondarySubtle: string;
+  ringSuccess: string;
+  ringSuccessSubtle: string;
+  ringTertiary: string;
+  ringTertiarySubtle: string;
+  ringWarning: string;
+  ringWarningSubtle: string;
   sky1: string;
   sky2: string;
   sky3: string;
@@ -1575,12 +1647,14 @@ export const config = createTamagui({
     body: bodyFont,
     caption: captionFont,
     code: codeFont,
-    displayLg: displayLgFont,
-    displayMd: displayMdFont,
-    displaySm: displaySmFont,
-    titleLg: titleLgFont,
-    titleMd: titleMdFont,
-    titleSm: titleSmFont
+    "display-lg": displayLgFont,
+    "display-md": displayMdFont,
+    "display-sm": displaySmFont,
+    "heading-2xl": heading2xlFont,
+    "heading-lg": headingLgFont,
+    "heading-md": headingMdFont,
+    "heading-sm": headingSmFont,
+    "heading-xl": headingXlFont
   },
   defaultFont: "Space Grotesk"
 , ...userConfig 

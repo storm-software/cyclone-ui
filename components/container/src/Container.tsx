@@ -32,14 +32,14 @@ export type ContainerVariant =
 const ContainerFrame = styled(View, {
   name: "Container",
 
-  focusable: false,
+  tabIndex: -1,
   width: "100%",
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineStyle: "solid",
     outlineWidth: 3,
-    outlineOffset: "$1.25"
+    outlineOffset: "$lg"
   },
 
   variants: {
@@ -107,9 +107,7 @@ const ContainerFrame = styled(View, {
 
     elevated: {
       true: {
-        shadowColor: "$overlayBackdrop",
-        shadowOffset: { width: 0, height: 4 },
-        shadowRadius: 30
+        boxShadow: "0px 4px 30px $overlayBackdrop"
       }
     },
 
@@ -141,7 +139,7 @@ const ContainerFrame = styled(View, {
 const ContainerGlassBackground = styled(LinearGradient, {
   name: "Container",
 
-  animation: "normal",
+  transition: "medium",
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
@@ -153,7 +151,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
 const ContainerGroup = styled(View, {
   name: "Container",
 
-  animation: "normal",
+  transition: "medium",
   width: "100%",
   display: "flex",
   flex: 1,

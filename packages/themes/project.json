@@ -5,6 +5,7 @@
   "sourceRoot": "packages/themes/src",
   "targets": {
     "build-base": {
+      "dependsOn": ["monorepo:generate-tokens"],
       "executor": "@powerlines/nx:build",
       "options": {
         "configFile": "powerlines.config.ts"

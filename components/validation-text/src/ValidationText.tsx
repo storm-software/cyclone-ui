@@ -24,7 +24,7 @@ import { Dot } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
-  animation: "normal",
+  transition: "medium",
 
   enterStyle: {
     opacity: 0,
@@ -64,14 +64,14 @@ export const ValidationText = ValidationBodyText.styleable<{
   }
 
   return (
-    <YStack gap="$0.5">
+    <YStack gap="$xs">
       <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
         {heading}
       </ValidationBodyText>
       {messages
         .filter(message => message.message)
         .map(message => (
-          <XStack key={message.message} gap="$1" alignItems="center">
+          <XStack key={message.message} gap="$md" alignItems="center">
             <ThemeableIcon theme={theme}>
               <Dot />
             </ThemeableIcon>

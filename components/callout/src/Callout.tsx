@@ -48,7 +48,7 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
 
   fullscreen: true,
   flexDirection: "row",
-  animation: "normal",
+  transition: "medium",
   overflow: "hidden",
   borderRadius: "$true",
   opacity: 0.9,
@@ -63,7 +63,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
 
   fullscreen: true,
   flexDirection: "row",
-  animation: "normal",
+  transition: "medium",
   overflow: "hidden",
   borderRadius: "$true",
   opacity: 0.25,
@@ -89,12 +89,12 @@ const CalloutBackgroundDiagonal = styled(Diagonal, {
 const CalloutContent = styled(YStack, {
   name: "Callout",
 
-  animation: "normal",
+  transition: "medium",
   width: "100%",
   flexDirection: "column",
   zIndex: 20,
-  gap: "$2",
-  padding: "$1"
+  gap: "$xl",
+  padding: "$md"
 });
 
 const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
@@ -130,7 +130,7 @@ const CalloutHeader = styled(XStack, {
   zIndex: 10,
   backgroundColor: "transparent",
   alignItems: "center",
-  gap: "$3"
+  gap: "$3xl"
 });
 
 const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
@@ -142,7 +142,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$6">
+    <ThemeableIcon theme={theme} {...props} size="$8xl">
       {icon}
     </ThemeableIcon>
   );

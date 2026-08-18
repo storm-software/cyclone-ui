@@ -24,7 +24,7 @@ const meta: Meta<typeof ThemeableGradient> = {
   component: ThemeableGradient,
   tags: ["autodocs"],
   render: ({ ...rest }: any) => (
-    <ThemeableGradient {...rest} height="$12" width="100%" />
+    <ThemeableGradient {...rest} height="$14xl" width="100%" />
   )
 } satisfies Meta<typeof ThemeableGradient>;
 

@@ -42,6 +42,6 @@ type Story = StoryObj<typeof AlertCircle>;
 
 export const Base: Story = {
   args: {
-    size: "$6"
+    size: "$8xl"
   }
 };

@@ -34,7 +34,6 @@
     "@tamagui/core": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/separator": "catalog:",
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {

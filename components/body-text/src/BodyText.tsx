@@ -21,9 +21,9 @@ import type { GetProps } from "@tamagui/core";
 import { styled, Text } from "@tamagui/core";
 export const BodyText = styled(Text, {
   name: "BodyText",
-  tag: "p",
+  render: "p",
 
-  color: "$foregroundOnPrimary",
+  color: "$foregroundPrimary",
   fontFamily: "$body",
 
   variants: {

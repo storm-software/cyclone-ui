@@ -48,7 +48,7 @@ const BadgeFrame = styled(View, {
     unstyled: {
       false: {
         borderRadius: 5,
-        paddingHorizontal: "$3",
+        paddingHorizontal: "$3xl",
         justifyContent: "center",
         alignItems: "center"
       }
@@ -77,11 +77,12 @@ const BadgeFrame = styled(View, {
 
     pressable: {
       true: {
-        focusable: true,
+        tabIndex: 0,
         role: "button",
 
         hoverStyle: {
-          backgroundColor: "$backgroundElevated"
+          backgroundColor: "$backgroundPrimaryHover",
+          borderColor: "$borderPrimaryHover"
         },
 
         focusVisibleStyle: {
@@ -103,18 +104,26 @@ const BadgeText = styled(SizableText, {
   context: BadgeContext,
   color: "$foregroundOnPrimary",
 
+  hoverStyle: {
+    color: "$foregroundOnPrimaryHover"
+  },
+
   variants: {
     unstyled: {
       false: {
         fontFamily: "$label",
-        fontWeight: "$6",
+        fontWeight: "$semibold",
         size: "$true"
       }
     },
 
     outlined: {
       true: {
-        color: "$foregroundPrimary"
+        color: "$foregroundPrimary",
+
+        hoverStyle: {
+          color: "$foregroundPrimaryHover"
+        }
       }
     },
 
@@ -182,7 +191,7 @@ const BadgeIcon = BadgeIconFrame.styleable<BadgeIconProps>((props, ref) => {
 const ButtonComp = styled(View, {
   name: BADGE_NAME,
   context: BadgeContext,
-  focusable: true,
+  tabIndex: 0,
   role: "button",
 
   variants: {
@@ -195,7 +204,8 @@ const ButtonComp = styled(View, {
         alignItems: "center",
 
         hoverStyle: {
-          backgroundColor: "$backgroundElevated"
+          backgroundColor: "$backgroundPrimaryHover",
+          borderColor: "$borderPrimaryHover"
         },
         pressStyle: {
           backgroundColor: "$backgroundFloating"

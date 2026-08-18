@@ -123,12 +123,12 @@ export const StepsFrame = TamaguiTabs.styleable(
         <TamaguiTabs
           ref={forwardedRef}
           value={currentStep}
-          size="$4"
+          size="$5xl"
           height={150}
           flexDirection="row"
           activationMode="manual"
           backgroundColor="$backgroundPrimary"
-          borderRadius="$4"
+          borderRadius="$lg"
           position="relative"
           {...rest}
           onValueChange={setCurrentStep}
@@ -187,7 +187,7 @@ export const StepsHeaderList = YStack.styleable(
           disablePassBorderRadius={true}
           loop={false}
           aria-label="Steps"
-          gap="$3"
+          gap="$3xl"
           backgroundColor="transparent">
           <AnimatePresence
             exitBeforeEnter={true}
@@ -220,42 +220,42 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
     }, []);
 
     return (
-      <YStack flexDirection="column" gap="$3" justifyContent="center">
+      <YStack flexDirection="column" gap="$3xl" justifyContent="center">
         {(state.steps.length === 0 || state.steps[0] !== value) && (
           <Circle
             height={75}
             width={3}
             backgroundColor="$color5"
-            elevation="$4"
-            marginLeft="$5"
+            elevation="$5xl"
+            marginLeft="$7xl"
           />
         )}
 
-        <XStack gap="$4" alignItems="center">
+        <XStack gap="$5xl" alignItems="center">
           <TamaguiTabs.Tab
-            animation="slow"
+            transition="slow"
             ref={forwardedRef}
             unstyled={true}
-            padding="$3"
+            padding="$3xl"
             borderRadius={1000_000_000}
-            borderWidth="$0.5"
+            borderWidth="$xs"
             borderColor={index === currentIndex ? "$borderPrimary" : "$color5"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle animation="slow" color="$color5" size="$1" />
+              <CheckCircle transition="slow" color="$color5" size="$md" />
             )}
             {index === currentIndex && (
-              <Edit3 animation="slow" color="$foregroundPrimary" size="$1" />
+              <Edit3 transition="slow" color="$foregroundPrimary" size="$md" />
             )}
             {index > currentIndex && (
-              <Lock animation="slow" color="$color5" size="$1" />
+              <Lock transition="slow" color="$color5" size="$md" />
             )}
           </TamaguiTabs.Tab>
 
           <SizableText
-            animation="slow"
+            transition="slow"
             fontFamily="$heading"
             color={
               state.currentStep === value ? "$foregroundPrimary" : "$color5"
@@ -306,7 +306,7 @@ const StepsRovingIndicator = styled(YStack, {
   position: "absolute",
   backgroundColor: "$color8",
   opacity: 1,
-  animation: "200ms",
+  transition: "200ms",
   borderRadius: 1000_000_000,
 
   enterStyle: {
@@ -344,7 +344,7 @@ const StepsRovingIndicator = styled(YStack, {
 const _StepsRovingIndicatorImpl = StepsRovingIndicator.styleable(
   (props, forwardedRef) => {
     return (
-      <StepsRovingIndicator ref={forwardedRef} animation="200ms" {...props} />
+      <StepsRovingIndicator ref={forwardedRef} transition="200ms" {...props} />
     );
   }
 );
@@ -355,7 +355,7 @@ const AnimatedView = styled(View, {
   opacity: 1,
   position: "absolute",
 
-  animation: "slow",
+  transition: "slow",
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
     direction: {

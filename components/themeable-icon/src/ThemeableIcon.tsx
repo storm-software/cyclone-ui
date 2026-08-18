@@ -38,7 +38,7 @@ import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
 const ThemeableIconFrame = styled(View, {
-  animation: "normal",
+  transition: "medium",
 
   alignItems: "center",
 
@@ -104,7 +104,9 @@ export const ThemeableIcon =
     ) => {
       const getThemedIcon = useGetThemedIcon({
         size: getSized(size),
-        color: disabled ? "$base4" : (color as ColorProp)
+        color: disabled
+          ? "$foregroundOnPrimaryDisabled"
+          : (color as ColorProp)
       });
 
       return (

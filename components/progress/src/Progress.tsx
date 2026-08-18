@@ -29,7 +29,7 @@ export const Progress = TamaguiProgress.styleable(
         max={max}
         {...props}>
         <TamaguiProgress.Indicator
-          animation="bouncy"
+          transition="bouncy"
           backgroundColor="$foregroundOnPrimary"
         />
       </TamaguiProgress>

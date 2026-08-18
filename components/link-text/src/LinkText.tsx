@@ -40,7 +40,7 @@ const LinkTextFrame = styled(SizableText, {
   variants: {
     underline: {
       initial: {
-        animation: "normal",
+        transition: "medium",
         textDecorationLine: "underline",
         textDecorationStyle: "solid",
 
@@ -57,7 +57,7 @@ const LinkTextFrame = styled(SizableText, {
         }
       },
       static: {
-        animation: "normal",
+        transition: "medium",
         textDecorationLine: "underline",
         textDecorationStyle: "solid"
       },
@@ -84,8 +84,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundLink",
 
         hoverStyle: {
-          color: "$foregroundAccent",
-          textDecorationColor: "$foregroundAccent"
+          color: "$foregroundLinkHover",
+          textDecorationColor: "$foregroundLinkHover"
         },
 
         pressStyle: {
@@ -103,8 +103,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundLink",
 
         hoverStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundOnPrimary"
+          color: "$foregroundOnPrimaryHover",
+          textDecorationColor: "$foregroundLinkHover"
         },
 
         pressStyle: {
@@ -122,8 +122,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundAccent",
-          textDecorationColor: "$foregroundAccent"
+          color: "$foregroundOnPrimaryHover",
+          textDecorationColor: "$foregroundOnPrimaryHover"
         },
 
         pressStyle: {
@@ -141,8 +141,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundAccent",
 
         hoverStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundAccentHover",
+          textDecorationColor: "$foregroundAccentHover"
         },
 
         pressStyle: {
@@ -160,8 +160,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundOnPrimary",
 
         hoverStyle: {
-          color: "$foregroundOnPrimary",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundLinkHover",
+          textDecorationColor: "$foregroundOnPrimaryHover"
         },
 
         pressStyle: {
@@ -179,8 +179,8 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationColor: "$foregroundAccent",
 
         hoverStyle: {
-          color: "$foregroundOnPrimary",
-          textDecorationColor: "$foregroundOnPrimary"
+          color: "$foregroundAccentHover",
+          textDecorationColor: "$foregroundAccentHover"
         },
 
         pressStyle: {
@@ -198,11 +198,11 @@ const LinkTextFrame = styled(SizableText, {
     disabled: {
       true: {
         cursor: "default",
-        color: "$base4",
+        color: "$foregroundLinkDisabled",
         textDecorationLine: "none",
 
         hoverStyle: {
-          color: "$base4",
+          color: "$foregroundLinkDisabled",
           textDecorationLine: "none"
         }
       }

@@ -54,7 +54,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   hoverTheme: false,
   pressTheme: true,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   backgroundColor: "transparent",
   outlineStyle: "none",
@@ -63,7 +63,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent",
+    borderColor: "$borderPrimaryHover",
     backgroundColor: "transparent"
   },
 
@@ -91,20 +91,20 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
 
     disabled: {
       true: {
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     }
@@ -120,7 +120,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   name: "RadioGroupItemValue",
   context: RadioGroupContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   borderRadius: 100_000,
   backgroundColor: "$foregroundOnPrimary",
@@ -140,22 +140,22 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        color: "$base4",
-        placeholderColor: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
+        placeholderColor: "$foregroundOnPrimaryDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         focusStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         pressStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     }
@@ -170,33 +170,26 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   name: "RadioGroupItem",
   context: RadioGroupContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
-  gap: "$3",
+  gap: "$3xl",
   backgroundColor: "transparent",
-  borderRadius: "$4",
+  borderRadius: "$lg",
   borderWidth: 1,
   borderColor: "$borderPrimary",
-  paddingHorizontal: "$3",
-  paddingVertical: "$2.5",
+  paddingHorizontal: "$3xl",
+  paddingVertical: "$2xl",
   alignItems: "center",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -204,7 +197,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -233,23 +226,23 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
     disabled: {
       true: {
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$base4",
+          borderColor: "$borderPrimaryDisabled",
           backgroundColor: "transparent"
         },
 
         focusStyle: {
-          borderColor: "$base4",
+          borderColor: "$borderPrimaryDisabled",
           backgroundColor: "transparent"
         },
 
         pressStyle: {
-          borderColor: "$base4",
+          borderColor: "$borderPrimaryDisabled",
           backgroundColor: "transparent"
         }
       }
@@ -285,12 +278,14 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             value={String(value)}
             disabled={disabled}
             $group-hover={{
-              borderColor: disabled ? "$base4" : "$borderAccent"
+              borderColor: disabled
+                ? "$borderPrimaryDisabled"
+                : "$borderPrimaryHover"
             }}
             $group-focus={{
               outlineColor: "$borderAccent",
               outlineWidth: 3,
-              outlineOffset: "$1.25",
+              outlineOffset: "$lg",
               outlineStyle: "solid",
               borderColor: "$borderAccent"
             }}>
@@ -309,7 +304,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   name: "RadioGroup",
   context: RadioGroupContext,
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   flexDirection: "column",
   display: "flex",
@@ -336,7 +331,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
         backgroundColor: "transparent"
       }
     }
@@ -368,11 +363,11 @@ const RadioGroupImpl = RadioGroupFrame.styleable<{
         disabled={disabled}>
         <YStack
           justifyContent="flex-start"
-          gap="$2.5"
+          gap="$2xl"
           width="100%"
-          $sm={{
-            paddingHorizontal: "$4",
-            paddingVertical: "$4.5"
+          $max-sm={{
+            paddingHorizontal: "$5xl",
+            paddingVertical: "$6xl"
           }}>
           {children}
         </YStack>

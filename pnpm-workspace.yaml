@@ -15,7 +15,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.612
   "@powerlines/plugin-untyped": ^0.2.627
   "@powerlines/plugin-tamagui": ^0.1.663
-  "@razorwind/color-variants": ^0.0.32
+  "@razorwind/color-variants": ^0.0.33
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -97,14 +97,14 @@ catalog:
   "@nx/storybook": 23.1.0
   "@nx/vite": 23.1.0
   "@nx/vitest": 23.1.0
-  "@razorwind/core": ^0.0.55
-  "@razorwind/css": ^0.0.38
-  "@razorwind/design-md": ^0.0.51
-  "@razorwind/nx": ^0.0.50
-  "@razorwind/storybook": ^0.0.52
-  "@razorwind/style-dictionary": ^0.0.41
-  "@razorwind/shadcn": ^0.0.51
-  "@razorwind/tamagui": ^0.0.44
+  "@razorwind/core": ^0.0.56
+  "@razorwind/css": ^0.0.39
+  "@razorwind/design-md": ^0.0.53
+  "@razorwind/nx": ^0.0.51
+  "@razorwind/storybook": ^0.0.53
+  "@razorwind/style-dictionary": ^0.0.42
+  "@razorwind/shadcn": ^0.0.52
+  "@razorwind/tamagui": ^0.0.48
   "@storm-software/cloudflare-tools": ^0.71.281
   "@storm-software/config": ^1.138.69
   "@storm-software/config-tools": ^1.190.133
@@ -165,8 +165,7 @@ catalog:
   lefthook: ^1.13.6
   log4brains: ^1.1.0
   maska: ^3.2.0
-  next: 14.2.3
-  nx: ^23.1.1
+  nx: 23.1.0
   optics-ts: ^2.4.1
   powerlines: ^0.47.211
   prettier: ^3.9.6
@@ -201,8 +200,6 @@ catalog:
   "@storm-software/tsdoc": ^0.13.285
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
-dedupeDirectDeps: true
-dedupePeerDependents: true
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

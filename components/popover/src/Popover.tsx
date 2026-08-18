@@ -25,6 +25,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { Popover as TamaguiPopover } from "@tamagui/popover";
+import { Sheet } from "@tamagui/sheet";
 
 export interface PopoverContextProps {
   size: SizeTokens;
@@ -56,20 +57,20 @@ const PopoverFrameImpl = PopoverFrame.styleable<Partial<PopoverContextProps>>(
           {children}
 
           {shouldAdapt && (
-            <Adapt when={"sm" as any} platform="touch">
-              <TamaguiPopover.Sheet
+            <Adapt when="max-sm" platform="touch">
+              <Sheet
                 modal={true}
                 dismissOnSnapToBottom={true}
                 snapPointsMode="fit">
-                <TamaguiPopover.Sheet.Frame padding="$4">
+                <Sheet.Frame padding="$5xl">
                   <Adapt.Contents />
-                </TamaguiPopover.Sheet.Frame>
-                <TamaguiPopover.Sheet.Overlay
-                  animation="lazy"
+                </Sheet.Frame>
+                <Sheet.Overlay
+                  transition="lazy"
                   enterStyle={{ opacity: 0 }}
                   exitStyle={{ opacity: 0 }}
                 />
-              </TamaguiPopover.Sheet>
+              </Sheet>
             </Adapt>
           )}
         </TamaguiPopover>
@@ -95,7 +96,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
 
   flex: 1,
   backgroundColor: "$backgroundFloating",
-  padding: "$3",
+  padding: "$3xl",
   borderWidth: 2,
   borderColor: "$overlayBorder",
   borderRadius: "$true",
@@ -104,7 +105,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   enterStyle: { y: -10, opacity: 0 },
   exitStyle: { y: -10, opacity: 0 },
 
-  animation: [
+  transition: [
     "100ms",
     {
       opacity: {
@@ -116,7 +117,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -124,10 +125,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   variants: {
     elevated: {
       true: {
-        shadowColor: "$overlayBackdrop",
-        shadowOffset: { width: 0, height: 4 },
-        shadowRadius: 30,
-        elevate: true
+        boxShadow: "0px 4px 30px $overlayBackdrop"
       }
     }
   } as const,

@@ -29,7 +29,7 @@ export interface TooltipContextProps {
 }
 
 export const TooltipContext = createStyledContext<TooltipContextProps>({
-  size: "$5"
+  size: "$7xl"
 });
 
 const TooltipFrame = styled(TamaguiTooltip, {
@@ -63,15 +63,15 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   name: "Tooltip",
   context: TooltipContext,
 
-  animation: "normal",
+  transition: "medium",
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "$backgroundFloating",
-  paddingVertical: "$3",
-  paddingHorizontal: "$2.5",
+  paddingVertical: "$3xl",
+  paddingHorizontal: "$2xl",
   borderWidth: 2,
   borderColor: "$overlayBorder",
-  borderRadius: "$3",
+  borderRadius: "$md",
 
   enterStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
   exitStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
@@ -79,7 +79,7 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -87,10 +87,7 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   variants: {
     elevated: {
       true: {
-        shadowColor: "$overlayBackdrop",
-        shadowOffset: { width: 0, height: 4 },
-        shadowRadius: 30,
-        elevate: true
+        boxShadow: "0px 4px 30px $overlayBackdrop"
       }
     }
   } as const,

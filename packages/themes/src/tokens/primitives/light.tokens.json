@@ -27,7 +27,7 @@
       }
     },
     "surface": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -49,7 +49,7 @@
       "$description": "The surface color palette - used for background colors"
     },
     "base": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -107,7 +107,7 @@
       "$description": "The base color palette"
     },
     "red": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -165,7 +165,7 @@
       "$description": "The red color palette"
     },
     "orange": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -223,7 +223,7 @@
       "$description": "The orange color palette"
     },
     "yellow": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -281,7 +281,7 @@
       "$description": "The yellow color palette"
     },
     "green": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -339,7 +339,7 @@
       "$description": "The green color palette"
     },
     "sky": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -397,7 +397,7 @@
       "$description": "The sky color palette"
     },
     "blue": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -455,7 +455,7 @@
       "$description": "The blue color palette"
     },
     "purple": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -513,7 +513,7 @@
       "$description": "The purple color palette"
     },
     "pink": {
-      "primitive": true,
+      "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",

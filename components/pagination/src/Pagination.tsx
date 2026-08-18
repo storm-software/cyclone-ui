@@ -97,15 +97,15 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
     }, [setPageIndex, currentPage, pageCount]);
 
     return (
-      <XStack gap="$0.5" alignItems="center" flex={1} flexShrink={1}>
+      <XStack gap="$xs" alignItems="center" flex={1} flexShrink={1}>
         <PreviousButton
           {...props}
           hideText={hideText}
           variant="ghost"
           bordered={false}
           theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
+          size="$3xl"
+          paddingHorizontal="$none"
           disabled={currentPage === 1}
           onClick={onPrevious ?? handlePrevious}
         />
@@ -114,8 +114,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
           variant={currentPage === 1 ? "outlined" : "ghost"}
           bordered={false}
           theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
+          size="$3xl"
+          paddingHorizontal="$none"
           {...props}
           onClick={onFirst ?? handleFirst}>
           <Button.Text>1</Button.Text>
@@ -124,8 +124,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         {currentPage > 3 && pageCount > 5 && (
           <SizableText
             color="$foregroundPrimary"
-            size="$6"
-            paddingHorizontal="$1">
+            size="$lg"
+            paddingHorizontal="$md">
             . . .
           </SizableText>
         )}
@@ -135,8 +135,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             variant={currentPage === 2 ? "outlined" : "ghost"}
             bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size="$3xl"
+            paddingHorizontal="$none"
             {...props}
             onClick={handleSecond}>
             <Button.Text>
@@ -159,8 +159,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             }
             bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size="$3xl"
+            paddingHorizontal="$none"
             {...props}
             onClick={handleThird}>
             <Button.Text>
@@ -183,8 +183,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             }
             bordered={false}
             theme={theme}
-            size="$3"
-            paddingHorizontal="$0"
+            size="$3xl"
+            paddingHorizontal="$none"
             {...props}
             onClick={handleFourth}>
             <Button.Text>
@@ -200,8 +200,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
         {currentPage < pageCount - 2 && pageCount > 5 && (
           <SizableText
             color="$foregroundPrimary"
-            size="$6"
-            paddingHorizontal="$1">
+            size="$lg"
+            paddingHorizontal="$md">
             . . .
           </SizableText>
         )}
@@ -212,8 +212,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
             bordered={false}
             theme={theme}
             {...props}
-            size="$3"
-            paddingHorizontal="$0"
+            size="$3xl"
+            paddingHorizontal="$none"
             onClick={onLast ?? handleLast}>
             <Button.Text>{pageCount}</Button.Text>
           </Button>
@@ -224,8 +224,8 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
           variant="ghost"
           bordered={false}
           theme={theme}
-          size="$3"
-          paddingHorizontal="$0"
+          size="$3xl"
+          paddingHorizontal="$none"
           disabled={currentPage === pageCount}
           onClick={onNext ?? handleNext}
         />

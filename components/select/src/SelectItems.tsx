@@ -35,7 +35,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   backgroundColor: "transparent",
   marginVertical: 0,
   paddingVertical: 0,
-  paddingHorizontal: "$2",
+  paddingHorizontal: "$xl",
 
   focusStyle: {
     backgroundColor: "transparent"
@@ -51,24 +51,24 @@ const SelectItemGroup = styled(XStack, {
   context: SelectContext,
 
   cursor: "pointer",
-  gap: "$2",
+  gap: "$xl",
   alignItems: "center",
-  paddingHorizontal: "$2",
+  paddingHorizontal: "$xl",
   paddingVertical: 0,
-  borderRadius: "$3",
-  minHeight: "$4",
+  borderRadius: "$md",
+  minHeight: "$5xl",
   width: "100%",
 
   hoverStyle: {
-    backgroundColor: "$base2"
+    backgroundColor: "$backgroundPrimaryHover"
   },
 
   focusStyle: {
-    backgroundColor: "$base2"
+    backgroundColor: "$backgroundPrimaryHover"
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$base2"
+    backgroundColor: "$backgroundPrimaryHover"
   },
 
   variants: {
@@ -112,10 +112,10 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
 
         hoverStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     },
@@ -125,7 +125,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
     }
   } as const,
 
-  fontWeight: "$6",
+  fontWeight: "$semibold",
 
   defaultVariants: {
     disabled: false,
@@ -151,11 +151,13 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
           <SelectItemGroup
             disabled={disabled}
             justifyContent={isSmall ? "space-between" : "center"}>
-            <View width="$2" justifyContent="center">
-              {disabled && <Lock size="$1.5" color="$base4" />}
+            <View width="$xl" justifyContent="center">
+              {disabled && (
+                <Lock size="$lg" color="$foregroundOnPrimaryDisabled" />
+              )}
               <TamaguiSelect.ItemIndicator>
                 <Theme name={"accent"}>
-                  <Check size="$2" color="$foregroundOnPrimary" />
+                  <Check size="$xl" color="$foregroundOnPrimary" />
                 </Theme>
               </TamaguiSelect.ItemIndicator>
             </View>
@@ -164,10 +166,10 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               disabled={disabled}
               $group-hover={{
                 color: disabled
-                  ? "$base4"
+                  ? "$foregroundOnPrimaryDisabled"
                   : selected
-                    ? "$foregroundAccent"
-                    : "$foregroundSecondary"
+                    ? "$foregroundAccentHover"
+                    : "$foregroundOnPrimaryHover"
               }}>
               {children}
             </SelectItemTextFrame>
@@ -185,11 +187,11 @@ const SelectItemsGroup = View.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <View ref={forwardedRef} flex={1} {...props}>
-        <Adapt when={"sm" as any} platform="touch">
+        <Adapt when="max-sm" platform="touch">
           <Sheet
             modal={true}
             dismissOnSnapToBottom={true}
-            animationConfig={{
+            transitionConfig={{
               type: "spring",
               damping: 20,
               mass: 1.2,
@@ -201,7 +203,7 @@ const SelectItemsGroup = View.styleable(
               </Sheet.ScrollView>
             </Sheet.Frame>
             <Sheet.Overlay
-              animation="lazy"
+              transition="lazy"
               enterStyle={{ opacity: 0 }}
               exitStyle={{ opacity: 0 }}
             />
@@ -210,13 +212,13 @@ const SelectItemsGroup = View.styleable(
 
         <TamaguiSelect.Content zIndex={200000}>
           <TamaguiSelect.ScrollUpButton
-            animation="quick"
+            transition="quick"
             animateOnly={["scale", "opacity"]}
             enterStyle={{ opacity: 0.2, scale: 0.5 }}
             alignItems="center"
             justifyContent="center"
             position="relative"
-            height="$3">
+            height="$3xl">
             <YStack zIndex={10}>
               <ChevronUp size={20} />
             </YStack>
@@ -225,36 +227,34 @@ const SelectItemsGroup = View.styleable(
               end={[0, 1]}
               fullscreen={true}
               colors={["$base3", "transparent"]}
-              borderRadius="$4"
-              marginTop="$0.2"
+              borderRadius="$lg"
+              marginTop="$xxs"
             />
           </TamaguiSelect.ScrollUpButton>
 
           <TamaguiSelect.Viewport
-            animation="quick"
+            transition="quick"
             animateOnly={["transform", "scale", "opacity"]}
             enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
             exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
             backgroundColor="$backgroundFloating"
-            minWidth="$10"
+            minWidth="$12xl"
             borderRadius="$true"
-            shadowColor="$overlayBackdrop"
-            shadowOffset={{ width: 0, height: 4 }}
-            shadowRadius={30}>
-            <TamaguiSelect.Group paddingVertical="$2">
+            boxShadow="0px 4px 30px $overlayBackdrop">
+            <TamaguiSelect.Group paddingVertical="$xl">
               {children}
             </TamaguiSelect.Group>
           </TamaguiSelect.Viewport>
 
           <TamaguiSelect.ScrollDownButton
-            animation="quick"
+            transition="quick"
             animateOnly={["scale", "opacity"]}
             enterStyle={{ opacity: 0.2, scale: 0.5 }}
             alignItems="center"
             justifyContent="center"
             position="relative"
             width="100%"
-            height="$3">
+            height="$3xl">
             <YStack zIndex={10}>
               <ChevronDown size={20} />
             </YStack>
@@ -263,8 +263,8 @@ const SelectItemsGroup = View.styleable(
               end={[0, 1]}
               fullscreen={true}
               colors={["transparent", "$base3"]}
-              borderRadius="$4"
-              marginBottom="$0.2"
+              borderRadius="$lg"
+              marginBottom="$xxs"
             />
           </TamaguiSelect.ScrollDownButton>
         </TamaguiSelect.Content>

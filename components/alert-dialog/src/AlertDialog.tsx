@@ -40,13 +40,13 @@ const AlertDialogIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
 
-    const padding = theme?.includes("success") ? "$3" : "$2";
+    const padding = theme?.includes("success") ? "$3xl" : "$xl";
 
     return (
       <YStack position="relative" minWidth="100%" alignItems="center">
         <View
           theme={theme}
-          animation="normal"
+          transition="medium"
           enterStyle={{
             y: -100,
             opacity: 0.6
@@ -56,10 +56,10 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           width="100%"
           height="55%"
           backgroundColor="$backgroundPrimary"
-          zIndex="$1"
+          zIndex="$10"
         />
 
-        <XStack zIndex="$2" justifyContent="center" paddingTop="$3">
+        <XStack zIndex="$20" justifyContent="center" paddingTop="$3xl">
           <View
             theme={"base"}
             themeShallow={true}
@@ -70,7 +70,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
               ref={forwardedRef}
               {...props}
               theme={theme}
-              size="$7">
+              size="$9xl">
               {children || getIconByTheme({ theme }) || <AlertCircle />}
             </ThemeableIcon>
           </View>
@@ -115,10 +115,10 @@ const AlertDialogContent = YStack.styleable(
     return (
       <YStack
         ref={forwardedRef}
-        paddingHorizontal="$5"
-        paddingTop="$2"
-        paddingBottom="$5"
-        gap="$3"
+        paddingHorizontal="$7xl"
+        paddingTop="$xl"
+        paddingBottom="$7xl"
+        gap="$3xl"
         alignItems="center"
         {...props}>
         {children}
@@ -152,7 +152,7 @@ const AlertDialogBody = Dialog.Body.styleable(
         <Dialog.Body
           ref={forwardedRef}
           color="$foregroundSecondary"
-          size="$7"
+          size="$9xl"
           {...props}>
           {children}
         </Dialog.Body>

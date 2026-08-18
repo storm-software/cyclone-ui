@@ -55,7 +55,7 @@ export const VisuallyHidden = styled(View, {
 
     animate: {
       true: {
-        animation: "200ms"
+        transition: "200ms"
       }
     }
   } as const,

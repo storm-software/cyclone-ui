@@ -24,6 +24,7 @@ import designMD from "@razorwind/design-md/generate";
 import shadcn from "@razorwind/shadcn/generate";
 import storybook from "@razorwind/storybook/generate";
 import tamagui from "@razorwind/tamagui/generate";
+import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
 
 export default defineConfig({
   name: "cyclone-ui",
@@ -35,6 +36,7 @@ export default defineConfig({
   tokensPath: "packages/themes/src/tokens/**/*.json",
   componentsPath: ["components"],
   plugins: [
+    tamaguiPreprocessor(),
     colorVariants(),
     shadcn({
       configFile: "registry.json"
@@ -58,20 +60,29 @@ export default defineConfig({
             colorPrimary: tokens?.dark?.color?.foreground?.primary?.$value,
             colorSecondary: tokens?.dark?.color?.foreground?.secondary?.$value,
 
+            textColor: tokens?.dark?.color?.foreground?.primary?.$value,
+            textInverseColor: tokens?.dark?.color?.foreground?.inverse?.$value,
+
+            appBg: tokens?.dark?.color?.background?.page?.$value,
+            appContentBg: tokens?.dark?.color?.background?.page?.$value,
+            appPreviewBg: tokens?.dark?.color?.background?.page?.$value,
+            appBorderColor: tokens?.dark?.color?.border?.primary?.$value,
+            appBorderRadius: tokens?.dark?.radius?.md?.$value,
+
             barTextColor: tokens?.dark?.color?.foreground?.primary?.$value,
             barSelectedColor: tokens?.dark?.color?.foreground?.accent?.$value,
-            barBg: tokens?.dark?.color?.surface2?.$value,
-            barHoverColor: tokens?.dark?.color?.surface3?.$value,
+            barBg: tokens?.dark?.color?.background?.floating?.$value,
+            barHoverColor: tokens?.dark?.color?.background?.primary?.$value,
 
-            buttonBg: tokens?.dark?.color?.background?.primary?.$value,
+            buttonBg: tokens?.dark?.color?.background?.elevated?.$value,
             buttonBorder: tokens?.dark?.color?.border?.primary?.$value,
 
-            inputBg: tokens?.dark?.color?.background?.primary?.$value,
+            inputBg: tokens?.dark?.color?.background?.elevated?.$value,
             inputBorder: tokens?.dark?.color?.border?.primary?.$value,
             inputTextColor: tokens?.dark?.color?.foreground?.primary?.$value,
             inputBorderRadius: tokens?.dark?.radius?.md?.$value,
 
-            booleanBg: tokens?.dark?.color?.background?.primary?.$value,
+            booleanBg: tokens?.dark?.color?.background?.elevated?.$value,
             booleanSelectedBg: tokens?.dark?.color?.background?.primary?.$value,
 
             brandImage:
@@ -80,51 +91,33 @@ export default defineConfig({
           light: {
             base: "light",
             colorPrimary: tokens?.light?.color?.foreground?.primary?.$value,
-            colorSecondary: tokens?.light?.color?.foreground?.secondary?.$value,
+            colorSecondary: tokens?.light?.color?.foreground?.accent?.$value,
 
-            barTextColor: tokens?.light?.color?.foreground?.secondary?.$value,
-            barSelectedColor: tokens?.light?.color?.foreground?.primary?.$value,
-            barBg: tokens?.light?.color?.surface2?.$value,
-            barHoverColor: tokens?.light?.color?.surface3?.$value,
+            textColor: tokens?.light?.color?.foreground?.primary?.$value,
+            textInverseColor: tokens?.light?.color?.foreground?.inverse?.$value,
 
-            buttonBg: tokens?.light?.color?.background?.primary?.$value,
+            appBg: tokens?.light?.color?.background?.page?.$value,
+            appContentBg: tokens?.light?.color?.background?.page?.$value,
+            appPreviewBg: tokens?.light?.color?.background?.page?.$value,
+            appBorderColor: tokens?.light?.color?.border?.primary?.$value,
+            appBorderRadius: tokens?.light?.radius?.md?.$value,
+
+            barTextColor: tokens?.light?.color?.foreground?.primary?.$value,
+            barSelectedColor: tokens?.light?.color?.foreground?.accent?.$value,
+            barBg: tokens?.light?.color?.background?.floating?.$value,
+            barHoverColor: tokens?.light?.color?.background?.primary?.$value,
+
+            buttonBg: tokens?.light?.color?.background?.elevated?.$value,
             buttonBorder: tokens?.light?.color?.border?.primary?.$value,
 
-            inputBg: tokens?.light?.color?.background?.primary?.$value,
+            inputBg: tokens?.light?.color?.background?.elevated?.$value,
             inputBorder: tokens?.light?.color?.border?.primary?.$value,
             inputTextColor: tokens?.light?.color?.foreground?.primary?.$value,
             inputBorderRadius: tokens?.light?.radius?.md?.$value,
 
-            booleanBg: tokens?.light?.color?.background?.primary?.$value,
+            booleanBg: tokens?.light?.color?.background?.elevated?.$value,
             booleanSelectedBg:
               tokens?.light?.color?.background?.primary?.$value,
-
-            // //
-            // colorPrimary: "#3A10E5",
-            // colorSecondary: "#585C6D",
-
-            // // UI
-            // appBg: "#ffffff",
-            // appContentBg: "#ffffff",
-            // appPreviewBg: "#ffffff",
-            // appBorderColor: "#585C6D",
-            // appBorderRadius: 4,
-
-            // // Text colors
-            // textColor: "#10162F",
-            // textInverseColor: "#ffffff",
-
-            // // Toolbar default and active colors
-            // barTextColor: "#9E9E9E",
-            // barSelectedColor: "#585C6D",
-            // barHoverColor: "#585C6D",
-            // barBg: "#ffffff",
-
-            // // Form colors
-            // inputBg: tokens.light?.background?.elevated,
-            // inputBorder: tokens.light?.border?.primary,
-            // inputTextColor: tokens.light?.color?.forground?.primary,
-            // inputBorderRadius: 1,
 
             brandImage:
               "https://public.storm-cdn.com/cyclone-ui/assets/light-logo.svg"

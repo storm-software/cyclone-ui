@@ -45,7 +45,7 @@ import { useMemo } from "react";
 const FieldGroupFrame = styled(ThemeableStack, {
   name: "Field",
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
 
   // this fixes a flex bug where it overflows container
@@ -56,11 +56,11 @@ const FieldGroupFrame = styled(ThemeableStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$2"
+        gap: "$xl"
       },
       horizontal: {
         flexDirection: "row",
-        gap: "$0.75"
+        gap: "$sm"
       }
     },
 
@@ -161,10 +161,12 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         messages={messages}
         size={size}
         color={
-          disabled
-            ? "$base4"
-            : theme === "base"
-              ? "$foregroundOnPrimary"
+          theme === "base"
+            ? disabled
+              ? "$foregroundOnPrimaryDisabled"
+              : "$foregroundOnPrimary"
+            : disabled
+              ? "$foregroundPrimaryDisabled"
               : "$foregroundPrimary"
         }>
         {children}
@@ -184,7 +186,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
 
     return (
       <Theme name={theme}>
-        <YStack gap="$2">
+        <YStack gap="$xl">
           <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
             {children}
           </FieldGroupFrame>
@@ -214,9 +216,13 @@ const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
 const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
-  animation: "normal",
+  transition: "medium",
   color: "$foregroundOnPrimary",
   fontStyle: "italic",
+
+  hoverStyle: {
+    color: "$foregroundOnPrimaryHover"
+  },
 
   enterStyle: {
     opacity: 0,
@@ -235,8 +241,12 @@ const FieldDetails = styled(BodyText, {
 
     disabled: {
       true: {
-        color: "$base4",
-        cursor: "not-allowed"
+        color: "$foregroundOnPrimaryDisabled",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$foregroundOnPrimaryDisabled"
+        }
       }
     }
   } as const,
@@ -269,12 +279,23 @@ const FieldDetailsImpl = FieldDetails.styleable(
         size={size}
         disabled={disabled}
         color={
-          disabled
-            ? "$base4"
-            : theme === "base"
-              ? "$foregroundOnPrimary"
+          theme === "base"
+            ? disabled
+              ? "$foregroundOnPrimaryDisabled"
+              : "$foregroundOnPrimary"
+            : disabled
+              ? "$foregroundPrimaryDisabled"
               : "$foregroundPrimary"
-        }>
+        }
+        hoverStyle={{
+          color: disabled
+            ? theme === "base"
+              ? "$foregroundOnPrimaryDisabled"
+              : "$foregroundPrimaryDisabled"
+            : theme === "base"
+              ? "$foregroundOnPrimaryHover"
+              : "$foregroundPrimaryHover"
+        }}>
         {children}
       </FieldDetails>
     );
@@ -284,18 +305,26 @@ const FieldDetailsImpl = FieldDetails.styleable(
 
 const FieldLabelText = styled(LabelText, {
   name: "FieldLabel",
-  tag: "label",
+  render: "label",
 
-  animation: "normal",
+  transition: "medium",
   cursor: "pointer",
   wordWrap: "normal",
   color: "$foregroundOnPrimary",
 
+  hoverStyle: {
+    color: "$foregroundOnPrimaryHover"
+  },
+
   variants: {
     disabled: {
       true: {
-        color: "$base4",
-        cursor: "not-allowed"
+        color: "$foregroundOnPrimaryDisabled",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$foregroundOnPrimaryDisabled"
+        }
       }
     }
   } as const,
@@ -309,7 +338,7 @@ const LabelXStack = styled(XStack, {
   name: "FieldLabel",
 
   cursor: "pointer",
-  gap: "$1.2",
+  gap: "$md",
   flex: 1,
   alignItems: "center",
 
@@ -372,7 +401,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                     <View position="relative" alignSelf="stretch">
                       <Asterisk
                         color="$foregroundDanger"
-                        size="$0.75"
+                        size="$sm"
                         position="absolute"
                         top={-4}
                       />
@@ -386,10 +415,19 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                       {...props}
                       theme={"base"}
                       disabled={disabled}
-                      color={disabled ? "$base4" : "$foregroundSecondary"}
-                      size="$5"
-                      fontWeight="$4"
-                      marginLeft="$2">
+                      color={
+                        disabled
+                          ? "$foregroundSecondaryDisabled"
+                          : "$foregroundSecondary"
+                      }
+                      hoverStyle={
+                        disabled
+                          ? { color: "$foregroundSecondaryDisabled" }
+                          : { color: "$foregroundSecondaryHover" }
+                      }
+                      size="$md"
+                      fontWeight="$normal"
+                      marginLeft="$xl">
                       (Optional)
                     </FieldLabelText>
                   )}
@@ -447,7 +485,7 @@ const FieldIconButtonImpl = Button.styleable(
           ref={forwardedRef}
           variant="ghost"
           circular={true}
-          padding="$1.5"
+          padding="$lg"
           {...props}
           size={adjusted}>
           <Button.Icon size={adjusted}>{children}</Button.Icon>

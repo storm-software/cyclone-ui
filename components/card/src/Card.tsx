@@ -55,7 +55,7 @@ const CardFrame = styled(Container, {
   name: "Card",
   context: CardContext,
 
-  animation: "normal",
+  transition: "medium",
   overflow: "hidden",
   borderColor: "$borderPrimary",
   cursor: "pointer",
@@ -63,11 +63,12 @@ const CardFrame = styled(Container, {
   position: "relative",
 
   hoverStyle: {
-    borderColor: "$borderSecondary"
+    backgroundColor: "$backgroundElevatedHover",
+    borderColor: "$borderPrimaryHover"
   },
 
   pressStyle: {
-    borderColor: "$borderSecondary"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusVisibleStyle: {
@@ -81,7 +82,7 @@ export type CardProps = GetProps<typeof CardFrame>;
 //   name: "Card",
 //   context: CardContext,
 
-//   animation: "normal",
+//   transition: "medium",
 //   fullscreen: true,
 //   backgroundColor: "$backgroundElevated",
 //   overflow: "hidden",
@@ -93,7 +94,7 @@ export type CardProps = GetProps<typeof CardFrame>;
 //   name: "Card",
 //   context: CardContext,
 
-//   animation: "normal",
+//   transition: "medium",
 //   fullscreen: true,
 //   flexDirection: "row",
 //   overflow: "hidden",
@@ -108,7 +109,7 @@ const CardContent = styled(YStack, {
   name: "Card",
   context: CardContext,
 
-  animation: "normal",
+  transition: "medium",
   zIndex: 20,
 
   variants: {
@@ -184,7 +185,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$6">
+    <ThemeableIcon theme={theme} {...props} size="$8xl">
       {icon}
     </ThemeableIcon>
   );
@@ -283,7 +284,7 @@ const CardLinkArrowRight = styled(ArrowRight, {
 
   zIndex: 25,
   color: "$foregroundPrimary",
-  marginTop: "$0.4"
+  marginTop: "$xs"
 });
 
 const CardLinkImpl = CardLink.styleable(
@@ -291,15 +292,20 @@ const CardLinkImpl = CardLink.styleable(
     const { children, ...rest } = props;
 
     return (
-      <XStack ref={forwardedRef} gap="$1.5" alignItems="center">
+      <XStack ref={forwardedRef} gap="$lg" alignItems="center">
         <CardLink {...rest}>{children}</CardLink>
         <View
-          animation="normal"
+          transition="medium"
           x={0}
           $group-card-hover={{
             x: 10
           }}>
-          <CardLinkArrowRight size="$2" />
+          <CardLinkArrowRight
+            size="$xl"
+            $group-card-hover={{
+              color: "$foregroundPrimaryHover"
+            }}
+          />
         </View>
       </XStack>
     );

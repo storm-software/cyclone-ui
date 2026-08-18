@@ -254,7 +254,7 @@ const TabsFrameImpl = TabsFrame.styleable(
           ref={forwardedRef}
           value={currentTab}
           size={size}
-          gap="$2"
+          gap="$xl"
           {...rest}
           onValueChange={handleSetCurrentTab}
           variant={variant}
@@ -270,7 +270,7 @@ const TabsRovingIndicator = styled(YStack, {
   name: "TabsIndicator",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "200ms",
   position: "absolute",
 
   enterStyle: {
@@ -378,7 +378,7 @@ const AnimatedView = styled(View, {
   name: "TabsIndicator",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "200ms",
   flex: 1,
   x: 0,
   opacity: 1,
@@ -406,7 +406,7 @@ const TabsHeaderList = styled(YStack, {
   name: "Tabs",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "200ms",
   borderStyle: "solid",
   borderColor: "transparent",
 
@@ -419,7 +419,7 @@ const TabsHeaderList = styled(YStack, {
     variant: {
       underline: {
         borderBottomColor: "$borderPrimary",
-        borderBottomWidth: "$0.2"
+        borderBottomWidth: "$xxs"
       },
       background: {}
     }
@@ -508,7 +508,7 @@ const TabsHeaderItemHeading = styled(Heading4Text, {
   name: "TabsHeading",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "200ms",
 
   variants: {
     size: {
@@ -527,7 +527,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   name: "TabsHeading",
   context: TabsContext,
 
-  animation: "200ms",
+  transition: "200ms",
   unstyled: true,
   flex: 1,
 
@@ -574,7 +574,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
           size={size}
           color={currentTab === value ? "$foregroundPrimary" : "$base4"}
           $group-hover={{
-            color: currentTab === value ? "$foregroundPrimary" : "$borderAccent"
+            color: "$foregroundPrimaryHover"
           }}>
           {children}
         </TabsHeaderItemHeading>

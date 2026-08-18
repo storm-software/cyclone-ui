@@ -39,7 +39,7 @@ const CheckboxFieldLabel = Field.Label.styleable(
     const disabled = field.disabled.get();
 
     return (
-      <XStack gap="$0.5" alignContent="center">
+      <XStack gap="$xs" alignContent="center">
         <Field.Label
           ref={forwardedRef}
           paddingBottom={0}

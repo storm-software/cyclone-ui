@@ -305,24 +305,7 @@ const config: StorybookConfig = {
         tamaguiPlugin({
           config: join(workspaceRoot, "packages/themes/src/tamagui/config.ts"),
           components: ["tamagui"]
-        }),
-        {
-          name: "cyclone-ui-oklch-create-v5-theme",
-          transform(code: string, id: string) {
-            if (
-              !id
-                .replaceAll("\\", "/")
-                .endsWith("packages/themes/src/tamagui/config.ts")
-            ) {
-              return null;
-            }
-
-            return code.replace(
-              'from "@tamagui/config/v5"',
-              'from "./create-v5-theme"'
-            );
-          }
-        }
+        })
       ].filter(Boolean),
 
       define: {
@@ -348,10 +331,7 @@ const config: StorybookConfig = {
       },
 
       build: {
-        outDir: join(
-          dirname(fileURLToPath(import.meta.url)),
-          "../storybook-static"
-        ),
+        outDir: join(workspaceRoot, "dist/apps/storybook"),
         reportCompressedSize: true
       }
     });

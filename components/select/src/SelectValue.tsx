@@ -25,7 +25,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   name: "SelectValue",
   context: SelectContext,
 
-  animation: "normal",
+  transition: "medium",
   unstyled: true,
   cursor: "pointer",
   color: "$foregroundOnPrimary",
@@ -35,7 +35,8 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   alignItems: "center",
 
   hoverStyle: {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    color: "$foregroundOnPrimaryHover"
   },
 
   focusStyle: {
@@ -45,7 +46,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   variants: {
     placeholding: {
       true: {
-        color: "$base4"
+        color: "$foregroundOnPrimaryDisabled"
       }
     },
 
@@ -53,19 +54,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
       true: {
         cursor: "not-allowed",
         userSelect: "none",
-        color: "$base4",
-        placeholderColor: "$base4",
+        color: "$foregroundOnPrimaryDisabled",
+        placeholderColor: "$foregroundOnPrimaryDisabled",
 
         hoverStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         focusStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         pressStyle: {
-          color: "$base4"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     },
@@ -89,7 +90,7 @@ export const SelectValue = SelectValueFrame.styleable<{
     const { disabled, name } = SelectContext.useStyledContext();
 
     return (
-      <View flex={1} paddingHorizontal="$3">
+      <View flex={1} paddingHorizontal="$3xl">
         <Theme name={"base"}>
           <SelectValueFrame
             id={name}

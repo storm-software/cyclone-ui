@@ -19,7 +19,6 @@
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
-import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
@@ -28,33 +27,26 @@ import { Minus } from "@tamagui/lucide-icons";
 const CheckboxGroupFrame = styled(XGroup, {
   name: "Checkbox",
 
-  animation: "normal",
+  transition: "medium",
   justifyContent: "space-between",
   alignContent: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
   borderColor: "$borderPrimary",
   outlineStyle: "none",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  tabIndex: 0,
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -62,7 +54,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -100,7 +92,7 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {
         outlineColor: "$borderAccent",
         outlineWidth: 3,
-        outlineOffset: "$1.25",
+        outlineOffset: "$lg",
         outlineStyle: "solid",
         borderColor: "$borderAccent"
       }
@@ -110,18 +102,18 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     }
@@ -220,7 +212,7 @@ export const Checkbox = BaseCheckbox.styleable<{
             alignItems="center">
             {checked === "indeterminate" ? (
               <View
-                animation="normal"
+                transition="medium"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"

@@ -39,13 +39,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const StyledPdfIcon = styled(PdfIcon, {
-  animation: "200ms",
+  transition: "200ms",
   height: "100%",
   width: "100%",
   position: "absolute",
   top: 0,
   left: 0,
-  zIndex: "$2",
+  zIndex: "$20",
 
   variants: {
     visible: {
@@ -139,7 +139,7 @@ export const PdfDocumentDisplay = View.styleable<PdfDocumentDisplayExtraProps>(
             position="absolute"
             top="35%"
             margin="auto"
-            zIndex="$3"
+            zIndex="$30"
           />
 
           <StyledPdfIcon visible={loading || error !== null} />

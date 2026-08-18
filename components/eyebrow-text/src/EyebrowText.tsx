@@ -22,7 +22,7 @@ import { SizableText } from "@tamagui/text";
 
 export const EyebrowText = styled(SizableText, {
   name: "EyebrowText",
-  tag: "h5",
+  render: "h5",
 
   theme: "base",
   color: "$foregroundTertiary",

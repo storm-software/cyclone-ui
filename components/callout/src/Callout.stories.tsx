@@ -29,7 +29,7 @@ const meta: Meta<typeof Callout> = {
     <Callout {...rest}>
       <Callout.Header>
         <Callout.Header.Icon>{icon}</Callout.Header.Icon>
-        <YStack gap="$1">
+        <YStack gap="$md">
           <Callout.Header.Eyebrow>Callout Eyebrow</Callout.Header.Eyebrow>
           <Callout.Header.Heading>Callout Heading</Callout.Header.Heading>
         </YStack>

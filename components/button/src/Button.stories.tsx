@@ -51,14 +51,14 @@ export const Icon: Story = {
 export const Sized: Story = {
   args: {
     children: "Button Text",
-    size: "$6"
+    size: "$8xl"
   }
 };
 
 export const SizedIcon: Story = {
   args: {
     icon: <X />,
-    size: "$6"
+    size: "$8xl"
   }
 };
 

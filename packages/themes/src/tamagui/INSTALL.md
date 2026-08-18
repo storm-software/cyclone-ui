@@ -37,7 +37,7 @@ export function App() {
 - `color="$primary"` / `padding="$sm"` / `borderRadius="$md"`
 - `fontFamily="$body"` / `fontSize="$true"` / `fontWeight="$bold"`
 - Language variants: `<FontLanguage body="cn">` when a `body_cn` font is generated
-- `boxShadow="$shadow.sm"` / `boxShadow="$insetShadow.xs"`
+- `boxShadow="$shadow.sm"` / `boxShadow="$insetShadow.xs"` / `boxShadow="$ringAccent"`
 - `textShadow="$textShadow.sm"`
 - `filter="$dropShadow.sm"`
 

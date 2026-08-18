@@ -44,7 +44,7 @@ const meta: Meta<typeof AlertDialog> = {
             {children}
           </AlertDialog.Container.Content.Body>
 
-          <XStack gap="$3" marginTop="$3" width="100%">
+          <XStack gap="$3xl" marginTop="$3xl" width="100%">
             <AlertDialog.Container.Close>
               <AlertDialog.Container.Close.Text>
                 Close

@@ -280,29 +280,29 @@ const DayPicker = () => {
   return (
     <AnimatePresence key={prevNextAnimationKey}>
       <YStack
-        animation="normal"
+        transition="medium"
         justifyContent="center"
-        gap="$2"
+        gap="$xl"
         {...prevNextAnimation()}>
-        <XStack gap="$1">
+        <XStack gap="$md">
           {weekDays.map(day => (
-            <View key={day} justifyContent="center" width="$4">
+            <View key={day} justifyContent="center" width="$5xl">
               <LabelText
                 textAlign="center"
-                size="$4"
+                size="$sm"
                 color="$foregroundSecondary">
                 {day}
               </LabelText>
             </View>
           ))}
         </XStack>
-        <YStack gap="$1" flexWrap="wrap">
+        <YStack gap="$md" flexWrap="wrap">
           {subDays.map((days, i) => {
             return (
               <XStack
                 key={days[0]?.$date.toString() ?? i}
-                gap="$0.5"
-                rowGap="$0.5"
+                gap="$xs"
+                rowGap="$xs"
                 alignItems="center">
                 {days.map(day => (
                   <Button
@@ -319,14 +319,14 @@ const DayPicker = () => {
                             : "outlined"
                     }
                     borderColor={day.now ? "$borderPrimary" : undefined}
-                    padding="$1"
+                    padding="$md"
                     flexBasis="14%"
                     borderRadius={0}
                     disabled={!day.inCurrentMonth}
                     hoverStyle={
                       day.inCurrentMonth
                         ? {
-                            backgroundColor: "$backgroundElevated"
+                            backgroundColor: "$backgroundPrimaryHover"
                           }
                         : {}
                     }>
@@ -351,15 +351,15 @@ function YearRangeSlider() {
   return (
     <View
       flexDirection="row"
-      gap="$3"
+      gap="$3xl"
       width="100%"
       height={40}
       alignItems="center"
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
@@ -377,8 +377,8 @@ function YearRangeSlider() {
       </View>
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
@@ -400,15 +400,15 @@ function YearSlider() {
   return (
     <View
       flexDirection="row"
-      gap="$3"
+      gap="$3xl"
       width="100%"
       height={40}
       alignItems="center"
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
@@ -418,21 +418,21 @@ function YearSlider() {
       <View flexBasis="50%">
         <LabelText
           onPress={() => setHeader("year")}
-          selectable={true}
+          userSelect="text"
           tabIndex={0}
-          size="$6"
+          size="$lg"
           cursor="pointer"
           color="$foregroundOnPrimary"
           hoverStyle={{
-            color: "$foregroundAccent"
+            color: "$foregroundOnPrimaryHover"
           }}>
           {year}
         </LabelText>
       </View>
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
@@ -465,52 +465,52 @@ const CalendarHeader = () => {
     <XStack
       width="100%"
       alignItems="center"
-      gap="$3"
+      gap="$3xl"
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <YStack gap="$1" alignItems="center" flexBasis="50%">
+      <YStack gap="$md" alignItems="center" flexBasis="50%">
         <LabelText
-          animation="normal"
+          transition="medium"
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
-          size="$5"
+          size="$md"
           cursor="pointer"
           color="$foregroundOnPrimary"
           hoverStyle={{
-            color: "$foregroundAccent"
+            color: "$foregroundOnPrimaryHover"
           }}>
           {year}
         </LabelText>
         <LabelText
-          animation="normal"
+          transition="medium"
           onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
-          size="$8"
+          size="$2xl"
           color="$foregroundOnPrimary"
           fontWeight="600"
-          lineHeight="$1"
+          lineHeight="$xs"
           hoverStyle={{
-            color: "$foregroundAccent"
+            color: "$foregroundOnPrimaryHover"
           }}>
           {month}
         </LabelText>
       </YStack>
       <Button
         variant="ghost"
-        size="$4"
-        width="$5"
+        size="$5xl"
+        width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
@@ -569,8 +569,8 @@ const MonthPicker = ({
         display="flex"
         flexDirection="row"
         flexWrap="wrap"
-        gap="$2"
-        animation="100ms"
+        gap="$xl"
+        transition="100ms"
         $platform-native={{
           justifyContent: "space-between",
           width: "100%"
@@ -613,10 +613,10 @@ function YearPicker({
     <AnimatePresence key={prevNextAnimationKey}>
       <View
         {...prevNextAnimation()}
-        animation="100ms"
+        transition="100ms"
         flexDirection="row"
         flexWrap="wrap"
-        gap="$2"
+        gap="$xl"
         width="100%"
         justifyContent="space-between">
         {years.map(year => (
@@ -644,7 +644,7 @@ const DatePickerPopoverBody = () => {
     <Theme name={"base"}>
       <HeaderTypeProvider type={header} setHeader={setHeader}>
         <XStack justifyContent="center">
-          <YStack alignItems="center" gap="$2.5" maxWidth={425}>
+          <YStack alignItems="center" gap="$2xl" maxWidth={425}>
             <CalendarHeader />
             {header === "month" && (
               <MonthPicker onChange={() => setHeader("day")} />

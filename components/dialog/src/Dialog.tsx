@@ -50,7 +50,7 @@ const DialogHeading = styled(Heading3Text, {
 const DialogHeadingImpl = DialogHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <TamaguiDialogTitle tag="span">
+      <TamaguiDialogTitle render="span">
         <DialogHeading ref={forwardedRef} {...props}>
           {children}
         </DialogHeading>
@@ -71,8 +71,8 @@ const DialogBody = styled(BodyText, {
 const DialogBodyImpl = DialogBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <TamaguiDialogDescription tag="span">
-        <DialogBody ref={forwardedRef} size="$6" {...props}>
+      <TamaguiDialogDescription render="span">
+        <DialogBody ref={forwardedRef} size="$8xl" {...props}>
           {children}
         </DialogBody>
       </TamaguiDialogDescription>
@@ -91,7 +91,7 @@ const DialogAction = Button.styleable(
           ref={forwardedRef}
           {...props}
           variant={variant}
-          $sm={{
+          $max-sm={{
             flexBasis: "100%"
           }}>
           {children}
@@ -112,7 +112,7 @@ const DialogClose = Button.styleable(
           ref={forwardedRef}
           {...props}
           variant={variant}
-          $sm={{
+          $max-sm={{
             flexBasis: "100%"
           }}>
           {children}
@@ -128,7 +128,7 @@ const DialogClose = Button.styleable(
 const DialogOverlayFrame = styled(LinearGradient, {
   name: "DialogOverlay",
 
-  animation: "normal",
+  transition: "medium",
   fullscreen: true,
   pointerEvents: "auto",
   opacity: 0.85,
@@ -151,7 +151,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
 const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
   name: "DialogOverlay",
 
-  animation: "normal",
+  transition: "medium",
   pointerEvents: "auto",
   opacity: 0.6,
   backdropFilter: "blur(35px)",
@@ -209,13 +209,13 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
   ) => {
     return (
       <TamaguiDialogContent
-        backgrounded={true}
+        backgroundColor="$background"
         width="95%"
         flexDirection="row"
         padding={0}
-        margin="$5"
-        animation={[
-          "fast",
+        margin="$7xl"
+        transition={[
+          "quick",
           {
             opacity: {
               overshootClamping: true
@@ -228,7 +228,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
           outlineColor: "$borderAccent",
           outlineStyle: "solid",
           outlineWidth: 3,
-          outlineOffset: "$1.25"
+          outlineOffset: "$lg"
         }}>
         <Container
           ref={forwardedRef}

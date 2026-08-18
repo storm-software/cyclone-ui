@@ -33,7 +33,7 @@ const meta: Meta<typeof Message> = {
       <YStack alignItems="center" width="100%">
         <Message />
 
-        <XStack alignItems="center" gap="$4" marginTop="400px" width={400}>
+        <XStack alignItems="center" gap="$5xl" marginTop="400px" width={400}>
           <Button
             variant="tertiary"
             onPress={() => {

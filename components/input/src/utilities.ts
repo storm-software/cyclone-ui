@@ -25,7 +25,6 @@ import {
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   createStyledContext,
-  isWeb,
   stylePropsTextOnly,
   validStyles
 } from "@tamagui/core";
@@ -40,15 +39,15 @@ export const InputContext = createStyledContext<InputContextProps>({
 export const baseInputStyle = [
   {
     name: "InputValue",
-    tag: "input",
+    render: "input",
     context: InputContext,
 
-    animation: "normal",
+    transition: "medium",
     cursor: "pointer",
     height: "100%",
     flex: 1,
     color: "$foregroundOnPrimary",
-    placeholderTextColor: "$base4",
+    placeholderTextColor: "$foregroundOnPrimaryDisabled",
     selectionColor: "$color6",
     fontFamily: "$body",
     fontSize: "$true",
@@ -56,23 +55,25 @@ export const baseInputStyle = [
     margin: 0,
     padding: 0,
 
-    ...(isWeb
-      ? {
-          tabIndex: 0 as const
-        }
-      : {
-          focusable: true
-        }),
+    tabIndex: 0,
 
     // this fixes a flex bug where it overflows container
     minWidth: 0,
+
+    hoverStyle: {
+      color: "$foregroundOnPrimaryHover"
+    },
 
     variants: {
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "$base4",
-          placeholderTextColor: "$base4"
+          color: "$foregroundOnPrimaryDisabled",
+          placeholderTextColor: "$foregroundOnPrimaryDisabled",
+
+          hoverStyle: {
+            color: "$foregroundOnPrimaryDisabled"
+          }
         }
       },
 

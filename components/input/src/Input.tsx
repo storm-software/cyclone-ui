@@ -18,7 +18,6 @@
 
 import { Button } from "@cyclone-ui/button";
 import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
-import { isWeb } from "@tamagui/constants";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   styled,
@@ -39,7 +38,7 @@ const InputGroup = styled(XGroup, {
   name: "Input",
   context: InputContext,
 
-  animation: "normal",
+  transition: "medium",
   justifyContent: "space-between",
   alignItems: "center",
   backgroundColor: "transparent",
@@ -47,27 +46,20 @@ const InputGroup = styled(XGroup, {
   borderColor: "$borderPrimary",
   outlineWidth: 0,
   outlineColor: "transparent",
-  gap: "$0.6",
-
-  ...(isWeb
-    ? {
-        tabIndex: 0
-      }
-    : {
-        focusable: true
-      }),
+  gap: "$sm",
+  tabIndex: 0,
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderPrimaryHover"
   },
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
     outlineWidth: 3,
-    outlineOffset: "$1.25",
+    outlineOffset: "$lg",
     outlineStyle: "solid",
     borderColor: "$borderAccent"
   },
@@ -77,7 +69,7 @@ const InputGroup = styled(XGroup, {
       true: {
         outlineColor: "$borderAccent",
         outlineWidth: 3,
-        outlineOffset: "$1.25",
+        outlineOffset: "$lg",
         outlineStyle: "solid",
         borderColor: "$borderAccent"
       }
@@ -101,18 +93,18 @@ const InputGroup = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     },
@@ -151,12 +143,12 @@ const InputSeparator = styled(Separator, {
   name: "Input",
   context: InputContext,
 
-  animation: "normal",
+  transition: "medium",
   borderWidth: 1,
   borderColor: "$borderPrimary",
   vertical: true,
   height: "50%",
-  marginVertical: "$0.25",
+  marginVertical: "$xxs",
 
   variants: {
     focused: {
@@ -167,18 +159,18 @@ const InputSeparator = styled(Separator, {
 
     disabled: {
       true: {
-        borderColor: "$base4",
+        borderColor: "$borderPrimaryDisabled",
 
         hoverStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         focusStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         },
 
         pressStyle: {
-          borderColor: "$base4"
+          borderColor: "$borderPrimaryDisabled"
         }
       }
     }
@@ -192,14 +184,18 @@ const InputSeparator = styled(Separator, {
 
 const InputSeparatorImpl = InputSeparator.styleable(
   (props, forwardedRef) => {
-    const { disabled } = InputContext.useStyledContext();
+    const { disabled, focused } = InputContext.useStyledContext();
 
     return (
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
           $group-input-hover={{
-            borderColor: disabled ? "$base4" : "$borderAccent"
+            borderColor: disabled
+              ? "$borderPrimaryDisabled"
+              : focused
+                ? "$borderAccent"
+                : "$borderPrimaryHover"
           }}
           {...props}
         />
@@ -290,7 +286,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           {...props}
           value={value}
           enterKeyHint={enterKeyHint}
-          placeholderTextColor="$base4">
+          placeholderTextColor="$foregroundOnPrimaryDisabled">
           {children}
         </InputValue>
         {clearable && onClear && value && (
@@ -301,7 +297,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             height="100%"
             display="flex"
             alignItems="center"
-            minWidth="$4">
+            minWidth="$5xl">
             <Button
               ref={forwardedRef}
               variant="ghost"
@@ -314,7 +310,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
               onClick={onClear}
               size={adjustedTrigger}>
               <Button.Icon>
-                <X size="$1" />
+                <X size="$md" />
               </Button.Icon>
             </Button>
           </View>
@@ -341,11 +337,11 @@ const InputTrigger = Button.styleable<{
     return (
       <XGroup.Item>
         <View
-          paddingRight="$0.6"
+          paddingRight="$sm"
           display="flex"
           flexBasis={flexBasis}
           flexShrink={1}
-          minWidth="$4">
+          minWidth="$5xl">
           <Button
             ref={forwardedRef}
             variant="ghost"

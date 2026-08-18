@@ -37,7 +37,7 @@ const meta: Meta<typeof Popover> = {
         </Popover.Trigger>
 
         <Popover.Content>
-          <YStack gap="$3">
+          <YStack gap="$3xl">
             <HeadingText>Heading Text</HeadingText>
             <BodyText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

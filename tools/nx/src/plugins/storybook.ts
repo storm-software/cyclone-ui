@@ -128,7 +128,7 @@ export const createNodesV2: CreateNodes<StorybookPluginOptions> = [
           }
 
           targets[normalizedOptions.staticStorybookTargetName] =
-            serveStaticTarget(normalizedOptions, projectRoot);
+            serveStaticTarget(normalizedOptions);
 
           return {
             projects: {
@@ -227,8 +227,8 @@ function storybookConfigDir(workspaceRoot: string, projectRoot: string) {
   return join(workspaceRoot, projectRoot, ".storybook");
 }
 
-function storybookOutputDir(workspaceRoot: string, projectRoot: string) {
-  return join(workspaceRoot, projectRoot, "storybook-static");
+function storybookOutputDir(workspaceRoot: string) {
+  return join(workspaceRoot, "dist/apps/storybook");
 }
 
 function buildTarget(
@@ -237,7 +237,7 @@ function buildTarget(
   workspaceRoot: string
 ): TargetConfiguration {
   const configDir = storybookConfigDir(workspaceRoot, projectRoot);
-  const outputDir = storybookOutputDir(workspaceRoot, projectRoot);
+  const outputDir = storybookOutputDir(workspaceRoot);
 
   return {
     dependsOn: [{ target: "prepare" }],
@@ -304,16 +304,13 @@ function testTarget(projectRoot: string) {
   return targetConfig;
 }
 
-function serveStaticTarget(
-  options: StorybookPluginOptions,
-  projectRoot: string
-) {
+function serveStaticTarget(options: StorybookPluginOptions) {
   const targetConfig: TargetConfiguration = {
     dependsOn: [{ target: "prepare" }],
     executor: "@nx/web:file-server",
     options: {
       buildTarget: `${options.buildStorybookTargetName}`,
-      staticFilePath: joinPathFragments(projectRoot, "storybook-static")
+      staticFilePath: joinPathFragments("dist/apps/storybook")
     }
   };
 
@@ -322,7 +319,7 @@ function serveStaticTarget(
 
 function getOutputs(): string[] {
   const outputs = [
-    "{projectRoot}/storybook-static",
+    "{workspaceRoot}/dist/apps/storybook",
     "{options.output-dir}",
     "{options.outputDir}",
     "{options.o}"
