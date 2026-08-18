@@ -27,7 +27,7 @@ import { createStyledContext, styled } from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { forwardRef, useCallback, useState } from "react";
-import { Heading6Text } from "../../heading-text/src/HeadingText";
+import { HeadingSmallText } from "../../heading-text/src/HeadingText";
 import { AccordionToggle } from "../../vectors/src/AccordionToggle";
 
 type BaseAccordionProps = AccordionSingleProps | AccordionMultipleProps;
@@ -183,12 +183,12 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
   }
 );
 
-const AccordionItemHeaderHeading = Heading6Text.styleable(
+const AccordionItemHeaderHeading = HeadingSmallText.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { open } = AccordionItemContext.useStyledContext();
 
     return (
-      <Heading6Text
+      <HeadingSmallText
         ref={forwardedRef}
         transition="medium"
         color={open ? "$foregroundPrimary" : "$foregroundPrimaryHover"}
@@ -200,7 +200,7 @@ const AccordionItemHeaderHeading = Heading6Text.styleable(
         }}
         {...props}>
         {children}
-      </Heading6Text>
+      </HeadingSmallText>
     );
   },
   {

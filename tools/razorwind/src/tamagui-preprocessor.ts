@@ -401,7 +401,7 @@ interface ColorStateVariant {
 
 const COLOR_STATE_HOVER: ColorStateVariant = {
   suffix: "-hover",
-  brightness: 1.1,
+  brightness: 1.25,
   label: "hover"
 };
 
