@@ -31,7 +31,7 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#1A1C1F",
+        "$value": "#0F1012",
         "$description": "The lowest level surface of the palette - used for the background of the page"
       },
       "2": {
@@ -43,7 +43,7 @@
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#242629",
+        "$value": "#323537",
         "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)"
       },
       "$description": "The surface color palette - used for background colors"

@@ -71,7 +71,7 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   paddingHorizontal: "$2xl",
   borderWidth: 2,
   borderColor: "$overlayBorder",
-  borderRadius: "$md",
+  borderRadius: "$tooltip",
 
   enterStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
   exitStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },

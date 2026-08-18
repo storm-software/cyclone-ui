@@ -30,7 +30,7 @@ export const getSelectSize = (
   val: SizeTokens | number,
   extras: VariantSpreadExtras<any>
 ) => {
-  const { tokens, props } = extras;
+  const { props } = extras;
   if (!val || props.circular) {
     return;
   }
@@ -38,14 +38,12 @@ export const getSelectSize = (
   if (typeof val === "number") {
     return {
       height: val,
-      borderRadius: props.circular ? 100_000 : val * 0.2
+      borderRadius: props.circular ? 100_000 : "$control"
     };
   }
 
-  const radiusToken = tokens.radius[val] ?? tokens.radius.$true;
-
   return {
     height: val,
-    borderRadius: props.circular ? 100_000 : radiusToken
+    borderRadius: props.circular ? 100_000 : "$control"
   };
 };

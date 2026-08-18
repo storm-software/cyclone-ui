@@ -7,4 +7,3 @@ inputs:
     url: github:cachix/devenv-nixpkgs/rolling
 imports:
   - storm-ops/devenv-modules/pnpm
-  - storm-ops/devenv-modules/claude

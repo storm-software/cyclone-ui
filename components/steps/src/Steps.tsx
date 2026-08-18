@@ -128,7 +128,7 @@ export const StepsFrame = TamaguiTabs.styleable(
           flexDirection="row"
           activationMode="manual"
           backgroundColor="$backgroundPrimary"
-          borderRadius="$lg"
+          borderRadius="$container"
           position="relative"
           {...rest}
           onValueChange={setCurrentStep}
@@ -365,7 +365,7 @@ const AnimatedView = styled(View, {
           opacity: 0
         },
         exitStyle: {
-          zIndex: 0,
+          zIndex: "$0",
           x: direction < 0 ? -50 : 50,
           opacity: 0
         }

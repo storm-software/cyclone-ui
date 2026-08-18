@@ -20,7 +20,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
-import { Heading5Text } from "@cyclone-ui/heading-text";
+import { HeadingMediumText } from "@cyclone-ui/heading-text";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
   styled,
@@ -66,7 +66,6 @@ const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
     <Container
       {...props}
       variant="tertiary"
-      theme={"base"}
       themeShallow={true}
       bordered={false}
       noPadding={true}
@@ -88,7 +87,7 @@ const AlertIcon = ThemeableIcon.styleable(
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
           theme={theme}
-          transition="medium"
+          transition="250ms"
           enterStyle={{
             x: -200,
             opacity: 0.6
@@ -97,15 +96,15 @@ const AlertIcon = ThemeableIcon.styleable(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$backgroundFloating"
           zIndex="$10"
         />
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
           <View
-            theme={"base"}
+            theme="base"
             padding="$xl"
-            backgroundColor="$surface1"
+            backgroundColor="$backgroundFloating"
             borderRadius={1000_000_000}>
             <ThemeableIcon
               ref={forwardedRef}
@@ -142,10 +141,18 @@ const AlertContent = YStack.styleable(
   }
 );
 
-const AlertHeading = styled(Heading5Text, {
+const AlertHeading = styled(HeadingMediumText, {
   name: "AlertHeading",
 
-  color: "$foregroundPrimary"
+  color: "$foregroundPrimary",
+
+  variants: {
+    size: {
+      default: {
+        fontSize: "$lg"
+      }
+    }
+  }
 });
 
 const AlertHeadingImpl = AlertHeading.styleable(

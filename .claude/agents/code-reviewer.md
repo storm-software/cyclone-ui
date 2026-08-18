@@ -1,1 +1,0 @@
-/nix/store/gpmw3rv59cxj5z8fj3pbd2w8rvl6pfj3-claude-agents-code-reviewer.md

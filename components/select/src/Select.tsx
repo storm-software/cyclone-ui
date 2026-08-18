@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { getRadius, getSized } from "@cyclone-ui/helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   styled,
@@ -49,6 +49,7 @@ const SelectGroup = styled(XGroup, {
   outlineStyle: "none",
   gap: "$none",
   tabIndex: 0,
+  borderRadius: "$control",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -171,10 +172,6 @@ const SelectTrigger = Button.styleable<{
     const { circular, focused, disabled, size, onFocus } =
       SelectContext.useStyledContext();
 
-    const radius = useMemo(
-      () => getRadius("$true", { circular, scale: 0.75 }),
-      []
-    );
     const adjustedTrigger = useMemo(
       () => getSized(size, { shift: -3 }),
       [size]
@@ -199,7 +196,7 @@ const SelectTrigger = Button.styleable<{
           variant="ghost"
           {...props}
           disabled={disabled}
-          borderRadius={radius}
+          borderRadius={circular ? 100_000 : "$trigger"}
           onPress={onFocus}
           size={adjustedTrigger}
           color={

@@ -124,7 +124,7 @@ export const getInputSize = (
   val: SizeTokens | number,
   extras: VariantSpreadExtras<any>
 ) => {
-  const { tokens, props } = extras;
+  const { props } = extras;
   if (!val || props.circular) {
     return;
   }
@@ -133,16 +133,15 @@ export const getInputSize = (
     return {
       paddingHorizontal: val * 0.25,
       height: val,
-      borderRadius: props.circular ? 100_000 : val * 0.2
+      borderRadius: props.circular ? 100_000 : "$control"
     };
   }
 
   const xSize = getSpaced(val);
-  const radiusToken = tokens.radius[val] ?? tokens.radius.$true;
 
   return {
     paddingHorizontal: xSize,
     height: val,
-    borderRadius: props.circular ? 100_000 : radiusToken
+    borderRadius: props.circular ? 100_000 : "$control"
   };
 };

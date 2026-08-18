@@ -995,6 +995,62 @@ const TOKENS: TokenTableRow[] = [
       theme: "base"
     },
     {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "base"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "base"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "base"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "base"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "base"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "base"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
+      theme: "base"
+    },
+    {
       path: "shadow.2xs",
       type: "shadow",
       value: "0px 1px 0px 0px #0000000d",
@@ -1693,7 +1749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.surface.1",
       type: "color",
-      value: "#1a1c1f",
+      value: "#0f1012",
       cssVar: "--rw-color-surface-1",
       description: "The lowest level surface of the palette - used for the background of the page",
       theme: "dark"
@@ -1709,7 +1765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.surface.3",
       type: "color",
-      value: "#242629",
+      value: "#323537",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)",
       theme: "dark"
@@ -2373,7 +2429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary",
       type: "color",
-      value: "var(--color-base-8)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the dark theme",
       theme: "dark"
@@ -2533,15 +2589,15 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary-hover",
       type: "color",
-      value: "#65686a",
+      value: "#909191",
       cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme (hover, 25% brighter)",
+      description: "The secondary foreground color for the dark theme (hover, 25% darker)",
       theme: "dark"
     },
     {
       path: "color.foreground.secondary-disabled",
       type: "color",
-      value: "#494b4d99",
+      value: "#d5d6d699",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -2973,7 +3029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#27292d",
+      value: "#191a1c",
       cssVar: "--rw-color-background-page-hover",
       description: "The page background color for the dark theme (hover, 25% brighter)",
       theme: "dark"
@@ -2981,7 +3037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.page-disabled",
       type: "color",
-      value: "#1a1c1f99",
+      value: "#0f101299",
       cssVar: "--rw-color-background-page-disabled",
       description: "The page background color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3005,7 +3061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#35373a",
+      value: "#474a4d",
       cssVar: "--rw-color-background-floating-hover",
       description: "The floating background color for the dark theme (hover, 25% brighter)",
       theme: "dark"
@@ -3013,7 +3069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#24262999",
+      value: "#32353799",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3661,7 +3717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#35373a",
+      value: "#474a4d",
       cssVar: "--rw-color-overlay-background-hover",
       description: "The overlay background color for the dark theme (hover, 25% brighter)",
       theme: "dark"
@@ -3669,7 +3725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#24262999",
+      value: "#32353799",
       cssVar: "--rw-color-overlay-background-disabled",
       description: "The overlay background color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -4888,6 +4944,62 @@ const TOKENS: TokenTableRow[] = [
       value: "100%",
       cssVar: "--rw-border-radius-full",
       description: "Full radius (100%)",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
       theme: "dark"
     },
     {
@@ -5589,7 +5701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.surface.1",
       type: "color",
-      value: "#373a3d",
+      value: "#2f3134",
       cssVar: "--rw-color-surface-1",
       description: "The lowest level surface of the palette - used for the background of the page",
       theme: "darkDimmed"
@@ -5605,7 +5717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.surface.3",
       type: "color",
-      value: "#3f4144",
+      value: "#494b4d",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)",
       theme: "darkDimmed"
@@ -6269,7 +6381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary",
       type: "color",
-      value: "var(--color-base-8)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the dark theme",
       theme: "darkDimmed"
@@ -6429,15 +6541,15 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary-hover",
       type: "color",
-      value: "#6d6f70",
+      value: "#8b8c8c",
       cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme (hover, 25% brighter)",
+      description: "The secondary foreground color for the dark theme (hover, 25% darker)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.secondary-disabled",
       type: "color",
-      value: "#595b5c99",
+      value: "#bbbcbc99",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -6869,7 +6981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#414346",
+      value: "#37383b",
       cssVar: "--rw-color-background-page-hover",
       description: "The page background color for the dark theme (hover, 25% brighter)",
       theme: "darkDimmed"
@@ -6877,7 +6989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.page-disabled",
       type: "color",
-      value: "#373a3d99",
+      value: "#2f313499",
       cssVar: "--rw-color-background-page-disabled",
       description: "The page background color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -6901,7 +7013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#4b4d4f",
+      value: "#585a5c",
       cssVar: "--rw-color-background-floating-hover",
       description: "The floating background color for the dark theme (hover, 25% brighter)",
       theme: "darkDimmed"
@@ -6909,7 +7021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#3f414499",
+      value: "#494b4d99",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -7557,7 +7669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#4b4d4f",
+      value: "#585a5c",
       cssVar: "--rw-color-overlay-background-hover",
       description: "The overlay background color for the dark theme (hover, 25% brighter)",
       theme: "darkDimmed"
@@ -7565,7 +7677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#3f414499",
+      value: "#494b4d99",
       cssVar: "--rw-color-overlay-background-disabled",
       description: "The overlay background color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -8784,6 +8896,62 @@ const TOKENS: TokenTableRow[] = [
       value: "100%",
       cssVar: "--rw-border-radius-full",
       description: "Full radius (100%)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
       theme: "darkDimmed"
     },
     {
@@ -9501,7 +9669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.surface.3",
       type: "color",
-      value: "#000000",
+      value: "#111315",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)",
       theme: "darkHighContrast"
@@ -10165,7 +10333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary",
       type: "color",
-      value: "var(--color-base-8)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -10325,15 +10493,15 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.secondary-hover",
       type: "color",
-      value: "#555e64",
+      value: "#929e9e",
       cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme (hover, 25% brighter)",
+      description: "The secondary foreground color for the dark theme (hover, 25% darker)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.secondary-disabled",
       type: "color",
-      value: "#2f333899",
+      value: "#fcfcfc99",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -10765,7 +10933,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#030304",
+      value: "#000000",
       cssVar: "--rw-color-background-page-hover",
       description: "The page background color for the dark theme (hover, 25% brighter)",
       theme: "darkHighContrast"
@@ -10797,7 +10965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#15171a",
+      value: "#2d3237",
       cssVar: "--rw-color-background-floating-hover",
       description: "The floating background color for the dark theme (hover, 25% brighter)",
       theme: "darkHighContrast"
@@ -10805,7 +10973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#00000099",
+      value: "#11131599",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -11453,7 +11621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#15171a",
+      value: "#2d3237",
       cssVar: "--rw-color-overlay-background-hover",
       description: "The overlay background color for the dark theme (hover, 25% brighter)",
       theme: "darkHighContrast"
@@ -11461,7 +11629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#00000099",
+      value: "#11131599",
       cssVar: "--rw-color-overlay-background-disabled",
       description: "The overlay background color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -12680,6 +12848,62 @@ const TOKENS: TokenTableRow[] = [
       value: "100%",
       cssVar: "--rw-border-radius-full",
       description: "Full radius (100%)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
       theme: "darkHighContrast"
     },
     {
@@ -16579,6 +16803,62 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "light"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "light"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "light"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "light"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "light"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "light"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
+      theme: "light"
+    },
+    {
       path: "shadow.2xs",
       type: "shadow",
       value: "0px 1px 0px 0px #0000000d",
@@ -20475,6 +20755,62 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
+      theme: "lightDimmed"
+    },
+    {
       path: "shadow.2xs",
       type: "shadow",
       value: "0px 1px 0px 0px #0000000d",
@@ -24368,6 +24704,62 @@ const TOKENS: TokenTableRow[] = [
       value: "100%",
       cssVar: "--rw-border-radius-full",
       description: "Full radius (100%)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.container",
+      type: "dimension",
+      value: "var(--border-radius-lg)",
+      cssVar: "--rw-border-radius-container",
+      description: "The border radius use for large containers",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.card",
+      type: "dimension",
+      value: "var(--border-radius-md)",
+      cssVar: "--rw-border-radius-card",
+      description: "The border radius use for cards",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.trigger",
+      type: "dimension",
+      value: "var(--border-radius-sm)",
+      cssVar: "--rw-border-radius-trigger",
+      description: "The border radius use for triggers, such as buttons and badges",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.control",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-control",
+      description: "The border radius use for controls, such as inputs and selects",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.dialog",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-dialog",
+      description: "The border radius use for dialogs",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.popover",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-popover",
+      description: "The border radius use for popovers",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.tooltip",
+      type: "dimension",
+      value: "var(--border-radius-xs)",
+      cssVar: "--rw-border-radius-tooltip",
+      description: "The border radius use for tooltips",
       theme: "lightHighContrast"
     },
     {

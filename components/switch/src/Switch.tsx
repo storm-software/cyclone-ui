@@ -240,7 +240,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
     return (
       <SwitchIconFrame
         ref={forwardedRef}
-        zIndex="$md"
+        zIndex="$20"
         alignItems="center"
         // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}

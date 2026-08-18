@@ -34,6 +34,7 @@ const ContainerFrame = styled(View, {
 
   tabIndex: -1,
   width: "100%",
+  borderRadius: "$container",
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
@@ -95,12 +96,11 @@ const ContainerFrame = styled(View, {
     },
 
     size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
+      "...size": (val: SizeTokens, _config: VariantSpreadExtras<ViewProps>) => {
         const space = getSpaced(val);
 
         return {
-          padding: space,
-          borderRadius: config.tokens.radius[val]
+          padding: space
         };
       }
     },
@@ -155,16 +155,9 @@ const ContainerGroup = styled(View, {
   width: "100%",
   display: "flex",
   flex: 1,
+  borderRadius: "$container",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        return {
-          borderRadius: config.tokens.radius[val]
-        };
-      }
-    },
-
     circular: {
       true: {
         borderRadius: 1000_000_000
@@ -173,7 +166,6 @@ const ContainerGroup = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     circular: false
   }
 });
@@ -194,7 +186,7 @@ export const Container = ContainerFrame.styleable(
     forwardedRef
   ) => {
     return (
-      <ContainerGroup group={true} size={size} circular={circular}>
+      <ContainerGroup group={true} circular={circular}>
         {variant === "glass" && (
           <ContainerGlassBackground theme={"base"} fullscreen={true} />
         )}

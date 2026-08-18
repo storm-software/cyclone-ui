@@ -432,6 +432,13 @@
   --border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
   --border-radius-4xl: 2rem; /** 4X large radius (2rem) */
   --border-radius-full: 100%; /** Full radius (100%) */
+  --border-radius-container: 0.5rem; /** The border radius use for large containers */
+  --border-radius-card: 0.375rem; /** The border radius use for cards */
+  --border-radius-trigger: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
+  --border-radius-control: 0.125rem; /** The border radius use for controls, such as inputs and selects */
+  --border-radius-dialog: 0.125rem; /** The border radius use for dialogs */
+  --border-radius-popover: 0.125rem; /** The border radius use for popovers */
+  --border-radius-tooltip: 0.125rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
   --shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
   --shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */

@@ -214,6 +214,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         flexDirection="row"
         padding={0}
         margin="$7xl"
+        borderRadius="$dialog"
         transition={[
           "quick",
           {
@@ -237,7 +238,8 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
           {...props}
           variant={variant}
           bordered={bordered}
-          elevated={elevated}>
+          elevated={elevated}
+          borderRadius="$dialog">
           {children}
         </Container>
       </TamaguiDialogContent>

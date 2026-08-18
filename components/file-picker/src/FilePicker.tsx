@@ -95,7 +95,7 @@ const FilePickerGroupFrame = styled(View, {
   paddingVertical: "$5xl",
   borderStyle: "dashed",
   borderWidth: 2,
-  borderRadius: "$lg",
+  borderRadius: "$container",
   borderColor: "$borderPrimary",
   backgroundColor: "transparent",
   outlineWidth: 0,
@@ -414,6 +414,7 @@ const FilePickerFile = ({
       width="100%"
       overflow="hidden"
       position="relative"
+      borderRadius="$card"
       borderColor="$base4"
       borderWidth={1}
       enterStyle={{
@@ -437,7 +438,7 @@ const FilePickerFile = ({
         bottom={0}
         left={0}
         right={0}
-        zIndex={10}
+        zIndex="$10"
         backgroundColor="$backgroundPrimaryHover"
         opacity={0.6}
         $group-file-hover={{
@@ -450,7 +451,7 @@ const FilePickerFile = ({
       <View
         transition="100ms"
         position="absolute"
-        zIndex={20}
+        zIndex="$20"
         left={16}
         top="30%"
         opacity={0}
@@ -478,7 +479,7 @@ const FilePickerFile = ({
         <View
           transition="100ms"
           position="absolute"
-          zIndex={20}
+          zIndex="$20"
           right={16}
           top="30%"
           opacity={0}
@@ -503,7 +504,7 @@ const FilePickerFile = ({
       <View
         transition="100ms"
         position="absolute"
-        zIndex={15}
+        zIndex="$20"
         top={0}
         bottom={0}
         left={0}
@@ -511,7 +512,7 @@ const FilePickerFile = ({
         alignItems="center"
         justifyContent="center">
         <YStack width="75%" gap="$xl">
-          <View zIndex={25} justifyContent="center" alignItems="center">
+          <View zIndex="$30" justifyContent="center" alignItems="center">
             <FilePickerViewLink uri={uri}>
               {name
                 ? name.length > MAX_DISPLAYABLE_FILE_NAME_LENGTH
@@ -521,14 +522,14 @@ const FilePickerFile = ({
             </FilePickerViewLink>
           </View>
           <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <BytesText zIndex={25} color="$base9" fontWeight="$medium">
+            <BytesText zIndex="$30" color="$base9" fontWeight="$medium">
               {size}
             </BytesText>
 
             {lastModified && <Dot size="$lg" color="$base9" />}
 
             {lastModified && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$medium">
+              <BodyText zIndex="$30" color="$base9" fontWeight="$medium">
                 {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
               </BodyText>
             )}
@@ -536,7 +537,7 @@ const FilePickerFile = ({
             {mimeType && <Dot size="$lg" color="$base9" />}
 
             {mimeType && (
-              <BodyText zIndex={25} color="$base9" fontWeight="$medium">
+              <BodyText zIndex="$30" color="$base9" fontWeight="$medium">
                 {mimeType}
               </BodyText>
             )}
@@ -547,7 +548,7 @@ const FilePickerFile = ({
       <LinearGradient
         transition="slow"
         fullscreen={true}
-        zIndex={10}
+        zIndex="$10"
         colors={["transparent", "$backgroundAccentSubtle"]}
         locations={[0, 1.1]}
         start={[0, 0]}
@@ -564,7 +565,7 @@ const FilePickerFile = ({
         top={-240}
         left={0}
         right={0}
-        zIndex={5}
+        zIndex="$0"
         scale={1}
         $group-file-hover={{
           scale: 1.2

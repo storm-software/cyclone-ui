@@ -21,10 +21,12 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Accordion } from "./Accordion";
 
 const meta = {
+  title: "Containers/Accordion",
   component: Accordion,
   tags: ["autodocs"],
   args: {
-    variant: "default"
+    variant: "default",
+    single: false
   },
   render: (args: any) => (
     <Accordion {...args}>
@@ -81,10 +83,19 @@ const meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta> & {
+  args: Parameters<typeof Accordion>[0];
+};
 
 export const Default: Story = {
   args: {
+    children: "Some collapsed content"
+  }
+};
+
+export const Single: Story = {
+  args: {
+    single: true,
     children: "Some collapsed content"
   }
 };

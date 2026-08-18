@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import {
   styled,
@@ -48,6 +48,7 @@ const InputGroup = styled(XGroup, {
   outlineColor: "transparent",
   gap: "$sm",
   tabIndex: 0,
+  borderRadius: "$control",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -326,7 +327,6 @@ const InputTrigger = Button.styleable<{
 }>(
   ({ children, flexBasis = "6%", ...props }, forwardedRef) => {
     const { circular, size } = InputContext.useStyledContext();
-    const radius = getRadius("$true", { circular, scale: 0.75 });
     const theme = useThemeName();
 
     const adjustedTrigger = useMemo(
@@ -345,7 +345,7 @@ const InputTrigger = Button.styleable<{
           <Button
             ref={forwardedRef}
             variant="ghost"
-            borderRadius={radius}
+            borderRadius={circular ? 100_000 : "$trigger"}
             color={
               theme?.includes("base")
                 ? "$borderPrimary"

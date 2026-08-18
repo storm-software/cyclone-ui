@@ -57,6 +57,7 @@ const CardFrame = styled(Container, {
 
   transition: "medium",
   overflow: "hidden",
+  borderRadius: "$card",
   borderColor: "$borderPrimary",
   cursor: "pointer",
   backgroundColor: "$backgroundElevated",
@@ -110,7 +111,7 @@ const CardContent = styled(YStack, {
   context: CardContext,
 
   transition: "medium",
-  zIndex: 20,
+  zIndex: "$20",
 
   variants: {
     size: {
@@ -156,7 +157,7 @@ const CardHeader = styled(XStack, {
   context: CardContext,
 
   paddingBottom: 0,
-  zIndex: 10,
+  zIndex: "$10",
   alignItems: "center",
 
   variants: {
@@ -195,7 +196,7 @@ const CardHeading = styled(Heading3Text, {
   name: "CardHeading",
   context: CardContext,
 
-  zIndex: 20,
+  zIndex: "$20",
   verticalAlign: "middle"
 });
 
@@ -220,7 +221,7 @@ const CardEyebrow = styled(EyebrowText, {
   name: "CardEyebrow",
   context: CardContext,
 
-  zIndex: 20
+  zIndex: "$20"
 });
 
 const CardEyebrowImpl = CardEyebrow.styleable(
@@ -244,7 +245,7 @@ const CardBody = styled(BodyText, {
   name: "CardBody",
   context: CardContext,
 
-  zIndex: 20,
+  zIndex: "$20",
   paddingVertical: 0
 });
 
@@ -268,21 +269,21 @@ const CardBodyImpl = CardBody.styleable(
 const CardFooter = styled(ThemeableStack, {
   name: "CardFooter",
   context: CardContext,
-  zIndex: 20
+  zIndex: "$20"
 });
 
 const CardLink = styled(Link, {
   name: "CardLink",
   context: CardContext,
 
-  zIndex: 25
+  zIndex: "$30"
 });
 
 const CardLinkArrowRight = styled(ArrowRight, {
   name: "CardLink",
   context: CardContext,
 
-  zIndex: 25,
+  zIndex: "$30",
   color: "$foregroundPrimary",
   marginTop: "$xs"
 });

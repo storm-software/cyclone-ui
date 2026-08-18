@@ -147,19 +147,18 @@ const TabsFrame = styled(TamaguiTabs, {
   context: TabsContext,
 
   activationMode: "manual",
-  borderRadius: "$true",
+  borderRadius: "$container",
   position: "relative",
   height: "100%",
   width: "100%",
 
   variants: {
     size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
+      "...size": (val: SizeTokens) => {
         const size = getSized(val);
 
         return {
-          size,
-          borderRadius: config.tokens.radius[size]
+          size
         };
       }
     },
@@ -334,7 +333,7 @@ const TabsRovingIndicator = styled(YStack, {
         borderRadius: 0
       },
       background: {
-        borderRadius: "$true"
+        borderRadius: "$trigger"
       }
     }
   } as const,
@@ -393,7 +392,7 @@ const AnimatedView = styled(View, {
           opacity: 0
         },
         exitStyle: {
-          zIndex: 0,
+          zIndex: "$0",
           x: direction < 0 ? -50 : 50,
           opacity: 0
         }

@@ -174,7 +174,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   cursor: "pointer",
   gap: "$3xl",
   backgroundColor: "transparent",
-  borderRadius: "$lg",
+  borderRadius: "$control",
   borderWidth: 1,
   borderColor: "$borderPrimary",
   paddingHorizontal: "$3xl",

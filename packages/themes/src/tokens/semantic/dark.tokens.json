@@ -12,7 +12,7 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.8}",
+        "$value": "{color.base.4}",
         "$description": "The secondary foreground color for the dark theme"
       },
       "tertiary": {

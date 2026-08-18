@@ -24,12 +24,12 @@ import { getSpace } from "@tamagui/get-token";
  * Get the sizing related style values for a button component based on the size token or number
  *
  * @param val - The size token or number to use
- * @param param - The tokens and props to use
+ * @param param - The props to use
  * @returns The style values for the button sizing
  */
 export const getButtonSized = (
   val: SizeTokens | number,
-  { tokens, props }: VariantSpreadExtras<any>
+  { props }: VariantSpreadExtras<any>
 ) => {
   if (!val || props.circular) {
     return;
@@ -40,17 +40,16 @@ export const getButtonSized = (
       paddingHorizontal: val * 0.25,
       gap: val * 0.25,
       height: val,
-      borderRadius: props.circular ? 100_000 : val * 0.2
+      borderRadius: props.circular ? 100_000 : "$trigger"
     };
   }
 
   const size = getSpace(val);
-  const radiusToken = tokens.radius[val] ?? tokens.radius.$true;
 
   return {
     paddingHorizontal: size,
     gap: size,
     height: val,
-    borderRadius: props.circular ? 100_000 : radiusToken
+    borderRadius: props.circular ? 100_000 : "$trigger"
   };
 };
