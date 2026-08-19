@@ -100,11 +100,11 @@ catalog:
   "@razorwind/core": ^0.0.57
   "@razorwind/css": ^0.0.40
   "@razorwind/design-md": ^0.0.54
-  "@razorwind/nx": ^0.0.52
+  "@razorwind/nx": ^0.0.53
   "@razorwind/storybook": ^0.0.54
   "@razorwind/style-dictionary": ^0.0.43
   "@razorwind/shadcn": ^0.0.53
-  "@razorwind/tamagui": ^0.0.49
+  "@razorwind/tamagui": ^0.0.54
   "@storm-software/cloudflare-tools": ^0.71.281
   "@storm-software/config": ^1.138.69
   "@storm-software/config-tools": ^1.190.133

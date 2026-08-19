@@ -73,7 +73,7 @@ const AccordionGroup = styled(YGroup, {
         borderColor: "$borderPrimary",
         backgroundColor: "$backgroundElevated",
         paddingHorizontal: "$6xl",
-        paddingVertical: "$2xl",
+        paddingVertical: "$lg",
         overflow: "hidden"
       },
       surface: {
@@ -81,7 +81,7 @@ const AccordionGroup = styled(YGroup, {
         borderColor: "$borderPrimary",
         backgroundColor: "$backgroundPage",
         paddingHorizontal: "$6xl",
-        paddingVertical: "$2xl",
+        paddingVertical: "$lg",
         overflow: "hidden"
       },
       separated: {
@@ -241,7 +241,7 @@ const AccordionItemImpl = AccordionItem.styleable(
             ref={forwardedRef}
             key={value}
             value={value}
-            unstyled
+            unstyled={true}
             {...props}>
             {children}
           </AccordionItem>
@@ -257,7 +257,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
   transition: "250ms",
   paddingHorizontal: "$3xl",
-  paddingVertical: "$lg",
+  paddingVertical: "$2xl",
   zIndex: "$60",
   borderStyle: "solid",
   borderWidth: 0,
@@ -285,6 +285,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
         backgroundColor: "$backgroundPage"
       },
       separated: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "$backgroundElevated",
 
         hoverStyle: {
@@ -292,6 +293,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
         }
       },
       bordered: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "transparent",
 
         hoverStyle: {
@@ -333,10 +335,11 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         {children}
         <AccordionToggle
           isExpanded={open}
-          color="$foregroundPrimary"
+          color="$foreground"
           size="$lg"
+          strokeWidth={2.5}
           $group-accordion-hover={{
-            color: "$foregroundPrimaryHover",
+            color: "$foregroundHover",
             cursor: "pointer"
           }}
         />
@@ -354,9 +357,9 @@ const AccordionItemHeaderHeading = HeadingSmallText.styleable(
       <HeadingSmallText
         ref={forwardedRef}
         transition="250ms"
-        color="$foregroundPrimary"
+        color="$foreground"
         $group-accordion-hover={{
-          color: "$foregroundPrimaryHover",
+          color: "$foregroundHover",
           cursor: "pointer"
         }}
         {...props}>
@@ -387,9 +390,11 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
         backgroundColor: "$backgroundPage"
       },
       separated: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "$backgroundElevated"
       },
       bordered: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "transparent"
       },
       ghost: {

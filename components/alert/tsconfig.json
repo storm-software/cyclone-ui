@@ -13,19 +13,22 @@
   },
   "references": [
     {
-      "path": "../themeable-icon"
-    },
-    {
-      "path": "../heading-text"
+      "path": "../button"
     },
     {
       "path": "../container"
     },
     {
-      "path": "../button"
+      "path": "../heading-text"
     },
     {
       "path": "../body-text"
+    },
+    {
+      "path": "../themeable-icon"
+    },
+    {
+      "path": "../../packages/helpers"
     }
   ],
   "files": [],

@@ -24,8 +24,8 @@ const meta: Meta<typeof Alert> = {
   title: "Containers/Alert",
   component: Alert,
   tags: ["autodocs"],
-  render: ({ children, icon, theme, ...rest }: any) => (
-    <Alert {...rest} theme={theme}>
+  render: ({ children, icon, theme, type, ...rest }: any) => (
+    <Alert {...rest} theme={theme} type={type}>
       <Alert.Icon>{icon}</Alert.Icon>
       <Alert.Content>
         <Alert.Content.Heading>Alert Heading</Alert.Content.Heading>
@@ -60,49 +60,56 @@ export const CustomIcon: Story = {
 export const Brand: Story = {
   args: {
     children: bodyText,
-    theme: "brand"
+    type: "brand"
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
     children: bodyText,
-    theme: "alternate"
+    theme: "discovery"
   }
 };
 
-export const Help: Story = {
+export const Danger: Story = {
   args: {
     children: bodyText,
-    theme: "help"
-  }
-};
-
-export const Error: Story = {
-  args: {
-    children: bodyText,
-    theme: "danger"
+    type: "danger"
   }
 };
 
 export const Warning: Story = {
   args: {
     children: bodyText,
-    theme: "warning"
+    type: "warning"
   }
 };
 
 export const Info: Story = {
   args: {
     children: bodyText,
-    theme: "info"
+    type: "info"
   }
 };
 
 export const Success: Story = {
   args: {
     children: bodyText,
-    theme: "success"
+    type: "success"
+  }
+};
+
+export const Discovery: Story = {
+  args: {
+    children: bodyText,
+    type: "discovery"
+  }
+};
+
+export const Accent: Story = {
+  args: {
+    children: bodyText,
+    type: "accent"
   }
 };
 

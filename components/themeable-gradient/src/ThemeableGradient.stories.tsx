@@ -48,9 +48,9 @@ export const Alternate: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 
@@ -104,9 +104,9 @@ export const AnalogousAlternate: Story = {
   }
 };
 
-export const AnalogousHelp: Story = {
+export const AnalogousDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "analogous"
   }
 };
@@ -169,9 +169,9 @@ export const TriadicAlternate: Story = {
   }
 };
 
-export const TriadicHelp: Story = {
+export const TriadicDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "triadic"
   }
 };
@@ -234,9 +234,9 @@ export const TetradicAlternate: Story = {
   }
 };
 
-export const TetradicHelp: Story = {
+export const TetradicDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "tetradic"
   }
 };
@@ -299,9 +299,9 @@ export const ComplementaryAlternate: Story = {
   }
 };
 
-export const ComplementaryHelp: Story = {
+export const ComplementaryDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "complementary"
   }
 };
@@ -364,9 +364,9 @@ export const SplitComplementaryAlternate: Story = {
   }
 };
 
-export const SplitComplementaryHelp: Story = {
+export const SplitComplementaryDiscovery: Story = {
   args: {
-    theme: "help",
+    theme: "discovery",
     variant: "splitComplementary"
   }
 };

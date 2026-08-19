@@ -25,7 +25,7 @@ const BaseHeadingText = styled(SizableText, {
   render: "span",
   role: "heading",
 
-  color: "$foregroundPrimary",
+  color: "$foreground",
   fontFamily: "$heading-md"
 });
 

@@ -31,20 +31,26 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#0F1012",
+        "$value": "#000101",
         "$description": "The lowest level surface of the palette - used for the background of the page"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#1E2023",
+        "$value": "#181B1B",
         "$description": "The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.)"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#323537",
-        "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)"
+        "$value": "#222424",
+        "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, dropdowns, etc.)"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#2E3030",
+        "$description": "The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.)"
       },
       "$description": "The surface color palette - used for background colors"
     },
@@ -53,55 +59,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#FBFBFB",
+        "$value": "#FAFAFA",
         "$description": "A near-white base gray color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#F6F6F6",
+        "$value": "#ABACAC",
         "$description": "A very light base gray color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#EAEAEA",
+        "$value": "#6F7070",
         "$description": "A light base gray color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#D5D6D6",
+        "$value": "#444646",
         "$description": "A soft base gray color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#BABBBB",
+        "$value": "#27292A",
         "$description": "A mid base gray color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#999A9B",
+        "$value": "#161819",
         "$description": "A medium base gray color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#727476",
+        "$value": "#0D0F10",
         "$description": "A dark base gray color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#494B4D",
+        "$value": "#090C0C",
         "$description": "A deep charcoal gray color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#1E2023",
+        "$value": "#090B0C",
         "$description": "An almost-black base gray color"
       },
       "$description": "The base color palette"

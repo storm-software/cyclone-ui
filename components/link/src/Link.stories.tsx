@@ -129,26 +129,26 @@ export const AlternateExternal: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     href: "#",
-    theme: "help"
+    theme: "discovery"
   }
 };
 
-export const HelpCallToAction: Story = {
+export const DiscoveryCallToAction: Story = {
   args: {
     href: "#",
     cta: true,
-    theme: "help"
+    theme: "discovery"
   }
 };
 
-export const HelpExternal: Story = {
+export const DiscoveryExternal: Story = {
   args: {
     href: "#",
     external: true,
-    theme: "help"
+    theme: "discovery"
   }
 };
 

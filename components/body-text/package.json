@@ -21,11 +21,7 @@
     }
   },
   "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
+  "files": ["dist", "src", "types"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -33,7 +29,8 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/text": "catalog:"
+    "@tamagui/text": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -44,7 +41,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ]
+  "sideEffects": ["*.css"]
 }

@@ -101,25 +101,25 @@ export const AlternateOutlined: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     children: "Badge Text",
-    theme: "help"
+    theme: "discovery"
   }
 };
 
-export const HelpRounded: Story = {
+export const DiscoveryRounded: Story = {
   args: {
     children: "Badge Text",
-    theme: "help",
+    theme: "discovery",
     circular: true
   }
 };
 
-export const HelpOutlined: Story = {
+export const DiscoveryOutlined: Story = {
   args: {
     children: "Badge Text",
-    theme: "help",
+    theme: "discovery",
     outlined: true
   }
 };

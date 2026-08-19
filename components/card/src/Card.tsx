@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { Heading3Text } from "@cyclone-ui/heading-text";
+import { HeadingXLText } from "@cyclone-ui/heading-text";
 import { getSpaced } from "@cyclone-ui/helpers";
 import { Link } from "@cyclone-ui/link";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
@@ -192,7 +192,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   );
 };
 
-const CardHeading = styled(Heading3Text, {
+const CardHeading = styled(HeadingXLText, {
   name: "CardHeading",
   context: CardContext,
 

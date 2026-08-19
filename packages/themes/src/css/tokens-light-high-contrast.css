@@ -35,6 +35,7 @@
   --color-surface-1: #ffffff; /** The lowest level surface of the palette - used for the background of the page */
   --color-surface-2: #ffffff; /** The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.) */
   --color-surface-3: #ffffff; /** The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.) */
+  --color-surface-4: #e0e4e4; /** The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.) */
   --color-base-1: #ffffff; /** A warm near-white gray color */
   --color-base-2: #dedede; /** A soft warm gray color */
   --color-base-3: #9d9d9d; /** A light warm gray color */
@@ -117,6 +118,7 @@
   --color-pink-8: #dc4f8a; /** A deep berry pink color */
   --color-pink-9: #b3386a; /** A dark plum pink color */
   --color-foreground-primary: #ffffff; /** The primary foreground color for the light theme */
+  --color-foreground-body: #666666; /** The body foreground color for the light theme */
   --color-foreground-secondary: #000000; /** The secondary foreground color for the light theme */
   --color-foreground-tertiary: #000000; /** The tertiary foreground color for the light theme */
   --color-foreground-accent: #00bcad; /** The accent foreground color for the light theme */
@@ -137,6 +139,8 @@
   --color-foreground-on-discovery: #ffffff; /** The discovery foreground color for the light theme */
   --color-foreground-primary-hover: #b7b7b7; /** The primary foreground color for the light theme (hover, 25% darker) */
   --color-foreground-primary-disabled: rgba(255, 255, 255, 0.6); /** The primary foreground color for the light theme (disabled, 60% opacity) */
+  --color-foreground-body-hover: #303030; /** The body foreground color for the light theme (hover, 25% darker) */
+  --color-foreground-body-disabled: rgba(102, 102, 102, 0.6); /** The body foreground color for the light theme (disabled, 60% opacity) */
   --color-foreground-secondary-hover: #040404; /** The secondary foreground color for the light theme (hover, 25% brighter) */
   --color-foreground-secondary-disabled: rgba(0, 0, 0, 0.6); /** The secondary foreground color for the light theme (disabled, 60% opacity) */
   --color-foreground-tertiary-hover: #000000; /** The tertiary foreground color for the light theme (hover, 25% brighter) */
@@ -176,6 +180,7 @@
   --color-background-page: #ffffff; /** The page background color for the light theme */
   --color-background-elevated: #ffffff; /** The elevated background color for the light theme */
   --color-background-floating: #ffffff; /** The floating background color for the light theme */
+  --color-background-highest: #e0e4e4; /** The highest level of elevation background color for the light theme */
   --color-background-primary: #ffffff; /** The primary foreground color for the light theme */
   --color-background-secondary: #000000; /** The secondary foreground color for the light theme */
   --color-background-tertiary: #000000; /** The tertiary foreground color for the light theme */
@@ -198,6 +203,8 @@
   --color-background-elevated-disabled: rgba(255, 255, 255, 0.6); /** The elevated background color for the light theme (disabled, 60% opacity) */
   --color-background-floating-hover: #b0aaa5; /** The floating background color for the light theme (hover, 25% darker) */
   --color-background-floating-disabled: rgba(255, 255, 255, 0.6); /** The floating background color for the light theme (disabled, 60% opacity) */
+  --color-background-highest-hover: #808d8d; /** The highest level of elevation background color for the light theme (hover, 25% darker) */
+  --color-background-highest-disabled: rgba(224, 228, 228, 0.6); /** The highest level of elevation background color for the light theme (disabled, 60% opacity) */
   --color-background-primary-hover: #b7b7b7; /** The primary foreground color for the light theme (hover, 25% darker) */
   --color-background-primary-disabled: rgba(255, 255, 255, 0.6); /** The primary foreground color for the light theme (disabled, 60% opacity) */
   --color-background-secondary-hover: #040404; /** The secondary foreground color for the light theme (hover, 25% brighter) */
@@ -432,7 +439,7 @@
   --border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
   --border-radius-4xl: 2rem; /** 4X large radius (2rem) */
   --border-radius-full: 100%; /** Full radius (100%) */
-  --border-radius-container: 0.5rem; /** The border radius use for large containers */
+  --border-radius-container: 0.375rem; /** The border radius use for large containers */
   --border-radius-card: 0.375rem; /** The border radius use for cards */
   --border-radius-trigger: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
   --border-radius-control: 0.125rem; /** The border radius use for controls, such as inputs and selects */

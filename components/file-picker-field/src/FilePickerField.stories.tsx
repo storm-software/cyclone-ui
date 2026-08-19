@@ -71,9 +71,9 @@ export const Multiple: Story = {
 //   }
 // };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 

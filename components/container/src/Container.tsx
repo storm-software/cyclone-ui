@@ -48,25 +48,43 @@ const ContainerFrame = styled(View, {
       primary: {
         backgroundColor: "$backgroundPrimary",
         borderWidth: 1,
-        borderColor: "$borderTertiary"
+        borderColor: "$borderPrimary"
       },
 
       secondary: {
-        backgroundColor: "$surface2",
+        backgroundColor: "$backgroundSecondary",
         borderWidth: 1,
-        borderColor: "$borderPrimary"
+        borderColor: "$borderSecondary"
       },
 
       tertiary: {
-        backgroundColor: "$surface1",
+        backgroundColor: "$backgroundTertiary",
+        borderWidth: 1,
+        borderColor: "$borderTertiary"
+      },
+
+      elevated: {
+        backgroundColor: "$backgroundElevated",
         borderWidth: 1,
         borderColor: "$borderPrimary"
       },
 
-      quaternary: {
-        backgroundColor: "$backgroundElevated",
+      floating: {
+        backgroundColor: "$backgroundFloating",
+        borderWidth: 1,
+        borderColor: "$borderSecondary"
+      },
+
+      highest: {
+        backgroundColor: "$backgroundHighest",
+        borderWidth: 1,
+        borderColor: "$borderTertiary"
+      },
+
+      page: {
+        backgroundColor: "$backgroundPage",
         borderWidth: 2,
-        borderColor: "$borderPrimary"
+        borderColor: "$borderSecondary"
       },
 
       outlined: {
@@ -105,7 +123,7 @@ const ContainerFrame = styled(View, {
       }
     },
 
-    elevated: {
+    shadowed: {
       true: {
         boxShadow: "0px 4px 30px $overlayBackdrop"
       }
@@ -127,9 +145,9 @@ const ContainerFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    variant: "tertiary",
+    variant: "elevated",
     size: "$true",
-    elevated: true,
+    shadowed: false,
     circular: false,
     bordered: true,
     noPadding: false
@@ -175,7 +193,7 @@ export const Container = ContainerFrame.styleable(
     {
       variant = "tertiary",
       size = "$true",
-      elevated = true,
+      shadowed = false,
       circular = false,
       bordered = true,
       noPadding = false,
@@ -195,7 +213,7 @@ export const Container = ContainerFrame.styleable(
           {...props}
           variant={variant}
           size={size}
-          elevated={elevated}
+          shadowed={shadowed}
           circular={circular}
           bordered={bordered}
           borderWidth={bordered ? borderWidth : 0}

@@ -47,11 +47,13 @@ const AccordionToggleContainer = styled(View, {
 
 export type AccordionToggleProps = IconProps & {
   isExpanded?: boolean;
+  strokeWidth?: number;
 };
 
 const Icon = ({
   isExpanded = false,
   size = 24,
+  strokeWidth = 1.5,
   ...props
 }: AccordionToggleProps) => {
   const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
@@ -150,13 +152,13 @@ const Icon = ({
           strokeLinecap="round"
           strokeLinejoin="round"
           {...(props as SvgProps)}>
-          <Path d="M5 12h14" stroke={color} strokeWidth="1.5" />
+          <Path d="M5 12h14" stroke={color} strokeWidth={strokeWidth} />
 
           {isExpanded && (
             <Path
               stroke={color}
               d={`M12 5v${expandLength}`}
-              strokeWidth="1.5"
+              strokeWidth={strokeWidth}
               opacity={expandOpacity}
             />
           )}
@@ -165,7 +167,7 @@ const Icon = ({
             <Path
               stroke={color}
               d={`M12 5v${compressLength}`}
-              strokeWidth="1.5"
+              strokeWidth={strokeWidth}
               opacity={compressOpacity}
             />
           )}

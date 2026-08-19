@@ -21,11 +21,7 @@
     }
   },
   "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
+  "files": ["dist", "src", "types"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -39,7 +35,13 @@
     "@tamagui/lucide-icons": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/web": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/button": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -50,8 +52,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx"
 }

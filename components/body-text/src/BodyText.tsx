@@ -23,7 +23,7 @@ export const BodyText = styled(Text, {
   name: "BodyText",
   render: "p",
 
-  color: "$foregroundSecondary",
+  color: "$foregroundBody",
   fontFamily: "$body",
 
   variants: {

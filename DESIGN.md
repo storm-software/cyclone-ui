@@ -9,6 +9,7 @@ colors:
   brand-1: "#1fb2a6"
   brand-2: "#003832"
   foreground-primary: "#f4f4f4"
+  foreground-body: "#6e6e6e"
   foreground-secondary: "#1c1c1c"
   foreground-tertiary: "#181818"
   foreground-accent: "#1fb2a6"
@@ -29,6 +30,8 @@ colors:
   foreground-on-discovery: "#f4f4f4"
   foreground-primary-hover: "#a6a6a6"
   foreground-primary-disabled: "#f4f4f499"
+  foreground-body-hover: "#494949"
+  foreground-body-disabled: "#6e6e6e99"
   foreground-secondary-hover: "#2a2a2a"
   foreground-secondary-disabled: "#1c1c1c99"
   foreground-tertiary-hover: "#242424"
@@ -68,6 +71,7 @@ colors:
   background-page: "#ffffff"
   background-elevated: "#f4f4f3"
   background-floating: "#e8e7e6"
+  background-highest: "#c3c4c4"
   background-primary: "#f4f4f4"
   background-secondary: "#1c1c1c"
   background-tertiary: "#181818"
@@ -90,6 +94,8 @@ colors:
   background-elevated-disabled: "#f4f4f399"
   background-floating-hover: "#9e9d9c"
   background-floating-disabled: "#e8e7e699"
+  background-highest-hover: "#848585"
+  background-highest-disabled: "#c3c4c499"
   background-primary-hover: "#a6a6a6"
   background-primary-disabled: "#f4f4f499"
   background-secondary-hover: "#2a2a2a"
@@ -283,7 +289,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 197 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -293,6 +299,7 @@ Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing 
 - **Brand 1 (#1fb2a6):** The Storm Software brand teal color
 - **Brand 2 (#003832):** The Storm Software brand teal color
 - **Foreground Primary (#f4f4f4):** The primary foreground color for the light theme
+- **Foreground Body (#6e6e6e):** The body foreground color for the light theme
 - **Foreground Secondary (#1c1c1c):** The secondary foreground color for the light theme
 - **Foreground Tertiary (#181818):** The tertiary foreground color for the light theme
 - **Foreground Accent (#1fb2a6):** The accent foreground color for the light theme
@@ -313,6 +320,8 @@ Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing 
 - **Foreground On Discovery (#f4f4f4):** The discovery foreground color for the light theme
 - **Foreground Primary Hover (#a6a6a6):** The primary foreground color for the light theme (hover, 25% darker)
 - **Foreground Primary Disabled (#f4f4f499):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Body Hover (#494949):** The body foreground color for the light theme (hover, 25% darker)
+- **Foreground Body Disabled (#6e6e6e99):** The body foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Secondary Hover (#2a2a2a):** The secondary foreground color for the light theme (hover, 25% brighter)
 - **Foreground Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Tertiary Hover (#242424):** The tertiary foreground color for the light theme (hover, 25% brighter)
@@ -352,6 +361,7 @@ Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing 
 - **Background Page (#ffffff):** The page background color for the light theme
 - **Background Elevated (#f4f4f3):** The elevated background color for the light theme
 - **Background Floating (#e8e7e6):** The floating background color for the light theme
+- **Background Highest (#c3c4c4):** The highest level of elevation background color for the light theme
 - **Background Primary (#f4f4f4):** The primary foreground color for the light theme
 - **Background Secondary (#1c1c1c):** The secondary foreground color for the light theme
 - **Background Tertiary (#181818):** The tertiary foreground color for the light theme
@@ -374,6 +384,8 @@ Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing 
 - **Background Elevated Disabled (#f4f4f399):** The elevated background color for the light theme (disabled, 60% opacity)
 - **Background Floating Hover (#9e9d9c):** The floating background color for the light theme (hover, 25% darker)
 - **Background Floating Disabled (#e8e7e699):** The floating background color for the light theme (disabled, 60% opacity)
+- **Background Highest Hover (#848585):** The highest level of elevation background color for the light theme (hover, 25% darker)
+- **Background Highest Disabled (#c3c4c499):** The highest level of elevation background color for the light theme (disabled, 60% opacity)
 - **Background Primary Hover (#a6a6a6):** The primary foreground color for the light theme (hover, 25% darker)
 - **Background Primary Disabled (#f4f4f499):** The primary foreground color for the light theme (disabled, 60% opacity)
 - **Background Secondary Hover (#2a2a2a):** The secondary foreground color for the light theme (hover, 25% brighter)

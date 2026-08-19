@@ -24,7 +24,9 @@ const meta: Meta<typeof Container> = {
   component: Container,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => (
-    <Container {...rest}>{children}</Container>
+    <Container {...rest} height="300px">
+      {children}
+    </Container>
   )
 } satisfies Meta<typeof Container>;
 
@@ -37,6 +39,66 @@ type Story = StoryObj<typeof Container>;
 export const Base: Story = {
   args: {
     children: "Container Text"
+  }
+};
+
+export const Elevated: Story = {
+  args: {
+    children: "Container Text",
+    variant: "elevated"
+  }
+};
+
+export const ElevatedNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "elevated",
+    bordered: false
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    children: "Container Text",
+    variant: "floating"
+  }
+};
+
+export const FloatingNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "floating",
+    bordered: false
+  }
+};
+
+export const Highest: Story = {
+  args: {
+    children: "Container Text",
+    variant: "highest"
+  }
+};
+
+export const HighestNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "highest",
+    bordered: false
+  }
+};
+
+export const Page: Story = {
+  args: {
+    children: "Container Text",
+    variant: "page"
+  }
+};
+
+export const PageNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "page",
+    bordered: false
   }
 };
 
@@ -81,21 +143,6 @@ export const TertiaryNoBorder: Story = {
   args: {
     children: "Container Text",
     variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const Quaternary: Story = {
-  args: {
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const QuaternaryNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "quaternary",
     bordered: false
   }
 };
@@ -200,23 +247,6 @@ export const BaseTertiaryNoBorder: Story = {
   }
 };
 
-export const BaseQuaternary: Story = {
-  args: {
-    theme: "base",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const BaseQuaternaryNoBorder: Story = {
-  args: {
-    theme: "base",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
 export const BaseOutlined: Story = {
   args: {
     theme: "base",
@@ -263,252 +293,6 @@ export const BaseCircular: Story = {
 export const BaseCircularNoBorder: Story = {
   args: {
     theme: "base",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Brand theme
-
-export const BrandPrimary: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const BrandPrimaryNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const BrandSecondary: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const BrandSecondaryNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const BrandTertiary: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const BrandTertiaryNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const BrandQuaternary: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const BrandQuaternaryNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
-export const BrandOutlined: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const BrandOutlinedNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const BrandGlass: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const BrandGlassNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const BrandCircular: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const BrandCircularNoBorder: Story = {
-  args: {
-    theme: "brand",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Alternate theme
-
-export const AlternatePrimary: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const AlternatePrimaryNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const AlternateSecondary: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const AlternateSecondaryNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const AlternateTertiary: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const AlternateTertiaryNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const AlternateQuaternary: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const AlternateQuaternaryNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
-export const AlternateOutlined: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const AlternateOutlinedNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const AlternateGlass: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const AlternateGlassNoBorder: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const AlternateCircular: Story = {
-  args: {
-    theme: "alternate",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const AlternateCircularNoBorder: Story = {
-  args: {
-    theme: "alternate",
     children: "Container Text",
     variant: "secondary",
     circular: true,
@@ -639,245 +423,122 @@ export const AccentCircularNoBorder: Story = {
   }
 };
 
-// Link theme
+// Discovery theme
 
-export const LinkPrimary: Story = {
+export const DiscoveryPrimary: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "primary"
   }
 };
 
-export const LinkPrimaryNoBorder: Story = {
+export const DiscoveryPrimaryNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "primary",
     bordered: false
   }
 };
 
-export const LinkSecondary: Story = {
+export const DiscoverySecondary: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "secondary"
   }
 };
 
-export const LinkSecondaryNoBorder: Story = {
+export const DiscoverySecondaryNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "secondary",
     bordered: false
   }
 };
 
-export const LinkTertiary: Story = {
+export const DiscoveryTertiary: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "tertiary"
   }
 };
 
-export const LinkTertiaryNoBorder: Story = {
+export const DiscoveryTertiaryNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "tertiary",
     bordered: false
   }
 };
 
-export const LinkQuaternary: Story = {
+export const DiscoveryQuaternary: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "quaternary"
   }
 };
 
-export const LinkQuaternaryNoBorder: Story = {
+export const DiscoveryQuaternaryNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "quaternary",
     bordered: false
   }
 };
 
-export const LinkOutlined: Story = {
+export const DiscoveryOutlined: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "outlined"
   }
 };
 
-export const LinkOutlinedNoBorder: Story = {
+export const DiscoveryOutlinedNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "outlined",
     bordered: false
   }
 };
 
-export const LinkGlass: Story = {
+export const DiscoveryGlass: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "glass"
   }
 };
 
-export const LinkGlassNoBorder: Story = {
+export const DiscoveryGlassNoBorder: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "glass",
     bordered: false
   }
 };
 
-export const LinkCircular: Story = {
+export const DiscoveryCircular: Story = {
   args: {
-    theme: "link",
+    theme: "discovery",
     children: "Container Text",
     variant: "secondary",
     circular: true
   }
 };
 
-export const LinkCircularNoBorder: Story = {
+export const DiscoveryCircularNoBorder: Story = {
   args: {
-    theme: "link",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true,
-    bordered: false
-  }
-};
-
-// Help theme
-
-export const HelpPrimary: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "primary"
-  }
-};
-
-export const HelpPrimaryNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "primary",
-    bordered: false
-  }
-};
-
-export const HelpSecondary: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "secondary"
-  }
-};
-
-export const HelpSecondaryNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "secondary",
-    bordered: false
-  }
-};
-
-export const HelpTertiary: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "tertiary"
-  }
-};
-
-export const HelpTertiaryNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const HelpQuaternary: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const HelpQuaternaryNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
-export const HelpOutlined: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "outlined"
-  }
-};
-
-export const HelpOutlinedNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "outlined",
-    bordered: false
-  }
-};
-
-export const HelpGlass: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "glass"
-  }
-};
-
-export const HelpGlassNoBorder: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "glass",
-    bordered: false
-  }
-};
-
-export const HelpCircular: Story = {
-  args: {
-    theme: "help",
-    children: "Container Text",
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const HelpCircularNoBorder: Story = {
-  args: {
-    theme: "help",
+    theme: "discovery",
     children: "Container Text",
     variant: "secondary",
     circular: true,

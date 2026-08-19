@@ -46,6 +46,12 @@
         "$value": "#E8E7E6",
         "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)"
       },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#C3C4C4",
+        "$description": "The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.)"
+      },
       "$description": "The surface color palette - used for background colors"
     },
     "base": {

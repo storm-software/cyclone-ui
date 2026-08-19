@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Heading4Text } from "@cyclone-ui/heading-text";
+import { HeadingLargeText } from "@cyclone-ui/heading-text";
 import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type { SizeTokens, VariantSpreadExtras, ViewProps } from "@tamagui/core";
@@ -503,7 +503,7 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
   }
 );
 
-const TabsHeaderItemHeading = styled(Heading4Text, {
+const TabsHeaderItemHeading = styled(HeadingLargeText, {
   name: "TabsHeading",
   context: TabsContext,
 

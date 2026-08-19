@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Container } from "@cyclone-ui/container";
-import { Heading3Text } from "@cyclone-ui/heading-text";
+import { HeadingXLText } from "@cyclone-ui/heading-text";
 import type { GetProps } from "@tamagui/core";
 import { Theme, styled } from "@tamagui/core";
 import type {
@@ -41,7 +41,7 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import * as React from "react";
 
-const DialogHeading = styled(Heading3Text, {
+const DialogHeading = styled(HeadingXLText, {
   name: "DialogHeading",
 
   color: "$foregroundOnPrimary"

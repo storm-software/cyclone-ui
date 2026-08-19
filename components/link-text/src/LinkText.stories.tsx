@@ -110,9 +110,9 @@ export const AlternateTheme: Story = {
   }
 };
 
-export const HelpTheme: Story = {
+export const DiscoveryTheme: Story = {
   args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 

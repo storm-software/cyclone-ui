@@ -42,7 +42,9 @@ export default meta;
 type Story = StoryObj<typeof HeadingText>;
 
 export const Base: Story = {
-  args: {}
+  args: {
+    theme: "base"
+  }
 };
 
 export const Heading1: Story = {
@@ -81,25 +83,19 @@ export const Heading6: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Accent: Story = {
   args: {
-    theme: "brand"
+    theme: "accent"
   }
 };
 
-export const Alternate: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "alternate"
+    theme: "discovery"
   }
 };
 
-export const Help: Story = {
-  args: {
-    theme: "help"
-  }
-};
-
-export const Error: Story = {
+export const Danger: Story = {
   args: {
     theme: "danger"
   }
