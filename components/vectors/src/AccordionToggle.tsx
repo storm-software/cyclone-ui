@@ -56,7 +56,7 @@ const Icon = ({
   strokeWidth = 1.5,
   ...props
 }: AccordionToggleProps) => {
-  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
+  const color = useCurrentColor((props.color || "$foregroundOn") as any);
 
   const compressLengthPosition = useMotionValue(0);
   const compressLengthPlayback = animate(compressLengthPosition, 14, {

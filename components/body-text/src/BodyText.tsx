@@ -19,6 +19,7 @@
 import { getFontSizedFromSize } from "@cyclone-ui/helpers";
 import type { GetProps } from "@tamagui/core";
 import { styled, Text } from "@tamagui/core";
+
 export const BodyText = styled(Text, {
   name: "BodyText",
   render: "p",

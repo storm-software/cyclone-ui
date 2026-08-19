@@ -35,7 +35,15 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 export type AlertType =
-  "brand" | "danger" | "warning" | "info" | "success" | "discovery" | "accent";
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "danger"
+  | "warning"
+  | "info"
+  | "success"
+  | "discovery"
+  | "accent";
 
 export interface AlertContextProps {
   type?: AlertType;
@@ -85,7 +93,7 @@ const AlertFrameImpl = ({
     <AlertContext.Provider type={type}>
       <Container
         {...props}
-        variant="tertiary"
+        variant="highest"
         themeShallow={true}
         bordered={false}
         noPadding={true}
@@ -103,8 +111,9 @@ const AlertFrameImpl = ({
 const AlertIconBackground = styled(View, {
   name: "Alert",
 
+  theme: "base",
   padding: "$xl",
-  backgroundColor: "$surface1",
+  backgroundColor: "$backgroundHighest",
   borderRadius: 1000_000_000
 });
 
@@ -127,19 +136,18 @@ const AlertIcon = ThemeableIcon.styleable(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           zIndex="$10"
         />
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground
-              backgroundColor={type ? "$backgroundPrimary" : "$surface1"}>
+            <AlertIconBackground backgroundColor="$backgroundHighest">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={colorTheme}
-                {...(type ? { color: "$foregroundOnPrimary" } : {})}
+                {...(type ? { color: "$foreground" } : {})}
                 size="$5xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
                   <AlertCircle />
@@ -177,7 +185,7 @@ const AlertContent = YStack.styleable(
 const AlertHeading = styled(HeadingMediumText, {
   name: "AlertHeading",
 
-  color: "$foregroundPrimary",
+  color: "$foreground",
 
   variants: {
     size: {
@@ -208,7 +216,6 @@ const AlertHeadingImpl = AlertHeading.styleable(
 const AlertBody = styled(BodyText, {
   name: "AlertBody",
 
-  color: "$foregroundSecondary",
   fontSize: "$lg"
 });
 

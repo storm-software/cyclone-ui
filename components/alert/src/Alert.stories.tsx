@@ -57,17 +57,25 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     children: bodyText,
-    type: "brand"
+    type: "primary"
   }
 };
 
-export const Discovery: Story = {
+export const Secondary: Story = {
   args: {
     children: bodyText,
-    theme: "discovery"
+    type: "secondary"
+  }
+};
+
+export const Tertiary: Story = {
+
+  args: {
+    children: bodyText,
+    type: "tertiary"
   }
 };
 
@@ -113,16 +121,3 @@ export const Accent: Story = {
   }
 };
 
-export const Positive: Story = {
-  args: {
-    children: bodyText,
-    theme: "positive"
-  }
-};
-
-export const Negative: Story = {
-  args: {
-    children: bodyText,
-    theme: "negative"
-  }
-};

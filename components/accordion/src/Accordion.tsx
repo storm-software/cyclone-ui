@@ -70,7 +70,7 @@ const AccordionGroup = styled(YGroup, {
     variant: {
       default: {
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "$backgroundElevated",
         paddingHorizontal: "$6xl",
         paddingVertical: "$lg",
@@ -78,7 +78,7 @@ const AccordionGroup = styled(YGroup, {
       },
       surface: {
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "$backgroundPage",
         paddingHorizontal: "$6xl",
         paddingVertical: "$lg",
@@ -150,6 +150,7 @@ const AccordionFrameImpl = forwardRef<
         <TamaguiAccordion
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
+          theme="primary"
           unstyled
           {...props}
           borderRadius="$container"
@@ -198,22 +199,22 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
     variant: {
       default: {
         borderBottomWidth: 1,
-        borderBottomColor: "$borderPrimary"
+        borderBottomColor: "$border"
       },
       surface: {
         borderBottomWidth: 1,
-        borderBottomColor: "$borderPrimary"
+        borderBottomColor: "$border"
       },
       separated: {
         borderRadius: "$container",
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "$backgroundElevated"
       },
       bordered: {
         borderRadius: "$container",
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "transparent"
       },
       ghost: {

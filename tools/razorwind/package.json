@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@razorwind/core": "catalog:",
-    "@razorwind/style-dictionary": "catalog:"
+    "@razorwind/style-dictionary": "catalog:",
+    "style-dictionary": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:"
