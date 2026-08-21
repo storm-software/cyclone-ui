@@ -180,8 +180,7 @@ const ButtonFrame = styled(View, {
   borderWidth: 1,
   flexWrap: "nowrap",
   flexDirection: "row",
-  flex: 1,
-  // flexShrink: 1,
+  width: "fit-content",
   overflow: "hidden",
 
   hoverStyle: {
