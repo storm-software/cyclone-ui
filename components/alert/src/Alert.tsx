@@ -20,9 +20,10 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
 import { Container } from "@cyclone-ui/container";
-import { Heading5Text } from "@cyclone-ui/heading-text";
+import { HeadingMediumText } from "@cyclone-ui/heading-text";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import {
+  createStyledContext,
   styled,
   Theme,
   useThemeName,
@@ -32,6 +33,25 @@ import {
 import { AlertCircle, X } from "@tamagui/lucide-icons";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
+
+export type AlertType =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "danger"
+  | "warning"
+  | "info"
+  | "success"
+  | "discovery"
+  | "accent";
+
+export interface AlertContextProps {
+  type?: AlertType;
+}
+
+export const AlertContext = createStyledContext<AlertContextProps>({
+  type: undefined
+});
 
 const AlertClose = styled(Button, {
   name: "AlertTrigger",
@@ -61,34 +81,53 @@ const AlertCloseImpl = AlertClose.styleable(
   }
 );
 
-const AlertFrameImpl = ({ children, theme, ...props }: ContainerProps) => {
+export type AlertFrameProps = ContainerProps & AlertContextProps;
+
+const AlertFrameImpl = ({
+  children,
+  theme,
+  type,
+  ...props
+}: AlertFrameProps) => {
   return (
-    <Container
-      {...props}
-      variant="tertiary"
-      theme={"base"}
-      themeShallow={true}
-      bordered={false}
-      noPadding={true}
-      overflow="hidden">
-      <Theme name={theme}>
-        <XStack gap="$3xl" paddingRight="$md">
-          {children}
-        </XStack>
-      </Theme>
-    </Container>
+    <AlertContext.Provider type={type}>
+      <Container
+        {...props}
+        variant="highest"
+        themeShallow={true}
+        bordered={false}
+        noPadding={true}
+        overflow="hidden">
+        <Theme name={type ?? theme}>
+          <XStack gap="$3xl" paddingRight="$md">
+            {children}
+          </XStack>
+        </Theme>
+      </Container>
+    </AlertContext.Provider>
   );
 };
+
+const AlertIconBackground = styled(View, {
+  name: "Alert",
+
+  theme: "base",
+  padding: "$xl",
+  backgroundColor: "$backgroundHighest",
+  borderRadius: 1000_000_000
+});
 
 const AlertIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
+    const { type } = AlertContext.useStyledContext();
+    const colorTheme = type ?? theme;
 
     return (
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
-          theme={theme}
-          transition="medium"
+          theme={colorTheme}
+          transition="250ms"
           enterStyle={{
             x: -200,
             opacity: 0.6
@@ -97,24 +136,25 @@ const AlertIcon = ThemeableIcon.styleable(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           zIndex="$10"
         />
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
-          <View
-            theme={"base"}
-            padding="$xl"
-            backgroundColor="$surface1"
-            borderRadius={1000_000_000}>
-            <ThemeableIcon
-              ref={forwardedRef}
-              {...props}
-              theme={theme}
-              size="$5xl">
-              {children || getIconByTheme({ theme }) || <AlertCircle />}
-            </ThemeableIcon>
-          </View>
+          <Theme name={type ?? "base"}>
+            <AlertIconBackground backgroundColor="$backgroundHighest">
+              <ThemeableIcon
+                ref={forwardedRef}
+                {...props}
+                theme={colorTheme}
+                {...(type ? { color: "$foreground" } : {})}
+                size="$5xl">
+                {children || getIconByTheme({ theme: colorTheme }) || (
+                  <AlertCircle />
+                )}
+              </ThemeableIcon>
+            </AlertIconBackground>
+          </Theme>
         </YStack>
       </XStack>
     );
@@ -142,16 +182,26 @@ const AlertContent = YStack.styleable(
   }
 );
 
-const AlertHeading = styled(Heading5Text, {
+const AlertHeading = styled(HeadingMediumText, {
   name: "AlertHeading",
 
-  color: "$foregroundPrimary"
+  color: "$foreground",
+
+  variants: {
+    size: {
+      default: {
+        fontSize: "$lg"
+      }
+    }
+  } as const
 });
 
 const AlertHeadingImpl = AlertHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
+    const { type } = AlertContext.useStyledContext();
+
     return (
-      <Theme name={"base"}>
+      <Theme name={type ?? "base"}>
         <AlertHeading ref={forwardedRef} {...props}>
           {children}
         </AlertHeading>
@@ -166,7 +216,6 @@ const AlertHeadingImpl = AlertHeading.styleable(
 const AlertBody = styled(BodyText, {
   name: "AlertBody",
 
-  color: "$foregroundSecondary",
   fontSize: "$lg"
 });
 
@@ -190,7 +239,7 @@ export type AlertHeadingProps = GetProps<typeof AlertHeadingImpl>;
 export type AlertBodyProps = GetProps<typeof AlertBodyImpl>;
 export type AlertIconProps = GetProps<typeof AlertIcon>;
 
-export type AlertProps = GetProps<typeof AlertFrameImpl>;
+export type AlertProps = AlertFrameProps;
 
 export const Alert = withStaticProperties(AlertFrameImpl, {
   Icon: AlertIcon,

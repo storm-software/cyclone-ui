@@ -28,7 +28,7 @@ export type AlertCircleProps = IconProps & {
 };
 
 const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
-  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
+  const color = useCurrentColor((props.color || "$foregroundOn") as any);
 
   const diameter = 24;
   const strokeWidth = 2;

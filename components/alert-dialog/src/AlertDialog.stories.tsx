@@ -96,10 +96,10 @@ export const Alternate: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
     children: bodyText,
-    theme: "help"
+    theme: "discovery"
   }
 };
 

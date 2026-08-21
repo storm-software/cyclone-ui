@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
+import { AccordionToggle } from "@cyclone-ui/vectors";
 import { isString } from "@stryke/type-checks/is-string";
 import type {
   AccordionMultipleProps,
@@ -26,29 +28,32 @@ import type { GetProps, TamaguiElement } from "@tamagui/core";
 import { createStyledContext, styled } from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
-import { forwardRef, useCallback, useState } from "react";
-import { HeadingSmallText } from "../../heading-text/src/HeadingText";
-import { AccordionToggle } from "../../vectors/src/AccordionToggle";
+import {
+  Children,
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  useCallback,
+  useState
+} from "react";
 
 type BaseAccordionProps = AccordionSingleProps | AccordionMultipleProps;
 
 export type AccordionVariant =
-  | "default"
-  | "surface"
-  | "separated"
-  | "bordered"
-  | "ghost";
+  "default" | "surface" | "separated" | "bordered" | "ghost";
 
 export interface AccordionContextProps {
   open: string[];
   setOpen: (open: string[]) => void;
   variant: AccordionVariant;
+  single: boolean;
 }
 
 export const AccordionContext = createStyledContext<AccordionContextProps>({
   open: [],
   setOpen: (_open: string[]) => {},
-  variant: "default"
+  variant: "default",
+  single: false
 });
 
 const AccordionGroup = styled(YGroup, {
@@ -56,18 +61,28 @@ const AccordionGroup = styled(YGroup, {
   context: AccordionContext,
 
   width: "100%",
-  borderRadius: "$true",
+  borderRadius: "$container",
   borderWidth: 0,
   borderColor: "transparent",
   backgroundColor: "transparent",
 
   variants: {
     variant: {
-      default: {},
+      default: {
+        borderWidth: 1,
+        borderColor: "$border",
+        backgroundColor: "$backgroundElevated",
+        paddingHorizontal: "$6xl",
+        paddingVertical: "$lg",
+        overflow: "hidden"
+      },
       surface: {
         borderWidth: 1,
-        borderColor: "$borderPrimary",
-        backgroundColor: "$background"
+        borderColor: "$border",
+        backgroundColor: "$backgroundPage",
+        paddingHorizontal: "$6xl",
+        paddingVertical: "$lg",
+        overflow: "hidden"
       },
       separated: {
         gap: "$lg",
@@ -87,23 +102,31 @@ const AccordionGroup = styled(YGroup, {
 // eslint-disable-next-line react-refresh/only-export-components
 const AccordionFrameImpl = forwardRef<
   TamaguiElement,
-  Partial<BaseAccordionProps> & { variant?: AccordionVariant }
+  Partial<BaseAccordionProps> & {
+    variant?: AccordionVariant;
+    single?: boolean;
+  }
 >(
   (
     {
       children,
       type = "multiple",
       variant = "default",
+      single = false,
       onValueChange,
       ...props
     },
     forwardedRef
   ) => {
+    const isSingle = single || type === "single";
     const [open, setOpen] = useState<string[]>([]);
 
     const handleValueChange = useCallback(
       (next: string | string[]) => {
-        if (isString(next)) {
+        if (isSingle) {
+          const nextValue = isString(next) ? next : (next?.[0] ?? "");
+          setOpen(nextValue ? [nextValue] : []);
+        } else if (isString(next)) {
           setOpen(prev =>
             prev.includes(next)
               ? prev.filter(item => item !== next)
@@ -115,24 +138,40 @@ const AccordionFrameImpl = forwardRef<
 
         onValueChange?.(next as string & string[]);
       },
-      [onValueChange]
+      [isSingle, onValueChange]
     );
 
     return (
       <AccordionContext.Provider
         open={open}
         setOpen={setOpen}
-        variant={variant}>
+        variant={variant}
+        single={isSingle}>
         <TamaguiAccordion
           ref={forwardedRef}
-          type={type}
+          type={isSingle ? "single" : "multiple"}
+          theme="primary"
           unstyled
           {...props}
-          borderRadius="$true"
+          borderRadius="$container"
           width="100%"
           onValueChange={handleValueChange}>
           <AccordionGroup variant={variant}>
-            {children}
+            {
+              // eslint-disable-next-line ts/promise-function-async
+              Children.toArray(children).map((child, index, items) => {
+                if (!isValidElement(child)) {
+                  return child;
+                }
+
+                const isLast =
+                  (variant === "default" || variant === "surface") &&
+                  index === items.length - 1;
+
+                // eslint-disable-next-line react/no-clone-element
+                return cloneElement(child, { last: isLast } as never);
+              })
+            }
           </AccordionGroup>
         </TamaguiAccordion>
       </AccordionContext.Provider>
@@ -160,35 +199,32 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
     variant: {
       default: {
         borderBottomWidth: 1,
-        borderBottomColor: "$borderPrimary",
-
-        hoverStyle: {
-          borderBottomColor: "$borderPrimaryHover"
-        }
+        borderBottomColor: "$border"
       },
       surface: {
         borderBottomWidth: 1,
-        borderBottomColor: "$borderPrimary",
-
-        hoverStyle: {
-          borderBottomColor: "$borderPrimaryHover"
-        }
+        borderBottomColor: "$border"
       },
       separated: {
-        borderRadius: "$true",
+        borderRadius: "$container",
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "$backgroundElevated"
       },
       bordered: {
-        borderRadius: "$true",
+        borderRadius: "$container",
         borderWidth: 1,
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         backgroundColor: "transparent"
       },
       ghost: {
         borderWidth: 0,
         backgroundColor: "transparent"
+      }
+    },
+    last: {
+      true: {
+        borderBottomWidth: 0
       }
     }
   } as const
@@ -206,7 +242,7 @@ const AccordionItemImpl = AccordionItem.styleable(
             ref={forwardedRef}
             key={value}
             value={value}
-            unstyled
+            unstyled={true}
             {...props}>
             {children}
           </AccordionItem>
@@ -220,12 +256,17 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   name: "AccordionHeader",
   context: AccordionContext,
 
-  transition: "medium",
-  padding: "$3xl",
+  transition: "250ms",
+  paddingHorizontal: "$3xl",
+  paddingVertical: "$2xl",
   zIndex: "$60",
   borderStyle: "solid",
   borderWidth: 0,
   borderColor: "transparent",
+
+  hoverStyle: {
+    cursor: "pointer"
+  },
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
@@ -237,20 +278,15 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   variants: {
     variant: {
       default: {
-        backgroundColor: "$backgroundElevated",
-
-        hoverStyle: {
-          backgroundColor: "$backgroundElevatedHover"
-        }
+        paddingHorizontal: 0,
+        backgroundColor: "$backgroundElevated"
       },
       surface: {
-        backgroundColor: "$background",
-
-        hoverStyle: {
-          backgroundColor: "$backgroundElevatedHover"
-        }
+        paddingHorizontal: 0,
+        backgroundColor: "$backgroundPage"
       },
       separated: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "$backgroundElevated",
 
         hoverStyle: {
@@ -258,10 +294,12 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
         }
       },
       bordered: {
+        paddingHorizontal: "$4xl",
         backgroundColor: "transparent",
 
         hoverStyle: {
-          backgroundColor: "$backgroundElevatedHover"
+          backgroundColor: "$backgroundElevatedHover",
+          cursor: "pointer"
         }
       },
       ghost: {
@@ -270,7 +308,8 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
         backgroundColor: "transparent",
 
         hoverStyle: {
-          backgroundColor: "transparent"
+          backgroundColor: "transparent",
+          cursor: "pointer"
         }
       }
     }
@@ -297,10 +336,12 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         {children}
         <AccordionToggle
           isExpanded={open}
-          color={open ? "$foregroundPrimary" : "$foregroundPrimaryHover"}
-          size="$2xl"
+          color="$foreground"
+          size="$lg"
+          strokeWidth={2.5}
           $group-accordion-hover={{
-            color: "$foregroundPrimaryHover"
+            color: "$foregroundHover",
+            cursor: "pointer"
           }}
         />
       </AccordionItemHeader>
@@ -313,18 +354,14 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
 
 const AccordionItemHeaderHeading = HeadingSmallText.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { open } = AccordionItemContext.useStyledContext();
-
     return (
       <HeadingSmallText
         ref={forwardedRef}
-        transition="medium"
-        color={open ? "$foregroundPrimary" : "$foregroundPrimaryHover"}
-        hoverStyle={{
-          color: "$foregroundPrimaryHover"
-        }}
+        transition="250ms"
+        color="$foreground"
         $group-accordion-hover={{
-          color: "$foregroundPrimaryHover"
+          color: "$foregroundHover",
+          cursor: "pointer"
         }}
         {...props}>
         {children}
@@ -339,30 +376,30 @@ const AccordionItemHeaderHeading = HeadingSmallText.styleable(
 const AccordionItemContent = styled(TamaguiAccordion.Content, {
   name: "AccordionContent",
   context: AccordionContext,
-
+  padding: "$3xl",
+  paddingTop: 0,
   zIndex: "$50",
 
   variants: {
     variant: {
       default: {
+        paddingHorizontal: 0,
         backgroundColor: "$backgroundElevated"
       },
       surface: {
-        padding: "$3xl",
-        paddingTop: 0,
-        backgroundColor: "$background"
+        paddingHorizontal: 0,
+        backgroundColor: "$backgroundPage"
       },
       separated: {
-        padding: "$3xl",
-        paddingTop: 0,
+        paddingHorizontal: "$4xl",
         backgroundColor: "$backgroundElevated"
       },
       bordered: {
-        padding: "$3xl",
-        paddingTop: 0,
+        paddingHorizontal: "$4xl",
         backgroundColor: "transparent"
       },
       ghost: {
+        padding: 0,
         backgroundColor: "transparent"
       }
     }
@@ -376,10 +413,10 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
 const AccordionItemContentImpl = AccordionItemContent.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <TamaguiAccordion.HeightAnimator transition="medium">
+      <TamaguiAccordion.HeightAnimator transition="250ms">
         <AccordionItemContent
           ref={forwardedRef}
-          transition="medium"
+          transition="250ms"
           exitStyle={{ opacity: 0 }}
           unstyled
           {...props}>

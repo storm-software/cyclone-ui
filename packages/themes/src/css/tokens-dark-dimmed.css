@@ -32,27 +32,28 @@
   --color-white: #d9d9d9; /** A completely white color */
   --color-brand-1: #57b6a5; /** The Storm Software brand teal color */
   --color-brand-2: #1a5a53; /** The Storm Software brand teal color */
-  --color-surface-1: #373a3d; /** The lowest level surface of the palette - used for the background of the page */
-  --color-surface-2: #3a3c40; /** The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.) */
-  --color-surface-3: #3f4144; /** The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.) */
-  --color-base-1: #d6d6d6; /** A near-white base gray color */
-  --color-base-2: #d2d2d2; /** A very light base gray color */
-  --color-base-3: #cacaca; /** A light base gray color */
-  --color-base-4: #bbbcbc; /** A soft base gray color */
-  --color-base-5: #a8a9a9; /** A mid base gray color */
-  --color-base-6: #919293; /** A medium base gray color */
-  --color-base-7: #767779; /** A dark base gray color */
-  --color-base-8: #595b5c; /** A deep charcoal gray color */
-  --color-base-9: #3a3c40; /** An almost-black base gray color */
-  --color-red-1: #e4a2a1; /** A pale warm coral red color */
-  --color-red-2: #e29b9a; /** A light salmon red color */
-  --color-red-3: #df9392; /** A soft coral red color */
-  --color-red-4: #dd8d8d; /** A muted warm coral color */
-  --color-red-5: #dc8687; /** A medium salmon red color */
-  --color-red-6: #d67f82; /** A vivid coral red color */
-  --color-red-7: #d0797c; /** A rich dusty red color */
-  --color-red-8: #c37779; /** A deep brick red color */
-  --color-red-9: #9f676a; /** A dark brownish red color */
+  --color-surface-1: #353226; /** The lowest level surface of the palette - warm near-ink page floor */
+  --color-surface-2: #42413a; /** The second level surface of the palette - ink elevated backgrounds (inputs, cards, etc.) */
+  --color-surface-3: #4a4942; /** The third level surface of the palette - used for floating component backgrounds (tooltips, dropdowns, etc.) */
+  --color-surface-4: #53514b; /** The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.) */
+  --color-base-1: #d6d6ce; /** Warm cream canvas - primary text on dark */
+  --color-base-2: #a19e97; /** A warm muted-soft gray for body text on dark */
+  --color-base-3: #76746e; /** A warm muted gray color */
+  --color-base-4: #585752; /** A soft warm gray color */
+  --color-base-5: #45443d; /** A mid warm ink-adjacent gray color */
+  --color-base-6: #3a3931; /** A medium warm ink gray color */
+  --color-base-7: #363428; /** A dark warm ink gray color */
+  --color-base-8: #333326; /** A deep warm charcoal color */
+  --color-base-9: #353224; /** An almost-black warm ink color */
+  --color-red-1: #e4a1a8; /** A pale raspberry error color */
+  --color-red-2: #e199a1; /** A light raspberry error color */
+  --color-red-3: #de8e9a; /** A soft raspberry error color */
+  --color-red-4: #dc8795; /** A muted raspberry error color */
+  --color-red-5: #da7f8f; /** A medium raspberry error color */
+  --color-red-6: #d77589; /** A vivid raspberry error color */
+  --color-red-7: #d56d82; /** A rich raspberry error color - danger on dark */
+  --color-red-8: #ce687d; /** A deep raspberry error color */
+  --color-red-9: #ab5269; /** Semantic error (#cf2d56) - validation errors */
   --color-orange-1: #e0ae95; /** A pale peach orange color */
   --color-orange-2: #dba68d; /** A light apricot orange color */
   --color-orange-3: #d89e81; /** A soft sandy orange color */
@@ -71,15 +72,15 @@
   --color-yellow-7: #ab8531; /** A rich ochre gold color */
   --color-yellow-8: #a3802f; /** A deep bronze gold color */
   --color-yellow-9: #8f6f2a; /** A dark brownish gold color */
-  --color-green-1: #98c2a6; /** A pale mint green color */
-  --color-green-2: #8fbb9e; /** A light seafoam green color */
-  --color-green-3: #80b292; /** A soft spring green color */
-  --color-green-4: #77ad8c; /** A muted jade green color */
-  --color-green-5: #67a681; /** A medium emerald green color */
-  --color-green-6: #599f78; /** A vivid emerald green color */
-  --color-green-7: #409a6f; /** A rich forest green color */
-  --color-green-8: #42946b; /** A deep pine green color */
-  --color-green-9: #37825d; /** A dark evergreen color */
+  --color-green-1: #9cc0af; /** A pale teal success color */
+  --color-green-2: #93b9a7; /** A light teal success color */
+  --color-green-3: #87b09d; /** A soft teal success color */
+  --color-green-4: #7eab97; /** A muted teal success color */
+  --color-green-5: #73a58f; /** A medium teal success color */
+  --color-green-6: #679d87; /** A vivid teal success color - confirmation on dark */
+  --color-green-7: #609681; /** A rich teal success color */
+  --color-green-8: #57917b; /** A deep teal success color */
+  --color-green-9: #3f836c; /** Semantic success (#1f8a65) - confirmation indicators */
   --color-sky-1: #8ac0d1; /** A pale sky blue color */
   --color-sky-2: #80b8cb; /** A light aqua sky color */
   --color-sky-3: #6db1c5; /** A soft bright sky color */
@@ -116,172 +117,195 @@
   --color-pink-7: #c9799a; /** A rich fuchsia pink color */
   --color-pink-8: #bd7794; /** A deep berry pink color */
   --color-pink-9: #9e697f; /** A dark plum pink color */
-  --color-foreground-primary: #d6d6d6; /** The primary foreground color for the dark theme */
-  --color-foreground-secondary: #595b5c; /** The secondary foreground color for the dark theme */
-  --color-foreground-tertiary: #3a3c40; /** The tertiary foreground color for the dark theme */
+  --color-foreground-primary: #d6d6ce; /** The primary foreground color for the dark theme */
+  --color-foreground-secondary: #a19e97; /** The secondary foreground color for the dark theme - muted text */
+  --color-foreground-tertiary: #363428; /** The tertiary foreground color for the dark theme - muted-soft text */
+  --color-foreground-body: #a19e97; /** The body foreground color for the dark theme */
   --color-foreground-accent: #57b6a5; /** The accent foreground color for the dark theme */
-  --color-foreground-danger: #d0797c; /** The danger foreground color for the dark theme */
+  --color-foreground-danger: #ce687d; /** The danger foreground color for the dark theme */
   --color-foreground-warning: #bb9f6a; /** The warning foreground color for the dark theme */
-  --color-foreground-success: #599f78; /** The success foreground color for the dark theme */
+  --color-foreground-success: #73a58f; /** The success foreground color for the dark theme */
   --color-foreground-info: #6db1c5; /** The info foreground color for the dark theme */
-  --color-foreground-discovery: #8887db; /** The discovery foreground color for the dark theme */
+  --color-foreground-discovery: #9699e1; /** The discovery foreground color for the dark theme */
   --color-foreground-link: #6694d0; /** The link foreground color for the dark theme */
-  --color-foreground-on-primary: #3a3c40; /** The primary foreground color for the dark theme */
-  --color-foreground-on-secondary: #d6d6d6; /** The secondary foreground color for the dark theme */
-  --color-foreground-on-tertiary: #d6d6d6; /** The tertiary foreground color for the dark theme */
-  --color-foreground-on-accent: #d6d6d6; /** The accent foreground color for the dark theme */
-  --color-foreground-on-danger: #d6d6d6; /** The danger foreground color for the dark theme */
-  --color-foreground-on-warning: #3a3c40; /** The warning foreground color for the dark theme */
-  --color-foreground-on-success: #d6d6d6; /** The success foreground color for the dark theme */
-  --color-foreground-on-info: #d6d6d6; /** The info foreground color for the dark theme */
-  --color-foreground-on-discovery: #d6d6d6; /** The discovery foreground color for the dark theme */
-  --color-foreground-primary-hover: #9e9e9e; /** The primary foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-primary-disabled: rgba(214, 214, 214, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-secondary-hover: #6d6f70; /** The secondary foreground color for the dark theme (hover, 25% brighter) */
-  --color-foreground-secondary-disabled: rgba(89, 91, 92, 0.6); /** The secondary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-tertiary-hover: #45474a; /** The tertiary foreground color for the dark theme (hover, 25% brighter) */
-  --color-foreground-tertiary-disabled: rgba(58, 60, 64, 0.6); /** The tertiary foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-primary: #353224; /** Ink text on cream primary surfaces */
+  --color-foreground-on-secondary: #45443d; /** The secondary foreground color for the dark theme */
+  --color-foreground-on-tertiary: #a19e97; /** The tertiary foreground color for the dark theme */
+  --color-foreground-on-accent: #d6d6ce; /** The accent foreground color for the dark theme */
+  --color-foreground-on-danger: #d6d6ce; /** The danger foreground color for the dark theme */
+  --color-foreground-on-warning: #45443d; /** Ink text on warning surfaces */
+  --color-foreground-on-success: #d6d6ce; /** The success foreground color for the dark theme */
+  --color-foreground-on-info: #d6d6ce; /** The info foreground color for the dark theme */
+  --color-foreground-on-discovery: #d6d6ce; /** The discovery foreground color for the dark theme */
+  --color-foreground-primary-hover: #9c9c9a; /** The primary foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-primary-disabled: rgba(214, 214, 206, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-secondary-hover: #797771; /** The secondary foreground color for the dark theme - muted text (hover, 25% darker) */
+  --color-foreground-secondary-disabled: rgba(161, 158, 151, 0.6); /** The secondary foreground color for the dark theme - muted text (disabled, 60% opacity) */
+  --color-foreground-tertiary-hover: #3a3931; /** The tertiary foreground color for the dark theme - muted-soft text (hover, 25% brighter) */
+  --color-foreground-tertiary-disabled: rgba(54, 52, 40, 0.6); /** The tertiary foreground color for the dark theme - muted-soft text (disabled, 60% opacity) */
+  --color-foreground-body-hover: #797771; /** The body foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-body-disabled: rgba(161, 158, 151, 0.6); /** The body foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-accent-hover: #2a907f; /** The accent foreground color for the dark theme (hover, 25% darker) */
   --color-foreground-accent-disabled: rgba(87, 182, 165, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-danger-hover: #9e585d; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-danger-disabled: rgba(208, 121, 124, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-danger-hover: #a1365b; /** The danger foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-danger-disabled: rgba(206, 104, 125, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-warning-hover: #92752c; /** The warning foreground color for the dark theme (hover, 25% darker) */
   --color-foreground-warning-disabled: rgba(187, 159, 106, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-success-hover: #268254; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-success-disabled: rgba(89, 159, 120, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-success-hover: #457f69; /** The success foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-success-disabled: rgba(115, 165, 143, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-info-hover: #2c8498; /** The info foreground color for the dark theme (hover, 25% darker) */
   --color-foreground-info-disabled: rgba(109, 177, 197, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-discovery-hover: #6f6ba7; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-discovery-disabled: rgba(136, 135, 219, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-discovery-hover: #7a7aa7; /** The discovery foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-discovery-disabled: rgba(150, 153, 225, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-link-hover: #416ea3; /** The link foreground color for the dark theme (hover, 25% darker) */
   --color-foreground-link-disabled: rgba(102, 148, 208, 0.6); /** The link foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-primary-hover: #45474a; /** The primary foreground color for the dark theme (hover, 25% brighter) */
-  --color-foreground-on-primary-disabled: rgba(58, 60, 64, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-secondary-hover: #9e9e9e; /** The secondary foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-secondary-disabled: rgba(214, 214, 214, 0.6); /** The secondary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-tertiary-hover: #9e9e9e; /** The tertiary foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-tertiary-disabled: rgba(214, 214, 214, 0.6); /** The tertiary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-accent-hover: #9e9e9e; /** The accent foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-accent-disabled: rgba(214, 214, 214, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-danger-hover: #9e9e9e; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-danger-disabled: rgba(214, 214, 214, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-warning-hover: #45474a; /** The warning foreground color for the dark theme (hover, 25% brighter) */
-  --color-foreground-on-warning-disabled: rgba(58, 60, 64, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-success-hover: #9e9e9e; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-success-disabled: rgba(214, 214, 214, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-info-hover: #9e9e9e; /** The info foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-info-disabled: rgba(214, 214, 214, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-on-discovery-hover: #9e9e9e; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-foreground-on-discovery-disabled: rgba(214, 214, 214, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-page: #373a3d; /** The page background color for the dark theme */
-  --color-background-elevated: #3a3c40; /** The elevated background color for the dark theme */
-  --color-background-floating: #3f4144; /** The floating background color for the dark theme */
-  --color-background-primary: #d6d6d6; /** The primary foreground color for the dark theme */
-  --color-background-secondary: #595b5c; /** The secondary foreground color for the dark theme */
-  --color-background-tertiary: #3a3c40; /** The tertiary foreground color for the dark theme */
-  --color-background-link: #6694d0; /** The link foreground color for the dark theme */
-  --color-background-accent: #57b6a5; /** The accent foreground color for the dark theme */
-  --color-background-danger: #d0797c; /** The danger foreground color for the dark theme */
-  --color-background-warning: #bb9f6a; /** The warning foreground color for the dark theme */
-  --color-background-success: #599f78; /** The success foreground color for the dark theme */
-  --color-background-info: #6db1c5; /** The info foreground color for the dark theme */
-  --color-background-discovery: #8887db; /** The discovery foreground color for the dark theme */
-  --color-background-accent-subtle: #1a5a53; /** The accent foreground color for the dark theme */
-  --color-background-danger-subtle: #9f676a; /** The danger foreground color for the dark theme */
-  --color-background-warning-subtle: #8f6f2a; /** The warning foreground color for the dark theme */
-  --color-background-success-subtle: #37825d; /** The success foreground color for the dark theme */
-  --color-background-info-subtle: #2b7e95; /** The info foreground color for the dark theme */
-  --color-background-discovery-subtle: #7776a8; /** The discovery foreground color for the dark theme */
-  --color-background-page-hover: #414346; /** The page background color for the dark theme (hover, 25% brighter) */
-  --color-background-page-disabled: rgba(55, 58, 61, 0.6); /** The page background color for the dark theme (disabled, 60% opacity) */
-  --color-background-elevated-hover: #45474a; /** The elevated background color for the dark theme (hover, 25% brighter) */
-  --color-background-elevated-disabled: rgba(58, 60, 64, 0.6); /** The elevated background color for the dark theme (disabled, 60% opacity) */
-  --color-background-floating-hover: #4b4d4f; /** The floating background color for the dark theme (hover, 25% brighter) */
-  --color-background-floating-disabled: rgba(63, 65, 68, 0.6); /** The floating background color for the dark theme (disabled, 60% opacity) */
-  --color-background-primary-hover: #9e9e9e; /** The primary foreground color for the dark theme (hover, 25% darker) */
-  --color-background-primary-disabled: rgba(214, 214, 214, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-secondary-hover: #6d6f70; /** The secondary foreground color for the dark theme (hover, 25% brighter) */
-  --color-background-secondary-disabled: rgba(89, 91, 92, 0.6); /** The secondary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-tertiary-hover: #45474a; /** The tertiary foreground color for the dark theme (hover, 25% brighter) */
-  --color-background-tertiary-disabled: rgba(58, 60, 64, 0.6); /** The tertiary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-link-hover: #416ea3; /** The link foreground color for the dark theme (hover, 25% darker) */
-  --color-background-link-disabled: rgba(102, 148, 208, 0.6); /** The link foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-accent-hover: #2a907f; /** The accent foreground color for the dark theme (hover, 25% darker) */
-  --color-background-accent-disabled: rgba(87, 182, 165, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-danger-hover: #9e585d; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-background-danger-disabled: rgba(208, 121, 124, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-warning-hover: #92752c; /** The warning foreground color for the dark theme (hover, 25% darker) */
-  --color-background-warning-disabled: rgba(187, 159, 106, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-success-hover: #268254; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-background-success-disabled: rgba(89, 159, 120, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-info-hover: #2c8498; /** The info foreground color for the dark theme (hover, 25% darker) */
-  --color-background-info-disabled: rgba(109, 177, 197, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-discovery-hover: #6f6ba7; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-background-discovery-disabled: rgba(136, 135, 219, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-accent-subtle-hover: #375e59; /** The accent foreground color for the dark theme (hover, 25% brighter) */
-  --color-background-accent-subtle-disabled: rgba(26, 90, 83, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-danger-subtle-hover: #82464b; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-background-danger-subtle-disabled: rgba(159, 103, 106, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-warning-subtle-hover: #785523; /** The warning foreground color for the dark theme (hover, 25% darker) */
-  --color-background-warning-subtle-disabled: rgba(143, 111, 42, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-success-subtle-hover: #206e41; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-background-success-subtle-disabled: rgba(55, 130, 93, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-info-subtle-hover: #24657d; /** The info foreground color for the dark theme (hover, 25% darker) */
-  --color-background-info-subtle-disabled: rgba(43, 126, 149, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-background-discovery-subtle-hover: #5b5988; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-background-discovery-subtle-disabled: rgba(119, 118, 168, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-primary: #767779; /** The primary foreground color for the dark theme */
-  --color-border-secondary: #595b5c; /** The secondary foreground color for the dark theme */
-  --color-border-tertiary: #3a3c40; /** The tertiary foreground color for the dark theme */
-  --color-border-accent: #57b6a5; /** The accent foreground color for the dark theme */
-  --color-border-danger: #d0797c; /** The danger foreground color for the dark theme */
-  --color-border-warning: #bb9f6a; /** The warning foreground color for the dark theme */
-  --color-border-success: #599f78; /** The success foreground color for the dark theme */
-  --color-border-info: #6db1c5; /** The info foreground color for the dark theme */
-  --color-border-discovery: #8887db; /** The discovery foreground color for the dark theme */
-  --color-border-accent-subtle: #1a5a53; /** The accent foreground color for the dark theme */
-  --color-border-danger-subtle: #9f676a; /** The danger foreground color for the dark theme */
-  --color-border-warning-subtle: #8f6f2a; /** The warning foreground color for the dark theme */
-  --color-border-success-subtle: #37825d; /** The success foreground color for the dark theme */
-  --color-border-info-subtle: #2b7e95; /** The info foreground color for the dark theme */
-  --color-border-discovery-subtle: #7776a8; /** The discovery foreground color for the dark theme */
-  --color-border-primary-hover: #5b5c5d; /** The primary foreground color for the dark theme (hover, 25% darker) */
-  --color-border-primary-disabled: rgba(118, 119, 121, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-secondary-hover: #6d6f70; /** The secondary foreground color for the dark theme (hover, 25% brighter) */
-  --color-border-secondary-disabled: rgba(89, 91, 92, 0.6); /** The secondary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-tertiary-hover: #45474a; /** The tertiary foreground color for the dark theme (hover, 25% brighter) */
-  --color-border-tertiary-disabled: rgba(58, 60, 64, 0.6); /** The tertiary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-accent-hover: #2a907f; /** The accent foreground color for the dark theme (hover, 25% darker) */
-  --color-border-accent-disabled: rgba(87, 182, 165, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-danger-hover: #9e585d; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-border-danger-disabled: rgba(208, 121, 124, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-warning-hover: #92752c; /** The warning foreground color for the dark theme (hover, 25% darker) */
-  --color-border-warning-disabled: rgba(187, 159, 106, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-success-hover: #268254; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-border-success-disabled: rgba(89, 159, 120, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-info-hover: #2c8498; /** The info foreground color for the dark theme (hover, 25% darker) */
-  --color-border-info-disabled: rgba(109, 177, 197, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-discovery-hover: #6f6ba7; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-border-discovery-disabled: rgba(136, 135, 219, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-accent-subtle-hover: #375e59; /** The accent foreground color for the dark theme (hover, 25% brighter) */
-  --color-border-accent-subtle-disabled: rgba(26, 90, 83, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-danger-subtle-hover: #82464b; /** The danger foreground color for the dark theme (hover, 25% darker) */
-  --color-border-danger-subtle-disabled: rgba(159, 103, 106, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-warning-subtle-hover: #785523; /** The warning foreground color for the dark theme (hover, 25% darker) */
-  --color-border-warning-subtle-disabled: rgba(143, 111, 42, 0.6); /** The warning foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-success-subtle-hover: #206e41; /** The success foreground color for the dark theme (hover, 25% darker) */
-  --color-border-success-subtle-disabled: rgba(55, 130, 93, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-info-subtle-hover: #24657d; /** The info foreground color for the dark theme (hover, 25% darker) */
-  --color-border-info-subtle-disabled: rgba(43, 126, 149, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
-  --color-border-discovery-subtle-hover: #5b5988; /** The discovery foreground color for the dark theme (hover, 25% darker) */
-  --color-border-discovery-subtle-disabled: rgba(119, 118, 168, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
-  --color-overlay-background: #3f4144; /** The overlay background color for the dark theme */
-  --color-overlay-border: #767779; /** The overlay border color for the dark theme */
-  --color-overlay-backdrop: rgba(46, 46, 48, 0.4); /** The overlay backdrop background color for the dark theme */
-  --color-overlay-background-hover: #4b4d4f; /** The overlay background color for the dark theme (hover, 25% brighter) */
-  --color-overlay-background-disabled: rgba(63, 65, 68, 0.6); /** The overlay background color for the dark theme (disabled, 60% opacity) */
-  --color-overlay-border-hover: #5b5c5d; /** The overlay border color for the dark theme (hover, 25% darker) */
-  --color-overlay-border-disabled: rgba(118, 119, 121, 0.6); /** The overlay border color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-primary-hover: #38362c; /** Ink text on cream primary surfaces (hover, 25% brighter) */
+  --color-foreground-on-primary-disabled: rgba(53, 50, 36, 0.6); /** Ink text on cream primary surfaces (disabled, 60% opacity) */
+  --color-foreground-on-secondary-hover: #51504a; /** The secondary foreground color for the dark theme (hover, 25% brighter) */
+  --color-foreground-on-secondary-disabled: rgba(69, 68, 61, 0.6); /** The secondary foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-tertiary-hover: #797771; /** The tertiary foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-tertiary-disabled: rgba(161, 158, 151, 0.6); /** The tertiary foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-accent-hover: #9c9c9a; /** The accent foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-accent-disabled: rgba(214, 214, 206, 0.6); /** The accent foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-danger-hover: #9c9c9a; /** The danger foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-danger-disabled: rgba(214, 214, 206, 0.6); /** The danger foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-warning-hover: #51504a; /** Ink text on warning surfaces (hover, 25% brighter) */
+  --color-foreground-on-warning-disabled: rgba(69, 68, 61, 0.6); /** Ink text on warning surfaces (disabled, 60% opacity) */
+  --color-foreground-on-success-hover: #9c9c9a; /** The success foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-success-disabled: rgba(214, 214, 206, 0.6); /** The success foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-info-hover: #9c9c9a; /** The info foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-info-disabled: rgba(214, 214, 206, 0.6); /** The info foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-on-discovery-hover: #9c9c9a; /** The discovery foreground color for the dark theme (hover, 25% darker) */
+  --color-foreground-on-discovery-disabled: rgba(214, 214, 206, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
+  --color-background-page: #353226; /** The page background color for the dark theme */
+  --color-background-elevated: #42413a; /** The elevated background color for the dark theme */
+  --color-background-floating: #4a4942; /** The floating background color for the dark theme */
+  --color-background-highest: #53514b; /** The highest level of elevation background color for the dark theme */
+  --color-background-primary: #d6d6ce; /** The primary background color for the dark theme */
+  --color-background-secondary: #a19e97; /** The secondary background color for the dark theme */
+  --color-background-tertiary: #363428; /** The tertiary background color for the dark theme */
+  --color-background-accent: #57b6a5; /** The accent background color for the dark theme */
+  --color-background-danger: #ab5269; /** The danger background color for the dark theme */
+  --color-background-warning: #bb9f6a; /** The warning background color for the dark theme */
+  --color-background-success: #73a58f; /** The success background color for the dark theme */
+  --color-background-info: #6db1c5; /** The info background color for the dark theme */
+  --color-background-discovery: #9699e1; /** The discovery background color for the dark theme */
+  --color-background-accent-subtle: #1a5a53; /** The accent background color for the dark theme */
+  --color-background-danger-subtle: #de8e9a; /** The danger background color for the dark theme */
+  --color-background-warning-subtle: #bfa473; /** The warning background color for the dark theme */
+  --color-background-success-subtle: #87b09d; /** The success background color for the dark theme */
+  --color-background-info-subtle: #8ac0d1; /** The info background color for the dark theme */
+  --color-background-discovery-subtle: #a0a4e3; /** The discovery foreground color for the dark theme */
+  --color-background-page-hover: #38362e; /** The page background color for the dark theme (hover, 25% brighter) */
+  --color-background-page-pressed: #38362c; /** The page background color for the dark theme (pressed, 20% brighter) */
+  --color-background-page-disabled: rgba(53, 50, 38, 0.6); /** The page background color for the dark theme (disabled, 60% opacity) */
+  --color-background-elevated-hover: #4c4c46; /** The elevated background color for the dark theme (hover, 25% brighter) */
+  --color-background-elevated-pressed: #4a4a44; /** The elevated background color for the dark theme (pressed, 20% brighter) */
+  --color-background-elevated-disabled: rgba(66, 65, 58, 0.6); /** The elevated background color for the dark theme (disabled, 60% opacity) */
+  --color-background-floating-hover: #575751; /** The floating background color for the dark theme (hover, 25% brighter) */
+  --color-background-floating-pressed: #55544e; /** The floating background color for the dark theme (pressed, 20% brighter) */
+  --color-background-floating-disabled: rgba(74, 73, 66, 0.6); /** The floating background color for the dark theme (disabled, 60% opacity) */
+  --color-background-highest-hover: #63625c; /** The highest level of elevation background color for the dark theme (hover, 25% brighter) */
+  --color-background-highest-pressed: #5f5e59; /** The highest level of elevation background color for the dark theme (pressed, 20% brighter) */
+  --color-background-highest-disabled: rgba(83, 81, 75, 0.6); /** The highest level of elevation background color for the dark theme (disabled, 60% opacity) */
+  --color-background-primary-hover: #9c9c9a; /** The primary background color for the dark theme (hover, 25% darker) */
+  --color-background-primary-pressed: #a7a7a5; /** The primary background color for the dark theme (pressed, 20% darker) */
+  --color-background-primary-disabled: rgba(214, 214, 206, 0.6); /** The primary background color for the dark theme (disabled, 60% opacity) */
+  --color-background-secondary-hover: #797771; /** The secondary background color for the dark theme (hover, 25% darker) */
+  --color-background-secondary-pressed: #807f78; /** The secondary background color for the dark theme (pressed, 20% darker) */
+  --color-background-secondary-disabled: rgba(161, 158, 151, 0.6); /** The secondary background color for the dark theme (disabled, 60% opacity) */
+  --color-background-tertiary-hover: #3a3931; /** The tertiary background color for the dark theme (hover, 25% brighter) */
+  --color-background-tertiary-pressed: #39382f; /** The tertiary background color for the dark theme (pressed, 20% brighter) */
+  --color-background-tertiary-disabled: rgba(54, 52, 40, 0.6); /** The tertiary background color for the dark theme (disabled, 60% opacity) */
+  --color-background-accent-hover: #2a907f; /** The accent background color for the dark theme (hover, 25% darker) */
+  --color-background-accent-pressed: #2c9786; /** The accent background color for the dark theme (pressed, 20% darker) */
+  --color-background-accent-disabled: rgba(87, 182, 165, 0.6); /** The accent background color for the dark theme (disabled, 60% opacity) */
+  --color-background-danger-hover: #902a4a; /** The danger background color for the dark theme (hover, 25% darker) */
+  --color-background-danger-pressed: #962c4f; /** The danger background color for the dark theme (pressed, 20% darker) */
+  --color-background-danger-disabled: rgba(171, 82, 105, 0.6); /** The danger background color for the dark theme (disabled, 60% opacity) */
+  --color-background-warning-hover: #92752c; /** The warning background color for the dark theme (hover, 25% darker) */
+  --color-background-warning-pressed: #977c41; /** The warning background color for the dark theme (pressed, 20% darker) */
+  --color-background-warning-disabled: rgba(187, 159, 106, 0.6); /** The warning background color for the dark theme (disabled, 60% opacity) */
+  --color-background-success-hover: #457f69; /** The success background color for the dark theme (hover, 25% darker) */
+  --color-background-success-pressed: #508571; /** The success background color for the dark theme (pressed, 20% darker) */
+  --color-background-success-disabled: rgba(115, 165, 143, 0.6); /** The success background color for the dark theme (disabled, 60% opacity) */
+  --color-background-info-hover: #2c8498; /** The info background color for the dark theme (hover, 25% darker) */
+  --color-background-info-pressed: #418c9d; /** The info background color for the dark theme (pressed, 20% darker) */
+  --color-background-info-disabled: rgba(109, 177, 197, 0.6); /** The info background color for the dark theme (disabled, 60% opacity) */
+  --color-background-discovery-hover: #7a7aa7; /** The discovery background color for the dark theme (hover, 25% darker) */
+  --color-background-discovery-pressed: #8082b1; /** The discovery background color for the dark theme (pressed, 20% darker) */
+  --color-background-discovery-disabled: rgba(150, 153, 225, 0.6); /** The discovery background color for the dark theme (disabled, 60% opacity) */
+  --color-background-accent-subtle-hover: #375e59; /** The accent background color for the dark theme (hover, 25% brighter) */
+  --color-background-accent-subtle-pressed: #325c57; /** The accent background color for the dark theme (pressed, 20% brighter) */
+  --color-background-accent-subtle-disabled: rgba(26, 90, 83, 0.6); /** The accent background color for the dark theme (disabled, 60% opacity) */
+  --color-background-danger-subtle-hover: #a36f78; /** The danger background color for the dark theme (hover, 25% darker) */
+  --color-background-danger-subtle-pressed: #ad7680; /** The danger background color for the dark theme (pressed, 20% darker) */
+  --color-background-danger-subtle-disabled: rgba(222, 142, 154, 0.6); /** The danger background color for the dark theme (disabled, 60% opacity) */
+  --color-background-warning-subtle-hover: #917846; /** The warning background color for the dark theme (hover, 25% darker) */
+  --color-background-warning-subtle-pressed: #988052; /** The warning background color for the dark theme (pressed, 20% darker) */
+  --color-background-warning-subtle-disabled: rgba(191, 164, 115, 0.6); /** The warning background color for the dark theme (disabled, 60% opacity) */
+  --color-background-success-subtle-hover: #5e8473; /** The success background color for the dark theme (hover, 25% darker) */
+  --color-background-success-subtle-pressed: #678b7c; /** The success background color for the dark theme (pressed, 20% darker) */
+  --color-background-success-subtle-disabled: rgba(135, 176, 157, 0.6); /** The success background color for the dark theme (disabled, 60% opacity) */
+  --color-background-info-subtle-hover: #648c98; /** The info background color for the dark theme (hover, 25% darker) */
+  --color-background-info-subtle-pressed: #6c96a2; /** The info background color for the dark theme (pressed, 20% darker) */
+  --color-background-info-subtle-disabled: rgba(138, 192, 209, 0.6); /** The info background color for the dark theme (disabled, 60% opacity) */
+  --color-background-discovery-subtle-hover: #8283a5; /** The discovery foreground color for the dark theme (hover, 25% darker) */
+  --color-background-discovery-subtle-pressed: #898bb0; /** The discovery foreground color for the dark theme (pressed, 20% darker) */
+  --color-background-discovery-subtle-disabled: rgba(160, 164, 227, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
+  --color-border-primary: #585752; /** Hairline-strong border against ink cards */
+  --color-border-secondary: #45443d; /** Hairline border against ink surfaces */
+  --color-border-tertiary: #333326; /** Hairline-soft border, ink-adjacent */
+  --color-border-accent: #57b6a5; /** The accent border color for the dark theme */
+  --color-border-danger: #da7f8f; /** The danger border color for the dark theme */
+  --color-border-warning: #bfa473; /** The warning border color for the dark theme */
+  --color-border-success: #73a58f; /** The success border color for the dark theme */
+  --color-border-info: #5ea9be; /** The info border color for the dark theme */
+  --color-border-discovery: #a0a4e3; /** The discovery border color for the dark theme */
+  --color-border-accent-subtle: #1a5a53; /** The accent border color for the dark theme */
+  --color-border-danger-subtle: #de8e9a; /** The danger border color for the dark theme */
+  --color-border-warning-subtle: #bfa473; /** The warning border color for the dark theme */
+  --color-border-success-subtle: #87b09d; /** The success border color for the dark theme */
+  --color-border-info-subtle: #8ac0d1; /** The info border color for the dark theme */
+  --color-border-discovery-subtle: #a0a4e3; /** The discovery border color for the dark theme */
+  --color-border-primary-hover: #6a6a66; /** Hairline-strong border against ink cards (hover, 25% brighter) */
+  --color-border-primary-disabled: rgba(88, 87, 82, 0.6); /** Hairline-strong border against ink cards (disabled, 60% opacity) */
+  --color-border-secondary-hover: #51504a; /** Hairline border against ink surfaces (hover, 25% brighter) */
+  --color-border-secondary-disabled: rgba(69, 68, 61, 0.6); /** Hairline border against ink surfaces (disabled, 60% opacity) */
+  --color-border-tertiary-hover: #36362f; /** Hairline-soft border, ink-adjacent (hover, 25% brighter) */
+  --color-border-tertiary-disabled: rgba(51, 51, 38, 0.6); /** Hairline-soft border, ink-adjacent (disabled, 60% opacity) */
+  --color-border-accent-hover: #2a907f; /** The accent border color for the dark theme (hover, 25% darker) */
+  --color-border-accent-disabled: rgba(87, 182, 165, 0.6); /** The accent border color for the dark theme (disabled, 60% opacity) */
+  --color-border-danger-hover: #a2606e; /** The danger border color for the dark theme (hover, 25% darker) */
+  --color-border-danger-disabled: rgba(218, 127, 143, 0.6); /** The danger border color for the dark theme (disabled, 60% opacity) */
+  --color-border-warning-hover: #917846; /** The warning border color for the dark theme (hover, 25% darker) */
+  --color-border-warning-disabled: rgba(191, 164, 115, 0.6); /** The warning border color for the dark theme (disabled, 60% opacity) */
+  --color-border-success-hover: #457f69; /** The success border color for the dark theme (hover, 25% darker) */
+  --color-border-success-disabled: rgba(115, 165, 143, 0.6); /** The success border color for the dark theme (disabled, 60% opacity) */
+  --color-border-info-hover: #2c8196; /** The info border color for the dark theme (hover, 25% darker) */
+  --color-border-info-disabled: rgba(94, 169, 190, 0.6); /** The info border color for the dark theme (disabled, 60% opacity) */
+  --color-border-discovery-hover: #8283a5; /** The discovery border color for the dark theme (hover, 25% darker) */
+  --color-border-discovery-disabled: rgba(160, 164, 227, 0.6); /** The discovery border color for the dark theme (disabled, 60% opacity) */
+  --color-border-accent-subtle-hover: #375e59; /** The accent border color for the dark theme (hover, 25% brighter) */
+  --color-border-accent-subtle-disabled: rgba(26, 90, 83, 0.6); /** The accent border color for the dark theme (disabled, 60% opacity) */
+  --color-border-danger-subtle-hover: #a36f78; /** The danger border color for the dark theme (hover, 25% darker) */
+  --color-border-danger-subtle-disabled: rgba(222, 142, 154, 0.6); /** The danger border color for the dark theme (disabled, 60% opacity) */
+  --color-border-warning-subtle-hover: #917846; /** The warning border color for the dark theme (hover, 25% darker) */
+  --color-border-warning-subtle-disabled: rgba(191, 164, 115, 0.6); /** The warning border color for the dark theme (disabled, 60% opacity) */
+  --color-border-success-subtle-hover: #5e8473; /** The success border color for the dark theme (hover, 25% darker) */
+  --color-border-success-subtle-disabled: rgba(135, 176, 157, 0.6); /** The success border color for the dark theme (disabled, 60% opacity) */
+  --color-border-info-subtle-hover: #648c98; /** The info border color for the dark theme (hover, 25% darker) */
+  --color-border-info-subtle-disabled: rgba(138, 192, 209, 0.6); /** The info border color for the dark theme (disabled, 60% opacity) */
+  --color-border-discovery-subtle-hover: #8283a5; /** The discovery border color for the dark theme (hover, 25% darker) */
+  --color-border-discovery-subtle-disabled: rgba(160, 164, 227, 0.6); /** The discovery border color for the dark theme (disabled, 60% opacity) */
+  --color-overlay-background: #4a4942; /** The overlay background color for the dark theme */
+  --color-overlay-border: #585752; /** The overlay border color for the dark theme */
+  --color-overlay-backdrop: rgba(53, 50, 38, 0.4); /** The overlay backdrop background color for the dark theme */
+  --color-overlay-background-hover: #575751; /** The overlay background color for the dark theme (hover, 25% brighter) */
+  --color-overlay-background-pressed: #55544e; /** The overlay background color for the dark theme (pressed, 20% brighter) */
+  --color-overlay-background-disabled: rgba(74, 73, 66, 0.6); /** The overlay background color for the dark theme (disabled, 60% opacity) */
+  --color-overlay-border-hover: #6a6a66; /** The overlay border color for the dark theme (hover, 25% brighter) */
+  --color-overlay-border-disabled: rgba(88, 87, 82, 0.6); /** The overlay border color for the dark theme (disabled, 60% opacity) */
   --color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** The xsmall resting shadow for the dark theme */
   --color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** The small resting shadow for the dark theme */
   --color-shadow-resting-medium: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** The medium resting shadow for the dark theme */
@@ -290,18 +314,18 @@
   --color-shadow-floating-large: 0px 20px 25px -5px #0000001a, 0px 8px 10px -6px #0000001a; /** The large floating shadow for the dark theme */
   --color-shadow-floating-xlarge: 0px 25px 50px -12px #00000040; /** The xlarge floating shadow for the dark theme */
   --color-shadow-inset: inset 0px 1px 1px 0px #0000000d; /** The inset shadow for the dark theme */
-  --color-data-base-emphasis: #d6d6d6; /** The base data visualization emphasis color for the dark theme */
-  --color-data-base-subtle: #595b5c; /** The base data visualization subtle color for the dark theme */
+  --color-data-base-emphasis: #d6d6ce; /** The base data visualization emphasis color for the dark theme */
+  --color-data-base-subtle: #585752; /** The base data visualization subtle color for the dark theme */
   --color-data-brand-emphasis: #57b6a5; /** The brand data visualization emphasis color for the dark theme */
   --color-data-brand-subtle: #1a5a53; /** The brand data visualization subtle color for the dark theme */
-  --color-data-red-emphasis: #dc8687; /** The red data visualization emphasis color for the dark theme */
-  --color-data-red-subtle: #9f676a; /** The red data visualization subtle color for the dark theme */
+  --color-data-red-emphasis: #da7f8f; /** The red data visualization emphasis color for the dark theme */
+  --color-data-red-subtle: #ab5269; /** The red data visualization subtle color for the dark theme */
   --color-data-orange-emphasis: #d08f6d; /** The orange data visualization emphasis color for the dark theme */
   --color-data-orange-subtle: #9c694d; /** The orange data visualization subtle color for the dark theme */
   --color-data-yellow-emphasis: #b39454; /** The yellow data visualization emphasis color for the dark theme */
   --color-data-yellow-subtle: #8f6f2a; /** The yellow data visualization subtle color for the dark theme */
-  --color-data-green-emphasis: #67a681; /** The green data visualization emphasis color for the dark theme */
-  --color-data-green-subtle: #37825d; /** The green data visualization subtle color for the dark theme */
+  --color-data-green-emphasis: #73a58f; /** The green data visualization emphasis color for the dark theme */
+  --color-data-green-subtle: #3f836c; /** The green data visualization subtle color for the dark theme */
   --color-data-sky-emphasis: #36a1b9; /** The sky blue data visualization emphasis color for the dark theme */
   --color-data-sky-subtle: #2b7e95; /** The sky blue data visualization subtle color for the dark theme */
   --color-data-blue-emphasis: #76a2d7; /** The blue data visualization emphasis color for the dark theme */
@@ -432,6 +456,13 @@
   --border-radius-3xl: 1.5rem; /** 3X large radius (1.5rem) */
   --border-radius-4xl: 2rem; /** 4X large radius (2rem) */
   --border-radius-full: 100%; /** Full radius (100%) */
+  --border-radius-container: 0.375rem; /** The border radius use for large containers */
+  --border-radius-card: 0.375rem; /** The border radius use for cards */
+  --border-radius-trigger: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
+  --border-radius-control: 0.125rem; /** The border radius use for controls, such as inputs and selects */
+  --border-radius-dialog: 0.125rem; /** The border radius use for dialogs */
+  --border-radius-popover: 0.125rem; /** The border radius use for popovers */
+  --border-radius-tooltip: 0.125rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
   --shadow-xs: 0px 1px 2px 0px #0000000d; /** Extra small shadow */
   --shadow-sm: 0px 1px 3px 0px #0000001a, 0px 1px 2px -1px #0000001a; /** Small shadow */
@@ -467,42 +498,24 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --border-primary: 2px solid #767779; /** The primary border variant for the dark theme */
-  --border-primary-subtle: 1px solid #767779; /** The primary subtle border variant for the dark theme */
-  --border-secondary: 2px solid #595b5c; /** The secondary border variant for the dark theme */
-  --border-secondary-subtle: 1px solid #595b5c; /** The secondary subtle border variant for the dark theme */
-  --border-tertiary: 2px solid #3a3c40; /** The tertiary border variant for the dark theme */
-  --border-tertiary-subtle: 1px solid #3a3c40; /** The tertiary subtle border variant for the dark theme */
-  --border-accent: 2px solid #57b6a5; /** The accent border variant for the dark theme */
-  --border-accent-subtle: 1px solid #57b6a5; /** The accent subtle border variant for the dark theme */
-  --border-danger: 2px solid #d0797c; /** The danger border variant for the dark theme */
-  --border-danger-subtle: 1px solid #d0797c; /** The danger subtle border variant for the dark theme */
-  --border-warning: 2px solid #bb9f6a; /** The warning border variant for the dark theme */
-  --border-warning-subtle: 1px solid #bb9f6a; /** The warning subtle border variant for the dark theme */
-  --border-success: 2px solid #599f78; /** The success border variant for the dark theme */
-  --border-success-subtle: 1px solid #599f78; /** The success subtle border variant for the dark theme */
-  --border-info: 2px solid #6db1c5; /** The info border variant for the dark theme */
-  --border-info-subtle: 1px solid #6db1c5; /** The info subtle border variant for the dark theme */
-  --border-discovery: 2px solid #8887db; /** The discovery border variant for the dark theme */
-  --border-discovery-subtle: 1px solid #8887db; /** The discovery subtle border variant for the dark theme */
-  --ring-primary: 0px 0px 0px 3px #767779; /** The primary ring variant for the dark theme */
-  --ring-primary-subtle: 0px 0px 0px 1px #767779; /** The primary subtle ring variant for the dark theme */
-  --ring-secondary: 0px 0px 0px 3px #595b5c; /** The secondary ring variant for the dark theme */
-  --ring-secondary-subtle: 0px 0px 0px 1px #595b5c; /** The secondary subtle ring variant for the dark theme */
-  --ring-tertiary: 0px 0px 0px 3px #3a3c40; /** The tertiary ring variant for the dark theme */
-  --ring-tertiary-subtle: 0px 0px 0px 1px #3a3c40; /** The tertiary subtle ring variant for the dark theme */
+  --ring-primary: 0px 0px 0px 3px #585752; /** The primary ring variant for the dark theme */
+  --ring-primary-subtle: 0px 0px 0px 1px #585752; /** The primary subtle ring variant for the dark theme */
+  --ring-secondary: 0px 0px 0px 3px #45443d; /** The secondary ring variant for the dark theme */
+  --ring-secondary-subtle: 0px 0px 0px 1px #45443d; /** The secondary subtle ring variant for the dark theme */
+  --ring-tertiary: 0px 0px 0px 3px #333326; /** The tertiary ring variant for the dark theme */
+  --ring-tertiary-subtle: 0px 0px 0px 1px #333326; /** The tertiary subtle ring variant for the dark theme */
   --ring-accent: 0px 0px 0px 3px #57b6a5; /** The accent ring variant for the dark theme */
   --ring-accent-subtle: 0px 0px 0px 1px #57b6a5; /** The accent subtle ring variant for the dark theme */
-  --ring-danger: 0px 0px 0px 3px #d0797c; /** The danger ring variant for the dark theme */
-  --ring-danger-subtle: 0px 0px 0px 1px #d0797c; /** The danger subtle ring variant for the dark theme */
-  --ring-warning: 0px 0px 0px 3px #bb9f6a; /** The warning ring variant for the dark theme */
-  --ring-warning-subtle: 0px 0px 0px 1px #bb9f6a; /** The warning subtle ring variant for the dark theme */
-  --ring-success: 0px 0px 0px 3px #599f78; /** The success ring variant for the dark theme */
-  --ring-success-subtle: 0px 0px 0px 1px #599f78; /** The success subtle ring variant for the dark theme */
-  --ring-info: 0px 0px 0px 3px #6db1c5; /** The info ring variant for the dark theme */
-  --ring-info-subtle: 0px 0px 0px 1px #6db1c5; /** The info subtle ring variant for the dark theme */
-  --ring-discovery: 0px 0px 0px 3px #8887db; /** The discovery ring variant for the dark theme */
-  --ring-discovery-subtle: 0px 0px 0px 1px #8887db; /** The discovery subtle ring variant for the dark theme */
+  --ring-danger: 0px 0px 0px 3px #da7f8f; /** The danger ring variant for the dark theme */
+  --ring-danger-subtle: 0px 0px 0px 1px #da7f8f; /** The danger subtle ring variant for the dark theme */
+  --ring-warning: 0px 0px 0px 3px #bfa473; /** The warning ring variant for the dark theme */
+  --ring-warning-subtle: 0px 0px 0px 1px #bfa473; /** The warning subtle ring variant for the dark theme */
+  --ring-success: 0px 0px 0px 3px #73a58f; /** The success ring variant for the dark theme */
+  --ring-success-subtle: 0px 0px 0px 1px #73a58f; /** The success subtle ring variant for the dark theme */
+  --ring-info: 0px 0px 0px 3px #5ea9be; /** The info ring variant for the dark theme */
+  --ring-info-subtle: 0px 0px 0px 1px #5ea9be; /** The info subtle ring variant for the dark theme */
+  --ring-discovery: 0px 0px 0px 3px #a0a4e3; /** The discovery ring variant for the dark theme */
+  --ring-discovery-subtle: 0px 0px 0px 1px #a0a4e3; /** The discovery subtle ring variant for the dark theme */
   --typography-display-lg: 400 3rem/1 'Permanent Marker'; /** The display large typography variant for the dark theme */
   --typography-display-md: 400 1.875rem/1.2 'Permanent Marker'; /** The display medium typography variant for the dark theme */
   --typography-display-sm: 400 1.5rem/1.333333 'Permanent Marker'; /** The display small typography variant for the dark theme */

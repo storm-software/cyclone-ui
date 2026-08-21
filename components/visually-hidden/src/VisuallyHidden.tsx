@@ -36,7 +36,7 @@ export const VisuallyHidden = styled(View, {
         width: "auto",
         height: "auto",
         margin: 0,
-        zIndex: 1,
+        zIndex: "$0",
         overflow: "visible",
         opacity: 1,
         pointerEvents: "auto"

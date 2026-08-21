@@ -74,9 +74,9 @@ export const Indeterminate: Story = {
   }
 };
 
-export const Help: Story = {
+export const Discovery: Story = {
   args: {
-    theme: "help"
+    theme: "discovery"
   }
 };
 

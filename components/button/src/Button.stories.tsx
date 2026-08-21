@@ -657,91 +657,91 @@ export const AlternativeDisabledIcon: Story = {
   }
 };
 
-export const HelpPrimary: Story = {
+export const DiscoveryPrimary: Story = {
   args: {
     children: "Button Text",
     variant: "primary",
-    theme: "help",
+    theme: "discovery",
     disabled: false
   }
 };
 
-export const HelpSecondary: Story = {
+export const DiscoverySecondary: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "secondary",
     disabled: false
   }
 };
 
-export const HelpTertiary: Story = {
+export const DiscoveryTertiary: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "tertiary",
     disabled: false
   }
 };
 
-export const HelpQuaternary: Story = {
+export const DiscoveryQuaternary: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "quaternary",
     disabled: false
   }
 };
 
-export const HelpOutlined: Story = {
+export const DiscoveryOutlined: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "outlined",
     disabled: false
   }
 };
 
-export const HelpGradient: Story = {
+export const DiscoveryGradient: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "gradient",
     disabled: false
   }
 };
 
-export const HelpGhost: Story = {
+export const DiscoveryGhost: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "ghost",
     disabled: false
   }
 };
 
-export const HelpGlass: Story = {
+export const DiscoveryGlass: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "glass",
     disabled: false
   }
 };
 
-export const HelpLink: Story = {
+export const DiscoveryLink: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     variant: "link",
     disabled: false
   }
 };
 
-export const HelpDisabled: Story = {
+export const DiscoveryDisabled: Story = {
   args: {
     children: "Button Text",
-    theme: "help",
+    theme: "discovery",
     disabled: true
   }
 };

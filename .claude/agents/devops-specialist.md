@@ -1,1 +1,0 @@
-/nix/store/wm1gxv9xqi7irnxlrnmycaz7yqinragm-claude-agents-devops-specialist.md

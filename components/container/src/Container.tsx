@@ -34,6 +34,7 @@ const ContainerFrame = styled(View, {
 
   tabIndex: -1,
   width: "100%",
+  borderRadius: "$container",
 
   focusVisibleStyle: {
     outlineColor: "$borderAccent",
@@ -47,25 +48,43 @@ const ContainerFrame = styled(View, {
       primary: {
         backgroundColor: "$backgroundPrimary",
         borderWidth: 1,
-        borderColor: "$borderTertiary"
+        borderColor: "$borderPrimary"
       },
 
       secondary: {
-        backgroundColor: "$surface2",
+        backgroundColor: "$backgroundSecondary",
         borderWidth: 1,
-        borderColor: "$borderPrimary"
+        borderColor: "$borderSecondary"
       },
 
       tertiary: {
-        backgroundColor: "$surface1",
+        backgroundColor: "$backgroundTertiary",
+        borderWidth: 1,
+        borderColor: "$borderTertiary"
+      },
+
+      elevated: {
+        backgroundColor: "$backgroundElevated",
         borderWidth: 1,
         borderColor: "$borderPrimary"
       },
 
-      quaternary: {
-        backgroundColor: "$backgroundElevated",
+      floating: {
+        backgroundColor: "$backgroundFloating",
+        borderWidth: 1,
+        borderColor: "$borderSecondary"
+      },
+
+      highest: {
+        backgroundColor: "$backgroundHighest",
+        borderWidth: 1,
+        borderColor: "$borderTertiary"
+      },
+
+      page: {
+        backgroundColor: "$backgroundPage",
         borderWidth: 2,
-        borderColor: "$borderPrimary"
+        borderColor: "$borderSecondary"
       },
 
       outlined: {
@@ -95,17 +114,16 @@ const ContainerFrame = styled(View, {
     },
 
     size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<ViewProps>) => {
+      "...size": (val: SizeTokens, _config: VariantSpreadExtras<ViewProps>) => {
         const space = getSpaced(val);
 
         return {
-          padding: space,
-          borderRadius: config.tokens.radius[val]
+          padding: space
         };
       }
     },
 
-    elevated: {
+    shadowed: {
       true: {
         boxShadow: "0px 4px 30px $overlayBackdrop"
       }
@@ -127,9 +145,9 @@ const ContainerFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    variant: "tertiary",
+    variant: "elevated",
     size: "$true",
-    elevated: true,
+    shadowed: false,
     circular: false,
     bordered: true,
     noPadding: false
@@ -155,16 +173,9 @@ const ContainerGroup = styled(View, {
   width: "100%",
   display: "flex",
   flex: 1,
+  borderRadius: "$container",
 
   variants: {
-    size: {
-      "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
-        return {
-          borderRadius: config.tokens.radius[val]
-        };
-      }
-    },
-
     circular: {
       true: {
         borderRadius: 1000_000_000
@@ -173,7 +184,6 @@ const ContainerGroup = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     circular: false
   }
 });
@@ -183,7 +193,7 @@ export const Container = ContainerFrame.styleable(
     {
       variant = "tertiary",
       size = "$true",
-      elevated = true,
+      shadowed = false,
       circular = false,
       bordered = true,
       noPadding = false,
@@ -194,7 +204,7 @@ export const Container = ContainerFrame.styleable(
     forwardedRef
   ) => {
     return (
-      <ContainerGroup group={true} size={size} circular={circular}>
+      <ContainerGroup group={true} circular={circular}>
         {variant === "glass" && (
           <ContainerGlassBackground theme={"base"} fullscreen={true} />
         )}
@@ -203,7 +213,7 @@ export const Container = ContainerFrame.styleable(
           {...props}
           variant={variant}
           size={size}
-          elevated={elevated}
+          shadowed={shadowed}
           circular={circular}
           bordered={bordered}
           borderWidth={bordered ? borderWidth : 0}

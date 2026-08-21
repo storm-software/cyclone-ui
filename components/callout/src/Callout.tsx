@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Container } from "@cyclone-ui/container";
 import { EyebrowText } from "@cyclone-ui/eyebrow-text";
-import { Heading3Text } from "@cyclone-ui/heading-text";
+import { HeadingXLText } from "@cyclone-ui/heading-text";
 import type { ColorThemeName } from "@cyclone-ui/state/theme";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -50,9 +50,9 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "medium",
   overflow: "hidden",
-  borderRadius: "$true",
+  borderRadius: "$container",
   opacity: 0.9,
-  zIndex: 5,
+  zIndex: "$0",
   colors: ["transparent", "$base1"],
   start: [1.0, 1.0],
   end: [0, 0]
@@ -65,9 +65,9 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "medium",
   overflow: "hidden",
-  borderRadius: "$true",
+  borderRadius: "$container",
   opacity: 0.25,
-  zIndex: 8,
+  zIndex: "$10",
   colors: ["transparent", "$backgroundSecondary"],
   start: [0, 1.0],
   end: [0, 1.0]
@@ -77,13 +77,13 @@ const CalloutBackgroundDiagonal = styled(Diagonal, {
   name: "Callout",
 
   position: "absolute",
-  borderRadius: "$true",
+  borderRadius: "$container",
   height: "100%",
   width: "100%",
   top: 0,
   left: 0,
   opacity: 0.05,
-  zIndex: 10
+  zIndex: "$10"
 });
 
 const CalloutContent = styled(YStack, {
@@ -92,7 +92,7 @@ const CalloutContent = styled(YStack, {
   transition: "medium",
   width: "100%",
   flexDirection: "column",
-  zIndex: 20,
+  zIndex: "$20",
   gap: "$xl",
   padding: "$md"
 });
@@ -127,7 +127,7 @@ const CalloutHeader = styled(XStack, {
   name: "Callout",
 
   paddingBottom: 0,
-  zIndex: 10,
+  zIndex: "$10",
   backgroundColor: "transparent",
   alignItems: "center",
   gap: "$3xl"
@@ -148,11 +148,11 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   );
 };
 
-const CalloutHeading = styled(Heading3Text, {
+const CalloutHeading = styled(HeadingXLText, {
   name: "CalloutHeading",
 
   color: "$foregroundOnPrimary",
-  zIndex: 20
+  zIndex: "$20"
 });
 
 const CalloutHeadingImpl = CalloutHeading.styleable(
@@ -174,7 +174,7 @@ const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
   color: "$foregroundTertiary",
-  zIndex: 20
+  zIndex: "$20"
 });
 
 const CalloutEyebrowImpl = CalloutEyebrow.styleable(
@@ -196,7 +196,7 @@ const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
   color: "$foregroundSecondary",
-  zIndex: 20,
+  zIndex: "$20",
   paddingVertical: 0
 });
 

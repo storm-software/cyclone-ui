@@ -99,7 +99,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   padding: "$3xl",
   borderWidth: 2,
   borderColor: "$overlayBorder",
-  borderRadius: "$true",
+  borderRadius: "$popover",
   marginHorizontal: "auto",
 
   enterStyle: { y: -10, opacity: 0 },

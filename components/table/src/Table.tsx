@@ -180,7 +180,7 @@ const TableHeaderCell = styled(ThemeableStack, {
 
   render: "th",
 
-  zIndex: 10,
+  zIndex: "$10",
   flexDirection: "row",
   flexGrow: 0,
   flexShrink: 1,
@@ -227,8 +227,8 @@ const TableHeader = styled(ThemeableStack, {
   flexDirection: "column",
   flexShrink: 1,
   borderWidth: 1,
-  borderTopLeftRadius: "$true",
-  borderTopRightRadius: "$true",
+  borderTopLeftRadius: "$container",
+  borderTopRightRadius: "$container",
   overflow: "hidden"
 });
 
@@ -264,8 +264,8 @@ const TableFooter = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 1,
   borderTopWidth: 0,
-  borderBottomLeftRadius: "$true",
-  borderBottomRightRadius: "$true",
+  borderBottomLeftRadius: "$container",
+  borderBottomRightRadius: "$container",
   overflow: "hidden"
 });
 

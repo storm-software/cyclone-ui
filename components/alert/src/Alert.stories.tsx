@@ -24,8 +24,8 @@ const meta: Meta<typeof Alert> = {
   title: "Containers/Alert",
   component: Alert,
   tags: ["autodocs"],
-  render: ({ children, icon, theme, ...rest }: any) => (
-    <Alert {...rest} theme={theme}>
+  render: ({ children, icon, theme, type, ...rest }: any) => (
+    <Alert {...rest} theme={theme} type={type}>
       <Alert.Icon>{icon}</Alert.Icon>
       <Alert.Content>
         <Alert.Content.Heading>Alert Heading</Alert.Content.Heading>
@@ -57,65 +57,67 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     children: bodyText,
-    theme: "brand"
+    type: "primary"
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     children: bodyText,
-    theme: "alternate"
+    type: "secondary"
   }
 };
 
-export const Help: Story = {
+export const Tertiary: Story = {
+
   args: {
     children: bodyText,
-    theme: "help"
+    type: "tertiary"
   }
 };
 
-export const Error: Story = {
+export const Danger: Story = {
   args: {
     children: bodyText,
-    theme: "danger"
+    type: "danger"
   }
 };
 
 export const Warning: Story = {
   args: {
     children: bodyText,
-    theme: "warning"
+    type: "warning"
   }
 };
 
 export const Info: Story = {
   args: {
     children: bodyText,
-    theme: "info"
+    type: "info"
   }
 };
 
 export const Success: Story = {
   args: {
     children: bodyText,
-    theme: "success"
+    type: "success"
   }
 };
 
-export const Positive: Story = {
+export const Discovery: Story = {
   args: {
     children: bodyText,
-    theme: "positive"
+    type: "discovery"
   }
 };
 
-export const Negative: Story = {
+export const Accent: Story = {
   args: {
     children: bodyText,
-    theme: "negative"
+    type: "accent"
   }
 };
+

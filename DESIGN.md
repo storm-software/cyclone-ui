@@ -68,6 +68,7 @@ colors:
   background-page: "#ffffff"
   background-elevated: "#f4f4f3"
   background-floating: "#e8e7e6"
+  background-highest: "#c3c4c4"
   background-primary: "#f4f4f4"
   background-secondary: "#1c1c1c"
   background-tertiary: "#181818"
@@ -85,42 +86,64 @@ colors:
   background-info-subtle: "#007496"
   background-discovery-subtle: "#6261af"
   background-page-hover: "#aeaeae"
+  background-page-pressed: "#bebebe"
   background-page-disabled: "#ffffff99"
   background-elevated-hover: "#a6a6a5"
+  background-elevated-pressed: "#b5b5b4"
   background-elevated-disabled: "#f4f4f399"
   background-floating-hover: "#9e9d9c"
+  background-floating-pressed: "#acabaa"
   background-floating-disabled: "#e8e7e699"
+  background-highest-hover: "#848585"
+  background-highest-pressed: "#909191"
+  background-highest-disabled: "#c3c4c499"
   background-primary-hover: "#a6a6a6"
+  background-primary-pressed: "#b5b5b5"
   background-primary-disabled: "#f4f4f499"
   background-secondary-hover: "#2a2a2a"
+  background-secondary-pressed: "#272727"
   background-secondary-disabled: "#1c1c1c99"
   background-tertiary-hover: "#242424"
+  background-tertiary-pressed: "#222222"
   background-tertiary-disabled: "#18181899"
   background-link-hover: "#115aad"
+  background-link-pressed: "#1d63b8"
   background-link-disabled: "#468ae299"
   background-accent-hover: "#007c72"
+  background-accent-pressed: "#00877c"
   background-accent-disabled: "#1fb2a699"
   background-danger-hover: "#a12e37"
+  background-danger-pressed: "#ac3940"
   background-danger-disabled: "#d8616499"
   background-warning-hover: "#9a5e00"
+  background-warning-pressed: "#a66800"
   background-warning-disabled: "#d4940099"
   background-success-hover: "#00733c"
+  background-success-pressed: "#007d45"
   background-success-disabled: "#00a46999"
   background-info-hover: "#007fab"
+  background-info-pressed: "#008ab6"
   background-info-disabled: "#00b8e699"
   background-discovery-hover: "#534dae"
+  background-discovery-pressed: "#5b57b9"
   background-discovery-disabled: "#7f7ee499"
   background-accent-subtle-hover: "#1b4c46"
+  background-accent-subtle-pressed: "#164842"
   background-accent-subtle-disabled: "#00383299"
   background-danger-subtle-hover: "#7d262c"
+  background-danger-subtle-pressed: "#862e33"
   background-danger-subtle-disabled: "#a94e5099"
   background-warning-subtle-hover: "#673d00"
+  background-warning-subtle-pressed: "#6f4500"
   background-warning-subtle-disabled: "#8f630099"
   background-success-subtle-hover: "#00552b"
+  background-success-subtle-pressed: "#005c31"
   background-success-subtle-disabled: "#007a4d99"
   background-info-subtle-hover: "#004e6f"
+  background-info-subtle-pressed: "#005676"
   background-info-subtle-disabled: "#00749699"
   background-discovery-subtle-hover: "#3f3b85"
+  background-discovery-subtle-pressed: "#46428d"
   background-discovery-subtle-disabled: "#6261af99"
   border-primary: "#262626"
   border-secondary: "#1c1c1c"
@@ -171,6 +194,7 @@ colors:
   overlay-border: "#262626"
   overlay-backdrop: "#1a1c1f66"
   overlay-background-hover: "#9e9d9c"
+  overlay-background-pressed: "#acabaa"
   overlay-background-disabled: "#e8e7e699"
   overlay-border-hover: "#373737"
   overlay-border-disabled: "#26262699"
@@ -283,7 +307,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 215 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -352,109 +376,133 @@ Cyclone UI design tokens — 191 color tokens, 11 typography tokens, 28 spacing 
 - **Background Page (#ffffff):** The page background color for the light theme
 - **Background Elevated (#f4f4f3):** The elevated background color for the light theme
 - **Background Floating (#e8e7e6):** The floating background color for the light theme
-- **Background Primary (#f4f4f4):** The primary foreground color for the light theme
-- **Background Secondary (#1c1c1c):** The secondary foreground color for the light theme
-- **Background Tertiary (#181818):** The tertiary foreground color for the light theme
+- **Background Highest (#c3c4c4):** The highest level of elevation background color for the light theme
+- **Background Primary (#f4f4f4):** The primary background color for the light theme
+- **Background Secondary (#1c1c1c):** The secondary background color for the light theme
+- **Background Tertiary (#181818):** The tertiary background color for the light theme
 - **Background Link (#468ae2):** The link foreground color for the light theme
-- **Background Accent (#1fb2a6):** The accent foreground color for the light theme
-- **Background Danger (#d86164):** The danger foreground color for the light theme
-- **Background Warning (#d49400):** The warning foreground color for the light theme
-- **Background Success (#00a469):** The success foreground color for the light theme
-- **Background Info (#00b8e6):** The info foreground color for the light theme
-- **Background Discovery (#7f7ee4):** The discovery foreground color for the light theme
-- **Background Accent Subtle (#003832):** The accent foreground color for the light theme
-- **Background Danger Subtle (#a94e50):** The danger foreground color for the light theme
-- **Background Warning Subtle (#8f6300):** The warning foreground color for the light theme
-- **Background Success Subtle (#007a4d):** The success foreground color for the light theme
-- **Background Info Subtle (#007496):** The info foreground color for the light theme
-- **Background Discovery Subtle (#6261af):** The discovery foreground color for the light theme
+- **Background Accent (#1fb2a6):** The accent background color for the light theme
+- **Background Danger (#d86164):** The danger background color for the light theme
+- **Background Warning (#d49400):** The warning background color for the light theme
+- **Background Success (#00a469):** The success background color for the light theme
+- **Background Info (#00b8e6):** The info background color for the light theme
+- **Background Discovery (#7f7ee4):** The discovery background color for the light theme
+- **Background Accent Subtle (#003832):** The accent background color for the light theme
+- **Background Danger Subtle (#a94e50):** The danger background color for the light theme
+- **Background Warning Subtle (#8f6300):** The warning background color for the light theme
+- **Background Success Subtle (#007a4d):** The success background color for the light theme
+- **Background Info Subtle (#007496):** The info background color for the light theme
+- **Background Discovery Subtle (#6261af):** The discovery background color for the light theme
 - **Background Page Hover (#aeaeae):** The page background color for the light theme (hover, 25% darker)
+- **Background Page Pressed (#bebebe):** The page background color for the light theme (pressed, 20% darker)
 - **Background Page Disabled (#ffffff99):** The page background color for the light theme (disabled, 60% opacity)
 - **Background Elevated Hover (#a6a6a5):** The elevated background color for the light theme (hover, 25% darker)
+- **Background Elevated Pressed (#b5b5b4):** The elevated background color for the light theme (pressed, 20% darker)
 - **Background Elevated Disabled (#f4f4f399):** The elevated background color for the light theme (disabled, 60% opacity)
 - **Background Floating Hover (#9e9d9c):** The floating background color for the light theme (hover, 25% darker)
+- **Background Floating Pressed (#acabaa):** The floating background color for the light theme (pressed, 20% darker)
 - **Background Floating Disabled (#e8e7e699):** The floating background color for the light theme (disabled, 60% opacity)
-- **Background Primary Hover (#a6a6a6):** The primary foreground color for the light theme (hover, 25% darker)
-- **Background Primary Disabled (#f4f4f499):** The primary foreground color for the light theme (disabled, 60% opacity)
-- **Background Secondary Hover (#2a2a2a):** The secondary foreground color for the light theme (hover, 25% brighter)
-- **Background Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
-- **Background Tertiary Hover (#242424):** The tertiary foreground color for the light theme (hover, 25% brighter)
-- **Background Tertiary Disabled (#18181899):** The tertiary foreground color for the light theme (disabled, 60% opacity)
+- **Background Highest Hover (#848585):** The highest level of elevation background color for the light theme (hover, 25% darker)
+- **Background Highest Pressed (#909191):** The highest level of elevation background color for the light theme (pressed, 20% darker)
+- **Background Highest Disabled (#c3c4c499):** The highest level of elevation background color for the light theme (disabled, 60% opacity)
+- **Background Primary Hover (#a6a6a6):** The primary background color for the light theme (hover, 25% darker)
+- **Background Primary Pressed (#b5b5b5):** The primary background color for the light theme (pressed, 20% darker)
+- **Background Primary Disabled (#f4f4f499):** The primary background color for the light theme (disabled, 60% opacity)
+- **Background Secondary Hover (#2a2a2a):** The secondary background color for the light theme (hover, 25% brighter)
+- **Background Secondary Pressed (#272727):** The secondary background color for the light theme (pressed, 20% brighter)
+- **Background Secondary Disabled (#1c1c1c99):** The secondary background color for the light theme (disabled, 60% opacity)
+- **Background Tertiary Hover (#242424):** The tertiary background color for the light theme (hover, 25% brighter)
+- **Background Tertiary Pressed (#222222):** The tertiary background color for the light theme (pressed, 20% brighter)
+- **Background Tertiary Disabled (#18181899):** The tertiary background color for the light theme (disabled, 60% opacity)
 - **Background Link Hover (#115aad):** The link foreground color for the light theme (hover, 25% darker)
+- **Background Link Pressed (#1d63b8):** The link foreground color for the light theme (pressed, 20% darker)
 - **Background Link Disabled (#468ae299):** The link foreground color for the light theme (disabled, 60% opacity)
-- **Background Accent Hover (#007c72):** The accent foreground color for the light theme (hover, 25% darker)
-- **Background Accent Disabled (#1fb2a699):** The accent foreground color for the light theme (disabled, 60% opacity)
-- **Background Danger Hover (#a12e37):** The danger foreground color for the light theme (hover, 25% darker)
-- **Background Danger Disabled (#d8616499):** The danger foreground color for the light theme (disabled, 60% opacity)
-- **Background Warning Hover (#9a5e00):** The warning foreground color for the light theme (hover, 25% darker)
-- **Background Warning Disabled (#d4940099):** The warning foreground color for the light theme (disabled, 60% opacity)
-- **Background Success Hover (#00733c):** The success foreground color for the light theme (hover, 25% darker)
-- **Background Success Disabled (#00a46999):** The success foreground color for the light theme (disabled, 60% opacity)
-- **Background Info Hover (#007fab):** The info foreground color for the light theme (hover, 25% darker)
-- **Background Info Disabled (#00b8e699):** The info foreground color for the light theme (disabled, 60% opacity)
-- **Background Discovery Hover (#534dae):** The discovery foreground color for the light theme (hover, 25% darker)
-- **Background Discovery Disabled (#7f7ee499):** The discovery foreground color for the light theme (disabled, 60% opacity)
-- **Background Accent Subtle Hover (#1b4c46):** The accent foreground color for the light theme (hover, 25% brighter)
-- **Background Accent Subtle Disabled (#00383299):** The accent foreground color for the light theme (disabled, 60% opacity)
-- **Background Danger Subtle Hover (#7d262c):** The danger foreground color for the light theme (hover, 25% darker)
-- **Background Danger Subtle Disabled (#a94e5099):** The danger foreground color for the light theme (disabled, 60% opacity)
-- **Background Warning Subtle Hover (#673d00):** The warning foreground color for the light theme (hover, 25% darker)
-- **Background Warning Subtle Disabled (#8f630099):** The warning foreground color for the light theme (disabled, 60% opacity)
-- **Background Success Subtle Hover (#00552b):** The success foreground color for the light theme (hover, 25% darker)
-- **Background Success Subtle Disabled (#007a4d99):** The success foreground color for the light theme (disabled, 60% opacity)
-- **Background Info Subtle Hover (#004e6f):** The info foreground color for the light theme (hover, 25% darker)
-- **Background Info Subtle Disabled (#00749699):** The info foreground color for the light theme (disabled, 60% opacity)
-- **Background Discovery Subtle Hover (#3f3b85):** The discovery foreground color for the light theme (hover, 25% darker)
-- **Background Discovery Subtle Disabled (#6261af99):** The discovery foreground color for the light theme (disabled, 60% opacity)
-- **Border Primary (#262626):** The primary foreground color for the light theme
-- **Border Secondary (#1c1c1c):** The secondary foreground color for the light theme
-- **Border Tertiary (#181818):** The tertiary foreground color for the light theme
-- **Border Accent (#1fb2a6):** The accent foreground color for the light theme
-- **Border Danger (#d86164):** The danger foreground color for the light theme
-- **Border Warning (#d49400):** The warning foreground color for the light theme
-- **Border Success (#00a469):** The success foreground color for the light theme
-- **Border Info (#00b8e6):** The info foreground color for the light theme
-- **Border Discovery (#7f7ee4):** The discovery foreground color for the light theme
-- **Border Accent Subtle (#003832):** The accent foreground color for the light theme
-- **Border Danger Subtle (#a94e50):** The danger foreground color for the light theme
-- **Border Warning Subtle (#8f6300):** The warning foreground color for the light theme
-- **Border Success Subtle (#007a4d):** The success foreground color for the light theme
-- **Border Info Subtle (#007496):** The info foreground color for the light theme
-- **Border Discovery Subtle (#6261af):** The discovery foreground color for the light theme
-- **Border Primary Hover (#373737):** The primary foreground color for the light theme (hover, 25% brighter)
-- **Border Primary Disabled (#26262699):** The primary foreground color for the light theme (disabled, 60% opacity)
-- **Border Secondary Hover (#2a2a2a):** The secondary foreground color for the light theme (hover, 25% brighter)
-- **Border Secondary Disabled (#1c1c1c99):** The secondary foreground color for the light theme (disabled, 60% opacity)
-- **Border Tertiary Hover (#242424):** The tertiary foreground color for the light theme (hover, 25% brighter)
-- **Border Tertiary Disabled (#18181899):** The tertiary foreground color for the light theme (disabled, 60% opacity)
-- **Border Accent Hover (#007c72):** The accent foreground color for the light theme (hover, 25% darker)
-- **Border Accent Disabled (#1fb2a699):** The accent foreground color for the light theme (disabled, 60% opacity)
-- **Border Danger Hover (#a12e37):** The danger foreground color for the light theme (hover, 25% darker)
-- **Border Danger Disabled (#d8616499):** The danger foreground color for the light theme (disabled, 60% opacity)
-- **Border Warning Hover (#9a5e00):** The warning foreground color for the light theme (hover, 25% darker)
-- **Border Warning Disabled (#d4940099):** The warning foreground color for the light theme (disabled, 60% opacity)
-- **Border Success Hover (#00733c):** The success foreground color for the light theme (hover, 25% darker)
-- **Border Success Disabled (#00a46999):** The success foreground color for the light theme (disabled, 60% opacity)
-- **Border Info Hover (#007fab):** The info foreground color for the light theme (hover, 25% darker)
-- **Border Info Disabled (#00b8e699):** The info foreground color for the light theme (disabled, 60% opacity)
-- **Border Discovery Hover (#534dae):** The discovery foreground color for the light theme (hover, 25% darker)
-- **Border Discovery Disabled (#7f7ee499):** The discovery foreground color for the light theme (disabled, 60% opacity)
-- **Border Accent Subtle Hover (#1b4c46):** The accent foreground color for the light theme (hover, 25% brighter)
-- **Border Accent Subtle Disabled (#00383299):** The accent foreground color for the light theme (disabled, 60% opacity)
-- **Border Danger Subtle Hover (#7d262c):** The danger foreground color for the light theme (hover, 25% darker)
-- **Border Danger Subtle Disabled (#a94e5099):** The danger foreground color for the light theme (disabled, 60% opacity)
-- **Border Warning Subtle Hover (#673d00):** The warning foreground color for the light theme (hover, 25% darker)
-- **Border Warning Subtle Disabled (#8f630099):** The warning foreground color for the light theme (disabled, 60% opacity)
-- **Border Success Subtle Hover (#00552b):** The success foreground color for the light theme (hover, 25% darker)
-- **Border Success Subtle Disabled (#007a4d99):** The success foreground color for the light theme (disabled, 60% opacity)
-- **Border Info Subtle Hover (#004e6f):** The info foreground color for the light theme (hover, 25% darker)
-- **Border Info Subtle Disabled (#00749699):** The info foreground color for the light theme (disabled, 60% opacity)
-- **Border Discovery Subtle Hover (#3f3b85):** The discovery foreground color for the light theme (hover, 25% darker)
-- **Border Discovery Subtle Disabled (#6261af99):** The discovery foreground color for the light theme (disabled, 60% opacity)
+- **Background Accent Hover (#007c72):** The accent background color for the light theme (hover, 25% darker)
+- **Background Accent Pressed (#00877c):** The accent background color for the light theme (pressed, 20% darker)
+- **Background Accent Disabled (#1fb2a699):** The accent background color for the light theme (disabled, 60% opacity)
+- **Background Danger Hover (#a12e37):** The danger background color for the light theme (hover, 25% darker)
+- **Background Danger Pressed (#ac3940):** The danger background color for the light theme (pressed, 20% darker)
+- **Background Danger Disabled (#d8616499):** The danger background color for the light theme (disabled, 60% opacity)
+- **Background Warning Hover (#9a5e00):** The warning background color for the light theme (hover, 25% darker)
+- **Background Warning Pressed (#a66800):** The warning background color for the light theme (pressed, 20% darker)
+- **Background Warning Disabled (#d4940099):** The warning background color for the light theme (disabled, 60% opacity)
+- **Background Success Hover (#00733c):** The success background color for the light theme (hover, 25% darker)
+- **Background Success Pressed (#007d45):** The success background color for the light theme (pressed, 20% darker)
+- **Background Success Disabled (#00a46999):** The success background color for the light theme (disabled, 60% opacity)
+- **Background Info Hover (#007fab):** The info background color for the light theme (hover, 25% darker)
+- **Background Info Pressed (#008ab6):** The info background color for the light theme (pressed, 20% darker)
+- **Background Info Disabled (#00b8e699):** The info background color for the light theme (disabled, 60% opacity)
+- **Background Discovery Hover (#534dae):** The discovery background color for the light theme (hover, 25% darker)
+- **Background Discovery Pressed (#5b57b9):** The discovery background color for the light theme (pressed, 20% darker)
+- **Background Discovery Disabled (#7f7ee499):** The discovery background color for the light theme (disabled, 60% opacity)
+- **Background Accent Subtle Hover (#1b4c46):** The accent background color for the light theme (hover, 25% brighter)
+- **Background Accent Subtle Pressed (#164842):** The accent background color for the light theme (pressed, 20% brighter)
+- **Background Accent Subtle Disabled (#00383299):** The accent background color for the light theme (disabled, 60% opacity)
+- **Background Danger Subtle Hover (#7d262c):** The danger background color for the light theme (hover, 25% darker)
+- **Background Danger Subtle Pressed (#862e33):** The danger background color for the light theme (pressed, 20% darker)
+- **Background Danger Subtle Disabled (#a94e5099):** The danger background color for the light theme (disabled, 60% opacity)
+- **Background Warning Subtle Hover (#673d00):** The warning background color for the light theme (hover, 25% darker)
+- **Background Warning Subtle Pressed (#6f4500):** The warning background color for the light theme (pressed, 20% darker)
+- **Background Warning Subtle Disabled (#8f630099):** The warning background color for the light theme (disabled, 60% opacity)
+- **Background Success Subtle Hover (#00552b):** The success background color for the light theme (hover, 25% darker)
+- **Background Success Subtle Pressed (#005c31):** The success background color for the light theme (pressed, 20% darker)
+- **Background Success Subtle Disabled (#007a4d99):** The success background color for the light theme (disabled, 60% opacity)
+- **Background Info Subtle Hover (#004e6f):** The info background color for the light theme (hover, 25% darker)
+- **Background Info Subtle Pressed (#005676):** The info background color for the light theme (pressed, 20% darker)
+- **Background Info Subtle Disabled (#00749699):** The info background color for the light theme (disabled, 60% opacity)
+- **Background Discovery Subtle Hover (#3f3b85):** The discovery background color for the light theme (hover, 25% darker)
+- **Background Discovery Subtle Pressed (#46428d):** The discovery background color for the light theme (pressed, 20% darker)
+- **Background Discovery Subtle Disabled (#6261af99):** The discovery background color for the light theme (disabled, 60% opacity)
+- **Border Primary (#262626):** The primary border color for the light theme
+- **Border Secondary (#1c1c1c):** The secondary border color for the light theme
+- **Border Tertiary (#181818):** The tertiary border color for the light theme
+- **Border Accent (#1fb2a6):** The accent border color for the light theme
+- **Border Danger (#d86164):** The danger border color for the light theme
+- **Border Warning (#d49400):** The warning border color for the light theme
+- **Border Success (#00a469):** The success border color for the light theme
+- **Border Info (#00b8e6):** The info border color for the light theme
+- **Border Discovery (#7f7ee4):** The discovery border color for the light theme
+- **Border Accent Subtle (#003832):** The accent border color for the light theme
+- **Border Danger Subtle (#a94e50):** The danger border color for the light theme
+- **Border Warning Subtle (#8f6300):** The warning border color for the light theme
+- **Border Success Subtle (#007a4d):** The success border color for the light theme
+- **Border Info Subtle (#007496):** The info border color for the light theme
+- **Border Discovery Subtle (#6261af):** The discovery border color for the light theme
+- **Border Primary Hover (#373737):** The primary border color for the light theme (hover, 25% brighter)
+- **Border Primary Disabled (#26262699):** The primary border color for the light theme (disabled, 60% opacity)
+- **Border Secondary Hover (#2a2a2a):** The secondary border color for the light theme (hover, 25% brighter)
+- **Border Secondary Disabled (#1c1c1c99):** The secondary border color for the light theme (disabled, 60% opacity)
+- **Border Tertiary Hover (#242424):** The tertiary border color for the light theme (hover, 25% brighter)
+- **Border Tertiary Disabled (#18181899):** The tertiary border color for the light theme (disabled, 60% opacity)
+- **Border Accent Hover (#007c72):** The accent border color for the light theme (hover, 25% darker)
+- **Border Accent Disabled (#1fb2a699):** The accent border color for the light theme (disabled, 60% opacity)
+- **Border Danger Hover (#a12e37):** The danger border color for the light theme (hover, 25% darker)
+- **Border Danger Disabled (#d8616499):** The danger border color for the light theme (disabled, 60% opacity)
+- **Border Warning Hover (#9a5e00):** The warning border color for the light theme (hover, 25% darker)
+- **Border Warning Disabled (#d4940099):** The warning border color for the light theme (disabled, 60% opacity)
+- **Border Success Hover (#00733c):** The success border color for the light theme (hover, 25% darker)
+- **Border Success Disabled (#00a46999):** The success border color for the light theme (disabled, 60% opacity)
+- **Border Info Hover (#007fab):** The info border color for the light theme (hover, 25% darker)
+- **Border Info Disabled (#00b8e699):** The info border color for the light theme (disabled, 60% opacity)
+- **Border Discovery Hover (#534dae):** The discovery border color for the light theme (hover, 25% darker)
+- **Border Discovery Disabled (#7f7ee499):** The discovery border color for the light theme (disabled, 60% opacity)
+- **Border Accent Subtle Hover (#1b4c46):** The accent border color for the light theme (hover, 25% brighter)
+- **Border Accent Subtle Disabled (#00383299):** The accent border color for the light theme (disabled, 60% opacity)
+- **Border Danger Subtle Hover (#7d262c):** The danger border color for the light theme (hover, 25% darker)
+- **Border Danger Subtle Disabled (#a94e5099):** The danger border color for the light theme (disabled, 60% opacity)
+- **Border Warning Subtle Hover (#673d00):** The warning border color for the light theme (hover, 25% darker)
+- **Border Warning Subtle Disabled (#8f630099):** The warning border color for the light theme (disabled, 60% opacity)
+- **Border Success Subtle Hover (#00552b):** The success border color for the light theme (hover, 25% darker)
+- **Border Success Subtle Disabled (#007a4d99):** The success border color for the light theme (disabled, 60% opacity)
+- **Border Info Subtle Hover (#004e6f):** The info border color for the light theme (hover, 25% darker)
+- **Border Info Subtle Disabled (#00749699):** The info border color for the light theme (disabled, 60% opacity)
+- **Border Discovery Subtle Hover (#3f3b85):** The discovery border color for the light theme (hover, 25% darker)
+- **Border Discovery Subtle Disabled (#6261af99):** The discovery border color for the light theme (disabled, 60% opacity)
 - **Overlay Background (#e8e7e6):** The overlay background color for the light theme
 - **Overlay Border (#262626):** The overlay border color for the light theme
 - **Overlay Backdrop (#1a1c1f66):** The overlay backdrop background color for the light theme
 - **Overlay Background Hover (#9e9d9c):** The overlay background color for the light theme (hover, 25% darker)
+- **Overlay Background Pressed (#acabaa):** The overlay background color for the light theme (pressed, 20% darker)
 - **Overlay Background Disabled (#e8e7e699):** The overlay background color for the light theme (disabled, 60% opacity)
 - **Overlay Border Hover (#373737):** The overlay border color for the light theme (hover, 25% brighter)
 - **Overlay Border Disabled (#26262699):** The overlay border color for the light theme (disabled, 60% opacity)

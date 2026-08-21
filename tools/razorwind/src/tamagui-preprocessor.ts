@@ -32,7 +32,10 @@ const RESERVED_KEYS = new Set([
   "$deprecated",
   "$root",
   "$value",
-  "$ref"
+  "$ref",
+  "theme",
+  "palette",
+  "primitive"
 ]);
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
@@ -405,6 +408,12 @@ const COLOR_STATE_HOVER: ColorStateVariant = {
   label: "hover"
 };
 
+const COLOR_STATE_PRESSED: ColorStateVariant = {
+  suffix: "-pressed",
+  brightness: 0.8,
+  label: "pressed"
+};
+
 /** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
 const OKLCH_LIGHTNESS_MIDPOINT = 0.5;
 
@@ -415,7 +424,7 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
 };
 
 const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
-  background: [COLOR_STATE_HOVER, COLOR_STATE_DISABLED],
+  background: [COLOR_STATE_HOVER, COLOR_STATE_PRESSED, COLOR_STATE_DISABLED],
   foreground: [COLOR_STATE_HOVER, COLOR_STATE_DISABLED],
   border: [COLOR_STATE_HOVER, COLOR_STATE_DISABLED]
 };
@@ -425,8 +434,10 @@ const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 function isStateVariantKey(key: string): boolean {
   return (
     key.endsWith("-hover") ||
+    key.endsWith("-pressed") ||
     key.endsWith("-disabled") ||
     key.endsWith("-Hover") ||
+    key.endsWith("-Pressed") ||
     key.endsWith("-Disabled")
   );
 }
@@ -593,16 +604,15 @@ function createStateToken(
   variant: ColorStateVariant
 ): Record<string, unknown> {
   const detail = variantDetail(variant, hex);
-  const description =
-    typeof source.$description === "string"
-      ? `${source.$description} (${variant.label}, ${detail})`
-      : `${variant.label} state at ${detail}`;
 
   return {
     ...source,
     $type: "color",
     $value: applyStateTransform(hex, variant),
-    $description: description
+    $description:
+      typeof source.$description === "string"
+        ? `${source.$description} (${variant.label}, ${detail})`
+        : `${variant.label} state at ${detail}`
   };
 }
 

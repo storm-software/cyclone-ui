@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { getRadius, getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
@@ -38,6 +38,7 @@ const CheckboxGroupFrame = styled(XGroup, {
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
+  borderRadius: "$control",
 
   hoverStyle: {
     borderColor: "$borderPrimaryHover"
@@ -72,12 +73,11 @@ const CheckboxGroupFrame = styled(XGroup, {
         const size = getSized(val, {
           scale: 0.5
         });
-        const radius = getRadius(val, { circular: props.circular, scale: 0.5 });
 
         return {
           height: size,
           width: size,
-          borderRadius: radius
+          borderRadius: props.circular ? 100_000 : "$control"
         };
       }
     },

@@ -51,6 +51,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
   // this fixes a flex bug where it overflows container
   minWidth: 0,
   display: "flex",
+  borderRadius: "$control",
 
   variants: {
     orientation: {
@@ -64,14 +65,6 @@ const FieldGroupFrame = styled(ThemeableStack, {
       }
     },
 
-    size: {
-      "...size": (val, { tokens }) => {
-        return {
-          borderRadius: tokens.radius[val]
-        };
-      }
-    },
-
     disabled: {
       true: {
         userSelect: "none",
@@ -81,7 +74,6 @@ const FieldGroupFrame = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     orientation: "vertical",
     disabled: false
   }

@@ -81,8 +81,8 @@ export const AlternateTheme: Story = {
   args: { currentName: "Current Page", theme: "alternate" }
 };
 
-export const HelpTheme: Story = {
-  args: { currentName: "Current Page", theme: "help" }
+export const DiscoveryTheme: Story = {
+  args: { currentName: "Current Page", theme: "discovery" }
 };
 
 export const ErrorTheme: Story = {

@@ -90,7 +90,7 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The radius of the button's border
    *
-   * @defaultValue "$true"
+   * @defaultValue "$trigger"
    */
   borderRadius: BorderRadiusSizeTokens;
 
@@ -154,7 +154,7 @@ type ButtonExtraProps = TextParentStyles &
 export const ButtonContext = createStyledContext<ButtonContextProps>({
   size: "$true",
   variant: "tertiary",
-  borderRadius: "$true",
+  borderRadius: "$trigger",
   unstyled: false,
   circular: false,
   ringed: false,
@@ -182,6 +182,7 @@ const ButtonFrame = styled(View, {
   flexDirection: "row",
   width: "fit-content",
   overflow: "hidden",
+  borderRadius: "$trigger",
 
   hoverStyle: {
     borderWidth: 1,
@@ -418,7 +419,7 @@ const ButtonTextFrame = styled(LabelText, {
   // flexGrow 1 leads to inconsistent native style where text pushes to start of view
   flexGrow: 0,
   flexShrink: 1,
-  zIndex: "$md",
+  zIndex: "$20",
 
   variants: {
     variant: {
@@ -624,7 +625,7 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
     return (
       <View
         ref={forwardedRef}
-        zIndex="$md"
+        zIndex="$20"
         alignItems="center"
         // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}
@@ -663,7 +664,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
 
   transition: "medium",
   opacity: 0,
-  zIndex: "$sm",
+  zIndex: "$10",
   backgroundColor: "$backgroundPrimaryHover",
   borderColor: "$borderPrimary",
 
@@ -705,7 +706,7 @@ const ButtonGlassBackground = styled(LinearGradient, {
 
   transition: "medium",
   opacity: 0.5,
-  zIndex: "$sm",
+  zIndex: "$10",
   colors: ["$backgroundSecondary", "$backgroundPrimary"],
 
   variants: {
@@ -722,7 +723,7 @@ const ButtonGradientBackground = styled(LinearGradient, {
   context: ButtonContext,
 
   transition: "medium",
-  zIndex: "$sm",
+  zIndex: "$10",
   colors: ["$backgroundTertiary", "$backgroundPrimary"],
 
   variants: {

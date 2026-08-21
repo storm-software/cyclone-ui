@@ -27,15 +27,15 @@ import { Path, Svg } from "react-native-svg";
 const AccordionToggleContainer = styled(View, {
   name: "AccordionToggle",
 
-  transition: "quick",
+  transition: "250ms",
 
   variants: {
     isExpanded: {
       true: {
-        rotate: "180deg"
+        rotate: "90deg"
       },
       false: {
-        rotate: "-180deg"
+        rotate: "-90deg"
       }
     }
   } as const,
@@ -47,19 +47,22 @@ const AccordionToggleContainer = styled(View, {
 
 export type AccordionToggleProps = IconProps & {
   isExpanded?: boolean;
+  strokeWidth?: number;
 };
 
 const Icon = ({
   isExpanded = false,
   size = 24,
+  strokeWidth = 1.5,
   ...props
 }: AccordionToggleProps) => {
-  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
+  const color = useCurrentColor((props.color || "$foregroundOn") as any);
 
   const compressLengthPosition = useMotionValue(0);
   const compressLengthPlayback = animate(compressLengthPosition, 14, {
     type: "spring",
-    duration: 0.5,
+    duration: 0.25,
+    ease: "easeOut",
     bounce: 0
   });
 
@@ -72,6 +75,7 @@ const Icon = ({
   const compressOpacityPlayback = animate(compressOpacityPosition, 1, {
     type: "spring",
     duration: 0.25,
+    ease: "easeOut",
     bounce: 0
   });
 
@@ -83,7 +87,8 @@ const Icon = ({
   const expandLengthPosition = useMotionValue(14);
   const expandLengthPlayback = animate(expandLengthPosition, 1, {
     type: "spring",
-    duration: 0.5,
+    duration: 0.25,
+    ease: "easeOut",
     bounce: 0
   });
 
@@ -96,6 +101,7 @@ const Icon = ({
   const expandOpacityPlayback = animate(expandOpacityPosition, 0, {
     type: "spring",
     duration: 0.25,
+    ease: "easeOut",
     bounce: 0
   });
 
@@ -119,43 +125,55 @@ const Icon = ({
       compressOpacityPosition.set(0);
       expandLengthPlayback.play();
     }
-  }, [compressLengthPlayback, expandLengthPlayback, isExpanded]);
+  }, [
+    compressLengthPlayback,
+    compressLengthPosition,
+    compressOpacityPlayback,
+    compressOpacityPosition,
+    expandLengthPlayback,
+    expandLengthPosition,
+    expandOpacityPlayback,
+    expandOpacityPosition,
+    isExpanded
+  ]);
 
   return (
-    <AccordionToggleContainer
-      width={size}
-      height={size}
-      isExpanded={isExpanded}>
-      <Svg
+    <View style={{ width: size, height: size, rotate: "-90deg" }}>
+      <AccordionToggleContainer
         width={size}
         height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke={color}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        {...(props as SvgProps)}>
-        <Path d="M5 12h14" stroke={color} strokeWidth="1.5" />
+        isExpanded={isExpanded}>
+        <Svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          {...(props as SvgProps)}>
+          <Path d="M5 12h14" stroke={color} strokeWidth={strokeWidth} />
 
-        {isExpanded && (
-          <Path
-            stroke={color}
-            d={`M12 5v${expandLength}`}
-            strokeWidth="1.5"
-            opacity={expandOpacity}
-          />
-        )}
+          {isExpanded && (
+            <Path
+              stroke={color}
+              d={`M12 5v${expandLength}`}
+              strokeWidth={strokeWidth}
+              opacity={expandOpacity}
+            />
+          )}
 
-        {!isExpanded && (
-          <Path
-            stroke={color}
-            d={`M12 5v${compressLength}`}
-            strokeWidth="1.5"
-            opacity={compressOpacity}
-          />
-        )}
-      </Svg>
-    </AccordionToggleContainer>
+          {!isExpanded && (
+            <Path
+              stroke={color}
+              d={`M12 5v${compressLength}`}
+              strokeWidth={strokeWidth}
+              opacity={compressOpacity}
+            />
+          )}
+        </Svg>
+      </AccordionToggleContainer>
+    </View>
   );
 };
 

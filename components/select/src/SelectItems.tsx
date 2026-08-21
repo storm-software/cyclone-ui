@@ -55,7 +55,7 @@ const SelectItemGroup = styled(XStack, {
   alignItems: "center",
   paddingHorizontal: "$xl",
   paddingVertical: 0,
-  borderRadius: "$md",
+  borderRadius: "$trigger",
   minHeight: "$5xl",
   width: "100%",
 
@@ -210,7 +210,7 @@ const SelectItemsGroup = View.styleable(
           </Sheet>
         </Adapt>
 
-        <TamaguiSelect.Content zIndex={200000}>
+        <TamaguiSelect.Content zIndex="$90">
           <TamaguiSelect.ScrollUpButton
             transition="quick"
             animateOnly={["scale", "opacity"]}
@@ -219,7 +219,7 @@ const SelectItemsGroup = View.styleable(
             justifyContent="center"
             position="relative"
             height="$3xl">
-            <YStack zIndex={10}>
+            <YStack zIndex="$10">
               <ChevronUp size={20} />
             </YStack>
             <LinearGradient
@@ -227,7 +227,7 @@ const SelectItemsGroup = View.styleable(
               end={[0, 1]}
               fullscreen={true}
               colors={["$base3", "transparent"]}
-              borderRadius="$lg"
+              borderRadius="$popover"
               marginTop="$xxs"
             />
           </TamaguiSelect.ScrollUpButton>
@@ -239,7 +239,7 @@ const SelectItemsGroup = View.styleable(
             exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
             backgroundColor="$backgroundFloating"
             minWidth="$12xl"
-            borderRadius="$true"
+            borderRadius="$popover"
             boxShadow="0px 4px 30px $overlayBackdrop">
             <TamaguiSelect.Group paddingVertical="$xl">
               {children}
@@ -255,7 +255,7 @@ const SelectItemsGroup = View.styleable(
             position="relative"
             width="100%"
             height="$3xl">
-            <YStack zIndex={10}>
+            <YStack zIndex="$10">
               <ChevronDown size={20} />
             </YStack>
             <LinearGradient
@@ -263,7 +263,7 @@ const SelectItemsGroup = View.styleable(
               end={[0, 1]}
               fullscreen={true}
               colors={["transparent", "$base3"]}
-              borderRadius="$lg"
+              borderRadius="$popover"
               marginBottom="$xxs"
             />
           </TamaguiSelect.ScrollDownButton>
