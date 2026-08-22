@@ -21,30 +21,30 @@
     }
   },
   "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
+  "files": ["dist", "src", "types"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
     "@tamagui/focusable": "catalog:",
     "@tamagui/group": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/separator": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/web": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@storybook/react-vite": "catalog:",
+    "@stryke/types": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
@@ -52,8 +52,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx"
 }

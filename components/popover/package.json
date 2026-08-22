@@ -21,11 +21,7 @@
     }
   },
   "types": "./types/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "types"
-  ],
+  "files": ["dist", "src", "types"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -41,7 +37,9 @@
     "@tamagui/popper": "catalog:",
     "@tamagui/sheet": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:"
+    "@tamagui/text": "catalog:",
+    "@tamagui/floating": "catalog:",
+    "@cyclone-ui/scroll-view": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
@@ -55,8 +53,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx"
 }

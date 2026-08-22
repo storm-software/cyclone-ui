@@ -37,7 +37,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "motion": "^11.18.2"
   },
   "devDependencies": {

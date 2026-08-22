@@ -34,12 +34,12 @@
     "@tamagui/core": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

@@ -19,11 +19,12 @@
 import { getFontSizedFromSize } from "@cyclone-ui/helpers";
 import type { GetProps } from "@tamagui/core";
 import { styled, Text } from "@tamagui/core";
+
 export const LabelText = styled(Text, {
   name: "LabelText",
   render: "p",
 
-  color: "$foregroundOnPrimary",
+  color: "$foreground",
   fontFamily: "$label",
 
   variants: {

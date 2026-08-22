@@ -4,41 +4,6 @@
   "projectType": "library",
   "sourceRoot": "components/pagination/src",
   "targets": {
-    "build": {
-      "cache": true,
-      "executor": "@cyclone-ui/nx:build",
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "output": "{options.outputPath}",
-      "options": {
-        "outputPath": "dist/components/pagination",
-        "tsConfig": "components/pagination/tsconfig.json",
-        "project": "components/pagination/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "components/pagination",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
-      },
-      "configurations": {
-        "production": {
-          "debug": false,
-          "verbose": false
-        },
-        "development": {
-          "debug": true,
-          "verbose": true
-        }
-      }
-    },
     "nx-release-publish": {
       "executor": "@cyclone-ui/tools-nx:component-publish"
     }

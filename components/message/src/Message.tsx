@@ -20,7 +20,7 @@ import { Alert } from "@cyclone-ui/alert";
 import { Button } from "@cyclone-ui/button";
 import { Toast, useToastState } from "@cyclone-ui/state/message";
 import { styled } from "@tamagui/core";
-import { X } from "@tamagui/lucide-icons";
+import { X } from "@tamagui/lucide-icons-2";
 
 const MessageClose = styled(Toast.Close, {
   name: "Alert",

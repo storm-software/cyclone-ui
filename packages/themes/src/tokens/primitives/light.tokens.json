@@ -117,58 +117,116 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.8 0.12 21)",
+        "$value": "oklch(0.756816 0.115541 349.503)",
         "$description": "A pale warm coral red color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.78 0.13 21)",
+        "$value": "oklch(0.715786 0.132967 354.625)",
         "$description": "A light salmon red color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.75 0.15 21)",
+        "$value": "oklch(0.677790 0.148853 359.867)",
         "$description": "A soft coral red color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.72 0.16 21)",
+        "$value": "oklch(0.640000 0.165361 5.832)",
         "$description": "A muted warm coral color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.7 0.16 21)",
+        "$value": "oklch(0.606609 0.179913 11.991)",
         "$description": "A medium salmon red color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.67 0.15 21)",
+        "$value": "oklch(0.575993 0.194106 18.586)",
         "$description": "A vivid coral red color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.64 0.15 21)",
+        "$value": "oklch(0.551750 0.205115 24.525)",
         "$description": "A rich dusty red color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.61 0.14 21)",
+        "$value": "oklch(0.496285 0.188458 28.256)",
         "$description": "A deep brick red color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.54 0.12 21)",
+        "$value": "oklch(0.445339 0.162978 30.307)",
         "$description": "A dark brownish red color"
       },
       "$description": "The red color palette"
+    },
+    "apple": {
+      "palette": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.647619 0.188744 357.962)",
+        "$description": "A light apple negative color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.627169 0.192384 5.727)",
+        "$description": "A soft apple negative color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.609010 0.199527 13.795)",
+        "$description": "A subtle apple negative color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.591595 0.207129 21.343)",
+        "$description": "A muted apple negative color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.577099 0.215157 27.325)",
+        "$description": "A medium apple negative color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.574418 0.210108 29.167)",
+        "$description": "A vivid apple negative color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.572380 0.204623 30.893)",
+        "$description": "A rich apple negative color for light surfaces"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.569161 0.197874 32.755)",
+        "$description": "A dark apple negative color for light surfaces"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.565000 0.190000 34.500)",
+        "$description": "A very dark apple negative color for light surfaces"
+      },
+      "$description": "The apple color palette aligned to semantic-negative on light surfaces"
     },
     "orange": {
       "palette": true,
@@ -343,6 +401,64 @@
         "$description": "A dark evergreen color"
       },
       "$description": "The green color palette"
+    },
+    "avocado": {
+      "palette": true,
+      "1": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.793883 0.120380 108.855)",
+        "$description": "A light yellow-green positive color"
+      },
+      "2": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.772601 0.127127 114.042)",
+        "$description": "A soft yellow-green positive color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.752310 0.137490 119.828)",
+        "$description": "A subtle avocado positive color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.729710 0.147722 124.739)",
+        "$description": "A muted avocado positive color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.707282 0.158758 129.147)",
+        "$description": "A medium avocado positive color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.697134 0.163052 130.835)",
+        "$description": "A vivid avocado positive color for light surfaces"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.684764 0.165363 132.312)",
+        "$description": "A rich avocado positive color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.674992 0.169564 133.747)",
+        "$description": "A deep avocado positive color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.662948 0.171777 135.021)",
+        "$description": "A dark avocado positive color for light surfaces"
+      },
+      "$description": "The avocado color palette aligned to semantic-positive on light surfaces"
     },
     "sky": {
       "palette": true,

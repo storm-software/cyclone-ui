@@ -32,7 +32,7 @@ import {
   View
 } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ArrowRight } from "@tamagui/lucide-icons";
+import { ArrowRight } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type {
   GetProps,

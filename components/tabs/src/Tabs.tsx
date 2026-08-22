@@ -333,7 +333,7 @@ const TabsRovingIndicator = styled(YStack, {
         borderRadius: 0
       },
       background: {
-        borderRadius: "$trigger"
+        borderRadius: "$button"
       }
     }
   } as const,

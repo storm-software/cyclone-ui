@@ -7,6 +7,9 @@
   },
   "references": [
     {
+      "path": "./tools/config"
+    },
+    {
       "path": "./tools/nx"
     },
     {
@@ -19,7 +22,7 @@
       "path": "./packages/state"
     },
     {
-      "path": "./apps/cli"
+      "path": "./packages/helpers"
     },
     {
       "path": "./components/pdf-document-display"
@@ -172,9 +175,6 @@
       "path": "./components/field"
     },
     {
-      "path": "./packages/helpers"
-    },
-    {
       "path": "./components/input"
     },
     {
@@ -196,13 +196,10 @@
       "path": "./components/tabs"
     },
     {
-      "path": "./tools/config"
-    },
-    {
-      "path": "./apps/nx"
-    },
-    {
       "path": "./apps/storybook"
+    },
+    {
+      "path": "./apps/cli"
     }
   ],
   "files": []

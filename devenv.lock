@@ -14,6 +14,7 @@
         "dir": "src/modules",
         "owner": "cachix",
         "repo": "devenv",
+        "rev": "c18de5253016e6eb97689724327f08e9dd2d4768",
         "type": "github"
       }
     },

@@ -33,7 +33,7 @@ import {
   Lock,
   MinusCircle,
   PlusCircle
-} from "@tamagui/lucide-icons";
+} from "@tamagui/lucide-icons-2";
 import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
@@ -104,9 +104,7 @@ export const ThemeableIcon =
     ) => {
       const getThemedIcon = useGetThemedIcon({
         size: getSized(size),
-        color: disabled
-          ? "$foregroundOnPrimaryDisabled"
-          : (color as ColorProp)
+        color: disabled ? "$foregroundOnPrimaryDisabled" : (color as ColorProp)
       });
 
       return (

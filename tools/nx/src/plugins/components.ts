@@ -18,6 +18,7 @@
 
 import type { CreateNodes, CreateNodesResultArray } from "@nx/devkit";
 import { createNodesFromFiles } from "@nx/devkit";
+import { getWorkspacePackageManagerCommand } from "@storm-software/workspace-tools";
 import {
   ProjectTagRegistryValue,
   ProjectTagVariant
@@ -61,6 +62,11 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
   ): Promise<CreateNodesResultArray> => {
     const nxJson = readNxJson(contextV2.workspaceRoot);
 
+    const packageManagerCommand = await getWorkspacePackageManagerCommand(
+      contextV2.workspaceRoot
+    );
+    const { exec } = packageManagerCommand;
+
     return createNodesFromFiles(
       async (configFile, _, context) => {
         try {
@@ -76,8 +82,7 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
             return {};
           }
 
-          const root = getRoot(projectRoot, context);
-
+          const root = getRoot(projectRoot, contextV2);
           const packageJsonContent = await readFile(
             join(projectRoot, "package.json"),
             "utf8"
@@ -111,8 +116,65 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
               packageJson as PackageJsonNx,
               nxJson,
               projectRoot,
-              context.workspaceRoot
+              context.workspaceRoot,
+              packageManagerCommand
             );
+
+          targets["build-base"] ??= {
+            cache: true,
+            inputs: [
+              "default",
+              "^production",
+              "{workspaceRoot}/tools/config/tsdown.config.ts"
+            ],
+            outputs: ["{projectRoot}/dist"],
+            command: `${exec} tsdown \"src/**/*.ts\" --config \"../../tools/config/tsdown.components.ts\" --cwd \"${join(
+              context.workspaceRoot,
+              projectRoot
+            )}\"`,
+            defaultConfiguration: "production",
+            options: {
+              cwd: projectRoot,
+              name: projectConfig?.name
+            },
+            configurations: {
+              production: {
+                debug: false,
+                sourcemap: false
+              },
+              development: {
+                debug: true,
+                sourcemap: true
+              }
+            }
+          };
+
+          // Always set packaging `build` so it wins over the tsdown plugin's
+          // compile target for packages with a custom tsdown.config.ts.
+          targets.build = {
+            cache: true,
+            inputs: [
+              "{workspaceRoot}/LICENSE",
+              "{projectRoot}/dist",
+              "{projectRoot}/*.md",
+              "{projectRoot}/package.json"
+            ],
+            outputs: [`{workspaceRoot}/dist/${projectRoot}`],
+            executor: "nx:run-commands",
+            dependsOn: ["build-base", "^build"],
+            options: {
+              parallel: false,
+              commands: [
+                `pnpm copyfiles LICENSE dist/${projectRoot}`,
+                `pnpm copyfiles --up=2 ./${projectRoot}/*.md ./${
+                  projectRoot
+                }/package.json dist/${projectRoot}`,
+                `pnpm copyfiles --up=3 "./${projectRoot}/dist/**/*" dist/${
+                  projectRoot
+                }/dist`
+              ]
+            }
+          };
 
           // Apply nx-release-publish target for non-private projects
           const isPrivate = packageJson.private ?? false;
@@ -139,11 +201,6 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
             ProjectTagRegistryValue.CYCLONE
           );
 
-          const implicitDependencies = projectConfig.implicitDependencies ?? [];
-          if (!implicitDependencies.includes("tools-nx")) {
-            implicitDependencies.push("tools-nx");
-          }
-
           const packageGroup = findFolderName(
             resolveParentPath(appendPath(root, context.workspaceRoot))
           );
@@ -168,16 +225,18 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
                   name: String(packageJson.name).replace(/^@cyclone-ui\//, ""),
                   // eslint-disable-next-line ts/no-unnecessary-type-assertion
                   projectType: "library" as ProjectType,
-                  sourceRoot: join(root, "src"),
-                  implicitDependencies:
-                    packageGroup === "plugins" ? ["cyclone-ui"] : []
+                  sourceRoot: join(root, "src")
                 }
               )
             }
           };
         } catch (error) {
           console.error(
-            `[${name}]: ${error?.message ? error.message : "Unknown fatal error"}`
+            `[${name}]: ${
+              (error as Error)?.message
+                ? (error as Error).message
+                : "Unknown fatal error"
+            }`
           );
 
           return {};

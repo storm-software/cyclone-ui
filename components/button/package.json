@@ -41,11 +41,13 @@
     "@tamagui/linear-gradient": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/web": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"

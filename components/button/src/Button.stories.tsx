@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { X } from "@tamagui/lucide-icons";
+import { X } from "@tamagui/lucide-icons-2";
 import { Button } from "./Button";
 
 const meta: Meta<typeof Button> = {
@@ -36,7 +36,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Base: Story = {
+export const Default: Story = {
   args: {
     children: "Button Text"
   }
@@ -62,727 +62,169 @@ export const SizedIcon: Story = {
   }
 };
 
+/**
+ * Primary Stories
+ */
+
 export const Primary: Story = {
   args: {
     children: "Button Text",
-    variant: "primary",
+    theme: "primary",
+    variant: "surface",
     disabled: false
   }
 };
 
-export const PrimaryIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "primary",
-    disabled: false
-  }
-};
-
-export const PrimaryNoBorder: Story = {
+export const PrimaryOutlined: Story = {
   args: {
     children: "Button Text",
-    variant: "primary",
-    disabled: false,
-    bordered: false
+    theme: "primary",
+    variant: "outlined",
+    disabled: false
   }
 };
+
+export const PrimaryInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const PrimarySubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const PrimaryGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const PrimaryLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const PrimaryDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "primary",
+    disabled: true
+  }
+};
+
+/**
+ * Secondary Stories
+ */
 
 export const Secondary: Story = {
   args: {
     children: "Button Text",
-    variant: "secondary",
+    theme: "secondary",
     disabled: false
   }
 };
 
-export const SecondaryIcon: Story = {
+export const SecondarySurface: Story = {
   args: {
-    icon: <X />,
-    variant: "secondary",
+    children: "Button Text",
+    theme: "secondary",
+    variant: "surface",
     disabled: false
   }
 };
 
-export const SecondaryNoBorder: Story = {
+export const SecondaryOutlined: Story = {
   args: {
     children: "Button Text",
-    variant: "secondary",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Tertiary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const TertiaryIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const TertiaryNoBorder: Story = {
-  args: {
-    children: "Button Text",
-    variant: "tertiary",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Quaternary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const QuaternaryIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const QuaternaryNoBorder: Story = {
-  args: {
-    children: "Button Text",
-    variant: "quaternary",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Outlined: Story = {
-  args: {
-    children: "Button Text",
+    theme: "secondary",
     variant: "outlined",
     disabled: false
   }
 };
 
-export const OutlinedIcon: Story = {
+export const SecondaryInverse: Story = {
   args: {
-    icon: <X />,
-    variant: "outlined",
+    children: "Button Text",
+    theme: "secondary",
+    variant: "inverse",
     disabled: false
   }
 };
 
-export const OutlinedNoBorder: Story = {
+export const SecondarySubtle: Story = {
   args: {
     children: "Button Text",
-    variant: "outlined",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Gradient: Story = {
-  args: {
-    children: "Button Text",
-    variant: "gradient",
+    theme: "secondary",
+    variant: "subtle",
     disabled: false
   }
 };
 
-export const GradientIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const GradientNoBorder: Story = {
+export const SecondaryGhost: Story = {
   args: {
     children: "Button Text",
-    variant: "gradient",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Ghost: Story = {
-  args: {
-    children: "Button Text",
+    theme: "secondary",
     variant: "ghost",
     disabled: false
   }
 };
 
-export const GhostIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const GhostNoBorder: Story = {
+export const SecondaryLink: Story = {
   args: {
     children: "Button Text",
-    variant: "ghost",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Glass: Story = {
-  args: {
-    children: "Button Text",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const GlassIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const GlassNoBorder: Story = {
-  args: {
-    children: "Button Text",
-    variant: "glass",
-    disabled: false,
-    bordered: false
-  }
-};
-
-export const Link: Story = {
-  args: {
-    children: "Button Text",
+    theme: "secondary",
     variant: "link",
     disabled: false
   }
 };
 
-export const LinkIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const Disabled: Story = {
+export const SecondaryDisabled: Story = {
   args: {
     children: "Button Text",
+    theme: "secondary",
     disabled: true
   }
 };
 
-export const DisabledIcon: Story = {
-  args: {
-    icon: <X />,
-    disabled: true
-  }
-};
+/**
+ * Danger Stories
+ */
 
-export const Rounded: Story = {
-  args: {
-    children: "Text",
-    disabled: false,
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const RoundedIcon: Story = {
-  args: {
-    icon: <X />,
-    disabled: false,
-    variant: "secondary",
-    circular: true
-  }
-};
-
-export const Ringed: Story = {
-  args: {
-    children: "Button Text",
-    disabled: false,
-    ringed: true
-  }
-};
-
-export const BrandPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "brand",
-    disabled: false
-  }
-};
-
-export const BrandPrimaryIcon: Story = {
-  args: {
-    icon: <X />,
-    variant: "primary",
-    theme: "brand",
-    disabled: false
-  }
-};
-
-export const BrandSecondary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const BrandSecondaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const BrandTertiary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const BrandTertiaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const BrandQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const BrandQuaternaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const BrandOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const BrandOutlinedIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const BrandGradient: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const BrandGradientIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const BrandGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const BrandGhostIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const BrandGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const BrandGlassIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "brand",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const BrandLink: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const BrandDisabled: Story = {
-  args: {
-    children: "Button Text",
-    theme: "brand",
-    disabled: true
-  }
-};
-
-export const AlternatePrimary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "primary",
-    disabled: false
-  }
-};
-
-export const AlternativePrimaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "primary",
-    disabled: false
-  }
-};
-
-export const AlternateSecondary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const AlternativeSecondaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const AlternateTertiary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const AlternativeTertiaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const AlternateQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const AlternativeQuaternaryIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const AlternateOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const AlternativeOutlinedIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const AlternateGradient: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const AlternativeGradientIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const AlternateGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const AlternativeGhostIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const AlternateGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const AlternativeGlassIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const AlternateLink: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const AlternativeLinkIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternate",
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const AlternateDisabled: Story = {
-  args: {
-    children: "Button Text",
-    theme: "alternate",
-    disabled: true
-  }
-};
-
-export const AlternativeDisabledIcon: Story = {
-  args: {
-    icon: <X />,
-    theme: "alternative",
-    disabled: true
-  }
-};
-
-export const DiscoveryPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "discovery",
-    disabled: false
-  }
-};
-
-export const DiscoverySecondary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const DiscoveryTertiary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const DiscoveryQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const DiscoveryOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const DiscoveryGradient: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const DiscoveryGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const DiscoveryGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const DiscoveryLink: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const DiscoveryDisabled: Story = {
-  args: {
-    children: "Button Text",
-    theme: "discovery",
-    disabled: true
-  }
-};
-
-export const ErrorPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "danger",
-    disabled: false
-  }
-};
-
-export const ErrorSecondary: Story = {
+export const Danger: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "secondary",
+
     disabled: false
   }
 };
 
-export const ErrorTertiary: Story = {
+export const DangerSurface: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "tertiary",
+    variant: "surface",
     disabled: false
   }
 };
 
-export const ErrorQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "danger",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const ErrorOutlined: Story = {
+export const DangerOutlined: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
@@ -791,16 +233,25 @@ export const ErrorOutlined: Story = {
   }
 };
 
-export const ErrorGradient: Story = {
+export const DangerInverse: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
-    variant: "gradient",
+    variant: "inverse",
     disabled: false
   }
 };
 
-export const ErrorGhost: Story = {
+export const DangerSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "danger",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const DangerGhost: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
@@ -809,16 +260,7 @@ export const ErrorGhost: Story = {
   }
 };
 
-export const ErrorGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "danger",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const ErrorLink: Story = {
+export const DangerLink: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
@@ -827,46 +269,33 @@ export const ErrorLink: Story = {
   }
 };
 
-export const ErrorDisabled: Story = {
+export const DangerDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "danger",
+    variant: "inverse",
     disabled: true
   }
 };
 
-export const WarningPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "warning",
-    disabled: false
-  }
-};
+/**
+ * Warning Stories
+ */
 
-export const WarningSecondary: Story = {
+export const Warning: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "secondary",
+
     disabled: false
   }
 };
 
-export const WarningTertiary: Story = {
+export const WarningSurface: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const WarningQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "warning",
-    variant: "quaternary",
+    variant: "surface",
     disabled: false
   }
 };
@@ -880,11 +309,20 @@ export const WarningOutlined: Story = {
   }
 };
 
-export const WarningGradient: Story = {
+export const WarningInverse: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
-    variant: "gradient",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const WarningSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning",
+    variant: "subtle",
     disabled: false
   }
 };
@@ -894,15 +332,6 @@ export const WarningGhost: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "ghost",
-    disabled: false
-  }
-};
-
-export const WarningGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "warning",
-    variant: "glass",
     disabled: false
   }
 };
@@ -920,131 +349,29 @@ export const WarningDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "warning",
+    variant: "inverse",
     disabled: true
   }
 };
 
-export const InfoPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "info",
-    disabled: false
-  }
-};
+/**
+ * Success Stories
+ */
 
-export const InfoSecondary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "secondary",
-    disabled: false
-  }
-};
-
-export const InfoTertiary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const InfoQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "quaternary",
-    disabled: false
-  }
-};
-
-export const InfoOutlined: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "outlined",
-    disabled: false
-  }
-};
-
-export const InfoGradient: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "gradient",
-    disabled: false
-  }
-};
-
-export const InfoGhost: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "ghost",
-    disabled: false
-  }
-};
-
-export const InfoGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "glass",
-    disabled: false
-  }
-};
-
-export const InfoLink: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    variant: "link",
-    disabled: false
-  }
-};
-
-export const InfoDisabled: Story = {
-  args: {
-    children: "Button Text",
-    theme: "info",
-    disabled: true
-  }
-};
-
-export const SuccessPrimary: Story = {
-  args: {
-    children: "Button Text",
-    variant: "primary",
-    theme: "success",
-    disabled: false
-  }
-};
-
-export const SuccessSecondary: Story = {
+export const Success: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "secondary",
+
     disabled: false
   }
 };
 
-export const SuccessTertiary: Story = {
+export const SuccessSurface: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "tertiary",
-    disabled: false
-  }
-};
-
-export const SuccessQuaternary: Story = {
-  args: {
-    children: "Button Text",
-    theme: "success",
-    variant: "quaternary",
+    variant: "surface",
     disabled: false
   }
 };
@@ -1058,11 +385,20 @@ export const SuccessOutlined: Story = {
   }
 };
 
-export const SuccessGradient: Story = {
+export const SuccessInverse: Story = {
   args: {
     children: "Button Text",
     theme: "success",
-    variant: "gradient",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const SuccessSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success",
+    variant: "subtle",
     disabled: false
   }
 };
@@ -1072,15 +408,6 @@ export const SuccessGhost: Story = {
     children: "Button Text",
     theme: "success",
     variant: "ghost",
-    disabled: false
-  }
-};
-
-export const SuccessGlass: Story = {
-  args: {
-    children: "Button Text",
-    theme: "success",
-    variant: "glass",
     disabled: false
   }
 };
@@ -1098,6 +425,311 @@ export const SuccessDisabled: Story = {
   args: {
     children: "Button Text",
     theme: "success",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
+/**
+ * Info Stories
+ */
+
+export const Info: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+
+    disabled: false
+  }
+};
+
+export const InfoSurface: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "surface",
+    disabled: false
+  }
+};
+
+export const InfoOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "outlined",
+    disabled: false
+  }
+};
+
+export const InfoInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const InfoSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const InfoGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const InfoLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const InfoDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
+/**
+ * Discovery Stories
+ */
+
+export const Discovery: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+
+    disabled: false
+  }
+};
+
+export const DiscoverySurface: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "surface",
+    disabled: false
+  }
+};
+
+export const DiscoveryOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "outlined",
+    disabled: false
+  }
+};
+
+export const DiscoveryInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const DiscoverySubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const DiscoveryGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const DiscoveryLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const DiscoveryDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
+/**
+ * Positive Stories
+ */
+
+export const Positive: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+
+    disabled: false
+  }
+};
+
+export const PositiveSurface: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "surface",
+    disabled: false
+  }
+};
+
+export const PositiveOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "outlined",
+    disabled: false
+  }
+};
+
+export const PositiveInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const PositiveSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const PositiveGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const PositiveLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const PositiveDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
+/**
+ * Negative Stories
+ */
+
+export const Negative: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+
+    disabled: false
+  }
+};
+
+export const NegativeSurface: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "surface",
+    disabled: false
+  }
+};
+
+export const NegativeOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "outlined",
+    disabled: false
+  }
+};
+
+export const NegativeInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "inverse",
+    disabled: false
+  }
+};
+
+export const NegativeSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "subtle",
+    disabled: false
+  }
+};
+
+export const NegativeGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "ghost",
+    disabled: false
+  }
+};
+
+export const NegativeLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "link",
+    disabled: false
+  }
+};
+
+export const NegativeDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "inverse",
     disabled: true
   }
 };

@@ -21,7 +21,7 @@ import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons";
+import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
@@ -55,7 +55,7 @@ const SelectItemGroup = styled(XStack, {
   alignItems: "center",
   paddingHorizontal: "$xl",
   paddingVertical: 0,
-  borderRadius: "$trigger",
+  borderRadius: "$button",
   minHeight: "$5xl",
   width: "100%",
 

@@ -36,7 +36,7 @@
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/use-controllable-state": "catalog:",

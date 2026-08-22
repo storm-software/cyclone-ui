@@ -18,7 +18,40 @@
 
 import { isNumber } from "@stryke/type-checks/is-number";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { getSpace } from "@tamagui/get-token";
+import { getSize, getSpace } from "@tamagui/get-token";
+
+const FALLBACK_HEIGHT = 44;
+
+const tokenNumber = (token: unknown): number | undefined => {
+  if (typeof token === "number") {
+    return token;
+  }
+
+  if (token && typeof token === "object" && "val" in token) {
+    const value = token.val;
+
+    return typeof value === "number" ? value : undefined;
+  }
+
+  return undefined;
+};
+
+const lookupToken = (group: unknown, key: string) => {
+  if (!group || typeof group !== "object") {
+    return;
+  }
+
+  const tokens = group as Record<string, unknown>;
+  const normalized = key.replace(/^\$/, "");
+
+  return tokens[key] ?? tokens[`$${normalized}`] ?? tokens[normalized];
+};
+
+const resolveTokenKey = (val: SizeTokens | number | string) => {
+  const rawKey = String(val);
+
+  return rawKey === "$true" || rawKey === "true" ? "$5xl" : rawKey;
+};
 
 /**
  * Get the sizing related style values for a button component based on the size token or number
@@ -29,27 +62,48 @@ import { getSpace } from "@tamagui/get-token";
  */
 export const getButtonSized = (
   val: SizeTokens | number,
-  { props }: VariantSpreadExtras<any>
+  { props, tokens }: VariantSpreadExtras<any>
 ) => {
-  if (!val || props.circular) {
+  if (!val) {
     return;
   }
 
+  const circular = Boolean(props.circular);
+  const borderRadius = circular ? 100_000 : "$button";
+
   if (isNumber(val)) {
     return {
-      paddingHorizontal: val * 0.25,
+      paddingHorizontal: circular ? 0 : val * 0.25,
       gap: val * 0.25,
       height: val,
-      borderRadius: props.circular ? 100_000 : "$trigger"
+      minHeight: val,
+      ...(circular
+        ? { width: val, minWidth: val }
+        : { minWidth: "fit-content" }),
+      borderRadius
     };
   }
 
-  const size = getSpace(val);
+  const tokenKey = resolveTokenKey(val);
+
+  const height =
+    tokenNumber(lookupToken(tokens?.size, tokenKey)) ??
+    tokenNumber(lookupToken(tokens?.size, "5xl")) ??
+    tokenNumber(getSize(tokenKey)) ??
+    FALLBACK_HEIGHT;
+  const space =
+    tokenNumber(getSpace(tokenKey, { shift: -1 })) ??
+    tokenNumber(lookupToken(tokens?.space, "2xl")) ??
+    10;
 
   return {
-    paddingHorizontal: size,
-    gap: size,
-    height: val,
-    borderRadius: props.circular ? 100_000 : "$trigger"
+    paddingHorizontal: circular ? 0 : space,
+    gap: space,
+    height,
+    minHeight: height,
+    ...(circular
+      ? { width: height, minWidth: height }
+      : { minWidth: "fit-content" }),
+    borderRadius
   };
 };

@@ -16,10 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable no-console */
-
 import { isNumber } from "@stryke/type-checks/is-number";
-import { isClient } from "@tamagui/constants";
+import type { Mutable } from "@stryke/types/base";
 import type {
   FontSizeTokens,
   GenericFont,
@@ -52,7 +50,7 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
     (sizeTokenIn === "$true" ? getDefaultSizeToken(font) : sizeTokenIn) ??
     "$true";
 
-  const style: TextStyle = {};
+  const style: Mutable<TextStyle> = {};
 
   // size related, treat them as overrides
   const fontSize = font.size[sizeToken];
@@ -88,16 +86,6 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
     style.color = color;
   }
 
-  if (process.env.NODE_ENV === "development") {
-    if (props.debug && props.debug === "verbose") {
-      console.groupCollapsed("  🔹 getFontSized", sizeTokenIn, sizeToken);
-      if (isClient) {
-        console.info({ style, props, font });
-      }
-      console.groupEnd();
-    }
-  }
-
   return style;
 };
 
@@ -125,13 +113,7 @@ export const getFontSizedFromSize: VariantSpreadFunction<
       : sizeTokenIn
   ) as `$${string}`;
 
-  const value = getFontSized(sizeToken, extras);
-
-  // console.log(
-  //   `font: ${extras.fontFamily}, token: ${sizeTokenIn}, size: ${getSized(sizeTokenIn)}, value: ${JSON.stringify(value)}`
-  // );
-
-  return value;
+  return getFontSized(sizeToken, extras);
 };
 
 const cache = new WeakMap<any, FontSizeTokens>();
@@ -153,12 +135,6 @@ function getDefaultSizeToken(font: GenericFont): FontSizeTokens {
     : null;
 
   if (!sizeDefault || !sizeDefaultSpecific) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn(`No default size is set in your tokens for the "true" key, fonts will be inconsistent.
-
-      Fix this by having consistent tokens across fonts and sizes and setting a true key for your size tokens, or
-      set true keys for all your font tokens: "size", "lineHeight", "fontStyle", etc.`);
-    }
     return Object.keys(font.size)[3] as FontSizeTokens;
   }
 

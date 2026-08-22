@@ -36,8 +36,12 @@
     "@maskito/kit": "^3.11.1",
     "@stryke/date": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "@tamagui/lucide-icons-2": "catalog:",
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/date-picker": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

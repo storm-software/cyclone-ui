@@ -26,13 +26,21 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { X } from "@tamagui/lucide-icons";
+import { X } from "@tamagui/lucide-icons-2";
 import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { InputValue } from "./InputValue";
 import type { InputContextProps } from "./types";
 import { getInputSize, InputContext } from "./utilities";
+
+const getInputFrameSize = (
+  val: SizeTokens | number,
+  extras: VariantSpreadExtras<any>
+) => ({
+  ...getInputSize(val, extras),
+  paddingHorizontal: 0
+});
 
 const InputGroup = styled(XGroup, {
   name: "Input",
@@ -43,7 +51,7 @@ const InputGroup = styled(XGroup, {
   alignItems: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   outlineWidth: 0,
   outlineColor: "transparent",
   gap: "$sm",
@@ -54,58 +62,45 @@ const InputGroup = styled(XGroup, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    boxShadow: "$ring",
+    borderColor: "$borderFocused"
   },
 
   variants: {
     focused: {
       true: {
-        outlineColor: "$borderAccent",
-        outlineWidth: 3,
-        outlineOffset: "$lg",
-        outlineStyle: "solid",
-        borderColor: "$borderAccent"
+        boxShadow: "$ring",
+        borderColor: "$borderFocused"
       }
     },
 
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        extras: VariantSpreadExtras<any>
-      ) => {
-        const result = getInputSize(val, extras);
-
-        return {
-          ...result,
-          paddingHorizontal: 0
-        };
-      }
+    // Keep frame dimensions separate from Tamagui's special `size` prop. A
+    // `$true` size is consumed before spread variants run, leaving no height.
+    frameSize: {
+      ":string": getInputFrameSize,
+      ":number": getInputFrameSize
     },
 
     disabled: {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderPrimaryDisabled",
+        borderColor: "$borderDisabled",
 
         hoverStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         }
       }
     },
@@ -118,7 +113,7 @@ const InputGroup = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    frameSize: "$5xl",
     disabled: false,
     focused: false,
     circular: false
@@ -127,11 +122,31 @@ const InputGroup = styled(XGroup, {
 
 const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
   (props, forwardedRef) => {
-    const { children } = props;
+    const {
+      children,
+      size = "$true",
+      onChange,
+      onInput,
+      onFocus,
+      onBlur,
+      ...rest
+    } = props;
+    const frameSize =
+      size === "$true" || String(size) === "true" ? "$5xl" : size;
 
     return (
-      <InputContext.Provider {...props}>
-        <InputGroup ref={forwardedRef} group={"input" as any} {...props}>
+      <InputContext.Provider
+        {...rest}
+        size={size}
+        onChange={onChange}
+        onInput={onInput}
+        onFocus={onFocus}
+        onBlur={onBlur}>
+        <InputGroup
+          ref={forwardedRef}
+          group={"input" as any}
+          {...rest}
+          frameSize={frameSize}>
           {children}
         </InputGroup>
       </InputContext.Provider>
@@ -146,7 +161,7 @@ const InputSeparator = styled(Separator, {
 
   transition: "medium",
   borderWidth: 1,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   vertical: true,
   height: "50%",
   marginVertical: "$xxs",
@@ -154,24 +169,24 @@ const InputSeparator = styled(Separator, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderAccent"
+        borderColor: "$borderFocused"
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$borderPrimaryDisabled",
+        borderColor: "$borderDisabled",
 
         hoverStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         }
       }
     }
@@ -193,10 +208,10 @@ const InputSeparatorImpl = InputSeparator.styleable(
           ref={forwardedRef}
           $group-input-hover={{
             borderColor: disabled
-              ? "$borderPrimaryDisabled"
+              ? "$borderDisabled"
               : focused
-                ? "$borderAccent"
-                : "$borderPrimaryHover"
+                ? "$borderFocused"
+                : "$borderHover"
           }}
           {...props}
         />
@@ -287,7 +302,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           {...props}
           value={value}
           enterKeyHint={enterKeyHint}
-          placeholderTextColor="$foregroundOnPrimaryDisabled">
+          placeholderTextColor="$foregroundOnDisabled">
           {children}
         </InputValue>
         {clearable && onClear && value && (
@@ -303,11 +318,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
               ref={forwardedRef}
               variant="ghost"
               circular={true}
-              color={
-                theme?.includes("base")
-                  ? "$borderPrimary"
-                  : "$foregroundOnPrimary"
-              }
+              color={theme?.includes("base") ? "$border" : "$foregroundOn"}
               onClick={onClear}
               size={adjustedTrigger}>
               <Button.Icon>
@@ -345,12 +356,8 @@ const InputTrigger = Button.styleable<{
           <Button
             ref={forwardedRef}
             variant="ghost"
-            borderRadius={circular ? 100_000 : "$trigger"}
-            color={
-              theme?.includes("base")
-                ? "$borderPrimary"
-                : "$foregroundOnPrimary"
-            }
+            borderRadius={circular ? 100_000 : "$button"}
+            color={theme?.includes("base") ? "$border" : "$foregroundOn"}
             {...props}
             size={adjustedTrigger}>
             {children}

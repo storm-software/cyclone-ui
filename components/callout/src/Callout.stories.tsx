@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { HelpCircle } from "@tamagui/lucide-icons";
+import { HelpCircle } from "@tamagui/lucide-icons-2";
 import { YStack } from "@tamagui/stacks";
 import { Callout } from "./Callout";
 

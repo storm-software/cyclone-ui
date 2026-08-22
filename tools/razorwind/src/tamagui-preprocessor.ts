@@ -392,9 +392,10 @@ function walk(node: any, inheritedType?: string): unknown {
 }
 
 interface ColorStateVariant {
-  suffix: string;
-  label: string;
+  name: string;
   opacity?: number;
+  /** Multiplier applied to OKLCH chroma for non-greyscale colors. */
+  saturation?: number;
   /**
    * Magnitude of the OKLCH lightness shift (e.g. 1.1 = 10%). Light sources
    * darken on hover; dark sources lighten.
@@ -403,42 +404,50 @@ interface ColorStateVariant {
 }
 
 const COLOR_STATE_HOVER: ColorStateVariant = {
-  suffix: "-hover",
-  brightness: 1.25,
-  label: "hover"
+  name: "hover",
+  brightness: 1.2
+};
+
+const COLOR_STATE_FOCUSED: ColorStateVariant = {
+  name: "focused",
+  brightness: 1.4
 };
 
 const COLOR_STATE_PRESSED: ColorStateVariant = {
-  suffix: "-pressed",
-  brightness: 0.8,
-  label: "pressed"
+  name: "pressed",
+  brightness: 0.6
 };
 
-/** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
-const OKLCH_LIGHTNESS_MIDPOINT = 0.5;
-
 const COLOR_STATE_DISABLED: ColorStateVariant = {
-  suffix: "-disabled",
+  name: "disabled",
   opacity: 0.6,
-  label: "disabled"
+  saturation: 0.6
 };
 
 const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
-  background: [COLOR_STATE_HOVER, COLOR_STATE_PRESSED, COLOR_STATE_DISABLED],
-  foreground: [COLOR_STATE_HOVER, COLOR_STATE_DISABLED],
-  border: [COLOR_STATE_HOVER, COLOR_STATE_DISABLED]
+  background: [
+    COLOR_STATE_HOVER,
+    COLOR_STATE_PRESSED,
+    COLOR_STATE_FOCUSED,
+    COLOR_STATE_DISABLED
+  ],
+  foreground: [
+    COLOR_STATE_HOVER,
+    COLOR_STATE_PRESSED,
+    COLOR_STATE_FOCUSED,
+    COLOR_STATE_DISABLED
+  ],
+  border: [COLOR_STATE_HOVER, COLOR_STATE_FOCUSED, COLOR_STATE_DISABLED]
 };
 
 const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
 function isStateVariantKey(key: string): boolean {
   return (
-    key.endsWith("-hover") ||
-    key.endsWith("-pressed") ||
-    key.endsWith("-disabled") ||
-    key.endsWith("-Hover") ||
-    key.endsWith("-Pressed") ||
-    key.endsWith("-Disabled")
+    key.toLowerCase().endsWith("-hover") ||
+    key.toLowerCase().endsWith("-focused") ||
+    key.toLowerCase().endsWith("-pressed") ||
+    key.toLowerCase().endsWith("-disabled")
   );
 }
 
@@ -487,6 +496,23 @@ function resolveColorHex(
   return resolveColorHex(token.$value, tree, seen);
 }
 
+function resolveColor(
+  value: unknown,
+  tree: unknown,
+  seen: Set<string> = new Set()
+): string | undefined {
+  const hex = resolveColorHex(value, tree, seen);
+  if (!hex) {
+    return hex;
+  }
+
+  return isWhiteColor(hex)
+    ? DEFAULT_LIGHT_COLOR
+    : isBlackColor(hex)
+      ? DEFAULT_DARK_COLOR
+      : hex;
+}
+
 function applyOpacity(hex: string, opacity: number): string {
   const expanded = expandHex(hex).toLowerCase();
   const rgb = expanded.slice(0, 7);
@@ -499,6 +525,15 @@ function applyOpacity(hex: string, opacity: number): string {
   }
 
   return `${rgb}${alphaHex(alpha)}`;
+}
+
+function isGreyscale(hex: string): boolean {
+  const expanded = expandHex(hex).toLowerCase();
+
+  return (
+    expanded.slice(1, 3) === expanded.slice(3, 5) &&
+    expanded.slice(3, 5) === expanded.slice(5, 7)
+  );
 }
 
 /**
@@ -552,8 +587,26 @@ function applyBrightness(hex: string, factor: number): string {
   return oklchToHex(clamp01(lightness * factor), chroma, hue, alpha);
 }
 
+function applySaturation(hex: string, factor: number): string {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+
+  return oklchToHex(lightness, chroma * clamp01(factor), hue, alpha);
+}
+
+/** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
+const OKLCH_LIGHTNESS_MIDPOINT = 0.5;
+const MINIMUM_DISABLED_LIGHTNESS_DELTA = 0.3;
+
 function isLightColor(hex: string): boolean {
   return hexToOklch(hex).lightness >= OKLCH_LIGHTNESS_MIDPOINT;
+}
+
+function isWhiteColor(hex: string): boolean {
+  return hexToOklch(hex).lightness >= 0.75;
+}
+
+function isBlackColor(hex: string): boolean {
+  return hexToOklch(hex).lightness <= 0.25;
 }
 
 /**
@@ -574,6 +627,10 @@ function applyStateTransform(hex: string, variant: ColorStateVariant): string {
     );
   }
 
+  if (variant.saturation !== undefined && !isGreyscale(hex)) {
+    return applySaturation(hex, variant.saturation);
+  }
+
   if (variant.opacity !== undefined) {
     return applyOpacity(hex, variant.opacity);
   }
@@ -591,11 +648,15 @@ function variantDetail(variant: ColorStateVariant, hex: string): string {
       : `${Math.abs(percent)}% darker`;
   }
 
+  if (variant.saturation !== undefined && !isGreyscale(hex)) {
+    return `${Math.round(variant.saturation * 100)}% saturation`;
+  }
+
   if (variant.opacity !== undefined) {
     return `${Math.round(variant.opacity * 100)}% opacity`;
   }
 
-  return variant.label;
+  return variant.name;
 }
 
 function createStateToken(
@@ -604,16 +665,62 @@ function createStateToken(
   variant: ColorStateVariant
 ): Record<string, unknown> {
   const detail = variantDetail(variant, hex);
+  const transformed = applyStateTransform(hex, variant);
 
   return {
     ...source,
     $type: "color",
-    $value: applyStateTransform(hex, variant),
+    $value: transformed,
     $description:
       typeof source.$description === "string"
-        ? `${source.$description} (${variant.label}, ${detail})`
-        : `${variant.label} state at ${detail}`
+        ? `${source.$description} (${variant.name}, ${detail})`
+        : `${variant.name} state at ${detail}`
   };
+}
+
+const DEFAULT_DARK_COLOR = "#666666";
+const DEFAULT_LIGHT_COLOR = "#AAAAAA";
+
+function updateColorToken(isLightColor: boolean) {
+  return isLightColor ? DEFAULT_DARK_COLOR : DEFAULT_LIGHT_COLOR;
+}
+
+function ensureDisabledForegroundContrast(
+  group: Record<string, unknown>,
+  tree: unknown
+): void {
+  const backgrounds = group.background;
+  const foregrounds = group.foreground;
+  if (!isPlainObject(backgrounds) || !isPlainObject(foregrounds)) {
+    return;
+  }
+
+  for (const [name, foreground] of Object.entries(foregrounds)) {
+    if (!name.endsWith("-disabled") || !isTokenNode(foreground)) {
+      continue;
+    }
+
+    const background =
+      backgrounds[name.replace("-inverse-disabled", "-disabled")];
+    if (!isTokenNode(background)) {
+      continue;
+    }
+
+    const backgroundHex = resolveColor(background.$value, tree);
+    const foregroundHex = resolveColor(foreground.$value, tree);
+    if (
+      !backgroundHex ||
+      !foregroundHex ||
+      Math.abs(
+        hexToOklch(backgroundHex).lightness -
+          hexToOklch(foregroundHex).lightness
+      ) >= MINIMUM_DISABLED_LIGHTNESS_DELTA
+    ) {
+      continue;
+    }
+
+    foreground.$value = updateColorToken(isLightColor(backgroundHex));
+  }
 }
 
 function addColorStateTokens(
@@ -622,7 +729,7 @@ function addColorStateTokens(
   variants: readonly ColorStateVariant[],
   onlyKey?: string
 ): Record<string, unknown> {
-  const result = { ...group };
+  const result = { ...group } as Record<string, any>;
   const names = onlyKey ? [onlyKey] : Object.keys(group);
 
   for (const name of names) {
@@ -645,8 +752,10 @@ function addColorStateTokens(
       continue;
     }
 
-    for (const variant of variants) {
-      const variantKey = `${name}${variant.suffix}`;
+    for (const variant of variants.filter(
+      variant => variant.name !== "hover" || name !== "foreground-inverse"
+    )) {
+      const variantKey = `${name}-${variant.name}`;
       if (variantKey in result) {
         continue;
       }
@@ -697,6 +806,8 @@ function injectColorStateVariants(
     }
   }
 
+  ensureDisabledForegroundContrast(withLoneTokens, tree);
+
   return withLoneTokens;
 }
 
@@ -705,14 +816,19 @@ function injectColorStateVariants(
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
  * `oklch()`. For background, foreground, and border colors, also emit
  * `-hover` (10% lighter if the source is dark, 10% darker if light) and
- * `-disabled` (60% opacity) variants.
+ * `-disabled` variants (60% saturation for colored sources, or 60% opacity
+ * for greyscale sources).
  */
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens
 ): PreprocessedTokens {
   const converted = walk(dictionary) as PreprocessedTokens;
+  const withStateVariants = injectColorStateVariants(
+    converted,
+    converted
+  ) as PreprocessedTokens;
 
-  return injectColorStateVariants(converted, converted) as PreprocessedTokens;
+  return withStateVariants;
 }
 
 export default definePlugin(() => ({

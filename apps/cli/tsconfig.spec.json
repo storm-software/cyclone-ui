@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "types": ["node"],
-    "outDir": "../../../dist/out-tsc"
+    "outDir": "../../dist/out-tsc"
   },
   "include": [
     "vitest.config.mts",

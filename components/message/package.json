@@ -29,14 +29,15 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/web": "catalog:",
+    "@cyclone-ui/alert": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/state": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

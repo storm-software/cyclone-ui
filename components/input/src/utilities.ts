@@ -36,7 +36,9 @@ export const InputContext = createStyledContext<InputContextProps>({
   focused: false
 });
 
-export const baseInputStyle = [
+type BaseInputStyle = [Record<string, any>, Record<string, any>];
+
+export const baseInputStyle: BaseInputStyle = [
   {
     name: "InputValue",
     render: "input",
@@ -125,7 +127,7 @@ export const getInputSize = (
   extras: VariantSpreadExtras<any>
 ) => {
   const { props } = extras;
-  if (!val || props.circular) {
+  if (!val) {
     return;
   }
 
@@ -133,15 +135,20 @@ export const getInputSize = (
     return {
       paddingHorizontal: val * 0.25,
       height: val,
+      minHeight: val,
       borderRadius: props.circular ? 100_000 : "$control"
     };
   }
 
-  const xSize = getSpaced(val);
+  // The generated size scale has no `$true` CSS variable. Resolve Tamagui's
+  // default variant to the standard control size before using it as a height.
+  const size = val === "$true" || String(val) === "true" ? "$5xl" : val;
+  const xSize = getSpaced(size);
 
   return {
     paddingHorizontal: xSize,
-    height: val,
+    height: size,
+    minHeight: size,
     borderRadius: props.circular ? 100_000 : "$control"
   };
 };

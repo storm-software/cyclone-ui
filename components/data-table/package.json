@@ -40,11 +40,21 @@
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tanstack/react-table": "^8.21.3",
-    "@tanstack/table-core": "^8.21.3"
+    "@tanstack/table-core": "^8.21.3",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/checkbox-field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/pagination": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/search-input-field": "workspace:*",
+    "@cyclone-ui/select-field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/table": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

@@ -16,9 +16,6 @@
       "path": "../themeable-icon"
     },
     {
-      "path": "../label-text"
-    },
-    {
       "path": "../../packages/helpers"
     }
   ],

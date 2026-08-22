@@ -26,7 +26,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { ChevronDown } from "@tamagui/lucide-icons";
+import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Separator } from "@tamagui/separator";
 import { useCallback, useMemo } from "react";
@@ -196,7 +196,7 @@ const SelectTrigger = Button.styleable<{
           variant="ghost"
           {...props}
           disabled={disabled}
-          borderRadius={circular ? 100_000 : "$trigger"}
+          borderRadius={circular ? 100_000 : "$button"}
           onPress={onFocus}
           size={adjustedTrigger}
           color={

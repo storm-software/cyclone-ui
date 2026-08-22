@@ -24,9 +24,10 @@ import {
   useTheme
 } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
+import type { TamaguiWebElement } from "@tamagui/web";
 import type { FormEvent } from "react";
 import { useCallback, useEffect, useRef } from "react";
-import type { InputProps } from "./types";
+import type { InputComponentProps } from "./types";
 import { InputContext, baseInputStyle } from "./utilities";
 
 /* eslint-disable ts/no-unused-vars --
@@ -35,7 +36,7 @@ import { InputContext, baseInputStyle } from "./utilities";
 
 const BaseInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
 
-export const InputValue = BaseInputValue.styleable<InputProps>(
+export const InputValue = BaseInputValue.styleable<InputComponentProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
     const { disabled, name, onChange, onInput, onBlur, onFocus } =
       InputContext.useStyledContext();
@@ -89,7 +90,7 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       ...rest
     } = inProps;
 
-    const ref = useRef<HTMLInputElement>(null);
+    const ref = useRef<TamaguiWebElement<HTMLInputElement>>(null);
     const theme = useTheme();
 
     const composedRefs = useComposedRefs(forwardedRef, ref);
@@ -120,19 +121,20 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
       }
 
       return () => {};
-    }, []);
+    }, [handleSelectionChange, onSelectionChange]);
 
     useEffect(() => {
       if (selection) {
         ref.current?.setSelectionRange(
           selection.start || null,
-          selection.end || null
+          selection.end ?? null
         );
       }
-    }, [selection?.start, selection?.end]);
+    }, [selection]);
 
     const finalProps = {
       ...rest,
+      autoComplete,
       inputMode,
       disabled,
       caretColor,
@@ -169,13 +171,13 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
     }, [name, disabled, onFocus]);
 
     const handleChange = useCallback(
-      (event: FormEvent<HTMLInputElement>) => {
+      (event: FormEvent<HTMLElement>) => {
         event.stopPropagation();
 
         if (onChange) {
           onChange(
             new CustomEvent("change", {
-              detail: event.currentTarget.value
+              detail: (event.currentTarget as HTMLInputElement).value
             })
           );
         }
@@ -184,11 +186,11 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
     );
 
     const handleInput = useCallback(
-      (event: FormEvent<HTMLInputElement>) => {
+      (event: FormEvent<HTMLElement>) => {
         if (onInput) {
           onInput(
             new CustomEvent("input", {
-              detail: event.currentTarget.value
+              detail: (event.currentTarget as HTMLInputElement).value
             })
           );
         }
@@ -214,14 +216,13 @@ export const InputValue = BaseInputValue.styleable<InputProps>(
 
         <BaseInputValue
           ref={composedRefs}
-          disabled={disabled}
           {...finalProps}
+          disabled={disabled}
           id={name}
           onChange={handleChange}
           onInput={handleInput}
           onBlur={onBlur}
           onFocus={onFocus}
-          autoComplete={autoComplete}
         />
       </>
     );

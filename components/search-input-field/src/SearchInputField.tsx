@@ -21,7 +21,7 @@ import type { InputValueProps } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { FieldApi } from "@cyclone-ui/state/form";
 import { withStaticProperties } from "@tamagui/core";
-import { Search } from "@tamagui/lucide-icons";
+import { Search } from "@tamagui/lucide-icons-2";
 import { useMemo } from "react";
 
 const SearchInputFieldGroup = InputField.styleable(

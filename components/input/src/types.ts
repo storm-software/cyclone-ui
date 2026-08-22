@@ -32,11 +32,12 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
-export type InputProps = ViewProps &
+export type InputComponentProps = ViewProps &
   Omit<
     DetailedInputProps,
     | "className"
     | "children"
+    | "ref"
     | "value"
     | "size"
     | "onChange"

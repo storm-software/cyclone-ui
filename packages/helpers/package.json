@@ -1,20 +1,117 @@
 {
   "name": "@cyclone-ui/helpers",
   "version": "0.3.0",
-  "type": "module",
+  "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "packages/helpers"
   },
-  "private": false,
+  "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./package.json": "./package.json"
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./get-button-sized": {
+      "require": {
+        "types": "./dist/get-button-sized.d.cts",
+        "default": "./dist/get-button-sized.cjs"
+      },
+      "import": {
+        "types": "./dist/get-button-sized.d.mts",
+        "default": "./dist/get-button-sized.mjs"
+      },
+      "default": {
+        "types": "./dist/get-button-sized.d.mts",
+        "default": "./dist/get-button-sized.mjs"
+      }
+    },
+    "./get-colors": {
+      "require": {
+        "types": "./dist/get-colors.d.cts",
+        "default": "./dist/get-colors.cjs"
+      },
+      "import": {
+        "types": "./dist/get-colors.d.mts",
+        "default": "./dist/get-colors.mjs"
+      },
+      "default": {
+        "types": "./dist/get-colors.d.mts",
+        "default": "./dist/get-colors.mjs"
+      }
+    },
+    "./get-font-sized": {
+      "require": {
+        "types": "./dist/get-font-sized.d.cts",
+        "default": "./dist/get-font-sized.cjs"
+      },
+      "import": {
+        "types": "./dist/get-font-sized.d.mts",
+        "default": "./dist/get-font-sized.mjs"
+      },
+      "default": {
+        "types": "./dist/get-font-sized.d.mts",
+        "default": "./dist/get-font-sized.mjs"
+      }
+    },
+    "./get-nearest-token": {
+      "require": {
+        "types": "./dist/get-nearest-token.d.cts",
+        "default": "./dist/get-nearest-token.cjs"
+      },
+      "import": {
+        "types": "./dist/get-nearest-token.d.mts",
+        "default": "./dist/get-nearest-token.mjs"
+      },
+      "default": {
+        "types": "./dist/get-nearest-token.d.mts",
+        "default": "./dist/get-nearest-token.mjs"
+      }
+    },
+    "./get-sized": {
+      "require": {
+        "types": "./dist/get-sized.d.cts",
+        "default": "./dist/get-sized.cjs"
+      },
+      "import": {
+        "types": "./dist/get-sized.d.mts",
+        "default": "./dist/get-sized.mjs"
+      },
+      "default": {
+        "types": "./dist/get-sized.d.mts",
+        "default": "./dist/get-sized.mjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./types": {
+      "require": {
+        "types": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "import": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      },
+      "default": {
+        "types": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      }
+    }
   },
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/type-checks": "catalog:",
     "@stryke/types": "catalog:",
@@ -24,9 +121,13 @@
     "chroma-js": "catalog:"
   },
   "devDependencies": {
-    "@types/chroma-js": "catalog:"
+    "@powerlines/plugin-tamagui": "catalog:",
+    "@powerlines/plugin-tsdown": "catalog:",
+    "@types/chroma-js": "catalog:",
+    "powerlines": "catalog:"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "module": "./dist/index.mjs"
 }

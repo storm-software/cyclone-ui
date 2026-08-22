@@ -12,6 +12,6 @@
     "ignoreDeprecations": "6.0"
   },
   "files": [],
-  "include": ["src/**/*.ts", "src/**/*.js", "bin/**/*"],
+  "include": ["src/**/*.ts", "src/**/*.js", "bin/**/*", "powerlines.d.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

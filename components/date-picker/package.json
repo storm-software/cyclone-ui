@@ -48,13 +48,17 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/label": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/popover": "catalog:",
     "@tamagui/separator": "catalog:",
     "@tamagui/sheet": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/web": "catalog:",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

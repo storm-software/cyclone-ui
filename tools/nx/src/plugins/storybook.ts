@@ -214,9 +214,10 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
     options: {
       cwd: workspaceRoot,
       commands: [
-        { command: "pnpm nx run cli:build" },
+        { command: "pnpm nx run monorepo:generate-tokens" },
         { command: "pnpm nx run themes:build" },
-        { command: "pnpm nx run state:build" }
+        { command: "pnpm nx run state:build" },
+        { command: "pnpm nx run helpers:build" }
       ],
       parallel: false
     }

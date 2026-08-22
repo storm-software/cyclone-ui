@@ -4,5 +4,6 @@
   "projectType": "application",
   "sourceRoot": "apps/storybook/src",
   "tags": [],
+  "// targets": "to see all targets run: nx show project storybook --web",
   "targets": {}
 }

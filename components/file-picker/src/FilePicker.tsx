@@ -35,7 +35,7 @@ import {
 } from "@tamagui/core";
 import { Image } from "@tamagui/image";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons";
+import { Dot, Download, Trash2, Upload } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { DocumentPickerResult } from "expo-document-picker";
 import type { PropsWithChildren } from "react";

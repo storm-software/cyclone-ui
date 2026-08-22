@@ -36,7 +36,10 @@
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "pdfjs-dist": "^4.10.38",
-    "react-pdf": "^9.2.1"
+    "react-pdf": "^9.2.1",
+    "@cyclone-ui/spinner": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

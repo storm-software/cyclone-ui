@@ -33,11 +33,14 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/previous-button": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

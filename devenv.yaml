@@ -1,5 +1,8 @@
 # yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
+  # Newer dotenv modules require a devenv CLI that provides `loadDotenv`.
+  devenv:
+    url: github:cachix/devenv/c18de5253016e6eb97689724327f08e9dd2d4768?dir=src/modules
   storm-ops:
     url: github:storm-software/storm-ops?ref=main
     flake: false

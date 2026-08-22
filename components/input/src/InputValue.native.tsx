@@ -16,33 +16,40 @@
 
  ------------------------------------------------------------------- */
 
+import type { Mutable } from "@stryke/types/base";
 import { styled, useComposedRefs } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
+import type { ComponentProps, ComponentType } from "react";
 import { useEffect, useRef } from "react";
 import type {
-  NativeSyntheticEvent,
-  TextInputChangeEventData,
-  TextInputKeyPressEventData,
-  TextInputSubmitEditingEventData
+  TextInputChangeEvent,
+  TextInputKeyPressEvent,
+  TextInputSubmitEditingEvent
 } from "react-native";
 import { TextInput } from "react-native";
-import type { InputProps } from "./types";
+import type { InputComponentProps } from "./types";
 import { baseInputStyle, InputContext } from "./utilities";
 
 /* eslint-disable ts/no-unused-vars --
  * Web-only props are destructured so they are not forwarded to the native input.
  */
 
-const BaseInputValue = styled(TextInput, baseInputStyle[0], baseInputStyle[1]);
+const BaseInputValue = styled(
+  TextInput,
+  baseInputStyle[0] as any,
+  baseInputStyle[1]
+);
 
-export const Input = BaseInputValue.styleable<InputProps>(
-  (inProps, forwardedRef) => {
+export const Input: ComponentType<InputComponentProps> =
+  BaseInputValue.styleable<InputComponentProps>((inProps, forwardedRef) => {
     const { disabled, name, onChange, onInput, onBlur, onFocus } =
       InputContext.useStyledContext();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
       type,
+      onChange: _onChange,
+      onInput: _onInput,
       // @ts-ignore
       dirname,
       max,
@@ -60,7 +67,6 @@ export const Input = BaseInputValue.styleable<InputProps>(
       returnKeyType,
       onKeyDown,
       inputMode,
-      tag,
       ...rest
     } = inProps;
 
@@ -109,21 +115,19 @@ export const Input = BaseInputValue.styleable<InputProps>(
       enterKeyHint: _enterKeyHint,
       returnKeyType: _returnKeyType,
       secureTextEntry,
-      numberOfLines: rows || rest.numberOfLines
-    };
+      numberOfLines: rows ?? rest.numberOfLines
+    } as Mutable<ComponentProps<typeof BaseInputValue>>;
 
-    if (tag === "textarea") {
+    if (type === "textarea") {
       finalProps.multiline = true;
     }
 
     if (onKeyDown) {
-      finalProps.onKeyPress = (
-        e: NativeSyntheticEvent<TextInputKeyPressEventData>
-      ) => {
+      finalProps.onKeyPress = (e: TextInputKeyPressEvent) => {
         const { key } = e.nativeEvent;
         if (
           key === "Backspace" ||
-          (tag === "textarea" && key === "Enter") ||
+          (type === "textarea" && key === "Enter") ||
           key.length === 1
         ) {
           onKeyDown({
@@ -133,9 +137,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
         }
       };
 
-      finalProps.onSubmitEditing = (
-        _e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
-      ) => {
+      finalProps.onSubmitEditing = (_e: TextInputSubmitEditingEvent) => {
         onKeyDown({
           key: "Enter",
           type: "keydown"
@@ -144,9 +146,7 @@ export const Input = BaseInputValue.styleable<InputProps>(
     }
 
     if (onChange || onInput) {
-      finalProps.onChange = (
-        event: NativeSyntheticEvent<TextInputChangeEventData>
-      ) => {
+      finalProps.onChange = (event: TextInputChangeEvent) => {
         const { text } = event.nativeEvent;
 
         if (onInput) {
@@ -196,5 +196,4 @@ export const Input = BaseInputValue.styleable<InputProps>(
         {...finalProps}
       />
     );
-  }
-);
+  });

@@ -34,7 +34,8 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

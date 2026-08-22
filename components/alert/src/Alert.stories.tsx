@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { HelpCircle } from "@tamagui/lucide-icons";
+import { HelpCircle } from "@tamagui/lucide-icons-2";
 import { Alert } from "./Alert";
 
 const meta: Meta<typeof Alert> = {
@@ -72,7 +72,6 @@ export const Secondary: Story = {
 };
 
 export const Tertiary: Story = {
-
   args: {
     children: bodyText,
     type: "tertiary"
@@ -114,10 +113,23 @@ export const Discovery: Story = {
   }
 };
 
+export const Positive: Story = {
+  args: {
+    children: bodyText,
+    type: "positive"
+  }
+};
+
+export const Negative: Story = {
+  args: {
+    children: bodyText,
+    type: "negative"
+  }
+};
+
 export const Accent: Story = {
   args: {
     children: bodyText,
     type: "accent"
   }
 };
-

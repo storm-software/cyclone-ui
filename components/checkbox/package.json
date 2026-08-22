@@ -34,9 +34,11 @@
     "@tamagui/create-context": "catalog:",
     "@tamagui/get-token": "catalog:",
     "@tamagui/group": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

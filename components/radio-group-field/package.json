@@ -38,7 +38,11 @@
     "@tamagui/core": "catalog:",
     "@tamagui/label": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/radio-group": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

@@ -23,7 +23,7 @@ import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
 import { View, withStaticProperties } from "@tamagui/core";
-import { Calendar } from "@tamagui/lucide-icons";
+import { Calendar } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
 import { useCallback, useMemo } from "react";
 

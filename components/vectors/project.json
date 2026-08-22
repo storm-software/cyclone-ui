@@ -4,41 +4,6 @@
   "projectType": "library",
   "sourceRoot": "components/vectors/src",
   "targets": {
-    "build": {
-      "cache": true,
-      "executor": "@cyclone-ui/nx:build",
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^build"],
-      "output": "{options.outputPath}",
-      "options": {
-        "outputPath": "dist/components/vectors",
-        "tsConfig": "components/vectors/tsconfig.json",
-        "project": "components/vectors/package.json",
-        "defaultConfiguration": "production",
-        "assets": [
-          {
-            "input": "components/vectors",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
-      },
-      "configurations": {
-        "production": {
-          "debug": false,
-          "verbose": false
-        },
-        "development": {
-          "debug": true,
-          "verbose": true
-        }
-      }
-    },
     "nx-release-publish": {
       "executor": "@cyclone-ui/tools-nx:component-publish"
     }

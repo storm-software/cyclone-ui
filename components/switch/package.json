@@ -32,10 +32,12 @@
     "@tamagui/create-context": "catalog:",
     "@tamagui/get-token": "catalog:",
     "@tamagui/group": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/switch": "catalog:",
-    "@tamagui/switch-headless": "catalog:"
+    "@tamagui/switch-headless": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

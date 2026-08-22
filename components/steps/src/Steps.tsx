@@ -24,7 +24,7 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { CheckCircle, Edit3, Lock } from "@tamagui/lucide-icons";
+import { CheckCircle, Edit3, Lock } from "@tamagui/lucide-icons-2";
 import { Circle } from "@tamagui/shapes";
 import { XStack, YStack } from "@tamagui/stacks";
 import type {

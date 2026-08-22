@@ -35,11 +35,11 @@
       "options": {
         "commands": [
           "pnpm copyfiles LICENSE dist/tools/nx",
-          "pnpm copyfiles --up=3 \"tools/nx/*.md\" tools/nx/executors.json tools/nx/generators.json tools/nx/package.json dist/tools/nx",
-          "pnpm copyfiles --up=4 \"tools/nx/src/executors/*/schema.json\" \"tools/nx/src/executors/*/schema.d.ts\" \"tools/nx/src/generators/*/schema.json\" \"tools/nx/src/generators/*/schema.d.ts\" tools/nx/dist/src",
-          "pnpm copyfiles --up=4 \"tools/nx/src/base/*.schema.json\" \"tools/nx/src/base/*.schema.d.ts\" dist/tools/nx/dist/src",
-          "pnpm copyfiles --up=4 \"tools/nx/dist/src/**/*\" dist/tools/nx/dist",
-          "pnpm copyfiles --up=5 \"tools/nx/src/**/*.md\" dist/tools/nx/docs/api"
+          "pnpm copyfiles --up=2 \"tools/nx/*.md\" tools/nx/executors.json tools/nx/generators.json tools/nx/package.json dist/tools/nx",
+          "pnpm copyfiles --up=3 \"tools/nx/src/executors/*/schema.json\" \"tools/nx/src/executors/*/schema.d.ts\" \"tools/nx/src/generators/*/schema.json\" \"tools/nx/src/generators/*/schema.d.ts\" tools/nx/dist/src",
+          "pnpm copyfiles --up=3 \"tools/nx/src/base/*.schema.json\" \"tools/nx/src/base/*.schema.d.ts\" dist/tools/nx/dist/src",
+          "pnpm copyfiles --up=3 \"tools/nx/dist/src/**/*\" dist/tools/nx/dist",
+          "pnpm copyfiles --up=4 \"tools/nx/src/**/*.md\" dist/tools/nx/docs/api"
         ],
         "parallel": false
       }

@@ -33,7 +33,10 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/create-context": "catalog:"
+    "@tamagui/create-context": "catalog:",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

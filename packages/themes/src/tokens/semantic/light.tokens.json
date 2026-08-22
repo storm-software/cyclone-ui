@@ -13,16 +13,15 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.8}",
+        "$value": "{color.base.5}",
         "$description": "The secondary foreground color for the light theme",
         "theme": "secondary"
       },
-      "tertiary": {
+      "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
-        "$description": "The tertiary foreground color for the light theme",
-        "theme": "tertiary"
+        "$value": "{color.base.3}",
+        "$description": "The body foreground color for the light theme"
       },
       "accent": {
         "$type": "color",
@@ -38,6 +37,13 @@
         "$description": "The danger foreground color for the light theme",
         "theme": "danger"
       },
+      "negative": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.7}",
+        "$description": "The negative foreground color for the light theme",
+        "theme": "negative"
+      },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -51,6 +57,13 @@
         "$value": "{color.green.6}",
         "$description": "The success foreground color for the light theme",
         "theme": "success"
+      },
+      "positive": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.6}",
+        "$description": "The positive foreground color for the light theme",
+        "theme": "positive"
       },
       "info": {
         "$type": "color",
@@ -72,63 +85,70 @@
         "$value": "{color.blue.7}",
         "$description": "The link foreground color for the light theme"
       },
-      "on-primary": {
+      "primary-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.9}",
         "$description": "The primary foreground color for the light theme",
         "theme": "primary"
       },
-      "on-secondary": {
+      "secondary-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
         "$description": "The secondary foreground color for the light theme",
         "theme": "secondary"
       },
-      "on-tertiary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
-        "$description": "The tertiary foreground color for the light theme",
-        "theme": "tertiary"
-      },
-      "on-accent": {
+      "accent-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
         "$description": "The accent foreground color for the light theme",
         "theme": "accent"
       },
-      "on-danger": {
+      "danger-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
         "$description": "The danger foreground color for the light theme",
         "theme": "danger"
       },
-      "on-warning": {
+      "negative-inverse": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.1}",
+        "$description": "The negative foreground color for the light theme",
+        "theme": "negative"
+      },
+      "warning-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.9}",
         "$description": "The warning foreground color for the light theme",
         "theme": "warning"
       },
-      "on-success": {
+      "success-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
         "$description": "The success foreground color for the light theme",
         "theme": "success"
       },
-      "on-info": {
+      "positive-inverse": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.1}",
+        "$description": "The positive foreground color for the light theme",
+        "theme": "positive"
+      },
+      "info-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
         "$description": "The info foreground color for the light theme",
         "theme": "info"
       },
-      "on-discovery": {
+      "discovery-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
@@ -176,13 +196,6 @@
         "$description": "The secondary background color for the light theme",
         "theme": "secondary"
       },
-      "tertiary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
-        "$description": "The tertiary background color for the light theme",
-        "theme": "tertiary"
-      },
       "link": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -203,6 +216,13 @@
         "$description": "The danger background color for the light theme",
         "theme": "danger"
       },
+      "negative": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.7}",
+        "$description": "The negative background color for the light theme",
+        "theme": "negative"
+      },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -214,8 +234,15 @@
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.green.6}",
-          "$description": "The success background color for the light theme",
+        "$description": "The success background color for the light theme",
         "theme": "success"
+      },
+      "positive": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.6}",
+        "$description": "The positive background color for the light theme",
+        "theme": "positive"
       },
       "info": {
         "$type": "color",
@@ -245,6 +272,13 @@
         "$description": "The danger background color for the light theme",
         "theme": "danger"
       },
+      "negative-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.8}",
+        "$description": "The negative background color for the light theme",
+        "theme": "negative"
+      },
       "warning-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -258,6 +292,13 @@
         "$value": "{color.green.9}",
         "$description": "The success background color for the light theme",
         "theme": "success"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.9}",
+        "$description": "The positive background color for the light theme",
+        "theme": "positive"
       },
       "info-subtle": {
         "$type": "color",
@@ -286,16 +327,9 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.8}",
+        "$value": "{color.base.9}",
         "$description": "The secondary border color for the light theme",
         "theme": "secondary"
-      },
-      "tertiary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
-        "$description": "The tertiary border color for the light theme",
-        "theme": "tertiary"
       },
       "accent": {
         "$type": "color",
@@ -311,6 +345,13 @@
         "$description": "The danger border color for the light theme",
         "theme": "danger"
       },
+      "negative": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.7}",
+        "$description": "The negative border color for the light theme",
+        "theme": "negative"
+      },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -324,6 +365,13 @@
         "$value": "{color.green.6}",
         "$description": "The success border color for the light theme",
         "theme": "success"
+      },
+      "positive": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.6}",
+        "$description": "The positive border color for the light theme",
+        "theme": "positive"
       },
       "info": {
         "$type": "color",
@@ -353,6 +401,13 @@
         "$description": "The danger border color for the light theme",
         "theme": "danger"
       },
+      "negative-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.8}",
+        "$description": "The negative border color for the light theme",
+        "theme": "negative"
+      },
       "warning-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -366,6 +421,13 @@
         "$value": "{color.green.9}",
         "$description": "The success border color for the light theme",
         "theme": "success"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.9}",
+        "$description": "The positive border color for the light theme",
+        "theme": "positive"
       },
       "info-subtle": {
         "$type": "color",

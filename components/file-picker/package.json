@@ -43,7 +43,7 @@
     "@tamagui/helpers-tamagui": "catalog:",
     "@tamagui/image": "catalog:",
     "@tamagui/linear-gradient": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/separator": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
@@ -51,7 +51,13 @@
     "expo-document-picker": "catalog:",
     "expo-image-picker": "^15.1.0",
     "react-dropzone": "^14.4.1",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/bytes-text": "workspace:*",
+    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/field": "workspace:*",

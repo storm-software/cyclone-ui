@@ -34,8 +34,11 @@
   "dependencies": {
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "@tamagui/lucide-icons-2": "catalog:",
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/file-picker": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

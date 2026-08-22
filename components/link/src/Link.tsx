@@ -21,7 +21,7 @@ import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
-import { ArrowUpRight } from "@tamagui/lucide-icons";
+import { ArrowUpRight } from "@tamagui/lucide-icons-2";
 import type { GestureResponderEvent } from "react-native";
 import { Linking } from "react-native";
 const LinkFrame = styled(LinkText, {

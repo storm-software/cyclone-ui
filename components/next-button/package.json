@@ -34,7 +34,9 @@
   "dependencies": {
     "@stryke/hooks": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

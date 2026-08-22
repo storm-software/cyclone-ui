@@ -47,7 +47,7 @@ const BadgeFrame = styled(View, {
 
     unstyled: {
       false: {
-        borderRadius: "$trigger",
+        borderRadius: "$button",
         paddingHorizontal: "$3xl",
         justifyContent: "center",
         alignItems: "center"

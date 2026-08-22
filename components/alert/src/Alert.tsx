@@ -30,19 +30,20 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { AlertCircle, X } from "@tamagui/lucide-icons";
+import { AlertCircle, X } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 export type AlertType =
   | "primary"
   | "secondary"
-  | "tertiary"
   | "danger"
   | "warning"
   | "info"
   | "success"
   | "discovery"
+  | "positive"
+  | "negative"
   | "accent";
 
 export interface AlertContextProps {

@@ -35,7 +35,10 @@
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/switch-headless": "catalog:"
+    "@tamagui/switch-headless": "catalog:",
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/switch": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

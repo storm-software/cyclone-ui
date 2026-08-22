@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@number-flow/react": "^0.4.4",
-    "@tamagui/core": "catalog:"
+    "@tamagui/core": "catalog:",
+    "@cyclone-ui/label-text": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

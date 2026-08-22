@@ -16,4 +16,16 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./build/executor";
+import { plugin as tsdown } from "@powerlines/plugin-tsdown";
+import type { UserConfig } from "powerlines";
+import { defineConfig } from "powerlines/config";
+
+const config: UserConfig = defineConfig({
+  input: ["src/*.ts"],
+  platform: "browser",
+  plugins: [
+    tsdown()
+  ]
+});
+
+export default config;

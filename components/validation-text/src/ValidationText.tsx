@@ -20,11 +20,13 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type { ValidationDetail as ValidationDetails } from "@stryke/types/validations";
 import { styled } from "@tamagui/core";
-import { Dot } from "@tamagui/lucide-icons";
+import { Dot } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
   transition: "medium",
+
+  fontFamily: "$caption",
 
   enterStyle: {
     opacity: 0,

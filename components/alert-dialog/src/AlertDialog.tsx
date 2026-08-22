@@ -20,7 +20,7 @@ import type { DialogProps } from "@cyclone-ui/dialog";
 import { Dialog } from "@cyclone-ui/dialog";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Theme, useThemeName, View, withStaticProperties } from "@tamagui/core";
-import { AlertCircle } from "@tamagui/lucide-icons";
+import { AlertCircle } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 

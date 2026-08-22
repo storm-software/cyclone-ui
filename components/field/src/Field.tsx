@@ -37,7 +37,7 @@ import type {
 } from "@tamagui/core";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
-import { Asterisk } from "@tamagui/lucide-icons";
+import { Asterisk } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef } from "react";
 import { useMemo } from "react";

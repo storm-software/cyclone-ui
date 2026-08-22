@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   name = "storm-software/cyclone-ui";
 
   dotenv = {
-    enable = true;
+    enable = lib.mkDefault true;
     filename = [
       ".env"
       ".env.local"

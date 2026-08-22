@@ -4,5 +4,6 @@
   "sourceRoot": "tools/scripts/src",
   "projectType": "library",
   "tags": [],
+  "// targets": "to see all targets run: nx show project tools-scripts --web",
   "targets": {}
 }

@@ -38,9 +38,11 @@
     "@tamagui/helpers": "catalog:",
     "@tamagui/helpers-icon": "catalog:",
     "@tamagui/helpers-tamagui": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5"
+    "react-native-svg": "^15.15.5",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

@@ -16,48 +16,28 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  getButtonSized,
-  getFontSizedFromSize,
-  getSized
-} from "@cyclone-ui/helpers";
-import { LabelText } from "@cyclone-ui/label-text";
+import { getButtonSized, getSized } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import type {
   ColorTokens,
   GetProps,
   SizeTokens,
-  TextProps,
   ThemeableProps,
   UnionableNumber,
   UnionableString,
   Variable,
   VariantSpreadExtras
 } from "@tamagui/core";
-import {
-  Theme,
-  View,
-  createStyledContext,
-  styled,
-  useThemeName
-} from "@tamagui/core";
+import { Text, View, createStyledContext, styled } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
-import { LinearGradient } from "@tamagui/linear-gradient";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo } from "react";
 import type { GestureResponderEvent } from "react-native";
+
 type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "quaternary"
-  | "outlined"
-  | "gradient"
-  | "ghost"
-  | "glass"
-  | "link";
+  "default" | "subtle" | "surface" | "inverse" | "outlined" | "ghost" | "link";
 
 type BorderRadiusSizeTokens =
   | number
@@ -76,21 +56,21 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The size of the button
    *
-   * @defaultValue "$true"
+   * @defaultValue "$5xl"
    */
   size: SizeTokens;
 
   /**
    * The variant style of the button
    *
-   * @defaultValue "secondary"
+   * @defaultValue "default"
    */
   variant: ButtonVariant;
 
   /**
    * The radius of the button's border
    *
-   * @defaultValue "$trigger"
+   * @defaultValue "$button"
    */
   borderRadius: BorderRadiusSizeTokens;
 
@@ -152,9 +132,9 @@ type ButtonExtraProps = TextParentStyles &
   };
 
 export const ButtonContext = createStyledContext<ButtonContextProps>({
-  size: "$true",
-  variant: "tertiary",
-  borderRadius: "$trigger",
+  size: "$5xl",
+  variant: "default",
+  borderRadius: "$button",
   unstyled: false,
   circular: false,
   ringed: false,
@@ -166,125 +146,139 @@ export const ButtonContext = createStyledContext<ButtonContextProps>({
 const ButtonFrame = styled(View, {
   name: "Button",
   context: ButtonContext,
-
   render: "button",
   role: "button",
-  // tabIndex: -1,
   userSelect: "none",
-
-  transition: "medium",
+  transition: "200ms",
   alignItems: "center",
   justifyContent: "center",
+  display: "flex",
+  flexGrow: 1,
+  flexShrink: 0,
   cursor: "pointer",
-  borderColor: "$borderPrimary",
-  borderWidth: 1,
   flexWrap: "nowrap",
   flexDirection: "row",
-  width: "fit-content",
   overflow: "hidden",
-  borderRadius: "$trigger",
-
-  hoverStyle: {
-    borderWidth: 1,
-    borderColor: "$borderPrimaryHover"
-  },
-
-  focusStyle: {
-    outlineWidth: 0
-  },
+  borderRadius: "$button",
+  minWidth: "fit-content",
+  paddingHorizontal: "$2xl",
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
-    outlineStyle: "solid",
-    outlineWidth: 3,
-    outlineOffset: "$lg"
+    boxShadow: "$ring"
   },
 
   variants: {
     variant: {
-      primary: {
-        backgroundColor: "$backgroundPrimary",
-        borderColor: "$borderTertiary",
+      default: {
+        borderWidth: 1,
+        borderColor: "$border",
+        backgroundColor: "$background",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover",
-          borderColor: "$borderTertiaryHover"
+          backgroundColor: "$backgroundHover",
+          borderColor: "$borderHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$backgroundPressed"
         }
       },
 
-      secondary: {
-        backgroundColor: "$surface3",
+      subtle: {
+        borderWidth: 1,
+        borderColor: "$borderSubtle",
+        backgroundColor: "$backgroundSubtle",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover"
+          backgroundColor: "$backgroundSubtleHover",
+          borderColor: "$borderSubtleHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$backgroundSubtlePressed"
         }
       },
 
-      tertiary: {
-        backgroundColor: "$surface2",
+      surface: {
+        borderWidth: 1,
+        borderColor: "$foreground",
+        backgroundColor: "$backgroundElevated",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover"
+          backgroundColor: "$backgroundElevatedHover",
+          borderColor: "$foregroundHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$backgroundElevatedPressed",
+          borderColor: "$foregroundPressed"
         }
       },
 
-      quaternary: {
-        backgroundColor: "$surface1",
+      inverse: {
+        borderWidth: 1,
+        borderColor: "$border",
+        backgroundColor: "$foreground",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover"
+          backgroundColor: "$foregroundHover",
+          borderColor: "$borderHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$foregroundPressed"
         }
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 2,
-        borderColor: "$borderPrimary",
+        borderColor: "$foreground",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover",
-          borderWidth: 2,
-          borderColor: "$borderPrimaryHover"
+          backgroundColor: "$backgroundElevatedHover",
+          borderColor: "$foregroundHover"
+        },
+
+        pressStyle: {
+          backgroundColor: "$backgroundElevatedPressed",
+          borderColor: "$foregroundPressed"
         }
       },
 
       ghost: {
         backgroundColor: "transparent",
         borderWidth: 0,
+        borderColor: "transparent",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderWidth: 0
-        }
-      },
+          borderWidth: 0,
+          borderColor: "transparent"
+        },
 
-      gradient: {
-        backgroundColor: "transparent",
-        borderWidth: 0,
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 0
-        }
-      },
-
-      glass: {
-        backgroundColor: "transparent",
-        borderColor: "$base4",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderColor: "$borderPrimaryHover"
+        pressStyle: {
+          backgroundColor: "$backgroundElevatedPressed",
+          borderWidth: 0,
+          borderColor: "transparent"
         }
       },
 
       link: {
         backgroundColor: "transparent",
         borderWidth: 0,
+        borderColor: "transparent",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderWidth: 0
+          borderWidth: 0,
+          borderColor: "transparent"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 0,
+          borderColor: "transparent"
         }
       }
     },
@@ -301,98 +295,80 @@ const ButtonFrame = styled(View, {
       }
     },
 
-    size: {
-      "...size": getButtonSized,
-      ":number": getButtonSized
+    // Height/padding only. Avoid a `size` / `...size` variant — Tamagui (and its
+    // compiler) treat those as a width+height shorthand and clip the label.
+    frameSize: {
+      ":string": getButtonSized,
+      ":number": getButtonSized,
+      true: (_val: boolean, extras: VariantSpreadExtras<any>) =>
+        getButtonSized("$5xl", extras)
     },
 
     disabled: {
       true: (_val: boolean, { props }: VariantSpreadExtras<any>) => {
-        const variant = props.variant as ButtonVariant | undefined;
-        const filled =
-          variant === "primary" ||
-          variant === "secondary" ||
-          variant === "tertiary" ||
-          variant === "quaternary";
-        const hideBorder =
-          variant === "ghost" || variant === "link" || variant === "gradient";
-
-        return {
+        const result = {
           cursor: "not-allowed",
-          pointerEvents: "none",
-          ...(filled
-            ? {
-                backgroundColor: "$backgroundPrimaryDisabled",
-                borderColor:
-                  variant === "primary"
-                    ? "$borderTertiaryDisabled"
-                    : "$borderPrimaryDisabled",
-                hoverStyle: {
-                  backgroundColor: "$backgroundPrimaryDisabled",
-                  borderColor:
-                    variant === "primary"
-                      ? "$borderTertiaryDisabled"
-                      : "$borderPrimaryDisabled"
-                }
-              }
-            : {
-                borderColor: hideBorder
-                  ? "transparent"
-                  : "$borderPrimaryDisabled",
-                hoverStyle: {
-                  borderColor: hideBorder
-                    ? "transparent"
-                    : "$borderPrimaryDisabled"
-                }
-              })
-        };
+          pointerEvents: "none"
+        } as Partial<VariantSpreadExtras<any>>["props"];
+
+        const variant = props.variant as ButtonVariant | undefined;
+        if (variant === "surface") {
+          result.backgroundColor = "$backgroundElevatedDisabled";
+          result.borderColor = "$borderDisabled";
+        } else if (variant === "subtle") {
+          result.backgroundColor = "$backgroundSubtleDisabled";
+          result.borderColor = "$borderSubtleDisabled";
+        } else if (variant === "inverse") {
+          result.backgroundColor = "$backgroundDisabled";
+          result.borderColor = "$borderDisabled";
+        } else if (variant === "outlined") {
+          result.backgroundColor = "transparent";
+          result.borderColor = "$borderDisabled";
+        } else if (variant === "ghost" || variant === "link") {
+          result.backgroundColor = "transparent";
+          result.borderColor = "transparent";
+        }
+
+        return result;
       }
     },
 
     ringed: {
       true: {
         hoverStyle: {
-          outlineColor: "$borderPrimaryHover",
-          outlineStyle: "solid",
-          outlineWidth: 3,
-          outlineOffset: "$lg"
+          boxShadow: "$ring"
         },
-
         pressStyle: {
-          outlineColor: "$borderPrimaryHover",
-          outlineStyle: "solid",
-          outlineWidth: 3,
-          outlineOffset: "$lg"
+          boxShadow: "$ring"
         }
       }
     },
 
     circular: {
       true: {
-        borderRadius: 1000_000_000,
-        height: "fit-content"
+        borderRadius: 1000_000_000
       }
     },
 
     noPadding: {
       true: {
-        padding: 0,
-        height: "fit-content"
+        padding: 0
       }
     },
 
     animate: {
       true: {
         pressStyle: {
-          scale: 0.95
+          // scaleX: 0.98,
+          // scaleY: 0.99
         }
       }
     }
   } as const,
 
   defaultVariants: {
-    variant: "tertiary",
-    size: "$true",
+    variant: "surface",
+    frameSize: "$5xl",
     disabled: false,
     ringed: false,
     circular: false,
@@ -402,101 +378,60 @@ const ButtonFrame = styled(View, {
   }
 });
 
-const ButtonTextFrame = styled(LabelText, {
+const ButtonTextFrame = styled(Text, {
   name: "ButtonText",
   context: ButtonContext,
 
-  transition: "medium",
+  render: "span",
+  transition: "200ms",
   userSelect: "none",
-  ellipsis: true,
   borderRadius: 0,
   cursor: "pointer",
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  textOverflow: "ellipsis",
+  color: "$foreground",
+  fontFamily: "$label",
+  fontWeight: "$true",
+  fontSize: "$true",
 
-  // flexGrow 1 leads to inconsistent native style where text pushes to start of view
+  hoverStyle: {
+    color: "$foreground"
+  },
+
   flexGrow: 0,
-  flexShrink: 1,
+  flexShrink: 0,
+  flexBasis: "auto",
+  minWidth: "fit-content",
   zIndex: "$20",
 
   variants: {
     variant: {
-      primary: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
+      surface: {
+        color: "$foreground"
       },
 
-      secondary: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
+      subtle: {
+        color: "$foreground"
       },
 
-      tertiary: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
-      },
-
-      quaternary: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
+      inverse: {
+        color: "$foregroundInverse"
       },
 
       outlined: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
+        color: "$foreground"
       },
 
       ghost: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
-      },
-
-      glass: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
-      },
-
-      gradient: {
-        color: "$foregroundOnPrimary",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover"
-        }
+        color: "$foreground"
       },
 
       link: {
-        color: "$foregroundOnPrimary",
+        color: "$foreground",
         textDecorationLine: "underline",
-        textDecorationColor: "$foregroundOnPrimary",
-        textDecorationStyle: "solid",
-
-        hoverStyle: {
-          color: "$foregroundOnPrimaryHover",
-          textDecorationColor: "$foregroundOnPrimaryHover"
-        }
+        textDecorationColor: "$foreground",
+        textDecorationStyle: "solid"
       }
     },
 
@@ -504,93 +439,77 @@ const ButtonTextFrame = styled(LabelText, {
       true: {
         cursor: "not-allowed",
         pointerEvents: "none",
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundDisabled",
         textDecoration: "none",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled",
-
+          color: "$foregroundDisabled",
           textDecoration: "none"
         },
 
         pressStyle: {
-          color: "$foregroundOnPrimaryDisabled",
-
+          color: "$foregroundDisabled",
           textDecoration: "none"
         }
-      }
-    },
-
-    circular: {
-      true: {
-        height: "fit-content"
-      }
-    },
-
-    size: {
-      "...size": (val: SizeTokens, extras: VariantSpreadExtras<TextProps>) => {
-        if (!extras.font) {
-          return;
-        }
-
-        const font = getFontSizedFromSize(val, extras);
-
-        return {
-          ...font
-        };
       }
     }
   } as const,
 
   defaultVariants: {
-    variant: "tertiary",
-    size: "$true",
-    disabled: false,
-    circular: false
+    variant: "surface",
+    disabled: false
   }
 });
 
+const colorForVariant = (
+  variant: ButtonVariant,
+  disabled: boolean,
+  color?: ColorTokens | string
+): ThemeableIconProps["color"] => {
+  if (variant === "inverse") {
+    return (
+      disabled ? "$foregroundInverseDisabled" : (color ?? "$foregroundInverse")
+    ) as ThemeableIconProps["color"];
+  }
+
+  return (
+    disabled ? "$foregroundDisabled" : (color ?? "$foreground")
+  ) as ThemeableIconProps["color"];
+};
+
+const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
+  if (disabled) {
+    if (variant === "inverse") {
+      return "$foregroundInverseDisabled";
+    }
+
+    return "$foregroundDisabled";
+  }
+
+  if (variant === "inverse") {
+    return "$foregroundInverseHover";
+  }
+
+  return "$foregroundHover";
+};
+
 const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
-  ({ children, size, ...props }, forwardedRef) => {
-    const {
-      variant,
-      disabled,
-      circular,
-      color,
-      size: contextSize
-    } = ButtonContext.useStyledContext();
-    const theme = useThemeName();
+  ({ children, size: _size, ...props }, forwardedRef) => {
+    const { variant, disabled, color } = ButtonContext.useStyledContext();
 
     return (
-      <Theme
-        name={
-          theme &&
-          variant !== "primary" &&
-          variant !== "secondary" &&
-          variant !== "tertiary" &&
-          variant !== "quaternary" &&
-          variant !== "gradient"
-            ? theme
-            : "base"
-        }
-        componentName="ButtonText">
-        <ButtonTextFrame
-          ref={forwardedRef}
-          variant={variant}
-          disabled={disabled}
-          circular={circular}
-          size={size ?? contextSize}
-          color={disabled ? "$foregroundOnPrimaryDisabled" : color}
-          {...props}
-          borderRadius={0}
-          $group-button-hover={{
-            color: disabled
-              ? "$foregroundOnPrimaryDisabled"
-              : "$foregroundOnPrimaryHover"
-          }}>
-          {children}
-        </ButtonTextFrame>
-      </Theme>
+      <ButtonTextFrame
+        ref={forwardedRef}
+        variant={variant}
+        disabled={disabled}
+        color={colorForVariant(variant, disabled, color)}
+        {...props}
+        borderRadius={0}
+        $group-button-hover={{
+          color: hoverColorForVariant(variant, disabled)
+        }}>
+        {children}
+      </ButtonTextFrame>
     );
   },
   {
@@ -611,45 +530,23 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
       [size, contextSize]
     );
 
-    const themeName = useThemeName();
-    const theme =
-      themeName &&
-      variant !== "primary" &&
-      variant !== "secondary" &&
-      variant !== "tertiary" &&
-      variant !== "quaternary" &&
-      variant !== "gradient"
-        ? themeName
-        : "base";
-
     return (
       <View
         ref={forwardedRef}
         zIndex="$20"
         alignItems="center"
-        // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}
-        flexShrink={1}>
-        <Theme name={theme} componentName="ButtonIcon">
-          <ThemeableIcon
-            {...props}
-            theme={theme}
-            disabled={disabled}
-            size={adjusted}
-            color={
-              (color ||
-                (disabled
-                  ? "$foregroundOnPrimaryDisabled"
-                  : "$foregroundOnPrimary")) as ThemeableIconProps["color"]
-            }
-            $group-button-hover={{
-              color: disabled
-                ? "$foregroundOnPrimaryDisabled"
-                : "$foregroundOnPrimaryHover"
-            }}>
-            {children}
-          </ThemeableIcon>
-        </Theme>
+        flexShrink={0}>
+        <ThemeableIcon
+          {...props}
+          disabled={disabled}
+          size={adjusted}
+          color={colorForVariant(variant, disabled, color)}
+          $group-button-hover={{
+            color: hoverColorForVariant(variant, disabled)
+          }}>
+          {children}
+        </ThemeableIcon>
       </View>
     );
   },
@@ -662,11 +559,12 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   name: "Button",
   context: ButtonContext,
 
-  transition: "medium",
+  transition: "200ms",
   opacity: 0,
   zIndex: "$10",
-  backgroundColor: "$backgroundPrimaryHover",
-  borderColor: "$borderPrimary",
+  backgroundColor: "$backgroundHover",
+  borderColor: "$border",
+  pointerEvents: "none",
 
   variants: {
     bordered: {
@@ -682,7 +580,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
 
         hoverStyle: {
           borderWidth: 1,
-          borderColor: "$borderPrimaryHover"
+          borderColor: "$borderHover"
         }
       }
     },
@@ -700,48 +598,14 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   }
 });
 
-const ButtonGlassBackground = styled(LinearGradient, {
-  name: "Button",
-  context: ButtonContext,
-
-  transition: "medium",
-  opacity: 0.5,
-  zIndex: "$10",
-  colors: ["$backgroundSecondary", "$backgroundPrimary"],
-
-  variants: {
-    circular: {
-      true: {
-        borderRadius: 1000_000_000
-      }
-    }
-  } as const
-});
-
-const ButtonGradientBackground = styled(LinearGradient, {
-  name: "Button",
-  context: ButtonContext,
-
-  transition: "medium",
-  zIndex: "$10",
-  colors: ["$backgroundTertiary", "$backgroundPrimary"],
-
-  variants: {
-    circular: {
-      true: {
-        borderRadius: 1000_000_000
-      }
-    }
-  } as const
-});
-
-export type ButtonProps = ButtonExtraProps & GetProps<typeof ButtonFrame>;
+export type ButtonProps = ButtonExtraProps &
+  Omit<GetProps<typeof ButtonFrame>, "frameSize" | "size">;
 
 const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (
     {
-      variant = "tertiary",
-      size = "$true",
+      variant = "surface",
+      size = "$5xl",
       disabled = false,
       circular = false,
       bordered = true,
@@ -772,6 +636,35 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       [disabled, onPress, onClick]
     );
 
+    const frame = (
+      <ButtonFrame
+        group={"button" as any}
+        ref={forwardedRef}
+        {...props}
+        onPress={handlePress}
+        frameSize={size}
+        circular={circular}
+        bordered={bordered}
+        variant={variant}
+        disabled={disabled}
+        noPadding={noPadding}
+        ringed={ringed}
+        animate={animate}
+        width={circular ? undefined : props.width}>
+        {variant === "ghost" && (
+          <ButtonGhostBackground
+            fullscreen={true}
+            circular={circular}
+            bordered={bordered}
+            $group-button-hover={{
+              opacity: disabled ? 0 : 0.25
+            }}
+          />
+        )}
+        {children}
+      </ButtonFrame>
+    );
+
     return (
       <ButtonContext.Provider
         {...props}
@@ -782,43 +675,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         noPadding={noPadding}
         ringed={ringed}
         animate={animate}>
-        <ButtonFrame
-          group={"button" as any}
-          ref={forwardedRef}
-          {...props}
-          onPress={handlePress}
-          circular={circular}
-          bordered={bordered}
-          variant={variant}
-          disabled={disabled}
-          animate={animate}>
-          {variant === "ghost" && (
-            <ButtonGhostBackground
-              fullscreen={true}
-              circular={circular}
-              bordered={bordered}
-              $group-button-hover={{
-                opacity: disabled ? 0 : 0.25
-              }}
-            />
-          )}
-          {variant === "glass" && (
-            <ButtonGlassBackground
-              theme={"base"}
-              fullscreen={true}
-              circular={circular}
-              style={{
-                filter: "blur(15px)"
-              }}
-              $group-button-hover={{ opacity: disabled ? 0.5 : 0.75 }}
-            />
-          )}
-          {variant === "gradient" && (
-            <ButtonGradientBackground fullscreen={true} circular={circular} />
-          )}
-
-          {children}
-        </ButtonFrame>
+        {frame}
       </ButtonContext.Provider>
     );
   },

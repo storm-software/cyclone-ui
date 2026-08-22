@@ -38,7 +38,7 @@ import { titleCase } from "@stryke/string-format/title-case";
 import { isNumber } from "@stryke/type-checks/is-number";
 import type { SelectOption } from "@stryke/types/form";
 import { createStyledContext, View } from "@tamagui/core";
-import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons";
+import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type {

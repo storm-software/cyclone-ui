@@ -37,11 +37,16 @@
     "@tamagui/core": "catalog:",
     "@tamagui/get-token": "catalog:",
     "@tamagui/label": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@cyclone-ui/tooltip": "workspace:*",
+    "@cyclone-ui/validation-text": "workspace:*"
   },
   "devDependencies": {
-    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",

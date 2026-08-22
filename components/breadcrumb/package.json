@@ -35,9 +35,12 @@
     "@tamagui/create-context": "catalog:",
     "@tamagui/group": "catalog:",
     "@tamagui/helpers": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",
-    "@tamagui/text": "catalog:"
+    "@tamagui/text": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/link": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

@@ -34,11 +34,13 @@
   "dependencies": {
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/shapes": "catalog:",
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
-    "@tamagui/web": "catalog:"
+    "@tamagui/web": "catalog:",
+    "@cyclone-ui/link-text": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",

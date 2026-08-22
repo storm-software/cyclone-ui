@@ -14,12 +14,12 @@
         "@tamagui/core@catalog:",
         "@tamagui/group@catalog:",
         "@tamagui/helpers@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/heading-text@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/body-text@workspace:*",
-        "@cyclone-ui/heading-text@workspace:*",
-        "@cyclone-ui/vectors@workspace:*",
         "@storybook/react-vite@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
@@ -32,14 +32,19 @@
           "target": "/home/development/repos/cyclone-ui/components/accordion/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/accordion/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/accordion/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-native/index.js",
@@ -58,7 +63,7 @@
         "@tamagui/group@catalog:",
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
         "@tamagui/web@catalog:",
@@ -82,6 +87,16 @@
           "target": "/home/development/repos/cyclone-ui/components/alert/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/alert/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js"
@@ -90,11 +105,6 @@
           "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js"
         }
       ]
     },
@@ -108,10 +118,12 @@
         "@tamagui/group@catalog:",
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/dialog@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/button@workspace:*",
@@ -127,9 +139,9 @@
           "target": "/home/development/repos/cyclone-ui/components/alert-dialog/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/alert-dialog/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/alert-dialog/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-native/index.js",
@@ -140,6 +152,11 @@
           "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -165,14 +182,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/badge/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/badge/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/badge/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/badge/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js",
@@ -180,9 +202,9 @@
           "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js"
         }
       ]
     },
@@ -209,14 +231,19 @@
           "target": "/home/development/repos/cyclone-ui/components/body-text/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/body-text/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/body-text/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-native/index.js",
@@ -235,9 +262,12 @@
         "@tamagui/create-context@catalog:",
         "@tamagui/group@catalog:",
         "@tamagui/helpers@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
-        "@tamagui/text@catalog:"
+        "@tamagui/text@catalog:",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/label-text@workspace:*",
+        "@cyclone-ui/link@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -252,14 +282,19 @@
           "target": "/home/development/repos/cyclone-ui/components/breadcrumb/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/breadcrumb/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/breadcrumb/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/breadcrumb/node_modules/react-native/index.js",
@@ -283,11 +318,13 @@
         "@tamagui/linear-gradient@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
         "react-native@catalog:"
@@ -299,14 +336,19 @@
           "target": "/home/development/repos/cyclone-ui/components/button/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/button/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/button/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react-native/index.js",
@@ -322,7 +364,8 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@stryke/string-format@catalog:",
-        "@tamagui/core@catalog:"
+        "@tamagui/core@catalog:",
+        "@cyclone-ui/body-text@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -337,6 +380,16 @@
           "target": "/home/development/repos/cyclone-ui/components/bytes-text/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/bytes-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/bytes-text/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react/index.js"
@@ -345,11 +398,6 @@
           "path": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/bytes-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -363,10 +411,17 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/container@workspace:*",
+        "@cyclone-ui/eyebrow-text@workspace:*",
+        "@cyclone-ui/heading-text@workspace:*",
+        "@cyclone-ui/state@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -379,6 +434,11 @@
           "path": "/home/development/repos/cyclone-ui/components/callout/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/callout/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/callout/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/callout/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/callout/node_modules/react/index.js",
@@ -411,11 +471,18 @@
         "@tamagui/linear-gradient@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/container@workspace:*",
+        "@cyclone-ui/eyebrow-text@workspace:*",
+        "@cyclone-ui/heading-text@workspace:*",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/link@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
         "react-native@catalog:",
@@ -423,9 +490,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/card/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/card/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/card/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/card/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/card/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/card/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/card/node_modules/react-dom/index.js",
@@ -436,11 +513,6 @@
           "path": "/home/development/repos/cyclone-ui/components/card/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/card/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/card/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/card/node_modules/react-native/index.js"
         }
       ]
     },
@@ -457,9 +529,11 @@
         "@tamagui/create-context@catalog:",
         "@tamagui/get-token@catalog:",
         "@tamagui/group@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
@@ -471,6 +545,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/checkbox/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/checkbox/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/checkbox/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/checkbox/src/index.ts"
@@ -481,14 +560,14 @@
           "target": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/checkbox/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -501,7 +580,10 @@
         "@stryke/types@catalog:",
         "@tamagui/checkbox-headless@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/checkbox@workspace:*",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -512,14 +594,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/checkbox-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/checkbox-field/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/checkbox-field/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/checkbox-field/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react/index.js",
@@ -527,9 +614,9 @@
           "target": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/checkbox-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -541,7 +628,8 @@
       "dependencies": [
         "@tamagui/core@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/helpers@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -556,9 +644,9 @@
           "target": "/home/development/repos/cyclone-ui/components/container/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/container/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/container/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/container/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/container/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/container/node_modules/react/index.js",
@@ -569,6 +657,11 @@
           "path": "/home/development/repos/cyclone-ui/components/container/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/container/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/container/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/container/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -586,11 +679,21 @@
         "@tamagui/animate-presence@catalog:",
         "@tamagui/core@catalog:",
         "@tamagui/helpers@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
         "@tanstack/react-table@^8.21.3",
-        "@tanstack/table-core@^8.21.3"
+        "@tanstack/table-core@^8.21.3",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/checkbox-field@workspace:*",
+        "@cyclone-ui/form@workspace:*",
+        "@cyclone-ui/label-text@workspace:*",
+        "@cyclone-ui/pagination@workspace:*",
+        "@cyclone-ui/popover@workspace:*",
+        "@cyclone-ui/search-input-field@workspace:*",
+        "@cyclone-ui/select-field@workspace:*",
+        "@cyclone-ui/state@workspace:*",
+        "@cyclone-ui/table@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -606,19 +709,24 @@
           "target": "/home/development/repos/cyclone-ui/components/data-table/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/data-table/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/data-table/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-native/index.js"
         }
       ]
     },
@@ -644,13 +752,17 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/label@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/popover@catalog:",
         "@tamagui/separator@catalog:",
         "@tamagui/sheet@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/input@workspace:*",
+        "@cyclone-ui/label-text@workspace:*",
+        "@cyclone-ui/popover@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
@@ -667,6 +779,16 @@
           "target": "/home/development/repos/cyclone-ui/components/date-picker/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react/index.js"
@@ -675,11 +797,6 @@
           "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js"
         }
       ]
     },
@@ -693,8 +810,12 @@
         "@maskito/kit@^3.11.1",
         "@stryke/date@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
-        "react-native-svg@^15.15.5"
+        "@tamagui/lucide-icons-2@catalog:",
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/date-picker@workspace:*",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -710,19 +831,24 @@
           "target": "/home/development/repos/cyclone-ui/components/date-picker-field/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker-field/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -743,15 +869,18 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
         "@tamagui/use-controllable-state@catalog:",
         "@tamagui/web@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/container@workspace:*",
+        "@cyclone-ui/heading-text@workspace:*"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@workspace:*",
         "@storybook/react-vite@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
@@ -764,9 +893,9 @@
           "target": "/home/development/repos/cyclone-ui/components/dialog/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/dialog/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/dialog/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-dom/index.js",
@@ -777,6 +906,11 @@
           "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js"
         }
       ]
     },
@@ -796,6 +930,11 @@
         "react-native@catalog:"
       ],
       "files": [
+        {
+          "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/eyebrow-text/dist/index.mjs"
+        },
         {
           "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/src/index.ts",
           "type": "registry:file",
@@ -829,11 +968,16 @@
         "@tamagui/core@catalog:",
         "@tamagui/get-token@catalog:",
         "@tamagui/label@catalog:",
-        "@tamagui/lucide-icons@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/lucide-icons-2@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/state@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*",
+        "@cyclone-ui/tooltip@workspace:*",
+        "@cyclone-ui/validation-text@workspace:*"
       ],
       "devDependencies": [
-        "@cyclone-ui/body-text@workspace:*",
         "@cyclone-ui/form@workspace:*",
         "@storybook/react-vite@catalog:",
         "react@catalog:",
@@ -847,6 +991,16 @@
           "target": "/home/development/repos/cyclone-ui/components/field/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/field/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-native/index.js"
@@ -855,11 +1009,6 @@
           "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -880,7 +1029,7 @@
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/image@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/separator@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
@@ -888,7 +1037,13 @@
         "expo-document-picker@catalog:",
         "expo-image-picker@^15.1.0",
         "react-dropzone@^14.4.1",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/bytes-text@workspace:*",
+        "@cyclone-ui/label-text@workspace:*",
+        "@cyclone-ui/link@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
@@ -905,14 +1060,19 @@
           "target": "/home/development/repos/cyclone-ui/components/file-picker/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/file-picker/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/file-picker/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-dom/index.js",
@@ -929,8 +1089,11 @@
       "dependencies": [
         "@stryke/types@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
-        "react-native-svg@^15.15.5"
+        "@tamagui/lucide-icons-2@catalog:",
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/file-picker@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -941,9 +1104,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/file-picker-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/file-picker-field/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/file-picker-field/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker-field/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-native/index.js",
@@ -954,11 +1127,6 @@
           "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -969,7 +1137,8 @@
       "description": "A Next Button component meant to be shared in many other components",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/helpers@catalog:"
+        "@tamagui/helpers@catalog:",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -984,19 +1153,24 @@
           "target": "/home/development/repos/cyclone-ui/components/form/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/form/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/form/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js"
         }
       ]
     },
@@ -1022,6 +1196,16 @@
           "target": "/home/development/repos/cyclone-ui/components/heading-text/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/heading-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/heading-text/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js"
@@ -1030,11 +1214,6 @@
           "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1044,19 +1223,23 @@
       "title": "@cyclone-ui/input",
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/helpers@workspace:*",
         "@tamagui/constants@catalog:",
         "@tamagui/core@catalog:",
         "@tamagui/create-context@catalog:",
         "@tamagui/focusable@catalog:",
         "@tamagui/group@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/separator@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@tamagui/web@catalog:"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
         "@cyclone-ui/form@workspace:*",
         "@storybook/react-vite@catalog:",
+        "@stryke/types@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
         "react-native@catalog:"
@@ -1068,9 +1251,9 @@
           "target": "/home/development/repos/cyclone-ui/components/input/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/input/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/input/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react-native/index.js",
@@ -1081,6 +1264,11 @@
           "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js"
         }
       ]
     },
@@ -1091,7 +1279,10 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/create-context@catalog:"
+        "@tamagui/create-context@catalog:",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/input@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -1107,19 +1298,24 @@
           "target": "/home/development/repos/cyclone-ui/components/input-field/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/input-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/input-field/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1130,7 +1326,8 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/text@catalog:"
+        "@tamagui/text@catalog:",
+        "@cyclone-ui/helpers@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1139,6 +1336,11 @@
         "react-native@catalog:"
       ],
       "files": [
+        {
+          "path": "/home/development/repos/cyclone-ui/components/label-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/label-text/dist/index.mjs"
+        },
         {
           "path": "/home/development/repos/cyclone-ui/components/label-text/src/index.ts",
           "type": "registry:file",
@@ -1169,11 +1371,13 @@
       "dependencies": [
         "@tamagui/constants@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/shapes@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/link-text@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/body-text@workspace:*",
@@ -1187,6 +1391,11 @@
           "path": "/home/development/repos/cyclone-ui/components/link/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/link/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/link/node_modules/react-native/index.js",
@@ -1212,7 +1421,8 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/text@catalog:"
+        "@tamagui/text@catalog:",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/body-text@workspace:*",
@@ -1228,19 +1438,24 @@
           "target": "/home/development/repos/cyclone-ui/components/link-text/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/link-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link-text/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1251,14 +1466,15 @@
       "description": "A repository containing the core front-end components used by Storm Software across many platforms",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/alert@workspace:*",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
-        "@cyclone-ui/button@workspace:*",
-        "@cyclone-ui/state@workspace:*",
         "@storybook/react-vite@catalog:",
         "react@catalog:",
         "react-dom@catalog:",
@@ -1271,14 +1487,19 @@
           "target": "/home/development/repos/cyclone-ui/components/message/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/message/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/message/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react/index.js",
@@ -1295,7 +1516,9 @@
       "dependencies": [
         "@stryke/hooks@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1310,6 +1533,16 @@
           "target": "/home/development/repos/cyclone-ui/components/next-button/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/next-button/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/next-button/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-dom/index.js"
@@ -1318,11 +1551,6 @@
           "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js"
         }
       ]
     },
@@ -1333,7 +1561,8 @@
       "description": "A visually hidden component meant to be shared in many other components",
       "dependencies": [
         "@number-flow/react@^0.4.4",
-        "@tamagui/core@catalog:"
+        "@tamagui/core@catalog:",
+        "@cyclone-ui/label-text@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1348,14 +1577,19 @@
           "target": "/home/development/repos/cyclone-ui/components/number-text/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/number-text/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/number-text/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-dom/index.js",
@@ -1371,11 +1605,14 @@
       "description": "A component to support page navigation, next and previous links",
       "dependencies": [
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
         "@tamagui/web@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/next-button@workspace:*",
+        "@cyclone-ui/previous-button@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1385,14 +1622,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/pagination/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/pagination/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/pagination/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pagination/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react/index.js",
@@ -1400,9 +1642,9 @@
           "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1416,7 +1658,10 @@
         "@stryke/types@catalog:",
         "@tamagui/core@catalog:",
         "pdfjs-dist@^4.10.38",
-        "react-pdf@^9.2.1"
+        "react-pdf@^9.2.1",
+        "@cyclone-ui/spinner@workspace:*",
+        "@cyclone-ui/vectors@workspace:*",
+        "@cyclone-ui/visually-hidden@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1429,6 +1674,11 @@
           "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react-dom/index.js",
@@ -1462,7 +1712,9 @@
         "@tamagui/popper@catalog:",
         "@tamagui/sheet@catalog:",
         "@tamagui/stacks@catalog:",
-        "@tamagui/text@catalog:"
+        "@tamagui/text@catalog:",
+        "@tamagui/floating@catalog:",
+        "@cyclone-ui/scroll-view@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/body-text@workspace:*",
@@ -1480,19 +1732,24 @@
           "target": "/home/development/repos/cyclone-ui/components/popover/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/popover/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/popover/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1504,7 +1761,9 @@
       "dependencies": [
         "@stryke/hooks@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -1519,14 +1778,19 @@
           "target": "/home/development/repos/cyclone-ui/components/previous-button/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/previous-button/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/previous-button/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-dom/index.js",
@@ -1558,6 +1822,11 @@
           "target": "/home/development/repos/cyclone-ui/components/progress/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/progress/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/progress/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-native/index.js"
@@ -1587,7 +1856,7 @@
         "@tamagui/get-font-sized@catalog:",
         "@tamagui/get-token@catalog:",
         "@tamagui/label@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/radio-group@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/web@catalog:",
@@ -1608,6 +1877,16 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/radio-group/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/radio-group/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-dom/index.js"
@@ -1616,11 +1895,6 @@
           "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js"
         }
       ]
     },
@@ -1635,7 +1909,11 @@
         "@tamagui/core@catalog:",
         "@tamagui/label@catalog:",
         "@tamagui/stacks@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/radio-group@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -1652,14 +1930,14 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group-field/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/jotai/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/jotai/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-dom/index.js",
@@ -1670,6 +1948,11 @@
           "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/jotai/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/jotai/index.js"
         }
       ]
     },
@@ -1696,9 +1979,9 @@
           "target": "/home/development/repos/cyclone-ui/components/scroll-view/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/scroll-view/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/scroll-view/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react-dom/index.js",
@@ -1709,6 +1992,11 @@
           "path": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/scroll-view/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1720,7 +2008,11 @@
       "dependencies": [
         "@tamagui/core@catalog:",
         "@tamagui/create-context@catalog:",
-        "@tamagui/lucide-icons@catalog:"
+        "@tamagui/lucide-icons-2@catalog:",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/input@workspace:*",
+        "@cyclone-ui/input-field@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -1734,6 +2026,11 @@
           "path": "/home/development/repos/cyclone-ui/components/search-input-field/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/search-input-field/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/search-input-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/search-input-field/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-dom/index.js",
@@ -1769,13 +2066,16 @@
         "@tamagui/helpers-icon@catalog:",
         "@tamagui/linear-gradient@catalog:",
         "@tamagui/list-item@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/select@catalog:",
         "@tamagui/separator@catalog:",
         "@tamagui/sheet@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
-        "@tamagui/web@catalog:"
+        "@tamagui/web@catalog:",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/input@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
@@ -1792,14 +2092,19 @@
           "target": "/home/development/repos/cyclone-ui/components/select/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/select/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/select/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-dom/index.js",
@@ -1818,7 +2123,10 @@
         "@tamagui/core@catalog:",
         "@tamagui/create-context@catalog:",
         "@tamagui/web@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/select@workspace:*",
+        "@cyclone-ui/state@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -1835,14 +2143,9 @@
           "target": "/home/development/repos/cyclone-ui/components/select-field/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/select-field/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/select-field/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js",
@@ -1850,9 +2153,19 @@
           "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/jotai/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/jotai/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js"
         }
       ]
     },
@@ -1878,6 +2191,16 @@
           "target": "/home/development/repos/cyclone-ui/components/spinner/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/spinner/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/spinner/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-dom/index.js"
@@ -1886,11 +2209,6 @@
           "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js"
         }
       ]
     },
@@ -1908,7 +2226,7 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/shapes@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/tabs@catalog:",
@@ -1930,14 +2248,19 @@
           "target": "/home/development/repos/cyclone-ui/components/steps/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/steps/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/steps/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/steps/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/steps/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/steps/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/steps/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/steps/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/steps/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/steps/node_modules/react-native/index.js",
@@ -1957,10 +2280,12 @@
         "@tamagui/create-context@catalog:",
         "@tamagui/get-token@catalog:",
         "@tamagui/group@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/switch@catalog:",
-        "@tamagui/switch-headless@catalog:"
+        "@tamagui/switch-headless@catalog:",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/field@workspace:*",
@@ -1975,6 +2300,11 @@
           "path": "/home/development/repos/cyclone-ui/components/switch/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/switch/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/switch/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/switch/node_modules/react/index.js",
@@ -2002,7 +2332,10 @@
         "@stryke/types@catalog:",
         "@tamagui/core@catalog:",
         "@tamagui/stacks@catalog:",
-        "@tamagui/switch-headless@catalog:"
+        "@tamagui/switch-headless@catalog:",
+        "@cyclone-ui/field@workspace:*",
+        "@cyclone-ui/state@workspace:*",
+        "@cyclone-ui/switch@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/form@workspace:*",
@@ -2016,6 +2349,11 @@
           "path": "/home/development/repos/cyclone-ui/components/switch-field/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch-field/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/switch-field/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/switch-field/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-dom/index.js",
@@ -2044,7 +2382,7 @@
         "@tamagui/core@catalog:",
         "@tamagui/helpers@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/text@catalog:",
         "@tamagui/use-controllable-state@catalog:",
@@ -2062,9 +2400,19 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/table/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/table/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/table/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/table/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js",
@@ -2075,11 +2423,6 @@
           "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js"
         }
       ]
     },
@@ -2097,13 +2440,15 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
         "@tamagui/linear-gradient@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/stacks@catalog:",
         "@tamagui/tabs@catalog:",
         "@tamagui/text@catalog:",
         "@tamagui/use-controllable-state@catalog:",
         "@tamagui/web@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/heading-text@workspace:*",
+        "@cyclone-ui/helpers@workspace:*"
       ],
       "devDependencies": [
         "@cyclone-ui/body-text@workspace:*",
@@ -2119,6 +2464,16 @@
           "target": "/home/development/repos/cyclone-ui/components/tabs/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/tabs/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/tabs/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react/index.js"
@@ -2127,11 +2482,6 @@
           "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2143,7 +2493,8 @@
       "dependencies": [
         "@tamagui/core@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
-        "@tamagui/linear-gradient@catalog:"
+        "@tamagui/linear-gradient@catalog:",
+        "@cyclone-ui/helpers@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -2158,9 +2509,9 @@
           "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-native/index.js",
@@ -2171,6 +2522,11 @@
           "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2186,9 +2542,11 @@
         "@tamagui/helpers@catalog:",
         "@tamagui/helpers-icon@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "@tamagui/web@catalog:",
-        "react-native-svg@^15.15.5"
+        "react-native-svg@^15.15.5",
+        "@cyclone-ui/helpers@workspace:*",
+        "@cyclone-ui/vectors@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -2203,9 +2561,9 @@
           "target": "/home/development/repos/cyclone-ui/components/themeable-icon/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/themeable-icon/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/themeable-icon/dist/index.mjs"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react-native/index.js",
@@ -2216,6 +2574,11 @@
           "path": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/themeable-icon/node_modules/react/index.js"
         }
       ]
     },
@@ -2241,6 +2604,16 @@
           "target": "/home/development/repos/cyclone-ui/components/title-text/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/title-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/title-text/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js"
@@ -2249,11 +2622,6 @@
           "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js"
         }
       ]
     },
@@ -2285,9 +2653,14 @@
           "target": "/home/development/repos/cyclone-ui/components/tooltip/src/index.ts"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/tooltip/dist/index.mjs",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/tooltip/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-dom/index.js",
@@ -2295,9 +2668,9 @@
           "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js"
         }
       ]
     },
@@ -2309,8 +2682,10 @@
       "dependencies": [
         "@stryke/types@catalog:",
         "@tamagui/core@catalog:",
-        "@tamagui/lucide-icons@catalog:",
-        "@tamagui/stacks@catalog:"
+        "@tamagui/lucide-icons-2@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*"
       ],
       "devDependencies": [
         "@storybook/react-vite@catalog:",
@@ -2325,19 +2700,24 @@
           "target": "/home/development/repos/cyclone-ui/components/validation-text/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/validation-text/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/validation-text/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/validation-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2351,7 +2731,7 @@
         "@tamagui/core@catalog:",
         "@tamagui/helpers-icon@catalog:",
         "@tamagui/helpers-tamagui@catalog:",
-        "@tamagui/lucide-icons@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
         "motion@^11.18.2"
       ],
       "devDependencies": [
@@ -2363,6 +2743,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/vectors/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/vectors/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/vectors/src/index.ts",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/vectors/src/index.ts"
@@ -2373,14 +2758,14 @@
           "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2405,19 +2790,24 @@
           "target": "/home/development/repos/cyclone-ui/components/visually-hidden/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.mjs"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react/index.js"
         }
       ]
     }

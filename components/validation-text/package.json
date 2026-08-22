@@ -34,8 +34,10 @@
   "dependencies": {
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/lucide-icons": "catalog:",
-    "@tamagui/stacks": "catalog:"
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

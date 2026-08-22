@@ -22,7 +22,7 @@ import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { Minus } from "@tamagui/lucide-icons";
+import { Minus } from "@tamagui/lucide-icons-2";
 
 const CheckboxGroupFrame = styled(XGroup, {
   name: "Checkbox",

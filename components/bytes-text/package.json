@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@stryke/string-format": "catalog:",
-    "@tamagui/core": "catalog:"
+    "@tamagui/core": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

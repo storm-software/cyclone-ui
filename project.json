@@ -1,6 +1,18 @@
 {
   "name": "monorepo",
   "$schema": "node_modules/nx/schemas/project-schema.json",
+  "includedScripts": [
+    "lint-knip",
+    "lint-sherif",
+    "lint-ls",
+    "lint",
+    "format-readme",
+    "format-prettier",
+    "format-toml",
+    "format-sherif",
+    "commit",
+    "release"
+  ],
   "projectType": "library",
   "targets": {
     "local-registry": {

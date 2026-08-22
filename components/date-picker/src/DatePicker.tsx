@@ -34,7 +34,7 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons";
+import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

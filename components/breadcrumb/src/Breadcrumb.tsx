@@ -23,7 +23,7 @@ import type { FontSizeTokens, ThemeableProps } from "@tamagui/core";
 import { createStyledContext, styled, Theme, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
-import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons";
+import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons-2";
 import type { TextContextStyles } from "@tamagui/text";
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
 export const BreadcrumbVariant = {

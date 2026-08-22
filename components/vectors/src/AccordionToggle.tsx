@@ -74,7 +74,7 @@ const Icon = ({
   const compressOpacityPosition = useMotionValue(0);
   const compressOpacityPlayback = animate(compressOpacityPosition, 1, {
     type: "spring",
-    duration: 0.25,
+    duration: 0.15,
     ease: "easeOut",
     bounce: 0
   });
@@ -100,7 +100,7 @@ const Icon = ({
   const expandOpacityPosition = useMotionValue(1);
   const expandOpacityPlayback = animate(expandOpacityPosition, 0, {
     type: "spring",
-    duration: 0.25,
+    duration: 0.15,
     ease: "easeOut",
     bounce: 0
   });

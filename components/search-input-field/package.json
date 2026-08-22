@@ -34,7 +34,11 @@
   "dependencies": {
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
-    "@tamagui/lucide-icons": "catalog:"
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/input-field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/form": "workspace:*",

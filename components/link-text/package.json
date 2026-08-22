@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/text": "catalog:"
+    "@tamagui/text": "catalog:",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",

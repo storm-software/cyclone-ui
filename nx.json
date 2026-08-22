@@ -1,5 +1,4 @@
 {
-  "$schema": "https://cdn.jsdelivr.net/npm/nx/schemas/nx-schema.json",
   "extends": "@storm-software/workspace-tools/config/recommended.json",
   "release": {
     "groups": {
@@ -14,7 +13,7 @@
       "plugin": "@nx/js/typescript",
       "options": {
         "compiler": "tsgo",
-        "typecheck": true,
+        "typecheck": false,
         "build": false,
         "verboseOutput": false
       }
@@ -25,7 +24,9 @@
     "@powerlines/nx/plugin",
     {
       "plugin": "@razorwind/nx/plugin",
-      "options": { "targetName": "generate-tokens" }
+      "options": {
+        "targetName": "generate-tokens"
+      }
     },
     "./dist/nx-plugins/components.js",
     "./dist/nx-plugins/storybook.js"

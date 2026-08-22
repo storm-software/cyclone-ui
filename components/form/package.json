@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
-    "@tamagui/helpers": "catalog:"
+    "@tamagui/helpers": "catalog:",
+    "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",

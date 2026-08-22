@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "types": ["node"],
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc",
     "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*.ts", "shell-shock.config.ts", "shell-shock.d.ts"],
