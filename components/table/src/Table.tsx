@@ -51,7 +51,7 @@ const TableContext = createStyledContext<TableContextProps>({
   cellHeight: "$10xl",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
-  borderColor: "$borderPrimary"
+  borderColor: "$border"
 });
 
 export const TABLE_NAME = "Table";
@@ -65,7 +65,7 @@ const TableRow = styled(ThemeableStack, {
 
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -77,11 +77,11 @@ const TableRow = styled(ThemeableStack, {
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   variants: {
@@ -110,7 +110,7 @@ const TableRowImpl = TableRow.styleable(
           fullscreen={true}
           transition="medium"
           opacity={0}
-          backgroundColor="$backgroundPrimaryHover"
+          backgroundColor="$backgroundHover"
           $group-row-hover={{
             opacity: header ? 0 : 1
           }}
@@ -141,11 +141,11 @@ const TableCell = styled(ThemeableStack, {
   paddingHorizontal: "$xl",
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   variants: {
@@ -240,7 +240,7 @@ const TableHeaderImpl = TableHeader.styleable(
           fullscreen={true}
           transition="quick"
           opacity={0.05}
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           style={{
             filter: "blur(1px)"
           }}
@@ -277,7 +277,7 @@ const TableFooterImpl = TableFooter.styleable(
           fullscreen={true}
           transition="quick"
           opacity={0.05}
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           style={{
             filter: "blur(1px)"
           }}

@@ -30,7 +30,7 @@ export const Progress = TamaguiProgress.styleable(
         {...props}>
         <TamaguiProgress.Indicator
           transition="bouncy"
-          backgroundColor="$foregroundOnPrimary"
+          backgroundColor="$foregroundInverse"
         />
       </TamaguiProgress>
     );

@@ -45,7 +45,7 @@ const RadioGroupItemValue = styled(Label, {
 
   transition: "medium",
   cursor: "pointer",
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   fontFamily: "$label",
   fontSize: "$lg",
   fontWeight: "$normal",
@@ -54,7 +54,7 @@ const RadioGroupItemValue = styled(Label, {
   verticalAlign: "middle",
 
   hoverStyle: {
-    color: "$foregroundOnPrimaryHover"
+    color: "$foregroundInverseHover"
   },
 
   variants: {
@@ -66,21 +66,21 @@ const RadioGroupItemValue = styled(Label, {
 
     disabled: {
       true: {
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundInverseDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         }
       }
     }
@@ -98,31 +98,31 @@ const RadioGroupItemDetails = styled(BodyText, {
 
   transition: "medium",
   cursor: "pointer",
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   fontSize: "$md",
 
   hoverStyle: {
-    color: "$foregroundOnPrimaryHover"
+    color: "$foregroundInverseHover"
   },
 
   variants: {
     disabled: {
       true: {
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundInverseDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         }
       }
     }

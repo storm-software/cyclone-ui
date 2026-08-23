@@ -25,7 +25,7 @@ const BaseTitleText = styled(SizableText, {
   render: "span",
   role: "heading",
 
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   fontFamily: "$title",
   size: "$true"
 });

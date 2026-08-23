@@ -36,7 +36,7 @@ const BadgeFrame = styled(View, {
   flexDirection: "row",
   context: BadgeContext,
   width: "fit-content",
-  backgroundColor: "$backgroundPrimary",
+  backgroundColor: "$background",
 
   variants: {
     circular: {
@@ -57,7 +57,7 @@ const BadgeFrame = styled(View, {
     outlined: {
       true: {
         backgroundColor: "transparent",
-        borderColor: "$borderPrimary",
+        borderColor: "$border",
         borderWidth: 1
       }
     },
@@ -81,12 +81,12 @@ const BadgeFrame = styled(View, {
         role: "button",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover",
-          borderColor: "$borderPrimaryHover"
+          backgroundColor: "$backgroundHover",
+          borderColor: "$borderHover"
         },
 
         focusVisibleStyle: {
-          outlineColor: "$borderAccent",
+          outlineColor: "$borderFocused",
           outlineStyle: "solid",
           outlineWidth: 2
         }
@@ -102,10 +102,10 @@ const BadgeFrame = styled(View, {
 const BadgeText = styled(SizableText, {
   name: BADGE_NAME,
   context: BadgeContext,
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
 
   hoverStyle: {
-    color: "$foregroundOnPrimaryHover"
+    color: "$foregroundInverseHover"
   },
 
   variants: {
@@ -119,10 +119,10 @@ const BadgeText = styled(SizableText, {
 
     outlined: {
       true: {
-        color: "$foregroundPrimary",
+        color: "$foreground",
 
         hoverStyle: {
-          color: "$foregroundPrimaryHover"
+          color: "$foregroundHover"
         }
       }
     },
@@ -199,13 +199,13 @@ const ButtonComp = styled(View, {
     unstyled: {
       false: {
         borderRadius: 1000_000_000,
-        backgroundColor: "$backgroundPrimary",
+        backgroundColor: "$background",
         justifyContent: "center",
         alignItems: "center",
 
         hoverStyle: {
-          backgroundColor: "$backgroundPrimaryHover",
-          borderColor: "$borderPrimaryHover"
+          backgroundColor: "$backgroundHover",
+          borderColor: "$borderHover"
         },
         pressStyle: {
           backgroundColor: "$backgroundFloating"

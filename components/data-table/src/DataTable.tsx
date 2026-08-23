@@ -256,8 +256,8 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
     <SizableText
       transition="medium"
       fontFamily="$body"
-      color="$foregroundOnPrimary"
-      $group-row-hover={{ color: "$foregroundOnPrimaryHover" }}>
+      color="$foregroundInverse"
+      $group-row-hover={{ color: "$foregroundInverseHover" }}>
       {value}
     </SizableText>
   );
@@ -453,25 +453,25 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       justifyContent="space-between"
       alignItems="center"
       paddingRight="$3xl"
-      borderRightColor="$borderPrimary"
+      borderRightColor="$border"
       borderRightWidth={1}>
       <XStack gap="$xl" onPress={handleSorting} flex={1} cursor="pointer">
         <SizableText
           transition="medium"
           fontFamily="$label"
-          color="$foregroundPrimary"
+          color="$foreground"
           size="$lg"
-          $group-header-hover={{ color: "$foregroundPrimaryHover" }}>
+          $group-header-hover={{ color: "$foregroundHover" }}>
           {titleCase(id)}
         </SizableText>
         {isSorted && !desc && (
           <XStack gap="$xxs" alignItems="center">
-            <ArrowDownAZ size="$md" color="$foregroundPrimary" />
+            <ArrowDownAZ size="$md" color="$foreground" />
             <SizableText
               transition="medium"
               fontFamily="$label"
               fontWeight="$semibold"
-              color="$foregroundPrimary"
+              color="$foreground"
               size="$xs">
               {sortIndex + 1}
             </SizableText>
@@ -479,12 +479,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="$xxs" alignItems="center">
-            <ArrowUpZA size="$md" color="$foregroundPrimary" />
+            <ArrowUpZA size="$md" color="$foreground" />
             <SizableText
               transition="medium"
               fontFamily="$label"
               fontWeight="$semibold"
-              color="$foregroundPrimary"
+              color="$foreground"
               size="$xs">
               {sortIndex + 1}
             </SizableText>
@@ -504,7 +504,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 theme={"base"}
                 circular={true}
                 bordered={false}
-                color="$foregroundPrimary"
+                color="$foreground"
                 padding="$xl"
                 width="$3xl">
                 <Button.Icon>

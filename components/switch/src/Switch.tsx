@@ -63,38 +63,38 @@ const SwitchFrame = styled(View, {
   borderRadius: 100_000,
   backgroundColor: "transparent",
   borderWidth: 2,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   outlineStyle: "none",
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   focusStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundAccentSubtle",
+        backgroundColor: "$backgroundSubtle",
 
         hoverStyle: {
-          backgroundColor: "$backgroundAccentSubtleHover",
-          borderColor: "$borderAccentHover"
+          backgroundColor: "$backgroundSubtleHover",
+          borderColor: "$borderHover"
         }
       }
     },
@@ -116,18 +116,18 @@ const SwitchFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderPrimaryDisabled",
+        borderColor: "$borderDisabled",
 
         hoverStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         }
       }
     }
@@ -142,10 +142,10 @@ const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
   transition: "medium",
-  backgroundColor: "$foregroundOnPrimary",
+  backgroundColor: "$foregroundInverse",
   borderRadius: 100_000,
   borderWidth: 1,
-  borderColor: "$backgroundPrimary",
+  borderColor: "$background",
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
@@ -253,13 +253,13 @@ const SwitchIcon = SwitchIconFrame.styleable<{
           color={
             (color ||
               (disabled
-                ? "$foregroundOnPrimaryDisabled"
-                : "$foregroundOnPrimary")) as ThemeableIconProps["color"]
+                ? "$foregroundInverseDisabled"
+                : "$foregroundInverse")) as ThemeableIconProps["color"]
           }
           $group-switch-hover={{
             color: disabled
-              ? "$foregroundOnPrimaryDisabled"
-              : "$foregroundOnPrimaryHover"
+              ? "$foregroundInverseDisabled"
+              : "$foregroundInverseHover"
           }}>
           {children}
         </ThemeableIcon>

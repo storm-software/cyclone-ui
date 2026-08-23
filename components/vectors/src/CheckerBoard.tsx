@@ -32,7 +32,7 @@ import {
   Svg
 } from "react-native-svg";
 const Icon = (props: IconProps) => {
-  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
+  const color = useCurrentColor((props.color || "$foregroundInverse") as any);
 
   return (
     <Svg

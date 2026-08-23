@@ -55,7 +55,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           zIndex="$10"
         />
 
@@ -64,7 +64,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
             theme={"base"}
             themeShallow={true}
             padding={padding}
-            backgroundColor="$surface1"
+            backgroundColor="$backgroundPage"
             borderRadius={1000_000_000}>
             <ThemeableIcon
               ref={forwardedRef}
@@ -97,7 +97,7 @@ const AlertDialogContainer = Dialog.Container.styleable(
           {...props}
           theme={"base"}
           themeShallow={true}
-          backgroundColor="$surface1"
+          backgroundColor="$backgroundPage"
           bordered={false}
           noPadding={true}>
           <Theme name={theme}>{children}</Theme>
@@ -151,7 +151,7 @@ const AlertDialogBody = Dialog.Body.styleable(
       <Theme name={"base"}>
         <Dialog.Body
           ref={forwardedRef}
-          color="$foregroundSecondary"
+          color="$foregroundBody"
           size="$9xl"
           {...props}>
           {children}

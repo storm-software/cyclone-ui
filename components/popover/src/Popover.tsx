@@ -84,9 +84,9 @@ const PopoverArrow = styled(TamaguiPopover.Arrow, {
   name: "Popover",
   context: PopoverContext,
 
-  backgroundColor: "$base3",
+  backgroundColor: "$backgroundFloating",
   borderWidth: 2,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   top: -11
 });
 
@@ -115,11 +115,11 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   ],
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   variants: {

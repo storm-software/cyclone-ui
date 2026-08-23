@@ -31,7 +31,7 @@
       "secondary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.2}",
+        "$value": "{color.base.3}",
         "$description": "The secondary foreground color for the dark theme - muted-soft text",
         "theme": "secondary"
       },
@@ -45,7 +45,7 @@
       "danger": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.red.6}",
+        "$value": "{color.red.3}",
         "$description": "The danger foreground color for the dark theme",
         "theme": "danger"
       },
@@ -59,14 +59,14 @@
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.5}",
+        "$value": "{color.yellow.6}",
         "$description": "The warning foreground color for the dark theme",
         "theme": "warning"
       },
       "success": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.green.9}",
+        "$value": "{color.green.4}",
         "$description": "The success foreground color for the dark theme",
         "theme": "success"
       },
@@ -87,21 +87,21 @@
       "discovery": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.purple.8}",
+        "$value": "{color.purple.5}",
         "$description": "The discovery foreground color for the dark theme",
         "theme": "discovery"
       },
       "primary-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.8}",
+        "$value": "{color.black}",
         "$description": "Ink text on cream primary surfaces",
         "theme": "primary"
       },
       "secondary-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
+        "$value": "{color.base.1}",
         "$description": "The secondary foreground color for the dark theme",
         "theme": "secondary"
       },
@@ -191,7 +191,7 @@
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.6}",
+        "$value": "{color.base.1}",
         "$description": "The primary background color for the dark theme",
         "theme": "primary"
       },
@@ -199,63 +199,133 @@
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.8}",
-        "$description": "The secondary background color for the dark theme",
+        "$description": "The secondary background color for the dark theme - muted-soft text",
         "theme": "secondary"
       },
       "accent": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.2}",
+        "$value": "{color.brand.1}",
         "$description": "The accent background color for the dark theme",
         "theme": "accent"
       },
       "danger": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.red.1}",
+        "$value": "{color.red.4}",
         "$description": "The danger background color for the dark theme",
         "theme": "danger"
       },
       "negative": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.apple.3}",
+        "$value": "{color.apple.8}",
         "$description": "The negative background color for the dark theme",
         "theme": "negative"
       },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.1}",
+        "$value": "{color.yellow.6}",
         "$description": "The warning background color for the dark theme",
         "theme": "warning"
       },
       "success": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.green.4}",
+        "$value": "{color.green.6}",
         "$description": "The success background color for the dark theme",
         "theme": "success"
       },
       "positive": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.avocado.3}",
+        "$value": "{color.avocado.5}",
         "$description": "The positive background color for the dark theme",
         "theme": "positive"
       },
       "info": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.sky.3}",
+        "$value": "{color.sky.6}",
         "$description": "The info background color for the dark theme",
         "theme": "info"
       },
       "discovery": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.purple.8}",
+        "$value": "{color.purple.6}",
         "$description": "The discovery background color for the dark theme",
+        "theme": "discovery"
+      },
+      "primary-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.7}",
+        "$description": "The primary subtle background color for the dark theme",
+        "theme": "primary"
+      },
+      "secondary-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.9}",
+        "$description": "The secondary subtle background color for the dark theme",
+        "theme": "secondary"
+      },
+      "accent-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.brand.2}",
+        "$description": "The accent subtle background color for the dark theme",
+        "theme": "accent"
+      },
+      "danger-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.red.9}",
+        "$description": "The danger subtle background color for the dark theme",
+        "theme": "danger"
+      },
+      "negative-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.8}",
+        "$description": "The negative subtle background color for the dark theme",
+        "theme": "negative"
+      },
+      "warning-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.yellow.9}",
+        "$description": "The warning subtle background color for the dark theme",
+        "theme": "warning"
+      },
+      "success-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.green.9}",
+        "$description": "The success subtle background color for the dark theme",
+        "theme": "success"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.9}",
+        "$description": "The positive subtle background color for the dark theme",
+        "theme": "positive"
+      },
+      "info-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.sky.9}",
+        "$description": "The info subtle background color for the dark theme",
+        "theme": "info"
+      },
+      "discovery-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.purple.9}",
+        "$description": "The discovery subtle background color for the dark theme",
         "theme": "discovery"
       }
     },
@@ -285,42 +355,42 @@
       "danger": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.red.3}",
+        "$value": "{color.red.4}",
         "$description": "The danger border color for the dark theme",
         "theme": "danger"
       },
       "negative": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.apple.6}",
+        "$value": "{color.apple.5}",
         "$description": "The negative border color for the dark theme",
         "theme": "negative"
       },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.4}",
+        "$value": "{color.yellow.8}",
         "$description": "The warning border color for the dark theme",
         "theme": "warning"
       },
       "success": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.green.3}",
+        "$value": "{color.green.5}",
         "$description": "The success border color for the dark theme",
         "theme": "success"
       },
       "positive": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.avocado.1}",
+        "$value": "{color.avocado.3}",
         "$description": "The positive border color for the dark theme",
         "theme": "positive"
       },
       "info": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.sky.1}",
+        "$value": "{color.sky.4}",
         "$description": "The info border color for the dark theme",
         "theme": "info"
       },
@@ -328,6 +398,76 @@
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.purple.4}",
+        "$description": "The discovery border color for the dark theme",
+        "theme": "discovery"
+      },
+      "primary-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.6}",
+        "$description": "Hairline-strong border against ink cards",
+        "theme": "primary"
+      },
+      "secondary-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.8}",
+        "$description": "Hairline border against ink surfaces",
+        "theme": "secondary"
+      },
+      "accent-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.brand.1}",
+        "$description": "The accent border color for the dark theme",
+        "theme": "accent"
+      },
+      "danger-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.red.8}",
+        "$description": "The danger border color for the dark theme",
+        "theme": "danger"
+      },
+      "negative-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.8}",
+        "$description": "The negative border color for the dark theme",
+        "theme": "negative"
+      },
+      "warning-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.yellow.8}",
+        "$description": "The warning border color for the dark theme",
+        "theme": "warning"
+      },
+      "success-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.green.8}",
+        "$description": "The success border color for the dark theme",
+        "theme": "success"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.avocado.1}",
+        "$description": "The positive border color for the dark theme",
+        "theme": "positive"
+      },
+      "info-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.sky.8}",
+        "$description": "The info border color for the dark theme",
+        "theme": "info"
+      },
+      "discovery-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.purple.8}",
         "$description": "The discovery border color for the dark theme",
         "theme": "discovery"
       }

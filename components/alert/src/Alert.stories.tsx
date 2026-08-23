@@ -71,13 +71,6 @@ export const Secondary: Story = {
   }
 };
 
-export const Tertiary: Story = {
-  args: {
-    children: bodyText,
-    type: "tertiary"
-  }
-};
-
 export const Danger: Story = {
   args: {
     children: bodyText,

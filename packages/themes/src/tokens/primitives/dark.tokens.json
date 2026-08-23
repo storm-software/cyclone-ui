@@ -31,105 +31,105 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#0D0C07",
-        "$description": "The lowest level surface of the palette - warm near-ink page floor"
+        "$value": "#181818",
+        "$description": "The lowest level surface of the palette - neutral near-black page canvas"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#212121",
-        "$description": "The second level surface of the palette - ink elevated backgrounds (inputs, cards, etc.)"
+        "$value": "#1F1F1F",
+        "$description": "The second level surface of the palette - subtly lifted graphite for inputs and cards"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#2a2c33",
-        "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, dropdowns, etc.)"
+        "$value": "#262626",
+        "$description": "The third level surface of the palette - neutral charcoal for floating components"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#33363e",
-        "$description": "The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.)"
+        "$value": "#303030",
+        "$description": "The fourth level surface of the palette - emphasized charcoal for the highest elevation"
       },
-      "$description": "The surface color palette - warm ink canvases used for background colors"
+      "$description": "The surface color palette - DeepSeek-inspired neutral graphite backgrounds"
     },
     "base": {
       "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#FFFFFF",
-        "$description": "A cool near-white ink - primary text on dark"
+        "$value": "#F5F5F5",
+        "$description": "A soft neutral white for primary text on dark surfaces"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#E8E9E9",
-        "$description": "A muted-soft cool gray for body text on dark"
+        "$value": "#DCDCDC",
+        "$description": "A light neutral gray for prominent secondary text"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#D1D2D3",
-        "$description": "A muted cool gray color"
+        "$value": "#BEBEBE",
+        "$description": "A soft neutral gray for body text"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#BABCBD",
-        "$description": "A soft cool gray color"
+        "$value": "#9F9F9F",
+        "$description": "A muted neutral gray for captions"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#A3A5A7",
-        "$description": "A mid cool ink-adjacent gray color"
+        "$value": "#808080",
+        "$description": "A middle neutral gray"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#8B8F92",
-        "$description": "A medium cool ink gray color"
+        "$value": "#616161",
+        "$description": "A medium-dark neutral gray"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#74787C",
-        "$description": "A dark cool ink gray color"
+        "$value": "#484848",
+        "$description": "A dark neutral gray for strong borders"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#5D6166",
-        "$description": "A deep cool charcoal color"
+        "$value": "#3A3A3A",
+        "$description": "A deep neutral gray for secondary surfaces"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#464A50",
-        "$description": "An almost-black cool ink color"
+        "$value": "#2E2E2E",
+        "$description": "A subtle near-black gray for low-contrast borders"
       },
       "10": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#2F333A",
-        "$description": "A deepest cool ink-adjacent gray color"
+        "$value": "#181818",
+        "$description": "The deepest neutral gray matching the dark page canvas"
       },
-      "$description": "The base color palette - cool ink neutrals matching surface, stepped lighter for text and borders"
+      "$description": "The base color palette - DeepSeek-inspired neutral grays for text, borders, and themed surfaces"
     },
     "red": {
       "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.6759 0.1967 12.26)",
+        "$value": "oklch(0.686 0.1975 12.07)",
         "$description": "A pale raspberry error color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.5959 0.1967 12.26)",
+        "$value": "oklch(0.6759 0.1967 12.26)",
         "$description": "A light raspberry error color"
       },
       "3": {
@@ -171,7 +171,7 @@
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.251982 0.084434 21.217)",
+        "$value": "oklch(0.232 0.0844 21.22)",
         "$description": "Semantic error (#cf2d56) - validation errors"
       },
       "$description": "The error (red) color palette aligned to semantic-error"
@@ -297,55 +297,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.86 0.08 81)",
+        "$value": "oklch(0.880334 0.046640 39.779)",
         "$description": "A pale wheat gold color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.83 0.09 81)",
+        "$value": "oklch(0.836670 0.067182 47.898)",
         "$description": "A light sandy gold color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.8 0.11 81)",
+        "$value": "oklch(0.803135 0.087025 57.506)",
         "$description": "A soft golden yellow color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.78 0.12 81)",
+        "$value": "oklch(0.776070 0.106759 65.589)",
         "$description": "A muted amber gold color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.75 0.14 81)",
+        "$value": "oklch(0.759399 0.125082 73.931)",
         "$description": "A medium honey gold color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.73 0.15 81)",
+        "$value": "oklch(0.749596 0.139997 80.729)",
         "$description": "A vivid golden yellow color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.69 0.16 81)",
+        "$value": "oklch(0.659622 0.124056 86.697)",
         "$description": "A rich ochre gold color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.66 0.15 81)",
+        "$value": "oklch(0.554040 0.104940 91.777)",
         "$description": "A deep bronze gold color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.56 0.13 81)",
+        "$value": "oklch(0.431889 0.082432 97.233)",
         "$description": "A dark brownish gold color"
       },
       "$description": "The yellow color palette"
@@ -355,55 +355,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.886757 0.122553 143.508)",
+        "$value": "oklch(0.867752 0.048376 149.856)",
         "$description": "A pale green success color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.858187 0.148147 145.345)",
+        "$value": "oklch(0.806921 0.067220 152.169)",
         "$description": "A light green success color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.836582 0.164472 147.493)",
+        "$value": "oklch(0.746179 0.084903 154.664)",
         "$description": "A soft green success color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.817417 0.176148 149.333)",
+        "$value": "oklch(0.689526 0.100944 156.198)",
         "$description": "A muted green success color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.800349 0.182060 151.711)",
+        "$value": "oklch(0.632102 0.110671 158.979)",
         "$description": "A medium green success color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.748394 0.166680 153.552)",
+        "$value": "oklch(0.577065 0.115723 160.528)",
         "$description": "A vivid green success color - confirmation on dark"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.695694 0.151506 155.453)",
+        "$value": "oklch(0.514848 0.099727 163.293)",
         "$description": "A rich green success color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.636797 0.133880 157.910)",
+        "$value": "oklch(0.444467 0.082335 167.005)",
         "$description": "A deep green success color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.576899 0.116254 160.367)",
+        "$value": "oklch(0.371207 0.064942 171.944)",
         "$description": "Semantic success - confirmation and success"
       },
       "$description": "The success (green) color palette aligned to semantic-success"
@@ -471,55 +471,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.85 0.08 220)",
+        "$value": "oklch(0.928647 0.072535 177.640)",
         "$description": "A pale sky blue color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.82 0.09 220)",
+        "$value": "oklch(0.901162 0.097727 183.523)",
         "$description": "A light aqua sky color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.79 0.11 220)",
+        "$value": "oklch(0.881025 0.118388 188.561)",
         "$description": "A soft bright sky color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.76 0.12 220)",
+        "$value": "oklch(0.862028 0.131504 196.200)",
         "$description": "A vivid sky blue color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.74 0.14 220)",
+        "$value": "oklch(0.807666 0.133172 205.900)",
         "$description": "A medium electric sky color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.71 0.15 220)",
+        "$value": "oklch(0.741948 0.135783 220.723)",
         "$description": "A bright azure sky color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.67 0.16 220)",
+        "$value": "oklch(0.583416 0.115702 229.568)",
         "$description": "A rich ocean sky color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.64 0.15 220)",
+        "$value": "oklch(0.3348 0.067735 236.003329)",
         "$description": "A deep teal sky color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.55 0.13 220)",
+        "$value": "oklch(0.260301 0.060043 240.409)",
         "$description": "A dark steel sky color"
       },
       "$description": "The sky color palette"
@@ -529,55 +529,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.86 0.08 256)",
+        "$value": "oklch(0.928647 0.072535 177.640)",
         "$description": "A pale periwinkle blue color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.83 0.09 256)",
+        "$value": "oklch(0.901162 0.097727 183.523)",
         "$description": "A light sky blue color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.8 0.11 256)",
+        "$value": "oklch(0.881025 0.118388 188.561)",
         "$description": "A soft cornflower blue color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.77 0.12 256)",
+        "$value": "oklch(0.862028 0.131504 196.200)",
         "$description": "A muted bright blue color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.75 0.14 256)",
+        "$value": "oklch(0.807666 0.133172 205.900)",
         "$description": "A medium azure blue color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.72 0.15 256)",
+        "$value": "oklch(0.741948 0.135783 220.723)",
         "$description": "A vivid sky blue color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.69 0.16 256)",
+        "$value": "oklch(0.611140 0.120745 229.225)",
         "$description": "A rich cerulean blue color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.66 0.15 256)",
+        "$value": "oklch(0.483329 0.105286 236.844)",
         "$description": "A deep navy blue color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.56 0.13 256)",
+        "$value": "oklch(0.352595 0.084211 242.345)",
         "$description": "A dark midnight blue color"
       },
       "$description": "The blue color palette"
@@ -587,55 +587,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.821999 0.041119 258.807)",
+        "$value": "oklch(0.894457 0.023257 258.361)",
         "$description": "A pale lavender purple color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.790056 0.050680 263.669)",
+        "$value": "oklch(0.838070 0.038693 265.808)",
         "$description": "A light periwinkle purple color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.758279 0.059011 267.498)",
+        "$value": "oklch(0.776637 0.055960 271.310)",
         "$description": "A soft violet purple color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.721852 0.071840 271.888)",
+        "$value": "oklch(0.710408 0.076888 275.838)",
         "$description": "A muted indigo purple color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.685580 0.083629 275.408)",
+        "$value": "oklch(0.640778 0.103111 279.885)",
         "$description": "A medium periwinkle purple color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.646868 0.098963 277.954)",
+        "$value": "oklch(0.568719 0.130352 281.956)",
         "$description": "A vivid soft indigo color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.606417 0.114508 280.684)",
+        "$value": "oklch(0.485406 0.113057 284.510)",
         "$description": "A rich slate indigo color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.568719 0.130352 281.956)",
+        "$value": "oklch(0.399028 0.092229 287.177)",
         "$description": "A deep muted indigo color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.548738 0.140548 288.807)",
+        "$value": "oklch(0.305782 0.070432 289.609)",
         "$description": "A dark navy indigo color"
       },
       "$description": "The purple color palette"

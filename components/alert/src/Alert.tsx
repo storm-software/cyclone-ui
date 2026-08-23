@@ -137,7 +137,7 @@ const AlertIcon = ThemeableIcon.styleable(
           display="block"
           height="100%"
           width="62%"
-          backgroundColor="$background"
+          backgroundColor="$foreground"
           zIndex="$10"
         />
 

@@ -42,13 +42,13 @@ const MessageFrame = styled(Toast, {
   width: "100%",
   padding: 0,
   borderColor: "transparent",
-  backgroundColor: "$backgroundPrimary",
+  backgroundColor: "$background",
 
   enterStyle: { opacity: 0, scale: 0.75, y: 100 },
   exitStyle: { opacity: 0, scale: 1, y: -20 },
 
   hoverStyle: {
-    backgroundColor: "$backgroundPrimaryHover"
+    backgroundColor: "$backgroundHover"
   }
 });
 

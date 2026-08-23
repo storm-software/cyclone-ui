@@ -104,7 +104,7 @@ export const ThemeableIcon =
     ) => {
       const getThemedIcon = useGetThemedIcon({
         size: getSized(size),
-        color: disabled ? "$foregroundOnPrimaryDisabled" : (color as ColorProp)
+        color: disabled ? "$foregroundInverseDisabled" : (color as ColorProp)
       });
 
       return (

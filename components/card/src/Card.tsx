@@ -58,22 +58,22 @@ const CardFrame = styled(Container, {
   transition: "medium",
   overflow: "hidden",
   borderRadius: "$card",
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   cursor: "pointer",
   backgroundColor: "$backgroundElevated",
   position: "relative",
 
   hoverStyle: {
     backgroundColor: "$backgroundElevatedHover",
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   pressStyle: {
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   focusVisibleStyle: {
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   }
 });
 
@@ -284,7 +284,7 @@ const CardLinkArrowRight = styled(ArrowRight, {
   context: CardContext,
 
   zIndex: "$30",
-  color: "$foregroundPrimary",
+  color: "$foreground",
   marginTop: "$xs"
 });
 
@@ -304,7 +304,7 @@ const CardLinkImpl = CardLink.styleable(
           <CardLinkArrowRight
             size="$xl"
             $group-card-hover={{
-              color: "$foregroundPrimaryHover"
+              color: "$foregroundHover"
             }}
           />
         </View>

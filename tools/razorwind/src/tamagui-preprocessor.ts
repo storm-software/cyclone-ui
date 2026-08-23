@@ -424,6 +424,8 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
   saturation: 0.6
 };
 
+const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.2;
+
 const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
   background: [
     COLOR_STATE_HOVER,
@@ -678,8 +680,8 @@ function createStateToken(
   };
 }
 
-const DEFAULT_DARK_COLOR = "#666666";
-const DEFAULT_LIGHT_COLOR = "#AAAAAA";
+const DEFAULT_DARK_COLOR = "#555555";
+const DEFAULT_LIGHT_COLOR = "#999999";
 
 function updateColorToken(isLightColor: boolean) {
   return isLightColor ? DEFAULT_DARK_COLOR : DEFAULT_LIGHT_COLOR;
@@ -708,18 +710,40 @@ function ensureDisabledForegroundContrast(
 
     const backgroundHex = resolveColor(background.$value, tree);
     const foregroundHex = resolveColor(foreground.$value, tree);
+    if (!backgroundHex || !foregroundHex) {
+      continue;
+    }
+
+    const backgroundLightness = hexToOklch(backgroundHex).lightness;
+    const foregroundLightness = hexToOklch(foregroundHex).lightness;
     if (
-      !backgroundHex ||
-      !foregroundHex ||
-      Math.abs(
-        hexToOklch(backgroundHex).lightness -
-          hexToOklch(foregroundHex).lightness
-      ) >= MINIMUM_DISABLED_LIGHTNESS_DELTA
+      Math.abs(backgroundLightness - foregroundLightness) >=
+      MINIMUM_DISABLED_LIGHTNESS_DELTA
     ) {
       continue;
     }
 
-    foreground.$value = updateColorToken(isLightColor(backgroundHex));
+    const lightBackground = isLightColor(backgroundHex);
+    let replacementHex = updateColorToken(lightBackground);
+    const replacementLightness = hexToOklch(replacementHex).lightness;
+
+    if (
+      Math.abs(backgroundLightness - replacementLightness) <
+      MINIMUM_DISABLED_LIGHTNESS_DELTA
+    ) {
+      const targetLightness = clamp01(
+        backgroundLightness +
+          (lightBackground
+            ? -MINIMUM_DISABLED_LIGHTNESS_DELTA
+            : MINIMUM_DISABLED_LIGHTNESS_DELTA)
+      );
+      replacementHex = applyBrightness(
+        replacementHex,
+        targetLightness / replacementLightness
+      );
+    }
+
+    foreground.$value = replacementHex;
   }
 }
 
@@ -767,6 +791,60 @@ function addColorStateTokens(
   return result;
 }
 
+function addForegroundGhostHoverTokens(
+  group: Record<string, unknown>,
+  tree: unknown,
+  onlyKey?: string
+): Record<string, unknown> {
+  const result = { ...group };
+  const names = onlyKey ? [onlyKey] : Object.keys(group);
+  const brightnessPercent = Math.round(
+    (FOREGROUND_GHOST_HOVER_BRIGHTNESS - 1) * 100
+  );
+
+  for (const name of names) {
+    const source = group[name];
+    const isInverse = name.endsWith("-inverse");
+    // The theme metadata makes `<name>-ghost-hover` flatten to the shared
+    // `foregroundGhostHover` or `foregroundInverseGhostHover` key in that
+    // child theme. Unthemed foregrounds retain their existing state surface.
+    if (
+      name.startsWith("$") ||
+      isStateVariantKey(name) ||
+      !isTokenNode(source) ||
+      (!onlyKey && !("theme" in source) && !("$theme" in source))
+    ) {
+      continue;
+    }
+
+    const hover = group[`${name}-hover`];
+    const ghostHoverKey = `${name}-ghost-hover`;
+    if (!isTokenNode(hover) || ghostHoverKey in result) {
+      continue;
+    }
+
+    const hoverHex = resolveColorHex(hover.$value, tree);
+    if (!hoverHex) {
+      continue;
+    }
+
+    if (isInverse && isGreyscale(hoverHex)) {
+      continue;
+    }
+
+    result[ghostHoverKey] = {
+      ...hover,
+      $value: applyBrightness(hoverHex, FOREGROUND_GHOST_HOVER_BRIGHTNESS),
+      $description:
+        typeof source.$description === "string"
+          ? `${source.$description} (ghost hover, ${brightnessPercent}% brighter than hover)`
+          : `ghost hover state at ${brightnessPercent}% brighter than hover`
+    };
+  }
+
+  return result;
+}
+
 function injectColorStateVariants(
   node: unknown,
   tree: unknown,
@@ -791,7 +869,15 @@ function injectColorStateVariants(
   }
 
   if (key && COLOR_STATE_GROUP_KEYS.has(key)) {
-    return addColorStateTokens(result, tree, COLOR_STATE_VARIANTS[key]!);
+    const withStateTokens = addColorStateTokens(
+      result,
+      tree,
+      COLOR_STATE_VARIANTS[key]!
+    );
+
+    return key === "foreground"
+      ? addForegroundGhostHoverTokens(withStateTokens, tree)
+      : withStateTokens;
   }
 
   let withLoneTokens = result;
@@ -803,6 +889,14 @@ function injectColorStateVariants(
         COLOR_STATE_VARIANTS[groupKey]!,
         groupKey
       );
+
+      if (groupKey === "foreground") {
+        withLoneTokens = addForegroundGhostHoverTokens(
+          withLoneTokens,
+          tree,
+          groupKey
+        );
+      }
     }
   }
 

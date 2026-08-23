@@ -288,7 +288,7 @@ const TabsRovingIndicator = styled(YStack, {
         }
 
         return {
-          backgroundColor: "$backgroundPrimary"
+          backgroundColor: "$background"
         };
       }
     },
@@ -300,7 +300,7 @@ const TabsRovingIndicator = styled(YStack, {
         }
 
         return {
-          backgroundColor: "$backgroundAccent"
+          backgroundColor: "$background"
         };
       }
     },
@@ -417,7 +417,7 @@ const TabsHeaderList = styled(YStack, {
 
     variant: {
       underline: {
-        borderBottomColor: "$borderPrimary",
+        borderBottomColor: "$border",
         borderBottomWidth: "$xxs"
       },
       background: {}
@@ -571,9 +571,9 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
           size={size}
-          color={currentTab === value ? "$foregroundPrimary" : "$base4"}
+          color={currentTab === value ? "$foreground" : "$foregroundCaption"}
           $group-hover={{
-            color: "$foregroundPrimaryHover"
+            color: "$foregroundHover"
           }}>
           {children}
         </TabsHeaderItemHeading>

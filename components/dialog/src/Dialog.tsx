@@ -44,7 +44,7 @@ import * as React from "react";
 const DialogHeading = styled(HeadingXLText, {
   name: "DialogHeading",
 
-  color: "$foregroundOnPrimary"
+  color: "$foregroundInverse"
 });
 
 const DialogHeadingImpl = DialogHeading.styleable(
@@ -65,7 +65,7 @@ const DialogHeadingImpl = DialogHeading.styleable(
 const DialogBody = styled(BodyText, {
   name: "DialogBody",
 
-  color: "$foregroundOnPrimary"
+  color: "$foregroundInverse"
 });
 
 const DialogBodyImpl = DialogBody.styleable(
@@ -134,7 +134,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
   opacity: 0.85,
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
-  colors: ["$backgroundTertiary", "transparent"],
+  colors: ["$backgroundFloating", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],
@@ -226,7 +226,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
         exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
         focusVisibleStyle={{
-          outlineColor: "$borderAccent",
+          outlineColor: "$borderFocused",
           outlineStyle: "solid",
           outlineWidth: 3,
           outlineOffset: "$lg"

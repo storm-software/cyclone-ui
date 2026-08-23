@@ -37,7 +37,7 @@ const ContainerFrame = styled(View, {
   borderRadius: "$container",
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineStyle: "solid",
     outlineWidth: 3,
     outlineOffset: "$lg"
@@ -46,57 +46,57 @@ const ContainerFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "$backgroundPrimary",
+        backgroundColor: "$background",
         borderWidth: 1,
-        borderColor: "$borderPrimary"
+        borderColor: "$border"
       },
 
       secondary: {
-        backgroundColor: "$backgroundSecondary",
+        backgroundColor: "$backgroundElevated",
         borderWidth: 1,
-        borderColor: "$borderSecondary"
+        borderColor: "$borderSubtle"
       },
 
       tertiary: {
-        backgroundColor: "$backgroundTertiary",
+        backgroundColor: "$backgroundFloating",
         borderWidth: 1,
-        borderColor: "$borderTertiary"
+        borderColor: "$border"
       },
 
       elevated: {
         backgroundColor: "$backgroundElevated",
         borderWidth: 1,
-        borderColor: "$borderPrimary"
+        borderColor: "$border"
       },
 
       floating: {
         backgroundColor: "$backgroundFloating",
         borderWidth: 1,
-        borderColor: "$borderSecondary"
+        borderColor: "$borderSubtle"
       },
 
       highest: {
         backgroundColor: "$backgroundHighest",
         borderWidth: 1,
-        borderColor: "$borderTertiary"
+        borderColor: "$border"
       },
 
       page: {
         backgroundColor: "$backgroundPage",
         borderWidth: 2,
-        borderColor: "$borderSecondary"
+        borderColor: "$borderSubtle"
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "$borderPrimary"
+        borderColor: "$border"
       },
 
       glass: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderColor: "$base8"
+        borderColor: "$border"
       }
     },
 
@@ -161,7 +161,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  colors: ["$backgroundSecondary", "$backgroundPrimary"],
+  colors: ["$backgroundElevated", "$background"],
   start: { x: 0.1, y: 0.5 },
   end: { x: 0.9, y: 0.5 }
 });

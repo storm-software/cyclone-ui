@@ -96,7 +96,7 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "$container",
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   backgroundColor: "transparent",
   outlineWidth: 0,
   outlineColor: "transparent",
@@ -104,30 +104,30 @@ const FilePickerGroupFrame = styled(View, {
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   variants: {
     active: {
       true: {
-        outlineColor: "$borderAccent",
+        outlineColor: "$borderFocused",
         outlineWidth: 2,
         outlineOffset: "$lg",
         outlineStyle: "solid",
-        borderColor: "$borderSecondary",
+        borderColor: "$borderSubtle",
 
         hoverStyle: {
-          borderColor: "$borderSecondaryHover"
+          borderColor: "$borderSubtleHover"
         }
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$borderPrimaryDisabled",
+        borderColor: "$borderDisabled",
 
         hoverStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         }
       },
       false: {
@@ -286,7 +286,7 @@ const FilePickerTrigger = YStack.styleable(
           <Upload
             size="$7xl"
             color={
-              disabled ? "$foregroundOnPrimaryDisabled" : "$foregroundOnPrimary"
+              disabled ? "$foregroundInverseDisabled" : "$foregroundInverse"
             }
             transition="100ms"
             opacity={1}
@@ -366,7 +366,7 @@ const FilePickerViewLink = ({
         fontFamily="$label"
         fontSize="$xl"
         fontWeight="$true"
-        color="$foregroundOnPrimary"
+        color="$foregroundInverse"
         {...props}
         href={uri}
         target="_blank">
@@ -379,7 +379,7 @@ const FilePickerViewLink = ({
     <LabelText
       fontFamily="$label"
       fontSize="$xl"
-      color="$foregroundOnPrimary"
+      color="$foregroundInverse"
       {...props}>
       {children}
     </LabelText>
@@ -415,7 +415,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="$card"
-      borderColor="$base4"
+      borderColor="$border"
       borderWidth={1}
       enterStyle={{
         opacity: 0,
@@ -426,7 +426,7 @@ const FilePickerFile = ({
         scale: 0.5
       }}
       hoverStyle={{
-        outlineColor: "$borderPrimaryHover",
+        outlineColor: "$borderHover",
         outlineWidth: 2,
         outlineStyle: "solid",
         outlineOffset: 3
@@ -439,7 +439,7 @@ const FilePickerFile = ({
         left={0}
         right={0}
         zIndex="$10"
-        backgroundColor="$backgroundPrimaryHover"
+        backgroundColor="$backgroundHover"
         opacity={0.6}
         $group-file-hover={{
           opacity: 0.8,
@@ -463,7 +463,7 @@ const FilePickerFile = ({
             <Button
               variant="ghost"
               theme="base"
-              color="$foregroundPrimary"
+              color="$foreground"
               size="$8xl"
               padding="$xl"
               circular={true}>
@@ -489,7 +489,7 @@ const FilePickerFile = ({
           <Button
             variant="ghost"
             theme="base"
-            color="$foregroundPrimary"
+            color="$foreground"
             onPress={handleRemove}
             size="$8xl"
             padding="$xl"
@@ -522,22 +522,22 @@ const FilePickerFile = ({
             </FilePickerViewLink>
           </View>
           <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <BytesText zIndex="$30" color="$base9" fontWeight="$medium">
+            <BytesText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
               {size}
             </BytesText>
 
-            {lastModified && <Dot size="$lg" color="$base9" />}
+            {lastModified && <Dot size="$lg" color="$foregroundBody" />}
 
             {lastModified && (
-              <BodyText zIndex="$30" color="$base9" fontWeight="$medium">
+              <BodyText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
                 {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
               </BodyText>
             )}
 
-            {mimeType && <Dot size="$lg" color="$base9" />}
+            {mimeType && <Dot size="$lg" color="$foregroundBody" />}
 
             {mimeType && (
-              <BodyText zIndex="$30" color="$base9" fontWeight="$medium">
+              <BodyText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
                 {mimeType}
               </BodyText>
             )}
@@ -549,7 +549,7 @@ const FilePickerFile = ({
         transition="slow"
         fullscreen={true}
         zIndex="$10"
-        colors={["transparent", "$backgroundAccentSubtle"]}
+        colors={["transparent", "$backgroundSubtle"]}
         locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}

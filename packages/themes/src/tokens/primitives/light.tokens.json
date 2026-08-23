@@ -31,86 +31,86 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#FFFFFF",
-        "$description": "The lowest level surface of the palette - used for the background of the page"
+        "$value": "#FAFAFA",
+        "$description": "The lowest level surface of the palette - soft neutral page canvas"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#F4F4F3",
-        "$description": "The second level surface of the palette - used for elevated component backgrounds (inputs, cards, etc.)"
+        "$value": "#F4F4F4",
+        "$description": "The second level surface of the palette - neutral gray for inputs and cards"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#E8E7E6",
-        "$description": "The third level surface of the palette - used for floating component backgrounds (tooltips, modals, etc.)"
+        "$value": "#EAEAEA",
+        "$description": "The third level surface of the palette - neutral gray for floating components"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#C3C4C4",
-        "$description": "The fourth level surface of the palette - used for the highest level of elevation (drawers, modals, etc.)"
+        "$value": "#DCDCDC",
+        "$description": "The fourth level surface of the palette - emphasized gray for the highest elevation"
       },
-      "$description": "The surface color palette - used for background colors"
+      "$description": "The surface color palette - a light counterpart to the DeepSeek-inspired graphite scheme"
     },
     "base": {
       "palette": true,
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#F4F4F4",
-        "$description": "A warm near-white gray color"
+        "$value": "#F5F5F5",
+        "$description": "A soft neutral white"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#C1C1C1",
-        "$description": "A soft warm gray color"
+        "$value": "#C7C7C7",
+        "$description": "A light neutral gray"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "#949494",
-        "$description": "A light warm gray color"
+        "$description": "A soft neutral gray"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#6E6E6E",
-        "$description": "A muted warm gray color"
+        "$value": "#737373",
+        "$description": "A muted neutral gray"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#4F4F4F",
-        "$description": "A mid cool gray color"
+        "$value": "#525252",
+        "$description": "A middle neutral gray"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#373737",
-        "$description": "A slate cool gray color"
+        "$value": "#3F3F3F",
+        "$description": "A medium-dark neutral gray"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#262626",
-        "$description": "A deep slate gray color"
+        "$value": "#333333",
+        "$description": "A dark neutral gray"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#1C1C1C",
-        "$description": "A very dark slate gray color"
+        "$value": "#262626",
+        "$description": "A deep neutral gray"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "#181818",
-        "$description": "An almost-black cool gray color"
+        "$description": "An almost-black neutral gray matching the DeepSeek canvas"
       },
-      "$description": "The base color palette"
+      "$description": "The base color palette - neutral DeepSeek-inspired grays from soft white to graphite"
     },
     "red": {
       "palette": true,

@@ -60,15 +60,15 @@ const SelectItemGroup = styled(XStack, {
   width: "100%",
 
   hoverStyle: {
-    backgroundColor: "$backgroundPrimaryHover"
+    backgroundColor: "$backgroundHover"
   },
 
   focusStyle: {
-    backgroundColor: "$backgroundPrimaryHover"
+    backgroundColor: "$backgroundHover"
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$backgroundPrimaryHover"
+    backgroundColor: "$backgroundHover"
   },
 
   variants: {
@@ -98,24 +98,24 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   context: SelectContext,
 
   cursor: "pointer",
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   fontFamily: "$body",
   flex: 1,
 
   variants: {
     selected: {
       true: {
-        color: "$foregroundAccent"
+        color: "$foregroundLink"
       }
     },
 
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundInverseDisabled",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         }
       }
     },
@@ -153,11 +153,11 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             justifyContent={isSmall ? "space-between" : "center"}>
             <View width="$xl" justifyContent="center">
               {disabled && (
-                <Lock size="$lg" color="$foregroundOnPrimaryDisabled" />
+                <Lock size="$lg" color="$foregroundInverseDisabled" />
               )}
               <TamaguiSelect.ItemIndicator>
                 <Theme name={"accent"}>
-                  <Check size="$xl" color="$foregroundOnPrimary" />
+                  <Check size="$xl" color="$foregroundInverse" />
                 </Theme>
               </TamaguiSelect.ItemIndicator>
             </View>
@@ -166,10 +166,10 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               disabled={disabled}
               $group-hover={{
                 color: disabled
-                  ? "$foregroundOnPrimaryDisabled"
+                  ? "$foregroundInverseDisabled"
                   : selected
-                    ? "$foregroundAccentHover"
-                    : "$foregroundOnPrimaryHover"
+                    ? "$foregroundLinkHover"
+                    : "$foregroundInverseHover"
               }}>
               {children}
             </SelectItemTextFrame>
@@ -226,7 +226,7 @@ const SelectItemsGroup = View.styleable(
               start={[0, 0]}
               end={[0, 1]}
               fullscreen={true}
-              colors={["$base3", "transparent"]}
+              colors={["$backgroundFloating", "transparent"]}
               borderRadius="$popover"
               marginTop="$xxs"
             />
@@ -262,7 +262,7 @@ const SelectItemsGroup = View.styleable(
               start={[0, 0]}
               end={[0, 1]}
               fullscreen={true}
-              colors={["transparent", "$base3"]}
+              colors={["transparent", "$backgroundFloating"]}
               borderRadius="$popover"
               marginBottom="$xxs"
             />

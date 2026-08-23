@@ -155,11 +155,11 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         color={
           theme === "base"
             ? disabled
-              ? "$foregroundOnPrimaryDisabled"
-              : "$foregroundOnPrimary"
+              ? "$foregroundInverseDisabled"
+              : "$foregroundInverse"
             : disabled
-              ? "$foregroundPrimaryDisabled"
-              : "$foregroundPrimary"
+              ? "$foregroundDisabled"
+              : "$foreground"
         }>
         {children}
       </FieldValidationText>
@@ -209,11 +209,11 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   transition: "medium",
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   fontStyle: "italic",
 
   hoverStyle: {
-    color: "$foregroundOnPrimaryHover"
+    color: "$foregroundInverseHover"
   },
 
   enterStyle: {
@@ -233,11 +233,11 @@ const FieldDetails = styled(BodyText, {
 
     disabled: {
       true: {
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundInverseDisabled",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         }
       }
     }
@@ -273,20 +273,20 @@ const FieldDetailsImpl = FieldDetails.styleable(
         color={
           theme === "base"
             ? disabled
-              ? "$foregroundOnPrimaryDisabled"
-              : "$foregroundOnPrimary"
+              ? "$foregroundInverseDisabled"
+              : "$foregroundInverse"
             : disabled
-              ? "$foregroundPrimaryDisabled"
-              : "$foregroundPrimary"
+              ? "$foregroundDisabled"
+              : "$foreground"
         }
         hoverStyle={{
           color: disabled
             ? theme === "base"
-              ? "$foregroundOnPrimaryDisabled"
-              : "$foregroundPrimaryDisabled"
+              ? "$foregroundInverseDisabled"
+              : "$foregroundDisabled"
             : theme === "base"
-              ? "$foregroundOnPrimaryHover"
-              : "$foregroundPrimaryHover"
+              ? "$foregroundInverseHover"
+              : "$foregroundHover"
         }}>
         {children}
       </FieldDetails>
@@ -302,20 +302,20 @@ const FieldLabelText = styled(LabelText, {
   transition: "medium",
   cursor: "pointer",
   wordWrap: "normal",
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
 
   hoverStyle: {
-    color: "$foregroundOnPrimaryHover"
+    color: "$foregroundInverseHover"
   },
 
   variants: {
     disabled: {
       true: {
-        color: "$foregroundOnPrimaryDisabled",
+        color: "$foregroundInverseDisabled",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundOnPrimaryDisabled"
+          color: "$foregroundInverseDisabled"
         }
       }
     }
@@ -392,7 +392,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {hideAsterisk !== true && (
                     <View position="relative" alignSelf="stretch">
                       <Asterisk
-                        color="$foregroundDanger"
+                        color="$foreground"
                         size="$sm"
                         position="absolute"
                         top={-4}
@@ -409,13 +409,13 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                       disabled={disabled}
                       color={
                         disabled
-                          ? "$foregroundSecondaryDisabled"
-                          : "$foregroundSecondary"
+                          ? "$foregroundBodyDisabled"
+                          : "$foregroundBody"
                       }
                       hoverStyle={
                         disabled
-                          ? { color: "$foregroundSecondaryDisabled" }
-                          : { color: "$foregroundSecondaryHover" }
+                          ? { color: "$foregroundBodyDisabled" }
+                          : { color: "$foregroundBodyHover" }
                       }
                       size="$md"
                       fontWeight="$normal"
@@ -504,7 +504,7 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
       <Tooltip groupId="field-icon">
         <Tooltip.Content>
           <ValidationText
-            color="$foregroundPrimary"
+            color="$foreground"
             messages={messages}
             disabled={disabled}
           />

@@ -35,7 +35,7 @@ export const Spinner: React.ForwardRefExoticComponent<
     React.forwardRef<TamaguiElement>((props: SpinnerProps, ref) => {
       const {
         size,
-        color: colorProp = "$foregroundPrimary",
+        color: colorProp = "$foreground",
         ...stackProps
       } = props;
       const theme = useTheme();

@@ -123,7 +123,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
 
         {currentPage > 3 && pageCount > 5 && (
           <SizableText
-            color="$foregroundPrimary"
+            color="$foreground"
             size="$lg"
             paddingHorizontal="$md">
             . . .
@@ -199,7 +199,7 @@ export const Pagination = XStack.styleable<ExtraPaginationProps>(
 
         {currentPage < pageCount - 2 && pageCount > 5 && (
           <SizableText
-            color="$foregroundPrimary"
+            color="$foreground"
             size="$lg"
             paddingHorizontal="$md">
             . . .

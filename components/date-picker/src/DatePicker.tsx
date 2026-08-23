@@ -290,7 +290,7 @@ const DayPicker = () => {
               <LabelText
                 textAlign="center"
                 size="$sm"
-                color="$foregroundSecondary">
+                color="$foregroundBody">
                 {day}
               </LabelText>
             </View>
@@ -318,7 +318,7 @@ const DayPicker = () => {
                             ? "primary"
                             : "outlined"
                     }
-                    borderColor={day.now ? "$borderPrimary" : undefined}
+                    borderColor={day.now ? "$border" : undefined}
                     padding="$md"
                     flexBasis="14%"
                     borderRadius={0}
@@ -326,7 +326,7 @@ const DayPicker = () => {
                     hoverStyle={
                       day.inCurrentMonth
                         ? {
-                            backgroundColor: "$backgroundPrimaryHover"
+                            backgroundColor: "$backgroundHover"
                           }
                         : {}
                     }>
@@ -368,7 +368,7 @@ function YearRangeSlider() {
       </Button>
       <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
         <LabelText
-          color="$foregroundOnPrimary"
+          color="$foregroundInverse"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -422,9 +422,9 @@ function YearSlider() {
           tabIndex={0}
           size="$lg"
           cursor="pointer"
-          color="$foregroundOnPrimary"
+          color="$foregroundInverse"
           hoverStyle={{
-            color: "$foregroundOnPrimaryHover"
+            color: "$foregroundInverseHover"
           }}>
           {year}
         </LabelText>
@@ -485,9 +485,9 @@ const CalendarHeader = () => {
           tabIndex={0}
           size="$md"
           cursor="pointer"
-          color="$foregroundOnPrimary"
+          color="$foregroundInverse"
           hoverStyle={{
-            color: "$foregroundOnPrimaryHover"
+            color: "$foregroundInverseHover"
           }}>
           {year}
         </LabelText>
@@ -498,11 +498,11 @@ const CalendarHeader = () => {
           cursor="pointer"
           tabIndex={0}
           size="$2xl"
-          color="$foregroundOnPrimary"
+          color="$foregroundInverse"
           fontWeight="600"
           lineHeight="$xs"
           hoverStyle={{
-            color: "$foregroundOnPrimaryHover"
+            color: "$foregroundInverseHover"
           }}>
           {month}
         </LabelText>

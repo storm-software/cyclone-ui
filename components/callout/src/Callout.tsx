@@ -53,7 +53,7 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
   borderRadius: "$container",
   opacity: 0.9,
   zIndex: "$0",
-  colors: ["transparent", "$base1"],
+  colors: ["transparent", "$background"],
   start: [1.0, 1.0],
   end: [0, 0]
 });
@@ -68,7 +68,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   borderRadius: "$container",
   opacity: 0.25,
   zIndex: "$10",
-  colors: ["transparent", "$backgroundSecondary"],
+  colors: ["transparent", "$backgroundElevated"],
   start: [0, 1.0],
   end: [0, 1.0]
 });
@@ -151,7 +151,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 const CalloutHeading = styled(HeadingXLText, {
   name: "CalloutHeading",
 
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   zIndex: "$20"
 });
 
@@ -173,7 +173,7 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
 const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
-  color: "$foregroundTertiary",
+  color: "$foregroundCaption",
   zIndex: "$20"
 });
 
@@ -195,7 +195,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$foregroundSecondary",
+  color: "$foregroundBody",
   zIndex: "$20",
   paddingVertical: 0
 });

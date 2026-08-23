@@ -32,7 +32,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   alignContent: "center",
   backgroundColor: "transparent",
   borderWidth: 1,
-  borderColor: "$borderPrimary",
+  borderColor: "$border",
   outlineStyle: "none",
   tabIndex: 0,
 
@@ -41,23 +41,23 @@ const CheckboxGroupFrame = styled(XGroup, {
   borderRadius: "$control",
 
   hoverStyle: {
-    borderColor: "$borderPrimaryHover"
+    borderColor: "$borderHover"
   },
 
   focusStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderAccent",
+    outlineColor: "$borderFocused",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderAccent"
+    borderColor: "$borderFocused"
   },
 
   variants: {
@@ -90,11 +90,11 @@ const CheckboxGroupFrame = styled(XGroup, {
 
     focused: {
       true: {
-        outlineColor: "$borderAccent",
+        outlineColor: "$borderFocused",
         outlineWidth: 3,
         outlineOffset: "$lg",
         outlineStyle: "solid",
-        borderColor: "$borderAccent"
+        borderColor: "$borderFocused"
       }
     },
 
@@ -102,18 +102,18 @@ const CheckboxGroupFrame = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderPrimaryDisabled",
+        borderColor: "$borderDisabled",
 
         hoverStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderPrimaryDisabled"
+          borderColor: "$borderDisabled"
         }
       }
     }
@@ -169,7 +169,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   height: "95%",
   width: "90%",
   strokeWidth: 3
@@ -178,7 +178,7 @@ const CheckboxIcon = styled(Check, {
 const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
-  color: "$foregroundOnPrimary",
+  color: "$foregroundInverse",
   width: "90%",
   height: "100%",
   strokeWidth: 5

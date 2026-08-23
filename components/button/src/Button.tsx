@@ -37,7 +37,7 @@ import { useCallback, useMemo } from "react";
 import type { GestureResponderEvent } from "react-native";
 
 type ButtonVariant =
-  "default" | "subtle" | "surface" | "inverse" | "outlined" | "ghost" | "link";
+  "surface" | "subtle" | "inverse" | "outlined" | "ghost" | "link";
 
 type BorderRadiusSizeTokens =
   | number
@@ -63,7 +63,7 @@ export type ButtonContextProps = TextContextStyles & {
   /**
    * The variant style of the button
    *
-   * @defaultValue "default"
+   * @defaultValue "surface"
    */
   variant: ButtonVariant;
 
@@ -133,7 +133,7 @@ type ButtonExtraProps = TextParentStyles &
 
 export const ButtonContext = createStyledContext<ButtonContextProps>({
   size: "$5xl",
-  variant: "default",
+  variant: "surface",
   borderRadius: "$button",
   unstyled: false,
   circular: false,
@@ -169,18 +169,19 @@ const ButtonFrame = styled(View, {
 
   variants: {
     variant: {
-      default: {
+      surface: {
         borderWidth: 1,
-        borderColor: "$border",
-        backgroundColor: "$background",
+        borderColor: "$foreground",
+        backgroundColor: "$backgroundElevated",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover",
-          borderColor: "$borderHover"
+          backgroundColor: "$backgroundElevatedHover",
+          borderColor: "$foregroundHover"
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundPressed"
+          backgroundColor: "$backgroundElevatedPressed",
+          borderColor: "$foregroundPressed"
         }
       },
 
@@ -199,40 +200,24 @@ const ButtonFrame = styled(View, {
         }
       },
 
-      surface: {
-        borderWidth: 1,
-        borderColor: "$foreground",
-        backgroundColor: "$backgroundElevated",
-
-        hoverStyle: {
-          backgroundColor: "$backgroundElevatedHover",
-          borderColor: "$foregroundHover"
-        },
-
-        pressStyle: {
-          backgroundColor: "$backgroundElevatedPressed",
-          borderColor: "$foregroundPressed"
-        }
-      },
-
       inverse: {
         borderWidth: 1,
         borderColor: "$border",
-        backgroundColor: "$foreground",
+        backgroundColor: "$background",
 
         hoverStyle: {
-          backgroundColor: "$foregroundHover",
+          backgroundColor: "$backgroundHover",
           borderColor: "$borderHover"
         },
 
         pressStyle: {
-          backgroundColor: "$foregroundPressed"
+          backgroundColor: "$backgroundPressed"
         }
       },
 
       outlined: {
         backgroundColor: "transparent",
-        borderWidth: 2,
+        borderWidth: 3,
         borderColor: "$foreground",
 
         hoverStyle: {
@@ -390,7 +375,6 @@ const ButtonTextFrame = styled(Text, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  color: "$foreground",
   fontFamily: "$label",
   fontWeight: "$true",
   fontSize: "$true",
@@ -412,7 +396,7 @@ const ButtonTextFrame = styled(Text, {
       },
 
       subtle: {
-        color: "$foreground"
+        color: "$foregroundInverse"
       },
 
       inverse: {
@@ -466,7 +450,7 @@ const colorForVariant = (
   disabled: boolean,
   color?: ColorTokens | string
 ): ThemeableIconProps["color"] => {
-  if (variant === "inverse") {
+  if (variant === "inverse" || variant === "subtle") {
     return (
       disabled ? "$foregroundInverseDisabled" : (color ?? "$foregroundInverse")
     ) as ThemeableIconProps["color"];
@@ -479,15 +463,19 @@ const colorForVariant = (
 
 const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
   if (disabled) {
-    if (variant === "inverse") {
+    if (variant === "inverse" || variant === "subtle") {
       return "$foregroundInverseDisabled";
     }
 
     return "$foregroundDisabled";
   }
 
-  if (variant === "inverse") {
+  if (variant === "inverse" || variant === "subtle") {
     return "$foregroundInverseHover";
+  }
+
+  if (variant === "ghost" || variant === "outlined") {
+    return "$foregroundGhostHover";
   }
 
   return "$foregroundHover";
@@ -506,7 +494,8 @@ const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
         {...props}
         borderRadius={0}
         $group-button-hover={{
-          color: hoverColorForVariant(variant, disabled)
+          color: hoverColorForVariant(variant, disabled),
+          textDecorationColor: hoverColorForVariant(variant, disabled)
         }}>
         {children}
       </ButtonTextFrame>

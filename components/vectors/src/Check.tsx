@@ -38,7 +38,7 @@ const Icon = ({
   strokeWidth = 2,
   ...props
 }: CheckProps) => {
-  const color = useCurrentColor((props.color || "$foregroundOnPrimary") as any);
+  const color = useCurrentColor((props.color || "$foregroundInverse") as any);
 
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, 6, {

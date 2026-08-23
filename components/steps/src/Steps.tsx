@@ -127,7 +127,7 @@ export const StepsFrame = TamaguiTabs.styleable(
           height={150}
           flexDirection="row"
           activationMode="manual"
-          backgroundColor="$backgroundPrimary"
+          backgroundColor="$background"
           borderRadius="$container"
           position="relative"
           {...rest}
@@ -225,7 +225,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
           <Circle
             height={75}
             width={3}
-            backgroundColor="$color5"
+            backgroundColor="$borderSubtle"
             elevation="$5xl"
             marginLeft="$7xl"
           />
@@ -239,18 +239,18 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             padding="$3xl"
             borderRadius={1000_000_000}
             borderWidth="$xs"
-            borderColor={index === currentIndex ? "$borderPrimary" : "$color5"}
+            borderColor={index === currentIndex ? "$border" : "$borderSubtle"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle transition="slow" color="$color5" size="$md" />
+              <CheckCircle transition="slow" color="$foregroundBody" size="$md" />
             )}
             {index === currentIndex && (
-              <Edit3 transition="slow" color="$foregroundPrimary" size="$md" />
+              <Edit3 transition="slow" color="$foreground" size="$md" />
             )}
             {index > currentIndex && (
-              <Lock transition="slow" color="$color5" size="$md" />
+              <Lock transition="slow" color="$foregroundBody" size="$md" />
             )}
           </TamaguiTabs.Tab>
 
@@ -258,7 +258,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             transition="slow"
             fontFamily="$heading"
             color={
-              state.currentStep === value ? "$foregroundPrimary" : "$color5"
+              state.currentStep === value ? "$foreground" : "$foregroundBody"
             }>
             {children}
           </SizableText>
@@ -304,7 +304,7 @@ export const Steps = withStaticProperties(StepsFrame, {
 
 const StepsRovingIndicator = styled(YStack, {
   position: "absolute",
-  backgroundColor: "$color8",
+  backgroundColor: "$backgroundElevated",
   opacity: 1,
   transition: "200ms",
   borderRadius: 1000_000_000,
@@ -320,17 +320,17 @@ const StepsRovingIndicator = styled(YStack, {
   variants: {
     active: {
       true: {
-        backgroundColor: "$backgroundAccent",
+        backgroundColor: "$background",
         opacity: 1,
-        color: "$color12"
+        color: "$foreground"
       }
     },
 
     intent: {
       true: {
-        backgroundColor: "$color8",
+        backgroundColor: "$backgroundElevated",
         opacity: 1,
-        color: "$color9"
+        color: "$foregroundBody"
       }
     }
   },
