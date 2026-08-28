@@ -42,9 +42,7 @@ export default meta;
 type Story = StoryObj<typeof HeadingText>;
 
 export const Base: Story = {
-  args: {
-    theme: "base"
-  }
+  args: {}
 };
 
 export const Heading1: Story = {

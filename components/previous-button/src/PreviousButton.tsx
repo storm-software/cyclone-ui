@@ -50,7 +50,7 @@ export const PreviousButton = Button.styleable<{
         aria-label="Previous"
         justifyContent="center"
         {...props}>
-        <XStack gap="$sm" alignItems="center">
+        <XStack gap="$2xl" alignItems="center">
           <Button.Icon>
             <LeftArrow isComplete={hovering} animateShrink={animateShrink} />
           </Button.Icon>

@@ -19,13 +19,17 @@
 import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { InputProps } from "./Input";
 import { Input } from "./Input";
 
 const meta: Meta<typeof Input> = {
   title: "Base/Input",
   component: Input,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
+  render: ({
+    defaultValue,
+    ...props
+  }: InputProps & { defaultValue?: string }) => (
     <Form name="formName" initialValues={{ inputName: defaultValue }}>
       <Field name="inputName" {...props}>
         <Field.Label>Label Text</Field.Label>

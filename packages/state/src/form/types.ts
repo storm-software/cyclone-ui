@@ -68,16 +68,15 @@ export type ValidationResults = Partial<
  * The field status.
  */
 export type FieldStatus =
-  "base" | "help" | "success" | "info" | "warning" | "error";
-
-export const FieldStatus = {
-  BASE: "base" as FieldStatus,
-  HELP: "discovery" as FieldStatus,
-  SUCCESS: "success" as FieldStatus,
-  INFO: "info" as FieldStatus,
-  WARNING: "warning" as FieldStatus,
-  ERROR: "danger" as FieldStatus
-};
+  | "primary"
+  | "secondary"
+  | "discovery"
+  | "success"
+  | "info"
+  | "warning"
+  | "danger"
+  | "positive"
+  | "negative";
 
 // export type FieldValueType =
 //   | "date"
@@ -168,7 +167,7 @@ export interface FormOptions<
    * A function that compares two sets of form values to determine if they are equal.
    *
    * @remarks
-   * The default `isEqual` function is provided by the `@stryke/helpers` package.
+   * The default `isEqual` function is provided by the `@stryke/discoveryers` package.
    *
    * @defaultValue `isEqual`
    */
@@ -323,27 +322,33 @@ export interface FormAtoms<
   touched: Atom<boolean>;
   validating: Atom<boolean>;
 
-  errorMessages: Atom<ValidationDetails<"error">[]>;
+  dangerMessages: Atom<ValidationDetails<"danger">[]>;
   warningMessages: Atom<ValidationDetails<"warning">[]>;
   infoMessages: Atom<ValidationDetails<"info">[]>;
-  helpMessages: Atom<ValidationDetails<"help">[]>;
+  discoveryMessages: Atom<ValidationDetails<"discovery">[]>;
   successMessages: Atom<ValidationDetails<"success">[]>;
+  positiveMessages: Atom<ValidationDetails<"positive">[]>;
+  negativeMessages: Atom<ValidationDetails<"negative">[]>;
   messages: Atom<ValidationDetails[]>;
 
-  errorFields: Atom<InferFieldState<TFormValues, ValidationDetails<"error">[]>>;
+  dangerFields: Atom<
+    InferFieldState<TFormValues, ValidationDetails<"danger">[]>
+  >;
   warningFields: Atom<
     InferFieldState<TFormValues, ValidationDetails<"warning">[]>
   >;
   infoFields: Atom<InferFieldState<TFormValues, ValidationDetails<"info">[]>>;
-  helpFields: Atom<InferFieldState<TFormValues, ValidationDetails<"help">[]>>;
+  discoveryFields: Atom<
+    InferFieldState<TFormValues, ValidationDetails<"discovery">[]>
+  >;
   successFields: Atom<
     InferFieldState<TFormValues, ValidationDetails<"success">[]>
   >;
 
-  fieldErrorMessages: Atom<ValidationDetails<"error">[]>;
+  fieldDangerMessages: Atom<ValidationDetails<"danger">[]>;
   fieldWarningMessages: Atom<ValidationDetails<"warning">[]>;
   fieldInfoMessages: Atom<ValidationDetails<"info">[]>;
-  fieldHelpMessages: Atom<ValidationDetails<"help">[]>;
+  fieldHelpMessages: Atom<ValidationDetails<"discovery">[]>;
   fieldsSuccessMessages: Atom<ValidationDetails<"success">[]>;
 
   valid: Atom<boolean>;
@@ -510,7 +515,7 @@ export interface FieldOptions<TFieldValue> {
    * A function that compares two field values to determine if they are equal.
    *
    * @remarks
-   * The default `isEqual` function is provided by the `@stryke/helpers` package.
+   * The default `isEqual` function is provided by the `@stryke/discoveryers` package.
    *
    * @defaultValue `isEqual`
    */
@@ -680,17 +685,21 @@ export interface FieldAtoms<TFieldValue> {
     void
   >;
 
-  errors: Atom<ValidationDetails<"error">[]>;
+  errors: Atom<ValidationDetails<"danger">[]>;
   warnings: Atom<ValidationDetails<"warning">[]>;
   info: Atom<ValidationDetails<"info">[]>;
-  help: Atom<ValidationDetails<"help">[]>;
+  discovery: Atom<ValidationDetails<"discovery">[]>;
   success: Atom<ValidationDetails<"success">[]>;
+  positive: Atom<ValidationDetails<"positive">[]>;
+  negative: Atom<ValidationDetails<"negative">[]>;
 
-  errorMessages: Atom<ValidationDetails<"error">[]>;
+  dangerMessages: Atom<ValidationDetails<"danger">[]>;
   warningMessages: Atom<ValidationDetails<"warning">[]>;
   infoMessages: Atom<ValidationDetails<"info">[]>;
-  helpMessages: Atom<ValidationDetails<"help">[]>;
+  discoveryMessages: Atom<ValidationDetails<"discovery">[]>;
   successMessages: Atom<ValidationDetails<"success">[]>;
+  positiveMessages: Atom<ValidationDetails<"positive">[]>;
+  negativeMessages: Atom<ValidationDetails<"negative">[]>;
 
   theme: Atom<string>;
   messages: Atom<ValidationDetails[]>;

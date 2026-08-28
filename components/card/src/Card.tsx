@@ -48,7 +48,7 @@ export interface CardContextProps {
 
 export const CardContext = createStyledContext<CardContextProps>({
   size: "$true" as SizeTokens,
-  theme: `${"base"}_Card`
+  theme: `${"primary"}_Card`
 });
 
 const CardFrame = styled(Container, {
@@ -186,7 +186,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$8xl">
+    <ThemeableIcon theme={theme} {...props} size="$13xl">
       {icon}
     </ThemeableIcon>
   );
@@ -205,7 +205,7 @@ const CardHeadingImpl = CardHeading.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CardHeading ref={forwardedRef} {...rest}>
           {children}
         </CardHeading>
@@ -229,7 +229,7 @@ const CardEyebrowImpl = CardEyebrow.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CardEyebrow ref={forwardedRef} {...rest}>
           {children}
         </CardEyebrow>
@@ -254,7 +254,7 @@ const CardBodyImpl = CardBody.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CardBody ref={forwardedRef} {...rest}>
           {children}
         </CardBody>
@@ -302,7 +302,7 @@ const CardLinkImpl = CardLink.styleable(
             x: 10
           }}>
           <CardLinkArrowRight
-            size="$xl"
+            size="$7xl"
             $group-card-hover={{
               color: "$foregroundHover"
             }}

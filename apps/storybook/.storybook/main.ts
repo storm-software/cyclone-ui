@@ -18,7 +18,6 @@
 
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 import type { StorybookConfig } from "@storybook/react-vite";
-import react from "@vitejs/plugin-react-swc";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -211,6 +210,13 @@ const config: StorybookConfig = {
       // cacheDir: "../../node_modules/.cache/.vite/apps/storybook",
       envPrefix: "NEXT_PUBLIC_",
 
+      // Workspace component projects preserve JSX. Let Vite's single JSX
+      // transform compile it; Storybook already provides the React runtime.
+      esbuild: {
+        jsx: "automatic",
+        jsxImportSource: "react"
+      },
+
       resolve: {
         alias: [
           ...cycloneUiSourceAliases(),
@@ -301,7 +307,6 @@ const config: StorybookConfig = {
       plugins: [
         nxViteTsPaths({ debug: false }),
         reactNativeWeb(),
-        react(),
         tamaguiPlugin({
           config: join(workspaceRoot, "packages/themes/src/tamagui/config.ts"),
           components: ["tamagui"]

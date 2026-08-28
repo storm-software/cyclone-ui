@@ -16,9 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { useColorThemeName } from "@cyclone-ui/state/theme";
 import type { GetProps } from "@tamagui/core";
-import { styled, Theme } from "@tamagui/core";
+import { styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
 interface LinkTextExtraProps {
@@ -31,18 +30,17 @@ interface LinkTextExtraProps {
 const LinkTextFrame = styled(SizableText, {
   name: "LinkText",
 
+  transition: "200ms",
   cursor: "pointer",
-  fontFamily: "$link",
   fontWeight: "$md",
   size: "$true",
   whiteSpace: "nowrap",
+  textDecorationStyle: "solid",
 
   variants: {
     underline: {
       initial: {
-        transition: "medium",
         textDecorationLine: "underline",
-        textDecorationStyle: "solid",
 
         hoverStyle: {
           textDecorationLine: "none"
@@ -52,14 +50,11 @@ const LinkTextFrame = styled(SizableText, {
         textDecorationLine: "none",
 
         hoverStyle: {
-          textDecorationLine: "underline",
-          textDecorationStyle: "solid"
+          textDecorationLine: "underline"
         }
       },
       static: {
-        transition: "medium",
-        textDecorationLine: "underline",
-        textDecorationStyle: "solid"
+        textDecorationLine: "underline"
       },
       none: {
         textDecorationLine: "none",
@@ -89,108 +84,119 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundLinkPressed",
+          textDecorationColor: "$foregroundLinkPressed"
         },
 
         focusStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
-        }
-      },
-      mixed: {
-        color: "$foregroundInverse",
-        textDecorationColor: "$foregroundLink",
-
-        hoverStyle: {
-          color: "$foregroundInverseHover",
-          textDecorationColor: "$foregroundLinkHover"
-        },
-
-        pressStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundInverse"
-        },
-
-        focusStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundInverse"
-        }
-      },
-      themed: {
-        color: "$foregroundInverse",
-        textDecorationColor: "$foregroundInverse",
-
-        hoverStyle: {
-          color: "$foregroundInverseHover",
-          textDecorationColor: "$foregroundInverseHover"
-        },
-
-        pressStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
-        },
-
-        focusStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundLinkFocused",
+          textDecorationColor: "$foregroundLinkFocused"
         }
       },
       baseInverse: {
-        color: "$foregroundLink",
+        color: "$foreground",
+        textDecorationColor: "$foreground",
+
+        hoverStyle: {
+          color: "$foregroundHover",
+          textDecorationColor: "$foregroundHover"
+        },
+
+        pressStyle: {
+          color: "$foregroundPressed",
+          textDecorationColor: "$foregroundPressed"
+        },
+
+        focusStyle: {
+          color: "$foregroundFocused",
+          textDecorationColor: "$foregroundFocused"
+        }
+      },
+
+      mixed: {
+        color: "$foreground",
         textDecorationColor: "$foregroundLink",
 
         hoverStyle: {
-          color: "$foregroundLinkHover",
+          color: "$foregroundHover",
           textDecorationColor: "$foregroundLinkHover"
         },
 
         pressStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundPressed",
+          textDecorationColor: "$foregroundLinkPressed"
         },
 
         focusStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundFocused",
+          textDecorationColor: "$foregroundLinkFocused"
         }
       },
       mixedInverse: {
         color: "$foregroundLink",
-        textDecorationColor: "$foregroundInverse",
+        textDecorationColor: "$foreground",
 
         hoverStyle: {
-          color: "$foregroundLinkHover",
-          textDecorationColor: "$foregroundInverseHover"
+          color: "$foregroundHover",
+          textDecorationColor: "$foregroundHover"
         },
 
         pressStyle: {
-          color: "$foregroundInverse",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundLinkPressed",
+          textDecorationColor: "$foregroundPressed"
         },
 
         focusStyle: {
-          color: "$foregroundInverse",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundLinkFocused",
+          textDecorationColor: "$foregroundFocused"
+        }
+      },
+
+      themed: {
+        color: "$foreground",
+        textDecorationColor: "$foreground",
+
+        hoverStyle: {
+          color: "$foregroundHover",
+          textDecorationColor: "$foregroundHover"
+        },
+
+        pressStyle: {
+          color: "$foregroundPressed",
+          textDecorationColor: "$foregroundPressed"
+        },
+
+        focusStyle: {
+          color: "$foregroundFocused",
+          textDecorationColor: "$foregroundFocused"
         }
       },
       themedInverse: {
-        color: "$foregroundLink",
-        textDecorationColor: "$foregroundLink",
+        color: "$foreground",
+        textDecorationColor: "$foreground",
 
         hoverStyle: {
-          color: "$foregroundLinkHover",
-          textDecorationColor: "$foregroundLinkHover"
+          color: "$foregroundHover",
+          textDecorationColor: "$foregroundHover"
         },
 
         pressStyle: {
-          color: "$foregroundCaption",
-          textDecorationColor: "$foregroundCaption"
+          color: "$foregroundPressed",
+          textDecorationColor: "$foregroundPressed"
         },
 
         focusStyle: {
-          color: "$foregroundLink",
-          textDecorationColor: "$foregroundLink"
+          color: "$foregroundFocused",
+          textDecorationColor: "$foregroundFocused"
+        }
+      }
+    },
+
+    inverse: {
+      true: {
+        hoverStyle: {
+          color: "$foregroundHover",
+          textDecorationColor: "$foregroundHover"
         }
       }
     },
@@ -199,18 +205,16 @@ const LinkTextFrame = styled(SizableText, {
       true: {
         cursor: "default",
         color: "$foregroundLinkDisabled",
-        textDecorationLine: "none",
 
         hoverStyle: {
-          color: "$foregroundLinkDisabled",
-          textDecorationLine: "none"
+          color: "$foregroundLinkDisabled"
         }
       }
     }
   } as const,
 
   defaultVariants: {
-    underline: "hover",
+    underline: "static",
     cta: false,
     disabled: false,
     variant: "base"
@@ -223,41 +227,48 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
   (
     {
       children,
-      underline = "hover",
+      underline = "static",
       cta = false,
       disabled = false,
       inverse = false,
+      style,
       ...props
     },
     forwardedRef
   ) => {
-    const colorRole = useColorThemeName();
-    const isLinkThemed =
-      !colorRole || colorRole === "link" || colorRole === "base";
+    let theme = useThemeName();
 
     let variant = props.variant as BaseLinkTextVariant;
-    if (!variant && isLinkThemed) {
+    if (
+      !theme ||
+      theme === "dark" ||
+      theme === "light" ||
+      theme.endsWith("primary") ||
+      theme.endsWith("secondary")
+    ) {
       variant = "base";
-    }
-    if (!variant) {
+      theme = `${theme?.startsWith("dark") ? "dark" : "light"}_primary`;
+    } else if (!variant) {
       variant = "themed";
     }
+
     if (inverse) {
       variant = `${variant}Inverse` as BaseLinkTextVariant;
     }
 
     return (
-      <Theme name={isLinkThemed ? "link" : colorRole}>
-        <LinkTextFrame
-          {...props}
-          ref={forwardedRef}
-          underline={underline}
-          cta={cta}
-          disabled={disabled}
-          variant={variant}>
-          {children}
-        </LinkTextFrame>
-      </Theme>
+      <LinkTextFrame
+        {...props}
+        ref={forwardedRef}
+        theme={theme}
+        underline={underline}
+        cta={cta}
+        disabled={disabled}
+        inverse={inverse}
+        variant={variant}
+        style={[{ textUnderlineOffset: 3 }, style]}>
+        {children}
+      </LinkTextFrame>
     );
   },
   { staticConfig: { componentName: "LinkText" } }

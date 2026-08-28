@@ -529,55 +529,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.928647 0.072535 177.640)",
+        "$value": "oklch(0.754393 0.125823 261.401)",
         "$description": "A pale periwinkle blue color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.901162 0.097727 183.523)",
+        "$value": "oklch(0.733309 0.137879 260.918)",
         "$description": "A light sky blue color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.881025 0.118388 188.561)",
+        "$value": "oklch(0.710532 0.150966 260.989)",
         "$description": "A soft cornflower blue color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.862028 0.131504 196.200)",
+        "$value": "oklch(0.688211 0.164006 261.029)",
         "$description": "A muted bright blue color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.807666 0.133172 205.900)",
+        "$value": "oklch(0.668496 0.175815 260.701)",
         "$description": "A medium azure blue color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.741948 0.135783 220.723)",
+        "$value": "oklch(0.647338 0.188528 260.777)",
         "$description": "A vivid sky blue color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.611140 0.120745 229.225)",
+        "$value": "oklch(0.628952 0.199812 260.608)",
         "$description": "A rich cerulean blue color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.483329 0.105286 236.844)",
+        "$value": "oklch(0.609361 0.211850 260.783)",
         "$description": "A deep navy blue color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.352595 0.084211 242.345)",
+        "$value": "oklch(0.575628 0.210277 259.889)",
         "$description": "A dark midnight blue color"
       },
       "$description": "The blue color palette"

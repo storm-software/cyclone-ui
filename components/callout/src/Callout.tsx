@@ -142,7 +142,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$8xl">
+    <ThemeableIcon theme={theme} {...props} size="$13xl">
       {icon}
     </ThemeableIcon>
   );
@@ -158,7 +158,7 @@ const CalloutHeading = styled(HeadingXLText, {
 const CalloutHeadingImpl = CalloutHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CalloutHeading ref={forwardedRef} {...props}>
           {children}
         </CalloutHeading>
@@ -180,7 +180,7 @@ const CalloutEyebrow = styled(EyebrowText, {
 const CalloutEyebrowImpl = CalloutEyebrow.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CalloutEyebrow ref={forwardedRef} {...props}>
           {children}
         </CalloutEyebrow>
@@ -203,7 +203,7 @@ const CalloutBody = styled(BodyText, {
 const CalloutBodyImpl = CalloutBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <CalloutBody ref={forwardedRef} {...props}>
           {children}
         </CalloutBody>

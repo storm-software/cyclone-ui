@@ -16,11 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable ts/no-unsafe-call -- @stryke/helpers merge/path helpers */
-
+import { deepMerge } from "@stryke/helpers/deep-merge";
 import type { GetField } from "@stryke/helpers/get-field";
 import { getField } from "@stryke/helpers/get-field";
-import { deepMerge } from "@stryke/helpers/deep-merge";
 import { isEqual } from "@stryke/helpers/is-equal";
 import { toPath } from "@stryke/helpers/to-path";
 import { isFunction } from "@stryke/type-checks/is-function";
@@ -29,8 +27,8 @@ import { isString } from "@stryke/type-checks/is-string";
 import { atom } from "jotai";
 import { focusAtom } from "jotai-optics";
 import { atomWithDefault, RESET, splitAtom } from "jotai/utils";
-import type { SetStateActionWithReset } from "../../types";
 import { createMoleculeApi, use } from "../../base";
+import type { SetStateActionWithReset } from "../../types";
 import { atomWithFieldItems } from "../atoms/atom-with-field";
 import {
   atomWithFieldsMessageList,
@@ -48,7 +46,7 @@ import { requiredValidator } from "../utilities/validators";
 import { FormApi } from "./form-molecule";
 
 export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
-  theme: "base",
+  theme: "primary",
   size: "$true",
   debounceMs: 100,
   isEqual,
@@ -118,11 +116,23 @@ export const FieldApi = createMoleculeApi(
     const focusedAtom = focusAtom(form.focusedFields, optic =>
       optic.path(...path)
     );
-    const requiredAtom = focusAtom(form.requiredFields, optic =>
+    const requiredStateAtom = focusAtom(form.requiredFields, optic =>
       optic.path(...path)
     );
-    const disabledAtom = focusAtom(form.disabledFields, optic =>
+    const disabledStateAtom = focusAtom(form.disabledFields, optic =>
       optic.path(...path)
+    );
+    const requiredAtom = atom(
+      get => get(requiredStateAtom) ?? get(optionsAtom).required,
+      (_get, set, update: SetStateAction<boolean>) => {
+        set(requiredStateAtom, update);
+      }
+    );
+    const disabledAtom = atom(
+      get => get(disabledStateAtom) ?? get(optionsAtom).disabled,
+      (_get, set, update: SetStateAction<boolean>) => {
+        set(disabledStateAtom, update);
+      }
     );
     const touchedAtom = focusAtom(form.touchedFields, optic =>
       optic.path(...path)
@@ -154,22 +164,33 @@ export const FieldApi = createMoleculeApi(
 
     const errorsAtom = atomWithFieldsMessageTypes(
       validationResultsAtom,
-      "error"
+      "danger"
     );
     const warningsAtom = atomWithFieldsMessageTypes(
       validationResultsAtom,
       "warning"
     );
     const infoAtom = atomWithFieldsMessageTypes(validationResultsAtom, "info");
-    const helpAtom = atomWithFieldsMessageTypes(validationResultsAtom, "help");
+    const discoveryAtom = atomWithFieldsMessageTypes(
+      validationResultsAtom,
+      "discovery"
+    );
     const successesAtom = atomWithFieldsMessageTypes(
       validationResultsAtom,
       "success"
     );
+    const positivesAtom = atomWithFieldsMessageTypes(
+      validationResultsAtom,
+      "positive"
+    );
+    const negativesAtom = atomWithFieldsMessageTypes(
+      validationResultsAtom,
+      "negative"
+    );
 
     const errorMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,
-      "error"
+      "danger"
     );
     const warningMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,
@@ -179,13 +200,21 @@ export const FieldApi = createMoleculeApi(
       validationResultsAtom,
       "info"
     );
-    const helpMessagesAtom = atomWithFieldsMessageList(
+    const discoveryMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,
-      "help"
+      "discovery"
     );
     const successMessagesAtom = atomWithFieldsMessageList(
       validationResultsAtom,
       "success"
+    );
+    const positiveMessagesAtom = atomWithFieldsMessageList(
+      validationResultsAtom,
+      "positive"
+    );
+    const negativeMessagesAtom = atomWithFieldsMessageList(
+      validationResultsAtom,
+      "negative"
     );
 
     const invalidAtom = atom(get => {
@@ -266,29 +295,37 @@ export const FieldApi = createMoleculeApi(
       errors: errorsAtom,
       warnings: warningsAtom,
       info: infoAtom,
-      help: helpAtom,
+      discovery: discoveryAtom,
       success: successesAtom,
+      positive: positivesAtom,
+      negative: negativesAtom,
 
-      errorMessages: errorMessagesAtom,
+      dangerMessages: errorMessagesAtom,
       warningMessages: warningMessagesAtom,
       infoMessages: infoMessagesAtom,
-      helpMessages: helpMessagesAtom,
+      discoveryMessages: discoveryMessagesAtom,
       successMessages: successMessagesAtom,
+      positiveMessages: positiveMessagesAtom,
+      negativeMessages: negativeMessagesAtom,
 
       theme: atomWithTheme(
         optionsAtom,
         errorMessagesAtom,
         warningMessagesAtom,
         infoMessagesAtom,
-        helpMessagesAtom,
-        successMessagesAtom
+        discoveryMessagesAtom,
+        successMessagesAtom,
+        positiveMessagesAtom,
+        negativeMessagesAtom
       ),
       messages: atomWithMessages(
         errorMessagesAtom,
         warningMessagesAtom,
         infoMessagesAtom,
-        helpMessagesAtom,
-        successMessagesAtom
+        discoveryMessagesAtom,
+        successMessagesAtom,
+        positiveMessagesAtom,
+        negativeMessagesAtom
       ),
       invalid: invalidAtom,
       valid: validAtom

@@ -42,6 +42,6 @@ type Story = StoryObj<typeof AccordionToggle>;
 
 export const Base: Story = {
   args: {
-    size: "$8xl"
+    size: "$13xl"
   }
 };

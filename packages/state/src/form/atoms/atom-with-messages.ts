@@ -19,12 +19,14 @@
 import { isSetObject } from "@stryke/type-checks/is-set-object";
 import type { MessageType } from "@stryke/types/messages";
 import type {
-  ErrorValidationDetail as ErrorValidationDetails,
-  HelpValidationDetail as HelpValidationDetails,
+  DangerValidationDetail as DangerValidationDetails,
+  DiscoveryValidationDetail as DiscoveryValidationDetails,
   InfoValidationDetail as InfoValidationDetails,
   SuccessValidationDetail as SuccessValidationDetails,
   ValidationDetail as ValidationDetails,
-  WarningValidationDetail as WarningValidationDetails
+  WarningValidationDetail as WarningValidationDetails,
+  PositiveValidationDetail as PositiveValidationDetails,
+  NegativeValidationDetail as NegativeValidationDetails
 } from "@stryke/types/validations";
 import type { Atom } from "jotai";
 import { atom } from "jotai";
@@ -124,21 +126,24 @@ export const getFieldsMessageTypes = <
   type: TMessageType
 ): InferFieldState<TFieldValue, TValidationDetails[]> => {
   if (isValidationResults(messageMap)) {
-    return getMessageType<TMessageType, TValidationDetails>(messageMap, type);
+    return getMessageType<TMessageType, TValidationDetails>(
+      messageMap,
+      type
+    ) as InferFieldState<TFieldValue, TValidationDetails[]>;
   }
 
   return Object.entries(messageMap).reduce(
     (ret, [field, messages]) => {
       if (!isValidationResults(messages)) {
-        ret[field] = getFieldsMessageTypes(
+        (ret as Record<string, unknown>)[field] = getFieldsMessageTypes(
           messages as InferFieldState<TFieldValue, ValidationResults>,
           type
         );
       } else {
-        ret[field] = getMessageType<TMessageType, TValidationDetails>(
-          messages,
-          type
-        );
+        (ret as Record<string, unknown>)[field] = getMessageType<
+          TMessageType,
+          TValidationDetails
+        >(messages, type);
       }
 
       return ret;
@@ -246,16 +251,18 @@ export const atomWithMessageTypes = <
 };
 
 export const atomWithMessages = (
-  errorMessagesAtom: Atom<ErrorValidationDetails[]>,
+  dangerMessagesAtom: Atom<DangerValidationDetails[]>,
   warningMessagesAtom: Atom<WarningValidationDetails[]>,
   infoMessagesAtom: Atom<InfoValidationDetails[]>,
-  helpMessagesAtom: Atom<HelpValidationDetails[]>,
-  successMessagesAtom: Atom<SuccessValidationDetails[]>
+  discoveryMessagesAtom: Atom<DiscoveryValidationDetails[]>,
+  successMessagesAtom: Atom<SuccessValidationDetails[]>,
+  positiveMessagesAtom: Atom<PositiveValidationDetails[]>,
+  negativeMessagesAtom: Atom<NegativeValidationDetails[]>
 ) =>
   atom<ValidationDetails[]>(get => {
-    const errorMessages = get(errorMessagesAtom);
-    if (errorMessages.length > 0) {
-      return errorMessages;
+    const dangerMessages = get(dangerMessagesAtom);
+    if (dangerMessages.length > 0) {
+      return dangerMessages;
     }
     const warningMessages = get(warningMessagesAtom);
     if (warningMessages.length > 0) {
@@ -265,13 +272,21 @@ export const atomWithMessages = (
     if (infoMessages.length > 0) {
       return infoMessages;
     }
-    const helpMessages = get(helpMessagesAtom);
-    if (helpMessages.length > 0) {
-      return helpMessages;
+    const discoveryMessages = get(discoveryMessagesAtom);
+    if (discoveryMessages.length > 0) {
+      return discoveryMessages;
     }
     const successMessages = get(successMessagesAtom);
     if (successMessages.length > 0) {
       return successMessages;
+    }
+    const positiveMessages = get(positiveMessagesAtom);
+    if (positiveMessages.length > 0) {
+      return positiveMessages;
+    }
+    const negativeMessages = get(negativeMessagesAtom);
+    if (negativeMessages.length > 0) {
+      return negativeMessages;
     }
 
     return [];
@@ -279,16 +294,18 @@ export const atomWithMessages = (
 
 export const atomWithTheme = (
   optionsAtom: Atom<{ theme?: string }>,
-  errorMessagesAtom: Atom<ErrorValidationDetails[]>,
+  dangerMessagesAtom: Atom<DangerValidationDetails[]>,
   warningMessagesAtom: Atom<WarningValidationDetails[]>,
   infoMessagesAtom: Atom<InfoValidationDetails[]>,
-  helpMessagesAtom: Atom<HelpValidationDetails[]>,
-  successMessagesAtom: Atom<SuccessValidationDetails[]>
+  discoveryMessagesAtom: Atom<DiscoveryValidationDetails[]>,
+  successMessagesAtom: Atom<SuccessValidationDetails[]>,
+  positiveMessagesAtom: Atom<PositiveValidationDetails[]>,
+  negativeMessagesAtom: Atom<NegativeValidationDetails[]>
 ) =>
   atom<string>(get => {
     const options = get(optionsAtom);
     if (
-      get(errorMessagesAtom).length > 0 ||
+      get(dangerMessagesAtom).length > 0 ||
       options.theme?.includes("danger")
     ) {
       return "danger";
@@ -308,11 +325,21 @@ export const atomWithTheme = (
     ) {
       return "info";
     } else if (
-      get(helpMessagesAtom).length > 0 ||
+      get(discoveryMessagesAtom).length > 0 ||
       options.theme?.includes("discovery")
     ) {
       return "discovery";
+    } else if (
+      get(positiveMessagesAtom).length > 0 ||
+      options.theme?.includes("positive")
+    ) {
+      return "positive";
+    } else if (
+      get(negativeMessagesAtom).length > 0 ||
+      options.theme?.includes("negative")
+    ) {
+      return "negative";
     }
 
-    return "base";
+    return "primary";
   });

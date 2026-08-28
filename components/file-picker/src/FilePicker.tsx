@@ -57,11 +57,12 @@ export interface FilePickerContextProps {
   color?: ColorTokens | string;
   required: boolean;
   disabled: boolean;
+  active: boolean;
   theme: string;
 }
 
 export const FilePickerContext = createStyledContext<FilePickerContextProps>({
-  size: "$5xl",
+  size: "$10xl",
   typeOfPicker: "file",
   mediaTypes: [MediaTypeOptions.All] as MediaTypeOptions[],
   max: 1,
@@ -74,7 +75,8 @@ export const FilePickerContext = createStyledContext<FilePickerContextProps>({
   color: undefined,
   required: false,
   disabled: false,
-  theme: `${"base"}_FilePicker`
+  active: false,
+  theme: `${"primary"}_FilePicker`
 });
 
 const MAX_DISPLAYABLE_FILE_NAME_LENGTH = 150;
@@ -234,7 +236,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
         {...props}
         {...rootProps}
         ref={composedRef}
-        group={true}
+        group={"file-picker" as any}
         active={Boolean(dragStatus?.isDragActive)}>
         <FilePickerContext.Provider
           name={name}
@@ -243,6 +245,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
           onPick={handlePick}
           onChange={onChange}
           disabled={disabled}
+          active={Boolean(dragStatus?.isDragActive)}
           typeOfPicker={typeOfPicker}
           mediaTypes={mediaTypes}
           max={max}>
@@ -265,7 +268,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
 const FilePickerTrigger = YStack.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, onOpen, files, max } =
+    const { disabled, active, onOpen, files, max } =
       FilePickerContext.useStyledContext();
 
     if (files.length >= max) {
@@ -284,10 +287,21 @@ const FilePickerTrigger = YStack.styleable(
         {...props}>
         {files.length === 0 && (
           <Upload
-            size="$7xl"
+            size="$12xl"
             color={
-              disabled ? "$foregroundInverseDisabled" : "$foregroundInverse"
+              disabled
+                ? "$borderDisabled"
+                : active
+                  ? "$borderSubtle"
+                  : "$border"
             }
+            $group-file-picker-hover={{
+              color: disabled
+                ? "$borderDisabled"
+                : active
+                  ? "$borderSubtleHover"
+                  : "$borderHover"
+            }}
             transition="100ms"
             opacity={1}
             scale={1}
@@ -363,7 +377,7 @@ const FilePickerViewLink = ({
   if (uri) {
     return (
       <Link
-        fontFamily="$label"
+        fontFamily="$heading-sm"
         fontSize="$xl"
         fontWeight="$true"
         color="$foregroundInverse"
@@ -377,7 +391,7 @@ const FilePickerViewLink = ({
 
   return (
     <LabelText
-      fontFamily="$label"
+      fontFamily="$heading-sm"
       fontSize="$xl"
       color="$foregroundInverse"
       {...props}>
@@ -462,9 +476,9 @@ const FilePickerFile = ({
           <Link underline="none" href={uri} download={name}>
             <Button
               variant="ghost"
-              theme="base"
+              theme="primary"
               color="$foreground"
-              size="$8xl"
+              size="$13xl"
               padding="$xl"
               circular={true}>
               <Button.Icon>
@@ -488,10 +502,10 @@ const FilePickerFile = ({
           }}>
           <Button
             variant="ghost"
-            theme="base"
+            theme="primary"
             color="$foreground"
             onPress={handleRemove}
-            size="$8xl"
+            size="$13xl"
             padding="$xl"
             circular={true}>
             <Button.Icon>
@@ -522,22 +536,31 @@ const FilePickerFile = ({
             </FilePickerViewLink>
           </View>
           <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <BytesText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
+            <BytesText
+              zIndex="$30"
+              color="$foregroundBody"
+              fontWeight="$medium">
               {size}
             </BytesText>
 
-            {lastModified && <Dot size="$lg" color="$foregroundBody" />}
+            {lastModified && <Dot size="$6xl" color="$foregroundBody" />}
 
             {lastModified && (
-              <BodyText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
+              <BodyText
+                zIndex="$30"
+                color="$foregroundBody"
+                fontWeight="$medium">
                 {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
               </BodyText>
             )}
 
-            {mimeType && <Dot size="$lg" color="$foregroundBody" />}
+            {mimeType && <Dot size="$6xl" color="$foregroundBody" />}
 
             {mimeType && (
-              <BodyText zIndex="$30" color="$foregroundBody" fontWeight="$medium">
+              <BodyText
+                zIndex="$30"
+                color="$foregroundBody"
+                fontWeight="$medium">
                 {mimeType}
               </BodyText>
             )}

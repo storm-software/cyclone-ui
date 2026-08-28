@@ -56,6 +56,7 @@ export const baseInputStyle: BaseInputStyle = [
     alignItems: "center",
     margin: 0,
     padding: 0,
+    paddingHorizontal: "$xl",
 
     tabIndex: 0,
 
@@ -142,7 +143,7 @@ export const getInputSize = (
 
   // The generated size scale has no `$true` CSS variable. Resolve Tamagui's
   // default variant to the standard control size before using it as a height.
-  const size = val === "$true" || String(val) === "true" ? "$5xl" : val;
+  const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
   const xSize = getSpaced(size);
 
   return {

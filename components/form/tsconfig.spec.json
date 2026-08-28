@@ -1,11 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": ["jest"],
+    "types": ["vitest/globals", "vitest/importMeta", "node", "vitest"],
     "outDir": "../../dist/out-tsc"
   },
   "include": [
-    "jest.config.ts",
+    "vitest.config.mts",
     "src/**/*.test.ts",
     "src/**/*.spec.ts",
     "src/**/*.d.ts"

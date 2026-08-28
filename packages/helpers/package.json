@@ -95,6 +95,20 @@
       }
     },
     "./package.json": "./package.json",
+    "./token-value": {
+      "require": {
+        "types": "./dist/token-value.d.cts",
+        "default": "./dist/token-value.cjs"
+      },
+      "import": {
+        "types": "./dist/token-value.d.mts",
+        "default": "./dist/token-value.mjs"
+      },
+      "default": {
+        "types": "./dist/token-value.d.mts",
+        "default": "./dist/token-value.mjs"
+      }
+    },
     "./types": {
       "require": {
         "types": "./dist/types.d.cts",

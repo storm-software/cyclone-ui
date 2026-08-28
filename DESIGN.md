@@ -8,9 +8,12 @@ colors:
   white: "#ffffff"
   brand-1: "#1fb2a6"
   brand-2: "#003832"
+  foreground-body: "#949494"
+  foreground-caption: "#737373"
+  foreground-link: "#468ae2"
+  foreground-required: "#dc2626"
   foreground-primary: "#f5f5f5"
   foreground-secondary: "#525252"
-  foreground-body: "#949494"
   foreground-accent: "#1fb2a6"
   foreground-danger: "#cf222e"
   foreground-negative: "#d6301b"
@@ -19,7 +22,6 @@ colors:
   foreground-positive: "#79b136"
   foreground-info: "#00b8e6"
   foreground-discovery: "#7f7ee4"
-  foreground-link: "#468ae2"
   foreground-primary-inverse: "#181818"
   foreground-secondary-inverse: "#f5f5f5"
   foreground-accent-inverse: "#f5f5f5"
@@ -30,6 +32,22 @@ colors:
   foreground-positive-inverse: "#f5f5f5"
   foreground-info-inverse: "#f5f5f5"
   foreground-discovery-inverse: "#f5f5f5"
+  foreground-body-hover: "#6d6d6d"
+  foreground-body-pressed: "#484848"
+  foreground-body-focused: "#484848"
+  foreground-body-disabled: "#94949499"
+  foreground-caption-hover: "#545454"
+  foreground-caption-pressed: "#363636"
+  foreground-caption-focused: "#363636"
+  foreground-caption-disabled: "#73737399"
+  foreground-link-hover: "#1d63b8"
+  foreground-link-pressed: "#003d8f"
+  foreground-link-focused: "#003d8f"
+  foreground-link-disabled: "#363636"
+  foreground-required-hover: "#b20000"
+  foreground-required-pressed: "#890000"
+  foreground-required-focused: "#890000"
+  foreground-required-disabled: "#ba574e"
   foreground-primary-hover: "#b6b6b6"
   foreground-primary-pressed: "#7b7b7b"
   foreground-primary-focused: "#7b7b7b"
@@ -38,10 +56,6 @@ colors:
   foreground-secondary-pressed: "#848484"
   foreground-secondary-focused: "#848484"
   foreground-secondary-disabled: "#999999"
-  foreground-body-hover: "#6d6d6d"
-  foreground-body-pressed: "#484848"
-  foreground-body-focused: "#484848"
-  foreground-body-disabled: "#94949499"
   foreground-accent-hover: "#00877c"
   foreground-accent-pressed: "#005e55"
   foreground-accent-focused: "#005e55"
@@ -74,10 +88,6 @@ colors:
   foreground-discovery-pressed: "#3b318f"
   foreground-discovery-focused: "#3b318f"
   foreground-discovery-disabled: "#383838"
-  foreground-link-hover: "#1d63b8"
-  foreground-link-pressed: "#003d8f"
-  foreground-link-focused: "#003d8f"
-  foreground-link-disabled: "#363636"
   foreground-primary-inverse-hover: "#222222"
   foreground-primary-inverse-pressed: "#2c2c2c"
   foreground-primary-inverse-focused: "#2c2c2c"
@@ -391,11 +401,6 @@ typography:
     fontSize: "1rem"
     fontWeight: "400"
     lineHeight: "1.5"
-  label:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.25rem"
-    fontWeight: "700"
-    lineHeight: "1.4"
   body:
     fontFamily: "Space Grotesk"
     fontSize: "1rem"
@@ -444,7 +449,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -453,9 +458,12 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **White (#ffffff):** A completely white color
 - **Brand 1 (#1fb2a6):** The Storm Software brand teal color
 - **Brand 2 (#003832):** The Storm Software brand teal color
+- **Foreground Body (#949494):** The body foreground color for the light theme
+- **Foreground Caption (#737373):** The caption foreground color for the light theme
+- **Foreground Link (#468ae2):** The link foreground color for the light theme
+- **Foreground Required (#dc2626):** A required foreground color for the light theme
 - **Foreground Primary (#f5f5f5):** The primary foreground color for the light theme
 - **Foreground Secondary (#525252):** The secondary foreground color for the light theme
-- **Foreground Body (#949494):** The body foreground color for the light theme
 - **Foreground Accent (#1fb2a6):** The accent foreground color for the light theme
 - **Foreground Danger (#cf222e):** The danger foreground color for the light theme
 - **Foreground Negative (#d6301b):** The negative foreground color for the light theme
@@ -464,7 +472,6 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **Foreground Positive (#79b136):** The positive foreground color for the light theme
 - **Foreground Info (#00b8e6):** The info foreground color for the light theme
 - **Foreground Discovery (#7f7ee4):** The discovery foreground color for the light theme
-- **Foreground Link (#468ae2):** The link foreground color for the light theme
 - **Foreground Primary Inverse (#181818):** The primary foreground color for the light theme
 - **Foreground Secondary Inverse (#f5f5f5):** The secondary foreground color for the light theme
 - **Foreground Accent Inverse (#f5f5f5):** The accent foreground color for the light theme
@@ -475,6 +482,22 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **Foreground Positive Inverse (#f5f5f5):** The positive foreground color for the light theme
 - **Foreground Info Inverse (#f5f5f5):** The info foreground color for the light theme
 - **Foreground Discovery Inverse (#f5f5f5):** The discovery foreground color for the light theme
+- **Foreground Body Hover (#6d6d6d):** The body foreground color for the light theme (hover, 20% darker)
+- **Foreground Body Pressed (#484848):** The body foreground color for the light theme (pressed, 40% darker)
+- **Foreground Body Focused (#484848):** The body foreground color for the light theme (focused, 40% darker)
+- **Foreground Body Disabled (#94949499):** The body foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Caption Hover (#545454):** The caption foreground color for the light theme (hover, 20% darker)
+- **Foreground Caption Pressed (#363636):** The caption foreground color for the light theme (pressed, 40% darker)
+- **Foreground Caption Focused (#363636):** The caption foreground color for the light theme (focused, 40% darker)
+- **Foreground Caption Disabled (#73737399):** The caption foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Link Hover (#1d63b8):** The link foreground color for the light theme (hover, 20% darker)
+- **Foreground Link Pressed (#003d8f):** The link foreground color for the light theme (pressed, 40% darker)
+- **Foreground Link Focused (#003d8f):** The link foreground color for the light theme (focused, 40% darker)
+- **Foreground Link Disabled (#363636):** The link foreground color for the light theme (disabled, 60% saturation)
+- **Foreground Required Hover (#b20000):** A required foreground color for the light theme (hover, 20% darker)
+- **Foreground Required Pressed (#890000):** A required foreground color for the light theme (pressed, 40% darker)
+- **Foreground Required Focused (#890000):** A required foreground color for the light theme (focused, 40% darker)
+- **Foreground Required Disabled (#ba574e):** A required foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Primary Hover (#b6b6b6):** The primary foreground color for the light theme (hover, 20% darker)
 - **Foreground Primary Pressed (#7b7b7b):** The primary foreground color for the light theme (pressed, 40% darker)
 - **Foreground Primary Focused (#7b7b7b):** The primary foreground color for the light theme (focused, 40% darker)
@@ -483,10 +506,6 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **Foreground Secondary Pressed (#848484):** The secondary foreground color for the light theme (pressed, 40% brighter)
 - **Foreground Secondary Focused (#848484):** The secondary foreground color for the light theme (focused, 40% brighter)
 - **Foreground Secondary Disabled (#999999):** The secondary foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Body Hover (#6d6d6d):** The body foreground color for the light theme (hover, 20% darker)
-- **Foreground Body Pressed (#484848):** The body foreground color for the light theme (pressed, 40% darker)
-- **Foreground Body Focused (#484848):** The body foreground color for the light theme (focused, 40% darker)
-- **Foreground Body Disabled (#94949499):** The body foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Accent Hover (#00877c):** The accent foreground color for the light theme (hover, 20% darker)
 - **Foreground Accent Pressed (#005e55):** The accent foreground color for the light theme (pressed, 40% darker)
 - **Foreground Accent Focused (#005e55):** The accent foreground color for the light theme (focused, 40% darker)
@@ -519,10 +538,6 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **Foreground Discovery Pressed (#3b318f):** The discovery foreground color for the light theme (pressed, 40% darker)
 - **Foreground Discovery Focused (#3b318f):** The discovery foreground color for the light theme (focused, 40% darker)
 - **Foreground Discovery Disabled (#383838):** The discovery foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Link Hover (#1d63b8):** The link foreground color for the light theme (hover, 20% darker)
-- **Foreground Link Pressed (#003d8f):** The link foreground color for the light theme (pressed, 40% darker)
-- **Foreground Link Focused (#003d8f):** The link foreground color for the light theme (focused, 40% darker)
-- **Foreground Link Disabled (#363636):** The link foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Primary Inverse Hover (#222222):** The primary foreground color for the light theme (hover, 20% brighter)
 - **Foreground Primary Inverse Pressed (#2c2c2c):** The primary foreground color for the light theme (pressed, 40% brighter)
 - **Foreground Primary Inverse Focused (#2c2c2c):** The primary foreground color for the light theme (focused, 40% brighter)
@@ -802,7 +817,6 @@ Cyclone UI design tokens — 342 color tokens, 13 typography tokens, 28 spacing 
 - **heading-md:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
 - **heading-sm:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
 - **eyebrows:** fontFamily: Space Mono, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
-- **label:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
 - **body:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
 - **caption:** fontFamily: Space Grotesk, fontSize: 0.875rem, fontWeight: 300, lineHeight: 1.428571
 - **code:** fontFamily: Space Mono, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5

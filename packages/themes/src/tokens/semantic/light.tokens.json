@@ -3,6 +3,30 @@
     "$description": "The light theme colors",
     "foreground": {
       "$description": "The foreground colors for the light theme",
+      "body": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.3}",
+        "$description": "The body foreground color for the light theme"
+      },
+      "caption": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.base.4}",
+        "$description": "The caption foreground color for the light theme"
+      },
+      "link": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.blue.7}",
+        "$description": "The link foreground color for the light theme"
+      },
+      "required": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.5}",
+        "$description": "A required foreground color for the light theme"
+      },
       "primary": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -16,12 +40,6 @@
         "$value": "{color.base.5}",
         "$description": "The secondary foreground color for the light theme",
         "theme": "secondary"
-      },
-      "body": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.3}",
-        "$description": "The body foreground color for the light theme"
       },
       "accent": {
         "$type": "color",
@@ -78,12 +96,6 @@
         "$value": "{color.purple.7}",
         "$description": "The discovery foreground color for the light theme",
         "theme": "discovery"
-      },
-      "link": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.blue.7}",
-        "$description": "The link foreground color for the light theme"
       },
       "primary-inverse": {
         "$type": "color",

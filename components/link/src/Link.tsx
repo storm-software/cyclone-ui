@@ -24,10 +24,12 @@ import { styled } from "@tamagui/core";
 import { ArrowUpRight } from "@tamagui/lucide-icons-2";
 import type { GestureResponderEvent } from "react-native";
 import { Linking } from "react-native";
+
 const LinkFrame = styled(LinkText, {
   name: "Link",
   render: "a",
   role: "link",
+  color: "$foregroundLink",
 
   cursor: "pointer"
 });
@@ -43,8 +45,6 @@ export const Link = LinkFrame.styleable<{
     { target, children, href, external, size = "$true", ...props },
     forwardedRef
   ) => {
-    // const adjusted = useMemo(() => getSized(size, { shift: -2 }), [size]);
-
     return (
       <LinkFrame
         group={"link" as any}
@@ -68,14 +68,15 @@ export const Link = LinkFrame.styleable<{
 
         {external && (
           <ThemeableIcon
-            size="$md"
-            display="inline"
-            paddingTop={5}
-            color="$foregroundBody"
+            size="$10xl"
+            render="span"
+            display="inline-flex"
+            color="$foregroundLink"
+            style={{ verticalAlign: "middle" }}
             $group-link-hover={{
-              color: "$foregroundBodyHover",
-              x: 50,
-              y: -50
+              color: "$foregroundLinkHover",
+              x: 2,
+              y: -2
             }}>
             <ArrowUpRight />
           </ThemeableIcon>

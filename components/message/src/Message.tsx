@@ -72,7 +72,7 @@ export const Message = () => {
         <Alert.Icon>{current.icon}</Alert.Icon>
 
         <Alert.Content
-          transition="slow"
+          transition="250ms"
           enterStyle={{
             opacity: 0,
             y: 50
@@ -83,7 +83,7 @@ export const Message = () => {
 
           {current.message && (
             <Alert.Content.Body
-              transition="lazy"
+              transition="500ms"
               enterStyle={{
                 opacity: 0,
                 y: 50
@@ -100,7 +100,7 @@ export const Message = () => {
             circular={true}
             padding="$sm">
             <Button.Icon>
-              <X size="$lg" />
+              <X size="$6xl" />
             </Button.Icon>
           </Button>
         </MessageClose>

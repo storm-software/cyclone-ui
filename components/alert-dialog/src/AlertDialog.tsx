@@ -61,7 +61,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
 
         <XStack zIndex="$20" justifyContent="center" paddingTop="$3xl">
           <View
-            theme={"base"}
+            theme="primary"
             themeShallow={true}
             padding={padding}
             backgroundColor="$backgroundPage"
@@ -70,7 +70,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
               ref={forwardedRef}
               {...props}
               theme={theme}
-              size="$9xl">
+              size="$14xl">
               {children || getIconByTheme({ theme }) || <AlertCircle />}
             </ThemeableIcon>
           </View>
@@ -95,7 +95,7 @@ const AlertDialogContainer = Dialog.Container.styleable(
           key="content"
           variant="tertiary"
           {...props}
-          theme={"base"}
+          theme="primary"
           themeShallow={true}
           backgroundColor="$backgroundPage"
           bordered={false}
@@ -133,7 +133,7 @@ const AlertDialogContent = YStack.styleable(
 const AlertDialogHeading = Dialog.Heading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <Dialog.Heading ref={forwardedRef} {...props}>
           {children}
         </Dialog.Heading>
@@ -148,11 +148,11 @@ const AlertDialogHeading = Dialog.Heading.styleable(
 const AlertDialogBody = Dialog.Body.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <Dialog.Body
           ref={forwardedRef}
           color="$foregroundBody"
-          size="$9xl"
+          size="$14xl"
           {...props}>
           {children}
         </Dialog.Body>

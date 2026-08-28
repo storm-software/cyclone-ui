@@ -132,7 +132,7 @@ type ButtonExtraProps = TextParentStyles &
   };
 
 export const ButtonContext = createStyledContext<ButtonContextProps>({
-  size: "$5xl",
+  size: "$10xl",
   variant: "surface",
   borderRadius: "$button",
   unstyled: false,
@@ -152,6 +152,7 @@ const ButtonFrame = styled(View, {
   transition: "200ms",
   alignItems: "center",
   justifyContent: "center",
+  position: "relative",
   display: "flex",
   flexGrow: 1,
   flexShrink: 0,
@@ -286,7 +287,7 @@ const ButtonFrame = styled(View, {
       ":string": getButtonSized,
       ":number": getButtonSized,
       true: (_val: boolean, extras: VariantSpreadExtras<any>) =>
-        getButtonSized("$5xl", extras)
+        getButtonSized("$10xl", extras)
     },
 
     disabled: {
@@ -344,8 +345,7 @@ const ButtonFrame = styled(View, {
     animate: {
       true: {
         pressStyle: {
-          // scaleX: 0.98,
-          // scaleY: 0.99
+          scale: 0.95
         }
       }
     }
@@ -359,7 +359,7 @@ const ButtonFrame = styled(View, {
     circular: false,
     bordered: true,
     noPadding: false,
-    animate: true
+    animate: false
   }
 });
 
@@ -375,7 +375,7 @@ const ButtonTextFrame = styled(Text, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "$label",
+  fontFamily: "$heading-sm",
   fontWeight: "$true",
   fontSize: "$true",
 
@@ -594,7 +594,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
   (
     {
       variant = "surface",
-      size = "$5xl",
+      size = "$10xl",
       disabled = false,
       circular = false,
       bordered = true,

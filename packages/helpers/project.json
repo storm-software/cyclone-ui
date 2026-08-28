@@ -4,6 +4,9 @@
   "projectType": "library",
   "sourceRoot": "packages/helpers/src",
   "targets": {
+    "build": {
+      "dependsOn": ["clean"]
+    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

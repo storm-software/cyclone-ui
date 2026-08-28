@@ -111,7 +111,7 @@ const BadgeText = styled(SizableText, {
   variants: {
     unstyled: {
       false: {
-        fontFamily: "$label",
+        fontFamily: "$heading-sm",
         fontWeight: "$semibold",
         size: "$true"
       }

@@ -42,6 +42,6 @@ type Story = StoryObj<typeof CheckCircle>;
 
 export const Base: Story = {
   args: {
-    size: "$8xl"
+    size: "$13xl"
   }
 };

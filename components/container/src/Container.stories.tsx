@@ -198,7 +198,7 @@ export const CircularNoBorder: Story = {
 
 export const BasePrimary: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "primary"
   }
@@ -206,7 +206,7 @@ export const BasePrimary: Story = {
 
 export const BasePrimaryNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "primary",
     bordered: false
@@ -215,7 +215,7 @@ export const BasePrimaryNoBorder: Story = {
 
 export const BaseSecondary: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "secondary"
   }
@@ -223,7 +223,7 @@ export const BaseSecondary: Story = {
 
 export const BaseSecondaryNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "secondary",
     bordered: false
@@ -232,7 +232,7 @@ export const BaseSecondaryNoBorder: Story = {
 
 export const BaseTertiary: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "tertiary"
   }
@@ -240,7 +240,7 @@ export const BaseTertiary: Story = {
 
 export const BaseTertiaryNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "tertiary",
     bordered: false
@@ -249,7 +249,7 @@ export const BaseTertiaryNoBorder: Story = {
 
 export const BaseOutlined: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "outlined"
   }
@@ -257,7 +257,7 @@ export const BaseOutlined: Story = {
 
 export const BaseOutlinedNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "outlined",
     bordered: false
@@ -266,7 +266,7 @@ export const BaseOutlinedNoBorder: Story = {
 
 export const BaseGlass: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "glass"
   }
@@ -274,7 +274,7 @@ export const BaseGlass: Story = {
 
 export const BaseGlassNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "glass",
     bordered: false
@@ -283,7 +283,7 @@ export const BaseGlassNoBorder: Story = {
 
 export const BaseCircular: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "secondary",
     circular: true
@@ -292,7 +292,7 @@ export const BaseCircular: Story = {
 
 export const BaseCircularNoBorder: Story = {
   args: {
-    theme: "base",
+    theme: "primary",
     children: "Container Text",
     variant: "secondary",
     circular: true,

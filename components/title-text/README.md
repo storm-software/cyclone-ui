@@ -105,7 +105,7 @@ Run `nx build title-text` to build the library.
 
 ### Running unit tests
 
-Run `nx test title-text` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test title-text` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 

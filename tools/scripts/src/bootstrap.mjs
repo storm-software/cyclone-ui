@@ -54,7 +54,17 @@ try {
       outdir: "dist/nx-plugins",
       tsconfig: "tools/nx/tsconfig.json",
       packages: "external",
-      external: ["nx", "@nx/*"],
+      external: [
+        "@nx/*",
+        "@storm-software/*",
+        "@stryke/*",
+        "@swc/*",
+        "@tsdown/*",
+        "defu",
+        "glob",
+        "nx",
+        "nx/*"
+      ],
       logLevel: "info",
       bundle: true,
       minify: false,

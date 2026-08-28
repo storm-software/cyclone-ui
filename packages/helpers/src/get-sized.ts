@@ -18,13 +18,14 @@
 
 import { isNumber } from "@stryke/type-checks/is-number";
 import { isSet } from "@stryke/type-checks/is-set";
-import type { FontSizeTokens, SizeTokens } from "@tamagui/core";
 import {
   getRadius as getRadiusBase,
   getSize,
   getSpace
 } from "@tamagui/get-token";
 import { getNearestToken } from "./get-nearest-token";
+import type { TokenValue } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
 
 export interface GetSizedOptions {
   scale?: number;
@@ -42,19 +43,17 @@ export interface GetSizedOptions {
  * @returns The size number
  */
 export const getSized = (
-  val: SizeTokens | number,
+  val: TokenValue,
   options: GetSizedOptions = {}
 ): number => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "$true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken(value, "size");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "size");
   }
 
   const size = getSize(value, options);
@@ -71,19 +70,17 @@ export const getSized = (
  * @returns The font size number
  */
 export const getSizeFromFontSized = (
-  val: FontSizeTokens | number,
+  val: TokenValue,
   options: GetSizedOptions = {}
 ) => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "$true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken(value, "size");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "size");
   }
 
   return getSized(value, options);
@@ -106,19 +103,17 @@ export const fontSizeToSize = (fontSize: number) =>
  * @returns The space number
  */
 export const getSpaced = (
-  val: SizeTokens | number,
+  val: TokenValue,
   options: GetSizedOptions = {}
 ): number => {
-  let value = val;
-  if (!value) {
-    value = "$true";
-  }
+  let value = val ? normalizeTokenValue(val) : "$true";
 
   if (isNumber(value)) {
-    value = options.nearest === false ? value : getNearestToken(value, "space");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
     }
+
+    value = options.nearest === false ? value : getNearestToken(value, "space");
   }
 
   const space = getSpace(value, options);
@@ -133,7 +128,7 @@ export const getSpaced = (
  * @param val - The size token or number to use
  * @returns The space number
  */
-export const sizeToSpace = (val: SizeTokens | number): number => getSpaced(val);
+export const sizeToSpace = (val: TokenValue): number => getSpaced(val);
 
 export type GetRadiusOptions = GetSizedOptions & {
   circular?: boolean;
@@ -146,21 +141,19 @@ export type GetRadiusOptions = GetSizedOptions & {
  * @param options - The options to use
  * @returns The radius number
  */
-export const getRadius = (
-  val: SizeTokens | number,
-  options: GetRadiusOptions = {}
-) => {
+export const getRadius = (val: TokenValue, options: GetRadiusOptions = {}) => {
   if (options.circular) {
     return 100_000;
   }
 
-  let value = val;
+  let value = val ? normalizeTokenValue(val) : "$true";
   if (isNumber(value)) {
+    if (!options.shift && !options.bounds) {
+      return value * (isSet(options.scale) ? options.scale : 1);
+    }
+
     value =
       options.nearest === false ? value : getNearestToken(value, "radius");
-    if (!options.scale && !options.shift && !options.bounds) {
-      return value as number;
-    }
   }
 
   const radius = getRadiusBase(value, options);

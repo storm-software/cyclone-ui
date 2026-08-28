@@ -19,12 +19,7 @@
 import { Button } from "@cyclone-ui/button";
 import { getSized } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import {
-  styled,
-  useThemeName,
-  View,
-  withStaticProperties
-} from "@tamagui/core";
+import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
@@ -177,7 +172,6 @@ const SelectTrigger = Button.styleable<{
       [size]
     );
 
-    const theme = useThemeName();
     const rotate = useMemo(
       () => (rotateOnFocused ? focused : false),
       [rotateOnFocused, focused]
@@ -199,10 +193,11 @@ const SelectTrigger = Button.styleable<{
           borderRadius={circular ? 100_000 : "$button"}
           onPress={onFocus}
           size={adjustedTrigger}
-          color={
-            theme?.includes("base") ? "$border" : "$foregroundInverse"
-          }>
-          <Button.Icon>
+          color={disabled ? "$borderDisabled" : "$border"}>
+          <Button.Icon
+            $group-select-hover={{
+              color: disabled ? "$borderDisabled" : "$borderHover"
+            }}>
             {children || <ChevronDown disabled={disabled} />}
           </Button.Icon>
         </Button>

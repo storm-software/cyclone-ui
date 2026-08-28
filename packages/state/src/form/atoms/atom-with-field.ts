@@ -16,15 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable ts/no-unsafe-call -- bunshi molecule APIs and @stryke/helpers merge types */
-
 import type { SelectOption, SelectOptionValue } from "@stryke/types/form";
 import type { Atom, SetStateAction, WritableAtom } from "jotai";
 import { atom } from "jotai";
 import type { RESET } from "jotai/utils";
 import { atomWithDefault } from "jotai/utils";
-import type { FieldOptions, InferFieldState } from "../types";
-import { FieldStatus } from "../types";
+import type { FieldOptions, FieldStatus, InferFieldState } from "../types";
 
 export const atomWithFieldStatus = (
   themeAtom: Atom<string | undefined>
@@ -33,25 +30,31 @@ export const atomWithFieldStatus = (
     const theme = get(themeAtom);
 
     if (theme) {
-      if (theme?.includes("discovery")) {
-        return FieldStatus.HELP;
+      if (theme?.includes("secondary")) {
+        return "secondary";
+      } else if (theme?.includes("discovery")) {
+        return "discovery";
       } else if (theme?.includes("success")) {
-        return FieldStatus.SUCCESS;
+        return "success";
       } else if (theme?.includes("info")) {
-        return FieldStatus.INFO;
+        return "info";
       } else if (theme?.includes("warning")) {
-        return FieldStatus.WARNING;
+        return "warning";
       } else if (theme?.includes("danger")) {
-        return FieldStatus.ERROR;
+        return "danger";
+      } else if (theme?.includes("positive")) {
+        return "positive";
+      } else if (theme?.includes("negative")) {
+        return "negative";
       }
     }
 
-    return FieldStatus.BASE;
+    return "primary";
   });
 };
 
 export const atomWithFieldItems = <TFieldValue = any>(
-  optionsAtom: Atom<FieldOptions>,
+  optionsAtom: Atom<FieldOptions<TFieldValue>>,
   valueAtom: Atom<TFieldValue | null>,
   disabledAtom: Atom<InferFieldState<TFieldValue, boolean>>
 ): WritableAtom<

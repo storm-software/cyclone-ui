@@ -24,17 +24,14 @@ import type { ColorThemeName } from "../types";
  * @example
  * getThemeColorThemeName('dark') // undefined
  * getThemeColorThemeName('dark_Input') // undefined
- * getThemeColorThemeName('dark_base_Input') // "base"
+ * getThemeColorThemeName('dark_primary_Input') // "primary"
  * getThemeColorThemeName('dark_brand_Input') // "brand"
  *
  * @remarks
  * The following color roles are checked:
- * - base
- * - brand
- * - alternate
- * - accent
- * - link
- * - help
+ * - primary
+ * - secondary
+ * - discovery
  * - info
  * - warning
  * - danger
@@ -49,16 +46,10 @@ export const getThemeColorThemeName = (
   theme?: string
 ): ColorThemeName | undefined => {
   if (theme) {
-    if (theme.includes("base")) {
-      return "base";
-    } else if (theme.includes("brand")) {
-      return "brand";
-    } else if (theme.includes("alternate")) {
-      return "alternate";
-    } else if (theme.includes("accent")) {
-      return "accent";
-    } else if (theme.includes("link")) {
-      return "link";
+    if (theme.includes("primary")) {
+      return "primary";
+    } else if (theme.includes("secondary")) {
+      return "secondary";
     } else if (theme.includes("discovery")) {
       return "discovery";
     } else if (theme.includes("info")) {
@@ -85,17 +76,14 @@ export const getThemeColorThemeName = (
  * @example
  * themeColorThemeNameExists('dark') // false
  * themeColorThemeNameExists('dark_Input') // false
- * themeColorThemeNameExists('dark_base_Input') // true
+ * themeColorThemeNameExists('dark_primary_Input') // true
  * themeColorThemeNameExists('dark_brand_Input') // true
  *
  * @remarks
  * The following color roles are checked:
- * - base
- * - brand
- * - alternate
- * - accent
- * - link
- * - help
+ * - primary
+ * - secondary
+ * - discovery
  * - info
  * - warning
  * - danger

@@ -38,8 +38,14 @@ const BaseInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
 
 export const InputValue = BaseInputValue.styleable<InputComponentProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
-    const { disabled, name, onChange, onInput, onBlur, onFocus } =
-      InputContext.useStyledContext();
+    const {
+      disabled,
+      name,
+      onChange,
+      onInput,
+      onBlur: contextOnBlur,
+      onFocus: contextOnFocus
+    } = InputContext.useStyledContext();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in web.
@@ -87,6 +93,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       secureTextEntry,
       selectionColor,
       inputMode,
+      onBlur: inputOnBlur,
+      onFocus: inputOnFocus,
       ...rest
     } = inProps;
 
@@ -162,13 +170,13 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       return registerFocusable(name, {
         focusAndSelect: () => {
           ref.current?.focus();
-          onFocus?.();
+          contextOnFocus?.();
         },
         focus: () => {
-          onFocus?.();
+          contextOnFocus?.();
         }
       });
-    }, [name, disabled, onFocus]);
+    }, [name, disabled, contextOnFocus]);
 
     const handleChange = useCallback(
       (event: FormEvent<HTMLElement>) => {
@@ -221,8 +229,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
           id={name}
           onChange={handleChange}
           onInput={handleInput}
-          onBlur={onBlur}
-          onFocus={onFocus}
+          onBlur={inputOnBlur ?? contextOnBlur}
+          onFocus={inputOnFocus ?? contextOnFocus}
         />
       </>
     );

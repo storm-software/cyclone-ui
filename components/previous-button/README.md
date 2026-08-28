@@ -110,7 +110,7 @@ Run `nx build previous-button` to build the library.
 ### Running unit tests
 
 Run `nx test previous-button` to execute the unit tests via
-[Jest](https://jestjs.io).
+[Vitest](https://vitest.dev).
 
 ### Linting
 

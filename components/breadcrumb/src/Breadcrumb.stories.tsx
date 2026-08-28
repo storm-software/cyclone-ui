@@ -17,13 +17,14 @@
  ------------------------------------------------------------------- */
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { BreadcrumbProps } from "./Breadcrumb";
 import { Breadcrumb } from "./Breadcrumb";
 
 const meta: Meta<typeof Breadcrumb> = {
   title: "Triggers/Breadcrumb",
   component: Breadcrumb,
   tags: ["autodocs"],
-  render: (args: any) => (
+  render: (args: BreadcrumbProps) => (
     <Breadcrumb {...args}>
       <Breadcrumb.Item href="#">Page One</Breadcrumb.Item>
       <Breadcrumb.Item href="#">Page Two</Breadcrumb.Item>
@@ -63,22 +64,18 @@ export const DoubleChevron: Story = {
   }
 };
 
-export const BaseTheme: Story = {
+export const PrimaryTheme: Story = {
   args: {
     currentName: "Current Page",
-    theme: "base"
+    theme: "primary"
   }
 };
 
-export const BrandTheme: Story = {
+export const SecondaryTheme: Story = {
   args: {
     currentName: "Current Page",
-    theme: "brand"
+    theme: "secondary"
   }
-};
-
-export const AlternateTheme: Story = {
-  args: { currentName: "Current Page", theme: "alternate" }
 };
 
 export const DiscoveryTheme: Story = {

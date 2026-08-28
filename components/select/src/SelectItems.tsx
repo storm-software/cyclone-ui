@@ -137,10 +137,10 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
 export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
   ({ children, value, selected, disabled, ...props }, forwardedRef) => {
     const { size } = SelectContext.useStyledContext();
-    const isSmall = useMemo(() => getSized(size) < getSized("$md"), [size]);
+    const isSmall = useMemo(() => getSized(size) < getSized("$4xl"), [size]);
 
     return (
-      <Theme name={"base"}>
+      <Theme name={"primary"}>
         <SelectItemFrame
           {...props}
           group={true}
@@ -153,11 +153,11 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             justifyContent={isSmall ? "space-between" : "center"}>
             <View width="$xl" justifyContent="center">
               {disabled && (
-                <Lock size="$lg" color="$foregroundInverseDisabled" />
+                <Lock size="$6xl" color="$foregroundInverseDisabled" />
               )}
               <TamaguiSelect.ItemIndicator>
                 <Theme name={"accent"}>
-                  <Check size="$xl" color="$foregroundInverse" />
+                  <Check size="$7xl" color="$foregroundInverse" />
                 </Theme>
               </TamaguiSelect.ItemIndicator>
             </View>

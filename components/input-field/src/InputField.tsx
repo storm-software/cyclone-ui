@@ -20,7 +20,7 @@ import { Field } from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, withStaticProperties } from "@tamagui/core";
-import { useCallback, useLayoutEffect } from "react";
+import { type FocusEvent, useCallback, useLayoutEffect } from "react";
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -47,6 +47,16 @@ const InputFieldControl = Input.styleable(
       },
       [change]
     );
+    const handleBlur = useCallback(
+      (event: FocusEvent<HTMLElement>) => {
+        if (event.currentTarget.contains(event.relatedTarget)) {
+          return;
+        }
+
+        void blur();
+      },
+      [blur]
+    );
 
     return (
       <Input
@@ -57,7 +67,7 @@ const InputFieldControl = Input.styleable(
         disabled={disabled}
         size={size}
         onFocus={focus}
-        onBlur={blur}
+        onBlur={handleBlur}
         onChange={handleChange}>
         {children}
       </Input>
@@ -92,7 +102,7 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const inputRef = useFieldRef(forwardedRef);
     useLayoutEffect(() => {
       mount(inputRef);
-    }, [mount]);
+    }, [inputRef, mount]);
 
     return (
       <Theme name={theme}>

@@ -337,7 +337,7 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         <AccordionToggle
           isExpanded={open}
           color="$foreground"
-          size="$lg"
+          size="$6xl"
           strokeWidth={2.5}
           $group-accordion-hover={{
             color: "$foregroundHover",

@@ -21,13 +21,14 @@ import type { Mutable } from "@stryke/types/base";
 import type {
   FontSizeTokens,
   GenericFont,
-  SizeTokens,
   TextProps,
   TextStyle,
   VariantSpreadFunction
 } from "@tamagui/core";
 import { getTokens } from "@tamagui/core";
 import { getNearestToken } from "./get-nearest-token";
+import type { TokenValue } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
 
 /**
  * Get the font size related styles
@@ -36,18 +37,27 @@ import { getNearestToken } from "./get-nearest-token";
  * @param extras - The extra props
  * @returns The font size related styles
  */
-export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
-  sizeTokenIn = "$true",
-  { font, fontFamily, props }
-) => {
+export const getFontSized: VariantSpreadFunction<
+  TextProps,
+  FontSizeTokens | TokenValue
+> = (sizeTokenIn = "$true", { font, fontFamily, props }) => {
+  const tokenValue = normalizeTokenValue(sizeTokenIn);
+
   if (!font) {
     return {
-      fontSize: sizeTokenIn
+      fontSize: tokenValue
+    };
+  }
+
+  if (isNumber(tokenValue)) {
+    return {
+      fontFamily,
+      fontSize: tokenValue
     };
   }
 
   const sizeToken =
-    (sizeTokenIn === "$true" ? getDefaultSizeToken(font) : sizeTokenIn) ??
+    (tokenValue === "$true" ? getDefaultSizeToken(font) : tokenValue) ??
     "$true";
 
   const style: Mutable<TextStyle> = {};
@@ -98,7 +108,7 @@ export const getFontSized: VariantSpreadFunction<TextProps, FontSizeTokens> = (
  */
 export const getFontSizedFromSize: VariantSpreadFunction<
   TextProps,
-  SizeTokens
+  TokenValue
 > = (sizeTokenIn = "$true", extras) => {
   const font = extras.font;
   if (!font) {
@@ -107,10 +117,9 @@ export const getFontSizedFromSize: VariantSpreadFunction<
     };
   }
 
+  const tokenValue = normalizeTokenValue(sizeTokenIn);
   const sizeToken = (
-    isNumber(sizeTokenIn)
-      ? getNearestToken<SizeTokens>(sizeTokenIn, "size")
-      : sizeTokenIn
+    isNumber(tokenValue) ? getNearestToken(tokenValue, "size") : tokenValue
   ) as `$${string}`;
 
   return getFontSized(sizeToken, extras);

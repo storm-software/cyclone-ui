@@ -41,6 +41,21 @@ export const Base: Story = {
   }
 };
 
+export const Inverse: Story = {
+  args: {
+    href: "#",
+    variant: "base",
+    inverse: true
+  }
+};
+
+export const Mixed: Story = {
+  args: {
+    href: "#",
+    mixed: true
+  }
+};
+
 export const CallToAction: Story = {
   args: {
     href: "#",
@@ -83,52 +98,6 @@ export const UnderlineNone: Story = {
   }
 };
 
-export const Brand: Story = {
-  args: {
-    href: "#",
-    theme: "brand"
-  }
-};
-
-export const BrandCallToAction: Story = {
-  args: {
-    href: "#",
-    cta: true,
-    theme: "brand"
-  }
-};
-
-export const BrandExternal: Story = {
-  args: {
-    href: "#",
-    external: true,
-    theme: "brand"
-  }
-};
-
-export const Alternate: Story = {
-  args: {
-    href: "#",
-    theme: "alternate"
-  }
-};
-
-export const AlternateCallToAction: Story = {
-  args: {
-    href: "#",
-    cta: true,
-    theme: "alternate"
-  }
-};
-
-export const AlternateExternal: Story = {
-  args: {
-    href: "#",
-    external: true,
-    theme: "alternate"
-  }
-};
-
 export const Discovery: Story = {
   args: {
     href: "#",
@@ -152,14 +121,14 @@ export const DiscoveryExternal: Story = {
   }
 };
 
-export const Error: Story = {
+export const Danger: Story = {
   args: {
     href: "#",
     theme: "danger"
   }
 };
 
-export const ErrorCallToAction: Story = {
+export const DangerCallToAction: Story = {
   args: {
     href: "#",
     cta: true,
@@ -167,7 +136,7 @@ export const ErrorCallToAction: Story = {
   }
 };
 
-export const ErrorExternal: Story = {
+export const DangerExternal: Story = {
   args: {
     href: "#",
     external: true,
@@ -241,5 +210,51 @@ export const SuccessExternal: Story = {
     href: "#",
     external: true,
     theme: "success"
+  }
+};
+
+export const Positive: Story = {
+  args: {
+    href: "#",
+    theme: "positive"
+  }
+};
+
+export const PositiveCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "positive"
+  }
+};
+
+export const PositiveExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "positive"
+  }
+};
+
+export const Negative: Story = {
+  args: {
+    href: "#",
+    theme: "negative"
+  }
+};
+
+export const NegativeCallToAction: Story = {
+  args: {
+    href: "#",
+    cta: true,
+    theme: "negative"
+  }
+};
+
+export const NegativeExternal: Story = {
+  args: {
+    href: "#",
+    external: true,
+    theme: "negative"
   }
 };

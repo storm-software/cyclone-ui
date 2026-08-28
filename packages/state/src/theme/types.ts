@@ -19,11 +19,8 @@
 export type ColorThemeMode = "light" | "dark";
 
 export type ColorThemeName =
-  | "base"
-  | "brand"
-  | "alternate"
-  | "accent"
-  | "link"
+  | "primary"
+  | "secondary"
   | "discovery"
   | "info"
   | "warning"
@@ -32,13 +29,9 @@ export type ColorThemeName =
   | "positive"
   | "negative";
 
-// eslint-disable-next-line ts/no-redeclare -- runtime companion for the type
 export const ColorThemeName = {
-  BASE: "base",
-  BRAND: "brand",
-  ALTERNATE: "alternate",
-  ACCENT: "accent",
-  LINK: "link",
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
   DISCOVERY: "discovery",
   INFO: "info",
   WARNING: "warning",

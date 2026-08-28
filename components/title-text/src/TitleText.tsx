@@ -84,35 +84,35 @@ export const TitleText = BaseTitleText.styleable<{ level?: number }>(
 export const Title1Text = styled(BaseTitleText, {
   name: "Title1Text",
   render: "h1",
-  size: "$7xl"
+  size: "$12xl"
 });
 
 export const Title2Text = styled(BaseTitleText, {
   name: "Title2Text",
   render: "h2",
-  size: "$6xl"
+  size: "$11xl"
 });
 
 export const Title3Text = styled(BaseTitleText, {
   name: "Title3Text",
   render: "h3",
-  size: "$5xl"
+  size: "$10xl"
 });
 
 export const Title4Text = styled(BaseTitleText, {
   name: "Title4Text",
   render: "h4",
-  size: "$3xl"
+  size: "$9xl"
 });
 
 export const Title5Text = styled(BaseTitleText, {
   name: "Title5Text",
   render: "h5",
-  size: "$2xl"
+  size: "$8xl"
 });
 
 export const Title6Text = styled(BaseTitleText, {
   name: "Title6Text",
   render: "h6",
-  size: "$xl"
+  size: "$7xl"
 });

@@ -62,6 +62,11 @@ export const Base: Story = {
 export const Required: Story = {
   args: {
     required: true
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.queryByText("(Optional)")).not.toBeInTheDocument();
   }
 };
 
@@ -86,6 +91,17 @@ export const Discovery: Story = {
 export const Error: Story = {
   args: {
     theme: "danger"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const iconButton = canvas.getByRole("button");
+    const iconContainer = iconButton.parentElement as HTMLElement;
+
+    await expect(iconContainer).toHaveStyle({
+      flexShrink: "0",
+      width: "32px",
+      minWidth: "32px"
+    });
   }
 };
 

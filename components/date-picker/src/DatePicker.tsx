@@ -106,6 +106,9 @@ const MONTH_NAMES = [
   "December"
 ] as const;
 
+const CALENDAR_WIDTH = "$37xl";
+const CALENDAR_CELL_SIZE = "$9xl";
+
 const getMonthIndex = (month?: string | null) => {
   if (!month) {
     return -1;
@@ -284,13 +287,14 @@ const DayPicker = () => {
         justifyContent="center"
         gap="$xl"
         {...prevNextAnimation()}>
-        <XStack gap="$md">
+        <XStack width="100%" gap="$md" justifyContent="space-between">
           {weekDays.map(day => (
-            <View key={day} justifyContent="center" width="$5xl">
-              <LabelText
-                textAlign="center"
-                size="$sm"
-                color="$foregroundBody">
+            <View
+              key={day}
+              width={CALENDAR_CELL_SIZE}
+              alignItems="center"
+              justifyContent="center">
+              <LabelText textAlign="center" size="$sm" color="$foregroundBody">
                 {day}
               </LabelText>
             </View>
@@ -301,27 +305,32 @@ const DayPicker = () => {
             return (
               <XStack
                 key={days[0]?.$date.toString() ?? i}
+                width="100%"
                 gap="$xs"
                 rowGap="$xs"
-                alignItems="center">
+                alignItems="center"
+                justifyContent="space-between">
                 {days.map(day => (
                   <Button
                     key={day.$date.toString()}
                     {...swapOnClick(dayButton(day))}
-                    theme={"base"}
+                    theme={"primary"}
                     variant={
                       day.now
-                        ? "secondary"
+                        ? "subtle"
                         : !day.inCurrentMonth
                           ? "ghost"
                           : day.selected
-                            ? "primary"
-                            : "outlined"
+                            ? "surface"
+                            : "ghost"
                     }
                     borderColor={day.now ? "$border" : undefined}
-                    padding="$md"
-                    flexBasis="14%"
-                    borderRadius={0}
+                    size={CALENDAR_CELL_SIZE}
+                    width={CALENDAR_CELL_SIZE}
+                    flexGrow={0}
+                    flexShrink={0}
+                    noPadding={true}
+                    borderRadius="$button"
                     disabled={!day.inCurrentMonth}
                     hoverStyle={
                       day.inCurrentMonth
@@ -358,7 +367,7 @@ function YearRangeSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(previousYearsButton())}>
@@ -368,7 +377,7 @@ function YearRangeSlider() {
       </Button>
       <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
         <LabelText
-          color="$foregroundInverse"
+          color="$foreground"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -377,7 +386,7 @@ function YearRangeSlider() {
       </View>
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(nextYearsButton())}>
@@ -407,7 +416,7 @@ function YearSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
@@ -420,18 +429,19 @@ function YearSlider() {
           onPress={() => setHeader("year")}
           userSelect="text"
           tabIndex={0}
-          size="$lg"
+          size="$6xl"
+          textAlign="center"
           cursor="pointer"
-          color="$foregroundInverse"
+          color="$foreground"
           hoverStyle={{
-            color: "$foregroundInverseHover"
+            color: "$foregroundHover"
           }}>
           {year}
         </LabelText>
       </View>
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
@@ -469,7 +479,7 @@ const CalendarHeader = () => {
       justifyContent="space-between">
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
@@ -483,11 +493,11 @@ const CalendarHeader = () => {
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
-          size="$md"
+          size="$4xl"
           cursor="pointer"
-          color="$foregroundInverse"
+          color="$foreground"
           hoverStyle={{
-            color: "$foregroundInverseHover"
+            color: "$foregroundHover"
           }}>
           {year}
         </LabelText>
@@ -497,19 +507,19 @@ const CalendarHeader = () => {
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
-          size="$2xl"
-          color="$foregroundInverse"
+          size="$8xl"
+          color="$foreground"
           fontWeight="600"
           lineHeight="$xs"
           hoverStyle={{
-            color: "$foregroundInverseHover"
+            color: "$foregroundHover"
           }}>
           {month}
         </LabelText>
       </YStack>
       <Button
         variant="ghost"
-        size="$5xl"
+        size="$10xl"
         width="$7xl"
         flexShrink={1}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
@@ -524,7 +534,6 @@ const CalendarHeader = () => {
 type ItemPickerProps = PropsWithChildren<
   DPPropGetter & {
     active: boolean;
-    key: string;
     flexBasis?: "unset" | DimensionValue | undefined;
   }
 >;
@@ -532,14 +541,12 @@ type ItemPickerProps = PropsWithChildren<
 const ItemPicker = ({
   active,
   flexBasis,
-  key,
   children,
   ...rest
 }: ItemPickerProps) => {
   return (
     <Button
-      key={key}
-      variant={active ? "primary" : "secondary"}
+      variant={active ? "surface" : "ghost"}
       flexGrow={1}
       flexBasis={flexBasis}
       {...rest}>
@@ -580,7 +587,6 @@ const MonthPicker = ({
             active={month.active}
             key={month.$date.toString()}
             flexBasis="30%"
-            minWidth={150}
             {...swapOnClick(
               monthButton(month, {
                 onClick: onChange as any
@@ -641,10 +647,10 @@ const DatePickerPopoverBody = () => {
   const [header, setHeader] = useState<"day" | "month" | "year">("day");
 
   return (
-    <Theme name={"base"}>
+    <Theme name={"primary"}>
       <HeaderTypeProvider type={header} setHeader={setHeader}>
         <XStack justifyContent="center">
-          <YStack alignItems="center" gap="$2xl" maxWidth={425}>
+          <YStack width={CALENDAR_WIDTH} alignItems="center" gap="$2xl">
             <CalendarHeader />
             {header === "month" && (
               <MonthPicker onChange={() => setHeader("day")} />
@@ -757,7 +763,11 @@ const { Provider: HeaderTypeProvider, useStyledContext: useHeaderType } =
 
 const DatePickerPopoverContent = styled(Popover.Content, {
   name: "DatePickerPopover",
-  context: DatePickerContext
+  context: DatePickerContext,
+
+  flexBasis: "auto",
+  flexGrow: 0,
+  flexShrink: 0
 });
 
 const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(

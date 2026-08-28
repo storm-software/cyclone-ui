@@ -110,7 +110,7 @@ Run `nx build validation-text` to build the library.
 ### Running unit tests
 
 Run `nx test validation-text` to execute the unit tests via
-[Jest](https://jestjs.io).
+[Vitest](https://vitest.dev).
 
 ### Linting
 

@@ -19,12 +19,7 @@
 import { Button } from "@cyclone-ui/button";
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import {
-  styled,
-  useThemeName,
-  View,
-  withStaticProperties
-} from "@tamagui/core";
+import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { X } from "@tamagui/lucide-icons-2";
 import { Separator } from "@tamagui/separator";
@@ -39,36 +34,29 @@ const getInputFrameSize = (
   extras: VariantSpreadExtras<any>
 ) => ({
   ...getInputSize(val, extras),
-  paddingHorizontal: 0
+  paddingHorizontal: getSpaced(val) * 0.25
 });
 
 const InputGroup = styled(XGroup, {
   name: "Input",
   context: InputContext,
 
-  transition: "medium",
+  transition: "200ms",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "transparent",
+  backgroundColor: "$backgroundElevated",
   borderWidth: 1,
   borderColor: "$border",
   outlineWidth: 0,
   outlineColor: "transparent",
+  boxShadow: "none",
   gap: "$sm",
   tabIndex: 0,
   borderRadius: "$control",
+  overflow: "hidden",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
-
-  hoverStyle: {
-    borderColor: "$borderHover"
-  },
-
-  focusVisibleStyle: {
-    boxShadow: "$ring",
-    borderColor: "$borderFocused"
-  },
 
   variants: {
     focused: {
@@ -132,7 +120,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       ...rest
     } = props;
     const frameSize =
-      size === "$true" || String(size) === "true" ? "$5xl" : size;
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     return (
       <InputContext.Provider
@@ -144,9 +132,13 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
         onBlur={onBlur}>
         <InputGroup
           ref={forwardedRef}
-          group={"input" as any}
           {...rest}
-          frameSize={frameSize}>
+          frameSize={frameSize}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          $group-field-hover={{
+            borderColor: "$borderHover"
+          }}>
           {children}
         </InputGroup>
       </InputContext.Provider>
@@ -159,7 +151,7 @@ const InputSeparator = styled(Separator, {
   name: "Input",
   context: InputContext,
 
-  transition: "medium",
+  transition: "200ms",
   borderWidth: 1,
   borderColor: "$border",
   vertical: true,
@@ -206,7 +198,7 @@ const InputSeparatorImpl = InputSeparator.styleable(
       <XGroup.Item>
         <InputSeparator
           ref={forwardedRef}
-          $group-input-hover={{
+          $group-field-hover={{
             borderColor: disabled
               ? "$borderDisabled"
               : focused
@@ -227,6 +219,8 @@ const InputTextBox = styled(XStack, {
 
   height: "100%",
   flex: 1,
+  minWidth: 0,
+  alignItems: "center",
 
   variants: {
     size: {
@@ -260,7 +254,7 @@ const InputTextBox = styled(XStack, {
 const InputTextBoxImpl = InputTextBox.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <XGroup.Item>
+      <XGroup.Item flex={1} minWidth={0}>
         <InputTextBox ref={forwardedRef} {...props}>
           {children}
         </InputTextBox>
@@ -287,22 +281,20 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
     },
     forwardedRef
   ) => {
-    const { size } = InputContext.useStyledContext();
-    const theme = useThemeName();
-
+    const { size, disabled } = InputContext.useStyledContext();
     const adjustedTrigger = useMemo(
       () => getSized(size, { shift: -3 }),
       [size]
     );
 
     return (
-      <View position="relative" flex={1}>
+      <View position="relative" flex={1} minWidth={0}>
         <InputValue
           ref={forwardedRef}
           {...props}
           value={value}
           enterKeyHint={enterKeyHint}
-          placeholderTextColor="$foregroundOnDisabled">
+          placeholderTextColor="$foregroundInverseDisabled">
           {children}
         </InputValue>
         {clearable && onClear && value && (
@@ -316,13 +308,17 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             minWidth="$5xl">
             <Button
               ref={forwardedRef}
-              variant="ghost"
+              variant="link"
               circular={true}
-              color={theme?.includes("base") ? "$border" : "$foregroundOn"}
+              disabled={disabled}
+              color={disabled ? "$borderDisabled" : "$border"}
               onClick={onClear}
               size={adjustedTrigger}>
-              <Button.Icon>
-                <X size="$md" />
+              <Button.Icon
+                $group-field-hover={{
+                  color: disabled ? "$borderDisabled" : "$borderHover"
+                }}>
+                <X size="$4xl" />
               </Button.Icon>
             </Button>
           </View>
@@ -338,7 +334,6 @@ const InputTrigger = Button.styleable<{
 }>(
   ({ children, flexBasis = "6%", ...props }, forwardedRef) => {
     const { circular, size } = InputContext.useStyledContext();
-    const theme = useThemeName();
 
     const adjustedTrigger = useMemo(
       () => getSized(size, { shift: -3 }),
@@ -348,16 +343,16 @@ const InputTrigger = Button.styleable<{
     return (
       <XGroup.Item>
         <View
-          paddingRight="$sm"
+          paddingRight="$lg"
           display="flex"
           flexBasis={flexBasis}
           flexShrink={1}
           minWidth="$5xl">
           <Button
             ref={forwardedRef}
-            variant="ghost"
+            variant="link"
             borderRadius={circular ? 100_000 : "$button"}
-            color={theme?.includes("base") ? "$border" : "$foregroundOn"}
+            color="$foregroundInverse"
             {...props}
             size={adjustedTrigger}>
             {children}

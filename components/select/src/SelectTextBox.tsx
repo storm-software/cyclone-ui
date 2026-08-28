@@ -73,15 +73,12 @@ const BaseSelectTextBox = styled(View, {
 
 const SelectTextBoxImpl = BaseSelectTextBox.styleable(
   (
-    { __scopeSelect, children, ...props }: SelectScopedProps<ViewProps>,
+    { scope, children, ...props }: SelectScopedProps<ViewProps>,
     forwardedRef
   ) => {
     const { disabled, size } = SelectContext.useStyledContext();
-    const context = useSelectContext("SelectTrigger", __scopeSelect);
-    const itemParentContext = useSelectItemParentContext(
-      "SelectTrigger",
-      __scopeSelect
-    );
+    const context = useSelectContext(scope);
+    const itemParentContext = useSelectItemParentContext(scope);
     const composedRefs = useComposedRefs(
       forwardedRef,
       context.floatingContext?.refs.setReference as any

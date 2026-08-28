@@ -66,5 +66,11 @@ export default defineConfig(
       "react/rules-of-hooks": "off",
       "react-hooks/rules-of-hooks": "off"
     }
+  },
+  {
+    files: ["components/**/*.tsx"],
+    rules: {
+      "react/no-context-provider": "off"
+    }
   }
 );

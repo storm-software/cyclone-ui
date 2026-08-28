@@ -25,7 +25,8 @@ export const LabelText = styled(Text, {
   render: "p",
 
   color: "$foreground",
-  fontFamily: "$label",
+  fontFamily: "$heading-sm",
+  fontWeight: "$true",
 
   variants: {
     size: {

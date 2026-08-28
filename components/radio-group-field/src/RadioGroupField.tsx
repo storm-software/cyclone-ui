@@ -46,7 +46,7 @@ const RadioGroupItemValue = styled(Label, {
   transition: "medium",
   cursor: "pointer",
   color: "$foregroundInverse",
-  fontFamily: "$label",
+  fontFamily: "$heading-sm",
   fontSize: "$lg",
   fontWeight: "$normal",
   lineHeight: "$true",

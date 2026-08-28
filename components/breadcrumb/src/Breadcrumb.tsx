@@ -19,18 +19,14 @@
 import { getSpaced } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
-import type { FontSizeTokens, ThemeableProps } from "@tamagui/core";
+import type { FontSizeTokens, GetProps, ThemeableProps } from "@tamagui/core";
 import { createStyledContext, styled, Theme, View } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ChevronRight, ChevronsRight, Slash } from "@tamagui/lucide-icons-2";
 import type { TextContextStyles } from "@tamagui/text";
+
 export type BreadcrumbVariant = "chevron" | "double" | "slash";
-export const BreadcrumbVariant = {
-  CHEVRON: "chevron" as BreadcrumbVariant,
-  DOUBLE: "double" as BreadcrumbVariant,
-  SLASH: "slash" as BreadcrumbVariant
-};
 
 export type BreadcrumbContextProps = TextContextStyles &
   ThemeableProps & {
@@ -40,17 +36,18 @@ export type BreadcrumbContextProps = TextContextStyles &
 
 export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   size: "$true",
-  variant: BreadcrumbVariant.SLASH
+  variant: "slash"
 });
 
 const BreadcrumbFrame = styled(XGroup, {
   name: "Breadcrumb",
   context: BreadcrumbContext,
 
-  transition: "medium",
+  transition: "200ms",
   alignItems: "center",
   flexWrap: "nowrap",
   flexShrink: 1,
+  gap: "$2xl",
 
   variants: {
     size: {
@@ -67,17 +64,18 @@ const BreadcrumbCurrent = styled(LabelText, {
   name: "BreadcrumbCurrent",
   context: BreadcrumbContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "default",
-  color: "$foregroundInverse",
-  fontFamily: "$link",
+  color: "$foreground",
   fontWeight: "$lg",
   verticalAlign: "middle"
 });
 
-const BreadcrumbImpl = BreadcrumbFrame.styleable<{
-  currentName: string;
-}>(
+const BreadcrumbImpl = BreadcrumbFrame.styleable<
+  Partial<BreadcrumbContextProps> & {
+    currentName: string;
+  }
+>(
   ({ children, currentName, ...props }, forwardRef) => {
     const { theme } = BreadcrumbContext.useStyledContext();
 
@@ -99,7 +97,7 @@ const BreadcrumbLink = styled(Link, {
   name: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  transition: "medium",
+  transition: "200ms",
   underline: "initial"
 });
 
@@ -114,20 +112,18 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
             ref={forwardRef}
             size={size}
             {...props}
-            variant="mixed">
+            inverse={true}>
             {children}
           </BreadcrumbLink>
         </View>
 
-        {variant === BreadcrumbVariant.CHEVRON && (
-          <ChevronRight color="$border" size="$xl" />
+        {variant === "chevron" && (
+          <ChevronRight color="$foregroundPrimary" size="$4xl" />
         )}
-        {variant === BreadcrumbVariant.DOUBLE && (
-          <ChevronsRight color="$border" size="$xl" />
+        {variant === "double" && (
+          <ChevronsRight color="$foregroundPrimary" size="$4xl" />
         )}
-        {variant === BreadcrumbVariant.SLASH && (
-          <Slash color="$border" size="$sm" />
-        )}
+        {variant === "slash" && <Slash color="$foregroundPrimary" size="$xl" />}
       </XGroup.Item>
     );
   },
@@ -139,3 +135,5 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
 export const Breadcrumb = withStaticProperties(BreadcrumbImpl, {
   Item: BreadcrumbItemImpl
 });
+
+export type BreadcrumbProps = GetProps<typeof Breadcrumb>;

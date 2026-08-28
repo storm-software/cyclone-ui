@@ -23,9 +23,7 @@ import { defineConfig } from "powerlines/config";
 const config: UserConfig = defineConfig({
   input: ["src/*.ts"],
   platform: "browser",
-  plugins: [
-    tsdown()
-  ]
+  plugins: [tsdown()]
 });
 
 export default config;

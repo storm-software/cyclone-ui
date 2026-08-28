@@ -67,9 +67,9 @@ const meta: Meta<typeof Table> = {
                           flexShrink: 3
                         })}>
                     <SizableText
-                      fontFamily="$label"
+                      fontFamily="$heading-sm"
                       color="$foregroundPrimary"
-                      size="$lg">
+                      size="$6xl">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -116,9 +116,9 @@ const meta: Meta<typeof Table> = {
         <Table.Footer>
           <Table.Row header={true}>
             <SizableText
-              fontFamily="$label"
+              fontFamily="$heading-sm"
               color="$foregroundPrimary"
-              size="$lg">
+              size="$6xl">
               Table footer information is populated here
             </SizableText>
           </Table.Row>
@@ -298,13 +298,17 @@ const columns = [
             alignItems="center"
             gap="$3xl"
             marginLeft="$xl">
-            <Avatar circular size="$7xl">
+            <Avatar circular size="$12xl">
               <Avatar.Image aria-label="Profile image" src={image} />
               <Avatar.Fallback backgroundColor="$gray6" />
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
-              <Text fontSize="$xs" lineHeight="$sm" fontWeight="$extralight" theme="alt2">
+              <Text
+                fontSize="$xs"
+                lineHeight="$sm"
+                fontWeight="$extralight"
+                theme="alt2">
                 {userName}
               </Text>
             </View>

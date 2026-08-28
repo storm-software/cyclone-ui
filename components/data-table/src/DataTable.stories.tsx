@@ -213,7 +213,7 @@ const columns = [
             alignItems="center"
             gap="$3xl"
             marginLeft="$xl">
-            <Avatar circular size="$7xl">
+            <Avatar circular size="$12xl">
               <Avatar.Image aria-label="Profile image" src={image} />
               <Avatar.Fallback backgroundColor="$gray6" />
             </Avatar>

@@ -53,193 +53,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "base"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "base"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "base"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "base"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "base"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "base"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "base"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "base"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "base"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "base"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "base"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "base"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "base"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "base"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "base"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "base"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "base"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "base"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "base"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "base"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "base"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "base"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "base"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "base"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "base"
     },
     {
@@ -1333,7 +1453,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "base"
@@ -1341,7 +1461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "base"
@@ -1349,7 +1469,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "base"
@@ -1357,7 +1477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "base"
@@ -1365,7 +1485,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "base"
@@ -1381,7 +1501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "base"
@@ -1397,7 +1517,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "base"
@@ -1413,7 +1533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "base"
@@ -1429,7 +1549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "base"
@@ -1445,7 +1565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "base"
@@ -1461,7 +1581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "base"
@@ -1477,7 +1597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "base"
@@ -1560,14 +1680,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "base"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "base"
     },
     {
@@ -2253,7 +2365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.1",
       type: "color",
-      value: "#b3f8e7",
+      value: "#82afff",
       cssVar: "--rw-color-blue-1",
       description: "A pale periwinkle blue color",
       theme: "dark"
@@ -2261,7 +2373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.2",
       type: "color",
-      value: "#8ff4e5",
+      value: "#76a8ff",
       cssVar: "--rw-color-blue-2",
       description: "A light sky blue color",
       theme: "dark"
@@ -2269,7 +2381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.3",
       type: "color",
-      value: "#6bf1e7",
+      value: "#6aa0ff",
       cssVar: "--rw-color-blue-3",
       description: "A soft cornflower blue color",
       theme: "dark"
@@ -2277,7 +2389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.4",
       type: "color",
-      value: "#47ecee",
+      value: "#5e98ff",
       cssVar: "--rw-color-blue-4",
       description: "A muted bright blue color",
       theme: "dark"
@@ -2285,7 +2397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.5",
       type: "color",
-      value: "#24d8ea",
+      value: "#5291ff",
       cssVar: "--rw-color-blue-5",
       description: "A medium azure blue color",
       theme: "dark"
@@ -2293,7 +2405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.6",
       type: "color",
-      value: "#00bee7",
+      value: "#4689ff",
       cssVar: "--rw-color-blue-6",
       description: "A vivid sky blue color",
       theme: "dark"
@@ -2301,7 +2413,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.7",
       type: "color",
-      value: "#0090bd",
+      value: "#3a82ff",
       cssVar: "--rw-color-blue-7",
       description: "A rich cerulean blue color",
       theme: "dark"
@@ -2309,7 +2421,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.8",
       type: "color",
-      value: "#006692",
+      value: "#2e7aff",
       cssVar: "--rw-color-blue-8",
       description: "A deep navy blue color",
       theme: "dark"
@@ -2317,7 +2429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.9",
       type: "color",
-      value: "#003f63",
+      value: "#1d70f2",
       cssVar: "--rw-color-blue-9",
       description: "A dark midnight blue color",
       theme: "dark"
@@ -2485,9 +2597,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link",
       type: "color",
-      value: "var(--color-blue-7)",
+      value: "var(--color-blue-5)",
       cssVar: "--rw-color-foreground-link",
       description: "The link foreground color for the dark theme",
+      theme: "dark"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the dark theme",
       theme: "dark"
     },
     {
@@ -2717,7 +2837,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#006b96",
+      value: "#2a67d1",
       cssVar: "--rw-color-foreground-link-hover",
       description: "The link foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -2725,7 +2845,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-pressed",
       type: "color",
-      value: "#004771",
+      value: "#003da4",
       cssVar: "--rw-color-foreground-link-pressed",
       description: "The link foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -2733,7 +2853,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-focused",
       type: "color",
-      value: "#004771",
+      value: "#003da4",
       cssVar: "--rw-color-foreground-link-focused",
       description: "The link foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -2741,9 +2861,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-disabled",
       type: "color",
-      value: "#528ca6",
+      value: "#6f95d6",
       cssVar: "--rw-color-foreground-link-disabled",
       description: "The link foreground color for the dark theme (disabled, 60% saturation)",
+      theme: "dark"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#b20000",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the dark theme (hover, 20% darker)",
+      theme: "dark"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#890000",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the dark theme (pressed, 40% darker)",
+      theme: "dark"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#890000",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the dark theme (focused, 40% darker)",
+      theme: "dark"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#ba574e",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -5413,193 +5565,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "dark"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "dark"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "dark"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "dark"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "dark"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "dark"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "dark"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "dark"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "dark"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "dark"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "dark"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "dark"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "dark"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "dark"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "dark"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "dark"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "dark"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "dark"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "dark"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "dark"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "dark"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "dark"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "dark"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "dark"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "dark"
     },
     {
@@ -6693,7 +6965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "dark"
@@ -6701,7 +6973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "dark"
@@ -6709,7 +6981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "dark"
@@ -6717,7 +6989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "dark"
@@ -6725,7 +6997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "dark"
@@ -6741,7 +7013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "dark"
@@ -6757,7 +7029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "dark"
@@ -6773,7 +7045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "dark"
@@ -6789,7 +7061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "dark"
@@ -6805,7 +7077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "dark"
@@ -6821,7 +7093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "dark"
@@ -6837,7 +7109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "dark"
@@ -6920,14 +7192,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "dark"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "dark"
     },
     {
@@ -7613,7 +7877,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.1",
       type: "color",
-      value: "#9ddacb",
+      value: "#80a0da",
       cssVar: "--rw-color-blue-1",
       description: "A pale periwinkle blue color",
       theme: "darkDimmed"
@@ -7621,7 +7885,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.2",
       type: "color",
-      value: "#89d2c8",
+      value: "#799cd8",
       cssVar: "--rw-color-blue-2",
       description: "A light sky blue color",
       theme: "darkDimmed"
@@ -7629,7 +7893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.3",
       type: "color",
-      value: "#75cbc5",
+      value: "#7397d6",
       cssVar: "--rw-color-blue-3",
       description: "A soft cornflower blue color",
       theme: "darkDimmed"
@@ -7637,7 +7901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.4",
       type: "color",
-      value: "#61c3c4",
+      value: "#6c92d4",
       cssVar: "--rw-color-blue-4",
       description: "A muted bright blue color",
       theme: "darkDimmed"
@@ -7645,7 +7909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.5",
       type: "color",
-      value: "#4db2bc",
+      value: "#668dd3",
       cssVar: "--rw-color-blue-5",
       description: "A medium azure blue color",
       theme: "darkDimmed"
@@ -7653,7 +7917,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.6",
       type: "color",
-      value: "#36a1b9",
+      value: "#5f88d1",
       cssVar: "--rw-color-blue-6",
       description: "A vivid sky blue color",
       theme: "darkDimmed"
@@ -7661,7 +7925,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.7",
       type: "color",
-      value: "#2f86a2",
+      value: "#5984cf",
       cssVar: "--rw-color-blue-7",
       description: "A rich cerulean blue color",
       theme: "darkDimmed"
@@ -7669,7 +7933,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.8",
       type: "color",
-      value: "#286d8a",
+      value: "#527fcd",
       cssVar: "--rw-color-blue-8",
       description: "A deep navy blue color",
       theme: "darkDimmed"
@@ -7677,7 +7941,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.9",
       type: "color",
-      value: "#215471",
+      value: "#4978c1",
       cssVar: "--rw-color-blue-9",
       description: "A dark midnight blue color",
       theme: "darkDimmed"
@@ -7845,9 +8109,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link",
       type: "color",
-      value: "var(--color-blue-7)",
+      value: "var(--color-blue-5)",
       cssVar: "--rw-color-foreground-link",
       description: "The link foreground color for the dark theme",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -8077,7 +8349,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#29708d",
+      value: "#5072ac",
       cssVar: "--rw-color-foreground-link-hover",
       description: "The link foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8085,7 +8357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-pressed",
       type: "color",
-      value: "#235979",
+      value: "#2b5294",
       cssVar: "--rw-color-foreground-link-pressed",
       description: "The link foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8093,7 +8365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-focused",
       type: "color",
-      value: "#235979",
+      value: "#2b5294",
       cssVar: "--rw-color-foreground-link-focused",
       description: "The link foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8101,9 +8373,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-disabled",
       type: "color",
-      value: "#668694",
+      value: "#7890b8",
       cssVar: "--rw-color-foreground-link-disabled",
       description: "The link foreground color for the dark theme (disabled, 60% saturation)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#9c2d2d",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the dark theme (hover, 20% darker)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#862727",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the dark theme (pressed, 40% darker)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#862727",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the dark theme (focused, 40% darker)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#a16a65",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -10773,193 +11077,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "darkDimmed"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "darkDimmed"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "darkDimmed"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "darkDimmed"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "darkDimmed"
     },
     {
@@ -12053,7 +12477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "darkDimmed"
@@ -12061,7 +12485,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "darkDimmed"
@@ -12069,7 +12493,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "darkDimmed"
@@ -12077,7 +12501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "darkDimmed"
@@ -12085,7 +12509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "darkDimmed"
@@ -12101,7 +12525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "darkDimmed"
@@ -12117,7 +12541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "darkDimmed"
@@ -12133,7 +12557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "darkDimmed"
@@ -12149,7 +12573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "darkDimmed"
@@ -12165,7 +12589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "darkDimmed"
@@ -12181,7 +12605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkDimmed"
@@ -12197,7 +12621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkDimmed"
@@ -12280,14 +12704,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "darkDimmed"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "darkDimmed"
     },
     {
@@ -12973,7 +13389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.1",
       type: "color",
-      value: "#f9fffe",
+      value: "#bdd4ff",
       cssVar: "--rw-color-blue-1",
       description: "A pale periwinkle blue color",
       theme: "darkHighContrast"
@@ -12981,7 +13397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.2",
       type: "color",
-      value: "#bffff6",
+      value: "#abcaff",
       cssVar: "--rw-color-blue-2",
       description: "A light sky blue color",
       theme: "darkHighContrast"
@@ -12989,7 +13405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.3",
       type: "color",
-      value: "#87fff6",
+      value: "#9abeff",
       cssVar: "--rw-color-blue-3",
       description: "A soft cornflower blue color",
       theme: "darkHighContrast"
@@ -12997,7 +13413,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.4",
       type: "color",
-      value: "#4efdff",
+      value: "#88b3ff",
       cssVar: "--rw-color-blue-4",
       description: "A muted bright blue color",
       theme: "darkHighContrast"
@@ -13005,7 +13421,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.5",
       type: "color",
-      value: "#16eaff",
+      value: "#77a8ff",
       cssVar: "--rw-color-blue-5",
       description: "A medium azure blue color",
       theme: "darkHighContrast"
@@ -13013,7 +13429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.6",
       type: "color",
-      value: "#00b5dc",
+      value: "#659dff",
       cssVar: "--rw-color-blue-6",
       description: "A vivid sky blue color",
       theme: "darkHighContrast"
@@ -13021,7 +13437,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.7",
       type: "color",
-      value: "#00799f",
+      value: "#5493ff",
       cssVar: "--rw-color-blue-7",
       description: "A rich cerulean blue color",
       theme: "darkHighContrast"
@@ -13029,7 +13445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.8",
       type: "color",
-      value: "#004461",
+      value: "#4387ff",
       cssVar: "--rw-color-blue-8",
       description: "A deep navy blue color",
       theme: "darkHighContrast"
@@ -13037,7 +13453,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.blue.9",
       type: "color",
-      value: "#00121d",
+      value: "#1772ff",
       cssVar: "--rw-color-blue-9",
       description: "A dark midnight blue color",
       theme: "darkHighContrast"
@@ -13205,9 +13621,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link",
       type: "color",
-      value: "var(--color-blue-7)",
+      value: "var(--color-blue-5)",
       cssVar: "--rw-color-foreground-link",
       description: "The link foreground color for the dark theme",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -13437,7 +13861,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#004967",
+      value: "#065df3",
       cssVar: "--rw-color-foreground-link-hover",
       description: "The link foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -13445,7 +13869,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-pressed",
       type: "color",
-      value: "#001f31",
+      value: "#002e7b",
       cssVar: "--rw-color-foreground-link-pressed",
       description: "The link foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -13453,7 +13877,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-focused",
       type: "color",
-      value: "#001f31",
+      value: "#002e7b",
       cssVar: "--rw-color-foreground-link-focused",
       description: "The link foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -13461,9 +13885,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.link-disabled",
       type: "color",
-      value: "#3c92b9",
+      value: "#75a2f0",
       cssVar: "--rw-color-foreground-link-disabled",
       description: "The link foreground color for the dark theme (disabled, 60% saturation)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#8f0000",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the dark theme (hover, 20% darker)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#540000",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the dark theme (pressed, 40% darker)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#540000",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the dark theme (focused, 40% darker)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#d44538",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -16133,193 +16589,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "darkHighContrast"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "darkHighContrast"
     },
     {
@@ -17413,7 +17989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "darkHighContrast"
@@ -17421,7 +17997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "darkHighContrast"
@@ -17429,7 +18005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "darkHighContrast"
@@ -17437,7 +18013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "darkHighContrast"
@@ -17445,7 +18021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "darkHighContrast"
@@ -17461,7 +18037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "darkHighContrast"
@@ -17477,7 +18053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "darkHighContrast"
@@ -17493,7 +18069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "darkHighContrast"
@@ -17509,7 +18085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "darkHighContrast"
@@ -17525,7 +18101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "darkHighContrast"
@@ -17541,7 +18117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkHighContrast"
@@ -17557,7 +18133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkHighContrast"
@@ -17640,14 +18216,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "darkHighContrast"
     },
     {
@@ -18539,6 +19107,38 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
+      path: "color.foreground.body",
+      type: "color",
+      value: "var(--color-base-3)",
+      cssVar: "--rw-color-foreground-body",
+      description: "The body foreground color for the light theme",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.caption",
+      type: "color",
+      value: "var(--color-base-4)",
+      cssVar: "--rw-color-foreground-caption",
+      description: "The caption foreground color for the light theme",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.link",
+      type: "color",
+      value: "var(--color-blue-7)",
+      cssVar: "--rw-color-foreground-link",
+      description: "The link foreground color for the light theme",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the light theme",
+      theme: "light"
+    },
+    {
       path: "color.foreground.primary",
       type: "color",
       value: "var(--color-base-1)",
@@ -18552,14 +19152,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-base-5)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.body",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-body",
-      description: "The body foreground color for the light theme",
       theme: "light"
     },
     {
@@ -18624,14 +19216,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-7)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.link",
-      type: "color",
-      value: "var(--color-blue-7)",
-      cssVar: "--rw-color-foreground-link",
-      description: "The link foreground color for the light theme",
       theme: "light"
     },
     {
@@ -18715,6 +19299,134 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
+      path: "color.foreground.body-hover",
+      type: "color",
+      value: "#6d6d6d",
+      cssVar: "--rw-color-foreground-body-hover",
+      description: "The body foreground color for the light theme (hover, 20% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.body-pressed",
+      type: "color",
+      value: "#484848",
+      cssVar: "--rw-color-foreground-body-pressed",
+      description: "The body foreground color for the light theme (pressed, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.body-focused",
+      type: "color",
+      value: "#484848",
+      cssVar: "--rw-color-foreground-body-focused",
+      description: "The body foreground color for the light theme (focused, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.body-disabled",
+      type: "color",
+      value: "#94949499",
+      cssVar: "--rw-color-foreground-body-disabled",
+      description: "The body foreground color for the light theme (disabled, 60% opacity)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.caption-hover",
+      type: "color",
+      value: "#545454",
+      cssVar: "--rw-color-foreground-caption-hover",
+      description: "The caption foreground color for the light theme (hover, 20% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.caption-pressed",
+      type: "color",
+      value: "#363636",
+      cssVar: "--rw-color-foreground-caption-pressed",
+      description: "The caption foreground color for the light theme (pressed, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.caption-focused",
+      type: "color",
+      value: "#363636",
+      cssVar: "--rw-color-foreground-caption-focused",
+      description: "The caption foreground color for the light theme (focused, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.caption-disabled",
+      type: "color",
+      value: "#73737399",
+      cssVar: "--rw-color-foreground-caption-disabled",
+      description: "The caption foreground color for the light theme (disabled, 60% opacity)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.link-hover",
+      type: "color",
+      value: "#1d63b8",
+      cssVar: "--rw-color-foreground-link-hover",
+      description: "The link foreground color for the light theme (hover, 20% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.link-pressed",
+      type: "color",
+      value: "#003d8f",
+      cssVar: "--rw-color-foreground-link-pressed",
+      description: "The link foreground color for the light theme (pressed, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.link-focused",
+      type: "color",
+      value: "#003d8f",
+      cssVar: "--rw-color-foreground-link-focused",
+      description: "The link foreground color for the light theme (focused, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.link-disabled",
+      type: "color",
+      value: "#363636",
+      cssVar: "--rw-color-foreground-link-disabled",
+      description: "The link foreground color for the light theme (disabled, 60% saturation)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#b20000",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the light theme (hover, 20% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#890000",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the light theme (pressed, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#890000",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the light theme (focused, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#ba574e",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the light theme (disabled, 60% saturation)",
+      theme: "light"
+    },
+    {
       path: "color.foreground.primary-hover",
       type: "color",
       value: "#b6b6b6",
@@ -18776,38 +19488,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#999999",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.body-hover",
-      type: "color",
-      value: "#6d6d6d",
-      cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.body-pressed",
-      type: "color",
-      value: "#484848",
-      cssVar: "--rw-color-foreground-body-pressed",
-      description: "The body foreground color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.body-focused",
-      type: "color",
-      value: "#484848",
-      cssVar: "--rw-color-foreground-body-focused",
-      description: "The body foreground color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.body-disabled",
-      type: "color",
-      value: "#94949499",
-      cssVar: "--rw-color-foreground-body-disabled",
-      description: "The body foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -19064,38 +19744,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#383838",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.link-hover",
-      type: "color",
-      value: "#1d63b8",
-      cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.link-pressed",
-      type: "color",
-      value: "#003d8f",
-      cssVar: "--rw-color-foreground-link-pressed",
-      description: "The link foreground color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.link-focused",
-      type: "color",
-      value: "#003d8f",
-      cssVar: "--rw-color-foreground-link-focused",
-      description: "The link foreground color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.link-disabled",
-      type: "color",
-      value: "#363636",
-      cssVar: "--rw-color-foreground-link-disabled",
-      description: "The link foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -21333,193 +21981,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "light"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "light"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "light"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "light"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "light"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "light"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "light"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "light"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "light"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "light"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "light"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "light"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "light"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "light"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "light"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "light"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "light"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "light"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "light"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "light"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "light"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "light"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "light"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "light"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "light"
     },
     {
@@ -22613,7 +23381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "light"
@@ -22621,7 +23389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "light"
@@ -22629,7 +23397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "light"
@@ -22637,7 +23405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "light"
@@ -22645,7 +23413,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "light"
@@ -22661,7 +23429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "light"
@@ -22677,7 +23445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "light"
@@ -22693,7 +23461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "light"
@@ -22709,7 +23477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "light"
@@ -22725,7 +23493,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "light"
@@ -22741,7 +23509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "light"
@@ -22757,7 +23525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "light"
@@ -22840,14 +23608,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "light"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "light"
     },
     {
@@ -23739,6 +24499,38 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
+      path: "color.foreground.body",
+      type: "color",
+      value: "var(--color-base-3)",
+      cssVar: "--rw-color-foreground-body",
+      description: "The body foreground color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.caption",
+      type: "color",
+      value: "var(--color-base-4)",
+      cssVar: "--rw-color-foreground-caption",
+      description: "The caption foreground color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.link",
+      type: "color",
+      value: "var(--color-blue-7)",
+      cssVar: "--rw-color-foreground-link",
+      description: "The link foreground color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
       path: "color.foreground.primary",
       type: "color",
       value: "var(--color-base-1)",
@@ -23752,14 +24544,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-base-5)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.body",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-body",
-      description: "The body foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -23824,14 +24608,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-7)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.link",
-      type: "color",
-      value: "var(--color-blue-7)",
-      cssVar: "--rw-color-foreground-link",
-      description: "The link foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -23915,6 +24691,134 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
+      path: "color.foreground.body-hover",
+      type: "color",
+      value: "#737373",
+      cssVar: "--rw-color-foreground-body-hover",
+      description: "The body foreground color for the light theme (hover, 20% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.body-pressed",
+      type: "color",
+      value: "#595959",
+      cssVar: "--rw-color-foreground-body-pressed",
+      description: "The body foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.body-focused",
+      type: "color",
+      value: "#595959",
+      cssVar: "--rw-color-foreground-body-focused",
+      description: "The body foreground color for the light theme (focused, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.body-disabled",
+      type: "color",
+      value: "#8e8e8e99",
+      cssVar: "--rw-color-foreground-body-disabled",
+      description: "The body foreground color for the light theme (disabled, 60% opacity)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.caption-hover",
+      type: "color",
+      value: "#616161",
+      cssVar: "--rw-color-foreground-caption-hover",
+      description: "The caption foreground color for the light theme (hover, 20% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.caption-pressed",
+      type: "color",
+      value: "#4c4c4c",
+      cssVar: "--rw-color-foreground-caption-pressed",
+      description: "The caption foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.caption-focused",
+      type: "color",
+      value: "#4c4c4c",
+      cssVar: "--rw-color-foreground-caption-focused",
+      description: "The caption foreground color for the light theme (focused, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.caption-disabled",
+      type: "color",
+      value: "#77777799",
+      cssVar: "--rw-color-foreground-caption-disabled",
+      description: "The caption foreground color for the light theme (disabled, 60% opacity)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.link-hover",
+      type: "color",
+      value: "#446c9e",
+      cssVar: "--rw-color-foreground-link-hover",
+      description: "The link foreground color for the light theme (hover, 20% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.link-pressed",
+      type: "color",
+      value: "#285189",
+      cssVar: "--rw-color-foreground-link-pressed",
+      description: "The link foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.link-focused",
+      type: "color",
+      value: "#285189",
+      cssVar: "--rw-color-foreground-link-focused",
+      description: "The link foreground color for the light theme (focused, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.link-disabled",
+      type: "color",
+      value: "#4c4c4c",
+      cssVar: "--rw-color-foreground-link-disabled",
+      description: "The link foreground color for the light theme (disabled, 60% saturation)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#9c2d2d",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the light theme (hover, 20% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#862727",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#862727",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the light theme (focused, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#a16a65",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the light theme (disabled, 60% saturation)",
+      theme: "lightDimmed"
+    },
+    {
       path: "color.foreground.primary-hover",
       type: "color",
       value: "#a6a6a6",
@@ -23976,38 +24880,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#919191",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.body-hover",
-      type: "color",
-      value: "#737373",
-      cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.body-pressed",
-      type: "color",
-      value: "#595959",
-      cssVar: "--rw-color-foreground-body-pressed",
-      description: "The body foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.body-focused",
-      type: "color",
-      value: "#595959",
-      cssVar: "--rw-color-foreground-body-focused",
-      description: "The body foreground color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.body-disabled",
-      type: "color",
-      value: "#8e8e8e99",
-      cssVar: "--rw-color-foreground-body-disabled",
-      description: "The body foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -24264,38 +25136,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#4d4d4d",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.link-hover",
-      type: "color",
-      value: "#446c9e",
-      cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.link-pressed",
-      type: "color",
-      value: "#285189",
-      cssVar: "--rw-color-foreground-link-pressed",
-      description: "The link foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.link-focused",
-      type: "color",
-      value: "#285189",
-      cssVar: "--rw-color-foreground-link-focused",
-      description: "The link foreground color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.link-disabled",
-      type: "color",
-      value: "#4c4c4c",
-      cssVar: "--rw-color-foreground-link-disabled",
-      description: "The link foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -26533,193 +27373,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "lightDimmed"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "lightDimmed"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "lightDimmed"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "lightDimmed"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "lightDimmed"
     },
     {
@@ -27813,7 +28773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "lightDimmed"
@@ -27821,7 +28781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "lightDimmed"
@@ -27829,7 +28789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "lightDimmed"
@@ -27837,7 +28797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "lightDimmed"
@@ -27845,7 +28805,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "lightDimmed"
@@ -27861,7 +28821,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "lightDimmed"
@@ -27877,7 +28837,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "lightDimmed"
@@ -27893,7 +28853,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "lightDimmed"
@@ -27909,7 +28869,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "lightDimmed"
@@ -27925,7 +28885,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "lightDimmed"
@@ -27941,7 +28901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "lightDimmed"
@@ -27957,7 +28917,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "lightDimmed"
@@ -28040,14 +29000,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "lightDimmed"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "lightDimmed"
     },
     {
@@ -28939,6 +29891,38 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
+      path: "color.foreground.body",
+      type: "color",
+      value: "var(--color-base-3)",
+      cssVar: "--rw-color-foreground-body",
+      description: "The body foreground color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.caption",
+      type: "color",
+      value: "var(--color-base-4)",
+      cssVar: "--rw-color-foreground-caption",
+      description: "The caption foreground color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.link",
+      type: "color",
+      value: "var(--color-blue-7)",
+      cssVar: "--rw-color-foreground-link",
+      description: "The link foreground color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.required",
+      type: "color",
+      value: "var(--color-apple-5)",
+      cssVar: "--rw-color-foreground-required",
+      description: "A required foreground color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
       path: "color.foreground.primary",
       type: "color",
       value: "var(--color-base-1)",
@@ -28952,14 +29936,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-base-5)",
       cssVar: "--rw-color-foreground-secondary",
       description: "The secondary foreground color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.body",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-body",
-      description: "The body foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -29024,14 +30000,6 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-7)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.link",
-      type: "color",
-      value: "var(--color-blue-7)",
-      cssVar: "--rw-color-foreground-link",
-      description: "The link foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -29115,6 +30083,134 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
+      path: "color.foreground.body-hover",
+      type: "color",
+      value: "#656565",
+      cssVar: "--rw-color-foreground-body-hover",
+      description: "The body foreground color for the light theme (hover, 20% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.body-pressed",
+      type: "color",
+      value: "#2f2f2f",
+      cssVar: "--rw-color-foreground-body-pressed",
+      description: "The body foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.body-focused",
+      type: "color",
+      value: "#2f2f2f",
+      cssVar: "--rw-color-foreground-body-focused",
+      description: "The body foreground color for the light theme (focused, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.body-disabled",
+      type: "color",
+      value: "#9d9d9d99",
+      cssVar: "--rw-color-foreground-body-disabled",
+      description: "The body foreground color for the light theme (disabled, 60% opacity)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.caption-hover",
+      type: "color",
+      value: "#404040",
+      cssVar: "--rw-color-foreground-caption-hover",
+      description: "The caption foreground color for the light theme (hover, 20% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.caption-pressed",
+      type: "color",
+      value: "#151515",
+      cssVar: "--rw-color-foreground-caption-pressed",
+      description: "The caption foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.caption-focused",
+      type: "color",
+      value: "#151515",
+      cssVar: "--rw-color-foreground-caption-focused",
+      description: "The caption foreground color for the light theme (focused, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.caption-disabled",
+      type: "color",
+      value: "#6d6d6d99",
+      cssVar: "--rw-color-foreground-caption-disabled",
+      description: "The caption foreground color for the light theme (disabled, 60% opacity)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.link-hover",
+      type: "color",
+      value: "#0058c2",
+      cssVar: "--rw-color-foreground-link-hover",
+      description: "The link foreground color for the light theme (hover, 20% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.link-pressed",
+      type: "color",
+      value: "#00285d",
+      cssVar: "--rw-color-foreground-link-pressed",
+      description: "The link foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.link-focused",
+      type: "color",
+      value: "#00285d",
+      cssVar: "--rw-color-foreground-link-focused",
+      description: "The link foreground color for the light theme (focused, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.link-disabled",
+      type: "color",
+      value: "#151515",
+      cssVar: "--rw-color-foreground-link-disabled",
+      description: "The link foreground color for the light theme (disabled, 60% saturation)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.required-hover",
+      type: "color",
+      value: "#8f0000",
+      cssVar: "--rw-color-foreground-required-hover",
+      description: "A required foreground color for the light theme (hover, 20% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.required-pressed",
+      type: "color",
+      value: "#540000",
+      cssVar: "--rw-color-foreground-required-pressed",
+      description: "A required foreground color for the light theme (pressed, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.required-focused",
+      type: "color",
+      value: "#540000",
+      cssVar: "--rw-color-foreground-required-focused",
+      description: "A required foreground color for the light theme (focused, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.foreground.required-disabled",
+      type: "color",
+      value: "#d44538",
+      cssVar: "--rw-color-foreground-required-disabled",
+      description: "A required foreground color for the light theme (disabled, 60% saturation)",
+      theme: "lightHighContrast"
+    },
+    {
       path: "color.foreground.primary-hover",
       type: "color",
       value: "#cfcfcf",
@@ -29176,38 +30272,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#a4a4a4",
       cssVar: "--rw-color-foreground-secondary-disabled",
       description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.body-hover",
-      type: "color",
-      value: "#656565",
-      cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.body-pressed",
-      type: "color",
-      value: "#2f2f2f",
-      cssVar: "--rw-color-foreground-body-pressed",
-      description: "The body foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.body-focused",
-      type: "color",
-      value: "#2f2f2f",
-      cssVar: "--rw-color-foreground-body-focused",
-      description: "The body foreground color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.body-disabled",
-      type: "color",
-      value: "#9d9d9d99",
-      cssVar: "--rw-color-foreground-body-disabled",
-      description: "The body foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -29464,38 +30528,6 @@ const TOKENS: TokenTableRow[] = [
       value: "#181818",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.link-hover",
-      type: "color",
-      value: "#0058c2",
-      cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.link-pressed",
-      type: "color",
-      value: "#00285d",
-      cssVar: "--rw-color-foreground-link-pressed",
-      description: "The link foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.link-focused",
-      type: "color",
-      value: "#00285d",
-      cssVar: "--rw-color-foreground-link-focused",
-      description: "The link foreground color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.link-disabled",
-      type: "color",
-      value: "#151515",
-      cssVar: "--rw-color-foreground-link-disabled",
-      description: "The link foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -31733,193 +32765,313 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "size.md",
       type: "dimension",
-      value: "20px",
+      value: "10px",
       cssVar: "--rw-size-md",
-      description: "A 20px md size step",
+      description: "A 10px md size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.lg",
       type: "dimension",
-      value: "24px",
+      value: "12px",
       cssVar: "--rw-size-lg",
-      description: "A 24px lg size step",
+      description: "A 12px lg size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.xl",
       type: "dimension",
-      value: "28px",
+      value: "14px",
       cssVar: "--rw-size-xl",
-      description: "A 28px xl size step",
+      description: "A 14px xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.2xl",
       type: "dimension",
-      value: "32px",
+      value: "16px",
       cssVar: "--rw-size-2xl",
-      description: "A 32px 2xl size step",
+      description: "A 16px 2xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.3xl",
       type: "dimension",
-      value: "36px",
+      value: "18px",
       cssVar: "--rw-size-3xl",
-      description: "A 36px 3xl size step",
+      description: "A 18px 3xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.4xl",
       type: "dimension",
-      value: "40px",
+      value: "20px",
       cssVar: "--rw-size-4xl",
-      description: "A 40px 4xl size step",
+      description: "A 20px 4xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.5xl",
       type: "dimension",
-      value: "44px",
+      value: "22px",
       cssVar: "--rw-size-5xl",
-      description: "A 44px 5xl size step",
+      description: "A 22px 5xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.6xl",
       type: "dimension",
-      value: "48px",
+      value: "24px",
       cssVar: "--rw-size-6xl",
-      description: "A 48px 6xl size step",
+      description: "A 24px 6xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.7xl",
       type: "dimension",
-      value: "52px",
+      value: "26px",
       cssVar: "--rw-size-7xl",
-      description: "A 52px 7xl size step",
+      description: "A 26px 7xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.8xl",
       type: "dimension",
-      value: "64px",
+      value: "32px",
       cssVar: "--rw-size-8xl",
-      description: "A 64px 8xl size step",
+      description: "A 32px 8xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.9xl",
       type: "dimension",
-      value: "74px",
+      value: "37px",
       cssVar: "--rw-size-9xl",
-      description: "A 74px 9xl size step",
+      description: "A 37px 9xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.10xl",
       type: "dimension",
-      value: "84px",
+      value: "42px",
       cssVar: "--rw-size-10xl",
-      description: "A 84px 10xl size step",
+      description: "A 42px 10xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.11xl",
       type: "dimension",
-      value: "94px",
+      value: "47px",
       cssVar: "--rw-size-11xl",
-      description: "A 94px 11xl size step",
+      description: "A 47px 11xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.12xl",
       type: "dimension",
-      value: "104px",
+      value: "52px",
       cssVar: "--rw-size-12xl",
-      description: "A 104px 12xl size step",
+      description: "A 52px 12xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.13xl",
       type: "dimension",
-      value: "124px",
+      value: "62px",
       cssVar: "--rw-size-13xl",
-      description: "A 124px 13xl size step",
+      description: "A 62px 13xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.14xl",
       type: "dimension",
-      value: "144px",
+      value: "72px",
       cssVar: "--rw-size-14xl",
-      description: "A 144px 14xl size step",
+      description: "A 72px 14xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.15xl",
       type: "dimension",
-      value: "164px",
+      value: "82px",
       cssVar: "--rw-size-15xl",
-      description: "A 164px 15xl size step",
+      description: "A 82px 15xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.16xl",
       type: "dimension",
-      value: "184px",
+      value: "92px",
       cssVar: "--rw-size-16xl",
-      description: "A 184px 16xl size step",
+      description: "A 92px 16xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.17xl",
       type: "dimension",
-      value: "204px",
+      value: "102px",
       cssVar: "--rw-size-17xl",
-      description: "A 204px 17xl size step",
+      description: "A 102px 17xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.18xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-18xl",
-      description: "A 224px 18xl size step",
+      description: "A 112px 18xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.19xl",
       type: "dimension",
-      value: "224px",
+      value: "112px",
       cssVar: "--rw-size-19xl",
-      description: "A 224px 19xl size step",
+      description: "A 112px 19xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.20xl",
       type: "dimension",
-      value: "244px",
+      value: "122px",
       cssVar: "--rw-size-20xl",
-      description: "A 244px 20xl size step",
+      description: "A 122px 20xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.21xl",
       type: "dimension",
-      value: "264px",
+      value: "132px",
       cssVar: "--rw-size-21xl",
-      description: "A 264px 21xl size step",
+      description: "A 132px 21xl size step",
       theme: "lightHighContrast"
     },
     {
       path: "size.22xl",
       type: "dimension",
-      value: "284px",
+      value: "142px",
       cssVar: "--rw-size-22xl",
-      description: "A 284px 22xl size step",
+      description: "A 142px 22xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.23xl",
+      type: "dimension",
+      value: "152px",
+      cssVar: "--rw-size-23xl",
+      description: "A 152px 23xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.24xl",
+      type: "dimension",
+      value: "162px",
+      cssVar: "--rw-size-24xl",
+      description: "A 162px 24xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.25xl",
+      type: "dimension",
+      value: "172px",
+      cssVar: "--rw-size-25xl",
+      description: "A 172px 25xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.26xl",
+      type: "dimension",
+      value: "182px",
+      cssVar: "--rw-size-26xl",
+      description: "A 182px 26xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.27xl",
+      type: "dimension",
+      value: "192px",
+      cssVar: "--rw-size-27xl",
+      description: "A 192px 27xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.28xl",
+      type: "dimension",
+      value: "202px",
+      cssVar: "--rw-size-28xl",
+      description: "A 202px 28xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.29xl",
+      type: "dimension",
+      value: "212px",
+      cssVar: "--rw-size-29xl",
+      description: "A 212px 29xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.30xl",
+      type: "dimension",
+      value: "222px",
+      cssVar: "--rw-size-30xl",
+      description: "A 222px 30xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.31xl",
+      type: "dimension",
+      value: "232px",
+      cssVar: "--rw-size-31xl",
+      description: "A 232px 31xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.32xl",
+      type: "dimension",
+      value: "242px",
+      cssVar: "--rw-size-32xl",
+      description: "A 242px 32xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.33xl",
+      type: "dimension",
+      value: "252px",
+      cssVar: "--rw-size-33xl",
+      description: "A 252px 33xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.34xl",
+      type: "dimension",
+      value: "262px",
+      cssVar: "--rw-size-34xl",
+      description: "A 262px 34xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.35xl",
+      type: "dimension",
+      value: "272px",
+      cssVar: "--rw-size-35xl",
+      description: "A 272px 35xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.36xl",
+      type: "dimension",
+      value: "282px",
+      cssVar: "--rw-size-36xl",
+      description: "A 282px 36xl size step",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "size.37xl",
+      type: "dimension",
+      value: "284px",
+      cssVar: "--rw-size-37xl",
+      description: "A 284px 37xl size step",
       theme: "lightHighContrast"
     },
     {
@@ -33013,7 +34165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "lightHighContrast"
@@ -33021,7 +34173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-primary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "lightHighContrast"
@@ -33029,7 +34181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-secondary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary",
       description: "The secondary ring variant",
       theme: "lightHighContrast"
@@ -33037,7 +34189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.secondary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-secondary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-secondary-subtle",
       description: "The secondary subtle ring variant",
       theme: "lightHighContrast"
@@ -33045,7 +34197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.accent",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
+      value: "0px 0px 0px 2px var(--color-border-accent)",
       cssVar: "--rw-ring-accent",
       description: "The accent ring variant",
       theme: "lightHighContrast"
@@ -33061,7 +34213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 2px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "lightHighContrast"
@@ -33077,7 +34229,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 2px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "lightHighContrast"
@@ -33093,7 +34245,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 2px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "lightHighContrast"
@@ -33109,7 +34261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 2px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "lightHighContrast"
@@ -33125,7 +34277,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 2px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "lightHighContrast"
@@ -33141,7 +34293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 2px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "lightHighContrast"
@@ -33157,7 +34309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 2px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "lightHighContrast"
@@ -33240,14 +34392,6 @@ const TOKENS: TokenTableRow[] = [
       value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "typography.label",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-label",
-      description: "The label typography variant",
       theme: "lightHighContrast"
     },
     {

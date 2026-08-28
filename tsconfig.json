@@ -25,6 +25,9 @@
       "path": "./packages/helpers"
     },
     {
+      "path": "./packages/registry-api"
+    },
+    {
       "path": "./components/pdf-document-display"
     },
     {
@@ -107,9 +110,6 @@
     },
     {
       "path": "./components/pagination"
-    },
-    {
-      "path": "./packages/registry-api"
     },
     {
       "path": "./components/title-text"

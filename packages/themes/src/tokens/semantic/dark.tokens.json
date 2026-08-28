@@ -18,8 +18,14 @@
       "link": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.blue.7}",
+        "$value": "{color.blue.5}",
         "$description": "The link foreground color for the dark theme"
+      },
+      "required": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.apple.5}",
+        "$description": "A required foreground color for the dark theme"
       },
       "primary": {
         "$type": "color",

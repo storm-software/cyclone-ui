@@ -43,7 +43,7 @@ export const ValidationText = ValidationBodyText.styleable<{
   messages?: ValidationDetails[];
   theme?: string;
   disabled?: boolean;
-}>(({ disabled, theme = "base", messages = [], ...props }, forwardedRef) => {
+}>(({ disabled, theme = "primary", messages = [], ...props }, forwardedRef) => {
   if ((messages.length === 1 && messages[0]?.message) || disabled) {
     const message = messages[0]?.message || "This field is disabled";
 

@@ -162,7 +162,7 @@ component.
 
 # Testing
 
-Open System uses [Jest](https://jestjs.io/) for unit testing and
+Open System uses [Vitest](https://vitest.dev/) for unit testing and
 [Cypress](https://www.cypress.io/) for end-to-end testing.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
@@ -170,7 +170,7 @@ Open System uses [Jest](https://jestjs.io/) for unit testing and
 
 ## Running Unit Tests
 
-Run `pnpm test` to execute the unit tests via [Jest](https://jestjs.io).
+Run `pnpm test` to execute the unit tests via [Vitest](https://vitest.dev).
 
 Run `pnpm affected:test` to execute the unit tests affected by a change.
 

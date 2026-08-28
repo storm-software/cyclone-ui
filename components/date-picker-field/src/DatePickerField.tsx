@@ -22,7 +22,7 @@ import { getSized } from "@cyclone-ui/helpers";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
-import { View, withStaticProperties } from "@tamagui/core";
+import { withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
 import { useCallback, useMemo } from "react";
@@ -80,17 +80,23 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
 
     const field = FieldApi.use();
     const size = field.size.get();
+    const disabled = field.disabled.get();
 
     const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
 
     return (
-      <View flexBasis="6%">
-        <DatePicker.Trigger ref={forwardedRef} {...props} onPress={focus}>
-          <DatePicker.Trigger.Icon>
-            <Calendar size={adjustedIcon} />
-          </DatePicker.Trigger.Icon>
-        </DatePicker.Trigger>
-      </View>
+      <DatePicker.Trigger
+        ref={forwardedRef}
+        {...props}
+        color={disabled ? "$borderDisabled" : "$border"}
+        onPress={focus}>
+        <DatePicker.Trigger.Icon
+          $group-field-hover={{
+            color: disabled ? "$borderDisabled" : "$borderHover"
+          }}>
+          <Calendar size={adjustedIcon} />
+        </DatePicker.Trigger.Icon>
+      </DatePicker.Trigger>
     );
   }
 );
@@ -102,6 +108,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
 
     const field = FieldApi.use();
     const name = field.name.get();
+    const size = field.size.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const formattedValue = field.formattedValue.get();
@@ -120,6 +127,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     return (
       <DatePicker
         name={name}
+        size={size}
         focused={focused}
         disabled={disabled}
         onChange={handleChange}

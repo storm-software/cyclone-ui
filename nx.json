@@ -18,6 +18,7 @@
         "verboseOutput": false
       }
     },
+    "@nx/vitest",
     "@storm-software/workspace-tools/plugins/typescript",
     "@storm-software/workspace-tools/plugins/typescript/untyped",
     "@storm-software/workspace-tools/plugins/typescript/tsdown",

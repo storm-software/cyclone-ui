@@ -9,9 +9,16 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc"
+    "outDir": "../../dist/out-tsc",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/field/tsconfig.tsbuildinfo"
   },
   "references": [
+    {
+      "path": "../spinner"
+    },
+    {
+      "path": "../../packages/helpers"
+    },
     {
       "path": "../validation-text"
     },
@@ -28,16 +35,16 @@
       "path": "../button"
     },
     {
-      "path": "../form"
-    },
-    {
       "path": "../body-text"
     },
     {
       "path": "../label-text"
+    },
+    {
+      "path": "../form"
     }
   ],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

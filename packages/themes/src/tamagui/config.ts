@@ -44,15 +44,15 @@ const tokens = createTokens({
     darkBase8: "#3a3a3a",
     darkBase9: "#2e2e2e",
     darkBase10: "#181818",
-    darkBlue1: "#b3f8e7",
-    darkBlue2: "#8ff4e5",
-    darkBlue3: "#6bf1e7",
-    darkBlue4: "#47ecee",
-    darkBlue5: "#24d8ea",
-    darkBlue6: "#00bee7",
-    darkBlue7: "#0090bd",
-    darkBlue8: "#006692",
-    darkBlue9: "#003f63",
+    darkBlue1: "#82afff",
+    darkBlue2: "#76a8ff",
+    darkBlue3: "#6aa0ff",
+    darkBlue4: "#5e98ff",
+    darkBlue5: "#5291ff",
+    darkBlue6: "#4689ff",
+    darkBlue7: "#3a82ff",
+    darkBlue8: "#2e7aff",
+    darkBlue9: "#1d70f2",
     darkGreen1: "#beddc3",
     darkGreen2: "#a0cdab",
     darkGreen3: "#81bd95",
@@ -255,32 +255,47 @@ const tokens = createTokens({
     xxs: 0.5
   },
   size: {
-    "2xl": 32,
-    "3xl": 36,
-    "4xl": 40,
-    "5xl": 44,
-    "6xl": 48,
-    "7xl": 52,
-    "8xl": 64,
-    "9xl": 74,
-    "10xl": 84,
-    "11xl": 94,
-    "12xl": 104,
-    "13xl": 124,
-    "14xl": 144,
-    "15xl": 164,
-    "16xl": 184,
-    "17xl": 204,
-    "18xl": 224,
-    "19xl": 224,
-    "20xl": 244,
-    "21xl": 264,
-    "22xl": 284,
-    lg: 24,
-    md: 20,
+    "2xl": 16,
+    "3xl": 18,
+    "4xl": 20,
+    "5xl": 22,
+    "6xl": 24,
+    "7xl": 26,
+    "8xl": 32,
+    "9xl": 37,
+    "10xl": 42,
+    "11xl": 47,
+    "12xl": 52,
+    "13xl": 62,
+    "14xl": 72,
+    "15xl": 82,
+    "16xl": 92,
+    "17xl": 102,
+    "18xl": 112,
+    "19xl": 112,
+    "20xl": 122,
+    "21xl": 132,
+    "22xl": 142,
+    "23xl": 152,
+    "24xl": 162,
+    "25xl": 172,
+    "26xl": 182,
+    "27xl": 192,
+    "28xl": 202,
+    "29xl": 212,
+    "30xl": 222,
+    "31xl": 232,
+    "32xl": 242,
+    "33xl": 252,
+    "34xl": 262,
+    "35xl": 272,
+    "36xl": 282,
+    "37xl": 284,
+    lg: 12,
+    md: 10,
     none: 0,
     sm: 8,
-    xl: 28,
+    xl: 14,
     xs: 4,
     xxs: 2
   },
@@ -416,7 +431,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#800000",
-      ring: "0px 0px 0px 3px #cf222e",
+      ring: "0px 0px 0px 2px #cf222e",
       ringSubtle: "0px 0px 0px 1px #cf222e"
     },
     discovery: {
@@ -449,7 +464,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#3b318f",
-      ring: "0px 0px 0px 3px #7f7ee4",
+      ring: "0px 0px 0px 2px #7f7ee4",
       ringSubtle: "0px 0px 0px 1px #7f7ee4"
     },
     info: {
@@ -482,7 +497,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005e88",
-      ring: "0px 0px 0px 3px #00b8e6",
+      ring: "0px 0px 0px 2px #00b8e6",
       ringSubtle: "0px 0px 0px 1px #00b8e6"
     },
     negative: {
@@ -515,7 +530,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#840000",
-      ring: "0px 0px 0px 3px #d6301b",
+      ring: "0px 0px 0px 2px #d6301b",
       ringSubtle: "0px 0px 0px 1px #d6301b"
     },
     positive: {
@@ -548,7 +563,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#295c00",
-      ring: "0px 0px 0px 3px #79b136",
+      ring: "0px 0px 0px 2px #79b136",
       ringSubtle: "0px 0px 0px 1px #79b136"
     },
     primary: {
@@ -572,8 +587,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 3px #333333",
-      ringSubtle: "0px 0px 0px 1px #333333"
+      ring: "0px 0px 0px 2px #f5f5f5",
+      ringSubtle: "0px 0px 0px 1px #f5f5f5"
     },
     secondary: {
       background: tokens.color.lightBase8.val,
@@ -596,8 +611,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#848484",
-      ring: "0px 0px 0px 3px #181818",
-      ringSubtle: "0px 0px 0px 1px #181818"
+      ring: "0px 0px 0px 2px #525252",
+      ringSubtle: "0px 0px 0px 1px #525252"
     },
     success: {
       background: tokens.color.lightGreen6.val,
@@ -629,7 +644,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005722",
-      ring: "0px 0px 0px 3px #00a469",
+      ring: "0px 0px 0px 2px #00a469",
       ringSubtle: "0px 0px 0px 1px #00a469"
     },
     warning: {
@@ -662,7 +677,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#793e00",
-      ring: "0px 0px 0px 3px #d49400",
+      ring: "0px 0px 0px 2px #d49400",
       ringSubtle: "0px 0px 0px 1px #d49400"
     }
   },
@@ -697,7 +712,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#7f001a",
-      ring: "0px 0px 0px 3px #b92647",
+      ring: "0px 0px 0px 2px #b92647",
       ringSubtle: "0px 0px 0px 1px #b92647"
     },
     discovery: {
@@ -730,7 +745,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#3a3b79",
-      ring: "0px 0px 0px 3px #949ed2",
+      ring: "0px 0px 0px 2px #949ed2",
       ringSubtle: "0px 0px 0px 1px #949ed2"
     },
     info: {
@@ -763,7 +778,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#007283",
-      ring: "0px 0px 0px 3px #47ecee",
+      ring: "0px 0px 0px 2px #47ecee",
       ringSubtle: "0px 0px 0px 1px #47ecee"
     },
     negative: {
@@ -796,7 +811,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#820000",
-      ring: "0px 0px 0px 3px #dc2626",
+      ring: "0px 0px 0px 2px #dc2626",
       ringSubtle: "0px 0px 0px 1px #dc2626"
     },
     positive: {
@@ -829,7 +844,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#315c00",
-      ring: "0px 0px 0px 3px #a4bb4e",
+      ring: "0px 0px 0px 2px #a4bb4e",
       ringSubtle: "0px 0px 0px 1px #a4bb4e"
     },
     primary: {
@@ -863,8 +878,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#131314",
       foregroundInversePressed: "#1a1a1b",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 3px #484848",
-      ringSubtle: "0px 0px 0px 1px #484848"
+      ring: "0px 0px 0px 2px #f5f5f5",
+      ringSubtle: "0px 0px 0px 1px #f5f5f5"
     },
     secondary: {
       background: tokens.color.darkBase8.val,
@@ -896,8 +911,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#5e5e5e",
-      ring: "0px 0px 0px 3px #3a3a3a",
-      ringSubtle: "0px 0px 0px 1px #3a3a3a"
+      ring: "0px 0px 0px 2px #bebebe",
+      ringSubtle: "0px 0px 0px 1px #bebebe"
     },
     success: {
       background: tokens.color.darkGreen6.val,
@@ -929,7 +944,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005b33",
-      ring: "0px 0px 0px 3px #449e71",
+      ring: "0px 0px 0px 2px #449e71",
       ringSubtle: "0px 0px 0px 1px #449e71"
     },
     warning: {
@@ -962,7 +977,7 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#7c4800",
-      ring: "0px 0px 0px 3px #897018",
+      ring: "0px 0px 0px 2px #897018",
       ringSubtle: "0px 0px 0px 1px #897018"
     }
   }
@@ -1051,11 +1066,21 @@ const themes = createThemes({
         foregroundBodyFocused: "#484848",
         foregroundBodyHover: "#6d6d6d",
         foregroundBodyPressed: "#484848",
+        foregroundCaption: tokens.color.lightBase4.val,
+        foregroundCaptionDisabled: "#73737399",
+        foregroundCaptionFocused: "#363636",
+        foregroundCaptionHover: "#545454",
+        foregroundCaptionPressed: "#363636",
         foregroundLink: tokens.color.lightBlue7.val,
         foregroundLinkDisabled: "#363636",
         foregroundLinkFocused: "#003d8f",
         foregroundLinkHover: "#1d63b8",
         foregroundLinkPressed: "#003d8f",
+        foregroundRequired: tokens.color.lightApple5.val,
+        foregroundRequiredDisabled: "#ba574e",
+        foregroundRequiredFocused: "#890000",
+        foregroundRequiredHover: "#b20000",
+        foregroundRequiredPressed: "#890000",
         overlayBackdrop: "#1a1c1f66",
         overlayBackground: tokens.color.lightSurface3.val,
         overlayBackgroundDisabled: "#eaeaea99",
@@ -1123,11 +1148,16 @@ const themes = createThemes({
         foregroundCaptionFocused: "#4d4d4d",
         foregroundCaptionHover: "#757575",
         foregroundCaptionPressed: "#4d4d4d",
-        foregroundLink: tokens.color.darkBlue7.val,
-        foregroundLinkDisabled: "#528ca6",
-        foregroundLinkFocused: "#004771",
-        foregroundLinkHover: "#006b96",
-        foregroundLinkPressed: "#004771",
+        foregroundLink: tokens.color.darkBlue5.val,
+        foregroundLinkDisabled: "#6f95d6",
+        foregroundLinkFocused: "#003da4",
+        foregroundLinkHover: "#2a67d1",
+        foregroundLinkPressed: "#003da4",
+        foregroundRequired: tokens.color.darkApple5.val,
+        foregroundRequiredDisabled: "#ba574e",
+        foregroundRequiredFocused: "#890000",
+        foregroundRequiredHover: "#b20000",
+        foregroundRequiredPressed: "#890000",
         overlayBackdrop: "#0d0c0766",
         overlayBackground: tokens.color.darkSurface3.val,
         overlayBackgroundDisabled: "#26262699",
@@ -1200,7 +1230,7 @@ const themes = createThemes({
         foregroundInverseHover: "#b6b6b6",
         foregroundInversePressed: "#7b7b7b",
         foregroundPressed: "#005e55",
-        ring: "0px 0px 0px 3px #1fb2a6",
+        ring: "0px 0px 0px 2px #1fb2a6",
         ringSubtle: "0px 0px 0px 1px #1fb2a6"
       },
       dark: {
@@ -1233,7 +1263,7 @@ const themes = createThemes({
         foregroundInverseHover: "#b6b6b6",
         foregroundInversePressed: "#7b7b7b",
         foregroundPressed: "#00775e",
-        ring: "0px 0px 0px 3px #36dec0",
+        ring: "0px 0px 0px 2px #36dec0",
         ringSubtle: "0px 0px 0px 1px #36dec0"
       }
     }
@@ -1484,23 +1514,6 @@ const headingXlFont = createFont({
   }
 });
 
-const labelFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    true: 20,
-    xl: 20
-  },
-  lineHeight: {
-    true: 28,
-    xl: 28
-  },
-  weight: {
-    bold: "700",
-    true: "700",
-    xl: "700"
-  }
-});
-
 
 /**
  * Theme values available on `useTheme()` and `$` style props for the cyclone-ui.
@@ -1605,6 +1618,11 @@ export interface AppTheme {
   foregroundLinkHover: string;
   foregroundLinkPressed: string;
   foregroundPressed: string;
+  foregroundRequired: string;
+  foregroundRequiredDisabled: string;
+  foregroundRequiredFocused: string;
+  foregroundRequiredHover: string;
+  foregroundRequiredPressed: string;
   overlayBackdrop: string;
   overlayBackground: string;
   overlayBackgroundDisabled: string;
@@ -1643,8 +1661,7 @@ export const config = createTamagui({
     "heading-lg": headingLgFont,
     "heading-md": headingMdFont,
     "heading-sm": headingSmFont,
-    "heading-xl": headingXlFont,
-    label: labelFont
+    "heading-xl": headingXlFont
    },
   defaultFont: "Space Grotesk"
 , ...userConfig 

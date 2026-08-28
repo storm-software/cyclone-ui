@@ -444,6 +444,11 @@ const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
 
 const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
+const COLOR_STATE_TOKEN_VARIANTS: Record<string, readonly ColorStateVariant[]> =
+  {
+    "foreground-link": [COLOR_STATE_HOVER]
+  };
+
 function isStateVariantKey(key: string): boolean {
   return (
     key.toLowerCase().endsWith("-hover") ||
@@ -900,6 +905,19 @@ function injectColorStateVariants(
     }
   }
 
+  for (const [tokenKey, variants] of Object.entries(
+    COLOR_STATE_TOKEN_VARIANTS
+  )) {
+    if (isTokenNode(withLoneTokens[tokenKey])) {
+      withLoneTokens = addColorStateTokens(
+        withLoneTokens,
+        tree,
+        variants,
+        tokenKey
+      );
+    }
+  }
+
   ensureDisabledForegroundContrast(withLoneTokens, tree);
 
   return withLoneTokens;
@@ -911,7 +929,9 @@ function injectColorStateVariants(
  * `oklch()`. For background, foreground, and border colors, also emit
  * `-hover` (10% lighter if the source is dark, 10% darker if light) and
  * `-disabled` variants (60% saturation for colored sources, or 60% opacity
- * for greyscale sources).
+ * for greyscale sources). Themed foregrounds also receive link and body
+ * variants that use their own colors when colored and the shared foreground
+ * role colors when greyscale.
  */
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens

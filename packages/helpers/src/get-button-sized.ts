@@ -17,8 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { isNumber } from "@stryke/type-checks/is-number";
-import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { VariantSpreadExtras } from "@tamagui/core";
 import { getSize, getSpace } from "@tamagui/get-token";
+import type { TokenValue } from "./token-value";
+import { normalizeTokenValue } from "./token-value";
 
 const FALLBACK_HEIGHT = 44;
 
@@ -47,8 +49,8 @@ const lookupToken = (group: unknown, key: string) => {
   return tokens[key] ?? tokens[`$${normalized}`] ?? tokens[normalized];
 };
 
-const resolveTokenKey = (val: SizeTokens | number | string) => {
-  const rawKey = String(val);
+const resolveTokenKey = (val: TokenValue) => {
+  const rawKey = String(normalizeTokenValue(val));
 
   return rawKey === "$true" || rawKey === "true" ? "$5xl" : rawKey;
 };
@@ -61,7 +63,7 @@ const resolveTokenKey = (val: SizeTokens | number | string) => {
  * @returns The style values for the button sizing
  */
 export const getButtonSized = (
-  val: SizeTokens | number,
+  val: TokenValue,
   { props, tokens }: VariantSpreadExtras<any>
 ) => {
   if (!val) {
@@ -71,20 +73,22 @@ export const getButtonSized = (
   const circular = Boolean(props.circular);
   const borderRadius = circular ? 100_000 : "$button";
 
-  if (isNumber(val)) {
+  const tokenValue = normalizeTokenValue(val);
+
+  if (isNumber(tokenValue)) {
     return {
-      paddingHorizontal: circular ? 0 : val * 0.25,
-      gap: val * 0.25,
-      height: val,
-      minHeight: val,
+      paddingHorizontal: circular ? 0 : tokenValue * 0.25,
+      gap: tokenValue * 0.25,
+      height: tokenValue,
+      minHeight: tokenValue,
       ...(circular
-        ? { width: val, minWidth: val }
+        ? { width: tokenValue, minWidth: tokenValue }
         : { minWidth: "fit-content" }),
       borderRadius
     };
   }
 
-  const tokenKey = resolveTokenKey(val);
+  const tokenKey = resolveTokenKey(tokenValue);
 
   const height =
     tokenNumber(lookupToken(tokens?.size, tokenKey)) ??

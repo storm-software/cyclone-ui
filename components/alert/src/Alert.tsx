@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable react/no-context-provider */
+
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import type { ContainerProps } from "@cyclone-ui/container";
@@ -57,8 +59,9 @@ export const AlertContext = createStyledContext<AlertContextProps>({
 const AlertClose = styled(Button, {
   name: "AlertTrigger",
 
-  theme: "base",
+  theme: "primary",
   variant: "ghost",
+  position: "relative",
   circular: true,
   noPadding: true
 });
@@ -66,8 +69,8 @@ const AlertClose = styled(Button, {
 const AlertCloseImpl = AlertClose.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <XStack minHeight="100%" alignItems="center" flexBasis={50}>
-        <AlertClose ref={forwardedRef} {...props} padding="$2xl" size="$8xl">
+      <XStack minHeight="100%" alignItems="center" marginRight="$md">
+        <AlertClose ref={forwardedRef} {...props} padding="$md" size="$10xl">
           {children || (
             <Button.Icon>
               <X />
@@ -84,6 +87,7 @@ const AlertCloseImpl = AlertClose.styleable(
 
 export type AlertFrameProps = ContainerProps & AlertContextProps;
 
+// eslint-disable-next-line react-refresh/only-export-components
 const AlertFrameImpl = ({
   children,
   theme,
@@ -112,7 +116,7 @@ const AlertFrameImpl = ({
 const AlertIconBackground = styled(View, {
   name: "Alert",
 
-  theme: "base",
+  theme: "primary",
   padding: "$xl",
   backgroundColor: "$backgroundHighest",
   borderRadius: 1000_000_000
@@ -122,13 +126,13 @@ const AlertIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
     const theme = useThemeName();
     const { type } = AlertContext.useStyledContext();
-    const colorTheme = type ?? theme;
+    const colorTheme = type || theme;
 
     return (
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
           theme={colorTheme}
-          transition="250ms"
+          transition="200ms"
           enterStyle={{
             x: -200,
             opacity: 0.6
@@ -142,14 +146,14 @@ const AlertIcon = ThemeableIcon.styleable(
         />
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
-          <Theme name={type ?? "base"}>
+          <Theme name={type ?? "primary"}>
             <AlertIconBackground backgroundColor="$backgroundHighest">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={colorTheme}
                 {...(type ? { color: "$foreground" } : {})}
-                size="$5xl">
+                size="$10xl">
                 {children || getIconByTheme({ theme: colorTheme }) || (
                   <AlertCircle />
                 )}
@@ -202,7 +206,7 @@ const AlertHeadingImpl = AlertHeading.styleable(
     const { type } = AlertContext.useStyledContext();
 
     return (
-      <Theme name={type ?? "base"}>
+      <Theme name={type ?? "primary"}>
         <AlertHeading ref={forwardedRef} {...props}>
           {children}
         </AlertHeading>
@@ -223,7 +227,7 @@ const AlertBody = styled(BodyText, {
 const AlertBodyImpl = AlertBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name={"base"}>
+      <Theme name="primary">
         <AlertBody ref={forwardedRef} {...props}>
           {children}
         </AlertBody>

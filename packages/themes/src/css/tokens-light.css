@@ -135,9 +135,12 @@
   --color-pink-7: #d1608f; /** A rich fuchsia pink color */
   --color-pink-8: #c25b86; /** A deep berry pink color */
   --color-pink-9: #a34e71; /** A dark plum pink color */
+  --color-foreground-body: #949494; /** The body foreground color for the light theme */
+  --color-foreground-caption: #737373; /** The caption foreground color for the light theme */
+  --color-foreground-link: #468ae2; /** The link foreground color for the light theme */
+  --color-foreground-required: #dc2626; /** A required foreground color for the light theme */
   --color-foreground-primary: #f5f5f5; /** The primary foreground color for the light theme */
   --color-foreground-secondary: #525252; /** The secondary foreground color for the light theme */
-  --color-foreground-body: #949494; /** The body foreground color for the light theme */
   --color-foreground-accent: #1fb2a6; /** The accent foreground color for the light theme */
   --color-foreground-danger: #cf222e; /** The danger foreground color for the light theme */
   --color-foreground-negative: #d6301b; /** The negative foreground color for the light theme */
@@ -146,7 +149,6 @@
   --color-foreground-positive: #79b136; /** The positive foreground color for the light theme */
   --color-foreground-info: #00b8e6; /** The info foreground color for the light theme */
   --color-foreground-discovery: #7f7ee4; /** The discovery foreground color for the light theme */
-  --color-foreground-link: #468ae2; /** The link foreground color for the light theme */
   --color-foreground-primary-inverse: #181818; /** The primary foreground color for the light theme */
   --color-foreground-secondary-inverse: #f5f5f5; /** The secondary foreground color for the light theme */
   --color-foreground-accent-inverse: #f5f5f5; /** The accent foreground color for the light theme */
@@ -157,6 +159,22 @@
   --color-foreground-positive-inverse: #f5f5f5; /** The positive foreground color for the light theme */
   --color-foreground-info-inverse: #f5f5f5; /** The info foreground color for the light theme */
   --color-foreground-discovery-inverse: #f5f5f5; /** The discovery foreground color for the light theme */
+  --color-foreground-body-hover: #6d6d6d; /** The body foreground color for the light theme (hover, 20% darker) */
+  --color-foreground-body-pressed: #484848; /** The body foreground color for the light theme (pressed, 40% darker) */
+  --color-foreground-body-focused: #484848; /** The body foreground color for the light theme (focused, 40% darker) */
+  --color-foreground-body-disabled: rgba(148, 148, 148, 0.6); /** The body foreground color for the light theme (disabled, 60% opacity) */
+  --color-foreground-caption-hover: #545454; /** The caption foreground color for the light theme (hover, 20% darker) */
+  --color-foreground-caption-pressed: #363636; /** The caption foreground color for the light theme (pressed, 40% darker) */
+  --color-foreground-caption-focused: #363636; /** The caption foreground color for the light theme (focused, 40% darker) */
+  --color-foreground-caption-disabled: rgba(115, 115, 115, 0.6); /** The caption foreground color for the light theme (disabled, 60% opacity) */
+  --color-foreground-link-hover: #1d63b8; /** The link foreground color for the light theme (hover, 20% darker) */
+  --color-foreground-link-pressed: #003d8f; /** The link foreground color for the light theme (pressed, 40% darker) */
+  --color-foreground-link-focused: #003d8f; /** The link foreground color for the light theme (focused, 40% darker) */
+  --color-foreground-link-disabled: #363636; /** The link foreground color for the light theme (disabled, 60% saturation) */
+  --color-foreground-required-hover: #b20000; /** A required foreground color for the light theme (hover, 20% darker) */
+  --color-foreground-required-pressed: #890000; /** A required foreground color for the light theme (pressed, 40% darker) */
+  --color-foreground-required-focused: #890000; /** A required foreground color for the light theme (focused, 40% darker) */
+  --color-foreground-required-disabled: #ba574e; /** A required foreground color for the light theme (disabled, 60% saturation) */
   --color-foreground-primary-hover: #b6b6b6; /** The primary foreground color for the light theme (hover, 20% darker) */
   --color-foreground-primary-pressed: #7b7b7b; /** The primary foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-primary-focused: #7b7b7b; /** The primary foreground color for the light theme (focused, 40% darker) */
@@ -165,10 +183,6 @@
   --color-foreground-secondary-pressed: #848484; /** The secondary foreground color for the light theme (pressed, 40% brighter) */
   --color-foreground-secondary-focused: #848484; /** The secondary foreground color for the light theme (focused, 40% brighter) */
   --color-foreground-secondary-disabled: #999999; /** The secondary foreground color for the light theme (disabled, 60% opacity) */
-  --color-foreground-body-hover: #6d6d6d; /** The body foreground color for the light theme (hover, 20% darker) */
-  --color-foreground-body-pressed: #484848; /** The body foreground color for the light theme (pressed, 40% darker) */
-  --color-foreground-body-focused: #484848; /** The body foreground color for the light theme (focused, 40% darker) */
-  --color-foreground-body-disabled: rgba(148, 148, 148, 0.6); /** The body foreground color for the light theme (disabled, 60% opacity) */
   --color-foreground-accent-hover: #00877c; /** The accent foreground color for the light theme (hover, 20% darker) */
   --color-foreground-accent-pressed: #005e55; /** The accent foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-accent-focused: #005e55; /** The accent foreground color for the light theme (focused, 40% darker) */
@@ -201,10 +215,6 @@
   --color-foreground-discovery-pressed: #3b318f; /** The discovery foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-discovery-focused: #3b318f; /** The discovery foreground color for the light theme (focused, 40% darker) */
   --color-foreground-discovery-disabled: #383838; /** The discovery foreground color for the light theme (disabled, 60% saturation) */
-  --color-foreground-link-hover: #1d63b8; /** The link foreground color for the light theme (hover, 20% darker) */
-  --color-foreground-link-pressed: #003d8f; /** The link foreground color for the light theme (pressed, 40% darker) */
-  --color-foreground-link-focused: #003d8f; /** The link foreground color for the light theme (focused, 40% darker) */
-  --color-foreground-link-disabled: #363636; /** The link foreground color for the light theme (disabled, 60% saturation) */
   --color-foreground-primary-inverse-hover: #222222; /** The primary foreground color for the light theme (hover, 20% brighter) */
   --color-foreground-primary-inverse-pressed: #2c2c2c; /** The primary foreground color for the light theme (pressed, 40% brighter) */
   --color-foreground-primary-inverse-focused: #2c2c2c; /** The primary foreground color for the light theme (focused, 40% brighter) */
@@ -484,30 +494,45 @@
   --size-xxs: 2px; /** A 2px xxs size step */
   --size-xs: 4px; /** A 4px xs size step */
   --size-sm: 8px; /** A 8px sm size step */
-  --size-md: 20px; /** A 20px md size step */
-  --size-lg: 24px; /** A 24px lg size step */
-  --size-xl: 28px; /** A 28px xl size step */
-  --size-2xl: 32px; /** A 32px 2xl size step */
-  --size-3xl: 36px; /** A 36px 3xl size step */
-  --size-4xl: 40px; /** A 40px 4xl size step */
-  --size-5xl: 44px; /** A 44px 5xl size step */
-  --size-6xl: 48px; /** A 48px 6xl size step */
-  --size-7xl: 52px; /** A 52px 7xl size step */
-  --size-8xl: 64px; /** A 64px 8xl size step */
-  --size-9xl: 74px; /** A 74px 9xl size step */
-  --size-10xl: 84px; /** A 84px 10xl size step */
-  --size-11xl: 94px; /** A 94px 11xl size step */
-  --size-12xl: 104px; /** A 104px 12xl size step */
-  --size-13xl: 124px; /** A 124px 13xl size step */
-  --size-14xl: 144px; /** A 144px 14xl size step */
-  --size-15xl: 164px; /** A 164px 15xl size step */
-  --size-16xl: 184px; /** A 184px 16xl size step */
-  --size-17xl: 204px; /** A 204px 17xl size step */
-  --size-18xl: 224px; /** A 224px 18xl size step */
-  --size-19xl: 224px; /** A 224px 19xl size step */
-  --size-20xl: 244px; /** A 244px 20xl size step */
-  --size-21xl: 264px; /** A 264px 21xl size step */
-  --size-22xl: 284px; /** A 284px 22xl size step */
+  --size-md: 10px; /** A 10px md size step */
+  --size-lg: 12px; /** A 12px lg size step */
+  --size-xl: 14px; /** A 14px xl size step */
+  --size-2xl: 16px; /** A 16px 2xl size step */
+  --size-3xl: 18px; /** A 18px 3xl size step */
+  --size-4xl: 20px; /** A 20px 4xl size step */
+  --size-5xl: 22px; /** A 22px 5xl size step */
+  --size-6xl: 24px; /** A 24px 6xl size step */
+  --size-7xl: 26px; /** A 26px 7xl size step */
+  --size-8xl: 32px; /** A 32px 8xl size step */
+  --size-9xl: 37px; /** A 37px 9xl size step */
+  --size-10xl: 42px; /** A 42px 10xl size step */
+  --size-11xl: 47px; /** A 47px 11xl size step */
+  --size-12xl: 52px; /** A 52px 12xl size step */
+  --size-13xl: 62px; /** A 62px 13xl size step */
+  --size-14xl: 72px; /** A 72px 14xl size step */
+  --size-15xl: 82px; /** A 82px 15xl size step */
+  --size-16xl: 92px; /** A 92px 16xl size step */
+  --size-17xl: 102px; /** A 102px 17xl size step */
+  --size-18xl: 112px; /** A 112px 18xl size step */
+  --size-19xl: 112px; /** A 112px 19xl size step */
+  --size-20xl: 122px; /** A 122px 20xl size step */
+  --size-21xl: 132px; /** A 132px 21xl size step */
+  --size-22xl: 142px; /** A 142px 22xl size step */
+  --size-23xl: 152px; /** A 152px 23xl size step */
+  --size-24xl: 162px; /** A 162px 24xl size step */
+  --size-25xl: 172px; /** A 172px 25xl size step */
+  --size-26xl: 182px; /** A 182px 26xl size step */
+  --size-27xl: 192px; /** A 192px 27xl size step */
+  --size-28xl: 202px; /** A 202px 28xl size step */
+  --size-29xl: 212px; /** A 212px 29xl size step */
+  --size-30xl: 222px; /** A 222px 30xl size step */
+  --size-31xl: 232px; /** A 232px 31xl size step */
+  --size-32xl: 242px; /** A 242px 32xl size step */
+  --size-33xl: 252px; /** A 252px 33xl size step */
+  --size-34xl: 262px; /** A 262px 34xl size step */
+  --size-35xl: 272px; /** A 272px 35xl size step */
+  --size-36xl: 282px; /** A 282px 36xl size step */
+  --size-37xl: 284px; /** A 284px 37xl size step */
   --z-index-0: 0; /** Base stacking level */
   --z-index-10: 100; /** Low stacking level */
   --z-index-20: 200; /** Raised stacking level */
@@ -644,25 +669,25 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-primary: 0px 0px 0px 3px #333333; /** The primary ring variant */
-  --ring-primary-subtle: 0px 0px 0px 1px #333333; /** The primary subtle ring variant */
-  --ring-secondary: 0px 0px 0px 3px #181818; /** The secondary ring variant */
-  --ring-secondary-subtle: 0px 0px 0px 1px #181818; /** The secondary subtle ring variant */
-  --ring-accent: 0px 0px 0px 3px #1fb2a6; /** The accent ring variant */
+  --ring-primary: 0px 0px 0px 2px #f5f5f5; /** The primary ring variant */
+  --ring-primary-subtle: 0px 0px 0px 1px #f5f5f5; /** The primary subtle ring variant */
+  --ring-secondary: 0px 0px 0px 2px #525252; /** The secondary ring variant */
+  --ring-secondary-subtle: 0px 0px 0px 1px #525252; /** The secondary subtle ring variant */
+  --ring-accent: 0px 0px 0px 2px #1fb2a6; /** The accent ring variant */
   --ring-accent-subtle: 0px 0px 0px 1px #1fb2a6; /** The accent subtle ring variant */
-  --ring-danger: 0px 0px 0px 3px #cf222e; /** The danger ring variant */
+  --ring-danger: 0px 0px 0px 2px #cf222e; /** The danger ring variant */
   --ring-danger-subtle: 0px 0px 0px 1px #cf222e; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 3px #d49400; /** The warning ring variant */
+  --ring-warning: 0px 0px 0px 2px #d49400; /** The warning ring variant */
   --ring-warning-subtle: 0px 0px 0px 1px #d49400; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 3px #00a469; /** The success ring variant */
+  --ring-success: 0px 0px 0px 2px #00a469; /** The success ring variant */
   --ring-success-subtle: 0px 0px 0px 1px #00a469; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 3px #00b8e6; /** The info ring variant */
+  --ring-info: 0px 0px 0px 2px #00b8e6; /** The info ring variant */
   --ring-info-subtle: 0px 0px 0px 1px #00b8e6; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 3px #7f7ee4; /** The discovery ring variant */
+  --ring-discovery: 0px 0px 0px 2px #7f7ee4; /** The discovery ring variant */
   --ring-discovery-subtle: 0px 0px 0px 1px #7f7ee4; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 3px #79b136; /** The positive ring variant */
+  --ring-positive: 0px 0px 0px 2px #79b136; /** The positive ring variant */
   --ring-positive-subtle: 0px 0px 0px 1px #79b136; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 3px #d6301b; /** The negative ring variant */
+  --ring-negative: 0px 0px 0px 2px #d6301b; /** The negative ring variant */
   --ring-negative-subtle: 0px 0px 0px 1px #d6301b; /** The negative subtle ring variant */
   --typography-display-lg: 400 3rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 1.875rem/1.2 'Permanent Marker'; /** The display medium typography variant */
@@ -673,7 +698,6 @@
   --typography-heading-md: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading medium typography variant */
   --typography-heading-sm: 600 1rem/1.5 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrows: 400 1rem/1.5 'Space Mono'; /** The eyebrows typography variant */
-  --typography-label: 700 1.25rem/1.4 'Space Grotesk'; /** The label typography variant */
   --typography-body: 300 1rem/1.5 'Space Grotesk'; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Space Mono'; /** The code typography variant */

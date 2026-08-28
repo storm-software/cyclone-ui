@@ -51,6 +51,26 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
+  it("creates a hover variant for a lone foreground-link token", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        "foreground-link": {
+          $type: "color",
+          $value: "#336699"
+        }
+      }
+    });
+
+    expect(result).toMatchObject({
+      semantic: {
+        "foreground-link-hover": {
+          $description: "hover state at 20% brighter",
+          $value: "#5084b9"
+        }
+      }
+    });
+  });
+
   it("creates brighter ghost hovers for themed colored foregrounds", () => {
     const result = tamaguiPreprocessor({
       semantic: {
@@ -103,6 +123,55 @@ describe("tamaguiPreprocessor", () => {
     expect(result.semantic.foreground).not.toHaveProperty(
       "neutral-inverse-ghost-hover"
     );
+  });
+
+  it("creates themed foreground link and body variants from colored and greyscale sources", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        foreground: {
+          link: {
+            $type: "color",
+            $value: "#336699"
+          },
+          body: {
+            $type: "color",
+            $value: "#666666"
+          },
+          brand: {
+            $type: "color",
+            $value: "#993366",
+            theme: "brand"
+          },
+          neutral: {
+            $type: "color",
+            $value: "#808080",
+            theme: "neutral"
+          }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        foreground: Record<string, { $value: string; theme?: string }>;
+      };
+    };
+
+    const foreground = result.semantic.foreground;
+    for (const role of ["link", "body"]) {
+      for (const state of ["", "hover", "focused", "pressed", "disabled"]) {
+        const suffix = state ? `-${state}` : "";
+        expect(foreground[`brand-${role}${suffix}`]!.$value).toBe(
+          foreground[`brand${suffix}`]!.$value
+        );
+        expect(foreground[`neutral-${role}${suffix}`]!.$value).toBe(
+          foreground[`${role}${suffix}`]!.$value
+        );
+      }
+    }
+
+    expect(foreground["brand-link"]!.theme).toBe("brand");
+    expect(foreground["brand-body"]!.theme).toBe("brand");
+    expect(foreground["neutral-link"]!.theme).toBe("neutral");
+    expect(foreground["neutral-body"]!.theme).toBe("neutral");
   });
 
   it("separates too-close paired disabled tokens", () => {

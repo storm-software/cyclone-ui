@@ -72,7 +72,7 @@ const defaultContextValues = {
   },
   setState: ((_next: StepsState) => {}) as Dispatch<SetStateAction<StepsState>>,
   handleOnInteraction: (_type, _layout) => {},
-  theme: "base"
+  theme: "primary"
 } as const;
 
 export const InternalStateContext = createStyledContext<{
@@ -119,11 +119,11 @@ export const StepsFrame = TamaguiTabs.styleable(
         state={state}
         setState={setState}
         handleOnInteraction={handleOnInteraction}
-        theme="base">
+        theme="primary">
         <TamaguiTabs
           ref={forwardedRef}
           value={currentStep}
-          size="$5xl"
+          size="$10xl"
           height={150}
           flexDirection="row"
           activationMode="manual"
@@ -244,13 +244,17 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle transition="slow" color="$foregroundBody" size="$md" />
+              <CheckCircle
+                transition="slow"
+                color="$foregroundBody"
+                size="$4xl"
+              />
             )}
             {index === currentIndex && (
-              <Edit3 transition="slow" color="$foreground" size="$md" />
+                <Edit3 transition="slow" color="$foreground" size="$4xl" />
             )}
             {index > currentIndex && (
-              <Lock transition="slow" color="$foregroundBody" size="$md" />
+                <Lock transition="slow" color="$foregroundBody" size="$4xl" />
             )}
           </TamaguiTabs.Tab>
 

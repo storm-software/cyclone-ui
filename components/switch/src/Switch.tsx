@@ -46,7 +46,7 @@ export const SwitchContext = createStyledContext<SwitchContextProps>({
   checked: false,
   required: false,
   disabled: false,
-  theme: `${"base"}_Switch`
+  theme: `${"primary"}_Switch`
 });
 
 const getSwitchHeight = (val: SizeTokens) =>

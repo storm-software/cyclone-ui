@@ -45,7 +45,7 @@ import type {
 } from "../types";
 
 export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
-  theme: "base",
+  theme: "primary",
   debounceMs: 100,
   isEqual,
   disabled: false,
@@ -129,7 +129,7 @@ export const FormApi = createMoleculeApi(
       blur: [],
       submit: [],
       server: []
-    } as ValidationResults);
+    });
     const submittingAtom = atomWithReset(false);
     const submittedAtom = atomWithReset(false);
     const submitAttemptsAtom = atomWithReset(0);
@@ -234,16 +234,30 @@ export const FormApi = createMoleculeApi(
       return Object.keys(validatingFields).some(key => validatingFields[key]);
     });
 
-    const formErrorsAtom = atomWithMessageTypes(validationResultsAtom, "error");
+    const formErrorsAtom = atomWithMessageTypes(
+      validationResultsAtom,
+      "danger"
+    );
     const formWarningsAtom = atomWithMessageTypes(
       validationResultsAtom,
       "warning"
     );
     const formInfoAtom = atomWithMessageTypes(validationResultsAtom, "info");
-    const formHelpAtom = atomWithMessageTypes(validationResultsAtom, "help");
+    const formHelpAtom = atomWithMessageTypes(
+      validationResultsAtom,
+      "discovery"
+    );
     const formSuccessesAtom = atomWithMessageTypes(
       validationResultsAtom,
       "success"
+    );
+    const formPositivesAtom = atomWithMessageTypes(
+      validationResultsAtom,
+      "positive"
+    );
+    const formNegativesAtom = atomWithMessageTypes(
+      validationResultsAtom,
+      "negative"
     );
 
     const isFormInvalidAtom = atom(get => {
@@ -252,9 +266,9 @@ export const FormApi = createMoleculeApi(
       return errorMessages.length > 0;
     });
 
-    const errorFieldsAtom = atomWithFieldsMessageTypes<TFormValues, "error">(
+    const errorFieldsAtom = atomWithFieldsMessageTypes<TFormValues, "danger">(
       validationResultsFieldsAtom,
-      "error"
+      "danger"
     );
     const warningFieldsAtom = atomWithFieldsMessageTypes<
       TFormValues,
@@ -264,9 +278,9 @@ export const FormApi = createMoleculeApi(
       validationResultsFieldsAtom,
       "info"
     );
-    const helpFieldsAtom = atomWithFieldsMessageTypes<TFormValues, "help">(
+    const helpFieldsAtom = atomWithFieldsMessageTypes<TFormValues, "discovery">(
       validationResultsFieldsAtom,
-      "help"
+      "discovery"
     );
     const successFieldsAtom = atomWithFieldsMessageTypes<
       TFormValues,
@@ -275,8 +289,8 @@ export const FormApi = createMoleculeApi(
 
     const fieldErrorMessagesAtom = atomWithFieldsMessageList<
       TFormValues,
-      "error"
-    >(validationResultsFieldsAtom, "error");
+      "danger"
+    >(validationResultsFieldsAtom, "danger");
     const fieldWarningMessagesAtom = atomWithFieldsMessageList<
       TFormValues,
       "warning"
@@ -287,8 +301,8 @@ export const FormApi = createMoleculeApi(
     >(validationResultsFieldsAtom, "info");
     const fieldHelpMessagesAtom = atomWithFieldsMessageList<
       TFormValues,
-      "help"
-    >(validationResultsFieldsAtom, "help");
+      "discovery"
+    >(validationResultsFieldsAtom, "discovery");
     const fieldsSuccessMessagesAtom = atomWithFieldsMessageList<
       TFormValues,
       "success"
@@ -340,26 +354,30 @@ export const FormApi = createMoleculeApi(
       initialValues: initialValuesAtom,
       values: valuesAtom,
 
-      errorMessages: formErrorsAtom,
+      dangerMessages: formErrorsAtom,
       warningMessages: formWarningsAtom,
       infoMessages: formInfoAtom,
-      helpMessages: formHelpAtom,
+      discoveryMessages: formHelpAtom,
       successMessages: formSuccessesAtom,
+      positiveMessages: formPositivesAtom,
+      negativeMessages: formNegativesAtom,
       messages: atomWithMessages(
         formErrorsAtom,
         formWarningsAtom,
         formInfoAtom,
         formHelpAtom,
-        formSuccessesAtom
+        formSuccessesAtom,
+        formPositivesAtom,
+        formNegativesAtom
       ),
 
-      errorFields: errorFieldsAtom,
+      dangerFields: errorFieldsAtom,
       warningFields: warningFieldsAtom,
       infoFields: infoFieldsAtom,
-      helpFields: helpFieldsAtom,
+      discoveryFields: helpFieldsAtom,
       successFields: successFieldsAtom,
 
-      fieldErrorMessages: fieldErrorMessagesAtom,
+      fieldDangerMessages: fieldErrorMessagesAtom,
       fieldWarningMessages: fieldWarningMessagesAtom,
       fieldInfoMessages: fieldInfoMessagesAtom,
       fieldHelpMessages: fieldHelpMessagesAtom,
@@ -373,7 +391,9 @@ export const FormApi = createMoleculeApi(
         formWarningsAtom,
         formInfoAtom,
         formHelpAtom,
-        formSuccessesAtom
+        formSuccessesAtom,
+        formPositivesAtom,
+        formNegativesAtom
       ),
 
       canSubmit: canSubmitAtom

@@ -29,7 +29,7 @@ export interface TooltipContextProps {
 }
 
 export const TooltipContext = createStyledContext<TooltipContextProps>({
-  size: "$7xl"
+  size: "$12xl"
 });
 
 const TooltipFrame = styled(TamaguiTooltip, {

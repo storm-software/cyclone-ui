@@ -72,7 +72,7 @@ const DialogBodyImpl = DialogBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <TamaguiDialogDescription render="span">
-        <DialogBody ref={forwardedRef} size="$8xl" {...props}>
+        <DialogBody ref={forwardedRef} size="$13xl" {...props}>
           {children}
         </DialogBody>
       </TamaguiDialogDescription>
