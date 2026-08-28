@@ -60,15 +60,15 @@ const SelectItemGroup = styled(XStack, {
   width: "100%",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$backgroundHighestHover"
   },
 
   focusStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$backgroundHighestHover"
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$backgroundHighestHover"
   },
 
   variants: {
@@ -98,14 +98,14 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   context: SelectContext,
 
   cursor: "pointer",
-  color: "$foreground",
+  color: "$foregroundBody",
   fontFamily: "$body",
   flex: 1,
 
   variants: {
     selected: {
       true: {
-        color: "$foregroundLink"
+        color: "$white"
       }
     },
 
@@ -136,46 +136,46 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
 
 export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
   ({ children, value, selected, disabled, ...props }, forwardedRef) => {
-    const { size } = SelectContext.useStyledContext();
+    const { size, value: selectedValue } = SelectContext.useStyledContext();
     const isSmall = useMemo(() => getSized(size) < getSized("$4xl"), [size]);
+    const isSelected = selectedValue === String(value);
 
     return (
-      <Theme name={"base"}>
-        <SelectItemFrame
-          {...props}
-          group={true}
-          ref={forwardedRef}
-          value={String(value)}
-          textValue={String(value)}
-          disabled={disabled}>
-          <SelectItemGroup
-            disabled={disabled}
-            justifyContent={isSmall ? "space-between" : "center"}>
-            <View width="$xl" justifyContent="center">
-              {disabled && (
-                <Lock size="$6xl" color="$foregroundDisabled" />
-              )}
-              <TamaguiSelect.ItemIndicator>
-                <Theme name={"accent"}>
-                  <Check size="$7xl" color="$foregroundInverse" />
+      <SelectItemFrame
+        {...props}
+        group={true}
+        ref={forwardedRef}
+        value={String(value)}
+        textValue={String(value)}
+        aria-selected={isSelected}
+        disabled={disabled}>
+        <SelectItemGroup
+          disabled={disabled}
+          justifyContent={isSmall ? "space-between" : "center"}>
+          <View width="$xl" justifyContent="center">
+            {disabled && <Lock size="$xl" color="$foregroundDisabled" />}
+            {isSelected && (
+              <View aria-hidden={true}>
+                <Theme name="success">
+                  <Check size="$xl" color="$foreground" />
                 </Theme>
-              </TamaguiSelect.ItemIndicator>
-            </View>
-            <SelectItemTextFrame
-              selected={selected}
-              disabled={disabled}
-              $group-hover={{
-                color: disabled
-                  ? "$foregroundDisabled"
-                  : selected
-                    ? "$foregroundLinkHover"
-                    : "$foregroundHover"
-              }}>
-              {children}
-            </SelectItemTextFrame>
-          </SelectItemGroup>
-        </SelectItemFrame>
-      </Theme>
+              </View>
+            )}
+          </View>
+          <SelectItemTextFrame
+            selected={!!selected}
+            disabled={disabled}
+            $group-hover={{
+              color: disabled
+                ? "$foregroundDisabled"
+                : selected
+                  ? "$white"
+                  : "$foregroundHover"
+            }}>
+            {children}
+          </SelectItemTextFrame>
+        </SelectItemGroup>
+      </SelectItemFrame>
     );
   },
   {
@@ -187,87 +187,89 @@ const SelectItemsGroup = View.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <View ref={forwardedRef} flex={1} {...props}>
-        <Adapt when="max-sm" platform="touch">
-          <Sheet
-            modal={true}
-            dismissOnSnapToBottom={true}
-            transitionConfig={{
-              type: "spring",
-              damping: 20,
-              mass: 1.2,
-              stiffness: 250
-            }}>
-            <Sheet.Frame>
-              <Sheet.ScrollView>
-                <Adapt.Contents />
-              </Sheet.ScrollView>
-            </Sheet.Frame>
-            <Sheet.Overlay
-              transition="lazy"
-              enterStyle={{ opacity: 0 }}
-              exitStyle={{ opacity: 0 }}
-            />
-          </Sheet>
-        </Adapt>
+        <Theme name="primary">
+          <Adapt when="max-sm" platform="touch">
+            <Sheet
+              modal={true}
+              dismissOnSnapToBottom={true}
+              transitionConfig={{
+                type: "spring",
+                damping: 20,
+                mass: 1.2,
+                stiffness: 250
+              }}>
+              <Sheet.Frame>
+                <Sheet.ScrollView>
+                  <Adapt.Contents />
+                </Sheet.ScrollView>
+              </Sheet.Frame>
+              <Sheet.Overlay
+                transition="lazy"
+                enterStyle={{ opacity: 0 }}
+                exitStyle={{ opacity: 0 }}
+              />
+            </Sheet>
+          </Adapt>
 
-        <TamaguiSelect.Content zIndex="$90">
-          <TamaguiSelect.ScrollUpButton
-            transition="quick"
-            animateOnly={["scale", "opacity"]}
-            enterStyle={{ opacity: 0.2, scale: 0.5 }}
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            height="$3xl">
-            <YStack zIndex="$10">
-              <ChevronUp size={20} color="$foreground" />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["$backgroundFloating", "transparent"]}
+          <TamaguiSelect.Content zIndex="$90">
+            <TamaguiSelect.ScrollUpButton
+              transition="quick"
+              animateOnly={["scale", "opacity"]}
+              enterStyle={{ opacity: 0.2, scale: 0.5 }}
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+              height="$3xl">
+              <YStack zIndex="$10">
+                <ChevronUp size={20} color="$foreground" />
+              </YStack>
+              <LinearGradient
+                start={[0, 0]}
+                end={[0, 1]}
+                fullscreen={true}
+                colors={["$backgroundFloating", "transparent"]}
+                borderRadius="$popover"
+                marginTop="$xxs"
+              />
+            </TamaguiSelect.ScrollUpButton>
+
+            <TamaguiSelect.Viewport
+              transition="quick"
+              animateOnly={["transform", "scale", "opacity"]}
+              enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
+              exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
+              backgroundColor="$backgroundFloating"
+              minWidth="$12xl"
               borderRadius="$popover"
-              marginTop="$xxs"
-            />
-          </TamaguiSelect.ScrollUpButton>
+              boxShadow="0px 4px 30px $overlayBackdrop">
+              <TamaguiSelect.Group paddingVertical="$xl">
+                {children}
+              </TamaguiSelect.Group>
+            </TamaguiSelect.Viewport>
 
-          <TamaguiSelect.Viewport
-            transition="quick"
-            animateOnly={["transform", "scale", "opacity"]}
-            enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
-            exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-            backgroundColor="$backgroundFloating"
-            minWidth="$12xl"
-            borderRadius="$popover"
-            boxShadow="0px 4px 30px $overlayBackdrop">
-            <TamaguiSelect.Group paddingVertical="$xl">
-              {children}
-            </TamaguiSelect.Group>
-          </TamaguiSelect.Viewport>
-
-          <TamaguiSelect.ScrollDownButton
-            transition="quick"
-            animateOnly={["scale", "opacity"]}
-            enterStyle={{ opacity: 0.2, scale: 0.5 }}
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            width="100%"
-            height="$3xl">
-            <YStack zIndex="$10">
-              <ChevronDown size={20} color="$foreground" />
-            </YStack>
-            <LinearGradient
-              start={[0, 0]}
-              end={[0, 1]}
-              fullscreen={true}
-              colors={["transparent", "$backgroundFloating"]}
-              borderRadius="$popover"
-              marginBottom="$xxs"
-            />
-          </TamaguiSelect.ScrollDownButton>
-        </TamaguiSelect.Content>
+            <TamaguiSelect.ScrollDownButton
+              transition="quick"
+              animateOnly={["scale", "opacity"]}
+              enterStyle={{ opacity: 0.2, scale: 0.5 }}
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+              width="100%"
+              height="$3xl">
+              <YStack zIndex="$10">
+                <ChevronDown size={20} color="$foreground" />
+              </YStack>
+              <LinearGradient
+                start={[0, 0]}
+                end={[0, 1]}
+                fullscreen={true}
+                colors={["transparent", "$backgroundFloating"]}
+                borderRadius="$popover"
+                marginBottom="$xxs"
+              />
+            </TamaguiSelect.ScrollDownButton>
+          </TamaguiSelect.Content>
+        </Theme>
       </View>
     );
   },

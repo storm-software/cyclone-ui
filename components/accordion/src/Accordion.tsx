@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable react/no-children-to-array */
+
 import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { AccordionToggle } from "@cyclone-ui/vectors";
 import { isString } from "@stryke/type-checks/is-string";
@@ -25,9 +27,11 @@ import type {
 } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { createStyledContext, styled } from "@tamagui/core";
+import { createStyledContext, styled, Text } from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
+import { XStack } from "@tamagui/stacks";
+import type { Ref } from "react";
 import {
   Children,
   cloneElement,
@@ -47,13 +51,15 @@ export interface AccordionContextProps {
   setOpen: (open: string[]) => void;
   variant: AccordionVariant;
   single: boolean;
+  numbered: boolean;
 }
 
 export const AccordionContext = createStyledContext<AccordionContextProps>({
   open: [],
   setOpen: (_open: string[]) => {},
   variant: "default",
-  single: false
+  single: false,
+  numbered: false
 });
 
 const AccordionGroup = styled(YGroup, {
@@ -105,6 +111,7 @@ const AccordionFrameImpl = forwardRef<
   Partial<BaseAccordionProps> & {
     variant?: AccordionVariant;
     single?: boolean;
+    numbered?: boolean;
   }
 >(
   (
@@ -113,6 +120,7 @@ const AccordionFrameImpl = forwardRef<
       type = "multiple",
       variant = "default",
       single = false,
+      numbered = false,
       onValueChange,
       ...props
     },
@@ -146,7 +154,8 @@ const AccordionFrameImpl = forwardRef<
         open={open}
         setOpen={setOpen}
         variant={variant}
-        single={isSingle}>
+        single={isSingle}
+        numbered={numbered}>
         <TamaguiAccordion
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
@@ -169,7 +178,7 @@ const AccordionFrameImpl = forwardRef<
                   index === items.length - 1;
 
                 // eslint-disable-next-line react/no-clone-element
-                return cloneElement(child, { last: isLast } as never);
+                return cloneElement(child, { index, last: isLast } as never);
               })
             }
           </AccordionGroup>
@@ -181,11 +190,13 @@ const AccordionFrameImpl = forwardRef<
 
 export interface AccordionItemContextProps {
   open: boolean;
+  index: number;
 }
 
 export const AccordionItemContext =
   createStyledContext<AccordionItemContextProps>({
-    open: false
+    open: false,
+    index: 0
   });
 
 const AccordionItem = styled(TamaguiAccordion.Item, {
@@ -230,16 +241,17 @@ const AccordionItem = styled(TamaguiAccordion.Item, {
   } as const
 });
 
-const AccordionItemImpl = AccordionItem.styleable(
-  ({ children, value, ...props }, forwardedRef) => {
+const AccordionItemImpl = AccordionItem.styleable<{ index?: number }>(
+  ({ children, index = 0, value, ...props }, forwardedRef) => {
     const { open } = AccordionContext.useStyledContext();
 
     return (
       <YGroup.Item>
-        {}
-        <AccordionItemContext.Provider open={open.includes(value)}>
+        <AccordionItemContext.Provider
+          open={open.includes(value)}
+          index={index}>
           <AccordionItem
-            ref={forwardedRef}
+            ref={forwardedRef as Ref<TamaguiElement>}
             key={value}
             value={value}
             unstyled={true}
@@ -305,6 +317,8 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
       ghost: {
         paddingLeft: 0,
         paddingRight: 0,
+        borderBottomWidth: 1,
+        borderBottomColor: "$border",
         backgroundColor: "transparent",
 
         hoverStyle: {
@@ -322,7 +336,8 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
 const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { open } = AccordionItemContext.useStyledContext();
+    const { numbered } = AccordionContext.useStyledContext();
+    const { index, open } = AccordionItemContext.useStyledContext();
 
     return (
       <AccordionItemHeader
@@ -333,7 +348,16 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         alignItems="center"
         unstyled
         {...props}>
-        {children}
+        {numbered ? (
+          <XStack alignItems="center" flex={1} gap="$6xl">
+            <Text color="$foregroundBody" fontFamily="$code">
+              {String(index + 1).padStart(2, "0")}
+            </Text>
+            {children}
+          </XStack>
+        ) : (
+          children
+        )}
         <AccordionToggle
           isExpanded={open}
           color="$foreground"
@@ -400,6 +424,7 @@ const AccordionItemContent = styled(TamaguiAccordion.Content, {
       },
       ghost: {
         padding: 0,
+        paddingTop: "$3xl",
         backgroundColor: "transparent"
       }
     }

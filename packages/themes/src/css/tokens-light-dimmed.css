@@ -700,5 +700,5 @@
   --typography-eyebrows: 400 1rem/1.5 'Permanent Marker'; /** The eyebrows typography variant */
   --typography-body: 300 1rem/1.5 Inter; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
-  --typography-code: 400 1rem/1.5 'Space Mono'; /** The code typography variant */
+  --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
 }

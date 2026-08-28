@@ -25,7 +25,7 @@ import { withStaticProperties } from "@tamagui/core";
 import type { Atom } from "jotai";
 import { useAtomValue } from "jotai";
 import type { PropsWithChildren } from "react";
-import { useCallback, useLayoutEffect } from "react";
+import { memo, useCallback, useLayoutEffect } from "react";
 
 const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -37,18 +37,18 @@ const SelectFieldGroup = Field.styleable((props, forwardedRef) => {
   );
 });
 
-const SelectFieldItem = (
-  props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>
-) => {
-  const item = useAtomValue(props.itemAtom);
-  const { value, name, index } = item;
+const SelectFieldItem = memo(
+  (props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>) => {
+    const item = useAtomValue(props.itemAtom);
+    const { value, name, index } = item;
 
-  return (
-    <Select.Items.Item {...item} tabIndex={index} textValue={String(value)}>
-      {name}
-    </Select.Items.Item>
-  );
-};
+    return (
+      <Select.Items.Item {...item} tabIndex={index} textValue={String(value)}>
+        {name}
+      </Select.Items.Item>
+    );
+  }
+);
 
 const SelectFieldControl = Select.styleable<
   Pick<GetProps<typeof Select.TextBox.Value>, "placeholder">

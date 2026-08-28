@@ -59,7 +59,7 @@ const SwitchFrame = styled(View, {
   render: "button",
   context: SwitchContext,
 
-  transition: "medium",
+  transition: "200ms",
   borderRadius: 100_000,
   backgroundColor: "transparent",
   borderWidth: 2,
@@ -141,7 +141,7 @@ const SwitchFrame = styled(View, {
 const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
-  transition: "medium",
+  transition: "200ms",
   backgroundColor: "$foregroundInverse",
   borderRadius: 100_000,
   borderWidth: 1,

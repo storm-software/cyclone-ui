@@ -569,7 +569,7 @@ const FilePickerFile = ({
       </View>
 
       <LinearGradient
-        transition="slow"
+        transition="200ms"
         fullscreen={true}
         zIndex="$10"
         colors={["transparent", "$backgroundSubtle"]}
@@ -583,7 +583,7 @@ const FilePickerFile = ({
       />
 
       <View
-        transition="slow"
+        transition="200ms"
         position="absolute"
         top={-240}
         left={0}

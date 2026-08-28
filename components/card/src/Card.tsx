@@ -55,7 +55,7 @@ const CardFrame = styled(Container, {
   name: "Card",
   context: CardContext,
 
-  transition: "medium",
+  transition: "200ms",
   overflow: "hidden",
   borderRadius: "$card",
   borderColor: "$border",
@@ -83,7 +83,7 @@ export type CardProps = GetProps<typeof CardFrame>;
 //   name: "Card",
 //   context: CardContext,
 
-//   transition: "medium",
+//   transition: "200ms",
 //   fullscreen: true,
 //   backgroundColor: "$backgroundElevated",
 //   overflow: "hidden",
@@ -95,7 +95,7 @@ export type CardProps = GetProps<typeof CardFrame>;
 //   name: "Card",
 //   context: CardContext,
 
-//   transition: "medium",
+//   transition: "200ms",
 //   fullscreen: true,
 //   flexDirection: "row",
 //   overflow: "hidden",
@@ -110,7 +110,7 @@ const CardContent = styled(YStack, {
   name: "Card",
   context: CardContext,
 
-  transition: "medium",
+  transition: "200ms",
   zIndex: "$20",
 
   variants: {

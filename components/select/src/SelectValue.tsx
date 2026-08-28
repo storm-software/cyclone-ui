@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getFontSizedFromSize } from "@cyclone-ui/helpers";
-import { styled, Theme, View } from "@tamagui/core";
+import { styled, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { SelectContext } from "./utilities";
 
@@ -25,18 +25,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   name: "SelectValue",
   context: SelectContext,
 
-  transition: "medium",
+  transition: "200ms",
   unstyled: true,
   cursor: "pointer",
-  color: "$foregroundInverse",
+  color: "$foregroundOnPrimary",
   fontFamily: "$body",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
+  paddingHorizontal: "$xl",
 
   hoverStyle: {
     backgroundColor: "transparent",
-    color: "$foregroundInverseHover"
+    color: "$foregroundOnPrimaryHover"
   },
 
   focusStyle: {
@@ -46,7 +47,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   variants: {
     placeholding: {
       true: {
-        color: "$foregroundInverseDisabled"
+        color: "$foregroundOnPrimaryDisabled"
       }
     },
 
@@ -54,19 +55,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
       true: {
         cursor: "not-allowed",
         userSelect: "none",
-        color: "$foregroundInverseDisabled",
-        placeholderColor: "$foregroundInverseDisabled",
+        color: "$foregroundOnPrimaryDisabled",
+        placeholderColor: "$foregroundOnPrimaryDisabled",
 
         hoverStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundOnPrimaryDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundOnPrimaryDisabled"
         }
       }
     },
@@ -86,22 +87,20 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
 export const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
 }>(
-  ({ children, placeholding, ...props }, forwardedRef) => {
+  ({ children, placeholder, ...props }, forwardedRef) => {
     const { disabled, name, size } = SelectContext.useStyledContext();
 
     return (
-      <View flex={1} minWidth={0} paddingHorizontal="$xl">
-        <Theme name={"primary"}>
-          <SelectValueFrame
-            id={name}
-            ref={forwardedRef}
-            {...props}
-            size={size}
-            disabled={disabled}
-            placeholding={placeholding && !disabled}>
-            {children}
-          </SelectValueFrame>
-        </Theme>
+      <View flex={1} minWidth={0}>
+        <SelectValueFrame
+          id={name}
+          ref={forwardedRef}
+          {...props}
+          size={size}
+          disabled={disabled}
+          placeholding={placeholder && !disabled}>
+          {children}
+        </SelectValueFrame>
       </View>
     );
   },

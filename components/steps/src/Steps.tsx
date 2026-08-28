@@ -233,7 +233,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
 
         <XStack gap="$5xl" alignItems="center">
           <TamaguiTabs.Tab
-            transition="slow"
+            transition="200ms"
             ref={forwardedRef}
             unstyled={true}
             padding="$3xl"
@@ -245,21 +245,21 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
               <CheckCircle
-                transition="slow"
+                transition="200ms"
                 color="$foregroundBody"
                 size="$4xl"
               />
             )}
             {index === currentIndex && (
-                <Edit3 transition="slow" color="$foreground" size="$4xl" />
+                <Edit3 transition="200ms" color="$foreground" size="$4xl" />
             )}
             {index > currentIndex && (
-                <Lock transition="slow" color="$foregroundBody" size="$4xl" />
+                <Lock transition="200ms" color="$foregroundBody" size="$4xl" />
             )}
           </TamaguiTabs.Tab>
 
           <SizableText
-            transition="slow"
+            transition="200ms"
             fontFamily="$heading"
             color={
               state.currentStep === value ? "$foreground" : "$foregroundBody"

@@ -42,14 +42,20 @@ const BaseInputValue = styled(
 
 export const Input: ComponentType<InputComponentProps> =
   BaseInputValue.styleable<InputComponentProps>((inProps, forwardedRef) => {
-    const { disabled, name, onChange, onInput, onBlur, onFocus } =
-      InputContext.useStyledContext();
+    const {
+      disabled,
+      name,
+      onChange: contextOnChange,
+      onInput: contextOnInput,
+      onBlur,
+      onFocus
+    } = InputContext.useStyledContext();
 
     const {
       // some of destructed props are just to avoid passing them to ...rest because they are not in native.
       type,
-      onChange: _onChange,
-      onInput: _onInput,
+      onChange: inputOnChange,
+      onInput: inputOnInput,
       // @ts-ignore
       dirname,
       max,
@@ -69,6 +75,8 @@ export const Input: ComponentType<InputComponentProps> =
       inputMode,
       ...rest
     } = inProps;
+    const onChange = inputOnChange ?? contextOnChange;
+    const onInput = inputOnInput ?? contextOnInput;
 
     const ref = useRef<HTMLInputElement>(null);
     const composedRefs = useComposedRefs<any>(forwardedRef, ref);
@@ -148,7 +156,6 @@ export const Input: ComponentType<InputComponentProps> =
     if (onChange || onInput) {
       finalProps.onChange = (event: TextInputChangeEvent) => {
         const { text } = event.nativeEvent;
-
         if (onInput) {
           onInput(
             new CustomEvent("input", {

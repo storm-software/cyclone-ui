@@ -18,7 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, within } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
 import { InputField } from "./InputField";
 
 const meta: Meta<typeof InputField> = {
@@ -29,7 +29,7 @@ const meta: Meta<typeof InputField> = {
     <Form name="formName" initialValues={{ inputFieldName: defaultValue }}>
       <InputField name="inputFieldName" {...props}>
         <InputField.Label>Label Text</InputField.Label>
-        <InputField.Control data-testid="input-control">
+        <InputField.Control>
           <InputField.Control.TextBox>
             <InputField.Control.TextBox.Value placeholder="email@example.com" />
           </InputField.Control.TextBox>
@@ -52,10 +52,10 @@ export const Base: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByTestId("input-control")).toHaveStyle({
-      height: "44px",
-      minHeight: "44px"
-    });
+    const input = canvas.getByRole("textbox");
+    await expect(input).toHaveStyle({ height: "40px" });
+    await userEvent.type(input, "input value");
+    await expect(input).toHaveValue("input value");
   }
 };
 

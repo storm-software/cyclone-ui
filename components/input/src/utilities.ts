@@ -41,10 +41,9 @@ type BaseInputStyle = [Record<string, any>, Record<string, any>];
 export const baseInputStyle: BaseInputStyle = [
   {
     name: "InputValue",
-    render: "input",
     context: InputContext,
 
-    transition: "medium",
+    transition: "200ms",
     cursor: "pointer",
     height: "100%",
     flex: 1,

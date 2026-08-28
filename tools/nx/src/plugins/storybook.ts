@@ -214,10 +214,10 @@ function prepareTarget(workspaceRoot: string): TargetConfiguration {
     options: {
       cwd: workspaceRoot,
       commands: [
-        { command: "pnpm nx run monorepo:generate-tokens" },
-        { command: "pnpm nx run themes:build" },
-        { command: "pnpm nx run state:build" },
-        { command: "pnpm nx run helpers:build" }
+        { command: "nx run monorepo:generate-tokens" },
+        // `main.ts` aliases component and package imports to source. The theme
+        // export is the exception: Storybook loads it while compiling config.
+        { command: "nx run themes:build" }
       ],
       parallel: false
     }

@@ -48,7 +48,7 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
 
   fullscreen: true,
   flexDirection: "row",
-  transition: "medium",
+  transition: "200ms",
   overflow: "hidden",
   borderRadius: "$container",
   opacity: 0.9,
@@ -63,7 +63,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
 
   fullscreen: true,
   flexDirection: "row",
-  transition: "medium",
+  transition: "200ms",
   overflow: "hidden",
   borderRadius: "$container",
   opacity: 0.25,
@@ -89,7 +89,7 @@ const CalloutBackgroundDiagonal = styled(Diagonal, {
 const CalloutContent = styled(YStack, {
   name: "Callout",
 
-  transition: "medium",
+  transition: "200ms",
   width: "100%",
   flexDirection: "column",
   zIndex: "$20",

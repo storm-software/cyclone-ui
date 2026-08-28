@@ -24,7 +24,7 @@ import { Dot } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 
 const ValidationBodyText = styled(BodyText, {
-  transition: "medium",
+  transition: "200ms",
 
   fontFamily: "$caption",
 

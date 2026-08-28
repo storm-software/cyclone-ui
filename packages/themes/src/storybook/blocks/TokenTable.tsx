@@ -1701,7 +1701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "base"
@@ -2077,7 +2077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.1",
       type: "color",
-      value: "#f4cec1",
+      value: "#ffd285",
       cssVar: "--rw-color-yellow-1",
       description: "A pale wheat gold color",
       theme: "dark"
@@ -2085,7 +2085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#efbda4",
+      value: "#ffcc74",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "dark"
@@ -2093,7 +2093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#eab187",
+      value: "#ffc664",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "dark"
@@ -2101,7 +2101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#e5a86a",
+      value: "#ffc054",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "dark"
@@ -2109,7 +2109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#e0a44d",
+      value: "#ffba43",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "dark"
@@ -2117,7 +2117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#dba330",
+      value: "#ffb433",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "dark"
@@ -2125,7 +2125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#b38c23",
+      value: "#eea92b",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "dark"
@@ -2133,7 +2133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#897018",
+      value: "#dd9e23",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "dark"
@@ -2141,7 +2141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#5d500e",
+      value: "#cc931d",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "dark"
@@ -3061,7 +3061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#aa7500",
+      value: "#c88000",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3069,7 +3069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#7c4800",
+      value: "#934e00",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3077,7 +3077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#7c4800",
+      value: "#934e00",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3581,7 +3581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#d19a3d",
+      value: "#f4a946",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "dark"
@@ -4109,7 +4109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#aa7500",
+      value: "#c88000",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4117,7 +4117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#7c4800",
+      value: "#934e00",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -4125,7 +4125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#7c4800",
+      value: "#934e00",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4133,7 +4133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#c9a96f",
+      value: "#e9bc7d",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -4429,31 +4429,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#76682b",
+      value: "#9f6800",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#8f8245",
+      value: "#743f00",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#8f8245",
+      value: "#743f00",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#585130",
+      value: "#ba9962",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -4869,7 +4869,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#685000",
+      value: "#ad7000",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4877,7 +4877,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#4a3200",
+      value: "#7e4400",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4885,7 +4885,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#807247",
+      value: "#caa56b",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5109,7 +5109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#685000",
+      value: "#ad7000",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -5117,7 +5117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#4a3200",
+      value: "#7e4400",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -5125,7 +5125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#807247",
+      value: "#caa56b",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -7213,7 +7213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "dark"
@@ -7589,7 +7589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.1",
       type: "color",
-      value: "#d8b3a7",
+      value: "#dbba82",
       cssVar: "--rw-color-yellow-1",
       description: "A pale wheat gold color",
       theme: "darkDimmed"
@@ -7597,7 +7597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#d0aa96",
+      value: "#d8b578",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "darkDimmed"
@@ -7605,7 +7605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#c9a286",
+      value: "#d5b070",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "darkDimmed"
@@ -7613,7 +7613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#c29c75",
+      value: "#d3ab67",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "darkDimmed"
@@ -7621,7 +7621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#bb9865",
+      value: "#d0a65e",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "darkDimmed"
@@ -7629,7 +7629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#b39454",
+      value: "#cea155",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "darkDimmed"
@@ -7637,7 +7637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#9b8447",
+      value: "#c09951",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "darkDimmed"
@@ -7645,7 +7645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#83733a",
+      value: "#b3904d",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "darkDimmed"
@@ -7653,7 +7653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#6a602d",
+      value: "#a98946",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "darkDimmed"
@@ -8573,7 +8573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#98762c",
+      value: "#a87d31",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8581,7 +8581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#7f5925",
+      value: "#8b5d28",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8589,7 +8589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#7f5925",
+      value: "#8b5d28",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9093,7 +9093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#ae8f5b",
+      value: "#c89b60",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkDimmed"
@@ -9621,7 +9621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#98762c",
+      value: "#a87d31",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -9629,7 +9629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#7f5925",
+      value: "#8b5d28",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -9637,7 +9637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#7f5925",
+      value: "#8b5d28",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9645,7 +9645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#ae9b79",
+      value: "#c7aa80",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -9941,31 +9941,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#776e46",
+      value: "#926e2a",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#867e5b",
+      value: "#7a5323",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#867e5b",
+      value: "#7a5323",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#645f48",
+      value: "#a39071",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10381,7 +10381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#746122",
+      value: "#99732c",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10389,7 +10389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#634d1d",
+      value: "#805625",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10397,7 +10397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#7d755b",
+      value: "#af9976",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10621,7 +10621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#746122",
+      value: "#99732c",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10629,7 +10629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#634d1d",
+      value: "#805625",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10637,7 +10637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#7d755b",
+      value: "#af9976",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -12725,7 +12725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "darkDimmed"
@@ -13101,7 +13101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.1",
       type: "color",
-      value: "#ffffff",
+      value: "#ffe8c1",
       cssVar: "--rw-color-yellow-1",
       description: "A pale wheat gold color",
       theme: "darkHighContrast"
@@ -13109,7 +13109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#ffe4d7",
+      value: "#ffdfa8",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "darkHighContrast"
@@ -13117,7 +13117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#ffcba5",
+      value: "#ffd791",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "darkHighContrast"
@@ -13125,7 +13125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#ffba74",
+      value: "#ffce7a",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "darkHighContrast"
@@ -13133,7 +13133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#ffb243",
+      value: "#ffc561",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "darkHighContrast"
@@ -13141,7 +13141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#ffb111",
+      value: "#ffbc4a",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "darkHighContrast"
@@ -13149,7 +13149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#bf8d04",
+      value: "#ffb226",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "darkHighContrast"
@@ -13157,7 +13157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#775c00",
+      value: "#ffa901",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "darkHighContrast"
@@ -13165,7 +13165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#282200",
+      value: "#df9600",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "darkHighContrast"
@@ -14085,7 +14085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#845b00",
+      value: "#af7000",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14093,7 +14093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#412600",
+      value: "#623400",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14101,7 +14101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#412600",
+      value: "#623400",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14605,7 +14605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#f1a523",
+      value: "#ffb656",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkHighContrast"
@@ -15133,7 +15133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#845b00",
+      value: "#af7000",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -15141,7 +15141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#412600",
+      value: "#623400",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -15149,7 +15149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#412600",
+      value: "#623400",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -15157,7 +15157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#e2b970",
+      value: "#ffd395",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -15453,31 +15453,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#645513",
+      value: "#744c00",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#93812e",
+      value: "#351d00",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#93812e",
+      value: "#351d00",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
+      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#3c3517",
+      value: "#d2a457",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -15893,7 +15893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#241c00",
+      value: "#885800",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -15901,7 +15901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#000000",
+      value: "#442500",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -15909,7 +15909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#7d6a31",
+      value: "#e3b46a",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16133,7 +16133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#241c00",
+      value: "#885800",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -16141,7 +16141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#000000",
+      value: "#442500",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -16149,7 +16149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#7d6a31",
+      value: "#e3b46a",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -18237,7 +18237,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "darkHighContrast"
@@ -23629,7 +23629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "light"
@@ -29021,7 +29021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "lightDimmed"
@@ -34413,7 +34413,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: "lightHighContrast"

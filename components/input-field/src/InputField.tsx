@@ -92,7 +92,6 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const field = FieldApi.use();
     const theme = field.theme.get();
     const formattedValue = field.formattedValue.get();
-    const initialValue = field.initialValue.get();
     const options = field.options.get();
 
     const { change, mount } = useFieldActions();
@@ -111,7 +110,6 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
           ref={inputRef}
           {...props}
           value={formattedValue}
-          defaultValue={String(initialValue ?? "")}
           clearable={clearable}
           onClear={handleClear}
         />

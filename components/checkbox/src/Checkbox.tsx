@@ -27,7 +27,7 @@ import { Minus } from "@tamagui/lucide-icons-2";
 const CheckboxGroupFrame = styled(XGroup, {
   name: "Checkbox",
 
-  transition: "medium",
+  transition: "200ms",
   justifyContent: "space-between",
   alignContent: "center",
   backgroundColor: "transparent",

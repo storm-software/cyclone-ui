@@ -364,6 +364,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <LabelXStack disabled={disabled}>
           <FieldLabelText
             {...props}
+            paddingLeft="$lg"
             size={size}
             disabled={disabled}
             theme="primary">
@@ -558,7 +559,14 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
         disabled={disabled}
         messages={messages}
         onPress={focus}>
-        {getIconByTheme({ theme, disabled })}
+        {getIconByTheme({
+          theme,
+          disabled,
+          color: disabled ? "$borderDisabled" : "$border",
+          "$group-field-hover": {
+            color: disabled ? "$borderDisabled" : "$borderHover"
+          }
+        })}
       </InnerFieldThemeIcon>
     );
   },

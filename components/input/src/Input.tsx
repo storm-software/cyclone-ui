@@ -286,17 +286,23 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
     },
     forwardedRef
   ) => {
-    const { size, disabled } = InputContext.useStyledContext();
+    const {
+      size,
+      disabled,
+      onChange: contextOnChange,
+      onInput: contextOnInput
+    } = InputContext.useStyledContext();
     const adjustedTrigger = useMemo(
       () => getSized(size, { shift: -3 }),
       [size]
     );
-
     return (
-      <View position="relative" flex={1} minWidth={0}>
+      <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue
           ref={forwardedRef}
           {...props}
+          onChange={props.onChange ?? contextOnChange}
+          onInput={props.onInput ?? contextOnInput}
           value={value}
           enterKeyHint={enterKeyHint}
           placeholderTextColor="$foregroundInverseDisabled">

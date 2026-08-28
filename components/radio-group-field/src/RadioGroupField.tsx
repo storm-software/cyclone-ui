@@ -43,7 +43,7 @@ const RadioGroupItemValue = styled(Label, {
   name: "RadioGroupItemValue",
   render: "label",
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   color: "$foregroundInverse",
   fontFamily: "$heading-sm",
@@ -96,7 +96,7 @@ const RadioGroupItemDetails = styled(BodyText, {
   name: "RadioGroupItemDetails",
   context: RadioGroupContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   color: "$foregroundInverse",
   fontSize: "$md",

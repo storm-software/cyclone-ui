@@ -5,5 +5,35 @@
   "type": "module",
   "dependencies": {
     "tsdown": "catalog:"
+  },
+  "main": "./../../../../../../tmp/cyclone-select-build/index.cjs",
+  "module": "./../../../../../../tmp/cyclone-select-build/index.mjs",
+  "types": "./../../../../../../tmp/cyclone-select-build/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./../../../../../../tmp/cyclone-select-build/index.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/index.cjs"
+    },
+    "./Select": {
+      "import": "./../../../../../../tmp/cyclone-select-build/Select.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/Select.cjs"
+    },
+    "./SelectItems": {
+      "import": "./../../../../../../tmp/cyclone-select-build/SelectItems.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/SelectItems.cjs"
+    },
+    "./SelectTextBox": {
+      "import": "./../../../../../../tmp/cyclone-select-build/SelectTextBox.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/SelectTextBox.cjs"
+    },
+    "./SelectValue": {
+      "import": "./../../../../../../tmp/cyclone-select-build/SelectValue.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/SelectValue.cjs"
+    },
+    "./utilities": {
+      "import": "./../../../../../../tmp/cyclone-select-build/utilities.mjs",
+      "require": "./../../../../../../tmp/cyclone-select-build/utilities.cjs"
+    },
+    "./*": "./*"
   }
 }

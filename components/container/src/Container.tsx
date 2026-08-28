@@ -157,7 +157,7 @@ const ContainerFrame = styled(View, {
 const ContainerGlassBackground = styled(LinearGradient, {
   name: "Container",
 
-  transition: "medium",
+  transition: "200ms",
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
@@ -169,7 +169,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
 const ContainerGroup = styled(View, {
   name: "Container",
 
-  transition: "medium",
+  transition: "200ms",
   width: "100%",
   display: "flex",
   flex: 1,

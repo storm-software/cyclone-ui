@@ -54,7 +54,7 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   hoverTheme: false,
   pressTheme: true,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   backgroundColor: "transparent",
   outlineStyle: "none",
@@ -120,7 +120,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   name: "RadioGroupItemValue",
   context: RadioGroupContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   borderRadius: 100_000,
   backgroundColor: "$foregroundInverse",
@@ -170,7 +170,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   name: "RadioGroupItem",
   context: RadioGroupContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   gap: "$3xl",
   backgroundColor: "transparent",
@@ -278,9 +278,7 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             value={String(value)}
             disabled={disabled}
             $group-hover={{
-              borderColor: disabled
-                ? "$borderDisabled"
-                : "$borderHover"
+              borderColor: disabled ? "$borderDisabled" : "$borderHover"
             }}
             $group-focus={{
               outlineColor: "$borderFocused",
@@ -304,7 +302,7 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
   name: "RadioGroup",
   context: RadioGroupContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   flexDirection: "column",
   display: "flex",

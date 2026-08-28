@@ -68,7 +68,7 @@ export const Link = LinkFrame.styleable<{
 
         {external && (
           <ThemeableIcon
-            size="$10xl"
+            size="$4xl"
             render="span"
             display="inline-flex"
             color="$foregroundLink"

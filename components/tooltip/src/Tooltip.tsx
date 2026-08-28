@@ -63,7 +63,7 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   name: "Tooltip",
   context: TooltipContext,
 
-  transition: "medium",
+  transition: "200ms",
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "$backgroundFloating",

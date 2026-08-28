@@ -38,7 +38,7 @@ import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
 const ThemeableIconFrame = styled(View, {
-  transition: "medium",
+  transition: "200ms",
 
   alignItems: "center",
 

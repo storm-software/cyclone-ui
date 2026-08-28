@@ -40,7 +40,7 @@ const BaseSelectTextBox = styled(View, {
 
   render: "button",
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   justifyContent: "space-between",
   alignItems: "center",
@@ -50,6 +50,7 @@ const BaseSelectTextBox = styled(View, {
   flex: 1,
   flexGrow: 1,
   minWidth: 0,
+  padding: 0,
   backgroundColor: "transparent",
   borderWidth: 0,
   outlineStyle: "none",

@@ -127,3 +127,10 @@ export const Ghost: Story = {
     children: "Some collapsed content"
   }
 };
+
+export const Numbered: Story = {
+  args: {
+    numbered: true,
+    children: "Some collapsed content"
+  }
+};

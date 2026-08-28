@@ -128,7 +128,7 @@ const DialogClose = Button.styleable(
 const DialogOverlayFrame = styled(LinearGradient, {
   name: "DialogOverlay",
 
-  transition: "medium",
+  transition: "200ms",
   fullscreen: true,
   pointerEvents: "auto",
   opacity: 0.85,
@@ -151,7 +151,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
 const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
   name: "DialogOverlay",
 
-  transition: "medium",
+  transition: "200ms",
   pointerEvents: "auto",
   opacity: 0.6,
   backdropFilter: "blur(35px)",

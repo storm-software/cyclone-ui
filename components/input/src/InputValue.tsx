@@ -16,13 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  View,
-  styled,
-  useComposedRefs,
-  useEvent,
-  useTheme
-} from "@tamagui/core";
+import { styled, useComposedRefs, useEvent, useTheme } from "@tamagui/core";
 import { registerFocusable } from "@tamagui/focusable";
 import type { TamaguiWebElement } from "@tamagui/web";
 import type { FormEvent } from "react";
@@ -34,15 +28,19 @@ import { InputContext, baseInputStyle } from "./utilities";
  * Native-only props are destructured so they are not forwarded to the web input.
  */
 
-const BaseInputValue = styled(View, baseInputStyle[0], baseInputStyle[1]);
+const BaseInputValue = styled(
+  "input" as any,
+  baseInputStyle[0],
+  baseInputStyle[1]
+);
 
 export const InputValue = BaseInputValue.styleable<InputComponentProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
     const {
       disabled,
       name,
-      onChange,
-      onInput,
+      onChange: contextOnChange,
+      onInput: contextOnInput,
       onBlur: contextOnBlur,
       onFocus: contextOnFocus
     } = InputContext.useStyledContext();
@@ -93,6 +91,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       secureTextEntry,
       selectionColor,
       inputMode,
+      onChange: inputOnChange,
+      onInput: inputOnInput,
       onBlur: inputOnBlur,
       onFocus: inputOnFocus,
       ...rest
@@ -102,7 +102,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
     const theme = useTheme();
 
     const composedRefs = useComposedRefs(forwardedRef, ref);
-
+    const onChange = inputOnChange ?? contextOnChange;
+    const onInput = inputOnInput ?? contextOnInput;
     const handleSelectionChange = useEvent(() => {
       const start = ref.current?.selectionStart ?? 0;
       const end = ref.current?.selectionEnd ?? 0;
@@ -139,6 +140,20 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
         );
       }
     }, [selection]);
+
+    const handleInput = useCallback(
+      (event: FormEvent<HTMLInputElement>) => {
+        event.stopPropagation();
+        const value = event.target.value;
+        onInput?.(
+          new CustomEvent("input", {
+            detail: value
+          })
+        );
+        onChange?.(new CustomEvent("change", { detail: value }));
+      },
+      [onChange, onInput]
+    );
 
     const finalProps = {
       ...rest,
@@ -178,34 +193,6 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       });
     }, [name, disabled, contextOnFocus]);
 
-    const handleChange = useCallback(
-      (event: FormEvent<HTMLElement>) => {
-        event.stopPropagation();
-
-        if (onChange) {
-          onChange(
-            new CustomEvent("change", {
-              detail: (event.currentTarget as HTMLInputElement).value
-            })
-          );
-        }
-      },
-      [onChange]
-    );
-
-    const handleInput = useCallback(
-      (event: FormEvent<HTMLElement>) => {
-        if (onInput) {
-          onInput(
-            new CustomEvent("input", {
-              detail: (event.currentTarget as HTMLInputElement).value
-            })
-          );
-        }
-      },
-      [onInput]
-    );
-
     return (
       <>
         {process.env.TAMAGUI_TARGET === "web" && (
@@ -222,16 +209,22 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
           </style>
         )}
 
-        <BaseInputValue
-          ref={composedRefs}
-          {...finalProps}
-          disabled={disabled}
-          id={name}
-          onChange={handleChange}
-          onInput={handleInput}
-          onBlur={inputOnBlur ?? contextOnBlur}
-          onFocus={inputOnFocus ?? contextOnFocus}
-        />
+        <BaseInputValue asChild {...finalProps} disabled={disabled} id={name}>
+          <input
+            ref={composedRefs}
+            style={{
+              height: "100%",
+              flex: 1,
+              minWidth: 0,
+              margin: 0,
+              padding: 0,
+              paddingInline: "var(--t-space-xl)"
+            }}
+            onInputCapture={handleInput}
+            onBlur={inputOnBlur ?? contextOnBlur}
+            onFocus={inputOnFocus ?? contextOnFocus}
+          />
+        </BaseInputValue>
       </>
     );
   },

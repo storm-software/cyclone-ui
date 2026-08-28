@@ -16,14 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Separator } from "@tamagui/separator";
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import type { SelectContextProps } from "./types";
@@ -41,11 +41,11 @@ const SelectGroup = styled(XGroup, {
   name: "Select",
   context: SelectContext,
 
-  transition: "medium",
+  transition: "200ms",
   justifyContent: "space-between",
   alignItems: "center",
   cursor: "pointer",
-  backgroundColor: "transparent",
+  backgroundColor: "$backgroundElevated",
   borderWidth: 1,
   borderColor: "$border",
   outlineStyle: "none",
@@ -113,7 +113,7 @@ const SelectSeparator = styled(Separator, {
   name: "Select",
   context: SelectContext,
 
-  transition: "medium",
+  transition: "200ms",
   borderWidth: 1,
   borderColor: "$border",
   vertical: true,
@@ -163,16 +163,11 @@ const SelectTrigger = View.styleable(
       [controlSize]
     );
 
-    const iconSize = useMemo(
-      () => getSized(adjustedTrigger, { shift: -6 }),
-      [adjustedTrigger]
-    );
-
     return (
       <View
         ref={forwardedRef}
         {...props}
-        transition="slow"
+        transition="200ms"
         rotate={focused ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
         paddingHorizontal="$sm"
@@ -181,7 +176,7 @@ const SelectTrigger = View.styleable(
         alignItems="center"
         justifyContent="center">
         <ChevronDown
-          size={iconSize}
+          size={adjustedTrigger}
           color={disabled ? "$borderDisabled" : "$border"}
           $group-select-hover={{
             color: disabled ? "$borderDisabled" : "$borderHover"
@@ -197,7 +192,7 @@ const BaseSelect = styled(TamaguiSelect, {
   name: "Select",
   context: SelectContext,
 
-  transition: "medium",
+  transition: "200ms",
   cursor: "pointer",
   justifyContent: "center",
   alignItems: "center",
@@ -233,7 +228,12 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         frameSize={frameSize}>
         <SelectTextBox {...props}>
           <XGroup.Item flex={1} minWidth={0}>
-            <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
+            <View
+              flex={1}
+              minWidth={0}
+              flexDirection="row"
+              alignItems="center"
+              paddingHorizontal={getSpaced(frameSize) * 0.25}>
               {children}
             </View>
           </XGroup.Item>
@@ -278,9 +278,13 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
     },
     forwardedRef
   ) => {
+    const [open, setOpen] = useState(false);
+
     const handleOpenChanged = useCallback(
-      (open: boolean, _via?: "hover" | "press") => {
-        if (open) {
+      (nextOpen: boolean, _via?: "hover" | "press") => {
+        setOpen(nextOpen);
+
+        if (nextOpen) {
           onFocus?.();
         } else {
           onBlur?.();
@@ -318,7 +322,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
           {...props}
           onValueChange={handleChanged}
           onOpenChange={handleOpenChanged}
-          open={focused}
+          open={open}
           disabled={disabled}
           size={size}>
           {children}
