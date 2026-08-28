@@ -9,22 +9,8 @@
     "directory": "components/file-picker"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
     "react": "catalog:",
@@ -73,5 +59,31 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./file-picker-types": {
+      "import": "./dist/file-picker-types.mjs",
+      "require": "./dist/file-picker-types.cjs"
+    },
+    "./FilePicker": {
+      "import": "./dist/FilePicker.mjs",
+      "require": "./dist/FilePicker.cjs"
+    },
+    "./useDropZone": {
+      "import": "./dist/useDropZone.mjs",
+      "require": "./dist/useDropZone.cjs"
+    },
+    "./useFilePicker": {
+      "import": "./dist/useFilePicker.mjs",
+      "require": "./dist/useFilePicker.cjs"
+    },
+    "./*": "./*"
+  }
 }

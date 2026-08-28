@@ -9,19 +9,9 @@
     "directory": "components/body-text"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
-  "files": ["dist", "src", "types"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -41,5 +31,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"]
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./BodyText": {
+      "import": "./dist/BodyText.mjs",
+      "require": "./dist/BodyText.cjs"
+    },
+    "./*": "./*"
+  }
 }

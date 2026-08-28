@@ -98,7 +98,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   context: SelectContext,
 
   cursor: "pointer",
-  color: "$foregroundInverse",
+  color: "$foreground",
   fontFamily: "$body",
   flex: 1,
 
@@ -112,10 +112,10 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$foregroundInverseDisabled",
+        color: "$foregroundDisabled",
 
         hoverStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         }
       }
     },
@@ -140,7 +140,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
     const isSmall = useMemo(() => getSized(size) < getSized("$4xl"), [size]);
 
     return (
-      <Theme name={"primary"}>
+      <Theme name={"base"}>
         <SelectItemFrame
           {...props}
           group={true}
@@ -153,7 +153,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             justifyContent={isSmall ? "space-between" : "center"}>
             <View width="$xl" justifyContent="center">
               {disabled && (
-                <Lock size="$6xl" color="$foregroundInverseDisabled" />
+                <Lock size="$6xl" color="$foregroundDisabled" />
               )}
               <TamaguiSelect.ItemIndicator>
                 <Theme name={"accent"}>
@@ -166,10 +166,10 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               disabled={disabled}
               $group-hover={{
                 color: disabled
-                  ? "$foregroundInverseDisabled"
+                  ? "$foregroundDisabled"
                   : selected
                     ? "$foregroundLinkHover"
-                    : "$foregroundInverseHover"
+                    : "$foregroundHover"
               }}>
               {children}
             </SelectItemTextFrame>
@@ -220,7 +220,7 @@ const SelectItemsGroup = View.styleable(
             position="relative"
             height="$3xl">
             <YStack zIndex="$10">
-              <ChevronUp size={20} />
+              <ChevronUp size={20} color="$foreground" />
             </YStack>
             <LinearGradient
               start={[0, 0]}
@@ -256,7 +256,7 @@ const SelectItemsGroup = View.styleable(
             width="100%"
             height="$3xl">
             <YStack zIndex="$10">
-              <ChevronDown size={20} />
+              <ChevronDown size={20} color="$foreground" />
             </YStack>
             <LinearGradient
               start={[0, 0]}

@@ -70,6 +70,7 @@ const SelectFieldControl = Select.styleable<
   const value = field.value.get();
   const formattedValue = field.formattedValue.get();
   const initialValue = field.initialValue.get();
+  const displayValue = formattedValue || String(value ?? initialValue ?? "");
 
   const selectRef = useFieldRef();
   useLayoutEffect(() => {
@@ -87,17 +88,18 @@ const SelectFieldControl = Select.styleable<
       onFocus={focus}
       onBlur={blur}
       onChange={handleChange}
-      value={formattedValue}
+      value={displayValue}
       defaultValue={String(initialValue ?? "")}>
       <Select.TextBox>
         {children}
         <Select.TextBox.Value
           ref={selectRef}
-          placeholder={placeholder}
-          placeholding={!value}
-        />
+          placeholder={displayValue ? undefined : placeholder}
+          placeholding={!displayValue}>
+          {displayValue}
+        </Select.TextBox.Value>
 
-        <Field.ThemeIcon />
+        <Field.ThemeIcon render="span" role={undefined} />
       </Select.TextBox>
 
       <Select.Items>

@@ -684,8 +684,8 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-primary: 0px 0px 0px 2px #f5f5f5; /** The primary ring variant */
-  --ring-primary-subtle: 0px 0px 0px 1px #f5f5f5; /** The primary subtle ring variant */
+  --ring-primary: 0px 0px 0px 2px #bebebe; /** The primary ring variant */
+  --ring-primary-subtle: 0px 0px 0px 1px #bebebe; /** The primary subtle ring variant */
   --ring-secondary: 0px 0px 0px 2px #bebebe; /** The secondary ring variant */
   --ring-secondary-subtle: 0px 0px 0px 1px #bebebe; /** The secondary subtle ring variant */
   --ring-accent: 0px 0px 0px 2px #36dec0; /** The accent ring variant */
@@ -712,8 +712,8 @@
   --typography-heading-lg: 700 1.25rem/1.4 'Space Grotesk'; /** The heading large typography variant */
   --typography-heading-md: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading medium typography variant */
   --typography-heading-sm: 600 1rem/1.5 'Space Grotesk'; /** The heading small typography variant */
-  --typography-eyebrows: 400 1rem/1.5 'Space Mono'; /** The eyebrows typography variant */
-  --typography-body: 300 1rem/1.5 'Space Grotesk'; /** The body typography variant */
+  --typography-eyebrows: 400 1rem/1.5 'Permanent Marker'; /** The eyebrows typography variant */
+  --typography-body: 300 1rem/1.5 Inter; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Space Mono'; /** The code typography variant */
 }

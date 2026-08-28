@@ -59,7 +59,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$xl"
+        gap: "$lg"
       },
       horizontal: {
         flexDirection: "row",
@@ -96,8 +96,8 @@ const getFieldDetailsFontSize = (
     heightToken = (config.font.lineHeight?.[val] as any)?.val;
   }
 
-  const fontSize = (sizeToken ?? 1) * 0.9;
-  const lineHeight = Number(heightToken ?? 1) * 0.85;
+  const fontSize = (sizeToken ?? 1) * 0.6;
+  const lineHeight = Number(heightToken ?? 1) * 0.5;
   const fontWeight = config.font.weight?.[val];
   const letterSpacing = config.font.letterSpacing?.[val];
   const textTransform = config.font.transform?.[val];
@@ -143,6 +143,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
+    const theme = field.theme.get();
     const disabled = field.disabled.get();
     const size = field.size.get();
     const messages = field.messages.get();
@@ -153,7 +154,13 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         {...rest}
         messages={messages}
         size={size}
-        color={disabled ? "$foregroundDisabled" : "$foreground"}>
+        color={
+          disabled
+            ? "$foregroundDisabled"
+            : theme !== "primary" && theme !== "secondary"
+              ? "$foreground"
+              : "$foregroundSecondary"
+        }>
         {children}
       </FieldValidationText>
     );
@@ -171,12 +178,8 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
 
     return (
       <Theme name={theme}>
-        <YStack gap="$xl">
-          <FieldGroupFrame
-            ref={forwardedRef}
-            {...rest}
-            group={"field" as any}
-            disabled={disabled}>
+        <YStack gap="$xl" group={"field" as any} disabled={disabled}>
+          <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
             {children}
           </FieldGroupFrame>
           <FieldValidationTextImpl />
@@ -263,7 +266,13 @@ const FieldDetailsImpl = FieldDetails.styleable(
         theme={theme}
         size={size}
         disabled={disabled}
-        color={disabled ? "$foregroundDisabled" : "$foreground"}
+        color={
+          disabled
+            ? "$foregroundDisabled"
+            : theme !== "primary" && theme !== "secondary"
+              ? "$foreground"
+              : "$foregroundSecondary"
+        }
         group-field-hover={{
           color: disabled ? "$foregroundDisabled" : "$foregroundHover"
         }}>

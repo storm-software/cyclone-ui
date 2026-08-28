@@ -125,10 +125,10 @@ export const createNodesV2: CreateNodes<CycloneUIComponentPluginOptions> = [
             inputs: [
               "default",
               "^production",
-              "{workspaceRoot}/tools/config/tsdown.config.ts"
+              "{workspaceRoot}/tools/config/tsdown.component.ts"
             ],
             outputs: ["{projectRoot}/dist"],
-            command: `${exec} tsdown \"src/**/*.ts\" --config \"../../tools/config/tsdown.components.ts\" --cwd \"${join(
+            command: `${exec} tsdown \"src/index.ts\" --config \"../../tools/config/tsdown.component.ts\" --cwd \"${join(
               context.workspaceRoot,
               projectRoot
             )}\"`,

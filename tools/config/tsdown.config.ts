@@ -27,7 +27,9 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   format: ["cjs", "esm"],
   cjsDefault: true,
   treeshake: true,
-  exports: true,
+  exports: {
+    all: true
+  },
   clean: false,
   sourcemap: false,
   platform: "node",

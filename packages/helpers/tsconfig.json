@@ -3,7 +3,6 @@
   "compilerOptions": {
     "tsBuildInfoFile": "../../dist/out-tsc/packages/helpers/tsconfig.tsbuildinfo",
     "jsx": "react-jsx",
-    "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",

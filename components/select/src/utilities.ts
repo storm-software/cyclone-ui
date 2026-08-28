@@ -31,19 +31,15 @@ export const getSelectSize = (
   extras: VariantSpreadExtras<any>
 ) => {
   const { props } = extras;
-  if (!val || props.circular) {
+  if (!val) {
     return;
   }
 
-  if (typeof val === "number") {
-    return {
-      height: val,
-      borderRadius: props.circular ? 100_000 : "$control"
-    };
-  }
+  const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
 
   return {
-    height: val,
+    height: size,
+    minHeight: size,
     borderRadius: props.circular ? 100_000 : "$control"
   };
 };

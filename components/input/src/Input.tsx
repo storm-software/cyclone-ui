@@ -58,6 +58,11 @@ const InputGroup = styled(XGroup, {
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
+  focusVisibleStyle: {
+    boxShadow: "$ring",
+    borderColor: "$borderFocused"
+  },
+
   variants: {
     focused: {
       true: {
@@ -264,7 +269,7 @@ const InputTextBoxImpl = InputTextBox.styleable(
   { staticConfig: { componentName: "Input" } }
 );
 
-interface InputValueExtraProps {
+export interface InputValueExtraProps {
   clearable?: boolean;
   onClear?: () => void;
 }

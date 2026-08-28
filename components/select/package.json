@@ -9,22 +9,8 @@
     "directory": "components/select"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
     "react": "catalog:",
@@ -68,5 +54,35 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Select": {
+      "import": "./dist/Select.mjs",
+      "require": "./dist/Select.cjs"
+    },
+    "./SelectItems": {
+      "import": "./dist/SelectItems.mjs",
+      "require": "./dist/SelectItems.cjs"
+    },
+    "./SelectTextBox": {
+      "import": "./dist/SelectTextBox.mjs",
+      "require": "./dist/SelectTextBox.cjs"
+    },
+    "./SelectValue": {
+      "import": "./dist/SelectValue.mjs",
+      "require": "./dist/SelectValue.cjs"
+    },
+    "./utilities": {
+      "import": "./dist/utilities.mjs",
+      "require": "./dist/utilities.cjs"
+    },
+    "./*": "./*"
+  }
 }

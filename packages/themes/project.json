@@ -7,15 +7,6 @@
     "build-base": {
       "dependsOn": ["monorepo:generate-tokens"]
     },
-    "build": {
-      "dependsOn": ["build-base"],
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "pnpm exec copyfiles -u 1 packages/themes/dist/**/* dist/packages/themes/dist"
-        ]
-      }
-    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

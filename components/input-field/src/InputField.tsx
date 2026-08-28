@@ -20,7 +20,8 @@ import { Field } from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, withStaticProperties } from "@tamagui/core";
-import { type FocusEvent, useCallback, useLayoutEffect } from "react";
+import type { FocusEvent } from "react";
+import { useCallback, useLayoutEffect } from "react";
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;

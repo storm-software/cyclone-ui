@@ -27,8 +27,7 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   format: ["cjs", "esm"],
   cjsDefault: true,
   treeshake: true,
-  exports: true,
-  clean: false,
+  clean: true,
   sourcemap: false,
   platform: "browser",
   inputOptions: {
@@ -43,8 +42,11 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   fixedExtension: true,
   nodeProtocol: true,
   unbundle: true,
+  exports: {
+    all: true
+  },
   deps: {
-    skipNodeModulesBundle: true
+    neverBundle: true
   }
 };
 

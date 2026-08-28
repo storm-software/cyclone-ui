@@ -27,7 +27,7 @@ const meta: Meta<typeof SelectField> = {
   render: ({ defaultValue, ...props }: any) => (
     <Form
       name="formName"
-      defaultValues={{ selectFieldName: defaultValue ?? "" }}>
+      initialValues={{ selectFieldName: defaultValue ?? "" }}>
       <SelectField name="selectFieldName" {...props} items={items}>
         <SelectField.Label>Label Text</SelectField.Label>
         <SelectField.Control placeholder="email@example.com" />

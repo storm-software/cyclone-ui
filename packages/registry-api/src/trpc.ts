@@ -16,12 +16,16 @@
 
  ------------------------------------------------------------------- */
 
+import type { TRPCRootObject } from "@trpc/server";
 import { initTRPC } from "@trpc/server";
 import type { Context } from "./context";
 
-export const t = initTRPC.context<Context>().create();
+// eslint-disable-next-line ts/no-empty-object-type
+export const t: TRPCRootObject<Context, object, {}> = initTRPC
+  .context<Context>()
+  .create();
 
-export const publicProcedure = t.procedure;
-export const protectedProcedure = t.procedure;
+export const publicProcedure: typeof t.procedure = t.procedure;
+export const protectedProcedure: typeof t.procedure = t.procedure;
 
-export const createRouter = t.router;
+export const createRouter: typeof t.router = t.router;

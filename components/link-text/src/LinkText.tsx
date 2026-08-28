@@ -20,7 +20,7 @@ import type { GetProps } from "@tamagui/core";
 import { styled, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
-interface LinkTextExtraProps {
+export interface LinkTextExtraProps {
   disabled?: boolean;
   underline?: "hover" | "initial" | "static" | "none";
   variant?: "base" | "mixed" | "themed";

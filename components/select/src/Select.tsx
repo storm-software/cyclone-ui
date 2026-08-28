@@ -16,9 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { Button } from "@cyclone-ui/button";
 import { getSized } from "@cyclone-ui/helpers";
-import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
@@ -29,6 +28,14 @@ import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import type { SelectContextProps } from "./types";
 import { getSelectSize, SelectContext } from "./utilities";
+
+const getSelectFrameSize = (
+  val: SizeTokens | number,
+  extras: VariantSpreadExtras<any>
+) => ({
+  ...getSelectSize(val, extras),
+  paddingHorizontal: 0
+});
 
 const SelectGroup = styled(XGroup, {
   name: "Select",
@@ -42,6 +49,7 @@ const SelectGroup = styled(XGroup, {
   borderWidth: 1,
   borderColor: "$border",
   outlineStyle: "none",
+  boxShadow: "none",
   gap: "$none",
   tabIndex: 0,
   borderRadius: "$control",
@@ -54,36 +62,21 @@ const SelectGroup = styled(XGroup, {
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
+    boxShadow: "$ring",
     borderColor: "$borderFocused"
   },
 
   variants: {
     focused: {
       true: {
-        outlineColor: "$borderFocused",
-        outlineWidth: 3,
-        outlineOffset: "$lg",
-        outlineStyle: "solid",
+        boxShadow: "$ring",
         borderColor: "$borderFocused"
       }
     },
 
-    size: {
-      "...size": (
-        val: SizeTokens | number,
-        extras: VariantSpreadExtras<any>
-      ) => {
-        const result = getSelectSize(val, extras);
-
-        return {
-          ...result,
-          paddingHorizontal: 0
-        };
-      }
+    frameSize: {
+      ":string": getSelectFrameSize,
+      ":number": getSelectFrameSize
     },
 
     disabled: {
@@ -110,7 +103,7 @@ const SelectGroup = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    frameSize: "$10xl",
     disabled: false,
     focused: false
   }
@@ -159,48 +152,41 @@ const SelectSeparator = styled(Separator, {
   }
 });
 
-const SelectTrigger = Button.styleable<{
-  forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
-  rotateOnFocused?: boolean;
-}>(
-  ({ children, rotateOnFocused = true, ...props }, forwardedRef) => {
-    const { circular, focused, disabled, size, onFocus } =
-      SelectContext.useStyledContext();
+const SelectTrigger = View.styleable(
+  (props, forwardedRef) => {
+    const { focused, disabled, size } = SelectContext.useStyledContext();
+    const controlSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
+      () => getSized(controlSize, { shift: -3 }),
+      [controlSize]
     );
 
-    const rotate = useMemo(
-      () => (rotateOnFocused ? focused : false),
-      [rotateOnFocused, focused]
+    const iconSize = useMemo(
+      () => getSized(adjustedTrigger, { shift: -6 }),
+      [adjustedTrigger]
     );
 
     return (
       <View
+        ref={forwardedRef}
+        {...props}
         transition="slow"
-        rotate={rotate ? "180deg" : "0deg"}
+        rotate={focused ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
         paddingHorizontal="$sm"
         flexBasis="6%"
-        minWidth="$5xl">
-        <Button
-          ref={forwardedRef}
-          variant="ghost"
-          {...props}
-          disabled={disabled}
-          borderRadius={circular ? 100_000 : "$button"}
-          onPress={onFocus}
-          size={adjustedTrigger}
-          color={disabled ? "$borderDisabled" : "$border"}>
-          <Button.Icon
-            $group-select-hover={{
-              color: disabled ? "$borderDisabled" : "$borderHover"
-            }}>
-            {children || <ChevronDown disabled={disabled} />}
-          </Button.Icon>
-        </Button>
+        minWidth="$5xl"
+        alignItems="center"
+        justifyContent="center">
+        <ChevronDown
+          size={iconSize}
+          color={disabled ? "$borderDisabled" : "$border"}
+          $group-select-hover={{
+            color: disabled ? "$borderDisabled" : "$borderHover"
+          }}
+        />
       </View>
     );
   },
@@ -235,17 +221,21 @@ const BaseSelect = styled(TamaguiSelect, {
 
 const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
   ({ children, ...props }, forwardedRef) => {
-    const { focused, disabled } = SelectContext.useStyledContext();
+    const { focused, disabled, size } = SelectContext.useStyledContext();
+    const frameSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     return (
       <SelectGroup
         group={"select" as any}
         focused={focused}
         disabled={disabled}
-        minWidth="$12xl">
+        frameSize={frameSize}>
         <SelectTextBox {...props}>
-          <XGroup.Item>
-            <View flex={1}>{children}</View>
+          <XGroup.Item flex={1} minWidth={0}>
+            <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
+              {children}
+            </View>
           </XGroup.Item>
 
           <XGroup.Item>

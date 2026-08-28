@@ -9,18 +9,6 @@
     "directory": "components/accordion"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -49,5 +37,19 @@
     "access": "public"
   },
   "module:jsx": "dist/jsx",
-  "source": "src/index.ts"
+  "source": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Accordion": {
+      "import": "./dist/Accordion.mjs",
+      "require": "./dist/Accordion.cjs"
+    },
+    "./*": "./*"
+  }
 }

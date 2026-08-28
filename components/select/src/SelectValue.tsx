@@ -87,16 +87,16 @@ export const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
 }>(
   ({ children, placeholding, ...props }, forwardedRef) => {
-    const { disabled, name } = SelectContext.useStyledContext();
+    const { disabled, name, size } = SelectContext.useStyledContext();
 
     return (
-      <View flex={1} paddingHorizontal="$3xl">
+      <View flex={1} minWidth={0} paddingHorizontal="$xl">
         <Theme name={"primary"}>
           <SelectValueFrame
             id={name}
             ref={forwardedRef}
             {...props}
-            size={0}
+            size={size}
             disabled={disabled}
             placeholding={placeholding && !disabled}>
             {children}

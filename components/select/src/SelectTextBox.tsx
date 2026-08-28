@@ -29,7 +29,7 @@ import {} from "@tamagui/list-item";
 import type { SelectScopedProps } from "@tamagui/select";
 import { useSelectContext, useSelectItemParentContext } from "@tamagui/select";
 import { SelectValue } from "./SelectValue";
-import { getSelectSize, SelectContext } from "./utilities";
+import { SelectContext } from "./utilities";
 
 const isPointerCoarse =
   isWeb && isClient ? window.matchMedia("(pointer:coarse)").matches : true;
@@ -46,17 +46,15 @@ const BaseSelectTextBox = styled(View, {
   alignItems: "center",
   display: "flex",
   flexDirection: "row",
+  height: "100%",
   flex: 1,
   flexGrow: 1,
+  minWidth: 0,
   backgroundColor: "transparent",
   borderWidth: 0,
   outlineStyle: "none",
 
   variants: {
-    size: {
-      "...size": getSelectSize
-    },
-
     disabled: {
       true: {
         userSelect: "none",
@@ -66,7 +64,6 @@ const BaseSelectTextBox = styled(View, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     disabled: false
   }
 });
@@ -76,7 +73,7 @@ const SelectTextBoxImpl = BaseSelectTextBox.styleable(
     { scope, children, ...props }: SelectScopedProps<ViewProps>,
     forwardedRef
   ) => {
-    const { disabled, size } = SelectContext.useStyledContext();
+    const { disabled } = SelectContext.useStyledContext();
     const context = useSelectContext(scope);
     const itemParentContext = useSelectItemParentContext(scope);
     const composedRefs = useComposedRefs(
@@ -96,7 +93,6 @@ const SelectTextBoxImpl = BaseSelectTextBox.styleable(
         aria-expanded={context.open}
         aria-autocomplete="none"
         dir={context.dir}
-        size={size}
         disabled={disabled}
         data-disabled={disabled ? "" : undefined}
         {...props}

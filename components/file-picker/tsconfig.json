@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/file-picker/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
@@ -9,8 +10,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/file-picker/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc"
   },
   "references": [
     {

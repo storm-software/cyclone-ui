@@ -9,22 +9,8 @@
     "directory": "components/vectors"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
     "react": "catalog:",
@@ -53,5 +39,55 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./AccordionToggle": {
+      "import": "./dist/AccordionToggle.mjs",
+      "require": "./dist/AccordionToggle.cjs"
+    },
+    "./AlertCircle": {
+      "import": "./dist/AlertCircle.mjs",
+      "require": "./dist/AlertCircle.cjs"
+    },
+    "./Arrow": {
+      "import": "./dist/Arrow.mjs",
+      "require": "./dist/Arrow.cjs"
+    },
+    "./Binary": {
+      "import": "./dist/Binary.mjs",
+      "require": "./dist/Binary.cjs"
+    },
+    "./Check": {
+      "import": "./dist/Check.mjs",
+      "require": "./dist/Check.cjs"
+    },
+    "./CheckCircle": {
+      "import": "./dist/CheckCircle.mjs",
+      "require": "./dist/CheckCircle.cjs"
+    },
+    "./CheckerBoard": {
+      "import": "./dist/CheckerBoard.mjs",
+      "require": "./dist/CheckerBoard.cjs"
+    },
+    "./Diagonal": {
+      "import": "./dist/Diagonal.mjs",
+      "require": "./dist/Diagonal.cjs"
+    },
+    "./InfoCircle": {
+      "import": "./dist/InfoCircle.mjs",
+      "require": "./dist/InfoCircle.cjs"
+    },
+    "./PdfIcon": {
+      "import": "./dist/PdfIcon.mjs",
+      "require": "./dist/PdfIcon.cjs"
+    },
+    "./*": "./*"
+  }
 }

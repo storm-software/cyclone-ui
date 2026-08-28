@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/input/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
@@ -10,8 +11,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/input/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc"
   },
   "references": [
     {

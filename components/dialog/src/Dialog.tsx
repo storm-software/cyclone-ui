@@ -198,13 +198,7 @@ const DialogFrame: React.FC<TamaguiDialogProps & { theme?: string | null }> = ({
 
 const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
   (
-    {
-      children,
-      elevated = true,
-      bordered = true,
-      variant = "tertiary",
-      ...props
-    },
+    { children, bordered = true, variant = "tertiary", ...props },
     forwardedRef
   ) => {
     return (
@@ -238,7 +232,6 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
           {...props}
           variant={variant}
           bordered={bordered}
-          elevated={elevated}
           borderRadius="$dialog">
           {children}
         </Container>

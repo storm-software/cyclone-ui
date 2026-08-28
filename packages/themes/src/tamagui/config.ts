@@ -587,8 +587,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 2px #f5f5f5",
-      ringSubtle: "0px 0px 0px 1px #f5f5f5"
+      ring: "0px 0px 0px 2px #525252",
+      ringSubtle: "0px 0px 0px 1px #525252"
     },
     secondary: {
       background: tokens.color.lightBase8.val,
@@ -878,8 +878,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#131314",
       foregroundInversePressed: "#1a1a1b",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 2px #f5f5f5",
-      ringSubtle: "0px 0px 0px 1px #f5f5f5"
+      ring: "0px 0px 0px 2px #bebebe",
+      ringSubtle: "0px 0px 0px 1px #bebebe"
     },
     secondary: {
       background: tokens.color.darkBase8.val,
@@ -1311,7 +1311,7 @@ const assetsFont = createFont({
 });
 
 const bodyFont = createFont({
-  family: "Space Grotesk",
+  family: "Inter",
   size: {
     md: 16,
     true: 16
@@ -1413,7 +1413,7 @@ const displaySmFont = createFont({
 });
 
 const eyebrowsFont = createFont({
-  family: "Space Mono",
+  family: "Permanent Marker",
   size: {
     md: 16,
     true: 16

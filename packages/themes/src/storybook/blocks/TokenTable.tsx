@@ -1453,7 +1453,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "base"
@@ -1461,7 +1461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "base"
@@ -1677,7 +1677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "base"
@@ -1685,7 +1685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "base"
@@ -6965,7 +6965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "dark"
@@ -6973,7 +6973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "dark"
@@ -7189,7 +7189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "dark"
@@ -7197,7 +7197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "dark"
@@ -12477,7 +12477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "darkDimmed"
@@ -12485,7 +12485,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "darkDimmed"
@@ -12701,7 +12701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "darkDimmed"
@@ -12709,7 +12709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "darkDimmed"
@@ -17989,7 +17989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "darkHighContrast"
@@ -17997,7 +17997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "darkHighContrast"
@@ -18213,7 +18213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "darkHighContrast"
@@ -18221,7 +18221,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "darkHighContrast"
@@ -23381,7 +23381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "light"
@@ -23389,7 +23389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "light"
@@ -23605,7 +23605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "light"
@@ -23613,7 +23613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "light"
@@ -28773,7 +28773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "lightDimmed"
@@ -28781,7 +28781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "lightDimmed"
@@ -28997,7 +28997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "lightDimmed"
@@ -29005,7 +29005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "lightDimmed"
@@ -34165,7 +34165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary",
       type: "shadow",
-      value: "0px 0px 0px 2px var(--color-foreground-primary)",
+      value: "0px 0px 0px 2px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary",
       description: "The primary ring variant",
       theme: "lightHighContrast"
@@ -34173,7 +34173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.primary-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
+      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
       cssVar: "--rw-ring-primary-subtle",
       description: "The primary subtle ring variant",
       theme: "lightHighContrast"
@@ -34389,7 +34389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.eyebrows",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-eyebrows",
       description: "The eyebrows typography variant",
       theme: "lightHighContrast"
@@ -34397,7 +34397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "lightHighContrast"

@@ -9,22 +9,8 @@
     "directory": "components/dialog"
   },
   "private": false,
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
     "react": "catalog:",
@@ -32,12 +18,17 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/container": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
     "@tamagui/alert-dialog": "catalog:",
     "@tamagui/compose-refs": "catalog:",
     "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/create-context": "catalog:",
     "@tamagui/dialog": "catalog:",
+    "@tamagui/dismissable": "catalog:",
     "@tamagui/font-size": "catalog:",
     "@tamagui/get-font-sized": "catalog:",
     "@tamagui/helpers": "catalog:",
@@ -48,11 +39,7 @@
     "@tamagui/text": "catalog:",
     "@tamagui/use-controllable-state": "catalog:",
     "@tamagui/web": "catalog:",
-    "react-native-svg": "^15.15.5",
-    "@cyclone-ui/body-text": "workspace:*",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/container": "workspace:*",
-    "@cyclone-ui/heading-text": "workspace:*"
+    "react-native-svg": "^15.15.5"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -66,5 +53,19 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Dialog": {
+      "import": "./dist/Dialog.mjs",
+      "require": "./dist/Dialog.cjs"
+    },
+    "./*": "./*"
+  }
 }

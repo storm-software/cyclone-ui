@@ -2,9 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "ignoreDeprecations": "6.0",
-    "rootDir": ".",
-    "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/packages/themes/tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "../../dist/out-tsc/packages/themes/tsconfig.tsbuildinfo",
+    "outDir": "../../dist/out-tsc"
   },
   "include": [
     "src/**/*.ts",

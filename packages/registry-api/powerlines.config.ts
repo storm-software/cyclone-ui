@@ -16,26 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
-import type { Env } from "./types";
-import { HttpHeaders } from "./types";
+import { plugin as tsdown } from "@powerlines/plugin-tsdown";
+import type { UserConfig } from "powerlines";
+import { defineConfig } from "powerlines/config";
 
-export type Context = FetchCreateContextFnOptions & {
-  version: string | undefined;
-  storage: Env["STORAGE_BUCKET"];
-};
+const config: UserConfig = defineConfig({
+  input: ["src/**/*.ts"],
+  plugins: [tsdown()]
+});
 
-export type CreateContext = (
-  env: Env
-) => (options: FetchCreateContextFnOptions) => Context;
-
-export const createContext: CreateContext =
-  (env: Env) => (options: FetchCreateContextFnOptions) => {
-    const version = options.req.headers.get(HttpHeaders.Version);
-
-    return {
-      ...options,
-      version: version ? String(version) : undefined,
-      storage: env.STORAGE_BUCKET
-    };
-  };
+export default config;

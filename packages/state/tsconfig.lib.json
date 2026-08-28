@@ -3,7 +3,6 @@
   "compilerOptions": {
     "tsBuildInfoFile": "out-tsc/tsconfig.tsbuildinfo",
     "jsx": "preserve",
-    "rootDir": ".",
     "outDir": "./out-tsc"
   },
   "references": [],

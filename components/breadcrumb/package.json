@@ -9,21 +9,21 @@
     "directory": "components/breadcrumb"
   },
   "private": false,
-  "module": "dist/esm",
+  "module": "./dist/index.mjs",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "react-native": "./dist/cjs/index.native.js"
-    }
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Breadcrumb": {
+      "import": "./dist/Breadcrumb.mjs",
+      "require": "./dist/Breadcrumb.cjs"
+    },
+    "./*": "./*"
   },
-  "types": "./types/index.d.ts",
+  "types": "./dist/index.d.cts",
   "files": [
-    "dist",
-    "src",
-    "types"
+    "dist"
   ],
   "peerDependencies": {
     "react": "catalog:",
@@ -54,5 +54,6 @@
   "sideEffects": [
     "*.css"
   ],
-  "module:jsx": "dist/jsx"
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs"
 }
