@@ -50,21 +50,27 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   name: "RadioGroupItem",
   context: RadioGroupContext,
 
-  radiused: true,
+  transition: "200ms",
+  borderRadius: 100_000,
+  unstyled: true,
   hoverTheme: false,
   pressTheme: true,
-
-  transition: "200ms",
   cursor: "pointer",
-  backgroundColor: "transparent",
-  outlineStyle: "none",
+  height: "$5xl",
+  width: "$5xl",
+  color: "$foreground",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover",
-    backgroundColor: "transparent"
+    borderColor: "$borderHover"
+  },
+
+  focusVisibleStyle: {
+    borderColor: "$borderFocused",
+    boxShadow: "$ring",
+    backgroundColor: "backgroundElevatedFocused"
   },
 
   variants: {
@@ -73,18 +79,21 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
         if (!val) {
           return;
         }
+        if (val === "$true" || String(val) === "true") {
+          return;
+        }
         if (typeof val === "number") {
           return {
-            height: val * 0.5,
-            width: val * 0.5
+            height: val * 0.75,
+            width: val * 0.75
           };
         }
 
         const size = getSize(val);
 
         return {
-          height: size.val * 0.5,
-          width: size.val * 0.5
+          height: size.val * 0.75,
+          width: size.val * 0.75
         };
       }
     },
@@ -123,7 +132,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   transition: "200ms",
   cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "$foregroundInverse",
+  backgroundColor: "$foreground",
   height: "65%",
   width: "65%",
 
@@ -140,22 +149,21 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        color: "$foregroundInverseDisabled",
-        placeholderColor: "$foregroundInverseDisabled",
-        backgroundColor: "transparent",
+        placeholderColor: "$foregroundDisabled",
+        backgroundColor: "$foregroundDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundInverseDisabled"
+          backgroundColor: "$foregroundDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundInverseDisabled"
+          backgroundColor: "$foregroundDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundInverseDisabled"
+          backgroundColor: "$foregroundDisabled"
         }
       }
     }
@@ -170,10 +178,10 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   name: "RadioGroupItem",
   context: RadioGroupContext,
 
-  transition: "200ms",
   cursor: "pointer",
   gap: "$3xl",
-  backgroundColor: "transparent",
+  backgroundColor: "$backgroundElevated",
+  boxShadow: "none",
   borderRadius: "$control",
   borderWidth: 1,
   borderColor: "$border",
@@ -183,23 +191,22 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    backgroundColor: "backgroundElevatedHover"
   },
 
   focusStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    boxShadow: "$ring",
+    backgroundColor: "backgroundElevatedFocused"
+  },
+
+  pressStyle: {
+    boxShadow: "$ring",
+    backgroundColor: "backgroundElevatedPressed"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    boxShadow: "$ring",
+    backgroundColor: "backgroundElevatedFocused"
   },
 
   variants: {
@@ -227,23 +234,23 @@ const RadioGroupItemContainerFrame = styled(XStack, {
     disabled: {
       true: {
         borderColor: "$borderDisabled",
-        backgroundColor: "transparent",
+        boxShadow: "none",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
           borderColor: "$borderDisabled",
-          backgroundColor: "transparent"
+          boxShadow: "none"
         },
 
         focusStyle: {
           borderColor: "$borderDisabled",
-          backgroundColor: "transparent"
+          boxShadow: "none"
         },
 
         pressStyle: {
           borderColor: "$borderDisabled",
-          backgroundColor: "transparent"
+          boxShadow: "none"
         }
       }
     }
@@ -279,13 +286,6 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             disabled={disabled}
             $group-hover={{
               borderColor: disabled ? "$borderDisabled" : "$borderHover"
-            }}
-            $group-focus={{
-              outlineColor: "$borderFocused",
-              outlineWidth: 3,
-              outlineOffset: "$lg",
-              outlineStyle: "solid",
-              borderColor: "$borderFocused"
             }}>
             {selected && <RadioGroupItemIndicator />}
           </RadioGroupItem>
@@ -329,7 +329,6 @@ const RadioGroupFrame = styled(TamaguiRadioGroup, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$foregroundInverseDisabled",
         backgroundColor: "transparent"
       }
     }

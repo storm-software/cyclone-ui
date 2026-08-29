@@ -1138,16 +1138,16 @@ const themes = createThemes({
         dataSkySubtle: tokens.color.darkSky9.val,
         dataYellowEmphasis: tokens.color.darkYellow5.val,
         dataYellowSubtle: tokens.color.darkYellow9.val,
-        foregroundBody: tokens.color.darkBase3.val,
-        foregroundBodyDisabled: "#bebebe99",
-        foregroundBodyFocused: "#5e5e5e",
-        foregroundBodyHover: "#8c8c8c",
-        foregroundBodyPressed: "#5e5e5e",
-        foregroundCaption: tokens.color.darkBase4.val,
-        foregroundCaptionDisabled: "#9f9f9f99",
-        foregroundCaptionFocused: "#4d4d4d",
-        foregroundCaptionHover: "#757575",
-        foregroundCaptionPressed: "#4d4d4d",
+        foregroundBody: tokens.color.darkBase4.val,
+        foregroundBodyDisabled: "#9f9f9f99",
+        foregroundBodyFocused: "#4d4d4d",
+        foregroundBodyHover: "#757575",
+        foregroundBodyPressed: "#4d4d4d",
+        foregroundCaption: tokens.color.darkBase6.val,
+        foregroundCaptionDisabled: "#61616199",
+        foregroundCaptionFocused: "#9b9b9b",
+        foregroundCaptionHover: "#7d7d7d",
+        foregroundCaptionPressed: "#9b9b9b",
         foregroundLink: tokens.color.darkBlue5.val,
         foregroundLinkDisabled: "#6f95d6",
         foregroundLinkFocused: "#003da4",
@@ -1338,9 +1338,9 @@ const captionFont = createFont({
     true: 20
   },
   weight: {
-    light: "300",
-    sm: "300",
-    true: "300"
+    normal: "400",
+    sm: "400",
+    true: "400"
   }
 });
 
@@ -1474,9 +1474,9 @@ const headingMdFont = createFont({
     xl: 28
   },
   weight: {
-    semibold: "600",
-    true: "600",
-    xl: "600"
+    bold: "700",
+    true: "700",
+    xl: "700"
   }
 });
 
@@ -1491,9 +1491,9 @@ const headingSmFont = createFont({
     true: 28
   },
   weight: {
-    lg: "600",
-    semibold: "600",
-    true: "600"
+    bold: "700",
+    lg: "700",
+    true: "700"
   }
 });
 

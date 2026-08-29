@@ -87,7 +87,7 @@ const FilePickerGroupFrame = styled(View, {
   name: FILE_PICKER_NAME,
   context: FilePickerContext,
 
-  transition: "slow",
+  transition: "400ms",
   flexDirection: "column",
   width: "100%",
   minHeight: "$17xl",
@@ -99,27 +99,23 @@ const FilePickerGroupFrame = styled(View, {
   borderWidth: 2,
   borderRadius: "$container",
   borderColor: "$border",
-  backgroundColor: "transparent",
-  outlineWidth: 0,
-  outlineColor: "transparent",
-  outlineStyle: "none",
+  backgroundColor: "$backgroundElevated",
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$borderHover",
+    backgroundColor: "$backgroundElevatedHover"
   },
 
   variants: {
     active: {
       true: {
-        outlineColor: "$borderFocused",
-        outlineWidth: 2,
-        outlineOffset: "$lg",
-        outlineStyle: "solid",
         borderColor: "$borderSubtle",
+        backgroundColor: "$backgroundElevatedFocused",
 
         hoverStyle: {
-          borderColor: "$borderSubtleHover"
+          borderColor: "$borderSubtleHover",
+          backgroundColor: "$backgroundElevatedHover"
         }
       }
     },
@@ -127,9 +123,11 @@ const FilePickerGroupFrame = styled(View, {
     disabled: {
       true: {
         borderColor: "$borderDisabled",
+        backgroundColor: "$backgroundElevatedDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$borderDisabled",
+          backgroundColor: "$backgroundElevatedDisabled"
         }
       },
       false: {
@@ -287,7 +285,7 @@ const FilePickerTrigger = YStack.styleable(
         {...props}>
         {files.length === 0 && (
           <Upload
-            size="$12xl"
+            size="$9xl"
             color={
               disabled
                 ? "$borderDisabled"
@@ -328,9 +326,9 @@ const FilePickerTriggerButton = Button.styleable(
     return (
       <Button
         ref={forwardedRef}
+        width="100%"
         variant="link"
         disabled={disabled}
-        noPadding={true}
         $platform-native={{
           display: "none"
         }}
@@ -354,7 +352,7 @@ const FilePickerFiles = YStack.styleable(
 
     return (
       <AnimatePresence>
-        {files?.length && (
+        {files && files.length > 0 && (
           <YStack
             ref={forwardedRef}
             gap="$5xl"

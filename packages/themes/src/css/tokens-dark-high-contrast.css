@@ -136,8 +136,8 @@
   --color-pink-7: #ff8bbb; /** A rich fuchsia pink color */
   --color-pink-8: #f875aa; /** A deep berry pink color */
   --color-pink-9: #cc437c; /** A dark plum pink color */
-  --color-foreground-body: #dadada; /** The body foreground color for the dark theme */
-  --color-foreground-caption: #adadad; /** The caption foreground color for the dark theme */
+  --color-foreground-body: #adadad; /** The body foreground color for the dark theme */
+  --color-foreground-caption: #535353; /** The caption foreground color for the dark theme */
   --color-foreground-link: #77a8ff; /** The link foreground color for the dark theme */
   --color-foreground-required: #ff0404; /** A required foreground color for the dark theme */
   --color-foreground-primary: #ffffff; /** The primary foreground color for the dark theme */
@@ -160,14 +160,14 @@
   --color-foreground-positive-inverse: #ffffff; /** The positive foreground color for the dark theme */
   --color-foreground-info-inverse: #ffffff; /** The info foreground color for the dark theme */
   --color-foreground-discovery-inverse: #ffffff; /** The discovery foreground color for the dark theme */
-  --color-foreground-body-hover: #929292; /** The body foreground color for the dark theme (hover, 20% darker) */
-  --color-foreground-body-pressed: #4f4f4f; /** The body foreground color for the dark theme (pressed, 40% darker) */
-  --color-foreground-body-focused: #4f4f4f; /** The body foreground color for the dark theme (focused, 40% darker) */
-  --color-foreground-body-disabled: rgba(218, 218, 218, 0.6); /** The body foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-caption-hover: #707070; /** The caption foreground color for the dark theme (hover, 20% darker) */
-  --color-foreground-caption-pressed: #363636; /** The caption foreground color for the dark theme (pressed, 40% darker) */
-  --color-foreground-caption-focused: #363636; /** The caption foreground color for the dark theme (focused, 40% darker) */
-  --color-foreground-caption-disabled: rgba(173, 173, 173, 0.6); /** The caption foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-body-hover: #707070; /** The body foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-body-pressed: #363636; /** The body foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-body-focused: #363636; /** The body foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-body-disabled: rgba(173, 173, 173, 0.6); /** The body foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-caption-hover: #7c7c7c; /** The caption foreground color for the dark theme (hover, 20% brighter) */
+  --color-foreground-caption-pressed: #a7a7a7; /** The caption foreground color for the dark theme (pressed, 40% brighter) */
+  --color-foreground-caption-focused: #a7a7a7; /** The caption foreground color for the dark theme (focused, 40% brighter) */
+  --color-foreground-caption-disabled: rgba(83, 83, 83, 0.6); /** The caption foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-link-hover: #065df3; /** The link foreground color for the dark theme (hover, 20% darker) */
   --color-foreground-link-pressed: #002e7b; /** The link foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-link-focused: #002e7b; /** The link foreground color for the dark theme (focused, 40% darker) */
@@ -710,10 +710,10 @@
   --typography-heading-2xl: 700 2.25rem/1.111111 'Space Grotesk'; /** The heading extra large typography variant */
   --typography-heading-xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
   --typography-heading-lg: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading large typography variant */
-  --typography-heading-md: 600 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
-  --typography-heading-sm: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
+  --typography-heading-md: 700 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
+  --typography-heading-sm: 700 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
   --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
-  --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
+  --typography-caption: italic 400 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
 }

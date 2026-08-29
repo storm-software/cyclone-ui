@@ -47,6 +47,11 @@ export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
 
 export interface DatePickerExtraProps {
   /**
+   * Date shown and selected in the calendar popover.
+   */
+  selectedDate?: Date | null;
+
+  /**
    * Callback that is called when the text input's text changes.
    *
    * @remarks
@@ -713,14 +718,31 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   { staticConfig: { componentName: "DatePickerValue" } }
 );
 
+type DatePickerProviderProps = PropsWithChildren<
+  Partial<DatePickerContextProps> & Pick<DatePickerExtraProps, "selectedDate">
+>;
+
 const DatePickerProvider = ({
   children,
   onChange,
   onFocus,
   focused,
+  selectedDate = null,
   ...props
-}: PropsWithChildren<Partial<DatePickerContextProps>>) => {
-  const [date, setDate] = useState<Date | null>(null);
+}: DatePickerProviderProps) => {
+  const [date, setDate] = useState<Date | null>(selectedDate);
+  const [offsetDate, setOffsetDate] = useState<Date>(
+    () => selectedDate ?? new Date()
+  );
+
+  useEffect(() => {
+    setDate(selectedDate);
+
+    if (selectedDate) {
+      setOffsetDate(selectedDate);
+    }
+  }, [selectedDate]);
+
   const selectedDates = useMemo(() => {
     if (!date) {
       return [];
@@ -749,6 +771,8 @@ const DatePickerProvider = ({
       config={{
         selectedDates,
         onDatesChange: handleChange,
+        offsetDate,
+        onOffsetChange: setOffsetDate,
         calendar: {
           startDay: 0
         },
@@ -792,7 +816,16 @@ const DatePickerPopoverContent = styled(Popover.Content, {
 
 const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
   (
-    { children, onChange, onInput, onFocus, onBlur, focused, ...props },
+    {
+      children,
+      onChange,
+      onInput,
+      onFocus,
+      onBlur,
+      focused,
+      selectedDate,
+      ...props
+    },
     forwardedRef
   ) => {
     const handleOpenChanged = useCallback(
@@ -813,7 +846,8 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
         onInput={onInput}
         onFocus={onFocus}
         onBlur={onBlur}
-        focused={focused}>
+        focused={focused}
+        selectedDate={selectedDate}>
         <Popover
           keepChildrenMounted={true}
           open={!!focused}

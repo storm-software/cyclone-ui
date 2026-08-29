@@ -45,7 +45,7 @@ const RadioGroupItemValue = styled(Label, {
 
   transition: "200ms",
   cursor: "pointer",
-  color: "$foregroundInverse",
+  color: "$foreground",
   fontFamily: "$heading-sm",
   fontSize: "$lg",
   fontWeight: "$normal",
@@ -53,34 +53,30 @@ const RadioGroupItemValue = styled(Label, {
   wordWrap: "break-word",
   verticalAlign: "middle",
 
-  hoverStyle: {
-    color: "$foregroundInverseHover"
-  },
-
   variants: {
     selected: {
       true: {
-        fontWeight: "$semibold"
+        fontWeight: "$black"
       }
     },
 
     disabled: {
       true: {
-        color: "$foregroundInverseDisabled",
-        backgroundColor: "transparent",
+        color: "$foregroundDisabled",
+        backgroundColor: "$backgroundElevatedDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         }
       }
     }
@@ -98,31 +94,27 @@ const RadioGroupItemDetails = styled(BodyText, {
 
   transition: "200ms",
   cursor: "pointer",
-  color: "$foregroundInverse",
+  color: "$foregroundBody",
   fontSize: "$md",
-
-  hoverStyle: {
-    color: "$foregroundInverseHover"
-  },
 
   variants: {
     disabled: {
       true: {
-        color: "$foregroundInverseDisabled",
+        color: "$foregroundDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundInverseDisabled"
+          color: "$foregroundDisabled"
         }
       }
     }
@@ -147,16 +139,24 @@ const RadioGroupItem = (
   }, [disabled, value, change]);
 
   return (
-    <RadioGroup.Item {...item} onPress={handlePress}>
+    <RadioGroup.Item
+      {...item}
+      group={"item" as any}
+      onPress={handlePress}
+      $group-item-hover={{ backgroundColor: "$backgroundElevatedHover" }}>
       <YStack gap="$md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}
-          selected={selected}>
+          selected={selected}
+          $group-item-hover={{ color: "$foregroundHover" }}>
           {name}
         </RadioGroupItemValue>
         {description && (
-          <RadioGroupItemDetails disabled={disabled} display="flex">
+          <RadioGroupItemDetails
+            disabled={disabled}
+            display="flex"
+            $group-item-hover={{ color: "$foregroundHover" }}>
             {description}
           </RadioGroupItemDetails>
         )}

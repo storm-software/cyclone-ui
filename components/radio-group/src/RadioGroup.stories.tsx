@@ -132,3 +132,15 @@ export const Success: Story = {
     theme: "success"
   }
 };
+
+export const Positive: Story = {
+  args: {
+    theme: "positive"
+  }
+};
+
+export const Negative: Story = {
+  args: {
+    theme: "negative"
+  }
+};

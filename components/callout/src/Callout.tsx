@@ -29,7 +29,6 @@ import {
   styled,
   Theme,
   useThemeName,
-  View,
   withStaticProperties
 } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
@@ -70,21 +69,6 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   colors: ["transparent", "$backgroundElevated"],
   start: [0, 1.0],
   end: [0, 1.0]
-});
-
-const CalloutBackgroundOverlay = styled(View, {
-  name: "Callout",
-
-  height: "100%",
-  width: "100%",
-  position: "absolute",
-  top: 0,
-  left: 0,
-  backgroundColor: "$backgroundSubtle",
-  transition: "200ms",
-  overflow: "hidden",
-  opacity: 0.3,
-  zIndex: "$20"
 });
 
 const CalloutBackgroundDiagonal = styled(YStack, {
@@ -130,7 +114,6 @@ const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
           borderWidth={3}>
           <CalloutBackgroundLowGradient theme={theme} />
           <CalloutBackgroundHighGradient theme={theme} />
-          <CalloutBackgroundOverlay theme={theme} />
           <CalloutBackgroundDiagonal theme={theme}>
             <Diagonal
               color="$foreground"
@@ -181,7 +164,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 const CalloutHeading = styled(Heading2XLText, {
   name: "CalloutHeading",
 
-  color: "$foregroundInverse",
+  color: "$foreground",
   zIndex: "$20"
 });
 
@@ -189,10 +172,7 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <Theme name="primary">
-        <CalloutHeading
-          ref={forwardedRef}
-          color="$foregroundPrimary"
-          {...props}>
+        <CalloutHeading ref={forwardedRef} {...props}>
           {children}
         </CalloutHeading>
       </Theme>
@@ -206,18 +186,16 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
 const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
-  color: "$foregroundCaption",
+  color: "$backgroundSubtle",
   zIndex: "$20"
 });
 
 const CalloutEyebrowImpl = CalloutEyebrow.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
-        <CalloutEyebrow ref={forwardedRef} {...props}>
-          {children}
-        </CalloutEyebrow>
-      </Theme>
+      <CalloutEyebrow ref={forwardedRef} {...props}>
+        {children}
+      </CalloutEyebrow>
     );
   },
   {
@@ -228,7 +206,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$foregroundBody",
+  color: "$foreground",
   zIndex: "$20",
   paddingVertical: 0
 });

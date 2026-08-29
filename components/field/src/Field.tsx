@@ -310,6 +310,36 @@ const FieldLabelText = styled(LabelText, {
   }
 });
 
+const FieldOptionalLabelText = styled(FieldLabelText, {
+  name: "FieldLabel",
+  render: "label",
+
+  transition: "200ms",
+  cursor: "pointer",
+  wordWrap: "normal",
+  color: "$foregroundCaption",
+  size: "$3xl",
+  fontWeight: "$light",
+  marginLeft: "$xl",
+
+  variants: {
+    disabled: {
+      true: {
+        color: "$foregroundCaptionDisabled",
+        cursor: "not-allowed",
+
+        hoverStyle: {
+          color: "$foregroundCaptionDisabled"
+        }
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    disabled: false
+  }
+});
+
 const LabelXStack = styled(XStack, {
   name: "FieldLabel",
 
@@ -388,25 +418,22 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
               ) : (
                 <>
                   {hideOptional !== true && (
-                    <FieldLabelText
+                    <FieldOptionalLabelText
                       {...props}
-                      theme="primary"
+                      theme="secondary"
                       disabled={disabled}
                       color={
                         disabled
-                          ? "$foregroundDisabled"
-                          : "$foregroundSecondary"
+                          ? "$foregroundCaptionDisabled"
+                          : "$foregroundCaption"
                       }
                       group-field-hover={{
                         color: disabled
-                          ? "$foregroundDisabled"
-                          : "$foregroundHover"
-                      }}
-                      size="$3xl"
-                      fontWeight="$light"
-                      marginLeft="$xl">
+                          ? "$foregroundCaptionDisabled"
+                          : "$foregroundCaptionHover"
+                      }}>
                       (Optional)
-                    </FieldLabelText>
+                    </FieldOptionalLabelText>
                   )}
                 </>
               )}

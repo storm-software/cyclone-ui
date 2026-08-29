@@ -18,6 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, screen, userEvent, within } from "storybook/test";
 import { DatePickerField } from "./DatePickerField";
 
 const meta: Meta<typeof DatePickerField> = {
@@ -26,7 +27,9 @@ const meta: Meta<typeof DatePickerField> = {
   tags: ["autodocs"],
   render: (props: any) => {
     return (
-      <Form name="formName" defaultValues={{ datePickerFieldName: "" }}>
+      <Form
+        name="formName"
+        initialValues={{ datePickerFieldName: new Date(2026, 0, 28) }}>
         <DatePickerField name="datePickerFieldName" {...props}>
           <DatePickerField.Label>Label Text</DatePickerField.Label>
           <DatePickerField.Control />
@@ -44,7 +47,26 @@ export default meta;
 type Story = StoryObj<typeof DatePickerField>;
 
 export const Base: Story = {
-  args: {}
+  args: {},
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox") as HTMLInputElement;
+
+    await userEvent.click(input);
+    input.setSelectionRange(1, 1);
+    await userEvent.keyboard("{ArrowUp}");
+    await expect(input).toHaveValue("02.28.2026");
+
+    input.setSelectionRange(4, 4);
+    await userEvent.keyboard("{ArrowDown}");
+    await expect(input).toHaveValue("02.27.2026");
+
+    input.setSelectionRange(8, 8);
+    await userEvent.keyboard("{ArrowUp}");
+    await expect(input).toHaveValue("02.27.2027");
+    await expect(screen.getByText("February")).toBeVisible();
+    await expect(screen.getByText("2027")).toBeVisible();
+  }
 };
 
 export const Required: Story = {

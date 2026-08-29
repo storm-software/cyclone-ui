@@ -1661,7 +1661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "base"
@@ -1669,7 +1669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "base"
@@ -1693,7 +1693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "base"
@@ -2581,7 +2581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "dark"
@@ -2589,7 +2589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-base-6)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "dark"
@@ -2773,7 +2773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#757575",
       cssVar: "--rw-color-foreground-body-hover",
       description: "The body foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -2781,7 +2781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-pressed",
       type: "color",
-      value: "#5e5e5e",
+      value: "#4d4d4d",
       cssVar: "--rw-color-foreground-body-pressed",
       description: "The body foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -2789,7 +2789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-focused",
       type: "color",
-      value: "#5e5e5e",
+      value: "#4d4d4d",
       cssVar: "--rw-color-foreground-body-focused",
       description: "The body foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -2797,7 +2797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-disabled",
       type: "color",
-      value: "#bebebe99",
+      value: "#9f9f9f99",
       cssVar: "--rw-color-foreground-body-disabled",
       description: "The body foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -2805,31 +2805,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#757575",
+      value: "#7d7d7d",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 20% darker)",
+      description: "The caption foreground color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.foreground.caption-pressed",
       type: "color",
-      value: "#4d4d4d",
+      value: "#9b9b9b",
       cssVar: "--rw-color-foreground-caption-pressed",
-      description: "The caption foreground color for the dark theme (pressed, 40% darker)",
+      description: "The caption foreground color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.foreground.caption-focused",
       type: "color",
-      value: "#4d4d4d",
+      value: "#9b9b9b",
       cssVar: "--rw-color-foreground-caption-focused",
-      description: "The caption foreground color for the dark theme (focused, 40% darker)",
+      description: "The caption foreground color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.foreground.caption-disabled",
       type: "color",
-      value: "#9f9f9f99",
+      value: "#61616199",
       cssVar: "--rw-color-foreground-caption-disabled",
       description: "The caption foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -7173,7 +7173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "dark"
@@ -7181,7 +7181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "dark"
@@ -7205,7 +7205,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "dark"
@@ -8093,7 +8093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8101,7 +8101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-base-6)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8285,7 +8285,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#888888",
+      value: "#787878",
       cssVar: "--rw-color-foreground-body-hover",
       description: "The body foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8293,7 +8293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-pressed",
       type: "color",
-      value: "#686868",
+      value: "#5c5c5c",
       cssVar: "--rw-color-foreground-body-pressed",
       description: "The body foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8301,7 +8301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-focused",
       type: "color",
-      value: "#686868",
+      value: "#5c5c5c",
       cssVar: "--rw-color-foreground-body-focused",
       description: "The body foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8309,7 +8309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-disabled",
       type: "color",
-      value: "#ababab99",
+      value: "#96969699",
       cssVar: "--rw-color-foreground-body-disabled",
       description: "The body foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -8317,31 +8317,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#787878",
+      value: "#7e7e7e",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 20% darker)",
+      description: "The caption foreground color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.caption-pressed",
       type: "color",
-      value: "#5c5c5c",
+      value: "#939393",
       cssVar: "--rw-color-foreground-caption-pressed",
-      description: "The caption foreground color for the dark theme (pressed, 40% darker)",
+      description: "The caption foreground color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.caption-focused",
       type: "color",
-      value: "#5c5c5c",
+      value: "#939393",
       cssVar: "--rw-color-foreground-caption-focused",
-      description: "The caption foreground color for the dark theme (focused, 40% darker)",
+      description: "The caption foreground color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.caption-disabled",
       type: "color",
-      value: "#96969699",
+      value: "#6a6a6a99",
       cssVar: "--rw-color-foreground-caption-disabled",
       description: "The caption foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -12685,7 +12685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkDimmed"
@@ -12693,7 +12693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkDimmed"
@@ -12717,7 +12717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "darkDimmed"
@@ -13605,7 +13605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-base-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13613,7 +13613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-base-6)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13797,7 +13797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#929292",
+      value: "#707070",
       cssVar: "--rw-color-foreground-body-hover",
       description: "The body foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -13805,7 +13805,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-pressed",
       type: "color",
-      value: "#4f4f4f",
+      value: "#363636",
       cssVar: "--rw-color-foreground-body-pressed",
       description: "The body foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -13813,7 +13813,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-focused",
       type: "color",
-      value: "#4f4f4f",
+      value: "#363636",
       cssVar: "--rw-color-foreground-body-focused",
       description: "The body foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -13821,7 +13821,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body-disabled",
       type: "color",
-      value: "#dadada99",
+      value: "#adadad99",
       cssVar: "--rw-color-foreground-body-disabled",
       description: "The body foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -13829,31 +13829,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#707070",
+      value: "#7c7c7c",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 20% darker)",
+      description: "The caption foreground color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.caption-pressed",
       type: "color",
-      value: "#363636",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-caption-pressed",
-      description: "The caption foreground color for the dark theme (pressed, 40% darker)",
+      description: "The caption foreground color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.caption-focused",
       type: "color",
-      value: "#363636",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-caption-focused",
-      description: "The caption foreground color for the dark theme (focused, 40% darker)",
+      description: "The caption foreground color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.caption-disabled",
       type: "color",
-      value: "#adadad99",
+      value: "#53535399",
       cssVar: "--rw-color-foreground-caption-disabled",
       description: "The caption foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -18197,7 +18197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkHighContrast"
@@ -18205,7 +18205,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkHighContrast"
@@ -18229,7 +18229,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "darkHighContrast"
@@ -23589,7 +23589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "light"
@@ -23597,7 +23597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "light"
@@ -23621,7 +23621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "light"
@@ -28981,7 +28981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightDimmed"
@@ -28989,7 +28989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightDimmed"
@@ -29013,7 +29013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "lightDimmed"
@@ -34373,7 +34373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightHighContrast"
@@ -34381,7 +34381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightHighContrast"
@@ -34405,7 +34405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.sm}\",\"lineHeight\":\"{line-height.sm}\",\"fontStyle\":\"italic\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: "lightHighContrast"

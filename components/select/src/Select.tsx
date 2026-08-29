@@ -227,8 +227,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         focused={focused}
         disabled={disabled}
         frameSize={frameSize}
-        transition="200ms"
-        $group-field-hover={{ borderColor: "$borderHover" }}>
+        transition="200ms">
         <SelectTextBox {...props}>
           <XGroup.Item flex={1} minWidth={0}>
             <View
