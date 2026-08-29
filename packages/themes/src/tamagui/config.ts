@@ -112,14 +112,14 @@ const tokens = createTokens({
     darkSurface3: "#262626",
     darkSurface4: "#303030",
     darkYellow1: "#ffd285",
-    darkYellow2: "#ffcc74",
-    darkYellow3: "#ffc664",
-    darkYellow4: "#ffc054",
-    darkYellow5: "#ffba43",
-    darkYellow6: "#ffb433",
-    darkYellow7: "#eea92b",
-    darkYellow8: "#dd9e23",
-    darkYellow9: "#cc931d",
+    darkYellow2: "#ffcb70",
+    darkYellow3: "#ffc35c",
+    darkYellow4: "#ffbb47",
+    darkYellow5: "#ffb433",
+    darkYellow6: "#d29527",
+    darkYellow7: "#a6761c",
+    darkYellow8: "#795713",
+    darkYellow9: "#4d370b",
     lightApple1: "#e3518e",
     lightApple2: "#e14777",
     lightApple3: "#e03c5e",
@@ -948,37 +948,37 @@ const childThemeExtras: {
       ringSubtle: "0px 0px 0px 1px #449e71"
     },
     warning: {
-      background: tokens.color.darkYellow6.val,
-      backgroundDisabled: "#e9bc7d",
-      backgroundFocused: "#934e00",
-      backgroundHover: "#c88000",
-      backgroundPressed: "#934e00",
+      background: tokens.color.darkYellow7.val,
+      backgroundDisabled: "#977b50",
+      backgroundFocused: "#5d3100",
+      backgroundHover: "#815300",
+      backgroundPressed: "#5d3100",
       backgroundSubtle: tokens.color.darkYellow9.val,
-      backgroundSubtleDisabled: "#ba9962",
-      backgroundSubtleFocused: "#743f00",
-      backgroundSubtleHover: "#9f6800",
-      backgroundSubtlePressed: "#743f00",
-      border: tokens.color.darkYellow8.val,
-      borderDisabled: "#caa56b",
-      borderFocused: "#7e4400",
-      borderHover: "#ad7000",
-      borderSubtle: tokens.color.darkYellow8.val,
-      borderSubtleDisabled: "#caa56b",
-      borderSubtleFocused: "#7e4400",
-      borderSubtleHover: "#ad7000",
-      foreground: tokens.color.darkYellow6.val,
-      foregroundDisabled: "#434343",
+      backgroundSubtleDisabled: "#463923",
+      backgroundSubtleFocused: "#755e34",
+      backgroundSubtleHover: "#614a21",
+      backgroundSubtlePressed: "#755e34",
+      border: tokens.color.darkYellow6.val,
+      borderDisabled: "#c09c66",
+      borderFocused: "#784000",
+      borderHover: "#a46900",
+      borderSubtle: tokens.color.darkYellow7.val,
+      borderSubtleDisabled: "#977b50",
+      borderSubtleFocused: "#5d3100",
+      borderSubtleHover: "#815300",
+      foreground: tokens.color.darkYellow5.val,
+      foregroundDisabled: "#2e2e2e",
       foregroundFocused: "#934e00",
       foregroundGhostHover: "#f4a946",
       foregroundHover: "#c88000",
       foregroundInverse: tokens.color.darkBase1.val,
-      foregroundInverseDisabled: "#434343",
+      foregroundInverseDisabled: "#2e2e2e",
       foregroundInverseFocused: "#7b7b7b",
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#934e00",
-      ring: "0px 0px 0px 2px #dd9e23",
-      ringSubtle: "0px 0px 0px 1px #dd9e23"
+      ring: "0px 0px 0px 2px #d29527",
+      ringSubtle: "0px 0px 0px 1px #d29527"
     }
   }
 };
@@ -1321,9 +1321,9 @@ const bodyFont = createFont({
     true: 24
   },
   weight: {
-    light: "300",
-    md: "300",
-    true: "300"
+    md: "600",
+    semibold: "600",
+    true: "600"
   }
 });
 
@@ -1364,21 +1364,38 @@ const codeFont = createFont({
 const displayLgFont = createFont({
   family: "Permanent Marker",
   size: {
-    "5xl": 48,
-    true: 48
+    "6xl": 60,
+    true: 60
   },
   lineHeight: {
-    "5xl": 48,
-    true: 48
+    "6xl": 60,
+    true: 60
   },
   weight: {
-    "5xl": "400",
+    "6xl": "400",
     normal: "400",
     true: "400"
   }
 });
 
 const displayMdFont = createFont({
+  family: "Permanent Marker",
+  size: {
+    "4xl": 36,
+    true: 36
+  },
+  lineHeight: {
+    "4xl": 40,
+    true: 40
+  },
+  weight: {
+    "4xl": "400",
+    normal: "400",
+    true: "400"
+  }
+});
+
+const displaySmFont = createFont({
   family: "Permanent Marker",
   size: {
     "3xl": 30,
@@ -1395,8 +1412,42 @@ const displayMdFont = createFont({
   }
 });
 
-const displaySmFont = createFont({
+const eyebrowFont = createFont({
   family: "Permanent Marker",
+  size: {
+    true: 20,
+    xl: 20
+  },
+  lineHeight: {
+    true: 28,
+    xl: 28
+  },
+  weight: {
+    normal: "400",
+    true: "400",
+    xl: "400"
+  }
+});
+
+const heading2xlFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    "4xl": 36,
+    true: 36
+  },
+  lineHeight: {
+    "4xl": 40,
+    true: 40
+  },
+  weight: {
+    "4xl": "700",
+    bold: "700",
+    true: "700"
+  }
+});
+
+const headingLgFont = createFont({
+  family: "Space Grotesk",
   size: {
     "2xl": 24,
     true: 24
@@ -1406,47 +1457,13 @@ const displaySmFont = createFont({
     true: 32
   },
   weight: {
-    "2xl": "400",
-    normal: "400",
-    true: "400"
-  }
-});
-
-const eyebrowsFont = createFont({
-  family: "Permanent Marker",
-  size: {
-    md: 16,
-    true: 16
-  },
-  lineHeight: {
-    md: 24,
-    true: 24
-  },
-  weight: {
-    md: "400",
-    normal: "400",
-    true: "400"
-  }
-});
-
-const heading2xlFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    "3xl": 30,
-    true: 30
-  },
-  lineHeight: {
-    "3xl": 36,
-    true: 36
-  },
-  weight: {
-    "3xl": "700",
+    "2xl": "700",
     bold: "700",
     true: "700"
   }
 });
 
-const headingLgFont = createFont({
+const headingMdFont = createFont({
   family: "Space Grotesk",
   size: {
     true: 20,
@@ -1457,13 +1474,13 @@ const headingLgFont = createFont({
     xl: 28
   },
   weight: {
-    bold: "700",
-    true: "700",
-    xl: "700"
+    semibold: "600",
+    true: "600",
+    xl: "600"
   }
 });
 
-const headingMdFont = createFont({
+const headingSmFont = createFont({
   family: "Space Grotesk",
   size: {
     lg: 18,
@@ -1480,35 +1497,18 @@ const headingMdFont = createFont({
   }
 });
 
-const headingSmFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    md: 16,
-    true: 16
-  },
-  lineHeight: {
-    md: 24,
-    true: 24
-  },
-  weight: {
-    md: "600",
-    semibold: "600",
-    true: "600"
-  }
-});
-
 const headingXlFont = createFont({
   family: "Space Grotesk",
   size: {
-    "2xl": 24,
-    true: 24
+    "3xl": 30,
+    true: 30
   },
   lineHeight: {
-    "2xl": 32,
-    true: 32
+    "3xl": 36,
+    true: 36
   },
   weight: {
-    "2xl": "700",
+    "3xl": "700",
     bold: "700",
     true: "700"
   }
@@ -1656,7 +1656,7 @@ export const config = createTamagui({
     "display-lg": displayLgFont,
     "display-md": displayMdFont,
     "display-sm": displaySmFont,
-    eyebrows: eyebrowsFont,
+    eyebrow: eyebrowFont,
     "heading-2xl": heading2xlFont,
     "heading-lg": headingLgFont,
     "heading-md": headingMdFont,

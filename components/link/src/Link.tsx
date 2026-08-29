@@ -34,6 +34,17 @@ const LinkFrame = styled(LinkText, {
   cursor: "pointer"
 });
 
+const ThemeableIconFrame = styled(ThemeableIcon, {
+  name: "Link",
+  render: "span",
+
+  size: "$4xl",
+  display: "inline-flex",
+  marginBottom: "$md",
+  color: "currentColor",
+  cursor: "pointer"
+});
+
 export const Link = LinkFrame.styleable<{
   href?: string;
   target?: string;
@@ -67,19 +78,14 @@ export const Link = LinkFrame.styleable<{
         {children}
 
         {external && (
-          <ThemeableIcon
-            size="$4xl"
-            render="span"
-            display="inline-flex"
-            color="$foregroundLink"
+          <ThemeableIconFrame
             style={{ verticalAlign: "middle" }}
             $group-link-hover={{
-              color: "$foregroundLinkHover",
               x: 2,
               y: -2
             }}>
             <ArrowUpRight />
-          </ThemeableIcon>
+          </ThemeableIconFrame>
         )}
       </LinkFrame>
     );

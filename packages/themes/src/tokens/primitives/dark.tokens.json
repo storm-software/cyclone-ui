@@ -303,49 +303,49 @@
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.872389 0.120836 79.765)",
+        "$value": "oklch(0.869964 0.123898 79.960)",
         "$description": "A light sandy gold color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.859020 0.132005 79.002)",
+        "$value": "oklch(0.852482 0.137182 78.554)",
         "$description": "A soft golden yellow color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.846044 0.142056 78.056)",
+        "$value": "oklch(0.835569 0.149252 77.045)",
         "$description": "A muted amber gold color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.833402 0.151358 77.025)",
+        "$value": "oklch(0.821277 0.158525 75.540)",
         "$description": "A medium honey gold color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.821277 0.158525 75.540)",
+        "$value": "oklch(0.712113 0.137539 76.679)",
         "$description": "A vivid golden yellow color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.781626 0.152168 76.737)",
+        "$value": "oklch(0.599837 0.115846 77.629)",
         "$description": "A rich ochre gold color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.741502 0.145647 78.028)",
+        "$value": "oklch(0.480905 0.091650 79.576)",
         "$description": "A deep bronze gold color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.700955 0.138243 79.245)",
+        "$value": "oklch(0.353144 0.065474 80.261)",
         "$description": "A dark brownish gold color"
       },
       "$description": "The yellow color palette"

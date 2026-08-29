@@ -16,21 +16,17 @@
 
  ------------------------------------------------------------------- */
 
-import { DatePicker } from "@cyclone-ui/date-picker";
+import { DatePicker, DEFAULT_DATE_FORMAT } from "@cyclone-ui/date-picker";
 import { Field } from "@cyclone-ui/field";
 import { getSized } from "@cyclone-ui/helpers";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
+import type { MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
-import { withStaticProperties } from "@tamagui/core";
+import { useComposedRefs, withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
-import { useCallback, useMemo } from "react";
-
-export const DATE_MASK = maskitoDateOptionsGenerator({
-  mode: "mm/dd/yyyy",
-  separator: "."
-});
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const toDate = (value: unknown) => {
   if (value == null || value === "") {
@@ -43,16 +39,59 @@ const toDate = (value: unknown) => {
   return Number.isNaN(date.getTime()) ? null : date;
 };
 
+const parseInputDate = (value: string) => {
+  const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
+  if (!match) {
+    return null;
+  }
+
+  const month = Number(match[1]);
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+  const date = new Date(year, month - 1, day);
+
+  return date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+    ? date
+    : null;
+};
+
+const rejectInvalidDate: MaskitoPostprocessor = (
+  elementState,
+  initialElementState
+) =>
+  elementState.value.length === DEFAULT_DATE_FORMAT.length &&
+  !parseInputDate(elementState.value)
+    ? initialElementState
+    : elementState;
+
+const DATE_MASK_OPTIONS = maskitoDateOptionsGenerator({
+  mode: "mm/dd/yyyy",
+  separator: "."
+});
+
+export const DATE_MASK = {
+  ...DATE_MASK_OPTIONS,
+  // Maskito's final date postprocessor normalizes impossible dates (for
+  // example, 04.31 to 05.01). This field must reject them instead.
+  postprocessors: [DATE_MASK_OPTIONS.postprocessors[0], rejectInvalidDate]
+};
+
 export const format = (value: any) => {
   const date = toDate(value);
   if (!date) {
     return "";
   }
 
-  return formatDate(date, "MM.DD.YYYY");
+  return formatDate(date, DEFAULT_DATE_FORMAT);
 };
 
 export const parse = (value: any) => {
+  if (typeof value === "string" && /^[\d.]*$/.test(value)) {
+    return parseInputDate(value);
+  }
+
   return toDate(value);
 };
 
@@ -81,6 +120,14 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
     const field = FieldApi.use();
     const size = field.size.get();
     const disabled = field.disabled.get();
+    const focused = field.focused.get();
+
+    const iconColor = disabled
+      ? "$borderDisabled"
+      : focused
+        ? "$borderFocused"
+        : "$border";
+    const iconHoverColor = disabled ? "$borderDisabled" : "$borderHover";
 
     const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
 
@@ -88,13 +135,21 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
       <DatePicker.Trigger
         ref={forwardedRef}
         {...props}
-        color={disabled ? "$borderDisabled" : "$border"}
+        flexBasis="4%"
+        color={iconColor}
         onPress={focus}>
-        <DatePicker.Trigger.Icon
-          $group-field-hover={{
-            color: disabled ? "$borderDisabled" : "$borderHover"
-          }}>
-          <Calendar size={adjustedIcon} />
+        <DatePicker.Trigger.Icon>
+          <Calendar
+            size={adjustedIcon}
+            transition="200ms"
+            color={iconColor}
+            $group-button-hover={{
+              color: iconHoverColor
+            }}
+            $group-field-hover={{
+              color: iconHoverColor
+            }}
+          />
         </DatePicker.Trigger.Icon>
       </DatePicker.Trigger>
     );
@@ -104,7 +159,9 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
 const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
   ({ children, ...props }, forwardedRef) => {
     const { blur, change, focus } = useFieldActions();
-    const ref = useFieldRef(forwardedRef);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const composedRef = useComposedRefs(forwardedRef, inputRef);
+    const ref = useFieldRef(composedRef);
 
     const field = FieldApi.use();
     const name = field.name.get();
@@ -112,17 +169,37 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const formattedValue = field.formattedValue.get();
-    const initialValue = field.initialValue.get();
+    const [inputValue, setInputValue] = useState(formattedValue);
+
+    useEffect(() => {
+      setInputValue(formattedValue);
+    }, [formattedValue]);
 
     const handleChange = useCallback(
       (event: CustomEvent<Date | null>) => {
+        setInputValue(format(event.detail));
         change?.(event.detail);
         blur?.();
       },
       [change, blur]
     );
 
-    const defaultValue = useMemo(() => format(initialValue), [initialValue]);
+    const handleInput = useCallback(
+      (event: CustomEvent<string>) => {
+        const value = event.detail;
+        setInputValue(value);
+
+        if (value === "" || parseInputDate(value)) {
+          change?.(value);
+        }
+      },
+      [change]
+    );
+
+    const handleBlur = useCallback(() => {
+      setInputValue(formattedValue);
+      blur?.();
+    }, [blur, formattedValue]);
 
     return (
       <DatePicker
@@ -131,15 +208,15 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         focused={focused}
         disabled={disabled}
         onChange={handleChange}
+        onInput={handleInput}
         onFocus={focus}
-        onBlur={blur}>
+        onBlur={handleBlur}>
         <DatePicker.TextBox>
           {children}
           <DatePicker.TextBox.Value
             ref={ref as RefObject<HTMLInputElement>}
             {...props}
-            value={formattedValue}
-            defaultValue={defaultValue}
+            value={inputValue}
           />
           <Field.ThemeIcon />
         </DatePicker.TextBox>

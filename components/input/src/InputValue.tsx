@@ -220,7 +220,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
               padding: 0,
               paddingInline: "var(--t-space-xl)"
             }}
-            onInputCapture={handleInput}
+            onChange={handleInput}
             onBlur={inputOnBlur ?? contextOnBlur}
             onFocus={inputOnFocus ?? contextOnFocus}
           />

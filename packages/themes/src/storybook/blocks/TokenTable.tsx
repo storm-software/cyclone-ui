@@ -1613,7 +1613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "base"
@@ -1621,7 +1621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "base"
@@ -1629,7 +1629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "base"
@@ -1637,7 +1637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "base"
@@ -1645,7 +1645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "base"
@@ -1653,7 +1653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "base"
@@ -1661,7 +1661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "base"
@@ -1669,23 +1669,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "base"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "base"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "base"
@@ -2085,7 +2085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#ffcc74",
+      value: "#ffcb70",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "dark"
@@ -2093,7 +2093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#ffc664",
+      value: "#ffc35c",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "dark"
@@ -2101,7 +2101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#ffc054",
+      value: "#ffbb47",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "dark"
@@ -2109,7 +2109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#ffba43",
+      value: "#ffb433",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "dark"
@@ -2117,7 +2117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#ffb433",
+      value: "#d29527",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "dark"
@@ -2125,7 +2125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#eea92b",
+      value: "#a6761c",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "dark"
@@ -2133,7 +2133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#dd9e23",
+      value: "#795713",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "dark"
@@ -2141,7 +2141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#cc931d",
+      value: "#4d370b",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "dark"
@@ -2653,7 +2653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-5)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "dark"
@@ -3085,7 +3085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#434343",
+      value: "#2e2e2e",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3405,7 +3405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#434343",
+      value: "#2e2e2e",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "dark"
@@ -3701,7 +3701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "dark"
@@ -4109,7 +4109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#c88000",
+      value: "#815300",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4117,7 +4117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#934e00",
+      value: "#5d3100",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -4125,7 +4125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#934e00",
+      value: "#5d3100",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4133,7 +4133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#e9bc7d",
+      value: "#977b50",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -4429,31 +4429,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#9f6800",
+      value: "#614a21",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#743f00",
+      value: "#755e34",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#743f00",
+      value: "#755e34",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#ba9962",
+      value: "#463923",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -4629,7 +4629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-border-warning",
       description: "The warning border color for the dark theme",
       theme: "dark"
@@ -4709,7 +4709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-border-warning-subtle",
       description: "The warning border color for the dark theme",
       theme: "dark"
@@ -4869,7 +4869,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#ad7000",
+      value: "#a46900",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4877,7 +4877,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#7e4400",
+      value: "#784000",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4885,7 +4885,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#caa56b",
+      value: "#c09c66",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5109,7 +5109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#ad7000",
+      value: "#815300",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -5117,7 +5117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#7e4400",
+      value: "#5d3100",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -5125,7 +5125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#caa56b",
+      value: "#977b50",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -7125,7 +7125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "dark"
@@ -7133,7 +7133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "dark"
@@ -7141,7 +7141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "dark"
@@ -7149,7 +7149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "dark"
@@ -7157,7 +7157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "dark"
@@ -7165,7 +7165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "dark"
@@ -7173,7 +7173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "dark"
@@ -7181,23 +7181,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "dark"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "dark"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "dark"
@@ -7597,7 +7597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#d8b578",
+      value: "#d7b476",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "darkDimmed"
@@ -7605,7 +7605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#d5b070",
+      value: "#d4ae6b",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "darkDimmed"
@@ -7613,7 +7613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#d3ab67",
+      value: "#d1a760",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "darkDimmed"
@@ -7621,7 +7621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#d0a65e",
+      value: "#cea155",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "darkDimmed"
@@ -7629,7 +7629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#cea155",
+      value: "#ad8b4e",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "darkDimmed"
@@ -7637,7 +7637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#c09951",
+      value: "#947741",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "darkDimmed"
@@ -7645,7 +7645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#b3904d",
+      value: "#7a6334",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "darkDimmed"
@@ -7653,7 +7653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#a98946",
+      value: "#624f29",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "darkDimmed"
@@ -8165,7 +8165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-5)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8597,7 +8597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#555555",
+      value: "#464646",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8917,7 +8917,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#555555",
+      value: "#464646",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9213,7 +9213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "darkDimmed"
@@ -9621,7 +9621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#a87d31",
+      value: "#816126",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -9629,7 +9629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#8b5d28",
+      value: "#6e4920",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -9637,7 +9637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#8b5d28",
+      value: "#6e4920",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9645,7 +9645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#c7aa80",
+      value: "#8b7b63",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -9941,31 +9941,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#926e2a",
+      value: "#6a5a3d",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#7a5323",
+      value: "#76674d",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#7a5323",
+      value: "#76674d",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#a39071",
+      value: "#594f3d",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10141,7 +10141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-border-warning",
       description: "The warning border color for the dark theme",
       theme: "darkDimmed"
@@ -10221,7 +10221,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-border-warning-subtle",
       description: "The warning border color for the dark theme",
       theme: "darkDimmed"
@@ -10381,7 +10381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#99732c",
+      value: "#946e2b",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10389,7 +10389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#805625",
+      value: "#7c5324",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10397,7 +10397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#af9976",
+      value: "#a79273",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10621,7 +10621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#99732c",
+      value: "#816126",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10629,7 +10629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#805625",
+      value: "#6e4920",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10637,7 +10637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#af9976",
+      value: "#8b7b63",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -12637,7 +12637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "darkDimmed"
@@ -12645,7 +12645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "darkDimmed"
@@ -12653,7 +12653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "darkDimmed"
@@ -12661,7 +12661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "darkDimmed"
@@ -12669,7 +12669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "darkDimmed"
@@ -12677,7 +12677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "darkDimmed"
@@ -12685,7 +12685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkDimmed"
@@ -12693,23 +12693,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkDimmed"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "darkDimmed"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "darkDimmed"
@@ -13109,7 +13109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.2",
       type: "color",
-      value: "#ffdfa8",
+      value: "#ffdda2",
       cssVar: "--rw-color-yellow-2",
       description: "A light sandy gold color",
       theme: "darkHighContrast"
@@ -13117,7 +13117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.3",
       type: "color",
-      value: "#ffd791",
+      value: "#ffd285",
       cssVar: "--rw-color-yellow-3",
       description: "A soft golden yellow color",
       theme: "darkHighContrast"
@@ -13125,7 +13125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.4",
       type: "color",
-      value: "#ffce7a",
+      value: "#ffc767",
       cssVar: "--rw-color-yellow-4",
       description: "A muted amber gold color",
       theme: "darkHighContrast"
@@ -13133,7 +13133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.5",
       type: "color",
-      value: "#ffc561",
+      value: "#ffbc4a",
       cssVar: "--rw-color-yellow-5",
       description: "A medium honey gold color",
       theme: "darkHighContrast"
@@ -13141,7 +13141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.6",
       type: "color",
-      value: "#ffbc4a",
+      value: "#f39e03",
       cssVar: "--rw-color-yellow-6",
       description: "A vivid golden yellow color",
       theme: "darkHighContrast"
@@ -13149,7 +13149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.7",
       type: "color",
-      value: "#ffb226",
+      value: "#a76d00",
       cssVar: "--rw-color-yellow-7",
       description: "A rich ochre gold color",
       theme: "darkHighContrast"
@@ -13157,7 +13157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.8",
       type: "color",
-      value: "#ffa901",
+      value: "#583b00",
       cssVar: "--rw-color-yellow-8",
       description: "A deep bronze gold color",
       theme: "darkHighContrast"
@@ -13165,7 +13165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.yellow.9",
       type: "color",
-      value: "#df9600",
+      value: "#0d0900",
       cssVar: "--rw-color-yellow-9",
       description: "A dark brownish gold color",
       theme: "darkHighContrast"
@@ -13677,7 +13677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-5)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14109,7 +14109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#282828",
+      value: "#090909",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14429,7 +14429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#282828",
+      value: "#090909",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14725,7 +14725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "darkHighContrast"
@@ -15133,7 +15133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#af7000",
+      value: "#482f00",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -15141,7 +15141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#623400",
+      value: "#140b00",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -15149,7 +15149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#623400",
+      value: "#140b00",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -15157,7 +15157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#ffd395",
+      value: "#a1793b",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -15453,31 +15453,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-subtle-hover",
       type: "color",
-      value: "#744c00",
+      value: "#3f2c0b",
       cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-pressed",
       type: "color",
-      value: "#351d00",
+      value: "#664c1c",
       cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-focused",
       type: "color",
-      value: "#351d00",
+      value: "#664c1c",
       cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-subtle-disabled",
       type: "color",
-      value: "#d2a457",
+      value: "#1c1509",
       cssVar: "--rw-color-background-warning-subtle-disabled",
       description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -15653,7 +15653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-border-warning",
       description: "The warning border color for the dark theme",
       theme: "darkHighContrast"
@@ -15733,7 +15733,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle",
       type: "color",
-      value: "var(--color-yellow-8)",
+      value: "var(--color-yellow-7)",
       cssVar: "--rw-color-border-warning-subtle",
       description: "The warning border color for the dark theme",
       theme: "darkHighContrast"
@@ -15893,7 +15893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#885800",
+      value: "#7b4f00",
       cssVar: "--rw-color-border-warning-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -15901,7 +15901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-focused",
       type: "color",
-      value: "#442500",
+      value: "#3b2000",
       cssVar: "--rw-color-border-warning-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -15909,7 +15909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-disabled",
       type: "color",
-      value: "#e3b46a",
+      value: "#d9a85f",
       cssVar: "--rw-color-border-warning-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16133,7 +16133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#885800",
+      value: "#482f00",
       cssVar: "--rw-color-border-warning-subtle-hover",
       description: "The warning border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -16141,7 +16141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-focused",
       type: "color",
-      value: "#442500",
+      value: "#140b00",
       cssVar: "--rw-color-border-warning-subtle-focused",
       description: "The warning border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -16149,7 +16149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.warning-subtle-disabled",
       type: "color",
-      value: "#e3b46a",
+      value: "#a1793b",
       cssVar: "--rw-color-border-warning-subtle-disabled",
       description: "The warning border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -18149,7 +18149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "darkHighContrast"
@@ -18157,7 +18157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "darkHighContrast"
@@ -18165,7 +18165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "darkHighContrast"
@@ -18173,7 +18173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "darkHighContrast"
@@ -18181,7 +18181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "darkHighContrast"
@@ -18189,7 +18189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "darkHighContrast"
@@ -18197,7 +18197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkHighContrast"
@@ -18205,23 +18205,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkHighContrast"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "darkHighContrast"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "darkHighContrast"
@@ -23541,7 +23541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "light"
@@ -23549,7 +23549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "light"
@@ -23557,7 +23557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "light"
@@ -23565,7 +23565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "light"
@@ -23573,7 +23573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "light"
@@ -23581,7 +23581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "light"
@@ -23589,7 +23589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "light"
@@ -23597,23 +23597,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "light"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "light"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "light"
@@ -28933,7 +28933,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "lightDimmed"
@@ -28941,7 +28941,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "lightDimmed"
@@ -28949,7 +28949,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "lightDimmed"
@@ -28957,7 +28957,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "lightDimmed"
@@ -28965,7 +28965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "lightDimmed"
@@ -28973,7 +28973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "lightDimmed"
@@ -28981,7 +28981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightDimmed"
@@ -28989,23 +28989,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightDimmed"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "lightDimmed"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "lightDimmed"
@@ -34325,7 +34325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.5xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
       description: "The display large typography variant",
       theme: "lightHighContrast"
@@ -34333,7 +34333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
       description: "The display medium typography variant",
       theme: "lightHighContrast"
@@ -34341,7 +34341,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
       description: "The display small typography variant",
       theme: "lightHighContrast"
@@ -34349,7 +34349,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-2xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-heading-2xl",
       description: "The heading extra large typography variant",
       theme: "lightHighContrast"
@@ -34357,7 +34357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-heading-xl",
       description: "The heading extra large typography variant",
       theme: "lightHighContrast"
@@ -34365,7 +34365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
       cssVar: "--rw-typography-heading-lg",
       description: "The heading large typography variant",
       theme: "lightHighContrast"
@@ -34373,7 +34373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightHighContrast"
@@ -34381,23 +34381,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightHighContrast"
     },
     {
-      path: "typography.eyebrows",
+      path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
-      cssVar: "--rw-typography-eyebrows",
-      description: "The eyebrows typography variant",
+      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      cssVar: "--rw-typography-eyebrow",
+      description: "The eyebrow typography variant",
       theme: "lightHighContrast"
     },
     {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: "lightHighContrast"

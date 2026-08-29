@@ -43,6 +43,8 @@ export type DatePickerChangeEventHandler = (
   event: CustomEvent<Date | null>
 ) => any;
 
+export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
+
 export interface DatePickerExtraProps {
   /**
    * Callback that is called when the text input's text changes.
@@ -58,7 +60,7 @@ export interface DatePickerExtraProps {
    * @remarks
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
-  onInput?: DatePickerChangeEventHandler;
+  onInput?: DatePickerInputEventHandler;
 }
 
 export type DatePickerContextProps = Omit<
@@ -79,7 +81,7 @@ export type DatePickerContextProps = Omit<
    * @remarks
    * This is called before `onChange` and is useful for cases where you want to prevent certain characters from being inputted.
    */
-  onInput?: DatePickerChangeEventHandler;
+  onInput?: DatePickerInputEventHandler;
 };
 
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
@@ -321,7 +323,7 @@ const DayPicker = () => {
                         : !day.inCurrentMonth
                           ? "ghost"
                           : day.selected
-                            ? "surface"
+                            ? "inverse"
                             : "ghost"
                     }
                     borderColor={day.now ? "$border" : undefined}
@@ -331,14 +333,7 @@ const DayPicker = () => {
                     flexShrink={0}
                     noPadding={true}
                     borderRadius="$button"
-                    disabled={!day.inCurrentMonth}
-                    hoverStyle={
-                      day.inCurrentMonth
-                        ? {
-                            backgroundColor: "$backgroundHover"
-                          }
-                        : {}
-                    }>
+                    disabled={!day.inCurrentMonth}>
                     <Button.Text>{day.day}</Button.Text>
                   </Button>
                 ))}
@@ -368,14 +363,23 @@ function YearRangeSlider() {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(previousYearsButton())}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <View y={2} flexDirection="column" alignItems="center" flexBasis="50%">
+      <View
+        y={2}
+        flexGrow={1}
+        flexShrink={1}
+        flexBasis={0}
+        minWidth={0}
+        flexDirection="column"
+        alignItems="center">
         <LabelText
           color="$foreground"
           textAlign="center"
@@ -387,8 +391,10 @@ function YearRangeSlider() {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(nextYearsButton())}>
         <Button.Icon>
           <ChevronRight />
@@ -417,14 +423,16 @@ function YearSlider() {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(subtractOffset({ months: 12 }))}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <View flexBasis="50%">
+      <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
         <LabelText
           onPress={() => setHeader("year")}
           userSelect="text"
@@ -442,8 +450,10 @@ function YearSlider() {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(subtractOffset({ months: -12 }))}>
         <Button.Icon>
           <ChevronRight />
@@ -480,14 +490,22 @@ const CalendarHeader = () => {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(subtractOffset({ months: 1 }))}>
         <Button.Icon>
           <ChevronLeft />
         </Button.Icon>
       </Button>
-      <YStack gap="$md" alignItems="center" flexBasis="50%">
+      <YStack
+        gap="$md"
+        alignItems="center"
+        flexGrow={1}
+        flexShrink={1}
+        flexBasis={0}
+        minWidth={0}>
         <LabelText
           transition="medium"
           onPress={() => setHeader("year")}
@@ -520,8 +538,10 @@ const CalendarHeader = () => {
       <Button
         variant="ghost"
         size="$10xl"
-        width="$7xl"
-        flexShrink={1}
+        width="$10xl"
+        flexGrow={0}
+        flexShrink={0}
+        noPadding={true}
         {...swapOnClick(subtractOffset({ months: -1 }))}>
         <Button.Icon>
           <ChevronRight />
@@ -798,11 +818,15 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
           keepChildrenMounted={true}
           open={!!focused}
           onOpenChange={handleOpenChanged}>
-          <Input ref={forwardedRef} {...props} focused={focused}>
+          <Input
+            ref={forwardedRef}
+            {...props}
+            focused={focused}
+            onInput={onInput}>
             {children}
           </Input>
 
-          <DatePickerPopoverContent>
+          <DatePickerPopoverContent disableFocusScope={true}>
             <DatePickerPopoverBody />
           </DatePickerPopoverContent>
         </Popover>

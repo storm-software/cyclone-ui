@@ -66,7 +66,7 @@ const PopoverFrameImpl = PopoverFrame.styleable<Partial<PopoverContextProps>>(
                   <Adapt.Contents />
                 </Sheet.Frame>
                 <Sheet.Overlay
-                  transition="lazy"
+                  transition="500ms"
                   enterStyle={{ opacity: 0 }}
                   exitStyle={{ opacity: 0 }}
                 />
@@ -115,10 +115,6 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   ],
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
     borderColor: "$borderFocused"
   },
 

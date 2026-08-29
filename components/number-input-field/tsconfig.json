@@ -2,29 +2,26 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [
       "node",
       "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client"
+      "@nx/react/typings/image.d.ts"
     ],
     "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/switch/tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "../../dist/out-tsc/components/number-input-field/tsconfig.tsbuildinfo"
   },
   "references": [
     {
-      "path": "../themeable-icon"
+      "path": "../../packages/state"
     },
     {
-      "path": "../../packages/helpers"
+      "path": "../input-field"
     },
     {
       "path": "../form"
-    },
-    {
-      "path": "../field"
     }
   ],
   "files": [],

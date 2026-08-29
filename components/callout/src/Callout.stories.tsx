@@ -60,17 +60,17 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     children: bodyText,
-    theme: "brand"
+    theme: "primary"
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     children: bodyText,
-    theme: "alternate"
+    theme: "secondary"
   }
 };
 
@@ -81,7 +81,7 @@ export const Discovery: Story = {
   }
 };
 
-export const Error: Story = {
+export const Danger: Story = {
   args: {
     children: bodyText,
     theme: "danger"

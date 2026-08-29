@@ -65,7 +65,7 @@
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.6}",
+        "$value": "{color.yellow.5}",
         "$description": "The warning foreground color for the dark theme",
         "theme": "warning"
       },
@@ -232,7 +232,7 @@
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.6}",
+        "$value": "{color.yellow.7}",
         "$description": "The warning background color for the dark theme",
         "theme": "warning"
       },
@@ -375,7 +375,7 @@
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.8}",
+        "$value": "{color.yellow.6}",
         "$description": "The warning border color for the dark theme",
         "theme": "warning"
       },
@@ -445,7 +445,7 @@
       "warning-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.8}",
+        "$value": "{color.yellow.7}",
         "$description": "The warning border color for the dark theme",
         "theme": "warning"
       },

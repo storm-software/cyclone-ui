@@ -477,6 +477,7 @@ const FieldIconButtonImpl = Button.styleable(
           noPadding={true}
           padding="$sm"
           animate={true}
+          transition="200ms"
           color={disabled ? "$borderDisabled" : "$border"}
           {...props}
           size={adjusted}>
@@ -562,6 +563,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
         {getIconByTheme({
           theme,
           disabled,
+          transition: "200ms",
           color: disabled ? "$borderDisabled" : "$border",
           "$group-field-hover": {
             color: disabled ? "$borderDisabled" : "$borderHover"

@@ -358,53 +358,53 @@ colors:
 typography:
   display-lg:
     fontFamily: "Permanent Marker"
-    fontSize: "3rem"
+    fontSize: "3.75rem"
     fontWeight: "400"
     lineHeight: "1"
   display-md:
     fontFamily: "Permanent Marker"
-    fontSize: "1.875rem"
+    fontSize: "2.25rem"
     fontWeight: "400"
-    lineHeight: "1.2"
+    lineHeight: "1.111111"
   display-sm:
     fontFamily: "Permanent Marker"
-    fontSize: "1.5rem"
+    fontSize: "1.875rem"
     fontWeight: "400"
-    lineHeight: "1.333333"
+    lineHeight: "1.2"
   heading-2xl:
+    fontFamily: "Space Grotesk"
+    fontSize: "2.25rem"
+    fontWeight: "700"
+    lineHeight: "1.111111"
+  heading-xl:
     fontFamily: "Space Grotesk"
     fontSize: "1.875rem"
     fontWeight: "700"
     lineHeight: "1.2"
-  heading-xl:
+  heading-lg:
     fontFamily: "Space Grotesk"
     fontSize: "1.5rem"
     fontWeight: "700"
     lineHeight: "1.333333"
-  heading-lg:
+  heading-md:
     fontFamily: "Space Grotesk"
     fontSize: "1.25rem"
-    fontWeight: "700"
+    fontWeight: "600"
     lineHeight: "1.4"
-  heading-md:
+  heading-sm:
     fontFamily: "Space Grotesk"
     fontSize: "1.125rem"
     fontWeight: "600"
     lineHeight: "1.555556"
-  heading-sm:
-    fontFamily: "Space Grotesk"
-    fontSize: "1rem"
-    fontWeight: "600"
-    lineHeight: "1.5"
-  eyebrows:
+  eyebrow:
     fontFamily: "Permanent Marker"
-    fontSize: "1rem"
+    fontSize: "1.25rem"
     fontWeight: "400"
-    lineHeight: "1.5"
+    lineHeight: "1.4"
   body:
     fontFamily: Inter
     fontSize: "1rem"
-    fontWeight: "300"
+    fontWeight: "600"
     lineHeight: "1.5"
   caption:
     fontFamily: "Space Grotesk"
@@ -808,16 +808,16 @@ Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing 
 
 ## Typography
 
-- **display-lg:** fontFamily: Permanent Marker, fontSize: 3rem, fontWeight: 400, lineHeight: 1
-- **display-md:** fontFamily: Permanent Marker, fontSize: 1.875rem, fontWeight: 400, lineHeight: 1.2
-- **display-sm:** fontFamily: Permanent Marker, fontSize: 1.5rem, fontWeight: 400, lineHeight: 1.333333
-- **heading-2xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
-- **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
-- **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
-- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
-- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
-- **eyebrows:** fontFamily: Permanent Marker, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
-- **body:** fontFamily: Inter, fontSize: 1rem, fontWeight: 300, lineHeight: 1.5
+- **display-lg:** fontFamily: Permanent Marker, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1
+- **display-md:** fontFamily: Permanent Marker, fontSize: 2.25rem, fontWeight: 400, lineHeight: 1.111111
+- **display-sm:** fontFamily: Permanent Marker, fontSize: 1.875rem, fontWeight: 400, lineHeight: 1.2
+- **heading-2xl:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 700, lineHeight: 1.111111
+- **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
+- **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
+- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.4
+- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
+- **eyebrow:** fontFamily: Permanent Marker, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.4
+- **body:** fontFamily: Inter, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
 - **caption:** fontFamily: Space Grotesk, fontSize: 0.875rem, fontWeight: 300, lineHeight: 1.428571
 - **code:** fontFamily: Geist Mono, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
 

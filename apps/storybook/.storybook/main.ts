@@ -308,7 +308,7 @@ const config: StorybookConfig = {
         nxViteTsPaths({ debug: false }),
         reactNativeWeb(),
         tamaguiPlugin({
-          config: join(workspaceRoot, "packages/themes/src/tamagui/config.ts"),
+          config: "packages/themes/src/tamagui/config.ts",
           components: ["tamagui"]
         })
       ].filter(Boolean),

@@ -551,6 +551,11 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   transition: "200ms",
   opacity: 0,
   zIndex: "$10",
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
   backgroundColor: "$backgroundHover",
   borderColor: "$border",
   pointerEvents: "none",
@@ -600,7 +605,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       bordered = true,
       noPadding = false,
       ringed = false,
-      animate = true,
+      animate = false,
       children,
       onPress,
       onClick,
@@ -642,9 +647,9 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         width={circular ? undefined : props.width}>
         {variant === "ghost" && (
           <ButtonGhostBackground
-            fullscreen={true}
             circular={circular}
             bordered={bordered}
+            width="100%"
             $group-button-hover={{
               opacity: disabled ? 0 : 0.25
             }}

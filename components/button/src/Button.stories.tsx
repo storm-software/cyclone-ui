@@ -38,27 +38,31 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    children: "Button Text"
+    children: "Button Text",
+    animate: false,
   }
 };
 
 export const Icon: Story = {
   args: {
-    icon: <X />
+    icon: <X />,
+    animate: false,
   }
 };
 
 export const Sized: Story = {
   args: {
     children: "Button Text",
-    size: "$13xl"
+    size: "$13xl",
+    animate: false,
   }
 };
 
 export const SizedIcon: Story = {
   args: {
     icon: <X />,
-    size: "$13xl"
+    size: "$13xl",
+    animate: false,
   }
 };
 
@@ -71,7 +75,9 @@ export const Primary: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
+    animate: false,
   }
 };
 
@@ -80,7 +86,9 @@ export const PrimaryOutlined: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
+    animate: false,
   }
 };
 
@@ -89,7 +97,9 @@ export const PrimaryInverse: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
+    animate: false
   }
 };
 
@@ -98,7 +108,8 @@ export const PrimarySubtle: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -107,7 +118,8 @@ export const PrimaryGhost: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -116,7 +128,8 @@ export const PrimaryLink: Story = {
     children: "Button Text",
     theme: "primary",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -136,7 +149,8 @@ export const Secondary: Story = {
   args: {
     children: "Button Text",
     theme: "secondary",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -145,7 +159,8 @@ export const SecondarySurface: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -154,7 +169,8 @@ export const SecondaryOutlined: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -163,7 +179,8 @@ export const SecondaryInverse: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -172,7 +189,8 @@ export const SecondarySubtle: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -181,7 +199,8 @@ export const SecondaryGhost: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -190,7 +209,8 @@ export const SecondaryLink: Story = {
     children: "Button Text",
     theme: "secondary",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -211,7 +231,8 @@ export const Danger: Story = {
     children: "Button Text",
     theme: "danger",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -220,7 +241,8 @@ export const DangerSurface: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -229,7 +251,8 @@ export const DangerOutlined: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -238,7 +261,8 @@ export const DangerInverse: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -247,7 +271,8 @@ export const DangerSubtle: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -256,7 +281,8 @@ export const DangerGhost: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -265,7 +291,8 @@ export const DangerLink: Story = {
     children: "Button Text",
     theme: "danger",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -287,7 +314,8 @@ export const Warning: Story = {
     children: "Button Text",
     theme: "warning",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -296,7 +324,8 @@ export const WarningSurface: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -305,7 +334,8 @@ export const WarningOutlined: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -314,7 +344,8 @@ export const WarningInverse: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -323,7 +354,8 @@ export const WarningSubtle: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -332,7 +364,8 @@ export const WarningGhost: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -341,7 +374,8 @@ export const WarningLink: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -363,7 +397,8 @@ export const Success: Story = {
     children: "Button Text",
     theme: "success",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -372,7 +407,8 @@ export const SuccessSurface: Story = {
     children: "Button Text",
     theme: "success",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -381,7 +417,8 @@ export const SuccessOutlined: Story = {
     children: "Button Text",
     theme: "success",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -390,7 +427,8 @@ export const SuccessInverse: Story = {
     children: "Button Text",
     theme: "success",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -399,7 +437,8 @@ export const SuccessSubtle: Story = {
     children: "Button Text",
     theme: "success",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -408,7 +447,8 @@ export const SuccessGhost: Story = {
     children: "Button Text",
     theme: "success",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -417,7 +457,8 @@ export const SuccessLink: Story = {
     children: "Button Text",
     theme: "success",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -439,7 +480,8 @@ export const Info: Story = {
     children: "Button Text",
     theme: "info",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -448,7 +490,8 @@ export const InfoSurface: Story = {
     children: "Button Text",
     theme: "info",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -457,7 +500,8 @@ export const InfoOutlined: Story = {
     children: "Button Text",
     theme: "info",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -466,7 +510,8 @@ export const InfoInverse: Story = {
     children: "Button Text",
     theme: "info",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -475,7 +520,8 @@ export const InfoSubtle: Story = {
     children: "Button Text",
     theme: "info",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -484,7 +530,8 @@ export const InfoGhost: Story = {
     children: "Button Text",
     theme: "info",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -493,7 +540,8 @@ export const InfoLink: Story = {
     children: "Button Text",
     theme: "info",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -515,7 +563,8 @@ export const Discovery: Story = {
     children: "Button Text",
     theme: "discovery",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -524,7 +573,8 @@ export const DiscoverySurface: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -533,7 +583,8 @@ export const DiscoveryOutlined: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -542,7 +593,8 @@ export const DiscoveryInverse: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -551,7 +603,8 @@ export const DiscoverySubtle: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -560,7 +613,8 @@ export const DiscoveryGhost: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -569,7 +623,8 @@ export const DiscoveryLink: Story = {
     children: "Button Text",
     theme: "discovery",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -591,7 +646,8 @@ export const Positive: Story = {
     children: "Button Text",
     theme: "positive",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -600,7 +656,8 @@ export const PositiveSurface: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -609,7 +666,8 @@ export const PositiveOutlined: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -618,7 +676,8 @@ export const PositiveInverse: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -627,7 +686,8 @@ export const PositiveSubtle: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -636,7 +696,8 @@ export const PositiveGhost: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -645,7 +706,8 @@ export const PositiveLink: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -667,7 +729,8 @@ export const Negative: Story = {
     children: "Button Text",
     theme: "negative",
 
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -676,7 +739,8 @@ export const NegativeSurface: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "surface",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -685,7 +749,8 @@ export const NegativeOutlined: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "outlined",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -694,7 +759,8 @@ export const NegativeInverse: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "inverse",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -703,7 +769,8 @@ export const NegativeSubtle: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "subtle",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -712,7 +779,8 @@ export const NegativeGhost: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "ghost",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 
@@ -721,7 +789,8 @@ export const NegativeLink: Story = {
     children: "Button Text",
     theme: "negative",
     variant: "link",
-    disabled: false
+    disabled: false,
+    animate: false,
   }
 };
 

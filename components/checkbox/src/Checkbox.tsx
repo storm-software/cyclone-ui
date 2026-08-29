@@ -16,21 +16,21 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSpaced } from "@cyclone-ui/helpers";
 import { Check } from "@cyclone-ui/vectors";
 import { Checkbox as TamaguiCheckbox } from "@tamagui/checkbox";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
-import { styled, View } from "@tamagui/core";
-import { XGroup } from "@tamagui/group";
+import { getVariableValue, styled, View } from "@tamagui/core";
 import { Minus } from "@tamagui/lucide-icons-2";
 
-const CheckboxGroupFrame = styled(XGroup, {
+const CheckboxGroupFrame = styled(View, {
   name: "Checkbox",
 
   transition: "200ms",
   justifyContent: "space-between",
   alignContent: "center",
-  backgroundColor: "transparent",
+  backgroundColor: "$backgroundElevated",
+  boxShadow: "none",
   borderWidth: 1,
   borderColor: "$border",
   outlineStyle: "none",
@@ -45,18 +45,12 @@ const CheckboxGroupFrame = styled(XGroup, {
   },
 
   focusStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
+    boxShadow: "$ring",
     borderColor: "$borderFocused"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
+    boxShadow: "$ring",
     borderColor: "$borderFocused"
   },
 
@@ -64,18 +58,17 @@ const CheckboxGroupFrame = styled(XGroup, {
     size: {
       "...size": (
         val: SizeTokens | number,
-        { props }: VariantSpreadExtras<any>
+        { props, tokens }: VariantSpreadExtras<any>
       ) => {
         if (!val || props.circular) {
           return;
         }
 
-        const size = getSized(val, {
-          scale: 0.5
-        });
+        const size = getVariableValue((tokens.size as any)[val] ?? val) * 0.8;
 
         return {
           height: size,
+          minHeight: size,
           width: size,
           borderRadius: props.circular ? 100_000 : "$control"
         };
@@ -90,10 +83,6 @@ const CheckboxGroupFrame = styled(XGroup, {
 
     focused: {
       true: {
-        outlineColor: "$borderFocused",
-        outlineWidth: 3,
-        outlineOffset: "$lg",
-        outlineStyle: "solid",
         borderColor: "$borderFocused"
       }
     },
@@ -120,7 +109,7 @@ const CheckboxGroupFrame = styled(XGroup, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "$6xl",
     circular: false,
     focused: false,
     disabled: false
@@ -161,7 +150,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
+    size: "$6xl",
     disabled: false
   }
 });
@@ -170,7 +159,7 @@ const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
   color: "$foregroundInverse",
-  height: "95%",
+  height: "90%",
   width: "90%",
   strokeWidth: 3
 });
@@ -192,7 +181,7 @@ export const Checkbox = BaseCheckbox.styleable<{
       focused = false,
       disabled,
       name,
-      size = "$true",
+      size = "$6xl",
       checked = false,
       ...props
     },
@@ -209,7 +198,8 @@ export const Checkbox = BaseCheckbox.styleable<{
           disabled={disabled}>
           <TamaguiCheckbox.Indicator
             justifyContent="center"
-            alignItems="center">
+            alignItems="center"
+            y={checked === "indeterminate" ? undefined : -1}>
             {checked === "indeterminate" ? (
               <View
                 transition="medium"

@@ -689,16 +689,16 @@
   --ring-positive-subtle: 0px 0px 0px 1px #79b136; /** The positive subtle ring variant */
   --ring-negative: 0px 0px 0px 2px #d6301b; /** The negative ring variant */
   --ring-negative-subtle: 0px 0px 0px 1px #d6301b; /** The negative subtle ring variant */
-  --typography-display-lg: 400 3rem/1 'Permanent Marker'; /** The display large typography variant */
-  --typography-display-md: 400 1.875rem/1.2 'Permanent Marker'; /** The display medium typography variant */
-  --typography-display-sm: 400 1.5rem/1.333333 'Permanent Marker'; /** The display small typography variant */
-  --typography-heading-2xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
-  --typography-heading-xl: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading extra large typography variant */
-  --typography-heading-lg: 700 1.25rem/1.4 'Space Grotesk'; /** The heading large typography variant */
-  --typography-heading-md: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading medium typography variant */
-  --typography-heading-sm: 600 1rem/1.5 'Space Grotesk'; /** The heading small typography variant */
-  --typography-eyebrows: 400 1rem/1.5 'Permanent Marker'; /** The eyebrows typography variant */
-  --typography-body: 300 1rem/1.5 Inter; /** The body typography variant */
+  --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
+  --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
+  --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */
+  --typography-heading-2xl: 700 2.25rem/1.111111 'Space Grotesk'; /** The heading extra large typography variant */
+  --typography-heading-xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
+  --typography-heading-lg: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading large typography variant */
+  --typography-heading-md: 600 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
+  --typography-heading-sm: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
+  --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
+  --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
 }

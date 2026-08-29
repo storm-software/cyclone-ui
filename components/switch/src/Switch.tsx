@@ -50,7 +50,7 @@ export const SwitchContext = createStyledContext<SwitchContextProps>({
 });
 
 const getSwitchHeight = (val: SizeTokens) =>
-  Math.round(getVariableValue(getSize(val)) * 0.65);
+  Math.round(getVariableValue(getSize(val)));
 
 const getSwitchWidth = (val: SizeTokens) => getSwitchHeight(val) * 2;
 
@@ -64,7 +64,7 @@ const SwitchFrame = styled(View, {
   backgroundColor: "transparent",
   borderWidth: 2,
   borderColor: "$border",
-  outlineStyle: "none",
+  boxShadow: "none",
   tabIndex: 0,
 
   hoverStyle: {
@@ -72,19 +72,13 @@ const SwitchFrame = styled(View, {
   },
 
   focusStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    borderColor: "$borderFocused",
+      boxShadow: "$ring",
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    borderColor: "$borderFocused",
+    boxShadow: "$ring",
   },
 
   variants: {

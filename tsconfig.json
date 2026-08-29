@@ -196,6 +196,9 @@
       "path": "./components/tabs"
     },
     {
+      "path": "./components/number-input-field"
+    },
+    {
       "path": "./apps/storybook"
     },
     {

@@ -141,6 +141,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           frameSize={frameSize}
           onFocus={onFocus}
           onBlur={onBlur}
+          transition="200ms"
           $group-field-hover={{
             borderColor: "$borderHover"
           }}>

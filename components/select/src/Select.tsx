@@ -177,8 +177,9 @@ const SelectTrigger = View.styleable(
         justifyContent="center">
         <ChevronDown
           size={adjustedTrigger}
+          transition="200ms"
           color={disabled ? "$borderDisabled" : "$border"}
-          $group-select-hover={{
+          $group-field-hover={{
             color: disabled ? "$borderDisabled" : "$borderHover"
           }}
         />
@@ -222,10 +223,12 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
 
     return (
       <SelectGroup
-        group={"select" as any}
+        group={"field" as any}
         focused={focused}
         disabled={disabled}
-        frameSize={frameSize}>
+        frameSize={frameSize}
+        transition="200ms"
+        $group-field-hover={{ borderColor: "$borderHover" }}>
         <SelectTextBox {...props}>
           <XGroup.Item flex={1} minWidth={0}>
             <View
@@ -243,7 +246,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
               ref={forwardedRef}
               focused={focused}
               disabled={disabled}
-              $group-select-hover={{
+              $group-field-hover={{
                 borderColor: disabled
                   ? "$borderDisabled"
                   : focused
