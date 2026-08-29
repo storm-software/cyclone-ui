@@ -37,6 +37,7 @@ const BadgeFrame = styled(View, {
   context: BadgeContext,
   width: "fit-content",
   backgroundColor: "$background",
+  boxShadow: "none",
 
   variants: {
     circular: {
@@ -58,7 +59,7 @@ const BadgeFrame = styled(View, {
       true: {
         backgroundColor: "transparent",
         borderColor: "$border",
-        borderWidth: 1
+        borderWidth: 2
       }
     },
 
@@ -86,9 +87,7 @@ const BadgeFrame = styled(View, {
         },
 
         focusVisibleStyle: {
-          outlineColor: "$borderFocused",
-          outlineStyle: "solid",
-          outlineWidth: 2
+          boxShadow: "$ring"
         }
       }
     }
@@ -112,7 +111,7 @@ const BadgeText = styled(SizableText, {
     unstyled: {
       false: {
         fontFamily: "$heading-sm",
-        fontWeight: "$semibold",
+        fontWeight: "$bold",
         size: "$true"
       }
     },

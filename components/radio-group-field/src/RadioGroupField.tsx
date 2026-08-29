@@ -26,7 +26,7 @@ import { Label } from "@tamagui/label";
 import { YStack } from "@tamagui/stacks";
 import type { Atom } from "jotai";
 import { useAtomValue } from "jotai";
-import type { PropsWithChildren } from "react";
+import type { FocusEvent } from "react";
 import { useCallback } from "react";
 
 const RadioGroupFieldGroup = Field.styleable(
@@ -125,9 +125,7 @@ const RadioGroupItemDetails = styled(BodyText, {
   }
 });
 
-const RadioGroupItem = (
-  props: PropsWithChildren<{ itemAtom: Atom<SelectOption> }>
-) => {
+const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
   const item = useAtomValue(props.itemAtom);
   const { value, selected, disabled, name, description } = item;
 
@@ -143,6 +141,12 @@ const RadioGroupItem = (
       {...item}
       group={"item" as any}
       onPress={handlePress}
+      transition="200ms"
+      cursor="pointer"
+      backgroundColor={selected ? "$backgroundHighest" : "$backgroundElevated"}
+      borderColor={selected ? "$borderFocused" : "$border"}
+      borderWidth={1}
+      borderRadius="$control"
       $group-item-hover={{ backgroundColor: "$backgroundElevatedHover" }}>
       <YStack gap="$md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
@@ -169,6 +173,16 @@ const RadioGroupItem = (
 
 const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
   const { focus, blur, change } = useFieldActions();
+  const handleBlur = useCallback(
+    (event: FocusEvent<HTMLElement>) => {
+      if (event.currentTarget.contains(event.relatedTarget)) {
+        return;
+      }
+
+      void blur();
+    },
+    [blur]
+  );
 
   const field = FieldApi.use();
   const name = field.name.get();
@@ -184,11 +198,12 @@ const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
       name={name}
       disabled={disabled}
       onFocus={focus}
-      onBlur={blur}
+      onBlur={handleBlur}
       onValueChange={change}
       value={formattedValue}
       defaultValue={initialValue}>
       {itemsAtoms.map((itemAtom, i) => {
+        // eslint-disable-next-line react/no-array-index-key
         return <RadioGroupItem key={i} itemAtom={itemAtom} />;
       })}
     </RadioGroup>

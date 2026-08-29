@@ -146,10 +146,10 @@
   --color-foreground-danger: #ab5268; /** The danger foreground color for the dark theme */
   --color-foreground-negative: #ad5442; /** The negative foreground color for the dark theme */
   --color-foreground-warning: #cea155; /** The warning foreground color for the dark theme */
-  --color-foreground-success: #719b82; /** The success foreground color for the dark theme */
+  --color-foreground-success: #45856a; /** The success foreground color for the dark theme */
   --color-foreground-positive: #7f9b57; /** The positive foreground color for the dark theme */
   --color-foreground-info: #4db2bc; /** The info foreground color for the dark theme */
-  --color-foreground-discovery: #8386b1; /** The discovery foreground color for the dark theme */
+  --color-foreground-discovery: #7776a8; /** The discovery foreground color for the dark theme */
   --color-foreground-primary-inverse: #2e2e30; /** Ink text on cream primary surfaces */
   --color-foreground-secondary-inverse: #d2d2d2; /** The secondary foreground color for the dark theme */
   --color-foreground-accent-inverse: #d2d2d2; /** The accent foreground color for the dark theme */
@@ -200,9 +200,9 @@
   --color-foreground-warning-pressed: #8b5d28; /** The warning foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-warning-focused: #8b5d28; /** The warning foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-warning-disabled: #464646; /** The warning foreground color for the dark theme (disabled, 60% saturation) */
-  --color-foreground-success-hover: #517f65; /** The success foreground color for the dark theme (hover, 20% darker) */
-  --color-foreground-success-pressed: #206d4b; /** The success foreground color for the dark theme (pressed, 40% darker) */
-  --color-foreground-success-focused: #206d4b; /** The success foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-success-hover: #227555; /** The success foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-success-pressed: #1d633f; /** The success foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-success-focused: #1d633f; /** The success foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-success-disabled: #424242; /** The success foreground color for the dark theme (disabled, 60% saturation) */
   --color-foreground-positive-hover: #648526; /** The positive foreground color for the dark theme (hover, 20% darker) */
   --color-foreground-positive-pressed: #496d20; /** The positive foreground color for the dark theme (pressed, 40% darker) */
@@ -212,9 +212,9 @@
   --color-foreground-info-pressed: #267682; /** The info foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-info-focused: #267682; /** The info foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-info-disabled: #606060; /** The info foreground color for the dark theme (disabled, 60% saturation) */
-  --color-foreground-discovery-hover: #6c6d92; /** The discovery foreground color for the dark theme (hover, 20% darker) */
-  --color-foreground-discovery-pressed: #515278; /** The discovery foreground color for the dark theme (pressed, 40% darker) */
-  --color-foreground-discovery-focused: #515278; /** The discovery foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-discovery-hover: #615f8e; /** The discovery foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-discovery-pressed: #4a4578; /** The discovery foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-discovery-focused: #4a4578; /** The discovery foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-discovery-disabled: #414141; /** The discovery foreground color for the dark theme (disabled, 60% saturation) */
   --color-foreground-primary-inverse-hover: #333335; /** Ink text on cream primary surfaces (hover, 20% brighter) */
   --color-foreground-primary-inverse-pressed: #383839; /** Ink text on cream primary surfaces (pressed, 40% brighter) */
@@ -262,10 +262,10 @@
   --color-foreground-danger-ghost-hover: #a75465; /** The danger foreground color for the dark theme (ghost hover, 20% brighter than hover) */
   --color-foreground-negative-ghost-hover: #a9544d; /** The negative foreground color for the dark theme (ghost hover, 20% brighter than hover) */
   --color-foreground-warning-ghost-hover: #c89b60; /** The warning foreground color for the dark theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-success-ghost-hover: #6b947c; /** The success foreground color for the dark theme (ghost hover, 20% brighter than hover) */
+  --color-foreground-success-ghost-hover: #4a8167; /** The success foreground color for the dark theme (ghost hover, 20% brighter than hover) */
   --color-foreground-positive-ghost-hover: #7a9655; /** The positive foreground color for the dark theme (ghost hover, 20% brighter than hover) */
   --color-foreground-info-ghost-hover: #65b0bb; /** The info foreground color for the dark theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-discovery-ghost-hover: #7f81aa; /** The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover) */
+  --color-foreground-discovery-ghost-hover: #7272a2; /** The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover) */
   --color-foreground-primary-inverse-ghost-hover: #39393b; /** Ink text on cream primary surfaces (ghost hover, 20% brighter than hover) */
   --color-background-page: #373737; /** The page background color for the dark theme */
   --color-background-elevated: #3c3c3c; /** The elevated background color for the dark theme */
@@ -646,7 +646,7 @@
   --border-radius-card: 0.25rem; /** The border radius use for cards */
   --border-radius-button: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
   --border-radius-control: 0.25rem; /** The border radius use for controls, such as inputs and selects */
-  --border-radius-dialog: 0.25rem; /** The border radius use for dialogs */
+  --border-radius-dialog: 0.375rem; /** The border radius use for dialogs */
   --border-radius-popover: 0.25rem; /** The border radius use for popovers */
   --border-radius-tooltip: 0.25rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */

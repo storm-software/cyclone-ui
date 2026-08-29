@@ -37,6 +37,7 @@ import {
 import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
+
 const ThemeableIconFrame = styled(View, {
   transition: "200ms",
 
@@ -84,7 +85,7 @@ export const getIconByTheme = ({
 
 type ThemeableIconExtraProps = PropsWithChildren<{
   disabled?: boolean;
-  theme?: string;
+  theme?: string | null;
   size?: SizeTokens;
   color?: string | UnionableNumber | Variable<any> | OpaqueColorValue;
 }>;
@@ -124,7 +125,7 @@ export const ThemedIcon = ThemeableIconFrame.styleable<ThemeableIconExtraProps>(
   ) => {
     const adjusted = useMemo(
       () => (disabled ? getSized(size, { shift: -4 }) : size),
-      [size]
+      [disabled, size]
     );
 
     return (

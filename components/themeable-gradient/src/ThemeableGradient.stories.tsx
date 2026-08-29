@@ -36,13 +36,13 @@ export const Base: Story = {
   args: {}
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     theme: "brand"
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     theme: "alternate"
   }
@@ -90,14 +90,14 @@ export const Negative: Story = {
   }
 };
 
-export const AnalogousBrand: Story = {
+export const AnalogousPrimary: Story = {
   args: {
     theme: "brand",
     variant: "analogous"
   }
 };
 
-export const AnalogousAlternate: Story = {
+export const AnalogousSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "analogous"
@@ -155,14 +155,14 @@ export const AnalogousNegative: Story = {
 
 // Triadic variant
 
-export const TriadicBrand: Story = {
+export const TriadicPrimary: Story = {
   args: {
     theme: "brand",
     variant: "triadic"
   }
 };
 
-export const TriadicAlternate: Story = {
+export const TriadicSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "triadic"
@@ -220,14 +220,14 @@ export const TriadicNegative: Story = {
 
 // Tetradic variant
 
-export const TetradicBrand: Story = {
+export const TetradicPrimary: Story = {
   args: {
     theme: "brand",
     variant: "tetradic"
   }
 };
 
-export const TetradicAlternate: Story = {
+export const TetradicSecondary: Story = {
   args: {
     theme: "alternate",
     variant: "tetradic"
@@ -285,14 +285,14 @@ export const TetradicNegative: Story = {
 
 // Complementary variant
 
-export const ComplementaryBrand: Story = {
+export const ComplementaryPrimary: Story = {
   args: {
     theme: "brand",
     variant: "complementary"
   }
 };
 
-export const ComplementaryAlternate: Story = {
+export const ComplementarySecondary: Story = {
   args: {
     theme: "alternate",
     variant: "complementary"
@@ -350,14 +350,14 @@ export const ComplementaryNegative: Story = {
 
 // SplitComplementary variant
 
-export const SplitComplementaryBrand: Story = {
+export const SplitComplementaryPrimary: Story = {
   args: {
     theme: "brand",
     variant: "splitComplementary"
   }
 };
 
-export const SplitComplementaryAlternate: Story = {
+export const SplitComplementarySecondary: Story = {
   args: {
     theme: "alternate",
     variant: "splitComplementary"

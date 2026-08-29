@@ -17,8 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { MessageDetails } from "@stryke/types/messages";
-import { useToastController } from "@tamagui/toast";
-import { getEyebrowByType, getThemeByType } from "../utilities";
+import { toast } from "@tamagui/toast/v2";
 
 export type MessageOptions = Omit<MessageDetails, "message"> & {
   heading?: string;
@@ -39,98 +38,70 @@ export interface UseMessageActionsResult {
   showError: (message: string, options?: Omit<MessageOptions, "type">) => void;
   showHelp: (message: string, options?: Omit<MessageOptions, "type">) => void;
   hide: () => void;
-  nativeToast: any;
-  options?: any;
+  nativeToast?: never;
+  options?: never;
 }
 
 export const useMessageActions = (): UseMessageActionsResult => {
-  const toast = useToastController();
+  const show = (message: string, options: Partial<MessageOptions> = {}) => {
+    const { heading, type, ...toastOptions } = options;
+    const title = heading || message;
+    const data = {
+      ...toastOptions,
+      data: { messageType: type },
+      description: heading ? message : undefined
+    };
+
+    switch (type) {
+      case "error":
+        toast.error(title, data);
+        break;
+      case "warning":
+        toast.warning(title, data);
+        break;
+      case "info":
+        toast.info(title, data);
+        break;
+      case "success":
+        toast.success(title, data);
+        break;
+      default:
+        toast(title, data);
+    }
+  };
 
   return {
-    ...toast,
-    show: (message: string, options?: Partial<MessageOptions>) => {
-      toast.show(options?.heading || message, {
-        viewportName: "messages",
-        type: "foreground",
-        customData: {
-          eyebrow: getEyebrowByType(options?.type),
-          theme: getThemeByType(options?.type),
-          ...options,
-          message: options?.heading ? message : ""
-        }
-      });
-    },
+    hide: () => toast.dismiss(),
+    show,
     showInfo: (message: string, options: Omit<MessageOptions, "type"> = {}) => {
-      toast.show(options.heading || message, {
-        viewportName: "messages",
-        type: "foreground",
-        customData: {
-          eyebrow: getEyebrowByType("info"),
-          theme: "info",
-          ...options,
-          message: options.heading ? message : ""
-        }
-      });
+      show(message, { ...options, type: "info" });
     },
     showSuccess: (
       message: string,
       options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(
-        options.heading || message || "Process completed successfully",
-        {
-          viewportName: "messages",
-          type: "foreground",
-          customData: {
-            eyebrow: getEyebrowByType("success"),
-            theme: "success",
-            ...options,
-            message: options.heading ? message : ""
-          }
-        }
-      );
+      show(message || "Process completed successfully", {
+        ...options,
+        type: "success"
+      });
     },
     showWarning: (
       message: string,
       options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(options.heading || message, {
-        viewportName: "messages",
-        type: "foreground",
-        customData: {
-          eyebrow: getEyebrowByType("warning"),
-          theme: "warning",
-          ...options,
-          message: options.heading ? message : ""
-        }
-      });
+      show(message, { ...options, type: "warning" });
     },
     showError: (
       message: string,
       options: Omit<MessageOptions, "type"> = {}
     ) => {
-      toast.show(options.heading || "An error occured during processing", {
-        viewportName: "messages",
-        type: "foreground",
-        customData: {
-          eyebrow: getEyebrowByType("error"),
-          theme: "danger",
-          ...options,
-          message
-        }
+      show(message || "An error occured during processing", {
+        ...options,
+        type: "error"
       });
     },
     showHelp: (message: string, options: Omit<MessageOptions, "type"> = {}) => {
-      toast.show(options.heading || message, {
-        viewportName: "messages",
-        type: "foreground",
-        customData: {
-          eyebrow: getEyebrowByType("help"),
-          theme: "discovery",
-          ...options,
-          message: options.heading ? message : ""
-        }
-      });
+      show(message, options);
     }
   };
 };

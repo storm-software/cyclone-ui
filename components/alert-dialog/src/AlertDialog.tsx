@@ -17,28 +17,23 @@
  ------------------------------------------------------------------- */
 
 import type { DialogProps } from "@cyclone-ui/dialog";
-import { Dialog } from "@cyclone-ui/dialog";
+import { Dialog, DialogContext } from "@cyclone-ui/dialog";
 import { getIconByTheme, ThemeableIcon } from "@cyclone-ui/themeable-icon";
-import { Theme, useThemeName, View, withStaticProperties } from "@tamagui/core";
+import { Theme, View, withStaticProperties } from "@tamagui/core";
 import { AlertCircle } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 const AlertDialogFrame: React.FC<DialogProps> = ({
   children,
-  theme,
   ...props
 }: DialogProps) => {
-  return (
-    <Theme name={theme}>
-      <Dialog {...props}>{children}</Dialog>
-    </Theme>
-  );
+  return <Dialog {...props}>{children}</Dialog>;
 };
 
 const AlertDialogIcon = ThemeableIcon.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const theme = useThemeName();
+    const { theme } = DialogContext.useStyledContext();
 
     const padding = theme?.includes("success") ? "$3xl" : "$xl";
 
@@ -46,7 +41,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
       <YStack position="relative" minWidth="100%" alignItems="center">
         <View
           theme={theme}
-          transition="medium"
+          transition="400ms"
           enterStyle={{
             y: -100,
             opacity: 0.6
@@ -55,25 +50,26 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$background"
+          backgroundColor="$foreground"
           zIndex="$10"
         />
 
         <XStack zIndex="$20" justifyContent="center" paddingTop="$3xl">
-          <View
-            theme="primary"
-            themeShallow={true}
-            padding={padding}
-            backgroundColor="$backgroundPage"
-            borderRadius={1000_000_000}>
-            <ThemeableIcon
-              ref={forwardedRef}
-              {...props}
-              theme={theme}
-              size="$14xl">
-              {children || getIconByTheme({ theme }) || <AlertCircle />}
-            </ThemeableIcon>
-          </View>
+          <Theme name={theme}>
+            <View
+              padding={padding}
+              backgroundColor="$backgroundFloating"
+              borderRadius={1000_000_000}>
+              <ThemeableIcon
+                ref={forwardedRef}
+                {...props}
+                theme={theme}
+                color="$foreground"
+                size="$14xl">
+                {children || getIconByTheme({ theme }) || <AlertCircle />}
+              </ThemeableIcon>
+            </View>
+          </Theme>
         </XStack>
       </YStack>
     );
@@ -85,22 +81,16 @@ const AlertDialogIcon = ThemeableIcon.styleable(
 
 const AlertDialogContainer = Dialog.Container.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const theme = useThemeName();
-
     return (
       <Dialog.Portal>
         <Dialog.Overlay key="overlay" />
         <Dialog.Container
           ref={forwardedRef}
           key="content"
-          variant="tertiary"
           {...props}
-          theme="primary"
-          themeShallow={true}
-          backgroundColor="$backgroundPage"
           bordered={false}
           noPadding={true}>
-          <Theme name={theme}>{children}</Theme>
+          {children}
         </Dialog.Container>
       </Dialog.Portal>
     );
@@ -133,11 +123,9 @@ const AlertDialogContent = YStack.styleable(
 const AlertDialogHeading = Dialog.Heading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
-        <Dialog.Heading ref={forwardedRef} {...props}>
-          {children}
-        </Dialog.Heading>
-      </Theme>
+      <Dialog.Heading ref={forwardedRef} {...props}>
+        {children}
+      </Dialog.Heading>
     );
   },
   {
@@ -148,15 +136,13 @@ const AlertDialogHeading = Dialog.Heading.styleable(
 const AlertDialogBody = Dialog.Body.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
-        <Dialog.Body
-          ref={forwardedRef}
-          color="$foregroundBody"
-          size="$14xl"
-          {...props}>
-          {children}
-        </Dialog.Body>
-      </Theme>
+      <Dialog.Body
+        ref={forwardedRef}
+        color="$foregroundBody"
+        size="$14xl"
+        {...props}>
+        {children}
+      </Dialog.Body>
     );
   },
   {

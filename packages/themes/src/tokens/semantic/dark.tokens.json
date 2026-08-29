@@ -72,7 +72,7 @@
       "success": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.green.4}",
+        "$value": "{color.green.6}",
         "$description": "The success foreground color for the dark theme",
         "theme": "success"
       },
@@ -93,7 +93,7 @@
       "discovery": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.purple.5}",
+        "$value": "{color.purple.6}",
         "$description": "The discovery foreground color for the dark theme",
         "theme": "discovery"
       },

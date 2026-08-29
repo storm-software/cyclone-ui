@@ -631,7 +631,7 @@
   --border-radius-card: 0.25rem; /** The border radius use for cards */
   --border-radius-button: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
   --border-radius-control: 0.25rem; /** The border radius use for controls, such as inputs and selects */
-  --border-radius-dialog: 0.25rem; /** The border radius use for dialogs */
+  --border-radius-dialog: 0.375rem; /** The border radius use for dialogs */
   --border-radius-popover: 0.25rem; /** The border radius use for popovers */
   --border-radius-tooltip: 0.25rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */

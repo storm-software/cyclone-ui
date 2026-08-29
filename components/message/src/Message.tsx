@@ -16,95 +16,65 @@
 
  ------------------------------------------------------------------- */
 
+import type { AlertType } from "@cyclone-ui/alert";
 import { Alert } from "@cyclone-ui/alert";
-import { Button } from "@cyclone-ui/button";
-import { Toast, useToastState } from "@cyclone-ui/state/message";
-import { styled } from "@tamagui/core";
-import { X } from "@tamagui/lucide-icons-2";
+import type { ToastRootProps } from "@tamagui/toast/v2";
+import { Toast } from "@tamagui/toast/v2";
 
-const MessageClose = styled(Toast.Close, {
-  name: "Alert",
-
-  zIndex: "$20",
-  position: "absolute",
-  top: "$lg",
-  right: "$lg"
-});
-
-const MessageFrame = styled(Toast, {
-  name: "Alert",
-
-  transition: "200ms",
-  unstyled: true,
-
-  flexGrow: 1,
-  flex: 1,
-  width: "100%",
-  padding: 0,
-  borderColor: "transparent",
-  backgroundColor: "$background",
-
-  enterStyle: { opacity: 0, scale: 0.75, y: 100 },
-  exitStyle: { opacity: 0, scale: 1, y: -20 },
-
-  hoverStyle: {
-    backgroundColor: "$backgroundHover"
+const getAlertType = (type: unknown): AlertType => {
+  switch (type) {
+    case "error":
+      return "danger";
+    case "help":
+      return "discovery";
+    case "danger":
+    case "discovery":
+    case "warning":
+    case "info":
+    case "success":
+    case "positive":
+    case "negative":
+      return type;
+    default:
+      return "primary";
   }
-});
-
-export const Message = () => {
-  const current = useToastState();
-  if (!current || !current.customData || current.isHandledNatively) {
-    return null;
-  }
-
-  const data = current.customData;
-
-  return (
-    <MessageFrame
-      id={current.id}
-      key={current.id}
-      theme={data.theme}
-      type="foreground"
-      duration={30 * 1000}
-      viewportName="messages">
-      <Alert theme={data.theme}>
-        <Alert.Icon>{current.icon}</Alert.Icon>
-
-        <Alert.Content
-          transition="250ms"
-          enterStyle={{
-            opacity: 0,
-            y: 50
-          }}>
-          {data.heading && (
-            <Alert.Content.Heading>{data.heading}</Alert.Content.Heading>
-          )}
-
-          {current.message && (
-            <Alert.Content.Body
-              transition="500ms"
-              enterStyle={{
-                opacity: 0,
-                y: 50
-              }}>
-              {current.message}
-            </Alert.Content.Body>
-          )}
-        </Alert.Content>
-
-        <MessageClose asChild={true}>
-          <Button
-            theme={data.theme}
-            variant="ghost"
-            circular={true}
-            padding="$sm">
-            <Button.Icon>
-              <X size="$6xl" />
-            </Button.Icon>
-          </Button>
-        </MessageClose>
-      </Alert>
-    </MessageFrame>
-  );
 };
+
+export type MessageProps = Partial<ToastRootProps>;
+
+export const Message = (props: MessageProps) => (
+  <Toast
+    duration={30 * 1000}
+    gap={20}
+    position="bottom-right"
+    swipeDirection="horizontal"
+    swipeThreshold={50}
+    {...props}>
+    <Toast.Viewport label="Messages">
+      <Toast.List
+        renderItem={({ handleClose, index, toast }) => (
+          <Toast.Item index={index} toast={toast} width="100%" maxWidth={800}>
+            <Alert type={getAlertType(toast.data?.messageType ?? toast.type)}>
+              <Alert.Icon>{toast.icon}</Alert.Icon>
+              <Alert.Content>
+                <Alert.Content.Heading>
+                  {typeof toast.title === "function"
+                    ? toast.title()
+                    : toast.title}
+                </Alert.Content.Heading>
+                {toast.description && (
+                  <Alert.Content.Body>
+                    {typeof toast.description === "function"
+                      ? toast.description()
+                      : toast.description}
+                  </Alert.Content.Body>
+                )}
+              </Alert.Content>
+              <Alert.Close onPress={handleClose} />
+            </Alert>
+          </Toast.Item>
+        )}
+      />
+    </Toast.Viewport>
+  </Toast>
+);

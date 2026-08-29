@@ -67,10 +67,19 @@ const AlertClose = styled(Button, {
 const AlertCloseImpl = AlertClose.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <XStack minHeight="100%" alignItems="center" marginRight="$md">
-        <AlertClose ref={forwardedRef} {...props} padding="$md" size="$10xl">
+      <XStack
+        minHeight="100%"
+        alignItems="center"
+        flexBasis={50}
+        marginRight="$md">
+        <AlertClose
+          ref={forwardedRef}
+          {...props}
+          padding="$md"
+          size="$10xl"
+          flexGrow={0}>
           {children || (
-            <Button.Icon>
+            <Button.Icon position="absolute" inset={0} justifyContent="center">
               <X />
             </Button.Icon>
           )}
@@ -130,7 +139,7 @@ const AlertIcon = ThemeableIcon.styleable(
       <XStack position="relative" minHeight="100%" alignItems="center">
         <View
           theme={colorTheme}
-          transition="200ms"
+          transition="500ms"
           enterStyle={{
             x: -200,
             opacity: 0.6

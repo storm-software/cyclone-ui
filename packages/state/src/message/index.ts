@@ -25,7 +25,8 @@
  * @packageDocumentation
  */
 
-export { Toast, useToastController, useToastState } from "@tamagui/toast";
+export { Toaster, toast } from "@tamagui/toast/v2";
+export type { ExternalToast, ToasterProps } from "@tamagui/toast/v2";
 /* eslint-disable perfectionist/sort-exports -- prettier requires external exports first */
 export * from "./components";
 export * from "./hooks";

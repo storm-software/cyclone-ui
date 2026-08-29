@@ -21,7 +21,7 @@ import { Button } from "@cyclone-ui/button";
 import { Container } from "@cyclone-ui/container";
 import { HeadingXLText } from "@cyclone-ui/heading-text";
 import type { GetProps } from "@tamagui/core";
-import { Theme, styled } from "@tamagui/core";
+import { createStyledContext, styled, Theme } from "@tamagui/core";
 import type {
   DialogContentProps as TamaguiDialogContentProps,
   DialogOverlayProps as TamaguiDialogOverlayProps,
@@ -41,10 +41,21 @@ import { withStaticProperties } from "@tamagui/helpers";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import * as React from "react";
 
+export interface DialogContextProps {
+  theme: string;
+  overlay: boolean;
+}
+
+export const DialogContext = createStyledContext<DialogContextProps>({
+  theme: "primary",
+  overlay: true
+});
+
 const DialogHeading = styled(HeadingXLText, {
   name: "DialogHeading",
+  context: DialogContext,
 
-  color: "$foregroundInverse"
+  color: "$foreground"
 });
 
 const DialogHeadingImpl = DialogHeading.styleable(
@@ -65,7 +76,7 @@ const DialogHeadingImpl = DialogHeading.styleable(
 const DialogBody = styled(BodyText, {
   name: "DialogBody",
 
-  color: "$foregroundInverse"
+  color: "$foregroundBody"
 });
 
 const DialogBodyImpl = DialogBody.styleable(
@@ -84,7 +95,7 @@ const DialogBodyImpl = DialogBody.styleable(
 );
 
 const DialogAction = Button.styleable(
-  ({ children, onPress, variant = "primary", ...props }, forwardedRef) => {
+  ({ children, onPress, variant = "inverse", ...props }, forwardedRef) => {
     return (
       <TamaguiDialogClose onPress={onPress} asChild={true}>
         <Button
@@ -105,7 +116,7 @@ const DialogAction = Button.styleable(
 );
 
 const DialogClose = Button.styleable(
-  ({ children, onPress, variant = "tertiary", ...props }, forwardedRef) => {
+  ({ children, onPress, variant = "outlined", ...props }, forwardedRef) => {
     return (
       <TamaguiDialogClose onPress={onPress} asChild={true}>
         <Button
@@ -127,14 +138,15 @@ const DialogClose = Button.styleable(
 
 const DialogOverlayFrame = styled(LinearGradient, {
   name: "DialogOverlay",
+  context: DialogContext,
 
   transition: "200ms",
   fullscreen: true,
   pointerEvents: "auto",
-  opacity: 0.85,
+  opacity: 0.6,
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
-  colors: ["$backgroundFloating", "transparent"],
+  colors: ["$background", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],
@@ -145,11 +157,24 @@ const DialogOverlayFrame = styled(LinearGradient, {
 
   exitStyle: {
     opacity: 0
+  },
+
+  variants: {
+    overlay: {
+      false: {
+        display: "none"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    overlay: true
   }
 });
 
 const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
   name: "DialogOverlay",
+  context: DialogContext,
 
   transition: "200ms",
   pointerEvents: "auto",
@@ -164,6 +189,18 @@ const DialogOverlayBackground = styled(TamaguiDialogOverlay, {
 
   exitStyle: {
     opacity: 0
+  },
+
+  variants: {
+    overlay: {
+      false: {
+        display: "none"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    overlay: true
   }
 });
 
@@ -181,24 +218,29 @@ const DialogOverlay =
     }
   );
 
-const DialogFrame: React.FC<TamaguiDialogProps & { theme?: string | null }> = ({
+const DialogFrame: React.FC<
+  TamaguiDialogProps & Partial<DialogContextProps>
+> = ({
   modal = true,
   children,
-  theme,
+  theme = "primary",
+  overlay = true,
   ...props
 }) => {
   return (
-    <Theme name={theme}>
-      <TamaguiDialog modal={modal} {...props}>
-        {children}
-      </TamaguiDialog>
-    </Theme>
+    <DialogContext.Provider theme={theme} overlay={overlay}>
+      <Theme name={theme}>
+        <TamaguiDialog modal={modal} {...props}>
+          {children}
+        </TamaguiDialog>
+      </Theme>
+    </DialogContext.Provider>
   );
 };
 
 const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
   (
-    { children, bordered = true, variant = "tertiary", ...props },
+    { children, bordered = true, variant = "floating", ...props },
     forwardedRef
   ) => {
     return (
@@ -210,7 +252,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         margin="$7xl"
         borderRadius="$dialog"
         transition={[
-          "quick",
+          "200ms",
           {
             opacity: {
               overshootClamping: true
@@ -220,10 +262,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
         exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
         focusVisibleStyle={{
-          outlineColor: "$borderFocused",
-          outlineStyle: "solid",
-          outlineWidth: 3,
-          outlineOffset: "$lg"
+          boxShadow: "$ring"
         }}>
         <Container
           ref={forwardedRef}

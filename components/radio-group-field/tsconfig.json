@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [

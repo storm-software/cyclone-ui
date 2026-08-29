@@ -82,7 +82,7 @@ export const Vertical: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     theme: "brand"
   }

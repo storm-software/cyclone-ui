@@ -16,27 +16,16 @@
 
  ------------------------------------------------------------------- */
 
-import { styled } from "@tamagui/core";
-import { ToastViewport } from "@tamagui/toast";
-import type { PropsWithChildren } from "react";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import type { BaseMessageViewportProps } from "../types";
+import type { ToasterProps } from "@tamagui/toast/v2";
+import { Toaster } from "@tamagui/toast/v2";
 
 /**
- * The properties provided to the BaseMessageProvider component.
+ * The properties provided to the MessageViewport component.
  */
-export type MessageViewportProps = PropsWithChildren<BaseMessageViewportProps>;
-
-const TamaguiToastViewport = styled(ToastViewport, {
-  width: "100%",
-  flexDirection: "column",
-  flex: 1,
-  paddingTop: "$5",
-  paddingHorizontal: "$6"
-});
+export type MessageViewportProps = ToasterProps;
 
 /**
- * The BaseMessageProvider component is a wrapper for the Tamagui ToastProvider component.
+ * The MessageViewport component configures Tamagui Toast 2 for messages.
  *
  * @example
  * <MessageProvider>
@@ -44,24 +33,13 @@ const TamaguiToastViewport = styled(ToastViewport, {
  *   <MessageViewport />
  * </MessageProvider>
  */
-export const MessageViewport = ({
-  children,
-  ...props
-}: MessageViewportProps) => {
-  const { top, left, right } = useSafeAreaInsets();
-
-  return (
-    <TamaguiToastViewport
-      name="messages"
-      top={top}
-      left={left}
-      right={right}
-      hotkey={["F8"]}
-      label="Storm Messages ({hotkey})"
-      multipleToasts={true}
-      portalToRoot={true}
-      {...props}>
-      {children}
-    </TamaguiToastViewport>
-  );
-};
+export const MessageViewport = (props: MessageViewportProps) => (
+  <Toaster
+    containerAriaLabel="Storm Messages"
+    duration={30 * 1000}
+    position="top-right"
+    swipeDirection="horizontal"
+    swipeThreshold={50}
+    {...props}
+  />
+);

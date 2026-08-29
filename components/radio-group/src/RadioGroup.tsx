@@ -35,14 +35,12 @@ export interface RadioGroupContextProps {
   size: FontSizeTokens;
   color?: ColorTokens | string;
   disabled: boolean;
-  focused: boolean;
   required: boolean;
 }
 
 export const RadioGroupContext = createStyledContext<RadioGroupContextProps>({
   size: "$true",
   disabled: false,
-  focused: false,
   required: false
 });
 
@@ -53,22 +51,14 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   transition: "200ms",
   borderRadius: 100_000,
   unstyled: true,
-  hoverTheme: false,
-  pressTheme: true,
   cursor: "pointer",
   height: "$5xl",
   width: "$5xl",
-  color: "$foreground",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
-  hoverStyle: {
-    borderColor: "$borderHover"
-  },
-
   focusVisibleStyle: {
-    borderColor: "$borderFocused",
     boxShadow: "$ring",
     backgroundColor: "backgroundElevatedFocused"
   },
@@ -180,7 +170,6 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
   cursor: "pointer",
   gap: "$3xl",
-  backgroundColor: "$backgroundElevated",
   boxShadow: "none",
   borderRadius: "$control",
   borderWidth: 1,

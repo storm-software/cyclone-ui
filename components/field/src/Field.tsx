@@ -42,13 +42,7 @@ import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef, ReactNode } from "react";
-import {
-  createContext,
-  useContext,
-  useLayoutEffect,
-  useMemo,
-  useState
-} from "react";
+import { createContext, use, useLayoutEffect, useMemo, useState } from "react";
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
@@ -266,7 +260,7 @@ const FieldDetailsImpl = FieldDetails.styleable(
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
-    const setDetails = useContext(FieldDetailsSetterContext);
+    const setDetails = use(FieldDetailsSetterContext);
     const messages = field.messages.get();
     const disabled = field.disabled.get();
     const theme = field.theme.get();
@@ -508,7 +502,7 @@ const FieldIconButtonImpl = Button.styleable(
       size === "$true" || String(size) === "true" ? "$14xl" : size;
 
     const adjusted = useMemo(
-      () => getSized(frameSize, { shift: -2 }),
+      () => getSized(frameSize, { shift: -3 }),
       [frameSize]
     );
 
@@ -575,10 +569,10 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
               disabled={disabled}
               theme={theme}
             />
-          ) : details ? (
-            details
           ) : (
-            <ValidationText color="$foreground" disabled={disabled} />
+            details || (
+              <ValidationText color="$foreground" disabled={disabled} />
+            )
           )}
         </Tooltip.Content>
       </Tooltip>
@@ -596,7 +590,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     const validating = field.validating.get();
     const theme = field.theme.get();
     const messages = field.messages.get();
-    const details = useContext(FieldDetailsContext);
+    const details = use(FieldDetailsContext);
 
     if (validating) {
       return <Spinner size="$md" theme="$primary" />;

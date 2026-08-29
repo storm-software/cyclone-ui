@@ -18,7 +18,6 @@
 
 import type { Preview } from "@storybook/react-vite";
 import "@tamagui/core/reset.css";
-import "jotai-devtools/styles.css";
 import "raf/polyfill";
 import { CycloneDocsContainer, withCycloneTheme } from "./preview-decorators";
 import { storybookThemes } from "./storybook-themes";

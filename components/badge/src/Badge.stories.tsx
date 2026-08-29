@@ -55,14 +55,14 @@ export const Outlined: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     children: "Badge Text",
     theme: "brand"
   }
 };
 
-export const BrandRounded: Story = {
+export const PrimaryRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "brand",
@@ -70,7 +70,7 @@ export const BrandRounded: Story = {
   }
 };
 
-export const BrandOutlined: Story = {
+export const PrimaryOutlined: Story = {
   args: {
     children: "Badge Text",
     theme: "brand",
@@ -78,14 +78,14 @@ export const BrandOutlined: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     children: "Badge Text",
     theme: "alternate"
   }
 };
 
-export const AlternateRounded: Story = {
+export const SecondaryRounded: Story = {
   args: {
     children: "Badge Text",
     theme: "alternate",
@@ -93,7 +93,7 @@ export const AlternateRounded: Story = {
   }
 };
 
-export const AlternateOutlined: Story = {
+export const SecondaryOutlined: Story = {
   args: {
     children: "Badge Text",
     theme: "alternate",

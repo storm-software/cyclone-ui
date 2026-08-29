@@ -275,7 +275,7 @@ export const Pagination: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     theme: "brand",
     options: {
@@ -284,7 +284,7 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     theme: "alternate",
     options: {

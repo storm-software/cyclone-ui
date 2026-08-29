@@ -94,7 +94,6 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   name: "Popover",
   context: PopoverContext,
 
-  flex: 1,
   backgroundColor: "$backgroundFloating",
   padding: "$3xl",
   borderWidth: 2,

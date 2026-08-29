@@ -1149,7 +1149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "base"
@@ -2661,7 +2661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success",
       type: "color",
-      value: "var(--color-green-4)",
+      value: "var(--color-green-6)",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: "dark"
@@ -2685,7 +2685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "var(--color-purple-5)",
+      value: "var(--color-purple-6)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: "dark"
@@ -3093,7 +3093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#388359",
+      value: "#006b42",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3101,7 +3101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-pressed",
       type: "color",
-      value: "#005b33",
+      value: "#004a24",
       cssVar: "--rw-color-foreground-success-pressed",
       description: "The success foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3109,7 +3109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-focused",
       type: "color",
-      value: "#005b33",
+      value: "#004a24",
       cssVar: "--rw-color-foreground-success-focused",
       description: "The success foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3189,7 +3189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#5c5fa1",
+      value: "#4d499c",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3197,7 +3197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-pressed",
       type: "color",
-      value: "#3a3b79",
+      value: "#312978",
       cssVar: "--rw-color-foreground-discovery-pressed",
       description: "The discovery foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3205,7 +3205,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-focused",
       type: "color",
-      value: "#3a3b79",
+      value: "#312978",
       cssVar: "--rw-color-foreground-discovery-focused",
       description: "The discovery foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3589,7 +3589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#5ba579",
+      value: "#2e875c",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "dark"
@@ -3613,7 +3613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#797dc2",
+      value: "#6564b9",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "dark"
@@ -6661,7 +6661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "dark"
@@ -8173,7 +8173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success",
       type: "color",
-      value: "var(--color-green-4)",
+      value: "var(--color-green-6)",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8197,7 +8197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "var(--color-purple-5)",
+      value: "var(--color-purple-6)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8605,7 +8605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#517f65",
+      value: "#227555",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8613,7 +8613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-pressed",
       type: "color",
-      value: "#206d4b",
+      value: "#1d633f",
       cssVar: "--rw-color-foreground-success-pressed",
       description: "The success foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8621,7 +8621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-focused",
       type: "color",
-      value: "#206d4b",
+      value: "#1d633f",
       cssVar: "--rw-color-foreground-success-focused",
       description: "The success foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8701,7 +8701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#6c6d92",
+      value: "#615f8e",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8709,7 +8709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-pressed",
       type: "color",
-      value: "#515278",
+      value: "#4a4578",
       cssVar: "--rw-color-foreground-discovery-pressed",
       description: "The discovery foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8717,7 +8717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-focused",
       type: "color",
-      value: "#515278",
+      value: "#4a4578",
       cssVar: "--rw-color-foreground-discovery-focused",
       description: "The discovery foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9101,7 +9101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#6b947c",
+      value: "#4a8167",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkDimmed"
@@ -9125,7 +9125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#7f81aa",
+      value: "#7272a2",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkDimmed"
@@ -12173,7 +12173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "darkDimmed"
@@ -13685,7 +13685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success",
       type: "color",
-      value: "var(--color-green-4)",
+      value: "var(--color-green-6)",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13709,7 +13709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "var(--color-purple-5)",
+      value: "var(--color-purple-6)",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14117,7 +14117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#207c49",
+      value: "#002819",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14125,7 +14125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-pressed",
       type: "color",
-      value: "#00110a",
+      value: "#000000",
       cssVar: "--rw-color-foreground-success-pressed",
       description: "The success foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14133,7 +14133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-focused",
       type: "color",
-      value: "#00110a",
+      value: "#000000",
       cssVar: "--rw-color-foreground-success-focused",
       description: "The success foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14213,7 +14213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#494eb3",
+      value: "#3832a7",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14221,7 +14221,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-pressed",
       type: "color",
-      value: "#22246e",
+      value: "#1a1166",
       cssVar: "--rw-color-foreground-discovery-pressed",
       description: "The discovery foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14229,7 +14229,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-focused",
       type: "color",
-      value: "#22246e",
+      value: "#1a1166",
       cssVar: "--rw-color-foreground-discovery-focused",
       description: "The discovery foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14613,7 +14613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#48b876",
+      value: "#157f4c",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkHighContrast"
@@ -14637,7 +14637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#7c81da",
+      value: "#5b5ad0",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
       theme: "darkHighContrast"
@@ -17685,7 +17685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "darkHighContrast"
@@ -23077,7 +23077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "light"
@@ -28469,7 +28469,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "lightDimmed"
@@ -33861,7 +33861,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-sm)",
+      value: "var(--border-radius-md)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
       theme: "lightHighContrast"

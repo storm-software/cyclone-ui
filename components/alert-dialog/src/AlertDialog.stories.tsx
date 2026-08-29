@@ -82,14 +82,14 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     children: bodyText,
     theme: "brand"
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     children: bodyText,
     theme: "alternate"

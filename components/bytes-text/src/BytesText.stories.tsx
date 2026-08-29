@@ -61,14 +61,14 @@ export const GigaBytes: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     theme: "brand",
     children: "1337"
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     theme: "alternate",
     children: "1337"

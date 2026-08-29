@@ -172,7 +172,7 @@ const ContainerGroup = styled(View, {
   transition: "200ms",
   width: "100%",
   display: "flex",
-  flex: 1,
+  flexGrow: 1,
   borderRadius: "$container",
 
   variants: {

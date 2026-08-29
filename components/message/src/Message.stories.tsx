@@ -35,14 +35,14 @@ const meta: Meta<typeof Message> = {
 
         <XStack alignItems="center" gap="$5xl" marginTop="400px" width={400}>
           <Button
-            variant="tertiary"
+            variant="surface"
             onPress={() => {
               hide();
             }}>
             <Button.Text>Hide</Button.Text>
           </Button>
           <Button
-            variant="primary"
+            variant="inverse"
             onPress={() => {
               show(message, {
                 heading: "Message Heading",
@@ -68,7 +68,7 @@ export const Base: Story = {
   }
 };
 
-export const Brand: Story = {
+export const Primary: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -76,7 +76,7 @@ export const Brand: Story = {
   }
 };
 
-export const Alternate: Story = {
+export const Secondary: Story = {
   args: {
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",

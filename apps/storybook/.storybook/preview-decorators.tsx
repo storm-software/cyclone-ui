@@ -24,7 +24,6 @@ import type { Decorator } from "@storybook/react-vite";
 import { Theme } from "@tamagui/core";
 import { PortalProvider } from "@tamagui/portal";
 import { YStack } from "@tamagui/stacks";
-import { DevTools, useAtomsDebugValue } from "jotai-devtools";
 import type { ComponentProps } from "react";
 import { useEffect, useState } from "react";
 import {
@@ -41,14 +40,6 @@ import {
 const FALLBACK_SAFE_AREA_METRICS = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
   insets: { top: 0, left: 0, right: 0, bottom: 0 }
-};
-
-const DebugAtoms = () => {
-  useAtomsDebugValue({
-    enabled: true
-  });
-
-  return null;
 };
 
 const SyncColorMode = ({ mode }: { mode: StorybookColorMode }) => {
@@ -113,8 +104,6 @@ export const withCycloneTheme: Decorator = (Story, context) => {
         <Theme name={mode}>
           <PortalProvider>
             <MessageProvider>
-              <DevTools theme={mode} position="bottom-right" />
-              <DebugAtoms />
               <YStack p="$8" w="100%" minh="100%">
                 <Story />
               </YStack>

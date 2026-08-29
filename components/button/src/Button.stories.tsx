@@ -39,14 +39,14 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {
     children: "Button Text",
-    animate: false,
+    animate: false
   }
 };
 
 export const Icon: Story = {
   args: {
     icon: <X />,
-    animate: false,
+    animate: false
   }
 };
 
@@ -54,7 +54,7 @@ export const Sized: Story = {
   args: {
     children: "Button Text",
     size: "$13xl",
-    animate: false,
+    animate: false
   }
 };
 
@@ -62,7 +62,7 @@ export const SizedIcon: Story = {
   args: {
     icon: <X />,
     size: "$13xl",
-    animate: false,
+    animate: false
   }
 };
 
@@ -76,8 +76,7 @@ export const Primary: Story = {
     theme: "primary",
     variant: "surface",
     disabled: false,
-    animate: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -87,8 +86,7 @@ export const PrimaryOutlined: Story = {
     theme: "primary",
     variant: "outlined",
     disabled: false,
-    animate: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -98,7 +96,6 @@ export const PrimaryInverse: Story = {
     theme: "primary",
     variant: "inverse",
     disabled: false,
-    animate: false,
     animate: false
   }
 };
@@ -109,7 +106,7 @@ export const PrimarySubtle: Story = {
     theme: "primary",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -119,7 +116,7 @@ export const PrimaryGhost: Story = {
     theme: "primary",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -129,7 +126,7 @@ export const PrimaryLink: Story = {
     theme: "primary",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -150,7 +147,7 @@ export const Secondary: Story = {
     children: "Button Text",
     theme: "secondary",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -160,7 +157,7 @@ export const SecondarySurface: Story = {
     theme: "secondary",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -170,7 +167,7 @@ export const SecondaryOutlined: Story = {
     theme: "secondary",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -180,7 +177,7 @@ export const SecondaryInverse: Story = {
     theme: "secondary",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -190,7 +187,7 @@ export const SecondarySubtle: Story = {
     theme: "secondary",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -200,7 +197,7 @@ export const SecondaryGhost: Story = {
     theme: "secondary",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -210,7 +207,7 @@ export const SecondaryLink: Story = {
     theme: "secondary",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -232,7 +229,7 @@ export const Danger: Story = {
     theme: "danger",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -242,7 +239,7 @@ export const DangerSurface: Story = {
     theme: "danger",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -252,7 +249,7 @@ export const DangerOutlined: Story = {
     theme: "danger",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -262,7 +259,7 @@ export const DangerInverse: Story = {
     theme: "danger",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -272,7 +269,7 @@ export const DangerSubtle: Story = {
     theme: "danger",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -282,7 +279,7 @@ export const DangerGhost: Story = {
     theme: "danger",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -292,7 +289,7 @@ export const DangerLink: Story = {
     theme: "danger",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -315,7 +312,7 @@ export const Warning: Story = {
     theme: "warning",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -325,7 +322,7 @@ export const WarningSurface: Story = {
     theme: "warning",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -335,7 +332,7 @@ export const WarningOutlined: Story = {
     theme: "warning",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -345,7 +342,7 @@ export const WarningInverse: Story = {
     theme: "warning",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -355,7 +352,7 @@ export const WarningSubtle: Story = {
     theme: "warning",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -365,7 +362,7 @@ export const WarningGhost: Story = {
     theme: "warning",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -375,7 +372,7 @@ export const WarningLink: Story = {
     theme: "warning",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -398,7 +395,7 @@ export const Success: Story = {
     theme: "success",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -408,7 +405,7 @@ export const SuccessSurface: Story = {
     theme: "success",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -418,7 +415,7 @@ export const SuccessOutlined: Story = {
     theme: "success",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -428,7 +425,7 @@ export const SuccessInverse: Story = {
     theme: "success",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -438,7 +435,7 @@ export const SuccessSubtle: Story = {
     theme: "success",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -448,7 +445,7 @@ export const SuccessGhost: Story = {
     theme: "success",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -458,7 +455,7 @@ export const SuccessLink: Story = {
     theme: "success",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -481,7 +478,7 @@ export const Info: Story = {
     theme: "info",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -491,7 +488,7 @@ export const InfoSurface: Story = {
     theme: "info",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -501,7 +498,7 @@ export const InfoOutlined: Story = {
     theme: "info",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -511,7 +508,7 @@ export const InfoInverse: Story = {
     theme: "info",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -521,7 +518,7 @@ export const InfoSubtle: Story = {
     theme: "info",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -531,7 +528,7 @@ export const InfoGhost: Story = {
     theme: "info",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -541,7 +538,7 @@ export const InfoLink: Story = {
     theme: "info",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -564,7 +561,7 @@ export const Discovery: Story = {
     theme: "discovery",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -574,7 +571,7 @@ export const DiscoverySurface: Story = {
     theme: "discovery",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -584,7 +581,7 @@ export const DiscoveryOutlined: Story = {
     theme: "discovery",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -594,7 +591,7 @@ export const DiscoveryInverse: Story = {
     theme: "discovery",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -604,7 +601,7 @@ export const DiscoverySubtle: Story = {
     theme: "discovery",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -614,7 +611,7 @@ export const DiscoveryGhost: Story = {
     theme: "discovery",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -624,7 +621,7 @@ export const DiscoveryLink: Story = {
     theme: "discovery",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -647,7 +644,7 @@ export const Positive: Story = {
     theme: "positive",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -657,7 +654,7 @@ export const PositiveSurface: Story = {
     theme: "positive",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -667,7 +664,7 @@ export const PositiveOutlined: Story = {
     theme: "positive",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -677,7 +674,7 @@ export const PositiveInverse: Story = {
     theme: "positive",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -687,7 +684,7 @@ export const PositiveSubtle: Story = {
     theme: "positive",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -697,7 +694,7 @@ export const PositiveGhost: Story = {
     theme: "positive",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -707,7 +704,7 @@ export const PositiveLink: Story = {
     theme: "positive",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -730,7 +727,7 @@ export const Negative: Story = {
     theme: "negative",
 
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -740,7 +737,7 @@ export const NegativeSurface: Story = {
     theme: "negative",
     variant: "surface",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -750,7 +747,7 @@ export const NegativeOutlined: Story = {
     theme: "negative",
     variant: "outlined",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -760,7 +757,7 @@ export const NegativeInverse: Story = {
     theme: "negative",
     variant: "inverse",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -770,7 +767,7 @@ export const NegativeSubtle: Story = {
     theme: "negative",
     variant: "subtle",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -780,7 +777,7 @@ export const NegativeGhost: Story = {
     theme: "negative",
     variant: "ghost",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 
@@ -790,7 +787,7 @@ export const NegativeLink: Story = {
     theme: "negative",
     variant: "link",
     disabled: false,
-    animate: false,
+    animate: false
   }
 };
 

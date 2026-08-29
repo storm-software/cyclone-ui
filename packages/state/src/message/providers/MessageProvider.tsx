@@ -16,42 +16,22 @@
 
  ------------------------------------------------------------------- */
 
-// import { uuid } from "@stryke/unique-id";
-import type { ToastProviderProps as TamaguiToastProviderProps } from "@tamagui/toast";
-import { ToastProvider as TamaguiToastProvider } from "@tamagui/toast";
 import type { PropsWithChildren } from "react";
-import { MessageViewport } from "../components/MessageViewport";
 
 /**
  * The properties provided to the MessageProvider component.
  */
-export type MessageProviderProps = PropsWithChildren<
-  Partial<TamaguiToastProviderProps> &
-    Omit<TamaguiToastProviderProps, "id" | "label">
->;
+export type MessageProviderProps = PropsWithChildren;
 
 /**
- * The MessageProvider component is a wrapper for the Tamagui ToastProvider component.
+ * A compatibility wrapper for message descendants.
+ *
+ * Toast 2 uses a global store, so rendering a MessageProvider is no longer required
+ * for useMessageActions. Mount Message or MessageViewport once to render the toasts.
  *
  * @example
  * <MessageProvider>
  *   <App />
  * </MessageProvider>
  */
-export const MessageProvider = ({
-  children,
-  ...props
-}: MessageProviderProps) => {
-  return (
-    <TamaguiToastProvider
-      label="Messages"
-      duration={30 * 1000}
-      swipeDirection="horizontal"
-      swipeThreshold={50}
-      {...props}>
-      <MessageViewport />
-
-      {children}
-    </TamaguiToastProvider>
-  );
-};
+export const MessageProvider = ({ children }: MessageProviderProps) => children;

@@ -78,7 +78,7 @@ export const getButtonSized = (
   if (isNumber(tokenValue)) {
     return {
       paddingHorizontal: circular ? 0 : tokenValue * 0.25,
-      gap: tokenValue * 0.25,
+      gap: circular ? 0 : tokenValue * 0.25,
       height: tokenValue,
       minHeight: tokenValue,
       ...(circular
@@ -102,7 +102,7 @@ export const getButtonSized = (
 
   return {
     paddingHorizontal: circular ? 0 : space,
-    gap: space,
+    gap: circular ? 0 : space,
     height,
     minHeight: height,
     ...(circular

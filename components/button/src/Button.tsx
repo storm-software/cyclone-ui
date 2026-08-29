@@ -219,16 +219,16 @@ const ButtonFrame = styled(View, {
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "$foreground",
+        borderColor: "$background",
 
         hoverStyle: {
-          backgroundColor: "$backgroundElevatedHover",
-          borderColor: "$foregroundHover"
+          backgroundColor: "transparent",
+          borderColor: "$backgroundHover"
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundElevatedPressed",
-          borderColor: "$foregroundPressed"
+          backgroundColor: "transparent",
+          borderColor: "$backgroundPressed"
         }
       },
 

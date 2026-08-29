@@ -54,6 +54,7 @@ const BaseSelectTextBox = styled(View, {
   backgroundColor: "transparent",
   borderWidth: 0,
   outlineStyle: "none",
+  overflow: "hidden",
 
   variants: {
     disabled: {
