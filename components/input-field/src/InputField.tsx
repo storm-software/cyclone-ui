@@ -40,6 +40,7 @@ const InputFieldControl = Input.styleable(
     const size = field.size.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
+    const clearable = field.clearable.get();
 
     const { focus, blur, change } = useFieldActions();
     const handleChange = useCallback(
@@ -66,6 +67,7 @@ const InputFieldControl = Input.styleable(
         name={name}
         focused={focused}
         disabled={disabled}
+        clearable={clearable}
         size={size}
         onFocus={focus}
         onBlur={handleBlur}
@@ -88,11 +90,12 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
 );
 
 const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
-  ({ clearable = false, ...props }, forwardedRef) => {
+  (props, forwardedRef) => {
     const field = FieldApi.use();
     const theme = field.theme.get();
     const formattedValue = field.formattedValue.get();
     const options = field.options.get();
+    const clearable = field.clearable.get();
 
     const { change, mount } = useFieldActions();
     const handleClear = useCallback(() => {

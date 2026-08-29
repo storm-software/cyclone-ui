@@ -297,6 +297,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
       () => getSized(size, { shift: -3 }),
       [size]
     );
+
     return (
       <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue
@@ -309,6 +310,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           placeholderTextColor="$foregroundInverseDisabled">
           {children}
         </InputValue>
+
         {clearable && onClear && value && (
           <View
             position="absolute"

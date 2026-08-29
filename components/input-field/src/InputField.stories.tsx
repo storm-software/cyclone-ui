@@ -70,6 +70,12 @@ export const Required: Story = {
   }
 };
 
+export const Clearable: Story = {
+  args: {
+    clearable: true
+  }
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true

@@ -489,6 +489,13 @@ export interface FieldOptions<TFieldValue> {
   disabled?: boolean;
 
   /**
+   * Whether the field's value can be cleared by its control.
+   *
+   * @defaultValue false
+   */
+  clearable?: boolean;
+
+  /**
    * The options to be used as potential values for the field.
    *
    * @remarks
@@ -588,6 +595,7 @@ export type FieldOptionsState<TFieldValue = any> = FieldOptions<TFieldValue> &
       | "debounceMs"
       | "isEqual"
       | "disabled"
+      | "clearable"
       | "required"
       | "initialValue"
     >
@@ -619,6 +627,7 @@ export interface FieldAtoms<TFieldValue> {
     [SetStateAction<InferFieldState<TFieldValue, boolean>>],
     void
   >;
+  clearable: Atom<boolean>;
   touched: WritableAtom<
     InferFieldState<TFieldValue, boolean>,
     [SetStateAction<InferFieldState<TFieldValue, boolean>>],

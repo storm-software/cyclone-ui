@@ -52,6 +52,7 @@ export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
   isEqual,
   required: false,
   disabled: false,
+  clearable: false,
   initialValue: null
 } as const;
 
@@ -134,6 +135,7 @@ export const FieldApi = createMoleculeApi(
         set(disabledStateAtom, update);
       }
     );
+    const clearableAtom = atom(get => get(optionsAtom).clearable);
     const touchedAtom = focusAtom(form.touchedFields, optic =>
       optic.path(...path)
     );
@@ -277,6 +279,7 @@ export const FieldApi = createMoleculeApi(
       focused: focusedAtom,
       required: requiredAtom,
       disabled: disabledAtom,
+      clearable: clearableAtom,
       touched: touchedAtom,
       blurred: blurredAtom,
       validating: validatingAtom,

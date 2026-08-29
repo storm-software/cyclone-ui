@@ -25,9 +25,9 @@ import { Search } from "@tamagui/lucide-icons-2";
 import { useMemo } from "react";
 
 const SearchInputFieldGroup = InputField.styleable(
-  ({ children, ...props }, forwardedRef) => {
+  ({ children, clearable = true, ...props }, forwardedRef) => {
     return (
-      <InputField ref={forwardedRef} {...props}>
+      <InputField ref={forwardedRef} {...props} clearable={clearable}>
         {children}
       </InputField>
     );
@@ -58,33 +58,25 @@ const SearchInputFieldControl = InputField.Control.styleable(
 );
 
 const SearchInputFieldControlTextBox = InputField.Control.TextBox.styleable<
-  Partial<Pick<InputValueProps, "placeholder" | "clearable">>
->(
-  (
-    { children, placeholder = "Search...", clearable = true, ...props },
-    forwardedRef
-  ) => {
-    const field = FieldApi.use();
-    const size = field.size.get();
+  Partial<Pick<InputValueProps, "placeholder">>
+>(({ children, placeholder = "Search...", ...props }, forwardedRef) => {
+  const field = FieldApi.use();
+  const size = field.size.get();
 
-    const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
+  const adjusted = useMemo(() => getSized(size, { shift: -4 }), [size]);
 
-    return (
-      <InputField.Control.TextBox ref={forwardedRef} {...props}>
-        <InputField.Icon size={adjusted}>
-          <Search />
-        </InputField.Icon>
+  return (
+    <InputField.Control.TextBox ref={forwardedRef} {...props}>
+      <InputField.Icon size={adjusted}>
+        <Search />
+      </InputField.Icon>
 
-        <InputField.Control.TextBox.Value
-          placeholder={placeholder}
-          clearable={clearable}
-        />
+      <InputField.Control.TextBox.Value placeholder={placeholder} />
 
-        {children}
-      </InputField.Control.TextBox>
-    );
-  }
-);
+      {children}
+    </InputField.Control.TextBox>
+  );
+});
 
 export const SearchInputField = withStaticProperties(SearchInputFieldGroup, {
   Label: SearchInputFieldLabel,

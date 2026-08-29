@@ -24,6 +24,7 @@ import {
   createStyledContext,
   getVariableValue,
   styled,
+  Theme,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -37,16 +38,14 @@ export interface SwitchContextProps {
   checked: boolean;
   required: boolean;
   disabled: boolean;
-  theme: string;
 }
 
 export const SwitchContext = createStyledContext<SwitchContextProps>({
-  size: "$true",
+  size: "$6xl",
   name: "",
   checked: false,
   required: false,
-  disabled: false,
-  theme: `${"primary"}_Switch`
+  disabled: false
 });
 
 const getSwitchHeight = (val: SizeTokens) =>
@@ -61,8 +60,8 @@ const SwitchFrame = styled(View, {
 
   transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "transparent",
-  borderWidth: 2,
+  backgroundColor: "$backgroundElevated",
+  borderWidth: 1,
   borderColor: "$border",
   boxShadow: "none",
   tabIndex: 0,
@@ -82,17 +81,6 @@ const SwitchFrame = styled(View, {
   },
 
   variants: {
-    checked: {
-      true: {
-        backgroundColor: "$backgroundSubtle",
-
-        hoverStyle: {
-          backgroundColor: "$backgroundSubtleHover",
-          borderColor: "$borderHover"
-        }
-      }
-    },
-
     size: {
       "...size": val => {
         const height = getSwitchHeight(val);
@@ -128,6 +116,7 @@ const SwitchFrame = styled(View, {
   } as const,
 
   defaultVariants: {
+    size: "$6xl",
     disabled: false
   }
 });
@@ -136,17 +125,22 @@ const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
   transition: "200ms",
-  backgroundColor: "$foregroundInverse",
+  backgroundColor: "$backgroundHighest",
   borderRadius: 100_000,
   borderWidth: 1,
-  borderColor: "$background",
+  borderColor: "$border",
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
+  y: -1,
+  x: -2,
 
   variants: {
     checked: {
-      true: {}
+      true: {
+        backgroundColor: "$backgroundSubtle",
+        x: 1
+      }
     },
 
     size: {
@@ -154,6 +148,7 @@ const SwitchThumb = styled(View, {
         const width = getSwitchHeight(val);
 
         return {
+          height: width,
           width
         };
       }
@@ -161,16 +156,14 @@ const SwitchThumb = styled(View, {
   } as const,
 
   defaultVariants: {
-    checked: false,
-    size: "$true"
+    size: "$6xl",
+    checked: false
   }
 });
 
 const SwitchThumbImpl = SwitchThumb.styleable(
   (props, forwardedRef) => {
-    const { checked } = SwitchContext.useStyledContext();
-
-    return <SwitchThumb ref={forwardedRef} {...props} checked={checked} />;
+    return <SwitchThumb ref={forwardedRef} {...props} theme="primary" />;
   },
   {
     staticConfig: { componentName: "SwitchThumb" }
@@ -221,11 +214,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
   color?: ColorTokens;
 }>(
   ({ children, size, color, ...props }, forwardedRef) => {
-    const {
-      theme,
-      disabled,
-      size: contextSize
-    } = SwitchContext.useStyledContext();
+    const { disabled, size: contextSize } = SwitchContext.useStyledContext();
     const adjusted = useMemo(
       () => getSized(size ?? contextSize, { shift: -6 }),
       [size, contextSize]
@@ -233,6 +222,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
 
     return (
       <SwitchIconFrame
+        theme="primary"
         ref={forwardedRef}
         zIndex="$20"
         alignItems="center"
@@ -241,7 +231,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
         flexShrink={1}>
         <ThemeableIcon
           {...props}
-          theme={theme}
+          theme="primary"
           disabled={false}
           size={adjusted}
           color={
@@ -274,7 +264,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
   (
     {
       name,
-      size = "$true",
+      size = "$6xl",
       disabled = false,
       checked = false,
       children,
@@ -283,28 +273,28 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
     forwardedRef
   ) => {
     return (
-      <SwitchContext.Provider
-        name={name}
-        size={size}
-        checked={checked}
-        disabled={disabled}>
-        <BaseSwitch
-          ref={forwardedRef}
-          {...props}
-          id={name}
+      <Theme name="primary">
+        <SwitchContext.Provider
+          name={name}
           size={size}
           checked={checked}
           disabled={disabled}>
-          {children}
-          <View
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            height="100%">
-            <BaseSwitch.Thumb checked={checked} />
-          </View>
-        </BaseSwitch>
-      </SwitchContext.Provider>
+          <BaseSwitch
+            ref={forwardedRef}
+            activeStyle={{
+              backgroundColor: "$backgroundSubtle"
+            }}
+            {...props}
+            theme="secondary"
+            id={name}
+            size={size}
+            checked={checked}
+            disabled={disabled}>
+            {children}
+            <BaseSwitch.Thumb />
+          </BaseSwitch>
+        </SwitchContext.Provider>
+      </Theme>
     );
   },
   {
