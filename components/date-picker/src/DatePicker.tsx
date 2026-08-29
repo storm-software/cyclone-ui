@@ -125,10 +125,13 @@ const getMonthIndex = (month?: string | null) => {
 };
 
 // Rehookify internally return `onClick` and that's incompatible with native
-const swapOnClick = <D = any,>(d: D) => {
-  (d as any).onPress = (d as any).onClick;
+const swapOnClick = (d: any) => {
+  const { onClick, ...props } = d;
 
-  return d;
+  return {
+    ...props,
+    onPress: onClick
+  };
 };
 
 function useDateAnimation({

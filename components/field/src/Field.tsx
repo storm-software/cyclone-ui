@@ -41,8 +41,19 @@ import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
-import type { ForwardedRef } from "react";
-import { useMemo } from "react";
+import type { ForwardedRef, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useMemo,
+  useState
+} from "react";
+
+const FieldDetailsContext = createContext<ReactNode>(null);
+const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
+  () => undefined
+);
 
 const FieldGroupFrame = styled(ThemeableStack, {
   name: "Field",
@@ -175,15 +186,20 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
     const field = FieldApi.use();
     const theme = field.theme.get();
     const disabled = field.disabled.get();
+    const [details, setDetails] = useState<ReactNode>(null);
 
     return (
       <Theme name={theme}>
-        <YStack gap="$xl" group={"field" as any} disabled={disabled}>
-          <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
-            {children}
-          </FieldGroupFrame>
-          <FieldValidationTextImpl />
-        </YStack>
+        <FieldDetailsSetterContext.Provider value={setDetails}>
+          <FieldDetailsContext.Provider value={details}>
+            <YStack gap="$xl" group={"field" as any} disabled={disabled}>
+              <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
+                {children}
+              </FieldGroupFrame>
+              <FieldValidationTextImpl />
+            </YStack>
+          </FieldDetailsContext.Provider>
+        </FieldDetailsSetterContext.Provider>
       </Theme>
     );
   },
@@ -250,10 +266,17 @@ const FieldDetailsImpl = FieldDetails.styleable(
     const { children, ...rest } = props;
 
     const field = FieldApi.use();
+    const setDetails = useContext(FieldDetailsSetterContext);
     const messages = field.messages.get();
     const disabled = field.disabled.get();
     const theme = field.theme.get();
     const size = field.size.get();
+
+    useLayoutEffect(() => {
+      setDetails(children);
+
+      return () => setDetails(null);
+    }, [children, setDetails]);
 
     if (messages && messages.length > 0) {
       return null;
@@ -524,9 +547,11 @@ const FieldIconButtonImpl = Button.styleable(
 
 const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
   messages?: ValidationDetails[];
+  details?: ReactNode;
+  theme?: string;
 }>(
-  ({ children, messages, disabled, ...rest }, forwardedRef) => {
-    if ((!messages || messages.length === 0) && !disabled) {
+  ({ children, messages, details, disabled, theme, ...rest }, forwardedRef) => {
+    if ((!messages || messages.length === 0) && !details && !disabled) {
       return (
         <FieldIconButtonImpl ref={forwardedRef} {...rest}>
           {children}
@@ -535,20 +560,27 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
     }
 
     return (
-      <Tooltip groupId="field-icon">
-        <Tooltip.Content>
-          <ValidationText
-            color="$foreground"
-            messages={messages}
-            disabled={disabled}
-          />
-        </Tooltip.Content>
-
+      <Tooltip groupId="field-icon" theme={theme}>
         <Tooltip.Trigger asChild={true}>
           <FieldIconButtonImpl ref={forwardedRef} {...rest}>
             {children}
           </FieldIconButtonImpl>
         </Tooltip.Trigger>
+
+        <Tooltip.Content>
+          {messages && messages.length > 0 ? (
+            <ValidationText
+              color="$foreground"
+              messages={messages}
+              disabled={disabled}
+              theme={theme}
+            />
+          ) : details ? (
+            details
+          ) : (
+            <ValidationText color="$foreground" disabled={disabled} />
+          )}
+        </Tooltip.Content>
       </Tooltip>
     );
   },
@@ -564,6 +596,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     const validating = field.validating.get();
     const theme = field.theme.get();
     const messages = field.messages.get();
+    const details = useContext(FieldDetailsContext);
 
     if (validating) {
       return <Spinner size="$md" theme="$primary" />;
@@ -586,6 +619,8 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
         {...props}
         disabled={disabled}
         messages={messages}
+        details={details}
+        theme={theme}
         onPress={focus}>
         {getIconByTheme({
           theme,

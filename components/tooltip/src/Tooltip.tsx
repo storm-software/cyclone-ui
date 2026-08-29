@@ -56,7 +56,7 @@ const TooltipArrow = styled(TamaguiTooltip.Arrow, {
 
   backgroundColor: "$backgroundFloating",
   borderWidth: 2,
-  borderColor: "$overlayBorder"
+  borderColor: "$border"
 });
 
 const TooltipContent = styled(TamaguiTooltip.Content, {
@@ -70,7 +70,7 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   paddingVertical: "$3xl",
   paddingHorizontal: "$2xl",
   borderWidth: 2,
-  borderColor: "$overlayBorder",
+  borderColor: "$border",
   borderRadius: "$tooltip",
 
   enterStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },

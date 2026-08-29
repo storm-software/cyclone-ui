@@ -108,6 +108,13 @@ export const Error: Story = {
       width: "32px",
       minWidth: "32px"
     });
+
+    await userEvent.hover(iconButton);
+    await expect(
+      await within(document.body).findByText(
+        "This is an example detailed message for an input field"
+      )
+    ).toBeVisible();
   }
 };
 

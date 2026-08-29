@@ -21,8 +21,10 @@ import { Button } from "@cyclone-ui/button";
 import type { LeftArrowProps } from "@cyclone-ui/vectors";
 import { LeftArrow } from "@cyclone-ui/vectors";
 import { useHover } from "@stryke/hooks";
+import type { TamaguiElement } from "@tamagui/core";
 import { useComposedRefs } from "@tamagui/core";
 import { XStack } from "@tamagui/stacks";
+import type { Ref } from "react";
 
 export type PreviousButtonProps = ButtonProps &
   Pick<LeftArrowProps, "animateShrink"> & {
@@ -42,7 +44,7 @@ export const PreviousButton = Button.styleable<{
     forwardedRef
   ) => {
     const [hoverRef, hovering] = useHover();
-    const ref = useComposedRefs(forwardedRef, hoverRef);
+    const ref = useComposedRefs(forwardedRef, hoverRef as Ref<TamaguiElement>);
 
     return (
       <Button
@@ -52,7 +54,11 @@ export const PreviousButton = Button.styleable<{
         {...props}>
         <XStack gap="$2xl" alignItems="center">
           <Button.Icon>
-            <LeftArrow isComplete={hovering} animateShrink={animateShrink} />
+            <LeftArrow
+              isComplete={hovering}
+              animateShrink={animateShrink}
+              size="$7xl"
+            />
           </Button.Icon>
           {!hideText && <Button.Text>{children || "Previous"}</Button.Text>}
         </XStack>
