@@ -83,7 +83,7 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
     return (
       <Input.TextBox ref={forwardedRef} {...props}>
         {children}
-        <Field.ThemeIcon />
+        <Field.ThemeIcon position="end" />
       </Input.TextBox>
     );
   }

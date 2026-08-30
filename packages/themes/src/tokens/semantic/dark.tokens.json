@@ -12,7 +12,7 @@
       "caption": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.6}",
+        "$value": "{color.base.5}",
         "$description": "The caption foreground color for the dark theme"
       },
       "link": {

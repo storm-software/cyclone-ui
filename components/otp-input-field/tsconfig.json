@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "../../dist/out-tsc/components/search-input-field/tsconfig.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/otp-input-field/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESnext", "DOM"],
     "ignoreDeprecations": "6.0",
@@ -15,6 +15,12 @@
   },
   "references": [
     {
+      "path": "../field"
+    },
+    {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../input-field"
     },
     {
@@ -22,9 +28,6 @@
     },
     {
       "path": "../../packages/helpers"
-    },
-    {
-      "path": "../../packages/state"
     },
     {
       "path": "../form"

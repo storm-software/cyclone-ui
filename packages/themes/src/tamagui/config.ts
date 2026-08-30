@@ -431,8 +431,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#800000",
-      ring: "0px 0px 0px 2px #cf222e",
-      ringSubtle: "0px 0px 0px 1px #cf222e"
+      ring: "0px 0px 0px 3px #cf222e33",
+      ringSubtle: "0px 0px 0px 1px #cf222e33"
     },
     discovery: {
       background: tokens.color.lightPurple7.val,
@@ -464,8 +464,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#3b318f",
-      ring: "0px 0px 0px 2px #7f7ee4",
-      ringSubtle: "0px 0px 0px 1px #7f7ee4"
+      ring: "0px 0px 0px 3px #7f7ee433",
+      ringSubtle: "0px 0px 0px 1px #7f7ee433"
     },
     info: {
       background: tokens.color.lightSky3.val,
@@ -497,8 +497,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005e88",
-      ring: "0px 0px 0px 2px #00b8e6",
-      ringSubtle: "0px 0px 0px 1px #00b8e6"
+      ring: "0px 0px 0px 3px #00b8e633",
+      ringSubtle: "0px 0px 0px 1px #00b8e633"
     },
     negative: {
       background: tokens.color.lightApple7.val,
@@ -530,8 +530,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#840000",
-      ring: "0px 0px 0px 2px #d6301b",
-      ringSubtle: "0px 0px 0px 1px #d6301b"
+      ring: "0px 0px 0px 3px #d6301b33",
+      ringSubtle: "0px 0px 0px 1px #d6301b33"
     },
     positive: {
       background: tokens.color.lightAvocado6.val,
@@ -563,8 +563,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#295c00",
-      ring: "0px 0px 0px 2px #79b136",
-      ringSubtle: "0px 0px 0px 1px #79b136"
+      ring: "0px 0px 0px 3px #79b13633",
+      ringSubtle: "0px 0px 0px 1px #79b13633"
     },
     primary: {
       background: tokens.color.lightBase1.val,
@@ -587,8 +587,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 2px #525252",
-      ringSubtle: "0px 0px 0px 1px #525252"
+      ring: "0px 0px 0px 3px #f5f5f533",
+      ringSubtle: "0px 0px 0px 1px #f5f5f533"
     },
     secondary: {
       background: tokens.color.lightBase8.val,
@@ -611,8 +611,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#848484",
-      ring: "0px 0px 0px 2px #525252",
-      ringSubtle: "0px 0px 0px 1px #525252"
+      ring: "0px 0px 0px 3px #52525233",
+      ringSubtle: "0px 0px 0px 1px #52525233"
     },
     success: {
       background: tokens.color.lightGreen6.val,
@@ -644,8 +644,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005722",
-      ring: "0px 0px 0px 2px #00a469",
-      ringSubtle: "0px 0px 0px 1px #00a469"
+      ring: "0px 0px 0px 3px #00a46933",
+      ringSubtle: "0px 0px 0px 1px #00a46933"
     },
     warning: {
       background: tokens.color.lightYellow4.val,
@@ -677,8 +677,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#793e00",
-      ring: "0px 0px 0px 2px #d49400",
-      ringSubtle: "0px 0px 0px 1px #d49400"
+      ring: "0px 0px 0px 3px #d4940033",
+      ringSubtle: "0px 0px 0px 1px #d4940033"
     }
   },
   dark: {
@@ -712,8 +712,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#7f001a",
-      ring: "0px 0px 0px 2px #b92647",
-      ringSubtle: "0px 0px 0px 1px #b92647"
+      ring: "0px 0px 0px 3px #b9264733",
+      ringSubtle: "0px 0px 0px 1px #b9264733"
     },
     discovery: {
       background: tokens.color.darkPurple6.val,
@@ -745,8 +745,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#312978",
-      ring: "0px 0px 0px 2px #949ed2",
-      ringSubtle: "0px 0px 0px 1px #949ed2"
+      ring: "0px 0px 0px 3px #949ed233",
+      ringSubtle: "0px 0px 0px 1px #949ed233"
     },
     info: {
       background: tokens.color.darkSky6.val,
@@ -778,8 +778,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#007283",
-      ring: "0px 0px 0px 2px #47ecee",
-      ringSubtle: "0px 0px 0px 1px #47ecee"
+      ring: "0px 0px 0px 3px #47ecee33",
+      ringSubtle: "0px 0px 0px 1px #47ecee33"
     },
     negative: {
       background: tokens.color.darkApple8.val,
@@ -811,8 +811,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#820000",
-      ring: "0px 0px 0px 2px #dc2626",
-      ringSubtle: "0px 0px 0px 1px #dc2626"
+      ring: "0px 0px 0px 3px #dc262633",
+      ringSubtle: "0px 0px 0px 1px #dc262633"
     },
     positive: {
       background: tokens.color.darkAvocado5.val,
@@ -844,8 +844,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#315c00",
-      ring: "0px 0px 0px 2px #a4bb4e",
-      ringSubtle: "0px 0px 0px 1px #a4bb4e"
+      ring: "0px 0px 0px 3px #a4bb4e33",
+      ringSubtle: "0px 0px 0px 1px #a4bb4e33"
     },
     primary: {
       background: tokens.color.darkBase1.val,
@@ -878,8 +878,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#131314",
       foregroundInversePressed: "#1a1a1b",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 2px #bebebe",
-      ringSubtle: "0px 0px 0px 1px #bebebe"
+      ring: "0px 0px 0px 3px #f5f5f533",
+      ringSubtle: "0px 0px 0px 1px #f5f5f533"
     },
     secondary: {
       background: tokens.color.darkBase8.val,
@@ -911,8 +911,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#5e5e5e",
-      ring: "0px 0px 0px 2px #bebebe",
-      ringSubtle: "0px 0px 0px 1px #bebebe"
+      ring: "0px 0px 0px 3px #bebebe33",
+      ringSubtle: "0px 0px 0px 1px #bebebe33"
     },
     success: {
       background: tokens.color.darkGreen6.val,
@@ -944,8 +944,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#004a24",
-      ring: "0px 0px 0px 2px #449e71",
-      ringSubtle: "0px 0px 0px 1px #449e71"
+      ring: "0px 0px 0px 3px #449e7133",
+      ringSubtle: "0px 0px 0px 1px #449e7133"
     },
     warning: {
       background: tokens.color.darkYellow7.val,
@@ -977,8 +977,8 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#934e00",
-      ring: "0px 0px 0px 2px #d29527",
-      ringSubtle: "0px 0px 0px 1px #d29527"
+      ring: "0px 0px 0px 3px #d2952733",
+      ringSubtle: "0px 0px 0px 1px #d2952733"
     }
   }
 };
@@ -1143,11 +1143,11 @@ const themes = createThemes({
         foregroundBodyFocused: "#4d4d4d",
         foregroundBodyHover: "#757575",
         foregroundBodyPressed: "#4d4d4d",
-        foregroundCaption: tokens.color.darkBase6.val,
-        foregroundCaptionDisabled: "#61616199",
-        foregroundCaptionFocused: "#9b9b9b",
-        foregroundCaptionHover: "#7d7d7d",
-        foregroundCaptionPressed: "#9b9b9b",
+        foregroundCaption: tokens.color.darkBase5.val,
+        foregroundCaptionDisabled: "#80808099",
+        foregroundCaptionFocused: "#3d3d3d",
+        foregroundCaptionHover: "#5d5d5d",
+        foregroundCaptionPressed: "#3d3d3d",
         foregroundLink: tokens.color.darkBlue5.val,
         foregroundLinkDisabled: "#6f95d6",
         foregroundLinkFocused: "#003da4",
@@ -1230,8 +1230,8 @@ const themes = createThemes({
         foregroundInverseHover: "#b6b6b6",
         foregroundInversePressed: "#7b7b7b",
         foregroundPressed: "#005e55",
-        ring: "0px 0px 0px 2px #1fb2a6",
-        ringSubtle: "0px 0px 0px 1px #1fb2a6"
+        ring: "0px 0px 0px 3px #1fb2a633",
+        ringSubtle: "0px 0px 0px 1px #1fb2a633"
       },
       dark: {
         background: "#36dec0",
@@ -1263,8 +1263,8 @@ const themes = createThemes({
         foregroundInverseHover: "#b6b6b6",
         foregroundInversePressed: "#7b7b7b",
         foregroundPressed: "#00775e",
-        ring: "0px 0px 0px 2px #36dec0",
-        ringSubtle: "0px 0px 0px 1px #36dec0"
+        ring: "0px 0px 0px 3px #36dec033",
+        ringSubtle: "0px 0px 0px 1px #36dec033"
       }
     }
   },
@@ -1338,9 +1338,9 @@ const captionFont = createFont({
     true: 20
   },
   weight: {
-    normal: "400",
-    sm: "400",
-    true: "400"
+    light: "300",
+    sm: "300",
+    true: "300"
   }
 });
 

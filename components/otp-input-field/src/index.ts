@@ -16,16 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
-
-export const LabelText = styled(SizableText, {
-  name: "LabelText",
-  render: "p",
-
-  color: "$foreground",
-  fontFamily: "$heading-sm"
-});
-
-export type LabelTextProps = GetProps<typeof LabelText>;
+export * from "./OtpInputField";

@@ -219,7 +219,7 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   transition: "200ms",
-  color: "$foreground",
+  color: "$backgroundSubtle",
   fontStyle: "italic",
 
   enterStyle: {
@@ -307,7 +307,6 @@ const FieldLabelText = styled(LabelText, {
   transition: "200ms",
   cursor: "pointer",
   wordWrap: "normal",
-  color: "$foreground",
 
   variants: {
     disabled: {
@@ -328,14 +327,7 @@ const FieldLabelText = styled(LabelText, {
 });
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
-  name: "FieldLabel",
-  render: "label",
-
-  transition: "200ms",
-  cursor: "pointer",
-  wordWrap: "normal",
   color: "$foregroundCaption",
-  size: "$3xl",
   fontWeight: "$light",
   marginLeft: "$xl",
 
@@ -399,7 +391,6 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     const field = FieldApi.use();
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
-    const size = field.size.get();
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -412,7 +403,6 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
           <FieldLabelText
             {...props}
             paddingLeft="$lg"
-            size={size}
             disabled={disabled}
             theme="primary">
             {children}
@@ -437,7 +427,6 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {hideOptional !== true && (
                     <FieldOptionalLabelText
                       {...props}
-                      theme="secondary"
                       disabled={disabled}
                       color={
                         disabled
@@ -493,16 +482,19 @@ const FieldLabel = FieldLabelText.styleable<{
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
 
-const FieldIconButtonImpl = Button.styleable(
-  ({ children, ...props }, forwardedRef) => {
+const FieldIconButtonImpl = Button.styleable<{
+  position?: "start" | "end";
+}>(
+  ({ children, position, ...props }, forwardedRef) => {
     const field = FieldApi.use();
     const size = field.size.get() ?? "$true";
     const disabled = field.disabled.get();
+    const focused = field.focused.get();
     const frameSize =
-      size === "$true" || String(size) === "true" ? "$14xl" : size;
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     const adjusted = useMemo(
-      () => getSized(frameSize, { shift: -3 }),
+      () => getSized(frameSize, { shift: -2 }),
       [frameSize]
     );
 
@@ -512,14 +504,33 @@ const FieldIconButtonImpl = Button.styleable(
         justifyContent="center"
         flexDirection="row"
         flexShrink={0}
-        width={adjusted}
-        minWidth={adjusted}>
+        paddingHorizontal="$sm"
+        position="relative">
+        {position && (
+          <View
+            position="absolute"
+            top="25%"
+            height="50%"
+            {...(position === "end"
+              ? { left: 0, borderLeftWidth: 1 }
+              : { right: 0, borderRightWidth: 1 })}
+            borderColor={
+              disabled
+                ? "$borderDisabled"
+                : focused
+                  ? "$borderFocused"
+                  : "$border"
+            }
+            $group-field-hover={{
+              borderColor: disabled ? "$borderDisabled" : "$borderHover"
+            }}
+          />
+        )}
         <Button
           ref={forwardedRef}
           variant="ghost"
           circular={true}
           noPadding={true}
-          padding="$sm"
           animate={true}
           transition="200ms"
           color={disabled ? "$borderDisabled" : "$border"}

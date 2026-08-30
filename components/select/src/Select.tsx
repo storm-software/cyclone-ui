@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
@@ -170,9 +170,7 @@ const SelectTrigger = View.styleable(
         transition="200ms"
         rotate={focused ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
-        paddingHorizontal="$sm"
-        flexBasis="6%"
-        minWidth="$5xl"
+        paddingHorizontal={9}
         alignItems="center"
         justifyContent="center">
         <ChevronDown
@@ -230,12 +228,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         transition="200ms">
         <SelectTextBox {...props}>
           <XGroup.Item flex={1} minWidth={0}>
-            <View
-              flex={1}
-              minWidth={0}
-              flexDirection="row"
-              alignItems="center"
-              paddingHorizontal={getSpaced(frameSize) * 0.25}>
+            <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
               {children}
             </View>
           </XGroup.Item>

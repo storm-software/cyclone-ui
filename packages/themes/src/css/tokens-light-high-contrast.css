@@ -669,26 +669,26 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-primary: 0px 0px 0px 2px #3e3e3e; /** The primary ring variant */
-  --ring-primary-subtle: 0px 0px 0px 1px #3e3e3e; /** The primary subtle ring variant */
-  --ring-secondary: 0px 0px 0px 2px #3e3e3e; /** The secondary ring variant */
-  --ring-secondary-subtle: 0px 0px 0px 1px #3e3e3e; /** The secondary subtle ring variant */
-  --ring-accent: 0px 0px 0px 2px #00bcad; /** The accent ring variant */
-  --ring-accent-subtle: 0px 0px 0px 1px #00bcad; /** The accent subtle ring variant */
-  --ring-danger: 0px 0px 0px 2px #eb0010; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #eb0010; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 2px #c18600; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #c18600; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 2px #007b4f; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #007b4f; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 2px #00afdb; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #00afdb; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 2px #9493fb; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #9493fb; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 2px #76c319; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #76c319; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 2px #eb1a00; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #eb1a00; /** The negative subtle ring variant */
+  --ring-primary: 0px 0px 0px 3px #f5f5f533; /** The primary ring variant */
+  --ring-primary-subtle: 0px 0px 0px 1px #f5f5f533; /** The primary subtle ring variant */
+  --ring-secondary: 0px 0px 0px 3px #52525233; /** The secondary ring variant */
+  --ring-secondary-subtle: 0px 0px 0px 1px #52525233; /** The secondary subtle ring variant */
+  --ring-accent: 0px 0px 0px 3px #1fb2a633; /** The accent ring variant */
+  --ring-accent-subtle: 0px 0px 0px 1px #1fb2a633; /** The accent subtle ring variant */
+  --ring-danger: 0px 0px 0px 3px #cf222e33; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 1px #cf222e33; /** The danger subtle ring variant */
+  --ring-warning: 0px 0px 0px 3px #d4940033; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 1px #d4940033; /** The warning subtle ring variant */
+  --ring-success: 0px 0px 0px 3px #00a46933; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 1px #00a46933; /** The success subtle ring variant */
+  --ring-info: 0px 0px 0px 3px #00b8e633; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 1px #00b8e633; /** The info subtle ring variant */
+  --ring-discovery: 0px 0px 0px 3px #7f7ee433; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 1px #7f7ee433; /** The discovery subtle ring variant */
+  --ring-positive: 0px 0px 0px 3px #79b13633; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 1px #79b13633; /** The positive subtle ring variant */
+  --ring-negative: 0px 0px 0px 3px #d6301b33; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 1px #d6301b33; /** The negative subtle ring variant */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */
@@ -699,6 +699,6 @@
   --typography-heading-sm: 700 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
   --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
-  --typography-caption: italic 400 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
+  --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
 }

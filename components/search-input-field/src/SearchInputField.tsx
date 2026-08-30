@@ -67,7 +67,7 @@ const SearchInputFieldControlTextBox = InputField.Control.TextBox.styleable<
 
   return (
     <InputField.Control.TextBox ref={forwardedRef} {...props}>
-      <InputField.Icon size={adjusted}>
+      <InputField.Icon position="start" size={adjusted}>
         <Search />
       </InputField.Icon>
 

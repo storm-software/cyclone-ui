@@ -51,6 +51,57 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
+  it("reduces opacity for every ring shadow layer", () => {
+    const result = tamaguiPreprocessor({
+      color: {
+        foreground: {
+          secondary: { $type: "color", $value: "#336699" }
+        }
+      },
+      semantic: {
+        ring: {
+          primary: {
+            $type: "shadow",
+            $value: {
+              color: "{color.foreground.secondary}",
+              offsetX: { value: 0, unit: "px" },
+              offsetY: { value: 0, unit: "px" },
+              blur: { value: 0, unit: "px" },
+              spread: { value: 2, unit: "px" }
+            }
+          },
+          layered: {
+            $type: "shadow",
+            $value: [
+              { color: "#ff0000", offsetX: 0 },
+              { color: "#00ff00", offsetX: 0 }
+            ]
+          }
+        },
+        shadow: {
+          regular: {
+            $type: "shadow",
+            $value: { color: "#336699", offsetX: 0 }
+          }
+        }
+      }
+    });
+
+    expect(result).toMatchObject({
+      semantic: {
+        ring: {
+          primary: { $value: { color: "#33669980" } },
+          layered: {
+            $value: [{ color: "#ff000080" }, { color: "#00ff0080" }]
+          }
+        },
+        shadow: {
+          regular: { $value: { color: "#336699" } }
+        }
+      }
+    });
+  });
+
   it("creates a hover variant for a lone foreground-link token", () => {
     const result = tamaguiPreprocessor({
       semantic: {

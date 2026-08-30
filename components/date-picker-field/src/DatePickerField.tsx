@@ -179,7 +179,6 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
       <DatePicker.Trigger
         ref={forwardedRef}
         {...props}
-        flexBasis="4%"
         color={iconColor}
         onPress={focus}>
         <DatePicker.Trigger.Icon>
@@ -313,7 +312,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
             value={inputValue}
             onKeyDown={handleKeyDown}
           />
-          <Field.ThemeIcon />
+          <Field.ThemeIcon position="end" />
         </DatePicker.TextBox>
 
         <DatePicker.Separator />

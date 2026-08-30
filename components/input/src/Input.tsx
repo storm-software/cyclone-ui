@@ -34,7 +34,7 @@ const getInputFrameSize = (
   extras: VariantSpreadExtras<any>
 ) => ({
   ...getInputSize(val, extras),
-  paddingHorizontal: getSpaced(val) * 0.25
+  paddingHorizontal: 0
 });
 
 const InputGroup = styled(XGroup, {
@@ -50,7 +50,7 @@ const InputGroup = styled(XGroup, {
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
-  gap: "$sm",
+  gap: "$none",
   tabIndex: 0,
   borderRadius: "$control",
   overflow: "hidden",
@@ -227,34 +227,7 @@ const InputTextBox = styled(XStack, {
   flex: 1,
   minWidth: 0,
   alignItems: "center",
-
-  variants: {
-    size: {
-      "...size": (val: SizeTokens | number) => {
-        if (!val) {
-          return;
-        }
-
-        if (typeof val === "number") {
-          return {
-            paddingHorizontal: val * 0.25,
-            gap: val * 0.25
-          };
-        }
-
-        const space = getSpaced(val);
-
-        return {
-          paddingHorizontal: space * 0.25,
-          gap: space * 0.25
-        };
-      }
-    }
-  } as const,
-
-  defaultVariants: {
-    size: "$true"
-  }
+  gap: "$none"
 });
 
 const InputTextBoxImpl = InputTextBox.styleable(
@@ -290,6 +263,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
     const {
       size,
       disabled,
+      focused,
       onChange: contextOnChange,
       onInput: contextOnInput
     } = InputContext.useStyledContext();
@@ -297,6 +271,8 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
       () => getSized(size, { shift: -3 }),
       [size]
     );
+    const hasClearButton = Boolean(clearable && onClear && value);
+    const clearSlotWidth = adjustedTrigger + getSpaced("$sm") * 2;
 
     return (
       <View position="relative" height="100%" flex={1} minWidth={0}>
@@ -307,11 +283,12 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           onInput={props.onInput ?? contextOnInput}
           value={value}
           enterKeyHint={enterKeyHint}
+          paddingRight={hasClearButton ? clearSlotWidth : undefined}
           placeholderTextColor="$foregroundInverseDisabled">
           {children}
         </InputValue>
 
-        {clearable && onClear && value && (
+        {hasClearButton && (
           <View
             position="absolute"
             top={0}
@@ -319,11 +296,30 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             height="100%"
             display="flex"
             alignItems="center"
-            minWidth="$5xl">
+            paddingHorizontal="$sm"
+            zIndex="$10">
+            <View
+              position="absolute"
+              left={0}
+              top="25%"
+              height="50%"
+              borderLeftWidth={1}
+              borderColor={
+                disabled
+                  ? "$borderDisabled"
+                  : focused
+                    ? "$borderFocused"
+                    : "$border"
+              }
+              $group-field-hover={{
+                borderColor: disabled ? "$borderDisabled" : "$borderHover"
+              }}
+            />
             <Button
               ref={forwardedRef}
               variant="link"
               circular={true}
+              noPadding={true}
               disabled={disabled}
               color={disabled ? "$borderDisabled" : "$border"}
               onClick={onClear}
@@ -346,26 +342,32 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
 const InputTrigger = Button.styleable<{
   forcePlacement?: GetProps<typeof XGroup.Item>["forcePlacement"];
 }>(
-  ({ children, flexBasis = "6%", ...props }, forwardedRef) => {
+  ({ children, flexBasis: _flexBasis, ...props }, forwardedRef) => {
     const { circular, size } = InputContext.useStyledContext();
+    const controlSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
     const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
+      () => getSized(controlSize, { shift: -3 }),
+      [controlSize]
     );
 
     return (
-      <XGroup.Item>
+      <XGroup.Item flexShrink={0}>
         <View
-          paddingRight="$lg"
+          width={frameSize}
+          minWidth={frameSize}
+          paddingHorizontal="$xl"
           display="flex"
-          flexBasis={flexBasis}
-          flexShrink={1}
-          minWidth="$5xl">
+          flexShrink={0}
+          alignItems="center"
+          justifyContent="center">
           <Button
             ref={forwardedRef}
             variant="link"
             borderRadius={circular ? 100_000 : "$button"}
+            noPadding={true}
             color="$foregroundInverse"
             {...props}
             size={adjustedTrigger}>

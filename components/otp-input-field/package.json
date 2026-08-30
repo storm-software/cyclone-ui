@@ -1,0 +1,51 @@
+{
+  "name": "@cyclone-ui/otp-input-field",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/otp-input-field"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "@cyclone-ui/helpers": "workspace:*",
+    "@cyclone-ui/input": "workspace:*",
+    "@cyclone-ui/input-field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./OtpInputField": {
+      "import": "./dist/OtpInputField.mjs",
+      "require": "./dist/OtpInputField.cjs"
+    },
+    "./*": "./*"
+  }
+}

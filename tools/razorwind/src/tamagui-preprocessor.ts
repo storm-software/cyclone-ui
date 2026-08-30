@@ -534,6 +534,66 @@ function applyOpacity(hex: string, opacity: number): string {
   return `${rgb}${alphaHex(alpha)}`;
 }
 
+const RING_OPACITY = 0.2;
+const THEME_RING_OPACITY = 0.8;
+
+function applyRingOpacity(
+  node: unknown,
+  tree: unknown,
+  inRingGroup = false
+): unknown {
+  if (Array.isArray(node)) {
+    return node.map(item => applyRingOpacity(item, tree, inRingGroup));
+  }
+
+  if (!isPlainObject(node)) {
+    return node;
+  }
+
+  if (inRingGroup && isTokenNode(node) && resolveType(node) === "shadow") {
+    const value = node.$value;
+    const applyToLayer = (layer: unknown): unknown => {
+      if (!isPlainObject(layer) || !("color" in layer)) {
+        return layer;
+      }
+
+      const color = resolveColorHex(layer.color, tree);
+
+      return color
+        ? {
+            ...layer,
+            color: applyOpacity(
+              color,
+              "theme" in layer &&
+                layer.theme !== "primary" &&
+                layer.theme !== "secondary"
+                ? THEME_RING_OPACITY
+                : RING_OPACITY
+            )
+          }
+        : layer;
+    };
+
+    return {
+      ...node,
+      $value: Array.isArray(value)
+        ? value.map(applyToLayer)
+        : applyToLayer(value)
+    };
+  }
+
+  const result: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(node)) {
+    result[key] = applyRingOpacity(
+      value,
+      tree,
+      inRingGroup || key.toLowerCase() === "ring"
+    );
+  }
+
+  return result;
+}
+
 function isGreyscale(hex: string): boolean {
   const expanded = expandHex(hex).toLowerCase();
 
@@ -937,9 +997,13 @@ export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens
 ): PreprocessedTokens {
   const converted = walk(dictionary) as PreprocessedTokens;
-  const withStateVariants = injectColorStateVariants(
+  const withRingOpacity = applyRingOpacity(
     converted,
     converted
+  ) as PreprocessedTokens;
+  const withStateVariants = injectColorStateVariants(
+    withRingOpacity,
+    withRingOpacity
   ) as PreprocessedTokens;
 
   return withStateVariants;

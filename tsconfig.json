@@ -199,6 +199,9 @@
       "path": "./components/number-input-field"
     },
     {
+      "path": "./components/otp-input-field"
+    },
+    {
       "path": "./apps/storybook"
     },
     {

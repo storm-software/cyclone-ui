@@ -137,7 +137,7 @@
   --color-pink-8: #bd7794; /** A deep berry pink color */
   --color-pink-9: #9e697f; /** A dark plum pink color */
   --color-foreground-body: #969696; /** The body foreground color for the dark theme */
-  --color-foreground-caption: #6a6a6a; /** The caption foreground color for the dark theme */
+  --color-foreground-caption: #808080; /** The caption foreground color for the dark theme */
   --color-foreground-link: #668dd3; /** The link foreground color for the dark theme */
   --color-foreground-required: #b34e4e; /** A required foreground color for the dark theme */
   --color-foreground-primary: #d2d2d2; /** The primary foreground color for the dark theme */
@@ -164,10 +164,10 @@
   --color-foreground-body-pressed: #5c5c5c; /** The body foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-body-focused: #5c5c5c; /** The body foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-body-disabled: rgba(150, 150, 150, 0.6); /** The body foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-caption-hover: #7e7e7e; /** The caption foreground color for the dark theme (hover, 20% brighter) */
-  --color-foreground-caption-pressed: #939393; /** The caption foreground color for the dark theme (pressed, 40% brighter) */
-  --color-foreground-caption-focused: #939393; /** The caption foreground color for the dark theme (focused, 40% brighter) */
-  --color-foreground-caption-disabled: rgba(106, 106, 106, 0.6); /** The caption foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-caption-hover: #676767; /** The caption foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-caption-pressed: #515151; /** The caption foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-caption-focused: #515151; /** The caption foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-caption-disabled: rgba(128, 128, 128, 0.6); /** The caption foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-link-hover: #5072ac; /** The link foreground color for the dark theme (hover, 20% darker) */
   --color-foreground-link-pressed: #2b5294; /** The link foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-link-focused: #2b5294; /** The link foreground color for the dark theme (focused, 40% darker) */
@@ -684,26 +684,26 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-primary: 0px 0px 0px 2px #ababab; /** The primary ring variant */
-  --ring-primary-subtle: 0px 0px 0px 1px #ababab; /** The primary subtle ring variant */
-  --ring-secondary: 0px 0px 0px 2px #ababab; /** The secondary ring variant */
-  --ring-secondary-subtle: 0px 0px 0px 1px #ababab; /** The secondary subtle ring variant */
-  --ring-accent: 0px 0px 0px 2px #57b6a5; /** The accent ring variant */
-  --ring-accent-subtle: 0px 0px 0px 1px #57b6a5; /** The accent subtle ring variant */
-  --ring-danger: 0px 0px 0px 2px #9e4a5d; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #9e4a5d; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 2px #ad8b4e; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #ad8b4e; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 2px #5c8f75; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #5c8f75; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 2px #61c3c4; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #61c3c4; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 2px #8f96b8; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #8f96b8; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 2px #95a165; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #95a165; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 2px #b34e4e; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #b34e4e; /** The negative subtle ring variant */
+  --ring-primary: 0px 0px 0px 3px #f5f5f533; /** The primary ring variant */
+  --ring-primary-subtle: 0px 0px 0px 1px #f5f5f533; /** The primary subtle ring variant */
+  --ring-secondary: 0px 0px 0px 3px #bebebe33; /** The secondary ring variant */
+  --ring-secondary-subtle: 0px 0px 0px 1px #bebebe33; /** The secondary subtle ring variant */
+  --ring-accent: 0px 0px 0px 3px #36dec033; /** The accent ring variant */
+  --ring-accent-subtle: 0px 0px 0px 1px #36dec033; /** The accent subtle ring variant */
+  --ring-danger: 0px 0px 0px 3px #b9264733; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 1px #b9264733; /** The danger subtle ring variant */
+  --ring-warning: 0px 0px 0px 3px #d2952733; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 1px #d2952733; /** The warning subtle ring variant */
+  --ring-success: 0px 0px 0px 3px #449e7133; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 1px #449e7133; /** The success subtle ring variant */
+  --ring-info: 0px 0px 0px 3px #47ecee33; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 1px #47ecee33; /** The info subtle ring variant */
+  --ring-discovery: 0px 0px 0px 3px #949ed233; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 1px #949ed233; /** The discovery subtle ring variant */
+  --ring-positive: 0px 0px 0px 3px #a4bb4e33; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 1px #a4bb4e33; /** The positive subtle ring variant */
+  --ring-negative: 0px 0px 0px 3px #dc262633; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 1px #dc262633; /** The negative subtle ring variant */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */
@@ -714,6 +714,6 @@
   --typography-heading-sm: 700 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
   --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
-  --typography-caption: italic 400 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
+  --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */
   --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
 }

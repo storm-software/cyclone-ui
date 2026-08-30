@@ -99,7 +99,7 @@ const SelectFieldControl = Select.styleable<
           {displayValue}
         </Select.TextBox.Value>
 
-        <Field.ThemeIcon render="span" role={undefined} />
+        <Field.ThemeIcon position="end" render="span" role={undefined} />
       </Select.TextBox>
 
       <Select.Items>
