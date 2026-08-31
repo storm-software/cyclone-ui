@@ -302,7 +302,7 @@ const CardLinkImpl = CardLink.styleable(
           {children}
         </CardLink>
         <View
-          transition="medium"
+          transition="200ms"
           x={0}
           $group-card-hover={{
             x: 10

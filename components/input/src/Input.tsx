@@ -276,7 +276,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
     const adjustedTrigger = useMemo(
       // Keep clear-button glyphs aligned with Field.Icon: its button frame is
       // two size steps below the textbox, then Button.Icon derives the glyph.
-      () => getSized(controlSize, { shift: -2 }),
+      () => getSized(controlSize, { shift: 2 }),
       [controlSize]
     );
     const hasClearButton = Boolean(clearable && onClear && value);
@@ -304,6 +304,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             height="100%"
             display="flex"
             alignItems="center"
+            justifyContent="center"
             paddingHorizontal="$sm"
             zIndex="$10">
             <View

@@ -293,7 +293,7 @@ const DayPicker = () => {
   return (
     <AnimatePresence key={prevNextAnimationKey}>
       <YStack
-        transition="medium"
+        transition="200ms"
         justifyContent="center"
         gap="$xl"
         {...prevNextAnimation()}>
@@ -515,7 +515,7 @@ const CalendarHeader = () => {
         flexBasis={0}
         minWidth={0}>
         <LabelText
-          transition="medium"
+          transition="200ms"
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
@@ -528,7 +528,7 @@ const CalendarHeader = () => {
           {year}
         </LabelText>
         <LabelText
-          transition="medium"
+          transition="200ms"
           onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"

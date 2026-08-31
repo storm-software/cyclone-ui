@@ -33,12 +33,13 @@ const BaseInputValue = styled(
   baseInputStyle[0],
   baseInputStyle[1]
 );
+const BaseInputValueImpl = BaseInputValue as any;
 
 export const InputValue = BaseInputValue.styleable<InputComponentProps>(
   ({ autoComplete = "off", ...inProps }, forwardedRef) => {
     const {
-      disabled,
-      name,
+      disabled: contextDisabled,
+      name: contextName,
       onChange: contextOnChange,
       onInput: contextOnInput,
       onBlur: contextOnBlur,
@@ -91,6 +92,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       secureTextEntry,
       selectionColor,
       nativePaddingInline,
+      render = "input",
       inputMode,
       onChange: inputOnChange,
       onInput: inputOnInput,
@@ -98,8 +100,11 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       onFocus: inputOnFocus,
       ...rest
     } = inProps;
+    const disabled = inProps.disabled ?? contextDisabled;
+    const name = inProps.name ?? contextName;
 
-    const ref = useRef<TamaguiWebElement<HTMLInputElement>>(null);
+    const ref =
+      useRef<TamaguiWebElement<HTMLInputElement | HTMLTextAreaElement>>(null);
     const theme = useTheme();
 
     const composedRefs = useComposedRefs(forwardedRef, ref);
@@ -143,15 +148,15 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
     }, [selection]);
 
     const handleInput = useCallback(
-      (event: FormEvent<HTMLInputElement>) => {
+      (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         event.stopPropagation();
-        const value = event.target.value;
+        const value = event.currentTarget.value;
         onInput?.(
           new CustomEvent("input", {
             detail: value
-          })
+          }) as any
         );
-        onChange?.(new CustomEvent("change", { detail: value }));
+        onChange?.(new CustomEvent("change", { detail: value }) as any);
       },
       [onChange, onInput]
     );
@@ -210,22 +215,41 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
           </style>
         )}
 
-        <BaseInputValue asChild {...finalProps} disabled={disabled} id={name}>
-          <input
-            ref={composedRefs}
-            style={{
-              height: "100%",
-              flex: 1,
-              minWidth: 0,
-              margin: 0,
-              padding: 0,
-              paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
-            }}
-            onChange={handleInput}
-            onBlur={inputOnBlur ?? contextOnBlur}
-            onFocus={inputOnFocus ?? contextOnFocus}
-          />
-        </BaseInputValue>
+        <BaseInputValueImpl
+          asChild
+          {...finalProps}
+          disabled={disabled}
+          id={name}>
+          {render === "textarea" ? (
+            <textarea
+              ref={composedRefs as any}
+              style={{
+                flex: 1,
+                minWidth: 0,
+                margin: 0,
+                paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
+              }}
+              onChange={handleInput as any}
+              onBlur={(inputOnBlur ?? contextOnBlur) as any}
+              onFocus={(inputOnFocus ?? contextOnFocus) as any}
+            />
+          ) : (
+            <input
+              ref={composedRefs as any}
+              style={{
+                height: "100%",
+                flex: 1,
+                minWidth: 0,
+                margin: 0,
+                padding: 0,
+                paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
+              }}
+              onChange={handleInput as any}
+              onBlur={(inputOnBlur ?? contextOnBlur) as any}
+              onFocus={(inputOnFocus ?? contextOnFocus) as any}
+            />
+          )}
+        </BaseInputValueImpl>
       </>
     );
   },

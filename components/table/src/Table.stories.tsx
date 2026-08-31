@@ -68,7 +68,7 @@ const meta: Meta<typeof Table> = {
                         })}>
                     <SizableText
                       fontFamily="$heading-sm"
-                      color="$foregroundPrimary"
+                      color="$foreground"
                       size="$6xl">
                       {header.isPlaceholder
                         ? null
@@ -117,7 +117,7 @@ const meta: Meta<typeof Table> = {
           <Table.Row header={true}>
             <SizableText
               fontFamily="$heading-sm"
-              color="$foregroundPrimary"
+              color="$foreground"
               size="$6xl">
               Table footer information is populated here
             </SizableText>

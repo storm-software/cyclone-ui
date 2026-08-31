@@ -481,6 +481,22 @@ const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
   return "$foregroundHover";
 };
 
+const pressedColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
+  if (disabled) {
+    if (variant === "inverse" || variant === "subtle") {
+      return "$foregroundInverseDisabled";
+    }
+
+    return "$foregroundDisabled";
+  }
+
+  if (variant === "inverse" || variant === "subtle") {
+    return "$foregroundInversePressed";
+  }
+
+  return "$foregroundPressed";
+};
+
 const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
   ({ children, size: _size, ...props }, forwardedRef) => {
     const { variant, disabled, color } = ButtonContext.useStyledContext();
@@ -507,7 +523,16 @@ const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
 );
 
 const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
-  ({ children, size, ...props }, forwardedRef) => {
+  (
+    {
+      children,
+      size,
+      "$group-button-hover": groupButtonHover,
+      "$group-button-press": groupButtonPress,
+      ...props
+    },
+    forwardedRef
+  ) => {
     const {
       variant,
       disabled,
@@ -525,14 +550,28 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
         zIndex="$20"
         alignItems="center"
         flexGrow={0}
-        flexShrink={0}>
+        flexShrink={0}
+        color={colorForVariant(variant, disabled, color)}
+        $group-button-hover={{
+          color: hoverColorForVariant(variant, disabled),
+          ...groupButtonHover
+        }}
+        $group-button-press={{
+          color: pressedColorForVariant(variant, disabled),
+          ...groupButtonPress
+        }}>
         <ThemeableIcon
           {...props}
           disabled={disabled}
           size={adjusted}
           color={colorForVariant(variant, disabled, color)}
           $group-button-hover={{
-            color: hoverColorForVariant(variant, disabled)
+            color: hoverColorForVariant(variant, disabled),
+            ...groupButtonHover
+          }}
+          $group-button-press={{
+            color: pressedColorForVariant(variant, disabled),
+            ...groupButtonPress
           }}>
           {children}
         </ThemeableIcon>
@@ -609,13 +648,18 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       children,
       onPress,
       onClick,
+      render,
+      href,
+      download,
       ...props
     },
     forwardedRef
   ) => {
     const handlePress = useCallback(
       (event: GestureResponderEvent) => {
-        event.preventDefault();
+        if (render !== "a") {
+          event.preventDefault();
+        }
         event.stopPropagation();
 
         if (!disabled) {
@@ -627,13 +671,16 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           }
         }
       },
-      [disabled, onPress, onClick]
+      [disabled, onPress, onClick, render]
     );
 
     const frame = (
       <ButtonFrame
         group={"button" as any}
         ref={forwardedRef}
+        render={render}
+        href={href}
+        download={download}
         {...props}
         onPress={handlePress}
         frameSize={size}

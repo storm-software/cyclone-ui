@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { getFontSizedFromSize } from "@cyclone-ui/helpers";
 import { styled, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { SelectContext } from "./utilities";
@@ -30,6 +29,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   cursor: "pointer",
   color: "$foregroundOnPrimary",
   fontFamily: "$body",
+  fontSize: "$md",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
@@ -70,15 +70,10 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
           color: "$foregroundOnPrimaryDisabled"
         }
       }
-    },
-
-    size: {
-      "...size": getFontSizedFromSize
     }
   } as const,
 
   defaultVariants: {
-    size: "$true",
     disabled: false,
     placeholding: false
   }
@@ -88,7 +83,7 @@ export const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
 }>(
   ({ children, placeholder, ...props }, forwardedRef) => {
-    const { disabled, name, size } = SelectContext.useStyledContext();
+    const { disabled, name } = SelectContext.useStyledContext();
 
     return (
       <View flex={1} minWidth={0}>
@@ -96,7 +91,6 @@ export const SelectValue = SelectValueFrame.styleable<{
           id={name}
           ref={forwardedRef}
           {...props}
-          size={size}
           disabled={disabled}
           placeholding={placeholder && !disabled}>
           {children}

@@ -227,6 +227,11 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
     const { ref, ...rootProps } = getRootProps();
     const composedRef = useComposedRefs(forwardedRef, ref);
+    const handleOpen = useCallback(() => {
+      if (!disabled && files.length < max) {
+        onOpen();
+      }
+    }, [disabled, files.length, max, onOpen]);
 
     return (
       // @ts-ignore reason: getRootProps() which is web specific return some react-native incompatible props, but it's fine
@@ -235,7 +240,9 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
         {...rootProps}
         ref={composedRef}
         group={"file-picker" as any}
-        active={Boolean(dragStatus?.isDragActive)}>
+        active={Boolean(dragStatus?.isDragActive)}
+        onClick={handleOpen}
+        onPress={handleOpen}>
         <FilePickerContext.Provider
           name={name}
           files={files}
@@ -266,7 +273,7 @@ const FilePickerGroup = FilePickerGroupFrame.styleable<
 
 const FilePickerTrigger = YStack.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, active, onOpen, files, max } =
+    const { disabled, active, files, max } =
       FilePickerContext.useStyledContext();
 
     if (files.length >= max) {
@@ -279,7 +286,6 @@ const FilePickerTrigger = YStack.styleable(
         justifyContent="center"
         alignItems="center"
         gap="$md"
-        onPress={onOpen}
         width="100%"
         cursor={disabled ? "not-allowed" : "pointer"}
         {...props}>
@@ -317,7 +323,8 @@ const FilePickerTrigger = YStack.styleable(
 
 const FilePickerTriggerButton = Button.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { disabled, files, max } = FilePickerContext.useStyledContext();
+    const { disabled, files, max, onOpen } =
+      FilePickerContext.useStyledContext();
 
     if (disabled) {
       return null;
@@ -329,11 +336,14 @@ const FilePickerTriggerButton = Button.styleable(
         width="100%"
         variant="link"
         disabled={disabled}
+        onPress={onOpen}
         $platform-native={{
           display: "none"
         }}
         {...props}>
-        <Button.Text>
+        <Button.Text
+          color="$foregroundLink"
+          textDecorationColor="$foregroundLink">
           {children ||
             (max > 1
               ? files.length === 0
@@ -379,6 +389,8 @@ const FilePickerViewLink = ({
         fontSize="$xl"
         fontWeight="$true"
         color="$foregroundInverse"
+        width="100%"
+        textAlign="center"
         {...props}
         href={uri}
         target="_blank">
@@ -392,6 +404,8 @@ const FilePickerViewLink = ({
       fontFamily="$heading-sm"
       fontSize="$xl"
       color="$foregroundInverse"
+      width="100%"
+      textAlign="center"
       {...props}>
       {children}
     </LabelText>
@@ -429,6 +443,7 @@ const FilePickerFile = ({
       borderRadius="$card"
       borderColor="$border"
       borderWidth={1}
+      boxShadow="none"
       enterStyle={{
         opacity: 0,
         scale: 0.3
@@ -438,11 +453,11 @@ const FilePickerFile = ({
         scale: 0.5
       }}
       hoverStyle={{
-        outlineColor: "$borderHover",
-        outlineWidth: 2,
-        outlineStyle: "solid",
-        outlineOffset: 3
-      }}>
+        borderColor: "$borderHover",
+        boxShadow: "$ring"
+      }}
+      onClick={event => event.stopPropagation()}
+      onPress={event => event.stopPropagation()}>
       <View
         transition="100ms"
         position="absolute"
@@ -451,7 +466,7 @@ const FilePickerFile = ({
         left={0}
         right={0}
         zIndex="$10"
-        backgroundColor="$backgroundHover"
+        backgroundColor="$black"
         opacity={0.6}
         $group-file-hover={{
           opacity: 0.8,
@@ -463,27 +478,27 @@ const FilePickerFile = ({
       <View
         transition="100ms"
         position="absolute"
-        zIndex="$20"
+        zIndex="$30"
         left={16}
-        top="30%"
+        top="50%"
+        y="-50%"
         opacity={0}
         $group-file-hover={{
           opacity: 1
         }}>
         {uri && (
-          <Link underline="none" href={uri} download={name}>
-            <Button
-              variant="ghost"
-              theme="primary"
-              color="$foreground"
-              size="$13xl"
-              padding="$xl"
-              circular={true}>
-              <Button.Icon>
-                <Download />
-              </Button.Icon>
-            </Button>
-          </Link>
+          <Button
+            render="a"
+            href={uri}
+            download={name}
+            variant="ghost"
+            size="$13xl"
+            padding="$xl"
+            circular={true}>
+            <Button.Icon $group-button-hover={{ color: "$foregroundHover" }}>
+              <Download />
+            </Button.Icon>
+          </Button>
         )}
       </View>
 
@@ -491,22 +506,21 @@ const FilePickerFile = ({
         <View
           transition="100ms"
           position="absolute"
-          zIndex="$20"
+          zIndex="$30"
           right={16}
-          top="30%"
+          top="50%"
+          y="-50%"
           opacity={0}
           $group-file-hover={{
             opacity: 1
           }}>
           <Button
             variant="ghost"
-            theme="primary"
-            color="$foreground"
             onPress={handleRemove}
             size="$13xl"
             padding="$xl"
             circular={true}>
-            <Button.Icon>
+            <Button.Icon $group-button-hover={{ color: "$foregroundHover" }}>
               <Trash2 />
             </Button.Icon>
           </Button>
@@ -534,34 +548,19 @@ const FilePickerFile = ({
             </FilePickerViewLink>
           </View>
           <XStack gap="$lg" justifyContent="center" alignItems="center">
-            <BytesText
-              zIndex="$30"
-              color="$foregroundBody"
-              fontWeight="$medium">
-              {size}
-            </BytesText>
+            <BytesText zIndex="$30">{size}</BytesText>
 
             {lastModified && <Dot size="$6xl" color="$foregroundBody" />}
 
             {lastModified && (
-              <BodyText
-                zIndex="$30"
-                color="$foregroundBody"
-                fontWeight="$medium">
-                {formatDate(new Date(lastModified), "YYYY-MM-DD HH:mm:ss")}
+              <BodyText zIndex="$30">
+                {formatDate(new Date(lastModified), "MM-DD-YYYY HH:mm:ss")}
               </BodyText>
             )}
 
             {mimeType && <Dot size="$6xl" color="$foregroundBody" />}
 
-            {mimeType && (
-              <BodyText
-                zIndex="$30"
-                color="$foregroundBody"
-                fontWeight="$medium">
-                {mimeType}
-              </BodyText>
-            )}
+            {mimeType && <BodyText zIndex="$30">{mimeType}</BodyText>}
           </XStack>
         </YStack>
       </View>
@@ -570,13 +569,13 @@ const FilePickerFile = ({
         transition="200ms"
         fullscreen={true}
         zIndex="$10"
-        colors={["transparent", "$backgroundSubtle"]}
+        colors={["transparent", "$backgroundPage"]}
         locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}
         opacity={0}
         $group-file-hover={{
-          opacity: 1
+          opacity: 0.25
         }}
       />
 

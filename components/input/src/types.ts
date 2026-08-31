@@ -38,6 +38,7 @@ export type InputComponentProps = ViewProps &
     | "className"
     | "children"
     | "ref"
+    | "type"
     | "value"
     | "size"
     | "onChange"
@@ -60,6 +61,11 @@ export type InputComponentProps = ViewProps &
     | "selectionColor"
     | "numberOfLines"
   > & {
+    /**
+     * The native input type, or `textarea` for a multiline text control.
+     */
+    type?: DetailedInputProps["type"] | "textarea";
+
     /** @internal Native text inset for composed controls. */
     nativePaddingInline?: number | string;
 

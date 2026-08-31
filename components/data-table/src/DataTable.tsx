@@ -63,10 +63,17 @@ import {
   useReactTable
 } from "@tanstack/react-table";
 import type { Dispatch, SetStateAction } from "react";
-import { useCallback, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState
+} from "react";
 
 declare module "@tanstack/react-table" {
-  interface ColumnMeta<TData extends RowData, _TValue> {
+  interface ColumnMeta<TData extends RowData> {
     facetFn?: (data: TData) => string;
   }
 }
@@ -107,6 +114,130 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
   pageSize?: number | null | false;
 }
 
+interface ContentSizedCell {
+  dataset: { columnId?: string };
+  scrollWidth: number;
+  style: { width: string };
+}
+
+interface ContentSizedTableElement {
+  querySelectorAll: (selector: string) => ArrayLike<ContentSizedCell>;
+  style: {
+    maxWidth: string;
+    minWidth: string;
+    tableLayout: string;
+    width: string;
+  };
+}
+
+interface ContentResizeObserver {
+  disconnect: () => void;
+  observe: (element: ContentSizedCell) => void;
+}
+
+type ContentResizeObserverConstructor = new (
+  callback: () => void
+) => ContentResizeObserver;
+
+const useContentSizedColumns = () => {
+  const tableRef = useRef<ContentSizedTableElement | null>(null);
+
+  const measureColumns = useCallback(() => {
+    const tableElement = tableRef.current;
+
+    if (!tableElement?.querySelectorAll) {
+      return;
+    }
+
+    const cells = Array.from(tableElement.querySelectorAll("[data-column-id]"));
+    const headerCells = Array.from(
+      tableElement.querySelectorAll("thead [data-column-id]")
+    );
+
+    tableElement.style.width = "max-content";
+    tableElement.style.minWidth = "0px";
+    tableElement.style.maxWidth = "none";
+    tableElement.style.tableLayout = "auto";
+
+    cells.forEach(cell => {
+      cell.style.width = "auto";
+    });
+
+    const widths = cells.reduce((result, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      if (columnId) {
+        result.set(
+          columnId,
+          Math.max(result.get(columnId) ?? 0, Math.ceil(cell.scrollWidth))
+        );
+      }
+
+      return result;
+    }, new Map<string, number>());
+
+    const lastColumnId = headerCells.at(-1)?.dataset.columnId;
+    const intrinsicTableWidth = headerCells.reduce((width, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      return width + (columnId ? (widths.get(columnId) ?? 0) : 0);
+    }, 0);
+
+    cells.forEach(cell => {
+      const columnId = cell.dataset.columnId;
+      const width = columnId ? widths.get(columnId) : undefined;
+
+      if (width && columnId !== lastColumnId) {
+        cell.style.width = `${width}px`;
+      }
+    });
+
+    tableElement.style.width = "100%";
+    tableElement.style.minWidth = `${intrinsicTableWidth}px`;
+    tableElement.style.tableLayout = "fixed";
+  }, []);
+
+  useLayoutEffect(measureColumns);
+
+  useEffect(() => {
+    const tableElement = tableRef.current;
+    const ResizeObserverImpl = (
+      globalThis as typeof globalThis & {
+        ResizeObserver?: ContentResizeObserverConstructor;
+      }
+    ).ResizeObserver;
+
+    if (!tableElement?.querySelectorAll || !ResizeObserverImpl) {
+      return;
+    }
+
+    let animationFrame: number | undefined;
+    const observer = new ResizeObserverImpl(() => {
+      if (animationFrame !== undefined) {
+        cancelAnimationFrame(animationFrame);
+      }
+
+      animationFrame = requestAnimationFrame(measureColumns);
+    });
+
+    animationFrame = requestAnimationFrame(measureColumns);
+
+    Array.from(tableElement.querySelectorAll("[data-column-id] *")).forEach(
+      element => observer.observe(element)
+    );
+
+    return () => {
+      observer.disconnect();
+
+      if (animationFrame !== undefined) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  });
+
+  return tableRef;
+};
+
 export function DataTable<TData extends RowData>({
   options,
   pageSize = 100,
@@ -119,6 +250,7 @@ export function DataTable<TData extends RowData>({
     pageIndex: 0,
     pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
   });
+  const tableRef = useContentSizedColumns();
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -161,17 +293,31 @@ export function DataTable<TData extends RowData>({
       setPagination={setPagination}>
       <YStack gap="$3xl">
         <Table
+          ref={tableRef as any}
+          width="100%"
+          maxWidth="none"
           alignCells={{ x: "start", y: "center" }}
           alignHeaderCells={{ x: "start", y: "center" }}
-          cellWidth="$20xl"
-          cellHeight="$9xl"
+          {...({ sizing: "content" } as any)}
           {...rest}>
           <Table.Header>
             {headerGroups.map(headerGroup => {
               return (
                 <Table.Row key={headerGroup.id} header={true}>
                   {headerGroup.headers.map(header => (
-                    <Table.HeaderCell key={header.id} group={"header" as any}>
+                    <Table.HeaderCell
+                      key={header.id}
+                      borderRightColor="$border"
+                      borderRightWidth={
+                        header.index === headerGroup.headers.length - 1 ? 0 : 1
+                      }
+                      {...({
+                        colSpan: header.colSpan,
+                        ...(header.colSpan === 1
+                          ? { "data-column-id": header.column.id }
+                          : {})
+                      } as any)}
+                      group={"header" as any}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -189,7 +335,9 @@ export function DataTable<TData extends RowData>({
               return (
                 <Table.Row key={row.id}>
                   {row.getVisibleCells().map(cell => (
-                    <Table.Cell key={cell.id}>
+                    <Table.Cell
+                      key={cell.id}
+                      {...({ "data-column-id": cell.column.id } as any)}>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
@@ -201,31 +349,42 @@ export function DataTable<TData extends RowData>({
             })}
             {tableRows.length === 0 && (
               <Table.Row>
-                <View
-                  flex={1}
-                  justifyContent="center"
-                  alignItems="center"
-                  padding="$7xl">
-                  <LabelText size="$6xl">No data to display</LabelText>
-                </View>
+                <Table.Cell
+                  {...({
+                    colSpan: table.getVisibleLeafColumns().length
+                  } as any)}>
+                  <View
+                    flex={1}
+                    justifyContent="center"
+                    alignItems="center"
+                    padding="$7xl">
+                    <LabelText size="$6xl">No data to display</LabelText>
+                  </View>
+                </Table.Cell>
               </Table.Row>
             )}
           </Table.Body>
           {pageCount > 1 && (
             <Table.Footer>
               <Table.Row header={true}>
-                <DataTablePagination
-                  setPageIndex={table.setPageIndex}
-                  nextPage={table.nextPage}
-                  previousPage={table.previousPage}
-                  firstPage={table.firstPage}
-                  lastPage={table.lastPage}
-                  totalCount={data.length}
-                  unfilteredCount={table.getFilteredRowModel().rows.length}
-                  pageIndex={pagination.pageIndex}
-                  pageSize={pagination.pageSize}
-                  pageCount={pageCount}
-                />
+                <Table.Cell
+                  borderBottomWidth={0}
+                  {...({
+                    colSpan: table.getVisibleLeafColumns().length
+                  } as any)}>
+                  <DataTablePagination
+                    setPageIndex={table.setPageIndex}
+                    nextPage={table.nextPage}
+                    previousPage={table.previousPage}
+                    firstPage={table.firstPage}
+                    lastPage={table.lastPage}
+                    totalCount={data.length}
+                    unfilteredCount={table.getFilteredRowModel().rows.length}
+                    pageIndex={pagination.pageIndex}
+                    pageSize={pagination.pageSize}
+                    pageCount={pageCount}
+                  />
+                </Table.Cell>
               </Table.Row>
             </Table.Footer>
           )}
@@ -276,6 +435,13 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   const [searchResults, setSearchResults] = useState(
     useMemo(() => Array.from(valuesMap.keys()), [valuesMap])
   );
+  const intrinsicFilterLabels = useMemo(
+    () =>
+      Array.from(valuesMap.entries())
+        .map(([value, { count }]) => `${value} (${count})`)
+        .join("\n"),
+    [valuesMap]
+  );
 
   const handleSearchChange = useCallback(
     (context: CallbackContext<FieldAtoms<string>>) => {
@@ -291,11 +457,24 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   );
 
   return (
-    <YStack gap="$3xl" width="100%">
+    <YStack gap="$3xl" width="max-content" minWidth="100%">
+      <SizableText
+        aria-hidden={true}
+        height={0}
+        overflow="hidden"
+        opacity={0}
+        pointerEvents="none"
+        paddingRight="$9xl"
+        maxWidth="100%"
+        whiteSpace="pre"
+        fontFamily="$heading-sm">
+        {intrinsicFilterLabels}
+      </SizableText>
+
       <SearchInputField
         name={SEARCH_FIELD_NAME}
         size="$9xl"
-        width="$17xl"
+        width="100%"
         onChange={handleSearchChange}>
         <SearchInputField.Control>
           <SearchInputField.Control.TextBox placeholder="Filter..." />
@@ -384,18 +563,19 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         values[SELECT_ALL_FIELD_NAME] !== previousValues[SELECT_ALL_FIELD_NAME]
       ) {
         set(atoms.values, prev =>
-          keys.reduce((ret, key) => {
-            ret[key] = values[SELECT_ALL_FIELD_NAME];
+          keys.reduce(
+            (ret, key) => {
+              ret[key] = true;
 
-            return ret;
-          }, deepClone(prev))
+              return ret;
+            },
+            {
+              ...deepClone(prev),
+              [SELECT_ALL_FIELD_NAME]: true
+            }
+          )
         );
-
-        setFilterValue(
-          values[SELECT_ALL_FIELD_NAME]
-            ? []
-            : Array.from(valuesMap.values()).map(item => item.value)
-        );
+        setFilterValue([]);
       } else {
         const selectAll = keys.some(key => values[key] === false)
           ? keys.some(key => values[key] === true)
@@ -450,12 +630,11 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
     <XStack
       group={"header" as any}
       flexGrow={1}
+      gap="$3xl"
       justifyContent="space-between"
       alignItems="center"
-      paddingRight="$3xl"
-      borderRightColor="$border"
-      borderRightWidth={1}>
-      <XStack gap="$xl" onPress={handleSorting} flex={1} cursor="pointer">
+      paddingRight="$3xl">
+      <XStack gap="$xl" onPress={handleSorting} flexShrink={0} cursor="pointer">
         <SizableText
           transition="200ms"
           fontFamily="$heading-sm"
@@ -495,6 +674,8 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       {column.getCanFilter() && (
         <View
           transition="200ms"
+          flexShrink={0}
+          paddingRight="$3xl"
           opacity={filterValues.length > 0 ? 1 : 0}
           $group-header-hover={{ opacity: 1 }}>
           <Popover allowFlip={true}>
@@ -513,8 +694,16 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               </Button>
             </Popover.Trigger>
 
-            <Popover.Content width="$18xl">
-              <View flex={1} minWidth="100%">
+            <Popover.Content
+              width="max-content"
+              minWidth="$30xl"
+              maxWidth="90vw"
+              padding="$5xl">
+              <View
+                width="max-content"
+                minWidth="100%"
+                maxWidth="100%"
+                overflow="hidden">
                 <Form
                   name={`${id}_filter`}
                   initialValues={initialValues}
@@ -656,24 +845,30 @@ export function DataTablePagination<TData extends RowData>({
       paddingHorizontal="$xl">
       <View flex={1}>
         <XStack alignItems="center" gap="$xl">
-          <Form
-            name="pageSizing"
-            initialValues={{
-              pageSize
-            }}>
-            <SelectField
-              name="pageSize"
-              items={pageSizes}
-              size="$10xl"
-              onChange={handlePageSizeChange}>
-              <XStack alignItems="center" gap="$5xl">
-                <SelectField.Label hideOptional={true}>
-                  Per page:
-                </SelectField.Label>
-                <SelectField.Control placeholder="Size" flex={1} />
-              </XStack>
-            </SelectField>
-          </Form>
+          <View width="$30xl" flexShrink={0}>
+            <Form
+              name="pageSizing"
+              initialValues={{
+                pageSize
+              }}>
+              <View width="$30xl">
+                <SelectField
+                  name="pageSize"
+                  items={pageSizes}
+                  size="$9xl"
+                  onChange={handlePageSizeChange}>
+                  <XStack alignItems="center" gap="$3xl">
+                    <SelectField.Label hideOptional={true} flexShrink={0}>
+                      Per page:
+                    </SelectField.Label>
+                    <View width="$18xl" flexShrink={0}>
+                      <SelectField.Control placeholder="Size" />
+                    </View>
+                  </XStack>
+                </SelectField>
+              </View>
+            </Form>
+          </View>
 
           <YStack gap="$xl">
             <XStack

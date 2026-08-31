@@ -40,11 +40,11 @@ const BaseInputValue = styled(
   baseInputStyle[1]
 );
 
-export const Input: ComponentType<InputComponentProps> =
+export const InputValue: ComponentType<InputComponentProps> =
   BaseInputValue.styleable<InputComponentProps>((inProps, forwardedRef) => {
     const {
-      disabled,
-      name,
+      disabled: contextDisabled,
+      name: contextName,
       onChange: contextOnChange,
       onInput: contextOnInput,
       onBlur,
@@ -72,9 +72,12 @@ export const Input: ComponentType<InputComponentProps> =
       enterKeyHint,
       returnKeyType,
       onKeyDown,
+      render: _render,
       inputMode,
       ...rest
     } = inProps;
+    const disabled = inProps.disabled ?? contextDisabled;
+    const name = inProps.name ?? contextName;
     const onChange = inputOnChange ?? contextOnChange;
     const onInput = inputOnInput ?? contextOnInput;
 
@@ -160,7 +163,7 @@ export const Input: ComponentType<InputComponentProps> =
           onInput(
             new CustomEvent("input", {
               detail: text
-            })
+            }) as any
           );
         }
 
@@ -168,7 +171,7 @@ export const Input: ComponentType<InputComponentProps> =
           onChange(
             new CustomEvent("change", {
               detail: text
-            })
+            }) as any
           );
         }
       };
@@ -204,3 +207,6 @@ export const Input: ComponentType<InputComponentProps> =
       />
     );
   });
+
+/** @deprecated Use InputValue. */
+export { InputValue as Input };

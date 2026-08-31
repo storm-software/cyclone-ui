@@ -31,8 +31,6 @@ const meta: Meta<typeof DataTable> = {
       <DataTable<Person>
         alignCells={{ x: "start", y: "center" }}
         alignHeaderCells={{ x: "start", y: "center" }}
-        cellWidth="$20xl"
-        cellHeight="$9xl"
         options={{
           ...options,
           columns
@@ -234,6 +232,7 @@ const columns = [
   columnHelper.accessor("age", {
     header: DataTableHeader,
     cell: DataTableCell,
+    enableColumnFilter: true,
     footer: info => info.column.id
   }),
   columnHelper.accessor("status", {

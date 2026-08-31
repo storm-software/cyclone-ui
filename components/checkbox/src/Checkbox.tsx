@@ -202,7 +202,7 @@ export const Checkbox = BaseCheckbox.styleable<{
             y={checked === "indeterminate" ? undefined : -1}>
             {checked === "indeterminate" ? (
               <View
-                transition="medium"
+                transition="200ms"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"

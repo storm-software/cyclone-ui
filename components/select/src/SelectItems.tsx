@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { getFontSizedFromSize, getSized } from "@cyclone-ui/helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
@@ -100,6 +100,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   cursor: "pointer",
   color: "$foregroundBody",
   fontFamily: "$body",
+  fontSize: "$md",
   flex: 1,
 
   variants: {
@@ -118,10 +119,6 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
           color: "$foregroundDisabled"
         }
       }
-    },
-
-    size: {
-      "...size": getFontSizedFromSize
     }
   } as const,
 
@@ -129,8 +126,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
 
   defaultVariants: {
     disabled: false,
-    selected: false,
-    size: "$true"
+    selected: false
   }
 });
 

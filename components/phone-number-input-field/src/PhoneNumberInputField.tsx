@@ -33,7 +33,8 @@ import {
   parsePhoneNumberFromString
 } from "libphonenumber-js/min";
 import metadata from "libphonenumber-js/min/metadata";
-import { memo, useCallback, useEffect, useMemo, useRef, useState, type JSX } from "react";
+import type { JSX } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const regionNames =
   typeof Intl.DisplayNames === "function"
@@ -55,12 +56,14 @@ interface CountryOption {
   name: string;
 }
 
-const COUNTRY_OPTIONS: CountryOption[] = getCountries().map((code: CountryCode) => ({
-  callingCode: getCountryCallingCode(code),
-  code,
-  flag: getCountryFlag(code),
-  name: regionNames?.of(code) ?? code
-}));
+const COUNTRY_OPTIONS: CountryOption[] = getCountries().map(
+  (code: CountryCode) => ({
+    callingCode: getCountryCallingCode(code),
+    code,
+    flag: getCountryFlag(code),
+    name: regionNames?.of(code) ?? code
+  })
+);
 
 interface PhoneNumberContextValue {
   countryCode: CountryCode;
@@ -94,7 +97,8 @@ const PhoneNumberCountrySync = ({
       return;
     }
 
-    const valueCountry: CountryCode | undefined = parsePhoneNumberFromString(value)?.country;
+    const valueCountry: CountryCode | undefined =
+      parsePhoneNumberFromString(value)?.country;
     if (valueCountry && valueCountry !== countryCode) {
       setCountryCode(valueCountry);
     }
@@ -116,65 +120,73 @@ const styleableInputField = InputField.styleable as <TProps>(
   component: (props: TProps, forwardedRef: any) => JSX.Element
 ) => any;
 
-const PhoneNumberInputFieldGroup = styleableInputField<PhoneNumberInputFieldExtraProps>(
-  (
-    { children, defaultCountry = "US", format, mask, parse, ...props }: PhoneNumberInputFieldGroupProps,
-    forwardedRef: any
-  ): JSX.Element => {
-    const [countryCode, setCountryCode] =
-      useState<CountryCode>(defaultCountry);
-    const prefix: string = `+${getCountryCallingCode(countryCode)} `;
+const PhoneNumberInputFieldGroup =
+  styleableInputField<PhoneNumberInputFieldExtraProps>(
+    (
+      {
+        children,
+        defaultCountry = "US",
+        format,
+        mask,
+        parse,
+        ...props
+      }: PhoneNumberInputFieldGroupProps,
+      forwardedRef: any
+    ): JSX.Element => {
+      const [countryCode, setCountryCode] =
+        useState<CountryCode>(defaultCountry);
+      const prefix: string = `+${getCountryCallingCode(countryCode)} `;
 
-    const phoneMask = useMemo<MaskitoOptions>(
-      (): MaskitoOptions =>
-        maskitoPhoneOptionsGenerator({
-          countryIsoCode: countryCode,
-          metadata,
-          strict: true
-        }),
-      [countryCode]
-    );
-    const formatPhoneNumber = useCallback(
-      (value: unknown): string =>
-        format
-          ? format(value)
-          : String(value ?? "").trim()
-            ? String(value)
-            : prefix,
-      [format, prefix]
-    );
-    const parsePhoneNumber = useCallback(
-      (value: unknown): string => {
-        if (parse) {
-          return parse(value);
-        }
+      const phoneMask = useMemo<MaskitoOptions>(
+        (): MaskitoOptions =>
+          maskitoPhoneOptionsGenerator({
+            countryIsoCode: countryCode,
+            metadata,
+            strict: true
+          }),
+        [countryCode]
+      );
+      const formatPhoneNumber = useCallback(
+        (value: unknown): string =>
+          format
+            ? format(value)
+            : String(value ?? "").trim()
+              ? String(value)
+              : prefix,
+        [format, prefix]
+      );
+      const parsePhoneNumber = useCallback(
+        (value: unknown): string => {
+          if (parse) {
+            return parse(value);
+          }
 
-        const stringValue: string = String(value ?? "");
+          const stringValue: string = String(value ?? "");
 
-        return stringValue.trim() === prefix.trim() ? "" : stringValue;
-      },
-      [parse, prefix]
-    );
-    const contextValue = useMemo(
-      (): PhoneNumberContextValue => ({ countryCode, setCountryCode }),
-      [countryCode]
-    );
+          return stringValue.trim() === prefix.trim() ? "" : stringValue;
+        },
+        [parse, prefix]
+      );
+      const contextValue = useMemo(
+        (): PhoneNumberContextValue => ({ countryCode, setCountryCode }),
+        [countryCode]
+      );
 
-    return (
-      <PhoneNumberContext.Provider {...contextValue}>
-        <InputField
-          ref={forwardedRef}
-          {...props}
-          format={formatPhoneNumber}
-          mask={mask ?? phoneMask}
-          parse={parsePhoneNumber}>
-          <PhoneNumberCountrySync setCountryCode={setCountryCode} />
-          {children}
-        </InputField>
-      </PhoneNumberContext.Provider>
-    );
-  }
-);
+      return (
+        <PhoneNumberContext.Provider {...contextValue}>
+          <InputField
+            ref={forwardedRef}
+            {...props}
+            format={formatPhoneNumber}
+            mask={mask ?? phoneMask}
+            parse={parsePhoneNumber}>
+            <PhoneNumberCountrySync setCountryCode={setCountryCode} />
+            {children}
+          </InputField>
+        </PhoneNumberContext.Provider>
+      );
+    }
+  );
 
 interface CountryListItemProps {
   country: CountryOption;
@@ -182,10 +194,7 @@ interface CountryListItemProps {
 }
 
 const CountryListItem = memo(
-  ({
-    country,
-    onSelect
-  }: CountryListItemProps): JSX.Element => {
+  ({ country, onSelect }: CountryListItemProps): JSX.Element => {
     const handlePress = useCallback(
       (): void => onSelect(country),
       [country, onSelect]
@@ -321,7 +330,10 @@ interface PhoneNumberInputFieldControlProps {
 }
 
 const PhoneNumberInputFieldControl = InputField.Control.styleable(
-  ({ children, ...props }: PhoneNumberInputFieldControlProps, forwardedRef: any): JSX.Element => (
+  (
+    { children, ...props }: PhoneNumberInputFieldControlProps,
+    forwardedRef: any
+  ): JSX.Element => (
     <InputField.Control ref={forwardedRef} {...props}>
       <CountryCodeSelector />
       <Input.Separator />
@@ -335,20 +347,25 @@ interface PhoneNumberInputFieldControlTextBoxValueProps {
 }
 
 const PhoneNumberInputFieldControlTextBoxValue =
-  InputField.Control.TextBox.Value.styleable((props: PhoneNumberInputFieldControlTextBoxValueProps, forwardedRef: any): JSX.Element => {
-    const { countryCode } = PhoneNumberContext.useStyledContext();
+  InputField.Control.TextBox.Value.styleable(
+    (
+      props: PhoneNumberInputFieldControlTextBoxValueProps,
+      forwardedRef: any
+    ): JSX.Element => {
+      const { countryCode } = PhoneNumberContext.useStyledContext();
 
-    return (
-      <InputField.Control.TextBox.Value
-        key={countryCode}
-        ref={forwardedRef}
-        {...props}
-        autoComplete="tel"
-        inputMode="tel"
-        type="tel"
-      />
-    );
-  });
+      return (
+        <InputField.Control.TextBox.Value
+          key={countryCode}
+          ref={forwardedRef}
+          {...props}
+          autoComplete="tel"
+          inputMode="tel"
+          type="tel"
+        />
+      );
+    }
+  );
 
 export const PhoneNumberInputField = withStaticProperties(
   PhoneNumberInputFieldGroup,

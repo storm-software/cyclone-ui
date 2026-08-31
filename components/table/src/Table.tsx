@@ -32,9 +32,12 @@ export interface AlignCells {
 
 export type AlignHeaderCells = AlignCells;
 
+export type TableSizing = "fixed" | "content";
+
 export interface TableContextProps {
   cellWidth: SizeTokens | number;
   cellHeight: SizeTokens | number;
+  sizing: TableSizing;
   alignHeaderCells: {
     y: "center" | "start" | "end";
     x: "center" | "start" | "end";
@@ -49,6 +52,7 @@ export interface TableContextProps {
 const TableContext = createStyledContext<TableContextProps>({
   cellWidth: "$10xl",
   cellHeight: "$10xl",
+  sizing: "fixed",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
   borderColor: "$border"
@@ -71,16 +75,14 @@ const TableRow = styled(ThemeableStack, {
   position: "relative",
   backgroundColor: "transparent",
   paddingHorizontal: "$xl",
+  boxShadow: "none",
 
   hoverStyle: {
     backgroundColor: "transparent"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
+    boxShadow: "$ring",
     borderColor: "$borderFocused"
   },
 
@@ -88,6 +90,17 @@ const TableRow = styled(ThemeableStack, {
     header: {
       false: {
         borderBottomWidth: 1
+      }
+    },
+
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-row" as any
+        },
+        hoverStyle: {
+          backgroundColor: "$backgroundPageHover"
+        }
       }
     }
   },
@@ -99,6 +112,8 @@ const TableRow = styled(ThemeableStack, {
 
 const TableRowImpl = TableRow.styleable(
   ({ children, header = false, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+
     return (
       <TableRow
         ref={forwardRef}
@@ -106,18 +121,21 @@ const TableRowImpl = TableRow.styleable(
         header={header}
         position="relative"
         {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          transition="medium"
-          opacity={0}
-          backgroundColor="$backgroundHover"
-          $group-row-hover={{
-            opacity: header ? 0 : 1
-          }}
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
+        {sizing === "fixed" && (
+          <ThemeableStack
+            fullscreen={true}
+            pointerEvents="none"
+            transition="200ms"
+            opacity={0}
+            backgroundColor="$backgroundPageHover"
+            $group-row-hover={{
+              opacity: header ? 0 : 1
+            }}
+            style={{
+              filter: "blur(1px)"
+            }}
+          />
+        )}
         {children}
       </TableRow>
     );
@@ -137,15 +155,15 @@ const TableCell = styled(ThemeableStack, {
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
+  borderBottomWidth: 1,
+  borderColor: "$border",
   justifyContent: "flex-start",
   paddingHorizontal: "$xl",
+  boxShadow: "none",
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineWidth: 3,
-    outlineOffset: "$lg",
-    outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    borderColor: "$borderFocused",
+    boxShadow: "$ring"
   },
 
   variants: {
@@ -170,6 +188,18 @@ const TableCell = styled(ThemeableStack, {
         alignItems: val.y === "center" ? "center" : `flex-${val.y}`,
         justifyContent: val.x === "center" ? "center" : `flex-${val.x}`
       };
+    },
+
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-cell" as any,
+          minHeight: "auto",
+          paddingVertical: "$xl",
+          paddingHorizontal: "$xl",
+          width: "auto"
+        }
+      }
     }
   } as const
 });
@@ -185,6 +215,8 @@ const TableHeaderCell = styled(ThemeableStack, {
   flexGrow: 0,
   flexShrink: 1,
   borderWidth: 0,
+  borderBottomWidth: 1,
+  borderColor: "$border",
   justifyContent: "flex-start",
   paddingHorizontal: "$xl",
 
@@ -202,6 +234,17 @@ const TableHeaderCell = styled(ThemeableStack, {
         alignItems: val.y === "center" ? "center" : `flex-${val.y}`,
         justifyContent: val.x === "center" ? "center" : `flex-${val.x}`
       };
+    },
+
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-cell" as any,
+          paddingVertical: "$xl",
+          paddingHorizontal: "$xl",
+          width: "auto"
+        }
+      }
     }
   } as const
 });
@@ -214,8 +257,16 @@ const TableBody = styled(ThemeableStack, {
 
   flexDirection: "column",
   flexShrink: 1,
-  borderLeftWidth: 1,
-  borderRightWidth: 1
+
+  variants: {
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-row-group" as any
+        }
+      }
+    }
+  } as const
 });
 
 const TableHeader = styled(ThemeableStack, {
@@ -226,26 +277,36 @@ const TableHeader = styled(ThemeableStack, {
 
   flexDirection: "column",
   flexShrink: 1,
-  borderWidth: 1,
+  borderWidth: 0,
+  borderBottomWidth: 1,
+  borderColor: "$border",
   borderTopLeftRadius: "$container",
   borderTopRightRadius: "$container",
-  overflow: "hidden"
+  overflow: "hidden",
+  backgroundColor: "$backgroundElevated",
+
+  variants: {
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-header-group" as any
+        }
+      }
+    }
+  } as const
 });
 
 const TableHeaderImpl = TableHeader.styleable(
   ({ children, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+
     return (
       <TableHeader ref={forwardRef} position="relative" {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          transition="quick"
-          opacity={0.05}
-          backgroundColor="$background"
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
-        <View paddingVertical="$2xl">{children}</View>
+        {sizing === "content" ? (
+          children
+        ) : (
+          <View paddingVertical="$2xl">{children}</View>
+        )}
       </TableHeader>
     );
   },
@@ -262,27 +323,34 @@ const TableFooter = styled(ThemeableStack, {
 
   flexDirection: "column",
   flexShrink: 1,
-  borderWidth: 1,
-  borderTopWidth: 0,
+  borderWidth: 0,
   borderBottomLeftRadius: "$container",
   borderBottomRightRadius: "$container",
-  overflow: "hidden"
+  overflow: "hidden",
+  backgroundColor: "$backgroundElevated",
+
+  variants: {
+    sizing: {
+      content: {
+        "$platform-web": {
+          display: "table-footer-group" as any
+        }
+      }
+    }
+  } as const
 });
 
 const TableFooterImpl = TableFooter.styleable(
   ({ children, ...props }, forwardRef) => {
+    const { sizing } = TableContext.useStyledContext();
+
     return (
       <TableFooter ref={forwardRef} position="relative" {...props}>
-        <ThemeableStack
-          fullscreen={true}
-          transition="quick"
-          opacity={0.05}
-          backgroundColor="$background"
-          style={{
-            filter: "blur(1px)"
-          }}
-        />
-        <View paddingVertical="$2xl">{children}</View>
+        {sizing === "content" ? (
+          children
+        ) : (
+          <View paddingVertical="$2xl">{children}</View>
+        )}
       </TableFooter>
     );
   },
@@ -297,9 +365,16 @@ const TableFrame = styled(ThemeableStack, {
 
   render: "table",
 
-  borderWidth: 0,
+  borderWidth: 1,
+  borderColor: "$border",
+  borderRadius: "$container",
+  borderStyle: "solid",
   maxWidth: "100%",
   overflow: "hidden",
+  style: {
+    borderCollapse: "separate",
+    borderSpacing: 0
+  },
 
   variants: {
     cellWidth: {
@@ -315,8 +390,18 @@ const TableFrame = styled(ThemeableStack, {
     },
 
     alignHeaderCells: _val => ({}),
-    alignCells: _val => ({})
-  }
+    alignCells: _val => ({}),
+
+    sizing: {
+      fixed: {},
+      content: {
+        width: "max-content",
+        "$platform-web": {
+          display: "table" as any
+        }
+      }
+    }
+  } as const
 });
 
 export type TableProps = GetProps<typeof TableFrame>;

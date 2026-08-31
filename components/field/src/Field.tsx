@@ -401,10 +401,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     return (
       <TamaguiLabel ref={forwardedRef} htmlFor={name}>
         <LabelXStack disabled={disabled}>
-          <FieldLabelText
-            {...props}
-            disabled={disabled}
-            theme="primary">
+          <FieldLabelText {...props} disabled={disabled} theme="primary">
             {children}
           </FieldLabelText>
           {hideRequired !== true && (

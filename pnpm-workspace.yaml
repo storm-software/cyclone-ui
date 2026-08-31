@@ -30,7 +30,7 @@ catalog:
   "@storybook/react": ^10.5.10
   "@storybook/react-vite": ^10.5.10
   "@storybook/test-runner": ^0.24.4
-  "@stryke/date": ^0.0.24
+  "@stryke/date": ^0.0.25
   "@tamagui/accordion": ^2.7.7
   "@tamagui/adapt": ^2.7.7
   "@tamagui/alert-dialog": ^2.7.7
@@ -119,16 +119,16 @@ catalog:
   "@storm-software/tsconfig": ^0.48.200
   "@storm-software/untyped": ^0.24.276
   "@storm-software/workspace-tools": ^1.297.3
-  "@stryke/async": ^0.1.40
-  "@stryke/env": ^0.20.131
-  "@stryke/helpers": ^0.10.52
-  "@stryke/hooks": ^0.4.129
-  "@stryke/json": ^0.15.36
-  "@stryke/path": ^0.29.39
-  "@stryke/string-format": ^0.17.54
-  "@stryke/type-checks": ^0.6.45
-  "@stryke/types": ^0.12.40
-  "@stryke/unique-id": ^0.3.125
+  "@stryke/async": ^0.1.41
+  "@stryke/env": ^0.20.132
+  "@stryke/helpers": ^0.10.53
+  "@stryke/hooks": ^0.4.130
+  "@stryke/json": ^0.15.37
+  "@stryke/path": ^0.29.40
+  "@stryke/string-format": ^0.17.55
+  "@stryke/type-checks": ^0.6.46
+  "@stryke/types": ^0.12.41
+  "@stryke/unique-id": ^0.3.126
   "@swc-node/register": 1.11.1
   "@swc/core": 1.15.41
   "@swc/helpers": 0.5.23

@@ -209,6 +209,12 @@
     },
     {
       "path": "./apps/cli"
+    },
+    {
+      "path": "./components/text-area"
+    },
+    {
+      "path": "./components/text-area-field"
     }
   ],
   "files": []

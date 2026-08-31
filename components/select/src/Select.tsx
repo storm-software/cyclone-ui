@@ -16,13 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized } from "@cyclone-ui/helpers";
+import { getSized, getSpaced } from "@cyclone-ui/helpers";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
-import { Separator } from "@tamagui/separator";
 import { useCallback, useMemo, useState } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
@@ -109,14 +108,21 @@ const SelectGroup = styled(XGroup, {
   }
 });
 
-const SelectSeparator = styled(Separator, {
+const SelectSeparator = styled(View, {
   name: "Select",
   context: SelectContext,
 
   transition: "200ms",
-  borderWidth: 1,
+  // Tamagui's vertical Separator emits rules on both sides. Use the same
+  // one-pixel left rule as Input so the Select and field-icon dividers match.
+  borderWidth: 0,
+  borderLeftWidth: 1,
+  borderRightWidth: 0,
+  borderTopWidth: 0,
+  borderBottomWidth: 0,
   borderColor: "$border",
-  vertical: true,
+  width: 0,
+  flexShrink: 0,
   height: "60%",
   marginVertical: "$none",
 
@@ -161,7 +167,7 @@ const SelectTrigger = View.styleable(
     const adjustedTrigger = useMemo(
       // Select renders its glyph directly, unlike Button.Icon. Match the
       // Field.Icon result: two steps for its button frame and six for glyph.
-      () => getSized(controlSize, { shift: -8 }),
+      () => getSized(controlSize, { shift: -4 }),
       [controlSize]
     );
 
@@ -170,19 +176,28 @@ const SelectTrigger = View.styleable(
         ref={forwardedRef}
         {...props}
         transition="200ms"
-        rotate={focused ? "180deg" : "0deg"}
         cursor={disabled ? "not-allowed" : "pointer"}
-        paddingHorizontal={9}
+        width={adjustedTrigger + getSpaced("$xl") * 2}
+        flexShrink={0}
+        paddingHorizontal="$xl"
         alignItems="center"
         justifyContent="center">
-        <ChevronDown
-          size={adjustedTrigger}
-          transition="200ms"
-          color={disabled ? "$borderDisabled" : "$border"}
-          $group-field-hover={{
-            color: disabled ? "$borderDisabled" : "$borderHover"
-          }}
-        />
+        <View
+          width={adjustedTrigger}
+          height={adjustedTrigger}
+          transition="400ms"
+          transformOrigin="center"
+          rotate={focused ? "180deg" : "0deg"}
+          alignItems="center"
+          justifyContent="center">
+          <ChevronDown
+            size={adjustedTrigger}
+            color={disabled ? "$borderDisabled" : "$foreground"}
+            $group-field-hover={{
+              color: disabled ? "$borderDisabled" : "$foregroundHover"
+            }}
+          />
+        </View>
       </View>
     );
   },
@@ -228,9 +243,16 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         disabled={disabled}
         frameSize={frameSize}
         transition="200ms">
-        <SelectTextBox {...props}>
-          <XGroup.Item flex={1} minWidth={0}>
-            <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
+        <SelectTextBox
+          {...props}
+          paddingHorizontal={getSpaced(frameSize) * 0.25}>
+          <XGroup.Item flex={1} minWidth={0} height="100%">
+            <View
+              flex={1}
+              minWidth={0}
+              height="100%"
+              flexDirection="row"
+              alignItems="center">
               {children}
             </View>
           </XGroup.Item>
