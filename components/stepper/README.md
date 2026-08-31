@@ -39,29 +39,31 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# steps
+# stepper
 
-A package containing the Steps component used by Storm Software
+A package containing the Stepper component used by Storm Software
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-  - [Documentation](#documentation)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
-  - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer)
+- [stepper](#stepper)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+    - [Documentation](#documentation)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
+    - [💻 Visit stormsoftware.com to stay up to date with this developer](#-visit-stormsoftwarecom-to-stay-up-to-date-with-this-developer-1)
 
 <!-- END doctoc -->
 
@@ -70,14 +72,14 @@ A package containing the Steps component used by Storm Software
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/steps
+pnpm add -D @cyclone-ui/stepper
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/steps
+npm install -D @cyclone-ui/stepper
 ```
 
 </details>
@@ -86,7 +88,7 @@ npm install -D @cyclone-ui/steps
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/steps
+yarn add -D @cyclone-ui/stepper
 ```
 
 </details>
@@ -101,15 +103,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build steps` to build the library.
+Run `nx build stepper` to build the library.
 
 ### Running unit tests
 
-Run `nx test steps` to execute the unit tests via [Vitest](https://vitest.dev).
+Run `nx test stepper` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 
-Run `nx lint steps` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint stepper` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->
@@ -204,7 +206,7 @@ appreciated**.
 
 Please try to create bug reports that are:
 
-- _Reproducible._ Include steps to reproduce the problem.
+- _Reproducible._ Include stepper to reproduce the problem.
 - _Specific._ Include as much detail as possible: which version, what
   environment, etc.
 - _Unique._ Do not duplicate existing opened issues.

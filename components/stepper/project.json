@@ -1,8 +1,8 @@
 {
-  "name": "steps",
+  "name": "stepper",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "components/steps/src",
+  "sourceRoot": "components/stepper/src",
   "targets": {
     "nx-release-publish": {
       "executor": "@cyclone-ui/tools-nx:component-publish"

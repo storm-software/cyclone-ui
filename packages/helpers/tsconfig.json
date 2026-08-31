@@ -18,5 +18,6 @@
     "powerlines.config.ts",
     "powerlines.d.ts"
   ],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [{ "path": "../themes" }]
 }

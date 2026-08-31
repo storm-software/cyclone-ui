@@ -18,54 +18,60 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Text } from "@tamagui/core";
-import { Steps } from "./Steps";
+import { XStack } from "@tamagui/stacks";
+import { Stepper } from "./Stepper";
 
-const meta: Meta<typeof Steps> = {
-  title: "General/Steps",
-  component: Steps,
+const meta: Meta<typeof Stepper> = {
+  title: "General/Stepper",
+  component: Stepper,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => (
-    <Steps gap="$xl" {...rest}>
-      <Steps.Header>
-        <Steps.Header.Item value="tab1">Step One</Steps.Header.Item>
-        <Steps.Header.Item value="tab2">Step Two</Steps.Header.Item>
-        <Steps.Header.Item value="tab3">Step Three</Steps.Header.Item>
-        <Steps.Header.Item value="tab4">Step Four</Steps.Header.Item>
-      </Steps.Header>
+    <Stepper gap="$xl" {...rest}>
+      <Stepper.Header>
+        <Stepper.Header.Item value="tab1">Step One</Stepper.Header.Item>
+        <Stepper.Header.Item value="tab2">Step Two</Stepper.Header.Item>
+        <Stepper.Header.Item value="tab3">Step Three</Stepper.Header.Item>
+        <Stepper.Header.Item value="tab4">Step Four</Stepper.Header.Item>
+      </Stepper.Header>
 
-      <Steps.Content>
-        <Steps.Content.Item value="tab1">
-          <Text minWidth="$12xl">
+      <Stepper.Content>
+        <Stepper.Content.Item value="tab1">
+          <Text color="$foregroundBody">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
-        </Steps.Content.Item>
-        <Steps.Content.Item value="tab2">
-          <Text minWidth="$12xl">
+        </Stepper.Content.Item>
+        <Stepper.Content.Item value="tab2">
+          <Text color="$foregroundBody">
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
           </Text>
-        </Steps.Content.Item>
-        <Steps.Content.Item value="tab3">
-          <Text minWidth="$12xl">
+        </Stepper.Content.Item>
+        <Stepper.Content.Item value="tab3">
+          <Text color="$foregroundBody">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.
           </Text>
-        </Steps.Content.Item>
-        <Steps.Content.Item value="tab4">
-          <Text minWidth="$12xl">
+        </Stepper.Content.Item>
+        <Stepper.Content.Item value="tab4">
+          <Text color="$foregroundBody">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
           </Text>
-        </Steps.Content.Item>
-      </Steps.Content>
-    </Steps>
+        </Stepper.Content.Item>
+      </Stepper.Content>
+
+      <XStack gap="$xl">
+        <Stepper.PreviousButton />
+        <Stepper.NextButton />
+      </XStack>
+    </Stepper>
   )
-} satisfies Meta<typeof Steps>;
+} satisfies Meta<typeof Stepper>;
 
 export default meta;
 
-type Story = StoryObj<typeof Steps>;
+type Story = StoryObj<typeof Stepper>;
 
 export const Base: Story = {
   args: {

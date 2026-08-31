@@ -10,9 +10,17 @@
       "@nx/react/typings/image.d.ts"
     ],
     "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/steps/tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "../../dist/out-tsc/components/stepper/tsconfig.tsbuildinfo"
   },
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "../previous-button"
+    },
+    {
+      "path": "../next-button"
+    }
+  ]
 }

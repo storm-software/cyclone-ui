@@ -16,8 +16,12 @@
 
  ------------------------------------------------------------------- */
 
+import type { NextButtonProps } from "@cyclone-ui/next-button";
+import { NextButton } from "@cyclone-ui/next-button";
+import type { PreviousButtonProps } from "@cyclone-ui/previous-button";
+import { PreviousButton } from "@cyclone-ui/previous-button";
 import { AnimatePresence } from "@tamagui/animate-presence";
-import type { ViewProps } from "@tamagui/core";
+import type { TamaguiElement, ViewProps } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
@@ -35,10 +39,10 @@ import type {
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import { SizableText } from "@tamagui/text";
-import type { Dispatch, SetStateAction } from "react";
+import type { Dispatch, Ref, SetStateAction } from "react";
 import { useLayoutEffect, useState } from "react";
 
-export interface StepsState {
+export interface StepperState {
   currentStep: string;
   /**
    * Layout of the Step user might intend to select (hovering / focusing)
@@ -56,6 +60,10 @@ export interface StepsState {
    * List of step names
    */
   steps: string[];
+  /**
+   * Steps that have been selected at least once.
+   */
+  visitedSteps: string[];
   // /**
   //  * The direction of the tabs list (i.e. horizontal or vertical)
   //  */
@@ -68,30 +76,41 @@ const defaultContextValues = {
     currentStep: "",
     intentAt: null,
     prevActiveAt: null,
-    steps: [] as string[]
+    steps: [] as string[],
+    visitedSteps: [] as string[]
   },
-  setState: ((_next: StepsState) => {}) as Dispatch<SetStateAction<StepsState>>,
+  setState: ((_next: StepperState) => {}) as Dispatch<
+    SetStateAction<StepperState>
+  >,
+  setCurrentStep: (_currentStep: string) => {},
   handleOnInteraction: (_type, _layout) => {},
   theme: "primary"
 } as const;
 
 export const InternalStateContext = createStyledContext<{
-  state: StepsState;
-  setState: Dispatch<SetStateAction<StepsState>>;
+  state: StepperState;
+  setState: Dispatch<SetStateAction<StepperState>>;
+  setCurrentStep: (currentStep: string) => void;
   handleOnInteraction: TamaguiTabsTabProps["onInteraction"];
   theme: string;
 }>(defaultContextValues);
 
-export const StepsFrame = TamaguiTabs.styleable(
+export const StepperFrame = TamaguiTabs.styleable(
   ({ children, onValueChange, ...rest }: TamaguiTabsProps, forwardedRef) => {
-    const [state, setState] = useState<StepsState>({
+    const [state, setState] = useState<StepperState>({
       ...defaultContextValues.state
     });
     const { steps, currentStep } = state;
 
     const setCurrentStep = (currentStep: string) => {
       onValueChange?.(currentStep);
-      setState({ ...state, currentStep });
+      setState(next => ({
+        ...next,
+        currentStep,
+        visitedSteps: next.visitedSteps.includes(currentStep)
+          ? next.visitedSteps
+          : [...next.visitedSteps, currentStep]
+      }));
     };
     const setIntentIndicator = intentAt => setState({ ...state, intentAt });
     const setActiveIndicator = activeAt =>
@@ -110,7 +129,11 @@ export const StepsFrame = TamaguiTabs.styleable(
 
     useLayoutEffect(() => {
       if (!currentStep) {
-        setState(next => ({ ...next, currentStep: next.steps[0] }));
+        setState(next => ({
+          ...next,
+          currentStep: next.steps[0],
+          visitedSteps: [next.steps[0]]
+        }));
       }
     }, [currentStep, steps]);
 
@@ -118,16 +141,15 @@ export const StepsFrame = TamaguiTabs.styleable(
       <InternalStateContext.Provider
         state={state}
         setState={setState}
+        setCurrentStep={setCurrentStep}
         handleOnInteraction={handleOnInteraction}
         theme="primary">
         <TamaguiTabs
           ref={forwardedRef}
           value={currentStep}
           size="$10xl"
-          height={150}
           flexDirection="row"
           activationMode="manual"
-          backgroundColor="$background"
           borderRadius="$container"
           position="relative"
           {...rest}
@@ -140,7 +162,7 @@ export const StepsFrame = TamaguiTabs.styleable(
   }
 );
 
-export const StepsHeaderList = YStack.styleable(
+export const StepperHeaderList = YStack.styleable(
   ({ children, ...rest }: ViewProps, forwardedRef) => {
     const { state } = InternalStateContext.useStyledContext();
     const {
@@ -162,7 +184,7 @@ export const StepsHeaderList = YStack.styleable(
       <YStack ref={forwardedRef} {...rest}>
         {/* <AnimatePresence>
           {intentAt && (
-            <StepsRovingIndicatorImpl
+            <StepperRovingIndicatorImpl
               width={intentAt.width}
               height={intentAt.height}
               x={intentAt.x}
@@ -173,7 +195,7 @@ export const StepsHeaderList = YStack.styleable(
         </AnimatePresence>
         <AnimatePresence>
           {activeAt && (
-            <StepsRovingIndicatorImpl
+            <StepperRovingIndicatorImpl
               width={activeAt.width}
               height={activeAt.height}
               x={activeAt.x}
@@ -186,7 +208,7 @@ export const StepsHeaderList = YStack.styleable(
         <TamaguiTabs.List
           disablePassBorderRadius={true}
           loop={false}
-          aria-label="Steps"
+          aria-label="Stepper"
           gap="$3xl"
           backgroundColor="transparent">
           <AnimatePresence
@@ -201,7 +223,7 @@ export const StepsHeaderList = YStack.styleable(
   }
 );
 
-export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
+export const StepperHeaderItem = TamaguiTabs.Tab.styleable(
   ({ children, value, ...rest }: TamaguiTabsTabProps, forwardedRef) => {
     const { handleOnInteraction, setState, state } =
       InternalStateContext.useStyledContext();
@@ -214,6 +236,9 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
 
     const index = state.steps.indexOf(value);
     const currentIndex = state.steps.indexOf(currentStep);
+    const isPastOrCurrent = index <= currentIndex;
+    const isVisitedFutureStep =
+      index > currentIndex && state.visitedSteps.includes(value);
 
     useLayoutEffect(() => {
       setState(next => ({ ...next, steps: [...next.steps, value] }));
@@ -225,7 +250,9 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
           <Circle
             height={75}
             width={3}
-            backgroundColor="$borderSubtle"
+            backgroundColor={
+              index <= currentIndex ? "$background" : "$borderSubtle"
+            }
             elevation="$5xl"
             marginLeft="$7xl"
           />
@@ -238,23 +265,26 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             unstyled={true}
             padding="$3xl"
             borderRadius={1000_000_000}
-            borderWidth="$xs"
-            borderColor={index === currentIndex ? "$border" : "$borderSubtle"}
+            borderWidth="$md"
+            borderColor={isPastOrCurrent ? "$foreground" : "$borderSubtle"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
+              <CheckCircle transition="200ms" color="$foreground" size="$4xl" />
+            )}
+            {index === currentIndex && (
+              <Edit3 transition="200ms" color="$foreground" size="$4xl" />
+            )}
+            {isVisitedFutureStep && (
               <CheckCircle
                 transition="200ms"
-                color="$foregroundBody"
+                color="$borderSubtle"
                 size="$4xl"
               />
             )}
-            {index === currentIndex && (
-                <Edit3 transition="200ms" color="$foreground" size="$4xl" />
-            )}
-            {index > currentIndex && (
-                <Lock transition="200ms" color="$foregroundBody" size="$4xl" />
+            {index > currentIndex && !isVisitedFutureStep && (
+              <Lock transition="200ms" color="$borderSubtle" size="$4xl" />
             )}
           </TamaguiTabs.Tab>
 
@@ -262,7 +292,7 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
             transition="200ms"
             fontFamily="$heading"
             color={
-              state.currentStep === value ? "$foreground" : "$foregroundBody"
+              state.currentStep === value ? "$foreground" : "$borderSubtle"
             }>
             {children}
           </SizableText>
@@ -272,41 +302,93 @@ export const StepsHeaderItem = TamaguiTabs.Tab.styleable(
   }
 );
 
-export const StepsContentList = ({ children }) => {
-  return <View position="relative">{children}</View>;
-};
+export const StepperContentList = styled(View, {
+  position: "relative",
+  flex: 1,
+  minWidth: 0
+});
 
-export const StepsContentItem = TamaguiTabs.Content.styleable(
+export const StepperContentItem = TamaguiTabs.Content.styleable(
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
     return (
       <AnimatedView key={value}>
-        <TamaguiTabs.Content
-          ref={forwardedRef}
-          {...rest}
-          value={value}
-          flex={1}
-          justifyContent="center">
-          <SizableText textAlign="center">{children}</SizableText>
+        <TamaguiTabs.Content ref={forwardedRef} {...rest} value={value}>
+          {children}
         </TamaguiTabs.Content>
       </AnimatedView>
     );
   }
 );
 
-export const StepsHeader = withStaticProperties(StepsHeaderList, {
-  Item: StepsHeaderItem
+export const StepperHeader = withStaticProperties(StepperHeaderList, {
+  Item: StepperHeaderItem
 });
 
-export const StepsContent = withStaticProperties(StepsContentList, {
-  Item: StepsContentItem
+export const StepperContent = withStaticProperties(StepperContentList, {
+  Item: StepperContentItem
 });
 
-export const Steps = withStaticProperties(StepsFrame, {
-  Header: StepsHeader,
-  Content: StepsContent
+export const StepperNextButton = NextButton.styleable(
+  (
+    { disabled, onPress, ...props }: NextButtonProps,
+    forwardedRef: Ref<TamaguiElement>
+  ) => {
+    const { setCurrentStep, state } = InternalStateContext.useStyledContext();
+    const nextStep = state.steps[state.steps.indexOf(state.currentStep) + 1];
+
+    return (
+      <NextButton
+        ref={forwardedRef}
+        {...props}
+        disabled={disabled || !nextStep}
+        onPress={(
+          event: Parameters<NonNullable<NextButtonProps["onPress"]>>[0]
+        ) => {
+          onPress?.(event);
+          if (nextStep) {
+            setCurrentStep(nextStep);
+          }
+        }}
+      />
+    );
+  }
+);
+
+export const StepperPreviousButton = PreviousButton.styleable(
+  (
+    { disabled, onPress, ...props }: PreviousButtonProps,
+    forwardedRef: Ref<TamaguiElement>
+  ) => {
+    const { setCurrentStep, state } = InternalStateContext.useStyledContext();
+    const previousStep =
+      state.steps[state.steps.indexOf(state.currentStep) - 1];
+
+    return (
+      <PreviousButton
+        ref={forwardedRef}
+        {...props}
+        disabled={disabled || !previousStep}
+        onPress={(
+          event: Parameters<NonNullable<PreviousButtonProps["onPress"]>>[0]
+        ) => {
+          onPress?.(event);
+          if (previousStep) {
+            setCurrentStep(previousStep);
+          }
+        }}
+      />
+    );
+  }
+);
+
+export const Stepper = withStaticProperties(StepperFrame, {
+  Header: StepperHeader,
+  Content: StepperContent,
+  NextButton: StepperNextButton,
+  PreviousButton: StepperPreviousButton
 });
 
-const StepsRovingIndicator = styled(YStack, {
+const StepperRovingIndicator = styled(YStack, {
   position: "absolute",
   backgroundColor: "$backgroundElevated",
   opacity: 1,
@@ -345,10 +427,14 @@ const StepsRovingIndicator = styled(YStack, {
   }
 });
 
-const _StepsRovingIndicatorImpl = StepsRovingIndicator.styleable(
+const _StepperRovingIndicatorImpl = StepperRovingIndicator.styleable(
   (props, forwardedRef) => {
     return (
-      <StepsRovingIndicator ref={forwardedRef} transition="200ms" {...props} />
+      <StepperRovingIndicator
+        ref={forwardedRef}
+        transition="200ms"
+        {...props}
+      />
     );
   }
 );
@@ -358,6 +444,8 @@ const AnimatedView = styled(View, {
   x: 0,
   opacity: 1,
   position: "absolute",
+  height: "100%",
+  width: "100%",
 
   transition: "slow",
   variants: {

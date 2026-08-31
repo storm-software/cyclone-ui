@@ -1,23 +1,23 @@
 {
-  "name": "@cyclone-ui/steps",
+  "name": "@cyclone-ui/stepper",
   "version": "0.3.0",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/steps"
+    "directory": "components/stepper"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/next-button": "workspace:*",
+    "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/button": "catalog:",
     "@tamagui/core": "catalog:",
@@ -44,9 +44,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -56,9 +54,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./Steps": {
-      "import": "./dist/Steps.mjs",
-      "require": "./dist/Steps.cjs"
+    "./Stepper": {
+      "import": "./dist/Stepper.mjs",
+      "require": "./dist/Stepper.cjs"
     },
     "./*": "./*"
   }

@@ -178,7 +178,7 @@
       "path": "./components/input"
     },
     {
-      "path": "./components/steps"
+      "path": "./components/stepper"
     },
     {
       "path": "./components/table"

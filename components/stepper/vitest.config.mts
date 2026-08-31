@@ -4,10 +4,10 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: "../../node_modules/.vite/components/steps",
+  cacheDir: "../../node_modules/.vite/components/stepper",
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(["*.md"])],
   test: {
-    name: "steps",
+    name: "stepper",
     watch: false,
     globals: true,
     environment: "node",
@@ -18,7 +18,7 @@ export default defineConfig(() => ({
     ],
     reporters: ["default"],
     coverage: {
-      reportsDirectory: "../../coverage/components/steps",
+      reportsDirectory: "../../coverage/components/stepper",
       provider: "v8" as const
     }
   }
