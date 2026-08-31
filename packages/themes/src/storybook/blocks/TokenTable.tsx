@@ -1661,7 +1661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "base"
@@ -1669,7 +1669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "base"
@@ -3085,7 +3085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#2e2e2e",
+      value: "#4b4b4b",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3405,7 +3405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#2e2e2e",
+      value: "#4b4b4b",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "dark"
@@ -3627,6 +3627,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-black)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the dark theme",
+      theme: "dark"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -3701,7 +3709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-7)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "dark"
@@ -3816,6 +3824,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery subtle background color for the dark theme",
+      theme: "dark"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#131314",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the dark theme (hover, 20% brighter)",
+      theme: "dark"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#1a1a1b",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the dark theme (pressed, 40% brighter)",
+      theme: "dark"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#1a1a1b",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the dark theme (focused, 40% brighter)",
+      theme: "dark"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#0c0c0d",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -4109,7 +4149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#815300",
+      value: "#a46900",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4117,7 +4157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#5d3100",
+      value: "#784000",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -4125,7 +4165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#5d3100",
+      value: "#784000",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4133,7 +4173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#977b50",
+      value: "#c09c66",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -7173,7 +7213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "dark"
@@ -7181,7 +7221,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "dark"
@@ -8597,7 +8637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#464646",
+      value: "#5b5b5b",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8917,7 +8957,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#464646",
+      value: "#5b5b5b",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9139,6 +9179,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-black)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the dark theme",
+      theme: "darkDimmed"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -9213,7 +9261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-7)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "darkDimmed"
@@ -9328,6 +9376,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery subtle background color for the dark theme",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#333335",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the dark theme (hover, 20% brighter)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#383839",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the dark theme (pressed, 40% brighter)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#383839",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the dark theme (focused, 40% brighter)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#2e2e30",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -9621,7 +9701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#816126",
+      value: "#946e2b",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -9629,7 +9709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#6e4920",
+      value: "#7c5324",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -9637,7 +9717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#6e4920",
+      value: "#7c5324",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9645,7 +9725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#8b7b63",
+      value: "#a79273",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -12685,7 +12765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkDimmed"
@@ -12693,7 +12773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkDimmed"
@@ -14109,7 +14189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#090909",
+      value: "#333333",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14429,7 +14509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#090909",
+      value: "#333333",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14651,6 +14731,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-black)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the dark theme",
+      theme: "darkHighContrast"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -14725,7 +14813,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-7)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the dark theme",
       theme: "darkHighContrast"
@@ -14840,6 +14928,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery subtle background color for the dark theme",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the dark theme (hover, 20% brighter)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the dark theme (pressed, 40% brighter)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the dark theme (focused, 40% brighter)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -15133,7 +15253,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#482f00",
+      value: "#7b4f00",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -15141,7 +15261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#140b00",
+      value: "#3b2000",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -15149,7 +15269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#140b00",
+      value: "#3b2000",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -15157,7 +15277,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#a1793b",
+      value: "#d9a85f",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -18197,7 +18317,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "darkHighContrast"
@@ -18205,7 +18325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkHighContrast"
@@ -20147,6 +20267,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-white)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the light theme",
+      theme: "light"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -20328,6 +20456,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery background color for the light theme",
+      theme: "light"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#bebebe",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the light theme (hover, 20% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the light theme (pressed, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the light theme (focused, 40% darker)",
+      theme: "light"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#ffffff99",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -23589,7 +23749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "light"
@@ -23597,7 +23757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "light"
@@ -25539,6 +25699,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-white)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -25720,6 +25888,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery background color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#ababab",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the light theme (hover, 20% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the light theme (pressed, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the light theme (focused, 40% darker)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#d9d9d999",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -28981,7 +29181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightDimmed"
@@ -28989,7 +29189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightDimmed"
@@ -30931,6 +31131,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
+      path: "color.background.lowest",
+      type: "color",
+      value: "var(--color-white)",
+      cssVar: "--rw-color-background-lowest",
+      description: "The lowest background color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
       path: "color.background.page",
       type: "color",
       value: "var(--color-surface-1)",
@@ -31112,6 +31320,38 @@ const TOKENS: TokenTableRow[] = [
       value: "var(--color-purple-9)",
       cssVar: "--rw-color-background-discovery-subtle",
       description: "The discovery background color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.background.lowest-hover",
+      type: "color",
+      value: "#dadada",
+      cssVar: "--rw-color-background-lowest-hover",
+      description: "The lowest background color for the light theme (hover, 20% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.background.lowest-pressed",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-pressed",
+      description: "The lowest background color for the light theme (pressed, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.background.lowest-focused",
+      type: "color",
+      value: "#808080",
+      cssVar: "--rw-color-background-lowest-focused",
+      description: "The lowest background color for the light theme (focused, 40% darker)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.background.lowest-disabled",
+      type: "color",
+      value: "#ffffff99",
+      cssVar: "--rw-color-background-lowest-disabled",
+      description: "The lowest background color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -34373,7 +34613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-heading-md",
       description: "The heading medium typography variant",
       theme: "lightHighContrast"
@@ -34381,7 +34621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightHighContrast"

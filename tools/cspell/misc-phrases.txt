@@ -12,6 +12,7 @@ dtcg
 demi
 zindex
 oklch
+rehookify
 
 # Shorthands
 maxh

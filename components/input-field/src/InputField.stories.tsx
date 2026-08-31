@@ -73,6 +73,17 @@ export const Required: Story = {
 export const Clearable: Story = {
   args: {
     clearable: true
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+
+    await userEvent.type(input, "input value");
+    const clearButton = canvas.getByRole("button");
+    await expect(clearButton).toBeVisible();
+    await userEvent.click(clearButton);
+    await expect(input).toHaveValue("");
+    await expect(input).toHaveFocus();
   }
 };
 

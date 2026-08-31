@@ -138,6 +138,7 @@ colors:
   foreground-positive-ghost-hover: "#70a837"
   foreground-info-ghost-hover: "#42afdd"
   foreground-discovery-ghost-hover: "#7776db"
+  background-lowest: "#ffffff"
   background-page: "#fafafa"
   background-elevated: "#f4f4f4"
   background-floating: "#eaeaea"
@@ -161,6 +162,10 @@ colors:
   background-positive-subtle: "#61a92c"
   background-info-subtle: "#007496"
   background-discovery-subtle: "#6261af"
+  background-lowest-hover: "#bebebe"
+  background-lowest-pressed: "#808080"
+  background-lowest-focused: "#808080"
+  background-lowest-disabled: "#ffffff99"
   background-page-hover: "#bababa"
   background-page-pressed: "#7d7d7d"
   background-page-focused: "#7d7d7d"
@@ -389,12 +394,12 @@ typography:
   heading-md:
     fontFamily: "Space Grotesk"
     fontSize: "1.25rem"
-    fontWeight: "700"
+    fontWeight: "600"
     lineHeight: "1.4"
   heading-sm:
     fontFamily: "Space Grotesk"
     fontSize: "1.125rem"
-    fontWeight: "700"
+    fontWeight: "400"
     lineHeight: "1.555556"
   eyebrow:
     fontFamily: "Permanent Marker"
@@ -449,7 +454,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -588,6 +593,7 @@ Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Positive Ghost Hover (#70a837):** The positive foreground color for the light theme (ghost hover, 20% brighter than hover)
 - **Foreground Info Ghost Hover (#42afdd):** The info foreground color for the light theme (ghost hover, 20% brighter than hover)
 - **Foreground Discovery Ghost Hover (#7776db):** The discovery foreground color for the light theme (ghost hover, 20% brighter than hover)
+- **Background Lowest (#ffffff):** The lowest background color for the light theme
 - **Background Page (#fafafa):** The page background color for the light theme
 - **Background Elevated (#f4f4f4):** The elevated background color for the light theme
 - **Background Floating (#eaeaea):** The floating background color for the light theme
@@ -611,6 +617,10 @@ Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing 
 - **Background Positive Subtle (#61a92c):** The positive background color for the light theme
 - **Background Info Subtle (#007496):** The info background color for the light theme
 - **Background Discovery Subtle (#6261af):** The discovery background color for the light theme
+- **Background Lowest Hover (#bebebe):** The lowest background color for the light theme (hover, 20% darker)
+- **Background Lowest Pressed (#808080):** The lowest background color for the light theme (pressed, 40% darker)
+- **Background Lowest Focused (#808080):** The lowest background color for the light theme (focused, 40% darker)
+- **Background Lowest Disabled (#ffffff99):** The lowest background color for the light theme (disabled, 60% opacity)
 - **Background Page Hover (#bababa):** The page background color for the light theme (hover, 20% darker)
 - **Background Page Pressed (#7d7d7d):** The page background color for the light theme (pressed, 40% darker)
 - **Background Page Focused (#7d7d7d):** The page background color for the light theme (focused, 40% darker)
@@ -814,8 +824,8 @@ Cyclone UI design tokens — 352 color tokens, 12 typography tokens, 28 spacing 
 - **heading-2xl:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 700, lineHeight: 1.111111
 - **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
 - **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
-- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
-- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 700, lineHeight: 1.555556
+- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.4
+- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
 - **eyebrow:** fontFamily: Permanent Marker, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.4
 - **body:** fontFamily: Inter, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
 - **caption:** fontFamily: Space Grotesk, fontSize: 0.875rem, fontWeight: 300, lineHeight: 1.428571

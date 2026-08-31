@@ -70,6 +70,18 @@ export const Base: Story = {
   args: {}
 };
 
+export const Background: Story = {
+  args: {
+    variant: "background"
+  }
+};
+
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
 export const Horizontal: Story = {
   args: {
     orientation: "horizontal"

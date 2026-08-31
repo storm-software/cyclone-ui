@@ -112,6 +112,8 @@ const CardContent = styled(YStack, {
 
   transition: "200ms",
   zIndex: "$20",
+  gap: "$2xl",
+  padding: "$2xl",
 
   variants: {
     size: {
@@ -119,7 +121,8 @@ const CardContent = styled(YStack, {
         const space = getSpaced(val);
 
         return {
-          gap: space
+          gap: space,
+          padding: space
         };
       }
     }
@@ -132,7 +135,7 @@ const CardContent = styled(YStack, {
 
 const CardFrameImpl = CardFrame.styleable(
   (props, forwardedRef) => {
-    const { children, theme, size, ...rest } = props;
+    const { children, theme, size = "$true", ...rest } = props;
 
     return (
       <CardContext.Provider theme={theme} size={size}>
@@ -142,7 +145,7 @@ const CardFrameImpl = CardFrame.styleable(
           {...rest}
           theme={theme}
           size={size}>
-          <CardContent>{children}</CardContent>
+          <CardContent size={size}>{children}</CardContent>
         </CardFrame>
       </CardContext.Provider>
     );
@@ -159,6 +162,7 @@ const CardHeader = styled(XStack, {
   paddingBottom: 0,
   zIndex: "$10",
   alignItems: "center",
+  gap: "$2xl",
 
   variants: {
     size: {
@@ -294,7 +298,9 @@ const CardLinkImpl = CardLink.styleable(
 
     return (
       <XStack ref={forwardedRef} gap="$lg" alignItems="center">
-        <CardLink {...rest}>{children}</CardLink>
+        <CardLink {...rest} group={false}>
+          {children}
+        </CardLink>
         <View
           transition="medium"
           x={0}

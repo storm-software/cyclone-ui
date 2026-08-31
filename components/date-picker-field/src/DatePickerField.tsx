@@ -173,7 +173,14 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
         : "$border";
     const iconHoverColor = disabled ? "$borderDisabled" : "$borderHover";
 
-    const adjustedIcon = useMemo(() => getSized(size, { shift: -9 }), [size]);
+    const controlSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    // DatePicker.Trigger.Icon is Button.Icon, whose glyph is six steps below
+    // its supplied size. Match the Field.Icon button frame used in textboxes.
+    const iconButtonSize = useMemo(
+      () => getSized(controlSize, { shift: 1 }),
+      [controlSize]
+    );
 
     return (
       <DatePicker.Trigger
@@ -181,9 +188,8 @@ const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
         {...props}
         color={iconColor}
         onPress={focus}>
-        <DatePicker.Trigger.Icon>
+        <DatePicker.Trigger.Icon size={iconButtonSize}>
           <Calendar
-            size={adjustedIcon}
             transition="200ms"
             color={iconColor}
             $group-button-hover={{

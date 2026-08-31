@@ -170,6 +170,12 @@
     },
     "background": {
       "$description": "The background colors for the light theme",
+      "lowest": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.white}",
+        "$description": "The lowest background color for the light theme"
+      },
       "page": {
         "$type": "color",
         "colorSpace": "display-p3",

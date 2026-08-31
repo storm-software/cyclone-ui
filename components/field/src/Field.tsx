@@ -329,7 +329,8 @@ const FieldLabelText = styled(LabelText, {
 const FieldOptionalLabelText = styled(FieldLabelText, {
   color: "$foregroundCaption",
   fontWeight: "$light",
-  marginLeft: "$xl",
+  fontSize: "$sm",
+  marginLeft: "$lg",
 
   variants: {
     disabled: {
@@ -353,7 +354,7 @@ const LabelXStack = styled(XStack, {
   name: "FieldLabel",
 
   cursor: "pointer",
-  gap: "$md",
+  gap: "$sm",
   flex: 1,
   alignItems: "center",
 
@@ -402,7 +403,6 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <LabelXStack disabled={disabled}>
           <FieldLabelText
             {...props}
-            paddingLeft="$lg"
             disabled={disabled}
             theme="primary">
             {children}
@@ -491,10 +491,10 @@ const FieldIconButtonImpl = Button.styleable<{
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const frameSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+      size === "$true" || String(size) === "true" ? "$11xl" : size;
 
     const adjusted = useMemo(
-      () => getSized(frameSize, { shift: -2 }),
+      () => getSized(frameSize, { shift: -4 }),
       [frameSize]
     );
 
@@ -504,13 +504,14 @@ const FieldIconButtonImpl = Button.styleable<{
         justifyContent="center"
         flexDirection="row"
         flexShrink={0}
-        paddingHorizontal="$sm"
+        height="100%"
+        paddingHorizontal="$2xl"
         position="relative">
         {position && (
           <View
             position="absolute"
-            top="25%"
-            height="50%"
+            top="20%"
+            height="60%"
             {...(position === "end"
               ? { left: 0, borderLeftWidth: 1 }
               : { right: 0, borderRightWidth: 1 })}
@@ -537,7 +538,9 @@ const FieldIconButtonImpl = Button.styleable<{
           {...props}
           size={adjusted}>
           <Button.Icon
-            size={adjusted}
+            // Keep the compact field button frame while matching the 20px
+            // glyph size used by the other input affordances.
+            size={frameSize}
             $group-field-hover={{
               color: disabled ? "$borderDisabled" : "$borderHover"
             }}>

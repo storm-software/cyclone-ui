@@ -101,7 +101,7 @@ export const withCycloneTheme: Decorator = (Story, context) => {
         disableInjectCSS={false}
         defaultMode={mode}>
         <SyncColorMode mode={mode} />
-        <Theme name={mode}>
+        <Theme name={`${mode}_primary`}>
           <PortalProvider>
             <MessageProvider>
               <YStack p="$8" w="100%" minh="100%">

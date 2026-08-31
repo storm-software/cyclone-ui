@@ -576,7 +576,7 @@ const ItemPicker = ({
     <Button
       variant={active ? "surface" : "ghost"}
       flexGrow={1}
-      flexBasis={flexBasis}
+      flexBasis={flexBasis ?? "unset"}
       {...rest}>
       <Button.Text>{children}</Button.Text>
     </Button>
@@ -713,6 +713,7 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
       <Input.TextBox.Value
         ref={forwardedRef}
         placeholder={DEFAULT_DATE_FORMAT}
+        nativePaddingInline={16}
         {...props}>
         {children}
       </Input.TextBox.Value>

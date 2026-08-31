@@ -117,8 +117,8 @@ const SelectSeparator = styled(Separator, {
   borderWidth: 1,
   borderColor: "$border",
   vertical: true,
-  height: "50%",
-  marginVertical: "$xxs",
+  height: "60%",
+  marginVertical: "$none",
 
   variants: {
     focused: {
@@ -159,7 +159,9 @@ const SelectTrigger = View.styleable(
       size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     const adjustedTrigger = useMemo(
-      () => getSized(controlSize, { shift: -3 }),
+      // Select renders its glyph directly, unlike Button.Icon. Match the
+      // Field.Icon result: two steps for its button frame and six for glyph.
+      () => getSized(controlSize, { shift: -8 }),
       [controlSize]
     );
 

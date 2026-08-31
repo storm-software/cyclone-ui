@@ -170,6 +170,12 @@
     },
     "background": {
       "$description": "The background colors for the dark theme",
+      "lowest": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.black}",
+        "$description": "The lowest background color for the dark theme"
+      },
       "page": {
         "$type": "color",
         "colorSpace": "display-p3",
@@ -232,7 +238,7 @@
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.7}",
+        "$value": "{color.yellow.6}",
         "$description": "The warning background color for the dark theme",
         "theme": "warning"
       },

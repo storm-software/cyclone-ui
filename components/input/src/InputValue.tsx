@@ -90,6 +90,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       scrollEnabled,
       secureTextEntry,
       selectionColor,
+      nativePaddingInline,
       inputMode,
       onChange: inputOnChange,
       onInput: inputOnInput,
@@ -218,7 +219,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
               minWidth: 0,
               margin: 0,
               padding: 0,
-              paddingInline: "var(--t-space-xl)"
+              paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
             }}
             onChange={handleInput}
             onBlur={inputOnBlur ?? contextOnBlur}

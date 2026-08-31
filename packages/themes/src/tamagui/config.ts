@@ -948,11 +948,11 @@ const childThemeExtras: {
       ringSubtle: "0px 0px 0px 1px #449e7133"
     },
     warning: {
-      background: tokens.color.darkYellow7.val,
-      backgroundDisabled: "#977b50",
-      backgroundFocused: "#5d3100",
-      backgroundHover: "#815300",
-      backgroundPressed: "#5d3100",
+      background: tokens.color.darkYellow6.val,
+      backgroundDisabled: "#c09c66",
+      backgroundFocused: "#784000",
+      backgroundHover: "#a46900",
+      backgroundPressed: "#784000",
       backgroundSubtle: tokens.color.darkYellow9.val,
       backgroundSubtleDisabled: "#463923",
       backgroundSubtleFocused: "#755e34",
@@ -967,12 +967,12 @@ const childThemeExtras: {
       borderSubtleFocused: "#5d3100",
       borderSubtleHover: "#815300",
       foreground: tokens.color.darkYellow5.val,
-      foregroundDisabled: "#2e2e2e",
+      foregroundDisabled: "#4b4b4b",
       foregroundFocused: "#934e00",
       foregroundGhostHover: "#f4a946",
       foregroundHover: "#c88000",
       foregroundInverse: tokens.color.darkBase1.val,
-      foregroundInverseDisabled: "#2e2e2e",
+      foregroundInverseDisabled: "#4b4b4b",
       foregroundInverseFocused: "#7b7b7b",
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
@@ -1033,6 +1033,11 @@ const themes = createThemes({
         backgroundLinkFocused: "#003d8f",
         backgroundLinkHover: "#1d63b8",
         backgroundLinkPressed: "#003d8f",
+        backgroundLowest: "#ffffff",
+        backgroundLowestDisabled: "#ffffff99",
+        backgroundLowestFocused: "#808080",
+        backgroundLowestHover: "#bebebe",
+        backgroundLowestPressed: "#808080",
         backgroundPage: tokens.color.lightSurface1.val,
         backgroundPageDisabled: "#fafafa99",
         backgroundPageFocused: "#7d7d7d",
@@ -1110,6 +1115,11 @@ const themes = createThemes({
         backgroundHighestFocused: "#505050",
         backgroundHighestHover: "#404040",
         backgroundHighestPressed: "#505050",
+        backgroundLowest: "#0c0c0d",
+        backgroundLowestDisabled: "#0c0c0d",
+        backgroundLowestFocused: "#1a1a1b",
+        backgroundLowestHover: "#131314",
+        backgroundLowestPressed: "#1a1a1b",
         backgroundPage: tokens.color.darkSurface1.val,
         backgroundPageDisabled: "#18181899",
         backgroundPageFocused: "#2c2c2c",
@@ -1474,9 +1484,9 @@ const headingMdFont = createFont({
     xl: 28
   },
   weight: {
-    bold: "700",
-    true: "700",
-    xl: "700"
+    semibold: "600",
+    true: "600",
+    xl: "600"
   }
 });
 
@@ -1491,9 +1501,9 @@ const headingSmFont = createFont({
     true: 28
   },
   weight: {
-    bold: "700",
-    lg: "700",
-    true: "700"
+    lg: "400",
+    normal: "400",
+    true: "400"
   }
 });
 
@@ -1549,6 +1559,11 @@ export interface AppTheme {
   backgroundLinkFocused: string;
   backgroundLinkHover: string;
   backgroundLinkPressed: string;
+  backgroundLowest: string;
+  backgroundLowestDisabled: string;
+  backgroundLowestFocused: string;
+  backgroundLowestHover: string;
+  backgroundLowestPressed: string;
   backgroundPage: string;
   backgroundPageDisabled: string;
   backgroundPageFocused: string;

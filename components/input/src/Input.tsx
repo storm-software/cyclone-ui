@@ -22,7 +22,6 @@ import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { X } from "@tamagui/lucide-icons-2";
-import { Separator } from "@tamagui/separator";
 import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { InputValue } from "./InputValue";
@@ -153,16 +152,21 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
   { staticConfig: { componentName: "Input" } }
 );
 
-const InputSeparator = styled(Separator, {
+const InputSeparator = styled(View, {
   name: "Input",
   context: InputContext,
 
   transition: "200ms",
-  borderWidth: 1,
+  borderWidth: 0,
+  borderLeftWidth: 1,
+  borderRightWidth: 0,
+  borderTopWidth: 0,
+  borderBottomWidth: 0,
   borderColor: "$border",
-  vertical: true,
-  height: "50%",
-  marginVertical: "$xxs",
+  width: 0,
+  flexShrink: 0,
+  height: "60%",
+  marginVertical: "$none",
 
   variants: {
     focused: {
@@ -267,9 +271,13 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
       onChange: contextOnChange,
       onInput: contextOnInput
     } = InputContext.useStyledContext();
+    const controlSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
     const adjustedTrigger = useMemo(
-      () => getSized(size, { shift: -3 }),
-      [size]
+      // Keep clear-button glyphs aligned with Field.Icon: its button frame is
+      // two size steps below the textbox, then Button.Icon derives the glyph.
+      () => getSized(controlSize, { shift: -2 }),
+      [controlSize]
     );
     const hasClearButton = Boolean(clearable && onClear && value);
     const clearSlotWidth = adjustedTrigger + getSpaced("$sm") * 2;
@@ -301,8 +309,8 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
             <View
               position="absolute"
               left={0}
-              top="25%"
-              height="50%"
+              top="20%"
+              height="60%"
               borderLeftWidth={1}
               borderColor={
                 disabled
@@ -316,7 +324,6 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
               }}
             />
             <Button
-              ref={forwardedRef}
               variant="link"
               circular={true}
               noPadding={true}
@@ -328,7 +335,7 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
                 $group-field-hover={{
                   color: disabled ? "$borderDisabled" : "$borderHover"
                 }}>
-                <X size="$4xl" />
+                <X />
               </Button.Icon>
             </Button>
           </View>
@@ -349,7 +356,9 @@ const InputTrigger = Button.styleable<{
     const frameSize = useMemo(() => getSized(controlSize), [controlSize]);
 
     const adjustedTrigger = useMemo(
-      () => getSized(controlSize, { shift: -3 }),
+      // Button.Icon applies its standard six-step glyph reduction. A frame
+      // two steps below the control therefore matches Field.Icon glyphs.
+      () => getSized(controlSize, { shift: -2 }),
       [controlSize]
     );
 
@@ -370,6 +379,8 @@ const InputTrigger = Button.styleable<{
             noPadding={true}
             color="$foregroundInverse"
             {...props}
+            width={props.width ?? adjustedTrigger}
+            minWidth={props.minWidth ?? props.width ?? adjustedTrigger}
             size={adjustedTrigger}>
             {children}
           </Button>

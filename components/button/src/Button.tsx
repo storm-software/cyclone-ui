@@ -649,6 +649,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           <ButtonGhostBackground
             circular={circular}
             bordered={bordered}
+            position="absolute"
             width="100%"
             $group-button-hover={{
               opacity: disabled ? 0 : 0.25

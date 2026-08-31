@@ -18,6 +18,7 @@
 
 import { isNumber } from "@stryke/type-checks/is-number";
 import { isSet } from "@stryke/type-checks/is-set";
+import { getTokens, getVariableValue } from "@tamagui/core";
 import {
   getRadius as getRadiusBase,
   getSize,
@@ -116,8 +117,17 @@ export const getSpaced = (
     value = options.nearest === false ? value : getNearestToken(value, "space");
   }
 
-  const space = getSpace(value, options);
   const scale = isSet(options.scale) ? options.scale : 1;
+
+  if (typeof value === "string" && !options.shift && !options.bounds) {
+    const space = getTokens({ prefixed: true }).space[value];
+
+    if (space) {
+      return getVariableValue(space) * scale;
+    }
+  }
+
+  const space = getSpace(value, options);
 
   return space.val * scale;
 };

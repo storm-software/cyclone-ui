@@ -265,6 +265,7 @@
   --color-foreground-positive-ghost-hover: #759554; /** The positive foreground color for the light theme (ghost hover, 20% brighter than hover) */
   --color-foreground-info-ghost-hover: #5e9db7; /** The info foreground color for the light theme (ghost hover, 20% brighter than hover) */
   --color-foreground-discovery-ghost-hover: #7d7cbc; /** The discovery foreground color for the light theme (ghost hover, 20% brighter than hover) */
+  --color-background-lowest: #d9d9d9; /** The lowest background color for the light theme */
   --color-background-page: #d5d5d5; /** The page background color for the light theme */
   --color-background-elevated: #d1d1d1; /** The elevated background color for the light theme */
   --color-background-floating: #cacaca; /** The floating background color for the light theme */
@@ -288,6 +289,10 @@
   --color-background-positive-subtle: #6b954c; /** The positive background color for the light theme */
   --color-background-info-subtle: #29768d; /** The info background color for the light theme */
   --color-background-discovery-subtle: #70709b; /** The discovery background color for the light theme */
+  --color-background-lowest-hover: #ababab; /** The lowest background color for the light theme (hover, 20% darker) */
+  --color-background-lowest-pressed: #808080; /** The lowest background color for the light theme (pressed, 40% darker) */
+  --color-background-lowest-focused: #808080; /** The lowest background color for the light theme (focused, 40% darker) */
+  --color-background-lowest-disabled: rgba(217, 217, 217, 0.6); /** The lowest background color for the light theme (disabled, 60% opacity) */
   --color-background-page-hover: #a8a8a8; /** The page background color for the light theme (hover, 20% darker) */
   --color-background-page-pressed: #7e7e7e; /** The page background color for the light theme (pressed, 40% darker) */
   --color-background-page-focused: #7e7e7e; /** The page background color for the light theme (focused, 40% darker) */
@@ -695,8 +700,8 @@
   --typography-heading-2xl: 700 2.25rem/1.111111 'Space Grotesk'; /** The heading extra large typography variant */
   --typography-heading-xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
   --typography-heading-lg: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading large typography variant */
-  --typography-heading-md: 700 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
-  --typography-heading-sm: 700 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
+  --typography-heading-md: 600 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
+  --typography-heading-sm: 400 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
   --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */

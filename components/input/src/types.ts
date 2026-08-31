@@ -60,6 +60,9 @@ export type InputComponentProps = ViewProps &
     | "selectionColor"
     | "numberOfLines"
   > & {
+    /** @internal Native text inset for composed controls. */
+    nativePaddingInline?: number | string;
+
     /**
      * use `type` instead of inputMode for most cases, use `inputMode="none"` to disable the soft keyboard
      */

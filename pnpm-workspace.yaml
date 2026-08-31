@@ -199,7 +199,9 @@ catalog:
   playwright: ^1.62.1
   "@tamagui/theme-builder": ^2.7.7
   style-dictionary: ^5.5.2
-  '@tamagui/dismissable': ^2.7.7
+  "@tamagui/dismissable": ^2.7.7
+  "@maskito/phone": 3.11.1
+  libphonenumber-js: 1.12.31
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

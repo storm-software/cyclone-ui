@@ -53,7 +53,12 @@ export const Message = (props: MessageProps) => (
     <Toast.Viewport label="Messages">
       <Toast.List
         renderItem={({ handleClose, index, toast }) => (
-          <Toast.Item index={index} toast={toast} width="100%" maxWidth={800}>
+          <Toast.Item
+            index={index}
+            toast={toast}
+            width="100%"
+            maxWidth={800}
+            borderRadius="$container">
             <Alert type={getAlertType(toast.data?.messageType ?? toast.type)}>
               <Alert.Icon>{toast.icon}</Alert.Icon>
               <Alert.Content>

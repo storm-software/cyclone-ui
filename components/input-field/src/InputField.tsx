@@ -19,9 +19,9 @@
 import { Field } from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
-import { Theme, withStaticProperties } from "@tamagui/core";
+import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
 import type { FocusEvent } from "react";
-import { useCallback, useLayoutEffect } from "react";
+import { useCallback, useLayoutEffect, useRef } from "react";
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -98,11 +98,15 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const clearable = field.clearable.get();
 
     const { change, mount } = useFieldActions();
+    const inputElementRef = useRef<HTMLInputElement>(null);
+    const inputRef = useFieldRef(
+      useComposedRefs(forwardedRef, inputElementRef)
+    );
     const handleClear = useCallback(() => {
       change(options?.defaultValue);
+      inputElementRef.current?.focus();
     }, [change, options?.defaultValue]);
 
-    const inputRef = useFieldRef(forwardedRef);
     useLayoutEffect(() => {
       mount(inputRef);
     }, [inputRef, mount]);

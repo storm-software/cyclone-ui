@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { HeadingLargeText } from "@cyclone-ui/heading-text";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { getFontSizedFromSize, getSized, getSpaced } from "@cyclone-ui/helpers";
 import { AnimatePresence } from "@tamagui/animate-presence";
 import type { SizeTokens, VariantSpreadExtras, ViewProps } from "@tamagui/core";
@@ -33,20 +33,11 @@ import type {
   TabsTabProps as TamaguiTabsTabProps
 } from "@tamagui/tabs";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
-import type { Dispatch, PropsWithChildren, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 
 export type TabOrientation = "horizontal" | "vertical";
-export const TabOrientation = {
-  HORIZONTAL: "horizontal" as TabOrientation,
-  VERTICAL: "vertical" as TabOrientation
-} as const;
-
 export type TabVariant = "underline" | "background";
-export const TabVariant = {
-  UNDERLINE: "underline" as TabVariant,
-  BACKGROUND: "background" as TabVariant
-} as const;
 
 export interface TabsState {
   /**
@@ -78,12 +69,7 @@ export interface TabsState {
 const initialState: TabsState = {
   currentTab: "",
   activeAt: null,
-  intentAt: {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 10
-  },
+  intentAt: null,
   prevActiveAt: null,
   steps: [] as string[]
 };
@@ -119,7 +105,7 @@ export interface TabsContextProps {
   /**
    * The variant of the tabs
    *
-   * @default "underline"
+   * @default "background"
    */
   variant: TabVariant;
 
@@ -137,8 +123,8 @@ export const TabsContext = createStyledContext<TabsContextProps>({
   },
   setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
   onInteraction: (_type: any, _layout: any) => {},
-  orientation: TabOrientation.HORIZONTAL,
-  variant: TabVariant.UNDERLINE,
+  orientation: "horizontal",
+  variant: "background",
   size: "$true"
 });
 
@@ -163,15 +149,6 @@ const TabsFrame = styled(TamaguiTabs, {
       }
     },
 
-    orientation: {
-      horizontal: {
-        flexDirection: "column"
-      },
-      vertical: {
-        flexDirection: "row"
-      }
-    },
-
     variant: {
       underline: {},
       background: {}
@@ -180,8 +157,7 @@ const TabsFrame = styled(TamaguiTabs, {
 
   defaultVariants: {
     size: "$true",
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE
+    variant: "background"
   }
 });
 
@@ -189,8 +165,8 @@ const TabsFrameImpl = TabsFrame.styleable(
   (
     {
       children,
-      orientation = TabOrientation.HORIZONTAL,
-      variant = TabVariant.UNDERLINE,
+      orientation = "horizontal",
+      variant = "background",
       size = "$true",
       onValueChange,
       theme,
@@ -249,14 +225,13 @@ const TabsFrameImpl = TabsFrame.styleable(
         variant={variant}
         orientation={orientation}>
         <TabsFrame
-          group={"tabs" as any}
           ref={forwardedRef}
           value={currentTab}
           size={size}
-          gap="$xl"
           {...rest}
           onValueChange={handleSetCurrentTab}
           variant={variant}
+          flexDirection={orientation === "horizontal" ? "column" : "row"}
           orientation={orientation}>
           {children}
         </TabsFrame>
@@ -269,8 +244,9 @@ const TabsRovingIndicator = styled(YStack, {
   name: "TabsIndicator",
   context: TabsContext,
 
-  transition: "200ms",
+  transition: "100ms",
   position: "absolute",
+  pointerEvents: "none",
 
   enterStyle: {
     opacity: 0
@@ -282,13 +258,16 @@ const TabsRovingIndicator = styled(YStack, {
 
   variants: {
     active: {
-      ":boolean": (val: boolean, _config: VariantSpreadExtras<any>) => {
+      ":boolean": (val: boolean, config: VariantSpreadExtras<any>) => {
         if (!val) {
           return {};
         }
 
         return {
-          backgroundColor: "$background"
+          backgroundColor:
+            config.props.variant === "underline"
+              ? "$foreground"
+              : "$backgroundElevated"
         };
       }
     },
@@ -300,25 +279,22 @@ const TabsRovingIndicator = styled(YStack, {
         }
 
         return {
-          backgroundColor: "$background"
+          backgroundColor: "transparent",
+          borderColor: "transparent"
         };
       }
     },
 
     orientation: {
-      horizontal: {
-        bottom: -2
-      },
-      vertical: {
-        right: -2
-      }
+      horizontal: {},
+      vertical: {}
     },
 
     size: {
       "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
         const size = getSized(val);
 
-        return config.props.orientation === TabOrientation.HORIZONTAL
+        return config.props.orientation === "horizontal"
           ? {
               height: size * 0.1
             }
@@ -330,42 +306,58 @@ const TabsRovingIndicator = styled(YStack, {
 
     variant: {
       underline: {
-        borderRadius: 0
+        borderRadius: 0,
+        borderColor: "transparent"
       },
       background: {
-        borderRadius: "$button"
+        borderRadius: "$button",
+        borderWidth: 1,
+        borderColor: "$border",
+        alignItems: "center",
+        justifyContent: "center"
       }
     }
   } as const,
 
   defaultVariants: {
     size: "$true",
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE,
+    orientation: "horizontal",
+    variant: "underline",
     active: false,
     intent: false
   }
 });
 
 const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
-  ({ children, height, width, ...rest }, forwardedRef) => {
+  ({ children, height, width, active, ...rest }, forwardedRef) => {
     const { orientation, variant } = TabsContext.useStyledContext();
+    const isActiveUnderline =
+      active && variant === "underline" && orientation === "horizontal";
 
     return (
       <TabsRovingIndicator
         ref={forwardedRef}
         {...rest}
+        active={active}
         width={
-          orientation === TabOrientation.HORIZONTAL ||
-          variant === TabVariant.BACKGROUND
+          orientation === "horizontal" || variant === "background"
             ? width
             : undefined
         }
         height={
-          orientation === TabOrientation.VERTICAL ||
-          variant === TabVariant.BACKGROUND
-            ? height
+          isActiveUnderline
+            ? "$xs"
+            : orientation === "vertical" || variant === "background"
+              ? height
+              : undefined
+        }
+        bottom={
+          variant === "underline" && orientation === "horizontal"
+            ? -2
             : undefined
+        }
+        right={
+          variant === "underline" && orientation === "vertical" ? -2 : undefined
         }>
         {children}
       </TabsRovingIndicator>
@@ -377,11 +369,13 @@ const AnimatedView = styled(View, {
   name: "TabsIndicator",
   context: TabsContext,
 
-  transition: "200ms",
+  transition: "100ms",
   flex: 1,
   x: 0,
   opacity: 1,
   position: "absolute",
+  height: "100%",
+  width: "100%",
 
   variants: {
     // 1 = right, 0 = nowhere, -1 = left
@@ -405,28 +399,37 @@ const TabsHeaderList = styled(YStack, {
   name: "Tabs",
   context: TabsContext,
 
-  transition: "200ms",
+  transition: "100ms",
   borderStyle: "solid",
-  borderColor: "transparent",
+  position: "relative",
+  padding: "$md",
 
   variants: {
     orientation: {
       horizontal: {},
-      vertical: {}
+      vertical: {
+        minWidth: "$20xl"
+      }
     },
 
     variant: {
       underline: {
+        borderColor: "transparent",
         borderBottomColor: "$border",
         borderBottomWidth: "$xxs"
       },
-      background: {}
+      background: {
+        backgroundColor: "$backgroundPage",
+        borderRadius: "$container",
+        borderColor: "$border",
+        borderWidth: 1
+      }
     }
   } as const,
 
   defaultVariants: {
-    orientation: TabOrientation.HORIZONTAL,
-    variant: TabVariant.UNDERLINE
+    orientation: "horizontal",
+    variant: "background"
   }
 });
 
@@ -451,25 +454,24 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
 
     return (
       <TabsHeaderList
+        group={"tabs" as any}
         ref={forwardedRef}
         orientation={orientation}
         variant={variant}
         {...rest}>
-        <AnimatePresence>
-          {intentAt && (
-            <TabsRovingIndicatorImpl
-              width={intentAt.width}
-              height={intentAt.height}
-              x={intentAt.x}
-              y={intentAt.y}
-              orientation={orientation}
-              variant={variant}
-              $group-tabs-hover={{
-                intent: true
-              }}
-            />
-          )}
-        </AnimatePresence>
+        <TabsRovingIndicatorImpl
+          width={intentAt?.width ?? 0}
+          height={intentAt?.height ?? 0}
+          x={intentAt?.x ?? 0}
+          y={intentAt?.y ?? 0}
+          opacity={0}
+          orientation={orientation}
+          variant={variant}
+          $group-tabs-hover={{
+            intent: Boolean(intentAt),
+            opacity: intentAt ? 1 : 0
+          }}
+        />
         <AnimatePresence>
           {activeAt && (
             <TabsRovingIndicatorImpl
@@ -486,10 +488,13 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
 
         <TamaguiTabs.List
           disablePassBorderRadius={
-            orientation === TabOrientation.HORIZONTAL ? "bottom" : "end"
+            orientation === "horizontal" ? "bottom" : "end"
           }
           loop={false}
           aria-label="Tabs"
+          gap="$md"
+          position="relative"
+          zIndex={1}
           backgroundColor="transparent">
           <AnimatePresence
             exitBeforeEnter={true}
@@ -503,11 +508,12 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
   }
 );
 
-const TabsHeaderItemHeading = styled(HeadingLargeText, {
+const TabsHeaderItemHeading = styled(HeadingSmallText, {
   name: "TabsHeading",
   context: TabsContext,
 
-  transition: "200ms",
+  transition: "100ms",
+  textAlign: "center",
 
   variants: {
     size: {
@@ -526,17 +532,23 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   name: "TabsHeading",
   context: TabsContext,
 
-  transition: "200ms",
+  transition: "100ms",
   unstyled: true,
-  flex: 1,
 
   variants: {
+    orientation: {
+      horizontal: {
+        flex: 1
+      },
+      vertical: {}
+    },
+
     size: {
       "...size": (val: SizeTokens, _config: VariantSpreadExtras<any>) => {
-        const space = getSpaced(val);
+        const space = getSpaced(val, { scale: 5 });
 
         return {
-          paddingVertical: space * 0.5,
+          paddingVertical: space,
           paddingHorizontal: space
         };
       }
@@ -544,6 +556,7 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
   } as const,
 
   defaultVariants: {
+    orientation: "horizontal",
     size: "$true"
   }
 });
@@ -582,9 +595,28 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
   }
 );
 
-const TabsContentList = ({ children }: PropsWithChildren) => {
-  return <View position="relative">{children}</View>;
-};
+const TabsContentList = styled(View, {
+  name: "TabsContent",
+  context: TabsContext,
+
+  position: "relative",
+
+  variants: {
+    orientation: {
+      horizontal: {
+        width: "100%"
+      },
+      vertical: {
+        flex: 1,
+        minWidth: 0
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    orientation: "horizontal"
+  }
+});
 
 const TabsContentItem = TamaguiTabs.Content.styleable(
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
