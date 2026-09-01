@@ -217,7 +217,11 @@ const columns = [
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
-              <Text fontSize="$xs" lineHeight="$sm" fontWeight="$extralight" theme="alt2">
+              <Text
+                fontSize="$xs"
+                lineHeight="$sm"
+                fontWeight="$extralight"
+                theme="alt2">
                 {userName}
               </Text>
             </View>
@@ -256,6 +260,15 @@ export const Base: Story = {
     options: {
       data: defaultData
     }
+  }
+};
+
+export const Resizable: Story = {
+  args: {
+    options: {
+      data: defaultData
+    },
+    resizable: true
   }
 };
 

@@ -37,7 +37,12 @@ import { matchSorter } from "@stryke/helpers/match-sorter";
 import { titleCase } from "@stryke/string-format/title-case";
 import { isNumber } from "@stryke/type-checks/is-number";
 import type { SelectOption } from "@stryke/types/form";
-import { createStyledContext, View } from "@tamagui/core";
+import {
+  createStyledContext,
+  getTokens,
+  getVariableValue,
+  View
+} from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
@@ -112,6 +117,7 @@ export type DataTableOptions<TData = any> = Partial<TableOptions<TData>> &
 export interface DataTableProps<TData extends RowData> extends TableProps {
   options: DataTableOptions<TData>;
   pageSize?: number | null | false;
+  resizable?: boolean;
 }
 
 interface ContentSizedCell {
@@ -139,10 +145,14 @@ type ContentResizeObserverConstructor = new (
   callback: () => void
 ) => ContentResizeObserver;
 
-const useContentSizedColumns = () => {
+const useContentSizedColumns = (enabled: boolean) => {
   const tableRef = useRef<ContentSizedTableElement | null>(null);
 
   const measureColumns = useCallback(() => {
+    if (!enabled) {
+      return;
+    }
+
     const tableElement = tableRef.current;
 
     if (!tableElement?.querySelectorAll) {
@@ -195,11 +205,15 @@ const useContentSizedColumns = () => {
     tableElement.style.width = "100%";
     tableElement.style.minWidth = `${intrinsicTableWidth}px`;
     tableElement.style.tableLayout = "fixed";
-  }, []);
+  }, [enabled]);
 
   useLayoutEffect(measureColumns);
 
   useEffect(() => {
+    if (!enabled) {
+      return;
+    }
+
     const tableElement = tableRef.current;
     const ResizeObserverImpl = (
       globalThis as typeof globalThis & {
@@ -233,14 +247,83 @@ const useContentSizedColumns = () => {
         cancelAnimationFrame(animationFrame);
       }
     };
-  });
+  }, [enabled, measureColumns]);
 
   return tableRef;
+};
+
+const useInitialContentSizedColumns = <TData extends RowData>(
+  tableRef: { current: ContentSizedTableElement | null },
+  table: ReactTable<TData>,
+  enabled: boolean
+) => {
+  const measuredColumnsRef = useRef<string | undefined>(undefined);
+  const columnIds = table
+    .getVisibleLeafColumns()
+    .map(column => column.id)
+    .join("\0");
+
+  useLayoutEffect(() => {
+    const tableElement = tableRef.current;
+
+    if (
+      !enabled ||
+      measuredColumnsRef.current === columnIds ||
+      !tableElement?.querySelectorAll
+    ) {
+      return;
+    }
+
+    measuredColumnsRef.current = columnIds;
+
+    const columnWidthPadding = getVariableValue(
+      getTokens({ prefixed: true }).space["$xl"]
+    );
+
+    const widths = Array.from(
+      tableElement.querySelectorAll("[data-column-id]")
+    ).reduce((result, cell) => {
+      const columnId = cell.dataset.columnId;
+
+      if (columnId) {
+        result.set(
+          columnId,
+          Math.max(result.get(columnId) ?? 0, Math.ceil(cell.scrollWidth))
+        );
+      }
+
+      return result;
+    }, new Map<string, number>());
+
+    table.setColumnSizing(current => {
+      const next = { ...current };
+      let changed = false;
+
+      table.getVisibleLeafColumns().forEach(column => {
+        const measuredWidth = widths.get(column.id);
+        const initialWidth = measuredWidth
+          ? measuredWidth + columnWidthPadding
+          : undefined;
+
+        if (
+          initialWidth &&
+          current[column.id] === undefined &&
+          initialWidth > column.getSize()
+        ) {
+          next[column.id] = initialWidth;
+          changed = true;
+        }
+      });
+
+      return changed ? next : current;
+    });
+  }, [columnIds, enabled, table, tableRef]);
 };
 
 export function DataTable<TData extends RowData>({
   options,
   pageSize = 100,
+  resizable = false,
   ...rest
 }: DataTableProps<TData>) {
   const [data] = useState<TData[]>(() => [...options.data]);
@@ -250,7 +333,7 @@ export function DataTable<TData extends RowData>({
     pageIndex: 0,
     pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
   });
-  const tableRef = useContentSizedColumns();
+  const tableRef = useContentSizedColumns(!resizable);
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -270,7 +353,9 @@ export function DataTable<TData extends RowData>({
     onSortingChange: setSorting,
     onPaginationChange: setPagination,
     manualPagination: false,
+    columnResizeMode: "onChange",
     ...options,
+    enableColumnResizing: resizable,
     columns: options.columns.map(column => ({
       filterFn: defaultFilterFn,
       ...column
@@ -278,6 +363,8 @@ export function DataTable<TData extends RowData>({
     rowCount: data.length,
     data
   });
+
+  useInitialContentSizedColumns(tableRef, table, resizable);
 
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
@@ -294,12 +381,27 @@ export function DataTable<TData extends RowData>({
       <YStack gap="$3xl">
         <Table
           ref={tableRef as any}
-          width="100%"
+          width={resizable ? table.getTotalSize() : "100%"}
           maxWidth="none"
           alignCells={{ x: "start", y: "center" }}
           alignHeaderCells={{ x: "start", y: "center" }}
           {...({ sizing: "content" } as any)}
-          {...rest}>
+          {...rest}
+          style={
+            [
+              rest.style,
+              {
+                borderCollapse: "separate",
+                borderSpacing: 0
+              },
+              resizable
+                ? {
+                    tableLayout: "fixed",
+                    width: table.getTotalSize()
+                  }
+                : undefined
+            ] as any
+          }>
           <Table.Header>
             {headerGroups.map(headerGroup => {
               return (
@@ -307,6 +409,12 @@ export function DataTable<TData extends RowData>({
                   {headerGroup.headers.map(header => (
                     <Table.HeaderCell
                       key={header.id}
+                      position="relative"
+                      style={
+                        resizable
+                          ? ({ width: header.getSize() } as any)
+                          : undefined
+                      }
                       borderRightColor="$border"
                       borderRightWidth={
                         header.index === headerGroup.headers.length - 1 ? 0 : 1
@@ -324,6 +432,43 @@ export function DataTable<TData extends RowData>({
                             header.column.columnDef.header,
                             header.getContext()
                           )}
+                      {resizable && header.column.getCanResize() && (
+                        <View
+                          role="separator"
+                          aria-label={`Resize ${header.column.id} column`}
+                          aria-orientation="vertical"
+                          group={true}
+                          position="absolute"
+                          top={0}
+                          right={0}
+                          bottom={0}
+                          width="$2xl"
+                          zIndex="$20"
+                          cursor="col-resize"
+                          touchAction="none"
+                          userSelect="none"
+                          onDoubleClick={() => header.column.resetSize()}
+                          onMouseDown={header.getResizeHandler()}
+                          onTouchStart={header.getResizeHandler()}
+                          {...({
+                            "data-column-resizer": header.column.id
+                          } as any)}>
+                          <View
+                            position="absolute"
+                            right={-1}
+                            width={1}
+                            height="100%"
+                            backgroundColor={
+                              header.column.getIsResizing()
+                                ? "$borderFocused"
+                                : "transparent"
+                            }
+                            $group-hover={{
+                              backgroundColor: "$borderFocused"
+                            }}
+                          />
+                        </View>
+                      )}
                     </Table.HeaderCell>
                   ))}
                 </Table.Row>
@@ -337,6 +482,11 @@ export function DataTable<TData extends RowData>({
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
                       key={cell.id}
+                      style={
+                        resizable
+                          ? ({ width: cell.column.getSize() } as any)
+                          : undefined
+                      }
                       {...({ "data-column-id": cell.column.id } as any)}>
                       {flexRender(
                         cell.column.columnDef.cell,

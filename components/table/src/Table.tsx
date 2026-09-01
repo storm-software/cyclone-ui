@@ -218,7 +218,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   borderBottomWidth: 1,
   borderColor: "$border",
   justifyContent: "flex-start",
-  paddingHorizontal: "$xl",
+  padding: "$4xl",
 
   variants: {
     cellWidth: {
@@ -240,8 +240,7 @@ const TableHeaderCell = styled(ThemeableStack, {
       content: {
         "$platform-web": {
           display: "table-cell" as any,
-          paddingVertical: "$xl",
-          paddingHorizontal: "$xl",
+          padding: "$4xl",
           width: "auto"
         }
       }
