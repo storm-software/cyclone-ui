@@ -29,12 +29,10 @@ import { Sheet } from "@tamagui/sheet";
 
 export interface PopoverContextProps {
   size: SizeTokens;
-  shouldAdapt: true;
 }
 
 export const PopoverContext = createStyledContext<PopoverContextProps>({
-  size: "$true",
-  shouldAdapt: true
+  size: "$true"
 });
 
 const PopoverFrame = styled(TamaguiPopover, {
@@ -42,14 +40,18 @@ const PopoverFrame = styled(TamaguiPopover, {
   context: PopoverContext
 });
 
-const PopoverFrameImpl = PopoverFrame.styleable<Partial<PopoverContextProps>>(
+interface PopoverFrameExtraProps extends Partial<PopoverContextProps> {
+  shouldAdapt?: boolean;
+}
+
+const PopoverFrameImpl = PopoverFrame.styleable<PopoverFrameExtraProps>(
   (
     { children, size = "$true", shouldAdapt = true, ...props },
     forwardedRef
   ) => {
     return (
-      <PopoverContext.Provider size={size} shouldAdapt={shouldAdapt}>
-        <TamaguiPopover
+      <PopoverContext.Provider size={size}>
+        <PopoverFrame
           ref={forwardedRef}
           size={size}
           allowFlip={true}
@@ -73,7 +75,7 @@ const PopoverFrameImpl = PopoverFrame.styleable<Partial<PopoverContextProps>>(
               </Sheet>
             </Adapt>
           )}
-        </TamaguiPopover>
+        </PopoverFrame>
       </PopoverContext.Provider>
     );
   },

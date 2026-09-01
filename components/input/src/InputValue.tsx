@@ -229,7 +229,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
                 margin: 0,
                 paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
               }}
-              onChange={handleInput as any}
+              onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}
               onFocus={(inputOnFocus ?? contextOnFocus) as any}
             />
@@ -244,7 +244,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
                 padding: 0,
                 paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
               }}
-              onChange={handleInput as any}
+              onChange={handleInput}
               onBlur={(inputOnBlur ?? contextOnBlur) as any}
               onFocus={(inputOnFocus ?? contextOnFocus) as any}
             />

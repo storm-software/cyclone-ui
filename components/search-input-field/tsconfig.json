@@ -18,6 +18,9 @@
       "path": "../input-field"
     },
     {
+      "path": "../popover"
+    },
+    {
       "path": "../input"
     },
     {

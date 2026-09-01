@@ -255,16 +255,16 @@
   --color-foreground-discovery-inverse-pressed: #7c7c7c; /** The discovery foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-discovery-inverse-focused: #7c7c7c; /** The discovery foreground color for the light theme (focused, 40% darker) */
   --color-foreground-discovery-inverse-disabled: #4d4d4d; /** The discovery foreground color for the light theme (disabled, 60% opacity) */
-  --color-foreground-primary-ghost-hover: #c9c9c9; /** The primary foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-secondary-ghost-hover: #878787; /** The secondary foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-accent-ghost-hover: #59968f; /** The accent foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-danger-ghost-hover: #a7534e; /** The danger foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-negative-ghost-hover: #ab554e; /** The negative foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-warning-ghost-hover: #aa8658; /** The warning foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-success-ghost-hover: #538e6c; /** The success foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-positive-ghost-hover: #759554; /** The positive foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-info-ghost-hover: #5e9db7; /** The info foreground color for the light theme (ghost hover, 20% brighter than hover) */
-  --color-foreground-discovery-ghost-hover: #7d7cbc; /** The discovery foreground color for the light theme (ghost hover, 20% brighter than hover) */
+  --color-foreground-primary-ghost-hover: #d9d9d9; /** The primary foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-secondary-ghost-hover: #b5b5b5; /** The secondary foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-accent-ghost-hover: #87d1c7; /** The accent foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-danger-ghost-hover: #d5786e; /** The danger foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-negative-ghost-hover: #d57b6f; /** The negative foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-warning-ghost-hover: #dabb81; /** The warning foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-success-ghost-hover: #80c098; /** The success foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-positive-ghost-hover: #a5ce81; /** The positive foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-info-ghost-hover: #8adbdd; /** The info foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-discovery-ghost-hover: #9b9ee2; /** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover) */
   --color-background-lowest: #d9d9d9; /** The lowest background color for the light theme */
   --color-background-page: #d5d5d5; /** The page background color for the light theme */
   --color-background-elevated: #d1d1d1; /** The elevated background color for the light theme */

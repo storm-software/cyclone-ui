@@ -3541,89 +3541,89 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.primary-ghost-hover",
       type: "color",
-      value: "#e8e8e8",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#b3b3b3",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#4fd3b7",
+      value: "#9cfffc",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#c83250",
+      value: "#ff7186",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#cb3327",
+      value: "#ff7361",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#f4a946",
+      value: "#ffee8e",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#2e875c",
+      value: "#6cc193",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#79aa39",
+      value: "#bff584",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#4ecee0",
+      value: "#9bffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#6564b9",
+      value: "#9a9bf6",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.primary-inverse-ghost-hover",
       type: "color",
-      value: "#1b1b1d",
+      value: "#2d2d2f",
       cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
-      description: "Ink text on cream primary surfaces (ghost hover, 20% brighter than hover)",
+      description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
@@ -9093,89 +9093,89 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.primary-ghost-hover",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d9d9d9",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#a4a4a4",
+      value: "#d9d9d9",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#66b2a2",
+      value: "#8ededc",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#a75465",
+      value: "#d77785",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#a9544d",
+      value: "#d57a6e",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#c89b60",
+      value: "#dccf86",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#4a8167",
+      value: "#77a98e",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#7a9655",
+      value: "#acd283",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#65b0bb",
+      value: "#8ddede",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#7272a2",
+      value: "#8f90d6",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.primary-inverse-ghost-hover",
       type: "color",
-      value: "#39393b",
+      value: "#464647",
       cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
-      description: "Ink text on cream primary surfaces (ghost hover, 20% brighter than hover)",
+      description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
@@ -14647,87 +14647,87 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "#ffffff",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#cacaca",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#41f1cb",
+      value: "#e2fffe",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#e6113c",
+      value: "#ffa4b1",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#e81504",
+      value: "#ff9a8d",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#ffb656",
+      value: "#fff8ce",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#157f4c",
+      value: "#68d99c",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#75b91e",
+      value: "#daffb1",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#44e8ff",
+      value: "#e1ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#5b5ad0",
+      value: "#d2d3ff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the dark theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.primary-inverse-ghost-hover",
       type: "color",
-      value: "#000000",
+      value: "#09090a",
       cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
-      description: "Ink text on cream primary surfaces (ghost hover, 20% brighter than hover)",
+      description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
@@ -20189,81 +20189,81 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.primary-ghost-hover",
       type: "color",
-      value: "#e8e8e8",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#8a8a8a",
+      value: "#cccccc",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#3eaa9e",
+      value: "#8cf3e5",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#c73229",
+      value: "#ff7161",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ce3428",
+      value: "#ff7562",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#cb8b38",
+      value: "#ffd484",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#379d63",
+      value: "#7de0a1",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#70a837",
+      value: "#b5f181",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#42afdd",
+      value: "#94fdff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#7776db",
+      value: "#b4b7ff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
@@ -25621,81 +25621,81 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.primary-ghost-hover",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d9d9d9",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#878787",
+      value: "#b5b5b5",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#59968f",
+      value: "#87d1c7",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#a7534e",
+      value: "#d5786e",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ab554e",
+      value: "#d57b6f",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#aa8658",
+      value: "#dabb81",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#538e6c",
+      value: "#80c098",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#759554",
+      value: "#a5ce81",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#5e9db7",
+      value: "#8adbdd",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#7d7cbc",
+      value: "#9b9ee2",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
@@ -31055,79 +31055,79 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "#ffffff",
       cssVar: "--rw-color-foreground-primary-ghost-hover",
-      description: "The primary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.secondary-ghost-hover",
       type: "color",
-      value: "#8f8f8f",
+      value: "#eeeeee",
       cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.accent-ghost-hover",
       type: "color",
-      value: "#24baa9",
+      value: "#bafff6",
       cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#e21407",
+      value: "#ff988d",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
-      description: "The danger foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ed1605",
+      value: "#ff9c8e",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
-      description: "The negative foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#eb901a",
+      value: "#ffe9bf",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
-      description: "The warning foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#1da457",
+      value: "#8ff8b5",
       cssVar: "--rw-color-foreground-success-ghost-hover",
-      description: "The success foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#69b51c",
+      value: "#d0ffa7",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
-      description: "The positive foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#30c1fe",
+      value: "#d7feff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
-      description: "The info foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#8382f4",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
-      description: "The discovery foreground color for the light theme (ghost hover, 20% brighter than hover)",
+      description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {

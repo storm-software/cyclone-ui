@@ -141,7 +141,6 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
       {...item}
       group={"item" as any}
       onPress={handlePress}
-      transition="200ms"
       cursor="pointer"
       backgroundColor={selected ? "$backgroundHighest" : "$backgroundElevated"}
       borderColor={selected ? "$borderFocused" : "$border"}

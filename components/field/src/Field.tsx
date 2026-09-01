@@ -186,7 +186,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
       <Theme name={theme}>
         <FieldDetailsSetterContext.Provider value={setDetails}>
           <FieldDetailsContext.Provider value={details}>
-            <YStack gap="$xl" group={"field" as any} disabled={disabled}>
+            <YStack group={"field" as any} disabled={disabled}>
               <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
                 {children}
               </FieldGroupFrame>
@@ -488,10 +488,10 @@ const FieldIconButtonImpl = Button.styleable<{
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const frameSize =
-      size === "$true" || String(size) === "true" ? "$11xl" : size;
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     const adjusted = useMemo(
-      () => getSized(frameSize, { shift: -4 }),
+      () => getSized(frameSize, { shift: -2 }),
       [frameSize]
     );
 
@@ -532,6 +532,7 @@ const FieldIconButtonImpl = Button.styleable<{
           animate={true}
           transition="200ms"
           color={disabled ? "$borderDisabled" : "$border"}
+          ghostOpacity={0.1}
           {...props}
           size={adjusted}>
           <Button.Icon
@@ -593,7 +594,7 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
 );
 
 const FieldThemeIcon = InnerFieldThemeIcon.styleable(
-  (props, forwardedRef) => {
+  ({ children, ...props }, forwardedRef) => {
     const { focus } = useFieldActions();
 
     const field = FieldApi.use();
@@ -602,6 +603,14 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     const theme = field.theme.get();
     const messages = field.messages.get();
     const details = use(FieldDetailsContext);
+
+    if (children) {
+      return (
+        <FieldIconButtonImpl ref={forwardedRef} {...props}>
+          {children}
+        </FieldIconButtonImpl>
+      );
+    }
 
     if (validating) {
       return <Spinner size="$md" theme="$primary" />;

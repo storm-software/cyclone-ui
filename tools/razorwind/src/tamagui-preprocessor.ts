@@ -424,7 +424,7 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
   saturation: 0.6
 };
 
-const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.2;
+const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.6;
 
 const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
   background: [
@@ -535,7 +535,7 @@ function applyOpacity(hex: string, opacity: number): string {
 }
 
 const RING_OPACITY = 0.2;
-const THEME_RING_OPACITY = 0.8;
+const THEME_RING_OPACITY = 0.9;
 
 function applyRingOpacity(
   node: unknown,

@@ -128,16 +128,16 @@ colors:
   foreground-discovery-inverse-pressed: "#7b7b7b"
   foreground-discovery-inverse-focused: "#7b7b7b"
   foreground-discovery-inverse-disabled: "#383838"
-  foreground-primary-ghost-hover: "#e8e8e8"
-  foreground-secondary-ghost-hover: "#8a8a8a"
-  foreground-accent-ghost-hover: "#3eaa9e"
-  foreground-danger-ghost-hover: "#c73229"
-  foreground-negative-ghost-hover: "#ce3428"
-  foreground-warning-ghost-hover: "#cb8b38"
-  foreground-success-ghost-hover: "#379d63"
-  foreground-positive-ghost-hover: "#70a837"
-  foreground-info-ghost-hover: "#42afdd"
-  foreground-discovery-ghost-hover: "#7776db"
+  foreground-primary-ghost-hover: "#ffffff"
+  foreground-secondary-ghost-hover: "#cccccc"
+  foreground-accent-ghost-hover: "#8cf3e5"
+  foreground-danger-ghost-hover: "#ff7161"
+  foreground-negative-ghost-hover: "#ff7562"
+  foreground-warning-ghost-hover: "#ffd484"
+  foreground-success-ghost-hover: "#7de0a1"
+  foreground-positive-ghost-hover: "#b5f181"
+  foreground-info-ghost-hover: "#94fdff"
+  foreground-discovery-ghost-hover: "#b4b7ff"
   background-lowest: "#ffffff"
   background-page: "#fafafa"
   background-elevated: "#f4f4f4"
@@ -583,16 +583,16 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Discovery Inverse Pressed (#7b7b7b):** The discovery foreground color for the light theme (pressed, 40% darker)
 - **Foreground Discovery Inverse Focused (#7b7b7b):** The discovery foreground color for the light theme (focused, 40% darker)
 - **Foreground Discovery Inverse Disabled (#383838):** The discovery foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Primary Ghost Hover (#e8e8e8):** The primary foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Secondary Ghost Hover (#8a8a8a):** The secondary foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Accent Ghost Hover (#3eaa9e):** The accent foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Danger Ghost Hover (#c73229):** The danger foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Negative Ghost Hover (#ce3428):** The negative foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Warning Ghost Hover (#cb8b38):** The warning foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Success Ghost Hover (#379d63):** The success foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Positive Ghost Hover (#70a837):** The positive foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Info Ghost Hover (#42afdd):** The info foreground color for the light theme (ghost hover, 20% brighter than hover)
-- **Foreground Discovery Ghost Hover (#7776db):** The discovery foreground color for the light theme (ghost hover, 20% brighter than hover)
+- **Foreground Primary Ghost Hover (#ffffff):** The primary foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Secondary Ghost Hover (#cccccc):** The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Accent Ghost Hover (#8cf3e5):** The accent foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Danger Ghost Hover (#ff7161):** The danger foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Negative Ghost Hover (#ff7562):** The negative foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Warning Ghost Hover (#ffd484):** The warning foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Success Ghost Hover (#7de0a1):** The success foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Positive Ghost Hover (#b5f181):** The positive foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Info Ghost Hover (#94fdff):** The info foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Discovery Ghost Hover (#b4b7ff):** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Background Lowest (#ffffff):** The lowest background color for the light theme
 - **Background Page (#fafafa):** The page background color for the light theme
 - **Background Elevated (#f4f4f4):** The elevated background color for the light theme

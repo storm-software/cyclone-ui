@@ -179,7 +179,7 @@ const SelectTrigger = View.styleable(
         cursor={disabled ? "not-allowed" : "pointer"}
         width={adjustedTrigger + getSpaced("$xl") * 2}
         flexShrink={0}
-        paddingHorizontal="$xl"
+        paddingLeft="$xl"
         alignItems="center"
         justifyContent="center">
         <View
@@ -192,9 +192,19 @@ const SelectTrigger = View.styleable(
           justifyContent="center">
           <ChevronDown
             size={adjustedTrigger}
-            color={disabled ? "$borderDisabled" : "$foreground"}
+            color={
+              disabled
+                ? "$borderDisabled"
+                : focused
+                  ? "$borderFocused"
+                  : "$border"
+            }
             $group-field-hover={{
-              color: disabled ? "$borderDisabled" : "$foregroundHover"
+              color: disabled
+                ? "$borderDisabled"
+                : focused
+                  ? "$borderFocused"
+                  : "$borderHover"
             }}
           />
         </View>
@@ -251,6 +261,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
               flex={1}
               minWidth={0}
               height="100%"
+              vh
               flexDirection="row"
               alignItems="center">
               {children}

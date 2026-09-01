@@ -20,8 +20,19 @@ import { Field } from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
-import type { FocusEvent } from "react";
-import { useCallback, useLayoutEffect, useRef } from "react";
+import { X } from "@tamagui/lucide-icons-2";
+import type { FocusEvent, RefObject } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useLayoutEffect,
+  useRef
+} from "react";
+
+const InputFieldTextBoxContext = createContext<{
+  inputElementRef: RefObject<HTMLInputElement | null>;
+} | null>(null);
 
 const InputFieldGroup = Field.styleable((props, forwardedRef) => {
   const { children, ...rest } = props;
@@ -40,7 +51,6 @@ const InputFieldControl = Input.styleable(
     const size = field.size.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
-    const clearable = field.clearable.get();
 
     const { focus, blur, change } = useFieldActions();
     const handleChange = useCallback(
@@ -67,7 +77,6 @@ const InputFieldControl = Input.styleable(
         name={name}
         focused={focused}
         disabled={disabled}
-        clearable={clearable}
         size={size}
         onFocus={focus}
         onBlur={handleBlur}
@@ -80,11 +89,37 @@ const InputFieldControl = Input.styleable(
 
 const InputFieldControlTextBox = Input.TextBox.styleable(
   ({ children, ...props }, forwardedRef) => {
+    const field = FieldApi.use();
+    const clearable = field.clearable.get();
+    const disabled = field.disabled.get();
+    const formattedValue = field.formattedValue.get();
+    const options = field.options.get();
+
+    const inputElementRef = useRef<HTMLInputElement>(null);
+
+    const { change } = useFieldActions();
+    const handleClear = useCallback(() => {
+      change(options?.defaultValue);
+      inputElementRef.current?.focus();
+    }, [change, options?.defaultValue]);
+
     return (
-      <Input.TextBox ref={forwardedRef} {...props}>
-        {children}
-        <Field.ThemeIcon position="end" />
-      </Input.TextBox>
+      <InputFieldTextBoxContext value={{ inputElementRef }}>
+        <Input.TextBox ref={forwardedRef} {...props}>
+          {children}
+          {clearable && formattedValue && (
+            <Field.ThemeIcon position="end" onClick={handleClear}>
+              <X
+                color={disabled ? "$borderDisabled" : "$border"}
+                $group-field-hover={{
+                  color: disabled ? "$borderDisabled" : "$borderHover"
+                }}
+              />
+            </Field.ThemeIcon>
+          )}
+          <Field.ThemeIcon position="end" />
+        </Input.TextBox>
+      </InputFieldTextBoxContext>
     );
   }
 );
@@ -94,18 +129,12 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const field = FieldApi.use();
     const theme = field.theme.get();
     const formattedValue = field.formattedValue.get();
-    const options = field.options.get();
-    const clearable = field.clearable.get();
+    const textBox = use(InputFieldTextBoxContext);
 
-    const { change, mount } = useFieldActions();
-    const inputElementRef = useRef<HTMLInputElement>(null);
+    const { mount } = useFieldActions();
     const inputRef = useFieldRef(
-      useComposedRefs(forwardedRef, inputElementRef)
+      useComposedRefs(forwardedRef, textBox?.inputElementRef)
     );
-    const handleClear = useCallback(() => {
-      change(options?.defaultValue);
-      inputElementRef.current?.focus();
-    }, [change, options?.defaultValue]);
 
     useLayoutEffect(() => {
       mount(inputRef);
@@ -113,13 +142,7 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
 
     return (
       <Theme name={theme}>
-        <Input.TextBox.Value
-          ref={inputRef}
-          {...props}
-          value={formattedValue}
-          clearable={clearable}
-          onClear={handleClear}
-        />
+        <Input.TextBox.Value ref={inputRef} {...props} value={formattedValue} />
       </Theme>
     );
   }

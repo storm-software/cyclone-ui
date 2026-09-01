@@ -9,9 +9,7 @@
     "directory": "components/search-input-field"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -24,6 +22,7 @@
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
     "@cyclone-ui/state": "workspace:*"
   },
   "devDependencies": {
@@ -36,9 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

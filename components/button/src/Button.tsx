@@ -129,6 +129,23 @@ type ButtonExtraProps = TextParentStyles &
      * An alternate way to provide an onPress handler
      */
     onClick?: null | ((event?: any) => void);
+
+    /**
+     * The href to navigate to when the button is clicked
+     */
+    href?: string;
+
+    /**
+     * Should the button be a download link
+     */
+    download?: boolean;
+
+    /**
+     * The opacity of the ghost background when hovered
+     *
+     * @defaultValue 0.25
+     */
+    ghostOpacity?: number;
   };
 
 export const ButtonContext = createStyledContext<ButtonContextProps>({
@@ -474,7 +491,7 @@ const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
     return "$foregroundInverseHover";
   }
 
-  if (variant === "ghost" || variant === "outlined") {
+  if (variant === "ghost") {
     return "$foregroundGhostHover";
   }
 
@@ -551,7 +568,6 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
         alignItems="center"
         flexGrow={0}
         flexShrink={0}
-        color={colorForVariant(variant, disabled, color)}
         $group-button-hover={{
           color: hoverColorForVariant(variant, disabled),
           ...groupButtonHover
@@ -651,6 +667,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       render,
       href,
       download,
+      ghostOpacity = 0.25,
       ...props
     },
     forwardedRef
@@ -699,7 +716,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
             position="absolute"
             width="100%"
             $group-button-hover={{
-              opacity: disabled ? 0 : 0.25
+              opacity: disabled ? 0 : ghostOpacity
             }}
           />
         )}

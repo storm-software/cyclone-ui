@@ -18,6 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { SearchInputField } from "./SearchInputField";
 
 const meta: Meta<typeof SearchInputField> = {
@@ -64,6 +65,42 @@ export const Disabled: Story = {
 export const DefaultValue: Story = {
   args: {
     defaultValue: "Defaulted Text"
+  }
+};
+
+export const AutoComplete: Story = {
+  args: {
+    suggestions: ["Apple", "Apricot", "Banana", "Blueberry"]
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const document = within(canvasElement.ownerDocument.body);
+    const input = canvas.getByRole("combobox");
+
+    await userEvent.type(input, "ap");
+    await expect(input).toHaveAttribute("aria-expanded", "true");
+    await waitFor(async () => {
+      await expect(
+        document.getByRole("option", { name: "Apple" })
+      ).toBeVisible();
+      await expect(
+        document.getByRole("option", { name: "Apricot" })
+      ).toBeVisible();
+    });
+    await expect(
+      document.queryByRole("option", { name: "Banana" })
+    ).not.toBeInTheDocument();
+
+    await userEvent.click(document.getByRole("option", { name: "Apricot" }));
+    await expect(input).toHaveValue("Apricot");
+    await waitFor(async () =>
+      expect(document.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+
+    await userEvent.clear(input);
+    await userEvent.type(input, "bl");
+    await userEvent.keyboard("{ArrowDown}{Enter}");
+    await expect(input).toHaveValue("Blueberry");
   }
 };
 

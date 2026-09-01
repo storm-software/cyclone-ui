@@ -17,11 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { getSized } from "@cyclone-ui/helpers";
 import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
-import { X } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
 import { useMemo } from "react";
 import { InputValue } from "./InputValue";
@@ -247,41 +246,10 @@ const InputTextBoxImpl = InputTextBox.styleable(
   { staticConfig: { componentName: "Input" } }
 );
 
-export interface InputValueExtraProps {
-  clearable?: boolean;
-  onClear?: () => void;
-}
-
-const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
-  (
-    {
-      children,
-      enterKeyHint = "done",
-      clearable = false,
-      onClear,
-      value,
-      ...props
-    },
-    forwardedRef
-  ) => {
-    const {
-      size,
-      disabled,
-      focused,
-      onChange: contextOnChange,
-      onInput: contextOnInput
-    } = InputContext.useStyledContext();
-    const controlSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
-    const adjustedTrigger = useMemo(
-      // Keep clear-button glyphs aligned with Field.Icon: its button frame is
-      // two size steps below the textbox, then Button.Icon derives the glyph.
-      () => getSized(controlSize, { shift: 2 }),
-      [controlSize]
-    );
-    const hasClearButton = Boolean(clearable && onClear && value);
-    const clearSlotWidth = adjustedTrigger + getSpaced("$sm") * 2;
-
+const InputValueImpl = InputValue.styleable(
+  ({ children, enterKeyHint = "done", value, ...props }, forwardedRef) => {
+    const { onChange: contextOnChange, onInput: contextOnInput } =
+      InputContext.useStyledContext();
     return (
       <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue
@@ -291,56 +259,9 @@ const InputValueImpl = InputValue.styleable<InputValueExtraProps>(
           onInput={props.onInput ?? contextOnInput}
           value={value}
           enterKeyHint={enterKeyHint}
-          paddingRight={hasClearButton ? clearSlotWidth : undefined}
           placeholderTextColor="$foregroundInverseDisabled">
           {children}
         </InputValue>
-
-        {hasClearButton && (
-          <View
-            position="absolute"
-            top={0}
-            right={0}
-            height="100%"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            paddingHorizontal="$sm"
-            zIndex="$10">
-            <View
-              position="absolute"
-              left={0}
-              top="20%"
-              height="60%"
-              borderLeftWidth={1}
-              borderColor={
-                disabled
-                  ? "$borderDisabled"
-                  : focused
-                    ? "$borderFocused"
-                    : "$border"
-              }
-              $group-field-hover={{
-                borderColor: disabled ? "$borderDisabled" : "$borderHover"
-              }}
-            />
-            <Button
-              variant="link"
-              circular={true}
-              noPadding={true}
-              disabled={disabled}
-              color={disabled ? "$borderDisabled" : "$border"}
-              onClick={onClear}
-              size={adjustedTrigger}>
-              <Button.Icon
-                $group-field-hover={{
-                  color: disabled ? "$borderDisabled" : "$borderHover"
-                }}>
-                <X />
-              </Button.Icon>
-            </Button>
-          </View>
-        )}
       </View>
     );
   },
