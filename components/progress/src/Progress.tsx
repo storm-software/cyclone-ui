@@ -16,21 +16,33 @@
 
  ------------------------------------------------------------------- */
 
-import type { GetProps } from "@tamagui/core";
+import type { ColorTokens, GetProps, ThemeTokens } from "@tamagui/core";
 import { Progress as TamaguiProgress } from "@tamagui/progress";
 
-export const Progress = TamaguiProgress.styleable(
-  ({ size = "$true", value = 0, max = 100, ...props }, forwardRef) => {
+export const Progress = TamaguiProgress.styleable<{
+  color?: ColorTokens | ThemeTokens;
+}>(
+  (
+    {
+      color = "$foreground",
+      size = "$10xl",
+      value = 0,
+      max = 100,
+      ...props
+    },
+    forwardRef
+  ) => {
     return (
       <TamaguiProgress
         ref={forwardRef}
         size={size}
         value={value}
         max={max}
-        {...props}>
+        {...props}
+        backgroundColor="$backgroundElevated">
         <TamaguiProgress.Indicator
           transition="bouncy"
-          backgroundColor="$foregroundInverse"
+          backgroundColor={color}
         />
       </TamaguiProgress>
     );

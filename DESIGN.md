@@ -399,7 +399,7 @@ typography:
   heading-sm:
     fontFamily: "Space Grotesk"
     fontSize: "1.125rem"
-    fontWeight: "400"
+    fontWeight: "600"
     lineHeight: "1.555556"
   eyebrow:
     fontFamily: "Permanent Marker"
@@ -825,7 +825,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
 - **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
 - **heading-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.4
-- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
+- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
 - **eyebrow:** fontFamily: Permanent Marker, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.4
 - **body:** fontFamily: Inter, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
 - **caption:** fontFamily: Space Grotesk, fontSize: 0.875rem, fontWeight: 300, lineHeight: 1.428571

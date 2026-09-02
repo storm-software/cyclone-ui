@@ -316,6 +316,7 @@ const OtpInputFieldControl = OtpInputFieldControlFrame.styleable(
 
 export const OtpInputField = withStaticProperties(OtpInputFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: OtpInputFieldControl,
   Details: Field.Details,
   Icon: Field.Icon

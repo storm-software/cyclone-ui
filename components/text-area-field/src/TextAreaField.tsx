@@ -86,6 +86,7 @@ const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
 
 export const TextAreaField = withStaticProperties(TextAreaFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: TextAreaFieldControl,
   Details: Field.Details,
   Icon: Field.Icon

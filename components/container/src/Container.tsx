@@ -191,6 +191,7 @@ export const Container = ContainerFrame.styleable(
       bordered = true,
       noPadding = false,
       borderWidth,
+      backgroundColor,
       children,
       ...props
     },
@@ -210,7 +211,8 @@ export const Container = ContainerFrame.styleable(
           circular={circular}
           bordered={bordered}
           borderWidth={bordered ? borderWidth : 0}
-          noPadding={noPadding}>
+          noPadding={noPadding}
+          backgroundColor={backgroundColor}>
           {children}
         </ContainerFrame>
       </ContainerGroup>

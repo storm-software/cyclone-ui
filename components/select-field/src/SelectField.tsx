@@ -113,6 +113,7 @@ const SelectFieldControl = Select.styleable<
 
 export const SelectField = withStaticProperties(SelectFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: SelectFieldControl,
   Details: Field.Details,
   Icon: Field.Icon

@@ -1669,7 +1669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "base"
@@ -7221,7 +7221,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "dark"
@@ -12773,7 +12773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkDimmed"
@@ -18325,7 +18325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "darkHighContrast"
@@ -23757,7 +23757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "light"
@@ -29189,7 +29189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightDimmed"
@@ -34621,7 +34621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "typography.heading-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-heading-sm",
       description: "The heading small typography variant",
       theme: "lightHighContrast"

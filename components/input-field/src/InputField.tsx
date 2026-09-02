@@ -163,6 +163,7 @@ const InputFieldControlTrigger = Input.Trigger.styleable(
 
 export const InputField = withStaticProperties(InputFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: withStaticProperties(InputFieldControl, {
     TextBox: withStaticProperties(InputFieldControlTextBox, {
       Value: InputFieldControlTextBoxValue

@@ -211,6 +211,7 @@ const RadioGroupFieldControl = RadioGroup.styleable((props, forwardedRef) => {
 
 export const RadioGroupField = withStaticProperties(RadioGroupFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: RadioGroupFieldControl,
   Details: Field.Details
 });

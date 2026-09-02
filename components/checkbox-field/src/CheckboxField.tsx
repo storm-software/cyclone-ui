@@ -85,6 +85,7 @@ const CheckboxFieldControl = Checkbox.styleable(
 
 export const CheckboxField = withStaticProperties(CheckboxFieldGroup, {
   Label: CheckboxFieldLabel,
+  Link: Field.Link,
   Control: CheckboxFieldControl,
   Details: Field.Details
 });

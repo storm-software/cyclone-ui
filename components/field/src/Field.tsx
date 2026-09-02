@@ -20,6 +20,7 @@ import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { getSized } from "@cyclone-ui/helpers";
 import { LabelText } from "@cyclone-ui/label-text";
+import { Link } from "@cyclone-ui/link";
 import { Spinner } from "@cyclone-ui/spinner";
 import type { FieldProviderOptions } from "@cyclone-ui/state/form";
 import {
@@ -37,12 +38,26 @@ import type {
   TextProps,
   VariantSpreadExtras
 } from "@tamagui/core";
-import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
+import {
+  styled,
+  Theme,
+  useComposedRefs,
+  View,
+  withStaticProperties
+} from "@tamagui/core";
 import { Label as TamaguiLabel } from "@tamagui/label";
 import { Asterisk } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef, ReactNode } from "react";
-import { createContext, use, useLayoutEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  use,
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState
+} from "react";
 
 const FieldDetailsContext = createContext<ReactNode>(null);
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
@@ -58,6 +73,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
   // this fixes a flex bug where it overflows container
   minWidth: 0,
   display: "flex",
+  position: "relative",
   borderRadius: "$control",
 
   variants: {
@@ -399,7 +415,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     );
 
     return (
-      <TamaguiLabel ref={forwardedRef} htmlFor={name}>
+      <TamaguiLabel ref={forwardedRef} htmlFor={name} marginLeft="$md">
         <LabelXStack disabled={disabled}>
           <FieldLabelText {...props} disabled={disabled} theme="primary">
             {children}
@@ -478,6 +494,62 @@ const FieldLabel = FieldLabelText.styleable<{
 );
 
 export type FieldLabelProps = GetProps<typeof FieldLabel>;
+
+const FieldLinkFrame = styled(XStack, {
+  name: "FieldLink",
+
+  position: "absolute",
+  top: 0,
+  right: "$md"
+});
+
+const FieldLink = Link.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const linkRef = useRef<HTMLElement>(null);
+    const [width, setWidth] = useState<number>();
+    const updateWidth = useCallback((element: HTMLElement) => {
+      const nextWidth = element.scrollWidth;
+      setWidth(currentWidth =>
+        currentWidth === nextWidth ? currentWidth : nextWidth
+      );
+    }, []);
+    const measureRef = useCallback(
+      (element: HTMLElement | null) => {
+        linkRef.current = element;
+        if (element) {
+          updateWidth(element);
+        }
+      },
+      [updateWidth]
+    );
+    const composedRef = useComposedRefs(forwardedRef, measureRef);
+
+    useLayoutEffect(() => {
+      let cancelled = false;
+      if (typeof document !== "undefined" && document.fonts) {
+        void document.fonts.ready.then(() => {
+          const element = linkRef.current;
+          if (!cancelled && element) {
+            updateWidth(element);
+          }
+        });
+      }
+
+      return () => {
+        cancelled = true;
+      };
+    }, [children, updateWidth]);
+
+    return (
+      <FieldLinkFrame width={width}>
+        <Link ref={composedRef} {...props} width="100%" flexShrink={0}>
+          {children}
+        </Link>
+      </FieldLinkFrame>
+    );
+  },
+  { staticConfig: { componentName: "FieldLink" } }
+);
 
 const FieldIconButtonImpl = Button.styleable<{
   position?: "start" | "end";
@@ -653,6 +725,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
 
 export const Field = withStaticProperties(FieldGroup, {
   Label: FieldLabel,
+  Link: FieldLink,
   Details: FieldDetailsImpl,
   Icon: FieldIconButtonImpl,
   ThemeIcon: FieldThemeIcon

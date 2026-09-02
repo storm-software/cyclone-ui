@@ -68,6 +68,7 @@ const FilePickerFieldControl = FilePicker.styleable(
 
 export const FilePickerField = withStaticProperties(FilePickerFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: FilePickerFieldControl,
   Details: Field.Details,
   Icon: Field.Icon

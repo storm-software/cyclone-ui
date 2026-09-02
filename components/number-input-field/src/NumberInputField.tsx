@@ -53,6 +53,7 @@ const NumberInputFieldControlTextBoxValue =
 
 export const NumberInputField = withStaticProperties(NumberInputFieldGroup, {
   Label: InputField.Label,
+  Link: InputField.Link,
   Control: withStaticProperties(InputField.Control, {
     TextBox: withStaticProperties(InputField.Control.TextBox, {
       Value: NumberInputFieldControlTextBoxValue

@@ -40,7 +40,13 @@ import type {
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import { SizableText } from "@tamagui/text";
 import type { Dispatch, Ref, SetStateAction } from "react";
-import { useLayoutEffect, useState } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  useLayoutEffect,
+  useState
+} from "react";
 
 export interface StepperState {
   currentStep: string;
@@ -84,6 +90,7 @@ const defaultContextValues = {
   >,
   setCurrentStep: (_currentStep: string) => {},
   handleOnInteraction: (_type, _layout) => {},
+  numbered: false,
   theme: "primary"
 } as const;
 
@@ -92,11 +99,22 @@ export const InternalStateContext = createStyledContext<{
   setState: Dispatch<SetStateAction<StepperState>>;
   setCurrentStep: (currentStep: string) => void;
   handleOnInteraction: TamaguiTabsTabProps["onInteraction"];
+  numbered: boolean;
   theme: string;
 }>(defaultContextValues);
 
 export const StepperFrame = TamaguiTabs.styleable(
-  ({ children, onValueChange, ...rest }: TamaguiTabsProps, forwardedRef) => {
+  (
+    {
+      children,
+      numbered = false,
+      onValueChange,
+      ...rest
+    }: TamaguiTabsProps & {
+      numbered?: boolean;
+    },
+    forwardedRef
+  ) => {
     const [state, setState] = useState<StepperState>({
       ...defaultContextValues.state
     });
@@ -143,6 +161,7 @@ export const StepperFrame = TamaguiTabs.styleable(
         setState={setState}
         setCurrentStep={setCurrentStep}
         handleOnInteraction={handleOnInteraction}
+        numbered={numbered}
         theme="primary">
         <TamaguiTabs
           ref={forwardedRef}
@@ -215,7 +234,11 @@ export const StepperHeaderList = YStack.styleable(
             exitBeforeEnter={true}
             custom={{ direction }}
             initial={false}>
-            {children}
+            {Children.toArray(children).map((child, index) =>
+              isValidElement(child)
+                ? cloneElement(child, { index } as never)
+                : child
+            )}
           </AnimatePresence>
         </TamaguiTabs.List>
       </YStack>
@@ -223,9 +246,9 @@ export const StepperHeaderList = YStack.styleable(
   }
 );
 
-export const StepperHeaderItem = TamaguiTabs.Tab.styleable(
-  ({ children, value, ...rest }: TamaguiTabsTabProps, forwardedRef) => {
-    const { handleOnInteraction, setState, state } =
+export const StepperHeaderItem = TamaguiTabs.Tab.styleable<{ index?: number }>(
+  ({ children, index: itemIndex = 0, value, ...rest }, forwardedRef) => {
+    const { handleOnInteraction, numbered, setState, state } =
       InternalStateContext.useStyledContext();
     const {
       activeAt: _activeAt,
@@ -287,6 +310,12 @@ export const StepperHeaderItem = TamaguiTabs.Tab.styleable(
               <Lock transition="200ms" color="$borderSubtle" size="$4xl" />
             )}
           </TamaguiTabs.Tab>
+
+          {numbered && (
+            <SizableText color="$foregroundBody" fontFamily="$code">
+              {String(itemIndex + 1).padStart(2, "0")}
+            </SizableText>
+          )}
 
           <SizableText
             transition="200ms"

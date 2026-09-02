@@ -291,6 +291,7 @@ const SearchInputFieldControlTextBox =
 
 export const SearchInputField = withStaticProperties(SearchInputFieldGroup, {
   Label: SearchInputFieldLabel,
+  Link: InputField.Link,
   Control: withStaticProperties(SearchInputFieldControl, {
     TextBox: SearchInputFieldControlTextBox,
     Trigger: InputField.Control.Trigger

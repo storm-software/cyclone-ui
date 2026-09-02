@@ -84,6 +84,7 @@ const SwitchFieldControl = Switch.styleable(
 
 export const SwitchField = withStaticProperties(SwitchFieldGroup, {
   Label: SwitchFieldLabel,
+  Link: Field.Link,
   Control: SwitchFieldControl,
   Details: Field.Details
 });

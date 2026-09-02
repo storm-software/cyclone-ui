@@ -371,6 +371,7 @@ export const PhoneNumberInputField = withStaticProperties(
   PhoneNumberInputFieldGroup,
   {
     Label: InputField.Label,
+    Link: InputField.Link,
     Control: withStaticProperties(PhoneNumberInputFieldControl, {
       TextBox: withStaticProperties(InputField.Control.TextBox, {
         Value: PhoneNumberInputFieldControlTextBoxValue

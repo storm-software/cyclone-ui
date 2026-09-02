@@ -59,6 +59,23 @@ export const Base: Story = {
   }
 };
 
+export const WithLink: Story = {
+  args: {},
+  render: props => (
+    <Form name="formName" initialValues={{ inputFieldName: "" }}>
+      <InputField name="inputFieldName" {...props}>
+        <InputField.Label>Email</InputField.Label>
+        <InputField.Link href="#input-field-link">Why we ask</InputField.Link>
+        <InputField.Control>
+          <InputField.Control.TextBox>
+            <InputField.Control.TextBox.Value placeholder="email@example.com" />
+          </InputField.Control.TextBox>
+        </InputField.Control>
+      </InputField>
+    </Form>
+  )
+};
+
 export const Required: Story = {
   args: {
     required: true

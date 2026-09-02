@@ -44,6 +44,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const DataColor: Story = {
+  args: {
+    color: "$dataPinkEmphasis"
+  }
+};
+
 export const Primary: Story = {
   args: {
     theme: "brand"

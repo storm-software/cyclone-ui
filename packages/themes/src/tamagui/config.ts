@@ -1501,9 +1501,9 @@ const headingSmFont = createFont({
     true: 28
   },
   weight: {
-    lg: "400",
-    normal: "400",
-    true: "400"
+    lg: "600",
+    semibold: "600",
+    true: "600"
   }
 });
 

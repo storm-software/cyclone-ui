@@ -46,6 +46,19 @@ export const Base: Story = {
   args: {}
 };
 
+export const WithLink: Story = {
+  args: {},
+  render: props => (
+    <Form name="formName" defaultValues={{ fieldName: "" }}>
+      <Field name="fieldName" {...props}>
+        <Field.Label>Label Text</Field.Label>
+        <Field.Link href="#field-link">Learn more</Field.Link>
+        <BodyText>The form field can be added here</BodyText>
+      </Field>
+    </Form>
+  )
+};
+
 export const Required: Story = {
   args: {
     required: true

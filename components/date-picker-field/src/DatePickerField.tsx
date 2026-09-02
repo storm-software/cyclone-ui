@@ -330,6 +330,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
 
 export const DatePickerField = withStaticProperties(DatePickerFieldGroup, {
   Label: Field.Label,
+  Link: Field.Link,
   Control: DatePickerFieldControl,
   Details: Field.Details,
   Icon: Field.Icon

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/link": "workspace:*",
     "@stryke/types": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/get-token": "catalog:",

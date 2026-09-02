@@ -29,7 +29,6 @@ const LinkFrame = styled(LinkText, {
   name: "Link",
   render: "a",
   role: "link",
-  color: "$foregroundLink",
 
   cursor: "pointer"
 });

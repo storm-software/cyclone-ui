@@ -701,7 +701,7 @@
   --typography-heading-xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
   --typography-heading-lg: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading large typography variant */
   --typography-heading-md: 600 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
-  --typography-heading-sm: 400 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
+  --typography-heading-sm: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
   --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
   --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
   --typography-caption: italic 300 0.875rem/1.428571 'Space Grotesk'; /** The caption typography variant */

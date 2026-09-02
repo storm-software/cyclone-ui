@@ -1,0 +1,54 @@
+{
+  "name": "@cyclone-ui/drawer",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A Sheet-based drawer component for Cyclone UI",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/drawer"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/dialog": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/sheet": "catalog:",
+    "@tamagui/stacks": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/button": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Drawer": {
+      "import": "./dist/Drawer.mjs",
+      "require": "./dist/Drawer.cjs"
+    },
+    "./*": "./*"
+  }
+}

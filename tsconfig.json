@@ -215,6 +215,9 @@
     },
     {
       "path": "./components/text-area-field"
+    },
+    {
+      "path": "./components/drawer"
     }
   ],
   "files": []

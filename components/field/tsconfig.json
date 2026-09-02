@@ -38,6 +38,9 @@
       "path": "../body-text"
     },
     {
+      "path": "../link"
+    },
+    {
       "path": "../label-text"
     },
     {
