@@ -56,9 +56,9 @@ export const Message = (props: MessageProps) => (
           <Toast.Item
             index={index}
             toast={toast}
+            unstyled={true}
             width="100%"
-            maxWidth={800}
-            borderRadius="$container">
+            maxWidth={800}>
             <Alert type={getAlertType(toast.data?.messageType ?? toast.type)}>
               <Alert.Icon>{toast.icon}</Alert.Icon>
               <Alert.Content>

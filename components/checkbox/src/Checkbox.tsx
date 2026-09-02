@@ -199,6 +199,7 @@ export const Checkbox = BaseCheckbox.styleable<{
           <TamaguiCheckbox.Indicator
             justifyContent="center"
             alignItems="center"
+            zIndex={1}
             y={checked === "indeterminate" ? undefined : -1}>
             {checked === "indeterminate" ? (
               <View

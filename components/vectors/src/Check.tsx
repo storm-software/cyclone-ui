@@ -26,6 +26,7 @@ import {
   useMotionValueEvent
 } from "motion/react";
 import { memo, useEffect, useState } from "react";
+import { StyleSheet } from "react-native";
 import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
 export type CheckProps = IconProps & {
@@ -36,6 +37,7 @@ const Icon = ({
   isComplete = true,
   size = 24,
   strokeWidth = 2,
+  style,
   ...props
 }: CheckProps) => {
   const color = useCurrentColor((props.color || "$foregroundInverse") as any);
@@ -123,6 +125,7 @@ const Icon = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       {...(props as SvgProps)}
+      style={StyleSheet.flatten([{ overflow: "visible" }, style])}
       strokeWidth={strokeWidth}>
       {isComplete && (
         <>

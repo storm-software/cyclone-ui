@@ -36,13 +36,6 @@ const ContainerFrame = styled(View, {
   width: "100%",
   borderRadius: "$container",
 
-  focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineStyle: "solid",
-    outlineWidth: 3,
-    outlineOffset: "$lg"
-  },
-
   variants: {
     variant: {
       primary: {
