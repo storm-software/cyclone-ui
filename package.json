@@ -148,6 +148,7 @@
     "sherif": "catalog:",
     "solito": "catalog:",
     "storybook": "catalog:",
+    "tsdown": "catalog:",
     "tslib": "catalog:",
     "typescript": "^6.0.3",
     "verdaccio": "catalog:",
@@ -164,7 +165,11 @@
       }
     ],
     "ci": {
-      "trackBranches": ["main", "next", "experimental"]
+      "trackBranches": [
+        "main",
+        "next",
+        "experimental"
+      ]
     }
   },
   "licenses": [
