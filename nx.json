@@ -23,6 +23,7 @@
     "@storm-software/workspace-tools/plugins/typescript/untyped",
     "@storm-software/workspace-tools/plugins/typescript/tsdown",
     "@powerlines/nx/plugin",
+    "@shell-shock/nx/plugin",
     {
       "plugin": "@razorwind/nx/plugin",
       "options": {

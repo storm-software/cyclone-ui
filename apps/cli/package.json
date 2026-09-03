@@ -38,16 +38,11 @@
   },
   "license": "Apache-2.0",
   "private": true,
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "cli",
-    "cyclone-ui",
-    "storm-software",
-    "shell-shock"
-  ],
+  "files": ["dist"],
+  "keywords": ["cli", "cyclone-ui", "storm-software", "shell-shock"],
   "dependencies": {
+    "@cyclone-ui/registry-api": "workspace:*",
+    "@powerlines/plugin-env": "catalog:",
     "@shell-shock/core": "catalog:",
     "@shell-shock/preset-cli": "catalog:"
   },
@@ -55,19 +50,13 @@
     "@shell-shock/eslint-plugin": "catalog:",
     "@types/node": "catalog:"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "types": "./dist/index.d.cts",
-  "bin": {
-    "cyclone-ui": "./dist/bin.mjs",
-    "cyclone": "./dist/bin.mjs"
-  },
+  "bin": { "cyclone-ui": "./dist/bin.mjs" },
   "exports": {
+    "./add": "./dist/add.mjs",
     "./bin": "./dist/bin.mjs",
     "./build": "./dist/build.mjs",
-    "./changelog": "./dist/changelog.mjs",
-    "./clean": "./dist/clean.mjs",
     "./completions-bash-config": "./dist/completions-bash-config.mjs",
     "./completions-bash-script": "./dist/completions-bash-script.mjs",
     "./completions-fish-config": "./dist/completions-fish-config.mjs",
@@ -76,15 +65,15 @@
     "./completions-powershell-script": "./dist/completions-powershell-script.mjs",
     "./completions-zsh-config": "./dist/completions-zsh-config.mjs",
     "./completions-zsh-script": "./dist/completions-zsh-script.mjs",
-    "./create": "./dist/create.mjs",
-    "./deploy": "./dist/deploy.mjs",
+    "./diff": "./dist/diff.mjs",
     "./docs": "./dist/docs.mjs",
-    "./gc": "./dist/gc.mjs",
     "./help": "./dist/help.mjs",
-    "./lint": "./dist/lint.mjs",
+    "./info": "./dist/info.mjs",
+    "./init": "./dist/init.mjs",
     "./package.json": "./package.json",
-    "./prepare": "./dist/prepare.mjs",
-    "./types": "./dist/types.mjs",
-    "./update": "./dist/update.mjs"
+    "./registry-validate": "./dist/registry-validate.mjs",
+    "./search": "./dist/search.mjs",
+    "./update": "./dist/update.mjs",
+    "./view": "./dist/view.mjs"
   }
 }

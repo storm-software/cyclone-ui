@@ -9,12 +9,12 @@
   },
   "private": true,
   "dependencies": {
+    "@cloudflare/workers-types": "catalog:",
     "@trpc/client": "catalog:",
     "@trpc/server": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "catalog:",
     "@powerlines/plugin-tsdown": "catalog:",
     "powerlines": "catalog:"
   },
@@ -34,6 +34,20 @@
       "default": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
+      }
+    },
+    "./client": {
+      "require": {
+        "types": "./dist/client.d.cts",
+        "default": "./dist/client.cjs"
+      },
+      "import": {
+        "types": "./dist/client.d.mts",
+        "default": "./dist/client.mjs"
+      },
+      "default": {
+        "types": "./dist/client.d.mts",
+        "default": "./dist/client.mjs"
       }
     },
     "./context": {

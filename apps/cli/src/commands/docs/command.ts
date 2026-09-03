@@ -2,42 +2,61 @@
 
                    🗲 Storm Software - Cyclone UI
 
- This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 license, and is
- free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
-
- Website:                  https://stormsoftware.com
- Repository:               https://github.com/storm-software/cyclone-ui
- Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
- Contact:                  https://stormsoftware.com/contact
-
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
+import { DEFAULT_REGISTRY_URL } from "@cyclone-ui/registry-api/client";
 import type { CommandMetadata } from "@shell-shock/core";
-import { createPowerlines } from "../../utilities/create-powerlines";
+import { resolve } from "node:path";
+import { readConfig } from "../../utilities/config";
+import {
+  normalizeComponentName,
+  registryClient
+} from "../../utilities/registry";
 
 export const metadata = {
-  title: "Generate Documentation",
-  description: "Generate documentation for the project's source code.",
+  title: "Component Documentation",
+  description: "Get documentation links for registry components.",
   icon: "🕮"
 } satisfies CommandMetadata;
 
 export interface DocsOptions {
-  /**
-   * The root directory of the project to generate documentation for. Defaults to the current working directory if not specified.
-   *
-   * @remarks
-   * This option allows you to specify the base directory for the documentation generation process, which can be useful if your project structure requires generating documentation from a different location than the default. If not provided, Powerlines will use the current working directory as the root for the documentation generation process.
-   */
-  root?: string;
+  /** The working directory. */
+  cwd?: string;
+  /** Registry API URL. */
+  registry?: string;
+  /** Output machine-readable JSON. */
+  json?: boolean;
 }
 
-async function handler(options: DocsOptions) {
-  const engine = await createPowerlines(options);
-  await engine.docs(options);
+async function handler(
+  options: DocsOptions,
+  /** Component names to document. */
+  components: string[]
+) {
+  const root = resolve(options.cwd ?? process.cwd());
+  const config = await readConfig(root);
+  const client = registryClient(
+    options.registry ?? config?.registry ?? DEFAULT_REGISTRY_URL
+  );
+  const result = await Promise.all(
+    components.map(async name => {
+      const component = await client.components.get.query(name);
+      const normalizedName = normalizeComponentName(component.name);
+      return {
+        name: component.name,
+        description: component.description,
+        url: `https://docs.stormsoftware.com/projects/cyclone-ui/components/${normalizedName}`
+      };
+    })
+  );
+
+  console.log(
+    options.json
+      ? JSON.stringify(result, null, 2)
+      : result.map(item => `${item.name}: ${item.url}`).join("\n")
+  );
 }
 
 export default handler;

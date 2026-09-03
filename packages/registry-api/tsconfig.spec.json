@@ -2,13 +2,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "types": ["vitest/globals", "vitest/importMeta", "node", "vitest"],
+    "types": [
+      "vitest/globals",
+      "vitest/importMeta",
+      "node",
+      "vitest",
+      "@cloudflare/workers-types"
+    ],
     "outDir": "../../dist/out-tsc"
   },
-  "include": [
-    "vitest.config.mts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+  "include": ["vitest.config.mts", "src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": []
 }

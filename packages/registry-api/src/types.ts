@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { R2ObjectBody, R2Objects } from "@cloudflare/workers-types";
+
 export type ComponentPlatform = "web" | "mobile" | "all";
 
 export const ComponentPlatform = {
@@ -59,5 +61,10 @@ export const HttpHeaders = {
 };
 
 export interface Env {
-  STORAGE_BUCKET: R2Bucket;
+  STORAGE_BUCKET: RegistryStorage;
+}
+
+export interface RegistryStorage {
+  list(options: { prefix: string; cursor?: string }): Promise<R2Objects>;
+  get(key: string): Promise<R2ObjectBody | null>;
 }

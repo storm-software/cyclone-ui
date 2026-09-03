@@ -115,11 +115,7 @@ export async function handler(args: string[] = useArgs()) {
         ) + 2;
 
   let type: "data" | "cache" | "logs" | "temp" | "all" = "all" as
-    | "data"
-    | "cache"
-    | "logs"
-    | "temp"
-    | "all";
+    "data" | "cache" | "logs" | "temp" | "all";
 
   if (argsIndex + 0 < args.length && argsIndex + 0 !== optionsIndex) {
     type = args[argsIndex + 0] as "data" | "cache" | "logs" | "temp" | "all";

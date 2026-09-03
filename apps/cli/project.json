@@ -5,9 +5,22 @@
   "sourceRoot": "apps/cli/src",
   "targets": {
     "build": {
-      "executor": "nx:run-commands",
+      "executor": "@shell-shock/nx:build",
+      "dependsOn": ["^build"],
+      "defaultConfiguration": "production",
       "options": {
-        "command": "echo 'Building CLI'"
+        "configFile": "apps/cli/shell-shock.config.ts",
+        "outputPath": "apps/cli/dist",
+        "copyPath": "dist/apps/cli"
+      },
+      "configurations": {
+        "production": {
+          "mode": "production"
+        },
+        "development": {
+          "mode": "development",
+          "skipCache": true
+        }
       }
     },
     "nx-release-publish": {

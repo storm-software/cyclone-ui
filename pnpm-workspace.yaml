@@ -14,6 +14,7 @@ catalog:
   "@powerlines/tsdoc": ^0.2.203
   "@powerlines/plugin-tsdown": ^0.1.612
   "@powerlines/plugin-tamagui": ^0.1.663
+  "@powerlines/plugin-env": ^0.16.420
   "@razorwind/color-variants": ^0.0.39
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
@@ -26,10 +27,10 @@ catalog:
   "@shell-shock/nx": ^0.0.97
   "@shell-shock/preset-cli": ^0.9.36
   "@storm-software/eslint-plugin-pnpm": ^0.0.97
-  "@storybook/addon-docs": ^10.5.10
-  "@storybook/react": ^10.5.10
-  "@storybook/react-vite": ^10.5.10
-  "@storybook/test-runner": ^0.24.4
+  "@storybook/addon-docs": ^10.6.0
+  "@storybook/react": ^10.6.0
+  "@storybook/react-vite": ^10.6.0
+  "@storybook/test-runner": ^0.24.5
   "@stryke/date": ^0.0.25
   "@tamagui/accordion": ^2.7.7
   "@tamagui/adapt": ^2.7.7
@@ -161,7 +162,7 @@ catalog:
   jotai-optics: ^0.4.0
   lefthook: ^1.13.6
   log4brains: ^1.1.0
-  maska: ^3.2.0
+  maska: ^3.2.1
   nx: 23.1.1
   optics-ts: ^2.4.1
   powerlines: ^0.47.211
@@ -177,7 +178,7 @@ catalog:
   react-refresh: ^0.10.0
   sherif: ^1.13.0
   solito: ^4.4.1
-  storybook: ^10.5.10
+  storybook: ^10.6.0
   tamagui: ^2.7.7
   tslib: ^2.8.1
   tsdown: ^0.22.14

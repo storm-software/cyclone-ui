@@ -50,6 +50,39 @@ yarn add @cyclone-ui/cli
 <!-- shell-shock:commands -->
 <!-- /shell-shock -->
 
+The Cyclone CLI follows the registry workflow used by the shadcn CLI while
+retrieving components through the typed Cyclone Registry API.
+
+```bash
+# Create components.json and the local component directory.
+cyclone init
+
+# Browse the registry. `list` is an alias for `search`.
+cyclone search --query button
+
+# Inspect or install registry components.
+cyclone view button
+cyclone add button
+
+# Preview an installation or compare installed files with the registry.
+cyclone add button --dry-run
+cyclone diff button
+
+# Inspect the current project configuration.
+cyclone info
+
+# Validate and build a distributable shadcn-format registry.
+cyclone registry validate registry.json
+cyclone build registry.json --output public/r
+```
+
+`init` writes a `components.json` file containing the registry API URL, output
+path, and installed component manifest. `add` resolves internal component
+dependencies, refuses to overwrite changed files unless `--overwrite` is
+provided, updates package dependencies, and records the installed version and
+files. Registry file paths are constrained to the configured component
+directory.
+
 ## Configuration
 
 <!-- shell-shock:env -->

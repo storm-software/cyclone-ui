@@ -16,7 +16,7 @@ describe("generate documentation command metadata", () => {
     expect(typeof metadata.icon).toBe("string");
   });
 
-  it("title is 'Generate Documentation'", () => {
-    expect(metadata.title).toBe("Generate Documentation");
+  it("title is 'Component Documentation'", () => {
+    expect(metadata.title).toBe("Component Documentation");
   });
 });

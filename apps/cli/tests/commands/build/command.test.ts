@@ -16,7 +16,7 @@ describe("build command metadata", () => {
     expect(typeof metadata.icon).toBe("string");
   });
 
-  it("title is Build", () => {
-    expect(metadata.title).toBe("Build");
+  it("title is Build Registry", () => {
+    expect(metadata.title).toBe("Build Registry");
   });
 });

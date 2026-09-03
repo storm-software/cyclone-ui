@@ -2,13 +2,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "types": ["node"],
+    "types": ["node", "vitest/globals", "vitest"],
     "outDir": "../../dist/out-tsc"
   },
   "include": [
     "vitest.config.mts",
+    "src/**/*.ts",
     "tests/**/*.test.ts",
     "tests/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+  ],
+  "exclude": []
 }

@@ -2,42 +2,48 @@
 
                    🗲 Storm Software - Cyclone UI
 
- This code was released as part of the Cyclone UI project. Cyclone UI
- is maintained by Storm Software under the Apache-2.0 license, and is
- free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
-
- Website:                  https://stormsoftware.com
- Repository:               https://github.com/storm-software/cyclone-ui
- Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
- Contact:                  https://stormsoftware.com/contact
-
  SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 import type { CommandMetadata } from "@shell-shock/core";
-import { createPowerlines } from "../../utilities/create-powerlines";
+import { mkdir, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+import {
+  buildRegistry,
+  readRegistryManifest
+} from "../../utilities/local-registry";
 
 export const metadata = {
-  title: "Build",
-  description: "Builds the project for production deployment.",
+  title: "Build Registry",
+  description: "Build registry item JSON files for distribution.",
   icon: "🏗"
 } satisfies CommandMetadata;
 
 export interface BuildOptions {
-  /**
-   * The root directory of the project to build. Defaults to the current working directory if not specified.
-   *
-   * @remarks
-   * This option allows you to specify the base directory for the build process, which can be useful if your project structure requires building from a different location than the default. If not provided, Powerlines will use the current working directory as the root for the build process.
-   */
-  root?: string;
+  /** The working directory. */
+  cwd?: string;
+  /** Output directory. */
+  output?: string;
 }
 
-async function handler(options: BuildOptions) {
-  const engine = await createPowerlines(options);
-  await engine.build(options);
+async function handler(
+  options: BuildOptions,
+  /** Registry manifest path. */
+  registry: string = "registry.json"
+) {
+  const root = resolve(options.cwd ?? process.cwd());
+  const manifest = await readRegistryManifest(resolve(root, registry));
+  const files = await buildRegistry(
+    root,
+    manifest,
+    options.output ?? "public/r"
+  );
+  for (const file of files) {
+    await mkdir(dirname(file.path), { recursive: true });
+    await writeFile(file.path, file.content, "utf8");
+  }
+  console.log(`Built ${files.length} registry items.`);
 }
 
 export default handler;
