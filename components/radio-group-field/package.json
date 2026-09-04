@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/radio-group-field",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/radio-group-field"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "jotai": "catalog:",
     "react": "catalog:",
@@ -41,9 +39,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

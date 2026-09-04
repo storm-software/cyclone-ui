@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/themeable-gradient",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/themeable-gradient"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -32,9 +30,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/pagination",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "type": "module",
   "description": "A component to support page navigation, next and previous links",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/pagination"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -37,9 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

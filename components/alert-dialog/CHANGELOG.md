@@ -1,3 +1,15 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Alert Dialog
+
+## [0.4.1](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.1) (09/04/2026)
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.1**
+- Updated **dialog** to **v0.3.1**
+- Updated **themeable-icon** to **v0.6.1**
+
 ## 0.4.0 (2024-06-19)
 
 ### 🚀 Features

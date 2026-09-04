@@ -1,3 +1,15 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Breadcrumb
+
+## [0.4.2](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.2) (09/04/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.1**
+- Updated **label-text** to **v0.5.1**
+- Updated **link** to **v0.5.1**
+
 ## 0.4.1 (2024-06-15)
 
 ### 🩹 Fixes

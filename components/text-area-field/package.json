@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/text-area-field",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A textarea form field component for Cyclone UI",
   "repository": {

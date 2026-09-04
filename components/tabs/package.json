@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/tabs",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/tabs"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -46,9 +44,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

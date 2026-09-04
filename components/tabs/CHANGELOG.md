@@ -1,3 +1,15 @@
+![Cyclone UI's logo banner](https://public.storm-cdn.com/cyclone-ui/media/banner-1280x320-dark.gif)
+
+# Changelog for Cyclone UI - Tabs
+
+## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.1) (09/04/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.1**
+- Updated **heading-text** to **v0.5.1**
+- Updated **helpers** to **v0.3.1**
+
 ## 0.3.0 (2024-06-19)
 
 ### 🚀 Features

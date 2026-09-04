@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/breadcrumb",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "type": "module",
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
@@ -22,9 +22,7 @@
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -51,9 +49,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs"
 }

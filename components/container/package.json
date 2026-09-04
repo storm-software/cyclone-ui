@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/container",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "type": "module",
   "description": "Button component for Cyclone UI",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/message"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -32,9 +30,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

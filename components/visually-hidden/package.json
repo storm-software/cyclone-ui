@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/visually-hidden",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "type": "module",
   "description": "A visually hidden component meant to be shared in many other components",
   "repository": {
@@ -9,9 +9,7 @@
     "directory": "components/visually-hidden"
   },
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -29,9 +27,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
