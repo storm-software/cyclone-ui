@@ -83,6 +83,7 @@ jobs:
               "STORM_WORKSPACE_ROOT": "${{ github.workspace }}",
               "STORM_REPOSITORY": "${{ github.repositoryUrl }}",
               "NPM_TOKEN": "${{ secrets.STORM_BOT_NPM_TOKEN }}",
+              "CLOUDFLARE_ACCOUNT_ID": "${{ secrets.STORM_BOT_CLOUDFLARE_ACCOUNT }}",
               "CLOUDFLARE_API_TOKEN": "${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}",
               "CYCLONE_REGISTRY_ACCESS_KEY": "${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}",
               "CYCLONE_REGISTRY_SECRET_KEY": "${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}"
