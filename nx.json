@@ -3,7 +3,7 @@
   "release": {
     "groups": {
       "packages": {
-        "projects": ["packages/*", "components/*", "apps/*"],
+        "projects": ["packages/*", "components/*", "!apps/registry-worker"],
         "projectsRelationship": "independent"
       }
     }
