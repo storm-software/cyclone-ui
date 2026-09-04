@@ -56,7 +56,7 @@ try {
   }
 
   proc =
-    $`pnpm nx run-many --target=build --projects="packages/*,components/*" --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=5`.timeout(
+    $`pnpm nx run-many --target=build --projects="packages/*,components/*,apps/cli" --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=5`.timeout(
       `${15 * 60}s`
     );
   proc.stdout.on("data", data => {
