@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/visually-hidden",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "type": "module",
   "description": "A visually hidden component meant to be shared in many other components",
   "repository": {

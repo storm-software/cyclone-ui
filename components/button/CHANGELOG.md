@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.2](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.2**
+- Updated **themeable-icon** to **v0.6.2**
+
 ## [0.6.1](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.1) (09/04/2026)
 
 ### Updated Dependencies

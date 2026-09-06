@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Alert Dialog
 
+## [0.4.2](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.2**
+- Updated **dialog** to **v0.3.2**
+- Updated **themeable-icon** to **v0.6.2**
+
 ## [0.4.1](https://github.com/storm-software/cyclone-ui/releases/tag/alert-dialog%400.4.1) (09/04/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/vectors",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "type": "module",
   "description": "A Next Button component meant to be shared in many other components",
   "repository": {

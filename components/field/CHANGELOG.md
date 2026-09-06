@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.2**
+- Updated **button** to **v0.6.2**
+- Updated **form** to **v0.9.2**
+- Updated **helpers** to **v0.3.2**
+- Updated **label-text** to **v0.5.2**
+- Updated **link** to **v0.5.2**
+- Updated **spinner** to **v0.5.2**
+- Updated **state** to **v0.0.3**
+- Updated **themeable-icon** to **v0.6.2**
+- Updated **tooltip** to **v0.5.2**
+- Updated **validation-text** to **v0.5.2**
+
 ## [0.5.1](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.1) (09/04/2026)
 
 ### Updated Dependencies

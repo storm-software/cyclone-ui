@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Themeable Icon
 
+## [0.6.2](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.2) (09/06/2026)
+
+### Features
+
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.2**
+- Updated **vectors** to **v0.5.2**
+
 ## [0.6.1](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-icon%400.6.1) (09/04/2026)
 
 ### Updated Dependencies

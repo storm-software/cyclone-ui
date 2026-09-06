@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Tabs
 
+## [0.3.2](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.2**
+- Updated **heading-text** to **v0.5.2**
+- Updated **helpers** to **v0.3.2**
+
 ## [0.3.1](https://github.com/storm-software/cyclone-ui/releases/tag/tabs%400.3.1) (09/04/2026)
 
 ### Updated Dependencies

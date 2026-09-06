@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.2) (09/06/2026)
+
+### Features
+
+- **code-block:** Added Code Block display component ([5ff1ba9](https://github.com/storm-software/cyclone-ui/commit/5ff1ba9))
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.2**
+
 ## [0.5.1](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.1) (09/04/2026)
 
 ### Updated Dependencies

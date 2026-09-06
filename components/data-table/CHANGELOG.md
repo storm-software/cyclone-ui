@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.2](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.2) (09/06/2026)
+
+### Features
+
+- **themes:** Simplified semantic tokens to include a single `base` and only one background color ([3c71be2](https://github.com/storm-software/cyclone-ui/commit/3c71be2))
+- **themes:** Added the `brand` sub-theme to package ([94201d5](https://github.com/storm-software/cyclone-ui/commit/94201d5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.2**
+- Updated **checkbox-field** to **v0.1.2**
+- Updated **form** to **v0.9.2**
+- Updated **label-text** to **v0.5.2**
+- Updated **pagination** to **v0.8.2**
+- Updated **popover** to **v0.5.2**
+- Updated **search-input-field** to **v0.1.2**
+- Updated **select-field** to **v0.1.2**
+- Updated **state** to **v0.0.3**
+- Updated **table** to **v0.4.2**
+
 ## [0.6.1](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.1) (09/04/2026)
 
 ### Updated Dependencies
