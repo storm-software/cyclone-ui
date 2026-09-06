@@ -31,6 +31,7 @@ import type { ColorThemeName } from "../types";
  * The following color roles are checked:
  * - primary
  * - secondary
+ * - brand
  * - discovery
  * - info
  * - warning
@@ -50,6 +51,8 @@ export const getThemeColorThemeName = (
       return "primary";
     } else if (theme.includes("secondary")) {
       return "secondary";
+    } else if (theme.includes("brand")) {
+      return "brand";
     } else if (theme.includes("discovery")) {
       return "discovery";
     } else if (theme.includes("info")) {
@@ -83,6 +86,7 @@ export const getThemeColorThemeName = (
  * The following color roles are checked:
  * - primary
  * - secondary
+ * - brand
  * - discovery
  * - info
  * - warning

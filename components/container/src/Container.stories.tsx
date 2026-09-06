@@ -300,122 +300,105 @@ export const BaseCircularNoBorder: Story = {
   }
 };
 
-// Accent theme
+// Brand theme
 
-export const AccentPrimary: Story = {
+export const Brand: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "primary"
   }
 };
 
-export const AccentPrimaryNoBorder: Story = {
+export const BrandNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "primary",
     bordered: false
   }
 };
 
-export const AccentSecondary: Story = {
+export const BrandSecondary: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "secondary"
   }
 };
 
-export const AccentSecondaryNoBorder: Story = {
+export const BrandSecondaryNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "secondary",
     bordered: false
   }
 };
 
-export const AccentTertiary: Story = {
+export const BrandTertiary: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "tertiary"
   }
 };
 
-export const AccentTertiaryNoBorder: Story = {
+export const BrandTertiaryNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "tertiary",
     bordered: false
   }
 };
 
-export const AccentQuaternary: Story = {
+export const BrandOutlined: Story = {
   args: {
-    theme: "accent",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const AccentQuaternaryNoBorder: Story = {
-  args: {
-    theme: "accent",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
-export const AccentOutlined: Story = {
-  args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "outlined"
   }
 };
 
-export const AccentOutlinedNoBorder: Story = {
+export const BrandOutlinedNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "outlined",
     bordered: false
   }
 };
 
-export const AccentGlass: Story = {
+export const BrandGlass: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "glass"
   }
 };
 
-export const AccentGlassNoBorder: Story = {
+export const BrandGlassNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "glass",
     bordered: false
   }
 };
 
-export const AccentCircular: Story = {
+export const BrandCircular: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "secondary",
     circular: true
   }
 };
 
-export const AccentCircularNoBorder: Story = {
+export const BrandCircularNoBorder: Story = {
   args: {
-    theme: "accent",
+    theme: "brand",
     children: "Container Text",
     variant: "secondary",
     circular: true,
@@ -472,23 +455,6 @@ export const DiscoveryTertiaryNoBorder: Story = {
     theme: "discovery",
     children: "Container Text",
     variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const DiscoveryQuaternary: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const DiscoveryQuaternaryNoBorder: Story = {
-  args: {
-    theme: "discovery",
-    children: "Container Text",
-    variant: "quaternary",
     bordered: false
   }
 };
@@ -599,23 +565,6 @@ export const SuccessTertiaryNoBorder: Story = {
   }
 };
 
-export const SuccessQuaternary: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const SuccessQuaternaryNoBorder: Story = {
-  args: {
-    theme: "success",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
 export const SuccessOutlined: Story = {
   args: {
     theme: "success",
@@ -718,23 +667,6 @@ export const InfoTertiaryNoBorder: Story = {
     theme: "info",
     children: "Container Text",
     variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const InfoQuaternary: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const InfoQuaternaryNoBorder: Story = {
-  args: {
-    theme: "info",
-    children: "Container Text",
-    variant: "quaternary",
     bordered: false
   }
 };
@@ -845,23 +777,6 @@ export const ErrorTertiaryNoBorder: Story = {
   }
 };
 
-export const ErrorQuaternary: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const ErrorQuaternaryNoBorder: Story = {
-  args: {
-    theme: "danger",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
 export const ErrorOutlined: Story = {
   args: {
     theme: "danger",
@@ -964,23 +879,6 @@ export const WarningTertiaryNoBorder: Story = {
     theme: "warning",
     children: "Container Text",
     variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const WarningQuaternary: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const WarningQuaternaryNoBorder: Story = {
-  args: {
-    theme: "warning",
-    children: "Container Text",
-    variant: "quaternary",
     bordered: false
   }
 };
@@ -1091,23 +989,6 @@ export const PositiveTertiaryNoBorder: Story = {
   }
 };
 
-export const PositiveQuaternary: Story = {
-  args: {
-    theme: "positive",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const PositiveQuaternaryNoBorder: Story = {
-  args: {
-    theme: "positive",
-    children: "Container Text",
-    variant: "quaternary",
-    bordered: false
-  }
-};
-
 export const PositiveOutlined: Story = {
   args: {
     theme: "positive",
@@ -1210,23 +1091,6 @@ export const NegativeTertiaryNoBorder: Story = {
     theme: "negative",
     children: "Container Text",
     variant: "tertiary",
-    bordered: false
-  }
-};
-
-export const NegativeQuaternary: Story = {
-  args: {
-    theme: "negative",
-    children: "Container Text",
-    variant: "quaternary"
-  }
-};
-
-export const NegativeQuaternaryNoBorder: Story = {
-  args: {
-    theme: "negative",
-    children: "Container Text",
-    variant: "quaternary",
     bordered: false
   }
 };

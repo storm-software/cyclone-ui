@@ -195,7 +195,10 @@ const profiling = isProduction && {
 };
 
 const config: StorybookConfig = {
-  stories: ["../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
+  stories: [
+    "../../../packages/themes/src/storybook/**/*.mdx",
+    "../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+  ],
   addons: [getAbsolutePath("@storybook/addon-docs")],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),

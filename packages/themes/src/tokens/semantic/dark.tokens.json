@@ -41,12 +41,12 @@
         "$description": "The secondary foreground color for the dark theme - muted-soft text",
         "theme": "secondary"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent foreground color for the dark theme",
-        "theme": "accent"
+        "$value": "{color.brand.5}",
+        "$description": "The brand foreground color for the dark theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -111,12 +111,12 @@
         "$description": "The secondary foreground color for the dark theme",
         "theme": "secondary"
       },
-      "accent-inverse": {
+      "brand-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
-        "$description": "The accent foreground color for the dark theme",
-        "theme": "accent"
+        "$description": "The brand foreground color for the dark theme",
+        "theme": "brand"
       },
       "danger-inverse": {
         "$type": "color",
@@ -214,12 +214,12 @@
         "$description": "The secondary background color for the dark theme - muted-soft text",
         "theme": "secondary"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent background color for the dark theme",
-        "theme": "accent"
+        "$value": "{color.brand.6}",
+        "$description": "The brand background color for the dark theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -284,12 +284,12 @@
         "$description": "The secondary subtle background color for the dark theme",
         "theme": "secondary"
       },
-      "accent-subtle": {
+      "brand-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.2}",
-        "$description": "The accent subtle background color for the dark theme",
-        "theme": "accent"
+        "$value": "{color.brand.9}",
+        "$description": "The brand subtle background color for the dark theme",
+        "theme": "brand"
       },
       "danger-subtle": {
         "$type": "color",
@@ -357,12 +357,12 @@
         "$description": "Hairline border against ink surfaces",
         "theme": "secondary"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent border color for the dark theme",
-        "theme": "accent"
+        "$value": "{color.brand.4}",
+        "$description": "The brand border color for the dark theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -427,12 +427,12 @@
         "$description": "Hairline border against ink surfaces",
         "theme": "secondary"
       },
-      "accent-subtle": {
+      "brand-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent border color for the dark theme",
-        "theme": "accent"
+        "$value": "{color.brand.8}",
+        "$description": "The brand border color for the dark theme",
+        "theme": "brand"
       },
       "danger-subtle": {
         "$type": "color",

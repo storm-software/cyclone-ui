@@ -16,13 +16,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.8108 0.139 177.33)",
+        "$value": "oklch(0.913148 0.068972 182.414)",
         "$description": "The Storm Software brand teal color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.301 0.066 184.397587)",
+        "$value": "oklch(0.883255 0.092469 181.098)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.856576 0.111772 180.317)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.832191 0.127799 178.657)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.810820 0.139034 177.331)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.709818 0.122615 177.035)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.599671 0.103676 177.098)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.484363 0.083483 177.138)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.355527 0.059704 178.183)",
         "$description": "The Storm Software brand teal color"
       }
     },
@@ -172,7 +214,7 @@
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "oklch(0.232 0.0844 21.22)",
-        "$description": "Semantic error (#cf2d56) - validation errors"
+        "$description": "A very dark raspberry error color"
       },
       "$description": "The error (red) color palette aligned to semantic-error"
     },
@@ -181,55 +223,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.647619 0.188744 357.962)",
+        "$value": "oklch(0.792151 0.120002 20.093)",
         "$description": "A light apple negative color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.627169 0.192384 5.727)",
+        "$value": "oklch(0.726720 0.168933 22.177)",
         "$description": "A soft apple negative color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.609010 0.199527 13.795)",
+        "$value": "oklch(0.675196 0.212563 24.887)",
         "$description": "A subtle apple negative color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.591595 0.207129 21.343)",
+        "$value": "oklch(0.642735 0.242906 27.567)",
         "$description": "A muted apple negative color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.577099 0.215157 27.325)",
+        "$value": "oklch(0.628749 0.256870 29.135)",
         "$description": "A medium apple negative color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.574418 0.210108 29.167)",
+        "$value": "oklch(0.542415 0.222582 29.234)",
         "$description": "A vivid apple negative color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.572380 0.204623 30.893)",
+        "$value": "oklch(0.455366 0.186861 29.234)",
         "$description": "A rich apple negative color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.569161 0.197874 32.755)",
+        "$value": "oklch(0.361765 0.148451 29.234)",
         "$description": "A dark apple negative color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.565000 0.190000 34.500)",
+        "$value": "oklch(0.263890 0.108288 29.234)",
         "$description": "A very dark apple negative color"
       },
       "$description": "The apple color palette aligned to semantic-negative"
@@ -413,55 +455,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.793883 0.120380 108.855)",
+        "$value": "oklch(0.888874 0.095298 128.119)",
         "$description": "A light yellow-green positive color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.772601 0.127127 114.042)",
+        "$value": "oklch(0.849486 0.128549 128.689)",
         "$description": "A soft yellow-green positive color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.752310 0.137490 119.828)",
+        "$value": "oklch(0.810593 0.159981 129.724)",
         "$description": "A subtle avocado positive color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.729710 0.147722 124.739)",
+        "$value": "oklch(0.773998 0.184125 130.862)",
         "$description": "A muted avocado positive color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.707282 0.158758 129.147)",
+        "$value": "oklch(0.738525 0.200439 132.644)",
         "$description": "A medium avocado positive color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.697134 0.163052 130.835)",
+        "$value": "oklch(0.649253 0.176869 132.701)",
         "$description": "A vivid avocado positive color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.684764 0.165363 132.312)",
+        "$value": "oklch(0.550909 0.150261 132.765)",
         "$description": "A rich avocado positive color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.674992 0.169564 133.747)",
+        "$value": "oklch(0.445127 0.120890 132.681)",
         "$description": "A deep avocado positive color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.662948 0.171777 135.021)",
+        "$value": "oklch(0.330233 0.087099 131.695)",
         "$description": "A dark avocado positive color"
       },
       "$description": "The avocado color palette aligned to semantic-positive"

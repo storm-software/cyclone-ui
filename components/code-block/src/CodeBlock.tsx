@@ -157,7 +157,7 @@ const CodeBlockViewport = styled(View, {
   position: "relative",
   maxHeight: 600,
   paddingVertical: "$3xl",
-  overflow: "auto",
+  overflow: "unset",
   backgroundColor: "transparent"
 });
 
@@ -370,7 +370,7 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
       <CodeBlockFrame
         ref={forwardedRef}
         {...props}
-        dir="ltr"
+        direction="ltr"
         data-code-block=""
         data-keep-background={keepBackground ? "" : undefined}
         data-line-numbers={lineNumbers ? "" : undefined}

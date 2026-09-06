@@ -37,14 +37,14 @@ import type { GetProps } from "@tamagui/web";
 export type AlertType =
   | "primary"
   | "secondary"
+  | "brand"
   | "danger"
   | "warning"
   | "info"
   | "success"
   | "discovery"
   | "positive"
-  | "negative"
-  | "accent";
+  | "negative";
 
 export interface AlertContextProps {
   type?: AlertType;

@@ -104,6 +104,12 @@ export const SecondaryTheme: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
 export const DiscoveryTheme: Story = {
   args: {
     theme: "discovery"

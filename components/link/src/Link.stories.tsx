@@ -98,6 +98,13 @@ export const UnderlineNone: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    href: "#",
+    theme: "brand"
+  }
+};
+
 export const Discovery: Story = {
   args: {
     href: "#",

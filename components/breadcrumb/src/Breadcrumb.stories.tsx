@@ -78,6 +78,13 @@ export const SecondaryTheme: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    currentName: "Current Page",
+    theme: "brand"
+  }
+};
+
 export const DiscoveryTheme: Story = {
   args: { currentName: "Current Page", theme: "discovery" }
 };

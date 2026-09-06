@@ -71,6 +71,13 @@ export const Secondary: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: bodyText,
+    type: "brand"
+  }
+};
+
 export const Danger: Story = {
   args: {
     children: bodyText,
@@ -117,12 +124,5 @@ export const Negative: Story = {
   args: {
     children: bodyText,
     type: "negative"
-  }
-};
-
-export const Accent: Story = {
-  args: {
-    children: bodyText,
-    type: "accent"
   }
 };

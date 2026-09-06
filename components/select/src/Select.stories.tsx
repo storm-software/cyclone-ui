@@ -106,6 +106,12 @@ export const DefaultValue: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    theme: "brand"
+  }
+};
+
 export const Discovery: Story = {
   args: {
     theme: "discovery"

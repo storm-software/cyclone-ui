@@ -52,19 +52,19 @@ export const DataColor: Story = {
 
 export const Primary: Story = {
   args: {
-    theme: "brand"
+    theme: "primary"
   }
 };
 
 export const Secondary: Story = {
   args: {
-    theme: "alternate"
+    theme: "secondary"
   }
 };
 
-export const Accent: Story = {
+export const Brand: Story = {
   args: {
-    theme: "accent"
+    theme: "brand"
   }
 };
 

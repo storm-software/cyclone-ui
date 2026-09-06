@@ -1483,19 +1483,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "base"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-accent)",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px var(--color-border-brand)",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "base"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-accent)",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px var(--color-border-brand)",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "base"
     },
     {
@@ -1733,7 +1733,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#36dec0",
+      value: "#aff2e6",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "dark"
@@ -1741,8 +1741,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#003832",
+      value: "#90eddc",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#72e8d3",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#54e3c9",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#36dec0",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#2abaa0",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#1f947f",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#156e5e",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "dark"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#0c463c",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "dark"
     },
@@ -1927,7 +1983,7 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "#3c050a",
       cssVar: "--rw-color-red-9",
-      description: "Semantic error (#cf2d56) - validation errors",
+      description: "A very dark raspberry error color",
       theme: "dark"
     },
     {
@@ -2627,11 +2683,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the dark theme",
+      value: "var(--color-brand-5)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the dark theme",
       theme: "dark"
     },
     {
@@ -2707,11 +2763,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the dark theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the dark theme",
       theme: "dark"
     },
     {
@@ -2963,35 +3019,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
       value: "#00a98e",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
       value: "#00775e",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
       value: "#00775e",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% saturation)",
+      value: "#4a4a4a",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -3283,35 +3339,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% opacity)",
+      value: "#4a4a4a",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
     },
     {
@@ -3555,11 +3611,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
       value: "#9cfffc",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
@@ -3683,11 +3739,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the dark theme",
+      value: "var(--color-brand-6)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the dark theme",
       theme: "dark"
     },
     {
@@ -3763,11 +3819,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent subtle background color for the dark theme",
+      value: "var(--color-brand-9)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand subtle background color for the dark theme",
       theme: "dark"
     },
     {
@@ -4051,35 +4107,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#00a98e",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the dark theme (hover, 20% darker)",
+      value: "#008d75",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#00775e",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the dark theme (pressed, 40% darker)",
+      value: "#00634d",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the dark theme (pressed, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#00775e",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the dark theme (focused, 40% darker)",
+      value: "#00634d",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#84d3c0",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the dark theme (disabled, 60% saturation)",
+      value: "#6db1a1",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -4371,35 +4427,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#164842",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent subtle background color for the dark theme (hover, 20% brighter)",
+      value: "#245a4f",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#285952",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent subtle background color for the dark theme (pressed, 40% brighter)",
+      value: "#396e63",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#285952",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent subtle background color for the dark theme (focused, 40% brighter)",
+      value: "#396e63",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#1b3531",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent subtle background color for the dark theme (disabled, 60% saturation)",
+      value: "#26423c",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -4643,11 +4699,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the dark theme",
       theme: "dark"
     },
     {
@@ -4723,11 +4779,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the dark theme",
       theme: "dark"
     },
     {
@@ -4835,27 +4891,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#00a98e",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#00ad95",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#00775e",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#007964",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#84d3c0",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#90d9c9",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -5075,27 +5131,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#00a98e",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#3a8b7a",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#00775e",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#59a997",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#84d3c0",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#3e685e",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
@@ -7035,19 +7091,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec033",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "dark"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec033",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "dark"
     },
     {
@@ -7285,7 +7341,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#57b6a5",
+      value: "#9cd4ca",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "darkDimmed"
@@ -7293,8 +7349,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#1a5a53",
+      value: "#8bcdc1",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#79c5b8",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#68beae",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#57b6a5",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#4d9f90",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#41897c",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#357468",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "darkDimmed"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#295d54",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "darkDimmed"
     },
@@ -7479,7 +7591,7 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "#592126",
       cssVar: "--rw-color-red-9",
-      description: "Semantic error (#cf2d56) - validation errors",
+      description: "A very dark raspberry error color",
       theme: "darkDimmed"
     },
     {
@@ -8179,11 +8291,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the dark theme",
+      value: "var(--color-brand-5)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -8259,11 +8371,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the dark theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -8515,35 +8627,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
       value: "#2c9786",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
       value: "#247c69",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
       value: "#247c69",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% saturation)",
+      value: "#5a5a5a",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -8835,35 +8947,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% opacity)",
+      value: "#5a5a5a",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
@@ -9107,11 +9219,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
       value: "#8ededc",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
@@ -9235,11 +9347,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the dark theme",
+      value: "var(--color-brand-6)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -9315,11 +9427,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent subtle background color for the dark theme",
+      value: "var(--color-brand-9)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -9603,35 +9715,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#2c9786",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the dark theme (hover, 20% darker)",
+      value: "#278877",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#247c69",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the dark theme (pressed, 40% darker)",
+      value: "#21715f",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#247c69",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the dark theme (focused, 40% darker)",
+      value: "#21715f",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#85b7ab",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the dark theme (disabled, 60% saturation)",
+      value: "#779e95",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -9923,35 +10035,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#325c57",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent subtle background color for the dark theme (hover, 20% brighter)",
+      value: "#3f665e",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#426560",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent subtle background color for the dark theme (pressed, 40% brighter)",
+      value: "#50726b",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#426560",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent subtle background color for the dark theme (focused, 40% brighter)",
+      value: "#50726b",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#364e4a",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent subtle background color for the dark theme (disabled, 60% saturation)",
+      value: "#405651",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -10195,11 +10307,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -10275,11 +10387,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -10387,27 +10499,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#2c9786",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#2c998a",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#247c69",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#247d6e",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#85b7ab",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#8cbdb2",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -10627,27 +10739,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#2c9786",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#538379",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#247c69",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#6a978d",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#85b7ab",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#536e67",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
@@ -12587,19 +12699,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec033",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "darkDimmed"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec033",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "darkDimmed"
     },
     {
@@ -12837,7 +12949,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#1effd7",
+      value: "#ebfffb",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "darkHighContrast"
@@ -12845,8 +12957,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#000000",
+      value: "#b7fff2",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#84ffe9",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#51ffdf",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#1effd7",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#0bcdaa",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#058c74",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#014a3d",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#000403",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "darkHighContrast"
     },
@@ -13031,7 +13199,7 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-red-9",
-      description: "Semantic error (#cf2d56) - validation errors",
+      description: "A very dark raspberry error color",
       theme: "darkHighContrast"
     },
     {
@@ -13731,11 +13899,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the dark theme",
+      value: "var(--color-brand-5)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -13811,11 +13979,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the dark theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -14067,35 +14235,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
       value: "#00826d",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
       value: "#003a2e",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
       value: "#003a2e",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% saturation)",
+      value: "#323232",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -14387,35 +14555,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the dark theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the dark theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the dark theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the dark theme (disabled, 60% opacity)",
+      value: "#323232",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
@@ -14659,11 +14827,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
       value: "#e2fffe",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the dark theme (ghost hover, 60% brighter than hover)",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
@@ -14787,11 +14955,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the dark theme",
+      value: "var(--color-brand-6)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -14867,11 +15035,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent subtle background color for the dark theme",
+      value: "var(--color-brand-9)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -15155,35 +15323,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#00826d",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the dark theme (hover, 20% darker)",
+      value: "#005a4a",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#003a2e",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the dark theme (pressed, 40% darker)",
+      value: "#001d16",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#003a2e",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the dark theme (focused, 40% darker)",
+      value: "#001d16",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#93ebd6",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the dark theme (disabled, 60% saturation)",
+      value: "#66c6b0",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -15475,35 +15643,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#021311",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent subtle background color for the dark theme (hover, 20% brighter)",
+      value: "#0d372f",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#103833",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent subtle background color for the dark theme (pressed, 40% brighter)",
+      value: "#215e52",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#103833",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent subtle background color for the dark theme (focused, 40% brighter)",
+      value: "#215e52",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#000101",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent subtle background color for the dark theme (disabled, 60% saturation)",
+      value: "#0b1916",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -15747,11 +15915,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -15827,11 +15995,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the dark theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -15939,27 +16107,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#00826d",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#008875",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#003a2e",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#003d32",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#93ebd6",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#a8f0e1",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -16179,27 +16347,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#00826d",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the dark theme (hover, 20% darker)",
+      value: "#228973",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#003a2e",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the dark theme (focused, 40% darker)",
+      value: "#46bea3",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#93ebd6",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the dark theme (disabled, 60% saturation)",
+      value: "#26584c",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
@@ -18139,19 +18307,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec033",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "darkHighContrast"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec033",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "darkHighContrast"
     },
     {
@@ -18389,7 +18557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#1fb2a6",
+      value: "#aff2e6",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "light"
@@ -18397,8 +18565,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#003832",
+      value: "#90eddc",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#72e8d3",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#54e3c9",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#36dec0",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#2abaa0",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#1f947f",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#156e5e",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "light"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#0c463c",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "light"
     },
@@ -19275,11 +19499,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the light theme",
+      value: "var(--color-brand-7)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the light theme",
       theme: "light"
     },
     {
@@ -19355,11 +19579,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the light theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the light theme",
       theme: "light"
     },
     {
@@ -19611,35 +19835,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
-      value: "#00877c",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      value: "#00705c",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#005e55",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      value: "#004d3c",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
-      value: "#005e55",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      value: "#004d3c",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#454545",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% saturation)",
+      value: "#434343",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -19931,35 +20155,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#454545",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% opacity)",
+      value: "#434343",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -20203,11 +20427,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#8cf3e5",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
+      value: "#73cab3",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
@@ -20331,11 +20555,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the light theme",
       theme: "light"
     },
     {
@@ -20395,11 +20619,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand background color for the light theme",
       theme: "light"
     },
     {
@@ -20715,35 +20939,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#00877c",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the light theme (hover, 20% darker)",
+      value: "#00ad95",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the light theme (hover, 20% darker)",
       theme: "light"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#005e55",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the light theme (pressed, 40% darker)",
+      value: "#007964",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the light theme (pressed, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#005e55",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the light theme (focused, 40% darker)",
+      value: "#007964",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the light theme (focused, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#67aaa2",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#90d9c9",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -20971,35 +21195,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#164842",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent background color for the light theme (hover, 20% brighter)",
+      value: "#3a8b7a",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#285952",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent background color for the light theme (pressed, 40% brighter)",
+      value: "#59a997",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#285952",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent background color for the light theme (focused, 40% brighter)",
+      value: "#59a997",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#1b3531",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#3e685e",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -21243,11 +21467,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the light theme",
       theme: "light"
     },
     {
@@ -21307,11 +21531,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the light theme",
       theme: "light"
     },
     {
@@ -21419,27 +21643,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#00877c",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the light theme (hover, 20% darker)",
+      value: "#00ad95",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the light theme (hover, 20% darker)",
       theme: "light"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#005e55",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the light theme (focused, 40% darker)",
+      value: "#007964",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the light theme (focused, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#67aaa2",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#90d9c9",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -21611,27 +21835,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#164842",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the light theme (hover, 20% brighter)",
+      value: "#3a8b7a",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#285952",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the light theme (focused, 40% brighter)",
+      value: "#59a997",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#1b3531",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#3e685e",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
@@ -23571,19 +23795,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a633",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "light"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a633",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "light"
     },
     {
@@ -23821,7 +24045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#449a93",
+      value: "#9cd4ca",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "lightDimmed"
@@ -23829,8 +24053,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#1a5a53",
+      value: "#8bcdc1",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#79c5b8",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#68beae",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#57b6a5",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#4d9f90",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#41897c",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#357468",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#295d54",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "lightDimmed"
     },
@@ -24707,11 +24987,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the light theme",
+      value: "var(--color-brand-7)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -24787,11 +25067,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the light theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -25043,35 +25323,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
-      value: "#26857d",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      value: "#237869",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#206e67",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      value: "#1d6555",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
-      value: "#206e67",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      value: "#1d6555",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#575757",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% saturation)",
+      value: "#555555",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -25363,35 +25643,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#575757",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% opacity)",
+      value: "#555555",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -25635,11 +25915,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#87d1c7",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
+      value: "#7bafa2",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
@@ -25763,11 +26043,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -25827,11 +26107,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand background color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -26147,35 +26427,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#26857d",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the light theme (hover, 20% darker)",
+      value: "#2c998a",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#206e67",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the light theme (pressed, 40% darker)",
+      value: "#247d6e",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#206e67",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the light theme (focused, 40% darker)",
+      value: "#247d6e",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#739994",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#8cbdb2",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -26403,35 +26683,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#325c57",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent background color for the light theme (hover, 20% brighter)",
+      value: "#538379",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#426560",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent background color for the light theme (pressed, 40% brighter)",
+      value: "#6a978d",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#426560",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent background color for the light theme (focused, 40% brighter)",
+      value: "#6a978d",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#364e4a",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#536e67",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -26675,11 +26955,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -26739,11 +27019,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -26851,27 +27131,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#26857d",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the light theme (hover, 20% darker)",
+      value: "#2c998a",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#206e67",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the light theme (focused, 40% darker)",
+      value: "#247d6e",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#739994",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#8cbdb2",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -27043,27 +27323,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#325c57",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the light theme (hover, 20% brighter)",
+      value: "#538379",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#426560",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the light theme (focused, 40% brighter)",
+      value: "#6a978d",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#364e4a",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#536e67",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
@@ -29003,19 +29283,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a633",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "lightDimmed"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a633",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "lightDimmed"
     },
     {
@@ -29253,7 +29533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.1",
       type: "color",
-      value: "#00bcad",
+      value: "#ebfffb",
       cssVar: "--rw-color-brand-1",
       description: "The Storm Software brand teal color",
       theme: "lightHighContrast"
@@ -29261,8 +29541,64 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.brand.2",
       type: "color",
-      value: "#000000",
+      value: "#b7fff2",
       cssVar: "--rw-color-brand-2",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.3",
+      type: "color",
+      value: "#84ffe9",
+      cssVar: "--rw-color-brand-3",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.4",
+      type: "color",
+      value: "#51ffdf",
+      cssVar: "--rw-color-brand-4",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.5",
+      type: "color",
+      value: "#1effd7",
+      cssVar: "--rw-color-brand-5",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.6",
+      type: "color",
+      value: "#0bcdaa",
+      cssVar: "--rw-color-brand-6",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.7",
+      type: "color",
+      value: "#058c74",
+      cssVar: "--rw-color-brand-7",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.8",
+      type: "color",
+      value: "#014a3d",
+      cssVar: "--rw-color-brand-8",
+      description: "The Storm Software brand teal color",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.brand.9",
+      type: "color",
+      value: "#000403",
+      cssVar: "--rw-color-brand-9",
       description: "The Storm Software brand teal color",
       theme: "lightHighContrast"
     },
@@ -30139,11 +30475,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent",
+      path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-foreground-accent",
-      description: "The accent foreground color for the light theme",
+      value: "var(--color-brand-7)",
+      cssVar: "--rw-color-foreground-brand",
+      description: "The brand foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -30219,11 +30555,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse",
+      path: "color.foreground.brand-inverse",
       type: "color",
       value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-accent-inverse",
-      description: "The accent foreground color for the light theme",
+      cssVar: "--rw-color-foreground-brand-inverse",
+      description: "The brand foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -30475,35 +30811,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-hover",
+      path: "color.foreground.brand-hover",
       type: "color",
-      value: "#00514a",
-      cssVar: "--rw-color-foreground-accent-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      value: "#003027",
+      cssVar: "--rw-color-foreground-brand-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-pressed",
+      path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#001613",
-      cssVar: "--rw-color-foreground-accent-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-brand-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-focused",
+      path: "color.foreground.brand-focused",
       type: "color",
-      value: "#001613",
-      cssVar: "--rw-color-foreground-accent-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-brand-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-disabled",
+      path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#2b2b2b",
-      cssVar: "--rw-color-foreground-accent-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% saturation)",
+      value: "#282828",
+      cssVar: "--rw-color-foreground-brand-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -30795,35 +31131,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-hover",
+      path: "color.foreground.brand-inverse-hover",
       type: "color",
       value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-accent-inverse-hover",
-      description: "The accent foreground color for the light theme (hover, 20% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-hover",
+      description: "The brand foreground color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-pressed",
+      path: "color.foreground.brand-inverse-pressed",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-accent-inverse-pressed",
-      description: "The accent foreground color for the light theme (pressed, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-pressed",
+      description: "The brand foreground color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-focused",
+      path: "color.foreground.brand-inverse-focused",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-accent-inverse-focused",
-      description: "The accent foreground color for the light theme (focused, 40% darker)",
+      cssVar: "--rw-color-foreground-brand-inverse-focused",
+      description: "The brand foreground color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-inverse-disabled",
+      path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#2b2b2b",
-      cssVar: "--rw-color-foreground-accent-inverse-disabled",
-      description: "The accent foreground color for the light theme (disabled, 60% opacity)",
+      value: "#282828",
+      cssVar: "--rw-color-foreground-brand-inverse-disabled",
+      description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -31067,11 +31403,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.accent-ghost-hover",
+      path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#bafff6",
-      cssVar: "--rw-color-foreground-accent-ghost-hover",
-      description: "The accent foreground color for the light theme (ghost hover, 60% brighter than hover)",
+      value: "#76e3c6",
+      cssVar: "--rw-color-foreground-brand-ghost-hover",
+      description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
@@ -31195,11 +31531,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent",
+      path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-background-accent",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-background-brand",
+      description: "The brand background color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -31259,11 +31595,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-subtle",
+      path: "color.background.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-background-accent-subtle",
-      description: "The accent background color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-background-brand-subtle",
+      description: "The brand background color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -31579,35 +31915,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-hover",
+      path: "color.background.brand-hover",
       type: "color",
-      value: "#00514a",
-      cssVar: "--rw-color-background-accent-hover",
-      description: "The accent background color for the light theme (hover, 20% darker)",
+      value: "#008875",
+      cssVar: "--rw-color-background-brand-hover",
+      description: "The brand background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-pressed",
+      path: "color.background.brand-pressed",
       type: "color",
-      value: "#001613",
-      cssVar: "--rw-color-background-accent-pressed",
-      description: "The accent background color for the light theme (pressed, 40% darker)",
+      value: "#003d32",
+      cssVar: "--rw-color-background-brand-pressed",
+      description: "The brand background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-focused",
+      path: "color.background.brand-focused",
       type: "color",
-      value: "#001613",
-      cssVar: "--rw-color-background-accent-focused",
-      description: "The accent background color for the light theme (focused, 40% darker)",
+      value: "#003d32",
+      cssVar: "--rw-color-background-brand-focused",
+      description: "The brand background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-disabled",
+      path: "color.background.brand-disabled",
       type: "color",
-      value: "#5bbeb2",
-      cssVar: "--rw-color-background-accent-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#a8f0e1",
+      cssVar: "--rw-color-background-brand-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -31835,35 +32171,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-subtle-hover",
+      path: "color.background.brand-subtle-hover",
       type: "color",
-      value: "#021311",
-      cssVar: "--rw-color-background-accent-subtle-hover",
-      description: "The accent background color for the light theme (hover, 20% brighter)",
+      value: "#228973",
+      cssVar: "--rw-color-background-brand-subtle-hover",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-subtle-pressed",
+      path: "color.background.brand-subtle-pressed",
       type: "color",
-      value: "#103833",
-      cssVar: "--rw-color-background-accent-subtle-pressed",
-      description: "The accent background color for the light theme (pressed, 40% brighter)",
+      value: "#46bea3",
+      cssVar: "--rw-color-background-brand-subtle-pressed",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-subtle-focused",
+      path: "color.background.brand-subtle-focused",
       type: "color",
-      value: "#103833",
-      cssVar: "--rw-color-background-accent-subtle-focused",
-      description: "The accent background color for the light theme (focused, 40% brighter)",
+      value: "#46bea3",
+      cssVar: "--rw-color-background-brand-subtle-focused",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.accent-subtle-disabled",
+      path: "color.background.brand-subtle-disabled",
       type: "color",
-      value: "#000101",
-      cssVar: "--rw-color-background-accent-subtle-disabled",
-      description: "The accent background color for the light theme (disabled, 60% saturation)",
+      value: "#26584c",
+      cssVar: "--rw-color-background-brand-subtle-disabled",
+      description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -32107,11 +32443,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent",
+      path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-1)",
-      cssVar: "--rw-color-border-accent",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-4)",
+      cssVar: "--rw-color-border-brand",
+      description: "The brand border color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -32171,11 +32507,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-subtle",
+      path: "color.border.brand-subtle",
       type: "color",
-      value: "var(--color-brand-2)",
-      cssVar: "--rw-color-border-accent-subtle",
-      description: "The accent border color for the light theme",
+      value: "var(--color-brand-8)",
+      cssVar: "--rw-color-border-brand-subtle",
+      description: "The brand border color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -32283,27 +32619,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-hover",
+      path: "color.border.brand-hover",
       type: "color",
-      value: "#00514a",
-      cssVar: "--rw-color-border-accent-hover",
-      description: "The accent border color for the light theme (hover, 20% darker)",
+      value: "#008875",
+      cssVar: "--rw-color-border-brand-hover",
+      description: "The brand border color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-focused",
+      path: "color.border.brand-focused",
       type: "color",
-      value: "#001613",
-      cssVar: "--rw-color-border-accent-focused",
-      description: "The accent border color for the light theme (focused, 40% darker)",
+      value: "#003d32",
+      cssVar: "--rw-color-border-brand-focused",
+      description: "The brand border color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-disabled",
+      path: "color.border.brand-disabled",
       type: "color",
-      value: "#5bbeb2",
-      cssVar: "--rw-color-border-accent-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#a8f0e1",
+      cssVar: "--rw-color-border-brand-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -32475,27 +32811,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-subtle-hover",
+      path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#021311",
-      cssVar: "--rw-color-border-accent-subtle-hover",
-      description: "The accent border color for the light theme (hover, 20% brighter)",
+      value: "#228973",
+      cssVar: "--rw-color-border-brand-subtle-hover",
+      description: "The brand border color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-subtle-focused",
+      path: "color.border.brand-subtle-focused",
       type: "color",
-      value: "#103833",
-      cssVar: "--rw-color-border-accent-subtle-focused",
-      description: "The accent border color for the light theme (focused, 40% brighter)",
+      value: "#46bea3",
+      cssVar: "--rw-color-border-brand-subtle-focused",
+      description: "The brand border color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.accent-subtle-disabled",
+      path: "color.border.brand-subtle-disabled",
       type: "color",
-      value: "#000101",
-      cssVar: "--rw-color-border-accent-subtle-disabled",
-      description: "The accent border color for the light theme (disabled, 60% saturation)",
+      value: "#26584c",
+      cssVar: "--rw-color-border-brand-subtle-disabled",
+      description: "The brand border color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
@@ -34435,19 +34771,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "ring.accent",
+      path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #1fb2a633",
-      cssVar: "--rw-ring-accent",
-      description: "The accent ring variant",
+      value: "0px 0px 0px 3px #54e3c933",
+      cssVar: "--rw-ring-brand",
+      description: "The brand ring variant",
       theme: "lightHighContrast"
     },
     {
-      path: "ring.accent-subtle",
+      path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #1fb2a633",
-      cssVar: "--rw-ring-accent-subtle",
-      description: "The accent subtle ring variant",
+      value: "0px 0px 0px 1px #54e3c933",
+      cssVar: "--rw-ring-brand-subtle",
+      description: "The brand subtle ring variant",
       theme: "lightHighContrast"
     },
     {

@@ -6,15 +6,22 @@ colors:
   transparent: "#ffffff00"
   black: "#0c0c0d"
   white: "#ffffff"
-  brand-1: "#1fb2a6"
-  brand-2: "#003832"
+  brand-1: "#aff2e6"
+  brand-2: "#90eddc"
+  brand-3: "#72e8d3"
+  brand-4: "#54e3c9"
+  brand-5: "#36dec0"
+  brand-6: "#2abaa0"
+  brand-7: "#1f947f"
+  brand-8: "#156e5e"
+  brand-9: "#0c463c"
   foreground-body: "#949494"
   foreground-caption: "#737373"
   foreground-link: "#468ae2"
   foreground-required: "#dc2626"
   foreground-primary: "#f5f5f5"
   foreground-secondary: "#525252"
-  foreground-accent: "#1fb2a6"
+  foreground-brand: "#1f947f"
   foreground-danger: "#cf222e"
   foreground-negative: "#d6301b"
   foreground-warning: "#d49400"
@@ -24,7 +31,7 @@ colors:
   foreground-discovery: "#7f7ee4"
   foreground-primary-inverse: "#181818"
   foreground-secondary-inverse: "#f5f5f5"
-  foreground-accent-inverse: "#f5f5f5"
+  foreground-brand-inverse: "#f5f5f5"
   foreground-danger-inverse: "#f5f5f5"
   foreground-negative-inverse: "#f5f5f5"
   foreground-warning-inverse: "#181818"
@@ -56,10 +63,10 @@ colors:
   foreground-secondary-pressed: "#848484"
   foreground-secondary-focused: "#848484"
   foreground-secondary-disabled: "#999999"
-  foreground-accent-hover: "#00877c"
-  foreground-accent-pressed: "#005e55"
-  foreground-accent-focused: "#005e55"
-  foreground-accent-disabled: "#454545"
+  foreground-brand-hover: "#00705c"
+  foreground-brand-pressed: "#004d3c"
+  foreground-brand-focused: "#004d3c"
+  foreground-brand-disabled: "#434343"
   foreground-danger-hover: "#a70006"
   foreground-danger-pressed: "#800000"
   foreground-danger-focused: "#800000"
@@ -96,10 +103,10 @@ colors:
   foreground-secondary-inverse-pressed: "#7b7b7b"
   foreground-secondary-inverse-focused: "#7b7b7b"
   foreground-secondary-inverse-disabled: "#f5f5f599"
-  foreground-accent-inverse-hover: "#b6b6b6"
-  foreground-accent-inverse-pressed: "#7b7b7b"
-  foreground-accent-inverse-focused: "#7b7b7b"
-  foreground-accent-inverse-disabled: "#454545"
+  foreground-brand-inverse-hover: "#b6b6b6"
+  foreground-brand-inverse-pressed: "#7b7b7b"
+  foreground-brand-inverse-focused: "#7b7b7b"
+  foreground-brand-inverse-disabled: "#434343"
   foreground-danger-inverse-hover: "#b6b6b6"
   foreground-danger-inverse-pressed: "#7b7b7b"
   foreground-danger-inverse-focused: "#7b7b7b"
@@ -130,7 +137,7 @@ colors:
   foreground-discovery-inverse-disabled: "#383838"
   foreground-primary-ghost-hover: "#ffffff"
   foreground-secondary-ghost-hover: "#cccccc"
-  foreground-accent-ghost-hover: "#8cf3e5"
+  foreground-brand-ghost-hover: "#73cab3"
   foreground-danger-ghost-hover: "#ff7161"
   foreground-negative-ghost-hover: "#ff7562"
   foreground-warning-ghost-hover: "#ffd484"
@@ -146,7 +153,7 @@ colors:
   background-primary: "#f5f5f5"
   background-secondary: "#262626"
   background-link: "#468ae2"
-  background-accent: "#1fb2a6"
+  background-brand: "#54e3c9"
   background-danger: "#cf222e"
   background-negative: "#d6301b"
   background-warning: "#d49400"
@@ -154,7 +161,7 @@ colors:
   background-positive: "#79b136"
   background-info: "#00b8e6"
   background-discovery: "#7f7ee4"
-  background-accent-subtle: "#003832"
+  background-brand-subtle: "#156e5e"
   background-danger-subtle: "#9a1c0f"
   background-negative-subtle: "#d23516"
   background-warning-subtle: "#8f6300"
@@ -194,10 +201,10 @@ colors:
   background-link-pressed: "#003d8f"
   background-link-focused: "#003d8f"
   background-link-disabled: "#658cc0"
-  background-accent-hover: "#00877c"
-  background-accent-pressed: "#005e55"
-  background-accent-focused: "#005e55"
-  background-accent-disabled: "#67aaa2"
+  background-brand-hover: "#00ad95"
+  background-brand-pressed: "#007964"
+  background-brand-focused: "#007964"
+  background-brand-disabled: "#90d9c9"
   background-danger-hover: "#a70006"
   background-danger-pressed: "#800000"
   background-danger-focused: "#800000"
@@ -226,10 +233,10 @@ colors:
   background-discovery-pressed: "#3b318f"
   background-discovery-focused: "#3b318f"
   background-discovery-disabled: "#8386c2"
-  background-accent-subtle-hover: "#164842"
-  background-accent-subtle-pressed: "#285952"
-  background-accent-subtle-focused: "#285952"
-  background-accent-subtle-disabled: "#1b3531"
+  background-brand-subtle-hover: "#3a8b7a"
+  background-brand-subtle-pressed: "#59a997"
+  background-brand-subtle-focused: "#59a997"
+  background-brand-subtle-disabled: "#3e685e"
   background-danger-subtle-hover: "#b93c2d"
   background-danger-subtle-pressed: "#d85947"
   background-danger-subtle-focused: "#d85947"
@@ -260,7 +267,7 @@ colors:
   background-discovery-subtle-disabled: "#656795"
   border-primary: "#333333"
   border-secondary: "#181818"
-  border-accent: "#1fb2a6"
+  border-brand: "#54e3c9"
   border-danger: "#cf222e"
   border-negative: "#d6301b"
   border-warning: "#d49400"
@@ -268,7 +275,7 @@ colors:
   border-positive: "#79b136"
   border-info: "#00b8e6"
   border-discovery: "#7f7ee4"
-  border-accent-subtle: "#003832"
+  border-brand-subtle: "#156e5e"
   border-danger-subtle: "#9a1c0f"
   border-negative-subtle: "#d23516"
   border-warning-subtle: "#8f6300"
@@ -282,9 +289,9 @@ colors:
   border-secondary-hover: "#222222"
   border-secondary-focused: "#2c2c2c"
   border-secondary-disabled: "#18181899"
-  border-accent-hover: "#00877c"
-  border-accent-focused: "#005e55"
-  border-accent-disabled: "#67aaa2"
+  border-brand-hover: "#00ad95"
+  border-brand-focused: "#007964"
+  border-brand-disabled: "#90d9c9"
   border-danger-hover: "#a70006"
   border-danger-focused: "#800000"
   border-danger-disabled: "#af514d"
@@ -306,9 +313,9 @@ colors:
   border-discovery-hover: "#5b57b9"
   border-discovery-focused: "#3b318f"
   border-discovery-disabled: "#8386c2"
-  border-accent-subtle-hover: "#164842"
-  border-accent-subtle-focused: "#285952"
-  border-accent-subtle-disabled: "#1b3531"
+  border-brand-subtle-hover: "#3a8b7a"
+  border-brand-subtle-focused: "#59a997"
+  border-brand-subtle-disabled: "#3e685e"
   border-danger-subtle-hover: "#b93c2d"
   border-danger-subtle-focused: "#d85947"
   border-danger-subtle-disabled: "#813c32"
@@ -342,8 +349,8 @@ colors:
   overlay-border-disabled: "#33333399"
   data-base-emphasis: "#525252"
   data-base-subtle: "#f5f5f5"
-  data-brand-emphasis: "#1fb2a6"
-  data-brand-subtle: "#003832"
+  data-brand-emphasis: "#aff2e6"
+  data-brand-subtle: "#90eddc"
   data-red-emphasis: "#d3344a"
   data-red-subtle: "#e791bb"
   data-orange-emphasis: "#de743a"
@@ -454,22 +461,29 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 364 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
 - **Transparent (#ffffff00):** A transparent color
 - **Black (#0c0c0d):** A near black color
 - **White (#ffffff):** A completely white color
-- **Brand 1 (#1fb2a6):** The Storm Software brand teal color
-- **Brand 2 (#003832):** The Storm Software brand teal color
+- **Brand 1 (#aff2e6):** The Storm Software brand teal color
+- **Brand 2 (#90eddc):** The Storm Software brand teal color
+- **Brand 3 (#72e8d3):** The Storm Software brand teal color
+- **Brand 4 (#54e3c9):** The Storm Software brand teal color
+- **Brand 5 (#36dec0):** The Storm Software brand teal color
+- **Brand 6 (#2abaa0):** The Storm Software brand teal color
+- **Brand 7 (#1f947f):** The Storm Software brand teal color
+- **Brand 8 (#156e5e):** The Storm Software brand teal color
+- **Brand 9 (#0c463c):** The Storm Software brand teal color
 - **Foreground Body (#949494):** The body foreground color for the light theme
 - **Foreground Caption (#737373):** The caption foreground color for the light theme
 - **Foreground Link (#468ae2):** The link foreground color for the light theme
 - **Foreground Required (#dc2626):** A required foreground color for the light theme
 - **Foreground Primary (#f5f5f5):** The primary foreground color for the light theme
 - **Foreground Secondary (#525252):** The secondary foreground color for the light theme
-- **Foreground Accent (#1fb2a6):** The accent foreground color for the light theme
+- **Foreground Brand (#1f947f):** The brand foreground color for the light theme
 - **Foreground Danger (#cf222e):** The danger foreground color for the light theme
 - **Foreground Negative (#d6301b):** The negative foreground color for the light theme
 - **Foreground Warning (#d49400):** The warning foreground color for the light theme
@@ -479,7 +493,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Discovery (#7f7ee4):** The discovery foreground color for the light theme
 - **Foreground Primary Inverse (#181818):** The primary foreground color for the light theme
 - **Foreground Secondary Inverse (#f5f5f5):** The secondary foreground color for the light theme
-- **Foreground Accent Inverse (#f5f5f5):** The accent foreground color for the light theme
+- **Foreground Brand Inverse (#f5f5f5):** The brand foreground color for the light theme
 - **Foreground Danger Inverse (#f5f5f5):** The danger foreground color for the light theme
 - **Foreground Negative Inverse (#f5f5f5):** The negative foreground color for the light theme
 - **Foreground Warning Inverse (#181818):** The warning foreground color for the light theme
@@ -511,10 +525,10 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Secondary Pressed (#848484):** The secondary foreground color for the light theme (pressed, 40% brighter)
 - **Foreground Secondary Focused (#848484):** The secondary foreground color for the light theme (focused, 40% brighter)
 - **Foreground Secondary Disabled (#999999):** The secondary foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Accent Hover (#00877c):** The accent foreground color for the light theme (hover, 20% darker)
-- **Foreground Accent Pressed (#005e55):** The accent foreground color for the light theme (pressed, 40% darker)
-- **Foreground Accent Focused (#005e55):** The accent foreground color for the light theme (focused, 40% darker)
-- **Foreground Accent Disabled (#454545):** The accent foreground color for the light theme (disabled, 60% saturation)
+- **Foreground Brand Hover (#00705c):** The brand foreground color for the light theme (hover, 20% darker)
+- **Foreground Brand Pressed (#004d3c):** The brand foreground color for the light theme (pressed, 40% darker)
+- **Foreground Brand Focused (#004d3c):** The brand foreground color for the light theme (focused, 40% darker)
+- **Foreground Brand Disabled (#434343):** The brand foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Danger Hover (#a70006):** The danger foreground color for the light theme (hover, 20% darker)
 - **Foreground Danger Pressed (#800000):** The danger foreground color for the light theme (pressed, 40% darker)
 - **Foreground Danger Focused (#800000):** The danger foreground color for the light theme (focused, 40% darker)
@@ -551,10 +565,10 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Secondary Inverse Pressed (#7b7b7b):** The secondary foreground color for the light theme (pressed, 40% darker)
 - **Foreground Secondary Inverse Focused (#7b7b7b):** The secondary foreground color for the light theme (focused, 40% darker)
 - **Foreground Secondary Inverse Disabled (#f5f5f599):** The secondary foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Accent Inverse Hover (#b6b6b6):** The accent foreground color for the light theme (hover, 20% darker)
-- **Foreground Accent Inverse Pressed (#7b7b7b):** The accent foreground color for the light theme (pressed, 40% darker)
-- **Foreground Accent Inverse Focused (#7b7b7b):** The accent foreground color for the light theme (focused, 40% darker)
-- **Foreground Accent Inverse Disabled (#454545):** The accent foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Brand Inverse Hover (#b6b6b6):** The brand foreground color for the light theme (hover, 20% darker)
+- **Foreground Brand Inverse Pressed (#7b7b7b):** The brand foreground color for the light theme (pressed, 40% darker)
+- **Foreground Brand Inverse Focused (#7b7b7b):** The brand foreground color for the light theme (focused, 40% darker)
+- **Foreground Brand Inverse Disabled (#434343):** The brand foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Danger Inverse Hover (#b6b6b6):** The danger foreground color for the light theme (hover, 20% darker)
 - **Foreground Danger Inverse Pressed (#7b7b7b):** The danger foreground color for the light theme (pressed, 40% darker)
 - **Foreground Danger Inverse Focused (#7b7b7b):** The danger foreground color for the light theme (focused, 40% darker)
@@ -585,7 +599,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Discovery Inverse Disabled (#383838):** The discovery foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Primary Ghost Hover (#ffffff):** The primary foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Foreground Secondary Ghost Hover (#cccccc):** The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Accent Ghost Hover (#8cf3e5):** The accent foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Brand Ghost Hover (#73cab3):** The brand foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Foreground Danger Ghost Hover (#ff7161):** The danger foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Foreground Negative Ghost Hover (#ff7562):** The negative foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Foreground Warning Ghost Hover (#ffd484):** The warning foreground color for the light theme (ghost hover, 60% brighter than hover)
@@ -601,7 +615,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Background Primary (#f5f5f5):** The primary background color for the light theme
 - **Background Secondary (#262626):** The secondary background color for the light theme
 - **Background Link (#468ae2):** The link foreground color for the light theme
-- **Background Accent (#1fb2a6):** The accent background color for the light theme
+- **Background Brand (#54e3c9):** The brand background color for the light theme
 - **Background Danger (#cf222e):** The danger background color for the light theme
 - **Background Negative (#d6301b):** The negative background color for the light theme
 - **Background Warning (#d49400):** The warning background color for the light theme
@@ -609,7 +623,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Background Positive (#79b136):** The positive background color for the light theme
 - **Background Info (#00b8e6):** The info background color for the light theme
 - **Background Discovery (#7f7ee4):** The discovery background color for the light theme
-- **Background Accent Subtle (#003832):** The accent background color for the light theme
+- **Background Brand Subtle (#156e5e):** The brand background color for the light theme
 - **Background Danger Subtle (#9a1c0f):** The danger background color for the light theme
 - **Background Negative Subtle (#d23516):** The negative background color for the light theme
 - **Background Warning Subtle (#8f6300):** The warning background color for the light theme
@@ -649,10 +663,10 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Background Link Pressed (#003d8f):** The link foreground color for the light theme (pressed, 40% darker)
 - **Background Link Focused (#003d8f):** The link foreground color for the light theme (focused, 40% darker)
 - **Background Link Disabled (#658cc0):** The link foreground color for the light theme (disabled, 60% saturation)
-- **Background Accent Hover (#00877c):** The accent background color for the light theme (hover, 20% darker)
-- **Background Accent Pressed (#005e55):** The accent background color for the light theme (pressed, 40% darker)
-- **Background Accent Focused (#005e55):** The accent background color for the light theme (focused, 40% darker)
-- **Background Accent Disabled (#67aaa2):** The accent background color for the light theme (disabled, 60% saturation)
+- **Background Brand Hover (#00ad95):** The brand background color for the light theme (hover, 20% darker)
+- **Background Brand Pressed (#007964):** The brand background color for the light theme (pressed, 40% darker)
+- **Background Brand Focused (#007964):** The brand background color for the light theme (focused, 40% darker)
+- **Background Brand Disabled (#90d9c9):** The brand background color for the light theme (disabled, 60% saturation)
 - **Background Danger Hover (#a70006):** The danger background color for the light theme (hover, 20% darker)
 - **Background Danger Pressed (#800000):** The danger background color for the light theme (pressed, 40% darker)
 - **Background Danger Focused (#800000):** The danger background color for the light theme (focused, 40% darker)
@@ -681,10 +695,10 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Background Discovery Pressed (#3b318f):** The discovery background color for the light theme (pressed, 40% darker)
 - **Background Discovery Focused (#3b318f):** The discovery background color for the light theme (focused, 40% darker)
 - **Background Discovery Disabled (#8386c2):** The discovery background color for the light theme (disabled, 60% saturation)
-- **Background Accent Subtle Hover (#164842):** The accent background color for the light theme (hover, 20% brighter)
-- **Background Accent Subtle Pressed (#285952):** The accent background color for the light theme (pressed, 40% brighter)
-- **Background Accent Subtle Focused (#285952):** The accent background color for the light theme (focused, 40% brighter)
-- **Background Accent Subtle Disabled (#1b3531):** The accent background color for the light theme (disabled, 60% saturation)
+- **Background Brand Subtle Hover (#3a8b7a):** The brand background color for the light theme (hover, 20% brighter)
+- **Background Brand Subtle Pressed (#59a997):** The brand background color for the light theme (pressed, 40% brighter)
+- **Background Brand Subtle Focused (#59a997):** The brand background color for the light theme (focused, 40% brighter)
+- **Background Brand Subtle Disabled (#3e685e):** The brand background color for the light theme (disabled, 60% saturation)
 - **Background Danger Subtle Hover (#b93c2d):** The danger background color for the light theme (hover, 20% brighter)
 - **Background Danger Subtle Pressed (#d85947):** The danger background color for the light theme (pressed, 40% brighter)
 - **Background Danger Subtle Focused (#d85947):** The danger background color for the light theme (focused, 40% brighter)
@@ -715,7 +729,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Background Discovery Subtle Disabled (#656795):** The discovery background color for the light theme (disabled, 60% saturation)
 - **Border Primary (#333333):** The primary border color for the light theme
 - **Border Secondary (#181818):** The secondary border color for the light theme
-- **Border Accent (#1fb2a6):** The accent border color for the light theme
+- **Border Brand (#54e3c9):** The brand border color for the light theme
 - **Border Danger (#cf222e):** The danger border color for the light theme
 - **Border Negative (#d6301b):** The negative border color for the light theme
 - **Border Warning (#d49400):** The warning border color for the light theme
@@ -723,7 +737,7 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Border Positive (#79b136):** The positive border color for the light theme
 - **Border Info (#00b8e6):** The info border color for the light theme
 - **Border Discovery (#7f7ee4):** The discovery border color for the light theme
-- **Border Accent Subtle (#003832):** The accent border color for the light theme
+- **Border Brand Subtle (#156e5e):** The brand border color for the light theme
 - **Border Danger Subtle (#9a1c0f):** The danger border color for the light theme
 - **Border Negative Subtle (#d23516):** The negative border color for the light theme
 - **Border Warning Subtle (#8f6300):** The warning border color for the light theme
@@ -737,9 +751,9 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Border Secondary Hover (#222222):** The secondary border color for the light theme (hover, 20% brighter)
 - **Border Secondary Focused (#2c2c2c):** The secondary border color for the light theme (focused, 40% brighter)
 - **Border Secondary Disabled (#18181899):** The secondary border color for the light theme (disabled, 60% opacity)
-- **Border Accent Hover (#00877c):** The accent border color for the light theme (hover, 20% darker)
-- **Border Accent Focused (#005e55):** The accent border color for the light theme (focused, 40% darker)
-- **Border Accent Disabled (#67aaa2):** The accent border color for the light theme (disabled, 60% saturation)
+- **Border Brand Hover (#00ad95):** The brand border color for the light theme (hover, 20% darker)
+- **Border Brand Focused (#007964):** The brand border color for the light theme (focused, 40% darker)
+- **Border Brand Disabled (#90d9c9):** The brand border color for the light theme (disabled, 60% saturation)
 - **Border Danger Hover (#a70006):** The danger border color for the light theme (hover, 20% darker)
 - **Border Danger Focused (#800000):** The danger border color for the light theme (focused, 40% darker)
 - **Border Danger Disabled (#af514d):** The danger border color for the light theme (disabled, 60% saturation)
@@ -761,9 +775,9 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Border Discovery Hover (#5b57b9):** The discovery border color for the light theme (hover, 20% darker)
 - **Border Discovery Focused (#3b318f):** The discovery border color for the light theme (focused, 40% darker)
 - **Border Discovery Disabled (#8386c2):** The discovery border color for the light theme (disabled, 60% saturation)
-- **Border Accent Subtle Hover (#164842):** The accent border color for the light theme (hover, 20% brighter)
-- **Border Accent Subtle Focused (#285952):** The accent border color for the light theme (focused, 40% brighter)
-- **Border Accent Subtle Disabled (#1b3531):** The accent border color for the light theme (disabled, 60% saturation)
+- **Border Brand Subtle Hover (#3a8b7a):** The brand border color for the light theme (hover, 20% brighter)
+- **Border Brand Subtle Focused (#59a997):** The brand border color for the light theme (focused, 40% brighter)
+- **Border Brand Subtle Disabled (#3e685e):** The brand border color for the light theme (disabled, 60% saturation)
 - **Border Danger Subtle Hover (#b93c2d):** The danger border color for the light theme (hover, 20% brighter)
 - **Border Danger Subtle Focused (#d85947):** The danger border color for the light theme (focused, 40% brighter)
 - **Border Danger Subtle Disabled (#813c32):** The danger border color for the light theme (disabled, 60% saturation)
@@ -797,8 +811,8 @@ Cyclone UI design tokens — 357 color tokens, 12 typography tokens, 28 spacing 
 - **Overlay Border Disabled (#33333399):** The overlay border color for the light theme (disabled, 60% opacity)
 - **Data Base Emphasis (#525252):** The base data visualization emphasis color for the light theme
 - **Data Base Subtle (#f5f5f5):** The base data visualization subtle color for the light theme
-- **Data Brand Emphasis (#1fb2a6):** The brand data visualization emphasis color for the light theme
-- **Data Brand Subtle (#003832):** The brand data visualization subtle color for the light theme
+- **Data Brand Emphasis (#aff2e6):** The brand data visualization emphasis color for the light theme
+- **Data Brand Subtle (#90eddc):** The brand data visualization subtle color for the light theme
 - **Data Red Emphasis (#d3344a):** The red data visualization emphasis color for the light theme
 - **Data Red Subtle (#e791bb):** The red data visualization subtle color for the light theme
 - **Data Orange Emphasis (#de743a):** The orange data visualization emphasis color for the light theme

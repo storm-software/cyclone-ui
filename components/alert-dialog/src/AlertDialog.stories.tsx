@@ -96,6 +96,13 @@ export const Secondary: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: bodyText,
+    theme: "brand"
+  }
+};
+
 export const Discovery: Story = {
   args: {
     children: bodyText,

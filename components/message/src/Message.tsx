@@ -28,6 +28,7 @@ const getAlertType = (type: unknown): AlertType => {
     case "help":
       return "discovery";
     case "danger":
+    case "brand":
     case "discovery":
     case "warning":
     case "info":

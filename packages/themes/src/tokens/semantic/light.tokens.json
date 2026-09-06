@@ -41,12 +41,12 @@
         "$description": "The secondary foreground color for the light theme",
         "theme": "secondary"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent foreground color for the light theme",
-        "theme": "accent"
+        "$value": "{color.brand.7}",
+        "$description": "The brand foreground color for the light theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -111,12 +111,12 @@
         "$description": "The secondary foreground color for the light theme",
         "theme": "secondary"
       },
-      "accent-inverse": {
+      "brand-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.base.1}",
-        "$description": "The accent foreground color for the light theme",
-        "theme": "accent"
+        "$description": "The brand foreground color for the light theme",
+        "theme": "brand"
       },
       "danger-inverse": {
         "$type": "color",
@@ -220,12 +220,12 @@
         "$value": "{color.blue.7}",
         "$description": "The link foreground color for the light theme"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent background color for the light theme",
-        "theme": "accent"
+        "$value": "{color.brand.4}",
+        "$description": "The brand background color for the light theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -276,12 +276,12 @@
         "$description": "The discovery background color for the light theme",
         "theme": "discovery"
       },
-      "accent-subtle": {
+      "brand-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.2}",
-        "$description": "The accent background color for the light theme",
-        "theme": "accent"
+        "$value": "{color.brand.8}",
+        "$description": "The brand background color for the light theme",
+        "theme": "brand"
       },
       "danger-subtle": {
         "$type": "color",
@@ -349,12 +349,12 @@
         "$description": "The secondary border color for the light theme",
         "theme": "secondary"
       },
-      "accent": {
+      "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.1}",
-        "$description": "The accent border color for the light theme",
-        "theme": "accent"
+        "$value": "{color.brand.4}",
+        "$description": "The brand border color for the light theme",
+        "theme": "brand"
       },
       "danger": {
         "$type": "color",
@@ -405,12 +405,12 @@
         "$description": "The discovery border color for the light theme",
         "theme": "discovery"
       },
-      "accent-subtle": {
+      "brand-subtle": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.2}",
-        "$description": "The accent border color for the light theme",
-        "theme": "accent"
+        "$value": "{color.brand.8}",
+        "$description": "The brand border color for the light theme",
+        "theme": "brand"
       },
       "danger-subtle": {
         "$type": "color",

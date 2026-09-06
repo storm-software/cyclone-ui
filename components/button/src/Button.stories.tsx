@@ -220,6 +220,89 @@ export const SecondaryDisabled: Story = {
 };
 
 /**
+ * Brand Stories
+ */
+
+export const Brand: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "surface",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandSurface: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "surface",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandOutlined: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandInverse: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "inverse",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandSubtle: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "subtle",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandGhost: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "ghost",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandLink: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "link",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandDisabled: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
+/**
  * Danger Stories
  */
 

@@ -16,13 +16,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.6897 0.1156 186.1)",
+        "$value": "oklch(0.913148 0.068972 182.414)",
         "$description": "The Storm Software brand teal color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.301 0.066 184.397587)",
+        "$value": "oklch(0.883255 0.092469 181.098)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "3": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.856576 0.111772 180.317)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "4": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.832191 0.127799 178.657)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.810820 0.139034 177.331)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.709818 0.122615 177.035)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "7": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.599671 0.103676 177.098)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "8": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.484363 0.083483 177.138)",
+        "$description": "The Storm Software brand teal color"
+      },
+      "9": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "oklch(0.355527 0.059704 178.183)",
         "$description": "The Storm Software brand teal color"
       }
     },

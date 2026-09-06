@@ -101,6 +101,13 @@ export const SecondaryOutlined: Story = {
   }
 };
 
+export const Brand: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "brand"
+  }
+};
+
 export const Discovery: Story = {
   args: {
     children: "Badge Text",

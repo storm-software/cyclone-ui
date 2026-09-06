@@ -21,6 +21,7 @@ export type ColorThemeMode = "light" | "dark";
 export type ColorThemeName =
   | "primary"
   | "secondary"
+  | "brand"
   | "discovery"
   | "info"
   | "warning"
@@ -32,6 +33,7 @@ export type ColorThemeName =
 export const ColorThemeName = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
+  BRAND: "brand",
   DISCOVERY: "discovery",
   INFO: "info",
   WARNING: "warning",

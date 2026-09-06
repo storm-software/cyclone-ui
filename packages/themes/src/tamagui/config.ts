@@ -401,6 +401,39 @@ const childThemeExtras: {
   dark: Record<string, Record<string, string>>;
 } = {
   light: {
+    brand: {
+      background: "#54e3c9",
+      backgroundDisabled: "#90d9c9",
+      backgroundFocused: "#007964",
+      backgroundHover: "#00ad95",
+      backgroundPressed: "#007964",
+      backgroundSubtle: "#156e5e",
+      backgroundSubtleDisabled: "#3e685e",
+      backgroundSubtleFocused: "#59a997",
+      backgroundSubtleHover: "#3a8b7a",
+      backgroundSubtlePressed: "#59a997",
+      border: "#54e3c9",
+      borderDisabled: "#90d9c9",
+      borderFocused: "#007964",
+      borderHover: "#00ad95",
+      borderSubtle: "#156e5e",
+      borderSubtleDisabled: "#3e685e",
+      borderSubtleFocused: "#59a997",
+      borderSubtleHover: "#3a8b7a",
+      foreground: "#1f947f",
+      foregroundDisabled: "#434343",
+      foregroundFocused: "#004d3c",
+      foregroundGhostHover: "#73cab3",
+      foregroundHover: "#00705c",
+      foregroundInverse: tokens.color.lightBase1.val,
+      foregroundInverseDisabled: "#434343",
+      foregroundInverseFocused: "#7b7b7b",
+      foregroundInverseHover: "#b6b6b6",
+      foregroundInversePressed: "#7b7b7b",
+      foregroundPressed: "#004d3c",
+      ring: "0px 0px 0px 3px #54e3c933",
+      ringSubtle: "0px 0px 0px 1px #54e3c933"
+    },
     danger: {
       background: tokens.color.lightRed7.val,
       backgroundDisabled: "#af514d",
@@ -682,6 +715,39 @@ const childThemeExtras: {
     }
   },
   dark: {
+    brand: {
+      background: "#2abaa0",
+      backgroundDisabled: "#6db1a1",
+      backgroundFocused: "#00634d",
+      backgroundHover: "#008d75",
+      backgroundPressed: "#00634d",
+      backgroundSubtle: "#0c463c",
+      backgroundSubtleDisabled: "#26423c",
+      backgroundSubtleFocused: "#396e63",
+      backgroundSubtleHover: "#245a4f",
+      backgroundSubtlePressed: "#396e63",
+      border: "#54e3c9",
+      borderDisabled: "#90d9c9",
+      borderFocused: "#007964",
+      borderHover: "#00ad95",
+      borderSubtle: "#156e5e",
+      borderSubtleDisabled: "#3e685e",
+      borderSubtleFocused: "#59a997",
+      borderSubtleHover: "#3a8b7a",
+      foreground: "#36dec0",
+      foregroundDisabled: "#4a4a4a",
+      foregroundFocused: "#00775e",
+      foregroundGhostHover: "#9cfffc",
+      foregroundHover: "#00a98e",
+      foregroundInverse: tokens.color.darkBase1.val,
+      foregroundInverseDisabled: "#4a4a4a",
+      foregroundInverseFocused: "#7b7b7b",
+      foregroundInverseHover: "#b6b6b6",
+      foregroundInversePressed: "#7b7b7b",
+      foregroundPressed: "#00775e",
+      ring: "0px 0px 0px 3px #54e3c933",
+      ringSubtle: "0px 0px 0px 1px #54e3c933"
+    },
     danger: {
       background: tokens.color.darkRed4.val,
       backgroundDisabled: "#9d4b55",
@@ -1044,14 +1110,21 @@ const themes = createThemes({
         backgroundPageHover: "#bababa",
         backgroundPagePressed: "#7d7d7d",
         black: "#0c0c0d",
-        brand1: "#1fb2a6",
-        brand2: "#003832",
+        brand1: "#aff2e6",
+        brand2: "#90eddc",
+        brand3: "#72e8d3",
+        brand4: "#54e3c9",
+        brand5: "#36dec0",
+        brand6: "#2abaa0",
+        brand7: "#1f947f",
+        brand8: "#156e5e",
+        brand9: "#0c463c",
         dataBaseEmphasis: tokens.color.lightBase5.val,
         dataBaseSubtle: tokens.color.lightBase1.val,
         dataBlueEmphasis: tokens.color.lightBlue6.val,
         dataBlueSubtle: tokens.color.lightBlue1.val,
-        dataBrandEmphasis: "#1fb2a6",
-        dataBrandSubtle: "#003832",
+        dataBrandEmphasis: "#aff2e6",
+        dataBrandSubtle: "#90eddc",
         dataGreenEmphasis: tokens.color.lightGreen6.val,
         dataGreenSubtle: tokens.color.lightGreen1.val,
         dataOrangeEmphasis: tokens.color.lightOrange6.val,
@@ -1126,14 +1199,21 @@ const themes = createThemes({
         backgroundPageHover: "#222222",
         backgroundPagePressed: "#2c2c2c",
         black: "#0c0c0d",
-        brand1: "#36dec0",
-        brand2: "#003832",
+        brand1: "#aff2e6",
+        brand2: "#90eddc",
+        brand3: "#72e8d3",
+        brand4: "#54e3c9",
+        brand5: "#36dec0",
+        brand6: "#2abaa0",
+        brand7: "#1f947f",
+        brand8: "#156e5e",
+        brand9: "#0c463c",
         dataBaseEmphasis: tokens.color.darkBase1.val,
         dataBaseSubtle: tokens.color.darkBase4.val,
         dataBlueEmphasis: tokens.color.darkBlue5.val,
         dataBlueSubtle: tokens.color.darkBlue9.val,
-        dataBrandEmphasis: "#36dec0",
-        dataBrandSubtle: "#003832",
+        dataBrandEmphasis: "#aff2e6",
+        dataBrandSubtle: "#90eddc",
         dataGreenEmphasis: tokens.color.darkGreen5.val,
         dataGreenSubtle: tokens.color.darkGreen8.val,
         dataOrangeEmphasis: tokens.color.darkOrange5.val,
@@ -1183,102 +1263,8 @@ const themes = createThemes({
       }
     }
   },
-  accent: {
-    palette: {
-      light: [
-        tokens.color.lightBase1.val,
-        tokens.color.lightBase2.val,
-        tokens.color.lightBase3.val,
-        tokens.color.lightBase4.val,
-        tokens.color.lightBase5.val,
-        tokens.color.lightBase6.val,
-        tokens.color.lightBase7.val,
-        tokens.color.lightBase8.val,
-        tokens.color.lightBase9.val
-      ],
-      dark: [
-        tokens.color.darkBase10.val,
-        tokens.color.darkBase9.val,
-        tokens.color.darkBase8.val,
-        tokens.color.darkBase7.val,
-        tokens.color.darkBase6.val,
-        tokens.color.darkBase5.val,
-        tokens.color.darkBase4.val,
-        tokens.color.darkBase3.val,
-        tokens.color.darkBase2.val,
-        tokens.color.darkBase1.val
-      ]
-    },
-    extra: {
-      light: {
-        background: "#1fb2a6",
-        backgroundDisabled: "#67aaa2",
-        backgroundFocused: "#005e55",
-        backgroundHover: "#00877c",
-        backgroundPressed: "#005e55",
-        backgroundSubtle: "#003832",
-        backgroundSubtleDisabled: "#1b3531",
-        backgroundSubtleFocused: "#285952",
-        backgroundSubtleHover: "#164842",
-        backgroundSubtlePressed: "#285952",
-        border: "#1fb2a6",
-        borderDisabled: "#67aaa2",
-        borderFocused: "#005e55",
-        borderHover: "#00877c",
-        borderSubtle: "#003832",
-        borderSubtleDisabled: "#1b3531",
-        borderSubtleFocused: "#285952",
-        borderSubtleHover: "#164842",
-        foreground: "#1fb2a6",
-        foregroundDisabled: "#454545",
-        foregroundFocused: "#005e55",
-        foregroundGhostHover: "#8cf3e5",
-        foregroundHover: "#00877c",
-        foregroundInverse: tokens.color.lightBase1.val,
-        foregroundInverseDisabled: "#454545",
-        foregroundInverseFocused: "#7b7b7b",
-        foregroundInverseHover: "#b6b6b6",
-        foregroundInversePressed: "#7b7b7b",
-        foregroundPressed: "#005e55",
-        ring: "0px 0px 0px 3px #1fb2a633",
-        ringSubtle: "0px 0px 0px 1px #1fb2a633"
-      },
-      dark: {
-        background: "#36dec0",
-        backgroundDisabled: "#84d3c0",
-        backgroundFocused: "#00775e",
-        backgroundHover: "#00a98e",
-        backgroundPressed: "#00775e",
-        backgroundSubtle: "#003832",
-        backgroundSubtleDisabled: "#1b3531",
-        backgroundSubtleFocused: "#285952",
-        backgroundSubtleHover: "#164842",
-        backgroundSubtlePressed: "#285952",
-        border: "#36dec0",
-        borderDisabled: "#84d3c0",
-        borderFocused: "#00775e",
-        borderHover: "#00a98e",
-        borderSubtle: "#36dec0",
-        borderSubtleDisabled: "#84d3c0",
-        borderSubtleFocused: "#00775e",
-        borderSubtleHover: "#00a98e",
-        foreground: "#36dec0",
-        foregroundDisabled: "#434343",
-        foregroundFocused: "#00775e",
-        foregroundGhostHover: "#9cfffc",
-        foregroundHover: "#00a98e",
-        foregroundInverse: tokens.color.darkBase1.val,
-        foregroundInverseDisabled: "#434343",
-        foregroundInverseFocused: "#7b7b7b",
-        foregroundInverseHover: "#b6b6b6",
-        foregroundInversePressed: "#7b7b7b",
-        foregroundPressed: "#00775e",
-        ring: "0px 0px 0px 3px #36dec033",
-        ringSubtle: "0px 0px 0px 1px #36dec033"
-      }
-    }
-  },
   childrenThemes: {
+    brand: {},
     danger: {},
     discovery: {},
     info: {},
@@ -1291,7 +1277,7 @@ const themes = createThemes({
   },
   getTheme: ({ name, theme, scheme }) => {
     const child = name.replace(/^(?:light|dark)_/, "");
-    if (child === name || child === "accent") {
+    if (child === name) {
       return theme;
     }
 
@@ -1586,6 +1572,13 @@ export interface AppTheme {
   borderSubtleHover: string;
   brand1: string;
   brand2: string;
+  brand3: string;
+  brand4: string;
+  brand5: string;
+  brand6: string;
+  brand7: string;
+  brand8: string;
+  brand9: string;
   dataBaseEmphasis: string;
   dataBaseSubtle: string;
   dataBlueEmphasis: string;

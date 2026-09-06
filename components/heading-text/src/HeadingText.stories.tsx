@@ -81,9 +81,9 @@ export const Heading6: Story = {
   }
 };
 
-export const Accent: Story = {
+export const Brand: Story = {
   args: {
-    theme: "accent"
+    theme: "brand"
   }
 };
 
