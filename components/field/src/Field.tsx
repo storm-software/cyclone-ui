@@ -178,7 +178,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         color={
           disabled
             ? "$foregroundDisabled"
-            : theme !== "primary" && theme !== "secondary"
+            : theme !== "base"
               ? "$foreground"
               : "$foregroundSecondary"
         }>
@@ -235,7 +235,7 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   transition: "200ms",
-  color: "$backgroundSubtle",
+  color: "$background",
   fontStyle: "italic",
 
   enterStyle: {
@@ -302,7 +302,7 @@ const FieldDetailsImpl = FieldDetails.styleable(
         color={
           disabled
             ? "$foregroundDisabled"
-            : theme !== "primary" && theme !== "secondary"
+            : theme !== "base"
               ? "$foreground"
               : "$foregroundSecondary"
         }
@@ -417,7 +417,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     return (
       <TamaguiLabel ref={forwardedRef} htmlFor={name} marginLeft="$md">
         <LabelXStack disabled={disabled}>
-          <FieldLabelText {...props} disabled={disabled} theme="primary">
+          <FieldLabelText {...props} disabled={disabled} theme="base">
             {children}
           </FieldLabelText>
           {hideRequired !== true && (
@@ -482,7 +482,7 @@ const FieldLabel = FieldLabelText.styleable<{
       <FieldLabelTextImpl
         ref={forwardedRef as ForwardedRef<any>}
         {...props}
-        theme="primary"
+        theme="base"
         htmlFor={name}
         disabled={disabled}
         required={required}>
@@ -685,7 +685,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
     }
 
     if (validating) {
-      return <Spinner size="$md" theme="$primary" />;
+      return <Spinner size="$md" theme="base" />;
     } else if (
       !theme?.includes("danger") &&
       !theme?.includes("warning") &&

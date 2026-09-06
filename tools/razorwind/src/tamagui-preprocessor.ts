@@ -564,9 +564,7 @@ function applyRingOpacity(
             ...layer,
             color: applyOpacity(
               color,
-              "theme" in layer &&
-                layer.theme !== "primary" &&
-                layer.theme !== "secondary"
+              "theme" in layer && layer.theme !== "base"
                 ? THEME_RING_OPACITY
                 : RING_OPACITY
             )

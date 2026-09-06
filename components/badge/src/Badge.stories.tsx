@@ -55,56 +55,26 @@ export const Outlined: Story = {
   }
 };
 
-export const Primary: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "brand"
-  }
-};
-
-export const PrimaryRounded: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "brand",
-    circular: true
-  }
-};
-
-export const PrimaryOutlined: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "brand",
-    outlined: true
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "alternate"
-  }
-};
-
-export const SecondaryRounded: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "alternate",
-    circular: true
-  }
-};
-
-export const SecondaryOutlined: Story = {
-  args: {
-    children: "Badge Text",
-    theme: "alternate",
-    outlined: true
-  }
-};
-
 export const Brand: Story = {
   args: {
     children: "Badge Text",
     theme: "brand"
+  }
+};
+
+export const BrandRounded: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "brand",
+    circular: true
+  }
+};
+
+export const BrandOutlined: Story = {
+  args: {
+    children: "Badge Text",
+    theme: "brand",
+    outlined: true
   }
 };
 

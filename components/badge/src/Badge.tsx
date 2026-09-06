@@ -36,7 +36,7 @@ const BadgeFrame = styled(View, {
   flexDirection: "row",
   context: BadgeContext,
   width: "fit-content",
-  backgroundColor: "$background",
+  backgroundColor: "$foreground",
   boxShadow: "none",
 
   variants: {
@@ -198,7 +198,7 @@ const ButtonComp = styled(View, {
     unstyled: {
       false: {
         borderRadius: 1000_000_000,
-        backgroundColor: "$background",
+        backgroundColor: "$foreground",
         justifyContent: "center",
         alignItems: "center",
 

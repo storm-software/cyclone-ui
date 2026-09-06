@@ -243,11 +243,10 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
       !theme ||
       theme === "dark" ||
       theme === "light" ||
-      theme.endsWith("primary") ||
-      theme.endsWith("secondary")
+      theme.endsWith("base")
     ) {
       variant = "base";
-      theme = `${theme?.startsWith("dark") ? "dark" : "light"}_primary`;
+      theme = `${theme?.startsWith("dark") ? "dark" : "light"}_base`;
     } else if (!variant) {
       variant = "themed";
     }

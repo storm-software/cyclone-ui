@@ -36,18 +36,6 @@ export const Base: Story = {
   args: {}
 };
 
-export const Primary: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    theme: "alternate"
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"
@@ -96,7 +84,7 @@ export const Negative: Story = {
   }
 };
 
-export const AnalogousPrimary: Story = {
+export const AnalogousBrand: Story = {
   args: {
     theme: "brand",
     variant: "analogous"
@@ -161,7 +149,7 @@ export const AnalogousNegative: Story = {
 
 // Triadic variant
 
-export const TriadicPrimary: Story = {
+export const TriadicBrand: Story = {
   args: {
     theme: "brand",
     variant: "triadic"
@@ -226,7 +214,7 @@ export const TriadicNegative: Story = {
 
 // Tetradic variant
 
-export const TetradicPrimary: Story = {
+export const TetradicBrand: Story = {
   args: {
     theme: "brand",
     variant: "tetradic"
@@ -291,7 +279,7 @@ export const TetradicNegative: Story = {
 
 // Complementary variant
 
-export const ComplementaryPrimary: Story = {
+export const ComplementaryBrand: Story = {
   args: {
     theme: "brand",
     variant: "complementary"
@@ -356,7 +344,7 @@ export const ComplementaryNegative: Story = {
 
 // SplitComplementary variant
 
-export const SplitComplementaryPrimary: Story = {
+export const SplitComplementaryBrand: Story = {
   args: {
     theme: "brand",
     variant: "splitComplementary"

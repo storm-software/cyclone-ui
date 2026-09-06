@@ -94,12 +94,6 @@ export const Vertical: Story = {
   }
 };
 
-export const Primary: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"

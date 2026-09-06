@@ -206,7 +206,7 @@ const ButtonFrame = styled(View, {
       subtle: {
         borderWidth: 1,
         borderColor: "$borderSubtle",
-        backgroundColor: "$backgroundSubtle",
+        backgroundColor: "$background",
 
         hoverStyle: {
           backgroundColor: "$backgroundSubtleHover",
@@ -221,31 +221,31 @@ const ButtonFrame = styled(View, {
       inverse: {
         borderWidth: 1,
         borderColor: "$border",
-        backgroundColor: "$background",
+        backgroundColor: "$foreground",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover",
+          backgroundColor: "$foregroundHover",
           borderColor: "$borderHover"
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundPressed"
+          backgroundColor: "$foregroundPressed"
         }
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "$background",
+        borderColor: "$foreground",
 
         hoverStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundHover"
+          borderColor: "$foregroundHover"
         },
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderColor: "$backgroundPressed"
+          borderColor: "$foregroundPressed"
         }
       },
 

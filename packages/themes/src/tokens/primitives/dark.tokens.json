@@ -96,7 +96,7 @@
       },
       "$description": "The surface color palette - DeepSeek-inspired neutral graphite backgrounds"
     },
-    "base": {
+    "grey": {
       "palette": true,
       "1": {
         "$type": "color",
@@ -158,7 +158,7 @@
         "$value": "#181818",
         "$description": "The deepest neutral gray matching the dark page canvas"
       },
-      "$description": "The base color palette - DeepSeek-inspired neutral grays for text, borders, and themed surfaces"
+      "$description": "The grey color palette - DeepSeek-inspired neutral grays for text, borders, and themed surfaces"
     },
     "red": {
       "palette": true,

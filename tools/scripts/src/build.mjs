@@ -31,14 +31,14 @@ try {
     }
   }
 
-  let filter = argv.filter;
-  if (!filter) {
+  let projects = argv.filter;
+  if (!projects) {
     if (argv.cli) {
-      filter = "cli";
-    } else if (argv.plugins) {
-      filter = "plugins";
-    } else {
-      filter = "all";
+      projects = "apps/cli";
+    } else if (argv.components) {
+      projects = "components/*";
+    } else if (argv.all || (!argv.cli && !argv.components)) {
+      projects = "packages/*,components/*,apps/cli";
     }
   }
 
@@ -56,7 +56,7 @@ try {
   }
 
   proc =
-    $`pnpm nx run-many --target=build --projects="packages/*,components/*,apps/cli" --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=5`.timeout(
+    $`pnpm nx run-many --target=build --projects=${projects} --configuration=${configuration} --outputStyle=dynamic-legacy --parallel=5`.timeout(
       `${15 * 60}s`
     );
   proc.stdout.on("data", data => {

@@ -1451,35 +1451,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "base"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-foreground-primary)",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      value: "0px 0px 0px 3px var(--color-foreground-base)",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "base"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-primary)",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "base"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px var(--color-foreground-secondary)",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "base"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-secondary)",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      value: "0px 0px 0px 1px var(--color-foreground-base)",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "base"
     },
     {
@@ -1835,82 +1819,82 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#f5f5f5",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white for primary text on dark surfaces",
       theme: "dark"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#dcdcdc",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray for prominent secondary text",
       theme: "dark"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#bebebe",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray for body text",
       theme: "dark"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#9f9f9f",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray for captions",
       theme: "dark"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#808080",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "dark"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#616161",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "dark"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#484848",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray for strong borders",
       theme: "dark"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#3a3a3a",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray for secondary surfaces",
       theme: "dark"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#2e2e2e",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "A subtle near-black gray for low-contrast borders",
       theme: "dark"
     },
     {
-      path: "color.base.10",
+      path: "color.grey.10",
       type: "color",
       value: "#181818",
-      cssVar: "--rw-color-base-10",
+      cssVar: "--rw-color-grey-10",
       description: "The deepest neutral gray matching the dark page canvas",
       theme: "dark"
     },
@@ -1989,7 +1973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.1",
       type: "color",
-      value: "#e3518e",
+      value: "#ff9b9b",
       cssVar: "--rw-color-apple-1",
       description: "A light apple negative color",
       theme: "dark"
@@ -1997,7 +1981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.2",
       type: "color",
-      value: "#e14777",
+      value: "#ff7575",
       cssVar: "--rw-color-apple-2",
       description: "A soft apple negative color",
       theme: "dark"
@@ -2005,7 +1989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.3",
       type: "color",
-      value: "#e03c5e",
+      value: "#ff4f4f",
       cssVar: "--rw-color-apple-3",
       description: "A subtle apple negative color",
       theme: "dark"
@@ -2013,7 +1997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.4",
       type: "color",
-      value: "#de3143",
+      value: "#ff2a2a",
       cssVar: "--rw-color-apple-4",
       description: "A muted apple negative color",
       theme: "dark"
@@ -2021,7 +2005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.5",
       type: "color",
-      value: "#dc2626",
+      value: "#ff0404",
       cssVar: "--rw-color-apple-5",
       description: "A medium apple negative color",
       theme: "dark"
@@ -2029,7 +2013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.6",
       type: "color",
-      value: "#d92b20",
+      value: "#d20000",
       cssVar: "--rw-color-apple-6",
       description: "A vivid apple negative color",
       theme: "dark"
@@ -2037,7 +2021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.7",
       type: "color",
-      value: "#d6301b",
+      value: "#a60000",
       cssVar: "--rw-color-apple-7",
       description: "A rich apple negative color",
       theme: "dark"
@@ -2045,7 +2029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.8",
       type: "color",
-      value: "#d23516",
+      value: "#790000",
       cssVar: "--rw-color-apple-8",
       description: "A dark apple negative color",
       theme: "dark"
@@ -2053,7 +2037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.9",
       type: "color",
-      value: "#cd3a13",
+      value: "#4d0000",
       cssVar: "--rw-color-apple-9",
       description: "A very dark apple negative color",
       theme: "dark"
@@ -2277,7 +2261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.1",
       type: "color",
-      value: "#c2c261",
+      value: "#c8e7a3",
       cssVar: "--rw-color-avocado-1",
       description: "A light yellow-green positive color",
       theme: "dark"
@@ -2285,7 +2269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.2",
       type: "color",
-      value: "#b4be58",
+      value: "#b4de81",
       cssVar: "--rw-color-avocado-2",
       description: "A soft yellow-green positive color",
       theme: "dark"
@@ -2293,7 +2277,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.3",
       type: "color",
-      value: "#a4bb4e",
+      value: "#9fd55e",
       cssVar: "--rw-color-avocado-3",
       description: "A subtle avocado positive color",
       theme: "dark"
@@ -2301,7 +2285,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.4",
       type: "color",
-      value: "#93b744",
+      value: "#8bcc3c",
       cssVar: "--rw-color-avocado-4",
       description: "A muted avocado positive color",
       theme: "dark"
@@ -2309,7 +2293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.5",
       type: "color",
-      value: "#81b33a",
+      value: "#76c319",
       cssVar: "--rw-color-avocado-5",
       description: "A medium avocado positive color",
       theme: "dark"
@@ -2317,7 +2301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.6",
       type: "color",
-      value: "#79b136",
+      value: "#62a412",
       cssVar: "--rw-color-avocado-6",
       description: "A vivid avocado positive color",
       theme: "dark"
@@ -2325,7 +2309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.7",
       type: "color",
-      value: "#71ae33",
+      value: "#4d830c",
       cssVar: "--rw-color-avocado-7",
       description: "A rich avocado positive color",
       theme: "dark"
@@ -2333,7 +2317,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.8",
       type: "color",
-      value: "#69ac2f",
+      value: "#386107",
       cssVar: "--rw-color-avocado-8",
       description: "A deep avocado positive color",
       theme: "dark"
@@ -2341,7 +2325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.9",
       type: "color",
-      value: "#61a92c",
+      value: "#243e04",
       cssVar: "--rw-color-avocado-9",
       description: "A dark avocado positive color",
       theme: "dark"
@@ -2637,7 +2621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "dark"
@@ -2645,7 +2629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-5)",
+      value: "var(--color-grey-5)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "dark"
@@ -2667,25 +2651,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the dark theme - muted-soft text",
       theme: "dark"
     },
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-5)",
+      value: "var(--color-brand-7)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "dark"
@@ -2701,7 +2677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative",
       type: "color",
-      value: "var(--color-apple-8)",
+      value: "var(--color-apple-5)",
       cssVar: "--rw-color-foreground-negative",
       description: "The negative foreground color for the dark theme",
       theme: "dark"
@@ -2709,7 +2685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-5)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "dark"
@@ -2733,7 +2709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info",
       type: "color",
-      value: "var(--color-sky-5)",
+      value: "var(--color-sky-6)",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: "dark"
@@ -2747,25 +2723,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
       value: "var(--color-black)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "Ink text on cream primary surfaces",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the dark theme",
       theme: "dark"
@@ -2773,7 +2741,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the dark theme",
       theme: "dark"
@@ -2781,7 +2749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the dark theme",
       theme: "dark"
@@ -2789,7 +2757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "Ink text on warning surfaces",
       theme: "dark"
@@ -2797,7 +2765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the dark theme",
       theme: "dark"
@@ -2805,7 +2773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the dark theme",
       theme: "dark"
@@ -2813,7 +2781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the dark theme",
       theme: "dark"
@@ -2821,7 +2789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the dark theme",
       theme: "dark"
@@ -2925,7 +2893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#b20000",
+      value: "#d00000",
       cssVar: "--rw-color-foreground-required-hover",
       description: "A required foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -2933,7 +2901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-pressed",
       type: "color",
-      value: "#890000",
+      value: "#a10000",
       cssVar: "--rw-color-foreground-required-pressed",
       description: "A required foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -2941,7 +2909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-focused",
       type: "color",
-      value: "#890000",
+      value: "#a10000",
       cssVar: "--rw-color-foreground-required-focused",
       description: "A required foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -2949,79 +2917,47 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-disabled",
       type: "color",
-      value: "#ba574e",
+      value: "#d65e4f",
       cssVar: "--rw-color-foreground-required-disabled",
       description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#f5f5f599",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#8c8c8c",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (hover, 20% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#5e5e5e",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the dark theme - muted-soft text (pressed, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#5e5e5e",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the dark theme - muted-soft text (focused, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#bebebe99",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the dark theme - muted-soft text (disabled, 60% opacity)",
       theme: "dark"
     },
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#00a98e",
+      value: "#00705c",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3029,7 +2965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#00775e",
+      value: "#004d3c",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3037,7 +2973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#00775e",
+      value: "#004d3c",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3045,7 +2981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#4a4a4a",
+      value: "#999999",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3077,7 +3013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#1a1a1a",
+      value: "#aeaeae",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3085,7 +3021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#aa0000",
+      value: "#d00000",
       cssVar: "--rw-color-foreground-negative-hover",
       description: "The negative foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3093,7 +3029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-pressed",
       type: "color",
-      value: "#820000",
+      value: "#a10000",
       cssVar: "--rw-color-foreground-negative-pressed",
       description: "The negative foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3101,7 +3037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-focused",
       type: "color",
-      value: "#820000",
+      value: "#a10000",
       cssVar: "--rw-color-foreground-negative-focused",
       description: "The negative foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3109,7 +3045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-disabled",
       type: "color",
-      value: "#262626",
+      value: "#999999",
       cssVar: "--rw-color-foreground-negative-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3117,7 +3053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#c88000",
+      value: "#a46900",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3125,7 +3061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#934e00",
+      value: "#784000",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3133,7 +3069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#934e00",
+      value: "#784000",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3141,7 +3077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#4b4b4b",
+      value: "#c09c66",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3173,7 +3109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#282828",
+      value: "#999999",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3181,7 +3117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#588700",
+      value: "#499400",
       cssVar: "--rw-color-foreground-positive-hover",
       description: "The positive foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3189,7 +3125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-pressed",
       type: "color",
-      value: "#315c00",
+      value: "#1b6600",
       cssVar: "--rw-color-foreground-positive-pressed",
       description: "The positive foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3197,7 +3133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-focused",
       type: "color",
-      value: "#315c00",
+      value: "#1b6600",
       cssVar: "--rw-color-foreground-positive-focused",
       description: "The positive foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3205,7 +3141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#4a4a4a",
+      value: "#8dba69",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3213,7 +3149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#00a4b5",
+      value: "#008fb6",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -3221,7 +3157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-pressed",
       type: "color",
-      value: "#007283",
+      value: "#006288",
       cssVar: "--rw-color-foreground-info-pressed",
       description: "The info foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -3229,7 +3165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-focused",
       type: "color",
-      value: "#007283",
+      value: "#006288",
       cssVar: "--rw-color-foreground-info-focused",
       description: "The info foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -3237,7 +3173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#535353",
+      value: "#6db8d0",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3269,73 +3205,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#262626",
+      value: "#999999",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#131314",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "Ink text on cream primary surfaces (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#1a1a1b",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "Ink text on cream primary surfaces (pressed, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#1a1a1b",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "Ink text on cream primary surfaces (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#999999",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "Ink text on cream primary surfaces (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the dark theme (hover, 20% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the dark theme (pressed, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the dark theme (focused, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#f5f5f599",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
     },
     {
@@ -3365,7 +3269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#4a4a4a",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3397,7 +3301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#1a1a1a",
+      value: "#aeaeae",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3429,7 +3333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse-disabled",
       type: "color",
-      value: "#262626",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-negative-inverse-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3461,7 +3365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#4b4b4b",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "dark"
@@ -3493,7 +3397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#282828",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3525,7 +3429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#4a4a4a",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3557,7 +3461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#535353",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
@@ -3589,31 +3493,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#262626",
+      value: "#f5f5f599",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
-      theme: "dark"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#9cfffc",
+      value: "#73cab3",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -3629,7 +3525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ff7361",
+      value: "#ff8e77",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -3637,7 +3533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#ffee8e",
+      value: "#ffd484",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -3653,7 +3549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#bff584",
+      value: "#b8ff8d",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -3661,7 +3557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#9bffff",
+      value: "#99ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -3675,10 +3571,10 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.foreground.primary-inverse-ghost-hover",
+      path: "color.foreground.base-inverse-ghost-hover",
       type: "color",
       value: "#2d2d2f",
-      cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
+      cssVar: "--rw-color-foreground-base-inverse-ghost-hover",
       description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "dark"
     },
@@ -3723,35 +3619,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
-      description: "The primary background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the dark theme - muted-soft text",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-background-base",
+      description: "The primary subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-6)",
+      value: "var(--color-brand-9)",
       cssVar: "--rw-color-background-brand",
-      description: "The brand background color for the dark theme",
+      description: "The brand subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-4)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
-      description: "The danger background color for the dark theme",
+      description: "The danger subtle background color for the dark theme",
       theme: "dark"
     },
     {
@@ -3759,126 +3647,46 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
-      description: "The negative background color for the dark theme",
+      description: "The negative subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
-      description: "The warning background color for the dark theme",
+      description: "The warning subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
-      description: "The success background color for the dark theme",
+      description: "The success subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-5)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
-      description: "The positive background color for the dark theme",
+      description: "The positive subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-6)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
-      description: "The info background color for the dark theme",
+      description: "The info subtle background color for the dark theme",
       theme: "dark"
     },
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-6)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.primary-subtle",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-background-primary-subtle",
-      description: "The primary subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-background-secondary-subtle",
-      description: "The secondary subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-9)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info subtle background color for the dark theme",
-      theme: "dark"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: "dark"
     },
@@ -4043,659 +3851,299 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.background.primary-hover",
+      path: "color.background.base-hover",
       type: "color",
-      value: "#b6b6b6",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the dark theme (hover, 20% darker)",
+      value: "#3d3d3d",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.primary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the dark theme (pressed, 40% darker)",
+      value: "#4d4d4d",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.primary-focused",
+      path: "color.background.base-focused",
       type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the dark theme (focused, 40% darker)",
+      value: "#4d4d4d",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.background.primary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
-      value: "#f5f5f599",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the dark theme (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-hover",
-      type: "color",
-      value: "#4c4c4c",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the dark theme - muted-soft text (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-pressed",
-      type: "color",
-      value: "#606060",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the dark theme - muted-soft text (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-focused",
-      type: "color",
-      value: "#606060",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the dark theme - muted-soft text (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-disabled",
-      type: "color",
-      value: "#3a3a3a99",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the dark theme - muted-soft text (disabled, 60% opacity)",
+      value: "#2e2e2e99",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
       theme: "dark"
     },
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#008d75",
+      value: "#245a4f",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the dark theme (hover, 20% darker)",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#00634d",
+      value: "#396e63",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the dark theme (pressed, 40% darker)",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#00634d",
+      value: "#396e63",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the dark theme (focused, 40% darker)",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#6db1a1",
+      value: "#26423c",
       cssVar: "--rw-color-background-brand-disabled",
-      description: "The brand background color for the dark theme (disabled, 60% saturation)",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#95002b",
+      value: "#4a1215",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the dark theme (hover, 20% darker)",
+      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#710011",
+      value: "#571f20",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the dark theme (pressed, 40% darker)",
+      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#710011",
+      value: "#571f20",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the dark theme (focused, 40% darker)",
+      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#9d4b55",
+      value: "#311312",
       cssVar: "--rw-color-background-danger-disabled",
-      description: "The danger background color for the dark theme (disabled, 60% saturation)",
+      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#aa0000",
+      value: "#912219",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the dark theme (hover, 20% darker)",
+      description: "The negative subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#820000",
+      value: "#a93a2e",
       cssVar: "--rw-color-background-negative-pressed",
-      description: "The negative background color for the dark theme (pressed, 40% darker)",
+      description: "The negative subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#820000",
+      value: "#a93a2e",
       cssVar: "--rw-color-background-negative-focused",
-      description: "The negative background color for the dark theme (focused, 40% darker)",
+      description: "The negative subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#b25a48",
+      value: "#642821",
       cssVar: "--rw-color-background-negative-disabled",
-      description: "The negative background color for the dark theme (disabled, 60% saturation)",
+      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#a46900",
+      value: "#614a21",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#784000",
+      value: "#755e34",
       cssVar: "--rw-color-background-warning-pressed",
-      description: "The warning background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#784000",
+      value: "#755e34",
       cssVar: "--rw-color-background-warning-focused",
-      description: "The warning background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#c09c66",
+      value: "#463923",
       cssVar: "--rw-color-background-warning-disabled",
-      description: "The warning background color for the dark theme (disabled, 60% saturation)",
+      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#006b42",
+      value: "#286050",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the dark theme (hover, 20% darker)",
+      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#004a24",
+      value: "#3e7564",
       cssVar: "--rw-color-background-success-pressed",
-      description: "The success background color for the dark theme (pressed, 40% darker)",
+      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#004a24",
+      value: "#3e7564",
       cssVar: "--rw-color-background-success-focused",
-      description: "The success background color for the dark theme (focused, 40% darker)",
+      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#53866c",
+      value: "#2a473e",
       cssVar: "--rw-color-background-success-disabled",
-      description: "The success background color for the dark theme (disabled, 60% saturation)",
+      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#588700",
+      value: "#355019",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the dark theme (hover, 20% darker)",
+      description: "The positive subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#315c00",
+      value: "#46632c",
       cssVar: "--rw-color-background-positive-pressed",
-      description: "The positive background color for the dark theme (pressed, 40% darker)",
+      description: "The positive subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#315c00",
+      value: "#46632c",
       cssVar: "--rw-color-background-positive-focused",
-      description: "The positive background color for the dark theme (focused, 40% darker)",
+      description: "The positive subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#8ead6c",
+      value: "#2b3b1e",
       cssVar: "--rw-color-background-positive-disabled",
-      description: "The positive background color for the dark theme (disabled, 60% saturation)",
+      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#008fb6",
+      value: "#0e344c",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the dark theme (hover, 20% darker)",
+      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#006288",
+      value: "#1d425b",
       cssVar: "--rw-color-background-info-pressed",
-      description: "The info background color for the dark theme (pressed, 40% darker)",
+      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#006288",
+      value: "#1d425b",
       cssVar: "--rw-color-background-info-focused",
-      description: "The info background color for the dark theme (focused, 40% darker)",
+      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#6db8d0",
+      value: "#132634",
       cssVar: "--rw-color-background-info-disabled",
-      description: "The info background color for the dark theme (disabled, 60% saturation)",
+      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#4d499c",
+      value: "#3e3861",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the dark theme (hover, 20% darker)",
+      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#312978",
+      value: "#4e4873",
       cssVar: "--rw-color-background-discovery-pressed",
-      description: "The discovery background color for the dark theme (pressed, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#312978",
+      value: "#4e4873",
       cssVar: "--rw-color-background-discovery-focused",
-      description: "The discovery background color for the dark theme (focused, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#6f71a4",
-      cssVar: "--rw-color-background-discovery-disabled",
-      description: "The discovery background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.primary-subtle-hover",
-      type: "color",
-      value: "#5e5e5e",
-      cssVar: "--rw-color-background-primary-subtle-hover",
-      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.primary-subtle-pressed",
-      type: "color",
-      value: "#757575",
-      cssVar: "--rw-color-background-primary-subtle-pressed",
-      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.primary-subtle-focused",
-      type: "color",
-      value: "#757575",
-      cssVar: "--rw-color-background-primary-subtle-focused",
-      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.primary-subtle-disabled",
-      type: "color",
-      value: "#48484899",
-      cssVar: "--rw-color-background-primary-subtle-disabled",
-      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-subtle-hover",
-      type: "color",
-      value: "#3d3d3d",
-      cssVar: "--rw-color-background-secondary-subtle-hover",
-      description: "The secondary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-subtle-pressed",
-      type: "color",
-      value: "#4d4d4d",
-      cssVar: "--rw-color-background-secondary-subtle-pressed",
-      description: "The secondary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-subtle-focused",
-      type: "color",
-      value: "#4d4d4d",
-      cssVar: "--rw-color-background-secondary-subtle-focused",
-      description: "The secondary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.secondary-subtle-disabled",
-      type: "color",
-      value: "#2e2e2e99",
-      cssVar: "--rw-color-background-secondary-subtle-disabled",
-      description: "The secondary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.brand-subtle-hover",
-      type: "color",
-      value: "#245a4f",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#396e63",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#396e63",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#26423c",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#4a1215",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#571f20",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#571f20",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#311312",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#aa0000",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative subtle background color for the dark theme (hover, 20% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#820000",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#820000",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative subtle background color for the dark theme (focused, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#b25a48",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#614a21",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#755e34",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#755e34",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#463923",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#286050",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#3e7564",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#3e7564",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#2a473e",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#398000",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive subtle background color for the dark theme (hover, 20% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#0c5800",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#0c5800",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive subtle background color for the dark theme (focused, 40% darker)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#77a160",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#0e344c",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#1d425b",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#1d425b",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#132634",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#3e3861",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#4e4873",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#4e4873",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
       value: "#2f2c43",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
+      cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
     },
     {
-      path: "color.border.primary",
+      path: "color.border.base",
       type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary",
-      description: "Hairline border against ink surfaces",
       theme: "dark"
     },
     {
@@ -4763,19 +4211,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.primary-subtle",
+      path: "color.border.base-subtle",
       type: "color",
-      value: "var(--color-base-6)",
-      cssVar: "--rw-color-border-primary-subtle",
+      value: "var(--color-grey-6)",
+      cssVar: "--rw-color-border-base-subtle",
       description: "Hairline-strong border against ink cards",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary-subtle",
-      description: "Hairline border against ink surfaces",
       theme: "dark"
     },
     {
@@ -4843,51 +4283,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#5e5e5e",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#757575",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#48484899",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#4c4c4c",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#606060",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#3a3a3a99",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "dark"
     },
     {
@@ -4941,7 +4357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#b20000",
+      value: "#d00000",
       cssVar: "--rw-color-border-negative-hover",
       description: "The negative border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4949,7 +4365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-focused",
       type: "color",
-      value: "#890000",
+      value: "#a10000",
       cssVar: "--rw-color-border-negative-focused",
       description: "The negative border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4957,7 +4373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-disabled",
       type: "color",
-      value: "#ba574e",
+      value: "#d65e4f",
       cssVar: "--rw-color-border-negative-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5013,7 +4429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#778c11",
+      value: "#6ea122",
       cssVar: "--rw-color-border-positive-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -5021,7 +4437,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-focused",
       type: "color",
-      value: "#4d5f00",
+      value: "#406f00",
       cssVar: "--rw-color-border-positive-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -5029,7 +4445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-disabled",
       type: "color",
-      value: "#a8b77b",
+      value: "#adce8b",
       cssVar: "--rw-color-border-positive-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5083,51 +4499,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.border.primary-subtle-hover",
+      path: "color.border.base-subtle-hover",
       type: "color",
       value: "#7d7d7d",
-      cssVar: "--rw-color-border-primary-subtle-hover",
+      cssVar: "--rw-color-border-base-subtle-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.primary-subtle-focused",
+      path: "color.border.base-subtle-focused",
       type: "color",
       value: "#9b9b9b",
-      cssVar: "--rw-color-border-primary-subtle-focused",
+      cssVar: "--rw-color-border-base-subtle-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "dark"
     },
     {
-      path: "color.border.primary-subtle-disabled",
+      path: "color.border.base-subtle-disabled",
       type: "color",
       value: "#61616199",
-      cssVar: "--rw-color-border-primary-subtle-disabled",
+      cssVar: "--rw-color-border-base-subtle-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-subtle-hover",
-      type: "color",
-      value: "#4c4c4c",
-      cssVar: "--rw-color-border-secondary-subtle-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-subtle-focused",
-      type: "color",
-      value: "#606060",
-      cssVar: "--rw-color-border-secondary-subtle-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "dark"
-    },
-    {
-      path: "color.border.secondary-subtle-disabled",
-      type: "color",
-      value: "#3a3a3a99",
-      cssVar: "--rw-color-border-secondary-subtle-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "dark"
     },
     {
@@ -5181,23 +4573,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#aa0000",
+      value: "#912219",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 20% darker)",
+      description: "The negative border color for the dark theme (hover, 20% brighter)",
       theme: "dark"
     },
     {
       path: "color.border.negative-subtle-focused",
       type: "color",
-      value: "#820000",
+      value: "#a93a2e",
       cssVar: "--rw-color-border-negative-subtle-focused",
-      description: "The negative border color for the dark theme (focused, 40% darker)",
+      description: "The negative border color for the dark theme (focused, 40% brighter)",
       theme: "dark"
     },
     {
       path: "color.border.negative-subtle-disabled",
       type: "color",
-      value: "#b25a48",
+      value: "#642821",
       cssVar: "--rw-color-border-negative-subtle-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5253,7 +4645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#91902b",
+      value: "#90ad6c",
       cssVar: "--rw-color-border-positive-subtle-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -5261,7 +4653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-focused",
       type: "color",
-      value: "#636100",
+      value: "#5c7738",
       cssVar: "--rw-color-border-positive-subtle-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -5269,7 +4661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-disabled",
       type: "color",
-      value: "#bfc08a",
+      value: "#cfe2ba",
       cssVar: "--rw-color-border-positive-subtle-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -5333,7 +4725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: "dark"
@@ -5467,19 +4859,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the dark theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the dark theme",
       theme: "dark"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-4)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the dark theme",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the dark theme",
       theme: "dark"
     },
     {
@@ -7059,35 +6451,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "dark"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "dark"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "dark"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #bebebe33",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "dark"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #bebebe33",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "dark"
     },
     {
@@ -7189,7 +6565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #a4bb4e33",
+      value: "0px 0px 0px 3px #9fd55e33",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "dark"
@@ -7197,7 +6573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #a4bb4e33",
+      value: "0px 0px 0px 1px #9fd55e33",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "dark"
@@ -7205,7 +6581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #dc262633",
+      value: "0px 0px 0px 3px #ff040433",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "dark"
@@ -7213,7 +6589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #dc262633",
+      value: "0px 0px 0px 1px #ff040433",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "dark"
@@ -7443,82 +6819,82 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#d2d2d2",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white for primary text on dark surfaces",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#c0c0c0",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray for prominent secondary text",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#ababab",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray for body text",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#969696",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray for captions",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#808080",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#6a6a6a",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#595959",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray for strong borders",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#4f4f4f",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray for secondary surfaces",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#464646",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "A subtle near-black gray for low-contrast borders",
       theme: "darkDimmed"
     },
     {
-      path: "color.base.10",
+      path: "color.grey.10",
       type: "color",
       value: "#373737",
-      cssVar: "--rw-color-base-10",
+      cssVar: "--rw-color-grey-10",
       description: "The deepest neutral gray matching the dark page canvas",
       theme: "darkDimmed"
     },
@@ -7597,7 +6973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.1",
       type: "color",
-      value: "#bd678b",
+      value: "#de8d8d",
       cssVar: "--rw-color-apple-1",
       description: "A light apple negative color",
       theme: "darkDimmed"
@@ -7605,7 +6981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.2",
       type: "color",
-      value: "#bb617d",
+      value: "#d87979",
       cssVar: "--rw-color-apple-2",
       description: "A soft apple negative color",
       theme: "darkDimmed"
@@ -7613,7 +6989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.3",
       type: "color",
-      value: "#b85b6e",
+      value: "#d26464",
       cssVar: "--rw-color-apple-3",
       description: "A subtle apple negative color",
       theme: "darkDimmed"
@@ -7621,7 +6997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.4",
       type: "color",
-      value: "#b6555f",
+      value: "#cc5050",
       cssVar: "--rw-color-apple-4",
       description: "A muted apple negative color",
       theme: "darkDimmed"
@@ -7629,7 +7005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.5",
       type: "color",
-      value: "#b34e4e",
+      value: "#c63c3c",
       cssVar: "--rw-color-apple-5",
       description: "A medium apple negative color",
       theme: "darkDimmed"
@@ -7637,7 +7013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.6",
       type: "color",
-      value: "#b1504a",
+      value: "#ad3232",
       cssVar: "--rw-color-apple-6",
       description: "A vivid apple negative color",
       theme: "darkDimmed"
@@ -7645,7 +7021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.7",
       type: "color",
-      value: "#af5246",
+      value: "#952b2b",
       cssVar: "--rw-color-apple-7",
       description: "A rich apple negative color",
       theme: "darkDimmed"
@@ -7653,7 +7029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.8",
       type: "color",
-      value: "#ad5442",
+      value: "#7d2424",
       cssVar: "--rw-color-apple-8",
       description: "A dark apple negative color",
       theme: "darkDimmed"
@@ -7661,7 +7037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.9",
       type: "color",
-      value: "#aa563f",
+      value: "#651d1d",
       cssVar: "--rw-color-apple-9",
       description: "A very dark apple negative color",
       theme: "darkDimmed"
@@ -7885,7 +7261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.1",
       type: "color",
-      value: "#a8a870",
+      value: "#b2ca97",
       cssVar: "--rw-color-avocado-1",
       description: "A light yellow-green positive color",
       theme: "darkDimmed"
@@ -7893,7 +7269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.2",
       type: "color",
-      value: "#9fa46b",
+      value: "#a4bf83",
       cssVar: "--rw-color-avocado-2",
       description: "A soft yellow-green positive color",
       theme: "darkDimmed"
@@ -7901,7 +7277,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.3",
       type: "color",
-      value: "#95a165",
+      value: "#95b56e",
       cssVar: "--rw-color-avocado-3",
       description: "A subtle avocado positive color",
       theme: "darkDimmed"
@@ -7909,7 +7285,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.4",
       type: "color",
-      value: "#8a9e5e",
+      value: "#87ab5b",
       cssVar: "--rw-color-avocado-4",
       description: "A muted avocado positive color",
       theme: "darkDimmed"
@@ -7917,7 +7293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.5",
       type: "color",
-      value: "#7f9b57",
+      value: "#78a442",
       cssVar: "--rw-color-avocado-5",
       description: "A medium avocado positive color",
       theme: "darkDimmed"
@@ -7925,7 +7301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.6",
       type: "color",
-      value: "#7a9a54",
+      value: "#6a9339",
       cssVar: "--rw-color-avocado-6",
       description: "A vivid avocado positive color",
       theme: "darkDimmed"
@@ -7933,7 +7309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.7",
       type: "color",
-      value: "#759852",
+      value: "#5c8130",
       cssVar: "--rw-color-avocado-7",
       description: "A rich avocado positive color",
       theme: "darkDimmed"
@@ -7941,7 +7317,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.8",
       type: "color",
-      value: "#70974f",
+      value: "#4e6e27",
       cssVar: "--rw-color-avocado-8",
       description: "A deep avocado positive color",
       theme: "darkDimmed"
@@ -7949,7 +7325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.9",
       type: "color",
-      value: "#6b954c",
+      value: "#405b20",
       cssVar: "--rw-color-avocado-9",
       description: "A dark avocado positive color",
       theme: "darkDimmed"
@@ -8245,7 +7621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8253,7 +7629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-5)",
+      value: "var(--color-grey-5)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8275,25 +7651,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the dark theme - muted-soft text",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-5)",
+      value: "var(--color-brand-7)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8309,7 +7677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative",
       type: "color",
-      value: "var(--color-apple-8)",
+      value: "var(--color-apple-5)",
       cssVar: "--rw-color-foreground-negative",
       description: "The negative foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8317,7 +7685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-5)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8341,7 +7709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info",
       type: "color",
-      value: "var(--color-sky-5)",
+      value: "var(--color-sky-6)",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8355,25 +7723,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
       value: "var(--color-black)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "Ink text on cream primary surfaces",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8381,7 +7741,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8389,7 +7749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8397,7 +7757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "Ink text on warning surfaces",
       theme: "darkDimmed"
@@ -8405,7 +7765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8413,7 +7773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8421,7 +7781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8429,7 +7789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the dark theme",
       theme: "darkDimmed"
@@ -8533,7 +7893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#9c2d2d",
+      value: "#ac3232",
       cssVar: "--rw-color-foreground-required-hover",
       description: "A required foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8541,7 +7901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-pressed",
       type: "color",
-      value: "#862727",
+      value: "#932b2b",
       cssVar: "--rw-color-foreground-required-pressed",
       description: "A required foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8549,7 +7909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-focused",
       type: "color",
-      value: "#862727",
+      value: "#932b2b",
       cssVar: "--rw-color-foreground-required-focused",
       description: "A required foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8557,79 +7917,47 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-disabled",
       type: "color",
-      value: "#a16a65",
+      value: "#b46e66",
       cssVar: "--rw-color-foreground-required-disabled",
       description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#d2d2d299",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#888888",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (hover, 20% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#686868",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the dark theme - muted-soft text (pressed, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#686868",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the dark theme - muted-soft text (focused, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#ababab99",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the dark theme - muted-soft text (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#2c9786",
+      value: "#237869",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8637,7 +7965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#247c69",
+      value: "#1d6555",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8645,7 +7973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#247c69",
+      value: "#1d6555",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8653,7 +7981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#5a5a5a",
+      value: "#919191",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8685,7 +8013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#383838",
+      value: "#a0a0a0",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8693,7 +8021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#982c2c",
+      value: "#ac3232",
       cssVar: "--rw-color-foreground-negative-hover",
       description: "The negative foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8701,7 +8029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-pressed",
       type: "color",
-      value: "#822626",
+      value: "#932b2b",
       cssVar: "--rw-color-foreground-negative-pressed",
       description: "The negative foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8709,7 +8037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-focused",
       type: "color",
-      value: "#822626",
+      value: "#932b2b",
       cssVar: "--rw-color-foreground-negative-focused",
       description: "The negative foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8717,7 +8045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-disabled",
       type: "color",
-      value: "#414141",
+      value: "#919191",
       cssVar: "--rw-color-foreground-negative-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8725,7 +8053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#a87d31",
+      value: "#946e2b",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8733,7 +8061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#8b5d28",
+      value: "#7c5324",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8741,7 +8069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#8b5d28",
+      value: "#7c5324",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8749,7 +8077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#5b5b5b",
+      value: "#a79273",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8781,7 +8109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#424242",
+      value: "#919191",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8789,7 +8117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#648526",
+      value: "#598c29",
       cssVar: "--rw-color-foreground-positive-hover",
       description: "The positive foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8797,7 +8125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-pressed",
       type: "color",
-      value: "#496d20",
+      value: "#377321",
       cssVar: "--rw-color-foreground-positive-pressed",
       description: "The positive foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8805,7 +8133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-focused",
       type: "color",
-      value: "#496d20",
+      value: "#377321",
       cssVar: "--rw-color-foreground-positive-focused",
       description: "The positive foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8813,7 +8141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#5a5a5a",
+      value: "#8aa375",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8821,7 +8149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#2e939d",
+      value: "#2e869e",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -8829,7 +8157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-pressed",
       type: "color",
-      value: "#267682",
+      value: "#276b85",
       cssVar: "--rw-color-foreground-info-pressed",
       description: "The info foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -8837,7 +8165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-focused",
       type: "color",
-      value: "#267682",
+      value: "#276b85",
       cssVar: "--rw-color-foreground-info-focused",
       description: "The info foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -8845,7 +8173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#606060",
+      value: "#77a5b3",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8877,73 +8205,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#414141",
+      value: "#919191",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#333335",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "Ink text on cream primary surfaces (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#383839",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "Ink text on cream primary surfaces (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#383839",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "Ink text on cream primary surfaces (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#919191",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "Ink text on cream primary surfaces (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the dark theme (hover, 20% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the dark theme (pressed, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the dark theme (focused, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#d2d2d299",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
@@ -8973,7 +8269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#5a5a5a",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9005,7 +8301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#383838",
+      value: "#a0a0a0",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9037,7 +8333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse-disabled",
       type: "color",
-      value: "#414141",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-negative-inverse-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9069,7 +8365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#5b5b5b",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9101,7 +8397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#424242",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9133,7 +8429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#5a5a5a",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9165,7 +8461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#606060",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
@@ -9197,31 +8493,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#414141",
+      value: "#d2d2d299",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#8ededc",
+      value: "#7bafa2",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9237,7 +8525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#d57a6e",
+      value: "#d88a7a",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9245,7 +8533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#dccf86",
+      value: "#dabb81",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9261,7 +8549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#acd283",
+      value: "#a6dc86",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9269,7 +8557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#8ddede",
+      value: "#8cdede",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9283,10 +8571,10 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-ghost-hover",
+      path: "color.foreground.base-inverse-ghost-hover",
       type: "color",
       value: "#464647",
-      cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
+      cssVar: "--rw-color-foreground-base-inverse-ghost-hover",
       description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
     },
@@ -9331,35 +8619,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
-      description: "The primary background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the dark theme - muted-soft text",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-background-base",
+      description: "The primary subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-6)",
+      value: "var(--color-brand-9)",
       cssVar: "--rw-color-background-brand",
-      description: "The brand background color for the dark theme",
+      description: "The brand subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-4)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
-      description: "The danger background color for the dark theme",
+      description: "The danger subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -9367,126 +8647,46 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
-      description: "The negative background color for the dark theme",
+      description: "The negative subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
-      description: "The warning background color for the dark theme",
+      description: "The warning subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
-      description: "The success background color for the dark theme",
+      description: "The success subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-5)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
-      description: "The positive background color for the dark theme",
+      description: "The positive subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-6)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
-      description: "The info background color for the dark theme",
+      description: "The info subtle background color for the dark theme",
       theme: "darkDimmed"
     },
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-6)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.primary-subtle",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-background-primary-subtle",
-      description: "The primary subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-background-secondary-subtle",
-      description: "The secondary subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-9)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info subtle background color for the dark theme",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: "darkDimmed"
     },
@@ -9651,659 +8851,299 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.background.primary-hover",
+      path: "color.background.base-hover",
       type: "color",
-      value: "#a6a6a6",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the dark theme (hover, 20% darker)",
+      value: "#515151",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.primary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the dark theme (pressed, 40% darker)",
+      value: "#5c5c5c",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.primary-focused",
+      path: "color.background.base-focused",
       type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the dark theme (focused, 40% darker)",
+      value: "#5c5c5c",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.background.primary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
-      value: "#d2d2d299",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-hover",
-      type: "color",
-      value: "#5b5b5b",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the dark theme - muted-soft text (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-pressed",
-      type: "color",
-      value: "#696969",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the dark theme - muted-soft text (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-focused",
-      type: "color",
-      value: "#696969",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the dark theme - muted-soft text (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-disabled",
-      type: "color",
-      value: "#4f4f4f99",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the dark theme - muted-soft text (disabled, 60% opacity)",
+      value: "#46464699",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#278877",
+      value: "#3f665e",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the dark theme (hover, 20% darker)",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#21715f",
+      value: "#50726b",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the dark theme (pressed, 40% darker)",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#21715f",
+      value: "#50726b",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the dark theme (focused, 40% darker)",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#779e95",
+      value: "#405651",
       cssVar: "--rw-color-background-brand-disabled",
-      description: "The brand background color for the dark theme (disabled, 60% saturation)",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#8c2945",
+      value: "#5e2f31",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the dark theme (hover, 20% darker)",
+      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#792330",
+      value: "#643b3c",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the dark theme (pressed, 40% darker)",
+      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#792330",
+      value: "#643b3c",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the dark theme (focused, 40% darker)",
+      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#8f6066",
+      value: "#4d2f2e",
       cssVar: "--rw-color-background-danger-disabled",
-      description: "The danger background color for the dark theme (disabled, 60% saturation)",
+      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#982c2c",
+      value: "#88413c",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the dark theme (hover, 20% darker)",
+      description: "The negative subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#822626",
+      value: "#95554e",
       cssVar: "--rw-color-background-negative-pressed",
-      description: "The negative background color for the dark theme (pressed, 40% darker)",
+      description: "The negative subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#822626",
+      value: "#95554e",
       cssVar: "--rw-color-background-negative-focused",
-      description: "The negative background color for the dark theme (focused, 40% darker)",
+      description: "The negative subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#9b6a60",
+      value: "#6c423d",
       cssVar: "--rw-color-background-negative-disabled",
-      description: "The negative background color for the dark theme (disabled, 60% saturation)",
+      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#946e2b",
+      value: "#6a5a3d",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#7c5324",
+      value: "#76674d",
       cssVar: "--rw-color-background-warning-pressed",
-      description: "The warning background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#7c5324",
+      value: "#76674d",
       cssVar: "--rw-color-background-warning-focused",
-      description: "The warning background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#a79273",
+      value: "#594f3d",
       cssVar: "--rw-color-background-warning-disabled",
-      description: "The warning background color for the dark theme (disabled, 60% saturation)",
+      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#227555",
+      value: "#42695e",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the dark theme (hover, 20% darker)",
+      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#1d633f",
+      value: "#54766b",
       cssVar: "--rw-color-background-success-pressed",
-      description: "The success background color for the dark theme (pressed, 40% darker)",
+      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#1d633f",
+      value: "#54766b",
       cssVar: "--rw-color-background-success-focused",
-      description: "The success background color for the dark theme (focused, 40% darker)",
+      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#638172",
+      value: "#435952",
       cssVar: "--rw-color-background-success-disabled",
-      description: "The success background color for the dark theme (disabled, 60% saturation)",
+      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#648526",
+      value: "#4b6135",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the dark theme (hover, 20% darker)",
+      description: "The positive subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#496d20",
+      value: "#576b46",
       cssVar: "--rw-color-background-positive-pressed",
-      description: "The positive background color for the dark theme (pressed, 40% darker)",
+      description: "The positive subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#496d20",
+      value: "#576b46",
       cssVar: "--rw-color-background-positive-focused",
-      description: "The positive background color for the dark theme (focused, 40% darker)",
+      description: "The positive subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#899b76",
+      value: "#445239",
       cssVar: "--rw-color-background-positive-disabled",
-      description: "The positive background color for the dark theme (disabled, 60% saturation)",
+      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#2e869e",
+      value: "#2b4c60",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the dark theme (hover, 20% darker)",
+      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#276b85",
+      value: "#395567",
       cssVar: "--rw-color-background-info-pressed",
-      description: "The info background color for the dark theme (pressed, 40% darker)",
+      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#276b85",
+      value: "#395567",
       cssVar: "--rw-color-background-info-focused",
-      description: "The info background color for the dark theme (focused, 40% darker)",
+      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#77a5b3",
+      value: "#2f424f",
       cssVar: "--rw-color-background-info-disabled",
-      description: "The info background color for the dark theme (disabled, 60% saturation)",
+      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#615f8e",
+      value: "#524e69",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the dark theme (hover, 20% darker)",
+      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#4a4578",
+      value: "#5e5b75",
       cssVar: "--rw-color-background-discovery-pressed",
-      description: "The discovery background color for the dark theme (pressed, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#4a4578",
+      value: "#5e5b75",
       cssVar: "--rw-color-background-discovery-focused",
-      description: "The discovery background color for the dark theme (focused, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#787995",
-      cssVar: "--rw-color-background-discovery-disabled",
-      description: "The discovery background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.primary-subtle-hover",
-      type: "color",
-      value: "#686868",
-      cssVar: "--rw-color-background-primary-subtle-hover",
-      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.primary-subtle-pressed",
-      type: "color",
-      value: "#787878",
-      cssVar: "--rw-color-background-primary-subtle-pressed",
-      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.primary-subtle-focused",
-      type: "color",
-      value: "#787878",
-      cssVar: "--rw-color-background-primary-subtle-focused",
-      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.primary-subtle-disabled",
-      type: "color",
-      value: "#59595999",
-      cssVar: "--rw-color-background-primary-subtle-disabled",
-      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-subtle-hover",
-      type: "color",
-      value: "#515151",
-      cssVar: "--rw-color-background-secondary-subtle-hover",
-      description: "The secondary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-subtle-pressed",
-      type: "color",
-      value: "#5c5c5c",
-      cssVar: "--rw-color-background-secondary-subtle-pressed",
-      description: "The secondary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-subtle-focused",
-      type: "color",
-      value: "#5c5c5c",
-      cssVar: "--rw-color-background-secondary-subtle-focused",
-      description: "The secondary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.secondary-subtle-disabled",
-      type: "color",
-      value: "#46464699",
-      cssVar: "--rw-color-background-secondary-subtle-disabled",
-      description: "The secondary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-hover",
-      type: "color",
-      value: "#3f665e",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#50726b",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#50726b",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#405651",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#5e2f31",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#643b3c",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#643b3c",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#4d2f2e",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#982c2c",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative subtle background color for the dark theme (hover, 20% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#822626",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#822626",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative subtle background color for the dark theme (focused, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#9b6a60",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#6a5a3d",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#76674d",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#76674d",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#594f3d",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#42695e",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#54766b",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#54766b",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#435952",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#4e8125",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive subtle background color for the dark theme (hover, 20% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#296b1f",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#296b1f",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive subtle background color for the dark theme (focused, 40% darker)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#7b926e",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#2b4c60",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#395567",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#395567",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#2f424f",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#524e69",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#5e5b75",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#5e5b75",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
       value: "#474456",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
+      cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary",
+      path: "color.border.base",
       type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary",
-      description: "Hairline border against ink surfaces",
       theme: "darkDimmed"
     },
     {
@@ -10371,19 +9211,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-subtle",
+      path: "color.border.base-subtle",
       type: "color",
-      value: "var(--color-base-6)",
-      cssVar: "--rw-color-border-primary-subtle",
+      value: "var(--color-grey-6)",
+      cssVar: "--rw-color-border-base-subtle",
       description: "Hairline-strong border against ink cards",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary-subtle",
-      description: "Hairline border against ink surfaces",
       theme: "darkDimmed"
     },
     {
@@ -10451,51 +9283,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#686868",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#787878",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#59595999",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#5b5b5b",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#696969",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#4f4f4f99",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
@@ -10549,7 +9357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#9c2d2d",
+      value: "#ac3232",
       cssVar: "--rw-color-border-negative-hover",
       description: "The negative border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10557,7 +9365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-focused",
       type: "color",
-      value: "#862727",
+      value: "#932b2b",
       cssVar: "--rw-color-border-negative-focused",
       description: "The negative border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10565,7 +9373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-disabled",
       type: "color",
-      value: "#a16a65",
+      value: "#b46e66",
       cssVar: "--rw-color-border-negative-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10621,7 +9429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#788535",
+      value: "#729144",
       cssVar: "--rw-color-border-positive-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10629,7 +9437,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-focused",
       type: "color",
-      value: "#606f20",
+      value: "#547823",
       cssVar: "--rw-color-border-positive-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10637,7 +9445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-disabled",
       type: "color",
-      value: "#9aa380",
+      value: "#9fb48a",
       cssVar: "--rw-color-border-positive-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10691,51 +9499,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-subtle-hover",
+      path: "color.border.base-subtle-hover",
       type: "color",
       value: "#7e7e7e",
-      cssVar: "--rw-color-border-primary-subtle-hover",
+      cssVar: "--rw-color-border-base-subtle-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-subtle-focused",
+      path: "color.border.base-subtle-focused",
       type: "color",
       value: "#939393",
-      cssVar: "--rw-color-border-primary-subtle-focused",
+      cssVar: "--rw-color-border-base-subtle-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
-      path: "color.border.primary-subtle-disabled",
+      path: "color.border.base-subtle-disabled",
       type: "color",
       value: "#6a6a6a99",
-      cssVar: "--rw-color-border-primary-subtle-disabled",
+      cssVar: "--rw-color-border-base-subtle-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-subtle-hover",
-      type: "color",
-      value: "#5b5b5b",
-      cssVar: "--rw-color-border-secondary-subtle-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-subtle-focused",
-      type: "color",
-      value: "#696969",
-      cssVar: "--rw-color-border-secondary-subtle-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "darkDimmed"
-    },
-    {
-      path: "color.border.secondary-subtle-disabled",
-      type: "color",
-      value: "#4f4f4f99",
-      cssVar: "--rw-color-border-secondary-subtle-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "darkDimmed"
     },
     {
@@ -10789,23 +9573,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#982c2c",
+      value: "#88413c",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 20% darker)",
+      description: "The negative border color for the dark theme (hover, 20% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.border.negative-subtle-focused",
       type: "color",
-      value: "#822626",
+      value: "#95554e",
       cssVar: "--rw-color-border-negative-subtle-focused",
-      description: "The negative border color for the dark theme (focused, 40% darker)",
+      description: "The negative border color for the dark theme (focused, 40% brighter)",
       theme: "darkDimmed"
     },
     {
       path: "color.border.negative-subtle-disabled",
       type: "color",
-      value: "#9b6a60",
+      value: "#6c423d",
       cssVar: "--rw-color-border-negative-subtle-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10861,7 +9645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#878649",
+      value: "#8b9b76",
       cssVar: "--rw-color-border-positive-subtle-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -10869,7 +9653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-focused",
       type: "color",
-      value: "#716f21",
+      value: "#667750",
       cssVar: "--rw-color-border-positive-subtle-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -10877,7 +9661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-disabled",
       type: "color",
-      value: "#aaaa89",
+      value: "#b7c7a6",
       cssVar: "--rw-color-border-positive-subtle-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -10941,7 +9725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: "darkDimmed"
@@ -11075,19 +9859,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the dark theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the dark theme",
       theme: "darkDimmed"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-4)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the dark theme",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the dark theme",
       theme: "darkDimmed"
     },
     {
@@ -12667,35 +11451,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkDimmed"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "darkDimmed"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "darkDimmed"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #bebebe33",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "darkDimmed"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #bebebe33",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "darkDimmed"
     },
     {
@@ -12797,7 +11565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #a4bb4e33",
+      value: "0px 0px 0px 3px #9fd55e33",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkDimmed"
@@ -12805,7 +11573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #a4bb4e33",
+      value: "0px 0px 0px 1px #9fd55e33",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "darkDimmed"
@@ -12813,7 +11581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #dc262633",
+      value: "0px 0px 0px 3px #ff040433",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkDimmed"
@@ -12821,7 +11589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #dc262633",
+      value: "0px 0px 0px 1px #ff040433",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "darkDimmed"
@@ -13051,82 +11819,82 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white for primary text on dark surfaces",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray for prominent secondary text",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#dadada",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray for body text",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#adadad",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray for captions",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#808080",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#535353",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#2f2f2f",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray for strong borders",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#1b1b1b",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray for secondary surfaces",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#090909",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "A subtle near-black gray for low-contrast borders",
       theme: "darkHighContrast"
     },
     {
-      path: "color.base.10",
+      path: "color.grey.10",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-base-10",
+      cssVar: "--rw-color-grey-10",
       description: "The deepest neutral gray matching the dark page canvas",
       theme: "darkHighContrast"
     },
@@ -13205,7 +11973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.1",
       type: "color",
-      value: "#ff4d97",
+      value: "#ffe1e1",
       cssVar: "--rw-color-apple-1",
       description: "A light apple negative color",
       theme: "darkHighContrast"
@@ -13213,7 +11981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.2",
       type: "color",
-      value: "#ff3b78",
+      value: "#ffaaaa",
       cssVar: "--rw-color-apple-2",
       description: "A soft apple negative color",
       theme: "darkHighContrast"
@@ -13221,7 +11989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.3",
       type: "color",
-      value: "#ff2a56",
+      value: "#ff7373",
       cssVar: "--rw-color-apple-3",
       description: "A subtle apple negative color",
       theme: "darkHighContrast"
@@ -13229,7 +11997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.4",
       type: "color",
-      value: "#ff172f",
+      value: "#ff3d3d",
       cssVar: "--rw-color-apple-4",
       description: "A muted apple negative color",
       theme: "darkHighContrast"
@@ -13237,7 +12005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.5",
       type: "color",
-      value: "#ff0404",
+      value: "#ff0606",
       cssVar: "--rw-color-apple-5",
       description: "A medium apple negative color",
       theme: "darkHighContrast"
@@ -13245,7 +12013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.6",
       type: "color",
-      value: "#f60f00",
+      value: "#be0000",
       cssVar: "--rw-color-apple-6",
       description: "A vivid apple negative color",
       theme: "darkHighContrast"
@@ -13253,7 +12021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.7",
       type: "color",
-      value: "#eb1a00",
+      value: "#7e0000",
       cssVar: "--rw-color-apple-7",
       description: "A rich apple negative color",
       theme: "darkHighContrast"
@@ -13261,7 +12029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.8",
       type: "color",
-      value: "#de2500",
+      value: "#3d0000",
       cssVar: "--rw-color-apple-8",
       description: "A dark apple negative color",
       theme: "darkHighContrast"
@@ -13269,7 +12037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.apple.9",
       type: "color",
-      value: "#d22c00",
+      value: "#000000",
       cssVar: "--rw-color-apple-9",
       description: "A very dark apple negative color",
       theme: "darkHighContrast"
@@ -13493,7 +12261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.1",
       type: "color",
-      value: "#dbdb58",
+      value: "#e6fbce",
       cssVar: "--rw-color-avocado-1",
       description: "A light yellow-green positive color",
       theme: "darkHighContrast"
@@ -13501,7 +12269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.2",
       type: "color",
-      value: "#cad749",
+      value: "#caf694",
       cssVar: "--rw-color-avocado-2",
       description: "A soft yellow-green positive color",
       theme: "darkHighContrast"
@@ -13509,7 +12277,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.3",
       type: "color",
-      value: "#b4d539",
+      value: "#acf15a",
       cssVar: "--rw-color-avocado-3",
       description: "A subtle avocado positive color",
       theme: "darkHighContrast"
@@ -13517,7 +12285,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.4",
       type: "color",
-      value: "#9cd029",
+      value: "#90ec20",
       cssVar: "--rw-color-avocado-4",
       description: "A muted avocado positive color",
       theme: "darkHighContrast"
@@ -13525,7 +12293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.5",
       type: "color",
-      value: "#81c71e",
+      value: "#70cc00",
       cssVar: "--rw-color-avocado-5",
       description: "A medium avocado positive color",
       theme: "darkHighContrast"
@@ -13533,7 +12301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.6",
       type: "color",
-      value: "#76c319",
+      value: "#529500",
       cssVar: "--rw-color-avocado-6",
       description: "A vivid avocado positive color",
       theme: "darkHighContrast"
@@ -13541,7 +12309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.7",
       type: "color",
-      value: "#6abd16",
+      value: "#335d00",
       cssVar: "--rw-color-avocado-7",
       description: "A rich avocado positive color",
       theme: "darkHighContrast"
@@ -13549,7 +12317,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.8",
       type: "color",
-      value: "#5fb912",
+      value: "#142400",
       cssVar: "--rw-color-avocado-8",
       description: "A deep avocado positive color",
       theme: "darkHighContrast"
@@ -13557,7 +12325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.avocado.9",
       type: "color",
-      value: "#55b30f",
+      value: "#000000",
       cssVar: "--rw-color-avocado-9",
       description: "A dark avocado positive color",
       theme: "darkHighContrast"
@@ -13853,7 +12621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13861,7 +12629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-5)",
+      value: "var(--color-grey-5)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13883,25 +12651,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-3)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the dark theme - muted-soft text",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-5)",
+      value: "var(--color-brand-7)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13917,7 +12677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative",
       type: "color",
-      value: "var(--color-apple-8)",
+      value: "var(--color-apple-5)",
       cssVar: "--rw-color-foreground-negative",
       description: "The negative foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13925,7 +12685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning",
       type: "color",
-      value: "var(--color-yellow-5)",
+      value: "var(--color-yellow-6)",
       cssVar: "--rw-color-foreground-warning",
       description: "The warning foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13949,7 +12709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info",
       type: "color",
-      value: "var(--color-sky-5)",
+      value: "var(--color-sky-6)",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13963,25 +12723,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
       value: "var(--color-black)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "Ink text on cream primary surfaces",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13989,7 +12741,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -13997,7 +12749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14005,7 +12757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "Ink text on warning surfaces",
       theme: "darkHighContrast"
@@ -14013,7 +12765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14021,7 +12773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14029,7 +12781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14037,7 +12789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -14141,7 +12893,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#8f0000",
+      value: "#bb0000",
       cssVar: "--rw-color-foreground-required-hover",
       description: "A required foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14149,7 +12901,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-pressed",
       type: "color",
-      value: "#540000",
+      value: "#770000",
       cssVar: "--rw-color-foreground-required-pressed",
       description: "A required foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14157,7 +12909,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-focused",
       type: "color",
-      value: "#540000",
+      value: "#770000",
       cssVar: "--rw-color-foreground-required-focused",
       description: "A required foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14165,79 +12917,47 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.required-disabled",
       type: "color",
-      value: "#d44538",
+      value: "#f45642",
       cssVar: "--rw-color-foreground-required-disabled",
       description: "A required foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#ffffff99",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#929292",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (hover, 20% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#4f4f4f",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the dark theme - muted-soft text (pressed, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#4f4f4f",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the dark theme - muted-soft text (focused, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#dadada99",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the dark theme - muted-soft text (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#00826d",
+      value: "#003027",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14245,7 +12965,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#003a2e",
+      value: "#000000",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14253,7 +12973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#003a2e",
+      value: "#000000",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14261,7 +12981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#323232",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14293,7 +13013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#000000",
+      value: "#c3c3c3",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14301,7 +13021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#840000",
+      value: "#bb0000",
       cssVar: "--rw-color-foreground-negative-hover",
       description: "The negative foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14309,7 +13029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-pressed",
       type: "color",
-      value: "#4a0000",
+      value: "#770000",
       cssVar: "--rw-color-foreground-negative-pressed",
       description: "The negative foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14317,7 +13037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-focused",
       type: "color",
-      value: "#4a0000",
+      value: "#770000",
       cssVar: "--rw-color-foreground-negative-focused",
       description: "The negative foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14325,7 +13045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-disabled",
       type: "color",
-      value: "#000000",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-negative-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14333,7 +13053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#af7000",
+      value: "#7b4f00",
       cssVar: "--rw-color-foreground-warning-hover",
       description: "The warning foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14341,7 +13061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-pressed",
       type: "color",
-      value: "#623400",
+      value: "#3b2000",
       cssVar: "--rw-color-foreground-warning-pressed",
       description: "The warning foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14349,7 +13069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-focused",
       type: "color",
-      value: "#623400",
+      value: "#3b2000",
       cssVar: "--rw-color-foreground-warning-focused",
       description: "The warning foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14357,7 +13077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#333333",
+      value: "#d9a85f",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14389,7 +13109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#010101",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14397,7 +13117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#355100",
+      value: "#316400",
       cssVar: "--rw-color-foreground-positive-hover",
       description: "The positive foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14405,7 +13125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-pressed",
       type: "color",
-      value: "#0a1300",
+      value: "#092100",
       cssVar: "--rw-color-foreground-positive-pressed",
       description: "The positive foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14413,7 +13133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-focused",
       type: "color",
-      value: "#0a1300",
+      value: "#092100",
       cssVar: "--rw-color-foreground-positive-focused",
       description: "The positive foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14421,7 +13141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#323232",
+      value: "#93d162",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14429,7 +13149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#008694",
+      value: "#007595",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14437,7 +13157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-pressed",
       type: "color",
-      value: "#00414b",
+      value: "#003b52",
       cssVar: "--rw-color-foreground-info-pressed",
       description: "The info foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -14445,7 +13165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-focused",
       type: "color",
-      value: "#00414b",
+      value: "#003b52",
       cssVar: "--rw-color-foreground-info-focused",
       description: "The info foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14453,7 +13173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#3f3f3f",
+      value: "#6fccea",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -14485,73 +13205,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#000000",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "Ink text on cream primary surfaces (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "Ink text on cream primary surfaces (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "Ink text on cream primary surfaces (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#a4a4a4",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "Ink text on cream primary surfaces (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the dark theme (hover, 20% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the dark theme (pressed, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the dark theme (focused, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
@@ -14581,7 +13269,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#323232",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14613,7 +13301,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#000000",
+      value: "#c3c3c3",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14645,7 +13333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse-disabled",
       type: "color",
-      value: "#000000",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-negative-inverse-disabled",
       description: "The negative foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14677,7 +13365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#333333",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "Ink text on warning surfaces (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14709,7 +13397,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#010101",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14741,7 +13429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#323232",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14773,7 +13461,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#3f3f3f",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
@@ -14805,31 +13493,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#000000",
+      value: "#ffffff99",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the dark theme (ghost hover, 60% brighter than hover)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the dark theme - muted-soft text (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#e2fffe",
+      value: "#76e3c6",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14845,7 +13525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ff9a8d",
+      value: "#ffbaad",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14853,7 +13533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#fff8ce",
+      value: "#ffe9bf",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14869,7 +13549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#daffb1",
+      value: "#e0ffcc",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14877,7 +13557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#e1ffff",
+      value: "#deffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14891,10 +13571,10 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-ghost-hover",
+      path: "color.foreground.base-inverse-ghost-hover",
       type: "color",
       value: "#09090a",
-      cssVar: "--rw-color-foreground-primary-inverse-ghost-hover",
+      cssVar: "--rw-color-foreground-base-inverse-ghost-hover",
       description: "Ink text on cream primary surfaces (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
     },
@@ -14939,35 +13619,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
-      description: "The primary background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the dark theme - muted-soft text",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-background-base",
+      description: "The primary subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-6)",
+      value: "var(--color-brand-9)",
       cssVar: "--rw-color-background-brand",
-      description: "The brand background color for the dark theme",
+      description: "The brand subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-4)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
-      description: "The danger background color for the dark theme",
+      description: "The danger subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -14975,126 +13647,46 @@ const TOKENS: TokenTableRow[] = [
       type: "color",
       value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
-      description: "The negative background color for the dark theme",
+      description: "The negative subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-6)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
-      description: "The warning background color for the dark theme",
+      description: "The warning subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
-      description: "The success background color for the dark theme",
+      description: "The success subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-5)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
-      description: "The positive background color for the dark theme",
+      description: "The positive subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-6)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
-      description: "The info background color for the dark theme",
+      description: "The info subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-6)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.primary-subtle",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-background-primary-subtle",
-      description: "The primary subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-background-secondary-subtle",
-      description: "The secondary subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-9)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info subtle background color for the dark theme",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: "darkHighContrast"
     },
@@ -15259,659 +13851,299 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.primary-hover",
+      path: "color.background.base-hover",
       type: "color",
-      value: "#cfcfcf",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the dark theme (hover, 20% darker)",
+      value: "#1f1f1f",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.primary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the dark theme (pressed, 40% darker)",
+      value: "#363636",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.primary-focused",
+      path: "color.background.base-focused",
       type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the dark theme (focused, 40% darker)",
+      value: "#363636",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.background.primary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-hover",
-      type: "color",
-      value: "#353535",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the dark theme - muted-soft text (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-pressed",
-      type: "color",
-      value: "#525252",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the dark theme - muted-soft text (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-focused",
-      type: "color",
-      value: "#525252",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the dark theme - muted-soft text (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-disabled",
-      type: "color",
-      value: "#1b1b1b99",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the dark theme - muted-soft text (disabled, 60% opacity)",
+      value: "#09090999",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#005a4a",
+      value: "#0d372f",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the dark theme (hover, 20% darker)",
+      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#001d16",
+      value: "#215e52",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the dark theme (pressed, 40% darker)",
+      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#001d16",
+      value: "#215e52",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the dark theme (focused, 40% darker)",
+      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#66c6b0",
+      value: "#0b1916",
       cssVar: "--rw-color-background-brand-disabled",
-      description: "The brand background color for the dark theme (disabled, 60% saturation)",
+      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#65001d",
+      value: "#110102",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the dark theme (hover, 20% darker)",
+      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#310007",
+      value: "#300909",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the dark theme (pressed, 40% darker)",
+      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#310007",
+      value: "#300909",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the dark theme (focused, 40% darker)",
+      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#a93443",
+      value: "#000000",
       cssVar: "--rw-color-background-danger-disabled",
-      description: "The danger background color for the dark theme (disabled, 60% saturation)",
+      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#840000",
+      value: "#840a00",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the dark theme (hover, 20% darker)",
+      description: "The negative subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#4a0000",
+      value: "#b32112",
       cssVar: "--rw-color-background-negative-pressed",
-      description: "The negative background color for the dark theme (pressed, 40% darker)",
+      description: "The negative subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#4a0000",
+      value: "#b32112",
       cssVar: "--rw-color-background-negative-focused",
-      description: "The negative background color for the dark theme (focused, 40% darker)",
+      description: "The negative subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#c9492f",
+      value: "#44100b",
       cssVar: "--rw-color-background-negative-disabled",
-      description: "The negative background color for the dark theme (disabled, 60% saturation)",
+      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#7b4f00",
+      value: "#3f2c0b",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the dark theme (hover, 20% darker)",
+      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#3b2000",
+      value: "#664c1c",
       cssVar: "--rw-color-background-warning-pressed",
-      description: "The warning background color for the dark theme (pressed, 40% darker)",
+      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#3b2000",
+      value: "#664c1c",
       cssVar: "--rw-color-background-warning-focused",
-      description: "The warning background color for the dark theme (focused, 40% darker)",
+      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#d9a85f",
+      value: "#1c1509",
       cssVar: "--rw-color-background-warning-disabled",
-      description: "The warning background color for the dark theme (disabled, 60% saturation)",
+      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#002819",
+      value: "#104234",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the dark theme (hover, 20% darker)",
+      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#000000",
+      value: "#276a55",
       cssVar: "--rw-color-background-success-pressed",
-      description: "The success background color for the dark theme (pressed, 40% darker)",
+      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#000000",
+      value: "#276a55",
       cssVar: "--rw-color-background-success-focused",
-      description: "The success background color for the dark theme (focused, 40% darker)",
+      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#3f8963",
+      value: "#0f221c",
       cssVar: "--rw-color-background-success-disabled",
-      description: "The success background color for the dark theme (disabled, 60% saturation)",
+      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#355100",
+      value: "#132105",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the dark theme (hover, 20% darker)",
+      description: "The positive subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#0a1300",
+      value: "#2d4914",
       cssVar: "--rw-color-background-positive-pressed",
-      description: "The positive background color for the dark theme (pressed, 40% darker)",
+      description: "The positive subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#0a1300",
+      value: "#2d4914",
       cssVar: "--rw-color-background-positive-focused",
-      description: "The positive background color for the dark theme (focused, 40% darker)",
+      description: "The positive subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#95c163",
+      value: "#070b04",
       cssVar: "--rw-color-background-positive-disabled",
-      description: "The positive background color for the dark theme (disabled, 60% saturation)",
+      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#007595",
+      value: "#000a10",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the dark theme (hover, 20% darker)",
+      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#003b52",
+      value: "#072234",
       cssVar: "--rw-color-background-info-pressed",
-      description: "The info background color for the dark theme (pressed, 40% darker)",
+      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#003b52",
+      value: "#072234",
       cssVar: "--rw-color-background-info-focused",
-      description: "The info background color for the dark theme (focused, 40% darker)",
+      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#6fccea",
+      value: "#000000",
       cssVar: "--rw-color-background-info-disabled",
-      description: "The info background color for the dark theme (disabled, 60% saturation)",
+      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#3832a7",
+      value: "#26204c",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the dark theme (hover, 20% darker)",
+      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#1a1166",
+      value: "#3a326a",
       cssVar: "--rw-color-background-discovery-pressed",
-      description: "The discovery background color for the dark theme (pressed, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#1a1166",
+      value: "#3a326a",
       cssVar: "--rw-color-background-discovery-focused",
-      description: "The discovery background color for the dark theme (focused, 40% darker)",
+      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#6669b6",
-      cssVar: "--rw-color-background-discovery-disabled",
-      description: "The discovery background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.primary-subtle-hover",
-      type: "color",
-      value: "#4f4f4f",
-      cssVar: "--rw-color-background-primary-subtle-hover",
-      description: "The primary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.primary-subtle-pressed",
-      type: "color",
-      value: "#707070",
-      cssVar: "--rw-color-background-primary-subtle-pressed",
-      description: "The primary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.primary-subtle-focused",
-      type: "color",
-      value: "#707070",
-      cssVar: "--rw-color-background-primary-subtle-focused",
-      description: "The primary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.primary-subtle-disabled",
-      type: "color",
-      value: "#2f2f2f99",
-      cssVar: "--rw-color-background-primary-subtle-disabled",
-      description: "The primary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-subtle-hover",
-      type: "color",
-      value: "#1f1f1f",
-      cssVar: "--rw-color-background-secondary-subtle-hover",
-      description: "The secondary subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-subtle-pressed",
-      type: "color",
-      value: "#363636",
-      cssVar: "--rw-color-background-secondary-subtle-pressed",
-      description: "The secondary subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-subtle-focused",
-      type: "color",
-      value: "#363636",
-      cssVar: "--rw-color-background-secondary-subtle-focused",
-      description: "The secondary subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.secondary-subtle-disabled",
-      type: "color",
-      value: "#09090999",
-      cssVar: "--rw-color-background-secondary-subtle-disabled",
-      description: "The secondary subtle background color for the dark theme (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-hover",
-      type: "color",
-      value: "#0d372f",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#215e52",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#215e52",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#0b1916",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#110102",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#300909",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#300909",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#840000",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative subtle background color for the dark theme (hover, 20% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#4a0000",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#4a0000",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative subtle background color for the dark theme (focused, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#c9492f",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#3f2c0b",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#664c1c",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#664c1c",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#1c1509",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#104234",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#276a55",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#276a55",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#0f221c",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#204700",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive subtle background color for the dark theme (hover, 20% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#020d00",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive subtle background color for the dark theme (pressed, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#020d00",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive subtle background color for the dark theme (focused, 40% darker)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#72b34f",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#000a10",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#072234",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#072234",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#26204c",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#3a326a",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery subtle background color for the dark theme (pressed, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#3a326a",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery subtle background color for the dark theme (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
       value: "#110f1f",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
+      cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary",
+      path: "color.border.base",
       type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary",
-      description: "Hairline border against ink surfaces",
       theme: "darkHighContrast"
     },
     {
@@ -15979,19 +14211,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-subtle",
+      path: "color.border.base-subtle",
       type: "color",
-      value: "var(--color-base-6)",
-      cssVar: "--rw-color-border-primary-subtle",
+      value: "var(--color-grey-6)",
+      cssVar: "--rw-color-border-base-subtle",
       description: "Hairline-strong border against ink cards",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-subtle",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-border-secondary-subtle",
-      description: "Hairline border against ink surfaces",
       theme: "darkHighContrast"
     },
     {
@@ -16059,51 +14283,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#4f4f4f",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#707070",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#2f2f2f99",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#353535",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#525252",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#1b1b1b99",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
@@ -16157,7 +14357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#8f0000",
+      value: "#bb0000",
       cssVar: "--rw-color-border-negative-hover",
       description: "The negative border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -16165,7 +14365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-focused",
       type: "color",
-      value: "#540000",
+      value: "#770000",
       cssVar: "--rw-color-border-negative-focused",
       description: "The negative border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -16173,7 +14373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-disabled",
       type: "color",
-      value: "#d44538",
+      value: "#f45642",
       cssVar: "--rw-color-border-negative-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16229,7 +14429,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#5e7100",
+      value: "#63a206",
       cssVar: "--rw-color-border-positive-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -16237,7 +14437,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-focused",
       type: "color",
-      value: "#131700",
+      value: "#1b2e00",
       cssVar: "--rw-color-border-positive-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -16245,7 +14445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-disabled",
       type: "color",
-      value: "#b9cd7c",
+      value: "#c1e69c",
       cssVar: "--rw-color-border-positive-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16299,51 +14499,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-subtle-hover",
+      path: "color.border.base-subtle-hover",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-border-primary-subtle-hover",
+      cssVar: "--rw-color-border-base-subtle-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-subtle-focused",
+      path: "color.border.base-subtle-focused",
       type: "color",
       value: "#a7a7a7",
-      cssVar: "--rw-color-border-primary-subtle-focused",
+      cssVar: "--rw-color-border-base-subtle-focused",
       description: "Hairline-strong border against ink cards (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
-      path: "color.border.primary-subtle-disabled",
+      path: "color.border.base-subtle-disabled",
       type: "color",
       value: "#53535399",
-      cssVar: "--rw-color-border-primary-subtle-disabled",
+      cssVar: "--rw-color-border-base-subtle-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-subtle-hover",
-      type: "color",
-      value: "#353535",
-      cssVar: "--rw-color-border-secondary-subtle-hover",
-      description: "Hairline border against ink surfaces (hover, 20% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-subtle-focused",
-      type: "color",
-      value: "#525252",
-      cssVar: "--rw-color-border-secondary-subtle-focused",
-      description: "Hairline border against ink surfaces (focused, 40% brighter)",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "color.border.secondary-subtle-disabled",
-      type: "color",
-      value: "#1b1b1b99",
-      cssVar: "--rw-color-border-secondary-subtle-disabled",
-      description: "Hairline border against ink surfaces (disabled, 60% opacity)",
       theme: "darkHighContrast"
     },
     {
@@ -16397,23 +14573,23 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#840000",
+      value: "#840a00",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 20% darker)",
+      description: "The negative border color for the dark theme (hover, 20% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.border.negative-subtle-focused",
       type: "color",
-      value: "#4a0000",
+      value: "#b32112",
       cssVar: "--rw-color-border-negative-subtle-focused",
-      description: "The negative border color for the dark theme (focused, 40% darker)",
+      description: "The negative border color for the dark theme (focused, 40% brighter)",
       theme: "darkHighContrast"
     },
     {
       path: "color.border.negative-subtle-disabled",
       type: "color",
-      value: "#c9492f",
+      value: "#44100b",
       cssVar: "--rw-color-border-negative-subtle-disabled",
       description: "The negative border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16469,7 +14645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#8d8b11",
+      value: "#97c163",
       cssVar: "--rw-color-border-positive-subtle-hover",
       description: "The positive border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -16477,7 +14653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-focused",
       type: "color",
-      value: "#1d1c00",
+      value: "#4b6b20",
       cssVar: "--rw-color-border-positive-subtle-focused",
       description: "The positive border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -16485,7 +14661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.positive-subtle-disabled",
       type: "color",
-      value: "#d6d795",
+      value: "#f2fae9",
       cssVar: "--rw-color-border-positive-subtle-disabled",
       description: "The positive border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16549,7 +14725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: "darkHighContrast"
@@ -16683,19 +14859,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the dark theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the dark theme",
       theme: "darkHighContrast"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-4)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the dark theme",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the dark theme",
       theme: "darkHighContrast"
     },
     {
@@ -18275,35 +16451,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "darkHighContrast"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "darkHighContrast"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #bebebe33",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "darkHighContrast"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #bebebe33",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "darkHighContrast"
     },
     {
@@ -18405,7 +16565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #a4bb4e33",
+      value: "0px 0px 0px 3px #9fd55e33",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkHighContrast"
@@ -18413,7 +16573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #a4bb4e33",
+      value: "0px 0px 0px 1px #9fd55e33",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "darkHighContrast"
@@ -18421,7 +16581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #dc262633",
+      value: "0px 0px 0px 3px #ff040433",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkHighContrast"
@@ -18429,7 +16589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #dc262633",
+      value: "0px 0px 0px 1px #ff040433",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "darkHighContrast"
@@ -18659,74 +16819,74 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#f5f5f5",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white",
       theme: "light"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#c7c7c7",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#949494",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#737373",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#525252",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#3f3f3f",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#333333",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#262626",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray",
       theme: "light"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#181818",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "An almost-black neutral gray matching the DeepSeek canvas",
       theme: "light"
     },
@@ -19453,7 +17613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-grey-3)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the light theme",
       theme: "light"
@@ -19461,7 +17621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the light theme",
       theme: "light"
@@ -19483,19 +17643,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the light theme",
       theme: "light"
     },
     {
@@ -19563,25 +17715,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "The primary foreground color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the light theme",
       theme: "light"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the light theme",
       theme: "light"
@@ -19589,7 +17733,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the light theme",
       theme: "light"
@@ -19597,7 +17741,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the light theme",
       theme: "light"
@@ -19605,7 +17749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-9)",
+      value: "var(--color-grey-9)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "The warning foreground color for the light theme",
       theme: "light"
@@ -19613,7 +17757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the light theme",
       theme: "light"
@@ -19621,7 +17765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the light theme",
       theme: "light"
@@ -19629,7 +17773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the light theme",
       theme: "light"
@@ -19637,7 +17781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the light theme",
       theme: "light"
@@ -19771,67 +17915,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the light theme (hover, 20% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the light theme (focused, 40% darker)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#f5f5f599",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#6b6b6b",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#848484",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#848484",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#999999",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -19861,7 +17973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#434343",
+      value: "#b8b8b8",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -19893,7 +18005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#222222",
+      value: "#acacac",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -19925,7 +18037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-disabled",
       type: "color",
-      value: "#272727",
+      value: "#262626",
       cssVar: "--rw-color-foreground-negative-disabled",
       description: "The negative foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -19957,7 +18069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#4b4b4b",
+      value: "#1e1e1e",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -19989,7 +18101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#363636",
+      value: "#191919",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -20021,7 +18133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#474747",
+      value: "#3e3e3e",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -20053,7 +18165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#4f4f4f",
+      value: "#1b1b1b",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -20085,73 +18197,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#383838",
+      value: "#1d1d1d",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#222222",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "The primary foreground color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#2c2c2c",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#2c2c2c",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "The primary foreground color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#434343",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#999999",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#b6b6b6",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#f5f5f599",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -20181,7 +18261,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#434343",
+      value: "#b8b8b8",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20213,7 +18293,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#222222",
+      value: "#acacac",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20245,7 +18325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse-disabled",
       type: "color",
-      value: "#272727",
+      value: "#262626",
       cssVar: "--rw-color-foreground-negative-inverse-disabled",
       description: "The negative foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20277,7 +18357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#4b4b4b",
+      value: "#1e1e1e",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20309,7 +18389,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#363636",
+      value: "#191919",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20341,7 +18421,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#474747",
+      value: "#3e3e3e",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20373,7 +18453,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#4f4f4f",
+      value: "#1b1b1b",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
@@ -20405,25 +18485,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#383838",
+      value: "#1d1d1d",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
-      theme: "light"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#cccccc",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "light"
     },
     {
@@ -20531,19 +18603,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-background-base",
       description: "The primary background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the light theme",
       theme: "light"
     },
     {
@@ -20557,7 +18621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-8)",
       cssVar: "--rw-color-background-brand",
       description: "The brand background color for the light theme",
       theme: "light"
@@ -20565,7 +18629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-7)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
       description: "The danger background color for the light theme",
       theme: "light"
@@ -20573,7 +18637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative",
       type: "color",
-      value: "var(--color-apple-7)",
+      value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
       description: "The negative background color for the light theme",
       theme: "light"
@@ -20581,7 +18645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-4)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the light theme",
       theme: "light"
@@ -20589,7 +18653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
       description: "The success background color for the light theme",
       theme: "light"
@@ -20597,7 +18661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-6)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
       description: "The positive background color for the light theme",
       theme: "light"
@@ -20605,7 +18669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-3)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
       description: "The info background color for the light theme",
       theme: "light"
@@ -20613,72 +18677,8 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-7)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-8)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info background color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery background color for the light theme",
       theme: "light"
     },
@@ -20843,67 +18843,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.background.primary-hover",
-      type: "color",
-      value: "#b6b6b6",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.primary-pressed",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.primary-focused",
-      type: "color",
-      value: "#7b7b7b",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.primary-disabled",
-      type: "color",
-      value: "#f5f5f599",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the light theme (disabled, 60% opacity)",
-      theme: "light"
-    },
-    {
-      path: "color.background.secondary-hover",
+      path: "color.background.base-hover",
       type: "color",
       value: "#333333",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the light theme (hover, 20% brighter)",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary background color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.secondary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
       value: "#414141",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the light theme (pressed, 40% brighter)",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary background color for the light theme (pressed, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.secondary-focused",
+      path: "color.background.base-focused",
       type: "color",
       value: "#414141",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the light theme (focused, 40% brighter)",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary background color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.background.secondary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
       value: "#26262699",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the light theme (disabled, 60% opacity)",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary background color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -20941,31 +18909,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#00ad95",
+      value: "#3a8b7a",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 20% darker)",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#007964",
+      value: "#59a997",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the light theme (pressed, 40% darker)",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "light"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#007964",
+      value: "#59a997",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the light theme (focused, 40% darker)",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#90d9c9",
+      value: "#3e685e",
       cssVar: "--rw-color-background-brand-disabled",
       description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -20973,31 +18941,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#a70006",
+      value: "#b93c2d",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 20% darker)",
+      description: "The danger background color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#800000",
+      value: "#d85947",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the light theme (pressed, 40% darker)",
+      description: "The danger background color for the light theme (pressed, 40% brighter)",
       theme: "light"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#800000",
+      value: "#d85947",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the light theme (focused, 40% darker)",
+      description: "The danger background color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#af514d",
+      value: "#813c32",
       cssVar: "--rw-color-background-danger-disabled",
       description: "The danger background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21005,7 +18973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#ad0000",
+      value: "#aa0000",
       cssVar: "--rw-color-background-negative-hover",
       description: "The negative background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21013,7 +18981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#840000",
+      value: "#820000",
       cssVar: "--rw-color-background-negative-pressed",
       description: "The negative background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21021,7 +18989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#840000",
+      value: "#820000",
       cssVar: "--rw-color-background-negative-focused",
       description: "The negative background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21029,7 +18997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#b5594a",
+      value: "#b25a48",
       cssVar: "--rw-color-background-negative-disabled",
       description: "The negative background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21037,7 +19005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#a66800",
+      value: "#6f4500",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21045,7 +19013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#793e00",
+      value: "#502700",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21053,7 +19021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#793e00",
+      value: "#502700",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21061,7 +19029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#c19b60",
+      value: "#82683f",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21069,7 +19037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#007d45",
+      value: "#005c31",
       cssVar: "--rw-color-background-success-hover",
       description: "The success background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21077,7 +19045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#005722",
+      value: "#003f17",
       cssVar: "--rw-color-background-success-pressed",
       description: "The success background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21085,7 +19053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#005722",
+      value: "#003f17",
       cssVar: "--rw-color-background-success-focused",
       description: "The success background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21093,7 +19061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#589b77",
+      value: "#407358",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21101,7 +19069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#508500",
+      value: "#398000",
       cssVar: "--rw-color-background-positive-hover",
       description: "The positive background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21109,7 +19077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#295c00",
+      value: "#0c5800",
       cssVar: "--rw-color-background-positive-pressed",
       description: "The positive background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21117,7 +19085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#295c00",
+      value: "#0c5800",
       cssVar: "--rw-color-background-positive-focused",
       description: "The positive background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21125,7 +19093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#88aa69",
+      value: "#77a160",
       cssVar: "--rw-color-background-positive-disabled",
       description: "The positive background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21133,7 +19101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#008ab6",
+      value: "#005676",
       cssVar: "--rw-color-background-info-hover",
       description: "The info background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21141,7 +19109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#005e88",
+      value: "#003958",
       cssVar: "--rw-color-background-info-pressed",
       description: "The info background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21149,7 +19117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#005e88",
+      value: "#003958",
       cssVar: "--rw-color-background-info-focused",
       description: "The info background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21157,7 +19125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#6ab2cd",
+      value: "#417184",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info background color for the light theme (disabled, 60% saturation)",
       theme: "light"
@@ -21165,7 +19133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#5b57b9",
+      value: "#46428d",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery background color for the light theme (hover, 20% darker)",
       theme: "light"
@@ -21173,7 +19141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#3b318f",
+      value: "#2c246c",
       cssVar: "--rw-color-background-discovery-pressed",
       description: "The discovery background color for the light theme (pressed, 40% darker)",
       theme: "light"
@@ -21181,7 +19149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#3b318f",
+      value: "#2c246c",
       cssVar: "--rw-color-background-discovery-focused",
       description: "The discovery background color for the light theme (focused, 40% darker)",
       theme: "light"
@@ -21189,281 +19157,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#8386c2",
+      value: "#656795",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery background color for the light theme (disabled, 60% saturation)",
       theme: "light"
     },
     {
-      path: "color.background.brand-subtle-hover",
+      path: "color.border.base",
       type: "color",
-      value: "#3a8b7a",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand background color for the light theme (hover, 20% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#59a997",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand background color for the light theme (pressed, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#59a997",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand background color for the light theme (focused, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#3e685e",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#b93c2d",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger background color for the light theme (hover, 20% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#d85947",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger background color for the light theme (pressed, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#d85947",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger background color for the light theme (focused, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#813c32",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#aa0000",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#820000",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#820000",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#b25a48",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#6f4500",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#502700",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#502700",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#82683f",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#005c31",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#003f17",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#003f17",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#407358",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#398000",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#0c5800",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#0c5800",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#77a160",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#005676",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#003958",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#003958",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#417184",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#46428d",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery background color for the light theme (hover, 20% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#2c246c",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery background color for the light theme (pressed, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#2c246c",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery background color for the light theme (focused, 40% darker)",
-      theme: "light"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
-      value: "#656795",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
-      description: "The discovery background color for the light theme (disabled, 60% saturation)",
-      theme: "light"
-    },
-    {
-      path: "color.border.primary",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "The primary border color for the light theme",
-      theme: "light"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-border-secondary",
-      description: "The secondary border color for the light theme",
       theme: "light"
     },
     {
@@ -21531,6 +19235,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
+      path: "color.border.base-subtle",
+      type: "color",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-border-base-subtle",
+      description: "The primary subtle border color for the light theme",
+      theme: "light"
+    },
+    {
       path: "color.border.brand-subtle",
       type: "color",
       value: "var(--color-brand-8)",
@@ -21595,51 +19307,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#444444",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "The primary border color for the light theme (hover, 20% brighter)",
       theme: "light"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#555555",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "The primary border color for the light theme (focused, 40% brighter)",
       theme: "light"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#33333399",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "The primary border color for the light theme (disabled, 60% opacity)",
-      theme: "light"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#222222",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "The secondary border color for the light theme (hover, 20% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#2c2c2c",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "The secondary border color for the light theme (focused, 40% brighter)",
-      theme: "light"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#18181899",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "The secondary border color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -21832,6 +19520,30 @@ const TOKENS: TokenTableRow[] = [
       value: "#8386c2",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the light theme (disabled, 60% saturation)",
+      theme: "light"
+    },
+    {
+      path: "color.border.base-subtle-hover",
+      type: "color",
+      value: "#333333",
+      cssVar: "--rw-color-border-base-subtle-hover",
+      description: "The primary subtle border color for the light theme (hover, 20% brighter)",
+      theme: "light"
+    },
+    {
+      path: "color.border.base-subtle-focused",
+      type: "color",
+      value: "#414141",
+      cssVar: "--rw-color-border-base-subtle-focused",
+      description: "The primary subtle border color for the light theme (focused, 40% brighter)",
+      theme: "light"
+    },
+    {
+      path: "color.border.base-subtle-disabled",
+      type: "color",
+      value: "#26262699",
+      cssVar: "--rw-color-border-base-subtle-disabled",
+      description: "The primary subtle border color for the light theme (disabled, 60% opacity)",
       theme: "light"
     },
     {
@@ -22037,7 +19749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the light theme",
       theme: "light"
@@ -22171,19 +19883,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the light theme",
+      value: "var(--color-grey-5)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the light theme",
       theme: "light"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the light theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the light theme",
       theme: "light"
     },
     {
@@ -23763,35 +21475,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "light"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "light"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "light"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #52525233",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "light"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #52525233",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "light"
     },
     {
@@ -24147,74 +21843,74 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#d2d2d2",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#b2b2b2",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#8e8e8e",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#777777",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#606060",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#525252",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#4a4a4a",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#414141",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray",
       theme: "lightDimmed"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#373737",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "An almost-black neutral gray matching the DeepSeek canvas",
       theme: "lightDimmed"
     },
@@ -24941,7 +22637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-grey-3)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the light theme",
       theme: "lightDimmed"
@@ -24949,7 +22645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the light theme",
       theme: "lightDimmed"
@@ -24971,19 +22667,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -25051,25 +22739,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "The primary foreground color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the light theme",
       theme: "lightDimmed"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the light theme",
       theme: "lightDimmed"
@@ -25077,7 +22757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the light theme",
       theme: "lightDimmed"
@@ -25085,7 +22765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the light theme",
       theme: "lightDimmed"
@@ -25093,7 +22773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-9)",
+      value: "var(--color-grey-9)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "The warning foreground color for the light theme",
       theme: "lightDimmed"
@@ -25101,7 +22781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the light theme",
       theme: "lightDimmed"
@@ -25109,7 +22789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the light theme",
       theme: "lightDimmed"
@@ -25117,7 +22797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the light theme",
       theme: "lightDimmed"
@@ -25125,7 +22805,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the light theme",
       theme: "lightDimmed"
@@ -25259,67 +22939,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#d2d2d299",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#717171",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#838383",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#838383",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#919191",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -25349,7 +22997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#555555",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25381,7 +23029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#3e3e3e",
+      value: "#9f9f9f",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25413,7 +23061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-disabled",
       type: "color",
-      value: "#424242",
+      value: "#414141",
       cssVar: "--rw-color-foreground-negative-disabled",
       description: "The negative foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25445,7 +23093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#5b5b5b",
+      value: "#3b3b3b",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25477,7 +23125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#4c4c4c",
+      value: "#383838",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25509,7 +23157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#585858",
+      value: "#525252",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25541,7 +23189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#5e5e5e",
+      value: "#393939",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -25573,73 +23221,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#4d4d4d",
+      value: "#3b3b3b",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#3e3e3e",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "The primary foreground color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#454545",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#454545",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "The primary foreground color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#555555",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#919191",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#d2d2d299",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -25669,7 +23285,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#555555",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25701,7 +23317,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#3e3e3e",
+      value: "#9f9f9f",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25733,7 +23349,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse-disabled",
       type: "color",
-      value: "#424242",
+      value: "#414141",
       cssVar: "--rw-color-foreground-negative-inverse-disabled",
       description: "The negative foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25765,7 +23381,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#5b5b5b",
+      value: "#3b3b3b",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25797,7 +23413,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#4c4c4c",
+      value: "#383838",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25829,7 +23445,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#585858",
+      value: "#525252",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25861,7 +23477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#5e5e5e",
+      value: "#393939",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
@@ -25893,25 +23509,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#4d4d4d",
+      value: "#3b3b3b",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#d9d9d9",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#b5b5b5",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightDimmed"
     },
     {
@@ -26019,19 +23627,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-background-base",
       description: "The primary background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -26045,7 +23645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-8)",
       cssVar: "--rw-color-background-brand",
       description: "The brand background color for the light theme",
       theme: "lightDimmed"
@@ -26053,7 +23653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-7)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
       description: "The danger background color for the light theme",
       theme: "lightDimmed"
@@ -26061,7 +23661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative",
       type: "color",
-      value: "var(--color-apple-7)",
+      value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
       description: "The negative background color for the light theme",
       theme: "lightDimmed"
@@ -26069,7 +23669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-4)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the light theme",
       theme: "lightDimmed"
@@ -26077,7 +23677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
       description: "The success background color for the light theme",
       theme: "lightDimmed"
@@ -26085,7 +23685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-6)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
       description: "The positive background color for the light theme",
       theme: "lightDimmed"
@@ -26093,7 +23693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-3)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
       description: "The info background color for the light theme",
       theme: "lightDimmed"
@@ -26101,72 +23701,8 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-7)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-8)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info background color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery background color for the light theme",
       theme: "lightDimmed"
     },
@@ -26331,67 +23867,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.background.primary-hover",
-      type: "color",
-      value: "#a6a6a6",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.primary-pressed",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.primary-focused",
-      type: "color",
-      value: "#7c7c7c",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.primary-disabled",
-      type: "color",
-      value: "#d2d2d299",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the light theme (disabled, 60% opacity)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.secondary-hover",
+      path: "color.background.base-hover",
       type: "color",
       value: "#4a4a4a",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the light theme (hover, 20% brighter)",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary background color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.secondary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
       value: "#545454",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the light theme (pressed, 40% brighter)",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary background color for the light theme (pressed, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.secondary-focused",
+      path: "color.background.base-focused",
       type: "color",
       value: "#545454",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the light theme (focused, 40% brighter)",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary background color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.secondary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
       value: "#41414199",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the light theme (disabled, 60% opacity)",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary background color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -26429,31 +23933,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#2c998a",
+      value: "#538379",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 20% darker)",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#247d6e",
+      value: "#6a978d",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the light theme (pressed, 40% darker)",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#247d6e",
+      value: "#6a978d",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the light theme (focused, 40% darker)",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#8cbdb2",
+      value: "#536e67",
       cssVar: "--rw-color-background-brand-disabled",
       description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26461,31 +23965,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#962c2f",
+      value: "#9f584f",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 20% darker)",
+      description: "The danger background color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#812525",
+      value: "#b46b61",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the light theme (pressed, 40% darker)",
+      description: "The danger background color for the light theme (pressed, 40% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#812525",
+      value: "#b46b61",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the light theme (focused, 40% darker)",
+      description: "The danger background color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#996663",
+      value: "#7d534c",
       cssVar: "--rw-color-background-danger-disabled",
       description: "The danger background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26493,7 +23997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#992c2c",
+      value: "#982c2c",
       cssVar: "--rw-color-background-negative-hover",
       description: "The negative background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26501,7 +24005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#832626",
+      value: "#822626",
       cssVar: "--rw-color-background-negative-pressed",
       description: "The negative background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26509,7 +24013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#832626",
+      value: "#822626",
       cssVar: "--rw-color-background-negative-focused",
       description: "The negative background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26517,7 +24021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#9d6a62",
+      value: "#9b6a60",
       cssVar: "--rw-color-background-negative-disabled",
       description: "The negative background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26525,7 +24029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#956e2b",
+      value: "#785723",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26533,7 +24037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#7d5224",
+      value: "#67411e",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26541,7 +24045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#7d5224",
+      value: "#67411e",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26549,7 +24053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#a7916f",
+      value: "#7e6e56",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26557,7 +24061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#257f57",
+      value: "#206d49",
       cssVar: "--rw-color-background-success-hover",
       description: "The success background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26565,7 +24069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#1f6a3c",
+      value: "#1b5d33",
       cssVar: "--rw-color-background-success-pressed",
       description: "The success background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26573,7 +24077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#1f6a3c",
+      value: "#1b5d33",
       cssVar: "--rw-color-background-success-focused",
       description: "The success background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26581,7 +24085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#698e7a",
+      value: "#557564",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26589,7 +24093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#5e8326",
+      value: "#4e8125",
       cssVar: "--rw-color-background-positive-hover",
       description: "The positive background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26597,7 +24101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#426d20",
+      value: "#296b1f",
       cssVar: "--rw-color-background-positive-pressed",
       description: "The positive background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26605,7 +24109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#426d20",
+      value: "#296b1f",
       cssVar: "--rw-color-background-positive-focused",
       description: "The positive background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26613,7 +24117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#869974",
+      value: "#7b926e",
       cssVar: "--rw-color-background-positive-disabled",
       description: "The positive background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26621,7 +24125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#2e839e",
+      value: "#24647b",
       cssVar: "--rw-color-background-info-hover",
       description: "The info background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26629,7 +24133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#276885",
+      value: "#1f506b",
       cssVar: "--rw-color-background-info-pressed",
       description: "The info background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26637,7 +24141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#276885",
+      value: "#1f506b",
       cssVar: "--rw-color-background-info-focused",
       description: "The info background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26645,7 +24149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#76a1b1",
+      value: "#57747f",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
@@ -26653,7 +24157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#6c6aa1",
+      value: "#5b5985",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery background color for the light theme (hover, 20% darker)",
       theme: "lightDimmed"
@@ -26661,7 +24165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#534d86",
+      value: "#464071",
       cssVar: "--rw-color-background-discovery-pressed",
       description: "The discovery background color for the light theme (pressed, 40% darker)",
       theme: "lightDimmed"
@@ -26669,7 +24173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#534d86",
+      value: "#464071",
       cssVar: "--rw-color-background-discovery-focused",
       description: "The discovery background color for the light theme (focused, 40% darker)",
       theme: "lightDimmed"
@@ -26677,281 +24181,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#8587ab",
+      value: "#70728b",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery background color for the light theme (disabled, 60% saturation)",
       theme: "lightDimmed"
     },
     {
-      path: "color.background.brand-subtle-hover",
+      path: "color.border.base",
       type: "color",
-      value: "#538379",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand background color for the light theme (hover, 20% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#6a978d",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand background color for the light theme (pressed, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#6a978d",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand background color for the light theme (focused, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#536e67",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#9f584f",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger background color for the light theme (hover, 20% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#b46b61",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger background color for the light theme (pressed, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#b46b61",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger background color for the light theme (focused, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#7d534c",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#982c2c",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#822626",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#822626",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#9b6a60",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#785723",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#67411e",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#67411e",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#7e6e56",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#206d49",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#1b5d33",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#1b5d33",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#557564",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#4e8125",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#296b1f",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#296b1f",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#7b926e",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#24647b",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#1f506b",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#1f506b",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#57747f",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#5b5985",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery background color for the light theme (hover, 20% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#464071",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery background color for the light theme (pressed, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#464071",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery background color for the light theme (focused, 40% darker)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
-      value: "#70728b",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
-      description: "The discovery background color for the light theme (disabled, 60% saturation)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.border.primary",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "The primary border color for the light theme",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-border-secondary",
-      description: "The secondary border color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -27019,6 +24259,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
+      path: "color.border.base-subtle",
+      type: "color",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-border-base-subtle",
+      description: "The primary subtle border color for the light theme",
+      theme: "lightDimmed"
+    },
+    {
       path: "color.border.brand-subtle",
       type: "color",
       value: "var(--color-brand-8)",
@@ -27083,51 +24331,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#565656",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "The primary border color for the light theme (hover, 20% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#626262",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "The primary border color for the light theme (focused, 40% brighter)",
       theme: "lightDimmed"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#4a4a4a99",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "The primary border color for the light theme (disabled, 60% opacity)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#3e3e3e",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "The secondary border color for the light theme (hover, 20% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#454545",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "The secondary border color for the light theme (focused, 40% brighter)",
-      theme: "lightDimmed"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#37373799",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "The secondary border color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -27320,6 +24544,30 @@ const TOKENS: TokenTableRow[] = [
       value: "#8587ab",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the light theme (disabled, 60% saturation)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.border.base-subtle-hover",
+      type: "color",
+      value: "#4a4a4a",
+      cssVar: "--rw-color-border-base-subtle-hover",
+      description: "The primary subtle border color for the light theme (hover, 20% brighter)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.border.base-subtle-focused",
+      type: "color",
+      value: "#545454",
+      cssVar: "--rw-color-border-base-subtle-focused",
+      description: "The primary subtle border color for the light theme (focused, 40% brighter)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "color.border.base-subtle-disabled",
+      type: "color",
+      value: "#41414199",
+      cssVar: "--rw-color-border-base-subtle-disabled",
+      description: "The primary subtle border color for the light theme (disabled, 60% opacity)",
       theme: "lightDimmed"
     },
     {
@@ -27525,7 +24773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the light theme",
       theme: "lightDimmed"
@@ -27659,19 +24907,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the light theme",
+      value: "var(--color-grey-5)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the light theme",
       theme: "lightDimmed"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the light theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the light theme",
       theme: "lightDimmed"
     },
     {
@@ -29251,35 +26499,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightDimmed"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "lightDimmed"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "lightDimmed"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #52525233",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "lightDimmed"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #52525233",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "lightDimmed"
     },
     {
@@ -29635,74 +26867,74 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.1",
+      path: "color.grey.1",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-base-1",
+      cssVar: "--rw-color-grey-1",
       description: "A soft neutral white",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.2",
+      path: "color.grey.2",
       type: "color",
       value: "#e7e7e7",
-      cssVar: "--rw-color-base-2",
+      cssVar: "--rw-color-grey-2",
       description: "A light neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.3",
+      path: "color.grey.3",
       type: "color",
       value: "#9d9d9d",
-      cssVar: "--rw-color-base-3",
+      cssVar: "--rw-color-grey-3",
       description: "A soft neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.4",
+      path: "color.grey.4",
       type: "color",
       value: "#6d6d6d",
-      cssVar: "--rw-color-base-4",
+      cssVar: "--rw-color-grey-4",
       description: "A muted neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.5",
+      path: "color.grey.5",
       type: "color",
       value: "#3e3e3e",
-      cssVar: "--rw-color-base-5",
+      cssVar: "--rw-color-grey-5",
       description: "A middle neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.6",
+      path: "color.grey.6",
       type: "color",
       value: "#222222",
-      cssVar: "--rw-color-base-6",
+      cssVar: "--rw-color-grey-6",
       description: "A medium-dark neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.7",
+      path: "color.grey.7",
       type: "color",
       value: "#111111",
-      cssVar: "--rw-color-base-7",
+      cssVar: "--rw-color-grey-7",
       description: "A dark neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.8",
+      path: "color.grey.8",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-base-8",
+      cssVar: "--rw-color-grey-8",
       description: "A deep neutral gray",
       theme: "lightHighContrast"
     },
     {
-      path: "color.base.9",
+      path: "color.grey.9",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-base-9",
+      cssVar: "--rw-color-grey-9",
       description: "An almost-black neutral gray matching the DeepSeek canvas",
       theme: "lightHighContrast"
     },
@@ -30429,7 +27661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.body",
       type: "color",
-      value: "var(--color-base-3)",
+      value: "var(--color-grey-3)",
       cssVar: "--rw-color-foreground-body",
       description: "The body foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30437,7 +27669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.caption",
       type: "color",
-      value: "var(--color-base-4)",
+      value: "var(--color-grey-4)",
       cssVar: "--rw-color-foreground-caption",
       description: "The caption foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30459,19 +27691,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary",
+      path: "color.foreground.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-primary",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-foreground-base",
       description: "The primary foreground color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary",
-      type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-foreground-secondary",
-      description: "The secondary foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -30539,25 +27763,17 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse",
+      path: "color.foreground.base-inverse",
       type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-foreground-primary-inverse",
+      value: "var(--color-grey-9)",
+      cssVar: "--rw-color-foreground-base-inverse",
       description: "The primary foreground color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse",
-      type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-foreground-secondary-inverse",
-      description: "The secondary foreground color for the light theme",
       theme: "lightHighContrast"
     },
     {
       path: "color.foreground.brand-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-brand-inverse",
       description: "The brand foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30565,7 +27781,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-danger-inverse",
       description: "The danger foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30573,7 +27789,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.negative-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-negative-inverse",
       description: "The negative foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30581,7 +27797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse",
       type: "color",
-      value: "var(--color-base-9)",
+      value: "var(--color-grey-9)",
       cssVar: "--rw-color-foreground-warning-inverse",
       description: "The warning foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30589,7 +27805,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-success-inverse",
       description: "The success foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30597,7 +27813,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-positive-inverse",
       description: "The positive foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30605,7 +27821,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-info-inverse",
       description: "The info foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30613,7 +27829,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse",
       type: "color",
-      value: "var(--color-base-1)",
+      value: "var(--color-grey-1)",
       cssVar: "--rw-color-foreground-discovery-inverse",
       description: "The discovery foreground color for the light theme",
       theme: "lightHighContrast"
@@ -30747,67 +27963,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-hover",
+      path: "color.foreground.base-hover",
       type: "color",
       value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-primary-hover",
+      cssVar: "--rw-color-foreground-base-hover",
       description: "The primary foreground color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-pressed",
+      path: "color.foreground.base-pressed",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-primary-pressed",
+      cssVar: "--rw-color-foreground-base-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-focused",
+      path: "color.foreground.base-focused",
       type: "color",
       value: "#797979",
-      cssVar: "--rw-color-foreground-primary-focused",
+      cssVar: "--rw-color-foreground-base-focused",
       description: "The primary foreground color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-disabled",
+      path: "color.foreground.base-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-primary-disabled",
+      value: "#ffffff99",
+      cssVar: "--rw-color-foreground-base-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-hover",
-      type: "color",
-      value: "#626262",
-      cssVar: "--rw-color-foreground-secondary-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-pressed",
-      type: "color",
-      value: "#868686",
-      cssVar: "--rw-color-foreground-secondary-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-focused",
-      type: "color",
-      value: "#868686",
-      cssVar: "--rw-color-foreground-secondary-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-disabled",
-      type: "color",
-      value: "#a4a4a4",
-      cssVar: "--rw-color-foreground-secondary-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -30837,7 +28021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#282828",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -30869,7 +28053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-disabled",
       type: "color",
-      value: "#000000",
+      value: "#c0c0c0",
       cssVar: "--rw-color-foreground-danger-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -30933,7 +28117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-disabled",
       type: "color",
-      value: "#333333",
+      value: "#000000",
       cssVar: "--rw-color-foreground-warning-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -30965,7 +28149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#151515",
+      value: "#000000",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -30997,7 +28181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-disabled",
       type: "color",
-      value: "#2e2e2e",
+      value: "#212121",
       cssVar: "--rw-color-foreground-positive-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -31029,7 +28213,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#393939",
+      value: "#000000",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -31061,73 +28245,41 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#181818",
+      value: "#000000",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-hover",
+      path: "color.foreground.base-inverse-hover",
       type: "color",
       value: "#000000",
-      cssVar: "--rw-color-foreground-primary-inverse-hover",
+      cssVar: "--rw-color-foreground-base-inverse-hover",
       description: "The primary foreground color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-pressed",
+      path: "color.foreground.base-inverse-pressed",
       type: "color",
       value: "#060606",
-      cssVar: "--rw-color-foreground-primary-inverse-pressed",
+      cssVar: "--rw-color-foreground-base-inverse-pressed",
       description: "The primary foreground color for the light theme (pressed, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-focused",
+      path: "color.foreground.base-inverse-focused",
       type: "color",
       value: "#060606",
-      cssVar: "--rw-color-foreground-primary-inverse-focused",
+      cssVar: "--rw-color-foreground-base-inverse-focused",
       description: "The primary foreground color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-inverse-disabled",
+      path: "color.foreground.base-inverse-disabled",
       type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-foreground-primary-inverse-disabled",
+      value: "#a4a4a4",
+      cssVar: "--rw-color-foreground-base-inverse-disabled",
       description: "The primary foreground color for the light theme (disabled, 60% opacity)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-hover",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--rw-color-foreground-secondary-inverse-hover",
-      description: "The secondary foreground color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-pressed",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-foreground-secondary-inverse-pressed",
-      description: "The secondary foreground color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-focused",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-foreground-secondary-inverse-focused",
-      description: "The secondary foreground color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-inverse-disabled",
-      type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-foreground-secondary-inverse-disabled",
-      description: "The secondary foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -31157,7 +28309,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-inverse-disabled",
       type: "color",
-      value: "#282828",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-brand-inverse-disabled",
       description: "The brand foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31189,7 +28341,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
-      value: "#000000",
+      value: "#c0c0c0",
       cssVar: "--rw-color-foreground-danger-inverse-disabled",
       description: "The danger foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31253,7 +28405,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
-      value: "#333333",
+      value: "#000000",
       cssVar: "--rw-color-foreground-warning-inverse-disabled",
       description: "The warning foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31285,7 +28437,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.success-inverse-disabled",
       type: "color",
-      value: "#151515",
+      value: "#000000",
       cssVar: "--rw-color-foreground-success-inverse-disabled",
       description: "The success foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31317,7 +28469,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
-      value: "#2e2e2e",
+      value: "#212121",
       cssVar: "--rw-color-foreground-positive-inverse-disabled",
       description: "The positive foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31349,7 +28501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
-      value: "#393939",
+      value: "#000000",
       cssVar: "--rw-color-foreground-info-inverse-disabled",
       description: "The info foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
@@ -31381,25 +28533,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.discovery-inverse-disabled",
       type: "color",
-      value: "#181818",
+      value: "#000000",
       cssVar: "--rw-color-foreground-discovery-inverse-disabled",
       description: "The discovery foreground color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.foreground.primary-ghost-hover",
+      path: "color.foreground.base-ghost-hover",
       type: "color",
       value: "#ffffff",
-      cssVar: "--rw-color-foreground-primary-ghost-hover",
+      cssVar: "--rw-color-foreground-base-ghost-hover",
       description: "The primary foreground color for the light theme (ghost hover, 60% brighter than hover)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.foreground.secondary-ghost-hover",
-      type: "color",
-      value: "#eeeeee",
-      cssVar: "--rw-color-foreground-secondary-ghost-hover",
-      description: "The secondary foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: "lightHighContrast"
     },
     {
@@ -31507,19 +28651,11 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.primary",
+      path: "color.background.base",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-background-primary",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-background-base",
       description: "The primary background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.secondary",
-      type: "color",
-      value: "var(--color-base-8)",
-      cssVar: "--rw-color-background-secondary",
-      description: "The secondary background color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -31533,7 +28669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-8)",
       cssVar: "--rw-color-background-brand",
       description: "The brand background color for the light theme",
       theme: "lightHighContrast"
@@ -31541,7 +28677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger",
       type: "color",
-      value: "var(--color-red-7)",
+      value: "var(--color-red-9)",
       cssVar: "--rw-color-background-danger",
       description: "The danger background color for the light theme",
       theme: "lightHighContrast"
@@ -31549,7 +28685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative",
       type: "color",
-      value: "var(--color-apple-7)",
+      value: "var(--color-apple-8)",
       cssVar: "--rw-color-background-negative",
       description: "The negative background color for the light theme",
       theme: "lightHighContrast"
@@ -31557,7 +28693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning",
       type: "color",
-      value: "var(--color-yellow-4)",
+      value: "var(--color-yellow-9)",
       cssVar: "--rw-color-background-warning",
       description: "The warning background color for the light theme",
       theme: "lightHighContrast"
@@ -31565,7 +28701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success",
       type: "color",
-      value: "var(--color-green-6)",
+      value: "var(--color-green-9)",
       cssVar: "--rw-color-background-success",
       description: "The success background color for the light theme",
       theme: "lightHighContrast"
@@ -31573,7 +28709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive",
       type: "color",
-      value: "var(--color-avocado-6)",
+      value: "var(--color-avocado-9)",
       cssVar: "--rw-color-background-positive",
       description: "The positive background color for the light theme",
       theme: "lightHighContrast"
@@ -31581,7 +28717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info",
       type: "color",
-      value: "var(--color-sky-3)",
+      value: "var(--color-sky-9)",
       cssVar: "--rw-color-background-info",
       description: "The info background color for the light theme",
       theme: "lightHighContrast"
@@ -31589,72 +28725,8 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery",
       type: "color",
-      value: "var(--color-purple-7)",
-      cssVar: "--rw-color-background-discovery",
-      description: "The discovery background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle",
-      type: "color",
-      value: "var(--color-brand-8)",
-      cssVar: "--rw-color-background-brand-subtle",
-      description: "The brand background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle",
-      type: "color",
-      value: "var(--color-red-9)",
-      cssVar: "--rw-color-background-danger-subtle",
-      description: "The danger background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle",
-      type: "color",
-      value: "var(--color-apple-8)",
-      cssVar: "--rw-color-background-negative-subtle",
-      description: "The negative background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle",
-      type: "color",
-      value: "var(--color-yellow-9)",
-      cssVar: "--rw-color-background-warning-subtle",
-      description: "The warning background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.success-subtle",
-      type: "color",
-      value: "var(--color-green-9)",
-      cssVar: "--rw-color-background-success-subtle",
-      description: "The success background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle",
-      type: "color",
-      value: "var(--color-avocado-9)",
-      cssVar: "--rw-color-background-positive-subtle",
-      description: "The positive background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.info-subtle",
-      type: "color",
-      value: "var(--color-sky-9)",
-      cssVar: "--rw-color-background-info-subtle",
-      description: "The info background color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle",
-      type: "color",
       value: "var(--color-purple-9)",
-      cssVar: "--rw-color-background-discovery-subtle",
+      cssVar: "--rw-color-background-discovery",
       description: "The discovery background color for the light theme",
       theme: "lightHighContrast"
     },
@@ -31819,67 +28891,35 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.primary-hover",
-      type: "color",
-      value: "#cfcfcf",
-      cssVar: "--rw-color-background-primary-hover",
-      description: "The primary background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.primary-pressed",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-background-primary-pressed",
-      description: "The primary background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.primary-focused",
-      type: "color",
-      value: "#797979",
-      cssVar: "--rw-color-background-primary-focused",
-      description: "The primary background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.primary-disabled",
-      type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-background-primary-disabled",
-      description: "The primary background color for the light theme (disabled, 60% opacity)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.secondary-hover",
+      path: "color.background.base-hover",
       type: "color",
       value: "#111111",
-      cssVar: "--rw-color-background-secondary-hover",
-      description: "The secondary background color for the light theme (hover, 20% brighter)",
+      cssVar: "--rw-color-background-base-hover",
+      description: "The primary background color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.secondary-pressed",
+      path: "color.background.base-pressed",
       type: "color",
       value: "#252525",
-      cssVar: "--rw-color-background-secondary-pressed",
-      description: "The secondary background color for the light theme (pressed, 40% brighter)",
+      cssVar: "--rw-color-background-base-pressed",
+      description: "The primary background color for the light theme (pressed, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.secondary-focused",
+      path: "color.background.base-focused",
       type: "color",
       value: "#252525",
-      cssVar: "--rw-color-background-secondary-focused",
-      description: "The secondary background color for the light theme (focused, 40% brighter)",
+      cssVar: "--rw-color-background-base-focused",
+      description: "The primary background color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.secondary-disabled",
+      path: "color.background.base-disabled",
       type: "color",
       value: "#00000099",
-      cssVar: "--rw-color-background-secondary-disabled",
-      description: "The secondary background color for the light theme (disabled, 60% opacity)",
+      cssVar: "--rw-color-background-base-disabled",
+      description: "The primary background color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -31917,31 +28957,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#008875",
+      value: "#228973",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 20% darker)",
+      description: "The brand background color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.brand-pressed",
       type: "color",
-      value: "#003d32",
+      value: "#46bea3",
       cssVar: "--rw-color-background-brand-pressed",
-      description: "The brand background color for the light theme (pressed, 40% darker)",
+      description: "The brand background color for the light theme (pressed, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.brand-focused",
       type: "color",
-      value: "#003d32",
+      value: "#46bea3",
       cssVar: "--rw-color-background-brand-focused",
-      description: "The brand background color for the light theme (focused, 40% darker)",
+      description: "The brand background color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.brand-disabled",
       type: "color",
-      value: "#a8f0e1",
+      value: "#26584c",
       cssVar: "--rw-color-background-brand-disabled",
       description: "The brand background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -31949,31 +28989,31 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#7f0005",
+      value: "#cd220e",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 20% darker)",
+      description: "The danger background color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.danger-pressed",
       type: "color",
-      value: "#470000",
+      value: "#f74e36",
       cssVar: "--rw-color-background-danger-pressed",
-      description: "The danger background color for the light theme (pressed, 40% darker)",
+      description: "The danger background color for the light theme (pressed, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.danger-focused",
       type: "color",
-      value: "#470000",
+      value: "#f74e36",
       cssVar: "--rw-color-background-danger-focused",
-      description: "The danger background color for the light theme (focused, 40% darker)",
+      description: "The danger background color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
       path: "color.background.danger-disabled",
       type: "color",
-      value: "#c53b35",
+      value: "#77251a",
       cssVar: "--rw-color-background-danger-disabled",
       description: "The danger background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -31981,7 +29021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#880000",
+      value: "#840000",
       cssVar: "--rw-color-background-negative-hover",
       description: "The negative background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -31989,7 +29029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-pressed",
       type: "color",
-      value: "#4d0000",
+      value: "#4a0000",
       cssVar: "--rw-color-background-negative-pressed",
       description: "The negative background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -31997,7 +29037,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-focused",
       type: "color",
-      value: "#4d0000",
+      value: "#4a0000",
       cssVar: "--rw-color-background-negative-focused",
       description: "The negative background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32005,7 +29045,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.negative-disabled",
       type: "color",
-      value: "#ce4731",
+      value: "#c9492f",
       cssVar: "--rw-color-background-negative-disabled",
       description: "The negative background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -32013,7 +29053,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#7e4f00",
+      value: "#2e1d00",
       cssVar: "--rw-color-background-warning-hover",
       description: "The warning background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -32021,7 +29061,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-pressed",
       type: "color",
-      value: "#3d1f00",
+      value: "#010100",
       cssVar: "--rw-color-background-warning-pressed",
       description: "The warning background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -32029,7 +29069,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-focused",
       type: "color",
-      value: "#3d1f00",
+      value: "#010100",
       cssVar: "--rw-color-background-warning-focused",
       description: "The warning background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32037,7 +29077,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.warning-disabled",
       type: "color",
-      value: "#daa656",
+      value: "#7d5c28",
       cssVar: "--rw-color-background-warning-disabled",
       description: "The warning background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -32045,7 +29085,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#004325",
+      value: "#00130a",
       cssVar: "--rw-color-background-success-hover",
       description: "The success background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -32053,7 +29093,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-pressed",
       type: "color",
-      value: "#000b04",
+      value: "#000000",
       cssVar: "--rw-color-background-success-pressed",
       description: "The success background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -32061,7 +29101,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-focused",
       type: "color",
-      value: "#000b04",
+      value: "#000000",
       cssVar: "--rw-color-background-success-focused",
       description: "The success background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32069,7 +29109,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#45a973",
+      value: "#296847",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -32077,7 +29117,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#2f4e00",
+      value: "#204700",
       cssVar: "--rw-color-background-positive-hover",
       description: "The positive background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -32085,7 +29125,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-pressed",
       type: "color",
-      value: "#081300",
+      value: "#020d00",
       cssVar: "--rw-color-background-positive-pressed",
       description: "The positive background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -32093,7 +29133,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-focused",
       type: "color",
-      value: "#081300",
+      value: "#020d00",
       cssVar: "--rw-color-background-positive-focused",
       description: "The positive background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32101,7 +29141,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.positive-disabled",
       type: "color",
-      value: "#8cbe5e",
+      value: "#72b34f",
       cssVar: "--rw-color-background-positive-disabled",
       description: "The positive background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -32109,7 +29149,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#007195",
+      value: "#002938",
       cssVar: "--rw-color-background-info-hover",
       description: "The info background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -32117,7 +29157,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-pressed",
       type: "color",
-      value: "#003952",
+      value: "#00080d",
       cssVar: "--rw-color-background-info-pressed",
       description: "The info background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -32125,7 +29165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-focused",
       type: "color",
-      value: "#003952",
+      value: "#00080d",
       cssVar: "--rw-color-background-info-focused",
       description: "The info background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32133,7 +29173,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#69c5e7",
+      value: "#2a6881",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
@@ -32141,7 +29181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#4c46d2",
+      value: "#302b8f",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery background color for the light theme (hover, 20% darker)",
       theme: "lightHighContrast"
@@ -32149,7 +29189,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-pressed",
       type: "color",
-      value: "#24188c",
+      value: "#150d51",
       cssVar: "--rw-color-background-discovery-pressed",
       description: "The discovery background color for the light theme (pressed, 40% darker)",
       theme: "lightHighContrast"
@@ -32157,7 +29197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-focused",
       type: "color",
-      value: "#24188c",
+      value: "#150d51",
       cssVar: "--rw-color-background-discovery-focused",
       description: "The discovery background color for the light theme (focused, 40% darker)",
       theme: "lightHighContrast"
@@ -32165,281 +29205,17 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#8b8fd9",
+      value: "#5659a2",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery background color for the light theme (disabled, 60% saturation)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.background.brand-subtle-hover",
+      path: "color.border.base",
       type: "color",
-      value: "#228973",
-      cssVar: "--rw-color-background-brand-subtle-hover",
-      description: "The brand background color for the light theme (hover, 20% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-pressed",
-      type: "color",
-      value: "#46bea3",
-      cssVar: "--rw-color-background-brand-subtle-pressed",
-      description: "The brand background color for the light theme (pressed, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-focused",
-      type: "color",
-      value: "#46bea3",
-      cssVar: "--rw-color-background-brand-subtle-focused",
-      description: "The brand background color for the light theme (focused, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.brand-subtle-disabled",
-      type: "color",
-      value: "#26584c",
-      cssVar: "--rw-color-background-brand-subtle-disabled",
-      description: "The brand background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-hover",
-      type: "color",
-      value: "#cd220e",
-      cssVar: "--rw-color-background-danger-subtle-hover",
-      description: "The danger background color for the light theme (hover, 20% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-pressed",
-      type: "color",
-      value: "#f74e36",
-      cssVar: "--rw-color-background-danger-subtle-pressed",
-      description: "The danger background color for the light theme (pressed, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-focused",
-      type: "color",
-      value: "#f74e36",
-      cssVar: "--rw-color-background-danger-subtle-focused",
-      description: "The danger background color for the light theme (focused, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.danger-subtle-disabled",
-      type: "color",
-      value: "#77251a",
-      cssVar: "--rw-color-background-danger-subtle-disabled",
-      description: "The danger background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-hover",
-      type: "color",
-      value: "#840000",
-      cssVar: "--rw-color-background-negative-subtle-hover",
-      description: "The negative background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-pressed",
-      type: "color",
-      value: "#4a0000",
-      cssVar: "--rw-color-background-negative-subtle-pressed",
-      description: "The negative background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-focused",
-      type: "color",
-      value: "#4a0000",
-      cssVar: "--rw-color-background-negative-subtle-focused",
-      description: "The negative background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.negative-subtle-disabled",
-      type: "color",
-      value: "#c9492f",
-      cssVar: "--rw-color-background-negative-subtle-disabled",
-      description: "The negative background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-hover",
-      type: "color",
-      value: "#2e1d00",
-      cssVar: "--rw-color-background-warning-subtle-hover",
-      description: "The warning background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-pressed",
-      type: "color",
-      value: "#010100",
-      cssVar: "--rw-color-background-warning-subtle-pressed",
-      description: "The warning background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-focused",
-      type: "color",
-      value: "#010100",
-      cssVar: "--rw-color-background-warning-subtle-focused",
-      description: "The warning background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.warning-subtle-disabled",
-      type: "color",
-      value: "#7d5c28",
-      cssVar: "--rw-color-background-warning-subtle-disabled",
-      description: "The warning background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-hover",
-      type: "color",
-      value: "#00130a",
-      cssVar: "--rw-color-background-success-subtle-hover",
-      description: "The success background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-pressed",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-background-success-subtle-pressed",
-      description: "The success background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-focused",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-background-success-subtle-focused",
-      description: "The success background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.success-subtle-disabled",
-      type: "color",
-      value: "#296847",
-      cssVar: "--rw-color-background-success-subtle-disabled",
-      description: "The success background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-hover",
-      type: "color",
-      value: "#204700",
-      cssVar: "--rw-color-background-positive-subtle-hover",
-      description: "The positive background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-pressed",
-      type: "color",
-      value: "#020d00",
-      cssVar: "--rw-color-background-positive-subtle-pressed",
-      description: "The positive background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-focused",
-      type: "color",
-      value: "#020d00",
-      cssVar: "--rw-color-background-positive-subtle-focused",
-      description: "The positive background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.positive-subtle-disabled",
-      type: "color",
-      value: "#72b34f",
-      cssVar: "--rw-color-background-positive-subtle-disabled",
-      description: "The positive background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-hover",
-      type: "color",
-      value: "#002938",
-      cssVar: "--rw-color-background-info-subtle-hover",
-      description: "The info background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-pressed",
-      type: "color",
-      value: "#00080d",
-      cssVar: "--rw-color-background-info-subtle-pressed",
-      description: "The info background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-focused",
-      type: "color",
-      value: "#00080d",
-      cssVar: "--rw-color-background-info-subtle-focused",
-      description: "The info background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.info-subtle-disabled",
-      type: "color",
-      value: "#2a6881",
-      cssVar: "--rw-color-background-info-subtle-disabled",
-      description: "The info background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-hover",
-      type: "color",
-      value: "#302b8f",
-      cssVar: "--rw-color-background-discovery-subtle-hover",
-      description: "The discovery background color for the light theme (hover, 20% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-pressed",
-      type: "color",
-      value: "#150d51",
-      cssVar: "--rw-color-background-discovery-subtle-pressed",
-      description: "The discovery background color for the light theme (pressed, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-focused",
-      type: "color",
-      value: "#150d51",
-      cssVar: "--rw-color-background-discovery-subtle-focused",
-      description: "The discovery background color for the light theme (focused, 40% darker)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.background.discovery-subtle-disabled",
-      type: "color",
-      value: "#5659a2",
-      cssVar: "--rw-color-background-discovery-subtle-disabled",
-      description: "The discovery background color for the light theme (disabled, 60% saturation)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.border.primary",
-      type: "color",
-      value: "var(--color-base-7)",
-      cssVar: "--rw-color-border-primary",
+      value: "var(--color-grey-7)",
+      cssVar: "--rw-color-border-base",
       description: "The primary border color for the light theme",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.border.secondary",
-      type: "color",
-      value: "var(--color-base-9)",
-      cssVar: "--rw-color-border-secondary",
-      description: "The secondary border color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -32507,6 +29283,14 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
+      path: "color.border.base-subtle",
+      type: "color",
+      value: "var(--color-grey-8)",
+      cssVar: "--rw-color-border-base-subtle",
+      description: "The primary subtle border color for the light theme",
+      theme: "lightHighContrast"
+    },
+    {
       path: "color.border.brand-subtle",
       type: "color",
       value: "var(--color-brand-8)",
@@ -32571,51 +29355,27 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.primary-hover",
+      path: "color.border.base-hover",
       type: "color",
       value: "#292929",
-      cssVar: "--rw-color-border-primary-hover",
+      cssVar: "--rw-color-border-base-hover",
       description: "The primary border color for the light theme (hover, 20% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.primary-focused",
+      path: "color.border.base-focused",
       type: "color",
       value: "#424242",
-      cssVar: "--rw-color-border-primary-focused",
+      cssVar: "--rw-color-border-base-focused",
       description: "The primary border color for the light theme (focused, 40% brighter)",
       theme: "lightHighContrast"
     },
     {
-      path: "color.border.primary-disabled",
+      path: "color.border.base-disabled",
       type: "color",
       value: "#11111199",
-      cssVar: "--rw-color-border-primary-disabled",
+      cssVar: "--rw-color-border-base-disabled",
       description: "The primary border color for the light theme (disabled, 60% opacity)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.border.secondary-hover",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-border-secondary-hover",
-      description: "The secondary border color for the light theme (hover, 20% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.border.secondary-focused",
-      type: "color",
-      value: "#060606",
-      cssVar: "--rw-color-border-secondary-focused",
-      description: "The secondary border color for the light theme (focused, 40% brighter)",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "color.border.secondary-disabled",
-      type: "color",
-      value: "#00000099",
-      cssVar: "--rw-color-border-secondary-disabled",
-      description: "The secondary border color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -32808,6 +29568,30 @@ const TOKENS: TokenTableRow[] = [
       value: "#8b8fd9",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the light theme (disabled, 60% saturation)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.border.base-subtle-hover",
+      type: "color",
+      value: "#111111",
+      cssVar: "--rw-color-border-base-subtle-hover",
+      description: "The primary subtle border color for the light theme (hover, 20% brighter)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.border.base-subtle-focused",
+      type: "color",
+      value: "#252525",
+      cssVar: "--rw-color-border-base-subtle-focused",
+      description: "The primary subtle border color for the light theme (focused, 40% brighter)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "color.border.base-subtle-disabled",
+      type: "color",
+      value: "#00000099",
+      cssVar: "--rw-color-border-base-subtle-disabled",
+      description: "The primary subtle border color for the light theme (disabled, 60% opacity)",
       theme: "lightHighContrast"
     },
     {
@@ -33013,7 +29797,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.overlay.border",
       type: "color",
-      value: "var(--color-border-primary)",
+      value: "var(--color-border-base)",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the light theme",
       theme: "lightHighContrast"
@@ -33147,19 +29931,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "color.data.base.emphasis",
+      path: "color.data.grey.emphasis",
       type: "color",
-      value: "var(--color-base-5)",
-      cssVar: "--rw-color-data-base-emphasis",
-      description: "The base data visualization emphasis color for the light theme",
+      value: "var(--color-grey-5)",
+      cssVar: "--rw-color-data-grey-emphasis",
+      description: "The grey data visualization emphasis color for the light theme",
       theme: "lightHighContrast"
     },
     {
-      path: "color.data.base.subtle",
+      path: "color.data.grey.subtle",
       type: "color",
-      value: "var(--color-base-1)",
-      cssVar: "--rw-color-data-base-subtle",
-      description: "The base data visualization subtle color for the light theme",
+      value: "var(--color-grey-1)",
+      cssVar: "--rw-color-data-grey-subtle",
+      description: "The grey data visualization subtle color for the light theme",
       theme: "lightHighContrast"
     },
     {
@@ -34739,35 +31523,19 @@ const TOKENS: TokenTableRow[] = [
       theme: "lightHighContrast"
     },
     {
-      path: "ring.primary",
+      path: "ring.base",
       type: "shadow",
       value: "0px 0px 0px 3px #f5f5f533",
-      cssVar: "--rw-ring-primary",
-      description: "The primary ring variant",
+      cssVar: "--rw-ring-base",
+      description: "The base ring variant",
       theme: "lightHighContrast"
     },
     {
-      path: "ring.primary-subtle",
+      path: "ring.base-subtle",
       type: "shadow",
       value: "0px 0px 0px 1px #f5f5f533",
-      cssVar: "--rw-ring-primary-subtle",
-      description: "The primary subtle ring variant",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "ring.secondary",
-      type: "shadow",
-      value: "0px 0px 0px 3px #52525233",
-      cssVar: "--rw-ring-secondary",
-      description: "The secondary ring variant",
-      theme: "lightHighContrast"
-    },
-    {
-      path: "ring.secondary-subtle",
-      type: "shadow",
-      value: "0px 0px 0px 1px #52525233",
-      cssVar: "--rw-ring-secondary-subtle",
-      description: "The secondary subtle ring variant",
+      cssVar: "--rw-ring-base-subtle",
+      description: "The base subtle ring variant",
       theme: "lightHighContrast"
     },
     {

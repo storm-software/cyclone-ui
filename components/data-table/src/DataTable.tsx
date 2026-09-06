@@ -277,7 +277,7 @@ const useInitialContentSizedColumns = <TData extends RowData>(
     measuredColumnsRef.current = columnIds;
 
     const columnWidthPadding = getVariableValue(
-      getTokens({ prefixed: true }).space["$xl"]
+      getTokens({ prefixed: true }).space.$xl
     );
 
     const widths = Array.from(
@@ -832,7 +832,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
             <Popover.Trigger asChild={true}>
               <Button
                 variant="ghost"
-                theme="primary"
+                theme="base"
                 circular={true}
                 bordered={false}
                 color="$foreground"

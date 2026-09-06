@@ -37,18 +37,6 @@ export const Base: Story = {
   args: {}
 };
 
-export const Primary: Story = {
-  args: {
-    theme: "brand"
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    theme: "alternate"
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"

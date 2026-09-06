@@ -516,7 +516,7 @@ export function mapDtcgDictionaryToTamaguiV5(
   dictionary: PreprocessedTokens,
   _options?: Config | PlatformConfig
 ): PreprocessedTokens {
-  const result: Record<string, unknown> = { primary: dictionary };
+  const result: Record<string, unknown> = { base: dictionary };
 
   for (const [key, value] of Object.entries(dictionary)) {
     if (key.startsWith("$")) {

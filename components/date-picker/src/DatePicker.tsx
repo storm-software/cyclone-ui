@@ -324,7 +324,7 @@ const DayPicker = () => {
                   <Button
                     key={day.$date.toString()}
                     {...swapOnClick(dayButton(day))}
-                    theme={"primary"}
+                    theme="base"
                     variant={
                       day.now
                         ? "subtle"
@@ -675,7 +675,7 @@ const DatePickerPopoverBody = () => {
   const [header, setHeader] = useState<"day" | "month" | "year">("day");
 
   return (
-    <Theme name={"primary"}>
+    <Theme name="base">
       <HeaderTypeProvider type={header} setHeader={setHeader}>
         <XStack justifyContent="center">
           <YStack width={CALENDAR_WIDTH} alignItems="center" gap="$2xl">

@@ -64,20 +64,6 @@ export const DoubleChevron: Story = {
   }
 };
 
-export const PrimaryTheme: Story = {
-  args: {
-    currentName: "Current Page",
-    theme: "primary"
-  }
-};
-
-export const SecondaryTheme: Story = {
-  args: {
-    currentName: "Current Page",
-    theme: "secondary"
-  }
-};
-
 export const Brand: Story = {
   args: {
     currentName: "Current Page",

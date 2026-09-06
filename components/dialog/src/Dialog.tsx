@@ -47,7 +47,7 @@ export interface DialogContextProps {
 }
 
 export const DialogContext = createStyledContext<DialogContextProps>({
-  theme: "primary",
+  theme: "base",
   overlay: true
 });
 
@@ -146,7 +146,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
-  colors: ["$background", "transparent"],
+  colors: ["$foreground", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],
@@ -220,13 +220,7 @@ const DialogOverlay =
 
 const DialogFrame: React.FC<
   TamaguiDialogProps & Partial<DialogContextProps>
-> = ({
-  modal = true,
-  children,
-  theme = "primary",
-  overlay = true,
-  ...props
-}) => {
+> = ({ modal = true, children, theme = "base", overlay = true, ...props }) => {
   return (
     <DialogContext.Provider theme={theme} overlay={overlay}>
       <Theme name={theme}>
@@ -245,7 +239,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
   ) => {
     return (
       <TamaguiDialogContent
-        backgroundColor="$background"
+        backgroundColor="$foreground"
         width="95%"
         flexDirection="row"
         padding={0}

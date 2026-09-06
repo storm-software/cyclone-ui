@@ -159,7 +159,7 @@ const AccordionFrameImpl = forwardRef<
         <TamaguiAccordion
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
-          theme="primary"
+          theme="base"
           unstyled
           {...props}
           borderRadius="$container"

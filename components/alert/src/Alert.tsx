@@ -35,8 +35,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { GetProps } from "@tamagui/web";
 
 export type AlertType =
-  | "primary"
-  | "secondary"
+  | "base"
   | "brand"
   | "danger"
   | "warning"
@@ -57,7 +56,7 @@ export const AlertContext = createStyledContext<AlertContextProps>({
 const AlertClose = styled(Button, {
   name: "AlertTrigger",
 
-  theme: "primary",
+  theme: "base",
   variant: "ghost",
   position: "relative",
   circular: true,
@@ -123,7 +122,7 @@ const AlertFrameImpl = ({
 const AlertIconBackground = styled(View, {
   name: "Alert",
 
-  theme: "primary",
+  theme: "base",
   padding: "$xl",
   backgroundColor: "$backgroundHighest",
   borderRadius: 1000_000_000
@@ -153,7 +152,7 @@ const AlertIcon = ThemeableIcon.styleable(
         />
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
-          <Theme name={type ?? "primary"}>
+          <Theme name={type ?? "base"}>
             <AlertIconBackground backgroundColor="$backgroundHighest">
               <ThemeableIcon
                 ref={forwardedRef}
@@ -213,7 +212,7 @@ const AlertHeadingImpl = AlertHeading.styleable(
     const { type } = AlertContext.useStyledContext();
 
     return (
-      <Theme name={type ?? "primary"}>
+      <Theme name={type ?? "base"}>
         <AlertHeading ref={forwardedRef} {...props}>
           {children}
         </AlertHeading>
@@ -234,7 +233,7 @@ const AlertBody = styled(BodyText, {
 const AlertBodyImpl = AlertBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <AlertBody ref={forwardedRef} {...props}>
           {children}
         </AlertBody>

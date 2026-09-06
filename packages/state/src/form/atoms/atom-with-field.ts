@@ -30,8 +30,8 @@ export const atomWithFieldStatus = (
     const theme = get(themeAtom);
 
     if (theme) {
-      if (theme?.includes("secondary")) {
-        return "secondary";
+      if (theme?.includes("brand")) {
+        return "brand";
       } else if (theme?.includes("discovery")) {
         return "discovery";
       } else if (theme?.includes("success")) {
@@ -49,7 +49,7 @@ export const atomWithFieldStatus = (
       }
     }
 
-    return "primary";
+    return "base";
   });
 };
 

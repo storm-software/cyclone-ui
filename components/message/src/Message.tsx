@@ -37,7 +37,7 @@ const getAlertType = (type: unknown): AlertType => {
     case "negative":
       return type;
     default:
-      return "primary";
+      return "base";
   }
 };
 

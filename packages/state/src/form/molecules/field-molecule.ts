@@ -46,7 +46,7 @@ import { requiredValidator } from "../utilities/validators";
 import { FormApi } from "./form-molecule";
 
 export const DEFAULT_FIELD_OPTIONS: FieldOptionsState = {
-  theme: "primary",
+  theme: "base",
   size: "$true",
   debounceMs: 100,
   isEqual,

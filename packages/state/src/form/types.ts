@@ -68,8 +68,8 @@ export type ValidationResults = Partial<
  * The field status.
  */
 export type FieldStatus =
-  | "primary"
-  | "secondary"
+  | "base"
+  | "brand"
   | "discovery"
   | "success"
   | "info"

@@ -50,18 +50,6 @@ export const DataColor: Story = {
   }
 };
 
-export const Primary: Story = {
-  args: {
-    theme: "primary"
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    theme: "secondary"
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"

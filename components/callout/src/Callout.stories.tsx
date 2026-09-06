@@ -60,20 +60,6 @@ export const CustomIcon: Story = {
   }
 };
 
-export const Primary: Story = {
-  args: {
-    children: bodyText,
-    theme: "primary"
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    children: bodyText,
-    theme: "secondary"
-  }
-};
-
 export const Brand: Story = {
   args: {
     children: bodyText,

@@ -138,7 +138,8 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundSubtle",
+        backgroundColor: "$background",
+        borderColor: "$borderSubtle",
         x: 1
       }
     },
@@ -163,7 +164,7 @@ const SwitchThumb = styled(View, {
 
 const SwitchThumbImpl = SwitchThumb.styleable(
   (props, forwardedRef) => {
-    return <SwitchThumb ref={forwardedRef} {...props} theme="primary" />;
+    return <SwitchThumb ref={forwardedRef} {...props} theme="base" />;
   },
   {
     staticConfig: { componentName: "SwitchThumb" }
@@ -222,7 +223,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
 
     return (
       <SwitchIconFrame
-        theme="primary"
+        theme="base"
         ref={forwardedRef}
         zIndex="$20"
         alignItems="center"
@@ -231,7 +232,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
         flexShrink={1}>
         <ThemeableIcon
           {...props}
-          theme="primary"
+          theme="base"
           disabled={false}
           size={adjusted}
           color={
@@ -273,7 +274,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
     forwardedRef
   ) => {
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <SwitchContext.Provider
           name={name}
           size={size}
@@ -282,10 +283,10 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
           <BaseSwitch
             ref={forwardedRef}
             activeStyle={{
-              backgroundColor: "$backgroundSubtle"
+              backgroundColor: "$background",
+              borderColor: "$borderSubtle"
             }}
             {...props}
-            theme="secondary"
             id={name}
             size={size}
             checked={checked}

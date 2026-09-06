@@ -91,7 +91,7 @@ const defaultContextValues = {
   setCurrentStep: (_currentStep: string) => {},
   handleOnInteraction: (_type, _layout) => {},
   numbered: false,
-  theme: "primary"
+  theme: "base"
 } as const;
 
 export const InternalStateContext = createStyledContext<{
@@ -162,7 +162,7 @@ export const StepperFrame = TamaguiTabs.styleable(
         setCurrentStep={setCurrentStep}
         handleOnInteraction={handleOnInteraction}
         numbered={numbered}
-        theme="primary">
+        theme="base">
         <TamaguiTabs
           ref={forwardedRef}
           value={currentStep}
@@ -234,7 +234,7 @@ export const StepperHeaderList = YStack.styleable(
             exitBeforeEnter={true}
             custom={{ direction }}
             initial={false}>
-            {Children.toArray(children).map((child, index) =>
+            {Children.toArray(children).map(async (child, index) =>
               isValidElement(child)
                 ? cloneElement(child, { index } as never)
                 : child
@@ -274,7 +274,7 @@ export const StepperHeaderItem = TamaguiTabs.Tab.styleable<{ index?: number }>(
             height={75}
             width={3}
             backgroundColor={
-              index <= currentIndex ? "$background" : "$borderSubtle"
+              index <= currentIndex ? "$foreground" : "$borderSubtle"
             }
             elevation="$5xl"
             marginLeft="$7xl"
@@ -435,7 +435,7 @@ const StepperRovingIndicator = styled(YStack, {
   variants: {
     active: {
       true: {
-        backgroundColor: "$background",
+        backgroundColor: "$foreground",
         opacity: 1,
         color: "$foreground"
       }

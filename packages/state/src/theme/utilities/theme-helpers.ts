@@ -24,12 +24,12 @@ import type { ColorThemeName } from "../types";
  * @example
  * getThemeColorThemeName('dark') // undefined
  * getThemeColorThemeName('dark_Input') // undefined
- * getThemeColorThemeName('dark_primary_Input') // "primary"
+ * getThemeColorThemeName('dark_base_Input') // "base"
  * getThemeColorThemeName('dark_brand_Input') // "brand"
  *
  * @remarks
  * The following color roles are checked:
- * - primary
+ * - base
  * - secondary
  * - brand
  * - discovery
@@ -47,10 +47,8 @@ export const getThemeColorThemeName = (
   theme?: string
 ): ColorThemeName | undefined => {
   if (theme) {
-    if (theme.includes("primary")) {
-      return "primary";
-    } else if (theme.includes("secondary")) {
-      return "secondary";
+    if (theme.includes("base")) {
+      return "base";
     } else if (theme.includes("brand")) {
       return "brand";
     } else if (theme.includes("discovery")) {
@@ -79,12 +77,12 @@ export const getThemeColorThemeName = (
  * @example
  * themeColorThemeNameExists('dark') // false
  * themeColorThemeNameExists('dark_Input') // false
- * themeColorThemeNameExists('dark_primary_Input') // true
+ * themeColorThemeNameExists('dark_base_Input') // true
  * themeColorThemeNameExists('dark_brand_Input') // true
  *
  * @remarks
  * The following color roles are checked:
- * - primary
+ * - base
  * - secondary
  * - brand
  * - discovery

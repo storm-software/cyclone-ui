@@ -45,6 +45,7 @@
     "bootstrap": "pnpm exec zx tools/scripts/src/bootstrap.mjs",
     "build": "pnpm exec zx tools/scripts/src/build.mjs --prod",
     "build-dev": "pnpm exec zx tools/scripts/src/build.mjs --dev",
+    "build-components": "pnpm exec zx tools/scripts/src/build.mjs --components",
     "clean": "pnpm exec zx tools/scripts/src/clean.mjs",
     "commit": "pnpm exec storm-git commit",
     "dep-graph": "nx dep-graph",
@@ -165,11 +166,7 @@
       }
     ],
     "ci": {
-      "trackBranches": [
-        "main",
-        "next",
-        "experimental"
-      ]
+      "trackBranches": ["main", "next", "experimental"]
     }
   },
   "licenses": [

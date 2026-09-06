@@ -6,13 +6,13 @@
       "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.3}",
+        "$value": "{color.grey.3}",
         "$description": "The body foreground color for the light theme"
       },
       "caption": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.4}",
+        "$value": "{color.grey.4}",
         "$description": "The caption foreground color for the light theme"
       },
       "link": {
@@ -27,19 +27,12 @@
         "$value": "{color.apple.5}",
         "$description": "A required foreground color for the light theme"
       },
-      "primary": {
+      "base": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The primary foreground color for the light theme",
-        "theme": "primary"
-      },
-      "secondary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.5}",
-        "$description": "The secondary foreground color for the light theme",
-        "theme": "secondary"
+        "theme": "base"
       },
       "brand": {
         "$type": "color",
@@ -97,73 +90,66 @@
         "$description": "The discovery foreground color for the light theme",
         "theme": "discovery"
       },
-      "primary-inverse": {
+      "base-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
+        "$value": "{color.grey.9}",
         "$description": "The primary foreground color for the light theme",
-        "theme": "primary"
-      },
-      "secondary-inverse": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
-        "$description": "The secondary foreground color for the light theme",
-        "theme": "secondary"
+        "theme": "base"
       },
       "brand-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The brand foreground color for the light theme",
         "theme": "brand"
       },
       "danger-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The danger foreground color for the light theme",
         "theme": "danger"
       },
       "negative-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The negative foreground color for the light theme",
         "theme": "negative"
       },
       "warning-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
+        "$value": "{color.grey.9}",
         "$description": "The warning foreground color for the light theme",
         "theme": "warning"
       },
       "success-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The success foreground color for the light theme",
         "theme": "success"
       },
       "positive-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The positive foreground color for the light theme",
         "theme": "positive"
       },
       "info-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The info foreground color for the light theme",
         "theme": "info"
       },
       "discovery-inverse": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.1}",
         "$description": "The discovery foreground color for the light theme",
         "theme": "discovery"
       }
@@ -200,19 +186,12 @@
         "$value": "{color.surface.4}",
         "$description": "The highest level of elevation background color for the light theme"
       },
-      "primary": {
+      "base": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.1}",
+        "$value": "{color.grey.8}",
         "$description": "The primary background color for the light theme",
-        "theme": "primary"
-      },
-      "secondary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.8}",
-        "$description": "The secondary background color for the light theme",
-        "theme": "secondary"
+        "theme": "base"
       },
       "link": {
         "$type": "color",
@@ -223,109 +202,53 @@
       "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.4}",
+        "$value": "{color.brand.8}",
         "$description": "The brand background color for the light theme",
         "theme": "brand"
       },
       "danger": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.red.7}",
+        "$value": "{color.red.9}",
         "$description": "The danger background color for the light theme",
         "theme": "danger"
       },
       "negative": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.apple.7}",
+        "$value": "{color.apple.8}",
         "$description": "The negative background color for the light theme",
         "theme": "negative"
       },
       "warning": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.yellow.4}",
+        "$value": "{color.yellow.9}",
         "$description": "The warning background color for the light theme",
         "theme": "warning"
       },
       "success": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.green.6}",
+        "$value": "{color.green.9}",
         "$description": "The success background color for the light theme",
         "theme": "success"
       },
       "positive": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.avocado.6}",
+        "$value": "{color.avocado.9}",
         "$description": "The positive background color for the light theme",
         "theme": "positive"
       },
       "info": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.sky.3}",
-        "$description": "The info background color for the light theme",
-        "theme": "info"
-      },
-      "discovery": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.purple.7}",
-        "$description": "The discovery background color for the light theme",
-        "theme": "discovery"
-      },
-      "brand-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.brand.8}",
-        "$description": "The brand background color for the light theme",
-        "theme": "brand"
-      },
-      "danger-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.red.9}",
-        "$description": "The danger background color for the light theme",
-        "theme": "danger"
-      },
-      "negative-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.apple.8}",
-        "$description": "The negative background color for the light theme",
-        "theme": "negative"
-      },
-      "warning-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.yellow.9}",
-        "$description": "The warning background color for the light theme",
-        "theme": "warning"
-      },
-      "success-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.green.9}",
-        "$description": "The success background color for the light theme",
-        "theme": "success"
-      },
-      "positive-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.avocado.9}",
-        "$description": "The positive background color for the light theme",
-        "theme": "positive"
-      },
-      "info-subtle": {
-        "$type": "color",
-        "colorSpace": "display-p3",
         "$value": "{color.sky.9}",
         "$description": "The info background color for the light theme",
         "theme": "info"
       },
-      "discovery-subtle": {
+      "discovery": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.purple.9}",
@@ -335,19 +258,12 @@
     },
     "border": {
       "$description": "The border colors for the light theme",
-      "primary": {
+      "base": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.base.7}",
+        "$value": "{color.grey.7}",
         "$description": "The primary border color for the light theme",
-        "theme": "primary"
-      },
-      "secondary": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.base.9}",
-        "$description": "The secondary border color for the light theme",
-        "theme": "secondary"
+        "theme": "base"
       },
       "brand": {
         "$type": "color",
@@ -404,6 +320,13 @@
         "$value": "{color.purple.7}",
         "$description": "The discovery border color for the light theme",
         "theme": "discovery"
+      },
+      "base-subtle": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.grey.8}",
+        "$description": "The primary subtle border color for the light theme",
+        "theme": "base"
       },
       "brand-subtle": {
         "$type": "color",
@@ -473,7 +396,7 @@
       "border": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.border.primary}",
+        "$value": "{color.border.base}",
         "$description": "The overlay border color for the light theme"
       },
       "backdrop": {
@@ -532,18 +455,18 @@
     },
     "data": {
       "$description": "The data visualization colors for the light theme",
-      "base": {
+      "grey": {
         "emphasis": {
           "$type": "color",
           "colorSpace": "display-p3",
-          "$value": "{color.base.5}",
-          "$description": "The base data visualization emphasis color for the light theme"
+          "$value": "{color.grey.5}",
+          "$description": "The grey data visualization emphasis color for the light theme"
         },
         "subtle": {
           "$type": "color",
           "colorSpace": "display-p3",
-          "$value": "{color.base.1}",
-          "$description": "The base data visualization subtle color for the light theme"
+          "$value": "{color.grey.1}",
+          "$description": "The grey data visualization subtle color for the light theme"
         }
       },
       "brand": {

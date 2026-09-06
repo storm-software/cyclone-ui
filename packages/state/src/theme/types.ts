@@ -19,8 +19,7 @@
 export type ColorThemeMode = "light" | "dark";
 
 export type ColorThemeName =
-  | "primary"
-  | "secondary"
+  | "base"
   | "brand"
   | "discovery"
   | "info"
@@ -29,19 +28,6 @@ export type ColorThemeName =
   | "success"
   | "positive"
   | "negative";
-
-export const ColorThemeName = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-  BRAND: "brand",
-  DISCOVERY: "discovery",
-  INFO: "info",
-  WARNING: "warning",
-  DANGER: "danger",
-  SUCCESS: "success",
-  POSITIVE: "positive",
-  NEGATIVE: "negative"
-} as const satisfies Record<string, ColorThemeName>;
 
 export interface ThemeOptions {
   /**

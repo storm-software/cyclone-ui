@@ -60,7 +60,7 @@ describe("tamaguiPreprocessor", () => {
       },
       semantic: {
         ring: {
-          primary: {
+          base: {
             $type: "shadow",
             $value: {
               color: "{color.foreground.secondary}",
@@ -90,7 +90,7 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         ring: {
-          primary: { $value: { color: "#33669980" } },
+          base: { $value: { color: "#33669980" } },
           layered: {
             $value: [{ color: "#ff000080" }, { color: "#00ff0080" }]
           }

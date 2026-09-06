@@ -183,7 +183,7 @@ const SelectItemsGroup = View.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
       <View ref={forwardedRef} flex={1} {...props}>
-        <Theme name="primary">
+        <Theme name="base">
           <Adapt when="max-sm" platform="touch">
             <Sheet
               modal={true}

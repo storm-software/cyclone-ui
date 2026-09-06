@@ -53,7 +53,7 @@ export interface CardContextProps {
 
 export const CardContext = createStyledContext<CardContextProps>({
   size: "$true" as SizeTokens,
-  theme: "primary"
+  theme: "base"
 });
 
 const CardDataColorContext = createContext<
@@ -162,6 +162,7 @@ const CardFrameImpl = CardFrame.styleable<{
     const dataColor = color
       ? getVariableValue(activeTheme[color as any] ?? color, "color")
       : undefined;
+
     return (
       <CardDataColorContext.Provider value={color}>
         <CardContext.Provider theme={theme} size={size}>
@@ -174,7 +175,7 @@ const CardFrameImpl = CardFrame.styleable<{
             size={size}>
             {dataColor && <CardDataBorder style={{ borderColor: dataColor }} />}
             <CardBackgroundGradient
-              colors={["transparent", color ?? "$background"]}
+              colors={["transparent", color ?? "$foreground"]}
             />
             <CardContent size={size}>{children}</CardContent>
           </CardFrame>
@@ -269,7 +270,7 @@ const CardEyebrow = styled(EyebrowText, {
   context: CardContext,
 
   zIndex: "$20",
-  color: "$backgroundSubtle"
+  color: "$background"
 });
 
 const CardEyebrowImpl = CardEyebrow.styleable(
@@ -277,7 +278,7 @@ const CardEyebrowImpl = CardEyebrow.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <CardEyebrow ref={forwardedRef} {...rest}>
           {children}
         </CardEyebrow>
@@ -302,7 +303,7 @@ const CardBodyImpl = CardBody.styleable(
     const { children, ...rest } = props;
 
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <CardBody ref={forwardedRef} {...rest}>
           {children}
         </CardBody>
@@ -333,7 +334,7 @@ const CardLinkImpl = Link.styleable(
   (props, forwardedRef) => {
     const { children, ...rest } = props;
     const theme = useThemeName();
-    const inverse = theme?.endsWith("primary") || theme?.endsWith("secondary");
+    const inverse = theme?.endsWith("base");
 
     return (
       <XStack ref={forwardedRef} gap="$lg" alignItems="center">

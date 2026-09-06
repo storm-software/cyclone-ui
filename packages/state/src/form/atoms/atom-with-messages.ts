@@ -22,11 +22,11 @@ import type {
   DangerValidationDetail as DangerValidationDetails,
   DiscoveryValidationDetail as DiscoveryValidationDetails,
   InfoValidationDetail as InfoValidationDetails,
+  NegativeValidationDetail as NegativeValidationDetails,
+  PositiveValidationDetail as PositiveValidationDetails,
   SuccessValidationDetail as SuccessValidationDetails,
   ValidationDetail as ValidationDetails,
-  WarningValidationDetail as WarningValidationDetails,
-  PositiveValidationDetail as PositiveValidationDetails,
-  NegativeValidationDetail as NegativeValidationDetails
+  WarningValidationDetail as WarningValidationDetails
 } from "@stryke/types/validations";
 import type { Atom } from "jotai";
 import { atom } from "jotai";
@@ -341,5 +341,5 @@ export const atomWithTheme = (
       return "negative";
     }
 
-    return "primary";
+    return "base";
   });

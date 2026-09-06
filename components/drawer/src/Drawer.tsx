@@ -357,7 +357,7 @@ export interface DrawerProps extends GetProps<typeof Sheet> {
 
 const DrawerFrameImpl: FC<DrawerProps> = ({
   children,
-  theme = "primary",
+  theme = "base",
   direction = "bottom",
   modal = true,
   dismissOnSnapToBottom = true,

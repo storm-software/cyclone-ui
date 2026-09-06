@@ -45,7 +45,7 @@ import type {
 } from "../types";
 
 export const DEFAULT_FORM_OPTIONS: FormOptionsState = {
-  theme: "primary",
+  theme: "base",
   debounceMs: 100,
   isEqual,
   disabled: false,

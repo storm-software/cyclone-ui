@@ -52,7 +52,7 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
   overflow: "hidden",
   opacity: 1,
   zIndex: "$0",
-  colors: ["transparent", "$background"],
+  colors: ["transparent", "$foreground"],
   start: [1.0, 1.0],
   end: [0, 0]
 });
@@ -151,11 +151,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon
-      theme={theme}
-      {...props}
-      size="$13xl"
-      color="$backgroundSubtle">
+    <ThemeableIcon theme={theme} {...props} size="$13xl" color="$background">
       {icon}
     </ThemeableIcon>
   );
@@ -171,7 +167,7 @@ const CalloutHeading = styled(Heading2XLText, {
 const CalloutHeadingImpl = CalloutHeading.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <CalloutHeading ref={forwardedRef} {...props}>
           {children}
         </CalloutHeading>
@@ -186,7 +182,7 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
 const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
-  color: "$backgroundSubtle",
+  color: "$background",
   zIndex: "$20"
 });
 
@@ -214,7 +210,7 @@ const CalloutBody = styled(BodyText, {
 const CalloutBodyImpl = CalloutBody.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Theme name="primary">
+      <Theme name="base">
         <CalloutBody ref={forwardedRef} {...props}>
           {children}
         </CalloutBody>

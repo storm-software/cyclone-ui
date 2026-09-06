@@ -24,7 +24,7 @@ export const EyebrowText = styled(SizableText, {
   name: "EyebrowText",
   render: "h5",
 
-  color: "$backgroundSubtle",
+  color: "$background",
   fontFamily: "$eyebrow",
   size: "$true",
   textTransform: "uppercase"

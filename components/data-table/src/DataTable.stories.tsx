@@ -173,12 +173,12 @@ const StatusButton = ({ status }: { status: string }) => {
       borderRadius={1000_000_000}
       backgroundColor={
         status?.toLocaleLowerCase() === "active"
-          ? "$backgroundAccent"
-          : "$base9"
+          ? "$background"
+          : "$backgroundElevated"
       }
       paddingHorizontal="$xl">
       <Text
-        color="$foregroundOnPrimary"
+        color="$foreground"
         $gtXs={{
           fontSize: "$xs",
           lineHeight: "$xs",
@@ -284,24 +284,6 @@ export const Pagination: Story = {
       ]
     },
     pageSize: 5
-  }
-};
-
-export const Primary: Story = {
-  args: {
-    theme: "brand",
-    options: {
-      data: defaultData
-    }
-  }
-};
-
-export const Secondary: Story = {
-  args: {
-    theme: "alternate",
-    options: {
-      data: defaultData
-    }
   }
 };
 

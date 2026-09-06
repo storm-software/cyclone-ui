@@ -96,7 +96,7 @@
       },
       "$description": "The surface color palette - a light counterpart to the DeepSeek-inspired graphite scheme"
     },
-    "base": {
+    "grey": {
       "palette": true,
       "1": {
         "$type": "color",
@@ -152,7 +152,7 @@
         "$value": "#181818",
         "$description": "An almost-black neutral gray matching the DeepSeek canvas"
       },
-      "$description": "The base color palette - neutral DeepSeek-inspired grays from soft white to graphite"
+      "$description": "The grey color palette - neutral DeepSeek-inspired grays from soft white to graphite"
     },
     "red": {
       "palette": true,

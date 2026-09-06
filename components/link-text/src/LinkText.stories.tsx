@@ -92,61 +92,49 @@ export const ThemedInverseVariant: Story = {
   }
 };
 
-export const PrimaryTheme: Story = {
-  args: {
-    theme: "primary"
-  }
-};
-
-export const SecondaryTheme: Story = {
-  args: {
-    theme: "secondary"
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"
   }
 };
 
-export const DiscoveryTheme: Story = {
+export const Discovery: Story = {
   args: {
     theme: "discovery"
   }
 };
 
-export const ErrorTheme: Story = {
+export const Danger: Story = {
   args: {
     theme: "danger"
   }
 };
 
-export const WarningTheme: Story = {
+export const Warning: Story = {
   args: {
     theme: "warning"
   }
 };
 
-export const InfoTheme: Story = {
+export const Info: Story = {
   args: {
     theme: "info"
   }
 };
 
-export const SuccessTheme: Story = {
+export const Success: Story = {
   args: {
     theme: "success"
   }
 };
 
-export const PositiveTheme: Story = {
+export const Positive: Story = {
   args: {
     theme: "positive"
   }
 };
 
-export const NegativeTheme: Story = {
+export const Negative: Story = {
   args: {
     theme: "negative"
   }

@@ -118,12 +118,12 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
         </View>
 
         {variant === "chevron" && (
-          <ChevronRight color="$foregroundPrimary" size="$4xl" />
+          <ChevronRight color="$foreground" size="$4xl" />
         )}
         {variant === "double" && (
-          <ChevronsRight color="$foregroundPrimary" size="$4xl" />
+          <ChevronsRight color="$foreground" size="$4xl" />
         )}
-        {variant === "slash" && <Slash color="$foregroundPrimary" size="$xl" />}
+        {variant === "slash" && <Slash color="$foreground" size="$xl" />}
       </XGroup.Item>
     );
   },

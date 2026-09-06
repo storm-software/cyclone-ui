@@ -39,7 +39,7 @@ const ContainerFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "$background",
+        backgroundColor: "$foreground",
         borderWidth: 1,
         borderColor: "$border"
       },
@@ -154,7 +154,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  colors: ["$backgroundElevated", "$background"],
+  colors: ["$backgroundElevated", "$foreground"],
   start: { x: 0.1, y: 0.5 },
   end: { x: 0.9, y: 0.5 }
 });
@@ -200,7 +200,7 @@ export const Container = ContainerFrame.styleable(
     return (
       <ContainerGroup group={true} circular={circular}>
         {variant === "glass" && (
-          <ContainerGlassBackground theme="primary" fullscreen={true} />
+          <ContainerGlassBackground theme="base" fullscreen={true} />
         )}
         <ContainerFrame
           ref={forwardedRef}
