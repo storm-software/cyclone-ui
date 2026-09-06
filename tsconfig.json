@@ -218,6 +218,9 @@
     },
     {
       "path": "./components/drawer"
+    },
+    {
+      "path": "./components/code-block"
     }
   ],
   "files": []

@@ -42,6 +42,11 @@
           "target": "/home/development/repos/cyclone-ui/components/accordion/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-native/index.js"
@@ -50,11 +55,6 @@
           "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/accordion/node_modules/react/index.js"
         }
       ]
     },
@@ -87,11 +87,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/alert/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/alert/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/alert/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert/dist/index.mjs"
@@ -102,6 +97,16 @@
           "target": "/home/development/repos/cyclone-ui/components/alert/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/alert/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-native/index.js"
@@ -110,11 +115,6 @@
           "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/alert/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -159,6 +159,11 @@
           "target": "/home/development/repos/cyclone-ui/components/alert-dialog/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-native/index.js"
@@ -167,11 +172,6 @@
           "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/alert-dialog/node_modules/react/index.js"
         }
       ]
     },
@@ -212,11 +212,6 @@
           "target": "/home/development/repos/cyclone-ui/components/badge/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react/index.js"
@@ -225,6 +220,11 @@
           "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/badge/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -246,11 +246,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/body-text/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/body-text/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/body-text/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/body-text/dist/index.mjs"
@@ -259,6 +254,11 @@
           "path": "/home/development/repos/cyclone-ui/components/body-text/dist/index.cjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/body-text/dist/index.cjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/body-text/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/body-text/src/index.ts"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/body-text/node_modules/react-native/index.js",
@@ -361,6 +361,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/button/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/button/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/button/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/button/dist/index.mjs"
@@ -371,19 +376,14 @@
           "target": "/home/development/repos/cyclone-ui/components/button/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/button/src/index.ts",
+          "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/button/src/index.ts"
+          "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/button/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/button/node_modules/react-native/index.js",
@@ -681,6 +681,67 @@
       ]
     },
     {
+      "name": "@cyclone-ui/code-block",
+      "type": "registry:component",
+      "title": "@cyclone-ui/code-block",
+      "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+      "dependencies": [
+        "@cyclone-ui/body-text@workspace:*",
+        "@cyclone-ui/button@workspace:*",
+        "@cyclone-ui/themeable-icon@workspace:*",
+        "@tamagui/core@catalog:",
+        "@tamagui/font-size@catalog:",
+        "@tamagui/get-font-sized@catalog:",
+        "@tamagui/group@catalog:",
+        "@tamagui/helpers@catalog:",
+        "@tamagui/helpers-tamagui@catalog:",
+        "@tamagui/lucide-icons-2@catalog:",
+        "@tamagui/stacks@catalog:",
+        "@tamagui/tabs@catalog:",
+        "@tamagui/text@catalog:",
+        "@tamagui/web@catalog:"
+      ],
+      "devDependencies": [
+        "@storybook/react-vite@catalog:",
+        "react@catalog:",
+        "react-dom@catalog:",
+        "react-native@catalog:",
+        "react-native-svg@^15.15.5"
+      ],
+      "files": [
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/src/index.ts"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/dist/index.mjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/dist/index.mjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/dist/index.cjs",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/dist/index.cjs"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/code-block/node_modules/react-native/index.js"
+        }
+      ]
+    },
+    {
       "name": "@cyclone-ui/container",
       "type": "registry:component",
       "title": "@cyclone-ui/container",
@@ -769,11 +830,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/data-table/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/data-table/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/data-table/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/data-table/dist/index.mjs"
@@ -784,14 +840,19 @@
           "target": "/home/development/repos/cyclone-ui/components/data-table/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/data-table/src/index.ts",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/data-table/src/index.ts"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/data-table/node_modules/react-native/index.js",
@@ -859,14 +920,14 @@
           "target": "/home/development/repos/cyclone-ui/components/date-picker/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/date-picker/node_modules/react/index.js",
@@ -921,14 +982,14 @@
           "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/date-picker-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -984,6 +1045,11 @@
           "target": "/home/development/repos/cyclone-ui/components/dialog/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react/index.js"
@@ -992,11 +1058,6 @@
           "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/dialog/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1024,11 +1085,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/drawer/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/drawer/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/drawer/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/drawer/dist/index.mjs"
@@ -1039,19 +1095,24 @@
           "target": "/home/development/repos/cyclone-ui/components/drawer/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/drawer/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/drawer/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/drawer/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1087,14 +1148,14 @@
           "target": "/home/development/repos/cyclone-ui/components/eyebrow-text/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/eyebrow-text/node_modules/react-native/index.js",
@@ -1148,11 +1209,6 @@
           "target": "/home/development/repos/cyclone-ui/components/field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react/index.js"
@@ -1161,6 +1217,11 @@
           "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/field/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1222,11 +1283,6 @@
           "target": "/home/development/repos/cyclone-ui/components/file-picker/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-dom/index.js"
@@ -1235,6 +1291,11 @@
           "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/file-picker/node_modules/react/index.js"
         }
       ]
     },
@@ -1276,11 +1337,6 @@
           "target": "/home/development/repos/cyclone-ui/components/file-picker-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react/index.js"
@@ -1289,6 +1345,11 @@
           "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/file-picker-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1325,11 +1386,6 @@
           "target": "/home/development/repos/cyclone-ui/components/form/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react/index.js"
@@ -1338,6 +1394,11 @@
           "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/form/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1373,6 +1434,11 @@
           "target": "/home/development/repos/cyclone-ui/components/heading-text/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-dom/index.js"
@@ -1381,11 +1447,6 @@
           "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/heading-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1433,11 +1494,6 @@
           "target": "/home/development/repos/cyclone-ui/components/input/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react-native/index.js"
@@ -1446,6 +1502,11 @@
           "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/input/node_modules/react/index.js"
         }
       ]
     },
@@ -1486,14 +1547,14 @@
           "target": "/home/development/repos/cyclone-ui/components/input-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/input-field/node_modules/react-dom/index.js",
@@ -1535,6 +1596,11 @@
           "target": "/home/development/repos/cyclone-ui/components/label-text/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-dom/index.js"
@@ -1543,11 +1609,6 @@
           "path": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/label-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1596,14 +1657,14 @@
           "target": "/home/development/repos/cyclone-ui/components/link/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/link/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/link/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/link/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/link/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1626,6 +1687,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/link-text/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link-text/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/link-text/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link-text/dist/index.mjs"
@@ -1636,24 +1702,19 @@
           "target": "/home/development/repos/cyclone-ui/components/link-text/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/link-text/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/link-text/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/link-text/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -1701,14 +1762,14 @@
           "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/message/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/message/node_modules/react/index.js"
         }
       ]
     },
@@ -1747,6 +1808,11 @@
           "target": "/home/development/repos/cyclone-ui/components/next-button/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-dom/index.js"
@@ -1755,11 +1821,6 @@
           "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/next-button/node_modules/react/index.js"
         }
       ]
     },
@@ -1802,14 +1863,14 @@
           "target": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/number-input-field/node_modules/react/index.js"
         }
       ]
     },
@@ -1846,11 +1907,6 @@
           "target": "/home/development/repos/cyclone-ui/components/number-text/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-dom/index.js"
@@ -1859,6 +1915,11 @@
           "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/number-text/node_modules/react/index.js"
         }
       ]
     },
@@ -1883,6 +1944,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/otp-input-field/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/otp-input-field/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/otp-input-field/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/otp-input-field/dist/index.mjs"
@@ -1893,16 +1959,6 @@
           "target": "/home/development/repos/cyclone-ui/components/otp-input-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/otp-input-field/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/otp-input-field/src/index.ts"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react/index.js"
@@ -1911,6 +1967,11 @@
           "path": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/otp-input-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1953,6 +2014,11 @@
           "target": "/home/development/repos/cyclone-ui/components/pagination/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-dom/index.js"
@@ -1961,11 +2027,6 @@
           "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/pagination/node_modules/react-native/index.js"
         }
       ]
     },
@@ -1992,11 +2053,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/dist/index.mjs"
@@ -2007,14 +2063,19 @@
           "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/src/index.ts"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/pdf-document-display/node_modules/react-dom/index.js",
@@ -2065,6 +2126,11 @@
           "target": "/home/development/repos/cyclone-ui/components/phone-number-input-field/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react-dom/index.js"
@@ -2073,11 +2139,6 @@
           "path": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/phone-number-input-field/node_modules/libphonenumber-js/index.js",
@@ -2136,6 +2197,11 @@
           "target": "/home/development/repos/cyclone-ui/components/popover/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-native/index.js"
@@ -2144,11 +2210,6 @@
           "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/popover/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2187,9 +2248,9 @@
           "target": "/home/development/repos/cyclone-ui/components/previous-button/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-dom/index.js",
@@ -2197,9 +2258,9 @@
           "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/previous-button/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2236,6 +2297,11 @@
           "target": "/home/development/repos/cyclone-ui/components/progress/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/progress/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/progress/node_modules/react/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-native/index.js"
@@ -2244,11 +2310,6 @@
           "path": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/progress/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/progress/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/progress/node_modules/react/index.js"
         }
       ]
     },
@@ -2296,9 +2357,9 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-dom/index.js",
@@ -2306,9 +2367,9 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/radio-group/node_modules/react/index.js"
         }
       ]
     },
@@ -2354,9 +2415,9 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-dom/index.js",
@@ -2364,9 +2425,9 @@
           "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/radio-group-field/node_modules/jotai/index.js",
@@ -2463,14 +2524,14 @@
           "target": "/home/development/repos/cyclone-ui/components/search-input-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/search-input-field/node_modules/react-dom/index.js",
@@ -2517,6 +2578,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/select/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/select/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select/dist/index.mjs"
@@ -2527,19 +2593,14 @@
           "target": "/home/development/repos/cyclone-ui/components/select/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/select/src/index.ts",
+          "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select/src/index.ts"
+          "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select/node_modules/react-native/index.js",
@@ -2573,6 +2634,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/select-field/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select-field/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/select-field/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select-field/dist/index.mjs"
@@ -2583,24 +2649,19 @@
           "target": "/home/development/repos/cyclone-ui/components/select-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/select-field/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select-field/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/select-field/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/select-field/node_modules/jotai/index.js",
@@ -2641,11 +2702,6 @@
           "target": "/home/development/repos/cyclone-ui/components/spinner/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-native/index.js"
@@ -2654,6 +2710,11 @@
           "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/spinner/node_modules/react/index.js"
         }
       ]
     },
@@ -2710,14 +2771,14 @@
           "target": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/stepper/node_modules/react/index.js"
         }
       ]
     },
@@ -2749,11 +2810,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/switch/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/switch/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/switch/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch/dist/index.mjs"
@@ -2764,19 +2820,24 @@
           "target": "/home/development/repos/cyclone-ui/components/switch/dist/index.cjs"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/switch/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/switch/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/switch/node_modules/react-native/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch/node_modules/react-native/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/switch/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/switch/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/switch/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/switch/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/switch/node_modules/react/index.js"
         }
       ]
     },
@@ -2823,14 +2884,14 @@
           "target": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/switch-field/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2877,9 +2938,9 @@
           "target": "/home/development/repos/cyclone-ui/components/table/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js",
@@ -2887,9 +2948,9 @@
           "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/table/node_modules/react-dom/index.js"
         }
       ]
     },
@@ -2946,14 +3007,14 @@
           "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/tabs/node_modules/react-native/index.js"
         }
       ]
     },
@@ -2989,14 +3050,14 @@
           "target": "/home/development/repos/cyclone-ui/components/text-area/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react-dom/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/text-area/node_modules/react-native/index.js",
@@ -3040,14 +3101,14 @@
           "target": "/home/development/repos/cyclone-ui/components/text-area-field/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react/index.js"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/text-area-field/node_modules/react-native/index.js",
@@ -3075,11 +3136,6 @@
       ],
       "files": [
         {
-          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/src/index.ts"
-        },
-        {
           "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/dist/index.mjs"
@@ -3090,9 +3146,9 @@
           "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/src/index.ts",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/src/index.ts"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-native/index.js",
@@ -3103,6 +3159,11 @@
           "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react-dom/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/themeable-gradient/node_modules/react/index.js"
         }
       ]
     },
@@ -3195,9 +3256,9 @@
           "target": "/home/development/repos/cyclone-ui/components/title-text/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js",
@@ -3205,9 +3266,9 @@
           "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-dom/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/title-text/node_modules/react-native/index.js"
         }
       ]
     },
@@ -3249,9 +3310,9 @@
           "target": "/home/development/repos/cyclone-ui/components/tooltip/dist/index.cjs"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-dom/index.js",
@@ -3259,9 +3320,9 @@
           "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-dom/index.js"
         },
         {
-          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js",
+          "path": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js",
           "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react-native/index.js"
+          "target": "/home/development/repos/cyclone-ui/components/tooltip/node_modules/react/index.js"
         }
       ]
     },
@@ -3344,6 +3405,21 @@
           "target": "/home/development/repos/cyclone-ui/components/vectors/src/index.ts"
         },
         {
+          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react/index.js"
+        },
+        {
+          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/vectors/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/vectors/dist/index.mjs"
@@ -3352,21 +3428,6 @@
           "path": "/home/development/repos/cyclone-ui/components/vectors/dist/index.cjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/vectors/dist/index.cjs"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-native/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react-dom/index.js"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react/index.js",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/vectors/node_modules/react/index.js"
         }
       ]
     },
@@ -3386,6 +3447,11 @@
       ],
       "files": [
         {
+          "path": "/home/development/repos/cyclone-ui/components/visually-hidden/src/index.ts",
+          "type": "registry:file",
+          "target": "/home/development/repos/cyclone-ui/components/visually-hidden/src/index.ts"
+        },
+        {
           "path": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.mjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.mjs"
@@ -3394,11 +3460,6 @@
           "path": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.cjs",
           "type": "registry:file",
           "target": "/home/development/repos/cyclone-ui/components/visually-hidden/dist/index.cjs"
-        },
-        {
-          "path": "/home/development/repos/cyclone-ui/components/visually-hidden/src/index.ts",
-          "type": "registry:file",
-          "target": "/home/development/repos/cyclone-ui/components/visually-hidden/src/index.ts"
         },
         {
           "path": "/home/development/repos/cyclone-ui/components/visually-hidden/node_modules/react-dom/index.js",

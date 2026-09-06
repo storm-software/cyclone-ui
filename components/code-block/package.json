@@ -1,0 +1,60 @@
+{
+  "name": "@cyclone-ui/code-block",
+  "version": "0.6.1",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/code-block"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/themeable-icon": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/font-size": "catalog:",
+    "@tamagui/get-font-sized": "catalog:",
+    "@tamagui/group": "catalog:",
+    "@tamagui/helpers": "catalog:",
+    "@tamagui/helpers-tamagui": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/tabs": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:",
+    "react-native-svg": "^15.15.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CodeBlock": {
+      "import": "./dist/CodeBlock.mjs",
+      "require": "./dist/CodeBlock.cjs"
+    },
+    "./*": "./*"
+  }
+}

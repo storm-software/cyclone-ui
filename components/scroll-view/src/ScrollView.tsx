@@ -26,6 +26,10 @@ export const ScrollView = styled(
   {
     name: "ScrollView",
     scrollEnabled: true,
+    // Reserve the native scrollbar gutter even when `overflowY: "auto"`
+    // hides its inactive scrollbar. `style` passes this web-only CSS property
+    // through React Native Web instead of treating it as a Tamagui style prop.
+    style: { scrollbarGutter: "stable" },
 
     variants: {
       fullscreen: {

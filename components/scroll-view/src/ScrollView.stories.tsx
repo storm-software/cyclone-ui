@@ -47,3 +47,13 @@ type Story = StoryObj<typeof ScrollView>;
 export const Base: Story = {
   args: {}
 };
+
+export const FitsWithinMaxHeight: Story = {
+  render: args => (
+    <View width="100%" height={500} padding="$4">
+      <ScrollView {...args} maxHeight={400} width="90%">
+        <Diagonal width="100%" height={200} />
+      </ScrollView>
+    </View>
+  )
+};
