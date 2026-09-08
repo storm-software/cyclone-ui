@@ -58,11 +58,6 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   // this fixes a flex bug where it overflows container
   minWidth: 0,
 
-  focusVisibleStyle: {
-    boxShadow: "$ring",
-    backgroundColor: "backgroundElevatedFocused"
-  },
-
   variants: {
     size: {
       "...size": (val: SizeTokens | number) => {
@@ -168,6 +163,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   name: "RadioGroupItem",
   context: RadioGroupContext,
 
+  transition: "200ms",
   cursor: "pointer",
   gap: "$3xl",
   boxShadow: "none",
@@ -179,23 +175,16 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   alignItems: "center",
   tabIndex: 0,
 
-  hoverStyle: {
-    backgroundColor: "backgroundElevatedHover"
-  },
-
   focusStyle: {
-    boxShadow: "$ring",
-    backgroundColor: "backgroundElevatedFocused"
+    boxShadow: "$ring"
   },
 
   pressStyle: {
-    boxShadow: "$ring",
-    backgroundColor: "backgroundElevatedPressed"
+    boxShadow: "$ring"
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
-    backgroundColor: "backgroundElevatedFocused"
+    boxShadow: "$ring"
   },
 
   variants: {

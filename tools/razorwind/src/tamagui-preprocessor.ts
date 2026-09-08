@@ -534,8 +534,8 @@ function applyOpacity(hex: string, opacity: number): string {
   return `${rgb}${alphaHex(alpha)}`;
 }
 
-const RING_OPACITY = 0.2;
-const THEME_RING_OPACITY = 0.9;
+const BASE_RING_OPACITY = 0.2;
+const THEME_RING_OPACITY = 0.75;
 
 function applyRingOpacity(
   node: unknown,
@@ -552,6 +552,8 @@ function applyRingOpacity(
 
   if (inRingGroup && isTokenNode(node) && resolveType(node) === "shadow") {
     const value = node.$value;
+    const opacity =
+      node.theme === "base" ? BASE_RING_OPACITY : THEME_RING_OPACITY;
     const applyToLayer = (layer: unknown): unknown => {
       if (!isPlainObject(layer) || !("color" in layer)) {
         return layer;
@@ -562,20 +564,20 @@ function applyRingOpacity(
       return color
         ? {
             ...layer,
-            color: applyOpacity(
-              color,
-              "theme" in layer && layer.theme !== "base"
-                ? THEME_RING_OPACITY
-                : RING_OPACITY
-            )
+            color: applyOpacity(color, opacity)
           }
         : layer;
     };
 
     return {
       ...node,
+      // CSS paints the first shadow layer on top. Ring tokens may use those
+      // leading layers as opaque offset masks, so only tint the final,
+      // visible ring layer.
       $value: Array.isArray(value)
-        ? value.map(applyToLayer)
+        ? value.map((layer, index) =>
+            index === value.length - 1 ? applyToLayer(layer) : layer
+          )
         : applyToLayer(value)
     };
   }

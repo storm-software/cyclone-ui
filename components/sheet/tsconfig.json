@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "../../dist/out-tsc/components/drawer/tsconfig.tsbuildinfo",
+    "tsBuildInfoFile": "../../dist/out-tsc/components/sheet/tsconfig.tsbuildinfo",
     "jsx": "preserve",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "ignoreDeprecations": "6.0",
@@ -13,9 +13,6 @@
     ],
     "outDir": "../../dist/out-tsc"
   },
-  "files": [],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
       "path": "../heading-text"
@@ -28,9 +25,9 @@
     },
     {
       "path": "../scroll-view"
-    },
-    {
-      "path": "../sheet"
     }
-  ]
+  ],
+  "files": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

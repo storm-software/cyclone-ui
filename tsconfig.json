@@ -205,22 +205,25 @@
       "path": "./components/phone-number-input-field"
     },
     {
-      "path": "./apps/storybook"
-    },
-    {
-      "path": "./apps/cli"
-    },
-    {
       "path": "./components/text-area"
     },
     {
       "path": "./components/text-area-field"
     },
     {
+      "path": "./components/sheet"
+    },
+    {
       "path": "./components/drawer"
     },
     {
       "path": "./components/code-block"
+    },
+    {
+      "path": "./apps/storybook"
+    },
+    {
+      "path": "./apps/cli"
     }
   ],
   "files": []

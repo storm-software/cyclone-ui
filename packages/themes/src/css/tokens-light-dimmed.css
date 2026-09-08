@@ -587,7 +587,9 @@
   --border-radius-card: 0.25rem; /** The border radius use for cards */
   --border-radius-button: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
   --border-radius-control: 0.25rem; /** The border radius use for controls, such as inputs and selects */
-  --border-radius-dialog: 0.375rem; /** The border radius use for dialogs */
+  --border-radius-dialog: 0.5rem; /** The border radius use for dialogs */
+  --border-radius-sheet: 0rem; /** The border radius use for sheets (none) */
+  --border-radius-drawer: 1rem; /** The border radius use for drawers */
   --border-radius-popover: 0.25rem; /** The border radius use for popovers */
   --border-radius-tooltip: 0.25rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
@@ -625,24 +627,24 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-base: 0px 0px 0px 3px #f5f5f533; /** The base ring variant */
-  --ring-base-subtle: 0px 0px 0px 1px #f5f5f533; /** The base subtle ring variant */
-  --ring-brand: 0px 0px 0px 3px #54e3c933; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 1px #54e3c933; /** The brand subtle ring variant */
-  --ring-danger: 0px 0px 0px 3px #cf222e33; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #cf222e33; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 3px #d4940033; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #d4940033; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 3px #00a46933; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #00a46933; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 3px #00b8e633; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #00b8e633; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 3px #7f7ee433; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #7f7ee433; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 3px #79b13633; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #79b13633; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 3px #d6301b33; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #d6301b33; /** The negative subtle ring variant */
+  --ring-base: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #f5f5f533; /** The base ring variant */
+  --ring-base-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #f5f5f533; /** The base subtle ring variant */
+  --ring-brand: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #54e3c9bf; /** The brand ring variant */
+  --ring-brand-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #54e3c9bf; /** The brand subtle ring variant */
+  --ring-danger: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #cf222ebf; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #cf222ebf; /** The danger subtle ring variant */
+  --ring-warning: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d49400bf; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d49400bf; /** The warning subtle ring variant */
+  --ring-success: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00a469bf; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00a469bf; /** The success subtle ring variant */
+  --ring-info: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00b8e6bf; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00b8e6bf; /** The info subtle ring variant */
+  --ring-discovery: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #7f7ee4bf; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #7f7ee4bf; /** The discovery subtle ring variant */
+  --ring-positive: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #79b136bf; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #79b136bf; /** The positive subtle ring variant */
+  --ring-negative: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d6301bbf; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d6301bbf; /** The negative subtle ring variant */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */

@@ -17,7 +17,7 @@ export default {
     appPreviewBg: "#181818",
     appBorderColor: "#484848",
     barTextColor: "#f5f5f5",
-    barSelectedColor: "#1f947f",
+    barSelectedColor: "#2abaa0",
     barBg: "#262626",
     barHoverColor: "#2e2e2e",
     buttonBg: "#1f1f1f",

@@ -68,7 +68,6 @@ const FieldGroupFrame = styled(ThemeableStack, {
   name: "Field",
 
   transition: "200ms",
-  cursor: "pointer",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -237,6 +236,7 @@ const FieldDetails = styled(BodyText, {
   transition: "200ms",
   color: "$background",
   fontStyle: "italic",
+  marginTop: "$sm",
 
   enterStyle: {
     opacity: 0,
@@ -430,7 +430,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                         color="$foregroundRequired"
                         size="$2xl"
                         position="absolute"
-                        top={0}
+                        top={2}
                       />
                     </View>
                   )}
@@ -671,6 +671,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
 
     const field = FieldApi.use();
     const disabled = field.disabled.get();
+    const focused = field.focused.get();
     const validating = field.validating.get();
     const theme = field.theme.get();
     const messages = field.messages.get();
@@ -712,7 +713,11 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
           theme,
           disabled,
           transition: "200ms",
-          color: disabled ? "$borderDisabled" : "$border",
+          color: disabled
+            ? "$borderDisabled"
+            : focused
+              ? "$borderFocused"
+              : "$border",
           "$group-field-hover": {
             color: disabled ? "$borderDisabled" : "$borderHover"
           }

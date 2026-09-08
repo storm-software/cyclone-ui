@@ -45,7 +45,7 @@ const RadioGroupItemValue = styled(Label, {
 
   transition: "200ms",
   cursor: "pointer",
-  color: "$foreground",
+  color: "$foregroundBase",
   fontFamily: "$heading-sm",
   fontSize: "$lg",
   fontWeight: "$normal",
@@ -143,23 +143,23 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
       onPress={handlePress}
       cursor="pointer"
       backgroundColor={selected ? "$backgroundHighest" : "$backgroundElevated"}
-      borderColor={selected ? "$borderFocused" : "$border"}
+      borderColor={selected ? "$borderHover" : "$border"}
       borderWidth={1}
       borderRadius="$control"
-      $group-item-hover={{ backgroundColor: "$backgroundElevatedHover" }}>
+      hoverStyle={{ backgroundColor: "$backgroundElevatedHover" }}>
       <YStack gap="$md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}
           selected={selected}
-          $group-item-hover={{ color: "$foregroundHover" }}>
+          $group-item-hover={{ color: "$foregroundBaseHover" }}>
           {name}
         </RadioGroupItemValue>
         {description && (
           <RadioGroupItemDetails
             disabled={disabled}
             display="flex"
-            $group-item-hover={{ color: "$foregroundHover" }}>
+            $group-item-hover={{ color: "$foregroundBaseHover" }}>
             {description}
           </RadioGroupItemDetails>
         )}

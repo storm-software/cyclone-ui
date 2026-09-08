@@ -1149,9 +1149,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "base"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "base"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "base"
     },
     {
@@ -1453,7 +1469,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-foreground-base)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-foreground-base)",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "base"
@@ -1461,7 +1477,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-foreground-base)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-foreground-base)",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "base"
@@ -1469,7 +1485,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-brand)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-brand)",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "base"
@@ -1477,7 +1493,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-brand)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-brand)",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "base"
@@ -1485,7 +1501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-danger)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-danger)",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "base"
@@ -1493,7 +1509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-danger)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-danger)",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "base"
@@ -1501,7 +1517,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-warning)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-warning)",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "base"
@@ -1509,7 +1525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-warning)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-warning)",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "base"
@@ -1517,7 +1533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-success)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-success)",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "base"
@@ -1525,7 +1541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-success)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-success)",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "base"
@@ -1533,7 +1549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-info)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-info)",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "base"
@@ -1541,7 +1557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-info)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-info)",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "base"
@@ -1549,7 +1565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-discovery)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "base"
@@ -1557,7 +1573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-discovery)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-discovery)",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "base"
@@ -1565,7 +1581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-positive)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-positive)",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "base"
@@ -1573,7 +1589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-positive)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-positive)",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "base"
@@ -1581,7 +1597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-border-negative)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px var(--color-border-negative)",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "base"
@@ -1589,7 +1605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px var(--color-border-negative)",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px var(--color-border-negative)",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "base"
@@ -2661,7 +2677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-7)",
+      value: "var(--color-brand-6)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "dark"
@@ -2957,7 +2973,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#00705c",
+      value: "#008d75",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -2965,7 +2981,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#004d3c",
+      value: "#00634d",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "dark"
@@ -2973,7 +2989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#004d3c",
+      value: "#00634d",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -2981,7 +2997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#999999",
+      value: "#6db1a1",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -3509,7 +3525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#73cab3",
+      value: "#90fce0",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "dark"
@@ -4149,7 +4165,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-5)",
       cssVar: "--rw-color-border-brand",
       description: "The brand border color for the dark theme",
       theme: "dark"
@@ -4309,7 +4325,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#00ad95",
+      value: "#00a98e",
       cssVar: "--rw-color-border-brand-hover",
       description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "dark"
@@ -4317,7 +4333,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-focused",
       type: "color",
-      value: "#007964",
+      value: "#00775e",
       cssVar: "--rw-color-border-brand-focused",
       description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "dark"
@@ -4325,7 +4341,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-disabled",
       type: "color",
-      value: "#90d9c9",
+      value: "#84d3c0",
       cssVar: "--rw-color-border-brand-disabled",
       description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "dark"
@@ -6149,9 +6165,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "dark"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "dark"
     },
     {
@@ -6453,7 +6485,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "dark"
@@ -6461,7 +6493,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "dark"
@@ -6469,7 +6501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "dark"
@@ -6477,7 +6509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "dark"
@@ -6485,7 +6517,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "dark"
@@ -6493,7 +6525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "dark"
@@ -6501,7 +6533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "dark"
@@ -6509,7 +6541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "dark"
@@ -6517,7 +6549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "dark"
@@ -6525,7 +6557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "dark"
@@ -6533,7 +6565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "dark"
@@ -6541,7 +6573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "dark"
@@ -6549,7 +6581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "dark"
@@ -6557,7 +6589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "dark"
@@ -6565,7 +6597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "dark"
@@ -6573,7 +6605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "dark"
@@ -6581,7 +6613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "dark"
@@ -6589,7 +6621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "dark"
@@ -7661,7 +7693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-7)",
+      value: "var(--color-brand-6)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "darkDimmed"
@@ -7957,7 +7989,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#237869",
+      value: "#278877",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -7965,7 +7997,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#1d6555",
+      value: "#21715f",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkDimmed"
@@ -7973,7 +8005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#1d6555",
+      value: "#21715f",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -7981,7 +8013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#919191",
+      value: "#779e95",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -8509,7 +8541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#7bafa2",
+      value: "#88dac4",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkDimmed"
@@ -9149,7 +9181,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-5)",
       cssVar: "--rw-color-border-brand",
       description: "The brand border color for the dark theme",
       theme: "darkDimmed"
@@ -9309,7 +9341,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#2c998a",
+      value: "#2c9786",
       cssVar: "--rw-color-border-brand-hover",
       description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "darkDimmed"
@@ -9317,7 +9349,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-focused",
       type: "color",
-      value: "#247d6e",
+      value: "#247c69",
       cssVar: "--rw-color-border-brand-focused",
       description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "darkDimmed"
@@ -9325,7 +9357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-disabled",
       type: "color",
-      value: "#8cbdb2",
+      value: "#85b7ab",
       cssVar: "--rw-color-border-brand-disabled",
       description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkDimmed"
@@ -11149,9 +11181,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "darkDimmed"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "darkDimmed"
     },
     {
@@ -11453,7 +11501,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "darkDimmed"
@@ -11461,7 +11509,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "darkDimmed"
@@ -11469,7 +11517,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "darkDimmed"
@@ -11477,7 +11525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "darkDimmed"
@@ -11485,7 +11533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "darkDimmed"
@@ -11493,7 +11541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "darkDimmed"
@@ -11501,7 +11549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "darkDimmed"
@@ -11509,7 +11557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "darkDimmed"
@@ -11517,7 +11565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "darkDimmed"
@@ -11525,7 +11573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "darkDimmed"
@@ -11533,7 +11581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "darkDimmed"
@@ -11541,7 +11589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "darkDimmed"
@@ -11549,7 +11597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "darkDimmed"
@@ -11557,7 +11605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "darkDimmed"
@@ -11565,7 +11613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkDimmed"
@@ -11573,7 +11621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "darkDimmed"
@@ -11581,7 +11629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkDimmed"
@@ -11589,7 +11637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "darkDimmed"
@@ -12661,7 +12709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand",
       type: "color",
-      value: "var(--color-brand-7)",
+      value: "var(--color-brand-6)",
       cssVar: "--rw-color-foreground-brand",
       description: "The brand foreground color for the dark theme",
       theme: "darkHighContrast"
@@ -12957,7 +13005,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#003027",
+      value: "#005a4a",
       cssVar: "--rw-color-foreground-brand-hover",
       description: "The brand foreground color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -12965,7 +13013,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-pressed",
       type: "color",
-      value: "#000000",
+      value: "#001d16",
       cssVar: "--rw-color-foreground-brand-pressed",
       description: "The brand foreground color for the dark theme (pressed, 40% darker)",
       theme: "darkHighContrast"
@@ -12973,7 +13021,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-focused",
       type: "color",
-      value: "#000000",
+      value: "#001d16",
       cssVar: "--rw-color-foreground-brand-focused",
       description: "The brand foreground color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -12981,7 +13029,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-disabled",
       type: "color",
-      value: "#a4a4a4",
+      value: "#66c6b0",
       cssVar: "--rw-color-foreground-brand-disabled",
       description: "The brand foreground color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -13509,7 +13557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#76e3c6",
+      value: "#ccfff2",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: "darkHighContrast"
@@ -14149,7 +14197,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand",
       type: "color",
-      value: "var(--color-brand-4)",
+      value: "var(--color-brand-5)",
       cssVar: "--rw-color-border-brand",
       description: "The brand border color for the dark theme",
       theme: "darkHighContrast"
@@ -14309,7 +14357,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#008875",
+      value: "#00826d",
       cssVar: "--rw-color-border-brand-hover",
       description: "The brand border color for the dark theme (hover, 20% darker)",
       theme: "darkHighContrast"
@@ -14317,7 +14365,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-focused",
       type: "color",
-      value: "#003d32",
+      value: "#003a2e",
       cssVar: "--rw-color-border-brand-focused",
       description: "The brand border color for the dark theme (focused, 40% darker)",
       theme: "darkHighContrast"
@@ -14325,7 +14373,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "color.border.brand-disabled",
       type: "color",
-      value: "#a8f0e1",
+      value: "#93ebd6",
       cssVar: "--rw-color-border-brand-disabled",
       description: "The brand border color for the dark theme (disabled, 60% saturation)",
       theme: "darkHighContrast"
@@ -16149,9 +16197,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "darkHighContrast"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "darkHighContrast"
     },
     {
@@ -16453,7 +16517,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "darkHighContrast"
@@ -16461,7 +16525,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "darkHighContrast"
@@ -16469,7 +16533,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "darkHighContrast"
@@ -16477,7 +16541,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "darkHighContrast"
@@ -16485,7 +16549,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "darkHighContrast"
@@ -16493,7 +16557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b9264733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "darkHighContrast"
@@ -16501,7 +16565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "darkHighContrast"
@@ -16509,7 +16573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d2952733",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "darkHighContrast"
@@ -16517,7 +16581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "darkHighContrast"
@@ -16525,7 +16589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e7133",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "darkHighContrast"
@@ -16533,7 +16597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "darkHighContrast"
@@ -16541,7 +16605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47ecee33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "darkHighContrast"
@@ -16549,7 +16613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "darkHighContrast"
@@ -16557,7 +16621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed233",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "darkHighContrast"
@@ -16565,7 +16629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "darkHighContrast"
@@ -16573,7 +16637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "darkHighContrast"
@@ -16581,7 +16645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "darkHighContrast"
@@ -16589,7 +16653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff040433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "darkHighContrast"
@@ -21173,9 +21237,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "light"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "light"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "light"
     },
     {
@@ -21477,7 +21557,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "light"
@@ -21485,7 +21565,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "light"
@@ -21493,7 +21573,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "light"
@@ -21501,7 +21581,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "light"
@@ -21509,7 +21589,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "light"
@@ -21517,7 +21597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "light"
@@ -21525,7 +21605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "light"
@@ -21533,7 +21613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "light"
@@ -21541,7 +21621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "light"
@@ -21549,7 +21629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "light"
@@ -21557,7 +21637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "light"
@@ -21565,7 +21645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "light"
@@ -21573,7 +21653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "light"
@@ -21581,7 +21661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "light"
@@ -21589,7 +21669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "light"
@@ -21597,7 +21677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "light"
@@ -21605,7 +21685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "light"
@@ -21613,7 +21693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "light"
@@ -26197,9 +26277,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "lightDimmed"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "lightDimmed"
     },
     {
@@ -26501,7 +26597,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "lightDimmed"
@@ -26509,7 +26605,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "lightDimmed"
@@ -26517,7 +26613,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "lightDimmed"
@@ -26525,7 +26621,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "lightDimmed"
@@ -26533,7 +26629,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "lightDimmed"
@@ -26541,7 +26637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "lightDimmed"
@@ -26549,7 +26645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "lightDimmed"
@@ -26557,7 +26653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "lightDimmed"
@@ -26565,7 +26661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "lightDimmed"
@@ -26573,7 +26669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "lightDimmed"
@@ -26581,7 +26677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "lightDimmed"
@@ -26589,7 +26685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "lightDimmed"
@@ -26597,7 +26693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "lightDimmed"
@@ -26605,7 +26701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "lightDimmed"
@@ -26613,7 +26709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "lightDimmed"
@@ -26621,7 +26717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "lightDimmed"
@@ -26629,7 +26725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "lightDimmed"
@@ -26637,7 +26733,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "lightDimmed"
@@ -31221,9 +31317,25 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "border-radius.dialog",
       type: "dimension",
-      value: "var(--border-radius-md)",
+      value: "var(--border-radius-lg)",
       cssVar: "--rw-border-radius-dialog",
       description: "The border radius use for dialogs",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.sheet",
+      type: "dimension",
+      value: "var(--border-radius-none)",
+      cssVar: "--rw-border-radius-sheet",
+      description: "The border radius use for sheets (none)",
+      theme: "lightHighContrast"
+    },
+    {
+      path: "border-radius.drawer",
+      type: "dimension",
+      value: "var(--border-radius-2xl)",
+      cssVar: "--rw-border-radius-drawer",
+      description: "The border radius use for drawers",
       theme: "lightHighContrast"
     },
     {
@@ -31525,7 +31637,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: "lightHighContrast"
@@ -31533,7 +31645,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: "lightHighContrast"
@@ -31541,7 +31653,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: "lightHighContrast"
@@ -31549,7 +31661,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: "lightHighContrast"
@@ -31557,7 +31669,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: "lightHighContrast"
@@ -31565,7 +31677,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222e33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: "lightHighContrast"
@@ -31573,7 +31685,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: "lightHighContrast"
@@ -31581,7 +31693,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d4940033",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: "lightHighContrast"
@@ -31589,7 +31701,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: "lightHighContrast"
@@ -31597,7 +31709,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a46933",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: "lightHighContrast"
@@ -31605,7 +31717,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: "lightHighContrast"
@@ -31613,7 +31725,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: "lightHighContrast"
@@ -31621,7 +31733,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: "lightHighContrast"
@@ -31629,7 +31741,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee433",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: "lightHighContrast"
@@ -31637,7 +31749,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: "lightHighContrast"
@@ -31645,7 +31757,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b13633",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: "lightHighContrast"
@@ -31653,7 +31765,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: "lightHighContrast"
@@ -31661,7 +31773,7 @@ const TOKENS: TokenTableRow[] = [
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301b33",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: "lightHighContrast"

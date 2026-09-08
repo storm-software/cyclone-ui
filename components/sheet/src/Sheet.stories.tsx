@@ -20,34 +20,34 @@ import { Button } from "@cyclone-ui/button";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YStack } from "@tamagui/stacks";
 import { useState } from "react";
-import type { DrawerProps } from "./Drawer";
-import { Drawer } from "./Drawer";
+import type { SheetProps } from "./Sheet";
+import { Sheet } from "./Sheet";
 
-const meta: Meta<typeof Drawer> = {
-  title: "Containers/Drawer",
-  component: Drawer,
+const meta: Meta<typeof Sheet> = {
+  title: "Containers/Sheet",
+  component: Sheet,
   tags: ["autodocs"],
-  render: ({ children, ...props }: DrawerProps) => {
+  render: ({ children, ...props }: SheetProps) => {
     const [open, setOpen] = useState(false);
 
     return (
       <>
         <Button onPress={() => setOpen(true)}>
-          <Button.Text>Open Drawer</Button.Text>
+          <Button.Text>Open Sheet</Button.Text>
         </Button>
-        <Drawer {...props} open={open} onOpenChange={setOpen}>
-          <Drawer.Overlay />
-          <Drawer.Frame padding="$5xl" gap="$3xl">
-            <Drawer.Handle />
-            <Drawer.Heading>Drawer heading</Drawer.Heading>
-            <Drawer.Body>{children}</Drawer.Body>
-            <Drawer.Footer>
+        <Sheet {...props} open={open} onOpenChange={setOpen}>
+          <Sheet.Overlay />
+          <Sheet.Frame padding="$5xl" gap="$3xl">
+            <Sheet.Handle />
+            <Sheet.Heading>Sheet heading</Sheet.Heading>
+            <Sheet.Body>{children}</Sheet.Body>
+            <Sheet.Footer>
               <Button onPress={() => setOpen(false)} variant="outlined">
                 <Button.Text>Close</Button.Text>
               </Button>
-            </Drawer.Footer>
-          </Drawer.Frame>
-        </Drawer>
+            </Sheet.Footer>
+          </Sheet.Frame>
+        </Sheet>
       </>
     );
   }
@@ -60,28 +60,7 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {
   args: {
     children:
-      "A modal drawer keeps focus within its contents and can be dismissed using the overlay, close button, or drag handle."
-  }
-};
-
-export const Small: Story = {
-  args: {
-    ...Base.args,
-    size: "sm"
-  }
-};
-
-export const Medium: Story = {
-  args: {
-    ...Base.args,
-    size: "md"
-  }
-};
-
-export const Large: Story = {
-  args: {
-    ...Base.args,
-    size: "lg"
+      "A modal sheet keeps focus within its contents and can be dismissed using the overlay, close button, or drag handle."
   }
 };
 
@@ -114,33 +93,33 @@ export const Left: Story = {
 };
 
 export const Scrollable: Story = {
-  render: ({ children, ...props }: DrawerProps) => {
+  render: ({ children, ...props }: SheetProps) => {
     const [open, setOpen] = useState(false);
 
     return (
       <>
         <Button onPress={() => setOpen(true)}>
-          <Button.Text>Open Drawer</Button.Text>
+          <Button.Text>Open Sheet</Button.Text>
         </Button>
-        <Drawer {...props} open={open} onOpenChange={setOpen} snapPoints={[90]}>
-          <Drawer.Overlay />
-          <Drawer.Frame>
-            <Drawer.Handle />
-            <Drawer.ScrollView padding="$5xl">
+        <Sheet {...props} open={open} onOpenChange={setOpen} snapPoints={[90]}>
+          <Sheet.Overlay />
+          <Sheet.Frame>
+            <Sheet.Handle />
+            <Sheet.ScrollView padding="$5xl">
               <YStack gap="$3xl">
-                <Drawer.Heading>Scrollable drawer</Drawer.Heading>
+                <Sheet.Heading>Scrollable sheet</Sheet.Heading>
                 {Array.from({ length: 12 }, (_, index) => (
-                  <Drawer.Body key={index}>{children}</Drawer.Body>
+                  <Sheet.Body key={index}>{children}</Sheet.Body>
                 ))}
               </YStack>
-            </Drawer.ScrollView>
-          </Drawer.Frame>
-        </Drawer>
+            </Sheet.ScrollView>
+          </Sheet.Frame>
+        </Sheet>
       </>
     );
   },
   args: {
     children:
-      "Drawer.ScrollView keeps long content reachable without changing the drawer's modal behavior."
+      "Sheet.ScrollView keeps long content reachable without changing the sheet's modal behavior."
   }
 };

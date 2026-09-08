@@ -51,7 +51,7 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
-  it("reduces opacity for every ring shadow layer", () => {
+  it("applies opacity by ring token theme and preserves offset masks", () => {
     const result = tamaguiPreprocessor({
       color: {
         foreground: {
@@ -62,6 +62,7 @@ describe("tamaguiPreprocessor", () => {
         ring: {
           base: {
             $type: "shadow",
+            theme: "base",
             $value: {
               color: "{color.foreground.secondary}",
               offsetX: { value: 0, unit: "px" },
@@ -72,6 +73,7 @@ describe("tamaguiPreprocessor", () => {
           },
           layered: {
             $type: "shadow",
+            theme: "brand",
             $value: [
               { color: "#ff0000", offsetX: 0 },
               { color: "#00ff00", offsetX: 0 }
@@ -90,9 +92,9 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         ring: {
-          base: { $value: { color: "#33669980" } },
+          base: { $value: { color: "#33669999" } },
           layered: {
-            $value: [{ color: "#ff000080" }, { color: "#00ff0080" }]
+            $value: [{ color: "#ff0000" }, { color: "#00ff00e6" }]
           }
         },
         shadow: {

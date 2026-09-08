@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/drawer",
-  "version": "0.1.2",
+  "name": "@cyclone-ui/sheet",
+  "version": "0.0.1",
   "type": "module",
-  "description": "A Sheet-based drawer component for Cyclone UI",
+  "description": "A Sheet component for Cyclone UI",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/drawer"
+    "directory": "components/sheet"
   },
   "private": false,
   "files": ["dist"],
@@ -19,7 +19,6 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
-    "@cyclone-ui/sheet": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/dialog": "catalog:",
     "@tamagui/helpers": "catalog:",
@@ -46,9 +45,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./Drawer": {
-      "import": "./dist/Drawer.mjs",
-      "require": "./dist/Drawer.cjs"
+    "./Sheet": {
+      "import": "./dist/Sheet.mjs",
+      "require": "./dist/Sheet.cjs"
     },
     "./*": "./*"
   }

@@ -148,7 +148,7 @@
   --color-foreground-link: #668dd3; /** The link foreground color for the dark theme */
   --color-foreground-required: #c63c3c; /** A required foreground color for the dark theme */
   --color-foreground-base: #d2d2d2; /** The primary foreground color for the dark theme */
-  --color-foreground-brand: #41897c; /** The brand foreground color for the dark theme */
+  --color-foreground-brand: #4d9f90; /** The brand foreground color for the dark theme */
   --color-foreground-danger: #ab5268; /** The danger foreground color for the dark theme */
   --color-foreground-negative: #c63c3c; /** The negative foreground color for the dark theme */
   --color-foreground-warning: #ad8b4e; /** The warning foreground color for the dark theme */
@@ -185,10 +185,10 @@
   --color-foreground-base-pressed: #7c7c7c; /** The primary foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-base-focused: #7c7c7c; /** The primary foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-base-disabled: rgba(210, 210, 210, 0.6); /** The primary foreground color for the dark theme (disabled, 60% opacity) */
-  --color-foreground-brand-hover: #237869; /** The brand foreground color for the dark theme (hover, 20% darker) */
-  --color-foreground-brand-pressed: #1d6555; /** The brand foreground color for the dark theme (pressed, 40% darker) */
-  --color-foreground-brand-focused: #1d6555; /** The brand foreground color for the dark theme (focused, 40% darker) */
-  --color-foreground-brand-disabled: #919191; /** The brand foreground color for the dark theme (disabled, 60% saturation) */
+  --color-foreground-brand-hover: #278877; /** The brand foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-brand-pressed: #21715f; /** The brand foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-brand-focused: #21715f; /** The brand foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-brand-disabled: #779e95; /** The brand foreground color for the dark theme (disabled, 60% saturation) */
   --color-foreground-danger-hover: #962c4f; /** The danger foreground color for the dark theme (hover, 20% darker) */
   --color-foreground-danger-pressed: #802538; /** The danger foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-danger-focused: #802538; /** The danger foreground color for the dark theme (focused, 40% darker) */
@@ -254,7 +254,7 @@
   --color-foreground-discovery-inverse-focused: #7c7c7c; /** The discovery foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-discovery-inverse-disabled: rgba(210, 210, 210, 0.6); /** The discovery foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-base-ghost-hover: #d9d9d9; /** The primary foreground color for the dark theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-brand-ghost-hover: #7bafa2; /** The brand foreground color for the dark theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-brand-ghost-hover: #88dac4; /** The brand foreground color for the dark theme (ghost hover, 60% brighter than hover) */
   --color-foreground-danger-ghost-hover: #d77785; /** The danger foreground color for the dark theme (ghost hover, 60% brighter than hover) */
   --color-foreground-negative-ghost-hover: #d88a7a; /** The negative foreground color for the dark theme (ghost hover, 60% brighter than hover) */
   --color-foreground-warning-ghost-hover: #dabb81; /** The warning foreground color for the dark theme (ghost hover, 60% brighter than hover) */
@@ -334,7 +334,7 @@
   --color-background-discovery-focused: #5e5b75; /** The discovery subtle background color for the dark theme (focused, 40% brighter) */
   --color-background-discovery-disabled: #474456; /** The discovery subtle background color for the dark theme (disabled, 60% saturation) */
   --color-border-base: #595959; /** Hairline-strong border against ink cards */
-  --color-border-brand: #68beae; /** The brand border color for the dark theme */
+  --color-border-brand: #57b6a5; /** The brand border color for the dark theme */
   --color-border-danger: #9e4a5d; /** The danger border color for the dark theme */
   --color-border-negative: #c63c3c; /** The negative border color for the dark theme */
   --color-border-warning: #ad8b4e; /** The warning border color for the dark theme */
@@ -354,9 +354,9 @@
   --color-border-base-hover: #686868; /** Hairline-strong border against ink cards (hover, 20% brighter) */
   --color-border-base-focused: #787878; /** Hairline-strong border against ink cards (focused, 40% brighter) */
   --color-border-base-disabled: rgba(89, 89, 89, 0.6); /** Hairline-strong border against ink cards (disabled, 60% opacity) */
-  --color-border-brand-hover: #2c998a; /** The brand border color for the dark theme (hover, 20% darker) */
-  --color-border-brand-focused: #247d6e; /** The brand border color for the dark theme (focused, 40% darker) */
-  --color-border-brand-disabled: #8cbdb2; /** The brand border color for the dark theme (disabled, 60% saturation) */
+  --color-border-brand-hover: #2c9786; /** The brand border color for the dark theme (hover, 20% darker) */
+  --color-border-brand-focused: #247c69; /** The brand border color for the dark theme (focused, 40% darker) */
+  --color-border-brand-disabled: #85b7ab; /** The brand border color for the dark theme (disabled, 60% saturation) */
   --color-border-danger-hover: #8c2945; /** The danger border color for the dark theme (hover, 20% darker) */
   --color-border-danger-focused: #792330; /** The danger border color for the dark theme (focused, 40% darker) */
   --color-border-danger-disabled: #8f6066; /** The danger border color for the dark theme (disabled, 60% saturation) */
@@ -584,7 +584,9 @@
   --border-radius-card: 0.25rem; /** The border radius use for cards */
   --border-radius-button: 0.25rem; /** The border radius use for triggers, such as buttons and badges */
   --border-radius-control: 0.25rem; /** The border radius use for controls, such as inputs and selects */
-  --border-radius-dialog: 0.375rem; /** The border radius use for dialogs */
+  --border-radius-dialog: 0.5rem; /** The border radius use for dialogs */
+  --border-radius-sheet: 0rem; /** The border radius use for sheets (none) */
+  --border-radius-drawer: 1rem; /** The border radius use for drawers */
   --border-radius-popover: 0.25rem; /** The border radius use for popovers */
   --border-radius-tooltip: 0.25rem; /** The border radius use for tooltips */
   --shadow-2xs: 0px 1px 0px 0px #0000000d; /** 2X small shadow */
@@ -622,24 +624,24 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-base: 0px 0px 0px 3px #f5f5f533; /** The base ring variant */
-  --ring-base-subtle: 0px 0px 0px 1px #f5f5f533; /** The base subtle ring variant */
-  --ring-brand: 0px 0px 0px 3px #54e3c933; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 1px #54e3c933; /** The brand subtle ring variant */
-  --ring-danger: 0px 0px 0px 3px #b9264733; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #b9264733; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 3px #d2952733; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #d2952733; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 3px #449e7133; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #449e7133; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 3px #47ecee33; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #47ecee33; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 3px #949ed233; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #949ed233; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 3px #9fd55e33; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #9fd55e33; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 3px #ff040433; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #ff040433; /** The negative subtle ring variant */
+  --ring-base: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #f5f5f533; /** The base ring variant */
+  --ring-base-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #f5f5f533; /** The base subtle ring variant */
+  --ring-brand: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #36dec0bf; /** The brand ring variant */
+  --ring-brand-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #36dec0bf; /** The brand subtle ring variant */
+  --ring-danger: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #b92647bf; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #b92647bf; /** The danger subtle ring variant */
+  --ring-warning: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #d29527bf; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #d29527bf; /** The warning subtle ring variant */
+  --ring-success: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #449e71bf; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #449e71bf; /** The success subtle ring variant */
+  --ring-info: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #47eceebf; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #47eceebf; /** The info subtle ring variant */
+  --ring-discovery: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #949ed2bf; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #949ed2bf; /** The discovery subtle ring variant */
+  --ring-positive: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #9fd55ebf; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #9fd55ebf; /** The positive subtle ring variant */
+  --ring-negative: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 6px #ff0404bf; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 3px #3c3c3c, 0px 0px 0px 4px #ff0404bf; /** The negative subtle ring variant */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */
