@@ -37,7 +37,7 @@ import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 
 export type TabOrientation = "horizontal" | "vertical";
-export type TabVariant = "underline" | "background";
+export type TabVariant = "underline" | "floating" | "tabbed";
 
 export interface TabsState {
   /**
@@ -105,7 +105,7 @@ export interface TabsContextProps {
   /**
    * The variant of the tabs
    *
-   * @default "background"
+   * @default "floating"
    */
   variant: TabVariant;
 
@@ -124,7 +124,7 @@ export const TabsContext = createStyledContext<TabsContextProps>({
   setState: ((_next: TabsState) => {}) as Dispatch<SetStateAction<TabsState>>,
   onInteraction: (_type: any, _layout: any) => {},
   orientation: "horizontal",
-  variant: "background",
+  variant: "floating",
   size: "$true"
 });
 
@@ -151,13 +151,14 @@ const TabsFrame = styled(TamaguiTabs, {
 
     variant: {
       underline: {},
-      background: {}
+      floating: {},
+      tabbed: {}
     }
   } as const,
 
   defaultVariants: {
     size: "$true",
-    variant: "background"
+    variant: "floating"
   }
 });
 
@@ -166,7 +167,7 @@ const TabsFrameImpl = TabsFrame.styleable(
     {
       children,
       orientation = "horizontal",
-      variant = "background",
+      variant = "floating",
       size = "$true",
       onValueChange,
       theme,
@@ -309,13 +310,14 @@ const TabsRovingIndicator = styled(YStack, {
         borderRadius: 0,
         borderColor: "transparent"
       },
-      background: {
+      floating: {
         borderRadius: "$button",
         borderWidth: 1,
         borderColor: "$border",
         alignItems: "center",
         justifyContent: "center"
-      }
+      },
+      tabbed: {}
     }
   } as const,
 
@@ -340,14 +342,14 @@ const TabsRovingIndicatorImpl = TabsRovingIndicator.styleable(
         {...rest}
         active={active}
         width={
-          orientation === "horizontal" || variant === "background"
+          orientation === "horizontal" || variant === "floating"
             ? width
             : undefined
         }
         height={
           isActiveUnderline
             ? "$xs"
-            : orientation === "vertical" || variant === "background"
+            : orientation === "vertical" || variant === "floating"
               ? height
               : undefined
         }
@@ -418,18 +420,22 @@ const TabsHeaderList = styled(YStack, {
         borderBottomColor: "$border",
         borderBottomWidth: "$xxs"
       },
-      background: {
+      floating: {
         backgroundColor: "$backgroundPage",
         borderRadius: "$container",
         borderColor: "$border",
         borderWidth: 1
+      },
+      tabbed: {
+        borderWidth: 0,
+        padding: 0
       }
     }
   } as const,
 
   defaultVariants: {
     orientation: "horizontal",
-    variant: "background"
+    variant: "floating"
   }
 });
 
@@ -459,32 +465,36 @@ const TabsHeaderListImpl = TabsHeaderList.styleable(
         orientation={orientation}
         variant={variant}
         {...rest}>
-        <TabsRovingIndicatorImpl
-          width={intentAt?.width ?? 0}
-          height={intentAt?.height ?? 0}
-          x={intentAt?.x ?? 0}
-          y={intentAt?.y ?? 0}
-          opacity={0}
-          orientation={orientation}
-          variant={variant}
-          $group-tabs-hover={{
-            intent: Boolean(intentAt),
-            opacity: intentAt ? 1 : 0
-          }}
-        />
-        <AnimatePresence>
-          {activeAt && (
+        {variant !== "tabbed" && (
+          <>
             <TabsRovingIndicatorImpl
-              width={activeAt.width}
-              height={activeAt.height}
-              x={activeAt.x}
-              y={activeAt.y}
-              active={true}
+              width={intentAt?.width ?? 0}
+              height={intentAt?.height ?? 0}
+              x={intentAt?.x ?? 0}
+              y={intentAt?.y ?? 0}
+              opacity={0}
               orientation={orientation}
               variant={variant}
+              $group-tabs-hover={{
+                intent: Boolean(intentAt),
+                opacity: intentAt ? 1 : 0
+              }}
             />
-          )}
-        </AnimatePresence>
+            <AnimatePresence>
+              {activeAt && (
+                <TabsRovingIndicatorImpl
+                  width={activeAt.width}
+                  height={activeAt.height}
+                  x={activeAt.x}
+                  y={activeAt.y}
+                  active={true}
+                  orientation={orientation}
+                  variant={variant}
+                />
+              )}
+            </AnimatePresence>
+          </>
+        )}
 
         <TamaguiTabs.List
           disablePassBorderRadius={
@@ -552,12 +562,61 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
           paddingHorizontal: space
         };
       }
+    },
+
+    variant: {
+      underline: {},
+      floating: {},
+      tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
+        config.props.orientation === "horizontal"
+          ? {
+              backgroundColor: "$backgroundPage",
+              borderColor: "$border",
+              borderWidth: 1,
+              borderTopLeftRadius: "$container",
+              borderTopRightRadius: "$container",
+              borderBottomLeftRadius: 0,
+              borderBottomRightRadius: 0,
+              marginBottom: -1,
+              zIndex: 2
+            }
+          : {
+              backgroundColor: "$backgroundPage",
+              borderColor: "$border",
+              borderWidth: 1,
+              borderTopLeftRadius: "$container",
+              borderBottomLeftRadius: "$container",
+              borderTopRightRadius: 0,
+              borderBottomRightRadius: 0,
+              marginRight: -1,
+              zIndex: 2
+            }
+    },
+
+    selected: {
+      ":boolean": (selected: boolean, config: VariantSpreadExtras<any>) => {
+        if (!selected || config.props.variant !== "tabbed") {
+          return {};
+        }
+
+        return config.props.orientation === "horizontal"
+          ? {
+              backgroundColor: "$backgroundElevated",
+              borderBottomColor: "$backgroundElevated"
+            }
+          : {
+              backgroundColor: "$backgroundElevated",
+              borderRightColor: "$backgroundElevated"
+            };
+      }
     }
   } as const,
 
   defaultVariants: {
     orientation: "horizontal",
-    size: "$true"
+    size: "$true",
+    variant: "floating",
+    selected: false
   }
 });
 
@@ -567,7 +626,9 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
       onInteraction,
       setState,
       state: { currentTab },
-      size
+      size,
+      orientation,
+      variant
     } = TabsContext.useStyledContext();
 
     useLayoutEffect(() => {
@@ -579,6 +640,9 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         ref={forwardedRef}
         group={true}
         size={size}
+        orientation={orientation}
+        variant={variant}
+        selected={currentTab === value}
         {...rest}
         value={value}
         onInteraction={onInteraction}>
@@ -610,23 +674,58 @@ const TabsContentList = styled(View, {
         flex: 1,
         minWidth: 0
       }
+    },
+
+    variant: {
+      underline: {},
+      floating: {},
+      tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
+        config.props.orientation === "horizontal"
+          ? {
+              backgroundColor: "$backgroundElevated",
+              borderColor: "$border",
+              borderWidth: 1,
+              borderBottomLeftRadius: "$container",
+              borderBottomRightRadius: "$container"
+            }
+          : {
+              backgroundColor: "$backgroundElevated",
+              borderColor: "$border",
+              borderWidth: 1,
+              borderTopRightRadius: "$container",
+              borderBottomRightRadius: "$container"
+            }
     }
   } as const,
 
   defaultVariants: {
-    orientation: "horizontal"
+    orientation: "horizontal",
+    variant: "floating"
   }
 });
 
 const TabsContentItem = TamaguiTabs.Content.styleable(
   ({ children, value, ...rest }: TamaguiTabsContentProps, forwardedRef) => {
+    const {
+      state: { currentTab }
+    } = TabsContext.useStyledContext();
+    const isActive = currentTab === value;
+
     return (
-      <AnimatedView key={value}>
+      <AnimatedView
+        key={value}
+        flexBasis={isActive ? "auto" : undefined}
+        flexGrow={isActive ? 0 : undefined}
+        flexShrink={isActive ? 0 : undefined}
+        position={isActive ? "relative" : "absolute"}
+        height={isActive ? "auto" : "100%"}>
         <TamaguiTabs.Content
           ref={forwardedRef}
           {...rest}
           value={value}
-          flex={1}>
+          flexBasis={isActive ? "auto" : undefined}
+          flexGrow={isActive ? 0 : 1}
+          flexShrink={isActive ? 0 : undefined}>
           {children}
         </TamaguiTabs.Content>
       </AnimatedView>

@@ -44,9 +44,9 @@ import {
 
 const CODE_BLOCK_STYLES = `
 .cyclone-code-block-tabs .cyclone-code-block.cyclone-code-block { width: 100%; height: 100%; margin: 0; border-width: 0; border-radius: 0; }
-.cyclone-code-block[data-keep-background] { background-color: var(--shiki-light-bg); }
-.t_dark .cyclone-code-block[data-keep-background] { background-color: var(--shiki-dark-bg); }
-@media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] { background-color: var(--shiki-dark-bg); } }
+.cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-light-bg); }
+.t_dark .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); }
+@media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); } }
 .cyclone-code-block-icon, .cyclone-code-block-icon svg { display: block; width: 1rem; height: 1rem; }
 .cyclone-code-block-viewport:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
 .cyclone-code-block-viewport { scrollbar-gutter: stable; }
@@ -63,7 +63,7 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-viewport .diff.remove { background: color-mix(in srgb, #ef4444 14%, transparent); opacity: .7; }
 .cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
 .cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
-.cyclone-code-block-tabs-trigger[data-state="active"] { border-bottom-color: var(--foreground); }
+.cyclone-code-block-tabs-trigger[data-state="active"] { position: relative; z-index: 1; background-color: var(--backgroundElevated); border-bottom-color: var(--backgroundElevated) !important; }
 .cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--foreground); }
 `;
 
@@ -113,7 +113,7 @@ const CodeBlockFrame = styled(View, {
   borderWidth: 1,
   borderColor: "$border",
   borderRadius: "$container",
-  backgroundColor: "$backgroundLowest"
+  backgroundColor: "$backgroundElevated"
 });
 
 const CodeBlockHeader = styled(XStack, {
@@ -125,9 +125,7 @@ const CodeBlockHeader = styled(XStack, {
   alignItems: "center",
   gap: "$xl",
   overflow: "hidden",
-  borderBottomWidth: 1,
-  borderBottomColor: "$border",
-  backgroundColor: "$backgroundElevated"
+  backgroundColor: "transparent"
 });
 
 const CodeBlockHeaderIcon = styled(View, {
@@ -158,7 +156,11 @@ const CodeBlockViewport = styled(View, {
   maxHeight: 600,
   paddingVertical: "$3xl",
   overflow: "unset",
-  backgroundColor: "transparent"
+  borderRadius: "$container",
+  backgroundColor: "$backgroundFloating",
+  borderColor: "$border",
+  borderWidth: 1,
+  borderStyle: "solid"
 });
 
 const CodeBlockPre = styled(Text, {
@@ -168,7 +170,7 @@ const CodeBlockPre = styled(Text, {
   width: "max-content",
   margin: 0,
   padding: 0,
-  backgroundColor: "$lowest",
+  backgroundColor: "$backgroundFloating",
   fontFamily: "inherit",
   fontSize: "inherit",
   lineHeight: "inherit",
@@ -212,7 +214,9 @@ const writeClipboard = async (text: string) => {
   }
 
   if (typeof document === "undefined") {
-    throw new Error("Clipboard access is not available in this environment.");
+    throw new TypeError(
+      "Clipboard access is not available in this environment."
+    );
   }
 
   const textarea = document.createElement("textarea");
@@ -376,6 +380,8 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
         data-line-numbers={lineNumbers ? "" : undefined}
         data-line-numbers-start={lineNumbers ? lineNumbersStart : undefined}
         tabIndex={-1}
+        paddingHorizontal={header ? "$xl" : 0}
+        paddingBottom={header ? "$xl" : 0}
         className={`cyclone-code-block${className ? ` ${className}` : ""}`}
         style={style}>
         <style>{CODE_BLOCK_STYLES}</style>
@@ -383,8 +389,8 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
         {!header ? (
           <XStack
             position="absolute"
-            top="$lg"
-            right="$lg"
+            top="$xl"
+            right="$xl"
             zIndex="$20"
             padding="$xs"
             borderRadius="$button">
@@ -400,7 +406,7 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
           className={`cyclone-code-block-viewport${
             viewportProps.className ? ` ${viewportProps.className}` : ""
           }`}
-          style={viewportStyle as any}>
+          style={viewportStyle}>
           {contentChildren}
         </CodeBlockViewport>
       </CodeBlockFrame>
@@ -424,7 +430,8 @@ export const CodeBlockTabs = forwardRef<TamaguiElement, CodeBlockTabsProps>(
       borderWidth={1}
       borderColor="$border"
       borderRadius="$container"
-      backgroundColor="$backgroundLowest"
+      backgroundColor="$backgroundElevated"
+      padding="$xl"
       {...props}
       className={`cyclone-code-block-tabs${className ? ` ${className}` : ""}`}>
       {children}
@@ -436,7 +443,7 @@ export type CodeBlockTabsListProps = ComponentProps<typeof TamaguiTabs.List>;
 export const CodeBlockTabsList = forwardRef<
   TamaguiElement,
   CodeBlockTabsListProps
->(({ style, ...props }, forwardedRef) => (
+>((props, forwardedRef) => (
   <TamaguiTabs.List
     ref={forwardedRef}
     {...props}
@@ -444,13 +451,11 @@ export const CodeBlockTabsList = forwardRef<
     flexDirection="row"
     width="100%"
     gap="$md"
-    paddingHorizontal="$3xl"
     overflowX="auto"
     overflowY="hidden"
-    style={[{ scrollbarGutter: "stable" }, style]}
+    backgroundColor="transparent"
     borderBottomWidth={1}
     borderBottomColor="$border"
-    backgroundColor="$backgroundElevated"
   />
 ));
 
@@ -463,15 +468,25 @@ export const CodeBlockTabsTrigger = forwardRef<
     ref={forwardedRef}
     {...props}
     className="cyclone-code-block-tabs-trigger"
-    flexGrow={0}
-    flexShrink={0}
-    paddingHorizontal="$lg"
-    paddingVertical="$xl"
-    borderBottomWidth={2}
-    borderBottomColor="transparent"
-    backgroundColor="transparent"
+    flex={1}
+    marginBottom={-1}
+    borderWidth={1}
+    borderColor="$border"
+    borderBottomColor="$border"
+    borderTopLeftRadius="$container"
+    borderTopRightRadius="$container"
+    borderBottomLeftRadius={0}
+    borderBottomRightRadius={0}
+    backgroundColor="$backgroundPage"
     cursor="pointer">
-    <BodyText paddingVertical={0} whiteSpace="nowrap">
+    <BodyText
+      color="$foregroundCaption"
+      fontFamily="$heading-sm"
+      fontSize="$lg"
+      fontWeight="$semibold"
+      lineHeight="$lg"
+      textAlign="center"
+      whiteSpace="nowrap">
       {children}
     </BodyText>
   </TamaguiTabs.Tab>
@@ -479,15 +494,24 @@ export const CodeBlockTabsTrigger = forwardRef<
 
 export type CodeBlockTabProps = ComponentProps<typeof TamaguiTabs.Content>;
 export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
-  (props, forwardedRef) => (
+  ({ className, ...props }, forwardedRef) => (
     <TamaguiTabs.Content
       ref={forwardedRef}
       {...props}
       flexGrow={1}
       minHeight={0}
       width="100%"
-      backgroundColor="$backgroundLowest"
+      borderWidth={1}
+      borderTopWidth={0}
+      borderColor="$border"
+      borderBottomLeftRadius="$container"
+      borderBottomRightRadius="$container"
+      overflow="hidden"
+      backgroundColor="$backgroundElevated"
       outlineStyle="none"
+      className={`cyclone-code-block-tabs-content${
+        className ? ` ${className}` : ""
+      }`}
     />
   )
 );

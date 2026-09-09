@@ -48,6 +48,12 @@ export const Base: Story = {
     const textArea = canvas.getByRole("textbox");
 
     await expect(textArea.tagName).toBe("TEXTAREA");
+    await expect(getComputedStyle(textArea).color).not.toBe(
+      "rgba(0, 0, 0, 0)"
+    );
+    await expect(getComputedStyle(textArea, "::placeholder").color).not.toBe(
+      "rgba(0, 0, 0, 0)"
+    );
     await userEvent.type(textArea, "A multiline value");
     await expect(textArea).toHaveValue("A multiline value");
   }

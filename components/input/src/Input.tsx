@@ -91,14 +91,14 @@ const InputGroup = styled(XGroup, {
   minWidth: 0,
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 
   variants: {
     focused: {
       true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
-        boxShadow: props.variant === "underline" ? "none" : "$ring",
+        boxShadow: props.variant === "underline" ? "none" : "$ringOffset",
         borderColor: "$borderFocused"
       })
     },

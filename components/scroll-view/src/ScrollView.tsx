@@ -16,12 +16,18 @@
 
  ------------------------------------------------------------------- */
 
+import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import { fullscreenStyle } from "@tamagui/stacks";
 import { ScrollView as ScrollViewNative } from "react-native";
 
-export const ScrollView = styled(
+const SCROLL_VIEW_STYLES = `
+.cyclone-scroll-view::-webkit-scrollbar, .cyclone-scroll-view::-webkit-scrollbar-track { background: transparent; }
+.cyclone-scroll-view::-webkit-scrollbar-button { display: none; }
+`;
+
+const ScrollViewFrame = styled(
   ScrollViewNative,
   {
     name: "ScrollView",
@@ -42,6 +48,19 @@ export const ScrollView = styled(
       contentContainerStyle: "style"
     } as const
   }
+);
+
+export const ScrollView = ScrollViewFrame.styleable(
+  ({ children, className, ...props }, forwardedRef) => (
+    <ScrollViewFrame
+      {...props}
+      ref={forwardedRef}
+      className={`cyclone-scroll-view${className ? ` ${className}` : ""}`}>
+      {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+      {children}
+    </ScrollViewFrame>
+  ),
+  { staticConfig: { componentName: "ScrollView" } }
 );
 
 export type ScrollView = ScrollViewNative;

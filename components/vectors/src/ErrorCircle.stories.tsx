@@ -16,15 +16,32 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./Binary";
-export * from "./Check";
-export * from "./CheckCircle";
-export * from "./CheckerBoard";
-export * from "./Diagonal";
-export * from "./DiscoveryCircle";
-export * from "./ErrorCircle";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useEffect, useState } from "react";
+import { ErrorCircle } from "./ErrorCircle";
+
+const meta: Meta<typeof ErrorCircle> = {
+  title: "Vectors/ErrorCircle",
+  component: ErrorCircle,
+  tags: ["autodocs"],
+  render: (args: any) => {
+    const [isComplete, setIsComplete] = useState(false);
+    useEffect(() => {
+      setInterval(() => {
+        setIsComplete((prev: boolean) => !prev);
+      }, 5000);
+    }, [setIsComplete]);
+
+    return <ErrorCircle {...args} isComplete={isComplete} />;
+  }
+} satisfies Meta<typeof ErrorCircle>;
+
+export default meta;
+
+type Story = StoryObj<typeof ErrorCircle>;
+
+export const Base: Story = {
+  args: {
+    size: "$13xl"
+  }
+};

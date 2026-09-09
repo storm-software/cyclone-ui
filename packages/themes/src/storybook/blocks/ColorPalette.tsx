@@ -171,7 +171,8 @@ const COLOR_VARIANTS = {
             "1": "#181818",
             "2": "#1f1f1f",
             "3": "#262626",
-            "4": "#303030"
+            "4": "#303030",
+            "5": "#3a3a3a"
       }}
     />
           <ColorItem
@@ -442,7 +443,8 @@ const COLOR_VARIANTS = {
             "page": "#181818",
             "elevated": "#1f1f1f",
             "floating": "#262626",
-            "highest": "#303030",
+            "high": "#303030",
+            "highest": "#3a3a3a",
             "lowest-hover": "#131314",
             "lowest-pressed": "#1a1a1b",
             "lowest-focused": "#1a1a1b",
@@ -459,10 +461,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#414141",
             "floating-focused": "#414141",
             "floating-disabled": "#26262699",
-            "highest-hover": "#404040",
-            "highest-pressed": "#505050",
-            "highest-focused": "#505050",
-            "highest-disabled": "#30303099"
+            "high-hover": "#404040",
+            "high-pressed": "#505050",
+            "high-focused": "#505050",
+            "high-disabled": "#30303099",
+            "highest-hover": "#4c4c4c",
+            "highest-pressed": "#606060",
+            "highest-focused": "#606060",
+            "highest-disabled": "#3a3a3a99"
       }}
     />
           <ColorItem
@@ -518,6 +524,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the dark theme"}
       colors={{
             "body": "#9f9f9f",
+            "eyebrow": "#808080",
             "caption": "#808080",
             "link": "#5291ff",
             "required": "#ff0404",
@@ -525,6 +532,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#4d4d4d",
             "body-focused": "#4d4d4d",
             "body-disabled": "#9f9f9f99",
+            "eyebrow-hover": "#5d5d5d",
+            "eyebrow-pressed": "#3d3d3d",
+            "eyebrow-focused": "#3d3d3d",
+            "eyebrow-disabled": "#80808099",
             "caption-hover": "#5d5d5d",
             "caption-pressed": "#3d3d3d",
             "caption-focused": "#3d3d3d",
@@ -736,7 +747,8 @@ const COLOR_VARIANTS = {
             "1": "#373737",
             "2": "#3c3c3c",
             "3": "#414141",
-            "4": "#484848"
+            "4": "#484848",
+            "5": "#4f4f4f"
       }}
     />
           <ColorItem
@@ -1007,7 +1019,8 @@ const COLOR_VARIANTS = {
             "page": "#373737",
             "elevated": "#3c3c3c",
             "floating": "#414141",
-            "highest": "#484848",
+            "high": "#484848",
+            "highest": "#4f4f4f",
             "lowest-hover": "#333335",
             "lowest-pressed": "#383839",
             "lowest-focused": "#383839",
@@ -1024,10 +1037,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#545454",
             "floating-focused": "#545454",
             "floating-disabled": "#41414199",
-            "highest-hover": "#535353",
-            "highest-pressed": "#5e5e5e",
-            "highest-focused": "#5e5e5e",
-            "highest-disabled": "#48484899"
+            "high-hover": "#535353",
+            "high-pressed": "#5e5e5e",
+            "high-focused": "#5e5e5e",
+            "high-disabled": "#48484899",
+            "highest-hover": "#5b5b5b",
+            "highest-pressed": "#696969",
+            "highest-focused": "#696969",
+            "highest-disabled": "#4f4f4f99"
       }}
     />
           <ColorItem
@@ -1083,6 +1100,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the dark theme"}
       colors={{
             "body": "#969696",
+            "eyebrow": "#808080",
             "caption": "#808080",
             "link": "#668dd3",
             "required": "#c63c3c",
@@ -1090,6 +1108,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#5c5c5c",
             "body-focused": "#5c5c5c",
             "body-disabled": "#96969699",
+            "eyebrow-hover": "#676767",
+            "eyebrow-pressed": "#515151",
+            "eyebrow-focused": "#515151",
+            "eyebrow-disabled": "#80808099",
             "caption-hover": "#676767",
             "caption-pressed": "#515151",
             "caption-focused": "#515151",
@@ -1301,7 +1323,8 @@ const COLOR_VARIANTS = {
             "1": "#000000",
             "2": "#000000",
             "3": "#000000",
-            "4": "#0c0c0c"
+            "4": "#0c0c0c",
+            "5": "#1b1b1b"
       }}
     />
           <ColorItem
@@ -1572,7 +1595,8 @@ const COLOR_VARIANTS = {
             "page": "#000000",
             "elevated": "#000000",
             "floating": "#000000",
-            "highest": "#0c0c0c",
+            "high": "#0c0c0c",
+            "highest": "#1b1b1b",
             "lowest-hover": "#000000",
             "lowest-pressed": "#000000",
             "lowest-focused": "#000000",
@@ -1589,10 +1613,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#252525",
             "floating-focused": "#252525",
             "floating-disabled": "#00000099",
-            "highest-hover": "#232323",
-            "highest-pressed": "#3b3b3b",
-            "highest-focused": "#3b3b3b",
-            "highest-disabled": "#0c0c0c99"
+            "high-hover": "#232323",
+            "high-pressed": "#3b3b3b",
+            "high-focused": "#3b3b3b",
+            "high-disabled": "#0c0c0c99",
+            "highest-hover": "#353535",
+            "highest-pressed": "#525252",
+            "highest-focused": "#525252",
+            "highest-disabled": "#1b1b1b99"
       }}
     />
           <ColorItem
@@ -1648,6 +1676,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the dark theme"}
       colors={{
             "body": "#adadad",
+            "eyebrow": "#808080",
             "caption": "#808080",
             "link": "#77a8ff",
             "required": "#ff0606",
@@ -1655,6 +1684,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#363636",
             "body-focused": "#363636",
             "body-disabled": "#adadad99",
+            "eyebrow-hover": "#4d4d4d",
+            "eyebrow-pressed": "#1f1f1f",
+            "eyebrow-focused": "#1f1f1f",
+            "eyebrow-disabled": "#80808099",
             "caption-hover": "#4d4d4d",
             "caption-pressed": "#1f1f1f",
             "caption-focused": "#1f1f1f",
@@ -1865,7 +1898,8 @@ const COLOR_VARIANTS = {
             "1": "#fafafa",
             "2": "#f4f4f4",
             "3": "#eaeaea",
-            "4": "#dcdcdc"
+            "4": "#dcdcdc",
+            "5": "#c7c7c7"
       }}
     />
           <ColorItem
@@ -2135,7 +2169,8 @@ const COLOR_VARIANTS = {
             "page": "#fafafa",
             "elevated": "#f4f4f4",
             "floating": "#eaeaea",
-            "highest": "#dcdcdc",
+            "high": "#dcdcdc",
+            "highest": "#c7c7c7",
             "link": "#468ae2",
             "lowest-hover": "#bebebe",
             "lowest-pressed": "#808080",
@@ -2153,10 +2188,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#757575",
             "floating-focused": "#757575",
             "floating-disabled": "#eaeaea99",
-            "highest-hover": "#a3a3a3",
-            "highest-pressed": "#6e6e6e",
-            "highest-focused": "#6e6e6e",
-            "highest-disabled": "#dcdcdc99",
+            "high-hover": "#a3a3a3",
+            "high-pressed": "#6e6e6e",
+            "high-focused": "#6e6e6e",
+            "high-disabled": "#dcdcdc99",
+            "highest-hover": "#939393",
+            "highest-pressed": "#626262",
+            "highest-focused": "#626262",
+            "highest-disabled": "#c7c7c799",
             "link-hover": "#1d63b8",
             "link-pressed": "#003d8f",
             "link-focused": "#003d8f",
@@ -2216,6 +2255,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the light theme"}
       colors={{
             "body": "#949494",
+            "eyebrow": "#525252",
             "caption": "#737373",
             "link": "#468ae2",
             "required": "#dc2626",
@@ -2223,6 +2263,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#484848",
             "body-focused": "#484848",
             "body-disabled": "#94949499",
+            "eyebrow-hover": "#6b6b6b",
+            "eyebrow-pressed": "#848484",
+            "eyebrow-focused": "#848484",
+            "eyebrow-disabled": "#52525299",
             "caption-hover": "#545454",
             "caption-pressed": "#363636",
             "caption-focused": "#363636",
@@ -2433,7 +2477,8 @@ const COLOR_VARIANTS = {
             "1": "#d5d5d5",
             "2": "#d1d1d1",
             "3": "#cacaca",
-            "4": "#c0c0c0"
+            "4": "#c0c0c0",
+            "5": "#b2b2b2"
       }}
     />
           <ColorItem
@@ -2703,7 +2748,8 @@ const COLOR_VARIANTS = {
             "page": "#d5d5d5",
             "elevated": "#d1d1d1",
             "floating": "#cacaca",
-            "highest": "#c0c0c0",
+            "high": "#c0c0c0",
+            "highest": "#b2b2b2",
             "link": "#6088bb",
             "lowest-hover": "#ababab",
             "lowest-pressed": "#808080",
@@ -2721,10 +2767,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#787878",
             "floating-focused": "#787878",
             "floating-disabled": "#cacaca99",
-            "highest-hover": "#989898",
-            "highest-pressed": "#737373",
-            "highest-focused": "#737373",
-            "highest-disabled": "#c0c0c099",
+            "high-hover": "#989898",
+            "high-pressed": "#737373",
+            "high-focused": "#737373",
+            "high-disabled": "#c0c0c099",
+            "highest-hover": "#8d8d8d",
+            "highest-pressed": "#6b6b6b",
+            "highest-focused": "#6b6b6b",
+            "highest-disabled": "#b2b2b299",
             "link-hover": "#446c9e",
             "link-pressed": "#285189",
             "link-focused": "#285189",
@@ -2784,6 +2834,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the light theme"}
       colors={{
             "body": "#8e8e8e",
+            "eyebrow": "#606060",
             "caption": "#777777",
             "link": "#6088bb",
             "required": "#b34e4e",
@@ -2791,6 +2842,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#595959",
             "body-focused": "#595959",
             "body-disabled": "#8e8e8e99",
+            "eyebrow-hover": "#717171",
+            "eyebrow-pressed": "#838383",
+            "eyebrow-focused": "#838383",
+            "eyebrow-disabled": "#60606099",
             "caption-hover": "#616161",
             "caption-pressed": "#4c4c4c",
             "caption-focused": "#4c4c4c",
@@ -3001,7 +3056,8 @@ const COLOR_VARIANTS = {
             "1": "#ffffff",
             "2": "#ffffff",
             "3": "#ffffff",
-            "4": "#ffffff"
+            "4": "#ffffff",
+            "5": "#e7e7e7"
       }}
     />
           <ColorItem
@@ -3271,7 +3327,8 @@ const COLOR_VARIANTS = {
             "page": "#ffffff",
             "elevated": "#ffffff",
             "floating": "#ffffff",
-            "highest": "#ffffff",
+            "high": "#ffffff",
+            "highest": "#e7e7e7",
             "link": "#3b91ff",
             "lowest-hover": "#dadada",
             "lowest-pressed": "#808080",
@@ -3289,10 +3346,14 @@ const COLOR_VARIANTS = {
             "floating-pressed": "#707070",
             "floating-focused": "#707070",
             "floating-disabled": "#ffffff99",
-            "highest-hover": "#b3b3b3",
-            "highest-pressed": "#666666",
-            "highest-focused": "#666666",
-            "highest-disabled": "#ffffff99",
+            "high-hover": "#b3b3b3",
+            "high-pressed": "#666666",
+            "high-focused": "#666666",
+            "high-disabled": "#ffffff99",
+            "highest-hover": "#9c9c9c",
+            "highest-pressed": "#555555",
+            "highest-focused": "#555555",
+            "highest-disabled": "#e7e7e799",
             "link-hover": "#0058c2",
             "link-pressed": "#00285d",
             "link-focused": "#00285d",
@@ -3352,6 +3413,7 @@ const COLOR_VARIANTS = {
       subtitle={"The body foreground color for the light theme"}
       colors={{
             "body": "#9d9d9d",
+            "eyebrow": "#3e3e3e",
             "caption": "#6d6d6d",
             "link": "#3b91ff",
             "required": "#ff0404",
@@ -3359,6 +3421,10 @@ const COLOR_VARIANTS = {
             "body-pressed": "#2f2f2f",
             "body-focused": "#2f2f2f",
             "body-disabled": "#9d9d9d99",
+            "eyebrow-hover": "#626262",
+            "eyebrow-pressed": "#868686",
+            "eyebrow-focused": "#868686",
+            "eyebrow-disabled": "#3e3e3e99",
             "caption-hover": "#404040",
             "caption-pressed": "#151515",
             "caption-focused": "#151515",

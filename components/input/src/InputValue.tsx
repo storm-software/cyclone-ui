@@ -225,6 +225,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
             <textarea
               ref={composedRefs as any}
               style={{
+                color: "var(--color)",
                 flex: 1,
                 minWidth: 0,
                 margin: 0,

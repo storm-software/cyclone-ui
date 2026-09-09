@@ -1,0 +1,127 @@
+/* -------------------------------------------------------------------
+
+                   🗲 Storm Software - Cyclone UI
+
+ This code was released as part of the Cyclone UI project. Cyclone UI
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/cyclone-ui.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/cyclone-ui
+ Documentation:            https://docs.stormsoftware.com/projects/cyclone-ui
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import type { IconProps } from "@tamagui/helpers-icon";
+import { themed } from "@tamagui/helpers-icon";
+import { useCurrentColor } from "@tamagui/helpers-tamagui";
+import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
+import { memo, useEffect, useState } from "react";
+import type { SvgProps } from "react-native-svg";
+import { Circle, Path, Svg } from "react-native-svg";
+
+export type ErrorCircleProps = IconProps & {
+  isComplete?: boolean;
+};
+
+const Icon = ({ isComplete = true, size = 24, ...props }: ErrorCircleProps) => {
+  const color = useCurrentColor((props.color || "$foregroundOn") as any);
+
+  const diameter = 24;
+  const strokeWidth = 2;
+  const outerRadius = diameter / 2;
+  const innerRadius = outerRadius - strokeWidth / 2;
+  const circumference = 2 * Math.PI * innerRadius;
+
+  const motionCircle = useMotionValue(circumference);
+  const [strokeDashoffset, setStrokeDashoffset] = useState(circumference);
+  useMotionValueEvent(motionCircle, "change", latest => {
+    setStrokeDashoffset(latest);
+  });
+
+  const motionLine1 = useMotionValue(0);
+  const [line1, setLine1] = useState(0);
+  useMotionValueEvent(motionLine1, "change", latest => {
+    setLine1(latest);
+  });
+
+  const motionLine2 = useMotionValue(0);
+  const [line2, setLine2] = useState(0);
+  useMotionValueEvent(motionLine2, "change", latest => {
+    setLine2(latest);
+  });
+
+  useEffect(() => {
+    if (!isComplete) {
+      motionCircle.set(circumference);
+      motionLine1.set(0);
+      motionLine2.set(0);
+
+      return;
+    }
+
+    const playbackCircle = animate(motionCircle, 0, {
+      type: "spring",
+      duration: 0.75,
+      bounce: 0
+    });
+    const playbackLine1 = animate(motionLine1, 8, {
+      type: "spring",
+      duration: 0.25,
+      bounce: 0,
+      delay: 0
+    });
+    const playbackLine2 = animate(motionLine2, 8, {
+      type: "spring",
+      duration: 0.25,
+      bounce: 0,
+      delay: 0.25
+    });
+
+    return () => {
+      playbackCircle.stop();
+      playbackLine1.stop();
+      playbackLine2.stop();
+    };
+  }, [circumference, isComplete, motionCircle, motionLine1, motionLine2]);
+
+  return (
+    <Svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...(props as SvgProps)}
+      strokeWidth={strokeWidth}>
+      {isComplete && (
+        <>
+          <Circle
+            cx={outerRadius}
+            cy={outerRadius}
+            r={innerRadius}
+            fill="transparent"
+            stroke={color}
+            strokeDasharray={`${circumference} ${circumference}`}
+            strokeDashoffset={strokeDashoffset}
+            strokeWidth={strokeWidth}
+            strokeLinecap="round"
+          />
+
+          <Path d={`m8 8 ${line1} ${line1}`} stroke={color} />
+          <Path d={`m16 8 ${-line2} ${line2}`} stroke={color} />
+        </>
+      )}
+    </Svg>
+  );
+};
+
+Icon.displayName = "ErrorCircle";
+
+export const ErrorCircle = memo<ErrorCircleProps>(themed(Icon));

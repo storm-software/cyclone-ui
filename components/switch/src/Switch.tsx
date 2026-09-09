@@ -24,7 +24,6 @@ import {
   createStyledContext,
   getVariableValue,
   styled,
-  Theme,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -72,12 +71,12 @@ const SwitchFrame = styled(View, {
 
   focusStyle: {
     borderColor: "$borderFocused",
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   focusVisibleStyle: {
     borderColor: "$borderFocused",
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   variants: {
@@ -124,33 +123,28 @@ const SwitchFrame = styled(View, {
 const SwitchThumb = styled(View, {
   name: "SwitchThumb",
 
+  theme: "base",
   transition: "200ms",
   backgroundColor: "$backgroundHighest",
   borderRadius: 100_000,
-  borderWidth: 1,
-  borderColor: "$border",
+  borderWidth: 0,
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
-  y: -1,
-  x: -2,
 
   variants: {
     checked: {
       true: {
-        backgroundColor: "$background",
-        borderColor: "$borderSubtle",
-        x: 1
+        backgroundColor: "$backgroundHighest"
       }
     },
 
     size: {
       "...size": val => {
-        const width = getSwitchHeight(val);
+        const height = getSwitchHeight(val);
 
         return {
-          height: width,
-          width
+          height: height - 2,
+          width: height - 2
         };
       }
     }
@@ -164,7 +158,7 @@ const SwitchThumb = styled(View, {
 
 const SwitchThumbImpl = SwitchThumb.styleable(
   (props, forwardedRef) => {
-    return <SwitchThumb ref={forwardedRef} {...props} theme="base" />;
+    return <SwitchThumb ref={forwardedRef} {...props} />;
   },
   {
     staticConfig: { componentName: "SwitchThumb" }
@@ -274,28 +268,25 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
     forwardedRef
   ) => {
     return (
-      <Theme name="base">
-        <SwitchContext.Provider
-          name={name}
+      <SwitchContext.Provider
+        name={name}
+        size={size}
+        checked={checked}
+        disabled={disabled}>
+        <BaseSwitch
+          ref={forwardedRef}
+          activeStyle={{
+            backgroundColor: "$foreground"
+          }}
+          {...props}
+          id={name}
           size={size}
           checked={checked}
           disabled={disabled}>
-          <BaseSwitch
-            ref={forwardedRef}
-            activeStyle={{
-              backgroundColor: "$background",
-              borderColor: "$borderSubtle"
-            }}
-            {...props}
-            id={name}
-            size={size}
-            checked={checked}
-            disabled={disabled}>
-            {children}
-            <BaseSwitch.Thumb />
-          </BaseSwitch>
-        </SwitchContext.Provider>
-      </Theme>
+          {children}
+          <BaseSwitch.Thumb />
+        </BaseSwitch>
+      </SwitchContext.Provider>
     );
   },
   {

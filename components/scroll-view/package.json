@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
+    "@tamagui/constants": "catalog:",
     "@tamagui/stacks": "catalog:"
   },
   "devDependencies": {

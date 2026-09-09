@@ -37,6 +37,8 @@ try {
       projects = "apps/cli";
     } else if (argv.components) {
       projects = "components/*";
+    } else if (argv.storybook) {
+      projects = "apps/storybook";
     } else if (argv.all || (!argv.cli && !argv.components)) {
       projects = "packages/*,components/*,apps/cli";
     }

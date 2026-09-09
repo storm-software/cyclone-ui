@@ -2,6 +2,16 @@
 
 Guidance for AI agents working in the [cyclone-ui](https://github.com/storm-software/cyclone-ui) monorepo.
 
+## Storybook Validations
+
+When making a visual/design change and are unable to run Storybook locally for whatever reason, validate changes by running the Storybook build and checking for errors:
+
+```bash
+pnpm build-storybook
+```
+
+**Be sure to clearly report back to the user that you were unable to run Storybook locally, and that you are relying on the build output for validation.**
+
 ## External packages — do not patch
 
 The following Storm Software ecosystems are maintained in **separate repositories**. Do **not** modify their package code, vendored scaffolding, or `node_modules` contents in this repo — including via `patch-package`, manual edits under `node_modules`, or direct changes to generated integration layers.

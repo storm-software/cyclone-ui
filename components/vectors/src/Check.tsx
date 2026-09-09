@@ -36,7 +36,7 @@ export type CheckProps = IconProps & {
 const Icon = ({
   isComplete = true,
   size = 24,
-  strokeWidth = 2,
+  strokeWidth = 3,
   style,
   ...props
 }: CheckProps) => {

@@ -104,7 +104,7 @@ const AlertFrameImpl = ({
     <AlertContext.Provider type={type}>
       <Container
         {...props}
-        variant="highest"
+        variant="high"
         themeShallow={true}
         bordered={false}
         noPadding={true}
@@ -124,7 +124,7 @@ const AlertIconBackground = styled(View, {
 
   theme: "base",
   padding: "$xl",
-  backgroundColor: "$backgroundHighest",
+  backgroundColor: "$backgroundHigh",
   borderRadius: 1000_000_000
 });
 
@@ -153,7 +153,7 @@ const AlertIcon = ThemeableIcon.styleable(
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="$backgroundHighest">
+            <AlertIconBackground backgroundColor="$backgroundHigh">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}

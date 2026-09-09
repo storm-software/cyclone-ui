@@ -182,7 +182,7 @@ const ButtonFrame = styled(View, {
   paddingHorizontal: "$2xl",
 
   focusVisibleStyle: {
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   variants: {
@@ -339,10 +339,10 @@ const ButtonFrame = styled(View, {
     ringed: {
       true: {
         hoverStyle: {
-          boxShadow: "$ring"
+          boxShadow: "$ringOffset"
         },
         pressStyle: {
-          boxShadow: "$ring"
+          boxShadow: "$ringOffset"
         }
       }
     },

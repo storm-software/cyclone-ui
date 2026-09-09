@@ -45,7 +45,14 @@ export type DatePickerChangeEventHandler = (
 
 export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
 
+export type DateSeparator = "." | "/";
+
 export interface DatePickerExtraProps {
+  /**
+   * Separator used by the text input's date format.
+   */
+  separator?: DateSeparator;
+
   /**
    * Date shown and selected in the calendar popover.
    */
@@ -72,6 +79,8 @@ export type DatePickerContextProps = Omit<
   InputContextProps,
   "onChange" | "onInput"
 > & {
+  separator: DateSeparator;
+
   /**
    * Callback that is called when the text input's text changes.
    *
@@ -90,6 +99,7 @@ export type DatePickerContextProps = Omit<
 };
 
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
+  separator: ".",
   size: "$true",
   circular: false,
   disabled: false,
@@ -98,6 +108,9 @@ export const DatePickerContext = createStyledContext<DatePickerContextProps>({
 });
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
+
+export const getDateFormat = (separator: DateSeparator = ".") =>
+  `MM${separator}DD${separator}YYYY`;
 
 const MONTH_NAMES = [
   "January",
@@ -710,10 +723,16 @@ const DatePickerTextBox = Input.TextBox.styleable(
 
 const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   ({ children, placeholder = DEFAULT_DATE_FORMAT, ...props }, forwardedRef) => {
+    const { separator } = DatePickerContext.useStyledContext();
+
     return (
       <Input.TextBox.Value
         ref={forwardedRef}
-        placeholder={placeholder}
+        placeholder={
+          placeholder === DEFAULT_DATE_FORMAT
+            ? getDateFormat(separator)
+            : placeholder
+        }
         nativePaddingInline={16}
         {...props}>
         {children}
@@ -732,6 +751,7 @@ const DatePickerProvider = ({
   onChange,
   onFocus,
   focused,
+  separator = ".",
   variant = "default",
   selectedDate = null,
   ...props
@@ -798,6 +818,7 @@ const DatePickerProvider = ({
         {...props}
         onChange={onChange}
         onFocus={onFocus}
+        separator={separator}
         variant={variant}
         focused={focused}>
         {children}
@@ -830,6 +851,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
       onFocus,
       onBlur,
       focused,
+      separator = ".",
       variant = "default",
       selectedDate,
       ...props
@@ -855,6 +877,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
         onFocus={onFocus}
         onBlur={onBlur}
         focused={focused}
+        separator={separator}
         variant={variant}
         selectedDate={selectedDate}>
         <Popover

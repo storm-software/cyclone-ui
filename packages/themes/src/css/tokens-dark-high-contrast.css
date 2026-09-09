@@ -43,6 +43,7 @@
   --color-surface-2: #000000; /** The second level surface of the palette - subtly lifted graphite for inputs and cards */
   --color-surface-3: #000000; /** The third level surface of the palette - neutral charcoal for floating components */
   --color-surface-4: #0c0c0c; /** The fourth level surface of the palette - emphasized charcoal for the highest elevation */
+  --color-surface-5: #1b1b1b; /** The fifth level surface of the palette - deepest charcoal for maximum elevation */
   --color-grey-1: #ffffff; /** A soft neutral white for primary text on dark surfaces */
   --color-grey-2: #ffffff; /** A light neutral gray for prominent secondary text */
   --color-grey-3: #dadada; /** A soft neutral gray for body text */
@@ -144,6 +145,7 @@
   --color-pink-8: #f875aa; /** A deep berry pink color */
   --color-pink-9: #cc437c; /** A dark plum pink color */
   --color-foreground-body: #adadad; /** The body foreground color for the dark theme */
+  --color-foreground-eyebrow: #808080; /** The eyebrow foreground color for the dark theme */
   --color-foreground-caption: #808080; /** The caption foreground color for the dark theme */
   --color-foreground-link: #77a8ff; /** The link foreground color for the dark theme */
   --color-foreground-required: #ff0606; /** A required foreground color for the dark theme */
@@ -169,6 +171,10 @@
   --color-foreground-body-pressed: #363636; /** The body foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-body-focused: #363636; /** The body foreground color for the dark theme (focused, 40% darker) */
   --color-foreground-body-disabled: rgba(173, 173, 173, 0.6); /** The body foreground color for the dark theme (disabled, 60% opacity) */
+  --color-foreground-eyebrow-hover: #4d4d4d; /** The eyebrow foreground color for the dark theme (hover, 20% darker) */
+  --color-foreground-eyebrow-pressed: #1f1f1f; /** The eyebrow foreground color for the dark theme (pressed, 40% darker) */
+  --color-foreground-eyebrow-focused: #1f1f1f; /** The eyebrow foreground color for the dark theme (focused, 40% darker) */
+  --color-foreground-eyebrow-disabled: rgba(128, 128, 128, 0.6); /** The eyebrow foreground color for the dark theme (disabled, 60% opacity) */
   --color-foreground-caption-hover: #4d4d4d; /** The caption foreground color for the dark theme (hover, 20% darker) */
   --color-foreground-caption-pressed: #1f1f1f; /** The caption foreground color for the dark theme (pressed, 40% darker) */
   --color-foreground-caption-focused: #1f1f1f; /** The caption foreground color for the dark theme (focused, 40% darker) */
@@ -267,7 +273,8 @@
   --color-background-page: #000000; /** The page background color for the dark theme */
   --color-background-elevated: #000000; /** The elevated background color for the dark theme */
   --color-background-floating: #000000; /** The floating background color for the dark theme */
-  --color-background-highest: #0c0c0c; /** The highest level of elevation background color for the dark theme */
+  --color-background-high: #0c0c0c; /** A high level of elevation background color for the dark theme */
+  --color-background-highest: #1b1b1b; /** The highest level of elevation background color for the dark theme */
   --color-background-base: #090909; /** The primary subtle background color for the dark theme */
   --color-background-brand: #000403; /** The brand subtle background color for the dark theme */
   --color-background-danger: #000000; /** The danger subtle background color for the dark theme */
@@ -293,10 +300,14 @@
   --color-background-floating-pressed: #252525; /** The floating background color for the dark theme (pressed, 40% brighter) */
   --color-background-floating-focused: #252525; /** The floating background color for the dark theme (focused, 40% brighter) */
   --color-background-floating-disabled: rgba(0, 0, 0, 0.6); /** The floating background color for the dark theme (disabled, 60% opacity) */
-  --color-background-highest-hover: #232323; /** The highest level of elevation background color for the dark theme (hover, 20% brighter) */
-  --color-background-highest-pressed: #3b3b3b; /** The highest level of elevation background color for the dark theme (pressed, 40% brighter) */
-  --color-background-highest-focused: #3b3b3b; /** The highest level of elevation background color for the dark theme (focused, 40% brighter) */
-  --color-background-highest-disabled: rgba(12, 12, 12, 0.6); /** The highest level of elevation background color for the dark theme (disabled, 60% opacity) */
+  --color-background-high-hover: #232323; /** A high level of elevation background color for the dark theme (hover, 20% brighter) */
+  --color-background-high-pressed: #3b3b3b; /** A high level of elevation background color for the dark theme (pressed, 40% brighter) */
+  --color-background-high-focused: #3b3b3b; /** A high level of elevation background color for the dark theme (focused, 40% brighter) */
+  --color-background-high-disabled: rgba(12, 12, 12, 0.6); /** A high level of elevation background color for the dark theme (disabled, 60% opacity) */
+  --color-background-highest-hover: #353535; /** The highest level of elevation background color for the dark theme (hover, 20% brighter) */
+  --color-background-highest-pressed: #525252; /** The highest level of elevation background color for the dark theme (pressed, 40% brighter) */
+  --color-background-highest-focused: #525252; /** The highest level of elevation background color for the dark theme (focused, 40% brighter) */
+  --color-background-highest-disabled: rgba(27, 27, 27, 0.6); /** The highest level of elevation background color for the dark theme (disabled, 60% opacity) */
   --color-background-base-hover: #1f1f1f; /** The primary subtle background color for the dark theme (hover, 20% brighter) */
   --color-background-base-pressed: #363636; /** The primary subtle background color for the dark theme (pressed, 40% brighter) */
   --color-background-base-focused: #363636; /** The primary subtle background color for the dark theme (focused, 40% brighter) */
@@ -624,24 +635,42 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-base: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #f5f5f533; /** The base ring variant */
-  --ring-base-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #f5f5f533; /** The base subtle ring variant */
-  --ring-brand: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #36dec0bf; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #36dec0bf; /** The brand subtle ring variant */
-  --ring-danger: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #b92647bf; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #b92647bf; /** The danger subtle ring variant */
-  --ring-warning: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #d29527bf; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #d29527bf; /** The warning subtle ring variant */
-  --ring-success: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #449e71bf; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #449e71bf; /** The success subtle ring variant */
-  --ring-info: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #47eceebf; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #47eceebf; /** The info subtle ring variant */
-  --ring-discovery: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #949ed2bf; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #949ed2bf; /** The discovery subtle ring variant */
-  --ring-positive: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #9fd55ebf; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #9fd55ebf; /** The positive subtle ring variant */
-  --ring-negative: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #ff0404bf; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #ff0404bf; /** The negative subtle ring variant */
+  --ring-base: 0px 0px 0px 3px #f5f5f533; /** The base ring variant */
+  --ring-base-subtle: 0px 0px 0px 1px #f5f5f533; /** The base subtle ring variant */
+  --ring-base-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #f5f5f533; /** The base ring variant with a 3px offset */
+  --ring-base-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #f5f5f533; /** The base subtle ring variant with a 3px offset */
+  --ring-brand: 0px 0px 0px 3px #36dec0bf; /** The brand ring variant */
+  --ring-brand-subtle: 0px 0px 0px 1px #36dec0bf; /** The brand subtle ring variant */
+  --ring-brand-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #36dec0bf; /** The brand ring variant with a 3px offset */
+  --ring-brand-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #36dec0bf; /** The brand subtle ring variant with a 3px offset */
+  --ring-danger: 0px 0px 0px 3px #b92647bf; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 1px #b92647bf; /** The danger subtle ring variant */
+  --ring-danger-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #b92647bf; /** The danger ring variant with a 3px offset */
+  --ring-danger-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #b92647bf; /** The danger subtle ring variant with a 3px offset */
+  --ring-warning: 0px 0px 0px 3px #d29527bf; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 1px #d29527bf; /** The warning subtle ring variant */
+  --ring-warning-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #d29527bf; /** The warning ring variant with a 3px offset */
+  --ring-warning-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #d29527bf; /** The warning subtle ring variant with a 3px offset */
+  --ring-success: 0px 0px 0px 3px #449e71bf; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 1px #449e71bf; /** The success subtle ring variant */
+  --ring-success-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #449e71bf; /** The success ring variant with a 3px offset */
+  --ring-success-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #449e71bf; /** The success subtle ring variant with a 3px offset */
+  --ring-info: 0px 0px 0px 3px #47eceebf; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 1px #47eceebf; /** The info subtle ring variant */
+  --ring-info-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #47eceebf; /** The info ring variant with a 3px offset */
+  --ring-info-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #47eceebf; /** The info subtle ring variant with a 3px offset */
+  --ring-discovery: 0px 0px 0px 3px #949ed2bf; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 1px #949ed2bf; /** The discovery subtle ring variant */
+  --ring-discovery-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #949ed2bf; /** The discovery ring variant with a 3px offset */
+  --ring-discovery-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #949ed2bf; /** The discovery subtle ring variant with a 3px offset */
+  --ring-positive: 0px 0px 0px 3px #9fd55ebf; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 1px #9fd55ebf; /** The positive subtle ring variant */
+  --ring-positive-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #9fd55ebf; /** The positive ring variant with a 3px offset */
+  --ring-positive-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #9fd55ebf; /** The positive subtle ring variant with a 3px offset */
+  --ring-negative: 0px 0px 0px 3px #ff0404bf; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 1px #ff0404bf; /** The negative subtle ring variant */
+  --ring-negative-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 6px #ff0404bf; /** The negative ring variant with a 3px offset */
+  --ring-negative-subtle-offset: 0px 0px 0px 3px #000000, 0px 0px 0px 4px #ff0404bf; /** The negative subtle ring variant with a 3px offset */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */

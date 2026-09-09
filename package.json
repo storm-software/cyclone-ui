@@ -46,6 +46,7 @@
     "build": "pnpm exec zx tools/scripts/src/build.mjs --prod",
     "build-dev": "pnpm exec zx tools/scripts/src/build.mjs --dev",
     "build-components": "pnpm exec zx tools/scripts/src/build.mjs --components",
+    "build-storybook": "pnpm exec zx tools/scripts/src/build.mjs --storybook",
     "clean": "pnpm exec zx tools/scripts/src/clean.mjs",
     "commit": "pnpm exec storm-git commit",
     "dep-graph": "nx dep-graph",

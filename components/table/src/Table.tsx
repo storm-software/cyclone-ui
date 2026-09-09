@@ -82,7 +82,7 @@ const TableRow = styled(ThemeableStack, {
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 
@@ -163,7 +163,7 @@ const TableCell = styled(ThemeableStack, {
 
   focusVisibleStyle: {
     borderColor: "$borderFocused",
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   variants: {

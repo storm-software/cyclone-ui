@@ -16,6 +16,7 @@ colors:
   brand-8: "#156e5e"
   brand-9: "#0c463c"
   foreground-body: "#949494"
+  foreground-eyebrow: "#525252"
   foreground-caption: "#737373"
   foreground-link: "#468ae2"
   foreground-required: "#dc2626"
@@ -41,6 +42,10 @@ colors:
   foreground-body-pressed: "#484848"
   foreground-body-focused: "#484848"
   foreground-body-disabled: "#94949499"
+  foreground-eyebrow-hover: "#6b6b6b"
+  foreground-eyebrow-pressed: "#848484"
+  foreground-eyebrow-focused: "#848484"
+  foreground-eyebrow-disabled: "#52525299"
   foreground-caption-hover: "#545454"
   foreground-caption-pressed: "#363636"
   foreground-caption-focused: "#363636"
@@ -138,7 +143,8 @@ colors:
   background-page: "#fafafa"
   background-elevated: "#f4f4f4"
   background-floating: "#eaeaea"
-  background-highest: "#dcdcdc"
+  background-high: "#dcdcdc"
+  background-highest: "#c7c7c7"
   background-base: "#262626"
   background-link: "#468ae2"
   background-brand: "#156e5e"
@@ -165,10 +171,14 @@ colors:
   background-floating-pressed: "#757575"
   background-floating-focused: "#757575"
   background-floating-disabled: "#eaeaea99"
-  background-highest-hover: "#a3a3a3"
-  background-highest-pressed: "#6e6e6e"
-  background-highest-focused: "#6e6e6e"
-  background-highest-disabled: "#dcdcdc99"
+  background-high-hover: "#a3a3a3"
+  background-high-pressed: "#6e6e6e"
+  background-high-focused: "#6e6e6e"
+  background-high-disabled: "#dcdcdc99"
+  background-highest-hover: "#939393"
+  background-highest-pressed: "#626262"
+  background-highest-focused: "#626262"
+  background-highest-disabled: "#c7c7c799"
   background-base-hover: "#333333"
   background-base-pressed: "#414141"
   background-base-focused: "#414141"
@@ -405,7 +415,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 308 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 318 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -422,6 +432,7 @@ Cyclone UI design tokens — 308 color tokens, 12 typography tokens, 28 spacing 
 - **Brand 8 (#156e5e):** The Storm Software brand teal color
 - **Brand 9 (#0c463c):** The Storm Software brand teal color
 - **Foreground Body (#949494):** The body foreground color for the light theme
+- **Foreground Eyebrow (#525252):** The eyebrow foreground color for the light theme
 - **Foreground Caption (#737373):** The caption foreground color for the light theme
 - **Foreground Link (#468ae2):** The link foreground color for the light theme
 - **Foreground Required (#dc2626):** A required foreground color for the light theme
@@ -447,6 +458,10 @@ Cyclone UI design tokens — 308 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Body Pressed (#484848):** The body foreground color for the light theme (pressed, 40% darker)
 - **Foreground Body Focused (#484848):** The body foreground color for the light theme (focused, 40% darker)
 - **Foreground Body Disabled (#94949499):** The body foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Eyebrow Hover (#6b6b6b):** The eyebrow foreground color for the light theme (hover, 20% brighter)
+- **Foreground Eyebrow Pressed (#848484):** The eyebrow foreground color for the light theme (pressed, 40% brighter)
+- **Foreground Eyebrow Focused (#848484):** The eyebrow foreground color for the light theme (focused, 40% brighter)
+- **Foreground Eyebrow Disabled (#52525299):** The eyebrow foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Caption Hover (#545454):** The caption foreground color for the light theme (hover, 20% darker)
 - **Foreground Caption Pressed (#363636):** The caption foreground color for the light theme (pressed, 40% darker)
 - **Foreground Caption Focused (#363636):** The caption foreground color for the light theme (focused, 40% darker)
@@ -544,7 +559,8 @@ Cyclone UI design tokens — 308 color tokens, 12 typography tokens, 28 spacing 
 - **Background Page (#fafafa):** The page background color for the light theme
 - **Background Elevated (#f4f4f4):** The elevated background color for the light theme
 - **Background Floating (#eaeaea):** The floating background color for the light theme
-- **Background Highest (#dcdcdc):** The highest level of elevation background color for the light theme
+- **Background High (#dcdcdc):** A high level of elevation background color for the light theme
+- **Background Highest (#c7c7c7):** The highest level of elevation background color for the light theme
 - **Background Base (#262626):** The primary background color for the light theme
 - **Background Link (#468ae2):** The link foreground color for the light theme
 - **Background Brand (#156e5e):** The brand background color for the light theme
@@ -571,10 +587,14 @@ Cyclone UI design tokens — 308 color tokens, 12 typography tokens, 28 spacing 
 - **Background Floating Pressed (#757575):** The floating background color for the light theme (pressed, 40% darker)
 - **Background Floating Focused (#757575):** The floating background color for the light theme (focused, 40% darker)
 - **Background Floating Disabled (#eaeaea99):** The floating background color for the light theme (disabled, 60% opacity)
-- **Background Highest Hover (#a3a3a3):** The highest level of elevation background color for the light theme (hover, 20% darker)
-- **Background Highest Pressed (#6e6e6e):** The highest level of elevation background color for the light theme (pressed, 40% darker)
-- **Background Highest Focused (#6e6e6e):** The highest level of elevation background color for the light theme (focused, 40% darker)
-- **Background Highest Disabled (#dcdcdc99):** The highest level of elevation background color for the light theme (disabled, 60% opacity)
+- **Background High Hover (#a3a3a3):** A high level of elevation background color for the light theme (hover, 20% darker)
+- **Background High Pressed (#6e6e6e):** A high level of elevation background color for the light theme (pressed, 40% darker)
+- **Background High Focused (#6e6e6e):** A high level of elevation background color for the light theme (focused, 40% darker)
+- **Background High Disabled (#dcdcdc99):** A high level of elevation background color for the light theme (disabled, 60% opacity)
+- **Background Highest Hover (#939393):** The highest level of elevation background color for the light theme (hover, 20% darker)
+- **Background Highest Pressed (#626262):** The highest level of elevation background color for the light theme (pressed, 40% darker)
+- **Background Highest Focused (#626262):** The highest level of elevation background color for the light theme (focused, 40% darker)
+- **Background Highest Disabled (#c7c7c799):** The highest level of elevation background color for the light theme (disabled, 60% opacity)
 - **Background Base Hover (#333333):** The primary background color for the light theme (hover, 20% brighter)
 - **Background Base Pressed (#414141):** The primary background color for the light theme (pressed, 40% brighter)
 - **Background Base Focused (#414141):** The primary background color for the light theme (focused, 40% brighter)

@@ -24,6 +24,7 @@ import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Path, Svg } from "react-native-svg";
+
 const AccordionToggleContainer = styled(View, {
   name: "AccordionToggle",
 
@@ -47,7 +48,6 @@ const AccordionToggleContainer = styled(View, {
 
 export type AccordionToggleProps = IconProps & {
   isExpanded?: boolean;
-  strokeWidth?: number;
 };
 
 const Icon = ({

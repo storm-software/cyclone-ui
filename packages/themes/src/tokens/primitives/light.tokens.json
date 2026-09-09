@@ -94,6 +94,12 @@
         "$value": "#DCDCDC",
         "$description": "The fourth level surface of the palette - emphasized gray for the highest elevation"
       },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#C7C7C7",
+        "$description": "The fifth level surface of the palette - deepest gray for maximum elevation"
+      },
       "$description": "The surface color palette - a light counterpart to the DeepSeek-inspired graphite scheme"
     },
     "grey": {

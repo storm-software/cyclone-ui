@@ -42,6 +42,36 @@ export const Base: Story = {
   }
 };
 
+export const Lowest: Story = {
+  args: {
+    children: "Container Text",
+    variant: "lowest"
+  }
+};
+
+export const LowestNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "lowest",
+    bordered: false
+  }
+};
+
+export const Page: Story = {
+  args: {
+    children: "Container Text",
+    variant: "page"
+  }
+};
+
+export const PageNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "page",
+    bordered: false
+  }
+};
+
 export const Elevated: Story = {
   args: {
     children: "Container Text",
@@ -72,6 +102,21 @@ export const FloatingNoBorder: Story = {
   }
 };
 
+export const High: Story = {
+  args: {
+    children: "Container Text",
+    variant: "high"
+  }
+};
+
+export const HighNoBorder: Story = {
+  args: {
+    children: "Container Text",
+    variant: "high",
+    bordered: false
+  }
+};
+
 export const Highest: Story = {
   args: {
     children: "Container Text",
@@ -83,21 +128,6 @@ export const HighestNoBorder: Story = {
   args: {
     children: "Container Text",
     variant: "highest",
-    bordered: false
-  }
-};
-
-export const Page: Story = {
-  args: {
-    children: "Container Text",
-    variant: "page"
-  }
-};
-
-export const PageNoBorder: Story = {
-  args: {
-    children: "Container Text",
-    variant: "page",
     bordered: false
   }
 };

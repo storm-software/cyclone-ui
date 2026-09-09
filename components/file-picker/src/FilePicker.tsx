@@ -459,7 +459,7 @@ const FilePickerFile = ({
       }}
       hoverStyle={{
         borderColor: "$borderHover",
-        boxShadow: "$ring"
+        boxShadow: "$ringOffset"
       }}
       onClick={event => event.stopPropagation()}
       onPress={event => event.stopPropagation()}>

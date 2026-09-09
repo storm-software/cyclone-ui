@@ -240,6 +240,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
     return (
       <TamaguiDialogContent
         backgroundColor="$foreground"
+        borderWidth={0}
         width="95%"
         flexDirection="row"
         padding={0}
@@ -256,7 +257,7 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
         enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
         exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
         focusVisibleStyle={{
-          boxShadow: "$ring"
+          boxShadow: "$ringOffset"
         }}>
         <Container
           ref={forwardedRef}

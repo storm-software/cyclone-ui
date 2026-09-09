@@ -27,7 +27,17 @@ import { View, styled } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 
 export type ContainerVariant =
-  "primary" | "secondary" | "tertiary" | "quaternary" | "outlined" | "glass";
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "lowest"
+  | "page"
+  | "elevated"
+  | "floating"
+  | "high"
+  | "highest"
+  | "outlined"
+  | "glass";
 
 const ContainerFrame = styled(View, {
   name: "Container",
@@ -45,13 +55,25 @@ const ContainerFrame = styled(View, {
       },
 
       secondary: {
-        backgroundColor: "$backgroundElevated",
+        backgroundColor: "$background",
         borderWidth: 1,
         borderColor: "$borderSubtle"
       },
 
       tertiary: {
-        backgroundColor: "$backgroundFloating",
+        backgroundColor: "$backgroundElevated",
+        borderWidth: 1,
+        borderColor: "$border"
+      },
+
+      lowest: {
+        backgroundColor: "$backgroundLowest",
+        borderWidth: 1,
+        borderColor: "$border"
+      },
+
+      page: {
+        backgroundColor: "$backgroundPage",
         borderWidth: 1,
         borderColor: "$border"
       },
@@ -65,19 +87,19 @@ const ContainerFrame = styled(View, {
       floating: {
         backgroundColor: "$backgroundFloating",
         borderWidth: 1,
-        borderColor: "$borderSubtle"
+        borderColor: "$border"
+      },
+
+      high: {
+        backgroundColor: "$backgroundHigh",
+        borderWidth: 1,
+        borderColor: "$border"
       },
 
       highest: {
         backgroundColor: "$backgroundHighest",
         borderWidth: 1,
         borderColor: "$border"
-      },
-
-      page: {
-        backgroundColor: "$backgroundPage",
-        borderWidth: 2,
-        borderColor: "$borderSubtle"
       },
 
       outlined: {

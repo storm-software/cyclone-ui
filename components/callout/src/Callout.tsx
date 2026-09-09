@@ -64,9 +64,9 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   flexDirection: "row",
   transition: "200ms",
   overflow: "hidden",
-  opacity: 0.94875,
+  opacity: 0.6,
   zIndex: "$10",
-  colors: ["transparent", "$backgroundElevated"],
+  colors: ["transparent", "$background"],
   start: [0, 1.0],
   end: [0, 1.0]
 });

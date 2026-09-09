@@ -87,7 +87,7 @@ const BadgeFrame = styled(View, {
         },
 
         focusVisibleStyle: {
-          boxShadow: "$ring"
+          boxShadow: "$ringOffset"
         }
       }
     }

@@ -17,7 +17,13 @@
  ------------------------------------------------------------------- */
 
 import { getSized } from "@cyclone-ui/helpers";
-import { AlertCircle, CheckCircle, InfoCircle } from "@cyclone-ui/vectors";
+import {
+  AlertCircle,
+  CheckCircle,
+  DiscoveryCircle,
+  ErrorCircle,
+  InfoCircle
+} from "@cyclone-ui/vectors";
 import type {
   GetProps,
   SizeTokens,
@@ -28,12 +34,7 @@ import { styled, View } from "@tamagui/core";
 import type { IconProps } from "@tamagui/helpers-icon";
 import type { ColorProp } from "@tamagui/helpers-tamagui";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import {
-  Lightbulb,
-  Lock,
-  MinusCircle,
-  PlusCircle
-} from "@tamagui/lucide-icons-2";
+import { Lock, MinusCircle, PlusCircle } from "@tamagui/lucide-icons-2";
 import type { PropsWithChildren } from "react";
 import { useMemo } from "react";
 import type { OpaqueColorValue } from "react-native";
@@ -66,12 +67,14 @@ export const getIconByTheme = ({
 }: BaseThemeIconProps) => {
   if (disabled) {
     return <Lock {...props} />;
-  } else if (theme?.includes("danger") || theme?.includes("warning")) {
+  } else if (theme?.includes("danger")) {
+    return <ErrorCircle {...props} />;
+  } else if (theme?.includes("warning")) {
     return <AlertCircle {...props} />;
   } else if (theme?.includes("info")) {
     return <InfoCircle {...props} />;
   } else if (theme?.includes("discovery")) {
-    return <Lightbulb {...props} />;
+    return <DiscoveryCircle {...props} />;
   } else if (theme?.includes("success")) {
     return <CheckCircle {...props} />;
   } else if (theme?.includes("positive")) {

@@ -209,7 +209,7 @@ const SelectItemsGroup = View.styleable(
 
           <TamaguiSelect.Content zIndex="$90">
             <TamaguiSelect.ScrollUpButton
-              transition="quick"
+              transition="200ms"
               animateOnly={["scale", "opacity"]}
               enterStyle={{ opacity: 0.2, scale: 0.5 }}
               alignItems="center"
@@ -230,7 +230,7 @@ const SelectItemsGroup = View.styleable(
             </TamaguiSelect.ScrollUpButton>
 
             <TamaguiSelect.Viewport
-              transition="quick"
+              transition="200ms"
               animateOnly={["transform", "scale", "opacity"]}
               enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
               exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
@@ -244,7 +244,7 @@ const SelectItemsGroup = View.styleable(
             </TamaguiSelect.Viewport>
 
             <TamaguiSelect.ScrollDownButton
-              transition="quick"
+              transition="200ms"
               animateOnly={["scale", "opacity"]}
               enterStyle={{ opacity: 0.2, scale: 0.5 }}
               alignItems="center"

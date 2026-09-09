@@ -35,6 +35,7 @@ const TextAreaFrame = styled(InputValue, {
   minHeight: "$20xl",
   paddingVertical: "$xl",
   backgroundColor: "$backgroundElevated",
+  color: "$foreground",
   borderWidth: 1,
   borderColor: "$border",
   borderRadius: "$control",
@@ -47,14 +48,14 @@ const TextAreaFrame = styled(InputValue, {
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 
   variants: {
     focused: {
       true: {
-        boxShadow: "$ring",
+        boxShadow: "$ringOffset",
         borderColor: "$borderFocused"
       }
     },
@@ -121,6 +122,7 @@ export const TextArea = TextAreaFrame.styleable(
       render: _render,
       focused: focusedProp,
       disabled = false,
+      placeholderTextColor = "$foregroundInverseDisabled",
       onBlur,
       onFocus,
       variant = "default",
@@ -151,6 +153,7 @@ export const TextArea = TextAreaFrame.styleable(
         type="textarea"
         rows={rows}
         {...props}
+        placeholderTextColor={placeholderTextColor}
         focused={focusedProp ?? focused}
         variant={variant}
         disabled={disabled}

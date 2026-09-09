@@ -23,6 +23,7 @@ import { animate, useMotionValue, useMotionValueEvent } from "motion/react";
 import { memo, useEffect, useState } from "react";
 import type { SvgProps } from "react-native-svg";
 import { Circle, Path, Svg } from "react-native-svg";
+
 export type AlertCircleProps = IconProps & {
   isComplete?: boolean;
 };
@@ -35,6 +36,8 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
   const outerRadius = diameter / 2;
   const innerRadius = outerRadius - strokeWidth / 2;
   const circumference = 2 * Math.PI * innerRadius;
+  const markScale = 0.85;
+  const upperLineLength = 9.4875 * markScale;
 
   const motionCircle = useMotionValue(circumference);
   const playbackCircle = animate(motionCircle, 0, {
@@ -49,7 +52,7 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
   });
 
   const motionLine1 = useMotionValue(0);
-  const playbackLine1 = animate(motionLine1, -5, {
+  const playbackLine1 = animate(motionLine1, -upperLineLength, {
     type: "spring",
     duration: 1,
     bounce: 0
@@ -59,35 +62,50 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
   useMotionValueEvent(motionLine1, "change", latest => {
     setLine1(latest);
   });
-
-  const motionLine2 = useMotionValue(0);
-  const playbackLine2 = animate(motionLine2, 0.1, {
-    type: "spring",
-    duration: 1,
-    bounce: 0
-  });
-
-  const [line2, setLine2] = useState(12);
-  useMotionValueEvent(motionLine2, "change", latest => {
-    setLine2(latest);
-  });
+  const initialUpperLineBottomY = 12.5;
+  const upperLineBottomHalfWidth = 1.5 * markScale;
+  const lowerDotRadius = 2.25 * 0.85 * markScale;
+  const initialLowerDotY = 16.75;
+  const markGap = initialLowerDotY - lowerDotRadius - initialUpperLineBottomY;
+  const markGapReduction = 1 - (1 - 0.15) * (1 - 0.1);
+  const markGapAdjustment = (markGap * markGapReduction) / 2;
+  const uncenteredUpperLineBottomY =
+    initialUpperLineBottomY + markGapAdjustment;
+  const uncenteredLowerDotY = initialLowerDotY - markGapAdjustment;
+  const markVerticalOffset =
+    outerRadius -
+    (uncenteredUpperLineBottomY -
+      upperLineLength +
+      uncenteredLowerDotY +
+      lowerDotRadius) /
+      2;
+  const upperLineBottomY = uncenteredUpperLineBottomY + markVerticalOffset;
+  const lowerDotY = uncenteredLowerDotY + markVerticalOffset;
+  const upperLineTopY = upperLineBottomY + line1;
+  const upperLineTopHalfWidth =
+    upperLineBottomHalfWidth + Math.min(Math.abs(line1) / 15, 0.5 * markScale);
+  const upperLineTopCapRadius = Math.min(Math.abs(line1), 1.25 * markScale);
+  const upperLineBottomCapRadius = Math.min(Math.abs(line1), 0.5 * markScale);
 
   useEffect(() => {
     if (isComplete) {
       playbackCircle.play();
       playbackLine1.play();
-      playbackLine2.play();
     } else {
       playbackCircle.stop();
       motionCircle.set(circumference);
 
       playbackLine1.stop();
       motionLine1.set(0);
-
-      playbackLine2.stop();
-      motionLine2.set(0);
     }
-  }, [playbackCircle, playbackLine2, circumference, isComplete]);
+  }, [
+    playbackCircle,
+    circumference,
+    isComplete,
+    playbackLine1,
+    motionCircle,
+    motionLine1
+  ]);
 
   return (
     <Svg
@@ -114,8 +132,18 @@ const Icon = ({ isComplete = true, size = 24, ...props }: AlertCircleProps) => {
             strokeLinecap="round"
           />
 
-          <Path d={`m12 12 0 ${line1}`} stroke={color} />
-          <Path d={`m12 16 0 ${line2}`} stroke={color} />
+          <Path
+            d={`M ${12 - upperLineBottomHalfWidth} ${upperLineBottomY - upperLineBottomCapRadius} L ${12 - upperLineTopHalfWidth} ${upperLineTopY + upperLineTopCapRadius} Q ${12 - upperLineTopHalfWidth} ${upperLineTopY} ${12 - upperLineTopHalfWidth + upperLineTopCapRadius} ${upperLineTopY} H ${12 + upperLineTopHalfWidth - upperLineTopCapRadius} Q ${12 + upperLineTopHalfWidth} ${upperLineTopY} ${12 + upperLineTopHalfWidth} ${upperLineTopY + upperLineTopCapRadius} L ${12 + upperLineBottomHalfWidth} ${upperLineBottomY - upperLineBottomCapRadius} Q ${12 + upperLineBottomHalfWidth} ${upperLineBottomY} ${12 + upperLineBottomHalfWidth - upperLineBottomCapRadius} ${upperLineBottomY} H ${12 - upperLineBottomHalfWidth + upperLineBottomCapRadius} Q ${12 - upperLineBottomHalfWidth} ${upperLineBottomY} ${12 - upperLineBottomHalfWidth} ${upperLineBottomY - upperLineBottomCapRadius} Z`}
+            fill={color}
+            stroke="none"
+          />
+          <Circle
+            cx={12}
+            cy={lowerDotY}
+            r={lowerDotRadius}
+            fill={color}
+            stroke="none"
+          />
         </>
       )}
     </Svg>

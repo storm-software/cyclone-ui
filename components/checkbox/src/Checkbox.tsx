@@ -45,12 +45,12 @@ const CheckboxGroupFrame = styled(View, {
   },
 
   focusStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 

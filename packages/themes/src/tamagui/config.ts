@@ -111,6 +111,7 @@ const tokens = createTokens({
     darkSurface2: "#1f1f1f",
     darkSurface3: "#262626",
     darkSurface4: "#303030",
+    darkSurface5: "#3a3a3a",
     darkYellow1: "#ffd285",
     darkYellow2: "#ffcb70",
     darkYellow3: "#ffc35c",
@@ -214,6 +215,7 @@ const tokens = createTokens({
     lightSurface2: "#f4f4f4",
     lightSurface3: "#eaeaea",
     lightSurface4: "#dcdcdc",
+    lightSurface5: "#c7c7c7",
     lightYellow1: "#e2b259",
     lightYellow2: "#deab47",
     lightYellow3: "#db9f10",
@@ -428,8 +430,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #f5f5f533",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #f5f5f533"
+      ring: "0px 0px 0px 3px #f5f5f533",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #f5f5f533",
+      ringSubtle: "0px 0px 0px 1px #f5f5f533",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #f5f5f533"
     },
     brand: {
       background: "#156e5e",
@@ -456,8 +460,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#004d3c",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #54e3c9bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #54e3c9bf"
+      ring: "0px 0px 0px 3px #54e3c9bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #54e3c9bf",
+      ringSubtle: "0px 0px 0px 1px #54e3c9bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #54e3c9bf"
     },
     danger: {
       background: tokens.color.lightRed9.val,
@@ -484,8 +490,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#800000",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #cf222ebf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #cf222ebf"
+      ring: "0px 0px 0px 3px #cf222ebf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #cf222ebf",
+      ringSubtle: "0px 0px 0px 1px #cf222ebf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #cf222ebf"
     },
     discovery: {
       background: tokens.color.lightPurple9.val,
@@ -512,8 +520,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#3b318f",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #7f7ee4bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #7f7ee4bf"
+      ring: "0px 0px 0px 3px #7f7ee4bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #7f7ee4bf",
+      ringSubtle: "0px 0px 0px 1px #7f7ee4bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #7f7ee4bf"
     },
     info: {
       background: tokens.color.lightSky9.val,
@@ -540,8 +550,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005e88",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #00b8e6bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #00b8e6bf"
+      ring: "0px 0px 0px 3px #00b8e6bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #00b8e6bf",
+      ringSubtle: "0px 0px 0px 1px #00b8e6bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #00b8e6bf"
     },
     negative: {
       background: tokens.color.lightApple8.val,
@@ -568,8 +580,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#840000",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #d6301bbf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #d6301bbf"
+      ring: "0px 0px 0px 3px #d6301bbf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #d6301bbf",
+      ringSubtle: "0px 0px 0px 1px #d6301bbf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #d6301bbf"
     },
     positive: {
       background: tokens.color.lightAvocado9.val,
@@ -596,8 +610,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#295c00",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #79b136bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #79b136bf"
+      ring: "0px 0px 0px 3px #79b136bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #79b136bf",
+      ringSubtle: "0px 0px 0px 1px #79b136bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #79b136bf"
     },
     success: {
       background: tokens.color.lightGreen9.val,
@@ -624,8 +640,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#005722",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #00a469bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #00a469bf"
+      ring: "0px 0px 0px 3px #00a469bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #00a469bf",
+      ringSubtle: "0px 0px 0px 1px #00a469bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #00a469bf"
     },
     warning: {
       background: tokens.color.lightYellow9.val,
@@ -652,8 +670,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#222222",
       foregroundInversePressed: "#2c2c2c",
       foregroundPressed: "#793e00",
-      ring: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #d49400bf",
-      ringSubtle: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #d49400bf"
+      ring: "0px 0px 0px 3px #d49400bf",
+      ringOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 6px #d49400bf",
+      ringSubtle: "0px 0px 0px 1px #d49400bf",
+      ringSubtleOffset: "0px 0px 0px 3px #f4f4f4, 0px 0px 0px 4px #d49400bf"
     }
   },
   dark: {
@@ -683,8 +703,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#131314",
       foregroundInversePressed: "#1a1a1b",
       foregroundPressed: "#7b7b7b",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #f5f5f533",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #f5f5f533"
+      ring: "0px 0px 0px 3px #f5f5f533",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #f5f5f533",
+      ringSubtle: "0px 0px 0px 1px #f5f5f533",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #f5f5f533"
     },
     brand: {
       background: "#0c463c",
@@ -711,8 +733,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#00634d",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #36dec0bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #36dec0bf"
+      ring: "0px 0px 0px 3px #36dec0bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #36dec0bf",
+      ringSubtle: "0px 0px 0px 1px #36dec0bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #36dec0bf"
     },
     danger: {
       background: tokens.color.darkRed9.val,
@@ -739,8 +763,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#7f001a",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #b92647bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #b92647bf"
+      ring: "0px 0px 0px 3px #b92647bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #b92647bf",
+      ringSubtle: "0px 0px 0px 1px #b92647bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #b92647bf"
     },
     discovery: {
       background: tokens.color.darkPurple9.val,
@@ -767,8 +793,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#312978",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #949ed2bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #949ed2bf"
+      ring: "0px 0px 0px 3px #949ed2bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #949ed2bf",
+      ringSubtle: "0px 0px 0px 1px #949ed2bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #949ed2bf"
     },
     info: {
       background: tokens.color.darkSky9.val,
@@ -795,8 +823,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#006288",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #47eceebf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #47eceebf"
+      ring: "0px 0px 0px 3px #47eceebf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #47eceebf",
+      ringSubtle: "0px 0px 0px 1px #47eceebf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #47eceebf"
     },
     negative: {
       background: tokens.color.darkApple8.val,
@@ -823,8 +853,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#a10000",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #ff0404bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #ff0404bf"
+      ring: "0px 0px 0px 3px #ff0404bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #ff0404bf",
+      ringSubtle: "0px 0px 0px 1px #ff0404bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #ff0404bf"
     },
     positive: {
       background: tokens.color.darkAvocado9.val,
@@ -851,8 +883,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#1b6600",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #9fd55ebf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #9fd55ebf"
+      ring: "0px 0px 0px 3px #9fd55ebf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #9fd55ebf",
+      ringSubtle: "0px 0px 0px 1px #9fd55ebf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #9fd55ebf"
     },
     success: {
       background: tokens.color.darkGreen9.val,
@@ -879,8 +913,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#004a24",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #449e71bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #449e71bf"
+      ring: "0px 0px 0px 3px #449e71bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #449e71bf",
+      ringSubtle: "0px 0px 0px 1px #449e71bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #449e71bf"
     },
     warning: {
       background: tokens.color.darkYellow9.val,
@@ -907,8 +943,10 @@ const childThemeExtras: {
       foregroundInverseHover: "#b6b6b6",
       foregroundInversePressed: "#7b7b7b",
       foregroundPressed: "#784000",
-      ring: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #d29527bf",
-      ringSubtle: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #d29527bf"
+      ring: "0px 0px 0px 3px #d29527bf",
+      ringOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 6px #d29527bf",
+      ringSubtle: "0px 0px 0px 1px #d29527bf",
+      ringSubtleOffset: "0px 0px 0px 3px #1f1f1f, 0px 0px 0px 4px #d29527bf"
     }
   }
 };
@@ -953,11 +991,16 @@ const themes = createThemes({
         backgroundFloatingFocused: "#757575",
         backgroundFloatingHover: "#aeaeae",
         backgroundFloatingPressed: "#757575",
-        backgroundHighest: tokens.color.lightSurface4.val,
-        backgroundHighestDisabled: "#dcdcdc99",
-        backgroundHighestFocused: "#6e6e6e",
-        backgroundHighestHover: "#a3a3a3",
-        backgroundHighestPressed: "#6e6e6e",
+        backgroundHigh: tokens.color.lightSurface4.val,
+        backgroundHighDisabled: "#dcdcdc99",
+        backgroundHighest: tokens.color.lightSurface5.val,
+        backgroundHighestDisabled: "#c7c7c799",
+        backgroundHighestFocused: "#626262",
+        backgroundHighestHover: "#939393",
+        backgroundHighestPressed: "#626262",
+        backgroundHighFocused: "#6e6e6e",
+        backgroundHighHover: "#a3a3a3",
+        backgroundHighPressed: "#6e6e6e",
         backgroundLink: tokens.color.lightBlue7.val,
         backgroundLinkDisabled: "#658cc0",
         backgroundLinkFocused: "#003d8f",
@@ -1013,6 +1056,11 @@ const themes = createThemes({
         foregroundCaptionFocused: "#363636",
         foregroundCaptionHover: "#545454",
         foregroundCaptionPressed: "#363636",
+        foregroundEyebrow: tokens.color.lightGrey5.val,
+        foregroundEyebrowDisabled: "#52525299",
+        foregroundEyebrowFocused: "#848484",
+        foregroundEyebrowHover: "#6b6b6b",
+        foregroundEyebrowPressed: "#848484",
         foregroundLink: tokens.color.lightBlue7.val,
         foregroundLinkDisabled: "#363636",
         foregroundLinkFocused: "#003d8f",
@@ -1047,11 +1095,16 @@ const themes = createThemes({
         backgroundFloatingFocused: "#414141",
         backgroundFloatingHover: "#333333",
         backgroundFloatingPressed: "#414141",
-        backgroundHighest: tokens.color.darkSurface4.val,
-        backgroundHighestDisabled: "#30303099",
-        backgroundHighestFocused: "#505050",
-        backgroundHighestHover: "#404040",
-        backgroundHighestPressed: "#505050",
+        backgroundHigh: tokens.color.darkSurface4.val,
+        backgroundHighDisabled: "#30303099",
+        backgroundHighest: tokens.color.darkSurface5.val,
+        backgroundHighestDisabled: "#3a3a3a99",
+        backgroundHighestFocused: "#606060",
+        backgroundHighestHover: "#4c4c4c",
+        backgroundHighestPressed: "#606060",
+        backgroundHighFocused: "#505050",
+        backgroundHighHover: "#404040",
+        backgroundHighPressed: "#505050",
         backgroundLowest: "#0c0c0d",
         backgroundLowestDisabled: "#0c0c0d",
         backgroundLowestFocused: "#1a1a1b",
@@ -1102,6 +1155,11 @@ const themes = createThemes({
         foregroundCaptionFocused: "#3d3d3d",
         foregroundCaptionHover: "#5d5d5d",
         foregroundCaptionPressed: "#3d3d3d",
+        foregroundEyebrow: tokens.color.darkGrey5.val,
+        foregroundEyebrowDisabled: "#80808099",
+        foregroundEyebrowFocused: "#3d3d3d",
+        foregroundEyebrowHover: "#5d5d5d",
+        foregroundEyebrowPressed: "#3d3d3d",
         foregroundLink: tokens.color.darkBlue5.val,
         foregroundLinkDisabled: "#6f95d6",
         foregroundLinkFocused: "#003da4",
@@ -1397,11 +1455,16 @@ export interface AppTheme {
   backgroundFloatingHover: string;
   backgroundFloatingPressed: string;
   backgroundFocused: string;
+  backgroundHigh: string;
+  backgroundHighDisabled: string;
   backgroundHighest: string;
   backgroundHighestDisabled: string;
   backgroundHighestFocused: string;
   backgroundHighestHover: string;
   backgroundHighestPressed: string;
+  backgroundHighFocused: string;
+  backgroundHighHover: string;
+  backgroundHighPressed: string;
   backgroundHover: string;
   backgroundLink: string;
   backgroundLinkDisabled: string;
@@ -1469,6 +1532,11 @@ export interface AppTheme {
   foregroundCaptionHover: string;
   foregroundCaptionPressed: string;
   foregroundDisabled: string;
+  foregroundEyebrow: string;
+  foregroundEyebrowDisabled: string;
+  foregroundEyebrowFocused: string;
+  foregroundEyebrowHover: string;
+  foregroundEyebrowPressed: string;
   foregroundFocused: string;
   foregroundGhostHover: string;
   foregroundHover: string;
@@ -1500,7 +1568,9 @@ export interface AppTheme {
   overlayBorderFocused: string;
   overlayBorderHover: string;
   ring: string;
+  ringOffset: string;
   ringSubtle: string;
+  ringSubtleOffset: string;
   transparent: string;
   white: string;
 }

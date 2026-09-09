@@ -16,7 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { DatePicker, DEFAULT_DATE_FORMAT } from "@cyclone-ui/date-picker";
+import {
+  DatePicker,
+  DEFAULT_DATE_FORMAT,
+  getDateFormat,
+  type DateSeparator
+} from "@cyclone-ui/date-picker";
 import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { getSized } from "@cyclone-ui/helpers";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
@@ -27,13 +32,17 @@ import { useComposedRefs, withStaticProperties } from "@tamagui/core";
 import { Calendar } from "@tamagui/lucide-icons-2";
 import type { RefObject } from "react";
 import {
+  createContext,
   useCallback,
+  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
   useState
 } from "react";
+
+const DatePickerFieldSeparatorContext = createContext<DateSeparator>(".");
 
 const toDate = (value: unknown) => {
   if (value == null || value === "") {
@@ -46,8 +55,10 @@ const toDate = (value: unknown) => {
   return Number.isNaN(date.getTime()) ? null : date;
 };
 
-const parseInputDate = (value: string) => {
-  const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value);
+const parseInputDate = (value: string, separator: DateSeparator = ".") => {
+  const match = new RegExp(
+    `^(\\d{2})\\${separator}(\\d{2})\\${separator}(\\d{4})$`
+  ).exec(value);
   if (!match) {
     return null;
   }
@@ -101,61 +112,93 @@ const stepDate = (date: Date, part: DatePart, amount: number) => {
   return next;
 };
 
-const rejectInvalidDate: MaskitoPostprocessor = (
-  elementState,
-  initialElementState
-) =>
-  elementState.value.length === DEFAULT_DATE_FORMAT.length &&
-  !parseInputDate(elementState.value)
-    ? initialElementState
-    : elementState;
+const rejectInvalidDate =
+  (separator: DateSeparator): MaskitoPostprocessor =>
+  (elementState, initialElementState) =>
+    elementState.value.length === DEFAULT_DATE_FORMAT.length &&
+    !parseInputDate(elementState.value, separator)
+      ? initialElementState
+      : elementState;
 
-const DATE_MASK_OPTIONS = maskitoDateOptionsGenerator({
+const DATE_MASK_OPTIONS_DOT = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
   separator: "."
 });
 
-export const DATE_MASK = {
-  ...DATE_MASK_OPTIONS,
+const DATE_MASK_OPTIONS_SLASH = maskitoDateOptionsGenerator({
+  mode: "mm/dd/yyyy",
+  separator: "/"
+});
+
+export const DATE_MASK_DOT = {
+  ...DATE_MASK_OPTIONS_DOT,
   // Maskito's final date postprocessor normalizes impossible dates (for
   // example, 04.31 to 05.01). This field must reject them instead.
-  postprocessors: [DATE_MASK_OPTIONS.postprocessors[0], rejectInvalidDate]
+  postprocessors: [
+    DATE_MASK_OPTIONS_DOT.postprocessors[0],
+    rejectInvalidDate(".")
+  ]
 };
 
-export const format = (value: any) => {
+export const DATE_MASK_SLASH = {
+  ...DATE_MASK_OPTIONS_SLASH,
+  // Maskito's final date postprocessor normalizes impossible dates (for
+  // example, 04.31 to 05.01). This field must reject them instead.
+  postprocessors: [
+    DATE_MASK_OPTIONS_SLASH.postprocessors[0],
+    rejectInvalidDate("/")
+  ]
+};
+
+export const DATE_MASK = DATE_MASK_DOT;
+
+export const format = (value: any, separator: DateSeparator = ".") => {
   const date = toDate(value);
   if (!date) {
     return "";
   }
 
-  return formatDate(date, DEFAULT_DATE_FORMAT);
+  return formatDate(date, getDateFormat(separator));
 };
 
-export const parse = (value: any) => {
-  if (typeof value === "string" && /^[\d.]*$/.test(value)) {
-    return parseInputDate(value);
+export const parse = (value: any, separator: DateSeparator = ".") => {
+  if (
+    typeof value === "string" &&
+    new RegExp(`^[\\d\\${separator}]*$`).test(value)
+  ) {
+    return parseInputDate(value, separator);
   }
 
   return toDate(value);
 };
 
-const DatePickerFieldGroup = Field.styleable((props, forwardedRef) => {
-  const { children, ...rest } = props;
+const DatePickerFieldGroup = Field.styleable<{ separator?: "." | "/" }>(
+  (props, forwardedRef) => {
+    const { children, separator = ".", ...rest } = props;
 
-  const handleFormat = useCallback(format, []);
-  const handleParse = useCallback(parse, []);
+    const handleFormat = useCallback(
+      (value: any) => format(value, separator),
+      [separator]
+    );
+    const handleParse = useCallback(
+      (value: any) => parse(value, separator),
+      [separator]
+    );
 
-  return (
-    <Field
-      ref={forwardedRef}
-      {...rest}
-      format={handleFormat}
-      parse={handleParse}
-      mask={DATE_MASK}>
-      {children}
-    </Field>
-  );
-});
+    return (
+      <DatePickerFieldSeparatorContext.Provider value={separator}>
+        <Field
+          ref={forwardedRef}
+          {...rest}
+          format={handleFormat}
+          parse={handleParse}
+          mask={separator === "." ? DATE_MASK_DOT : DATE_MASK_SLASH}>
+          {children}
+        </Field>
+      </DatePickerFieldSeparatorContext.Provider>
+    );
+  }
+);
 
 const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
   (props, forwardedRef) => {
@@ -213,6 +256,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const ref = useFieldRef(composedRef);
 
     const field = FieldApi.use();
+    const separator = useContext(DatePickerFieldSeparatorContext);
     const name = field.name.get();
     const size = field.size.get();
     const disabled = field.disabled.get();
@@ -222,11 +266,12 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const [inputValue, setInputValue] = useState(formattedValue);
     const selectionRef = useRef<{ end: number; start: number } | null>(null);
     const selectedDate = useMemo(
-      () => parseInputDate(inputValue),
-      [inputValue]
+      () => parseInputDate(inputValue, separator),
+      [inputValue, separator]
     );
 
     useEffect(() => {
+      // eslint-disable-next-line react/set-state-in-effect
       setInputValue(formattedValue);
     }, [formattedValue]);
 
@@ -242,11 +287,11 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
 
     const handleChange = useCallback(
       (event: CustomEvent<Date | null>) => {
-        setInputValue(format(event.detail));
+        setInputValue(format(event.detail, separator));
         change?.(event.detail);
         blur?.();
       },
-      [change, blur]
+      [change, blur, separator]
     );
 
     const handleInput = useCallback(
@@ -254,11 +299,11 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         const value = event.detail;
         setInputValue(value);
 
-        if (value === "" || parseInputDate(value)) {
+        if (value === "" || parseInputDate(value, separator)) {
           change?.(value);
         }
       },
-      [change]
+      [change, separator]
     );
 
     const handleBlur = useCallback(() => {
@@ -278,7 +323,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         }
 
         const input = event.currentTarget as HTMLInputElement;
-        const date = parseInputDate(input.value);
+        const date = parseInputDate(input.value, separator);
         if (!date) {
           return;
         }
@@ -294,10 +339,10 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
           getDatePart(input.selectionStart ?? 0),
           event.key === "ArrowUp" ? 1 : -1
         );
-        setInputValue(format(nextDate));
+        setInputValue(format(nextDate, separator));
         change?.(nextDate);
       },
-      [change, onKeyDown]
+      [change, onKeyDown, separator]
     );
 
     return (
@@ -305,6 +350,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         name={name}
         size={size}
         focused={focused}
+        separator={separator}
         variant={variant}
         disabled={disabled}
         selectedDate={selectedDate}

@@ -94,6 +94,12 @@
         "$value": "#303030",
         "$description": "The fourth level surface of the palette - emphasized charcoal for the highest elevation"
       },
+      "5": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#3A3A3A",
+        "$description": "The fifth level surface of the palette - deepest charcoal for maximum elevation"
+      },
       "$description": "The surface color palette - DeepSeek-inspired neutral graphite backgrounds"
     },
     "grey": {

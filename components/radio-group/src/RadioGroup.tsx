@@ -176,15 +176,15 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   tabIndex: 0,
 
   focusStyle: {
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   pressStyle: {
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   variants: {

@@ -63,14 +63,14 @@ const SelectGroup = styled(XGroup, {
   },
 
   focusVisibleStyle: {
-    boxShadow: "$ring",
+    boxShadow: "$ringOffset",
     borderColor: "$borderFocused"
   },
 
   variants: {
     focused: {
       true: {
-        boxShadow: "$ring",
+        boxShadow: "$ringOffset",
         borderColor: "$borderFocused"
       }
     },
@@ -391,7 +391,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         {...props}
         name={name}
         disabled={disabled}
-        focused={focused || open}
+        focused={focused ?? open}
         variant={variant}
         size={size}
         onFocus={onFocus}

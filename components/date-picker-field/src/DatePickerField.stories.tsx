@@ -83,6 +83,24 @@ export const Floating: Story = {
   )
 };
 
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
+export const Dot: Story = {
+  args: {
+    separator: "."
+  }
+};
+
+export const Slash: Story = {
+  args: {
+    separator: "/"
+  }
+};
+
 export const Required: Story = {
   args: {
     required: true
