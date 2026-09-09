@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { DatePicker, DEFAULT_DATE_FORMAT } from "@cyclone-ui/date-picker";
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { getSized } from "@cyclone-ui/helpers";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoPostprocessor } from "@maskito/core";
@@ -218,6 +218,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const formattedValue = field.formattedValue.get();
+    const variant = useFieldVariant(props.placeholder ?? DEFAULT_DATE_FORMAT);
     const [inputValue, setInputValue] = useState(formattedValue);
     const selectionRef = useRef<{ end: number; start: number } | null>(null);
     const selectedDate = useMemo(
@@ -304,6 +305,7 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         name={name}
         size={size}
         focused={focused}
+        variant={variant}
         disabled={disabled}
         selectedDate={selectedDate}
         onChange={handleChange}

@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { Input } from "@cyclone-ui/input";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -51,6 +51,7 @@ const InputFieldControl = Input.styleable(
     const size = field.size.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
+    const variant = useFieldVariant();
 
     const { focus, blur, change } = useFieldActions();
     const handleChange = useCallback(
@@ -76,6 +77,7 @@ const InputFieldControl = Input.styleable(
         {...props}
         name={name}
         focused={focused}
+        variant={variant}
         disabled={disabled}
         size={size}
         onFocus={focus}
@@ -130,6 +132,7 @@ const InputFieldControlTextBoxValue = Input.TextBox.Value.styleable(
     const theme = field.theme.get();
     const formattedValue = field.formattedValue.get();
     const textBox = use(InputFieldTextBoxContext);
+    useFieldVariant(props.placeholder);
 
     const { mount } = useFieldActions();
     const inputRef = useFieldRef(

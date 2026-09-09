@@ -43,6 +43,13 @@ export const Base: Story = {
   }
 };
 
+export const Inverse: Story = {
+  args: {
+    currentName: "Current Page",
+    inverse: true
+  }
+};
+
 export const Slash: Story = {
   args: {
     currentName: "Current Page",

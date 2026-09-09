@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { Select } from "@cyclone-ui/select";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
@@ -71,6 +71,7 @@ const SelectFieldControl = Select.styleable<
   const formattedValue = field.formattedValue.get();
   const initialValue = field.initialValue.get();
   const displayValue = formattedValue || String(value ?? initialValue ?? "");
+  const variant = useFieldVariant(placeholder);
 
   const selectRef = useFieldRef();
   useLayoutEffect(() => {
@@ -83,6 +84,7 @@ const SelectFieldControl = Select.styleable<
       {...props}
       name={name}
       focused={focused}
+      variant={variant}
       disabled={disabled}
       size={size}
       onFocus={focus}

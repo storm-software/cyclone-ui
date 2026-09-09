@@ -51,6 +51,13 @@ const TextAreaFrame = styled(InputValue, {
   },
 
   variants: {
+    variant: {
+      default: {},
+      floating: {
+        paddingTop: "$2xl"
+      }
+    },
+
     focused: {
       true: {
         boxShadow: "$ring",
@@ -71,7 +78,11 @@ const TextAreaFrame = styled(InputValue, {
         }
       }
     }
-  } as const
+  } as const,
+
+  defaultVariants: {
+    variant: "default"
+  }
 });
 
 /**
@@ -94,14 +105,14 @@ export const TextArea = TextAreaFrame.styleable(
     const handleFocus = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         setFocused(true);
-        onFocus?.(event as any);
+        onFocus?.(event);
       },
       [onFocus]
     );
     const handleBlur = useCallback(
       (event: FocusEvent<HTMLElement>) => {
         setFocused(false);
-        onBlur?.(event as any);
+        onBlur?.(event);
       },
       [onBlur]
     );

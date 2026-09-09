@@ -32,11 +32,13 @@ export type BreadcrumbContextProps = TextContextStyles &
   ThemeableProps & {
     size: FontSizeTokens;
     variant: BreadcrumbVariant;
+    inverse: boolean;
   };
 
 export const BreadcrumbContext = createStyledContext<BreadcrumbContextProps>({
   size: "$true",
-  variant: "slash"
+  variant: "slash",
+  inverse: false
 });
 
 const BreadcrumbFrame = styled(XGroup, {
@@ -97,13 +99,12 @@ const BreadcrumbLink = styled(Link, {
   name: "BreadcrumbItem",
   context: BreadcrumbContext,
 
-  transition: "200ms",
-  underline: "initial"
+  transition: "200ms"
 });
 
 const BreadcrumbItemImpl = BreadcrumbLink.styleable(
   ({ children, ...props }, forwardRef) => {
-    const { size, variant } = BreadcrumbContext.useStyledContext();
+    const { size, variant, inverse } = BreadcrumbContext.useStyledContext();
 
     return (
       <XGroup.Item>
@@ -111,8 +112,8 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
           <BreadcrumbLink
             ref={forwardRef}
             size={size}
-            {...props}
-            inverse={true}>
+            inverse={inverse}
+            {...props}>
             {children}
           </BreadcrumbLink>
         </View>

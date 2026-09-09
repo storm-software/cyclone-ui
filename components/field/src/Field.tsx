@@ -59,6 +59,44 @@ import {
   useState
 } from "react";
 
+export type FieldVariant = "default" | "floating";
+
+interface FieldPresentationContextValue {
+  variant: FieldVariant;
+  hasPlaceholder: boolean;
+  setHasPlaceholder: (hasPlaceholder: boolean) => void;
+}
+
+const FieldPresentationContext = createContext<FieldPresentationContextValue>({
+  variant: "default",
+  hasPlaceholder: false,
+  setHasPlaceholder: () => undefined
+});
+
+const FIELD_PLACEHOLDER_UNSET = Symbol("field-placeholder-unset");
+
+export const useFieldVariant = (
+  placeholder: unknown = FIELD_PLACEHOLDER_UNSET
+) => {
+  const { variant, setHasPlaceholder } = use(FieldPresentationContext);
+  const hasPlaceholder =
+    placeholder === FIELD_PLACEHOLDER_UNSET
+      ? FIELD_PLACEHOLDER_UNSET
+      : Boolean(placeholder);
+
+  useLayoutEffect(() => {
+    if (hasPlaceholder === FIELD_PLACEHOLDER_UNSET) {
+      return;
+    }
+
+    setHasPlaceholder(hasPlaceholder);
+
+    return () => setHasPlaceholder(false);
+  }, [hasPlaceholder, setHasPlaceholder]);
+
+  return variant;
+};
+
 const FieldDetailsContext = createContext<ReactNode>(null);
 const FieldDetailsSetterContext = createContext<(details: ReactNode) => void>(
   () => undefined
@@ -92,12 +130,18 @@ const FieldGroupFrame = styled(ThemeableStack, {
         userSelect: "none",
         cursor: "not-allowed"
       }
+    },
+
+    variant: {
+      default: {},
+      floating: {}
     }
   } as const,
 
   defaultVariants: {
     orientation: "vertical",
-    disabled: false
+    disabled: false,
+    variant: "default"
   }
 });
 
@@ -190,7 +234,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
 
 const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   (props, forwardedRef) => {
-    const { children, ...rest } = props;
+    const { children, variant = "default", ...rest } = props;
 
     const field = FieldApi.use();
     const theme = field.theme.get();
@@ -202,7 +246,11 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
         <FieldDetailsSetterContext.Provider value={setDetails}>
           <FieldDetailsContext.Provider value={details}>
             <YStack group={"field" as any} disabled={disabled}>
-              <FieldGroupFrame ref={forwardedRef} {...rest} disabled={disabled}>
+              <FieldGroupFrame
+                ref={forwardedRef}
+                {...rest}
+                disabled={disabled}
+                variant={variant}>
                 {children}
               </FieldGroupFrame>
               <FieldValidationTextImpl />
@@ -215,15 +263,27 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
   { staticConfig: { componentName: "Field" } }
 );
 
-export type FieldProps<TFieldValue = any> = FieldProviderOptions<TFieldValue>;
+export type FieldProps<TFieldValue = any> =
+  FieldProviderOptions<TFieldValue> & {
+    variant?: FieldVariant;
+  };
 
 const FieldGroup = FieldGroupFrame.styleable<FieldProps>(
   (props, forwardedRef) => {
-    const { children, ...rest } = props;
+    const { children, variant = "default", ...rest } = props;
+    const [hasPlaceholder, setHasPlaceholder] = useState(false);
+    const presentation = useMemo(
+      () => ({ variant, hasPlaceholder, setHasPlaceholder }),
+      [variant, hasPlaceholder]
+    );
 
     return (
       <FieldProvider {...rest}>
-        <FieldGroupInnerImpl ref={forwardedRef}>{children}</FieldGroupInnerImpl>
+        <FieldPresentationContext.Provider value={presentation}>
+          <FieldGroupInnerImpl ref={forwardedRef} variant={variant}>
+            {children}
+          </FieldGroupInnerImpl>
+        </FieldPresentationContext.Provider>
       </FieldProvider>
     );
   },
@@ -342,7 +402,38 @@ const FieldLabelText = styled(LabelText, {
   }
 });
 
+const FieldLabelPositioner = styled(View, {
+  name: "FieldLabel",
+
+  transition: "200ms",
+
+  variants: {
+    variant: {
+      default: {},
+      floating: {
+        position: "absolute",
+        top: "50%",
+        left: "$4xl",
+        zIndex: 1,
+        transform: [{ translateY: "-50%" }]
+      }
+    },
+
+    floating: {
+      true: {
+        top: 4
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "default",
+    floating: false
+  }
+});
+
 const FieldOptionalLabelText = styled(FieldLabelText, {
+  transition: "200ms",
   color: "$foregroundCaption",
   fontWeight: "$light",
   fontSize: "$sm",
@@ -369,12 +460,17 @@ const FieldOptionalLabelText = styled(FieldLabelText, {
 const LabelXStack = styled(XStack, {
   name: "FieldLabel",
 
+  transition: "200ms",
+  position: "relative",
   cursor: "pointer",
-  gap: "$sm",
   flex: 1,
   alignItems: "center",
 
   variants: {
+    floating: {
+      true: {}
+    },
+
     disabled: {
       true: {
         cursor: "not-allowed"
@@ -383,8 +479,31 @@ const LabelXStack = styled(XStack, {
   } as const,
 
   defaultVariants: {
+    floating: false,
     disabled: false
   }
+});
+
+const FieldLabelBorderMask = styled(View, {
+  name: "FieldLabelMask",
+
+  position: "absolute",
+  top: "50%",
+  left: -2,
+  right: -2,
+  height: 8,
+  transform: [{ translateY: "-50%" }],
+  backgroundColor: "$backgroundElevated",
+  pointerEvents: "none"
+});
+
+const FieldLabelContent = styled(XStack, {
+  name: "FieldLabelContent",
+
+  position: "relative",
+  zIndex: 1,
+  gap: "$sm",
+  alignItems: "center"
 });
 
 const FieldLabelTextImpl = FieldLabelText.styleable<{
@@ -393,6 +512,8 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
   hideRequired?: boolean;
   hideAsterisk?: boolean;
   hideOptional?: boolean;
+  floating?: boolean;
+  variant?: FieldVariant;
 }>(
   (
     {
@@ -400,6 +521,8 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       hideRequired = false,
       hideAsterisk = false,
       hideOptional = false,
+      floating = false,
+      variant = "default",
       required,
       ...props
     },
@@ -415,51 +538,66 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     );
 
     return (
-      <TamaguiLabel ref={forwardedRef} htmlFor={name} marginLeft="$md">
-        <LabelXStack disabled={disabled}>
-          <FieldLabelText {...props} disabled={disabled} theme="base">
-            {children}
-          </FieldLabelText>
-          {hideRequired !== true && (
-            <>
-              {required ? (
+      <FieldLabelPositioner variant={variant} floating={floating}>
+        <TamaguiLabel
+          ref={forwardedRef}
+          htmlFor={name}
+          marginLeft={variant === "default" ? "$md" : "$none"}>
+          <LabelXStack disabled={disabled} floating={floating}>
+            {floating && <FieldLabelBorderMask />}
+            <FieldLabelContent>
+              <FieldLabelText
+                {...props}
+                disabled={disabled}
+                fontFamily={floating ? "$caption" : "$heading-sm"}
+                size={floating ? "$sm" : undefined}
+                theme="base">
+                {children}
+              </FieldLabelText>
+              {hideRequired !== true && (
                 <>
-                  {hideAsterisk !== true && (
-                    <View position="relative" alignSelf="stretch">
-                      <Asterisk
-                        color="$foregroundRequired"
-                        size="$2xl"
-                        position="absolute"
-                        top={2}
-                      />
-                    </View>
-                  )}
-                </>
-              ) : (
-                <>
-                  {hideOptional !== true && (
-                    <FieldOptionalLabelText
-                      {...props}
-                      disabled={disabled}
-                      color={
-                        disabled
-                          ? "$foregroundCaptionDisabled"
-                          : "$foregroundCaption"
-                      }
-                      group-field-hover={{
-                        color: disabled
-                          ? "$foregroundCaptionDisabled"
-                          : "$foregroundCaptionHover"
-                      }}>
-                      (Optional)
-                    </FieldOptionalLabelText>
+                  {required ? (
+                    <>
+                      {hideAsterisk !== true && (
+                        <View position="relative" alignSelf="stretch">
+                          <Asterisk
+                            color="$foregroundRequired"
+                            size="$lg"
+                            position="absolute"
+                            top={2}
+                          />
+                        </View>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      {hideOptional !== true && (
+                        <FieldOptionalLabelText
+                          {...props}
+                          disabled={disabled}
+                          fontFamily="$caption"
+                          size="$sm"
+                          color={
+                            disabled
+                              ? "$foregroundCaptionDisabled"
+                              : "$foregroundCaption"
+                          }
+                          group-field-hover={{
+                            color: disabled
+                              ? "$foregroundCaptionDisabled"
+                              : "$foregroundCaptionHover"
+                          }}>
+                          (Optional)
+                        </FieldOptionalLabelText>
+                      )}
+                    </>
                   )}
                 </>
               )}
-            </>
-          )}
-        </LabelXStack>
-      </TamaguiLabel>
+            </FieldLabelContent>
+          </LabelXStack>
+        </TamaguiLabel>
+      </FieldLabelPositioner>
     );
   },
   { staticConfig: { componentName: "FieldLabel" } }
@@ -477,6 +615,16 @@ const FieldLabel = FieldLabelText.styleable<{
     const name = field.name.get();
     const disabled = field.disabled.get();
     const required = field.required.get();
+    const focused = field.focused.get();
+    const formattedValue = field.formattedValue.get();
+    const { variant, hasPlaceholder } = use(FieldPresentationContext);
+    const hasValue =
+      formattedValue !== undefined &&
+      formattedValue !== null &&
+      formattedValue !== "";
+    const floating =
+      variant === "floating" &&
+      (hasPlaceholder || hasValue || Boolean(focused));
 
     return (
       <FieldLabelTextImpl
@@ -485,7 +633,9 @@ const FieldLabel = FieldLabelText.styleable<{
         theme="base"
         htmlFor={name}
         disabled={disabled}
-        required={required}>
+        required={required}
+        variant={variant}
+        floating={floating}>
         {children}
       </FieldLabelTextImpl>
     );

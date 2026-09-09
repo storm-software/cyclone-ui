@@ -23,7 +23,8 @@ export const SelectContext = createStyledContext<SelectContextProps>({
   size: "$true",
   circular: false,
   disabled: false,
-  focused: false
+  focused: false,
+  variant: "default"
 });
 
 export const getSelectSize = (

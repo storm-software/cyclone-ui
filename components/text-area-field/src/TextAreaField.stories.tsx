@@ -53,6 +53,26 @@ export const Base: Story = {
   }
 };
 
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ textAreaFieldName: "" }}>
+      <TextAreaField name="textAreaFieldName" {...props}>
+        <TextAreaField.Label>Label Text</TextAreaField.Label>
+        <TextAreaField.Control rows={3} />
+      </TextAreaField>
+    </Form>
+  )
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
 export const Required: Story = {
   args: {
     required: true

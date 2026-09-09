@@ -18,7 +18,7 @@
 
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { InputField } from "./InputField";
 
 const meta: Meta<typeof InputField> = {
@@ -56,6 +56,73 @@ export const Base: Story = {
     await expect(input).toHaveStyle({ height: "40px" });
     await userEvent.type(input, "input value");
     await expect(input).toHaveValue("input value");
+  }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ inputFieldName: "" }}>
+      <InputField name="inputFieldName" {...props}>
+        <InputField.Label>Label Text</InputField.Label>
+        <InputField.Control>
+          <InputField.Control.TextBox>
+            <InputField.Control.TextBox.Value />
+          </InputField.Control.TextBox>
+        </InputField.Control>
+      </InputField>
+    </Form>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    const labelText = canvas.getByText("Label Text");
+    const label = labelText.closest("label") as HTMLLabelElement;
+    const initialFontSize = Number.parseFloat(
+      getComputedStyle(labelText).fontSize
+    );
+    const inputRect = input.getBoundingClientRect();
+    const labelRect = label.getBoundingClientRect();
+
+    await expect(
+      Math.abs(
+        labelRect.top +
+          labelRect.height / 2 -
+          (inputRect.top + inputRect.height / 2)
+      )
+    ).toBeLessThan(2);
+
+    await userEvent.click(input);
+    await waitFor(() => {
+      const focusedLabelRect = label.getBoundingClientRect();
+      expect(
+        Math.abs(
+          focusedLabelRect.top + focusedLabelRect.height / 2 - inputRect.top
+        )
+      ).toBeLessThan(2);
+      expect(
+        Number.parseFloat(getComputedStyle(labelText).fontSize)
+      ).toBeLessThan(initialFontSize);
+    });
+
+    await userEvent.type(input, "input value");
+    await userEvent.tab();
+    await waitFor(() => {
+      const valuedLabelRect = label.getBoundingClientRect();
+      expect(
+        Math.abs(
+          valuedLabelRect.top + valuedLabelRect.height / 2 - inputRect.top
+        )
+      ).toBeLessThan(2);
+    });
+  }
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    variant: "floating"
   }
 };
 

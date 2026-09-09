@@ -24,6 +24,12 @@ export const parameters = {
 };
 ```
 
+## Token-doc variants
+
+Generated token blocks render the `dark` token set by default. Pass `theme`
+directly to a block to select `dark`, `darkDimmed`, `darkHighContrast`,
+`light`, `lightDimmed`, or `lightHighContrast`.
+
 ## Setup
 
 1. Add the generated MDX pages to Storybook (paths depend on your `stories` config):

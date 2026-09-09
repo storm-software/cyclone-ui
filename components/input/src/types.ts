@@ -32,6 +32,8 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
+export type InputVariant = "default" | "floating";
+
 export type InputComponentProps = ViewProps &
   Omit<
     DetailedInputProps,
@@ -133,6 +135,13 @@ export interface InputContextProps {
    * The input's name.
    */
   name?: string;
+
+  /**
+   * The input's label presentation variant.
+   *
+   * @defaultValue "default"
+   */
+  variant: InputVariant;
 
   /**
    * The input's current size.

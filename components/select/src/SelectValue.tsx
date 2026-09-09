@@ -45,6 +45,13 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   },
 
   variants: {
+    variant: {
+      default: {},
+      floating: {
+        paddingTop: "$lg"
+      }
+    },
+
     placeholding: {
       true: {
         color: "$foregroundDisabled"
@@ -74,6 +81,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   } as const,
 
   defaultVariants: {
+    variant: "default",
     disabled: false,
     placeholding: false
   }

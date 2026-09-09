@@ -93,7 +93,8 @@ export const DatePickerContext = createStyledContext<DatePickerContextProps>({
   size: "$true",
   circular: false,
   disabled: false,
-  focused: false
+  focused: false,
+  variant: "default"
 });
 
 export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
@@ -708,11 +709,11 @@ const DatePickerTextBox = Input.TextBox.styleable(
 );
 
 const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
-  ({ children, ...props }, forwardedRef) => {
+  ({ children, placeholder = DEFAULT_DATE_FORMAT, ...props }, forwardedRef) => {
     return (
       <Input.TextBox.Value
         ref={forwardedRef}
-        placeholder={DEFAULT_DATE_FORMAT}
+        placeholder={placeholder}
         nativePaddingInline={16}
         {...props}>
         {children}
@@ -731,6 +732,7 @@ const DatePickerProvider = ({
   onChange,
   onFocus,
   focused,
+  variant = "default",
   selectedDate = null,
   ...props
 }: DatePickerProviderProps) => {
@@ -796,6 +798,7 @@ const DatePickerProvider = ({
         {...props}
         onChange={onChange}
         onFocus={onFocus}
+        variant={variant}
         focused={focused}>
         {children}
       </DatePickerContext.Provider>
@@ -827,6 +830,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
       onFocus,
       onBlur,
       focused,
+      variant = "default",
       selectedDate,
       ...props
     },
@@ -851,6 +855,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
         onFocus={onFocus}
         onBlur={onBlur}
         focused={focused}
+        variant={variant}
         selectedDate={selectedDate}>
         <Popover
           keepChildrenMounted={true}
@@ -860,6 +865,7 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
             ref={forwardedRef}
             {...props}
             focused={focused}
+            variant={variant}
             onInput={onInput}>
             {children}
           </Input>

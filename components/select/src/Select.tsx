@@ -73,6 +73,11 @@ const SelectGroup = styled(XGroup, {
       }
     },
 
+    variant: {
+      default: {},
+      floating: {}
+    },
+
     frameSize: {
       ":string": getSelectFrameSize,
       ":number": getSelectFrameSize
@@ -104,7 +109,8 @@ const SelectGroup = styled(XGroup, {
   defaultVariants: {
     frameSize: "$10xl",
     disabled: false,
-    focused: false
+    focused: false,
+    variant: "default"
   }
 });
 
@@ -299,6 +305,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
       name,
       disabled,
       focused,
+      variant = "default",
       children,
       onFocus,
       onBlur,
@@ -341,6 +348,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         name={name}
         disabled={disabled}
         focused={focused}
+        variant={variant}
         size={size}
         onFocus={onFocus}
         onBlur={onBlur}

@@ -50,7 +50,7 @@ export const Base: Story = {
   args: {},
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole("textbox") as HTMLInputElement;
+    const input = canvas.getByRole("textbox");
 
     await userEvent.click(input);
     input.setSelectionRange(1, 1);
@@ -67,6 +67,20 @@ export const Base: Story = {
     await expect(screen.getByText("February")).toBeVisible();
     await expect(screen.getByText("2027")).toBeVisible();
   }
+};
+
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ datePickerFieldName: null }}>
+      <DatePickerField name="datePickerFieldName" {...props}>
+        <DatePickerField.Label>Label Text</DatePickerField.Label>
+        <DatePickerField.Control />
+      </DatePickerField>
+    </Form>
+  )
 };
 
 export const Required: Story = {

@@ -72,6 +72,26 @@ export const Base: Story = {
   args: {}
 };
 
+export const Floating: Story = {
+  args: {
+    variant: "floating"
+  },
+  render: props => (
+    <Form name="formName" initialValues={{ selectFieldName: "" }}>
+      <SelectField name="selectFieldName" {...props} items={items}>
+        <SelectField.Label>Label Text</SelectField.Label>
+        <SelectField.Control />
+      </SelectField>
+    </Form>
+  )
+};
+
+export const FloatingWithPlaceholder: Story = {
+  args: {
+    variant: "floating"
+  }
+};
+
 export const Required: Story = {
   args: {
     required: true

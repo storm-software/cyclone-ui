@@ -333,6 +333,7 @@ const FilePickerTriggerButton = Button.styleable(
     return (
       <Button
         ref={forwardedRef}
+        group={"link" as any}
         width="100%"
         variant="link"
         disabled={disabled}
@@ -343,7 +344,11 @@ const FilePickerTriggerButton = Button.styleable(
         {...props}>
         <Button.Text
           color="$foregroundLink"
-          textDecorationColor="$foregroundLink">
+          textDecorationColor="$foregroundLink"
+          $group-link-hover={{
+            color: "$foregroundLinkHover",
+            textDecorationColor: "$foregroundLinkHover"
+          }}>
           {children ||
             (max > 1
               ? files.length === 0

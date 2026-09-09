@@ -69,6 +69,11 @@ const InputGroup = styled(XGroup, {
       }
     },
 
+    variant: {
+      default: {},
+      floating: {}
+    },
+
     // Keep frame dimensions separate from Tamagui's special `size` prop. A
     // `$true` size is consumed before spread variants run, leaving no height.
     frameSize: {
@@ -107,7 +112,8 @@ const InputGroup = styled(XGroup, {
     frameSize: "$5xl",
     disabled: false,
     focused: false,
-    circular: false
+    circular: false,
+    variant: "default"
   }
 });
 
@@ -116,6 +122,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
     const {
       children,
       size = "$true",
+      variant = "default",
       onChange,
       onInput,
       onFocus,
@@ -129,6 +136,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       <InputContext.Provider
         {...rest}
         size={size}
+        variant={variant}
         onChange={onChange}
         onInput={onInput}
         onFocus={onFocus}
@@ -137,6 +145,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           ref={forwardedRef}
           {...rest}
           frameSize={frameSize}
+          variant={variant}
           onFocus={onFocus}
           onBlur={onBlur}
           transition="200ms"
@@ -250,6 +259,7 @@ const InputValueImpl = InputValue.styleable(
   ({ children, enterKeyHint = "done", value, ...props }, forwardedRef) => {
     const { onChange: contextOnChange, onInput: contextOnInput } =
       InputContext.useStyledContext();
+
     return (
       <View position="relative" height="100%" flex={1} minWidth={0}>
         <InputValue

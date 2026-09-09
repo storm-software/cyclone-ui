@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import { TextArea } from "@cyclone-ui/text-area";
 import { Theme, useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -41,6 +41,7 @@ const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
   const disabled = field.disabled.get();
   const focused = field.focused.get();
   const formattedValue = field.formattedValue.get();
+  const variant = useFieldVariant(props.placeholder);
 
   const { blur, change, focus, mount } = useFieldActions();
   const elementRef = useRef<HTMLTextAreaElement>(null);
@@ -74,6 +75,7 @@ const TextAreaFieldControl = TextArea.styleable((props, forwardedRef) => {
         name={name}
         size={size}
         focused={focused}
+        variant={variant}
         disabled={disabled}
         value={formattedValue}
         onFocus={focus}

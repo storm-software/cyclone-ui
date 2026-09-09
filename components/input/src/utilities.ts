@@ -33,7 +33,8 @@ export const InputContext = createStyledContext<InputContextProps>({
   size: "$true",
   circular: false,
   disabled: false,
-  focused: false
+  focused: false,
+  variant: "default"
 });
 
 type BaseInputStyle = [Record<string, any>, Record<string, any>];
