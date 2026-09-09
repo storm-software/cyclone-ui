@@ -38,7 +38,7 @@ const meta: Meta<typeof DatePicker> = {
   title: "Base/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
-  render: (props: any) => {
+  render: ({ variant, ...props }: any) => {
     const handleFormat = useCallback((value: any) => {
       const date = toDate(value);
       if (!date) {
@@ -57,10 +57,11 @@ const meta: Meta<typeof DatePicker> = {
         <Field
           name="datePickerName"
           {...props}
+          variant={variant}
           format={handleFormat}
           parse={handleParse}>
           <Field.Label>Label Text</Field.Label>
-          <DatePicker>
+          <DatePicker variant={variant}>
             <DatePicker.TextBox>
               <DatePicker.TextBox.Value />
             </DatePicker.TextBox>
@@ -80,6 +81,12 @@ type Story = StoryObj<typeof DatePicker>;
 
 export const Base: Story = {
   args: {}
+};
+
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
 };
 
 export const Required: Story = {

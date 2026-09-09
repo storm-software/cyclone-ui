@@ -25,11 +25,11 @@ const meta: Meta<typeof Select> = {
   title: "Base/Select",
   component: Select,
   tags: ["autodocs"],
-  render: ({ defaultValue, ...props }: any) => (
+  render: ({ defaultValue, variant, ...props }: any) => (
     <Form name="formName" defaultValues={{ selectName: defaultValue }}>
-      <Field name="selectName" {...props}>
+      <Field name="selectName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
-        <Select>
+        <Select variant={variant}>
           <Select.TextBox>
             <Select.TextBox.Value placeholder="email@example.com" />
           </Select.TextBox>
@@ -86,6 +86,12 @@ const options = [
 
 export const Base: Story = {
   args: {}
+};
+
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
 };
 
 export const Required: Story = {

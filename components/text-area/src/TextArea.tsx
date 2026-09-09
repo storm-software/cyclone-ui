@@ -16,9 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import { ControlUnderline } from "@cyclone-ui/input";
 import { InputValue } from "@cyclone-ui/input/InputValue";
 import type { GetProps } from "@tamagui/core";
-import { styled } from "@tamagui/core";
+import { styled, View } from "@tamagui/core";
 import type { FocusEvent } from "react";
 import { useCallback, useState } from "react";
 
@@ -51,17 +52,33 @@ const TextAreaFrame = styled(InputValue, {
   },
 
   variants: {
-    variant: {
-      default: {},
-      floating: {
-        paddingTop: "$2xl"
-      }
-    },
-
     focused: {
       true: {
         boxShadow: "$ring",
         borderColor: "$borderFocused"
+      }
+    },
+
+    variant: {
+      default: {},
+      floating: {
+        paddingTop: "$2xl"
+      },
+      underline: {
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderColor: "$border",
+        borderRadius: 0,
+        boxShadow: "none",
+
+        hoverStyle: {
+          borderColor: "$borderHover"
+        },
+
+        focusVisibleStyle: {
+          borderColor: "$border",
+          boxShadow: "none"
+        }
       }
     },
 
@@ -85,6 +102,14 @@ const TextAreaFrame = styled(InputValue, {
   }
 });
 
+const TextAreaUnderlineFrame = styled(View, {
+  name: "TextAreaUnderlineFrame",
+
+  position: "relative",
+  width: "100%",
+  minWidth: 0
+});
+
 /**
  * A multiline Cyclone Input value with the same tokens and state behavior as
  * the standard Input control.
@@ -95,8 +120,10 @@ export const TextArea = TextAreaFrame.styleable(
       rows = 3,
       render: _render,
       focused: focusedProp,
+      disabled = false,
       onBlur,
       onFocus,
+      variant = "default",
       ...props
     },
     forwardedRef
@@ -117,7 +144,7 @@ export const TextArea = TextAreaFrame.styleable(
       [onBlur]
     );
 
-    return (
+    const textArea = (
       <TextAreaFrame
         ref={forwardedRef}
         render="textarea"
@@ -125,9 +152,25 @@ export const TextArea = TextAreaFrame.styleable(
         rows={rows}
         {...props}
         focused={focusedProp ?? focused}
+        variant={variant}
+        disabled={disabled}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
+    );
+
+    if (variant !== "underline") {
+      return textArea;
+    }
+
+    return (
+      <TextAreaUnderlineFrame>
+        {textArea}
+        <ControlUnderline
+          focused={focusedProp ?? focused}
+          disabled={disabled}
+        />
+      </TextAreaUnderlineFrame>
     );
   },
   { staticConfig: { componentName: "TextArea" } }

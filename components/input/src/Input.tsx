@@ -22,7 +22,7 @@ import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { XStack } from "@tamagui/stacks";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { InputValue } from "./InputValue";
 import type { InputContextProps } from "./types";
 import { getInputSize, InputContext } from "./utilities";
@@ -35,11 +35,45 @@ const getInputFrameSize = (
   paddingHorizontal: 0
 });
 
+export const ControlUnderline = styled(View, {
+  name: "ControlUnderline",
+
+  transition: "200ms",
+  position: "absolute",
+  left: 0,
+  bottom: 0,
+  width: 0,
+  height: "$xxs",
+  backgroundColor: "$borderFocused",
+  pointerEvents: "none",
+
+  variants: {
+    focused: {
+      true: {
+        width: "100%"
+      }
+    },
+
+    disabled: {
+      true: {
+        width: 0,
+        backgroundColor: "$borderDisabled"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    focused: false,
+    disabled: false
+  }
+});
+
 const InputGroup = styled(XGroup, {
   name: "Input",
   context: InputContext,
 
   transition: "200ms",
+  position: "relative",
   justifyContent: "space-between",
   alignItems: "center",
   backgroundColor: "$backgroundElevated",
@@ -63,15 +97,31 @@ const InputGroup = styled(XGroup, {
 
   variants: {
     focused: {
-      true: {
-        boxShadow: "$ring",
+      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
+        boxShadow: props.variant === "underline" ? "none" : "$ring",
         borderColor: "$borderFocused"
-      }
+      })
     },
 
     variant: {
       default: {},
-      floating: {}
+      floating: {},
+      underline: {
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderColor: "$border",
+        borderRadius: 0,
+        boxShadow: "none",
+
+        hoverStyle: {
+          borderColor: "$borderHover"
+        },
+
+        focusVisibleStyle: {
+          borderColor: "$border",
+          boxShadow: "none"
+        }
+      }
     },
 
     // Keep frame dimensions separate from Tamagui's special `size` prop. A
@@ -127,16 +177,38 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       onInput,
       onFocus,
       onBlur,
+      focused = false,
+      disabled = false,
       ...rest
     } = props;
+    const [locallyFocused, setLocallyFocused] = useState(false);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const handleFocus = useCallback(
+      (event: any) => {
+        setLocallyFocused(true);
+        onFocus?.(event);
+      },
+      [onFocus]
+    );
+    const handleBlur = useCallback(
+      (event: any) => {
+        if (!event.currentTarget?.contains?.(event.relatedTarget)) {
+          setLocallyFocused(false);
+        }
+        onBlur?.(event);
+      },
+      [onBlur]
+    );
+    const underlineFocused = focused || locallyFocused;
 
     return (
       <InputContext.Provider
         {...rest}
         size={size}
         variant={variant}
+        focused={focused}
+        disabled={disabled}
         onChange={onChange}
         onInput={onInput}
         onFocus={onFocus}
@@ -146,13 +218,22 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           {...rest}
           frameSize={frameSize}
           variant={variant}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          focused={focused}
+          disabled={disabled}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           transition="200ms"
           $group-field-hover={{
             borderColor: "$borderHover"
           }}>
           {children}
+          {variant === "underline" && (
+            <ControlUnderline
+              bottom={-1}
+              focused={underlineFocused}
+              disabled={disabled}
+            />
+          )}
         </InputGroup>
       </InputContext.Provider>
     );
@@ -183,6 +264,14 @@ const InputSeparator = styled(View, {
       }
     },
 
+    variant: {
+      default: {},
+      floating: {},
+      underline: {
+        borderWidth: 0
+      }
+    },
+
     disabled: {
       true: {
         borderColor: "$borderDisabled",
@@ -204,7 +293,8 @@ const InputSeparator = styled(View, {
 
   defaultVariants: {
     disabled: false,
-    focused: false
+    focused: false,
+    variant: "default"
   }
 });
 

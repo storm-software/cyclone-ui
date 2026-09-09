@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { ControlUnderline } from "@cyclone-ui/input";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
@@ -41,6 +42,7 @@ const SelectGroup = styled(XGroup, {
   context: SelectContext,
 
   transition: "200ms",
+  position: "relative",
   justifyContent: "space-between",
   alignItems: "center",
   cursor: "pointer",
@@ -75,7 +77,23 @@ const SelectGroup = styled(XGroup, {
 
     variant: {
       default: {},
-      floating: {}
+      floating: {},
+      underline: {
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderColor: "$border",
+        borderRadius: 0,
+        boxShadow: "none",
+
+        hoverStyle: {
+          borderColor: "$borderHover"
+        },
+
+        focusVisibleStyle: {
+          borderColor: "$border",
+          boxShadow: "none"
+        }
+      }
     },
 
     frameSize: {
@@ -139,6 +157,14 @@ const SelectSeparator = styled(View, {
       }
     },
 
+    variant: {
+      default: {},
+      floating: {},
+      underline: {
+        borderWidth: 0
+      }
+    },
+
     disabled: {
       true: {
         borderColor: "$borderDisabled",
@@ -160,7 +186,8 @@ const SelectSeparator = styled(View, {
 
   defaultVariants: {
     disabled: false,
-    focused: false
+    focused: false,
+    variant: "default"
   }
 });
 
@@ -248,16 +275,26 @@ const BaseSelect = styled(TamaguiSelect, {
 
 const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
   ({ children, ...props }, forwardedRef) => {
-    const { focused, disabled, size } = SelectContext.useStyledContext();
+    const { focused, disabled, size, variant } =
+      SelectContext.useStyledContext();
+    const [locallyFocused, setLocallyFocused] = useState(false);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const underlineFocused = focused || locallyFocused;
 
     return (
       <SelectGroup
         group={"field" as any}
         focused={focused}
-        disabled={disabled}
+        variant={variant}
         frameSize={frameSize}
+        disabled={disabled}
+        onFocus={() => setLocallyFocused(true)}
+        onBlur={(event: any) => {
+          if (!event.currentTarget?.contains?.(event.relatedTarget)) {
+            setLocallyFocused(false);
+          }
+        }}
         transition="200ms">
         <SelectTextBox
           {...props}
@@ -293,6 +330,13 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
             <SelectTrigger />
           </XGroup.Item>
         </SelectTextBox>
+        {variant === "underline" && (
+          <ControlUnderline
+            bottom={-1}
+            focused={underlineFocused}
+            disabled={disabled}
+          />
+        )}
       </SelectGroup>
     );
   },
@@ -347,7 +391,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         {...props}
         name={name}
         disabled={disabled}
-        focused={focused}
+        focused={focused || open}
         variant={variant}
         size={size}
         onFocus={onFocus}

@@ -59,7 +59,7 @@ import {
   useState
 } from "react";
 
-export type FieldVariant = "default" | "floating";
+export type FieldVariant = "default" | "floating" | "underline";
 
 interface FieldPresentationContextValue {
   variant: FieldVariant;
@@ -134,7 +134,18 @@ const FieldGroupFrame = styled(ThemeableStack, {
 
     variant: {
       default: {},
-      floating: {}
+      floating: {},
+      underline: {
+        boxShadow: "none",
+
+        focusStyle: {
+          boxShadow: "none"
+        },
+
+        focusVisibleStyle: {
+          boxShadow: "none"
+        }
+      }
     }
   } as const,
 
@@ -416,7 +427,8 @@ const FieldLabelPositioner = styled(View, {
         left: "$4xl",
         zIndex: 1,
         transform: [{ translateY: "-50%" }]
-      }
+      },
+      underline: {}
     },
 
     floating: {
@@ -542,7 +554,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
         <TamaguiLabel
           ref={forwardedRef}
           htmlFor={name}
-          marginLeft={variant === "default" ? "$md" : "$none"}>
+          marginLeft={variant === "floating" ? "$none" : "$md"}>
           <LabelXStack disabled={disabled} floating={floating}>
             {floating && <FieldLabelBorderMask />}
             <FieldLabelContent>
@@ -709,6 +721,7 @@ const FieldIconButtonImpl = Button.styleable<{
     const size = field.size.get() ?? "$true";
     const disabled = field.disabled.get();
     const focused = field.focused.get();
+    const { variant } = use(FieldPresentationContext);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
 
@@ -726,7 +739,7 @@ const FieldIconButtonImpl = Button.styleable<{
         height="100%"
         paddingHorizontal="$2xl"
         position="relative">
-        {position && (
+        {position && variant !== "underline" && (
           <View
             position="absolute"
             top="20%"

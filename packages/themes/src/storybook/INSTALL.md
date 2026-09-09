@@ -26,9 +26,9 @@ export const parameters = {
 
 ## Token-doc variants
 
-Generated token blocks render the `dark` token set by default. Pass `theme`
-directly to a block to select `dark`, `darkDimmed`, `darkHighContrast`,
-`light`, `lightDimmed`, or `lightHighContrast`.
+Generated token blocks follow Storybook's `theme` global when it matches one
+of these token-set names: `dark`, `darkDimmed`, `darkHighContrast`, `light`, `lightDimmed`, `lightHighContrast`.
+Pass `theme` directly to a block to override that selection.
 
 ## Setup
 

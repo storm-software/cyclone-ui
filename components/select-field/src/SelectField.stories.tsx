@@ -92,6 +92,12 @@ export const FloatingWithPlaceholder: Story = {
   }
 };
 
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
 export const Required: Story = {
   args: {
     required: true

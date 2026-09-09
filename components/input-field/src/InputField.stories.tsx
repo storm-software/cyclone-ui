@@ -126,6 +126,12 @@ export const FloatingWithPlaceholder: Story = {
   }
 };
 
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
 export const WithLink: Story = {
   args: {},
   render: props => (

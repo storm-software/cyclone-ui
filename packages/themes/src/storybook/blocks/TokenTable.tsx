@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactElement } from "react";
-import { resolveThemeVariant } from "./ThemeVariant";
+import { useThemeVariant } from "./ThemeVariant";
 
 
 export interface TokenTableRow {
@@ -33997,7 +33997,7 @@ export interface TokenTableBlockProps {
   type?: string;
   /** Restrict rows to tokens used to define typography. */
   typography?: boolean;
-  /** Generated token-set name. Defaults to `dark`. */
+  /** Generated token-set name. Defaults to Storybook's `theme` global. */
   theme?: string;
 }
 
@@ -34010,7 +34010,7 @@ export function TokenTableBlock({
   typography,
   theme
 }: TokenTableBlockProps = {}): ReactElement {
-  const activeTheme = resolveThemeVariant(TOKEN_VARIANTS, "dark", theme);
+  const activeTheme = useThemeVariant(TOKEN_VARIANTS, "dark", theme);
   const rows = TOKEN_VARIANTS[activeTheme].filter(token => {
     const filters = typeof filter === "string" ? [filter] : filter;
     if (

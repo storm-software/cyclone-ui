@@ -46,6 +46,12 @@ export const Base: Story = {
   args: {}
 };
 
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
 export const WithLink: Story = {
   args: {},
   render: props => (

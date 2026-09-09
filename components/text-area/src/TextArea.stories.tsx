@@ -46,6 +46,12 @@ export const Base: Story = {
   }
 };
 
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
+};
+
 export const Disabled: Story = {
   args: {
     disabled: true

@@ -32,7 +32,7 @@ type DetailedInputProps = React.DetailedHTMLProps<
 
 export type InputChangeEventHandler = (event: CustomEvent<string>) => any;
 
-export type InputVariant = "default" | "floating";
+export type InputVariant = "default" | "floating" | "underline";
 
 export type InputComponentProps = ViewProps &
   Omit<

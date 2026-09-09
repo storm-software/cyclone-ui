@@ -41,6 +41,7 @@ export const getSelectSize = (
   return {
     height: size,
     minHeight: size,
-    borderRadius: props.circular ? 100_000 : "$control"
+    borderRadius:
+      props.variant === "underline" ? 0 : props.circular ? 100_000 : "$control"
   };
 };

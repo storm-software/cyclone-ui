@@ -28,12 +28,13 @@ const meta: Meta<typeof Input> = {
   tags: ["autodocs"],
   render: ({
     defaultValue,
+    variant,
     ...props
   }: InputProps & { defaultValue?: string }) => (
     <Form name="formName" initialValues={{ inputName: defaultValue }}>
-      <Field name="inputName" {...props}>
+      <Field name="inputName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
-        <Input>
+        <Input variant={variant}>
           <Input.TextBox>
             <Input.TextBox.Value placeholder="email@example.com" />
           </Input.TextBox>
@@ -52,6 +53,12 @@ type Story = StoryObj<typeof Input>;
 
 export const Base: Story = {
   args: {}
+};
+
+export const Underline: Story = {
+  args: {
+    variant: "underline"
+  }
 };
 
 export const Required: Story = {

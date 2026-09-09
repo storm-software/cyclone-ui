@@ -1,5 +1,5 @@
 import { Typeset } from "@storybook/addon-docs/blocks";
-import { resolveThemeVariant } from "./ThemeVariant";
+import { useThemeVariant } from "./ThemeVariant";
 
 
 /**
@@ -47,12 +47,12 @@ const TYPESET_VARIANTS = {
 };
 
 export interface TypesetBlockProps {
-  /** Generated token-set name. Defaults to `dark`. */
+  /** Generated token-set name. Defaults to Storybook's `theme` global. */
   theme?: string;
 }
 
 export function TypesetBlock({ theme }: TypesetBlockProps = {}) {
-  const activeTheme = resolveThemeVariant(TYPESET_VARIANTS, "dark", theme);
+  const activeTheme = useThemeVariant(TYPESET_VARIANTS, "dark", theme);
 
   return TYPESET_VARIANTS[activeTheme];
 }
