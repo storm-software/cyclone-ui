@@ -1484,9 +1484,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#f5f5f599",
+      value: "#999999",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the dark theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -5489,7 +5489,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -5498,7 +5498,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -5507,7 +5507,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -5516,7 +5516,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5525,7 +5525,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec0bf",
+      value: "0px 0px 0px 3px #36dec099",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -5534,7 +5534,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec0bf",
+      value: "0px 0px 0px 1px #36dec099",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -5543,7 +5543,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec099",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -5552,7 +5552,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec099",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5561,7 +5561,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b92647bf",
+      value: "0px 0px 0px 3px #b9264799",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -5570,7 +5570,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b92647bf",
+      value: "0px 0px 0px 1px #b9264799",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -5579,7 +5579,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b9264799",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -5588,7 +5588,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b9264799",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5597,7 +5597,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d29527bf",
+      value: "0px 0px 0px 3px #d2952799",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -5606,7 +5606,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d29527bf",
+      value: "0px 0px 0px 1px #d2952799",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -5615,7 +5615,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d2952799",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -5624,7 +5624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d2952799",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5633,7 +5633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e71bf",
+      value: "0px 0px 0px 3px #449e7199",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -5642,7 +5642,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e71bf",
+      value: "0px 0px 0px 1px #449e7199",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -5651,7 +5651,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e7199",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -5660,7 +5660,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e7199",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5669,7 +5669,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47eceebf",
+      value: "0px 0px 0px 3px #47ecee99",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -5678,7 +5678,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47eceebf",
+      value: "0px 0px 0px 1px #47ecee99",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -5687,7 +5687,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47ecee99",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -5696,7 +5696,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47ecee99",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5705,7 +5705,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed2bf",
+      value: "0px 0px 0px 3px #949ed299",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -5714,7 +5714,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed2bf",
+      value: "0px 0px 0px 1px #949ed299",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -5723,7 +5723,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed299",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -5732,7 +5732,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed299",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5741,7 +5741,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55ebf",
+      value: "0px 0px 0px 3px #9fd55e99",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -5750,7 +5750,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55ebf",
+      value: "0px 0px 0px 1px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -5759,7 +5759,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55e99",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -5768,7 +5768,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5777,7 +5777,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff0404bf",
+      value: "0px 0px 0px 3px #ff040499",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -5786,7 +5786,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff0404bf",
+      value: "0px 0px 0px 1px #ff040499",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -5795,7 +5795,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff040499",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -5804,7 +5804,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff040499",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,
@@ -7390,9 +7390,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#d2d2d299",
+      value: "#919191",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the dark theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -11395,7 +11395,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -11404,7 +11404,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -11413,7 +11413,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -11422,7 +11422,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11431,7 +11431,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec0bf",
+      value: "0px 0px 0px 3px #36dec099",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -11440,7 +11440,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec0bf",
+      value: "0px 0px 0px 1px #36dec099",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -11449,7 +11449,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec099",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -11458,7 +11458,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec099",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11467,7 +11467,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b92647bf",
+      value: "0px 0px 0px 3px #b9264799",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -11476,7 +11476,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b92647bf",
+      value: "0px 0px 0px 1px #b9264799",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -11485,7 +11485,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b9264799",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -11494,7 +11494,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b9264799",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11503,7 +11503,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d29527bf",
+      value: "0px 0px 0px 3px #d2952799",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -11512,7 +11512,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d29527bf",
+      value: "0px 0px 0px 1px #d2952799",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -11521,7 +11521,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d2952799",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -11530,7 +11530,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d2952799",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11539,7 +11539,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e71bf",
+      value: "0px 0px 0px 3px #449e7199",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -11548,7 +11548,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e71bf",
+      value: "0px 0px 0px 1px #449e7199",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -11557,7 +11557,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e7199",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -11566,7 +11566,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e7199",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11575,7 +11575,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47eceebf",
+      value: "0px 0px 0px 3px #47ecee99",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -11584,7 +11584,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47eceebf",
+      value: "0px 0px 0px 1px #47ecee99",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -11593,7 +11593,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47ecee99",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -11602,7 +11602,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47ecee99",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11611,7 +11611,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed2bf",
+      value: "0px 0px 0px 3px #949ed299",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -11620,7 +11620,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed2bf",
+      value: "0px 0px 0px 1px #949ed299",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -11629,7 +11629,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed299",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -11638,7 +11638,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed299",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11647,7 +11647,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55ebf",
+      value: "0px 0px 0px 3px #9fd55e99",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -11656,7 +11656,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55ebf",
+      value: "0px 0px 0px 1px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -11665,7 +11665,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55e99",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -11674,7 +11674,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11683,7 +11683,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff0404bf",
+      value: "0px 0px 0px 3px #ff040499",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -11692,7 +11692,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff0404bf",
+      value: "0px 0px 0px 1px #ff040499",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -11701,7 +11701,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff040499",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -11710,7 +11710,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff040499",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,
@@ -13296,9 +13296,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#ffffff99",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the dark theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the dark theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -17301,7 +17301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -17310,7 +17310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -17319,7 +17319,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -17328,7 +17328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17337,7 +17337,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #36dec0bf",
+      value: "0px 0px 0px 3px #36dec099",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -17346,7 +17346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #36dec0bf",
+      value: "0px 0px 0px 1px #36dec099",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -17355,7 +17355,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #36dec099",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -17364,7 +17364,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec0bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #36dec099",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17373,7 +17373,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #b92647bf",
+      value: "0px 0px 0px 3px #b9264799",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -17382,7 +17382,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #b92647bf",
+      value: "0px 0px 0px 1px #b9264799",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -17391,7 +17391,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #b9264799",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -17400,7 +17400,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b92647bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #b9264799",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17409,7 +17409,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d29527bf",
+      value: "0px 0px 0px 3px #d2952799",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -17418,7 +17418,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d29527bf",
+      value: "0px 0px 0px 1px #d2952799",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -17427,7 +17427,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d2952799",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -17436,7 +17436,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d29527bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d2952799",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17445,7 +17445,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #449e71bf",
+      value: "0px 0px 0px 3px #449e7199",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -17454,7 +17454,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #449e71bf",
+      value: "0px 0px 0px 1px #449e7199",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -17463,7 +17463,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #449e7199",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -17472,7 +17472,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e71bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #449e7199",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17481,7 +17481,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #47eceebf",
+      value: "0px 0px 0px 3px #47ecee99",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -17490,7 +17490,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #47eceebf",
+      value: "0px 0px 0px 1px #47ecee99",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -17499,7 +17499,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #47ecee99",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -17508,7 +17508,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47eceebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #47ecee99",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17517,7 +17517,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #949ed2bf",
+      value: "0px 0px 0px 3px #949ed299",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -17526,7 +17526,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #949ed2bf",
+      value: "0px 0px 0px 1px #949ed299",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -17535,7 +17535,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #949ed299",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -17544,7 +17544,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed2bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #949ed299",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17553,7 +17553,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #9fd55ebf",
+      value: "0px 0px 0px 3px #9fd55e99",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -17562,7 +17562,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #9fd55ebf",
+      value: "0px 0px 0px 1px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -17571,7 +17571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9fd55e99",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -17580,7 +17580,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9fd55e99",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17589,7 +17589,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #ff0404bf",
+      value: "0px 0px 0px 3px #ff040499",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -17598,7 +17598,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #ff0404bf",
+      value: "0px 0px 0px 1px #ff040499",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -17607,7 +17607,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #ff040499",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -17616,7 +17616,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff0404bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #ff040499",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,
@@ -19193,9 +19193,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#f5f5f599",
+      value: "#999999",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the light theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the light theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -23234,7 +23234,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -23243,7 +23243,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -23252,7 +23252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -23261,7 +23261,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23270,7 +23270,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c9bf",
+      value: "0px 0px 0px 3px #54e3c999",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -23279,7 +23279,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c9bf",
+      value: "0px 0px 0px 1px #54e3c999",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -23288,7 +23288,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c999",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -23297,7 +23297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c999",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23306,7 +23306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222ebf",
+      value: "0px 0px 0px 3px #cf222e99",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -23315,7 +23315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222ebf",
+      value: "0px 0px 0px 1px #cf222e99",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -23324,7 +23324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222e99",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -23333,7 +23333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222e99",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23342,7 +23342,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d49400bf",
+      value: "0px 0px 0px 3px #d4940099",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -23351,7 +23351,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d49400bf",
+      value: "0px 0px 0px 1px #d4940099",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -23360,7 +23360,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d4940099",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -23369,7 +23369,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d4940099",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23378,7 +23378,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a469bf",
+      value: "0px 0px 0px 3px #00a46999",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -23387,7 +23387,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a469bf",
+      value: "0px 0px 0px 1px #00a46999",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -23396,7 +23396,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a46999",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -23405,7 +23405,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a46999",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23414,7 +23414,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e6bf",
+      value: "0px 0px 0px 3px #00b8e699",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -23423,7 +23423,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e6bf",
+      value: "0px 0px 0px 1px #00b8e699",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -23432,7 +23432,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e699",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -23441,7 +23441,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e699",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23450,7 +23450,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee4bf",
+      value: "0px 0px 0px 3px #7f7ee499",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -23459,7 +23459,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee4bf",
+      value: "0px 0px 0px 1px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -23468,7 +23468,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee499",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -23477,7 +23477,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23486,7 +23486,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b136bf",
+      value: "0px 0px 0px 3px #79b13699",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -23495,7 +23495,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b136bf",
+      value: "0px 0px 0px 1px #79b13699",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -23504,7 +23504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b13699",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -23513,7 +23513,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b13699",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -23522,7 +23522,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301bbf",
+      value: "0px 0px 0px 3px #d6301b99",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -23531,7 +23531,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301bbf",
+      value: "0px 0px 0px 1px #d6301b99",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -23540,7 +23540,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301b99",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -23549,7 +23549,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301b99",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,
@@ -25126,9 +25126,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#d2d2d299",
+      value: "#919191",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the light theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the light theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -29167,7 +29167,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -29176,7 +29176,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -29185,7 +29185,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -29194,7 +29194,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29203,7 +29203,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c9bf",
+      value: "0px 0px 0px 3px #54e3c999",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -29212,7 +29212,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c9bf",
+      value: "0px 0px 0px 1px #54e3c999",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -29221,7 +29221,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c999",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -29230,7 +29230,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c999",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29239,7 +29239,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222ebf",
+      value: "0px 0px 0px 3px #cf222e99",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -29248,7 +29248,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222ebf",
+      value: "0px 0px 0px 1px #cf222e99",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -29257,7 +29257,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222e99",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -29266,7 +29266,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222e99",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29275,7 +29275,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d49400bf",
+      value: "0px 0px 0px 3px #d4940099",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -29284,7 +29284,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d49400bf",
+      value: "0px 0px 0px 1px #d4940099",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -29293,7 +29293,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d4940099",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -29302,7 +29302,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d4940099",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29311,7 +29311,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a469bf",
+      value: "0px 0px 0px 3px #00a46999",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -29320,7 +29320,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a469bf",
+      value: "0px 0px 0px 1px #00a46999",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -29329,7 +29329,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a46999",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -29338,7 +29338,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a46999",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29347,7 +29347,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e6bf",
+      value: "0px 0px 0px 3px #00b8e699",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -29356,7 +29356,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e6bf",
+      value: "0px 0px 0px 1px #00b8e699",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -29365,7 +29365,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e699",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -29374,7 +29374,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e699",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29383,7 +29383,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee4bf",
+      value: "0px 0px 0px 3px #7f7ee499",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -29392,7 +29392,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee4bf",
+      value: "0px 0px 0px 1px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -29401,7 +29401,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee499",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -29410,7 +29410,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29419,7 +29419,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b136bf",
+      value: "0px 0px 0px 3px #79b13699",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -29428,7 +29428,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b136bf",
+      value: "0px 0px 0px 1px #79b13699",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -29437,7 +29437,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b13699",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -29446,7 +29446,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b13699",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -29455,7 +29455,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301bbf",
+      value: "0px 0px 0px 3px #d6301b99",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -29464,7 +29464,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301bbf",
+      value: "0px 0px 0px 1px #d6301b99",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -29473,7 +29473,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301b99",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -29482,7 +29482,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301b99",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,
@@ -31059,9 +31059,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.base-disabled",
       type: "color",
-      value: "#ffffff99",
+      value: "#a4a4a4",
       cssVar: "--rw-color-foreground-base-disabled",
-      description: "The primary foreground color for the light theme (disabled, 60% opacity)",
+      description: "The primary foreground color for the light theme (disabled, 50% darker, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -35100,7 +35100,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base",
       type: "shadow",
-      value: "0px 0px 0px 3px #f5f5f533",
+      value: "0px 0px 0px 3px #f5f5f51a",
       cssVar: "--rw-ring-base",
       description: "The base ring variant",
       theme: undefined,
@@ -35109,7 +35109,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #f5f5f533",
+      value: "0px 0px 0px 1px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle",
       description: "The base subtle ring variant",
       theme: undefined,
@@ -35118,7 +35118,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #f5f5f51a",
       cssVar: "--rw-ring-base-offset",
       description: "The base ring variant with a 3px offset",
       theme: undefined,
@@ -35127,7 +35127,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.base-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f533",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #f5f5f51a",
       cssVar: "--rw-ring-base-subtle-offset",
       description: "The base subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35136,7 +35136,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand",
       type: "shadow",
-      value: "0px 0px 0px 3px #54e3c9bf",
+      value: "0px 0px 0px 3px #54e3c999",
       cssVar: "--rw-ring-brand",
       description: "The brand ring variant",
       theme: undefined,
@@ -35145,7 +35145,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #54e3c9bf",
+      value: "0px 0px 0px 1px #54e3c999",
       cssVar: "--rw-ring-brand-subtle",
       description: "The brand subtle ring variant",
       theme: undefined,
@@ -35154,7 +35154,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #54e3c999",
       cssVar: "--rw-ring-brand-offset",
       description: "The brand ring variant with a 3px offset",
       theme: undefined,
@@ -35163,7 +35163,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.brand-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c9bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #54e3c999",
       cssVar: "--rw-ring-brand-subtle-offset",
       description: "The brand subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35172,7 +35172,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger",
       type: "shadow",
-      value: "0px 0px 0px 3px #cf222ebf",
+      value: "0px 0px 0px 3px #cf222e99",
       cssVar: "--rw-ring-danger",
       description: "The danger ring variant",
       theme: undefined,
@@ -35181,7 +35181,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #cf222ebf",
+      value: "0px 0px 0px 1px #cf222e99",
       cssVar: "--rw-ring-danger-subtle",
       description: "The danger subtle ring variant",
       theme: undefined,
@@ -35190,7 +35190,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #cf222e99",
       cssVar: "--rw-ring-danger-offset",
       description: "The danger ring variant with a 3px offset",
       theme: undefined,
@@ -35199,7 +35199,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.danger-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222ebf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #cf222e99",
       cssVar: "--rw-ring-danger-subtle-offset",
       description: "The danger subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35208,7 +35208,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning",
       type: "shadow",
-      value: "0px 0px 0px 3px #d49400bf",
+      value: "0px 0px 0px 3px #d4940099",
       cssVar: "--rw-ring-warning",
       description: "The warning ring variant",
       theme: undefined,
@@ -35217,7 +35217,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d49400bf",
+      value: "0px 0px 0px 1px #d4940099",
       cssVar: "--rw-ring-warning-subtle",
       description: "The warning subtle ring variant",
       theme: undefined,
@@ -35226,7 +35226,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d4940099",
       cssVar: "--rw-ring-warning-offset",
       description: "The warning ring variant with a 3px offset",
       theme: undefined,
@@ -35235,7 +35235,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.warning-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d49400bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d4940099",
       cssVar: "--rw-ring-warning-subtle-offset",
       description: "The warning subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35244,7 +35244,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #00a469bf",
+      value: "0px 0px 0px 3px #00a46999",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -35253,7 +35253,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00a469bf",
+      value: "0px 0px 0px 1px #00a46999",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -35262,7 +35262,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00a46999",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -35271,7 +35271,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a469bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00a46999",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35280,7 +35280,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00b8e6bf",
+      value: "0px 0px 0px 3px #00b8e699",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -35289,7 +35289,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00b8e6bf",
+      value: "0px 0px 0px 1px #00b8e699",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -35298,7 +35298,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00b8e699",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -35307,7 +35307,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e6bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00b8e699",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35316,7 +35316,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #7f7ee4bf",
+      value: "0px 0px 0px 3px #7f7ee499",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -35325,7 +35325,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #7f7ee4bf",
+      value: "0px 0px 0px 1px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -35334,7 +35334,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #7f7ee499",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -35343,7 +35343,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee4bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #7f7ee499",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35352,7 +35352,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive",
       type: "shadow",
-      value: "0px 0px 0px 3px #79b136bf",
+      value: "0px 0px 0px 3px #79b13699",
       cssVar: "--rw-ring-positive",
       description: "The positive ring variant",
       theme: undefined,
@@ -35361,7 +35361,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #79b136bf",
+      value: "0px 0px 0px 1px #79b13699",
       cssVar: "--rw-ring-positive-subtle",
       description: "The positive subtle ring variant",
       theme: undefined,
@@ -35370,7 +35370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #79b13699",
       cssVar: "--rw-ring-positive-offset",
       description: "The positive ring variant with a 3px offset",
       theme: undefined,
@@ -35379,7 +35379,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.positive-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b136bf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #79b13699",
       cssVar: "--rw-ring-positive-subtle-offset",
       description: "The positive subtle ring variant with a 3px offset",
       theme: undefined,
@@ -35388,7 +35388,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative",
       type: "shadow",
-      value: "0px 0px 0px 3px #d6301bbf",
+      value: "0px 0px 0px 3px #d6301b99",
       cssVar: "--rw-ring-negative",
       description: "The negative ring variant",
       theme: undefined,
@@ -35397,7 +35397,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #d6301bbf",
+      value: "0px 0px 0px 1px #d6301b99",
       cssVar: "--rw-ring-negative-subtle",
       description: "The negative subtle ring variant",
       theme: undefined,
@@ -35406,7 +35406,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #d6301b99",
       cssVar: "--rw-ring-negative-offset",
       description: "The negative ring variant with a 3px offset",
       theme: undefined,
@@ -35415,7 +35415,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.negative-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301bbf",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #d6301b99",
       cssVar: "--rw-ring-negative-subtle-offset",
       description: "The negative subtle ring variant with a 3px offset",
       theme: undefined,

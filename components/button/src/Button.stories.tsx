@@ -66,6 +66,68 @@ export const SizedIcon: Story = {
   }
 };
 
+export const Surface: Story = {
+  args: {
+    children: "Button Text",
+    variant: "surface",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Outlined: Story = {
+  args: {
+    children: "Button Text",
+    variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Inverse: Story = {
+  args: {
+    children: "Button Text",
+    variant: "inverse",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Subtle: Story = {
+  args: {
+    children: "Button Text",
+    variant: "subtle",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    children: "Button Text",
+    variant: "ghost",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Link: Story = {
+  args: {
+    children: "Button Text",
+    variant: "link",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Button Text",
+    variant: "inverse",
+    disabled: true
+  }
+};
+
 /**
  * Brand Stories
  */

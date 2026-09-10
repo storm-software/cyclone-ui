@@ -1,0 +1,62 @@
+{
+  "name": "@cyclone-ui/password-input-field",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/password-input-field"
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/visually-hidden": "workspace:*",
+    "@tamagui/core": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@cyclone-ui/input-field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/validation-text": "workspace:*"
+  },
+  "devDependencies": {
+    "@cyclone-ui/form": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./password-strength": {
+      "import": "./dist/password-strength.mjs",
+      "require": "./dist/password-strength.cjs"
+    },
+    "./PasswordInputField": {
+      "import": "./dist/PasswordInputField.mjs",
+      "require": "./dist/PasswordInputField.cjs"
+    },
+    "./*": "./*"
+  }
+}

@@ -4,7 +4,7 @@ Guidance for AI agents working in the [cyclone-ui](https://github.com/storm-soft
 
 ## Storybook Validations
 
-When making a visual/design change and are unable to run Storybook locally for whatever reason, validate changes by running the Storybook build and checking for errors:
+When making a visual/design change, use Storybook rendering to ensure the changes are correct. If you are unable to run Storybook rendering validations for whatever reason, validate changes by running the Storybook build and checking for errors:
 
 ```bash
 pnpm build-storybook

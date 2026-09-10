@@ -29,7 +29,13 @@ import type {
   Variable,
   VariantSpreadExtras
 } from "@tamagui/core";
-import { Text, View, createStyledContext, styled } from "@tamagui/core";
+import {
+  Text,
+  View,
+  createStyledContext,
+  styled,
+  useThemeName
+} from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
@@ -465,9 +471,13 @@ const ButtonTextFrame = styled(Text, {
 const colorForVariant = (
   variant: ButtonVariant,
   disabled: boolean,
-  color?: ColorTokens | string
+  color?: ColorTokens | string,
+  themeName?: string | null | undefined
 ): ThemeableIconProps["color"] => {
-  if (variant === "inverse" || variant === "subtle") {
+  if (
+    variant === "inverse" ||
+    (variant === "subtle" && !themeName?.endsWith("base"))
+  ) {
     return (
       disabled ? "$foregroundInverseDisabled" : (color ?? "$foregroundInverse")
     ) as ThemeableIconProps["color"];
@@ -478,16 +488,26 @@ const colorForVariant = (
   ) as ThemeableIconProps["color"];
 };
 
-const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
+const hoverColorForVariant = (
+  variant: ButtonVariant,
+  disabled: boolean,
+  themeName?: string | null | undefined
+) => {
   if (disabled) {
-    if (variant === "inverse" || variant === "subtle") {
+    if (
+      variant === "inverse" ||
+      (variant === "subtle" && !themeName?.endsWith("base"))
+    ) {
       return "$foregroundInverseDisabled";
     }
 
     return "$foregroundDisabled";
   }
 
-  if (variant === "inverse" || variant === "subtle") {
+  if (
+    variant === "inverse" ||
+    (variant === "subtle" && !themeName?.endsWith("base"))
+  ) {
     return "$foregroundInverseHover";
   }
 
@@ -498,9 +518,16 @@ const hoverColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
   return "$foregroundHover";
 };
 
-const pressedColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
+const pressedColorForVariant = (
+  variant: ButtonVariant,
+  disabled: boolean,
+  themeName?: string | null | undefined
+) => {
   if (disabled) {
-    if (variant === "inverse" || variant === "subtle") {
+    if (
+      variant === "inverse" ||
+      (variant === "subtle" && !themeName?.endsWith("base"))
+    ) {
       return "$foregroundInverseDisabled";
     }
 
@@ -517,18 +544,19 @@ const pressedColorForVariant = (variant: ButtonVariant, disabled: boolean) => {
 const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(
   ({ children, size: _size, ...props }, forwardedRef) => {
     const { variant, disabled, color } = ButtonContext.useStyledContext();
+    const theme = useThemeName();
 
     return (
       <ButtonTextFrame
         ref={forwardedRef}
         variant={variant}
         disabled={disabled}
-        color={colorForVariant(variant, disabled, color)}
+        color={colorForVariant(variant, disabled, color, theme)}
         {...props}
         borderRadius={0}
         $group-button-hover={{
-          color: hoverColorForVariant(variant, disabled),
-          textDecorationColor: hoverColorForVariant(variant, disabled)
+          color: hoverColorForVariant(variant, disabled, theme),
+          textDecorationColor: hoverColorForVariant(variant, disabled, theme)
         }}>
         {children}
       </ButtonTextFrame>

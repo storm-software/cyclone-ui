@@ -54,7 +54,7 @@ const SelectItemGroup = styled(XStack, {
   gap: "$xl",
   alignItems: "center",
   paddingHorizontal: "$xl",
-  paddingVertical: 0,
+  paddingVertical: "$lg",
   borderRadius: "$button",
   minHeight: "$5xl",
   width: "100%",
@@ -97,16 +97,21 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   name: "SelectItems",
   context: SelectContext,
 
+  transition: "200ms",
   cursor: "pointer",
   color: "$foregroundBody",
   fontFamily: "$body",
   fontSize: "$md",
   flex: 1,
 
+  hoverStyle: {
+    color: "$foreground"
+  },
+
   variants: {
     selected: {
       true: {
-        color: "$white"
+        color: "$foreground"
       }
     },
 
@@ -121,8 +126,6 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
       }
     }
   } as const,
-
-  fontWeight: "$semibold",
 
   defaultVariants: {
     disabled: false,
@@ -148,7 +151,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         <SelectItemGroup
           disabled={disabled}
           justifyContent={isSmall ? "space-between" : "center"}>
-          <View width="$xl" justifyContent="center">
+          <View width="$4xl" justifyContent="center">
             {disabled && <Lock size="$xl" color="$foregroundDisabled" />}
             {isSelected && (
               <View aria-hidden={true}>
@@ -159,13 +162,13 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
             )}
           </View>
           <SelectItemTextFrame
-            selected={!!selected}
+            selected={!!isSelected}
             disabled={disabled}
             $group-hover={{
               color: disabled
                 ? "$foregroundDisabled"
-                : selected
-                  ? "$white"
+                : isSelected
+                  ? "$foreground"
                   : "$foregroundHover"
             }}>
             {children}

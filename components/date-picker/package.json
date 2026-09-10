@@ -40,6 +40,7 @@
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",
     "@cyclone-ui/popover": "workspace:*"

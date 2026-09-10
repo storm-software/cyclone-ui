@@ -69,6 +69,10 @@ export const DefaultValue: Story = {
   }
 };
 
+export const Indeterminate: Story = {
+  render: () => <Checkbox checked="indeterminate" />
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

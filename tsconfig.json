@@ -196,6 +196,9 @@
       "path": "./components/tabs"
     },
     {
+      "path": "./components/password-input-field"
+    },
+    {
       "path": "./components/number-input-field"
     },
     {

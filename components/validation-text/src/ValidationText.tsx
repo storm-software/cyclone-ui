@@ -45,7 +45,10 @@ export const ValidationText = ValidationBodyText.styleable<{
   disabled?: boolean;
 }>(({ disabled, theme = "base", messages = [], ...props }, forwardedRef) => {
   if ((messages.length === 1 && messages[0]?.message) || disabled) {
-    const message = messages[0]?.message || "This field is disabled";
+    const message =
+      (disabled && (!theme || theme.endsWith("base"))) || messages.length === 0
+        ? "This field is disabled"
+        : messages[0]?.message;
 
     return (
       <ValidationBodyText ref={forwardedRef} {...props} theme={theme}>
@@ -74,7 +77,7 @@ export const ValidationText = ValidationBodyText.styleable<{
         .filter(message => message.message)
         .map(message => (
           <XStack key={message.message} gap="$md" alignItems="center">
-            <ThemeableIcon theme={theme}>
+            <ThemeableIcon color="$foreground">
               <Dot />
             </ThemeableIcon>
             <ValidationBodyText {...props} theme={theme}>

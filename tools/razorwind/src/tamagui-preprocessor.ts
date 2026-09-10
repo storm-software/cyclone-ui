@@ -424,6 +424,11 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
   saturation: 0.6
 };
 
+const BASE_FOREGROUND_DISABLED: ColorStateVariant = {
+  ...COLOR_STATE_DISABLED,
+  brightness: 0.5
+};
+
 const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.6;
 
 const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
@@ -534,8 +539,8 @@ function applyOpacity(hex: string, opacity: number): string {
   return `${rgb}${alphaHex(alpha)}`;
 }
 
-const BASE_RING_OPACITY = 0.2;
-const THEME_RING_OPACITY = 0.75;
+const BASE_RING_OPACITY = 0.1;
+const THEME_RING_OPACITY = 0.6;
 
 function applyRingOpacity(
   node: unknown,
@@ -687,43 +692,45 @@ function directedBrightnessFactor(hex: string, factor: number): number {
 }
 
 function applyStateTransform(hex: string, variant: ColorStateVariant): string {
+  let transformed = hex;
+
   if (variant.brightness !== undefined) {
-    return applyBrightness(
-      hex,
-      directedBrightnessFactor(hex, variant.brightness)
+    transformed = applyBrightness(
+      transformed,
+      directedBrightnessFactor(transformed, variant.brightness)
     );
   }
 
   if (variant.saturation !== undefined && !isGreyscale(hex)) {
-    return applySaturation(hex, variant.saturation);
+    return applySaturation(transformed, variant.saturation);
   }
 
   if (variant.opacity !== undefined) {
-    return applyOpacity(hex, variant.opacity);
+    return applyOpacity(transformed, variant.opacity);
   }
 
-  return hex;
+  return transformed;
 }
 
 function variantDetail(variant: ColorStateVariant, hex: string): string {
+  const details: string[] = [];
+
   if (variant.brightness !== undefined) {
     const factor = directedBrightnessFactor(hex, variant.brightness);
     const percent = Math.round((factor - 1) * 100);
 
-    return percent >= 0
-      ? `${percent}% brighter`
-      : `${Math.abs(percent)}% darker`;
+    details.push(
+      percent >= 0 ? `${percent}% brighter` : `${Math.abs(percent)}% darker`
+    );
   }
 
   if (variant.saturation !== undefined && !isGreyscale(hex)) {
-    return `${Math.round(variant.saturation * 100)}% saturation`;
+    details.push(`${Math.round(variant.saturation * 100)}% saturation`);
+  } else if (variant.opacity !== undefined) {
+    details.push(`${Math.round(variant.opacity * 100)}% opacity`);
   }
 
-  if (variant.opacity !== undefined) {
-    return `${Math.round(variant.opacity * 100)}% opacity`;
-  }
-
-  return variant.name;
+  return details.join(", ") || variant.name;
 }
 
 function createStateToken(
@@ -816,7 +823,8 @@ function addColorStateTokens(
   group: Record<string, unknown>,
   tree: unknown,
   variants: readonly ColorStateVariant[],
-  onlyKey?: string
+  onlyKey?: string,
+  isForegroundGroup = false
 ): Record<string, unknown> {
   const result = { ...group } as Record<string, any>;
   const names = onlyKey ? [onlyKey] : Object.keys(group);
@@ -849,7 +857,15 @@ function addColorStateTokens(
         continue;
       }
 
-      result[variantKey] = createStateToken(token, hex, variant);
+      const stateVariant =
+        isForegroundGroup &&
+        name === "base" &&
+        token.theme === "base" &&
+        variant.name === "disabled"
+          ? BASE_FOREGROUND_DISABLED
+          : variant;
+
+      result[variantKey] = createStateToken(token, hex, stateVariant);
     }
   }
 
@@ -937,7 +953,9 @@ function injectColorStateVariants(
     const withStateTokens = addColorStateTokens(
       result,
       tree,
-      COLOR_STATE_VARIANTS[key]!
+      COLOR_STATE_VARIANTS[key]!,
+      undefined,
+      key === "foreground"
     );
 
     return key === "foreground"
@@ -952,7 +970,8 @@ function injectColorStateVariants(
         withLoneTokens,
         tree,
         COLOR_STATE_VARIANTS[groupKey]!,
-        groupKey
+        groupKey,
+        groupKey === "foreground"
       );
 
       if (groupKey === "foreground") {

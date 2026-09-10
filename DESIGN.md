@@ -61,7 +61,7 @@ colors:
   foreground-base-hover: "#b6b6b6"
   foreground-base-pressed: "#7b7b7b"
   foreground-base-focused: "#7b7b7b"
-  foreground-base-disabled: "#f5f5f599"
+  foreground-base-disabled: "#999999"
   foreground-brand-hover: "#00705c"
   foreground-brand-pressed: "#004d3c"
   foreground-brand-focused: "#004d3c"
@@ -477,7 +477,7 @@ Cyclone UI design tokens — 318 color tokens, 12 typography tokens, 28 spacing 
 - **Foreground Base Hover (#b6b6b6):** The primary foreground color for the light theme (hover, 20% darker)
 - **Foreground Base Pressed (#7b7b7b):** The primary foreground color for the light theme (pressed, 40% darker)
 - **Foreground Base Focused (#7b7b7b):** The primary foreground color for the light theme (focused, 40% darker)
-- **Foreground Base Disabled (#f5f5f599):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Base Disabled (#999999):** The primary foreground color for the light theme (disabled, 50% darker, 60% opacity)
 - **Foreground Brand Hover (#00705c):** The brand foreground color for the light theme (hover, 20% darker)
 - **Foreground Brand Pressed (#004d3c):** The brand foreground color for the light theme (pressed, 40% darker)
 - **Foreground Brand Focused (#004d3c):** The brand foreground color for the light theme (focused, 40% darker)

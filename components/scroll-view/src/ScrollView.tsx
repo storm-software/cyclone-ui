@@ -23,7 +23,11 @@ import { fullscreenStyle } from "@tamagui/stacks";
 import { ScrollView as ScrollViewNative } from "react-native";
 
 const SCROLL_VIEW_STYLES = `
-.cyclone-scroll-view::-webkit-scrollbar, .cyclone-scroll-view::-webkit-scrollbar-track { background: transparent; }
+.cyclone-scroll-view::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
+.cyclone-scroll-view::-webkit-scrollbar-track { background: transparent; }
+.cyclone-scroll-view:hover::-webkit-scrollbar, .cyclone-scroll-view:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--backgroundHighest) 25%, transparent); }
+.cyclone-scroll-view::-webkit-scrollbar-thumb { background: var(--foregroundHover); border-radius: ${100_000}px }
+.cyclone-scroll-view:hover::-webkit-scrollbar-thumb { background: var(--foreground); }
 .cyclone-scroll-view::-webkit-scrollbar-button { display: none; }
 `;
 
@@ -35,7 +39,7 @@ const ScrollViewFrame = styled(
     // Reserve the native scrollbar gutter even when `overflowY: "auto"`
     // hides its inactive scrollbar. `style` passes this web-only CSS property
     // through React Native Web instead of treating it as a Tamagui style prop.
-    style: { scrollbarGutter: "stable" },
+    style: { scrollbarGutter: "stable" } as any,
 
     variants: {
       fullscreen: {

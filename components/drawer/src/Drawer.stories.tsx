@@ -129,7 +129,7 @@ export const Scrollable: Story = {
             <Drawer.ScrollView padding="$5xl">
               <YStack gap="$3xl">
                 <Drawer.Heading>Scrollable drawer</Drawer.Heading>
-                {Array.from({ length: 12 }, (_, index) => (
+                {Array.from({ length: 64 }, (_, index) => (
                   <Drawer.Body key={index}>{children}</Drawer.Body>
                 ))}
               </YStack>

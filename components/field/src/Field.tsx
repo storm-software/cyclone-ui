@@ -50,7 +50,9 @@ import { Asterisk } from "@tamagui/lucide-icons-2";
 import { ThemeableStack, XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef, ReactNode } from "react";
 import {
+  cloneElement,
   createContext,
+  isValidElement,
   use,
   useCallback,
   useLayoutEffect,
@@ -229,6 +231,7 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         {...rest}
         messages={messages}
         size={size}
+        disabled={disabled}
         color={
           disabled
             ? "$foregroundDisabled"
@@ -423,18 +426,11 @@ const FieldLabelPositioner = styled(View, {
       default: {},
       floating: {
         position: "absolute",
-        top: "50%",
         left: "$4xl",
         zIndex: 1,
         transform: [{ translateY: "-50%" }]
       },
       underline: {}
-    },
-
-    floating: {
-      true: {
-        top: 4
-      }
     }
   } as const,
 
@@ -543,6 +539,15 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     const field = FieldApi.use();
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
+    const size = field.size.get();
+    const controlSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
+    const labelTop =
+      variant === "floating"
+        ? floating
+          ? 4
+          : getSized(controlSize, { scale: 0.5 })
+        : undefined;
 
     const disabled = useMemo(
       () => Boolean(fieldDisabled || props.disabled),
@@ -550,7 +555,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     );
 
     return (
-      <FieldLabelPositioner variant={variant} floating={floating}>
+      <FieldLabelPositioner variant={variant} top={labelTop}>
         <TamaguiLabel
           ref={forwardedRef}
           htmlFor={name}
@@ -729,6 +734,21 @@ const FieldIconButtonImpl = Button.styleable<{
       () => getSized(frameSize, { shift: -2 }),
       [frameSize]
     );
+    const iconColor = disabled
+      ? "$borderDisabled"
+      : focused
+        ? "$borderFocused"
+        : "$border";
+    const hoverIconColor = disabled ? "$borderDisabled" : "$borderHover";
+    const icon = isValidElement<{
+      color?: string;
+      "$group-field-hover"?: { color?: string };
+    }>(children)
+      ? cloneElement(children, {
+          color: "currentColor",
+          "$group-field-hover": undefined
+        })
+      : children;
 
     return (
       <View
@@ -766,18 +786,23 @@ const FieldIconButtonImpl = Button.styleable<{
           noPadding={true}
           animate={true}
           transition="200ms"
-          color={disabled ? "$borderDisabled" : "$border"}
-          ghostOpacity={0.1}
+          color={iconColor}
+          ghostOpacity={0.25}
           {...props}
+          $group-field-hover={{
+            color: hoverIconColor
+          }}
           size={adjusted}>
           <Button.Icon
             // Keep the compact field button frame while matching the 20px
             // glyph size used by the other input affordances.
-            size={frameSize}
-            $group-field-hover={{
-              color: disabled ? "$borderDisabled" : "$borderHover"
-            }}>
-            {children}
+            size={frameSize}>
+            <View
+              // @ts-expect-error View's web color style drives the nested SVG's currentColor.
+              color={iconColor}
+              $group-field-hover={{ color: hoverIconColor }}>
+              {icon}
+            </View>
           </Button.Icon>
         </Button>
       </View>
@@ -809,18 +834,20 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
         </Tooltip.Trigger>
 
         <Tooltip.Content>
-          {messages && messages.length > 0 ? (
-            <ValidationText
-              color="$foreground"
-              messages={messages}
-              disabled={disabled}
-              theme={theme}
-            />
-          ) : (
-            details || (
-              <ValidationText color="$foreground" disabled={disabled} />
-            )
-          )}
+          <Theme name="base">
+            {messages && messages.length > 0 ? (
+              <ValidationText
+                color="$foreground"
+                messages={messages}
+                disabled={disabled}
+                theme="base"
+              />
+            ) : (
+              details || (
+                <ValidationText color="$foreground" disabled={disabled} />
+              )
+            )}
+          </Theme>
         </Tooltip.Content>
       </Tooltip>
     );

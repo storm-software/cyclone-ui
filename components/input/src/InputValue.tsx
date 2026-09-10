@@ -177,7 +177,8 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
         }),
         ...(selectionColor && {
           "--selectionColor": theme[selectionColor]?.variable || selectionColor
-        })
+        }),
+        "--autofillBackgroundColor": theme.backgroundElevated.variable
       }
     };
 
@@ -212,6 +213,11 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
       input::placeholder, textarea::placeholder {
         color: var(--placeholderColor) !important;
       }
+
+      input.cyclone-input-value:-webkit-autofill {
+        background-color: var(--autofillBackgroundColor) !important;
+        -webkit-box-shadow: 0 0 0 1000px var(--autofillBackgroundColor) inset !important;
+      }
       `}
           </style>
         )}
@@ -237,6 +243,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
             />
           ) : (
             <input
+              className="cyclone-input-value"
               ref={composedRefs as any}
               style={{
                 height: "100%",

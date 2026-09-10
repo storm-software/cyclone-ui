@@ -108,7 +108,7 @@ export const Scrollable: Story = {
             <Sheet.ScrollView padding="$5xl">
               <YStack gap="$3xl">
                 <Sheet.Heading>Scrollable sheet</Sheet.Heading>
-                {Array.from({ length: 12 }, (_, index) => (
+                {Array.from({ length: 64 }, (_, index) => (
                   <Sheet.Body key={index}>{children}</Sheet.Body>
                 ))}
               </YStack>

@@ -23,7 +23,6 @@ import {
   type DateSeparator
 } from "@cyclone-ui/date-picker";
 import { Field, useFieldVariant } from "@cyclone-ui/field";
-import { getSized } from "@cyclone-ui/helpers";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
 import type { MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
@@ -200,54 +199,6 @@ const DatePickerFieldGroup = Field.styleable<{ separator?: "." | "/" }>(
   }
 );
 
-const DatePickerFieldTrigger = DatePicker.Trigger.styleable(
-  (props, forwardedRef) => {
-    const { focus } = useFieldActions();
-
-    const field = FieldApi.use();
-    const size = field.size.get();
-    const disabled = field.disabled.get();
-    const focused = field.focused.get();
-
-    const iconColor = disabled
-      ? "$borderDisabled"
-      : focused
-        ? "$borderFocused"
-        : "$border";
-    const iconHoverColor = disabled ? "$borderDisabled" : "$borderHover";
-
-    const controlSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
-    // DatePicker.Trigger.Icon is Button.Icon, whose glyph is six steps below
-    // its supplied size. Match the Field.Icon button frame used in textboxes.
-    const iconButtonSize = useMemo(
-      () => getSized(controlSize, { shift: 1 }),
-      [controlSize]
-    );
-
-    return (
-      <DatePicker.Trigger
-        ref={forwardedRef}
-        {...props}
-        color={iconColor}
-        onPress={focus}>
-        <DatePicker.Trigger.Icon size={iconButtonSize}>
-          <Calendar
-            transition="200ms"
-            color={iconColor}
-            $group-button-hover={{
-              color: iconHoverColor
-            }}
-            $group-field-hover={{
-              color: iconHoverColor
-            }}
-          />
-        </DatePicker.Trigger.Icon>
-      </DatePicker.Trigger>
-    );
-  }
-);
-
 const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
   ({ children, onKeyDown, ...props }, forwardedRef) => {
     const { blur, change, focus } = useFieldActions();
@@ -370,7 +321,9 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         </DatePicker.TextBox>
 
         <DatePicker.Separator />
-        <DatePickerFieldTrigger />
+        <DatePicker.Trigger>
+          <Calendar />
+        </DatePicker.Trigger>
       </DatePicker>
     );
   }

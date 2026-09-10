@@ -9,7 +9,9 @@
     "directory": "components/vectors"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,7 +36,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -75,6 +79,14 @@
     "./Diagonal": {
       "import": "./dist/Diagonal.mjs",
       "require": "./dist/Diagonal.cjs"
+    },
+    "./DiscoveryCircle": {
+      "import": "./dist/DiscoveryCircle.mjs",
+      "require": "./dist/DiscoveryCircle.cjs"
+    },
+    "./ErrorCircle": {
+      "import": "./dist/ErrorCircle.mjs",
+      "require": "./dist/ErrorCircle.cjs"
     },
     "./InfoCircle": {
       "import": "./dist/InfoCircle.mjs",

@@ -46,6 +46,13 @@ export const Base: Story = {
   args: {}
 };
 
+export const DisabledBase: Story = {
+  args: {
+    disabled: true
+  },
+  render: args => <ValidationText {...args} />
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"
@@ -68,6 +75,19 @@ export const Warning: Story = {
   args: {
     theme: "warning"
   }
+};
+
+export const DisabledWarning: Story = {
+  args: {
+    disabled: true,
+    theme: "warning"
+  },
+  render: args => (
+    <ValidationText
+      {...args}
+      messages={[{ type: "warning", message: "This is a warning message" }]}
+    />
+  )
 };
 
 export const Info: Story = {

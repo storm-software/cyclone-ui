@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
+import { Field } from "@cyclone-ui/field";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
 import { LabelText } from "@cyclone-ui/label-text";
@@ -27,6 +28,7 @@ import {
   useDatePickerContext
 } from "@rehookify/datepicker";
 import { AnimatePresence } from "@tamagui/animate-presence";
+import type { GetProps } from "@tamagui/core";
 import {
   createStyledContext,
   styled,
@@ -36,7 +38,7 @@ import {
 } from "@tamagui/core";
 import { ChevronLeft, ChevronRight } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
-import type { PropsWithChildren } from "react";
+import type { ForwardedRef, PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DimensionValue } from "react-native";
 export type DatePickerChangeEventHandler = (
@@ -127,8 +129,8 @@ const MONTH_NAMES = [
   "December"
 ] as const;
 
-const CALENDAR_WIDTH = "$37xl";
-const CALENDAR_CELL_SIZE = "$9xl";
+const CALENDAR_WIDTH = "$38xl";
+const CALENDAR_CELL_SIZE = "$10xl";
 
 const getMonthIndex = (month?: string | null) => {
   if (!month) {
@@ -341,13 +343,14 @@ const DayPicker = () => {
                     theme="base"
                     variant={
                       day.now
-                        ? "subtle"
+                        ? "outlined"
                         : !day.inCurrentMonth
                           ? "ghost"
                           : day.selected
                             ? "inverse"
                             : "ghost"
                     }
+                    ghostOpacity={0.75}
                     borderColor={day.now ? "$border" : undefined}
                     size={CALENDAR_CELL_SIZE}
                     width={CALENDAR_CELL_SIZE}
@@ -384,6 +387,7 @@ function YearRangeSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -412,6 +416,7 @@ function YearRangeSlider() {
       </View>
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -444,6 +449,7 @@ function YearSlider() {
       justifyContent="space-between">
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -471,6 +477,7 @@ function YearSlider() {
       </View>
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -511,6 +518,7 @@ const CalendarHeader = () => {
       justifyContent="space-between">
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -559,6 +567,7 @@ const CalendarHeader = () => {
       </YStack>
       <Button
         variant="ghost"
+        ghostOpacity={0.75}
         size="$10xl"
         width="$10xl"
         flexGrow={0}
@@ -588,7 +597,8 @@ const ItemPicker = ({
 }: ItemPickerProps) => {
   return (
     <Button
-      variant={active ? "surface" : "ghost"}
+      variant={active ? "inverse" : "ghost"}
+      ghostOpacity={0.75}
       flexGrow={1}
       flexBasis={flexBasis ?? "unset"}
       {...rest}>
@@ -742,6 +752,19 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   { staticConfig: { componentName: "DatePickerValue" } }
 );
 
+type DatePickerTriggerProps = GetProps<typeof Field.Icon>;
+
+const DatePickerTrigger = Field.Icon.styleable(
+  (props: DatePickerTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
+    return (
+      <Popover.Trigger asChild={true}>
+        <Field.Icon ref={forwardedRef} {...props} />
+      </Popover.Trigger>
+    );
+  },
+  { staticConfig: { componentName: "DatePickerTrigger" } }
+);
+
 type DatePickerProviderProps = PropsWithChildren<
   Partial<DatePickerContextProps> & Pick<DatePickerExtraProps, "selectedDate">
 >;
@@ -762,6 +785,7 @@ const DatePickerProvider = ({
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDate(selectedDate);
 
     if (selectedDate) {
@@ -908,5 +932,8 @@ export const DatePicker = withStaticProperties(DatePickerControlImpl, {
     Value: DatePickerTextBoxValue
   }),
   Separator: Input.Separator,
-  Trigger: Input.Trigger
+  Trigger: withStaticProperties(DatePickerTrigger, {
+    Icon: Button.Icon,
+    Text: Button.Text
+  })
 });

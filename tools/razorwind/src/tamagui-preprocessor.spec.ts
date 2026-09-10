@@ -51,6 +51,37 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
+  it("darkens only the base theme foreground disabled token", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        foreground: {
+          base: {
+            $type: "color",
+            $value: "#f5f5f5",
+            theme: "base"
+          },
+          brand: {
+            $type: "color",
+            $value: "#f5f5f5",
+            theme: "brand"
+          }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        foreground: Record<string, { $description: string; $value: string }>;
+      };
+    };
+
+    expect(result.semantic.foreground["base-disabled"]).toMatchObject({
+      $description: "disabled state at 15% darker, 60% opacity",
+      $value: "#c5c5c599"
+    });
+    expect(result.semantic.foreground["brand-disabled"]!.$value).toBe(
+      "#f5f5f599"
+    );
+  });
+
   it("applies opacity by ring token theme and preserves offset masks", () => {
     const result = tamaguiPreprocessor({
       color: {

@@ -35,11 +35,11 @@
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/input": "workspace:*"
   },
   "devDependencies": {
-    "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@storybook/react-vite": "catalog:",
     "react": "catalog:",

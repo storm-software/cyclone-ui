@@ -171,7 +171,10 @@ export const InputField = withStaticProperties(InputFieldGroup, {
     TextBox: withStaticProperties(InputFieldControlTextBox, {
       Value: InputFieldControlTextBoxValue
     }),
-    Trigger: InputFieldControlTrigger
+    Trigger: withStaticProperties(InputFieldControlTrigger, {
+      Icon: Input.Trigger.Icon,
+      Text: Input.Trigger.Text
+    })
   }),
   Details: Field.Details,
   Icon: Field.Icon

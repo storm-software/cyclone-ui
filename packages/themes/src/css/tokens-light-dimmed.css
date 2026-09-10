@@ -189,7 +189,7 @@
   --color-foreground-base-hover: #a6a6a6; /** The primary foreground color for the light theme (hover, 20% darker) */
   --color-foreground-base-pressed: #7c7c7c; /** The primary foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-base-focused: #7c7c7c; /** The primary foreground color for the light theme (focused, 40% darker) */
-  --color-foreground-base-disabled: rgba(210, 210, 210, 0.6); /** The primary foreground color for the light theme (disabled, 60% opacity) */
+  --color-foreground-base-disabled: #919191; /** The primary foreground color for the light theme (disabled, 50% darker, 60% opacity) */
   --color-foreground-brand-hover: #237869; /** The brand foreground color for the light theme (hover, 20% darker) */
   --color-foreground-brand-pressed: #1d6555; /** The brand foreground color for the light theme (pressed, 40% darker) */
   --color-foreground-brand-focused: #1d6555; /** The brand foreground color for the light theme (focused, 40% darker) */
@@ -638,42 +638,42 @@
   --blur-xl: 24px; /** Extra large blur (24px) */
   --blur-2xl: 40px; /** 2X large blur (40px) */
   --blur-3xl: 64px; /** 3X large blur (64px) */
-  --ring-base: 0px 0px 0px 3px #f5f5f533; /** The base ring variant */
-  --ring-base-subtle: 0px 0px 0px 1px #f5f5f533; /** The base subtle ring variant */
-  --ring-base-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #f5f5f533; /** The base ring variant with a 3px offset */
-  --ring-base-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #f5f5f533; /** The base subtle ring variant with a 3px offset */
-  --ring-brand: 0px 0px 0px 3px #54e3c9bf; /** The brand ring variant */
-  --ring-brand-subtle: 0px 0px 0px 1px #54e3c9bf; /** The brand subtle ring variant */
-  --ring-brand-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #54e3c9bf; /** The brand ring variant with a 3px offset */
-  --ring-brand-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #54e3c9bf; /** The brand subtle ring variant with a 3px offset */
-  --ring-danger: 0px 0px 0px 3px #cf222ebf; /** The danger ring variant */
-  --ring-danger-subtle: 0px 0px 0px 1px #cf222ebf; /** The danger subtle ring variant */
-  --ring-danger-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #cf222ebf; /** The danger ring variant with a 3px offset */
-  --ring-danger-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #cf222ebf; /** The danger subtle ring variant with a 3px offset */
-  --ring-warning: 0px 0px 0px 3px #d49400bf; /** The warning ring variant */
-  --ring-warning-subtle: 0px 0px 0px 1px #d49400bf; /** The warning subtle ring variant */
-  --ring-warning-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d49400bf; /** The warning ring variant with a 3px offset */
-  --ring-warning-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d49400bf; /** The warning subtle ring variant with a 3px offset */
-  --ring-success: 0px 0px 0px 3px #00a469bf; /** The success ring variant */
-  --ring-success-subtle: 0px 0px 0px 1px #00a469bf; /** The success subtle ring variant */
-  --ring-success-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00a469bf; /** The success ring variant with a 3px offset */
-  --ring-success-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00a469bf; /** The success subtle ring variant with a 3px offset */
-  --ring-info: 0px 0px 0px 3px #00b8e6bf; /** The info ring variant */
-  --ring-info-subtle: 0px 0px 0px 1px #00b8e6bf; /** The info subtle ring variant */
-  --ring-info-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00b8e6bf; /** The info ring variant with a 3px offset */
-  --ring-info-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00b8e6bf; /** The info subtle ring variant with a 3px offset */
-  --ring-discovery: 0px 0px 0px 3px #7f7ee4bf; /** The discovery ring variant */
-  --ring-discovery-subtle: 0px 0px 0px 1px #7f7ee4bf; /** The discovery subtle ring variant */
-  --ring-discovery-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #7f7ee4bf; /** The discovery ring variant with a 3px offset */
-  --ring-discovery-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #7f7ee4bf; /** The discovery subtle ring variant with a 3px offset */
-  --ring-positive: 0px 0px 0px 3px #79b136bf; /** The positive ring variant */
-  --ring-positive-subtle: 0px 0px 0px 1px #79b136bf; /** The positive subtle ring variant */
-  --ring-positive-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #79b136bf; /** The positive ring variant with a 3px offset */
-  --ring-positive-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #79b136bf; /** The positive subtle ring variant with a 3px offset */
-  --ring-negative: 0px 0px 0px 3px #d6301bbf; /** The negative ring variant */
-  --ring-negative-subtle: 0px 0px 0px 1px #d6301bbf; /** The negative subtle ring variant */
-  --ring-negative-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d6301bbf; /** The negative ring variant with a 3px offset */
-  --ring-negative-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d6301bbf; /** The negative subtle ring variant with a 3px offset */
+  --ring-base: 0px 0px 0px 3px #f5f5f51a; /** The base ring variant */
+  --ring-base-subtle: 0px 0px 0px 1px #f5f5f51a; /** The base subtle ring variant */
+  --ring-base-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #f5f5f51a; /** The base ring variant with a 3px offset */
+  --ring-base-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #f5f5f51a; /** The base subtle ring variant with a 3px offset */
+  --ring-brand: 0px 0px 0px 3px #54e3c999; /** The brand ring variant */
+  --ring-brand-subtle: 0px 0px 0px 1px #54e3c999; /** The brand subtle ring variant */
+  --ring-brand-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #54e3c999; /** The brand ring variant with a 3px offset */
+  --ring-brand-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #54e3c999; /** The brand subtle ring variant with a 3px offset */
+  --ring-danger: 0px 0px 0px 3px #cf222e99; /** The danger ring variant */
+  --ring-danger-subtle: 0px 0px 0px 1px #cf222e99; /** The danger subtle ring variant */
+  --ring-danger-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #cf222e99; /** The danger ring variant with a 3px offset */
+  --ring-danger-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #cf222e99; /** The danger subtle ring variant with a 3px offset */
+  --ring-warning: 0px 0px 0px 3px #d4940099; /** The warning ring variant */
+  --ring-warning-subtle: 0px 0px 0px 1px #d4940099; /** The warning subtle ring variant */
+  --ring-warning-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d4940099; /** The warning ring variant with a 3px offset */
+  --ring-warning-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d4940099; /** The warning subtle ring variant with a 3px offset */
+  --ring-success: 0px 0px 0px 3px #00a46999; /** The success ring variant */
+  --ring-success-subtle: 0px 0px 0px 1px #00a46999; /** The success subtle ring variant */
+  --ring-success-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00a46999; /** The success ring variant with a 3px offset */
+  --ring-success-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00a46999; /** The success subtle ring variant with a 3px offset */
+  --ring-info: 0px 0px 0px 3px #00b8e699; /** The info ring variant */
+  --ring-info-subtle: 0px 0px 0px 1px #00b8e699; /** The info subtle ring variant */
+  --ring-info-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #00b8e699; /** The info ring variant with a 3px offset */
+  --ring-info-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #00b8e699; /** The info subtle ring variant with a 3px offset */
+  --ring-discovery: 0px 0px 0px 3px #7f7ee499; /** The discovery ring variant */
+  --ring-discovery-subtle: 0px 0px 0px 1px #7f7ee499; /** The discovery subtle ring variant */
+  --ring-discovery-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #7f7ee499; /** The discovery ring variant with a 3px offset */
+  --ring-discovery-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #7f7ee499; /** The discovery subtle ring variant with a 3px offset */
+  --ring-positive: 0px 0px 0px 3px #79b13699; /** The positive ring variant */
+  --ring-positive-subtle: 0px 0px 0px 1px #79b13699; /** The positive subtle ring variant */
+  --ring-positive-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #79b13699; /** The positive ring variant with a 3px offset */
+  --ring-positive-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #79b13699; /** The positive subtle ring variant with a 3px offset */
+  --ring-negative: 0px 0px 0px 3px #d6301b99; /** The negative ring variant */
+  --ring-negative-subtle: 0px 0px 0px 1px #d6301b99; /** The negative subtle ring variant */
+  --ring-negative-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 6px #d6301b99; /** The negative ring variant with a 3px offset */
+  --ring-negative-subtle-offset: 0px 0px 0px 3px #d1d1d1, 0px 0px 0px 4px #d6301b99; /** The negative subtle ring variant with a 3px offset */
   --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
   --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
   --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */

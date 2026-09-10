@@ -16,14 +16,16 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized, getSpaced } from "@cyclone-ui/helpers";
+import { Field } from "@cyclone-ui/field";
+import { getSpaced } from "@cyclone-ui/helpers";
 import { ControlUnderline } from "@cyclone-ui/input";
-import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
+import type { GetProps, SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { styled, View, withStaticProperties } from "@tamagui/core";
 import { XGroup } from "@tamagui/group";
 import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
-import { useCallback, useMemo, useState } from "react";
+import type { ForwardedRef } from "react";
+import { useCallback, useState } from "react";
 import { SelectItems } from "./SelectItems";
 import { SelectTextBox } from "./SelectTextBox";
 import type { SelectContextProps } from "./types";
@@ -191,57 +193,25 @@ const SelectSeparator = styled(View, {
   }
 });
 
-const SelectTrigger = View.styleable(
-  (props, forwardedRef) => {
-    const { focused, disabled, size } = SelectContext.useStyledContext();
-    const controlSize =
-      size === "$true" || String(size) === "true" ? "$10xl" : size;
+type SelectTriggerProps = GetProps<typeof Field.Icon>;
 
-    const adjustedTrigger = useMemo(
-      // Select renders its glyph directly, unlike Button.Icon. Match the
-      // Field.Icon result: two steps for its button frame and six for glyph.
-      () => getSized(controlSize, { shift: -4 }),
-      [controlSize]
-    );
+const SelectTrigger = Field.Icon.styleable(
+  (props: SelectTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
+    const { focused } = SelectContext.useStyledContext();
 
     return (
-      <View
-        ref={forwardedRef}
-        {...props}
-        transition="200ms"
-        cursor={disabled ? "not-allowed" : "pointer"}
-        width={adjustedTrigger + getSpaced("$xl") * 2}
-        flexShrink={0}
-        paddingLeft="$xl"
-        alignItems="center"
-        justifyContent="center">
+      <Field.Icon ref={forwardedRef} {...props} render="span" role={undefined}>
         <View
-          width={adjustedTrigger}
-          height={adjustedTrigger}
+          width="100%"
+          height="100%"
           transition="400ms"
           transformOrigin="center"
           rotate={focused ? "180deg" : "0deg"}
           alignItems="center"
           justifyContent="center">
-          <ChevronDown
-            size={adjustedTrigger}
-            color={
-              disabled
-                ? "$borderDisabled"
-                : focused
-                  ? "$borderFocused"
-                  : "$border"
-            }
-            $group-field-hover={{
-              color: disabled
-                ? "$borderDisabled"
-                : focused
-                  ? "$borderFocused"
-                  : "$borderHover"
-            }}
-          />
+          <ChevronDown color="currentColor" />
         </View>
-      </View>
+      </Field.Icon>
     );
   },
   { staticConfig: { componentName: "Select" } }
@@ -296,17 +266,9 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
           }
         }}
         transition="200ms">
-        <SelectTextBox
-          {...props}
-          paddingHorizontal={getSpaced(frameSize) * 0.25}>
+        <SelectTextBox {...props} paddingLeft={getSpaced(frameSize) * 0.25}>
           <XGroup.Item flex={1} minWidth={0} height="100%">
-            <View
-              flex={1}
-              minWidth={0}
-              height="100%"
-              vh
-              flexDirection="row"
-              alignItems="center">
+            <View flex={1} minWidth={0} flexDirection="row" alignItems="center">
               {children}
             </View>
           </XGroup.Item>

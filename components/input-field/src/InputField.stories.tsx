@@ -195,9 +195,37 @@ export const Brand: Story = {
   }
 };
 
+export const BrandFloating: Story = {
+  args: {
+    theme: "brand",
+    variant: "floating"
+  }
+};
+
+export const BrandUnderline: Story = {
+  args: {
+    theme: "brand",
+    variant: "underline"
+  }
+};
+
 export const Discovery: Story = {
   args: {
     theme: "discovery"
+  }
+};
+
+export const DiscoveryFloating: Story = {
+  args: {
+    theme: "discovery",
+    variant: "floating"
+  }
+};
+
+export const DiscoveryUnderline: Story = {
+  args: {
+    theme: "discovery",
+    variant: "underline"
   }
 };
 
@@ -225,9 +253,37 @@ export const Error: Story = {
   }
 };
 
+export const ErrorFloating: Story = {
+  args: {
+    theme: "danger",
+    variant: "floating"
+  }
+};
+
+export const ErrorUnderline: Story = {
+  args: {
+    theme: "danger",
+    variant: "underline"
+  }
+};
+
 export const Warning: Story = {
   args: {
     theme: "warning"
+  }
+};
+
+export const WarningFloating: Story = {
+  args: {
+    theme: "warning",
+    variant: "floating"
+  }
+};
+
+export const WarningUnderline: Story = {
+  args: {
+    theme: "warning",
+    variant: "underline"
   }
 };
 
@@ -237,9 +293,37 @@ export const Info: Story = {
   }
 };
 
+export const InfoFloating: Story = {
+  args: {
+    theme: "info",
+    variant: "floating"
+  }
+};
+
+export const InfoUnderline: Story = {
+  args: {
+    theme: "info",
+    variant: "underline"
+  }
+};
+
 export const Success: Story = {
   args: {
     theme: "success"
+  }
+};
+
+export const SuccessFloating: Story = {
+  args: {
+    theme: "success",
+    variant: "floating"
+  }
+};
+
+export const SuccessUnderline: Story = {
+  args: {
+    theme: "success",
+    variant: "underline"
   }
 };
 
@@ -249,8 +333,36 @@ export const Positive: Story = {
   }
 };
 
+export const PositiveFloating: Story = {
+  args: {
+    theme: "positive",
+    variant: "floating"
+  }
+};
+
+export const PositiveUnderline: Story = {
+  args: {
+    theme: "positive",
+    variant: "underline"
+  }
+};
+
 export const Negative: Story = {
   args: {
     theme: "negative"
+  }
+};
+
+export const NegativeFloating: Story = {
+  args: {
+    theme: "negative",
+    variant: "floating"
+  }
+};
+
+export const NegativeUnderline: Story = {
+  args: {
+    theme: "negative",
+    variant: "underline"
   }
 };

@@ -33,7 +33,8 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
-  paddingHorizontal: "$xl",
+  paddingLeft: "$xl",
+  paddingRight: "$sm",
 
   hoverStyle: {
     backgroundColor: "transparent",

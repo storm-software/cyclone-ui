@@ -168,7 +168,7 @@ const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
   color: "$foregroundInverse",
-  width: "90%",
+  width: "94%",
   height: "100%",
   strokeWidth: 5
 });
@@ -217,7 +217,7 @@ export const Checkbox = BaseCheckbox.styleable<{
                   y: -10,
                   opacity: 0.5
                 }}>
-                <MinusIcon />
+                <MinusIcon color="$foregroundInverse" />
               </View>
             ) : (
               <CheckboxIcon />
