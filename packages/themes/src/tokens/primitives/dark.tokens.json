@@ -73,13 +73,13 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#181818",
+        "$value": "#151517",
         "$description": "The lowest level surface of the palette - neutral near-black page canvas"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#1F1F1F",
+        "$value": "#1B1B1C",
         "$description": "The second level surface of the palette - subtly lifted graphite for inputs and cards"
       },
       "3": {
@@ -92,13 +92,19 @@
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "#303030",
-        "$description": "The fourth level surface of the palette - emphasized charcoal for the highest elevation"
+        "$description": "The fourth level surface of the palette - emphasized charcoal for the high elevation"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "#3A3A3A",
-        "$description": "The fifth level surface of the palette - deepest charcoal for maximum elevation"
+        "$description": "The fifth level surface of the palette - deepest charcoal for higher elevation"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#616161",
+        "$description": "The sixth level surface of the palette - deepest charcoal for highest elevation"
       },
       "$description": "The surface color palette - DeepSeek-inspired neutral graphite backgrounds"
     },
@@ -107,7 +113,7 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#F5F5F5",
+        "$value": "#FAFAFA",
         "$description": "A soft neutral white for primary text on dark surfaces"
       },
       "2": {
@@ -131,38 +137,32 @@
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#808080",
+        "$value": "#616161",
         "$description": "A middle neutral gray"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#616161",
+        "$value": "#484848",
         "$description": "A medium-dark neutral gray"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#484848",
+        "$value": "#3A3A3A",
         "$description": "A dark neutral gray for strong borders"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#3A3A3A",
+        "$value": "#2E2E2E",
         "$description": "A deep neutral gray for secondary surfaces"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#2E2E2E",
+        "$value": "#1A1C1F",
         "$description": "A subtle near-black gray for low-contrast borders"
-      },
-      "10": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "#181818",
-        "$description": "The deepest neutral gray matching the dark page canvas"
       },
       "$description": "The grey color palette - DeepSeek-inspired neutral grays for text, borders, and themed surfaces"
     },

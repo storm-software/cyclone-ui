@@ -409,13 +409,13 @@ interface ThemedColorStateVariant {
 }
 
 const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
-  base: { name: "hover", brightness: 0.8 },
-  theme: { name: "hover", brightness: 0.6 }
+  base: { name: "hover", brightness: 1.2 },
+  theme: { name: "hover", brightness: 0.8 }
 };
 
 const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 1.6 },
-  theme: { name: "active", brightness: 1.2 }
+  base: { name: "active", brightness: 1.4 },
+  theme: { name: "active", brightness: 1.4 }
 };
 
 const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
@@ -424,8 +424,8 @@ const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
 };
 
 const BACKGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 1.3 },
-  theme: { name: "active", brightness: 1.1 }
+  base: { name: "active", brightness: 0.8 },
+  theme: { name: "active", brightness: 1.2 }
 };
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {

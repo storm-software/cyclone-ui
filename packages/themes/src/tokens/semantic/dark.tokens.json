@@ -6,7 +6,7 @@
       "body": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.grey.4}",
+        "$value": "{color.grey.3}",
         "$description": "The body foreground color for the dark theme"
       },
       "eyebrow": {
@@ -18,7 +18,7 @@
       "caption": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.grey.5}",
+        "$value": "{color.grey.4}",
         "$description": "The caption foreground color for the dark theme"
       },
       "link": {
@@ -192,16 +192,22 @@
         "$value": "{color.surface.4}",
         "$description": "A high level of elevation background color for the dark theme"
       },
-      "highest": {
+      "higher": {
         "$type": "color",
         "colorSpace": "display-p3",
         "$value": "{color.surface.5}",
+        "$description": "The higher level of elevation background color for the dark theme"
+      },
+      "highest": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "{color.surface.6}",
         "$description": "The highest level of elevation background color for the dark theme"
       },
       "base": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.grey.9}",
+        "$value": "{color.grey.7}",
         "$description": "The primary subtle background color for the dark theme",
         "theme": "base"
       },

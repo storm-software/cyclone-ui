@@ -96,6 +96,12 @@ const ContainerFrame = styled(View, {
         borderColor: "$border"
       },
 
+      higher: {
+        backgroundColor: "$backgroundHigher",
+        borderWidth: 1,
+        borderColor: "$border"
+      },
+
       highest: {
         backgroundColor: "$backgroundHighest",
         borderWidth: 1,

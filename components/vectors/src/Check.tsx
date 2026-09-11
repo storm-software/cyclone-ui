@@ -119,7 +119,7 @@ const Icon = ({
     <Svg
       width={size}
       height={size}
-      viewBox="0 0 16 16"
+      viewBox="-3 -2 20 21"
       fill="none"
       stroke={color}
       strokeLinecap="round"

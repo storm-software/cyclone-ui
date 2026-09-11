@@ -158,9 +158,7 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
-  color: "$foregroundInverse",
-  height: "90%",
-  width: "90%",
+  color: "$foreground",
   strokeWidth: 3
 });
 
@@ -168,9 +166,9 @@ const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
   color: "$foreground",
-  width: "94%",
+  width: "92%",
   height: "100%",
-  strokeWidth: 5
+  strokeWidth: 6
 });
 
 export const Checkbox = BaseCheckbox.styleable<{
@@ -182,7 +180,7 @@ export const Checkbox = BaseCheckbox.styleable<{
       disabled,
       name,
       size = "$6xl",
-      checked = false,
+      checked = true,
       ...props
     },
     forwardedRef

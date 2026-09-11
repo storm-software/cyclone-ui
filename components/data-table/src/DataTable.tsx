@@ -25,11 +25,7 @@ import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
 import { SearchInputField } from "@cyclone-ui/search-input-field";
 import { SelectField } from "@cyclone-ui/select-field";
-import type {
-  CallbackContext,
-  FieldAtoms,
-  FormAtoms
-} from "@cyclone-ui/state/form";
+import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import type { TableProps } from "@cyclone-ui/table";
 import { Table } from "@cyclone-ui/table";
 import { isEqual } from "@stryke/helpers/is-equal";
@@ -376,6 +372,7 @@ export function DataTable<TData extends RowData>({
   const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [hoveredResizer, setHoveredResizer] = useState<string | null>(null);
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -433,7 +430,6 @@ export function DataTable<TData extends RowData>({
       : false,
     enableColumnResizing: resizable,
     columns,
-    rowCount: data.length,
     data
   });
 
@@ -442,6 +438,7 @@ export function DataTable<TData extends RowData>({
   const headerGroups = table.getHeaderGroups();
   const tableRows = table.getRowModel().rows;
   const pageCount = table.getPageCount();
+  const selectedCount = Object.keys(table.getState().rowSelection).length;
 
   return (
     <DataTableContext.Provider
@@ -488,10 +485,6 @@ export function DataTable<TData extends RowData>({
                           ? ({ width: header.getSize() } as any)
                           : undefined
                       }
-                      borderRightColor="$border"
-                      borderRightWidth={
-                        header.index === headerGroup.headers.length - 1 ? 0 : 1
-                      }
                       {...({
                         colSpan: header.colSpan,
                         ...(header.colSpan === 1
@@ -510,7 +503,6 @@ export function DataTable<TData extends RowData>({
                           role="separator"
                           aria-label={`Resize ${header.column.id} column`}
                           aria-orientation="vertical"
-                          group={true}
                           position="absolute"
                           top={0}
                           right={0}
@@ -521,6 +513,8 @@ export function DataTable<TData extends RowData>({
                           touchAction="none"
                           userSelect="none"
                           onDoubleClick={() => header.column.resetSize()}
+                          onMouseEnter={() => setHoveredResizer(header.id)}
+                          onMouseLeave={() => setHoveredResizer(null)}
                           onMouseDown={header.getResizeHandler()}
                           onTouchStart={header.getResizeHandler()}
                           {...({
@@ -528,17 +522,18 @@ export function DataTable<TData extends RowData>({
                           } as any)}>
                           <View
                             position="absolute"
+                            top="$xl"
                             right={-1}
-                            width={1}
-                            height="100%"
-                            backgroundColor={
-                              header.column.getIsResizing()
+                            bottom="$xl"
+                            borderWidth={0}
+                            borderRightWidth={2}
+                            borderStyle="dashed"
+                            borderRightColor={
+                              header.column.getIsResizing() ||
+                              hoveredResizer === header.id
                                 ? "$borderActive"
                                 : "transparent"
                             }
-                            $group-hover={{
-                              backgroundColor: "$borderActive"
-                            }}
                           />
                         </View>
                       )}
@@ -608,6 +603,7 @@ export function DataTable<TData extends RowData>({
                     lastPage={table.lastPage}
                     totalCount={data.length}
                     unfilteredCount={table.getFilteredRowModel().rows.length}
+                    selectedCount={selectedCount}
                     pageIndex={pagination.pageIndex}
                     pageSize={pagination.pageSize}
                     pageCount={pageCount}
@@ -657,11 +653,13 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   valuesMap = new Map(),
   onSearchChange,
   onFilterChange,
+  filterValues,
   selectAll
 }: {
   valuesMap: Map<string, { value: any; count: number }>;
   onSearchChange: (context: CallbackContext<FieldAtoms<string>>) => void;
   onFilterChange: (name: string, checked: boolean) => void;
+  filterValues: any[];
   selectAll: boolean | "indeterminate";
 }) => {
   const [searchResults, setSearchResults] = useState(
@@ -743,6 +741,11 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
                   alignItems="center"
                   justifyContent="flex-start">
                   <CheckboxField.Control
+                    checked={
+                      !filterValues.some(filterValue =>
+                        isEqual(filterValue, valuesMap.get(searchResult)?.value)
+                      )
+                    }
                     onCheckedChange={checked =>
                       handleFilterChange(searchResult, checked)
                     }
@@ -809,51 +812,6 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       : filterValues.length === valuesMap.size
         ? false
         : "indeterminate";
-
-  const handleChange = useCallback(
-    ({ get, set, atoms }: CallbackContext<FormAtoms>) => {
-      const values = get(atoms.values);
-      const previousValues = get(atoms.previousValues);
-
-      const keys = Object.keys(values).filter(
-        key => key !== SEARCH_FIELD_NAME && key !== SELECT_ALL_FIELD_NAME
-      );
-      const selectAll = keys.some(key => values[key] === false)
-        ? keys.some(key => values[key] === true)
-          ? "indeterminate"
-          : false
-        : true;
-
-      if (
-        values[SELECT_ALL_FIELD_NAME] !== "indeterminate" &&
-        values[SELECT_ALL_FIELD_NAME] !==
-          previousValues[SELECT_ALL_FIELD_NAME] &&
-        values[SELECT_ALL_FIELD_NAME] !== selectAll
-      ) {
-        const nextSelectAll = values[SELECT_ALL_FIELD_NAME];
-
-        set(atoms.values, prev =>
-          keys.reduce(
-            (ret, key) => {
-              ret[key] = nextSelectAll;
-
-              return ret;
-            },
-            {
-              ...prev,
-              [SELECT_ALL_FIELD_NAME]: nextSelectAll
-            }
-          )
-        );
-      } else if (values[SELECT_ALL_FIELD_NAME] !== selectAll) {
-        set(atoms.values, prev => ({
-          ...prev,
-          [SELECT_ALL_FIELD_NAME]: selectAll
-        }));
-      }
-    },
-    []
-  );
 
   const handleFilterChange = useCallback(
     (name: string, checked: boolean) => {
@@ -971,10 +929,9 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 variant="ghost"
                 theme="base"
                 circular={true}
+                noPadding={true}
                 bordered={false}
-                color="$foreground"
-                padding="$xl"
-                width="$3xl">
+                color="$foreground">
                 <Button.Icon>
                   <Filter size="$4xl" />
                 </Button.Icon>
@@ -986,14 +943,12 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               minWidth="$30xl"
               maxWidth="90vw"
               paddingVertical="$3xl">
-              <Form
-                name={`${id}_filter`}
-                initialValues={initialValues}
-                onChange={handleChange}>
+              <Form name={`${id}_filter`} initialValues={initialValues}>
                 <DataTableHeaderFilterFields
                   valuesMap={valuesMap}
                   onSearchChange={handleSearchChange}
                   onFilterChange={handleFilterChange}
+                  filterValues={filterValues}
                   selectAll={selectAll}
                 />
               </Form>
@@ -1013,6 +968,7 @@ export type DataTablePaginationProps<TData extends RowData> = Pick<
     pageCount: number;
     totalCount: number;
     unfilteredCount: number;
+    selectedCount: number;
   };
 
 export function DataTablePagination<TData extends RowData>({
@@ -1023,6 +979,7 @@ export function DataTablePagination<TData extends RowData>({
   lastPage,
   totalCount,
   unfilteredCount,
+  selectedCount,
   pageIndex,
   pageSize,
   pageCount,
@@ -1159,7 +1116,9 @@ export function DataTablePagination<TData extends RowData>({
               alignItems="center"
               gap="$xl">
               <LabelText size="$sm">Total:</LabelText>
-              <LabelText size="$sm">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
+              <LabelText size="$sm">
+                {`${totalCount} ${totalCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
+              </LabelText>
             </XStack>
             {unfilteredCount !== totalCount && (
               <XStack

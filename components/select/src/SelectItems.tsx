@@ -30,7 +30,7 @@ import { useCallback, useMemo, useState } from "react";
 import { SelectContext } from "./utilities";
 
 const SELECT_VIEWPORT_PADDING = 10;
-const SELECT_VIEWPORT_UPWARD_CLASS = "is_SelectViewportUpward";
+const SELECT_VIEWPORT_COLLISION_CLASS = "is_SelectViewportCollisionAdjusted";
 
 const useSelectViewportPosition = () => {
   const [viewport, setViewport] = useState<HTMLElement | null>(null);
@@ -60,7 +60,7 @@ const useSelectViewportPosition = () => {
 
     const style = document.createElement("style");
     style.textContent = `
-      .${SELECT_VIEWPORT_UPWARD_CLASS} {
+      .${SELECT_VIEWPORT_COLLISION_CLASS} {
         top: var(--select-viewport-top) !important;
         max-height: var(--select-viewport-height) !important;
       }
@@ -85,18 +85,25 @@ const useSelectViewportPosition = () => {
           viewportWindow.innerHeight -
           triggerRect.bottom -
           SELECT_VIEWPORT_PADDING;
+        const opensUpward = spaceAbove > spaceBelow;
+        const availableHeight = opensUpward ? spaceAbove : spaceBelow;
+        const height = Math.min(fullHeight, availableHeight);
+        const collisionHeight =
+          Number.parseFloat(viewport.style.maxHeight) || viewportRect.height;
 
-        if (fullHeight > spaceBelow && spaceAbove > spaceBelow) {
-          const height = Math.min(fullHeight, spaceAbove);
-          const top = triggerRect.top - (offsetParentRect?.top ?? 0) - height;
+        if (collisionHeight < height) {
+          const offsetParentTop = offsetParentRect?.top ?? 0;
+          const top = opensUpward
+            ? triggerRect.top - offsetParentTop - height
+            : triggerRect.bottom - offsetParentTop;
 
           // Tamagui writes collision values directly to the viewport. Override
-          // only when the larger collision area is above the trigger.
+          // a clipped item-aligned height with the larger available side.
           viewport.style.setProperty("--select-viewport-top", `${top}px`);
           viewport.style.setProperty("--select-viewport-height", `${height}px`);
-          viewport.classList.add(SELECT_VIEWPORT_UPWARD_CLASS);
+          viewport.classList.add(SELECT_VIEWPORT_COLLISION_CLASS);
         } else {
-          viewport.classList.remove(SELECT_VIEWPORT_UPWARD_CLASS);
+          viewport.classList.remove(SELECT_VIEWPORT_COLLISION_CLASS);
         }
       });
     };
@@ -113,7 +120,7 @@ const useSelectViewportPosition = () => {
         cancelAnimationFrame(frame);
       }
 
-      viewport.classList.remove(SELECT_VIEWPORT_UPWARD_CLASS);
+      viewport.classList.remove(SELECT_VIEWPORT_COLLISION_CLASS);
       viewport.style.removeProperty("--select-viewport-top");
       viewport.style.removeProperty("--select-viewport-height");
       style.remove();
@@ -158,15 +165,15 @@ const SelectItemGroup = styled(XStack, {
   width: "100%",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHighestHover"
+    backgroundColor: "$backgroundHigherHover"
   },
 
   focusStyle: {
-    backgroundColor: "$backgroundHighestHover"
+    backgroundColor: "$backgroundHigherHover"
   },
 
   focusVisibleStyle: {
-    backgroundColor: "$backgroundHighestHover"
+    backgroundColor: "$backgroundHigherHover"
   },
 
   variants: {

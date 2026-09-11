@@ -530,7 +530,6 @@ const CalendarHeader = () => {
         </Button.Icon>
       </Button>
       <YStack
-        gap="$md"
         alignItems="center"
         flexGrow={1}
         flexShrink={1}
@@ -541,9 +540,9 @@ const CalendarHeader = () => {
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
-          size="$4xl"
           cursor="pointer"
           color="$foreground"
+          fontFamily="$heading-md"
           hoverStyle={{
             color: "$foregroundHover"
           }}>
@@ -555,10 +554,8 @@ const CalendarHeader = () => {
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
-          size="$8xl"
           color="$foreground"
-          fontWeight="600"
-          lineHeight="$xs"
+          fontFamily="$heading-xl"
           hoverStyle={{
             color: "$foregroundHover"
           }}>

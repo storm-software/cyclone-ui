@@ -16,18 +16,20 @@
 
  ------------------------------------------------------------------- */
 
-import { Field } from "@cyclone-ui/field";
+import { Field, type FieldProps } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { XStack } from "@tamagui/stacks";
 import { Checkbox } from "./Checkbox";
 
-const meta: Meta<typeof Checkbox> = {
+type CheckboxStoryArgs = Omit<FieldProps<boolean>, "children" | "name">;
+
+const meta = {
   title: "Base/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  render: (props: any) => (
-    <Form name="formName" initialValues={{ checkboxName: false }}>
+  render: ({ defaultValue, ...props }) => (
+    <Form name="formName" initialValues={{ checkboxName: defaultValue }}>
       <Field name="checkboxName" {...props}>
         <XStack gap="$3xl" alignContent="center" alignItems="center">
           <Checkbox />
@@ -38,11 +40,11 @@ const meta: Meta<typeof Checkbox> = {
       </Field>
     </Form>
   )
-} satisfies Meta<typeof Checkbox>;
+} satisfies Meta<CheckboxStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<CheckboxStoryArgs>;
 
 const validation = (
   type:

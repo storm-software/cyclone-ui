@@ -260,7 +260,7 @@ const FieldGroupInnerImpl = FieldGroupFrame.styleable(
       <Theme name={theme}>
         <FieldDetailsSetterContext.Provider value={setDetails}>
           <FieldDetailsContext.Provider value={details}>
-            <YStack group={"field" as any} disabled={disabled} gap="$sm">
+            <YStack group={"field" as any} disabled={disabled} gap="$lg">
               <FieldGroupFrame
                 ref={forwardedRef}
                 {...rest}

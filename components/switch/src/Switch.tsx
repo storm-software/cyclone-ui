@@ -125,7 +125,7 @@ const SwitchThumb = styled(View, {
 
   theme: "base",
   transition: "200ms",
-  backgroundColor: "$backgroundHighest",
+  backgroundColor: "$backgroundHigh",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -134,7 +134,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundHighest"
+        backgroundColor: "$backgroundHigh"
       }
     },
 
@@ -223,7 +223,10 @@ const SwitchIcon = SwitchIconFrame.styleable<{
         alignItems="center"
         // flexGrow 1 leads to inconsistent native style where text pushes to start of view
         flexGrow={0}
-        flexShrink={1}>
+        flexShrink={1}
+        $group-field-hover={{
+          borderColor: "$borderHover"
+        }}>
         <ThemeableIcon
           {...props}
           theme="base"
@@ -276,7 +279,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "$foreground"
+            backgroundColor: "$backgroundHighest"
           }}
           {...props}
           id={name}

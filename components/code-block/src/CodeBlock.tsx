@@ -481,7 +481,10 @@ export const CodeBlockTabsTrigger = forwardRef<
     borderBottomLeftRadius={0}
     borderBottomRightRadius={0}
     backgroundColor="$backgroundPage"
-    cursor="pointer">
+    cursor="pointer"
+    hoverStyle={{
+      backgroundColor: "$backgroundPageHover"
+    }}>
     <BodyText
       color="$foregroundCaption"
       fontFamily="$heading-sm"
