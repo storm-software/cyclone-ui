@@ -145,11 +145,12 @@ export const getInputSize = (
   // default variant to the standard control size before using it as a height.
   const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
   const xSize = getSpaced(size);
+  const height = props.variant === "floating" ? getSized(size) + 3 : size;
 
   return {
     paddingHorizontal: xSize,
-    height: size,
-    minHeight: size,
+    height,
+    minHeight: height,
     borderRadius: props.circular ? 100_000 : "$control"
   };
 };

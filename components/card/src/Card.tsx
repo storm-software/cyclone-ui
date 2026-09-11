@@ -82,7 +82,7 @@ const CardFrame = styled(Container, {
   },
 
   focusVisibleStyle: {
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   }
 });
 

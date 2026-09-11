@@ -42,9 +42,6 @@ const meta: Meta<typeof RadioGroup> = {
             </RadioGroup.Item>
           ))}
         </RadioGroup>
-        <Field.Details>
-          This is an example detailed message for an select
-        </Field.Details>
       </Field>
     </Form>
   )
@@ -53,6 +50,26 @@ const meta: Meta<typeof RadioGroup> = {
 export default meta;
 
 type Story = StoryObj<typeof RadioGroup>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 const options = [
   {
@@ -111,42 +128,42 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
 
 export const Positive: Story = {
   args: {
-    theme: "positive"
+    validate: validation("positive")
   }
 };
 
 export const Negative: Story = {
   args: {
-    theme: "negative"
+    validate: validation("negative")
   }
 };

@@ -66,14 +66,14 @@ const SelectGroup = styled(XGroup, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {
     focused: {
       true: {
         boxShadow: "$ringOffset",
-        borderColor: "$borderFocused"
+        borderColor: "$borderActive"
       }
     },
 
@@ -155,7 +155,7 @@ const SelectSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderFocused"
+        borderColor: "$borderActive"
       }
     },
 
@@ -247,10 +247,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
   ({ children, ...props }, forwardedRef) => {
     const { focused, disabled, size, variant } =
       SelectContext.useStyledContext();
-    const [locallyFocused, setLocallyFocused] = useState(false);
+    const [locallyActive, setLocallyActive] = useState(false);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
-    const underlineFocused = focused || locallyFocused;
+    const underlineActive = focused || locallyActive;
 
     return (
       <SelectGroup
@@ -259,10 +259,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         variant={variant}
         frameSize={frameSize}
         disabled={disabled}
-        onFocus={() => setLocallyFocused(true)}
+        onFocus={() => setLocallyActive(true)}
         onBlur={(event: any) => {
           if (!event.currentTarget?.contains?.(event.relatedTarget)) {
-            setLocallyFocused(false);
+            setLocallyActive(false);
           }
         }}
         transition="200ms">
@@ -282,7 +282,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
                 borderColor: disabled
                   ? "$borderDisabled"
                   : focused
-                    ? "$borderFocused"
+                    ? "$borderActive"
                     : "$borderHover"
               }}
             />
@@ -295,7 +295,7 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
         {variant === "underline" && (
           <ControlUnderline
             bottom={-1}
-            focused={underlineFocused}
+            focused={underlineActive}
             disabled={disabled}
           />
         )}

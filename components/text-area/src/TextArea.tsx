@@ -49,14 +49,14 @@ const TextAreaFrame = styled(InputValue, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {
     focused: {
       true: {
         boxShadow: "$ringOffset",
-        borderColor: "$borderFocused"
+        borderColor: "$borderActive"
       }
     },
 
@@ -130,17 +130,17 @@ export const TextArea = TextAreaFrame.styleable(
     },
     forwardedRef
   ) => {
-    const [focused, setFocused] = useState(false);
+    const [focused, setActive] = useState(false);
     const handleFocus = useCallback(
       (event: FocusEvent<HTMLElement>) => {
-        setFocused(true);
+        setActive(true);
         onFocus?.(event);
       },
       [onFocus]
     );
     const handleBlur = useCallback(
       (event: FocusEvent<HTMLElement>) => {
-        setFocused(false);
+        setActive(false);
         onBlur?.(event);
       },
       [onBlur]

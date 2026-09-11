@@ -70,12 +70,12 @@ const SwitchFrame = styled(View, {
   },
 
   focusStyle: {
-    borderColor: "$borderFocused",
+    borderColor: "$borderActive",
     boxShadow: "$ringOffset"
   },
 
   focusVisibleStyle: {
-    borderColor: "$borderFocused",
+    borderColor: "$borderActive",
     boxShadow: "$ringOffset"
   },
 

@@ -30,9 +30,6 @@ const meta: Meta<typeof Field> = {
       <Field name="fieldName" {...props}>
         <Field.Label>Label Text</Field.Label>
         <BodyText>The form field can be added here</BodyText>
-        <Field.Details>
-          This is an example detailed message for an input
-        </Field.Details>
       </Field>
     </Form>
   )
@@ -41,6 +38,26 @@ const meta: Meta<typeof Field> = {
 export default meta;
 
 type Story = StoryObj<typeof Field>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {}
@@ -91,30 +108,30 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };

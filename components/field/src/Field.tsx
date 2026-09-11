@@ -42,6 +42,7 @@ import {
   styled,
   Theme,
   useComposedRefs,
+  useThemeName,
   View,
   withStaticProperties
 } from "@tamagui/core";
@@ -119,7 +120,7 @@ const FieldGroupFrame = styled(ThemeableStack, {
     orientation: {
       vertical: {
         flexDirection: "column",
-        gap: "$lg"
+        gap: "$md"
       },
       horizontal: {
         flexDirection: "row",
@@ -308,9 +309,8 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   transition: "200ms",
-  color: "$background",
+  color: "$foreground",
   fontStyle: "italic",
-  marginTop: "$sm",
 
   enterStyle: {
     opacity: 0,
@@ -435,8 +435,7 @@ const FieldLabelPositioner = styled(View, {
   } as const,
 
   defaultVariants: {
-    variant: "default",
-    floating: false
+    variant: "default"
   }
 });
 
@@ -499,7 +498,7 @@ const FieldLabelBorderMask = styled(View, {
   top: "50%",
   left: -2,
   right: -2,
-  height: 8,
+  height: 10,
   transform: [{ translateY: "-50%" }],
   backgroundColor: "$backgroundElevated",
   pointerEvents: "none"
@@ -537,6 +536,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
     forwardedRef
   ) => {
     const field = FieldApi.use();
+    const theme = useThemeName();
     const fieldDisabled = field.disabled.get();
     const name = field.name.get();
     const size = field.size.get();
@@ -553,6 +553,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
       () => Boolean(fieldDisabled || props.disabled),
       [fieldDisabled, props.disabled]
     );
+    const baseTheme = theme?.startsWith("light") ? "light_base" : "dark_base";
 
     return (
       <FieldLabelPositioner variant={variant} top={labelTop}>
@@ -563,14 +564,16 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
           <LabelXStack disabled={disabled} floating={floating}>
             {floating && <FieldLabelBorderMask />}
             <FieldLabelContent>
-              <FieldLabelText
-                {...props}
-                disabled={disabled}
-                fontFamily={floating ? "$caption" : "$heading-sm"}
-                size={floating ? "$sm" : undefined}
-                theme="base">
-                {children}
-              </FieldLabelText>
+              <Theme name={baseTheme}>
+                <FieldLabelText
+                  {...props}
+                  disabled={disabled}
+                  fontFamily={floating ? "$caption" : "$heading-sm"}
+                  size={floating ? "$sm" : undefined}
+                  color={disabled ? "$foregroundDisabled" : "$foreground"}>
+                  {children}
+                </FieldLabelText>
+              </Theme>
               {hideRequired !== true && (
                 <>
                   {required ? (
@@ -647,7 +650,6 @@ const FieldLabel = FieldLabelText.styleable<{
       <FieldLabelTextImpl
         ref={forwardedRef as ForwardedRef<any>}
         {...props}
-        theme="base"
         htmlFor={name}
         disabled={disabled}
         required={required}
@@ -673,13 +675,15 @@ const FieldLinkFrame = styled(XStack, {
 const FieldLink = Link.styleable(
   ({ children, ...props }, forwardedRef) => {
     const linkRef = useRef<HTMLElement>(null);
+
     const [width, setWidth] = useState<number>();
     const updateWidth = useCallback((element: HTMLElement) => {
-      const nextWidth = element.scrollWidth;
+      const nextWidth = (element as any).scrollWidth;
       setWidth(currentWidth =>
         currentWidth === nextWidth ? currentWidth : nextWidth
       );
     }, []);
+
     const measureRef = useCallback(
       (element: HTMLElement | null) => {
         linkRef.current = element;
@@ -689,6 +693,7 @@ const FieldLink = Link.styleable(
       },
       [updateWidth]
     );
+
     const composedRef = useComposedRefs(forwardedRef, measureRef);
 
     useLayoutEffect(() => {
@@ -737,14 +742,15 @@ const FieldIconButtonImpl = Button.styleable<{
     const iconColor = disabled
       ? "$borderDisabled"
       : focused
-        ? "$borderFocused"
+        ? "$borderActive"
         : "$border";
     const hoverIconColor = disabled ? "$borderDisabled" : "$borderHover";
     const icon = isValidElement<{
       color?: string;
       "$group-field-hover"?: { color?: string };
     }>(children)
-      ? cloneElement(children, {
+      ? // eslint-disable-next-line react/no-clone-element
+        cloneElement(children, {
           color: "currentColor",
           "$group-field-hover": undefined
         })
@@ -771,7 +777,7 @@ const FieldIconButtonImpl = Button.styleable<{
               disabled
                 ? "$borderDisabled"
                 : focused
-                  ? "$borderFocused"
+                  ? "$borderActive"
                   : "$border"
             }
             $group-field-hover={{
@@ -906,7 +912,7 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
           color: disabled
             ? "$borderDisabled"
             : focused
-              ? "$borderFocused"
+              ? "$borderActive"
               : "$border",
           "$group-field-hover": {
             color: disabled ? "$borderDisabled" : "$borderHover"

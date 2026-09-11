@@ -44,6 +44,7 @@ import {
 
 const CODE_BLOCK_STYLES = `
 .cyclone-code-block-tabs .cyclone-code-block.cyclone-code-block { width: 100%; height: 100%; margin: 0; border-width: 0; border-radius: 0; }
+.cyclone-code-block-tabs-content .cyclone-code-block-viewport { border-width: 0 !important; border-radius: 0; }
 .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-light-bg); }
 .t_dark .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); }
 @media (prefers-color-scheme: dark) { .cyclone-code-block[data-keep-background] .cyclone-code-block-viewport { background-color: var(--shiki-dark-bg); } }
@@ -63,7 +64,7 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-viewport .diff.remove { background: color-mix(in srgb, #ef4444 14%, transparent); opacity: .7; }
 .cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
 .cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
-.cyclone-code-block-tabs-trigger[data-state="active"] { position: relative; z-index: 1; background-color: var(--backgroundElevated); border-bottom-color: var(--backgroundElevated) !important; }
+.cyclone-code-block-tabs-trigger[data-state="active"] { background-color: var(--backgroundFloating); border-bottom-color: var(--backgroundFloating) !important; }
 .cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--foreground); }
 `;
 
@@ -454,8 +455,6 @@ export const CodeBlockTabsList = forwardRef<
     overflowX="auto"
     overflowY="hidden"
     backgroundColor="transparent"
-    borderBottomWidth={1}
-    borderBottomColor="$border"
   />
 ));
 
@@ -468,8 +467,11 @@ export const CodeBlockTabsTrigger = forwardRef<
     ref={forwardedRef}
     {...props}
     className="cyclone-code-block-tabs-trigger"
-    flex={1}
-    marginBottom={-1}
+    flexGrow={0}
+    flexShrink={0}
+    paddingHorizontal="$2xl"
+    position="relative"
+    zIndex={2}
     borderWidth={1}
     borderColor="$border"
     borderBottomColor="$border"
@@ -501,8 +503,9 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       flexGrow={1}
       minHeight={0}
       width="100%"
+      marginTop={-1}
       borderWidth={1}
-      borderTopWidth={0}
+      borderTopWidth={1}
       borderColor="$border"
       borderBottomLeftRadius="$container"
       borderBottomRightRadius="$container"

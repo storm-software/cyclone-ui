@@ -46,12 +46,12 @@ const CheckboxGroupFrame = styled(View, {
 
   focusStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {
@@ -83,7 +83,7 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "$borderFocused"
+        borderColor: "$borderActive"
       }
     },
 

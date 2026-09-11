@@ -460,11 +460,11 @@ export function DataTable<TData extends RowData>({
                             height="100%"
                             backgroundColor={
                               header.column.getIsResizing()
-                                ? "$borderFocused"
+                                ? "$borderActive"
                                 : "transparent"
                             }
                             $group-hover={{
-                              backgroundColor: "$borderFocused"
+                              backgroundColor: "$borderActive"
                             }}
                           />
                         </View>

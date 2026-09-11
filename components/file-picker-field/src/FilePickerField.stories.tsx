@@ -30,9 +30,6 @@ const meta: Meta<typeof FilePickerField> = {
         <FilePickerField name="filePickerFieldName" {...props}>
           <FilePickerField.Label>Label Text</FilePickerField.Label>
           <FilePickerField.Control />
-          <FilePickerField.Details>
-            This is an example detailed message for an file-picker field
-          </FilePickerField.Details>
         </FilePickerField>
       </Form>
     );
@@ -42,6 +39,26 @@ const meta: Meta<typeof FilePickerField> = {
 export default meta;
 
 type Story = StoryObj<typeof FilePickerField>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {}
@@ -79,30 +96,30 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };

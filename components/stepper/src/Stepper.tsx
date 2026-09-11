@@ -225,7 +225,6 @@ export const StepperHeaderList = YStack.styleable(
         </AnimatePresence> */}
 
         <TamaguiTabs.List
-          disablePassBorderRadius={true}
           loop={false}
           aria-label="Stepper"
           gap="$3xl"
@@ -234,7 +233,7 @@ export const StepperHeaderList = YStack.styleable(
             exitBeforeEnter={true}
             custom={{ direction }}
             initial={false}>
-            {Children.toArray(children).map(async (child, index) =>
+            {Children.toArray(children).map((child, index) =>
               isValidElement(child)
                 ? cloneElement(child, { index } as never)
                 : child

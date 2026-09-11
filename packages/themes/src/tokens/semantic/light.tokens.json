@@ -280,7 +280,7 @@
       "brand": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.brand.4}",
+        "$value": "{color.brand.7}",
         "$description": "The brand border color for the light theme",
         "theme": "brand"
       },

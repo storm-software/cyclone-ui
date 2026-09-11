@@ -267,7 +267,7 @@ const SearchInputFieldControlTextBox =
                       borderRadius="$button"
                       backgroundColor={
                         index === activeIndex
-                          ? "$backgroundFloatingPressed"
+                          ? "$backgroundFloatingActive"
                           : "transparent"
                       }
                       hoverStyle={{

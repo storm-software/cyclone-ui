@@ -49,7 +49,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
     variant: {
       default: {},
       floating: {
-        paddingTop: "$lg"
+        paddingTop: 7
       },
       underline: {}
     },

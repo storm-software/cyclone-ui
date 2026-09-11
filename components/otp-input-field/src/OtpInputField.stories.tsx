@@ -34,9 +34,6 @@ const meta = {
       <OtpInputField name="code" {...props}>
         <OtpInputField.Label>Code</OtpInputField.Label>
         <OtpInputField.Control />
-        <OtpInputField.Details>
-          Enter the one-time password sent to your device
-        </OtpInputField.Details>
       </OtpInputField>
     </Form>
   )
@@ -45,6 +42,26 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   play: async ({ args, canvasElement }) => {
@@ -120,6 +137,6 @@ export const SixDigits: Story = {
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };

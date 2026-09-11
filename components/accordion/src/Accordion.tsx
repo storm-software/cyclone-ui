@@ -275,16 +275,16 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   borderStyle: "solid",
   borderWidth: 0,
   borderColor: "transparent",
+  boxShadow: "none",
 
   hoverStyle: {
     cursor: "pointer"
   },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
-    outlineStyle: "solid",
-    outlineWidth: 3,
-    outlineOffset: "$lg"
+    outlineStyle: "none",
+    outlineWidth: 0,
+    boxShadow: "$ring"
   },
 
   variants: {

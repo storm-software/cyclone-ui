@@ -30,9 +30,6 @@ const meta: Meta<typeof TextAreaField> = {
       <TextAreaField name="textAreaFieldName" {...props}>
         <TextAreaField.Label>Label Text</TextAreaField.Label>
         <TextAreaField.Control placeholder="Enter a message" rows={3} />
-        <TextAreaField.Details>
-          This is an example detailed message for a text area field
-        </TextAreaField.Details>
       </TextAreaField>
     </Form>
   )
@@ -42,15 +39,33 @@ export default meta;
 
 type Story = StoryObj<typeof TextAreaField>;
 
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
+
 export const Base: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const textArea = canvas.getByRole("textbox");
 
     await expect(textArea.tagName).toBe("TEXTAREA");
-    await expect(getComputedStyle(textArea).color).not.toBe(
-      "rgba(0, 0, 0, 0)"
-    );
+    await expect(getComputedStyle(textArea).color).not.toBe("rgba(0, 0, 0, 0)");
     await expect(getComputedStyle(textArea, "::placeholder").color).not.toBe(
       "rgba(0, 0, 0, 0)"
     );
@@ -116,30 +131,30 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };

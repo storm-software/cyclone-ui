@@ -116,7 +116,7 @@ const PopoverContent = styled(TamaguiPopover.Content, {
   ],
 
   focusVisibleStyle: {
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {

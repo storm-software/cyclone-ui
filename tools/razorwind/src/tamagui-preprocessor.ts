@@ -403,19 +403,29 @@ interface ColorStateVariant {
   brightness?: number;
 }
 
-const COLOR_STATE_HOVER: ColorStateVariant = {
-  name: "hover",
-  brightness: 1.2
+interface ThemedColorStateVariant {
+  base: ColorStateVariant;
+  theme: ColorStateVariant;
+}
+
+const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
+  base: { name: "hover", brightness: 0.8 },
+  theme: { name: "hover", brightness: 0.6 }
 };
 
-const COLOR_STATE_FOCUSED: ColorStateVariant = {
-  name: "focused",
-  brightness: 1.4
+const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
+  base: { name: "active", brightness: 1.6 },
+  theme: { name: "active", brightness: 1.2 }
 };
 
-const COLOR_STATE_PRESSED: ColorStateVariant = {
-  name: "pressed",
-  brightness: 0.6
+const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
+  base: { name: "hover", brightness: 0.9 },
+  theme: { name: "hover", brightness: 0.8 }
+};
+
+const BACKGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
+  base: { name: "active", brightness: 1.3 },
+  theme: { name: "active", brightness: 1.1 }
 };
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
@@ -431,34 +441,66 @@ const BASE_FOREGROUND_DISABLED: ColorStateVariant = {
 
 const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.6;
 
-const COLOR_STATE_VARIANTS: Record<string, readonly ColorStateVariant[]> = {
-  background: [
-    COLOR_STATE_HOVER,
-    COLOR_STATE_PRESSED,
-    COLOR_STATE_FOCUSED,
-    COLOR_STATE_DISABLED
-  ],
-  foreground: [
-    COLOR_STATE_HOVER,
-    COLOR_STATE_PRESSED,
-    COLOR_STATE_FOCUSED,
-    COLOR_STATE_DISABLED
-  ],
-  border: [COLOR_STATE_HOVER, COLOR_STATE_FOCUSED, COLOR_STATE_DISABLED]
+interface ThemeColorStateVariants {
+  base: readonly ColorStateVariant[];
+  theme: readonly ColorStateVariant[];
+}
+
+const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
+  background: {
+    base: [
+      BACKGROUND_COLOR_STATE_HOVER.base,
+      BACKGROUND_COLOR_STATE_ACTIVE.base,
+      COLOR_STATE_DISABLED
+    ],
+    theme: [
+      BACKGROUND_COLOR_STATE_HOVER.theme,
+      BACKGROUND_COLOR_STATE_ACTIVE.theme,
+      COLOR_STATE_DISABLED
+    ]
+  },
+  foreground: {
+    base: [
+      FOREGROUND_COLOR_STATE_HOVER.base,
+      FOREGROUND_COLOR_STATE_ACTIVE.base,
+      COLOR_STATE_DISABLED
+    ],
+    theme: [
+      FOREGROUND_COLOR_STATE_HOVER.theme,
+      FOREGROUND_COLOR_STATE_ACTIVE.theme,
+      COLOR_STATE_DISABLED
+    ]
+  },
+  border: {
+    base: [
+      FOREGROUND_COLOR_STATE_HOVER.base,
+      FOREGROUND_COLOR_STATE_ACTIVE.base,
+      COLOR_STATE_DISABLED
+    ],
+    theme: [
+      FOREGROUND_COLOR_STATE_HOVER.theme,
+      FOREGROUND_COLOR_STATE_ACTIVE.theme,
+      COLOR_STATE_DISABLED
+    ]
+  }
 };
 
 const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
-const COLOR_STATE_TOKEN_VARIANTS: Record<string, readonly ColorStateVariant[]> =
-  {
-    "foreground-link": [COLOR_STATE_HOVER]
-  };
+const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
+  "foreground-link": {
+    base: [FOREGROUND_COLOR_STATE_HOVER.base],
+    theme: [FOREGROUND_COLOR_STATE_HOVER.theme]
+  }
+};
+
+const BASE_RING_OPACITY = 0.075;
+const THEME_RING_OPACITY = 0.125;
 
 function isStateVariantKey(key: string): boolean {
   return (
     key.toLowerCase().endsWith("-hover") ||
-    key.toLowerCase().endsWith("-focused") ||
-    key.toLowerCase().endsWith("-pressed") ||
+    key.toLowerCase().endsWith("-active") ||
     key.toLowerCase().endsWith("-disabled")
   );
 }
@@ -538,9 +580,6 @@ function applyOpacity(hex: string, opacity: number): string {
 
   return `${rgb}${alphaHex(alpha)}`;
 }
-
-const BASE_RING_OPACITY = 0.1;
-const THEME_RING_OPACITY = 0.6;
 
 function applyRingOpacity(
   node: unknown,
@@ -822,7 +861,7 @@ function ensureDisabledForegroundContrast(
 function addColorStateTokens(
   group: Record<string, unknown>,
   tree: unknown,
-  variants: readonly ColorStateVariant[],
+  variants: readonly ColorStateVariant[] | ThemeColorStateVariants,
   onlyKey?: string,
   isForegroundGroup = false
 ): Record<string, unknown> {
@@ -849,7 +888,12 @@ function addColorStateTokens(
       continue;
     }
 
-    for (const variant of variants.filter(
+    const tokenVariants =
+      "base" in variants
+        ? variants[token.theme === "base" ? "base" : "theme"]
+        : variants;
+
+    for (const variant of tokenVariants.filter(
       variant => variant.name !== "hover" || name !== "foreground-inverse"
     )) {
       const variantKey = `${name}-${variant.name}`;

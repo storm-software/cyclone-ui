@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { getSized } from "@cyclone-ui/helpers";
 import type { SizeTokens, VariantSpreadExtras } from "@tamagui/core";
 import { createStyledContext } from "@tamagui/core";
 import type { SelectContextProps } from "./types";
@@ -37,10 +38,11 @@ export const getSelectSize = (
   }
 
   const size = val === "$true" || String(val) === "true" ? "$10xl" : val;
+  const height = props.variant === "floating" ? getSized(size) + 3 : size;
 
   return {
-    height: size,
-    minHeight: size,
+    height,
+    minHeight: height,
     borderRadius:
       props.variant === "underline" ? 0 : props.circular ? 100_000 : "$control"
   };

@@ -82,6 +82,59 @@ describe("tamaguiPreprocessor", () => {
     );
   });
 
+  it("uses half-strength hover and active colors only for backgrounds", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        background: {
+          base: { $type: "color", $value: "#333333", theme: "base" },
+          brand: { $type: "color", $value: "#333333", theme: "brand" }
+        },
+        foreground: {
+          base: { $type: "color", $value: "#333333", theme: "base" },
+          brand: { $type: "color", $value: "#333333", theme: "brand" }
+        },
+        border: {
+          base: { $type: "color", $value: "#333333", theme: "base" },
+          brand: { $type: "color", $value: "#333333", theme: "brand" }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        background: Record<string, { $value: string }>;
+        foreground: Record<string, { $value: string }>;
+        border: Record<string, { $value: string }>;
+      };
+    };
+
+    expect({
+      baseBackgroundHover: result.semantic.background["base-hover"]!.$value,
+      baseBackgroundActive: result.semantic.background["base-active"]!.$value,
+      themeBackgroundHover: result.semantic.background["brand-hover"]!.$value,
+      themeBackgroundActive: result.semantic.background["brand-active"]!.$value,
+      baseForegroundHover: result.semantic.foreground["base-hover"]!.$value,
+      baseForegroundActive: result.semantic.foreground["base-active"]!.$value,
+      themeForegroundHover: result.semantic.foreground["brand-hover"]!.$value,
+      themeForegroundActive: result.semantic.foreground["brand-active"]!.$value,
+      baseBorderHover: result.semantic.border["base-hover"]!.$value,
+      baseBorderActive: result.semantic.border["base-active"]!.$value,
+      themeBorderHover: result.semantic.border["brand-hover"]!.$value,
+      themeBorderActive: result.semantic.border["brand-active"]!.$value
+    }).toEqual({
+      baseBackgroundHover: "#3b3b3b",
+      baseBackgroundActive: "#4c4c4c",
+      themeBackgroundHover: "#444444",
+      themeBackgroundActive: "#3b3b3b",
+      baseForegroundHover: "#444444",
+      baseForegroundActive: "#676767",
+      themeForegroundHover: "#555555",
+      themeForegroundActive: "#444444",
+      baseBorderHover: "#444444",
+      baseBorderActive: "#676767",
+      themeBorderHover: "#555555",
+      themeBorderActive: "#444444"
+    });
+  });
+
   it("applies opacity by ring token theme and preserves offset masks", () => {
     const result = tamaguiPreprocessor({
       color: {
@@ -148,8 +201,8 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         "foreground-link-hover": {
-          $description: "hover state at 20% brighter",
-          $value: "#5084b9"
+          $description: "hover state at 40% brighter",
+          $value: "#6ea3d9"
         }
       }
     });

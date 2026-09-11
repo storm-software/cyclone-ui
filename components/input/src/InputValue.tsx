@@ -251,7 +251,7 @@ export const InputValue = BaseInputValue.styleable<InputComponentProps>(
                 minWidth: 0,
                 margin: 0,
                 padding: 0,
-                paddingTop: variant === "floating" ? "var(--t-space-lg)" : 0,
+                paddingTop: variant === "floating" ? 7 : 0,
                 paddingInline: nativePaddingInline ?? "var(--t-space-4xl)"
               }}
               onChange={handleInput}

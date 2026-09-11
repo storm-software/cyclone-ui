@@ -84,13 +84,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundLinkPressed",
-          textDecorationColor: "$foregroundLinkPressed"
+          color: "$foregroundLinkActive",
+          textDecorationColor: "$foregroundLinkActive"
         },
 
         focusStyle: {
-          color: "$foregroundLinkFocused",
-          textDecorationColor: "$foregroundLinkFocused"
+          color: "$foregroundLinkActive",
+          textDecorationColor: "$foregroundLinkActive"
         }
       },
       baseInverse: {
@@ -103,13 +103,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundPressed",
-          textDecorationColor: "$foregroundPressed"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         },
 
         focusStyle: {
-          color: "$foregroundFocused",
-          textDecorationColor: "$foregroundFocused"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         }
       },
 
@@ -123,13 +123,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundPressed",
-          textDecorationColor: "$foregroundLinkPressed"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundLinkActive"
         },
 
         focusStyle: {
-          color: "$foregroundFocused",
-          textDecorationColor: "$foregroundLinkFocused"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundLinkActive"
         }
       },
       mixedInverse: {
@@ -142,13 +142,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundLinkPressed",
-          textDecorationColor: "$foregroundPressed"
+          color: "$foregroundLinkActive",
+          textDecorationColor: "$foregroundActive"
         },
 
         focusStyle: {
-          color: "$foregroundLinkFocused",
-          textDecorationColor: "$foregroundFocused"
+          color: "$foregroundLinkActive",
+          textDecorationColor: "$foregroundActive"
         }
       },
 
@@ -162,13 +162,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundPressed",
-          textDecorationColor: "$foregroundPressed"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         },
 
         focusStyle: {
-          color: "$foregroundFocused",
-          textDecorationColor: "$foregroundFocused"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         }
       },
       themedInverse: {
@@ -181,13 +181,13 @@ const LinkTextFrame = styled(SizableText, {
         },
 
         pressStyle: {
-          color: "$foregroundPressed",
-          textDecorationColor: "$foregroundPressed"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         },
 
         focusStyle: {
-          color: "$foregroundFocused",
-          textDecorationColor: "$foregroundFocused"
+          color: "$foregroundActive",
+          textDecorationColor: "$foregroundActive"
         }
       }
     },

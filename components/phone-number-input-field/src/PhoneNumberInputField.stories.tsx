@@ -34,9 +34,6 @@ const meta = {
             <PhoneNumberInputField.Control.TextBox.Value placeholder="Phone number" />
           </PhoneNumberInputField.Control.TextBox>
         </PhoneNumberInputField.Control>
-        <PhoneNumberInputField.Details>
-          This is an example detailed message for an input field
-        </PhoneNumberInputField.Details>
       </PhoneNumberInputField>
     </Form>
   )
@@ -45,6 +42,26 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {},
@@ -130,18 +147,19 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const iconButton = canvas.getByRole("button");
-    const iconContainer = iconButton.parentElement as HTMLElement;
+    await canvas.findByText("This is an example validation message");
+    const iconButton = canvas.getAllByRole("button").at(-1)!;
+    const iconContainer = iconButton;
 
     await expect(iconContainer).toHaveStyle({
       flexShrink: "0",
@@ -153,30 +171,30 @@ export const Error: Story = {
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
 
 export const Positive: Story = {
   args: {
-    theme: "positive"
+    validate: validation("positive")
   }
 };
 
 export const Negative: Story = {
   args: {
-    theme: "negative"
+    validate: validation("negative")
   }
 };

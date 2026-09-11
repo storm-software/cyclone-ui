@@ -111,7 +111,7 @@ const FilePickerGroupFrame = styled(View, {
     active: {
       true: {
         borderColor: "$borderSubtle",
-        backgroundColor: "$backgroundElevatedFocused",
+        backgroundColor: "$backgroundElevatedActive",
 
         hoverStyle: {
           borderColor: "$borderSubtleHover",

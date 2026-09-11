@@ -77,11 +77,11 @@ const TooltipContent = styled(TamaguiTooltip.Content, {
   exitStyle: { x: 0, y: -5, opacity: 0, scale: 0.9 },
 
   focusVisibleStyle: {
-    outlineColor: "$borderFocused",
+    outlineColor: "$borderActive",
     outlineWidth: 3,
     outlineOffset: "$lg",
     outlineStyle: "solid",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {

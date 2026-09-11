@@ -44,7 +44,7 @@ export const ControlUnderline = styled(View, {
   bottom: 0,
   width: 0,
   height: "$xxs",
-  backgroundColor: "$borderFocused",
+  backgroundColor: "$borderActive",
   pointerEvents: "none",
 
   variants: {
@@ -92,14 +92,14 @@ const InputGroup = styled(XGroup, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderFocused"
+    borderColor: "$borderActive"
   },
 
   variants: {
     focused: {
       true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
-        boxShadow: props.variant === "underline" ? "none" : "$ringOffset",
-        borderColor: "$borderFocused"
+        boxShadow: props.variant === "underline" ? "none" : "$ring",
+        borderColor: "$borderActive"
       })
     },
 
@@ -181,12 +181,12 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
       disabled = false,
       ...rest
     } = props;
-    const [locallyFocused, setLocallyFocused] = useState(false);
+    const [locallyActive, setLocallyActive] = useState(false);
     const frameSize =
       size === "$true" || String(size) === "true" ? "$10xl" : size;
     const handleFocus = useCallback(
       (event: any) => {
-        setLocallyFocused(true);
+        setLocallyActive(true);
         onFocus?.(event);
       },
       [onFocus]
@@ -194,13 +194,13 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
     const handleBlur = useCallback(
       (event: any) => {
         if (!event.currentTarget?.contains?.(event.relatedTarget)) {
-          setLocallyFocused(false);
+          setLocallyActive(false);
         }
         onBlur?.(event);
       },
       [onBlur]
     );
-    const underlineFocused = focused || locallyFocused;
+    const underlineActive = focused || locallyActive;
 
     return (
       <InputContext.Provider
@@ -230,7 +230,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           {variant === "underline" && (
             <ControlUnderline
               bottom={-1}
-              focused={underlineFocused}
+              focused={underlineActive}
               disabled={disabled}
             />
           )}
@@ -260,7 +260,7 @@ const InputSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderFocused"
+        borderColor: "$borderActive"
       }
     },
 
@@ -310,7 +310,7 @@ const InputSeparatorImpl = InputSeparator.styleable(
             borderColor: disabled
               ? "$borderDisabled"
               : focused
-                ? "$borderFocused"
+                ? "$borderActive"
                 : "$borderHover"
           }}
           {...props}

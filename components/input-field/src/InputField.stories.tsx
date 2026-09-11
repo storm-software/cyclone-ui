@@ -34,9 +34,6 @@ const meta: Meta<typeof InputField> = {
             <InputField.Control.TextBox.Value placeholder="email@example.com" />
           </InputField.Control.TextBox>
         </InputField.Control>
-        <InputField.Details>
-          This is an example detailed message for an input field
-        </InputField.Details>
       </InputField>
     </Form>
   )
@@ -45,6 +42,26 @@ const meta: Meta<typeof InputField> = {
 export default meta;
 
 type Story = StoryObj<typeof InputField>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example detailed message for an input field",
+        type
+      }
+    ]
+  ]
+});
 
 export const Base: Story = {
   args: {},
@@ -211,32 +228,35 @@ export const BrandUnderline: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const DiscoveryFloating: Story = {
   args: {
-    theme: "discovery",
+    validate: validation("discovery"),
     variant: "floating"
   }
 };
 
 export const DiscoveryUnderline: Story = {
   args: {
-    theme: "discovery",
+    validate: validation("discovery"),
     variant: "underline"
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const iconButton = canvas.getByRole("button");
-    const iconContainer = iconButton.parentElement as HTMLElement;
+    await canvas.findByText(
+      "This is an example detailed message for an input field"
+    );
+    const iconButton = canvas.getAllByRole("button").at(-1)!;
+    const iconContainer = iconButton;
 
     await expect(iconContainer).toHaveStyle({
       flexShrink: "0",
@@ -245,124 +265,125 @@ export const Error: Story = {
     });
 
     await userEvent.hover(iconButton);
-    await expect(
-      await within(document.body).findByText(
-        "This is an example detailed message for an input field"
-      )
-    ).toBeVisible();
+    const messages = await within(document.body).findAllByText(
+      "This is an example detailed message for an input field"
+    );
+    await waitFor(async () => {
+      await expect(messages.at(-1)!).toBeVisible();
+    });
   }
 };
 
 export const ErrorFloating: Story = {
   args: {
-    theme: "danger",
+    validate: validation("danger"),
     variant: "floating"
   }
 };
 
 export const ErrorUnderline: Story = {
   args: {
-    theme: "danger",
+    validate: validation("danger"),
     variant: "underline"
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const WarningFloating: Story = {
   args: {
-    theme: "warning",
+    validate: validation("warning"),
     variant: "floating"
   }
 };
 
 export const WarningUnderline: Story = {
   args: {
-    theme: "warning",
+    validate: validation("warning"),
     variant: "underline"
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const InfoFloating: Story = {
   args: {
-    theme: "info",
+    validate: validation("info"),
     variant: "floating"
   }
 };
 
 export const InfoUnderline: Story = {
   args: {
-    theme: "info",
+    validate: validation("info"),
     variant: "underline"
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
 
 export const SuccessFloating: Story = {
   args: {
-    theme: "success",
+    validate: validation("success"),
     variant: "floating"
   }
 };
 
 export const SuccessUnderline: Story = {
   args: {
-    theme: "success",
+    validate: validation("success"),
     variant: "underline"
   }
 };
 
 export const Positive: Story = {
   args: {
-    theme: "positive"
+    validate: validation("positive")
   }
 };
 
 export const PositiveFloating: Story = {
   args: {
-    theme: "positive",
+    validate: validation("positive"),
     variant: "floating"
   }
 };
 
 export const PositiveUnderline: Story = {
   args: {
-    theme: "positive",
+    validate: validation("positive"),
     variant: "underline"
   }
 };
 
 export const Negative: Story = {
   args: {
-    theme: "negative"
+    validate: validation("negative")
   }
 };
 
 export const NegativeFloating: Story = {
   args: {
-    theme: "negative",
+    validate: validation("negative"),
     variant: "floating"
   }
 };
 
 export const NegativeUnderline: Story = {
   args: {
-    theme: "negative",
+    validate: validation("negative"),
     variant: "underline"
   }
 };

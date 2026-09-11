@@ -204,8 +204,8 @@ const ButtonFrame = styled(View, {
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundElevatedPressed",
-          borderColor: "$foregroundPressed"
+          backgroundColor: "$backgroundElevatedActive",
+          borderColor: "$foregroundActive"
         }
       },
 
@@ -220,7 +220,7 @@ const ButtonFrame = styled(View, {
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundSubtlePressed"
+          backgroundColor: "$backgroundSubtleActive"
         }
       },
 
@@ -235,7 +235,7 @@ const ButtonFrame = styled(View, {
         },
 
         pressStyle: {
-          backgroundColor: "$foregroundPressed"
+          backgroundColor: "$foregroundActive"
         }
       },
 
@@ -251,7 +251,7 @@ const ButtonFrame = styled(View, {
 
         pressStyle: {
           backgroundColor: "transparent",
-          borderColor: "$foregroundPressed"
+          borderColor: "$foregroundActive"
         }
       },
 
@@ -267,7 +267,7 @@ const ButtonFrame = styled(View, {
         },
 
         pressStyle: {
-          backgroundColor: "$backgroundElevatedPressed",
+          backgroundColor: "$backgroundElevatedActive",
           borderWidth: 0,
           borderColor: "transparent"
         }
@@ -535,10 +535,10 @@ const pressedColorForVariant = (
   }
 
   if (variant === "inverse" || variant === "subtle") {
-    return "$foregroundInversePressed";
+    return "$foregroundInverseActive";
   }
 
-  return "$foregroundPressed";
+  return "$foregroundActive";
 };
 
 const ButtonText = ButtonTextFrame.styleable<{ size?: SizeTokens }>(

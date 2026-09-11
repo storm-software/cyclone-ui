@@ -31,9 +31,6 @@ const meta: Meta<typeof SelectField> = {
       <SelectField name="selectFieldName" {...props} items={items}>
         <SelectField.Label>Label Text</SelectField.Label>
         <SelectField.Control placeholder="email@example.com" />
-        <SelectField.Details>
-          This is an example detailed message for an select field
-        </SelectField.Details>
       </SelectField>
     </Form>
   )
@@ -42,6 +39,26 @@ const meta: Meta<typeof SelectField> = {
 export default meta;
 
 type Story = StoryObj<typeof SelectField>;
+
+const validation = (
+  type:
+    | "danger"
+    | "warning"
+    | "info"
+    | "discovery"
+    | "success"
+    | "positive"
+    | "negative"
+) => ({
+  onChange: [
+    () => [
+      {
+        message: "This is an example validation message",
+        type
+      }
+    ]
+  ]
+});
 
 const items = [
   { name: "Apple", value: "Apple" },
@@ -124,30 +141,30 @@ export const Brand: Story = {
 
 export const Discovery: Story = {
   args: {
-    theme: "discovery"
+    validate: validation("discovery")
   }
 };
 
 export const Error: Story = {
   args: {
-    theme: "danger"
+    validate: validation("danger")
   }
 };
 
 export const Warning: Story = {
   args: {
-    theme: "warning"
+    validate: validation("warning")
   }
 };
 
 export const Info: Story = {
   args: {
-    theme: "info"
+    validate: validation("info")
   }
 };
 
 export const Success: Story = {
   args: {
-    theme: "success"
+    validate: validation("success")
   }
 };
