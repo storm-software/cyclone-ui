@@ -1,27 +1,3 @@
-@font-face {
-  font-family: Assets;
-  src: url("./fonts/banner-short.svg") format("svg");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Assets;
-  src: url("./fonts/banner-tight.svg") format("svg");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Assets;
-  src: url("./fonts/icon.svg") format("svg");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Assets;
-  src: url("./fonts/transparent.svg") format("svg");
-  font-display: swap;
-}
-
 /**
  * Do not edit directly, this file was auto-generated.
  */

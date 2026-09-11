@@ -1129,25 +1129,6 @@ const themes = createThemes({
   }
 });
 
-const assetsFont = createFont({
-  family: "Assets",
-  size: {
-    1: 12,
-    2: 14,
-    3: 16,
-    4: 18,
-    5: 20,
-    6: 24,
-    7: 28,
-    8: 32,
-    9: 40,
-    10: 48
-  },
-  face: {
-    400: { normal: "transparent" }
-  }
-});
-
 const bodyFont = createFont({
   family: "Inter",
   size: {
@@ -1490,8 +1471,7 @@ export const config = createTamagui({
   tokens,
   themes,
   fonts: {
-     assets: assetsFont,
-    body: bodyFont,
+     body: bodyFont,
     caption: captionFont,
     code: codeFont,
     "display-lg": displayLgFont,

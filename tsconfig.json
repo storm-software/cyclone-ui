@@ -223,6 +223,9 @@
       "path": "./components/code-block"
     },
     {
+      "path": "./components/package-command-code-block"
+    },
+    {
       "path": "./apps/storybook"
     },
     {

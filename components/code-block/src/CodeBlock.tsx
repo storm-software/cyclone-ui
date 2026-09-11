@@ -444,11 +444,11 @@ export type CodeBlockTabsListProps = ComponentProps<typeof TamaguiTabs.List>;
 export const CodeBlockTabsList = forwardRef<
   TamaguiElement,
   CodeBlockTabsListProps
->((props, forwardedRef) => (
+>(({ "aria-label": ariaLabel, ...props }, forwardedRef) => (
   <TamaguiTabs.List
     ref={forwardedRef}
     {...props}
-    aria-label="Code samples"
+    aria-label={ariaLabel ?? "Code samples"}
     flexDirection="row"
     width="100%"
     gap="$md"
