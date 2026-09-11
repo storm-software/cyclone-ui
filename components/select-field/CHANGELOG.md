@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Select Field
 
+## [0.1.3](https://github.com/storm-software/cyclone-ui/releases/tag/select-field%400.1.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Features
+
+- **field:** Add `underline` variant to form fields ([fac31ad](https://github.com/storm-software/cyclone-ui/commit/fac31ad))
+- **field:** Added `floating` label variant to fields ([50350f5](https://github.com/storm-software/cyclone-ui/commit/50350f5))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.3**
+- Updated **form** to **v0.9.3**
+- Updated **select** to **v0.6.3**
+- Updated **state** to **v0.0.4**
+
 ## [0.1.2](https://github.com/storm-software/cyclone-ui/releases/tag/select-field%400.1.2) (09/06/2026)
 
 ### Features

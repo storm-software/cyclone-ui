@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.3) (09/11/2026)
+
+### Bug Fixes
+
+- **code-block:** Clean up to various components ([5610e6e](https://github.com/storm-software/cyclone-ui/commit/5610e6e))
+
+### Features
+
+- **anchor:** Added Anchor component to support permalink display ([7e31186](https://github.com/storm-software/cyclone-ui/commit/7e31186))
+
 ## [0.3.2](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.2) (09/06/2026)
 
 ### Features

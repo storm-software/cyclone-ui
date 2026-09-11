@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/callout",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "type": "module",
   "description": "A package containing the Alert component used by Storm Software",
   "repository": {

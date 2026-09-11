@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.3](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.3) (09/11/2026)
+
+### Features
+
+- **anchor:** Added Anchor component to support permalink display ([7e31186](https://github.com/storm-software/cyclone-ui/commit/7e31186))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.3**
+- Updated **next-button** to **v0.5.3**
+- Updated **previous-button** to **v0.5.3**
+
 ## [0.8.2](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.2) (09/06/2026)
 
 ### Updated Dependencies

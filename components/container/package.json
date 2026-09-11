@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/container",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "type": "module",
   "description": "Button component for Cyclone UI",
   "repository": {

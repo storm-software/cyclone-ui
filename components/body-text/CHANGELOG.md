@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.3](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.3**
+
 ## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.2) (09/06/2026)
 
 ### Features

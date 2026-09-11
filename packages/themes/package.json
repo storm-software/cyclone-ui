@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/themes",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "description": "A package containing various themes for the Cyclone UI.",
   "repository": {

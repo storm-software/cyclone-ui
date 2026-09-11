@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.4](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.4) (09/11/2026)
+
+### Features
+
+- **field:** Added `floating` label variant to fields ([50350f5](https://github.com/storm-software/cyclone-ui/commit/50350f5))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.3**
+- Updated **label-text** to **v0.5.3**
+- Updated **link** to **v0.5.3**
+
 ## [0.4.3](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.3) (09/06/2026)
 
 ### Features

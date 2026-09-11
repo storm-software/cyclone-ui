@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Popover
 
+## [0.5.3](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.3**
+- Updated **button** to **v0.6.3**
+- Updated **heading-text** to **v0.5.3**
+- Updated **scroll-view** to **v0.5.3**
+
 ## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/popover%400.5.2) (09/06/2026)
 
 ### Features

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Number Input Field
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/number-input-field%400.0.4) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Updated Dependencies
+
+- Updated **form** to **v0.9.3**
+- Updated **input-field** to **v0.1.3**
+- Updated **state** to **v0.0.4**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/number-input-field%400.0.3) (09/06/2026)
 
 ### Features

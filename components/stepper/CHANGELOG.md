@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+
+### Updated Dependencies
+
+- Updated **next-button** to **v0.5.3**
+- Updated **previous-button** to **v0.5.3**
+
 ## [0.3.2](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.2) (09/06/2026)
 
 ### Features

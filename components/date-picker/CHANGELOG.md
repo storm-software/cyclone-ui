@@ -2,6 +2,29 @@
 
 # Changelog for Cyclone UI - Date Picker
 
+## [0.5.3](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.3) (09/11/2026)
+
+### Bug Fixes
+
+- **field:** Clean up issues around field status display ([b5a57dd](https://github.com/storm-software/cyclone-ui/commit/b5a57dd))
+- **code-block:** Clean up to various components ([5610e6e](https://github.com/storm-software/cyclone-ui/commit/5610e6e))
+
+### Features
+
+- **anchor:** Added Anchor component to support permalink display ([7e31186](https://github.com/storm-software/cyclone-ui/commit/7e31186))
+- **password-input-field:** Added the Password Input Field component ([828984b](https://github.com/storm-software/cyclone-ui/commit/828984b))
+- **field:** Add `underline` variant to form fields ([fac31ad](https://github.com/storm-software/cyclone-ui/commit/fac31ad))
+- **field:** Added `floating` label variant to fields ([50350f5](https://github.com/storm-software/cyclone-ui/commit/50350f5))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.3**
+- Updated **field** to **v0.5.3**
+- Updated **form** to **v0.9.3**
+- Updated **input** to **v0.6.3**
+- Updated **label-text** to **v0.5.3**
+- Updated **popover** to **v0.5.3**
+
 ## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/date-picker%400.5.2) (09/06/2026)
 
 ### Features
