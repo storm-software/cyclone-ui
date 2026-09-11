@@ -167,7 +167,7 @@ const CheckboxIcon = styled(Check, {
 const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
-  color: "$foregroundInverse",
+  color: "$foreground",
   width: "94%",
   height: "100%",
   strokeWidth: 5
@@ -188,7 +188,13 @@ export const Checkbox = BaseCheckbox.styleable<{
     forwardedRef
   ) => {
     return (
-      <CheckboxGroupFrame focused={focused} disabled={disabled} size={size}>
+      <CheckboxGroupFrame
+        focused={focused}
+        disabled={disabled}
+        size={size}
+        $group-field-hover={{
+          borderColor: "$borderHover"
+        }}>
         <BaseCheckbox
           ref={forwardedRef}
           {...props}
@@ -217,7 +223,7 @@ export const Checkbox = BaseCheckbox.styleable<{
                   y: -10,
                   opacity: 0.5
                 }}>
-                <MinusIcon color="$foregroundInverse" />
+                <MinusIcon color="$foreground" />
               </View>
             ) : (
               <CheckboxIcon />

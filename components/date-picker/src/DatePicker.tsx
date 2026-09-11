@@ -721,27 +721,27 @@ const DatePickerPopoverBody = () => {
 const DatePickerTextBox = Input.TextBox.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Popover.Trigger asChild={true}>
-        <Input.TextBox ref={forwardedRef} {...props}>
-          {children}
-        </Input.TextBox>
-      </Popover.Trigger>
+      <Input.TextBox ref={forwardedRef} {...props}>
+        {children}
+      </Input.TextBox>
     );
   },
   { staticConfig: { componentName: "DatePickerValue" } }
 );
 
 const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
-  ({ children, placeholder = DEFAULT_DATE_FORMAT, ...props }, forwardedRef) => {
+  ({ children, placeholder, ...props }, forwardedRef) => {
     const { separator } = DatePickerContext.useStyledContext();
 
     return (
       <Input.TextBox.Value
         ref={forwardedRef}
         placeholder={
-          placeholder === DEFAULT_DATE_FORMAT
-            ? getDateFormat(separator)
-            : placeholder
+          placeholder === undefined
+            ? undefined
+            : placeholder === DEFAULT_DATE_FORMAT
+              ? getDateFormat(separator)
+              : placeholder
         }
         nativePaddingInline={16}
         {...props}>
@@ -756,11 +756,7 @@ type DatePickerTriggerProps = GetProps<typeof Field.Icon>;
 
 const DatePickerTrigger = Field.Icon.styleable(
   (props: DatePickerTriggerProps, forwardedRef: ForwardedRef<unknown>) => {
-    return (
-      <Popover.Trigger asChild={true}>
-        <Field.Icon ref={forwardedRef} {...props} />
-      </Popover.Trigger>
-    );
+    return <Field.Icon ref={forwardedRef} {...props} pointerEvents="none" />;
   },
   { staticConfig: { componentName: "DatePickerTrigger" } }
 );
@@ -908,14 +904,16 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
           keepChildrenMounted={true}
           open={!!focused}
           onOpenChange={handleOpenChanged}>
-          <Input
-            ref={forwardedRef}
-            {...props}
-            focused={focused}
-            variant={variant}
-            onInput={onInput}>
-            {children}
-          </Input>
+          <Popover.Trigger asChild={true}>
+            <Input
+              ref={forwardedRef}
+              {...props}
+              focused={focused}
+              variant={variant}
+              onInput={onInput}>
+              {children}
+            </Input>
+          </Popover.Trigger>
 
           <DatePickerPopoverContent disableFocusScope={true}>
             <DatePickerPopoverBody />

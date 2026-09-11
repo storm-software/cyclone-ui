@@ -30,7 +30,7 @@ import { useState } from "react";
 import { Table } from "./Table";
 
 const meta: Meta<typeof Table> = {
-  title: "Base/Table",
+  title: "Tables/Table",
   component: Table,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => {

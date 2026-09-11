@@ -55,7 +55,10 @@ const CheckboxFieldLabel = Field.Label.styleable(
 );
 
 const CheckboxFieldControl = Checkbox.styleable(
-  ({ children, ...props }, forwardedRef) => {
+  (
+    { children, checked: controlledChecked, onCheckedChange, ...props },
+    forwardedRef
+  ) => {
     const { focus, change, blur } = useFieldActions<CheckedState>();
 
     const field = FieldApi.use();
@@ -72,8 +75,11 @@ const CheckboxFieldControl = Checkbox.styleable(
         name={name}
         onFocus={focus}
         onBlur={blur}
-        onCheckedChange={change}
-        checked={value || false}
+        onCheckedChange={checked => {
+          void change(checked);
+          onCheckedChange?.(checked);
+        }}
+        checked={(controlledChecked ?? value) || false}
         defaultChecked={initialValue || false}
         focused={focused}
         disabled={disabled}>

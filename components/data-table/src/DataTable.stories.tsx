@@ -31,6 +31,7 @@ const meta: Meta<typeof DataTable> = {
       <DataTable<Person>
         alignCells={{ x: "start", y: "center" }}
         alignHeaderCells={{ x: "start", y: "center" }}
+        marginBottom="20px"
         options={{
           ...options,
           columns
@@ -171,23 +172,14 @@ const StatusButton = ({ status }: { status: string }) => {
   return (
     <View
       borderRadius={1000_000_000}
-      backgroundColor={
-        status?.toLocaleLowerCase() === "active"
-          ? "$background"
-          : "$backgroundElevated"
-      }
-      paddingHorizontal="$xl">
-      <Text
-        color="$foreground"
-        $gtXs={{
-          fontSize: "$xs",
-          lineHeight: "$xs",
-          fontWeight: "$extralight"
-        }}
-        fontSize="$xs"
-        fontWeight="$extralight"
-        lineHeight="$xs"
-        paddingVertical="$md">
+      backgroundColor="$foreground"
+      theme={status?.toLocaleLowerCase() === "active" ? "success" : "danger"}
+      themeShallow={true}
+      height="$6xl"
+      paddingHorizontal="$xl"
+      alignItems="center"
+      justifyContent="center">
+      <Text color="$foregroundInverse" paddingVertical="$md">
         {status}
       </Text>
     </View>
@@ -217,13 +209,7 @@ const columns = [
             </Avatar>
             <View flexDirection="column">
               <Text>{fullName}</Text>
-              <Text
-                fontSize="$xs"
-                lineHeight="$sm"
-                fontWeight="$extralight"
-                theme="alt2">
-                {userName}
-              </Text>
+              <Text>{userName}</Text>
             </View>
           </View>
         );
@@ -269,6 +255,16 @@ export const Resizable: Story = {
       data: defaultData
     },
     resizable: true
+  }
+};
+
+export const RowSelection: Story = {
+  args: {
+    options: {
+      data: defaultData,
+      enableRowSelection: true
+    },
+    pageSize: 5
   }
 };
 

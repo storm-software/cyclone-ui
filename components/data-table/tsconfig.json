@@ -17,6 +17,9 @@
       "path": "../table"
     },
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../select-field"
     },
     {
@@ -35,10 +38,10 @@
       "path": "../form"
     },
     {
-      "path": "../../packages/state"
+      "path": "../checkbox-field"
     },
     {
-      "path": "../checkbox-field"
+      "path": "../checkbox"
     },
     {
       "path": "../button"

@@ -19,14 +19,112 @@
 import { getSized } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
+import { useIsomorphicLayoutEffect } from "@tamagui/constants";
 import { styled, Theme, View, withStaticProperties } from "@tamagui/core";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { SelectContext } from "./utilities";
+
+const SELECT_VIEWPORT_PADDING = 10;
+const SELECT_VIEWPORT_UPWARD_CLASS = "is_SelectViewportUpward";
+
+const useSelectViewportPosition = () => {
+  const [viewport, setViewport] = useState<HTMLElement | null>(null);
+
+  const viewportRef = useCallback((node: unknown) => {
+    setViewport(
+      typeof HTMLElement !== "undefined" && node instanceof HTMLElement
+        ? node
+        : null
+    );
+  }, []);
+
+  useIsomorphicLayoutEffect(() => {
+    if (!viewport) {
+      return;
+    }
+
+    const document = viewport.ownerDocument;
+    const viewportWindow = document.defaultView;
+    const trigger = document.activeElement?.closest?.(
+      ".is_SelectTrigger[aria-expanded='true']"
+    );
+
+    if (!viewportWindow || !(trigger instanceof viewportWindow.HTMLElement)) {
+      return;
+    }
+
+    const style = document.createElement("style");
+    style.textContent = `
+      .${SELECT_VIEWPORT_UPWARD_CLASS} {
+        top: var(--select-viewport-top) !important;
+        max-height: var(--select-viewport-height) !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    let frame: number | undefined;
+
+    const updatePosition = () => {
+      if (frame !== undefined) {
+        cancelAnimationFrame(frame);
+      }
+
+      frame = requestAnimationFrame(() => {
+        const triggerRect = trigger.getBoundingClientRect();
+        const viewportRect = viewport.getBoundingClientRect();
+        const offsetParentRect = viewport.offsetParent?.getBoundingClientRect();
+        const borderHeight = viewportRect.height - viewport.clientHeight;
+        const fullHeight = viewport.scrollHeight + borderHeight;
+        const spaceAbove = triggerRect.top - SELECT_VIEWPORT_PADDING;
+        const spaceBelow =
+          viewportWindow.innerHeight -
+          triggerRect.bottom -
+          SELECT_VIEWPORT_PADDING;
+
+        if (fullHeight > spaceBelow && spaceAbove > spaceBelow) {
+          const height = Math.min(fullHeight, spaceAbove);
+          const top = triggerRect.top - (offsetParentRect?.top ?? 0) - height;
+
+          // Tamagui writes collision values directly to the viewport. Override
+          // only when the larger collision area is above the trigger.
+          viewport.style.setProperty("--select-viewport-top", `${top}px`);
+          viewport.style.setProperty("--select-viewport-height", `${height}px`);
+          viewport.classList.add(SELECT_VIEWPORT_UPWARD_CLASS);
+        } else {
+          viewport.classList.remove(SELECT_VIEWPORT_UPWARD_CLASS);
+        }
+      });
+    };
+
+    const resizeObserver = new viewportWindow.ResizeObserver(updatePosition);
+    resizeObserver.observe(viewport);
+    resizeObserver.observe(trigger);
+    viewportWindow.addEventListener("resize", updatePosition);
+    viewportWindow.addEventListener("scroll", updatePosition, true);
+    updatePosition();
+
+    return () => {
+      if (frame !== undefined) {
+        cancelAnimationFrame(frame);
+      }
+
+      viewport.classList.remove(SELECT_VIEWPORT_UPWARD_CLASS);
+      viewport.style.removeProperty("--select-viewport-top");
+      viewport.style.removeProperty("--select-viewport-height");
+      style.remove();
+      resizeObserver.disconnect();
+      viewportWindow.removeEventListener("resize", updatePosition);
+      viewportWindow.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [viewport]);
+
+  return viewportRef;
+};
 
 const SelectItemFrame = styled(TamaguiSelect.Item, {
   name: "SelectItems",
@@ -184,6 +282,8 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
 
 const SelectItemsGroup = View.styleable(
   ({ children, ...props }, forwardedRef) => {
+    const viewportRef = useSelectViewportPosition();
+
     return (
       <View ref={forwardedRef} flex={1} {...props}>
         <Theme name="base">
@@ -233,6 +333,7 @@ const SelectItemsGroup = View.styleable(
             </TamaguiSelect.ScrollUpButton>
 
             <TamaguiSelect.Viewport
+              ref={viewportRef}
               transition="200ms"
               animateOnly={["transform", "scale", "opacity"]}
               enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}

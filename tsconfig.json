@@ -230,6 +230,9 @@
     },
     {
       "path": "./apps/cli"
+    },
+    {
+      "path": "./components/anchor"
     }
   ],
   "files": []

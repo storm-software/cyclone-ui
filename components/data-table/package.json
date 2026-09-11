@@ -30,6 +30,7 @@
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/table-core": "^8.21.3",
     "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/checkbox": "workspace:*",
     "@cyclone-ui/checkbox-field": "workspace:*",
     "@cyclone-ui/form": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",

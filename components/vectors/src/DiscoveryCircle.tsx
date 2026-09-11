@@ -40,6 +40,8 @@ const Icon = ({
   const diameter = 24;
   const strokeWidth = 2;
   const lightBulbScaleReferenceSize = 62;
+  const resolvedSize = getSized(size);
+  const isSmall = resolvedSize < getSized("$4xl");
   const outerRadius = diameter / 2;
   const innerRadius = outerRadius - strokeWidth / 2;
   const circumference = 2 * Math.PI * innerRadius;
@@ -84,8 +86,6 @@ const Icon = ({
   }, [circumference, isComplete, motionCircle, motionLightBulbScale]);
 
   const lightBulbSize = useMemo(() => {
-    const resolvedSize = getSized(size);
-
     if (resolvedSize <= 0) {
       return 0;
     }
@@ -96,7 +96,7 @@ const Icon = ({
         0.2 *
         Math.max(1, lightBulbScaleReferenceSize / resolvedSize) ** 0.840625
     );
-  }, [size]);
+  }, [resolvedSize]);
   const lightBulbOffset = (diameter - lightBulbSize) / 2;
 
   return (
@@ -112,24 +112,26 @@ const Icon = ({
       strokeWidth={strokeWidth}>
       {isComplete && (
         <>
-          <Circle
-            cx={outerRadius}
-            cy={outerRadius}
-            r={innerRadius}
-            fill="transparent"
-            stroke={color}
-            strokeDasharray={`${circumference} ${circumference}`}
-            strokeDashoffset={strokeDashoffset}
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-          />
+          {!isSmall && (
+            <Circle
+              cx={outerRadius}
+              cy={outerRadius}
+              r={innerRadius}
+              fill="transparent"
+              stroke={color}
+              strokeDasharray={`${circumference} ${circumference}`}
+              strokeDashoffset={strokeDashoffset}
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+            />
+          )}
 
           <G
             transform={`translate(12 12) scale(${lightBulbScale}) translate(-12 -12)`}>
             <Lightbulb
-              size={lightBulbSize}
-              x={lightBulbOffset}
-              y={lightBulbOffset}
+              size={isSmall ? diameter : lightBulbSize}
+              x={isSmall ? 0 : lightBulbOffset}
+              y={isSmall ? 0 : lightBulbOffset}
               strokeWidth={3}
               color={color}
             />

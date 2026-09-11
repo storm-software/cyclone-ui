@@ -695,7 +695,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       render,
       href,
       download,
-      ghostOpacity = 0.25,
+      ghostOpacity = 0.4,
       ...props
     },
     forwardedRef

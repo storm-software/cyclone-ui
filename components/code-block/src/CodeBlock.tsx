@@ -65,6 +65,7 @@ const CODE_BLOCK_STYLES = `
 .cyclone-code-block-viewport .highlighted.error { background: color-mix(in srgb, #ef4444 14%, transparent); }
 .cyclone-code-block-viewport .highlighted.warning { background: color-mix(in srgb, #eab308 14%, transparent); }
 .cyclone-code-block-tabs-trigger[data-state="active"] { background-color: var(--backgroundFloating); border-bottom-color: var(--backgroundFloating) !important; }
+.cyclone-code-block-tabs-trigger[data-state="active"]::after { position: absolute; right: 1px; bottom: -1px; left: 1px; height: 2px; background-color: var(--backgroundFloating); content: ""; }
 .cyclone-code-block-tabs-trigger[data-state="active"] > * { color: var(--foreground); }
 `;
 

@@ -200,7 +200,12 @@ const SelectTrigger = Field.Icon.styleable(
     const { focused } = SelectContext.useStyledContext();
 
     return (
-      <Field.Icon ref={forwardedRef} {...props} render="span" role={undefined}>
+      <Field.Icon
+        ref={forwardedRef}
+        {...props}
+        render="span"
+        role={undefined}
+        pointerEvents="none">
         <View
           width="100%"
           height="100%"

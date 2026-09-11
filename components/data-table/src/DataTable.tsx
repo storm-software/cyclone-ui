@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { Button } from "@cyclone-ui/button";
+import { Checkbox } from "@cyclone-ui/checkbox";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { Form } from "@cyclone-ui/form";
 import { LabelText } from "@cyclone-ui/label-text";
@@ -31,7 +32,6 @@ import type {
 } from "@cyclone-ui/state/form";
 import type { TableProps } from "@cyclone-ui/table";
 import { Table } from "@cyclone-ui/table";
-import { deepClone } from "@stryke/helpers/deep-clone";
 import { isEqual } from "@stryke/helpers/is-equal";
 import { matchSorter } from "@stryke/helpers/match-sorter";
 import { titleCase } from "@stryke/string-format/title-case";
@@ -48,12 +48,15 @@ import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type {
   CellContext,
+  ColumnDef,
   ColumnFiltersState,
   HeaderContext,
+  OnChangeFn,
   PaginationState,
   Table as ReactTable,
   Row,
   RowData,
+  RowSelectionState,
   SortingState,
   TableOptions
 } from "@tanstack/react-table";
@@ -119,6 +122,50 @@ export interface DataTableProps<TData extends RowData> extends TableProps {
   pageSize?: number | null | false;
   resizable?: boolean;
 }
+
+const SELECTION_COLUMN_ID = "__selection";
+
+const getSelectionColumn = <TData extends RowData>(): ColumnDef<TData> => ({
+  id: SELECTION_COLUMN_ID,
+  size: 56,
+  enableColumnFilter: false,
+  enableResizing: false,
+  enableSorting: false,
+  header: ({ table }) => {
+    const pageRows = table.getRowModel().rows;
+    const hasSelectableRows = pageRows.some(row => row.getCanSelect());
+    const checked = table.getIsAllPageRowsSelected()
+      ? true
+      : table.getIsSomePageRowsSelected()
+        ? "indeterminate"
+        : false;
+
+    return (
+      <View width="100%" alignItems="center" justifyContent="center">
+        <Checkbox
+          name="data-table-select-all"
+          aria-label="Select all rows on this page"
+          checked={checked}
+          disabled={!hasSelectableRows}
+          onCheckedChange={nextChecked =>
+            table.toggleAllPageRowsSelected(nextChecked === true)
+          }
+        />
+      </View>
+    );
+  },
+  cell: ({ row }) => (
+    <View width="100%" alignItems="center" justifyContent="center">
+      <Checkbox
+        name={`data-table-select-row-${row.id}`}
+        aria-label={`Select row ${row.index + 1}`}
+        checked={row.getIsSelected()}
+        disabled={!row.getCanSelect()}
+        onCheckedChange={checked => row.toggleSelected(checked === true)}
+      />
+    </View>
+  )
+});
 
 interface ContentSizedCell {
   dataset: { columnId?: string };
@@ -329,11 +376,34 @@ export function DataTable<TData extends RowData>({
   const [data] = useState<TData[]>(() => [...options.data]);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
   });
   const tableRef = useContentSizedColumns(!resizable);
+  const rowSelectionEnabled =
+    options.enableRowSelection !== undefined &&
+    options.enableRowSelection !== false;
+
+  const columns = useMemo(
+    () => [
+      ...(rowSelectionEnabled ? [getSelectionColumn<TData>()] : []),
+      ...options.columns.map(column => ({
+        filterFn: defaultFilterFn,
+        ...column
+      }))
+    ],
+    [options.columns, rowSelectionEnabled]
+  );
+
+  const handleRowSelectionChange = useCallback<OnChangeFn<RowSelectionState>>(
+    updater => {
+      setRowSelection(updater);
+      options.onRowSelectionChange?.(updater);
+    },
+    [options.onRowSelectionChange]
+  );
 
   // const columnHelper = useMemo(() => createColumnHelper<TData>(), []);
 
@@ -344,22 +414,25 @@ export function DataTable<TData extends RowData>({
     getPaginationRowModel: getPaginationRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
-    state: {
-      sorting,
-      columnFilters,
-      pagination
-    },
     onColumnFiltersChange: setColumnFilters,
     onSortingChange: setSorting,
     onPaginationChange: setPagination,
     manualPagination: false,
     columnResizeMode: "onChange",
     ...options,
+    state: {
+      sorting,
+      columnFilters,
+      pagination,
+      rowSelection,
+      ...options.state
+    },
+    onRowSelectionChange: handleRowSelectionChange,
+    enableRowSelection: rowSelectionEnabled
+      ? options.enableRowSelection
+      : false,
     enableColumnResizing: resizable,
-    columns: options.columns.map(column => ({
-      filterFn: defaultFilterFn,
-      ...column
-    })),
+    columns,
     rowCount: data.length,
     data
   });
@@ -478,7 +551,12 @@ export function DataTable<TData extends RowData>({
           <Table.Body>
             {tableRows.map(row => {
               return (
-                <Table.Row key={row.id}>
+                <Table.Row
+                  key={row.id}
+                  aria-selected={row.getIsSelected()}
+                  backgroundColor={
+                    row.getIsSelected() ? "$backgroundActive" : undefined
+                  }>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
                       key={cell.id}
@@ -565,8 +643,8 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
     <SizableText
       transition="200ms"
       fontFamily="$body"
-      color="$foregroundInverse"
-      $group-row-hover={{ color: "$foregroundInverseHover" }}>
+      color="$foreground"
+      $group-row-hover={{ color: "$foregroundHover" }}>
       {value}
     </SizableText>
   );
@@ -577,10 +655,14 @@ const SELECT_ALL_FIELD_NAME = "__selectAll";
 
 const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
   valuesMap = new Map(),
-  onSearchChange
+  onSearchChange,
+  onFilterChange,
+  selectAll
 }: {
   valuesMap: Map<string, { value: any; count: number }>;
   onSearchChange: (context: CallbackContext<FieldAtoms<string>>) => void;
+  onFilterChange: (name: string, checked: boolean) => void;
+  selectAll: boolean | "indeterminate";
 }) => {
   const [searchResults, setSearchResults] = useState(
     useMemo(() => Array.from(valuesMap.keys()), [valuesMap])
@@ -603,11 +685,18 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
 
       setSearchResults(!value ? keys : matchSorter(keys, value));
     },
-    [valuesMap]
+    [onSearchChange, valuesMap]
+  );
+
+  const handleFilterChange = useCallback(
+    (name: string, checked: boolean | "indeterminate") => {
+      onFilterChange(name, checked === true);
+    },
+    [onFilterChange]
   );
 
   return (
-    <YStack gap="$3xl" width="max-content" minWidth="100%">
+    <View width="max-content" minWidth="100%" maxWidth="100%">
       <SizableText
         aria-hidden={true}
         height={0}
@@ -621,36 +710,51 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         {intrinsicFilterLabels}
       </SizableText>
 
-      <SearchInputField
-        name={SEARCH_FIELD_NAME}
-        size="$9xl"
-        width="100%"
-        onChange={handleSearchChange}>
-        <SearchInputField.Control>
-          <SearchInputField.Control.TextBox placeholder="Filter..." />
-        </SearchInputField.Control>
-      </SearchInputField>
+      <YStack gap="$4xl">
+        <SearchInputField
+          name={SEARCH_FIELD_NAME}
+          onChange={handleSearchChange}>
+          <SearchInputField.Control>
+            <SearchInputField.Control.TextBox placeholder="Filter..." />
+          </SearchInputField.Control>
+        </SearchInputField>
 
-      <Popover.Content.ScrollView maxHeight="$18xl" padding={5}>
-        <YStack gap="$xl">
-          <CheckboxField name={SELECT_ALL_FIELD_NAME} size="$9xl">
-            <XStack gap="$3xl">
-              <CheckboxField.Control />
-              <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
-            </XStack>
-          </CheckboxField>
-
-          {searchResults.map(searchResult => (
-            <CheckboxField key={searchResult} name={searchResult} size="$9xl">
-              <XStack gap="$3xl">
-                <CheckboxField.Control />
-                <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
+        <Popover.Content.ScrollView maxHeight="$30xl">
+          <YStack gap="$xl" width="100%" minWidth="$28xl" paddingLeft="$xl">
+            <CheckboxField name={SELECT_ALL_FIELD_NAME}>
+              <XStack
+                gap="$3xl"
+                alignItems="center"
+                justifyContent="flex-start">
+                <CheckboxField.Control
+                  checked={selectAll}
+                  onCheckedChange={checked =>
+                    handleFilterChange(SELECT_ALL_FIELD_NAME, checked)
+                  }
+                />
+                <CheckboxField.Label>{"(Select All)"}</CheckboxField.Label>
               </XStack>
             </CheckboxField>
-          ))}
-        </YStack>
-      </Popover.Content.ScrollView>
-    </YStack>
+
+            {searchResults.map(searchResult => (
+              <CheckboxField key={searchResult} name={searchResult}>
+                <XStack
+                  gap="$3xl"
+                  alignItems="center"
+                  justifyContent="flex-start">
+                  <CheckboxField.Control
+                    onCheckedChange={checked =>
+                      handleFilterChange(searchResult, checked)
+                    }
+                  />
+                  <CheckboxField.Label>{`${searchResult} (${valuesMap.get(searchResult)?.count ?? 0})`}</CheckboxField.Label>
+                </XStack>
+              </CheckboxField>
+            ))}
+          </YStack>
+        </Popover.Content.ScrollView>
+      </YStack>
+    </View>
   );
 };
 
@@ -697,7 +801,14 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
 
         return ret;
       }, new Map());
-  }, [filterValues, meta]);
+  }, [column, meta]);
+
+  const selectAll =
+    filterValues.length === 0
+      ? true
+      : filterValues.length === valuesMap.size
+        ? false
+        : "indeterminate";
 
   const handleChange = useCallback(
     ({ get, set, atoms }: CallbackContext<FormAtoms>) => {
@@ -707,44 +818,70 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       const keys = Object.keys(values).filter(
         key => key !== SEARCH_FIELD_NAME && key !== SELECT_ALL_FIELD_NAME
       );
+      const selectAll = keys.some(key => values[key] === false)
+        ? keys.some(key => values[key] === true)
+          ? "indeterminate"
+          : false
+        : true;
 
       if (
         values[SELECT_ALL_FIELD_NAME] !== "indeterminate" &&
-        values[SELECT_ALL_FIELD_NAME] !== previousValues[SELECT_ALL_FIELD_NAME]
+        values[SELECT_ALL_FIELD_NAME] !==
+          previousValues[SELECT_ALL_FIELD_NAME] &&
+        values[SELECT_ALL_FIELD_NAME] !== selectAll
       ) {
+        const nextSelectAll = values[SELECT_ALL_FIELD_NAME];
+
         set(atoms.values, prev =>
           keys.reduce(
             (ret, key) => {
-              ret[key] = true;
+              ret[key] = nextSelectAll;
 
               return ret;
             },
             {
-              ...deepClone(prev),
-              [SELECT_ALL_FIELD_NAME]: true
+              ...prev,
+              [SELECT_ALL_FIELD_NAME]: nextSelectAll
             }
           )
         );
-        setFilterValue([]);
-      } else {
-        const selectAll = keys.some(key => values[key] === false)
-          ? keys.some(key => values[key] === true)
-            ? "indeterminate"
-            : false
-          : true;
+      } else if (values[SELECT_ALL_FIELD_NAME] !== selectAll) {
         set(atoms.values, prev => ({
           ...prev,
           [SELECT_ALL_FIELD_NAME]: selectAll
         }));
-
-        setFilterValue(
-          keys
-            .filter(key => values[key] === false && valuesMap.has(key))
-            .map(key => valuesMap.get(key)!.value)
-        );
       }
     },
-    [valuesMap]
+    []
+  );
+
+  const handleFilterChange = useCallback(
+    (name: string, checked: boolean) => {
+      if (name === SELECT_ALL_FIELD_NAME) {
+        setFilterValue(
+          checked
+            ? []
+            : Array.from(valuesMap.values()).map(({ value }) => value)
+        );
+        return;
+      }
+
+      const value = valuesMap.get(name)?.value;
+      if (value === undefined) {
+        return;
+      }
+
+      setFilterValue(current => {
+        const filterValues = (current ?? []) as any[];
+
+        return checked
+          ? filterValues.filter(filterValue => !isEqual(filterValue, value))
+          : filterValues.some(filterValue => isEqual(filterValue, value))
+            ? filterValues
+            : [...filterValues, value];
+      });
+    },
+    [setFilterValue, valuesMap]
   );
 
   const handleSearchChange = useCallback(
@@ -774,7 +911,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               : "indeterminate"
       } as Record<string, any>
     );
-  }, [valuesMap]);
+  }, [currentSearch, filterValues, valuesMap]);
 
   return (
     <XStack
@@ -848,22 +985,18 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
               width="max-content"
               minWidth="$30xl"
               maxWidth="90vw"
-              padding="$5xl">
-              <View
-                width="max-content"
-                minWidth="100%"
-                maxWidth="100%"
-                overflow="hidden">
-                <Form
-                  name={`${id}_filter`}
-                  initialValues={initialValues}
-                  onChange={handleChange}>
-                  <DataTableHeaderFilterFields
-                    valuesMap={valuesMap}
-                    onSearchChange={handleSearchChange}
-                  />
-                </Form>
-              </View>
+              paddingVertical="$3xl">
+              <Form
+                name={`${id}_filter`}
+                initialValues={initialValues}
+                onChange={handleChange}>
+                <DataTableHeaderFilterFields
+                  valuesMap={valuesMap}
+                  onSearchChange={handleSearchChange}
+                  onFilterChange={handleFilterChange}
+                  selectAll={selectAll}
+                />
+              </Form>
             </Popover.Content>
           </Popover>
         </View>
@@ -1020,11 +1153,11 @@ export function DataTablePagination<TData extends RowData>({
             </Form>
           </View>
 
-          <YStack gap="$xl">
+          <YStack gap="$xs" justifyContent="center">
             <XStack
               justifyContent="space-between"
               alignItems="center"
-              gap="$5xl">
+              gap="$xl">
               <LabelText size="$sm">Total:</LabelText>
               <LabelText size="$sm">{`${totalCount} ${totalCount === 1 ? "row" : "rows"}`}</LabelText>
             </XStack>
@@ -1032,7 +1165,7 @@ export function DataTablePagination<TData extends RowData>({
               <XStack
                 justifyContent="space-between"
                 alignItems="center"
-                gap="$5xl">
+                gap="$xl">
                 <LabelText size="$sm">Filtering:</LabelText>
                 <LabelText size="$sm">
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}

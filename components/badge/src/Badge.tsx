@@ -16,7 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import type { ColorTokens, FontSizeTokens, SizeTokens } from "@tamagui/core";
+import type {
+  ColorTokens,
+  FontSizeTokens,
+  SizeTokens,
+  VariantSpreadExtras
+} from "@tamagui/core";
 import { View, createStyledContext, styled } from "@tamagui/core";
 import { getFontSize } from "@tamagui/font-size";
 import { getFontSized } from "@tamagui/get-font-sized";
@@ -26,7 +31,8 @@ import { SizableText } from "@tamagui/text";
 
 const BadgeContext = createStyledContext({
   size: "$true" as SizeTokens,
-  outlined: false
+  outlined: false,
+  pressable: false
 });
 
 const BADGE_NAME = "Badge";
@@ -38,20 +44,15 @@ const BadgeFrame = styled(View, {
   width: "fit-content",
   backgroundColor: "$foreground",
   boxShadow: "none",
+  borderRadius: "$button",
+  paddingHorizontal: "$3xl",
+  justifyContent: "center",
+  alignItems: "center",
 
   variants: {
     circular: {
       true: {
         borderRadius: 1000_000_000
-      }
-    },
-
-    unstyled: {
-      false: {
-        borderRadius: "$button",
-        paddingHorizontal: "$3xl",
-        justifyContent: "center",
-        alignItems: "center"
       }
     },
 
@@ -94,7 +95,7 @@ const BadgeFrame = styled(View, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
+    pressable: false
   }
 });
 
@@ -102,28 +103,24 @@ const BadgeText = styled(SizableText, {
   name: BADGE_NAME,
   context: BadgeContext,
   color: "$foregroundInverse",
-
-  hoverStyle: {
-    color: "$foregroundInverseHover"
-  },
+  fontFamily: "$heading-sm",
+  fontWeight: "$bold",
+  size: "$true",
 
   variants: {
-    unstyled: {
-      false: {
-        fontFamily: "$heading-sm",
-        fontWeight: "$bold",
-        size: "$true"
+    outlined: {
+      true: {
+        color: "$foreground"
       }
     },
 
-    outlined: {
-      true: {
-        color: "$foreground",
-
+    pressable: {
+      true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
         hoverStyle: {
-          color: "$foregroundHover"
+          color: props.outlined ? "$foregroundHover" : "$foregroundInverseHover"
         }
-      }
+      }),
+      false: {}
     },
 
     size: {
@@ -132,7 +129,7 @@ const BadgeText = styled(SizableText, {
   } as const,
 
   defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
+    pressable: false
   }
 });
 
@@ -193,27 +190,26 @@ const ButtonComp = styled(View, {
   tabIndex: 0,
   role: "button",
 
+  borderRadius: 1000_000_000,
+  backgroundColor: "$foreground",
+  justifyContent: "center",
+  alignItems: "center",
+
+  hoverStyle: {
+    backgroundColor: "$backgroundHover",
+    borderColor: "$borderHover"
+  },
+
+  pressStyle: {
+    backgroundColor: "$backgroundFloating"
+  },
+
+  focusStyle: {
+    backgroundColor: "$backgroundElevated"
+  },
+
   variants: {
     size: {} as any,
-    unstyled: {
-      false: {
-        borderRadius: 1000_000_000,
-        backgroundColor: "$foreground",
-        justifyContent: "center",
-        alignItems: "center",
-
-        hoverStyle: {
-          backgroundColor: "$backgroundHover",
-          borderColor: "$borderHover"
-        },
-        pressStyle: {
-          backgroundColor: "$backgroundFloating"
-        },
-        focusStyle: {
-          backgroundColor: "$backgroundElevated"
-        }
-      }
-    },
     alignRight: {
       ":boolean": (val: any, { props, tokens }: any) => {
         if (val) {
@@ -244,11 +240,7 @@ const ButtonComp = styled(View, {
         }
       }
     }
-  } as const,
-
-  defaultVariants: {
-    unstyled: process.env.TAMAGUI_HEADLESS === "1"
-  }
+  } as const
 });
 
 export const Badge = withStaticProperties(BadgeFrame, {

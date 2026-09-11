@@ -87,7 +87,30 @@ export const DefaultValue: Story = {
 
 export const AutoComplete: Story = {
   args: {
-    suggestions: ["Apple", "Apricot", "Banana", "Blueberry"]
+    suggestions: [
+      "Apple",
+      "Pear",
+      "Blackberry",
+      "Peach",
+      "Apricot",
+      "Melon",
+      "Honeydew",
+      "Starfruit",
+      "Blueberry",
+      "Raspberry",
+      "Strawberry",
+      "Mango",
+      "Pineapple",
+      "Lime",
+      "Lemon",
+      "Coconut",
+      "Guava",
+      "Papaya",
+      "Orange",
+      "Grape",
+      "Jackfruit",
+      "Durian"
+    ]
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

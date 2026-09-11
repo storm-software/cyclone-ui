@@ -88,9 +88,7 @@ const TableRow = styled(ThemeableStack, {
 
   variants: {
     header: {
-      false: {
-        borderBottomWidth: 1
-      }
+      false: {}
     },
 
     sizing: {
@@ -218,7 +216,8 @@ const TableHeaderCell = styled(ThemeableStack, {
   borderBottomWidth: 1,
   borderColor: "$border",
   justifyContent: "flex-start",
-  padding: "$4xl",
+  paddingVertical: "$md",
+  paddingHorizontal: "$4xl",
 
   variants: {
     cellWidth: {
@@ -240,7 +239,8 @@ const TableHeaderCell = styled(ThemeableStack, {
       content: {
         "$platform-web": {
           display: "table-cell" as any,
-          padding: "$4xl",
+          paddingVertical: "$md",
+          paddingHorizontal: "$4xl",
           width: "auto"
         }
       }
@@ -277,8 +277,6 @@ const TableHeader = styled(ThemeableStack, {
   flexDirection: "column",
   flexShrink: 1,
   borderWidth: 0,
-  borderBottomWidth: 1,
-  borderColor: "$border",
   borderTopLeftRadius: "$container",
   borderTopRightRadius: "$container",
   overflow: "hidden",

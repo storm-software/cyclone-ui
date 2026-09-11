@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/anchor",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A repository containing the core front-end components used by Storm Software across many platforms",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/anchor"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
+    "@tamagui/text": "catalog:",
+    "@tamagui/web": "catalog:"
+  },
+  "devDependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Anchor": {
+      "import": "./dist/Anchor.mjs",
+      "require": "./dist/Anchor.cjs"
+    },
+    "./*": "./*"
+  }
+}

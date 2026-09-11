@@ -284,7 +284,7 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
   focusVisibleStyle: {
     outlineStyle: "none",
     outlineWidth: 0,
-    boxShadow: "$ring"
+    boxShadow: "$ringOffset"
   },
 
   variants: {

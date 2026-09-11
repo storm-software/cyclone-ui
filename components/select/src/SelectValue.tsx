@@ -102,7 +102,7 @@ export const SelectValue = SelectValueFrame.styleable<{
           ref={forwardedRef}
           {...props}
           disabled={disabled}
-          placeholding={placeholder && !disabled}>
+          placeholding={!!placeholder && !disabled}>
           {children}
         </SelectValueFrame>
       </View>
