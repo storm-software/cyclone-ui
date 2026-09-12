@@ -100,6 +100,13 @@ export type ButtonContextProps = TextContextStyles & {
   circular: boolean;
 
   /**
+   * Should the button's left and right sides be fully rounded
+   *
+   * @defaultValue false
+   */
+  rounded: boolean;
+
+  /**
    * Should the button have a ringed outline
    *
    * @defaultValue false
@@ -160,6 +167,7 @@ export const ButtonContext = createStyledContext<ButtonContextProps>({
   borderRadius: "$button",
   unstyled: false,
   circular: false,
+  rounded: false,
   ringed: false,
   disabled: false,
   noPadding: false,
@@ -359,6 +367,12 @@ const ButtonFrame = styled(View, {
       }
     },
 
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
+    },
+
     noPadding: {
       true: {
         padding: 0
@@ -380,6 +394,7 @@ const ButtonFrame = styled(View, {
     disabled: false,
     ringed: false,
     circular: false,
+    rounded: false,
     bordered: true,
     noPadding: false,
     animate: false
@@ -666,12 +681,19 @@ const ButtonGhostBackground = styled(ThemeableStack, {
       true: {
         borderRadius: 1000_000_000
       }
+    },
+
+    rounded: {
+      true: {
+        borderRadius: 1000_000_000
+      }
     }
   } as const,
 
   defaultVariants: {
     bordered: true,
-    circular: false
+    circular: false,
+    rounded: false
   }
 });
 
@@ -685,6 +707,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       size = "$10xl",
       disabled = false,
       circular = false,
+      rounded = false,
       bordered = true,
       noPadding = false,
       ringed = false,
@@ -730,6 +753,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         onPress={handlePress}
         frameSize={size}
         circular={circular}
+        rounded={rounded}
         bordered={bordered}
         variant={variant}
         disabled={disabled}
@@ -740,6 +764,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         {variant === "ghost" && (
           <ButtonGhostBackground
             circular={circular}
+            rounded={rounded}
             bordered={bordered}
             position="absolute"
             width="100%"
@@ -759,6 +784,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         size={size}
         disabled={disabled}
         circular={circular}
+        rounded={rounded}
         noPadding={noPadding}
         ringed={ringed}
         animate={animate}>

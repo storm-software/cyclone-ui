@@ -68,7 +68,7 @@ const BreadcrumbCurrent = styled(LabelText, {
 
   transition: "200ms",
   cursor: "default",
-  color: "$foreground",
+  color: "$foregroundCaption",
   fontWeight: "$lg",
   verticalAlign: "middle"
 });
@@ -119,12 +119,22 @@ const BreadcrumbItemImpl = BreadcrumbLink.styleable(
         </View>
 
         {variant === "chevron" && (
-          <ChevronRight color="$foreground" size="$4xl" />
+          <ChevronRight
+            color="$foregroundCaption"
+            size="$4xl"
+            strokeWidth={3}
+          />
         )}
         {variant === "double" && (
-          <ChevronsRight color="$foreground" size="$4xl" />
+          <ChevronsRight
+            color="$foregroundCaption"
+            size="$4xl"
+            strokeWidth={2}
+          />
         )}
-        {variant === "slash" && <Slash color="$foreground" size="$xl" />}
+        {variant === "slash" && (
+          <Slash color="$foregroundCaption" size="$lg" strokeWidth={3.5} />
+        )}
       </XGroup.Item>
     );
   },

@@ -135,6 +135,30 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
+  it("adds inactive foreground variants that are 40% darker", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        foreground: {
+          light: { $type: "color", $value: "#f5f5f5", theme: "base" },
+          dark: { $type: "color", $value: "#333333", theme: "brand" }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        foreground: Record<string, { $description: string; $value: string }>;
+      };
+    };
+
+    expect(result.semantic.foreground["light-inactive"]).toMatchObject({
+      $description: "inactive state at 40% darker",
+      $value: "#7b7b7b"
+    });
+    expect(result.semantic.foreground["dark-inactive"]).toMatchObject({
+      $description: "inactive state at 40% darker",
+      $value: "#141414"
+    });
+  });
+
   it("applies opacity by ring token theme and preserves offset masks", () => {
     const result = tamaguiPreprocessor({
       color: {

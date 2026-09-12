@@ -226,16 +226,19 @@
       "path": "./components/package-command-code-block"
     },
     {
+      "path": "./components/anchor"
+    },
+    {
+      "path": "./components/file-tree"
+    },
+    {
       "path": "./apps/storybook"
     },
     {
       "path": "./apps/cli"
     },
     {
-      "path": "./components/anchor"
-    },
-    {
-      "path": "./components/file-tree"
+      "path": "./components/navigation-header"
     }
   ],
   "files": []

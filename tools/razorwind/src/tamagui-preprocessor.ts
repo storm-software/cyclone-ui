@@ -401,6 +401,8 @@ interface ColorStateVariant {
    * darken on hover; dark sources lighten.
    */
   brightness?: number;
+  /** Always reduce lightness instead of adapting direction to the source. */
+  brightnessDirection?: "darker";
 }
 
 interface ThemedColorStateVariant {
@@ -416,6 +418,12 @@ const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
 const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
   base: { name: "active", brightness: 1.4 },
   theme: { name: "active", brightness: 1.4 }
+};
+
+const FOREGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.6,
+  brightnessDirection: "darker"
 };
 
 const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
@@ -463,11 +471,13 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
     base: [
       FOREGROUND_COLOR_STATE_HOVER.base,
       FOREGROUND_COLOR_STATE_ACTIVE.base,
+      FOREGROUND_COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ],
     theme: [
       FOREGROUND_COLOR_STATE_HOVER.theme,
       FOREGROUND_COLOR_STATE_ACTIVE.theme,
+      FOREGROUND_COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
@@ -501,6 +511,7 @@ function isStateVariantKey(key: string): boolean {
   return (
     key.toLowerCase().endsWith("-hover") ||
     key.toLowerCase().endsWith("-active") ||
+    key.toLowerCase().endsWith("-inactive") ||
     key.toLowerCase().endsWith("-disabled")
   );
 }
@@ -730,13 +741,26 @@ function directedBrightnessFactor(hex: string, factor: number): number {
   return isLightColor(hex) ? 1 - amount : 1 + amount;
 }
 
+function stateBrightnessFactor(
+  hex: string,
+  variant: ColorStateVariant
+): number {
+  if (variant.brightness === undefined) {
+    return 1;
+  }
+
+  return variant.brightnessDirection === "darker"
+    ? 1 - Math.abs(variant.brightness - 1)
+    : directedBrightnessFactor(hex, variant.brightness);
+}
+
 function applyStateTransform(hex: string, variant: ColorStateVariant): string {
   let transformed = hex;
 
   if (variant.brightness !== undefined) {
     transformed = applyBrightness(
       transformed,
-      directedBrightnessFactor(transformed, variant.brightness)
+      stateBrightnessFactor(transformed, variant)
     );
   }
 
@@ -755,7 +779,7 @@ function variantDetail(variant: ColorStateVariant, hex: string): string {
   const details: string[] = [];
 
   if (variant.brightness !== undefined) {
-    const factor = directedBrightnessFactor(hex, variant.brightness);
+    const factor = stateBrightnessFactor(hex, variant);
     const percent = Math.round((factor - 1) * 100);
 
     details.push(
@@ -1051,6 +1075,7 @@ function injectColorStateVariants(
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
  * `oklch()`. For background, foreground, and border colors, also emit
  * `-hover` (10% lighter if the source is dark, 10% darker if light) and
+ * foreground `-inactive` variants (40% darker), plus
  * `-disabled` variants (60% saturation for colored sources, or 60% opacity
  * for greyscale sources). Themed foregrounds also receive link and body
  * variants that use their own colors when colored and the shared foreground

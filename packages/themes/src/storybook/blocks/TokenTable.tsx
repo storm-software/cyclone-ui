@@ -1293,6 +1293,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#5e5e5e",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#bebebe99",
@@ -1316,6 +1325,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#9b9b9b",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the dark theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#2d2d2d",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1347,6 +1365,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#4d4d4d",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#9f9f9f99",
@@ -1370,6 +1397,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#003da4",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#003da4",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1401,6 +1437,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#a10000",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#d65e4f",
@@ -1424,6 +1469,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d7d7d",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1455,6 +1509,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#00634d",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#6db1a1",
@@ -1478,6 +1541,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7f001a",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#7f001a",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1509,6 +1581,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#a10000",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#999999",
@@ -1532,6 +1613,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#784000",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#784000",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1563,6 +1653,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#004a24",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#999999",
@@ -1586,6 +1685,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#1b6600",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#1b6600",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1617,6 +1725,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#006288",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#6db8d0",
@@ -1640,6 +1757,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#312978",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#312978",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1671,6 +1797,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#030303",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "Ink text on cream primary surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#999999",
@@ -1694,6 +1829,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d7d7d",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1725,6 +1869,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#aeaeae",
@@ -1748,6 +1901,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d7d7d",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1779,6 +1941,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "Ink text on warning surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#fafafa99",
@@ -1802,6 +1973,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d7d7d",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -1833,6 +2013,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#fafafa99",
@@ -1860,6 +2049,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#fafafa99",
@@ -1883,6 +2081,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d7d7d",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#7d7d7d",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -6884,6 +7091,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#686868",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#ababab99",
@@ -6907,6 +7123,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#939393",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the dark theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#464646",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -6938,6 +7163,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#5c5c5c",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#96969699",
@@ -6961,6 +7195,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#2b5294",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#2b5294",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -6992,6 +7235,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#932b2b",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#b46e66",
@@ -7015,6 +7267,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7e7e7e",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7046,6 +7307,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#21715f",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#779e95",
@@ -7069,6 +7339,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#802538",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#802538",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7100,6 +7379,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#932b2b",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#919191",
@@ -7123,6 +7411,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c5324",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#7c5324",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7154,6 +7451,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#1d633f",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#919191",
@@ -7177,6 +7483,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#377321",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#377321",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7208,6 +7523,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#276b85",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#77a5b3",
@@ -7231,6 +7555,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#4a4578",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#4a4578",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7262,6 +7595,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#282828",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "Ink text on cream primary surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#919191",
@@ -7285,6 +7627,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7e7e7e",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7316,6 +7667,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#a0a0a0",
@@ -7339,6 +7699,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7e7e7e",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7370,6 +7739,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "Ink text on warning surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#d5d5d599",
@@ -7393,6 +7771,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7e7e7e",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -7424,6 +7811,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#d5d5d599",
@@ -7451,6 +7847,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#d5d5d599",
@@ -7474,6 +7879,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7e7e7e",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#7e7e7e",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12475,6 +12889,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#4f4f4f",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#dadada99",
@@ -12498,6 +12921,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#a7a7a7",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the dark theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#080808",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12529,6 +12961,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#363636",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#adadad99",
@@ -12552,6 +12993,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#002e7b",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#002e7b",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12583,6 +13033,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#770000",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#f45642",
@@ -12606,6 +13065,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12637,6 +13105,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#001d16",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#66c6b0",
@@ -12660,6 +13137,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#45000e",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#45000e",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12691,6 +13177,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#770000",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#a4a4a4",
@@ -12714,6 +13209,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3b2000",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#3b2000",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12745,6 +13249,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#a4a4a4",
@@ -12768,6 +13281,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#092100",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#092100",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12799,6 +13321,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#003b52",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#6fccea",
@@ -12822,6 +13353,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#1a1166",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#1a1166",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12853,6 +13393,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "Ink text on cream primary surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#a4a4a4",
@@ -12876,6 +13425,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12907,6 +13465,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#c3c3c3",
@@ -12930,6 +13497,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -12961,6 +13537,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "Ink text on warning surfaces (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#ffffff99",
@@ -12984,6 +13569,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -13015,6 +13609,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#ffffff99",
@@ -13042,6 +13645,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the dark theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#ffffff99",
@@ -13065,6 +13677,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the dark theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18057,6 +18678,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#484848",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#94949499",
@@ -18080,6 +18710,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#848484",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the light theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#252525",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18111,6 +18750,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#363636",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#73737399",
@@ -18134,6 +18782,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#003d8f",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#003d8f",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18165,6 +18822,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#890000",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#ba574e",
@@ -18188,6 +18854,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7b7b7b",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18219,6 +18894,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#004d3c",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#b8b8b8",
@@ -18242,6 +18926,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#800000",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#800000",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18273,6 +18966,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#840000",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#262626",
@@ -18296,6 +18998,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#793e00",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#793e00",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18327,6 +19038,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#005722",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#191919",
@@ -18350,6 +19070,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#295c00",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#295c00",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18381,6 +19110,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#005e88",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#1b1b1b",
@@ -18404,6 +19142,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3b318f",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#3b318f",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18435,6 +19182,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#070707",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#999999",
@@ -18458,6 +19214,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7b7b7b",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18489,6 +19254,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#acacac",
@@ -18512,6 +19286,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7b7b7b",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18543,6 +19326,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#070707",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#1e1e1e",
@@ -18566,6 +19358,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7b7b7b",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -18597,6 +19398,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#3e3e3e",
@@ -18624,6 +19434,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#1b1b1b",
@@ -18647,6 +19466,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7b7b7b",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#7b7b7b",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23630,6 +24458,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#595959",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#8e8e8e99",
@@ -23653,6 +24490,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#838383",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the light theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#404040",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23684,6 +24530,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#4c4c4c",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#77777799",
@@ -23707,6 +24562,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#285189",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#285189",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23738,6 +24602,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#862727",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#a16a65",
@@ -23761,6 +24634,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23792,6 +24674,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#1d6555",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#a7a7a7",
@@ -23815,6 +24706,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#812525",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#812525",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23846,6 +24746,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#832626",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#414141",
@@ -23869,6 +24778,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7d5224",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#7d5224",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23900,6 +24818,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#1f6a3c",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#383838",
@@ -23923,6 +24850,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#426d20",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#426d20",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -23954,6 +24890,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#276885",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#393939",
@@ -23977,6 +24922,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#534d86",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#534d86",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -24008,6 +24962,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#2b2b2b",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#919191",
@@ -24031,6 +24994,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -24062,6 +25034,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#9f9f9f",
@@ -24085,6 +25066,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -24116,6 +25106,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#2b2b2b",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#3b3b3b",
@@ -24139,6 +25138,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -24170,6 +25178,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#525252",
@@ -24197,6 +25214,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#393939",
@@ -24220,6 +25246,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#7c7c7c",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#7c7c7c",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29203,6 +30238,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.body-inactive",
+      type: "color",
+      value: "#2f2f2f",
+      cssVar: "--rw-color-foreground-body-inactive",
+      description: "The body foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.body-disabled",
       type: "color",
       value: "#9d9d9d99",
@@ -29226,6 +30270,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#868686",
       cssVar: "--rw-color-foreground-eyebrow-active",
       description: "The eyebrow foreground color for the light theme (active, 40% brighter)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.eyebrow-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-eyebrow-inactive",
+      description: "The eyebrow foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29257,6 +30310,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.caption-inactive",
+      type: "color",
+      value: "#151515",
+      cssVar: "--rw-color-foreground-caption-inactive",
+      description: "The caption foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.caption-disabled",
       type: "color",
       value: "#6d6d6d99",
@@ -29280,6 +30342,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#00285d",
       cssVar: "--rw-color-foreground-link-active",
       description: "The link foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.link-inactive",
+      type: "color",
+      value: "#00285d",
+      cssVar: "--rw-color-foreground-link-inactive",
+      description: "The link foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29311,6 +30382,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.required-inactive",
+      type: "color",
+      value: "#540000",
+      cssVar: "--rw-color-foreground-required-inactive",
+      description: "A required foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.required-disabled",
       type: "color",
       value: "#d44538",
@@ -29334,6 +30414,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#797979",
       cssVar: "--rw-color-foreground-base-active",
       description: "The primary foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.base-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-base-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29365,6 +30454,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.brand-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-brand-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.brand-disabled",
       type: "color",
       value: "#d1d1d1",
@@ -29388,6 +30486,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#470000",
       cssVar: "--rw-color-foreground-danger-active",
       description: "The danger foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.danger-inactive",
+      type: "color",
+      value: "#470000",
+      cssVar: "--rw-color-foreground-danger-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29419,6 +30526,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.negative-inactive",
+      type: "color",
+      value: "#4d0000",
+      cssVar: "--rw-color-foreground-negative-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.negative-disabled",
       type: "color",
       value: "#000000",
@@ -29442,6 +30558,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#3d1f00",
       cssVar: "--rw-color-foreground-warning-active",
       description: "The warning foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.warning-inactive",
+      type: "color",
+      value: "#3d1f00",
+      cssVar: "--rw-color-foreground-warning-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29473,6 +30598,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.success-inactive",
+      type: "color",
+      value: "#000b04",
+      cssVar: "--rw-color-foreground-success-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.success-disabled",
       type: "color",
       value: "#000000",
@@ -29496,6 +30630,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#081300",
       cssVar: "--rw-color-foreground-positive-active",
       description: "The positive foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.positive-inactive",
+      type: "color",
+      value: "#081300",
+      cssVar: "--rw-color-foreground-positive-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29527,6 +30670,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inactive",
+      type: "color",
+      value: "#003952",
+      cssVar: "--rw-color-foreground-info-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-disabled",
       type: "color",
       value: "#000000",
@@ -29550,6 +30702,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#24188c",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inactive",
+      type: "color",
+      value: "#24188c",
+      cssVar: "--rw-color-foreground-discovery-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29581,6 +30742,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.base-inverse-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-base-inverse-inactive",
+      description: "The primary foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.base-inverse-disabled",
       type: "color",
       value: "#a4a4a4",
@@ -29604,6 +30774,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#797979",
       cssVar: "--rw-color-foreground-brand-inverse-active",
       description: "The brand foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.brand-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-brand-inverse-inactive",
+      description: "The brand foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29635,6 +30814,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.danger-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-danger-inverse-inactive",
+      description: "The danger foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.danger-inverse-disabled",
       type: "color",
       value: "#c0c0c0",
@@ -29658,6 +30846,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#797979",
       cssVar: "--rw-color-foreground-negative-inverse-active",
       description: "The negative foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.negative-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-negative-inverse-inactive",
+      description: "The negative foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29689,6 +30886,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.warning-inverse-inactive",
+      type: "color",
+      value: "#000000",
+      cssVar: "--rw-color-foreground-warning-inverse-inactive",
+      description: "The warning foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.warning-inverse-disabled",
       type: "color",
       value: "#000000",
@@ -29712,6 +30918,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#797979",
       cssVar: "--rw-color-foreground-success-inverse-active",
       description: "The success foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.success-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-success-inverse-inactive",
+      description: "The success foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },
@@ -29743,6 +30958,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.positive-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-positive-inverse-inactive",
+      description: "The positive foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.positive-inverse-disabled",
       type: "color",
       value: "#212121",
@@ -29770,6 +30994,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "color.foreground.info-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-info-inverse-inactive",
+      description: "The info foreground color for the light theme (inactive, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
       path: "color.foreground.info-inverse-disabled",
       type: "color",
       value: "#000000",
@@ -29793,6 +31026,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#797979",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
       description: "The discovery foreground color for the light theme (active, 40% darker)",
+      theme: undefined,
+      typography: false
+    },
+    {
+      path: "color.foreground.discovery-inverse-inactive",
+      type: "color",
+      value: "#797979",
+      cssVar: "--rw-color-foreground-discovery-inverse-inactive",
+      description: "The discovery foreground color for the light theme (inactive, 40% darker)",
       theme: undefined,
       typography: false
     },

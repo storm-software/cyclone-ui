@@ -791,3 +791,92 @@ export const NegativeDisabled: Story = {
     disabled: true
   }
 };
+
+const withRounded = (story: Story): Story => ({
+  ...story,
+  args: { ...story.args, rounded: true }
+});
+
+export const DefaultRounded = withRounded(Default);
+export const IconRounded = withRounded(Icon);
+export const SizedRounded = withRounded(Sized);
+export const SizedIconRounded = withRounded(SizedIcon);
+export const SurfaceRounded = withRounded(Surface);
+export const OutlinedRounded = withRounded(Outlined);
+export const InverseRounded = withRounded(Inverse);
+export const SubtleRounded = withRounded(Subtle);
+export const GhostRounded = withRounded(Ghost);
+export const LinkRounded = withRounded(Link);
+export const DisabledRounded = withRounded(Disabled);
+
+export const BrandRounded = withRounded(Brand);
+export const BrandSurfaceRounded = withRounded(BrandSurface);
+export const BrandOutlinedRounded = withRounded(BrandOutlined);
+export const BrandInverseRounded = withRounded(BrandInverse);
+export const BrandSubtleRounded = withRounded(BrandSubtle);
+export const BrandGhostRounded = withRounded(BrandGhost);
+export const BrandLinkRounded = withRounded(BrandLink);
+export const BrandDisabledRounded = withRounded(BrandDisabled);
+
+export const DangerRounded = withRounded(Danger);
+export const DangerSurfaceRounded = withRounded(DangerSurface);
+export const DangerOutlinedRounded = withRounded(DangerOutlined);
+export const DangerInverseRounded = withRounded(DangerInverse);
+export const DangerSubtleRounded = withRounded(DangerSubtle);
+export const DangerGhostRounded = withRounded(DangerGhost);
+export const DangerLinkRounded = withRounded(DangerLink);
+export const DangerDisabledRounded = withRounded(DangerDisabled);
+
+export const WarningRounded = withRounded(Warning);
+export const WarningSurfaceRounded = withRounded(WarningSurface);
+export const WarningOutlinedRounded = withRounded(WarningOutlined);
+export const WarningInverseRounded = withRounded(WarningInverse);
+export const WarningSubtleRounded = withRounded(WarningSubtle);
+export const WarningGhostRounded = withRounded(WarningGhost);
+export const WarningLinkRounded = withRounded(WarningLink);
+export const WarningDisabledRounded = withRounded(WarningDisabled);
+
+export const SuccessRounded = withRounded(Success);
+export const SuccessSurfaceRounded = withRounded(SuccessSurface);
+export const SuccessOutlinedRounded = withRounded(SuccessOutlined);
+export const SuccessInverseRounded = withRounded(SuccessInverse);
+export const SuccessSubtleRounded = withRounded(SuccessSubtle);
+export const SuccessGhostRounded = withRounded(SuccessGhost);
+export const SuccessLinkRounded = withRounded(SuccessLink);
+export const SuccessDisabledRounded = withRounded(SuccessDisabled);
+
+export const InfoRounded = withRounded(Info);
+export const InfoSurfaceRounded = withRounded(InfoSurface);
+export const InfoOutlinedRounded = withRounded(InfoOutlined);
+export const InfoInverseRounded = withRounded(InfoInverse);
+export const InfoSubtleRounded = withRounded(InfoSubtle);
+export const InfoGhostRounded = withRounded(InfoGhost);
+export const InfoLinkRounded = withRounded(InfoLink);
+export const InfoDisabledRounded = withRounded(InfoDisabled);
+
+export const DiscoveryRounded = withRounded(Discovery);
+export const DiscoverySurfaceRounded = withRounded(DiscoverySurface);
+export const DiscoveryOutlinedRounded = withRounded(DiscoveryOutlined);
+export const DiscoveryInverseRounded = withRounded(DiscoveryInverse);
+export const DiscoverySubtleRounded = withRounded(DiscoverySubtle);
+export const DiscoveryGhostRounded = withRounded(DiscoveryGhost);
+export const DiscoveryLinkRounded = withRounded(DiscoveryLink);
+export const DiscoveryDisabledRounded = withRounded(DiscoveryDisabled);
+
+export const PositiveRounded = withRounded(Positive);
+export const PositiveSurfaceRounded = withRounded(PositiveSurface);
+export const PositiveOutlinedRounded = withRounded(PositiveOutlined);
+export const PositiveInverseRounded = withRounded(PositiveInverse);
+export const PositiveSubtleRounded = withRounded(PositiveSubtle);
+export const PositiveGhostRounded = withRounded(PositiveGhost);
+export const PositiveLinkRounded = withRounded(PositiveLink);
+export const PositiveDisabledRounded = withRounded(PositiveDisabled);
+
+export const NegativeRounded = withRounded(Negative);
+export const NegativeSurfaceRounded = withRounded(NegativeSurface);
+export const NegativeOutlinedRounded = withRounded(NegativeOutlined);
+export const NegativeInverseRounded = withRounded(NegativeInverse);
+export const NegativeSubtleRounded = withRounded(NegativeSubtle);
+export const NegativeGhostRounded = withRounded(NegativeGhost);
+export const NegativeLinkRounded = withRounded(NegativeLink);
+export const NegativeDisabledRounded = withRounded(NegativeDisabled);
