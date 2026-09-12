@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ThemeableGradient } from "./ThemeableGradient";
 
 const meta: Meta<typeof ThemeableGradient> = {
-  title: "General/ThemeableGradient",
+  title: "Base/ThemeableGradient",
   component: ThemeableGradient,
   tags: ["autodocs"],
   render: ({ ...rest }: any) => (

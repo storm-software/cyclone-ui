@@ -233,6 +233,9 @@
     },
     {
       "path": "./components/anchor"
+    },
+    {
+      "path": "./components/file-tree"
     }
   ],
   "files": []

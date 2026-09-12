@@ -22,7 +22,7 @@ import { XStack } from "@tamagui/stacks";
 import { Stepper } from "./Stepper";
 
 const meta: Meta<typeof Stepper> = {
-  title: "General/Stepper",
+  title: "Containers/Stepper",
   component: Stepper,
   tags: ["autodocs"],
   render: ({ children, ...rest }: any) => (

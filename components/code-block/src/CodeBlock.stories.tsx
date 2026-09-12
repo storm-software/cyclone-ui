@@ -48,7 +48,7 @@ const TypeScriptCode = () => (
 );
 
 const meta = {
-  title: "Documentation/CodeBlock",
+  title: "Docs/CodeBlock",
   component: CodeBlock,
   tags: ["autodocs"],
   parameters: {

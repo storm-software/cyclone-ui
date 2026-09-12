@@ -20,7 +20,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PackageCommandCodeBlock } from "./PackageCommandCodeBlock";
 
 const meta = {
-  title: "Documentation/PackageCommandCodeBlock",
+  title: "Docs/PackageCommandCodeBlock",
   tags: ["autodocs", "docs"],
   component: PackageCommandCodeBlock,
   args: {

@@ -1,5 +1,5 @@
-[19:41:02.060] [INFO] storybook v10.6.0
-[19:41:02.366] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0018 (NoFreePortError): Unable to find a free port for Storybook's dev server (requested port: 6016).
+[20:21:40.914] [INFO] storybook v10.6.0
+[20:21:41.044] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0018 (NoFreePortError): Unable to find a free port for Storybook's dev server (requested port: 6007).
 Your environment appears to block Storybook from listening on network ports.
 If you are running Storybook in a sandboxed or restricted shell, allow binding to localhost ports and try again.[39m
     at file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/core-server/index.js:8988:11
@@ -9,5 +9,16 @@ If you are running Storybook in a sandboxed or restricted shell, allow binding t
     at async withTelemetry (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-FTP3QZ7O.js:142:12)
     at async dev (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/bin/core.js:4906:3)
     at async _Command.<anonymous> (file://./node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/bin/core.js:5014:3)
-[19:41:02.369] [WARN] Broken build, fix the error above.
+[20:21:41.046] [WARN] Broken build, fix the error above.
 You may need to refresh the browser.
+[20:21:41.052] [WARN]   Failed to load preset: "/tmp/cyclone-file-tree-storybook/main.ts"
+[20:21:41.052] [ERROR] Error [ERR_MODULE_NOT_FOUND]: Cannot find module './apps/storybook/.storybook/main' imported from /tmp/cyclone-file-tree-storybook/main.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:272:11)
+    at moduleResolve (node:internal/modules/esm/resolve:879:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at nextResolve (node:internal/modules/esm/hooks:769:28)
+    at AsyncLoaderHooksOnLoaderHookWorker.resolve (node:internal/modules/esm/hooks:265:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:251:24)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:856:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+[20:21:41.054] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
