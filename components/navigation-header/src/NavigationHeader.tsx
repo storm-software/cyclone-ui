@@ -18,10 +18,12 @@
 
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { styled, Text, View } from "@tamagui/core";
+import { styled, Text, View, withStaticProperties } from "@tamagui/core";
 import { ChevronDown, Menu, X } from "@tamagui/lucide-icons-2";
-import type { ReactNode } from "react";
+import type { KeyboardEvent, ReactElement, ReactNode } from "react";
 import {
+  Children,
+  isValidElement,
   useEffect,
   useId,
   useRef,
@@ -30,6 +32,9 @@ import {
 } from "react";
 
 const reducedMotionMediaQuery = "(prefers-reduced-motion: reduce)";
+type NavigationHeaderPressEvent = Parameters<
+  NonNullable<GetProps<typeof Link>["onPress"]>
+>[0];
 
 interface NavigationHeaderMediaQuery {
   matches: boolean;
@@ -471,7 +476,7 @@ const NavigationHeaderMobileActions = styled(View, {
   borderTopColor: "$borderSubtle"
 });
 
-export interface NavigationHeaderChildItem {
+interface NavigationHeaderChildItem {
   label: ReactNode;
   /** Optional column heading used in the desktop mega menu. */
   group?: string;
@@ -484,7 +489,7 @@ export interface NavigationHeaderChildItem {
   onPress?: GetProps<typeof Link>["onPress"];
 }
 
-export interface NavigationHeaderItem extends NavigationHeaderChildItem {
+interface NavigationHeaderItem extends NavigationHeaderChildItem {
   /** Optional second-level destinations displayed beneath this item. */
   children?: readonly NavigationHeaderChildItem[];
 }
@@ -553,37 +558,128 @@ export interface NavigationHeaderProps extends Omit<
   NavigationHeaderFrameProps,
   "children"
 > {
-  /** The product or company mark displayed at the start of the header. */
-  logo: ReactNode;
-
-  /** Primary destinations shown in the center on wide screens. */
-  items: readonly NavigationHeaderItem[];
-
-  /** Account and conversion actions displayed at the end of the header. */
-  actions?: ReactNode;
-
-  /** Accessible name for the primary navigation landmark. */
-  navigationLabel?: string;
-
-  /** Accessible name for the compact navigation trigger. */
-  menuLabel?: string;
+  /** Compose the logo, navigation, actions, and optional menu button. */
+  children: ReactNode;
 }
 
-export const NavigationHeader =
+export interface NavigationHeaderLogoProps {
+  children: ReactNode;
+}
+
+/** Product or company mark displayed at the start of the header. */
+const NavigationHeaderLogoSlot = (_: NavigationHeaderLogoProps) => null;
+
+export interface NavigationHeaderActionsProps {
+  children: ReactNode;
+}
+
+/** Account and conversion actions displayed at the end of the header. */
+const NavigationHeaderActionsSlot = (_: NavigationHeaderActionsProps) => null;
+
+export interface NavigationHeaderNavigationProps {
+  children: ReactNode;
+  /** Accessible name for the primary navigation landmark. */
+  label?: string;
+}
+
+/** Primary destinations shown in the center on wide screens. */
+const NavigationHeaderNavigationSlot = (_: NavigationHeaderNavigationProps) =>
+  null;
+
+export interface NavigationHeaderMenuButtonProps {
+  /** Accessible name for the compact navigation trigger. */
+  label?: string;
+}
+
+/** Optional configuration for the compact navigation trigger. */
+const NavigationHeaderMenuButtonSlotComponent = (
+  _: NavigationHeaderMenuButtonProps
+) => null;
+
+export interface NavigationHeaderItemProps extends Omit<
+  NavigationHeaderChildItem,
+  "label"
+> {
+  children: ReactNode;
+}
+
+/** A primary destination. Groups nested inside it become its mega menu. */
+const NavigationHeaderItemSlot = (_: NavigationHeaderItemProps) => null;
+
+export interface NavigationHeaderGroupProps {
+  children: ReactNode;
+  /** Column heading shown in the desktop mega menu. */
+  label?: string;
+  /** Displays links in this group with prominent typography by default. */
+  featured?: boolean;
+}
+
+/** A column within a primary destination's mega menu. */
+const NavigationHeaderGroupSlot = (_: NavigationHeaderGroupProps) => null;
+
+export interface NavigationHeaderLinkProps extends Omit<
+  NavigationHeaderChildItem,
+  "group" | "label"
+> {
+  children: ReactNode;
+}
+
+/** A destination within a mega-menu group. */
+const NavigationHeaderLinkSlot = (_: NavigationHeaderLinkProps) => null;
+
+const getSlots = <Props,>(children: ReactNode, slot: unknown) =>
+  Children.toArray(children).filter(
+    (child): child is ReactElement<Props> =>
+      isValidElement<Props>(child) && child.type === slot
+  );
+
+const getSlot = <Props,>(children: ReactNode, slot: unknown) =>
+  getSlots<Props>(children, slot).at(0);
+
+const getItemLabel = (children: ReactNode) =>
+  Children.toArray(children).filter(
+    child => !isValidElement(child) || child.type !== NavigationHeaderGroupSlot
+  );
+
+const getNavigationHeaderItems = (
+  children: ReactNode
+): NavigationHeaderItem[] =>
+  getSlots<NavigationHeaderItemProps>(children, NavigationHeaderItemSlot).map(
+    ({ props }) => {
+      const groups = getSlots<NavigationHeaderGroupProps>(
+        props.children,
+        NavigationHeaderGroupSlot
+      );
+
+      return {
+        label: getItemLabel(props.children),
+        href: props.href,
+        target: props.target,
+        external: props.external,
+        active: props.active,
+        onPress: props.onPress,
+        children: groups.flatMap(group =>
+          getSlots<NavigationHeaderLinkProps>(
+            group.props.children,
+            NavigationHeaderLinkSlot
+          ).map(link => ({
+            label: link.props.children,
+            group: group.props.label,
+            featured: link.props.featured ?? group.props.featured,
+            href: link.props.href,
+            target: link.props.target,
+            external: link.props.external,
+            active: link.props.active,
+            onPress: link.props.onPress
+          }))
+        )
+      };
+    }
+  );
+
+const NavigationHeaderRoot =
   NavigationHeaderFrame.styleable<NavigationHeaderProps>(
-    (
-      {
-        logo,
-        items,
-        actions,
-        navigationLabel = "Primary navigation",
-        menuLabel = "Navigation menu",
-        onBlur,
-        onMouseLeave,
-        ...props
-      },
-      forwardedRef
-    ) => {
+    ({ children, onBlur, onMouseLeave, ...props }, forwardedRef) => {
       const [menuOpen, setMenuOpen] = useState(false);
       const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
       const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
@@ -594,6 +690,25 @@ export const NavigationHeader =
       const isAtTop = useIsAtTop();
       const prefersReducedMotion = usePrefersReducedMotion();
       const mobileNavigationId = useId();
+      const logo = getSlot<NavigationHeaderLogoProps>(
+        children,
+        NavigationHeaderLogoSlot
+      )?.props.children;
+      const actions = getSlot<NavigationHeaderActionsProps>(
+        children,
+        NavigationHeaderActionsSlot
+      )?.props.children;
+      const navigation = getSlot<NavigationHeaderNavigationProps>(
+        children,
+        NavigationHeaderNavigationSlot
+      );
+      const menuButton = getSlot<NavigationHeaderMenuButtonProps>(
+        children,
+        NavigationHeaderMenuButtonSlotComponent
+      );
+      const items = getNavigationHeaderItems(navigation?.props.children);
+      const navigationLabel = navigation?.props.label ?? "Primary navigation";
+      const menuLabel = menuButton?.props.label ?? "Navigation menu";
       const openItem =
         openItemIndex === null ? undefined : items[openItemIndex];
       const submenuOpen = Boolean(openItem?.children?.length);
@@ -623,7 +738,13 @@ export const NavigationHeader =
           }}
           onBlur={event => {
             onBlur?.(event);
-            if (!event.currentTarget.contains(event.relatedTarget)) {
+            if (
+              !(
+                event.currentTarget as unknown as {
+                  contains: (node: unknown) => boolean;
+                }
+              ).contains(event.relatedTarget)
+            ) {
               setOpenItemIndex(null);
               setHoveredItemIndex(null);
               setHoveredDropdownItem(null);
@@ -681,7 +802,9 @@ export const NavigationHeader =
                           gap="$lg"
                           onMouseEnter={() => setOpenItemIndex(index)}
                           onFocus={() => setOpenItemIndex(index)}
-                          onKeyDown={event => {
+                          onKeyDown={(
+                            event: KeyboardEvent<HTMLButtonElement>
+                          ) => {
                             if (event.key === "Escape") {
                               setOpenItemIndex(null);
                             }
@@ -791,7 +914,7 @@ export const NavigationHeader =
                                 childIndex
                               })
                             }
-                            onPress={event => {
+                            onPress={(event: NavigationHeaderPressEvent) => {
                               child.onPress?.(event);
                               setOpenItemIndex(null);
                             }}>
@@ -827,7 +950,7 @@ export const NavigationHeader =
                       active={item.active}
                       mobile={true}
                       aria-current={item.active ? "page" : undefined}
-                      onPress={event => {
+                      onPress={(event: NavigationHeaderPressEvent) => {
                         item.onPress?.(event);
                         setMenuOpen(false);
                       }}>
@@ -858,7 +981,9 @@ export const NavigationHeader =
                                 target={child.target}
                                 external={child.external}
                                 aria-current={child.active ? "page" : undefined}
-                                onPress={event => {
+                                onPress={(
+                                  event: NavigationHeaderPressEvent
+                                ) => {
                                   child.onPress?.(event);
                                   setMenuOpen(false);
                                 }}>
@@ -885,3 +1010,15 @@ export const NavigationHeader =
     },
     { staticConfig: { componentName: "NavigationHeader" } }
   );
+
+export const NavigationHeader = withStaticProperties(NavigationHeaderRoot, {
+  Logo: NavigationHeaderLogoSlot,
+  Navigation: withStaticProperties(NavigationHeaderNavigationSlot, {
+    Item: withStaticProperties(NavigationHeaderItemSlot, {
+      Group: NavigationHeaderGroupSlot,
+      Link: NavigationHeaderLinkSlot
+    })
+  }),
+  Actions: NavigationHeaderActionsSlot,
+  MenuButton: NavigationHeaderMenuButtonSlotComponent
+});

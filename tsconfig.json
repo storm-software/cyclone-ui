@@ -235,6 +235,9 @@
       "path": "./components/navigation-header"
     },
     {
+      "path": "./components/footer"
+    },
+    {
       "path": "./components/circular-progress"
     },
     {

@@ -143,64 +143,86 @@ const storyActions = (
   </>
 );
 
-const storyItems = [
-  {
-    label: "Research",
-    href: "#research",
-    children: [
-      {
-        label: "Overview",
-        group: "Explore Research",
-        featured: true,
-        href: "#research-overview"
-      },
-      {
-        label: "Research index",
-        group: "Explore Research",
-        featured: true,
-        href: "#research-index"
-      },
-      { label: "GPT-5", group: "Latest advances", href: "#gpt-5" },
-      { label: "Reasoning", group: "Latest advances", href: "#reasoning" },
-      { label: "Safety approach", group: "Safety", href: "#safety" },
-      { label: "Preparedness", group: "Safety", href: "#preparedness" }
-    ]
-  },
-  {
-    label: "Products",
-    href: "#products",
-    children: [
-      {
-        label: "Overview",
-        group: "Explore Products",
-        featured: true,
-        href: "#products-overview"
-      },
-      {
-        label: "ChatGPT",
-        group: "Explore Products",
-        featured: true,
-        href: "#chatgpt",
-        active: true
-      },
-      {
-        label: "Sora",
-        group: "Explore Products",
-        featured: true,
-        href: "#sora"
-      },
-      { label: "ChatGPT", group: "Products", href: "#chatgpt-product" },
-      { label: "Codex", group: "Products", href: "#codex" },
-      { label: "API platform", group: "Products", href: "#api-platform" },
-      { label: "Enterprise", group: "Solutions", href: "#enterprise" },
-      { label: "Education", group: "Solutions", href: "#education" },
-      { label: "Startups", group: "Solutions", href: "#startups" }
-    ]
-  },
-  { label: "Business", href: "#business" },
-  { label: "Developers", href: "#developers" },
-  { label: "Company", href: "#company" }
-];
+const storyNavigation = (
+  <NavigationHeader.Navigation>
+    <NavigationHeader.Navigation.Item href="#research">
+      Research
+      <NavigationHeader.Navigation.Item.Group
+        label="Explore Research"
+        featured={true}>
+        <NavigationHeader.Navigation.Item.Link href="#research-overview">
+          Overview
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#research-index">
+          Research index
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+      <NavigationHeader.Navigation.Item.Group label="Latest advances">
+        <NavigationHeader.Navigation.Item.Link href="#gpt-5">
+          GPT-5
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#reasoning">
+          Reasoning
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+      <NavigationHeader.Navigation.Item.Group label="Safety">
+        <NavigationHeader.Navigation.Item.Link href="#safety">
+          Safety approach
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#preparedness">
+          Preparedness
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+    </NavigationHeader.Navigation.Item>
+    <NavigationHeader.Navigation.Item href="#products">
+      Products
+      <NavigationHeader.Navigation.Item.Group
+        label="Explore Products"
+        featured={true}>
+        <NavigationHeader.Navigation.Item.Link href="#products-overview">
+          Overview
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#chatgpt" active={true}>
+          ChatGPT
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#sora">
+          Sora
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+      <NavigationHeader.Navigation.Item.Group label="Products">
+        <NavigationHeader.Navigation.Item.Link href="#chatgpt-product">
+          ChatGPT
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#codex">
+          Codex
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#api-platform">
+          API platform
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+      <NavigationHeader.Navigation.Item.Group label="Solutions">
+        <NavigationHeader.Navigation.Item.Link href="#enterprise">
+          Enterprise
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#education">
+          Education
+        </NavigationHeader.Navigation.Item.Link>
+        <NavigationHeader.Navigation.Item.Link href="#startups">
+          Startups
+        </NavigationHeader.Navigation.Item.Link>
+      </NavigationHeader.Navigation.Item.Group>
+    </NavigationHeader.Navigation.Item>
+    <NavigationHeader.Navigation.Item href="#business">
+      Business
+    </NavigationHeader.Navigation.Item>
+    <NavigationHeader.Navigation.Item href="#developers">
+      Developers
+    </NavigationHeader.Navigation.Item>
+    <NavigationHeader.Navigation.Item href="#company">
+      Company
+    </NavigationHeader.Navigation.Item>
+  </NavigationHeader.Navigation>
+);
 
 const meta = {
   title: "Blocks/NavigationHeader",
@@ -210,12 +232,17 @@ const meta = {
     layout: "fullscreen"
   },
   args: {
-    logo: "Storm",
-    items: storyItems
+    children: null
   },
   render: args => (
     <StoryPage>
-      <NavigationHeader {...args} logo={<StoryLogo />} actions={storyActions} />
+      <NavigationHeader {...args}>
+        <NavigationHeader.Logo>
+          <StoryLogo />
+        </NavigationHeader.Logo>
+        {storyNavigation}
+        <NavigationHeader.Actions>{storyActions}</NavigationHeader.Actions>
+      </NavigationHeader>
     </StoryPage>
   )
 } satisfies Meta<typeof NavigationHeader>;
@@ -235,10 +262,12 @@ export const Brand: Story = {
 export const SignedIn: Story = {
   render: args => (
     <StoryPage>
-      <NavigationHeader
-        {...args}
-        logo={<StoryLogo />}
-        actions={
+      <NavigationHeader {...args}>
+        <NavigationHeader.Logo>
+          <StoryLogo />
+        </NavigationHeader.Logo>
+        {storyNavigation}
+        <NavigationHeader.Actions>
           <Button
             aria-label="Open profile"
             variant="ghost"
@@ -250,8 +279,8 @@ export const SignedIn: Story = {
               <UserRound aria-hidden={true} />
             </Button.Icon>
           </Button>
-        }
-      />
+        </NavigationHeader.Actions>
+      </NavigationHeader>
     </StoryPage>
   )
 };
