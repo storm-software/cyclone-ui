@@ -42,8 +42,43 @@ import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo } from "react";
 import type { GestureResponderEvent } from "react-native";
 
+type ButtonCascadeVariant =
+  | "cascade"
+  | "cascade-top"
+  | "cascade-left"
+  | "cascade-bottom"
+  | "cascade-right"
+  | "diagonal-cascade"
+  | "diagonal-cascade-top"
+  | "diagonal-cascade-left"
+  | "diagonal-cascade-bottom"
+  | "diagonal-cascade-right";
+
 type ButtonVariant =
-  "surface" | "subtle" | "inverse" | "outlined" | "ghost" | "link";
+  | "surface"
+  | "subtle"
+  | "inverse"
+  | "outlined"
+  | ButtonCascadeVariant
+  | "ghost"
+  | "link";
+
+const isCascadeVariant = (
+  variant: ButtonVariant | undefined
+): variant is ButtonCascadeVariant => variant?.includes("cascade") ?? false;
+
+const cascadeHoverStyle = {
+  cascade: { left: 0 },
+  "cascade-left": { left: 0 },
+  "cascade-top": { top: 0 },
+  "cascade-bottom": { bottom: 0 },
+  "cascade-right": { right: 0 },
+  "diagonal-cascade": { left: 0 },
+  "diagonal-cascade-left": { left: 0 },
+  "diagonal-cascade-top": { top: 0 },
+  "diagonal-cascade-bottom": { bottom: 0 },
+  "diagonal-cascade-right": { right: 0 }
+} as const;
 
 type BorderRadiusSizeTokens =
   | number
@@ -263,6 +298,186 @@ const ButtonFrame = styled(View, {
         }
       },
 
+      cascade: {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "cascade-top": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "cascade-left": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "cascade-bottom": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "cascade-right": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "diagonal-cascade": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "diagonal-cascade-top": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "diagonal-cascade-left": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "diagonal-cascade-bottom": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "diagonal-cascade-right": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
       ghost: {
         backgroundColor: "transparent",
         borderWidth: 0,
@@ -338,7 +553,7 @@ const ButtonFrame = styled(View, {
         } else if (variant === "inverse") {
           result.backgroundColor = "$backgroundDisabled";
           result.borderColor = "$borderDisabled";
-        } else if (variant === "outlined") {
+        } else if (variant === "outlined" || isCascadeVariant(variant)) {
           result.backgroundColor = "transparent";
           result.borderColor = "$borderDisabled";
         } else if (variant === "ghost" || variant === "link") {
@@ -445,6 +660,46 @@ const ButtonTextFrame = styled(Text, {
         color: "$foreground"
       },
 
+      cascade: {
+        color: "$foreground"
+      },
+
+      "cascade-top": {
+        color: "$foreground"
+      },
+
+      "cascade-left": {
+        color: "$foreground"
+      },
+
+      "cascade-bottom": {
+        color: "$foreground"
+      },
+
+      "cascade-right": {
+        color: "$foreground"
+      },
+
+      "diagonal-cascade": {
+        color: "$foreground"
+      },
+
+      "diagonal-cascade-top": {
+        color: "$foreground"
+      },
+
+      "diagonal-cascade-left": {
+        color: "$foreground"
+      },
+
+      "diagonal-cascade-bottom": {
+        color: "$foreground"
+      },
+
+      "diagonal-cascade-right": {
+        color: "$foreground"
+      },
+
       ghost: {
         color: "$foreground"
       },
@@ -519,6 +774,10 @@ const hoverColorForVariant = (
     return "$foregroundDisabled";
   }
 
+  if (isCascadeVariant(variant)) {
+    return "$foregroundInverse";
+  }
+
   if (
     variant === "inverse" ||
     (variant === "subtle" && !themeName?.endsWith("base"))
@@ -549,7 +808,11 @@ const pressedColorForVariant = (
     return "$foregroundDisabled";
   }
 
-  if (variant === "inverse" || variant === "subtle") {
+  if (
+    variant === "inverse" ||
+    variant === "subtle" ||
+    isCascadeVariant(variant)
+  ) {
     return "$foregroundInverseActive";
   }
 
@@ -642,23 +905,113 @@ const ButtonIcon = View.styleable<{ size?: SizeTokens }>(
   }
 );
 
-const ButtonGhostBackground = styled(ThemeableStack, {
+const ButtonHoverBackground = styled(ThemeableStack, {
   name: "Button",
   context: ButtonContext,
 
   transition: "200ms",
-  opacity: 0,
   zIndex: "$10",
   position: "absolute",
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
-  backgroundColor: "$backgroundHover",
   borderColor: "$border",
   pointerEvents: "none",
 
   variants: {
+    effect: {
+      ghost: {
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        opacity: 0,
+        backgroundColor: "$backgroundHover"
+      },
+      cascade: {
+        top: 0,
+        bottom: 0,
+        left: "-100%",
+        width: "100%",
+        opacity: 1,
+        backgroundColor: "$foreground"
+      },
+      "cascade-left": {
+        top: 0,
+        bottom: 0,
+        left: "-100%",
+        width: "100%",
+        opacity: 1,
+        backgroundColor: "$foreground"
+      },
+      "cascade-top": {
+        top: "-100%",
+        right: 0,
+        left: 0,
+        height: "100%",
+        opacity: 1,
+        backgroundColor: "$foreground"
+      },
+      "cascade-bottom": {
+        right: 0,
+        bottom: "-100%",
+        left: 0,
+        height: "100%",
+        opacity: 1,
+        backgroundColor: "$foreground"
+      },
+      "cascade-right": {
+        top: 0,
+        right: "-100%",
+        bottom: 0,
+        width: "100%",
+        opacity: 1,
+        backgroundColor: "$foreground"
+      },
+      "diagonal-cascade": {
+        top: 0,
+        bottom: 0,
+        left: "-125%",
+        width: "125%",
+        opacity: 1,
+        backgroundColor: "$foreground",
+        clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
+      },
+      "diagonal-cascade-left": {
+        top: 0,
+        bottom: 0,
+        left: "-125%",
+        width: "125%",
+        opacity: 1,
+        backgroundColor: "$foreground",
+        clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)"
+      },
+      "diagonal-cascade-top": {
+        top: "-400%",
+        right: 0,
+        left: 0,
+        height: "400%",
+        opacity: 1,
+        backgroundColor: "$foreground",
+        clipPath: "polygon(0 0, 100% 0, 100% 25%, 0 100%)"
+      },
+      "diagonal-cascade-bottom": {
+        right: 0,
+        bottom: "-400%",
+        left: 0,
+        height: "400%",
+        opacity: 1,
+        backgroundColor: "$foreground",
+        clipPath: "polygon(0 75%, 100% 0, 100% 100%, 0 100%)"
+      },
+      "diagonal-cascade-right": {
+        top: 0,
+        right: "-125%",
+        bottom: 0,
+        width: "125%",
+        opacity: 1,
+        backgroundColor: "$foreground",
+        clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)"
+      }
+    },
+
     bordered: {
       false: {
         borderWidth: 0,
@@ -691,6 +1044,7 @@ const ButtonGhostBackground = styled(ThemeableStack, {
   } as const,
 
   defaultVariants: {
+    effect: "ghost",
     bordered: true,
     circular: false,
     rounded: false
@@ -762,7 +1116,8 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
         animate={animate}
         width={circular ? undefined : props.width}>
         {variant === "ghost" && (
-          <ButtonGhostBackground
+          <ButtonHoverBackground
+            effect="ghost"
             circular={circular}
             rounded={rounded}
             bordered={bordered}
@@ -770,6 +1125,18 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
             width="100%"
             $group-button-hover={{
               opacity: disabled ? 0 : ghostOpacity
+            }}
+          />
+        )}
+        {isCascadeVariant(variant) && (
+          <ButtonHoverBackground
+            effect={variant}
+            circular={circular}
+            rounded={rounded}
+            bordered={false}
+            $group-button-hover={disabled ? {} : cascadeHoverStyle[variant]}
+            $group-button-press={{
+              backgroundColor: "$foregroundActive"
             }}
           />
         )}

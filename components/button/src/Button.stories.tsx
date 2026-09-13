@@ -84,6 +84,96 @@ export const Outlined: Story = {
   }
 };
 
+export const Cascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const CascadeTop: Story = {
+  args: {
+    children: "Button Text",
+    variant: "cascade-top",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const CascadeLeft: Story = {
+  args: {
+    children: "Button Text",
+    variant: "cascade-left",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const CascadeBottom: Story = {
+  args: {
+    children: "Button Text",
+    variant: "cascade-bottom",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const CascadeRight: Story = {
+  args: {
+    children: "Button Text",
+    variant: "cascade-right",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DiagonalCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "diagonal-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DiagonalCascadeTop: Story = {
+  args: {
+    children: "Button Text",
+    variant: "diagonal-cascade-top",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DiagonalCascadeLeft: Story = {
+  args: {
+    children: "Button Text",
+    variant: "diagonal-cascade-left",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DiagonalCascadeBottom: Story = {
+  args: {
+    children: "Button Text",
+    variant: "diagonal-cascade-bottom",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DiagonalCascadeRight: Story = {
+  args: {
+    children: "Button Text",
+    variant: "diagonal-cascade-right",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const Inverse: Story = {
   args: {
     children: "Button Text",
@@ -157,6 +247,16 @@ export const BrandOutlined: Story = {
     children: "Button Text",
     theme: "brand",
     variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const BrandCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "brand",
+    variant: "cascade",
     disabled: false,
     animate: false
   }
@@ -245,6 +345,16 @@ export const DangerOutlined: Story = {
   }
 };
 
+export const DangerCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "danger",
+    variant: "cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const DangerInverse: Story = {
   args: {
     children: "Button Text",
@@ -323,6 +433,16 @@ export const WarningOutlined: Story = {
     children: "Button Text",
     theme: "warning",
     variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const WarningCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "warning",
+    variant: "cascade",
     disabled: false,
     animate: false
   }
@@ -411,6 +531,16 @@ export const SuccessOutlined: Story = {
   }
 };
 
+export const SuccessCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "success",
+    variant: "cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const SuccessInverse: Story = {
   args: {
     children: "Button Text",
@@ -489,6 +619,16 @@ export const InfoOutlined: Story = {
     children: "Button Text",
     theme: "info",
     variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const InfoCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "info",
+    variant: "cascade",
     disabled: false,
     animate: false
   }
@@ -577,6 +717,16 @@ export const DiscoveryOutlined: Story = {
   }
 };
 
+export const DiscoveryCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "discovery",
+    variant: "cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const DiscoveryInverse: Story = {
   args: {
     children: "Button Text",
@@ -655,6 +805,16 @@ export const PositiveOutlined: Story = {
     children: "Button Text",
     theme: "positive",
     variant: "outlined",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const PositiveCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "positive",
+    variant: "cascade",
     disabled: false,
     animate: false
   }
@@ -743,6 +903,16 @@ export const NegativeOutlined: Story = {
   }
 };
 
+export const NegativeCascade: Story = {
+  args: {
+    children: "Button Text",
+    theme: "negative",
+    variant: "cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const NegativeInverse: Story = {
   args: {
     children: "Button Text",
@@ -803,6 +973,16 @@ export const SizedRounded = withRounded(Sized);
 export const SizedIconRounded = withRounded(SizedIcon);
 export const SurfaceRounded = withRounded(Surface);
 export const OutlinedRounded = withRounded(Outlined);
+export const CascadeRounded = withRounded(Cascade);
+export const CascadeTopRounded = withRounded(CascadeTop);
+export const CascadeLeftRounded = withRounded(CascadeLeft);
+export const CascadeBottomRounded = withRounded(CascadeBottom);
+export const CascadeRightRounded = withRounded(CascadeRight);
+export const DiagonalCascadeRounded = withRounded(DiagonalCascade);
+export const DiagonalCascadeTopRounded = withRounded(DiagonalCascadeTop);
+export const DiagonalCascadeLeftRounded = withRounded(DiagonalCascadeLeft);
+export const DiagonalCascadeBottomRounded = withRounded(DiagonalCascadeBottom);
+export const DiagonalCascadeRightRounded = withRounded(DiagonalCascadeRight);
 export const InverseRounded = withRounded(Inverse);
 export const SubtleRounded = withRounded(Subtle);
 export const GhostRounded = withRounded(Ghost);
@@ -812,6 +992,7 @@ export const DisabledRounded = withRounded(Disabled);
 export const BrandRounded = withRounded(Brand);
 export const BrandSurfaceRounded = withRounded(BrandSurface);
 export const BrandOutlinedRounded = withRounded(BrandOutlined);
+export const BrandCascadeRounded = withRounded(BrandCascade);
 export const BrandInverseRounded = withRounded(BrandInverse);
 export const BrandSubtleRounded = withRounded(BrandSubtle);
 export const BrandGhostRounded = withRounded(BrandGhost);
@@ -821,6 +1002,7 @@ export const BrandDisabledRounded = withRounded(BrandDisabled);
 export const DangerRounded = withRounded(Danger);
 export const DangerSurfaceRounded = withRounded(DangerSurface);
 export const DangerOutlinedRounded = withRounded(DangerOutlined);
+export const DangerCascadeRounded = withRounded(DangerCascade);
 export const DangerInverseRounded = withRounded(DangerInverse);
 export const DangerSubtleRounded = withRounded(DangerSubtle);
 export const DangerGhostRounded = withRounded(DangerGhost);
@@ -830,6 +1012,7 @@ export const DangerDisabledRounded = withRounded(DangerDisabled);
 export const WarningRounded = withRounded(Warning);
 export const WarningSurfaceRounded = withRounded(WarningSurface);
 export const WarningOutlinedRounded = withRounded(WarningOutlined);
+export const WarningCascadeRounded = withRounded(WarningCascade);
 export const WarningInverseRounded = withRounded(WarningInverse);
 export const WarningSubtleRounded = withRounded(WarningSubtle);
 export const WarningGhostRounded = withRounded(WarningGhost);
@@ -839,6 +1022,7 @@ export const WarningDisabledRounded = withRounded(WarningDisabled);
 export const SuccessRounded = withRounded(Success);
 export const SuccessSurfaceRounded = withRounded(SuccessSurface);
 export const SuccessOutlinedRounded = withRounded(SuccessOutlined);
+export const SuccessCascadeRounded = withRounded(SuccessCascade);
 export const SuccessInverseRounded = withRounded(SuccessInverse);
 export const SuccessSubtleRounded = withRounded(SuccessSubtle);
 export const SuccessGhostRounded = withRounded(SuccessGhost);
@@ -848,6 +1032,7 @@ export const SuccessDisabledRounded = withRounded(SuccessDisabled);
 export const InfoRounded = withRounded(Info);
 export const InfoSurfaceRounded = withRounded(InfoSurface);
 export const InfoOutlinedRounded = withRounded(InfoOutlined);
+export const InfoCascadeRounded = withRounded(InfoCascade);
 export const InfoInverseRounded = withRounded(InfoInverse);
 export const InfoSubtleRounded = withRounded(InfoSubtle);
 export const InfoGhostRounded = withRounded(InfoGhost);
@@ -857,6 +1042,7 @@ export const InfoDisabledRounded = withRounded(InfoDisabled);
 export const DiscoveryRounded = withRounded(Discovery);
 export const DiscoverySurfaceRounded = withRounded(DiscoverySurface);
 export const DiscoveryOutlinedRounded = withRounded(DiscoveryOutlined);
+export const DiscoveryCascadeRounded = withRounded(DiscoveryCascade);
 export const DiscoveryInverseRounded = withRounded(DiscoveryInverse);
 export const DiscoverySubtleRounded = withRounded(DiscoverySubtle);
 export const DiscoveryGhostRounded = withRounded(DiscoveryGhost);
@@ -866,6 +1052,7 @@ export const DiscoveryDisabledRounded = withRounded(DiscoveryDisabled);
 export const PositiveRounded = withRounded(Positive);
 export const PositiveSurfaceRounded = withRounded(PositiveSurface);
 export const PositiveOutlinedRounded = withRounded(PositiveOutlined);
+export const PositiveCascadeRounded = withRounded(PositiveCascade);
 export const PositiveInverseRounded = withRounded(PositiveInverse);
 export const PositiveSubtleRounded = withRounded(PositiveSubtle);
 export const PositiveGhostRounded = withRounded(PositiveGhost);
@@ -875,6 +1062,7 @@ export const PositiveDisabledRounded = withRounded(PositiveDisabled);
 export const NegativeRounded = withRounded(Negative);
 export const NegativeSurfaceRounded = withRounded(NegativeSurface);
 export const NegativeOutlinedRounded = withRounded(NegativeOutlined);
+export const NegativeCascadeRounded = withRounded(NegativeCascade);
 export const NegativeInverseRounded = withRounded(NegativeInverse);
 export const NegativeSubtleRounded = withRounded(NegativeSubtle);
 export const NegativeGhostRounded = withRounded(NegativeGhost);

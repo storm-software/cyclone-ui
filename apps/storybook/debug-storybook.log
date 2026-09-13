@@ -1,5 +1,5 @@
-[22:02:20.092] [INFO] storybook v10.6.0
-[22:02:20.457] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0018 (NoFreePortError): Unable to find a free port for Storybook's dev server (requested port: 4400).
+[03:42:25.118] [INFO] storybook v10.6.0
+[03:42:25.396] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0018 (NoFreePortError): Unable to find a free port for Storybook's dev server (requested port: 4402).
 Your environment appears to block Storybook from listening on network ports.
 If you are running Storybook in a sandboxed or restricted shell, allow binding to localhost ports and try again.[39m
     at file:///home/development/repos/cyclone-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/core-server/index.js:8988:11
@@ -9,5 +9,5 @@ If you are running Storybook in a sandboxed or restricted shell, allow binding t
     at async withTelemetry (file:///home/development/repos/cyclone-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/_node-chunks/chunk-FTP3QZ7O.js:142:12)
     at async dev (file:///home/development/repos/cyclone-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/bin/core.js:4906:3)
     at async _Command.<anonymous> (file:///home/development/repos/cyclone-ui/node_modules/.pnpm/storybook@10.6.0_@types+react@19.3.0_prettier@3.9.6_react@19.3.0/node_modules/storybook/dist/bin/core.js:5014:3)
-[22:02:20.462] [WARN] Broken build, fix the error above.
+[03:42:25.400] [WARN] Broken build, fix the error above.
 You may need to refresh the browser.

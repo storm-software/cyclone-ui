@@ -446,7 +446,7 @@ const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
 
 const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
   base: { name: "active", brightness: 1.75 },
-  theme: { name: "active", brightness: 1.75 }
+  theme: { name: "active", brightness: 1.125 }
 };
 
 const FOREGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
