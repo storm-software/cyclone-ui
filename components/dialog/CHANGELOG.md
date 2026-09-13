@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.4) (09/13/2026)
+
+### Features
+
+- **navigation-header:** Added the NavigationHeader component ([c7bef48](https://github.com/storm-software/cyclone-ui/commit/c7bef48))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.4**
+- Updated **button** to **v0.6.4**
+- Updated **container** to **v0.6.4**
+- Updated **heading-text** to **v0.5.4**
+
 ## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.3) (09/11/2026)
 
 ### Bug Fixes

@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.5](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.5) (09/13/2026)
+
+### Features
+
+- **navigation-header:** Initial check-in of the Navigation Header component ([545601a](https://github.com/storm-software/cyclone-ui/commit/545601a))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.4**
+- Updated **label-text** to **v0.5.4**
+- Updated **link** to **v0.5.4**
+
 ## [0.4.4](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.4) (09/11/2026)
 
 ### Features

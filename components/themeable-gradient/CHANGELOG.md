@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Themeable Gradient
 
+## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.5) (09/13/2026)
+
+### Features
+
+- **file-tree:** Initial check-in of the File Tree component ([f06be2f](https://github.com/storm-software/cyclone-ui/commit/f06be2f))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.4**
+
 ## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/themeable-gradient%400.0.4) (09/11/2026)
 
 ### Updated Dependencies

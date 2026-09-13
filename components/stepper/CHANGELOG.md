@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.4) (09/13/2026)
+
+### Features
+
+- **file-tree:** Initial check-in of the File Tree component ([f06be2f](https://github.com/storm-software/cyclone-ui/commit/f06be2f))
+
+### Updated Dependencies
+
+- Updated **next-button** to **v0.5.4**
+- Updated **previous-button** to **v0.5.4**
+
 ## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.3) (09/11/2026)
 
 ### Bug Fixes

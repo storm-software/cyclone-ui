@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Text Area
 
+## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.4) (09/13/2026)
+
+### Features
+
+- **navigation-header:** Added the NavigationHeader component ([c7bef48](https://github.com/storm-software/cyclone-ui/commit/c7bef48))
+
+### Updated Dependencies
+
+- Updated **input** to **v0.6.4**
+
 ## [0.1.3](https://github.com/storm-software/cyclone-ui/releases/tag/text-area%400.1.3) (09/11/2026)
 
 ### Bug Fixes

@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.4) (09/13/2026)
+
+### Bug Fixes
+
+- **data-table:** Various styling clean up changes ([86787b1](https://github.com/storm-software/cyclone-ui/commit/86787b1))
+
+### Features
+
+- **circular-progress:** Added the CircularProgress component ([6eaff51](https://github.com/storm-software/cyclone-ui/commit/6eaff51))
+- **button:** Added `cascade` and `diagonal-cascade` variants ([d74ae25](https://github.com/storm-software/cyclone-ui/commit/d74ae25))
+- **navigation-header:** Added the NavigationHeader component ([c7bef48](https://github.com/storm-software/cyclone-ui/commit/c7bef48))
+- **navigation-header:** Initial check-in of the Navigation Header component ([545601a](https://github.com/storm-software/cyclone-ui/commit/545601a))
+
 ## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.3) (09/11/2026)
 
 ### Bug Fixes

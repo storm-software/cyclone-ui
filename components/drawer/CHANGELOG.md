@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.4) (09/13/2026)
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.4**
+- Updated **button** to **v0.6.4**
+- Updated **heading-text** to **v0.5.4**
+- Updated **scroll-view** to **v0.5.4**
+- Updated **sheet** to **v0.0.3**
+
 ## [0.1.3](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.3) (09/11/2026)
 
 ### Features

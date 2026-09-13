@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Package Command Code Block
 
+## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.3) (09/13/2026)
+
+### Features
+
+- **file-tree:** Initial check-in of the File Tree component ([f06be2f](https://github.com/storm-software/cyclone-ui/commit/f06be2f))
+
+### Updated Dependencies
+
+- Updated **code-block** to **v0.6.4**
+
 ## [0.0.2](https://github.com/storm-software/cyclone-ui/releases/tag/package-command-code-block%400.0.2) (09/11/2026)
 
 ### Features

@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Progress
 
+## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.4) (09/13/2026)
+
+### Features
+
+- **circular-progress:** Added the CircularProgress component ([6eaff51](https://github.com/storm-software/cyclone-ui/commit/6eaff51))
+
 ## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.2) (09/06/2026)
 
 ### Features

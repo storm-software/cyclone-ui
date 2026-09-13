@@ -2,6 +2,17 @@
 
 # Changelog for Cyclone UI - Link Text
 
+## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.4) (09/13/2026)
+
+### Features
+
+- **navigation-header:** Added the NavigationHeader component ([c7bef48](https://github.com/storm-software/cyclone-ui/commit/c7bef48))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.4**
+- Updated **state** to **v0.0.5**
+
 ## [0.5.3](https://github.com/storm-software/cyclone-ui/releases/tag/link-text%400.5.3) (09/11/2026)
 
 ### Bug Fixes

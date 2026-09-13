@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Button
 
+## [0.6.4](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.4) (09/13/2026)
+
+### Features
+
+- **button:** Added `double-cascade` variants ([2439c43](https://github.com/storm-software/cyclone-ui/commit/2439c43))
+- **button:** Added `cascade` and `diagonal-cascade` variants ([d74ae25](https://github.com/storm-software/cyclone-ui/commit/d74ae25))
+- **navigation-header:** Initial check-in of the Navigation Header component ([545601a](https://github.com/storm-software/cyclone-ui/commit/545601a))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.4**
+- Updated **themeable-icon** to **v0.6.4**
+
 ## [0.6.3](https://github.com/storm-software/cyclone-ui/releases/tag/button%400.6.3) (09/11/2026)
 
 ### Bug Fixes

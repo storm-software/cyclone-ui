@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Badge
 
+## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.4) (09/13/2026)
+
+### Features
+
+- **file-tree:** Initial check-in of the File Tree component ([f06be2f](https://github.com/storm-software/cyclone-ui/commit/f06be2f))
+
 ## [0.3.3](https://github.com/storm-software/cyclone-ui/releases/tag/badge%400.3.3) (09/11/2026)
 
 ### Bug Fixes
