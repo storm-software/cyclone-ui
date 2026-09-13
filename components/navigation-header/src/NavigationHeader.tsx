@@ -31,13 +31,13 @@ import {
 
 const reducedMotionMediaQuery = "(prefers-reduced-motion: reduce)";
 
-type NavigationHeaderMediaQuery = {
+interface NavigationHeaderMediaQuery {
   matches: boolean;
   addEventListener: (type: "change", listener: () => void) => void;
   removeEventListener: (type: "change", listener: () => void) => void;
-};
+}
 
-type NavigationHeaderWindow = {
+interface NavigationHeaderWindow {
   scrollY: number;
   addEventListener: (
     type: "scroll",
@@ -46,7 +46,7 @@ type NavigationHeaderWindow = {
   ) => void;
   removeEventListener: (type: "scroll", listener: () => void) => void;
   matchMedia?: (query: string) => NavigationHeaderMediaQuery;
-};
+}
 
 const getBrowserWindow = () =>
   (globalThis as typeof globalThis & { window?: NavigationHeaderWindow })
@@ -170,7 +170,7 @@ const NavigationHeaderItemFrame = styled(View, {
   display: "block",
   width: "fit-content",
   flexShrink: 0,
-  borderBottomWidth: 2,
+  borderBottomWidth: 3,
   borderBottomColor: "$transparent",
 
   variants: {
@@ -495,11 +495,11 @@ interface NavigationHeaderChildGroup {
   items: NavigationHeaderChildItem[];
 }
 
-type NavigationHeaderDropdownHover = {
+interface NavigationHeaderDropdownHover {
   scope: "featured" | "standard";
   groupIndex: number;
   childIndex: number;
-};
+}
 
 const dropdownTransition = "200ms";
 
@@ -610,6 +610,7 @@ export const NavigationHeader =
         // Keep each item's border-bottom in the same transformed navigation row.
         transform: `${isAtTop ? "scale(1.25) " : ""}translateY(-15%)`
       };
+
       return (
         <NavigationHeaderFrame
           ref={forwardedRef}
@@ -813,7 +814,7 @@ export const NavigationHeader =
                   width="100%">
                   <NavigationHeaderItemFrame
                     active={
-                      item.active || item.children?.some(child => child.active)
+                      item.active ?? item.children?.some(child => child.active)
                     }
                     mobile={true}>
                     <NavigationHeaderItemLink

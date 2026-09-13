@@ -93,6 +93,15 @@ export const Cascade: Story = {
   }
 };
 
+export const DoubleCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "double-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const CascadeTop: Story = {
   args: {
     children: "Button Text",
@@ -133,6 +142,15 @@ export const DiagonalCascade: Story = {
   args: {
     children: "Button Text",
     variant: "diagonal-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const DoubleDiagonalCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "double-diagonal-cascade",
     disabled: false,
     animate: false
   }

@@ -133,7 +133,7 @@ const storyActions = (
       <Button.Text>Log in</Button.Text>
     </Button>
     <Button
-      variant="inverse"
+      variant="diagonal-cascade"
       rounded={true}
       flexGrow={0}
       width={128}

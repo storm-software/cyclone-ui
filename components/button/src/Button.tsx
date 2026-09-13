@@ -44,11 +44,13 @@ import type { GestureResponderEvent } from "react-native";
 
 type ButtonCascadeVariant =
   | "cascade"
+  | "double-cascade"
   | "cascade-top"
   | "cascade-left"
   | "cascade-bottom"
   | "cascade-right"
   | "diagonal-cascade"
+  | "double-diagonal-cascade"
   | "diagonal-cascade-top"
   | "diagonal-cascade-left"
   | "diagonal-cascade-bottom"
@@ -69,16 +71,28 @@ const isCascadeVariant = (
 
 const cascadeHoverStyle = {
   cascade: { left: 0 },
+  "double-cascade": { left: 0 },
   "cascade-left": { left: 0 },
   "cascade-top": { top: 0 },
   "cascade-bottom": { bottom: 0 },
   "cascade-right": { right: 0 },
   "diagonal-cascade": { left: 0 },
+  "double-diagonal-cascade": { left: 0 },
   "diagonal-cascade-left": { left: 0 },
   "diagonal-cascade-top": { top: 0 },
   "diagonal-cascade-bottom": { bottom: 0 },
   "diagonal-cascade-right": { right: 0 }
 } as const;
+
+const doubleCascadeEffect = {
+  "double-cascade": "cascade",
+  "double-diagonal-cascade": "diagonal-cascade"
+} as const;
+
+const isDoubleCascadeVariant = (
+  variant: ButtonCascadeVariant
+): variant is keyof typeof doubleCascadeEffect =>
+  variant in doubleCascadeEffect;
 
 type BorderRadiusSizeTokens =
   | number
@@ -316,6 +330,24 @@ const ButtonFrame = styled(View, {
         }
       },
 
+      "double-cascade": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
       "cascade-top": {
         backgroundColor: "transparent",
         borderWidth: 3,
@@ -389,6 +421,24 @@ const ButtonFrame = styled(View, {
       },
 
       "diagonal-cascade": {
+        backgroundColor: "transparent",
+        borderWidth: 3,
+        borderColor: "$foreground",
+
+        hoverStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$border"
+        },
+
+        pressStyle: {
+          backgroundColor: "transparent",
+          borderWidth: 1,
+          borderColor: "$borderActive"
+        }
+      },
+
+      "double-diagonal-cascade": {
         backgroundColor: "transparent",
         borderWidth: 3,
         borderColor: "$foreground",
@@ -664,6 +714,10 @@ const ButtonTextFrame = styled(Text, {
         color: "$foreground"
       },
 
+      "double-cascade": {
+        color: "$foreground"
+      },
+
       "cascade-top": {
         color: "$foreground"
       },
@@ -681,6 +735,10 @@ const ButtonTextFrame = styled(Text, {
       },
 
       "diagonal-cascade": {
+        color: "$foreground"
+      },
+
+      "double-diagonal-cascade": {
         color: "$foreground"
       },
 
@@ -1030,6 +1088,12 @@ const ButtonHoverBackground = styled(ThemeableStack, {
       }
     },
 
+    slow: {
+      true: {
+        transition: "1s"
+      }
+    },
+
     circular: {
       true: {
         borderRadius: 1000_000_000
@@ -1046,6 +1110,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
   defaultVariants: {
     effect: "ghost",
     bordered: true,
+    slow: false,
     circular: false,
     rounded: false
   }
@@ -1129,16 +1194,35 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
           />
         )}
         {isCascadeVariant(variant) && (
-          <ButtonHoverBackground
-            effect={variant}
-            circular={circular}
-            rounded={rounded}
-            bordered={false}
-            $group-button-hover={disabled ? {} : cascadeHoverStyle[variant]}
-            $group-button-press={{
-              backgroundColor: "$foregroundActive"
-            }}
-          />
+          <>
+            {isDoubleCascadeVariant(variant) && (
+              <ButtonHoverBackground
+                effect={doubleCascadeEffect[variant]}
+                circular={circular}
+                rounded={rounded}
+                bordered={false}
+                slow
+                backgroundColor="$background"
+                $group-button-hover={disabled ? {} : { left: 0 }}
+              />
+            )}
+            <ButtonHoverBackground
+              effect={
+                isDoubleCascadeVariant(variant)
+                  ? doubleCascadeEffect[variant]
+                  : variant
+              }
+              circular={circular}
+              rounded={rounded}
+              bordered={false}
+              slow={isDoubleCascadeVariant(variant)}
+              left={isDoubleCascadeVariant(variant) ? "-171.875%" : undefined}
+              $group-button-hover={disabled ? {} : cascadeHoverStyle[variant]}
+              $group-button-press={{
+                backgroundColor: "$foregroundActive"
+              }}
+            />
+          </>
         )}
         {children}
       </ButtonFrame>
