@@ -397,12 +397,41 @@ interface ColorStateVariant {
   /** Multiplier applied to OKLCH chroma for non-greyscale colors. */
   saturation?: number;
   /**
-   * Magnitude of the OKLCH lightness shift (e.g. 1.1 = 10%). Light sources
-   * darken on hover; dark sources lighten.
+   * Magnitude of the OKLCH lightness shift (e.g. 1.1 = 10%). Parent light
+   * and dark themes direct the shift for non-extreme colors; other colors
+   * adapt to the source lightness.
    */
   brightness?: number;
-  /** Always reduce lightness instead of adapting direction to the source. */
+  /** Reduce lightness when no parent-theme direction applies. */
   brightnessDirection?: "darker";
+}
+
+type ParentTheme = "dark" | "light";
+
+function parentThemeFromDescription(
+  description: unknown
+): ParentTheme | undefined {
+  if (typeof description !== "string") {
+    return undefined;
+  }
+
+  const theme = /\b(dark|light)\s+theme\b/i.exec(description)?.[1];
+
+  return theme?.toLowerCase() === "dark"
+    ? "dark"
+    : theme?.toLowerCase() === "light"
+      ? "light"
+      : undefined;
+}
+
+function parentThemeFromDictionary(
+  dictionary: unknown
+): ParentTheme | undefined {
+  if (!isPlainObject(dictionary) || !isPlainObject(dictionary.color)) {
+    return undefined;
+  }
+
+  return parentThemeFromDescription(dictionary.color.$description);
 }
 
 interface ThemedColorStateVariant {
@@ -416,8 +445,8 @@ const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
 };
 
 const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 1.4 },
-  theme: { name: "active", brightness: 1.4 }
+  base: { name: "active", brightness: 1.75 },
+  theme: { name: "active", brightness: 1.75 }
 };
 
 const FOREGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
@@ -427,13 +456,19 @@ const FOREGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
 };
 
 const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
-  base: { name: "hover", brightness: 0.9 },
-  theme: { name: "hover", brightness: 0.8 }
+  base: { name: "hover", brightness: 0.95 },
+  theme: { name: "hover", brightness: 0.9 }
 };
 
 const BACKGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 0.8 },
-  theme: { name: "active", brightness: 1.2 }
+  base: { name: "active", brightness: 0.92 },
+  theme: { name: "active", brightness: 1.08 }
+};
+
+const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
+  name: "inactive",
+  brightness: 0.8,
+  brightnessDirection: "darker"
 };
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
@@ -444,7 +479,7 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
 
 const BASE_FOREGROUND_DISABLED: ColorStateVariant = {
   ...COLOR_STATE_DISABLED,
-  brightness: 0.5
+  brightness: 0.25
 };
 
 const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.6;
@@ -459,11 +494,13 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
     base: [
       BACKGROUND_COLOR_STATE_HOVER.base,
       BACKGROUND_COLOR_STATE_ACTIVE.base,
+      BACKGROUND_COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ],
     theme: [
       BACKGROUND_COLOR_STATE_HOVER.theme,
       BACKGROUND_COLOR_STATE_ACTIVE.theme,
+      BACKGROUND_COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
@@ -717,6 +754,8 @@ function applySaturation(hex: string, factor: number): string {
 
 /** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
 const OKLCH_LIGHTNESS_MIDPOINT = 0.5;
+const DARK_THEME_WHITE_LIGHTNESS_LIMIT = 0.85;
+const LIGHT_THEME_BLACK_LIGHTNESS_LIMIT = 0.15;
 const MINIMUM_DISABLED_LIGHTNESS_DELTA = 0.3;
 
 function isLightColor(hex: string): boolean {
@@ -731,22 +770,55 @@ function isBlackColor(hex: string): boolean {
   return hexToOklch(hex).lightness <= 0.25;
 }
 
-/**
- * Resolve a hover lightness multiplier from the source color. Light colors
- * darken and dark colors lighten by the same amount (`|factor - 1|`).
- */
+/** Resolve a lightness multiplier from the source color. */
 function directedBrightnessFactor(hex: string, factor: number): number {
   const amount = Math.abs(factor - 1);
 
   return isLightColor(hex) ? 1 - amount : 1 + amount;
 }
 
+function themeDirectedBrightnessFactor(
+  hex: string,
+  factor: number,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): number | undefined {
+  const lightness = hexToOklch(hex).lightness;
+
+  if (
+    parentTheme === "dark" &&
+    (variant.name === "active" || lightness < DARK_THEME_WHITE_LIGHTNESS_LIMIT)
+  ) {
+    return factor;
+  }
+
+  if (
+    parentTheme === "light" &&
+    (variant.name === "active" || lightness > LIGHT_THEME_BLACK_LIGHTNESS_LIMIT)
+  ) {
+    return 2 - factor;
+  }
+
+  return undefined;
+}
+
 function stateBrightnessFactor(
   hex: string,
-  variant: ColorStateVariant
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
 ): number {
   if (variant.brightness === undefined) {
     return 1;
+  }
+
+  const themeDirectedFactor = themeDirectedBrightnessFactor(
+    hex,
+    variant.brightness,
+    variant,
+    parentTheme
+  );
+  if (themeDirectedFactor !== undefined) {
+    return themeDirectedFactor;
   }
 
   return variant.brightnessDirection === "darker"
@@ -754,13 +826,17 @@ function stateBrightnessFactor(
     : directedBrightnessFactor(hex, variant.brightness);
 }
 
-function applyStateTransform(hex: string, variant: ColorStateVariant): string {
+function applyStateTransform(
+  hex: string,
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
+): string {
   let transformed = hex;
 
   if (variant.brightness !== undefined) {
     transformed = applyBrightness(
       transformed,
-      stateBrightnessFactor(transformed, variant)
+      stateBrightnessFactor(transformed, variant, parentTheme)
     );
   }
 
@@ -775,11 +851,15 @@ function applyStateTransform(hex: string, variant: ColorStateVariant): string {
   return transformed;
 }
 
-function variantDetail(variant: ColorStateVariant, hex: string): string {
+function variantDetail(
+  variant: ColorStateVariant,
+  hex: string,
+  parentTheme?: ParentTheme
+): string {
   const details: string[] = [];
 
   if (variant.brightness !== undefined) {
-    const factor = stateBrightnessFactor(hex, variant);
+    const factor = stateBrightnessFactor(hex, variant, parentTheme);
     const percent = Math.round((factor - 1) * 100);
 
     details.push(
@@ -799,10 +879,11 @@ function variantDetail(variant: ColorStateVariant, hex: string): string {
 function createStateToken(
   source: Record<string, unknown>,
   hex: string,
-  variant: ColorStateVariant
+  variant: ColorStateVariant,
+  parentTheme?: ParentTheme
 ): Record<string, unknown> {
-  const detail = variantDetail(variant, hex);
-  const transformed = applyStateTransform(hex, variant);
+  const detail = variantDetail(variant, hex, parentTheme);
+  const transformed = applyStateTransform(hex, variant, parentTheme);
 
   return {
     ...source,
@@ -887,7 +968,8 @@ function addColorStateTokens(
   tree: unknown,
   variants: readonly ColorStateVariant[] | ThemeColorStateVariants,
   onlyKey?: string,
-  isForegroundGroup = false
+  isForegroundGroup = false,
+  parentTheme?: ParentTheme
 ): Record<string, unknown> {
   const result = { ...group } as Record<string, any>;
   const names = onlyKey ? [onlyKey] : Object.keys(group);
@@ -914,8 +996,14 @@ function addColorStateTokens(
 
     const tokenVariants =
       "base" in variants
-        ? variants[token.theme === "base" ? "base" : "theme"]
+        ? variants[
+            token.theme === "base" || (!isForegroundGroup && name === "base")
+              ? "base"
+              : "theme"
+          ]
         : variants;
+    const tokenParentTheme =
+      parentThemeFromDescription(token.$description) ?? parentTheme;
 
     for (const variant of tokenVariants.filter(
       variant => variant.name !== "hover" || name !== "foreground-inverse"
@@ -933,7 +1021,12 @@ function addColorStateTokens(
           ? BASE_FOREGROUND_DISABLED
           : variant;
 
-      result[variantKey] = createStateToken(token, hex, stateVariant);
+      result[variantKey] = createStateToken(
+        token,
+        hex,
+        stateVariant,
+        tokenParentTheme
+      );
     }
   }
 
@@ -997,10 +1090,13 @@ function addForegroundGhostHoverTokens(
 function injectColorStateVariants(
   node: unknown,
   tree: unknown,
-  key?: string
+  key?: string,
+  parentTheme?: ParentTheme
 ): unknown {
   if (Array.isArray(node)) {
-    return node.map(item => injectColorStateVariants(item, tree));
+    return node.map(item =>
+      injectColorStateVariants(item, tree, undefined, parentTheme)
+    );
   }
 
   if (!isPlainObject(node) || isTokenNode(node)) {
@@ -1014,7 +1110,14 @@ function injectColorStateVariants(
       continue;
     }
 
-    result[childKey] = injectColorStateVariants(value, tree, childKey);
+    const childTheme =
+      childKey === "dark" || childKey === "light" ? childKey : parentTheme;
+    result[childKey] = injectColorStateVariants(
+      value,
+      tree,
+      childKey,
+      childTheme
+    );
   }
 
   if (key && COLOR_STATE_GROUP_KEYS.has(key)) {
@@ -1023,7 +1126,8 @@ function injectColorStateVariants(
       tree,
       COLOR_STATE_VARIANTS[key]!,
       undefined,
-      key === "foreground"
+      key === "foreground",
+      parentTheme
     );
 
     return key === "foreground"
@@ -1039,7 +1143,8 @@ function injectColorStateVariants(
         tree,
         COLOR_STATE_VARIANTS[groupKey]!,
         groupKey,
-        groupKey === "foreground"
+        groupKey === "foreground",
+        parentTheme
       );
 
       if (groupKey === "foreground") {
@@ -1060,7 +1165,9 @@ function injectColorStateVariants(
         withLoneTokens,
         tree,
         variants,
-        tokenKey
+        tokenKey,
+        false,
+        parentTheme
       );
     }
   }
@@ -1073,9 +1180,9 @@ function injectColorStateVariants(
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. For background, foreground, and border colors, also emit
- * `-hover` (10% lighter if the source is dark, 10% darker if light) and
- * foreground `-inactive` variants (40% darker), plus
+ * `oklch()`. For background, foreground, and border colors, also emit state
+ * variants whose brightness direction follows their light or dark parent
+ * theme for non-extreme colors, plus
  * `-disabled` variants (60% saturation for colored sources, or 60% opacity
  * for greyscale sources). Themed foregrounds also receive link and body
  * variants that use their own colors when colored and the shared foreground
@@ -1091,7 +1198,9 @@ export function tamaguiPreprocessor(
   ) as PreprocessedTokens;
   const withStateVariants = injectColorStateVariants(
     withRingOpacity,
-    withRingOpacity
+    withRingOpacity,
+    undefined,
+    parentThemeFromDictionary(withRingOpacity)
   ) as PreprocessedTokens;
 
   return withStateVariants;

@@ -82,7 +82,7 @@ describe("tamaguiPreprocessor", () => {
     );
   });
 
-  it("uses half-strength hover and active colors only for backgrounds", () => {
+  it("uses reduced-strength hover, active, and inactive colors for backgrounds", () => {
     const result = tamaguiPreprocessor({
       semantic: {
         background: {
@@ -111,28 +111,137 @@ describe("tamaguiPreprocessor", () => {
       baseBackgroundActive: result.semantic.background["base-active"]!.$value,
       themeBackgroundHover: result.semantic.background["brand-hover"]!.$value,
       themeBackgroundActive: result.semantic.background["brand-active"]!.$value,
-      baseForegroundHover: result.semantic.foreground["base-hover"]!.$value,
-      baseForegroundActive: result.semantic.foreground["base-active"]!.$value,
-      themeForegroundHover: result.semantic.foreground["brand-hover"]!.$value,
-      themeForegroundActive: result.semantic.foreground["brand-active"]!.$value,
-      baseBorderHover: result.semantic.border["base-hover"]!.$value,
-      baseBorderActive: result.semantic.border["base-active"]!.$value,
-      themeBorderHover: result.semantic.border["brand-hover"]!.$value,
-      themeBorderActive: result.semantic.border["brand-active"]!.$value
+      baseBackgroundInactive:
+        result.semantic.background["base-inactive"]!.$value,
+      themeBackgroundInactive:
+        result.semantic.background["brand-inactive"]!.$value
     }).toEqual({
-      baseBackgroundHover: "#3b3b3b",
-      baseBackgroundActive: "#4c4c4c",
-      themeBackgroundHover: "#444444",
-      themeBackgroundActive: "#3b3b3b",
-      baseForegroundHover: "#444444",
-      baseForegroundActive: "#676767",
-      themeForegroundHover: "#555555",
-      themeForegroundActive: "#444444",
-      baseBorderHover: "#444444",
-      baseBorderActive: "#676767",
-      themeBorderHover: "#555555",
-      themeBorderActive: "#444444"
+      baseBackgroundHover: "#373737",
+      baseBackgroundActive: "#3a3a3a",
+      themeBackgroundHover: "#3b3b3b",
+      themeBackgroundActive: "#3a3a3a",
+      baseBackgroundInactive: "#232323",
+      themeBackgroundInactive: "#232323"
     });
+  });
+
+  it("adds a reduced-strength inactive background variant", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        background: {
+          base: { $type: "color", $value: "#333333", theme: "base" }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        background: Record<string, { $description: string; $value: string }>;
+      };
+    };
+
+    expect(result.semantic.background["base-inactive"]).toMatchObject({
+      $description: "inactive state at 20% darker",
+      $value: expect.any(String)
+    });
+  });
+
+  it("darkens the dark theme base background when active", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        semantic: {
+          background: {
+            base: { $type: "color", $value: "#333333", theme: "dark" }
+          }
+        }
+      }
+    }) as any;
+
+    expect(result.dark.semantic.background["base-active"].$value).toBe(
+      "#2d2d2d"
+    );
+  });
+
+  it("brightens active foreground colors in dark themes and darkens them in light themes", () => {
+    const foreground = (theme: "dark" | "light") => ({
+      base: {
+        $type: "color",
+        $value: "#333333",
+        $description: `The primary foreground color for the ${theme} theme`,
+        theme: "base"
+      },
+      brand: {
+        $type: "color",
+        $value: "#333333",
+        $description: `The brand foreground color for the ${theme} theme`,
+        theme: "brand"
+      }
+    });
+    const dark = tamaguiPreprocessor({
+      color: { foreground: foreground("dark") }
+    }) as unknown as {
+      color: {
+        foreground: Record<string, { $description: string; $value: string }>;
+      };
+    };
+    const light = tamaguiPreprocessor({
+      color: { foreground: foreground("light") }
+    }) as unknown as {
+      color: {
+        foreground: Record<string, { $description: string; $value: string }>;
+      };
+    };
+
+    for (const name of ["base", "brand"]) {
+      expect(dark.color.foreground[`${name}-active`]).toMatchObject({
+        $description: expect.stringContaining("active, 75% brighter"),
+        $value: "#757575"
+      });
+      expect(light.color.foreground[`${name}-active`]).toMatchObject({
+        $description: expect.stringContaining("active, 75% darker")
+      });
+      expect(
+        Number.parseInt(
+          light.color.foreground[`${name}-active`]!.$value.slice(1, 3),
+          16
+        )
+      ).toBeLessThan(0x33);
+    }
+  });
+
+  it("keeps active foreground colors theme-directed at lightness extremes", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        color: {
+          foreground: {
+            base: {
+              $type: "color",
+              $value: "#fafafa",
+              $description: "The primary foreground color for the dark theme",
+              theme: "base"
+            }
+          }
+        }
+      },
+      light: {
+        color: {
+          foreground: {
+            base: {
+              $type: "color",
+              $value: "#f5f5f5",
+              $description: "The primary foreground color for the light theme",
+              theme: "base"
+            }
+          }
+        }
+      }
+    }) as unknown as {
+      dark: { color: { foreground: Record<string, { $value: string }> } };
+      light: { color: { foreground: Record<string, { $value: string }> } };
+    };
+
+    expect(result.dark.color.foreground["base-active"]!.$value).toBe("#ffffff");
+    expect(result.light.color.foreground["base-active"]!.$value).toBe(
+      "#202020"
+    );
   });
 
   it("adds inactive foreground variants that are 40% darker", () => {
@@ -157,6 +266,104 @@ describe("tamaguiPreprocessor", () => {
       $description: "inactive state at 40% darker",
       $value: "#141414"
     });
+  });
+
+  it("directs state brightness from the dark or light parent theme", () => {
+    const themedColor = {
+      $type: "color",
+      $value: "#777777",
+      theme: "base"
+    };
+    const result = tamaguiPreprocessor({
+      dark: {
+        semantic: {
+          foreground: { base: themedColor }
+        }
+      },
+      light: {
+        semantic: {
+          foreground: { base: themedColor }
+        }
+      }
+    }) as unknown as {
+      dark: {
+        semantic: {
+          foreground: Record<string, { $description: string; $value: string }>;
+        };
+      };
+      light: {
+        semantic: {
+          foreground: Record<string, { $description: string; $value: string }>;
+        };
+      };
+    };
+
+    const dark = result.dark.semantic.foreground;
+    const channel = (value: string) => Number.parseInt(value.slice(1, 3), 16);
+    expect({
+      hover: dark["base-hover"]!.$description,
+      active: dark["base-active"]!.$description,
+      inactive: dark["base-inactive"]!.$description,
+      disabled: dark["base-disabled"]!.$description
+    }).toEqual({
+      hover: "hover state at 20% brighter",
+      active: "active state at 75% brighter",
+      inactive: "inactive state at 40% darker",
+      disabled: "disabled state at 50% darker, 60% opacity"
+    });
+    expect(channel(dark["base-hover"]!.$value)).toBeGreaterThan(0x77);
+    expect(channel(dark["base-active"]!.$value)).toBeGreaterThan(0x77);
+    expect(channel(dark["base-inactive"]!.$value)).toBeLessThan(0x77);
+    expect(channel(dark["base-disabled"]!.$value)).toBeLessThan(0x77);
+
+    const light = result.light.semantic.foreground;
+    expect({
+      hover: light["base-hover"]!.$description,
+      active: light["base-active"]!.$description,
+      inactive: light["base-inactive"]!.$description,
+      disabled: light["base-disabled"]!.$description
+    }).toEqual({
+      hover: "hover state at 20% darker",
+      active: "active state at 75% darker",
+      inactive: "inactive state at 40% brighter",
+      disabled: "disabled state at 50% brighter, 60% opacity"
+    });
+    expect(channel(light["base-hover"]!.$value)).toBeLessThan(0x77);
+    expect(channel(light["base-active"]!.$value)).toBeLessThan(0x77);
+    expect(channel(light["base-inactive"]!.$value)).toBeGreaterThan(0x77);
+    expect(channel(light["base-disabled"]!.$value)).toBeGreaterThan(0x77);
+  });
+
+  it("uses source-directed brightness near the parent theme extremes", () => {
+    const result = tamaguiPreprocessor({
+      dark: {
+        semantic: {
+          foreground: {
+            base: { $type: "color", $value: "#eeeeee", theme: "base" }
+          }
+        }
+      },
+      light: {
+        semantic: {
+          foreground: {
+            base: { $type: "color", $value: "#050505", theme: "base" }
+          }
+        }
+      }
+    }) as unknown as {
+      dark: {
+        semantic: { foreground: Record<string, { $value: string }> };
+      };
+      light: {
+        semantic: { foreground: Record<string, { $value: string }> };
+      };
+    };
+
+    const darkHover = result.dark.semantic.foreground["base-hover"]!.$value;
+    const lightHover = result.light.semantic.foreground["base-hover"]!.$value;
+
+    expect(Number.parseInt(darkHover.slice(1, 3), 16)).toBeLessThan(0xee);
+    expect(Number.parseInt(lightHover.slice(1, 3), 16)).toBeGreaterThan(0x05);
   });
 
   it("applies opacity by ring token theme and preserves offset masks", () => {

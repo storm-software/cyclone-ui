@@ -21,12 +21,89 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, View } from "@tamagui/core";
 import { UserRound, Zap } from "@tamagui/lucide-icons-2";
 import { SizableText } from "@tamagui/text";
+import type { ReactNode } from "react";
 import { NavigationHeader } from "./NavigationHeader";
 
 const StoryCanvas = styled(View, {
-  minHeight: 420,
+  minHeight: "100vh",
   backgroundColor: "$backgroundSubtle"
 });
+
+const StoryContent = styled(View, {
+  width: "100%",
+  maxWidth: 1200,
+  marginHorizontal: "auto",
+  paddingHorizontal: "$4xl",
+  paddingVertical: "$10xl",
+  gap: "$10xl",
+
+  "$max-md": {
+    paddingHorizontal: "$2xl"
+  }
+});
+
+const StorySection = styled(View, {
+  minHeight: 320,
+  padding: "$7xl",
+  justifyContent: "center",
+  gap: "$xl",
+  backgroundColor: "$backgroundPage",
+  borderRadius: "$lg",
+  borderWidth: 1,
+  borderColor: "$borderSubtle",
+
+  variants: {
+    light: {
+      true: {
+        backgroundColor: "$foreground"
+      }
+    }
+  }
+});
+
+const StoryPage = ({ children }: { children: ReactNode }) => (
+  <StoryCanvas>
+    {children}
+    <StoryContent>
+      <StorySection id="hero">
+        <SizableText color="$foreground" fontSize="$10xl" fontWeight="$bold">
+          Build what matters
+        </SizableText>
+        <SizableText color="$foregroundBody" fontSize="$lg" maxWidth={640}>
+          Explore ideas, tools, and practical guidance for creating useful
+          products with a thoughtful approach.
+        </SizableText>
+      </StorySection>
+      <StorySection id="research" light={true}>
+        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+          Research and discovery
+        </SizableText>
+        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+          Learn from new perspectives and turn early questions into clear
+          directions through careful research and experimentation.
+        </SizableText>
+      </StorySection>
+      <StorySection id="products">
+        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+          Products for every team
+        </SizableText>
+        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+          Flexible tools help teams move from a first sketch to a finished
+          experience while keeping the important details in view.
+        </SizableText>
+      </StorySection>
+      <StorySection id="company">
+        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+          A long-term perspective
+        </SizableText>
+        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+          We share what we learn, listen to the people who use our work, and
+          keep improving the systems that support them.
+        </SizableText>
+      </StorySection>
+    </StoryContent>
+  </StoryCanvas>
+);
 
 const StoryLogo = () => (
   <View alignItems="center" flexDirection="row" gap="$2xl">
@@ -126,7 +203,7 @@ const storyItems = [
 ];
 
 const meta = {
-  title: "Containers/NavigationHeader",
+  title: "Blocks/NavigationHeader",
   component: NavigationHeader,
   tags: ["autodocs"],
   parameters: {
@@ -137,9 +214,9 @@ const meta = {
     items: storyItems
   },
   render: args => (
-    <StoryCanvas>
+    <StoryPage>
       <NavigationHeader {...args} logo={<StoryLogo />} actions={storyActions} />
-    </StoryCanvas>
+    </StoryPage>
   )
 } satisfies Meta<typeof NavigationHeader>;
 
@@ -157,7 +234,7 @@ export const Brand: Story = {
 
 export const SignedIn: Story = {
   render: args => (
-    <StoryCanvas>
+    <StoryPage>
       <NavigationHeader
         {...args}
         logo={<StoryLogo />}
@@ -175,7 +252,7 @@ export const SignedIn: Story = {
           </Button>
         }
       />
-    </StoryCanvas>
+    </StoryPage>
   )
 };
 

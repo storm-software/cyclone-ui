@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { GetProps } from "@tamagui/core";
-import { styled, useThemeName } from "@tamagui/core";
+import { styled, useStyle, useThemeName } from "@tamagui/core";
 import { SizableText } from "@tamagui/text";
 
 export interface LinkTextExtraProps {
@@ -231,6 +231,7 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
       cta = false,
       disabled = false,
       inverse = false,
+      color,
       style,
       ...props
     },
@@ -255,6 +256,8 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
       variant = `${variant}Inverse` as BaseLinkTextVariant;
     }
 
+    const colorStyle = useStyle({ color });
+
     return (
       <LinkTextFrame
         {...props}
@@ -265,7 +268,11 @@ export const LinkText = LinkTextFrame.styleable<LinkTextExtraProps>(
         disabled={disabled}
         inverse={inverse}
         variant={variant}
-        style={[{ textUnderlineOffset: 3 }, style]}>
+        style={[
+          { textUnderlineOffset: 3 },
+          color !== undefined ? colorStyle : undefined,
+          style
+        ]}>
         {children}
       </LinkTextFrame>
     );

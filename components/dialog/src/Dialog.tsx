@@ -239,13 +239,13 @@ const DialogContainer = Container.styleable<TamaguiDialogContentProps>(
   ) => {
     return (
       <TamaguiDialogContent
-        backgroundColor="$foreground"
+        backgroundColor="transparent"
         borderWidth={0}
         width="95%"
         flexDirection="row"
         padding={0}
         margin="$7xl"
-        borderRadius="$dialog"
+        borderRadius={0}
         transition={[
           "200ms",
           {

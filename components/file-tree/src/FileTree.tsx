@@ -146,7 +146,12 @@ export const Folder = ({
         cursor="pointer"
         onPress={toggle}
         onKeyDown={onKeyDown}>
-        <ChevronRight aria-hidden size="$lg" rotate={open ? "90deg" : "0deg"} />
+        <ChevronRight
+          aria-hidden
+          color={open ? "$foreground" : "$foregroundCaption"}
+          size="$lg"
+          rotate={open ? "90deg" : "0deg"}
+        />
         <XStack aria-hidden data-file-tree-folder-icon={open ? "open" : "closed"}>
           {open ? openIcon ?? defaultFolderOpenIcon : icon}
         </XStack>

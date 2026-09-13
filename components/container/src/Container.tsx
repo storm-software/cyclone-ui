@@ -219,6 +219,7 @@ export const Container = ContainerFrame.styleable(
       bordered = true,
       noPadding = false,
       borderWidth,
+      borderRadius = "$container",
       backgroundColor,
       children,
       ...props
@@ -226,7 +227,10 @@ export const Container = ContainerFrame.styleable(
     forwardedRef
   ) => {
     return (
-      <ContainerGroup group={true} circular={circular}>
+      <ContainerGroup
+        group={true}
+        circular={circular}
+        borderRadius={borderRadius}>
         {variant === "glass" && (
           <ContainerGlassBackground theme="base" fullscreen={true} />
         )}
@@ -240,6 +244,7 @@ export const Container = ContainerFrame.styleable(
           bordered={bordered}
           borderWidth={bordered ? borderWidth : 0}
           noPadding={noPadding}
+          borderRadius={borderRadius}
           backgroundColor={backgroundColor}>
           {children}
         </ContainerFrame>

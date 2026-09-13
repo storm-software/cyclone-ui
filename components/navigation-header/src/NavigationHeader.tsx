@@ -17,17 +17,92 @@
  ------------------------------------------------------------------- */
 
 import { Link } from "@cyclone-ui/link";
-import type { GetProps } from "@tamagui/core";
+import type { GetProps, TamaguiElement } from "@tamagui/core";
 import { styled, Text, View } from "@tamagui/core";
 import { ChevronDown, Menu, X } from "@tamagui/lucide-icons-2";
 import type { ReactNode } from "react";
-import { useId, useState } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore
+} from "react";
+
+const reducedMotionMediaQuery = "(prefers-reduced-motion: reduce)";
+
+type NavigationHeaderMediaQuery = {
+  matches: boolean;
+  addEventListener: (type: "change", listener: () => void) => void;
+  removeEventListener: (type: "change", listener: () => void) => void;
+};
+
+type NavigationHeaderWindow = {
+  scrollY: number;
+  addEventListener: (
+    type: "scroll",
+    listener: () => void,
+    options?: { passive?: boolean }
+  ) => void;
+  removeEventListener: (type: "scroll", listener: () => void) => void;
+  matchMedia?: (query: string) => NavigationHeaderMediaQuery;
+};
+
+const getBrowserWindow = () =>
+  (globalThis as typeof globalThis & { window?: NavigationHeaderWindow })
+    .window;
+
+const subscribeToWindowScroll = (onStoreChange: () => void) => {
+  const browserWindow = getBrowserWindow();
+
+  if (!browserWindow) {
+    return () => {};
+  }
+
+  browserWindow.addEventListener("scroll", onStoreChange, { passive: true });
+
+  return () => browserWindow.removeEventListener("scroll", onStoreChange);
+};
+
+const getIsAtTop = () => {
+  const browserWindow = getBrowserWindow();
+
+  return !browserWindow || browserWindow.scrollY <= 0;
+};
+
+const subscribeToReducedMotion = (onStoreChange: () => void) => {
+  const mediaQuery = getBrowserWindow()?.matchMedia?.(reducedMotionMediaQuery);
+
+  if (!mediaQuery) {
+    return () => {};
+  }
+
+  mediaQuery.addEventListener("change", onStoreChange);
+
+  return () => mediaQuery.removeEventListener("change", onStoreChange);
+};
+
+const getPrefersReducedMotion = () =>
+  getBrowserWindow()?.matchMedia?.(reducedMotionMediaQuery).matches ?? false;
+
+const useIsAtTop = () =>
+  useSyncExternalStore(subscribeToWindowScroll, getIsAtTop, () => true);
+
+const usePrefersReducedMotion = () =>
+  useSyncExternalStore(
+    subscribeToReducedMotion,
+    getPrefersReducedMotion,
+    () => true
+  );
 
 const NavigationHeaderFrame = styled(View, {
   name: "NavigationHeader",
   render: "header",
 
-  position: "relative",
+  position: "fixed",
+  top: 0,
+  left: 0,
+  right: 0,
   zIndex: "$40",
   width: "100%",
   backgroundColor: "$backgroundPage"
@@ -66,15 +141,23 @@ const NavigationHeaderLogo = styled(NavigationHeaderEdge, {
   justifyContent: "flex-start"
 });
 
+const NavigationHeaderLogoContent = styled(View, {
+  name: "NavigationHeaderLogoContent",
+
+  flexShrink: 0,
+  transformOrigin: "left center"
+});
+
 const NavigationHeaderNavigation = styled(View, {
   name: "NavigationHeaderNavigation",
   render: "nav",
 
   height: "100%",
-  alignItems: "stretch",
+  alignItems: "center",
   justifyContent: "center",
   flexDirection: "row",
   gap: "$6xl",
+  transformOrigin: "center",
 
   "$max-md": {
     display: "none"
@@ -89,10 +172,6 @@ const NavigationHeaderItemFrame = styled(View, {
   flexShrink: 0,
   borderBottomWidth: 2,
   borderBottomColor: "$transparent",
-
-  hoverStyle: {
-    borderBottomColor: "$borderHover"
-  },
 
   variants: {
     active: {
@@ -116,7 +195,8 @@ const NavigationHeaderItemLink = styled(Link, {
 
   width: "100%",
   minWidth: "fit-content",
-  paddingVertical: "$xl",
+  paddingVertical: "$2xl",
+  paddingBottom: 5,
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
@@ -158,16 +238,30 @@ const NavigationHeaderItemLink = styled(Link, {
 const NavigationHeaderDropdown = styled(View, {
   name: "NavigationHeaderDropdown",
 
-  transition: "400ms",
   position: "absolute",
-  top: "100%",
+  top: "calc(100% - 1px)",
   left: 0,
   right: 0,
   zIndex: "$50",
+  overflow: "hidden",
   backgroundColor: "$backgroundPage",
   borderBottomWidth: 1,
   borderBottomColor: "$borderSubtle",
-  boxShadow: "$lg",
+
+  variants: {
+    open: {
+      true: {
+        pointerEvents: "auto",
+        clipPath: "inset(0 0 0 0)",
+        borderBottomColor: "$borderSubtle"
+      },
+      false: {
+        pointerEvents: "none",
+        clipPath: "inset(0 0 100% 0)",
+        borderBottomColor: "$transparent"
+      }
+    }
+  } as const,
 
   "$max-md": {
     display: "none"
@@ -213,8 +307,7 @@ const NavigationHeaderDropdownLink = styled(Link, {
 
   width: "100%",
   minHeight: "$10xl",
-  paddingHorizontal: "$3xl",
-  alignItems: "center",
+  alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
   color: "$foregroundBody",
@@ -265,6 +358,7 @@ const NavigationHeaderMobileGroupLabel = styled(
 const NavigationHeaderActions = styled(NavigationHeaderEdge, {
   name: "NavigationHeaderActions",
 
+  paddingVertical: "$2xl",
   justifyContent: "flex-end",
   gap: "$2xl",
 
@@ -401,6 +495,34 @@ interface NavigationHeaderChildGroup {
   items: NavigationHeaderChildItem[];
 }
 
+type NavigationHeaderDropdownHover = {
+  scope: "featured" | "standard";
+  groupIndex: number;
+  childIndex: number;
+};
+
+const dropdownTransition = "200ms";
+
+const useNavigationHeaderDropdownHeight = (
+  open: boolean,
+  contentKey: number | null
+) => {
+  const contentRef = useRef<TamaguiElement | null>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    const content = contentRef.current;
+
+    setHeight(
+      open && content
+        ? (content as unknown as { scrollHeight: number }).scrollHeight
+        : 0
+    );
+  }, [contentKey, open]);
+
+  return { contentRef, height };
+};
+
 const groupNavigationHeaderChildren = (
   children: readonly NavigationHeaderChildItem[]
 ) => {
@@ -464,10 +586,30 @@ export const NavigationHeader =
     ) => {
       const [menuOpen, setMenuOpen] = useState(false);
       const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
+      const [hoveredItemIndex, setHoveredItemIndex] = useState<number | null>(
+        null
+      );
+      const [hoveredDropdownItem, setHoveredDropdownItem] =
+        useState<NavigationHeaderDropdownHover | null>(null);
+      const isAtTop = useIsAtTop();
+      const prefersReducedMotion = usePrefersReducedMotion();
       const mobileNavigationId = useId();
       const openItem =
         openItemIndex === null ? undefined : items[openItemIndex];
-
+      const submenuOpen = Boolean(openItem?.children?.length);
+      const { contentRef: dropdownContentRef, height: dropdownHeight } =
+        useNavigationHeaderDropdownHeight(submenuOpen, openItemIndex);
+      const scaleStyle = {
+        transform: isAtTop ? "scale(1.25)" : "none",
+        transition: prefersReducedMotion
+          ? "none"
+          : "transform 200ms ease-in-out"
+      };
+      const navigationStyle = {
+        ...scaleStyle,
+        // Keep each item's border-bottom in the same transformed navigation row.
+        transform: `${isAtTop ? "scale(1.25) " : ""}translateY(-15%)`
+      };
       return (
         <NavigationHeaderFrame
           ref={forwardedRef}
@@ -475,28 +617,53 @@ export const NavigationHeader =
           onMouseLeave={event => {
             onMouseLeave?.(event);
             setOpenItemIndex(null);
+            setHoveredItemIndex(null);
+            setHoveredDropdownItem(null);
           }}
           onBlur={event => {
             onBlur?.(event);
             if (!event.currentTarget.contains(event.relatedTarget)) {
               setOpenItemIndex(null);
+              setHoveredItemIndex(null);
+              setHoveredDropdownItem(null);
             }
           }}>
           <NavigationHeaderBar>
-            <NavigationHeaderLogo>{logo}</NavigationHeaderLogo>
+            <NavigationHeaderLogo>
+              <NavigationHeaderLogoContent style={scaleStyle}>
+                {logo}
+              </NavigationHeaderLogoContent>
+            </NavigationHeaderLogo>
 
-            <NavigationHeaderNavigation aria-label={navigationLabel}>
+            <NavigationHeaderNavigation
+              aria-label={navigationLabel}
+              style={navigationStyle}>
               {items.map((item, index) => {
                 const hasChildren = Boolean(item.children?.length);
                 const active =
-                  item.active || item.children?.some(child => child.active);
+                  item.active ?? item.children?.some(child => child.active);
+                const navigationItemColor =
+                  hoveredItemIndex === null
+                    ? undefined
+                    : hoveredItemIndex === index
+                      ? "$foregroundActive"
+                      : "$foregroundInactive";
                 const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
                 return (
                   <NavigationHeaderItemFrame
                     key={`${item.href ?? "navigation-item"}-${index}`}
                     active={active}
-                    position="relative">
+                    borderBottomColor={
+                      active
+                        ? (navigationItemColor ?? "$foreground")
+                        : "$transparent"
+                    }
+                    position="relative"
+                    onMouseEnter={() => {
+                      setHoveredItemIndex(index);
+                      setHoveredDropdownItem(null);
+                    }}>
                     {hasChildren ? (
                       <>
                         <NavigationHeaderItemLink
@@ -509,20 +676,22 @@ export const NavigationHeader =
                           aria-expanded={openItemIndex === index}
                           aria-haspopup="true"
                           active={active}
+                          color={navigationItemColor}
                           gap="$lg"
                           onMouseEnter={() => setOpenItemIndex(index)}
+                          onFocus={() => setOpenItemIndex(index)}
                           onKeyDown={event => {
                             if (event.key === "Escape") {
                               setOpenItemIndex(null);
                             }
                           }}
-                          onPress={() =>
-                            setOpenItemIndex(current =>
-                              current === index ? null : index
-                            )
-                          }>
+                          onPress={() => setOpenItemIndex(index)}>
                           {item.label}
-                          <ChevronDown aria-hidden={true} size={16} />
+                          <ChevronDown
+                            aria-hidden={true}
+                            color="currentColor"
+                            size={16}
+                          />
                         </NavigationHeaderItemLink>
                       </>
                     ) : (
@@ -534,6 +703,7 @@ export const NavigationHeader =
                         target={item.target}
                         external={item.external}
                         active={item.active}
+                        color={navigationItemColor}
                         aria-current={item.active ? "page" : undefined}
                         onMouseEnter={() => setOpenItemIndex(null)}
                         onPress={item.onPress}>
@@ -568,10 +738,19 @@ export const NavigationHeader =
             </NavigationHeaderMenuButtonSlot>
           </NavigationHeaderBar>
 
-          {openItem?.children?.length ? (
-            <NavigationHeaderDropdown
-              id={`${mobileNavigationId}-submenu-${openItemIndex}`}>
-              <NavigationHeaderDropdownContent>
+          <NavigationHeaderDropdown
+            id={
+              openItemIndex === null
+                ? undefined
+                : `${mobileNavigationId}-submenu-${openItemIndex}`
+            }
+            open={submenuOpen}
+            aria-hidden={!submenuOpen}
+            height={dropdownHeight}
+            transition={prefersReducedMotion ? "none" : dropdownTransition}
+            onMouseLeave={() => setHoveredDropdownItem(null)}>
+            {openItem?.children?.length ? (
+              <NavigationHeaderDropdownContent ref={dropdownContentRef}>
                 {groupNavigationHeaderChildren(openItem.children).map(
                   (group, groupIndex) => (
                     <NavigationHeaderDropdownGroup
@@ -582,30 +761,49 @@ export const NavigationHeader =
                         </NavigationHeaderDropdownGroupLabel>
                       ) : null}
 
-                      {group.items.map((child, childIndex) => (
-                        <NavigationHeaderDropdownLink
-                          key={`${child.href ?? "navigation-child"}-${childIndex}`}
-                          group={false}
-                          inverse={true}
-                          underline="none"
-                          featured={child.featured}
-                          href={child.href}
-                          target={child.target}
-                          external={child.external}
-                          aria-current={child.active ? "page" : undefined}
-                          onPress={event => {
-                            child.onPress?.(event);
-                            setOpenItemIndex(null);
-                          }}>
-                          {child.label}
-                        </NavigationHeaderDropdownLink>
-                      ))}
+                      {group.items.map((child, childIndex) => {
+                        const scope = group.featured ? "featured" : "standard";
+                        const hovered = hoveredDropdownItem?.scope === scope;
+                        const color = hovered
+                          ? hoveredDropdownItem.groupIndex === groupIndex &&
+                            hoveredDropdownItem.childIndex === childIndex
+                            ? "$foregroundActive"
+                            : "$foregroundInactive"
+                          : undefined;
+
+                        return (
+                          <NavigationHeaderDropdownLink
+                            key={`${child.href ?? "navigation-child"}-${childIndex}`}
+                            group={false}
+                            inverse={true}
+                            underline="none"
+                            featured={child.featured}
+                            href={child.href}
+                            target={child.target}
+                            external={child.external}
+                            color={color}
+                            aria-current={child.active ? "page" : undefined}
+                            onMouseEnter={() =>
+                              setHoveredDropdownItem({
+                                scope,
+                                groupIndex,
+                                childIndex
+                              })
+                            }
+                            onPress={event => {
+                              child.onPress?.(event);
+                              setOpenItemIndex(null);
+                            }}>
+                            {child.label}
+                          </NavigationHeaderDropdownLink>
+                        );
+                      })}
                     </NavigationHeaderDropdownGroup>
                   )
                 )}
               </NavigationHeaderDropdownContent>
-            </NavigationHeaderDropdown>
-          ) : null}
+            ) : null}
+          </NavigationHeaderDropdown>
 
           <NavigationHeaderMobilePanel id={mobileNavigationId} open={menuOpen}>
             <NavigationHeaderMobileNavigation aria-label={navigationLabel}>

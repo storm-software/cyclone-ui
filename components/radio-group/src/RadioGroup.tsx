@@ -54,6 +54,8 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
   cursor: "pointer",
   height: "$5xl",
   width: "$5xl",
+  alignItems: "center",
+  justifyContent: "center",
 
   // this fixes a flex bug where it overflows container
   minWidth: 0,
@@ -256,7 +258,9 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
         size={size}
         onPress={onPress}
         disabled={disabled}>
-        <View onPress={e => e.stopPropagation()}>
+        {children}
+
+        <View alignSelf="center" onPress={e => e.stopPropagation()}>
           <RadioGroupItem
             id={String(value)}
             size={size}
@@ -268,8 +272,6 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             {selected && <RadioGroupItemIndicator />}
           </RadioGroupItem>
         </View>
-
-        {children}
       </RadioGroupItemContainerFrame>
     );
   },

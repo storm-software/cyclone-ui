@@ -157,6 +157,9 @@ export const TextArea = TextAreaFrame.styleable(
         focused={focusedProp ?? focused}
         variant={variant}
         disabled={disabled}
+        $group-field-hover={{
+          borderColor: disabled ? "$borderDisabled" : "$borderHover"
+        }}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
