@@ -232,13 +232,16 @@
       "path": "./components/file-tree"
     },
     {
+      "path": "./components/navigation-header"
+    },
+    {
+      "path": "./components/circular-progress"
+    },
+    {
       "path": "./apps/storybook"
     },
     {
       "path": "./apps/cli"
-    },
-    {
-      "path": "./components/navigation-header"
     }
   ],
   "files": []

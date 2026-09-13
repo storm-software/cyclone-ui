@@ -1,0 +1,49 @@
+{
+  "name": "@cyclone-ui/circular-progress",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A circular progress component meant to be shared in many other components",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/cyclone-ui.git",
+    "directory": "components/circular-progress"
+  },
+  "private": false,
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "dependencies": {
+    "@tamagui/core": "catalog:",
+    "@tamagui/progress": "catalog:",
+    "@tamagui/stacks": "catalog:",
+    "react-native-svg": "^15.15.5"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": ["*.css"],
+  "module:jsx": "dist/jsx",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./CircularProgress": {
+      "import": "./dist/CircularProgress.mjs",
+      "require": "./dist/CircularProgress.cjs"
+    },
+    "./*": "./*"
+  }
+}
