@@ -417,11 +417,12 @@ const TabsHeaderList = styled(YStack, {
     variant: {
       underline: {
         borderColor: "transparent",
-        borderBottomColor: "$border",
-        borderBottomWidth: "$xxs"
+        borderBottomColor: "$backgroundLowest",
+        borderBottomWidth: "$lg",
+        borderRadius: 0
       },
       floating: {
-        backgroundColor: "$backgroundPage",
+        backgroundColor: "$backgroundLowest",
         borderRadius: "$container",
         borderColor: "$border",
         borderWidth: 1

@@ -270,7 +270,8 @@ const CountryCodeSelector = (): JSX.Element => {
       open={open}
       onOpenChange={handleOpenChange}
       size={size}
-      placement="bottom-start">
+      placement="bottom-start"
+      shouldAdapt={false}>
       <Popover.Trigger
         asChild={true}
         aria-label={`Select country code, currently ${selectedCountry.name} +${selectedCountry.callingCode}`}>

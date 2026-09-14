@@ -245,6 +245,9 @@
     },
     {
       "path": "./apps/cli"
+    },
+    {
+      "path": "./components/glitch-separator"
     }
   ],
   "files": []

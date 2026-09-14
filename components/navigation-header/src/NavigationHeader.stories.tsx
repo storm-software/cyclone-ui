@@ -126,6 +126,7 @@ const storyActions = (
   <>
     <Button
       variant="ghost"
+      ghostOpacity={0.6}
       bordered={false}
       flexGrow={0}
       width={96}
@@ -133,7 +134,7 @@ const storyActions = (
       <Button.Text>Log in</Button.Text>
     </Button>
     <Button
-      variant="diagonal-cascade"
+      variant="reverse-diagonal-cascade"
       rounded={true}
       flexGrow={0}
       width={128}

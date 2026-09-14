@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { getSized } from "@cyclone-ui/helpers";
+import { getSpaced } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { useIsomorphicLayoutEffect } from "@tamagui/constants";
@@ -26,11 +26,13 @@ import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
-import { useCallback, useMemo, useState } from "react";
+import { SizableText } from "@tamagui/text";
+import { useCallback, useState } from "react";
 import { SelectContext } from "./utilities";
 
 const SELECT_VIEWPORT_PADDING = 10;
-const SELECT_VIEWPORT_COLLISION_CLASS = "is_SelectViewportCollisionAdjusted";
+const SELECT_VIEWPORT_HORIZONTAL_MARGIN = getSpaced("$10xl");
+const SELECT_VIEWPORT_POSITION_CLASS = "is_SelectViewportPositioned";
 
 const useSelectViewportPosition = () => {
   const [viewport, setViewport] = useState<HTMLElement | null>(null);
@@ -60,8 +62,9 @@ const useSelectViewportPosition = () => {
 
     const style = document.createElement("style");
     style.textContent = `
-      .${SELECT_VIEWPORT_COLLISION_CLASS} {
+      .${SELECT_VIEWPORT_POSITION_CLASS} {
         top: var(--select-viewport-top) !important;
+        left: var(--select-viewport-left) !important;
         max-height: var(--select-viewport-height) !important;
       }
     `;
@@ -88,23 +91,30 @@ const useSelectViewportPosition = () => {
         const opensUpward = spaceAbove > spaceBelow;
         const availableHeight = opensUpward ? spaceAbove : spaceBelow;
         const height = Math.min(fullHeight, availableHeight);
-        const collisionHeight =
-          Number.parseFloat(viewport.style.maxHeight) || viewportRect.height;
+        const offsetParentTop = offsetParentRect?.top ?? 0;
+        const top = opensUpward
+          ? triggerRect.top - offsetParentTop - height
+          : triggerRect.bottom - offsetParentTop;
+        const centeredLeft =
+          triggerRect.left + (triggerRect.width - viewportRect.width) / 2;
+        const canCenterHorizontally =
+          centeredLeft >= SELECT_VIEWPORT_HORIZONTAL_MARGIN &&
+          centeredLeft + viewportRect.width <=
+            viewportWindow.innerWidth - SELECT_VIEWPORT_HORIZONTAL_MARGIN;
 
-        if (collisionHeight < height) {
-          const offsetParentTop = offsetParentRect?.top ?? 0;
-          const top = opensUpward
-            ? triggerRect.top - offsetParentTop - height
-            : triggerRect.bottom - offsetParentTop;
-
-          // Tamagui writes collision values directly to the viewport. Override
-          // a clipped item-aligned height with the larger available side.
-          viewport.style.setProperty("--select-viewport-top", `${top}px`);
-          viewport.style.setProperty("--select-viewport-height", `${height}px`);
-          viewport.classList.add(SELECT_VIEWPORT_COLLISION_CLASS);
+        // Keep the menu below its text box whenever space permits. Tamagui's
+        // default item alignment otherwise lets the selected row overlap it.
+        viewport.style.setProperty("--select-viewport-top", `${top}px`);
+        viewport.style.setProperty("--select-viewport-height", `${height}px`);
+        if (canCenterHorizontally) {
+          viewport.style.setProperty(
+            "--select-viewport-left",
+            `${centeredLeft - (offsetParentRect?.left ?? 0)}px`
+          );
         } else {
-          viewport.classList.remove(SELECT_VIEWPORT_COLLISION_CLASS);
+          viewport.style.removeProperty("--select-viewport-left");
         }
+        viewport.classList.add(SELECT_VIEWPORT_POSITION_CLASS);
       });
     };
 
@@ -120,9 +130,10 @@ const useSelectViewportPosition = () => {
         cancelAnimationFrame(frame);
       }
 
-      viewport.classList.remove(SELECT_VIEWPORT_COLLISION_CLASS);
+      viewport.classList.remove(SELECT_VIEWPORT_POSITION_CLASS);
       viewport.style.removeProperty("--select-viewport-top");
       viewport.style.removeProperty("--select-viewport-height");
+      viewport.style.removeProperty("--select-viewport-left");
       style.remove();
       resizeObserver.disconnect();
       viewportWindow.removeEventListener("resize", updatePosition);
@@ -138,6 +149,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   context: SelectContext,
 
   backgroundColor: "transparent",
+  position: "relative",
   marginVertical: 0,
   paddingVertical: 0,
   paddingHorizontal: "$xl",
@@ -149,6 +161,19 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   hoverStyle: {
     backgroundColor: "transparent"
   }
+});
+
+const SelectItemDivider = styled(View, {
+  name: "SelectItems",
+  context: SelectContext,
+
+  position: "absolute",
+  bottom: 0,
+  left: "$xl",
+  right: "$xl",
+  borderBottomWidth: 1,
+  borderBottomColor: "$borderSubtle",
+  pointerEvents: "none"
 });
 
 const SelectItemGroup = styled(XStack, {
@@ -202,12 +227,19 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   name: "SelectItems",
   context: SelectContext,
 
+  flex: 1
+});
+
+const SelectItemValue = styled(SizableText, {
+  name: "SelectItems",
+  context: SelectContext,
+
   transition: "200ms",
   cursor: "pointer",
   color: "$foregroundBody",
   fontFamily: "$body",
   fontSize: "$md",
-  flex: 1,
+  fontWeight: "$normal",
 
   hoverStyle: {
     color: "$foreground"
@@ -240,8 +272,7 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
 
 export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
   ({ children, value, selected, disabled, ...props }, forwardedRef) => {
-    const { size, value: selectedValue } = SelectContext.useStyledContext();
-    const isSmall = useMemo(() => getSized(size) < getSized("$4xl"), [size]);
+    const { value: selectedValue } = SelectContext.useStyledContext();
     const isSelected = selectedValue === String(value);
 
     return (
@@ -253,9 +284,22 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         textValue={String(value)}
         aria-selected={isSelected}
         disabled={disabled}>
-        <SelectItemGroup
-          disabled={disabled}
-          justifyContent={isSmall ? "space-between" : "center"}>
+        <SelectItemGroup disabled={disabled} justifyContent="space-between">
+          <SelectItemTextFrame>
+            <SelectItemValue
+              selected={!!isSelected}
+              disabled={disabled}
+              fontWeight="$normal"
+              $group-hover={{
+                color: disabled
+                  ? "$foregroundDisabled"
+                  : isSelected
+                    ? "$foreground"
+                    : "$foregroundHover"
+              }}>
+              {children}
+            </SelectItemValue>
+          </SelectItemTextFrame>
           <View width="$4xl" justifyContent="center">
             {disabled && <Lock size="$xl" color="$foregroundDisabled" />}
             {isSelected && (
@@ -266,19 +310,8 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               </View>
             )}
           </View>
-          <SelectItemTextFrame
-            selected={!!isSelected}
-            disabled={disabled}
-            $group-hover={{
-              color: disabled
-                ? "$foregroundDisabled"
-                : isSelected
-                  ? "$foreground"
-                  : "$foregroundHover"
-            }}>
-            {children}
-          </SelectItemTextFrame>
         </SelectItemGroup>
+        <SelectItemDivider />
       </SelectItemFrame>
     );
   },

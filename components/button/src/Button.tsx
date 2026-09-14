@@ -42,7 +42,7 @@ import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
 import { useCallback, useMemo } from "react";
 import type { GestureResponderEvent } from "react-native";
 
-type ButtonCascadeVariant =
+type ButtonCascadeEffect =
   | "cascade"
   | "double-cascade"
   | "cascade-top"
@@ -56,6 +56,10 @@ type ButtonCascadeVariant =
   | "diagonal-cascade-bottom"
   | "diagonal-cascade-right";
 
+type ButtonReverseCascadeVariant = `reverse-${ButtonCascadeEffect}`;
+
+type ButtonCascadeVariant = ButtonCascadeEffect | ButtonReverseCascadeVariant;
+
 type ButtonVariant =
   | "surface"
   | "subtle"
@@ -68,6 +72,16 @@ type ButtonVariant =
 const isCascadeVariant = (
   variant: ButtonVariant | undefined
 ): variant is ButtonCascadeVariant => variant?.includes("cascade") ?? false;
+
+const isReverseCascadeVariant = (
+  variant: ButtonVariant | undefined
+): variant is ButtonReverseCascadeVariant =>
+  variant?.startsWith("reverse-") ?? false;
+
+const getCascadeEffect = (variant: ButtonCascadeVariant): ButtonCascadeEffect =>
+  (isReverseCascadeVariant(variant)
+    ? variant.slice("reverse-".length)
+    : variant) as ButtonCascadeEffect;
 
 const cascadeHoverStyle = {
   cascade: { left: 0 },
@@ -84,15 +98,66 @@ const cascadeHoverStyle = {
   "diagonal-cascade-right": { right: 0 }
 } as const;
 
+const cascadeInitialStyle = {
+  cascade: { left: "-100%" },
+  "double-cascade": { left: "-100%" },
+  "cascade-left": { left: "-100%" },
+  "cascade-top": { top: "-100%" },
+  "cascade-bottom": { bottom: "-100%" },
+  "cascade-right": { right: "-100%" },
+  "diagonal-cascade": { left: "-125%" },
+  "double-diagonal-cascade": { left: "-125%" },
+  "diagonal-cascade-left": { left: "-125%" },
+  "diagonal-cascade-top": { top: "-400%" },
+  "diagonal-cascade-bottom": { bottom: "-400%" },
+  "diagonal-cascade-right": { right: "-125%" }
+} as const;
+
 const doubleCascadeEffect = {
   "double-cascade": "cascade",
   "double-diagonal-cascade": "diagonal-cascade"
 } as const;
 
 const isDoubleCascadeVariant = (
-  variant: ButtonCascadeVariant
+  variant: ButtonCascadeEffect
 ): variant is keyof typeof doubleCascadeEffect =>
   variant in doubleCascadeEffect;
+
+const cascadeFrameStyle = {
+  backgroundColor: "transparent",
+  borderWidth: 3,
+  borderColor: "$foreground",
+
+  hoverStyle: {
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "$border"
+  },
+
+  pressStyle: {
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: "$borderActive"
+  }
+} as const;
+
+const reverseCascadeFrameStyle = {
+  backgroundColor: "$foreground",
+  borderWidth: 1,
+  borderColor: "$border",
+
+  hoverStyle: {
+    backgroundColor: "transparent",
+    borderWidth: 3,
+    borderColor: "$foreground"
+  },
+
+  pressStyle: {
+    backgroundColor: "transparent",
+    borderWidth: 3,
+    borderColor: "$foregroundActive"
+  }
+} as const;
 
 type BorderRadiusSizeTokens =
   | number
@@ -312,221 +377,30 @@ const ButtonFrame = styled(View, {
         }
       },
 
-      cascade: {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "double-cascade": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "cascade-top": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "cascade-left": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "cascade-bottom": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "cascade-right": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "diagonal-cascade": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "double-diagonal-cascade": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "diagonal-cascade-top": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "diagonal-cascade-left": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "diagonal-cascade-bottom": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
-
-      "diagonal-cascade-right": {
-        backgroundColor: "transparent",
-        borderWidth: 3,
-        borderColor: "$foreground",
-
-        hoverStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$border"
-        },
-
-        pressStyle: {
-          backgroundColor: "transparent",
-          borderWidth: 1,
-          borderColor: "$borderActive"
-        }
-      },
+      cascade: cascadeFrameStyle,
+      "double-cascade": cascadeFrameStyle,
+      "cascade-top": cascadeFrameStyle,
+      "cascade-left": cascadeFrameStyle,
+      "cascade-bottom": cascadeFrameStyle,
+      "cascade-right": cascadeFrameStyle,
+      "diagonal-cascade": cascadeFrameStyle,
+      "double-diagonal-cascade": cascadeFrameStyle,
+      "diagonal-cascade-top": cascadeFrameStyle,
+      "diagonal-cascade-left": cascadeFrameStyle,
+      "diagonal-cascade-bottom": cascadeFrameStyle,
+      "diagonal-cascade-right": cascadeFrameStyle,
+      "reverse-cascade": reverseCascadeFrameStyle,
+      "reverse-double-cascade": reverseCascadeFrameStyle,
+      "reverse-cascade-top": reverseCascadeFrameStyle,
+      "reverse-cascade-left": reverseCascadeFrameStyle,
+      "reverse-cascade-bottom": reverseCascadeFrameStyle,
+      "reverse-cascade-right": reverseCascadeFrameStyle,
+      "reverse-diagonal-cascade": reverseCascadeFrameStyle,
+      "reverse-double-diagonal-cascade": reverseCascadeFrameStyle,
+      "reverse-diagonal-cascade-top": reverseCascadeFrameStyle,
+      "reverse-diagonal-cascade-left": reverseCascadeFrameStyle,
+      "reverse-diagonal-cascade-bottom": reverseCascadeFrameStyle,
+      "reverse-diagonal-cascade-right": reverseCascadeFrameStyle,
 
       ghost: {
         backgroundColor: "transparent",
@@ -600,7 +474,7 @@ const ButtonFrame = styled(View, {
         } else if (variant === "subtle") {
           result.backgroundColor = "$backgroundSubtleDisabled";
           result.borderColor = "$borderSubtleDisabled";
-        } else if (variant === "inverse") {
+        } else if (variant === "inverse" || isReverseCascadeVariant(variant)) {
           result.backgroundColor = "$backgroundDisabled";
           result.borderColor = "$borderDisabled";
         } else if (variant === "outlined" || isCascadeVariant(variant)) {
@@ -758,6 +632,19 @@ const ButtonTextFrame = styled(Text, {
         color: "$foreground"
       },
 
+      "reverse-cascade": { color: "$foregroundInverse" },
+      "reverse-double-cascade": { color: "$foregroundInverse" },
+      "reverse-cascade-top": { color: "$foregroundInverse" },
+      "reverse-cascade-left": { color: "$foregroundInverse" },
+      "reverse-cascade-bottom": { color: "$foregroundInverse" },
+      "reverse-cascade-right": { color: "$foregroundInverse" },
+      "reverse-diagonal-cascade": { color: "$foregroundInverse" },
+      "reverse-double-diagonal-cascade": { color: "$foregroundInverse" },
+      "reverse-diagonal-cascade-top": { color: "$foregroundInverse" },
+      "reverse-diagonal-cascade-left": { color: "$foregroundInverse" },
+      "reverse-diagonal-cascade-bottom": { color: "$foregroundInverse" },
+      "reverse-diagonal-cascade-right": { color: "$foregroundInverse" },
+
       ghost: {
         color: "$foreground"
       },
@@ -804,6 +691,7 @@ const colorForVariant = (
 ): ThemeableIconProps["color"] => {
   if (
     variant === "inverse" ||
+    isReverseCascadeVariant(variant) ||
     (variant === "subtle" && !themeName?.endsWith("base"))
   ) {
     return (
@@ -830,6 +718,10 @@ const hoverColorForVariant = (
     }
 
     return "$foregroundDisabled";
+  }
+
+  if (isReverseCascadeVariant(variant)) {
+    return "$foreground";
   }
 
   if (isCascadeVariant(variant)) {
@@ -864,6 +756,10 @@ const pressedColorForVariant = (
     }
 
     return "$foregroundDisabled";
+  }
+
+  if (isReverseCascadeVariant(variant)) {
+    return "$foregroundActive";
   }
 
   if (
@@ -1161,6 +1057,13 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       [disabled, onPress, onClick, render]
     );
 
+    const cascadeState = isCascadeVariant(variant)
+      ? {
+          effect: getCascadeEffect(variant),
+          reverse: isReverseCascadeVariant(variant)
+        }
+      : undefined;
+
     const frame = (
       <ButtonFrame
         group={"button" as any}
@@ -1193,31 +1096,56 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
             }}
           />
         )}
-        {isCascadeVariant(variant) && (
+        {cascadeState && (
           <>
-            {isDoubleCascadeVariant(variant) && (
+            {isDoubleCascadeVariant(cascadeState.effect) && (
               <ButtonHoverBackground
-                effect={doubleCascadeEffect[variant]}
+                effect={doubleCascadeEffect[cascadeState.effect]}
                 circular={circular}
                 rounded={rounded}
                 bordered={false}
                 slow
                 backgroundColor="$background"
-                $group-button-hover={disabled ? {} : { left: 0 }}
+                {...(cascadeState.reverse
+                  ? cascadeHoverStyle[doubleCascadeEffect[cascadeState.effect]]
+                  : {})}
+                $group-button-hover={
+                  disabled
+                    ? {}
+                    : cascadeState.reverse
+                      ? cascadeInitialStyle[
+                          doubleCascadeEffect[cascadeState.effect]
+                        ]
+                      : { left: 0 }
+                }
               />
             )}
             <ButtonHoverBackground
               effect={
-                isDoubleCascadeVariant(variant)
-                  ? doubleCascadeEffect[variant]
-                  : variant
+                isDoubleCascadeVariant(cascadeState.effect)
+                  ? doubleCascadeEffect[cascadeState.effect]
+                  : cascadeState.effect
               }
               circular={circular}
               rounded={rounded}
               bordered={false}
-              slow={isDoubleCascadeVariant(variant)}
-              left={isDoubleCascadeVariant(variant) ? "-171.875%" : undefined}
-              $group-button-hover={disabled ? {} : cascadeHoverStyle[variant]}
+              slow={isDoubleCascadeVariant(cascadeState.effect)}
+              left={
+                !cascadeState.reverse &&
+                isDoubleCascadeVariant(cascadeState.effect)
+                  ? "-171.875%"
+                  : undefined
+              }
+              {...(cascadeState.reverse
+                ? cascadeHoverStyle[cascadeState.effect]
+                : {})}
+              $group-button-hover={
+                disabled
+                  ? {}
+                  : cascadeState.reverse
+                    ? cascadeInitialStyle[cascadeState.effect]
+                    : cascadeHoverStyle[cascadeState.effect]
+              }
               $group-button-press={{
                 backgroundColor: "$foregroundActive"
               }}

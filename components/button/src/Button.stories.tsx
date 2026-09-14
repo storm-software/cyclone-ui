@@ -192,6 +192,114 @@ export const DiagonalCascadeRight: Story = {
   }
 };
 
+export const ReverseCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDoubleCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-double-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseCascadeTop: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-cascade-top",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseCascadeLeft: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-cascade-left",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseCascadeBottom: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-cascade-bottom",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseCascadeRight: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-cascade-right",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDiagonalCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-diagonal-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDoubleDiagonalCascade: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-double-diagonal-cascade",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDiagonalCascadeTop: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-diagonal-cascade-top",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDiagonalCascadeLeft: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-diagonal-cascade-left",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDiagonalCascadeBottom: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-diagonal-cascade-bottom",
+    disabled: false,
+    animate: false
+  }
+};
+
+export const ReverseDiagonalCascadeRight: Story = {
+  args: {
+    children: "Button Text",
+    variant: "reverse-diagonal-cascade-right",
+    disabled: false,
+    animate: false
+  }
+};
+
 export const Inverse: Story = {
   args: {
     children: "Button Text",
@@ -1001,6 +1109,30 @@ export const DiagonalCascadeTopRounded = withRounded(DiagonalCascadeTop);
 export const DiagonalCascadeLeftRounded = withRounded(DiagonalCascadeLeft);
 export const DiagonalCascadeBottomRounded = withRounded(DiagonalCascadeBottom);
 export const DiagonalCascadeRightRounded = withRounded(DiagonalCascadeRight);
+export const ReverseCascadeRounded = withRounded(ReverseCascade);
+export const ReverseDoubleCascadeRounded = withRounded(ReverseDoubleCascade);
+export const ReverseCascadeTopRounded = withRounded(ReverseCascadeTop);
+export const ReverseCascadeLeftRounded = withRounded(ReverseCascadeLeft);
+export const ReverseCascadeBottomRounded = withRounded(ReverseCascadeBottom);
+export const ReverseCascadeRightRounded = withRounded(ReverseCascadeRight);
+export const ReverseDiagonalCascadeRounded = withRounded(
+  ReverseDiagonalCascade
+);
+export const ReverseDoubleDiagonalCascadeRounded = withRounded(
+  ReverseDoubleDiagonalCascade
+);
+export const ReverseDiagonalCascadeTopRounded = withRounded(
+  ReverseDiagonalCascadeTop
+);
+export const ReverseDiagonalCascadeLeftRounded = withRounded(
+  ReverseDiagonalCascadeLeft
+);
+export const ReverseDiagonalCascadeBottomRounded = withRounded(
+  ReverseDiagonalCascadeBottom
+);
+export const ReverseDiagonalCascadeRightRounded = withRounded(
+  ReverseDiagonalCascadeRight
+);
 export const InverseRounded = withRounded(Inverse);
 export const SubtleRounded = withRounded(Subtle);
 export const GhostRounded = withRounded(Ghost);

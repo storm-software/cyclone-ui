@@ -40,7 +40,7 @@ const meta: Meta<typeof Select> = {
                 key={option.value}
                 index={i}
                 value={option.value}
-                disabled={false}
+                disabled={option.disabled}
                 selected={false}>
                 {option.name}
               </Select.Items.Item>

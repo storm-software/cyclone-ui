@@ -393,7 +393,6 @@ const FilePickerViewLink = ({
         fontFamily="$heading-sm"
         fontSize="$xl"
         fontWeight="$true"
-        color="$foregroundInverse"
         width="100%"
         textAlign="center"
         {...props}
@@ -497,6 +496,7 @@ const FilePickerFile = ({
             href={uri}
             download={name}
             variant="ghost"
+            ghostOpacity={0.75}
             size="$13xl"
             padding="$xl"
             circular={true}>
@@ -521,6 +521,7 @@ const FilePickerFile = ({
           }}>
           <Button
             variant="ghost"
+            ghostOpacity={0.75}
             onPress={handleRemove}
             size="$13xl"
             padding="$xl"
