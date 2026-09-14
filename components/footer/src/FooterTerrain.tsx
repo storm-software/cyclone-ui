@@ -17,6 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { getVariableValue, styled, useTheme, View } from "@tamagui/core";
+import { useEffect, useState } from "react";
+import { AccessibilityInfo } from "react-native";
 import { Path, Svg } from "react-native-svg";
 
 const TerrainFrame = styled(View, {
@@ -47,28 +49,96 @@ const points = Array.from({ length: rows + 1 }, (_, row) => {
       30 * Math.sin(x / 140 + depth * 8) +
       12 * Math.sin(x / 43 + depth * 13);
 
-    return `${(800 + x * perspective).toFixed(1)},${(480 + depth ** 1.5 * 510 - height * perspective).toFixed(1)}`;
+    return {
+      x: (800 + x * perspective).toFixed(1),
+      y: 480 + depth ** 1.5 * 510 - height * perspective,
+      phase: x / 240 + depth * 8,
+      amplitude: 4 * perspective
+    };
   });
 });
 
-const terrainPath = points
-  .flatMap((row, rowIndex) =>
-    row.map((point, columnIndex) => {
-      const right = row[columnIndex + 1];
-      const below = points[rowIndex + 1]?.[columnIndex];
-      const diagonal = points[rowIndex + 1]?.[columnIndex + 1];
+const createTerrainPath = (time = 0) => {
+  const projected = points.map(row =>
+    row.map(point => {
+      const ripple =
+        Math.min(time, 1) *
+        point.amplitude *
+        Math.sin(point.phase - (time * Math.PI) / 3);
 
-      return [
-        right ? `M${point}L${right}` : "",
-        below ? `M${point}L${below}` : "",
-        diagonal ? `M${point}L${diagonal}` : ""
-      ].join("");
+      return `${point.x},${(point.y + ripple).toFixed(1)}`;
     })
-  )
-  .join("");
+  );
 
-export const FooterTerrain = () => {
+  return projected
+    .flatMap((row, rowIndex) =>
+      row.map((point, columnIndex) => {
+        const right = row[columnIndex + 1];
+        const below = projected[rowIndex + 1]?.[columnIndex];
+        const diagonal = projected[rowIndex + 1]?.[columnIndex + 1];
+
+        return [
+          right ? `M${point}L${right}` : "",
+          below ? `M${point}L${below}` : "",
+          diagonal ? `M${point}L${diagonal}` : ""
+        ].join("");
+      })
+    )
+    .join("");
+};
+
+const terrainPath = createTerrainPath();
+
+export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
   const theme = useTheme();
+  const [path, setPath] = useState(terrainPath);
+
+  useEffect(() => {
+    if (!animate) {
+      return;
+    }
+
+    let disposed = false;
+    let frame = 0;
+    let start: number | undefined;
+    let lastFrame = 0;
+
+    const tick = (now: number) => {
+      start ??= now;
+      // A slow, decorative ripple only needs 30 updates per second.
+      if (now - lastFrame >= 1000 / 30) {
+        setPath(createTerrainPath((now - start) / 1000));
+        lastFrame = now;
+      }
+      frame = requestAnimationFrame(tick);
+    };
+
+    const updateMotion = (reduceMotion: boolean) => {
+      if (disposed) {
+        return;
+      }
+      cancelAnimationFrame(frame);
+      start = undefined;
+      lastFrame = 0;
+      setPath(terrainPath);
+      if (!reduceMotion) {
+        frame = requestAnimationFrame(tick);
+      }
+    };
+
+    const subscription = AccessibilityInfo.addEventListener(
+      "reduceMotionChanged",
+      updateMotion
+    );
+
+    void AccessibilityInfo.isReduceMotionEnabled().then(updateMotion, () => {});
+
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(frame);
+      subscription.remove();
+    };
+  }, [animate]);
 
   return (
     <TerrainFrame
@@ -82,7 +152,7 @@ export const FooterTerrain = () => {
         viewBox="0 0 1600 780"
         preserveAspectRatio="none">
         <Path
-          d={terrainPath}
+          d={animate ? path : terrainPath}
           fill="none"
           stroke={getVariableValue(theme.foreground, "color")}
           strokeWidth={0.7}

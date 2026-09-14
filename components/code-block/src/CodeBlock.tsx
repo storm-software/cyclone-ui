@@ -19,9 +19,10 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
+import { Check } from "@cyclone-ui/vectors";
 import type { TamaguiElement } from "@tamagui/core";
 import { styled, Text, View, withStaticProperties } from "@tamagui/core";
-import { Check, Clipboard } from "@tamagui/lucide-icons-2";
+import { Clipboard } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
 import { Tabs as TamaguiTabs } from "@tamagui/tabs";
 import type { GetProps, ViewProps } from "@tamagui/web";
@@ -275,11 +276,12 @@ export const CodeBlockCopyButton = ({
   return (
     <Button
       {...props}
-      theme={copied ? "success" : theme}
+      theme={theme}
       aria-label={copied ? "Copied text" : "Copy text"}
       accessibilityLabel={copied ? "Copied text" : "Copy text"}
       data-checked={copied || undefined}
       variant="ghost"
+      ghostOpacity={0.75}
       size="$8xl"
       color={copied ? "$foreground" : "$foregroundCaption"}
       circular={true}
@@ -287,7 +289,7 @@ export const CodeBlockCopyButton = ({
       flexGrow={0}
       onPress={handleCopy}>
       <Button.Icon size="$8xl">
-        {copied ? <Check /> : <Clipboard />}
+        {copied ? <Check strokeWidth={3} /> : <Clipboard />}
       </Button.Icon>
     </Button>
   );

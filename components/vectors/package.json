@@ -9,7 +9,9 @@
     "directory": "components/vectors"
   },
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -34,7 +36,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "module:jsx": "dist/jsx",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -91,6 +95,14 @@
     "./PdfIcon": {
       "import": "./dist/PdfIcon.mjs",
       "require": "./dist/PdfIcon.cjs"
+    },
+    "./StormLogoIcon": {
+      "import": "./dist/StormLogoIcon.mjs",
+      "require": "./dist/StormLogoIcon.cjs"
+    },
+    "./StormLogoText": {
+      "import": "./dist/StormLogoText.mjs",
+      "require": "./dist/StormLogoText.cjs"
     },
     "./*": "./*"
   }

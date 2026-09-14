@@ -141,7 +141,7 @@ const StoryBrand = () => (
       height="$8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="$foregroundInverse"
+      backgroundColor="$background"
       borderRadius="$full">
       <Zap
         aria-hidden={true}
@@ -235,9 +235,9 @@ const FooterExample = (props: ComponentProps<typeof Footer>) => (
         </Footer.Brand>
 
         <Footer.LegalNavigation aria-label="Legal">
-          <Footer.Link href="#privacy">Privacy</Footer.Link>
-          <Footer.Link href="#terms">Terms</Footer.Link>
-          <Footer.Link href="#licenses">Licenses</Footer.Link>
+          <Footer.Rail.Link href="#privacy">Privacy</Footer.Rail.Link>
+          <Footer.Rail.Link href="#terms">Terms</Footer.Rail.Link>
+          <Footer.Rail.Link href="#licenses">Licenses</Footer.Rail.Link>
         </Footer.LegalNavigation>
       </Footer.Rail>
     </Footer.Container>
@@ -248,6 +248,7 @@ const meta = {
   title: "Blocks/Footer",
   component: Footer,
   tags: ["autodocs"],
+  args: {},
   parameters: {
     layout: "fullscreen"
   },
@@ -280,4 +281,14 @@ export const Compact: Story = {
 
 export const Wireframe: Story = {
   render: (args: FooterProps) => <FooterExample {...args} />
+};
+
+export const Unanimated: Story = {
+  ...Wireframe,
+  args: { animate: false }
+};
+
+export const NoNoise: Story = {
+  ...Wireframe,
+  args: { noise: false }
 };

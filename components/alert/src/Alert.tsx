@@ -58,6 +58,7 @@ const AlertClose = styled(Button, {
 
   theme: "base",
   variant: "ghost",
+  ghostOpacity: 0.8,
   position: "relative",
   circular: true,
   noPadding: true

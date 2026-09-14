@@ -915,7 +915,7 @@ importers:
         version: link:../../packages/helpers
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/themes':
         specifier: workspace:*
         version: link:../../packages/themes
@@ -1423,7 +1423,7 @@ importers:
         version: link:../heading-text
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
@@ -1606,7 +1606,7 @@ importers:
         version: link:../field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.42
@@ -1675,6 +1675,9 @@ importers:
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
+      '@cyclone-ui/vectors':
+        specifier: workspace:*
+        version: link:../vectors
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -1784,7 +1787,7 @@ importers:
         version: link:../select-field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/table':
         specifier: workspace:*
         version: link:../table
@@ -1960,7 +1963,7 @@ importers:
         version: link:../../packages/helpers
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@maskito/core':
         specifier: 'catalog:'
         version: 3.11.1
@@ -2162,7 +2165,7 @@ importers:
         version: link:../link
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
@@ -2226,7 +2229,7 @@ importers:
         version: link:../link
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@stryke/date':
         specifier: 'catalog:'
         version: 0.0.26
@@ -2317,7 +2320,7 @@ importers:
         version: link:../file-picker
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.42
@@ -2410,7 +2413,7 @@ importers:
     dependencies:
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2543,7 +2546,7 @@ importers:
         version: link:../input
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2645,7 +2648,7 @@ importers:
     dependencies:
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2679,7 +2682,7 @@ importers:
         version: link:../button
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2781,7 +2784,7 @@ importers:
         version: link:../input-field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2840,7 +2843,7 @@ importers:
         version: link:../input-field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -2936,7 +2939,7 @@ importers:
         version: link:../input-field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/validation-text':
         specifier: workspace:*
         version: link:../validation-text
@@ -3025,7 +3028,7 @@ importers:
         version: link:../popover
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@maskito/core':
         specifier: 'catalog:'
         version: 3.11.1
@@ -3249,7 +3252,7 @@ importers:
         version: link:../radio-group
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@stryke/hooks':
         specifier: 'catalog:'
         version: 0.4.131(magicast@0.5.5)(react-dom@19.3.0(react@19.3.0))(react-native@0.87.1(@babel/core@8.0.5)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0))(react@19.3.0)(zod@4.6.4)
@@ -3332,7 +3335,7 @@ importers:
         version: link:../popover
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3454,7 +3457,7 @@ importers:
         version: link:../select
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@stryke/types':
         specifier: 'catalog:'
         version: 0.12.42
@@ -3687,7 +3690,7 @@ importers:
         version: link:../field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/switch':
         specifier: workspace:*
         version: link:../switch
@@ -3765,6 +3768,34 @@ importers:
       '@tanstack/table-core':
         specifier: ^8.21.3
         version: 8.21.3
+      react:
+        specifier: 'catalog:'
+        version: 19.3.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.0(react@19.3.0)
+      react-native:
+        specifier: 'catalog:'
+        version: 0.87.1(@babel/core@8.0.5)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
+
+  components/table-of-contents:
+    dependencies:
+      '@tamagui/core':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@tamagui/lucide-icons-2':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@tamagui/stacks':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@tamagui/text':
+        specifier: 'catalog:'
+        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.2)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react@19.3.0))(typescript@6.0.3)(vite@8.3.0(@types/node@26.5.1)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -3874,7 +3905,7 @@ importers:
         version: link:../field
       '@cyclone-ui/state':
         specifier: workspace:*
-        version: link:../../packages/state
+        version: link:../../packages/state/out-tsc
       '@cyclone-ui/text-area':
         specifier: workspace:*
         version: link:../text-area
@@ -29523,8 +29554,8 @@ snapshots:
       '@log4brains/cli-common': 1.1.0
       '@log4brains/core': 1.1.0
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/icons': 4.11.3(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@material-ui/lab': 4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@next/bundle-analyzer': 10.2.3
       '@types/node': 15.14.9
       '@types/react': 17.0.4
@@ -29644,7 +29675,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 17.0.4
 
-  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/icons@4.11.3(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -29653,7 +29684,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 17.0.4
 
-  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@material-ui/lab@4.0.0-alpha.61(@material-ui/core@4.12.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@material-ui/core': 4.12.4(@types/react@17.0.4)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)

@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { getSpaced } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { useIsomorphicLayoutEffect } from "@tamagui/constants";
@@ -31,7 +30,6 @@ import { useCallback, useState } from "react";
 import { SelectContext } from "./utilities";
 
 const SELECT_VIEWPORT_PADDING = 10;
-const SELECT_VIEWPORT_HORIZONTAL_MARGIN = getSpaced("$10xl");
 const SELECT_VIEWPORT_POSITION_CLASS = "is_SelectViewportPositioned";
 
 const useSelectViewportPosition = () => {
@@ -67,6 +65,17 @@ const useSelectViewportPosition = () => {
         left: var(--select-viewport-left) !important;
         max-height: var(--select-viewport-height) !important;
       }
+
+      .${SELECT_VIEWPORT_POSITION_CLASS} [data-select-item]:last-child [data-select-item-divider] {
+        display: none;
+      }
+
+      .${SELECT_VIEWPORT_POSITION_CLASS} [data-select-item]:focus-visible {
+        border: 0 !important;
+        outline: none !important;
+        outline-color: transparent !important;
+        outline-width: 0 !important;
+      }
     `;
     document.head.appendChild(style);
 
@@ -95,34 +104,37 @@ const useSelectViewportPosition = () => {
         const top = opensUpward
           ? triggerRect.top - offsetParentTop - height
           : triggerRect.bottom - offsetParentTop;
-        const centeredLeft =
-          triggerRect.left + (triggerRect.width - viewportRect.width) / 2;
-        const canCenterHorizontally =
-          centeredLeft >= SELECT_VIEWPORT_HORIZONTAL_MARGIN &&
-          centeredLeft + viewportRect.width <=
-            viewportWindow.innerWidth - SELECT_VIEWPORT_HORIZONTAL_MARGIN;
+        // Tamagui applies the trigger width after the viewport first mounts,
+        // so its initial bounding rect can be narrower than the final menu.
+        const width = Math.max(viewport.scrollWidth, triggerRect.width + 8);
+        const centeredLeft = triggerRect.left + (triggerRect.width - width) / 2;
 
         // Keep the menu below its text box whenever space permits. Tamagui's
         // default item alignment otherwise lets the selected row overlap it.
         viewport.style.setProperty("--select-viewport-top", `${top}px`);
         viewport.style.setProperty("--select-viewport-height", `${height}px`);
-        if (canCenterHorizontally) {
-          viewport.style.setProperty(
-            "--select-viewport-left",
-            `${centeredLeft - (offsetParentRect?.left ?? 0)}px`
-          );
-        } else {
-          viewport.style.removeProperty("--select-viewport-left");
-        }
+        viewport.style.setProperty(
+          "--select-viewport-left",
+          `${centeredLeft - (offsetParentRect?.left ?? 0)}px`
+        );
         viewport.classList.add(SELECT_VIEWPORT_POSITION_CLASS);
       });
     };
 
     const resizeObserver = new viewportWindow.ResizeObserver(updatePosition);
+    const handleScroll = (event: Event) => {
+      // The menu's own scroll position does not affect its placement. Avoid
+      // feeding each wheel/touch scroll back into layout while still tracking
+      // page and scroll-container movement around the trigger.
+      if (event.target !== viewport) {
+        updatePosition();
+      }
+    };
+
     resizeObserver.observe(viewport);
     resizeObserver.observe(trigger);
     viewportWindow.addEventListener("resize", updatePosition);
-    viewportWindow.addEventListener("scroll", updatePosition, true);
+    viewportWindow.addEventListener("scroll", handleScroll, true);
     updatePosition();
 
     return () => {
@@ -137,7 +149,7 @@ const useSelectViewportPosition = () => {
       style.remove();
       resizeObserver.disconnect();
       viewportWindow.removeEventListener("resize", updatePosition);
-      viewportWindow.removeEventListener("scroll", updatePosition, true);
+      viewportWindow.removeEventListener("scroll", handleScroll, true);
     };
   }, [viewport]);
 
@@ -148,18 +160,71 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   name: "SelectItems",
   context: SelectContext,
 
+  unstyled: true,
+  transition: "200ms",
+  cursor: "pointer",
   backgroundColor: "transparent",
+  color: "$foregroundInactive",
   position: "relative",
-  marginVertical: 0,
-  paddingVertical: 0,
-  paddingHorizontal: "$xl",
+  paddingTop: "$xs",
+  paddingBottom: "$sm",
+  paddingVertical: "$lg",
+  borderWidth: 0,
+  borderRadius: "$button",
 
   focusStyle: {
-    backgroundColor: "transparent"
+    color: "$foreground"
   },
 
   hoverStyle: {
-    backgroundColor: "transparent"
+    color: "$foreground"
+  },
+
+  focusVisibleStyle: {
+    color: "$foreground",
+    borderWidth: 0,
+    outlineStyle: "none",
+    outline: "none",
+    outlineWidth: 0,
+    outlineColor: "transparent"
+  },
+
+  variants: {
+    selected: {
+      true: {
+        color: "$foregroundActive"
+      },
+      false: {
+        color: "$foregroundInactive"
+      }
+    },
+
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        color: "$foregroundDisabled",
+
+        hoverStyle: {
+          color: "$foregroundDisabled"
+        },
+
+        focusStyle: {
+          color: "$foregroundDisabled"
+        },
+
+        focusVisibleStyle: {
+          color: "$foregroundDisabled",
+          borderWidth: 0,
+          outlineStyle: "none",
+          outlineWidth: 0
+        }
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    disabled: false,
+    selected: false
   }
 });
 
@@ -169,8 +234,15 @@ const SelectItemDivider = styled(View, {
 
   position: "absolute",
   bottom: 0,
-  left: "$xl",
-  right: "$xl",
+  left: "$2xl",
+  right: "$2xl",
+  pointerEvents: "none"
+});
+
+const SelectItemDividerLine = styled(View, {
+  name: "SelectItems",
+  context: SelectContext,
+
   borderBottomWidth: 1,
   borderBottomColor: "$borderSubtle",
   pointerEvents: "none"
@@ -180,38 +252,30 @@ const SelectItemGroup = styled(XStack, {
   name: "SelectItems",
   context: SelectContext,
 
-  cursor: "pointer",
-  gap: "$xl",
+  transition: "200ms",
+  cursor: "inherit",
   alignItems: "center",
-  paddingHorizontal: "$xl",
-  paddingVertical: "$lg",
   borderRadius: "$button",
   minHeight: "$5xl",
   width: "100%",
+  paddingHorizontal: "$2xl",
 
-  hoverStyle: {
+  "$group-item-hover": {
     backgroundColor: "$backgroundHigherHover"
   },
 
-  focusStyle: {
-    backgroundColor: "$backgroundHigherHover"
-  },
-
-  focusVisibleStyle: {
+  "$group-item-focus": {
     backgroundColor: "$backgroundHigherHover"
   },
 
   variants: {
     disabled: {
       true: {
-        cursor: "not-allowed",
-        backgroundColor: "transparent",
-
-        hoverStyle: {
+        "$group-item-hover": {
           backgroundColor: "transparent"
         },
 
-        focusStyle: {
+        "$group-item-focus": {
           backgroundColor: "transparent"
         }
       }
@@ -227,7 +291,10 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   name: "SelectItems",
   context: SelectContext,
 
-  flex: 1
+  flex: 1,
+  color: "currentColor",
+  paddingVertical: "$xl",
+  paddingHorizontal: "$sm"
 });
 
 const SelectItemValue = styled(SizableText, {
@@ -235,37 +302,23 @@ const SelectItemValue = styled(SizableText, {
   context: SelectContext,
 
   transition: "200ms",
-  cursor: "pointer",
-  color: "$foregroundBody",
+  cursor: "inherit",
+  color: "currentColor",
   fontFamily: "$body",
   fontSize: "$md",
-  fontWeight: "$normal",
-
-  hoverStyle: {
-    color: "$foreground"
-  },
 
   variants: {
     selected: {
       true: {
-        color: "$foreground"
-      }
-    },
-
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        color: "$foregroundDisabled",
-
-        hoverStyle: {
-          color: "$foregroundDisabled"
-        }
+        fontWeight: "$bold"
+      },
+      false: {
+        fontWeight: "$light"
       }
     }
   } as const,
 
   defaultVariants: {
-    disabled: false,
     selected: false
   }
 });
@@ -278,40 +331,34 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
     return (
       <SelectItemFrame
         {...props}
-        group={true}
+        data-select-item
+        group={"item" as any}
         ref={forwardedRef}
         value={String(value)}
         textValue={String(value)}
         aria-selected={isSelected}
+        selected={isSelected}
         disabled={disabled}>
         <SelectItemGroup disabled={disabled} justifyContent="space-between">
           <SelectItemTextFrame>
-            <SelectItemValue
-              selected={!!isSelected}
-              disabled={disabled}
-              fontWeight="$normal"
-              $group-hover={{
-                color: disabled
-                  ? "$foregroundDisabled"
-                  : isSelected
-                    ? "$foreground"
-                    : "$foregroundHover"
-              }}>
+            <SelectItemValue selected={!!isSelected}>
               {children}
             </SelectItemValue>
           </SelectItemTextFrame>
           <View width="$4xl" justifyContent="center">
-            {disabled && <Lock size="$xl" color="$foregroundDisabled" />}
+            {disabled && (
+              <Lock size="$2xl" color="$foregroundDisabled" strokeWidth={2} />
+            )}
             {isSelected && (
               <View aria-hidden={true}>
-                <Theme name="success">
-                  <Check size="$xl" color="$foreground" />
-                </Theme>
+                <Check size="$2xl" color="$foregroundActive" strokeWidth={3} />
               </View>
             )}
           </View>
         </SelectItemGroup>
-        <SelectItemDivider />
+        <SelectItemDivider data-select-item-divider>
+          <SelectItemDividerLine />
+        </SelectItemDivider>
       </SelectItemFrame>
     );
   },
@@ -382,7 +429,7 @@ const SelectItemsGroup = View.styleable(
               minWidth="$12xl"
               borderRadius="$popover"
               boxShadow="0px 4px 30px $overlayBackdrop">
-              <TamaguiSelect.Group paddingVertical="$xl">
+              <TamaguiSelect.Group padding="$xl">
                 {children}
               </TamaguiSelect.Group>
             </TamaguiSelect.Viewport>

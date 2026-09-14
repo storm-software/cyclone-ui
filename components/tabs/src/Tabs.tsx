@@ -212,6 +212,7 @@ const TabsFrameImpl = TabsFrame.styleable(
 
     useLayoutEffect(() => {
       if (!currentTab) {
+        // eslint-disable-next-line react/set-state-in-effect
         setState(prev => ({ ...prev, currentTab: prev.steps[0] as string }));
       }
     }, [currentTab, steps]);
@@ -428,6 +429,7 @@ const TabsHeaderList = styled(YStack, {
         borderWidth: 1
       },
       tabbed: {
+        backgroundColor: "$backgroundPage",
         borderWidth: 0,
         padding: 0
       }
@@ -523,7 +525,7 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
   name: "TabsHeading",
   context: TabsContext,
 
-  transition: "100ms",
+  transition: "200ms",
   textAlign: "center",
 
   variants: {
@@ -531,11 +533,23 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
       "...size": (val: SizeTokens, config: VariantSpreadExtras<any>) => {
         return getFontSizedFromSize(val, config);
       }
+    },
+
+    selected: {
+      true: {
+        color: "$foregroundActive",
+        fontWeight: "$bold"
+      },
+      false: {
+        color: "$foregroundInactive",
+        fontWeight: "$normal"
+      }
     }
   } as const,
 
   defaultVariants: {
-    size: "$true"
+    size: "$true",
+    selected: false
   }
 });
 
@@ -596,8 +610,16 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
 
     selected: {
       ":boolean": (selected: boolean, config: VariantSpreadExtras<any>) => {
-        if (!selected || config.props.variant !== "tabbed") {
+        if (config.props.variant !== "tabbed") {
           return {};
+        }
+
+        if (!selected) {
+          return {
+            hoverStyle: {
+              backgroundColor: "$backgroundPageHover"
+            }
+          };
         }
 
         return config.props.orientation === "horizontal"
@@ -644,12 +666,13 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
         orientation={orientation}
         variant={variant}
         selected={currentTab === value}
+
         {...rest}
         value={value}
         onInteraction={onInteraction}>
         <TabsHeaderItemHeading
           size={size}
-          color={currentTab === value ? "$foreground" : "$foregroundCaption"}
+          selected={currentTab === value}
           $group-hover={{
             color: "$foregroundHover"
           }}>

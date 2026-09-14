@@ -32,8 +32,8 @@ export const Progress = TamaguiProgress.styleable<{
         size={size}
         value={value}
         max={max}
-        {...props}
-        backgroundColor="$backgroundElevated">
+        backgroundColor="$backgroundLowest"
+        {...props}>
         <TamaguiProgress.Indicator
           transition="bouncy"
           backgroundColor={color}

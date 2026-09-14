@@ -39,23 +39,15 @@ This package is part of the <b>🌀 Cyclone UI</b> monorepo. The repository cont
 
 <!-- END header -->
 
-# Footer
+# Eyebrow Text
 
-A responsive footer block with a closing statement, primary action, grouped
-navigation, brand details, and legal links over a decorative wireframe terrain.
-The SVG uses the current theme, requires no WebGL or image downloads,
-and stays behind the content without intercepting pointer or keyboard input.
-Pass `animate={true}` to `<Footer>` for a subtle terrain ripple. Animation is
-disabled by default and respects the system reduced-motion preference.
-Pass `noise={true}` to overlay a low-opacity repeating texture over the footer
-surface.
+A `EyebrowText` component used to render the Eyebrow text of a page. It is a simple component that renders the text in a way that is easy to read and understand.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Table of Contents
 
-- [Footer](#footer)
+- [Eyebrow Text](#eyebrow-text)
   - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
@@ -80,14 +72,14 @@ surface.
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @cyclone-ui/footer
+pnpm add -D @cyclone-ui/table-of-contents
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @cyclone-ui/footer
+npm install -D @cyclone-ui/table-of-contents
 ```
 
 </details>
@@ -96,7 +88,7 @@ npm install -D @cyclone-ui/footer
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @cyclone-ui/footer
+yarn add -D @cyclone-ui/table-of-contents
 ```
 
 </details>
@@ -111,15 +103,15 @@ This project is built using [Nx](https://nx.dev). As a result, many of the usual
 
 ### Building
 
-Run `nx build footer` to build the library.
+Run `nx build table-of-contents` to build the library.
 
 ### Running unit tests
 
-Run `nx test footer` to execute the unit tests via [Vitest](https://vitest.dev).
+Run `nx test table-of-contents` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 
-Run `nx lint footer` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint table-of-contents` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

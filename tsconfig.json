@@ -248,6 +248,9 @@
     },
     {
       "path": "./components/glitch-separator"
+    },
+    {
+      "path": "./components/table-of-contents"
     }
   ],
   "files": []

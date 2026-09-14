@@ -19,7 +19,18 @@
 import { Link } from "@cyclone-ui/link";
 import type { GetProps } from "@tamagui/core";
 import { styled, Text, View, withStaticProperties } from "@tamagui/core";
+import { createContext, use, useId, useState } from "react";
+import { Image } from "react-native";
+import noiseImage from "./assets/noise.png";
 import { FooterTerrain } from "./FooterTerrain";
+
+interface FooterLinkHoverContextValue {
+  hoveredLinkId: string | null;
+  setHoveredLinkId: (linkId: string | null) => void;
+}
+
+const FooterLinkHoverContext =
+  createContext<FooterLinkHoverContextValue | null>(null);
 
 const FooterFrame = styled(View, {
   name: "Footer",
@@ -191,12 +202,12 @@ const FooterLink = styled(Link, {
 
   hoverStyle: {
     x: 3,
-    color: "$foreground",
+    color: "$foregroundActive",
     opacity: 1
   },
 
   focusVisibleStyle: {
-    color: "$foreground",
+    color: "$foregroundActive",
     opacity: 1,
     outlineColor: "$foreground",
     outlineOffset: 3,
@@ -251,7 +262,7 @@ const FooterLegalNavigation = styled(View, {
 });
 
 const FooterBackgroundLogo = styled(View, {
-  name: "FooterBackgroundLogoText",
+  name: "FooterBackgroundLogo",
 
   display: "flex",
   alignItems: "center",
@@ -269,10 +280,28 @@ const FooterBackgroundLogoImpl = FooterBackgroundLogo.styleable(
       </View>
     </FooterBackgroundLogo>
   ),
-  { staticConfig: { componentName: "FooterLink" } }
+  { staticConfig: { componentName: "FooterBackgroundLogo" } }
 );
 
-export type FooterProps = GetProps<typeof FooterFrame>;
+const FooterNoise = styled(Image, {
+  name: "FooterNoise",
+
+  position: "absolute",
+  inset: 0,
+  width: "100%",
+  height: "100%",
+  zIndex: "$30",
+  opacity: 0.0175,
+  pointerEvents: "none"
+});
+
+export type FooterProps = GetProps<typeof FooterFrame> & {
+  /** Enable the subtle terrain ripple. Respects reduced motion. Defaults to false. */
+  animate?: boolean;
+  /** Overlay a low-opacity noise texture over the footer. Defaults to false. */
+  noise?: boolean;
+};
+
 export type FooterContainerProps = GetProps<typeof FooterContainer>;
 export type FooterMainProps = GetProps<typeof FooterMain>;
 export type FooterIntroductionProps = GetProps<typeof FooterIntroduction>;
@@ -290,21 +319,70 @@ export type FooterCopyrightProps = GetProps<typeof FooterCopyright>;
 export type FooterLegalNavigationProps = GetProps<typeof FooterLegalNavigation>;
 
 const FooterLinkImpl = FooterLink.styleable(
-  ({ children, ...props }, forwardedRef) => (
-    <FooterLink ref={forwardedRef} group={false} underline="none" {...props}>
-      {children}
-    </FooterLink>
-  ),
+  ({ children, onMouseEnter, onMouseLeave, ...props }, forwardedRef) => {
+    const linkId = useId();
+    const hoverContext = use(FooterLinkHoverContext);
+    const hovered = hoverContext ? hoverContext.hoveredLinkId !== null : false;
+    const active = hoverContext?.hoveredLinkId === linkId;
+
+    return (
+      <FooterLink
+        ref={forwardedRef}
+        group={false}
+        underline="none"
+        {...props}
+        color={
+          hovered
+            ? active
+              ? "$foregroundActive"
+              : "$foregroundInactive"
+            : undefined
+        }
+        onMouseEnter={(event: any) => {
+          onMouseEnter?.(event);
+          hoverContext?.setHoveredLinkId(linkId);
+        }}
+        onMouseLeave={(event: any) => {
+          onMouseLeave?.(event);
+          hoverContext?.setHoveredLinkId(null);
+        }}>
+        {children}
+      </FooterLink>
+    );
+  },
   { staticConfig: { componentName: "FooterLink" } }
 );
 
-const FooterFrameImpl = FooterFrame.styleable(
-  ({ children, ...props }, forwardedRef) => (
-    <FooterFrame ref={forwardedRef} {...props}>
-      {children}
-      <FooterTerrain />
-    </FooterFrame>
-  ),
+const FooterRailLink = styled(FooterLinkImpl, {
+  name: "FooterRailLink",
+
+  underline: true,
+  fontSize: "$sm"
+});
+
+const FooterFrameImpl = FooterFrame.styleable<FooterProps>(
+  ({ children, animate = true, noise = true, ...props }, forwardedRef) => {
+    const [hoveredLinkId, setHoveredLinkId] = useState<string | null>(null);
+
+    return (
+      <FooterFrame ref={forwardedRef} {...props}>
+        <FooterLinkHoverContext.Provider
+          value={{ hoveredLinkId, setHoveredLinkId }}>
+          {children}
+        </FooterLinkHoverContext.Provider>
+        <FooterTerrain animate={animate} />
+        {noise ? (
+          <FooterNoise
+            source={{ uri: noiseImage }}
+            resizeMode="repeat"
+            aria-hidden={true}
+            accessibilityElementsHidden={true}
+            importantForAccessibility="no-hide-descendants"
+          />
+        ) : null}
+      </FooterFrame>
+    );
+  },
   { staticConfig: { componentName: "Footer" } }
 );
 
@@ -322,7 +400,9 @@ export const Footer = withStaticProperties(FooterFrameImpl, {
     Links: FooterSectionLinks
   }),
   Link: FooterLinkImpl,
-  Rail: FooterRail,
+  Rail: withStaticProperties(FooterRail, {
+    Link: FooterRailLink
+  }),
   Brand: FooterBrand,
   Copyright: FooterCopyright,
   LegalNavigation: FooterLegalNavigation

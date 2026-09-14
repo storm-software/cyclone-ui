@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "../../dist/out-tsc/components/table-of-contents/tsconfig.tsbuildinfo",
     "jsx": "preserve",
-    "lib": ["DOM", "ES2022"],
     "ignoreDeprecations": "6.0",
     "rootDir": ".",
     "types": [
@@ -10,23 +10,9 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
     ],
-    "outDir": "../../dist/out-tsc",
-    "tsBuildInfoFile": "../../dist/out-tsc/components/code-block/tsconfig.tsbuildinfo"
+    "outDir": "../../dist/out-tsc"
   },
-  "references": [
-    {
-      "path": "../vectors"
-    },
-    {
-      "path": "../themeable-icon"
-    },
-    {
-      "path": "../button"
-    },
-    {
-      "path": "../body-text"
-    }
-  ],
+  "references": [],
   "files": [],
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["vitest.config.mts", "src/**/*.spec.ts", "src/**/*.test.ts"]
