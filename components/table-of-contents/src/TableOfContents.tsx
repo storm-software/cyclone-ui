@@ -65,6 +65,17 @@ interface BrowserDocument {
   getElementById: (id: string) => BrowserElement | null;
 }
 
+interface Point {
+  x: number;
+  y: number;
+}
+
+interface RailGeometry {
+  markerDistances: number[];
+  path: string;
+  points: Point[];
+}
+
 function getBrowserGlobals() {
   return globalThis as typeof globalThis & {
     window?: BrowserWindow;
@@ -169,13 +180,13 @@ const TableOfContentsLinkText = styled(SizableText, {
   fontWeight: "$normal",
 
   "$group-tableOfContentsItem-hover": {
-    color: "$foregroundLinkHover"
+    color: "$foregroundHover"
   },
 
   variants: {
     active: {
       true: {
-        color: "$foregroundLink"
+        color: "$foreground"
       }
     },
     reducedMotion: {
@@ -198,16 +209,73 @@ function getItemDepth(item: TableOfContentsItem) {
   return Number.isFinite(item.depth) ? item.depth : 0;
 }
 
-function getRailPath(items: readonly TableOfContentsItem[], minDepth: number) {
+function getLineLength(start: Point, end: Point) {
+  return Math.hypot(end.x - start.x, end.y - start.y);
+}
+
+function getCubicPoint(
+  progress: number,
+  start: Point,
+  controlStart: Point,
+  controlEnd: Point,
+  end: Point
+) {
+  const remaining = 1 - progress;
+
+  return {
+    x:
+      remaining ** 3 * start.x +
+      3 * remaining ** 2 * progress * controlStart.x +
+      3 * remaining * progress ** 2 * controlEnd.x +
+      progress ** 3 * end.x,
+    y:
+      remaining ** 3 * start.y +
+      3 * remaining ** 2 * progress * controlStart.y +
+      3 * remaining * progress ** 2 * controlEnd.y +
+      progress ** 3 * end.y
+  };
+}
+
+function getCubicLength(
+  start: Point,
+  controlStart: Point,
+  controlEnd: Point,
+  end: Point
+) {
+  const steps = 16;
+  let length = 0;
+  let previous = start;
+
+  for (let step = 1; step <= steps; step += 1) {
+    const point = getCubicPoint(
+      step / steps,
+      start,
+      controlStart,
+      controlEnd,
+      end
+    );
+    length += getLineLength(previous, point);
+    previous = point;
+  }
+
+  return length;
+}
+
+function getRailGeometry(
+  items: readonly TableOfContentsItem[],
+  minDepth: number
+): RailGeometry {
   const points = items.map((item, index) => ({
     x: RAIL_LEFT + (getItemDepth(item) - minDepth) * LEVEL_INDENT,
     y: (index + 0.5) * ITEM_HEIGHT
   }));
   const first = points[0];
 
-  if (!first) return "";
+  if (!first) return { markerDistances: [], path: "", points };
 
   let path = `M ${first.x} 0 L ${first.x} ${first.y}`;
+  let pathLength = first.y;
+  const markerDistances = [pathLength];
 
   for (let index = 1; index < points.length; index += 1) {
     const previous = points[index - 1];
@@ -217,18 +285,40 @@ function getRailPath(items: readonly TableOfContentsItem[], minDepth: number) {
 
     if (previous.x === point.x) {
       path += ` L ${point.x} ${point.y}`;
+      pathLength += getLineLength(previous, point);
+      markerDistances.push(pathLength);
       continue;
     }
 
     const midpoint = (previous.y + point.y) / 2;
+    const curveStart = {
+      x: previous.x,
+      y: midpoint - RAIL_CURVE_RADIUS
+    };
+    const controlStart = { x: previous.x, y: midpoint - 2 };
+    const controlEnd = { x: point.x, y: midpoint + 2 };
+    const curveEnd = { x: point.x, y: midpoint + RAIL_CURVE_RADIUS };
     path += ` L ${previous.x} ${midpoint - RAIL_CURVE_RADIUS}`;
     path += ` C ${previous.x} ${midpoint - 2}, ${point.x} ${midpoint + 2}, ${point.x} ${midpoint + RAIL_CURVE_RADIUS}`;
     path += ` L ${point.x} ${point.y}`;
+    pathLength += getLineLength(previous, curveStart);
+    pathLength += getCubicLength(
+      curveStart,
+      controlStart,
+      controlEnd,
+      curveEnd
+    );
+    pathLength += getLineLength(curveEnd, point);
+    markerDistances.push(pathLength);
   }
 
   const last = points.at(-1);
 
-  return last ? `${path} L ${last.x} ${items.length * ITEM_HEIGHT}` : path;
+  return {
+    markerDistances,
+    path: last ? `${path} L ${last.x} ${items.length * ITEM_HEIGHT}` : path,
+    points
+  };
 }
 
 function getHashId(url: string) {
@@ -263,11 +353,13 @@ function usePrefersReducedMotion() {
 function TableOfContentsRail({
   items,
   activeIndex,
+  activeStartIndex,
   minDepth,
   prefersReducedMotion
 }: {
   items: readonly TableOfContentsItem[];
   activeIndex: number;
+  activeStartIndex: number;
   minDepth: number;
   prefersReducedMotion: boolean;
 }) {
@@ -275,18 +367,22 @@ function TableOfContentsRail({
   const maxDepth = Math.max(...items.map(getItemDepth));
   const width =
     RAIL_LEFT + (Math.max(minDepth, maxDepth) - minDepth) * LEVEL_INDENT + 2;
-  const activeItem = items[activeIndex];
-  const activeX = activeItem
-    ? RAIL_LEFT + (getItemDepth(activeItem) - minDepth) * LEVEL_INDENT
-    : RAIL_LEFT;
+  const geometry = getRailGeometry(items, minDepth);
   const activeY = (activeIndex + 0.5) * ITEM_HEIGHT;
-  const path = getRailPath(items, minDepth);
+  const activeStartY =
+    activeStartIndex === 0
+      ? 0
+      : activeStartIndex * ITEM_HEIGHT +
+        (geometry.points[activeStartIndex - 1]?.x ===
+        geometry.points[activeStartIndex]?.x
+          ? 0
+          : RAIL_CURVE_RADIUS);
   const railTransition = prefersReducedMotion
     ? "none"
-    : `height ${MOTION_DURATION}ms ${MOTION_EASING}`;
+    : `clip-path ${MOTION_DURATION}ms ${MOTION_EASING}`;
   const markerTransition = prefersReducedMotion
     ? "none"
-    : `left ${MOTION_DURATION}ms ${MOTION_EASING}, top ${MOTION_DURATION}ms ${MOTION_EASING}`;
+    : `offset-distance ${MOTION_DURATION}ms ${MOTION_EASING}`;
 
   if (Platform.OS !== "web") {
     return (
@@ -312,7 +408,7 @@ function TableOfContentsRail({
         height={height}
         viewBox={`0 0 ${width} ${height}`}>
         <path
-          d={path}
+          d={geometry.path}
           fill="none"
           stroke="var(--borderSubtle)"
           strokeLinecap="round"
@@ -324,8 +420,9 @@ function TableOfContentsRail({
 
       <TableOfContentsRailLayer
         width={width}
-        height={activeY}
+        height={height}
         style={{
+          clipPath: `polygon(0 ${activeStartY}px, 100% ${activeStartY}px, 100% ${activeY}px, 0 ${activeY}px)`,
           transition: railTransition
         }}>
         <svg
@@ -335,9 +432,9 @@ function TableOfContentsRail({
           height={height}
           viewBox={`0 0 ${width} ${height}`}>
           <path
-            d={path}
+            d={geometry.path}
             fill="none"
-            stroke="var(--foregroundLink)"
+            stroke="var(--foreground)"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
@@ -346,15 +443,18 @@ function TableOfContentsRail({
         </svg>
       </TableOfContentsRailLayer>
 
-      <View
-        position="absolute"
-        width={ACTIVE_MARKER_SIZE}
-        height={ACTIVE_MARKER_SIZE}
-        borderRadius="$full"
-        backgroundColor="$foregroundLink"
+      <div
         style={{
-          left: activeX - ACTIVE_MARKER_SIZE / 2,
-          top: activeY - ACTIVE_MARKER_SIZE / 2,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: ACTIVE_MARKER_SIZE,
+          height: ACTIVE_MARKER_SIZE,
+          borderRadius: "50%",
+          backgroundColor: "var(--foreground)",
+          offsetPath: `path("${geometry.path}")`,
+          offsetDistance: `${geometry.markerDistances[activeIndex] ?? 0}px`,
+          offsetRotate: "0deg",
           transition: markerTransition
         }}
       />
@@ -387,6 +487,7 @@ export const TableOfContents =
 
         return result;
       }, [activeIndex, items, minDepth]);
+      const activeStartIndex = Math.min(...activePathIndexes);
 
       useEffect(() => {
         const { window: browserWindow, document: browserDocument } =
@@ -474,6 +575,7 @@ export const TableOfContents =
             <TableOfContentsRail
               items={items}
               activeIndex={activeIndex}
+              activeStartIndex={activeStartIndex}
               minDepth={minDepth}
               prefersReducedMotion={prefersReducedMotion}
             />

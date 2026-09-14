@@ -45,6 +45,14 @@ const ContainerFrame = styled(View, {
   tabIndex: -1,
   width: "100%",
   borderRadius: "$container",
+  boxShadow: "none",
+
+  focusVisibleStyle: {
+    outline: "none",
+    outlineWidth: 0,
+    outlineColor: "transparent",
+    boxShadow: "$ringOffset"
+  },
 
   variants: {
     variant: {
