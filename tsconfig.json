@@ -251,6 +251,9 @@
     },
     {
       "path": "./components/table-of-contents"
+    },
+    {
+      "path": "./components/redacted-animation"
     }
   ],
   "files": []

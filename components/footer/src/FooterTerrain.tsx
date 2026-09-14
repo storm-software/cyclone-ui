@@ -107,7 +107,7 @@ export const FooterTerrain = ({ animate = true }: { animate?: boolean }) => {
       start ??= now;
       // A slow, decorative ripple only needs 30 updates per second.
       if (now - lastFrame >= 1000 / 30) {
-        setPath(createTerrainPath((now - start) / 1000));
+        setPath(createTerrainPath(((now - start) / 1000) * 1.25));
         lastFrame = now;
       }
       frame = requestAnimationFrame(tick);
