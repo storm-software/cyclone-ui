@@ -17,14 +17,8 @@
  ------------------------------------------------------------------- */
 
 import { Link } from "@cyclone-ui/link";
-import {
-  styled,
-  Text,
-  View,
-  withStaticProperties,
-  type GetProps
-} from "@tamagui/core";
-
+import type { GetProps } from "@tamagui/core";
+import { styled, Text, View, withStaticProperties } from "@tamagui/core";
 import { FooterTerrain } from "./FooterTerrain";
 
 const FooterFrame = styled(View, {
@@ -256,6 +250,28 @@ const FooterLegalNavigation = styled(View, {
   gap: "$5xl"
 });
 
+const FooterBackgroundLogo = styled(View, {
+  name: "FooterBackgroundLogoText",
+
+  display: "flex",
+  alignItems: "center",
+  position: "absolute",
+  top: "$2xl",
+  zIndex: "$40",
+  paddingHorizontal: "$9xl"
+});
+
+const FooterBackgroundLogoImpl = FooterBackgroundLogo.styleable(
+  ({ children, ...props }, forwardedRef) => (
+    <FooterBackgroundLogo ref={forwardedRef} {...props}>
+      <View opacity={0.075} display="flex" alignItems="center">
+        {children}
+      </View>
+    </FooterBackgroundLogo>
+  ),
+  { staticConfig: { componentName: "FooterLink" } }
+);
+
 export type FooterProps = GetProps<typeof FooterFrame>;
 export type FooterContainerProps = GetProps<typeof FooterContainer>;
 export type FooterMainProps = GetProps<typeof FooterMain>;
@@ -285,8 +301,8 @@ const FooterLinkImpl = FooterLink.styleable(
 const FooterFrameImpl = FooterFrame.styleable(
   ({ children, ...props }, forwardedRef) => (
     <FooterFrame ref={forwardedRef} {...props}>
-      <FooterTerrain />
       {children}
+      <FooterTerrain />
     </FooterFrame>
   ),
   { staticConfig: { componentName: "Footer" } }
@@ -295,6 +311,7 @@ const FooterFrameImpl = FooterFrame.styleable(
 export const Footer = withStaticProperties(FooterFrameImpl, {
   Container: FooterContainer,
   Main: FooterMain,
+  BackgroundLogo: FooterBackgroundLogoImpl,
   Introduction: FooterIntroduction,
   Statement: FooterStatement,
   Description: FooterDescription,

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@cyclone-ui/link": "workspace:*",
+    "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",
     "react-native-svg": "^15.15.5"
   },

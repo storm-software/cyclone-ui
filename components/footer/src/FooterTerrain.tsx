@@ -24,7 +24,8 @@ const TerrainFrame = styled(View, {
   position: "absolute",
   inset: 0,
   overflow: "hidden",
-  pointerEvents: "none"
+  pointerEvents: "none",
+  zIndex: "$20"
 });
 
 // Project a fixed height field once. Shared vertices keep the triangular mesh

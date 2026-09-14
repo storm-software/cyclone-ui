@@ -28,3 +28,5 @@ export * from "./DiscoveryCircle";
 export * from "./ErrorCircle";
 export * from "./InfoCircle";
 export * from "./PdfIcon";
+export * from "./StormLogoIcon";
+export * from "./StormLogoText";

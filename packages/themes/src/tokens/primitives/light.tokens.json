@@ -16,55 +16,55 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.913148 0.068972 182.414)",
+        "$value": "oklch(0.882393 0.052653 190.281)",
         "$description": "The Storm Software brand teal color"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.883255 0.092469 181.098)",
+        "$value": "oklch(0.830764 0.076055 188.440)",
         "$description": "The Storm Software brand teal color"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.856576 0.111772 180.317)",
+        "$value": "oklch(0.780039 0.094153 188.496)",
         "$description": "The Storm Software brand teal color"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.832191 0.127799 178.657)",
+        "$value": "oklch(0.733979 0.109126 186.718)",
         "$description": "The Storm Software brand teal color"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.810820 0.139034 177.331)",
+        "$value": "oklch(0.689733 0.115563 186.097)",
         "$description": "The Storm Software brand teal color"
       },
       "6": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.709818 0.122615 177.035)",
+        "$value": "oklch(0.599035 0.100548 186.162)",
         "$description": "The Storm Software brand teal color"
       },
       "7": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.599671 0.103676 177.098)",
+        "$value": "oklch(0.501793 0.084117 186.168)",
         "$description": "The Storm Software brand teal color"
       },
       "8": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.484363 0.083483 177.138)",
+        "$value": "oklch(0.393525 0.064976 187.410)",
         "$description": "The Storm Software brand teal color"
       },
       "9": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "oklch(0.355527 0.059704 178.183)",
+        "$value": "oklch(0.276751 0.044517 187.787)",
         "$description": "The Storm Software brand teal color"
       }
     },
@@ -73,32 +73,38 @@
       "1": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#FAFAFA",
+        "$value": "#E1E1E1",
         "$description": "The lowest level surface of the palette - soft neutral page canvas"
       },
       "2": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#F4F4F4",
+        "$value": "#EAEAEA",
         "$description": "The second level surface of the palette - neutral gray for inputs and cards"
       },
       "3": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#EAEAEA",
+        "$value": "#F1F1F1",
         "$description": "The third level surface of the palette - neutral gray for floating components"
       },
       "4": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#DCDCDC",
+        "$value": "#F6F6F6",
         "$description": "The fourth level surface of the palette - emphasized gray for the highest elevation"
       },
       "5": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "#C7C7C7",
+        "$value": "#F9F9F9",
         "$description": "The fifth level surface of the palette - deepest gray for maximum elevation"
+      },
+      "6": {
+        "$type": "color",
+        "colorSpace": "display-p3",
+        "$value": "#FAFAFA",
+        "$description": "he sixth level surface of the palette - deepest charcoal for highest elevation"
       },
       "$description": "The surface color palette - a light counterpart to the DeepSeek-inspired graphite scheme"
     },

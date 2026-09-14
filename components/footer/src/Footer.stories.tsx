@@ -17,12 +17,13 @@
  ------------------------------------------------------------------- */
 
 import { Link } from "@cyclone-ui/link";
+import { StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { styled, Text, View } from "@tamagui/core";
 import { Zap } from "@tamagui/lucide-icons-2";
 import type { ComponentProps, ReactNode } from "react";
-
-import { Footer, type FooterProps } from "./Footer";
+import type { FooterProps } from "./Footer";
+import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
@@ -192,12 +193,18 @@ const storyAction = (
 const FooterExample = (props: ComponentProps<typeof Footer>) => (
   <Footer {...props}>
     <Footer.Container>
+      <Footer.BackgroundLogo>
+        <StormLogoText width="100%" />
+      </Footer.BackgroundLogo>
       <Footer.Main>
         <Footer.Introduction>
           <Footer.Statement>Contact us</Footer.Statement>
           <Footer.Description>
-            Thoughtful interfaces. Shared foundations.\nBuilt by Storm
-            Software.\nLet’s bring your next idea to life.
+            Thoughtful interfaces. Shared foundations.
+            <br />
+            Built by Storm Software.
+            <br />
+            Let’s bring your next idea to life.
           </Footer.Description>
         </Footer.Introduction>
 
