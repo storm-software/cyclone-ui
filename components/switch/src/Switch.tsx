@@ -125,7 +125,7 @@ const SwitchThumb = styled(View, {
 
   theme: "base",
   transition: "200ms",
-  backgroundColor: "$backgroundHigh",
+  backgroundColor: "$backgroundFloating",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -134,7 +134,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundHigh"
+        backgroundColor: "$backgroundFloating"
       }
     },
 
@@ -279,7 +279,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "$backgroundHighest"
+            backgroundColor: "$background"
           }}
           {...props}
           id={name}

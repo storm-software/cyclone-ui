@@ -64,7 +64,9 @@ const validation = (
 });
 
 export const Base: Story = {
-  args: {},
+  args: {
+    increment: 2
+  },
   tags: ["input-height-regression"],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -72,8 +74,19 @@ export const Base: Story = {
     const input = canvas.getByRole("spinbutton");
     await expect(input).toHaveStyle({ height: "40px" });
     await expect(input).toHaveAttribute("type", "number");
+    const decreaseButton = canvas.getByRole("button", {
+      name: "Decrease value"
+    });
+    const increaseButton = canvas.getByRole("button", {
+      name: "Increase value"
+    });
     await userEvent.type(input, "12");
     await expect(input).toHaveValue(12);
+    await userEvent.click(increaseButton);
+    await expect(input).toHaveValue(14);
+    await userEvent.click(decreaseButton);
+    await expect(input).toHaveValue(12);
+    await userEvent.click(input);
     await userEvent.keyboard("{ArrowUp}");
     await expect(input).toHaveValue(13);
     await userEvent.keyboard("{ArrowDown}");

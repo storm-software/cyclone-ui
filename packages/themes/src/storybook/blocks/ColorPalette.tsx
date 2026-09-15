@@ -62,15 +62,15 @@ const COLOR_VARIANTS = {
       title={"color.green"}
       subtitle={"A pale green success color"}
       colors={{
-            "1": "#beddc3",
-            "2": "#a0cdab",
-            "3": "#81bd95",
-            "4": "#63ae81",
-            "5": "#449e71",
-            "6": "#268e62",
-            "7": "#1e7957",
-            "8": "#16624a",
-            "9": "#0f4b3c"
+            "1": "#b7ebd5",
+            "2": "#9ce4c6",
+            "3": "#81ddb6",
+            "4": "#66d5a7",
+            "5": "#4bce97",
+            "6": "#45c791",
+            "7": "#3aae7d",
+            "8": "#29815c",
+            "9": "#14412e"
       }}
     />
           <ColorItem
@@ -107,30 +107,30 @@ const COLOR_VARIANTS = {
       title={"color.pink"}
       subtitle={"A pale blush pink color"}
       colors={{
-            "1": "#ffbfd6",
-            "2": "#fbb2cc",
-            "3": "#faa3c3",
-            "4": "#f899bd",
-            "5": "#f98cb7",
-            "6": "#f37fae",
-            "7": "#ed72a5",
-            "8": "#de6d9b",
-            "9": "#b4567d"
+            "1": "#f5c7e4",
+            "2": "#f2b3da",
+            "3": "#ee9ecf",
+            "4": "#eb89c5",
+            "5": "#e774bb",
+            "6": "#df6db3",
+            "7": "#c25c9b",
+            "8": "#904272",
+            "9": "#482039"
       }}
     />
           <ColorItem
       title={"color.purple"}
       subtitle={"A pale lavender purple color"}
       colors={{
-            "1": "#d3ddec",
-            "2": "#becae4",
-            "3": "#a9b5db",
-            "4": "#949ed2",
-            "5": "#8085ca",
-            "6": "#6c6bc1",
-            "7": "#59549c",
-            "8": "#453e76",
-            "9": "#2f2850"
+            "1": "#dbcffd",
+            "2": "#cdbdfc",
+            "3": "#c0abfb",
+            "4": "#b299fa",
+            "5": "#a587f9",
+            "6": "#9d7ff0",
+            "7": "#866cd1",
+            "8": "#624e9b",
+            "9": "#30264d"
       }}
     />
           <ColorItem
@@ -152,27 +152,25 @@ const COLOR_VARIANTS = {
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#b3f8e7",
-            "2": "#8ff4e5",
-            "3": "#6bf1e7",
-            "4": "#47ecee",
-            "5": "#24d8ea",
-            "6": "#00bee7",
-            "7": "#0087b2",
-            "8": "#073b55",
-            "9": "#00273e"
+            "1": "#c4e7f3",
+            "2": "#aeddee",
+            "3": "#97d4e9",
+            "4": "#81cbe5",
+            "5": "#6bc2e0",
+            "6": "#64bbd8",
+            "7": "#55a2bc",
+            "8": "#3d788c",
+            "9": "#1d3b46"
       }}
     />
           <ColorItem
       title={"color.surface"}
       subtitle={"The lowest level surface of the palette - neutral near-black page canvas"}
       colors={{
-            "1": "#151517",
-            "2": "#1b1b1c",
-            "3": "#262626",
-            "4": "#303030",
-            "5": "#3a3a3a",
-            "6": "#616161"
+            "1": "#1f1f21",
+            "2": "#242528",
+            "3": "#2b2c30",
+            "4": "#484848"
       }}
     />
           <ColorItem
@@ -204,10 +202,10 @@ const COLOR_VARIANTS = {
             "danger": "#3c050a",
             "negative": "#790000",
             "warning": "#4d370b",
-            "success": "#0f4b3c",
+            "success": "#14412e",
             "positive": "#243e04",
-            "info": "#00273e",
-            "discovery": "#2f2850",
+            "info": "#1d3b46",
+            "discovery": "#30264d",
             "base-hover": "#363636",
             "base-active": "#333333",
             "base-inactive": "#282828",
@@ -228,49 +226,49 @@ const COLOR_VARIANTS = {
             "warning-active": "#553e14",
             "warning-inactive": "#3a2500",
             "warning-disabled": "#463923",
-            "success-hover": "#004132",
-            "success-active": "#1a5344",
-            "success-inactive": "#003729",
-            "success-disabled": "#2a473e",
+            "success-hover": "#093826",
+            "success-active": "#1c4835",
+            "success-inactive": "#002f1d",
+            "success-disabled": "#263d32",
             "positive-hover": "#1c3500",
             "positive-active": "#2b450d",
             "positive-inactive": "#142d00",
             "positive-disabled": "#2b3b1e",
-            "info-hover": "#002137",
-            "info-active": "#052c44",
-            "info-inactive": "#001a30",
-            "info-disabled": "#132634",
-            "discovery-hover": "#282047",
-            "discovery-active": "#352e57",
-            "discovery-inactive": "#21193f",
-            "discovery-disabled": "#2f2c43"
+            "info-hover": "#14323d",
+            "info-active": "#24424d",
+            "info-inactive": "#0b2a34",
+            "info-disabled": "#293940",
+            "discovery-hover": "#291e45",
+            "discovery-active": "#362c54",
+            "discovery-inactive": "#22173c",
+            "discovery-disabled": "#2f2a41"
       }}
     />
           <ColorItem
       title={"color.border"}
       subtitle={"Hairline-strong border against ink cards"}
       colors={{
-            "base": "#3a3a3a",
+            "base": "#616161",
             "brand": "#2dbc9c",
             "danger": "#cf2d56",
             "negative": "#ff0404",
             "warning": "#d29527",
-            "success": "#268e62",
+            "success": "#45c791",
             "positive": "#76c319",
-            "info": "#00bee7",
-            "discovery": "#6c6bc1",
+            "info": "#64bbd8",
+            "discovery": "#9d7ff0",
             "base-subtle": "#484848",
             "brand-subtle": "#166855",
             "danger-subtle": "#5a0f17",
             "negative-subtle": "#790000",
             "warning-subtle": "#a6761c",
-            "success-subtle": "#16624a",
+            "success-subtle": "#29815c",
             "positive-subtle": "#c8e7a3",
-            "info-subtle": "#073b55",
-            "discovery-subtle": "#453e76",
-            "base-hover": "#4c4c4c",
-            "base-active": "#838383",
-            "base-disabled": "#3a3a3a99",
+            "info-subtle": "#3d788c",
+            "discovery-subtle": "#624e9b",
+            "base-hover": "#7d7d7d",
+            "base-active": "#d1d1d1",
+            "base-disabled": "#61616199",
             "brand-hover": "#008f71",
             "brand-active": "#54d9b8",
             "brand-disabled": "#6eb39f",
@@ -283,18 +281,18 @@ const COLOR_VARIANTS = {
             "warning-hover": "#a46900",
             "warning-active": "#f0b14b",
             "warning-disabled": "#c09c66",
-            "success-hover": "#006b42",
-            "success-active": "#42a477",
-            "success-disabled": "#53866c",
+            "success-hover": "#009865",
+            "success-active": "#68e6ae",
+            "success-disabled": "#7bbd9c",
             "positive-hover": "#499400",
             "positive-active": "#93e246",
             "positive-disabled": "#8dba69",
-            "info-hover": "#008fb6",
-            "info-active": "#45dcff",
-            "info-disabled": "#6db8d0",
-            "discovery-hover": "#4d499c",
-            "discovery-active": "#8081d9",
-            "discovery-disabled": "#6f71a4",
+            "info-hover": "#318ca8",
+            "info-active": "#83d9f7",
+            "info-disabled": "#86b6c7",
+            "discovery-hover": "#7656c2",
+            "discovery-active": "#b79aff",
+            "discovery-disabled": "#998bcd",
             "base-subtle-hover": "#5e5e5e",
             "base-subtle-active": "#9f9f9f",
             "base-subtle-disabled": "#48484899",
@@ -310,18 +308,18 @@ const COLOR_VARIANTS = {
             "warning-subtle-hover": "#815300",
             "warning-subtle-active": "#be8d39",
             "warning-subtle-disabled": "#977b50",
-            "success-subtle-hover": "#004933",
-            "success-subtle-active": "#2a7259",
-            "success-subtle-disabled": "#385d4e",
+            "success-subtle-hover": "#00613e",
+            "success-subtle-active": "#41966f",
+            "success-subtle-disabled": "#4d7a64",
             "positive-subtle-hover": "#90ad6c",
             "positive-subtle-active": "#ecffc7",
             "positive-subtle-disabled": "#cfe2ba",
-            "info-subtle-hover": "#002a42",
-            "info-subtle-active": "#164661",
-            "info-subtle-disabled": "#213a49",
-            "discovery-subtle-hover": "#31295e",
-            "discovery-subtle-active": "#524c85",
-            "discovery-subtle-disabled": "#454364"
+            "info-subtle-hover": "#1b596c",
+            "info-subtle-active": "#518ca1",
+            "info-subtle-disabled": "#547581",
+            "discovery-subtle-hover": "#48337d",
+            "discovery-subtle-active": "#735fae",
+            "discovery-subtle-disabled": "#605683"
       }}
     />
           <ColorItem
@@ -333,10 +331,10 @@ const COLOR_VARIANTS = {
             "danger": "#cf2d56",
             "negative": "#ff0404",
             "warning": "#d29527",
-            "success": "#268e62",
+            "success": "#45c791",
             "positive": "#76c319",
-            "info": "#00bee7",
-            "discovery": "#6c6bc1",
+            "info": "#64bbd8",
+            "discovery": "#9d7ff0",
             "base-inverse": "#0c0c0d",
             "brand-inverse": "#fafafa",
             "danger-inverse": "#fafafa",
@@ -366,22 +364,22 @@ const COLOR_VARIANTS = {
             "warning-active": "#f0b14b",
             "warning-inactive": "#784000",
             "warning-disabled": "#c09c66",
-            "success-hover": "#006b42",
-            "success-active": "#42a477",
-            "success-inactive": "#004a24",
-            "success-disabled": "#999999",
+            "success-hover": "#009865",
+            "success-active": "#68e6ae",
+            "success-inactive": "#006a3b",
+            "success-disabled": "#7bbd9c",
             "positive-hover": "#499400",
             "positive-active": "#93e246",
             "positive-inactive": "#1b6600",
             "positive-disabled": "#8dba69",
-            "info-hover": "#008fb6",
-            "info-active": "#45dcff",
-            "info-inactive": "#006288",
-            "info-disabled": "#6db8d0",
-            "discovery-hover": "#4d499c",
-            "discovery-active": "#8081d9",
-            "discovery-inactive": "#312978",
-            "discovery-disabled": "#999999",
+            "info-hover": "#318ca8",
+            "info-active": "#83d9f7",
+            "info-inactive": "#00607a",
+            "info-disabled": "#86b6c7",
+            "discovery-hover": "#7656c2",
+            "discovery-active": "#b79aff",
+            "discovery-inactive": "#512c96",
+            "discovery-disabled": "#998bcd",
             "base-inverse-hover": "#131314",
             "base-inverse-active": "#262628",
             "base-inverse-inactive": "#030303",
@@ -423,10 +421,10 @@ const COLOR_VARIANTS = {
             "danger-ghost-hover": "#ff7186",
             "negative-ghost-hover": "#ff8e77",
             "warning-ghost-hover": "#ffd484",
-            "success-ghost-hover": "#6cc193",
+            "success-ghost-hover": "#99ffd4",
             "positive-ghost-hover": "#b8ff8d",
-            "info-ghost-hover": "#99ffff",
-            "discovery-ghost-hover": "#9a9bf6",
+            "info-ghost-hover": "#a9ffff",
+            "discovery-ghost-hover": "#d9bcff",
             "base-inverse-ghost-hover": "#2d2d2f"
       }}
     />
@@ -440,40 +438,30 @@ const COLOR_VARIANTS = {
       subtitle={"The lowest background color for the dark theme"}
       colors={{
             "lowest": "#0c0c0d",
-            "page": "#151517",
-            "elevated": "#1b1b1c",
-            "floating": "#262626",
-            "high": "#303030",
-            "higher": "#3a3a3a",
-            "highest": "#616161",
+            "page": "#1f1f21",
+            "elevated": "#242528",
+            "floating": "#2b2c30",
+            "highest": "#484848",
             "lowest-hover": "#09090a",
             "lowest-active": "#0f0f10",
             "lowest-inactive": "#060607",
             "lowest-disabled": "#0c0c0d",
-            "page-hover": "#111113",
-            "page-active": "#19191b",
-            "page-inactive": "#0c0c0e",
-            "page-disabled": "#151516",
-            "elevated-hover": "#161617",
-            "elevated-active": "#1f1f20",
-            "elevated-inactive": "#111112",
-            "elevated-disabled": "#1b1b1c",
-            "floating-hover": "#202020",
-            "floating-active": "#2b2b2b",
-            "floating-inactive": "#191919",
-            "floating-disabled": "#26262699",
-            "high-hover": "#282828",
-            "high-active": "#363636",
-            "high-inactive": "#212121",
-            "high-disabled": "#30303099",
-            "higher-hover": "#313131",
-            "higher-active": "#414141",
-            "higher-inactive": "#282828",
-            "higher-disabled": "#3a3a3a99",
-            "highest-hover": "#535353",
-            "highest-active": "#6c6c6c",
-            "highest-inactive": "#464646",
-            "highest-disabled": "#61616199"
+            "page-hover": "#19191b",
+            "page-active": "#242426",
+            "page-inactive": "#141416",
+            "page-disabled": "#1f1f20",
+            "elevated-hover": "#1e1f22",
+            "elevated-active": "#292a2d",
+            "elevated-inactive": "#18191b",
+            "elevated-disabled": "#242527",
+            "floating-hover": "#242529",
+            "floating-active": "#313236",
+            "floating-inactive": "#1d1e22",
+            "floating-disabled": "#2b2c2e",
+            "highest-hover": "#3d3d3d",
+            "highest-active": "#515151",
+            "highest-inactive": "#333333",
+            "highest-disabled": "#48484899"
       }}
     />
           <ColorItem
@@ -512,16 +500,16 @@ const COLOR_VARIANTS = {
             "orange.subtle": "#b45b2b",
             "yellow.emphasis": "#ffb433",
             "yellow.subtle": "#4d370b",
-            "green.emphasis": "#449e71",
-            "green.subtle": "#16624a",
-            "sky.emphasis": "#24d8ea",
-            "sky.subtle": "#00273e",
+            "green.emphasis": "#4bce97",
+            "green.subtle": "#29815c",
+            "sky.emphasis": "#6bc2e0",
+            "sky.subtle": "#1d3b46",
             "blue.emphasis": "#5291ff",
             "blue.subtle": "#1d70f2",
-            "purple.emphasis": "#8085ca",
-            "purple.subtle": "#2f2850",
-            "pink.emphasis": "#f98cb7",
-            "pink.subtle": "#b4567d"
+            "purple.emphasis": "#a587f9",
+            "purple.subtle": "#30264d",
+            "pink.emphasis": "#e774bb",
+            "pink.subtle": "#482039"
       }}
     />
           <ColorItem
@@ -559,16 +547,16 @@ const COLOR_VARIANTS = {
       title={"color.overlay"}
       subtitle={"The overlay background color for the dark theme"}
       colors={{
-            "background": "#262626",
-            "border": "#3a3a3a",
+            "background": "#2b2c30",
+            "border": "#616161",
             "backdrop": "#0d0c0766",
-            "background-hover": "#202020",
-            "background-active": "#2b2b2b",
-            "background-inactive": "#191919",
-            "background-disabled": "#26262699",
-            "border-hover": "#282828",
-            "border-active": "#454545",
-            "border-disabled": "#3a3a3a99"
+            "background-hover": "#242529",
+            "background-active": "#313236",
+            "background-inactive": "#1d1e22",
+            "background-disabled": "#2b2c2e",
+            "border-hover": "#464646",
+            "border-active": "#737373",
+            "border-disabled": "#61616199"
       }}
     />
           <ColorItem
@@ -643,15 +631,15 @@ const COLOR_VARIANTS = {
       title={"color.green"}
       subtitle={"A pale green success color"}
       colors={{
-            "1": "#aac3ae",
-            "2": "#97b59e",
-            "3": "#83a890",
-            "4": "#719b82",
-            "5": "#5c8f75",
-            "6": "#45856a",
-            "7": "#3d7963",
-            "8": "#346c5b",
-            "9": "#2c5f53"
+            "1": "#a3cebc",
+            "2": "#93c7b1",
+            "3": "#83bfa5",
+            "4": "#73b69a",
+            "5": "#63ae8f",
+            "6": "#60a88a",
+            "7": "#57987d",
+            "8": "#467e66",
+            "9": "#305847"
       }}
     />
           <ColorItem
@@ -688,30 +676,30 @@ const COLOR_VARIANTS = {
       title={"color.pink"}
       subtitle={"A pale blush pink color"}
       colors={{
-            "1": "#e4a1b9",
-            "2": "#dd9bb3",
-            "3": "#da93ad",
-            "4": "#d78eaa",
-            "5": "#d686a6",
-            "6": "#d080a0",
-            "7": "#c9799a",
-            "8": "#bd7794",
-            "9": "#9e697f"
+            "1": "#d9aac8",
+            "2": "#d59fc0",
+            "3": "#cf93b8",
+            "4": "#ca87b0",
+            "5": "#c57ba8",
+            "6": "#be77a3",
+            "7": "#a86d91",
+            "8": "#875975",
+            "9": "#5a3b4f"
       }}
     />
           <ColorItem
       title={"color.purple"}
       subtitle={"A pale lavender purple color"}
       colors={{
-            "1": "#b6c0d0",
-            "2": "#a9b3c9",
-            "3": "#9ca5c0",
-            "4": "#8f96b8",
-            "5": "#8386b1",
-            "6": "#7776a8",
-            "7": "#69668e",
-            "8": "#585477",
-            "9": "#47425f"
+            "1": "#baabe3",
+            "2": "#b1a1e0",
+            "3": "#aa97dc",
+            "4": "#a18ed9",
+            "5": "#9984d6",
+            "6": "#9580cd",
+            "7": "#8677b4",
+            "8": "#6d628e",
+            "9": "#47405d"
       }}
     />
           <ColorItem
@@ -733,27 +721,25 @@ const COLOR_VARIANTS = {
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#9ddacb",
-            "2": "#89d2c8",
-            "3": "#75cbc5",
-            "4": "#61c3c4",
-            "5": "#4db2bc",
-            "6": "#36a1b9",
-            "7": "#2d819c",
-            "8": "#265167",
-            "9": "#1b445d"
+            "1": "#a9cbd7",
+            "2": "#9cc3d1",
+            "3": "#8fbbca",
+            "4": "#82b3c5",
+            "5": "#76acbe",
+            "6": "#72a6b8",
+            "7": "#6994a3",
+            "8": "#557884",
+            "9": "#38515a"
       }}
     />
           <ColorItem
       title={"color.surface"}
       subtitle={"The lowest level surface of the palette - neutral near-black page canvas"}
       colors={{
-            "1": "#343437",
-            "2": "#39393a",
-            "3": "#414141",
-            "4": "#484848",
-            "5": "#4f4f4f",
-            "6": "#6a6a6a"
+            "1": "#3c3c3e",
+            "2": "#3f4043",
+            "3": "#444548",
+            "4": "#595959"
       }}
     />
           <ColorItem
@@ -785,10 +771,10 @@ const COLOR_VARIANTS = {
             "danger": "#592126",
             "negative": "#7d2424",
             "warning": "#624f29",
-            "success": "#2c5f53",
+            "success": "#305847",
             "positive": "#405b20",
-            "info": "#1b445d",
-            "discovery": "#47425f",
+            "info": "#38515a",
+            "discovery": "#47405d",
             "base-hover": "#4c4c4c",
             "base-active": "#4a4a4a",
             "base-inactive": "#424242",
@@ -809,49 +795,49 @@ const COLOR_VARIANTS = {
             "warning-active": "#655231",
             "warning-inactive": "#5b431a",
             "warning-disabled": "#594f3d",
-            "success-hover": "#1b5f4f",
-            "success-active": "#366257",
-            "success-inactive": "#1a5949",
-            "success-disabled": "#435952",
+            "success-hover": "#255543",
+            "success-active": "#385b4c",
+            "success-inactive": "#19553e",
+            "success-disabled": "#405249",
             "positive-hover": "#3b581a",
             "positive-active": "#455c2a",
             "positive-inactive": "#335418",
             "positive-disabled": "#445239",
-            "info-hover": "#1a4059",
-            "info-active": "#22475e",
-            "info-inactive": "#193a55",
-            "info-disabled": "#2f424f",
-            "discovery-hover": "#413b5a",
-            "discovery-active": "#4b4663",
-            "discovery-inactive": "#3c3555",
-            "discovery-disabled": "#474456"
+            "info-hover": "#304b55",
+            "info-active": "#3e555d",
+            "info-inactive": "#274752",
+            "info-disabled": "#424f54",
+            "discovery-hover": "#423959",
+            "discovery-active": "#4c4561",
+            "discovery-inactive": "#3d3354",
+            "discovery-disabled": "#474355"
       }}
     />
           <ColorItem
       title={"color.border"}
       subtitle={"Hairline-strong border against ink cards"}
       colors={{
-            "base": "#4f4f4f",
+            "base": "#6a6a6a",
             "brand": "#4fa08e",
             "danger": "#ab5268",
             "negative": "#c63c3c",
             "warning": "#ad8b4e",
-            "success": "#45856a",
+            "success": "#60a88a",
             "positive": "#78a442",
-            "info": "#36a1b9",
-            "discovery": "#7776a8",
+            "info": "#72a6b8",
+            "discovery": "#9580cd",
             "base-subtle": "#595959",
             "brand-subtle": "#357062",
             "danger-subtle": "#682e34",
             "negative-subtle": "#7d2424",
             "warning-subtle": "#947741",
-            "success-subtle": "#346c5b",
+            "success-subtle": "#467e66",
             "positive-subtle": "#b2ca97",
-            "info-subtle": "#265167",
-            "discovery-subtle": "#585477",
-            "base-hover": "#5b5b5b",
-            "base-active": "#828282",
-            "base-disabled": "#4f4f4f99",
+            "info-subtle": "#557884",
+            "discovery-subtle": "#6d628e",
+            "base-hover": "#7e7e7e",
+            "base-active": "#b9b9b9",
+            "base-disabled": "#6a6a6a99",
             "brand-hover": "#288974",
             "brand-active": "#69b7a3",
             "brand-disabled": "#789f94",
@@ -864,18 +850,18 @@ const COLOR_VARIANTS = {
             "warning-hover": "#946e2b",
             "warning-active": "#c6a063",
             "warning-disabled": "#a79273",
-            "success-hover": "#227555",
-            "success-active": "#5b9379",
-            "success-disabled": "#638172",
+            "success-hover": "#298e6c",
+            "success-active": "#74c2a0",
+            "success-disabled": "#80a793",
             "positive-hover": "#598c29",
             "positive-active": "#8dbb60",
             "positive-disabled": "#8aa375",
-            "info-hover": "#2e869e",
-            "info-active": "#5fbbd0",
-            "info-disabled": "#77a5b3",
-            "discovery-hover": "#615f8e",
-            "discovery-active": "#8383bb",
-            "discovery-disabled": "#787995",
+            "info-hover": "#508495",
+            "info-active": "#82bed3",
+            "info-disabled": "#87a4af",
+            "discovery-hover": "#7c6aa7",
+            "discovery-active": "#a48dde",
+            "discovery-disabled": "#938ab4",
             "base-subtle-hover": "#686868",
             "base-subtle-active": "#969696",
             "base-subtle-disabled": "#59595999",
@@ -891,18 +877,18 @@ const COLOR_VARIANTS = {
             "warning-subtle-hover": "#816126",
             "warning-subtle-active": "#a28658",
             "warning-subtle-disabled": "#8b7b63",
-            "success-subtle-hover": "#1d634e",
-            "success-subtle-active": "#457464",
-            "success-subtle-disabled": "#4e675d",
+            "success-subtle-hover": "#207053",
+            "success-subtle-active": "#598a74",
+            "success-subtle-disabled": "#5e796c",
             "positive-subtle-hover": "#8b9b76",
             "positive-subtle-active": "#cfe5a5",
             "positive-subtle-disabled": "#b7c7a6",
-            "info-subtle-hover": "#1c475f",
-            "info-subtle-active": "#34586c",
-            "info-subtle-disabled": "#3c4f5b",
-            "discovery-subtle-hover": "#494368",
-            "discovery-subtle-active": "#625f80",
-            "discovery-subtle-disabled": "#57566b"
+            "info-subtle-hover": "#396472",
+            "info-subtle-active": "#658691",
+            "info-subtle-disabled": "#64777e",
+            "discovery-subtle-hover": "#5a4d7b",
+            "discovery-subtle-active": "#796e9b",
+            "discovery-subtle-disabled": "#6b657f"
       }}
     />
           <ColorItem
@@ -914,10 +900,10 @@ const COLOR_VARIANTS = {
             "danger": "#ab5268",
             "negative": "#c63c3c",
             "warning": "#ad8b4e",
-            "success": "#45856a",
+            "success": "#60a88a",
             "positive": "#78a442",
-            "info": "#36a1b9",
-            "discovery": "#7776a8",
+            "info": "#72a6b8",
+            "discovery": "#9580cd",
             "base-inverse": "#2e2e30",
             "brand-inverse": "#d5d5d5",
             "danger-inverse": "#d5d5d5",
@@ -947,22 +933,22 @@ const COLOR_VARIANTS = {
             "warning-active": "#c6a063",
             "warning-inactive": "#7c5324",
             "warning-disabled": "#a79273",
-            "success-hover": "#227555",
-            "success-active": "#5b9379",
-            "success-inactive": "#1d633f",
-            "success-disabled": "#919191",
+            "success-hover": "#298e6c",
+            "success-active": "#74c2a0",
+            "success-inactive": "#227550",
+            "success-disabled": "#80a793",
             "positive-hover": "#598c29",
             "positive-active": "#8dbb60",
             "positive-inactive": "#377321",
             "positive-disabled": "#8aa375",
-            "info-hover": "#2e869e",
-            "info-active": "#5fbbd0",
-            "info-inactive": "#276b85",
-            "info-disabled": "#77a5b3",
-            "discovery-hover": "#615f8e",
-            "discovery-active": "#8383bb",
-            "discovery-inactive": "#4a4578",
-            "discovery-disabled": "#919191",
+            "info-hover": "#508495",
+            "info-active": "#82bed3",
+            "info-inactive": "#246a7d",
+            "info-disabled": "#87a4af",
+            "discovery-hover": "#7c6aa7",
+            "discovery-active": "#a48dde",
+            "discovery-inactive": "#614a8a",
+            "discovery-disabled": "#938ab4",
             "base-inverse-hover": "#333335",
             "base-inverse-active": "#414142",
             "base-inverse-inactive": "#282828",
@@ -1004,10 +990,10 @@ const COLOR_VARIANTS = {
             "danger-ghost-hover": "#d77785",
             "negative-ghost-hover": "#d88a7a",
             "warning-ghost-hover": "#dabb81",
-            "success-ghost-hover": "#77a98e",
+            "success-ghost-hover": "#8cdebb",
             "positive-ghost-hover": "#a6dc86",
-            "info-ghost-hover": "#8cdede",
-            "discovery-ghost-hover": "#8f90d6",
+            "info-ghost-hover": "#95e0e0",
+            "discovery-ghost-hover": "#bd9fe3",
             "base-inverse-ghost-hover": "#464647"
       }}
     />
@@ -1021,40 +1007,30 @@ const COLOR_VARIANTS = {
       subtitle={"The lowest background color for the dark theme"}
       colors={{
             "lowest": "#2e2e30",
-            "page": "#343437",
-            "elevated": "#39393a",
-            "floating": "#414141",
-            "high": "#484848",
-            "higher": "#4f4f4f",
-            "highest": "#6a6a6a",
+            "page": "#3c3c3e",
+            "elevated": "#3f4043",
+            "floating": "#444548",
+            "highest": "#595959",
             "lowest-hover": "#2c2c2e",
             "lowest-active": "#303032",
             "lowest-inactive": "#29292d",
             "lowest-disabled": "#2e2e30",
-            "page-hover": "#313134",
-            "page-active": "#37373a",
-            "page-inactive": "#2d2d31",
-            "page-disabled": "#353536",
-            "elevated-hover": "#353537",
-            "elevated-active": "#3c3c3d",
-            "elevated-inactive": "#323233",
-            "elevated-disabled": "#39393a",
-            "floating-hover": "#3d3d3d",
-            "floating-active": "#444444",
-            "floating-inactive": "#383838",
-            "floating-disabled": "#41414199",
-            "high-hover": "#424242",
-            "high-active": "#4c4c4c",
-            "high-inactive": "#3d3d3d",
-            "high-disabled": "#48484899",
-            "higher-hover": "#494949",
-            "higher-active": "#545454",
-            "higher-inactive": "#424242",
-            "higher-disabled": "#4f4f4f99",
-            "highest-hover": "#606060",
-            "highest-active": "#727272",
-            "highest-inactive": "#575757",
-            "highest-disabled": "#6a6a6a99"
+            "page-hover": "#37373a",
+            "page-active": "#3f3f41",
+            "page-inactive": "#343436",
+            "page-disabled": "#3c3c3d",
+            "elevated-hover": "#3b3c3f",
+            "elevated-active": "#434346",
+            "elevated-inactive": "#36373a",
+            "elevated-disabled": "#3f4042",
+            "floating-hover": "#3f4044",
+            "floating-active": "#48494c",
+            "floating-inactive": "#3a3b3f",
+            "floating-disabled": "#444547",
+            "highest-hover": "#515151",
+            "highest-active": "#5f5f5f",
+            "highest-inactive": "#4a4a4a",
+            "highest-disabled": "#59595999"
       }}
     />
           <ColorItem
@@ -1093,16 +1069,16 @@ const COLOR_VARIANTS = {
             "orange.subtle": "#9c694d",
             "yellow.emphasis": "#cea155",
             "yellow.subtle": "#624f29",
-            "green.emphasis": "#5c8f75",
-            "green.subtle": "#346c5b",
-            "sky.emphasis": "#4db2bc",
-            "sky.subtle": "#1b445d",
+            "green.emphasis": "#63ae8f",
+            "green.subtle": "#467e66",
+            "sky.emphasis": "#76acbe",
+            "sky.subtle": "#38515a",
             "blue.emphasis": "#668dd3",
             "blue.subtle": "#4978c1",
-            "purple.emphasis": "#8386b1",
-            "purple.subtle": "#47425f",
-            "pink.emphasis": "#d686a6",
-            "pink.subtle": "#9e697f"
+            "purple.emphasis": "#9984d6",
+            "purple.subtle": "#47405d",
+            "pink.emphasis": "#c57ba8",
+            "pink.subtle": "#5a3b4f"
       }}
     />
           <ColorItem
@@ -1140,16 +1116,16 @@ const COLOR_VARIANTS = {
       title={"color.overlay"}
       subtitle={"The overlay background color for the dark theme"}
       colors={{
-            "background": "#414141",
-            "border": "#4f4f4f",
+            "background": "#444548",
+            "border": "#6a6a6a",
             "backdrop": "#35322666",
-            "background-hover": "#3d3d3d",
-            "background-active": "#444444",
-            "background-inactive": "#383838",
-            "background-disabled": "#41414199",
-            "border-hover": "#424242",
-            "border-active": "#575757",
-            "border-disabled": "#4f4f4f99"
+            "background-hover": "#3f4044",
+            "background-active": "#48494c",
+            "background-inactive": "#3a3b3f",
+            "background-disabled": "#444547",
+            "border-hover": "#575757",
+            "border-active": "#777777",
+            "border-disabled": "#6a6a6a99"
       }}
     />
           <ColorItem
@@ -1224,15 +1200,15 @@ const COLOR_VARIANTS = {
       title={"color.green"}
       subtitle={"A pale green success color"}
       colors={{
-            "1": "#eaf7ec",
-            "2": "#b9e6c4",
-            "3": "#87d4a0",
-            "4": "#56c382",
-            "5": "#2ca96a",
-            "6": "#0c8652",
-            "7": "#07613f",
-            "8": "#033828",
-            "9": "#000f0c"
+            "1": "#eefdf7",
+            "2": "#c1f9e2",
+            "3": "#94f5cc",
+            "4": "#66f0b7",
+            "5": "#39eca1",
+            "6": "#2de498",
+            "7": "#1ebf7b",
+            "8": "#11734a",
+            "9": "#010705"
       }}
     />
           <ColorItem
@@ -1270,14 +1246,14 @@ const COLOR_VARIANTS = {
       subtitle={"A pale blush pink color"}
       colors={{
             "1": "#ffffff",
-            "2": "#fffcfd",
-            "3": "#ffe5ef",
-            "4": "#ffd4e4",
-            "5": "#ffc2da",
-            "6": "#ffa7cb",
-            "7": "#ff8bbb",
-            "8": "#f875aa",
-            "9": "#cc437c"
+            "2": "#fff1fa",
+            "3": "#ffcdeb",
+            "4": "#ffaade",
+            "5": "#ff85d0",
+            "6": "#f976c6",
+            "7": "#dc50a6",
+            "8": "#932b6b",
+            "9": "#1c0815"
       }}
     />
           <ColorItem
@@ -1285,14 +1261,14 @@ const COLOR_VARIANTS = {
       subtitle={"A pale lavender purple color"}
       colors={{
             "1": "#ffffff",
-            "2": "#f0f4fb",
-            "3": "#cdd6f3",
-            "4": "#aab5ea",
-            "5": "#8a90e2",
-            "6": "#6867d9",
-            "7": "#4740aa",
-            "8": "#2f276b",
-            "9": "#140f2c"
+            "2": "#ffffff",
+            "3": "#f6f2ff",
+            "4": "#e1d7ff",
+            "5": "#cdbbff",
+            "6": "#bba2ff",
+            "7": "#8e6eeb",
+            "8": "#5538a7",
+            "9": "#140d27"
       }}
     />
           <ColorItem
@@ -1314,15 +1290,15 @@ const COLOR_VARIANTS = {
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#f9fffe",
-            "2": "#bffff6",
-            "3": "#87fff6",
-            "4": "#4efdff",
-            "5": "#16eaff",
-            "6": "#00b5dc",
-            "7": "#006d8f",
-            "8": "#000c13",
-            "9": "#000000"
+            "1": "#ffffff",
+            "2": "#e5f7fe",
+            "3": "#bdecfd",
+            "4": "#99e2fc",
+            "5": "#73d7fa",
+            "6": "#64cff3",
+            "7": "#44b1d5",
+            "8": "#25728c",
+            "9": "#061217"
       }}
     />
           <ColorItem
@@ -1331,10 +1307,8 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#000000",
             "2": "#000000",
-            "3": "#000000",
-            "4": "#0c0c0c",
-            "5": "#1b1b1b",
-            "6": "#535353"
+            "3": "#08080a",
+            "4": "#2f2f2f"
       }}
     />
           <ColorItem
@@ -1366,10 +1340,10 @@ const COLOR_VARIANTS = {
             "danger": "#000000",
             "negative": "#3d0000",
             "warning": "#0d0900",
-            "success": "#000f0c",
+            "success": "#010705",
             "positive": "#000000",
-            "info": "#000000",
-            "discovery": "#140f2c",
+            "info": "#061217",
+            "discovery": "#140d27",
             "base-hover": "#151515",
             "base-active": "#111111",
             "base-inactive": "#010101",
@@ -1391,48 +1365,48 @@ const COLOR_VARIANTS = {
             "warning-inactive": "#000000",
             "warning-disabled": "#1c1509",
             "success-hover": "#000000",
-            "success-active": "#05261d",
+            "success-active": "#051910",
             "success-inactive": "#000000",
-            "success-disabled": "#0f221c",
+            "success-disabled": "#09140f",
             "positive-hover": "#000000",
             "positive-active": "#020400",
             "positive-inactive": "#000000",
             "positive-disabled": "#070b04",
-            "info-hover": "#000000",
-            "info-active": "#000000",
+            "info-hover": "#000202",
+            "info-active": "#0b1f26",
             "info-inactive": "#000000",
-            "info-disabled": "#000000",
-            "discovery-hover": "#0c081b",
-            "discovery-active": "#1b1539",
-            "discovery-inactive": "#04020a",
-            "discovery-disabled": "#110f1f"
+            "info-disabled": "#0c1519",
+            "discovery-hover": "#0b0617",
+            "discovery-active": "#1b1334",
+            "discovery-inactive": "#020105",
+            "discovery-disabled": "#100d1b"
       }}
     />
           <ColorItem
       title={"color.border"}
       subtitle={"Hairline-strong border against ink cards"}
       colors={{
-            "base": "#1b1b1b",
+            "base": "#535353",
             "brand": "#0ed2a6",
             "danger": "#f00a45",
             "negative": "#ff0606",
             "warning": "#f39e03",
-            "success": "#0c8652",
+            "success": "#2de498",
             "positive": "#70cc00",
-            "info": "#00b5dc",
-            "discovery": "#6867d9",
+            "info": "#64cff3",
+            "discovery": "#bba2ff",
             "base-subtle": "#2f2f2f",
             "brand-subtle": "#024233",
             "danger-subtle": "#260004",
             "negative-subtle": "#3d0000",
             "warning-subtle": "#a76d00",
-            "success-subtle": "#033828",
+            "success-subtle": "#11734a",
             "positive-subtle": "#e6fbce",
-            "info-subtle": "#000c13",
-            "discovery-subtle": "#2f276b",
-            "base-hover": "#353535",
-            "base-active": "#858585",
-            "base-disabled": "#1b1b1b99",
+            "info-subtle": "#25728c",
+            "discovery-subtle": "#5538a7",
+            "base-hover": "#7c7c7c",
+            "base-active": "#f6f6f6",
+            "base-disabled": "#53535399",
             "brand-hover": "#005d49",
             "brand-active": "#4bf6cc",
             "brand-disabled": "#68c9ad",
@@ -1445,18 +1419,18 @@ const COLOR_VARIANTS = {
             "warning-hover": "#7b4f00",
             "warning-active": "#ffbf57",
             "warning-disabled": "#d9a85f",
-            "success-hover": "#002819",
-            "success-active": "#29b273",
-            "success-disabled": "#3f8963",
+            "success-hover": "#006a46",
+            "success-active": "#73ffc1",
+            "success-disabled": "#7ed4a9",
             "positive-hover": "#316400",
             "positive-active": "#9cff3b",
             "positive-disabled": "#93d162",
-            "info-hover": "#007595",
-            "info-active": "#64e2ff",
-            "info-disabled": "#6fccea",
-            "discovery-hover": "#3832a7",
-            "discovery-active": "#9091f1",
-            "discovery-disabled": "#6669b6",
+            "info-hover": "#158eb3",
+            "info-active": "#b2ebff",
+            "info-disabled": "#91cbdf",
+            "discovery-hover": "#7347dc",
+            "discovery-active": "#e8dfff",
+            "discovery-disabled": "#ab9be5",
             "base-subtle-hover": "#4f4f4f",
             "base-subtle-active": "#adadad",
             "base-subtle-disabled": "#2f2f2f99",
@@ -1472,18 +1446,18 @@ const COLOR_VARIANTS = {
             "warning-subtle-hover": "#482f00",
             "warning-subtle-active": "#d8931b",
             "warning-subtle-disabled": "#a1793b",
-            "success-subtle-hover": "#000000",
-            "success-subtle-active": "#125d43",
-            "success-subtle-disabled": "#1f4636",
+            "success-subtle-hover": "#001a11",
+            "success-subtle-active": "#299c67",
+            "success-subtle-disabled": "#387658",
             "positive-subtle-hover": "#97c163",
             "positive-subtle-active": "#ffffff",
             "positive-subtle-disabled": "#f2fae9",
-            "info-subtle-hover": "#000000",
-            "info-subtle-active": "#032437",
-            "info-subtle-disabled": "#09161e",
-            "discovery-subtle-hover": "#181140",
-            "discovery-subtle-active": "#3f3786",
-            "discovery-subtle-disabled": "#2e2c54"
+            "info-subtle-hover": "#063b4b",
+            "info-subtle-active": "#3b92b1",
+            "info-subtle-disabled": "#417082",
+            "discovery-subtle-hover": "#331b72",
+            "discovery-subtle-active": "#6d50c3",
+            "discovery-subtle-disabled": "#524385"
       }}
     />
           <ColorItem
@@ -1495,10 +1469,10 @@ const COLOR_VARIANTS = {
             "danger": "#f00a45",
             "negative": "#ff0606",
             "warning": "#f39e03",
-            "success": "#0c8652",
+            "success": "#2de498",
             "positive": "#70cc00",
-            "info": "#00b5dc",
-            "discovery": "#6867d9",
+            "info": "#64cff3",
+            "discovery": "#bba2ff",
             "base-inverse": "#000000",
             "brand-inverse": "#ffffff",
             "danger-inverse": "#ffffff",
@@ -1528,22 +1502,22 @@ const COLOR_VARIANTS = {
             "warning-active": "#ffbf57",
             "warning-inactive": "#3b2000",
             "warning-disabled": "#d9a85f",
-            "success-hover": "#002819",
-            "success-active": "#29b273",
-            "success-inactive": "#000000",
-            "success-disabled": "#a4a4a4",
+            "success-hover": "#006a46",
+            "success-active": "#73ffc1",
+            "success-inactive": "#002716",
+            "success-disabled": "#7ed4a9",
             "positive-hover": "#316400",
             "positive-active": "#9cff3b",
             "positive-inactive": "#092100",
             "positive-disabled": "#93d162",
-            "info-hover": "#007595",
-            "info-active": "#64e2ff",
-            "info-inactive": "#003b52",
-            "info-disabled": "#6fccea",
-            "discovery-hover": "#3832a7",
-            "discovery-active": "#9091f1",
-            "discovery-inactive": "#1a1166",
-            "discovery-disabled": "#a4a4a4",
+            "info-hover": "#158eb3",
+            "info-active": "#b2ebff",
+            "info-inactive": "#00313e",
+            "info-disabled": "#91cbdf",
+            "discovery-hover": "#7347dc",
+            "discovery-active": "#e8dfff",
+            "discovery-inactive": "#3f1295",
+            "discovery-disabled": "#ab9be5",
             "base-inverse-hover": "#000000",
             "base-inverse-active": "#000000",
             "base-inverse-inactive": "#000000",
@@ -1585,10 +1559,10 @@ const COLOR_VARIANTS = {
             "danger-ghost-hover": "#ffa4b1",
             "negative-ghost-hover": "#ffbaad",
             "warning-ghost-hover": "#ffe9bf",
-            "success-ghost-hover": "#68d99c",
+            "success-ghost-hover": "#defff1",
             "positive-ghost-hover": "#e0ffcc",
-            "info-ghost-hover": "#deffff",
-            "discovery-ghost-hover": "#d2d3ff",
+            "info-ghost-hover": "#f5ffff",
+            "discovery-ghost-hover": "#ffffff",
             "base-inverse-ghost-hover": "#09090a"
       }}
     />
@@ -1604,10 +1578,8 @@ const COLOR_VARIANTS = {
             "lowest": "#000000",
             "page": "#000000",
             "elevated": "#000000",
-            "floating": "#000000",
-            "high": "#0c0c0c",
-            "higher": "#1b1b1b",
-            "highest": "#535353",
+            "floating": "#08080a",
+            "highest": "#2f2f2f",
             "lowest-hover": "#000000",
             "lowest-active": "#000000",
             "lowest-inactive": "#000000",
@@ -1617,25 +1589,17 @@ const COLOR_VARIANTS = {
             "page-inactive": "#000000",
             "page-disabled": "#000000",
             "elevated-hover": "#000000",
-            "elevated-active": "#000000",
+            "elevated-active": "#040506",
             "elevated-inactive": "#000000",
             "elevated-disabled": "#000000",
             "floating-hover": "#000000",
-            "floating-active": "#050505",
+            "floating-active": "#0f1013",
             "floating-inactive": "#000000",
-            "floating-disabled": "#00000099",
-            "high-hover": "#010101",
-            "high-active": "#151515",
-            "high-inactive": "#000000",
-            "high-disabled": "#0c0c0c99",
-            "higher-hover": "#0e0e0e",
-            "higher-active": "#252525",
-            "higher-inactive": "#010101",
-            "higher-disabled": "#1b1b1b99",
-            "highest-hover": "#3f3f3f",
-            "highest-active": "#636363",
-            "highest-inactive": "#2c2c2c",
-            "highest-disabled": "#53535399"
+            "floating-disabled": "#060708",
+            "highest-hover": "#1f1f1f",
+            "highest-active": "#3c3c3c",
+            "highest-inactive": "#111111",
+            "highest-disabled": "#2f2f2f99"
       }}
     />
           <ColorItem
@@ -1674,16 +1638,16 @@ const COLOR_VARIANTS = {
             "orange.subtle": "#c44d0d",
             "yellow.emphasis": "#ffbc4a",
             "yellow.subtle": "#0d0900",
-            "green.emphasis": "#2ca96a",
-            "green.subtle": "#033828",
-            "sky.emphasis": "#16eaff",
-            "sky.subtle": "#000000",
+            "green.emphasis": "#39eca1",
+            "green.subtle": "#11734a",
+            "sky.emphasis": "#73d7fa",
+            "sky.subtle": "#061217",
             "blue.emphasis": "#77a8ff",
             "blue.subtle": "#1772ff",
-            "purple.emphasis": "#8a90e2",
-            "purple.subtle": "#140f2c",
-            "pink.emphasis": "#ffc2da",
-            "pink.subtle": "#cc437c"
+            "purple.emphasis": "#cdbbff",
+            "purple.subtle": "#140d27",
+            "pink.emphasis": "#ff85d0",
+            "pink.subtle": "#1c0815"
       }}
     />
           <ColorItem
@@ -1721,16 +1685,16 @@ const COLOR_VARIANTS = {
       title={"color.overlay"}
       subtitle={"The overlay background color for the dark theme"}
       colors={{
-            "background": "#000000",
-            "border": "#1b1b1b",
+            "background": "#08080a",
+            "border": "#535353",
             "backdrop": "#00000066",
             "background-hover": "#000000",
-            "background-active": "#050505",
+            "background-active": "#0f1013",
             "background-inactive": "#000000",
-            "background-disabled": "#00000099",
-            "border-hover": "#010101",
-            "border-active": "#2b2b2b",
-            "border-disabled": "#1b1b1b99"
+            "background-disabled": "#060708",
+            "border-hover": "#2c2c2c",
+            "border-active": "#6d6d6d",
+            "border-disabled": "#53535399"
       }}
     />
           <ColorItem
@@ -1913,9 +1877,7 @@ const COLOR_VARIANTS = {
             "1": "#e1e1e1",
             "2": "#eaeaea",
             "3": "#f1f1f1",
-            "4": "#f6f6f6",
-            "5": "#f9f9f9",
-            "6": "#fafafa"
+            "4": "#fafafa"
       }}
     />
           <ColorItem
@@ -2184,9 +2146,7 @@ const COLOR_VARIANTS = {
             "lowest": "#e1e1e1",
             "page": "#eaeaea",
             "elevated": "#f1f1f1",
-            "floating": "#f6f6f6",
-            "high": "#f9f9f9",
-            "higher": "#fafafa",
+            "floating": "#fafafa",
             "highest": "#ffffff",
             "link": "#468ae2",
             "lowest-hover": "#ffffff",
@@ -2202,17 +2162,9 @@ const COLOR_VARIANTS = {
             "elevated-inactive": "#ffffff",
             "elevated-disabled": "#f1f1f199",
             "floating-hover": "#ffffff",
-            "floating-active": "#dcdcdc",
+            "floating-active": "#e0e0e0",
             "floating-inactive": "#ffffff",
-            "floating-disabled": "#f6f6f699",
-            "high-hover": "#ffffff",
-            "high-active": "#dfdfdf",
-            "high-inactive": "#ffffff",
-            "high-disabled": "#f9f9f999",
-            "higher-hover": "#ffffff",
-            "higher-active": "#e0e0e0",
-            "higher-inactive": "#ffffff",
-            "higher-disabled": "#fafafa99",
+            "floating-disabled": "#fafafa99",
             "highest-hover": "#ffffff",
             "highest-active": "#e4e4e4",
             "highest-inactive": "#ffffff",
@@ -2306,13 +2258,13 @@ const COLOR_VARIANTS = {
       title={"color.overlay"}
       subtitle={"The overlay background color for the light theme"}
       colors={{
-            "background": "#f6f6f6",
+            "background": "#fafafa",
             "border": "#333333",
             "backdrop": "#1a1c1f66",
             "background-hover": "#ffffff",
-            "background-active": "#dcdcdc",
+            "background-active": "#e0e0e0",
             "background-inactive": "#ffffff",
-            "background-disabled": "#f6f6f699",
+            "background-disabled": "#fafafa99",
             "border-hover": "#444444",
             "border-active": "#292929",
             "border-disabled": "#33333399"
@@ -2498,9 +2450,7 @@ const COLOR_VARIANTS = {
             "1": "#c4c4c4",
             "2": "#cacaca",
             "3": "#cfcfcf",
-            "4": "#d2d2d2",
-            "5": "#d5d5d5",
-            "6": "#d5d5d5"
+            "4": "#d5d5d5"
       }}
     />
           <ColorItem
@@ -2769,9 +2719,7 @@ const COLOR_VARIANTS = {
             "lowest": "#c4c4c4",
             "page": "#cacaca",
             "elevated": "#cfcfcf",
-            "floating": "#d2d2d2",
-            "high": "#d5d5d5",
-            "higher": "#d5d5d5",
+            "floating": "#d5d5d5",
             "highest": "#d9d9d9",
             "link": "#6088bb",
             "lowest-hover": "#d9d9d9",
@@ -2787,17 +2735,9 @@ const COLOR_VARIANTS = {
             "elevated-inactive": "#d9d9d9",
             "elevated-disabled": "#cfcfcf99",
             "floating-hover": "#d9d9d9",
-            "floating-active": "#c0c0c0",
+            "floating-active": "#c3c3c3",
             "floating-inactive": "#d9d9d9",
-            "floating-disabled": "#d2d2d299",
-            "high-hover": "#d9d9d9",
-            "high-active": "#c2c2c2",
-            "high-inactive": "#d9d9d9",
-            "high-disabled": "#d5d5d599",
-            "higher-hover": "#d9d9d9",
-            "higher-active": "#c3c3c3",
-            "higher-inactive": "#d9d9d9",
-            "higher-disabled": "#d5d5d599",
+            "floating-disabled": "#d5d5d599",
             "highest-hover": "#d9d9d9",
             "highest-active": "#c6c6c6",
             "highest-inactive": "#d9d9d9",
@@ -2891,13 +2831,13 @@ const COLOR_VARIANTS = {
       title={"color.overlay"}
       subtitle={"The overlay background color for the light theme"}
       colors={{
-            "background": "#d2d2d2",
+            "background": "#d5d5d5",
             "border": "#4a4a4a",
             "backdrop": "#373a3d66",
             "background-hover": "#d9d9d9",
-            "background-active": "#c0c0c0",
+            "background-active": "#c3c3c3",
             "background-inactive": "#d9d9d9",
-            "background-disabled": "#d2d2d299",
+            "background-disabled": "#d5d5d599",
             "border-hover": "#565656",
             "border-active": "#434343",
             "border-disabled": "#4a4a4a99"
@@ -3083,9 +3023,7 @@ const COLOR_VARIANTS = {
             "1": "#ffffff",
             "2": "#ffffff",
             "3": "#ffffff",
-            "4": "#ffffff",
-            "5": "#ffffff",
-            "6": "#ffffff"
+            "4": "#ffffff"
       }}
     />
           <ColorItem
@@ -3355,8 +3293,6 @@ const COLOR_VARIANTS = {
             "page": "#ffffff",
             "elevated": "#ffffff",
             "floating": "#ffffff",
-            "high": "#ffffff",
-            "higher": "#ffffff",
             "highest": "#ffffff",
             "link": "#3b91ff",
             "lowest-hover": "#ffffff",
@@ -3375,14 +3311,6 @@ const COLOR_VARIANTS = {
             "floating-active": "#ffffff",
             "floating-inactive": "#ffffff",
             "floating-disabled": "#ffffff99",
-            "high-hover": "#ffffff",
-            "high-active": "#ffffff",
-            "high-inactive": "#ffffff",
-            "high-disabled": "#ffffff99",
-            "higher-hover": "#ffffff",
-            "higher-active": "#ffffff",
-            "higher-inactive": "#ffffff",
-            "higher-disabled": "#ffffff99",
             "highest-hover": "#ffffff",
             "highest-active": "#ffffff",
             "highest-inactive": "#ffffff",

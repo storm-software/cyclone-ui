@@ -16,9 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import type { SizeTokens } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
-import { SelectContext } from "./utilities";
+import { getSelectContentSize, SelectContext } from "./utilities";
 
 const SelectValueFrame = styled(TamaguiSelect.Value, {
   name: "SelectValue",
@@ -29,12 +30,9 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   cursor: "pointer",
   color: "$foreground",
   fontFamily: "$body",
-  fontSize: "$md",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
-  paddingLeft: "$xl",
-  paddingRight: "$sm",
 
   hoverStyle: {
     backgroundColor: "transparent",
@@ -46,11 +44,25 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   },
 
   variants: {
+    size: {
+      "...size": (val: SizeTokens | number) => {
+        const { fontSize, lineHeight, valuePaddingLeft, valuePaddingRight } =
+          getSelectContentSize(val);
+
+        return {
+          fontSize,
+          lineHeight,
+          paddingLeft: valuePaddingLeft,
+          paddingRight: valuePaddingRight
+        };
+      }
+    },
+
     variant: {
       default: {},
-      floating: {
-        paddingTop: 7
-      },
+      floating: (_val: true, { props }: any) => ({
+        paddingTop: getSelectContentSize(props.size).valuePaddingLeft
+      }),
       underline: {}
     },
 
@@ -83,6 +95,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   } as const,
 
   defaultVariants: {
+    size: "$true",
     variant: "default",
     disabled: false,
     placeholding: false
@@ -93,7 +106,7 @@ export const SelectValue = SelectValueFrame.styleable<{
   placeholder?: string;
 }>(
   ({ children, placeholder, ...props }, forwardedRef) => {
-    const { disabled, name } = SelectContext.useStyledContext();
+    const { disabled, name, size, variant } = SelectContext.useStyledContext();
 
     return (
       <View flex={1} minWidth={0}>
@@ -101,6 +114,8 @@ export const SelectValue = SelectValueFrame.styleable<{
           id={name}
           ref={forwardedRef}
           {...props}
+          size={size}
+          variant={variant}
           disabled={disabled}
           placeholding={!!placeholder && !disabled}>
           {children}

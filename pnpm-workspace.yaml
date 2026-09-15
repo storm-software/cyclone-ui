@@ -28,9 +28,9 @@ catalog:
   "@shell-shock/preset-cli": ^0.9.37
   "@storm-software/eslint-plugin-pnpm": ^0.0.99
   "@storybook/addon-docs": ^10.6.0
+  "@storybook/addon-vitest": ^10.6.0
   "@storybook/react": ^10.6.0
   "@storybook/react-vite": ^10.6.0
-  "@storybook/test-runner": ^0.24.5
   "@stryke/date": ^0.0.26
   "@tamagui/accordion": ^2.7.7
   "@tamagui/adapt": ^2.7.7
@@ -142,6 +142,8 @@ catalog:
   "@typescript/native-preview": 7.0.0-dev.20260611.2
   "@vitejs/plugin-react-swc": ^3.11.0
   "@vitest/coverage-v8": ~4.1.11
+  "@vitest/browser": ~4.1.11
+  "@vitest/browser-playwright": ~4.1.11
   bundlewatch: ^0.4.2
   bunshi: ^2.2.0
   chroma-js: ^2.6.0

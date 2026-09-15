@@ -327,6 +327,8 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
     forwardedRef
   ) => {
     const [open, setOpen] = useState(false);
+    const resolvedSize =
+      size === "$true" || String(size) === "true" ? "$10xl" : size;
 
     const handleOpenChanged = useCallback(
       (nextOpen: boolean, _via?: "hover" | "press") => {
@@ -360,7 +362,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
         disabled={disabled}
         focused={focused ?? open}
         variant={variant}
-        size={size}
+        size={resolvedSize}
         onFocus={onFocus}
         onBlur={onBlur}
         onChange={onChange}>
@@ -373,7 +375,7 @@ const SelectGroupImpl = BaseSelect.styleable<Partial<SelectContextProps>>(
           onOpenChange={handleOpenChanged}
           open={open}
           disabled={disabled}
-          size={size}>
+          size={resolvedSize}>
           {children}
         </BaseSelect>
       </SelectContext.Provider>

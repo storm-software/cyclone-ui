@@ -142,9 +142,7 @@ colors:
   background-lowest: "#e1e1e1"
   background-page: "#eaeaea"
   background-elevated: "#f1f1f1"
-  background-floating: "#f6f6f6"
-  background-high: "#f9f9f9"
-  background-higher: "#fafafa"
+  background-floating: "#fafafa"
   background-highest: "#ffffff"
   background-base: "#262626"
   background-link: "#468ae2"
@@ -169,17 +167,9 @@ colors:
   background-elevated-inactive: "#ffffff"
   background-elevated-disabled: "#f1f1f199"
   background-floating-hover: "#ffffff"
-  background-floating-active: "#dcdcdc"
+  background-floating-active: "#e0e0e0"
   background-floating-inactive: "#ffffff"
-  background-floating-disabled: "#f6f6f699"
-  background-high-hover: "#ffffff"
-  background-high-active: "#dfdfdf"
-  background-high-inactive: "#ffffff"
-  background-high-disabled: "#f9f9f999"
-  background-higher-hover: "#ffffff"
-  background-higher-active: "#e0e0e0"
-  background-higher-inactive: "#ffffff"
-  background-higher-disabled: "#fafafa99"
+  background-floating-disabled: "#fafafa99"
   background-highest-hover: "#ffffff"
   background-highest-active: "#e4e4e4"
   background-highest-inactive: "#ffffff"
@@ -296,13 +286,13 @@ colors:
   border-discovery-subtle-hover: "#8081d2"
   border-discovery-subtle-active: "#504e9a"
   border-discovery-subtle-disabled: "#656795"
-  overlay-background: "#f6f6f6"
+  overlay-background: "#fafafa"
   overlay-border: "#333333"
   overlay-backdrop: "#1a1c1f66"
   overlay-background-hover: "#ffffff"
-  overlay-background-active: "#dcdcdc"
+  overlay-background-active: "#e0e0e0"
   overlay-background-inactive: "#ffffff"
-  overlay-background-disabled: "#f6f6f699"
+  overlay-background-disabled: "#fafafa99"
   overlay-border-hover: "#444444"
   overlay-border-active: "#292929"
   overlay-border-disabled: "#33333399"
@@ -420,7 +410,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 323 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 313 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -563,9 +553,7 @@ Cyclone UI design tokens — 323 color tokens, 12 typography tokens, 28 spacing 
 - **Background Lowest (#e1e1e1):** The lowest background color for the light theme
 - **Background Page (#eaeaea):** The page background color for the light theme
 - **Background Elevated (#f1f1f1):** The elevated background color for the light theme
-- **Background Floating (#f6f6f6):** The floating background color for the light theme
-- **Background High (#f9f9f9):** A high level of elevation background color for the light theme
-- **Background Higher (#fafafa):** The higher level of elevation background color for the light theme
+- **Background Floating (#fafafa):** The floating background color for the light theme
 - **Background Highest (#ffffff):** The highest level of elevation background color for the light theme
 - **Background Base (#262626):** The primary background color for the light theme
 - **Background Link (#468ae2):** The link foreground color for the light theme
@@ -590,17 +578,9 @@ Cyclone UI design tokens — 323 color tokens, 12 typography tokens, 28 spacing 
 - **Background Elevated Inactive (#ffffff):** The elevated background color for the light theme (inactive, 20% brighter)
 - **Background Elevated Disabled (#f1f1f199):** The elevated background color for the light theme (disabled, 60% opacity)
 - **Background Floating Hover (#ffffff):** The floating background color for the light theme (hover, 10% brighter)
-- **Background Floating Active (#dcdcdc):** The floating background color for the light theme (active, 8% darker)
+- **Background Floating Active (#e0e0e0):** The floating background color for the light theme (active, 8% darker)
 - **Background Floating Inactive (#ffffff):** The floating background color for the light theme (inactive, 20% brighter)
-- **Background Floating Disabled (#f6f6f699):** The floating background color for the light theme (disabled, 60% opacity)
-- **Background High Hover (#ffffff):** A high level of elevation background color for the light theme (hover, 10% brighter)
-- **Background High Active (#dfdfdf):** A high level of elevation background color for the light theme (active, 8% darker)
-- **Background High Inactive (#ffffff):** A high level of elevation background color for the light theme (inactive, 20% brighter)
-- **Background High Disabled (#f9f9f999):** A high level of elevation background color for the light theme (disabled, 60% opacity)
-- **Background Higher Hover (#ffffff):** The higher level of elevation background color for the light theme (hover, 10% brighter)
-- **Background Higher Active (#e0e0e0):** The higher level of elevation background color for the light theme (active, 8% darker)
-- **Background Higher Inactive (#ffffff):** The higher level of elevation background color for the light theme (inactive, 20% brighter)
-- **Background Higher Disabled (#fafafa99):** The higher level of elevation background color for the light theme (disabled, 60% opacity)
+- **Background Floating Disabled (#fafafa99):** The floating background color for the light theme (disabled, 60% opacity)
 - **Background Highest Hover (#ffffff):** The highest level of elevation background color for the light theme (hover, 10% brighter)
 - **Background Highest Active (#e4e4e4):** The highest level of elevation background color for the light theme (active, 8% darker)
 - **Background Highest Inactive (#ffffff):** The highest level of elevation background color for the light theme (inactive, 20% brighter)
@@ -717,13 +697,13 @@ Cyclone UI design tokens — 323 color tokens, 12 typography tokens, 28 spacing 
 - **Border Discovery Subtle Hover (#8081d2):** The discovery border color for the light theme (hover, 20% brighter)
 - **Border Discovery Subtle Active (#504e9a):** The discovery border color for the light theme (active, 12% darker)
 - **Border Discovery Subtle Disabled (#656795):** The discovery border color for the light theme (disabled, 60% saturation)
-- **Overlay Background (#f6f6f6):** The overlay background color for the light theme
+- **Overlay Background (#fafafa):** The overlay background color for the light theme
 - **Overlay Border (#333333):** The overlay border color for the light theme
 - **Overlay Backdrop (#1a1c1f66):** The overlay backdrop background color for the light theme
 - **Overlay Background Hover (#ffffff):** The overlay background color for the light theme (hover, 10% brighter)
-- **Overlay Background Active (#dcdcdc):** The overlay background color for the light theme (active, 8% darker)
+- **Overlay Background Active (#e0e0e0):** The overlay background color for the light theme (active, 8% darker)
 - **Overlay Background Inactive (#ffffff):** The overlay background color for the light theme (inactive, 20% brighter)
-- **Overlay Background Disabled (#f6f6f699):** The overlay background color for the light theme (disabled, 60% opacity)
+- **Overlay Background Disabled (#fafafa99):** The overlay background color for the light theme (disabled, 60% opacity)
 - **Overlay Border Hover (#444444):** The overlay border color for the light theme (hover, 20% brighter)
 - **Overlay Border Active (#292929):** The overlay border color for the light theme (active, 12% darker)
 - **Overlay Border Disabled (#33333399):** The overlay border color for the light theme (disabled, 60% opacity)

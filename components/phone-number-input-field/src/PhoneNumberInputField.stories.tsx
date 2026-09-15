@@ -86,19 +86,26 @@ export const Base: Story = {
     });
     await userEvent.click(countryTrigger);
     const document = within(canvasElement.ownerDocument.body);
-    const search = document.getByRole("textbox", { name: "Search countries" });
+    const search = document.getByRole("combobox", {
+      name: "Search countries"
+    });
     const firstCountry = document.getByRole("button", {
       name: /AC\s+\+247/i
     });
-    const firstCountryLabel = firstCountry.lastElementChild as HTMLElement;
+    const firstCountryLabel = firstCountry.firstElementChild as HTMLElement;
     const firstCountryLabelRange = firstCountry.ownerDocument.createRange();
     firstCountryLabelRange.selectNodeContents(firstCountryLabel);
 
+    await expect(firstCountry).toHaveTextContent("Ascension Island");
+    await expect(firstCountryLabel).toHaveStyle({ flexDirection: "row" });
     await expect(
       firstCountryLabelRange.getBoundingClientRect().right
     ).toBeLessThanOrEqual(firstCountry.getBoundingClientRect().right);
 
     await userEvent.type(search, "United Kingdom");
+    await waitFor(async () =>
+      expect(document.getByRole("button", { name: /GB.*\+44/i })).toBeVisible()
+    );
     await userEvent.click(document.getByRole("button", { name: /GB.*\+44/i }));
 
     // The concrete input remounts when its country-specific Maskito options
@@ -107,7 +114,7 @@ export const Base: Story = {
     await waitFor(async () => expect(input).toHaveValue("+44 "));
     await waitFor(async () =>
       expect(
-        document.queryByRole("textbox", { name: "Search countries" })
+        document.queryByRole("combobox", { name: "Search countries" })
       ).not.toBeInTheDocument()
     );
     input = canvas.getByRole("textbox");

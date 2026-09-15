@@ -125,7 +125,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.1",
       type: "color",
-      value: "#151517",
+      value: "#1f1f21",
       cssVar: "--rw-color-surface-1",
       description: "The lowest level surface of the palette - neutral near-black page canvas",
       theme: undefined,
@@ -134,7 +134,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.2",
       type: "color",
-      value: "#1b1b1c",
+      value: "#242528",
       cssVar: "--rw-color-surface-2",
       description: "The second level surface of the palette - subtly lifted graphite for inputs and cards",
       theme: undefined,
@@ -143,7 +143,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.3",
       type: "color",
-      value: "#262626",
+      value: "#2b2c30",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - neutral charcoal for floating components",
       theme: undefined,
@@ -152,27 +152,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.4",
       type: "color",
-      value: "#303030",
+      value: "#484848",
       cssVar: "--rw-color-surface-4",
-      description: "The fourth level surface of the palette - emphasized charcoal for the high elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.5",
-      type: "color",
-      value: "#3a3a3a",
-      cssVar: "--rw-color-surface-5",
       description: "The fifth level surface of the palette - deepest charcoal for higher elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#616161",
-      cssVar: "--rw-color-surface-6",
-      description: "The sixth level surface of the palette - deepest charcoal for highest elevation",
       theme: undefined,
       typography: false
     },
@@ -584,7 +566,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.1",
       type: "color",
-      value: "#beddc3",
+      value: "#b7ebd5",
       cssVar: "--rw-color-green-1",
       description: "A pale green success color",
       theme: undefined,
@@ -593,7 +575,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.2",
       type: "color",
-      value: "#a0cdab",
+      value: "#9ce4c6",
       cssVar: "--rw-color-green-2",
       description: "A light green success color",
       theme: undefined,
@@ -602,7 +584,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.3",
       type: "color",
-      value: "#81bd95",
+      value: "#81ddb6",
       cssVar: "--rw-color-green-3",
       description: "A soft green success color",
       theme: undefined,
@@ -611,7 +593,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.4",
       type: "color",
-      value: "#63ae81",
+      value: "#66d5a7",
       cssVar: "--rw-color-green-4",
       description: "A muted green success color",
       theme: undefined,
@@ -620,7 +602,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.5",
       type: "color",
-      value: "#449e71",
+      value: "#4bce97",
       cssVar: "--rw-color-green-5",
       description: "A medium green success color",
       theme: undefined,
@@ -629,7 +611,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.6",
       type: "color",
-      value: "#268e62",
+      value: "#45c791",
       cssVar: "--rw-color-green-6",
       description: "A vivid green success color - confirmation on dark",
       theme: undefined,
@@ -638,7 +620,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.7",
       type: "color",
-      value: "#1e7957",
+      value: "#3aae7d",
       cssVar: "--rw-color-green-7",
       description: "A rich green success color",
       theme: undefined,
@@ -647,7 +629,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.8",
       type: "color",
-      value: "#16624a",
+      value: "#29815c",
       cssVar: "--rw-color-green-8",
       description: "A deep green success color",
       theme: undefined,
@@ -656,7 +638,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.9",
       type: "color",
-      value: "#0f4b3c",
+      value: "#14412e",
       cssVar: "--rw-color-green-9",
       description: "Semantic success - confirmation and success",
       theme: undefined,
@@ -746,7 +728,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.1",
       type: "color",
-      value: "#b3f8e7",
+      value: "#c4e7f3",
       cssVar: "--rw-color-sky-1",
       description: "A pale sky blue color",
       theme: undefined,
@@ -755,7 +737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.2",
       type: "color",
-      value: "#8ff4e5",
+      value: "#aeddee",
       cssVar: "--rw-color-sky-2",
       description: "A light aqua sky color",
       theme: undefined,
@@ -764,7 +746,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.3",
       type: "color",
-      value: "#6bf1e7",
+      value: "#97d4e9",
       cssVar: "--rw-color-sky-3",
       description: "A soft bright sky color",
       theme: undefined,
@@ -773,7 +755,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.4",
       type: "color",
-      value: "#47ecee",
+      value: "#81cbe5",
       cssVar: "--rw-color-sky-4",
       description: "A vivid sky blue color",
       theme: undefined,
@@ -782,7 +764,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.5",
       type: "color",
-      value: "#24d8ea",
+      value: "#6bc2e0",
       cssVar: "--rw-color-sky-5",
       description: "A medium electric sky color",
       theme: undefined,
@@ -791,7 +773,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.6",
       type: "color",
-      value: "#00bee7",
+      value: "#64bbd8",
       cssVar: "--rw-color-sky-6",
       description: "A bright azure sky color",
       theme: undefined,
@@ -800,7 +782,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.7",
       type: "color",
-      value: "#0087b2",
+      value: "#55a2bc",
       cssVar: "--rw-color-sky-7",
       description: "A rich ocean sky color",
       theme: undefined,
@@ -809,7 +791,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.8",
       type: "color",
-      value: "#073b55",
+      value: "#3d788c",
       cssVar: "--rw-color-sky-8",
       description: "A deep teal sky color",
       theme: undefined,
@@ -818,7 +800,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.9",
       type: "color",
-      value: "#00273e",
+      value: "#1d3b46",
       cssVar: "--rw-color-sky-9",
       description: "A dark steel sky color",
       theme: undefined,
@@ -908,7 +890,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.1",
       type: "color",
-      value: "#d3ddec",
+      value: "#dbcffd",
       cssVar: "--rw-color-purple-1",
       description: "A pale lavender purple color",
       theme: undefined,
@@ -917,7 +899,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.2",
       type: "color",
-      value: "#becae4",
+      value: "#cdbdfc",
       cssVar: "--rw-color-purple-2",
       description: "A light periwinkle purple color",
       theme: undefined,
@@ -926,7 +908,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.3",
       type: "color",
-      value: "#a9b5db",
+      value: "#c0abfb",
       cssVar: "--rw-color-purple-3",
       description: "A soft violet purple color",
       theme: undefined,
@@ -935,7 +917,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.4",
       type: "color",
-      value: "#949ed2",
+      value: "#b299fa",
       cssVar: "--rw-color-purple-4",
       description: "A muted indigo purple color",
       theme: undefined,
@@ -944,7 +926,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.5",
       type: "color",
-      value: "#8085ca",
+      value: "#a587f9",
       cssVar: "--rw-color-purple-5",
       description: "A medium periwinkle purple color",
       theme: undefined,
@@ -953,7 +935,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.6",
       type: "color",
-      value: "#6c6bc1",
+      value: "#9d7ff0",
       cssVar: "--rw-color-purple-6",
       description: "A vivid soft indigo color",
       theme: undefined,
@@ -962,7 +944,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.7",
       type: "color",
-      value: "#59549c",
+      value: "#866cd1",
       cssVar: "--rw-color-purple-7",
       description: "A rich slate indigo color",
       theme: undefined,
@@ -971,7 +953,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.8",
       type: "color",
-      value: "#453e76",
+      value: "#624e9b",
       cssVar: "--rw-color-purple-8",
       description: "A deep muted indigo color",
       theme: undefined,
@@ -980,7 +962,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.9",
       type: "color",
-      value: "#2f2850",
+      value: "#30264d",
       cssVar: "--rw-color-purple-9",
       description: "A dark navy indigo color",
       theme: undefined,
@@ -989,7 +971,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.1",
       type: "color",
-      value: "#ffbfd6",
+      value: "#f5c7e4",
       cssVar: "--rw-color-pink-1",
       description: "A pale blush pink color",
       theme: undefined,
@@ -998,7 +980,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.2",
       type: "color",
-      value: "#fbb2cc",
+      value: "#f2b3da",
       cssVar: "--rw-color-pink-2",
       description: "A light rose pink color",
       theme: undefined,
@@ -1007,7 +989,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.3",
       type: "color",
-      value: "#faa3c3",
+      value: "#ee9ecf",
       cssVar: "--rw-color-pink-3",
       description: "A soft coral pink color",
       theme: undefined,
@@ -1016,7 +998,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.4",
       type: "color",
-      value: "#f899bd",
+      value: "#eb89c5",
       cssVar: "--rw-color-pink-4",
       description: "A muted bright pink color",
       theme: undefined,
@@ -1025,7 +1007,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.5",
       type: "color",
-      value: "#f98cb7",
+      value: "#e774bb",
       cssVar: "--rw-color-pink-5",
       description: "A medium hot pink color",
       theme: undefined,
@@ -1034,7 +1016,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.6",
       type: "color",
-      value: "#f37fae",
+      value: "#df6db3",
       cssVar: "--rw-color-pink-6",
       description: "A vivid magenta pink color",
       theme: undefined,
@@ -1043,7 +1025,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.7",
       type: "color",
-      value: "#ed72a5",
+      value: "#c25c9b",
       cssVar: "--rw-color-pink-7",
       description: "A rich fuchsia pink color",
       theme: undefined,
@@ -1052,7 +1034,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.8",
       type: "color",
-      value: "#de6d9b",
+      value: "#904272",
       cssVar: "--rw-color-pink-8",
       description: "A deep berry pink color",
       theme: undefined,
@@ -1061,7 +1043,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.9",
       type: "color",
-      value: "#b4567d",
+      value: "#482039",
       cssVar: "--rw-color-pink-9",
       description: "A dark plum pink color",
       theme: undefined,
@@ -1160,7 +1142,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success",
       type: "color",
-      value: "#268e62",
+      value: "#45c791",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: undefined,
@@ -1178,7 +1160,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info",
       type: "color",
-      value: "#00bee7",
+      value: "#64bbd8",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: undefined,
@@ -1187,7 +1169,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "#6c6bc1",
+      value: "#9d7ff0",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: undefined,
@@ -1637,7 +1619,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#006b42",
+      value: "#009865",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -1646,7 +1628,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#42a477",
+      value: "#68e6ae",
       cssVar: "--rw-color-foreground-success-active",
       description: "The success foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -1655,7 +1637,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inactive",
       type: "color",
-      value: "#004a24",
+      value: "#006a3b",
       cssVar: "--rw-color-foreground-success-inactive",
       description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -1664,7 +1646,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#999999",
+      value: "#7bbd9c",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -1709,7 +1691,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#008fb6",
+      value: "#318ca8",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -1718,7 +1700,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#45dcff",
+      value: "#83d9f7",
       cssVar: "--rw-color-foreground-info-active",
       description: "The info foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -1727,7 +1709,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inactive",
       type: "color",
-      value: "#006288",
+      value: "#00607a",
       cssVar: "--rw-color-foreground-info-inactive",
       description: "The info foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -1736,7 +1718,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#6db8d0",
+      value: "#86b6c7",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -1745,7 +1727,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#4d499c",
+      value: "#7656c2",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -1754,7 +1736,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#8081d9",
+      value: "#b79aff",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -1763,7 +1745,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inactive",
       type: "color",
-      value: "#312978",
+      value: "#512c96",
       cssVar: "--rw-color-foreground-discovery-inactive",
       description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -1772,7 +1754,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#999999",
+      value: "#998bcd",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2150,7 +2132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#6cc193",
+      value: "#99ffd4",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2168,7 +2150,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#99ffff",
+      value: "#a9ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2177,7 +2159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#9a9bf6",
+      value: "#d9bcff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2204,7 +2186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page",
       type: "color",
-      value: "#151517",
+      value: "#1f1f21",
       cssVar: "--rw-color-background-page",
       description: "The page background color for the dark theme",
       theme: undefined,
@@ -2213,7 +2195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated",
       type: "color",
-      value: "#1b1b1c",
+      value: "#242528",
       cssVar: "--rw-color-background-elevated",
       description: "The elevated background color for the dark theme",
       theme: undefined,
@@ -2222,34 +2204,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating",
       type: "color",
-      value: "#262626",
+      value: "#2b2c30",
       cssVar: "--rw-color-background-floating",
       description: "The floating background color for the dark theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.background.high",
-      type: "color",
-      value: "#303030",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#3a3a3a",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.background.highest",
       type: "color",
-      value: "#616161",
+      value: "#484848",
       cssVar: "--rw-color-background-highest",
       description: "The highest level of elevation background color for the dark theme",
       theme: undefined,
@@ -2303,7 +2267,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success",
       type: "color",
-      value: "#0f4b3c",
+      value: "#14412e",
       cssVar: "--rw-color-background-success",
       description: "The success subtle background color for the dark theme",
       theme: undefined,
@@ -2321,7 +2285,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info",
       type: "color",
-      value: "#00273e",
+      value: "#1d3b46",
       cssVar: "--rw-color-background-info",
       description: "The info subtle background color for the dark theme",
       theme: undefined,
@@ -2330,7 +2294,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery",
       type: "color",
-      value: "#2f2850",
+      value: "#30264d",
       cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: undefined,
@@ -2375,7 +2339,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#111113",
+      value: "#19191b",
       cssVar: "--rw-color-background-page-hover",
       description: "The page background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2384,7 +2348,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#19191b",
+      value: "#242426",
       cssVar: "--rw-color-background-page-active",
       description: "The page background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2393,7 +2357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-inactive",
       type: "color",
-      value: "#0c0c0e",
+      value: "#141416",
       cssVar: "--rw-color-background-page-inactive",
       description: "The page background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2402,7 +2366,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-disabled",
       type: "color",
-      value: "#151516",
+      value: "#1f1f20",
       cssVar: "--rw-color-background-page-disabled",
       description: "The page background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2411,7 +2375,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#161617",
+      value: "#1e1f22",
       cssVar: "--rw-color-background-elevated-hover",
       description: "The elevated background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2420,7 +2384,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#1f1f20",
+      value: "#292a2d",
       cssVar: "--rw-color-background-elevated-active",
       description: "The elevated background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2429,7 +2393,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-inactive",
       type: "color",
-      value: "#111112",
+      value: "#18191b",
       cssVar: "--rw-color-background-elevated-inactive",
       description: "The elevated background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2438,7 +2402,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-disabled",
       type: "color",
-      value: "#1b1b1c",
+      value: "#242527",
       cssVar: "--rw-color-background-elevated-disabled",
       description: "The elevated background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2447,7 +2411,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#202020",
+      value: "#242529",
       cssVar: "--rw-color-background-floating-hover",
       description: "The floating background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2456,7 +2420,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#2b2b2b",
+      value: "#313236",
       cssVar: "--rw-color-background-floating-active",
       description: "The floating background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2465,7 +2429,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-inactive",
       type: "color",
-      value: "#191919",
+      value: "#1d1e22",
       cssVar: "--rw-color-background-floating-inactive",
       description: "The floating background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2474,88 +2438,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#26262699",
+      value: "#2b2c2e",
       cssVar: "--rw-color-background-floating-disabled",
-      description: "The floating background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#363636",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#212121",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#30303099",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#313131",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#414141",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#282828",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#3a3a3a99",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the dark theme (disabled, 60% opacity)",
+      description: "The floating background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#535353",
+      value: "#3d3d3d",
       cssVar: "--rw-color-background-highest-hover",
       description: "The highest level of elevation background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2564,7 +2456,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#6c6c6c",
+      value: "#515151",
       cssVar: "--rw-color-background-highest-active",
       description: "The highest level of elevation background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2573,7 +2465,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-inactive",
       type: "color",
-      value: "#464646",
+      value: "#333333",
       cssVar: "--rw-color-background-highest-inactive",
       description: "The highest level of elevation background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2582,7 +2474,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-disabled",
       type: "color",
-      value: "#61616199",
+      value: "#48484899",
       cssVar: "--rw-color-background-highest-disabled",
       description: "The highest level of elevation background color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -2771,7 +2663,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#004132",
+      value: "#093826",
       cssVar: "--rw-color-background-success-hover",
       description: "The success subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2780,7 +2672,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#1a5344",
+      value: "#1c4835",
       cssVar: "--rw-color-background-success-active",
       description: "The success subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2789,7 +2681,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-inactive",
       type: "color",
-      value: "#003729",
+      value: "#002f1d",
       cssVar: "--rw-color-background-success-inactive",
       description: "The success subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2798,7 +2690,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#2a473e",
+      value: "#263d32",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2843,7 +2735,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#002137",
+      value: "#14323d",
       cssVar: "--rw-color-background-info-hover",
       description: "The info subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2852,7 +2744,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#052c44",
+      value: "#24424d",
       cssVar: "--rw-color-background-info-active",
       description: "The info subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2861,7 +2753,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-inactive",
       type: "color",
-      value: "#001a30",
+      value: "#0b2a34",
       cssVar: "--rw-color-background-info-inactive",
       description: "The info subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2870,7 +2762,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#132634",
+      value: "#293940",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2879,7 +2771,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#282047",
+      value: "#291e45",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -2888,7 +2780,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#352e57",
+      value: "#362c54",
       cssVar: "--rw-color-background-discovery-active",
       description: "The discovery subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -2897,7 +2789,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-inactive",
       type: "color",
-      value: "#21193f",
+      value: "#22173c",
       cssVar: "--rw-color-background-discovery-inactive",
       description: "The discovery subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2906,7 +2798,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#2f2c43",
+      value: "#2f2a41",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -2915,7 +2807,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base",
       type: "color",
-      value: "#3a3a3a",
+      value: "#616161",
       cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
       theme: undefined,
@@ -2960,7 +2852,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success",
       type: "color",
-      value: "#268e62",
+      value: "#45c791",
       cssVar: "--rw-color-border-success",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -2978,7 +2870,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info",
       type: "color",
-      value: "#00bee7",
+      value: "#64bbd8",
       cssVar: "--rw-color-border-info",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -2987,7 +2879,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery",
       type: "color",
-      value: "#6c6bc1",
+      value: "#9d7ff0",
       cssVar: "--rw-color-border-discovery",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -3041,7 +2933,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle",
       type: "color",
-      value: "#16624a",
+      value: "#29815c",
       cssVar: "--rw-color-border-success-subtle",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -3059,7 +2951,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle",
       type: "color",
-      value: "#073b55",
+      value: "#3d788c",
       cssVar: "--rw-color-border-info-subtle",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -3068,7 +2960,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle",
       type: "color",
-      value: "#453e76",
+      value: "#624e9b",
       cssVar: "--rw-color-border-discovery-subtle",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -3077,7 +2969,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-hover",
       type: "color",
-      value: "#4c4c4c",
+      value: "#7d7d7d",
       cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: undefined,
@@ -3086,7 +2978,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-active",
       type: "color",
-      value: "#838383",
+      value: "#d1d1d1",
       cssVar: "--rw-color-border-base-active",
       description: "Hairline-strong border against ink cards (active, 75% brighter)",
       theme: undefined,
@@ -3095,7 +2987,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-disabled",
       type: "color",
-      value: "#3a3a3a99",
+      value: "#61616199",
       cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
       theme: undefined,
@@ -3212,7 +3104,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#006b42",
+      value: "#009865",
       cssVar: "--rw-color-border-success-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3221,7 +3113,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#42a477",
+      value: "#68e6ae",
       cssVar: "--rw-color-border-success-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3230,7 +3122,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-disabled",
       type: "color",
-      value: "#53866c",
+      value: "#7bbd9c",
       cssVar: "--rw-color-border-success-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3266,7 +3158,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#008fb6",
+      value: "#318ca8",
       cssVar: "--rw-color-border-info-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3275,7 +3167,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#45dcff",
+      value: "#83d9f7",
       cssVar: "--rw-color-border-info-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3284,7 +3176,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-disabled",
       type: "color",
-      value: "#6db8d0",
+      value: "#86b6c7",
       cssVar: "--rw-color-border-info-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3293,7 +3185,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#4d499c",
+      value: "#7656c2",
       cssVar: "--rw-color-border-discovery-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3302,7 +3194,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#8081d9",
+      value: "#b79aff",
       cssVar: "--rw-color-border-discovery-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3311,7 +3203,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-disabled",
       type: "color",
-      value: "#6f71a4",
+      value: "#998bcd",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3455,7 +3347,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#004933",
+      value: "#00613e",
       cssVar: "--rw-color-border-success-subtle-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3464,7 +3356,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#2a7259",
+      value: "#41966f",
       cssVar: "--rw-color-border-success-subtle-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3473,7 +3365,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-disabled",
       type: "color",
-      value: "#385d4e",
+      value: "#4d7a64",
       cssVar: "--rw-color-border-success-subtle-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3509,7 +3401,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#002a42",
+      value: "#1b596c",
       cssVar: "--rw-color-border-info-subtle-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3518,7 +3410,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#164661",
+      value: "#518ca1",
       cssVar: "--rw-color-border-info-subtle-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3527,7 +3419,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-disabled",
       type: "color",
-      value: "#213a49",
+      value: "#547581",
       cssVar: "--rw-color-border-info-subtle-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3536,7 +3428,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#31295e",
+      value: "#48337d",
       cssVar: "--rw-color-border-discovery-subtle-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3545,7 +3437,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#524c85",
+      value: "#735fae",
       cssVar: "--rw-color-border-discovery-subtle-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3554,7 +3446,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-disabled",
       type: "color",
-      value: "#454364",
+      value: "#605683",
       cssVar: "--rw-color-border-discovery-subtle-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -3563,7 +3455,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background",
       type: "color",
-      value: "#262626",
+      value: "#2b2c30",
       cssVar: "--rw-color-overlay-background",
       description: "The overlay background color for the dark theme",
       theme: undefined,
@@ -3572,7 +3464,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#3a3a3a",
+      value: "#616161",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: undefined,
@@ -3590,7 +3482,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#202020",
+      value: "#242529",
       cssVar: "--rw-color-overlay-background-hover",
       description: "The overlay background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -3599,7 +3491,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#2b2b2b",
+      value: "#313236",
       cssVar: "--rw-color-overlay-background-active",
       description: "The overlay background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -3608,7 +3500,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-inactive",
       type: "color",
-      value: "#191919",
+      value: "#1d1e22",
       cssVar: "--rw-color-overlay-background-inactive",
       description: "The overlay background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -3617,16 +3509,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#26262699",
+      value: "#2b2c2e",
       cssVar: "--rw-color-overlay-background-disabled",
-      description: "The overlay background color for the dark theme (disabled, 60% opacity)",
+      description: "The overlay background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#282828",
+      value: "#464646",
       cssVar: "--rw-color-overlay-border-hover",
       description: "The overlay border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -3635,7 +3527,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#454545",
+      value: "#737373",
       cssVar: "--rw-color-overlay-border-active",
       description: "The overlay border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -3644,7 +3536,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-disabled",
       type: "color",
-      value: "#3a3a3a99",
+      value: "#61616199",
       cssVar: "--rw-color-overlay-border-disabled",
       description: "The overlay border color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -3815,7 +3707,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.emphasis",
       type: "color",
-      value: "#449e71",
+      value: "#4bce97",
       cssVar: "--rw-color-data-green-emphasis",
       description: "The green data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -3824,7 +3716,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.subtle",
       type: "color",
-      value: "#16624a",
+      value: "#29815c",
       cssVar: "--rw-color-data-green-subtle",
       description: "The green data visualization subtle color for the dark theme",
       theme: undefined,
@@ -3833,7 +3725,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.emphasis",
       type: "color",
-      value: "#24d8ea",
+      value: "#6bc2e0",
       cssVar: "--rw-color-data-sky-emphasis",
       description: "The sky blue data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -3842,7 +3734,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.subtle",
       type: "color",
-      value: "#00273e",
+      value: "#1d3b46",
       cssVar: "--rw-color-data-sky-subtle",
       description: "The sky blue data visualization subtle color for the dark theme",
       theme: undefined,
@@ -3869,7 +3761,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.emphasis",
       type: "color",
-      value: "#8085ca",
+      value: "#a587f9",
       cssVar: "--rw-color-data-purple-emphasis",
       description: "The purple data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -3878,7 +3770,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.subtle",
       type: "color",
-      value: "#2f2850",
+      value: "#30264d",
       cssVar: "--rw-color-data-purple-subtle",
       description: "The purple data visualization subtle color for the dark theme",
       theme: undefined,
@@ -3887,7 +3779,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.emphasis",
       type: "color",
-      value: "#f98cb7",
+      value: "#e774bb",
       cssVar: "--rw-color-data-pink-emphasis",
       description: "The pink data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -3896,7 +3788,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.subtle",
       type: "color",
-      value: "#b4567d",
+      value: "#482039",
       cssVar: "--rw-color-data-pink-subtle",
       description: "The pink data visualization subtle color for the dark theme",
       theme: undefined,
@@ -5678,7 +5570,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #268e6220",
+      value: "0px 0px 0px 3px #45c79120",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -5687,7 +5579,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #268e6220",
+      value: "0px 0px 0px 1px #45c79120",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -5696,7 +5588,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #45c79120",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -5705,7 +5597,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #45c79120",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5714,7 +5606,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00bee720",
+      value: "0px 0px 0px 3px #64bbd820",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -5723,7 +5615,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00bee720",
+      value: "0px 0px 0px 1px #64bbd820",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -5732,7 +5624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #64bbd820",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -5741,7 +5633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #64bbd820",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5750,7 +5642,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #6c6bc120",
+      value: "0px 0px 0px 3px #9d7ff020",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -5759,7 +5651,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #6c6bc120",
+      value: "0px 0px 0px 1px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -5768,7 +5660,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9d7ff020",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -5777,7 +5669,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -6076,7 +5968,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.1",
       type: "color",
-      value: "#343437",
+      value: "#3c3c3e",
       cssVar: "--rw-color-surface-1",
       description: "The lowest level surface of the palette - neutral near-black page canvas",
       theme: undefined,
@@ -6085,7 +5977,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.2",
       type: "color",
-      value: "#39393a",
+      value: "#3f4043",
       cssVar: "--rw-color-surface-2",
       description: "The second level surface of the palette - subtly lifted graphite for inputs and cards",
       theme: undefined,
@@ -6094,7 +5986,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.3",
       type: "color",
-      value: "#414141",
+      value: "#444548",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - neutral charcoal for floating components",
       theme: undefined,
@@ -6103,27 +5995,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.4",
       type: "color",
-      value: "#484848",
+      value: "#595959",
       cssVar: "--rw-color-surface-4",
-      description: "The fourth level surface of the palette - emphasized charcoal for the high elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.5",
-      type: "color",
-      value: "#4f4f4f",
-      cssVar: "--rw-color-surface-5",
       description: "The fifth level surface of the palette - deepest charcoal for higher elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#6a6a6a",
-      cssVar: "--rw-color-surface-6",
-      description: "The sixth level surface of the palette - deepest charcoal for highest elevation",
       theme: undefined,
       typography: false
     },
@@ -6535,7 +6409,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.1",
       type: "color",
-      value: "#aac3ae",
+      value: "#a3cebc",
       cssVar: "--rw-color-green-1",
       description: "A pale green success color",
       theme: undefined,
@@ -6544,7 +6418,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.2",
       type: "color",
-      value: "#97b59e",
+      value: "#93c7b1",
       cssVar: "--rw-color-green-2",
       description: "A light green success color",
       theme: undefined,
@@ -6553,7 +6427,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.3",
       type: "color",
-      value: "#83a890",
+      value: "#83bfa5",
       cssVar: "--rw-color-green-3",
       description: "A soft green success color",
       theme: undefined,
@@ -6562,7 +6436,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.4",
       type: "color",
-      value: "#719b82",
+      value: "#73b69a",
       cssVar: "--rw-color-green-4",
       description: "A muted green success color",
       theme: undefined,
@@ -6571,7 +6445,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.5",
       type: "color",
-      value: "#5c8f75",
+      value: "#63ae8f",
       cssVar: "--rw-color-green-5",
       description: "A medium green success color",
       theme: undefined,
@@ -6580,7 +6454,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.6",
       type: "color",
-      value: "#45856a",
+      value: "#60a88a",
       cssVar: "--rw-color-green-6",
       description: "A vivid green success color - confirmation on dark",
       theme: undefined,
@@ -6589,7 +6463,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.7",
       type: "color",
-      value: "#3d7963",
+      value: "#57987d",
       cssVar: "--rw-color-green-7",
       description: "A rich green success color",
       theme: undefined,
@@ -6598,7 +6472,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.8",
       type: "color",
-      value: "#346c5b",
+      value: "#467e66",
       cssVar: "--rw-color-green-8",
       description: "A deep green success color",
       theme: undefined,
@@ -6607,7 +6481,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.9",
       type: "color",
-      value: "#2c5f53",
+      value: "#305847",
       cssVar: "--rw-color-green-9",
       description: "Semantic success - confirmation and success",
       theme: undefined,
@@ -6697,7 +6571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.1",
       type: "color",
-      value: "#9ddacb",
+      value: "#a9cbd7",
       cssVar: "--rw-color-sky-1",
       description: "A pale sky blue color",
       theme: undefined,
@@ -6706,7 +6580,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.2",
       type: "color",
-      value: "#89d2c8",
+      value: "#9cc3d1",
       cssVar: "--rw-color-sky-2",
       description: "A light aqua sky color",
       theme: undefined,
@@ -6715,7 +6589,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.3",
       type: "color",
-      value: "#75cbc5",
+      value: "#8fbbca",
       cssVar: "--rw-color-sky-3",
       description: "A soft bright sky color",
       theme: undefined,
@@ -6724,7 +6598,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.4",
       type: "color",
-      value: "#61c3c4",
+      value: "#82b3c5",
       cssVar: "--rw-color-sky-4",
       description: "A vivid sky blue color",
       theme: undefined,
@@ -6733,7 +6607,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.5",
       type: "color",
-      value: "#4db2bc",
+      value: "#76acbe",
       cssVar: "--rw-color-sky-5",
       description: "A medium electric sky color",
       theme: undefined,
@@ -6742,7 +6616,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.6",
       type: "color",
-      value: "#36a1b9",
+      value: "#72a6b8",
       cssVar: "--rw-color-sky-6",
       description: "A bright azure sky color",
       theme: undefined,
@@ -6751,7 +6625,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.7",
       type: "color",
-      value: "#2d819c",
+      value: "#6994a3",
       cssVar: "--rw-color-sky-7",
       description: "A rich ocean sky color",
       theme: undefined,
@@ -6760,7 +6634,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.8",
       type: "color",
-      value: "#265167",
+      value: "#557884",
       cssVar: "--rw-color-sky-8",
       description: "A deep teal sky color",
       theme: undefined,
@@ -6769,7 +6643,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.9",
       type: "color",
-      value: "#1b445d",
+      value: "#38515a",
       cssVar: "--rw-color-sky-9",
       description: "A dark steel sky color",
       theme: undefined,
@@ -6859,7 +6733,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.1",
       type: "color",
-      value: "#b6c0d0",
+      value: "#baabe3",
       cssVar: "--rw-color-purple-1",
       description: "A pale lavender purple color",
       theme: undefined,
@@ -6868,7 +6742,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.2",
       type: "color",
-      value: "#a9b3c9",
+      value: "#b1a1e0",
       cssVar: "--rw-color-purple-2",
       description: "A light periwinkle purple color",
       theme: undefined,
@@ -6877,7 +6751,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.3",
       type: "color",
-      value: "#9ca5c0",
+      value: "#aa97dc",
       cssVar: "--rw-color-purple-3",
       description: "A soft violet purple color",
       theme: undefined,
@@ -6886,7 +6760,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.4",
       type: "color",
-      value: "#8f96b8",
+      value: "#a18ed9",
       cssVar: "--rw-color-purple-4",
       description: "A muted indigo purple color",
       theme: undefined,
@@ -6895,7 +6769,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.5",
       type: "color",
-      value: "#8386b1",
+      value: "#9984d6",
       cssVar: "--rw-color-purple-5",
       description: "A medium periwinkle purple color",
       theme: undefined,
@@ -6904,7 +6778,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.6",
       type: "color",
-      value: "#7776a8",
+      value: "#9580cd",
       cssVar: "--rw-color-purple-6",
       description: "A vivid soft indigo color",
       theme: undefined,
@@ -6913,7 +6787,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.7",
       type: "color",
-      value: "#69668e",
+      value: "#8677b4",
       cssVar: "--rw-color-purple-7",
       description: "A rich slate indigo color",
       theme: undefined,
@@ -6922,7 +6796,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.8",
       type: "color",
-      value: "#585477",
+      value: "#6d628e",
       cssVar: "--rw-color-purple-8",
       description: "A deep muted indigo color",
       theme: undefined,
@@ -6931,7 +6805,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.9",
       type: "color",
-      value: "#47425f",
+      value: "#47405d",
       cssVar: "--rw-color-purple-9",
       description: "A dark navy indigo color",
       theme: undefined,
@@ -6940,7 +6814,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.1",
       type: "color",
-      value: "#e4a1b9",
+      value: "#d9aac8",
       cssVar: "--rw-color-pink-1",
       description: "A pale blush pink color",
       theme: undefined,
@@ -6949,7 +6823,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.2",
       type: "color",
-      value: "#dd9bb3",
+      value: "#d59fc0",
       cssVar: "--rw-color-pink-2",
       description: "A light rose pink color",
       theme: undefined,
@@ -6958,7 +6832,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.3",
       type: "color",
-      value: "#da93ad",
+      value: "#cf93b8",
       cssVar: "--rw-color-pink-3",
       description: "A soft coral pink color",
       theme: undefined,
@@ -6967,7 +6841,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.4",
       type: "color",
-      value: "#d78eaa",
+      value: "#ca87b0",
       cssVar: "--rw-color-pink-4",
       description: "A muted bright pink color",
       theme: undefined,
@@ -6976,7 +6850,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.5",
       type: "color",
-      value: "#d686a6",
+      value: "#c57ba8",
       cssVar: "--rw-color-pink-5",
       description: "A medium hot pink color",
       theme: undefined,
@@ -6985,7 +6859,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.6",
       type: "color",
-      value: "#d080a0",
+      value: "#be77a3",
       cssVar: "--rw-color-pink-6",
       description: "A vivid magenta pink color",
       theme: undefined,
@@ -6994,7 +6868,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.7",
       type: "color",
-      value: "#c9799a",
+      value: "#a86d91",
       cssVar: "--rw-color-pink-7",
       description: "A rich fuchsia pink color",
       theme: undefined,
@@ -7003,7 +6877,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.8",
       type: "color",
-      value: "#bd7794",
+      value: "#875975",
       cssVar: "--rw-color-pink-8",
       description: "A deep berry pink color",
       theme: undefined,
@@ -7012,7 +6886,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.9",
       type: "color",
-      value: "#9e697f",
+      value: "#5a3b4f",
       cssVar: "--rw-color-pink-9",
       description: "A dark plum pink color",
       theme: undefined,
@@ -7111,7 +6985,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success",
       type: "color",
-      value: "#45856a",
+      value: "#60a88a",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: undefined,
@@ -7129,7 +7003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info",
       type: "color",
-      value: "#36a1b9",
+      value: "#72a6b8",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: undefined,
@@ -7138,7 +7012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "#7776a8",
+      value: "#9580cd",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: undefined,
@@ -7588,7 +7462,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#227555",
+      value: "#298e6c",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -7597,7 +7471,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#5b9379",
+      value: "#74c2a0",
       cssVar: "--rw-color-foreground-success-active",
       description: "The success foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -7606,7 +7480,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inactive",
       type: "color",
-      value: "#1d633f",
+      value: "#227550",
       cssVar: "--rw-color-foreground-success-inactive",
       description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -7615,7 +7489,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#919191",
+      value: "#80a793",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -7660,7 +7534,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#2e869e",
+      value: "#508495",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -7669,7 +7543,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#5fbbd0",
+      value: "#82bed3",
       cssVar: "--rw-color-foreground-info-active",
       description: "The info foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -7678,7 +7552,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inactive",
       type: "color",
-      value: "#276b85",
+      value: "#246a7d",
       cssVar: "--rw-color-foreground-info-inactive",
       description: "The info foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -7687,7 +7561,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#77a5b3",
+      value: "#87a4af",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -7696,7 +7570,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#615f8e",
+      value: "#7c6aa7",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -7705,7 +7579,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#8383bb",
+      value: "#a48dde",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -7714,7 +7588,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inactive",
       type: "color",
-      value: "#4a4578",
+      value: "#614a8a",
       cssVar: "--rw-color-foreground-discovery-inactive",
       description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -7723,7 +7597,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#919191",
+      value: "#938ab4",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8101,7 +7975,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#77a98e",
+      value: "#8cdebb",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8119,7 +7993,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#8cdede",
+      value: "#95e0e0",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8128,7 +8002,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#8f90d6",
+      value: "#bd9fe3",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8155,7 +8029,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page",
       type: "color",
-      value: "#343437",
+      value: "#3c3c3e",
       cssVar: "--rw-color-background-page",
       description: "The page background color for the dark theme",
       theme: undefined,
@@ -8164,7 +8038,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated",
       type: "color",
-      value: "#39393a",
+      value: "#3f4043",
       cssVar: "--rw-color-background-elevated",
       description: "The elevated background color for the dark theme",
       theme: undefined,
@@ -8173,34 +8047,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating",
       type: "color",
-      value: "#414141",
+      value: "#444548",
       cssVar: "--rw-color-background-floating",
       description: "The floating background color for the dark theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.background.high",
-      type: "color",
-      value: "#484848",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#4f4f4f",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.background.highest",
       type: "color",
-      value: "#6a6a6a",
+      value: "#595959",
       cssVar: "--rw-color-background-highest",
       description: "The highest level of elevation background color for the dark theme",
       theme: undefined,
@@ -8254,7 +8110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success",
       type: "color",
-      value: "#2c5f53",
+      value: "#305847",
       cssVar: "--rw-color-background-success",
       description: "The success subtle background color for the dark theme",
       theme: undefined,
@@ -8272,7 +8128,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info",
       type: "color",
-      value: "#1b445d",
+      value: "#38515a",
       cssVar: "--rw-color-background-info",
       description: "The info subtle background color for the dark theme",
       theme: undefined,
@@ -8281,7 +8137,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery",
       type: "color",
-      value: "#47425f",
+      value: "#47405d",
       cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: undefined,
@@ -8326,7 +8182,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#313134",
+      value: "#37373a",
       cssVar: "--rw-color-background-page-hover",
       description: "The page background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8335,7 +8191,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#37373a",
+      value: "#3f3f41",
       cssVar: "--rw-color-background-page-active",
       description: "The page background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8344,7 +8200,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-inactive",
       type: "color",
-      value: "#2d2d31",
+      value: "#343436",
       cssVar: "--rw-color-background-page-inactive",
       description: "The page background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8353,7 +8209,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-disabled",
       type: "color",
-      value: "#353536",
+      value: "#3c3c3d",
       cssVar: "--rw-color-background-page-disabled",
       description: "The page background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8362,7 +8218,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#353537",
+      value: "#3b3c3f",
       cssVar: "--rw-color-background-elevated-hover",
       description: "The elevated background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8371,7 +8227,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#3c3c3d",
+      value: "#434346",
       cssVar: "--rw-color-background-elevated-active",
       description: "The elevated background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8380,7 +8236,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-inactive",
       type: "color",
-      value: "#323233",
+      value: "#36373a",
       cssVar: "--rw-color-background-elevated-inactive",
       description: "The elevated background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8389,7 +8245,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-disabled",
       type: "color",
-      value: "#39393a",
+      value: "#3f4042",
       cssVar: "--rw-color-background-elevated-disabled",
       description: "The elevated background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8398,7 +8254,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#3d3d3d",
+      value: "#3f4044",
       cssVar: "--rw-color-background-floating-hover",
       description: "The floating background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8407,7 +8263,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#444444",
+      value: "#48494c",
       cssVar: "--rw-color-background-floating-active",
       description: "The floating background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8416,7 +8272,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-inactive",
       type: "color",
-      value: "#383838",
+      value: "#3a3b3f",
       cssVar: "--rw-color-background-floating-inactive",
       description: "The floating background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8425,88 +8281,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#41414199",
+      value: "#444547",
       cssVar: "--rw-color-background-floating-disabled",
-      description: "The floating background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#424242",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#4c4c4c",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#3d3d3d",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#48484899",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#494949",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#545454",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#424242",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#4f4f4f99",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the dark theme (disabled, 60% opacity)",
+      description: "The floating background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#606060",
+      value: "#515151",
       cssVar: "--rw-color-background-highest-hover",
       description: "The highest level of elevation background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8515,7 +8299,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#727272",
+      value: "#5f5f5f",
       cssVar: "--rw-color-background-highest-active",
       description: "The highest level of elevation background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8524,7 +8308,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-inactive",
       type: "color",
-      value: "#575757",
+      value: "#4a4a4a",
       cssVar: "--rw-color-background-highest-inactive",
       description: "The highest level of elevation background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8533,7 +8317,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-disabled",
       type: "color",
-      value: "#6a6a6a99",
+      value: "#59595999",
       cssVar: "--rw-color-background-highest-disabled",
       description: "The highest level of elevation background color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -8722,7 +8506,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#1b5f4f",
+      value: "#255543",
       cssVar: "--rw-color-background-success-hover",
       description: "The success subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8731,7 +8515,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#366257",
+      value: "#385b4c",
       cssVar: "--rw-color-background-success-active",
       description: "The success subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8740,7 +8524,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-inactive",
       type: "color",
-      value: "#1a5949",
+      value: "#19553e",
       cssVar: "--rw-color-background-success-inactive",
       description: "The success subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8749,7 +8533,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#435952",
+      value: "#405249",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8794,7 +8578,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#1a4059",
+      value: "#304b55",
       cssVar: "--rw-color-background-info-hover",
       description: "The info subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8803,7 +8587,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#22475e",
+      value: "#3e555d",
       cssVar: "--rw-color-background-info-active",
       description: "The info subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8812,7 +8596,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-inactive",
       type: "color",
-      value: "#193a55",
+      value: "#274752",
       cssVar: "--rw-color-background-info-inactive",
       description: "The info subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8821,7 +8605,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#2f424f",
+      value: "#424f54",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8830,7 +8614,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#413b5a",
+      value: "#423959",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -8839,7 +8623,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#4b4663",
+      value: "#4c4561",
       cssVar: "--rw-color-background-discovery-active",
       description: "The discovery subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -8848,7 +8632,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-inactive",
       type: "color",
-      value: "#3c3555",
+      value: "#3d3354",
       cssVar: "--rw-color-background-discovery-inactive",
       description: "The discovery subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -8857,7 +8641,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#474456",
+      value: "#474355",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -8866,7 +8650,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base",
       type: "color",
-      value: "#4f4f4f",
+      value: "#6a6a6a",
       cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
       theme: undefined,
@@ -8911,7 +8695,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success",
       type: "color",
-      value: "#45856a",
+      value: "#60a88a",
       cssVar: "--rw-color-border-success",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -8929,7 +8713,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info",
       type: "color",
-      value: "#36a1b9",
+      value: "#72a6b8",
       cssVar: "--rw-color-border-info",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -8938,7 +8722,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery",
       type: "color",
-      value: "#7776a8",
+      value: "#9580cd",
       cssVar: "--rw-color-border-discovery",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -8992,7 +8776,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle",
       type: "color",
-      value: "#346c5b",
+      value: "#467e66",
       cssVar: "--rw-color-border-success-subtle",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -9010,7 +8794,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle",
       type: "color",
-      value: "#265167",
+      value: "#557884",
       cssVar: "--rw-color-border-info-subtle",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -9019,7 +8803,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle",
       type: "color",
-      value: "#585477",
+      value: "#6d628e",
       cssVar: "--rw-color-border-discovery-subtle",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -9028,7 +8812,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-hover",
       type: "color",
-      value: "#5b5b5b",
+      value: "#7e7e7e",
       cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: undefined,
@@ -9037,7 +8821,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-active",
       type: "color",
-      value: "#828282",
+      value: "#b9b9b9",
       cssVar: "--rw-color-border-base-active",
       description: "Hairline-strong border against ink cards (active, 75% brighter)",
       theme: undefined,
@@ -9046,7 +8830,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-disabled",
       type: "color",
-      value: "#4f4f4f99",
+      value: "#6a6a6a99",
       cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
       theme: undefined,
@@ -9163,7 +8947,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#227555",
+      value: "#298e6c",
       cssVar: "--rw-color-border-success-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9172,7 +8956,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#5b9379",
+      value: "#74c2a0",
       cssVar: "--rw-color-border-success-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9181,7 +8965,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-disabled",
       type: "color",
-      value: "#638172",
+      value: "#80a793",
       cssVar: "--rw-color-border-success-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9217,7 +9001,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#2e869e",
+      value: "#508495",
       cssVar: "--rw-color-border-info-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9226,7 +9010,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#5fbbd0",
+      value: "#82bed3",
       cssVar: "--rw-color-border-info-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9235,7 +9019,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-disabled",
       type: "color",
-      value: "#77a5b3",
+      value: "#87a4af",
       cssVar: "--rw-color-border-info-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9244,7 +9028,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#615f8e",
+      value: "#7c6aa7",
       cssVar: "--rw-color-border-discovery-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9253,7 +9037,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#8383bb",
+      value: "#a48dde",
       cssVar: "--rw-color-border-discovery-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9262,7 +9046,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-disabled",
       type: "color",
-      value: "#787995",
+      value: "#938ab4",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9406,7 +9190,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#1d634e",
+      value: "#207053",
       cssVar: "--rw-color-border-success-subtle-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9415,7 +9199,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#457464",
+      value: "#598a74",
       cssVar: "--rw-color-border-success-subtle-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9424,7 +9208,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-disabled",
       type: "color",
-      value: "#4e675d",
+      value: "#5e796c",
       cssVar: "--rw-color-border-success-subtle-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9460,7 +9244,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#1c475f",
+      value: "#396472",
       cssVar: "--rw-color-border-info-subtle-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9469,7 +9253,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#34586c",
+      value: "#658691",
       cssVar: "--rw-color-border-info-subtle-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9478,7 +9262,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-disabled",
       type: "color",
-      value: "#3c4f5b",
+      value: "#64777e",
       cssVar: "--rw-color-border-info-subtle-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9487,7 +9271,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#494368",
+      value: "#5a4d7b",
       cssVar: "--rw-color-border-discovery-subtle-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9496,7 +9280,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#625f80",
+      value: "#796e9b",
       cssVar: "--rw-color-border-discovery-subtle-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9505,7 +9289,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-disabled",
       type: "color",
-      value: "#57566b",
+      value: "#6b657f",
       cssVar: "--rw-color-border-discovery-subtle-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -9514,7 +9298,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background",
       type: "color",
-      value: "#414141",
+      value: "#444548",
       cssVar: "--rw-color-overlay-background",
       description: "The overlay background color for the dark theme",
       theme: undefined,
@@ -9523,7 +9307,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#4f4f4f",
+      value: "#6a6a6a",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: undefined,
@@ -9541,7 +9325,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#3d3d3d",
+      value: "#3f4044",
       cssVar: "--rw-color-overlay-background-hover",
       description: "The overlay background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -9550,7 +9334,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#444444",
+      value: "#48494c",
       cssVar: "--rw-color-overlay-background-active",
       description: "The overlay background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -9559,7 +9343,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-inactive",
       type: "color",
-      value: "#383838",
+      value: "#3a3b3f",
       cssVar: "--rw-color-overlay-background-inactive",
       description: "The overlay background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -9568,16 +9352,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#41414199",
+      value: "#444547",
       cssVar: "--rw-color-overlay-background-disabled",
-      description: "The overlay background color for the dark theme (disabled, 60% opacity)",
+      description: "The overlay background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#424242",
+      value: "#575757",
       cssVar: "--rw-color-overlay-border-hover",
       description: "The overlay border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -9586,7 +9370,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#575757",
+      value: "#777777",
       cssVar: "--rw-color-overlay-border-active",
       description: "The overlay border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -9595,7 +9379,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-disabled",
       type: "color",
-      value: "#4f4f4f99",
+      value: "#6a6a6a99",
       cssVar: "--rw-color-overlay-border-disabled",
       description: "The overlay border color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -9766,7 +9550,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.emphasis",
       type: "color",
-      value: "#5c8f75",
+      value: "#63ae8f",
       cssVar: "--rw-color-data-green-emphasis",
       description: "The green data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -9775,7 +9559,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.subtle",
       type: "color",
-      value: "#346c5b",
+      value: "#467e66",
       cssVar: "--rw-color-data-green-subtle",
       description: "The green data visualization subtle color for the dark theme",
       theme: undefined,
@@ -9784,7 +9568,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.emphasis",
       type: "color",
-      value: "#4db2bc",
+      value: "#76acbe",
       cssVar: "--rw-color-data-sky-emphasis",
       description: "The sky blue data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -9793,7 +9577,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.subtle",
       type: "color",
-      value: "#1b445d",
+      value: "#38515a",
       cssVar: "--rw-color-data-sky-subtle",
       description: "The sky blue data visualization subtle color for the dark theme",
       theme: undefined,
@@ -9820,7 +9604,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.emphasis",
       type: "color",
-      value: "#8386b1",
+      value: "#9984d6",
       cssVar: "--rw-color-data-purple-emphasis",
       description: "The purple data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -9829,7 +9613,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.subtle",
       type: "color",
-      value: "#47425f",
+      value: "#47405d",
       cssVar: "--rw-color-data-purple-subtle",
       description: "The purple data visualization subtle color for the dark theme",
       theme: undefined,
@@ -9838,7 +9622,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.emphasis",
       type: "color",
-      value: "#d686a6",
+      value: "#c57ba8",
       cssVar: "--rw-color-data-pink-emphasis",
       description: "The pink data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -9847,7 +9631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.subtle",
       type: "color",
-      value: "#9e697f",
+      value: "#5a3b4f",
       cssVar: "--rw-color-data-pink-subtle",
       description: "The pink data visualization subtle color for the dark theme",
       theme: undefined,
@@ -11629,7 +11413,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #268e6220",
+      value: "0px 0px 0px 3px #45c79120",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -11638,7 +11422,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #268e6220",
+      value: "0px 0px 0px 1px #45c79120",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -11647,7 +11431,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #45c79120",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -11656,7 +11440,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #45c79120",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11665,7 +11449,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00bee720",
+      value: "0px 0px 0px 3px #64bbd820",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -11674,7 +11458,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00bee720",
+      value: "0px 0px 0px 1px #64bbd820",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -11683,7 +11467,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #64bbd820",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -11692,7 +11476,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #64bbd820",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -11701,7 +11485,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #6c6bc120",
+      value: "0px 0px 0px 3px #9d7ff020",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -11710,7 +11494,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #6c6bc120",
+      value: "0px 0px 0px 1px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -11719,7 +11503,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9d7ff020",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -11728,7 +11512,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -12045,7 +11829,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.3",
       type: "color",
-      value: "#000000",
+      value: "#08080a",
       cssVar: "--rw-color-surface-3",
       description: "The third level surface of the palette - neutral charcoal for floating components",
       theme: undefined,
@@ -12054,27 +11838,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.4",
       type: "color",
-      value: "#0c0c0c",
+      value: "#2f2f2f",
       cssVar: "--rw-color-surface-4",
-      description: "The fourth level surface of the palette - emphasized charcoal for the high elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.5",
-      type: "color",
-      value: "#1b1b1b",
-      cssVar: "--rw-color-surface-5",
       description: "The fifth level surface of the palette - deepest charcoal for higher elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#535353",
-      cssVar: "--rw-color-surface-6",
-      description: "The sixth level surface of the palette - deepest charcoal for highest elevation",
       theme: undefined,
       typography: false
     },
@@ -12486,7 +12252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.1",
       type: "color",
-      value: "#eaf7ec",
+      value: "#eefdf7",
       cssVar: "--rw-color-green-1",
       description: "A pale green success color",
       theme: undefined,
@@ -12495,7 +12261,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.2",
       type: "color",
-      value: "#b9e6c4",
+      value: "#c1f9e2",
       cssVar: "--rw-color-green-2",
       description: "A light green success color",
       theme: undefined,
@@ -12504,7 +12270,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.3",
       type: "color",
-      value: "#87d4a0",
+      value: "#94f5cc",
       cssVar: "--rw-color-green-3",
       description: "A soft green success color",
       theme: undefined,
@@ -12513,7 +12279,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.4",
       type: "color",
-      value: "#56c382",
+      value: "#66f0b7",
       cssVar: "--rw-color-green-4",
       description: "A muted green success color",
       theme: undefined,
@@ -12522,7 +12288,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.5",
       type: "color",
-      value: "#2ca96a",
+      value: "#39eca1",
       cssVar: "--rw-color-green-5",
       description: "A medium green success color",
       theme: undefined,
@@ -12531,7 +12297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.6",
       type: "color",
-      value: "#0c8652",
+      value: "#2de498",
       cssVar: "--rw-color-green-6",
       description: "A vivid green success color - confirmation on dark",
       theme: undefined,
@@ -12540,7 +12306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.7",
       type: "color",
-      value: "#07613f",
+      value: "#1ebf7b",
       cssVar: "--rw-color-green-7",
       description: "A rich green success color",
       theme: undefined,
@@ -12549,7 +12315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.8",
       type: "color",
-      value: "#033828",
+      value: "#11734a",
       cssVar: "--rw-color-green-8",
       description: "A deep green success color",
       theme: undefined,
@@ -12558,7 +12324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.green.9",
       type: "color",
-      value: "#000f0c",
+      value: "#010705",
       cssVar: "--rw-color-green-9",
       description: "Semantic success - confirmation and success",
       theme: undefined,
@@ -12648,7 +12414,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.1",
       type: "color",
-      value: "#f9fffe",
+      value: "#ffffff",
       cssVar: "--rw-color-sky-1",
       description: "A pale sky blue color",
       theme: undefined,
@@ -12657,7 +12423,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.2",
       type: "color",
-      value: "#bffff6",
+      value: "#e5f7fe",
       cssVar: "--rw-color-sky-2",
       description: "A light aqua sky color",
       theme: undefined,
@@ -12666,7 +12432,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.3",
       type: "color",
-      value: "#87fff6",
+      value: "#bdecfd",
       cssVar: "--rw-color-sky-3",
       description: "A soft bright sky color",
       theme: undefined,
@@ -12675,7 +12441,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.4",
       type: "color",
-      value: "#4efdff",
+      value: "#99e2fc",
       cssVar: "--rw-color-sky-4",
       description: "A vivid sky blue color",
       theme: undefined,
@@ -12684,7 +12450,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.5",
       type: "color",
-      value: "#16eaff",
+      value: "#73d7fa",
       cssVar: "--rw-color-sky-5",
       description: "A medium electric sky color",
       theme: undefined,
@@ -12693,7 +12459,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.6",
       type: "color",
-      value: "#00b5dc",
+      value: "#64cff3",
       cssVar: "--rw-color-sky-6",
       description: "A bright azure sky color",
       theme: undefined,
@@ -12702,7 +12468,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.7",
       type: "color",
-      value: "#006d8f",
+      value: "#44b1d5",
       cssVar: "--rw-color-sky-7",
       description: "A rich ocean sky color",
       theme: undefined,
@@ -12711,7 +12477,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.8",
       type: "color",
-      value: "#000c13",
+      value: "#25728c",
       cssVar: "--rw-color-sky-8",
       description: "A deep teal sky color",
       theme: undefined,
@@ -12720,7 +12486,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.sky.9",
       type: "color",
-      value: "#000000",
+      value: "#061217",
       cssVar: "--rw-color-sky-9",
       description: "A dark steel sky color",
       theme: undefined,
@@ -12819,7 +12585,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.2",
       type: "color",
-      value: "#f0f4fb",
+      value: "#ffffff",
       cssVar: "--rw-color-purple-2",
       description: "A light periwinkle purple color",
       theme: undefined,
@@ -12828,7 +12594,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.3",
       type: "color",
-      value: "#cdd6f3",
+      value: "#f6f2ff",
       cssVar: "--rw-color-purple-3",
       description: "A soft violet purple color",
       theme: undefined,
@@ -12837,7 +12603,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.4",
       type: "color",
-      value: "#aab5ea",
+      value: "#e1d7ff",
       cssVar: "--rw-color-purple-4",
       description: "A muted indigo purple color",
       theme: undefined,
@@ -12846,7 +12612,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.5",
       type: "color",
-      value: "#8a90e2",
+      value: "#cdbbff",
       cssVar: "--rw-color-purple-5",
       description: "A medium periwinkle purple color",
       theme: undefined,
@@ -12855,7 +12621,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.6",
       type: "color",
-      value: "#6867d9",
+      value: "#bba2ff",
       cssVar: "--rw-color-purple-6",
       description: "A vivid soft indigo color",
       theme: undefined,
@@ -12864,7 +12630,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.7",
       type: "color",
-      value: "#4740aa",
+      value: "#8e6eeb",
       cssVar: "--rw-color-purple-7",
       description: "A rich slate indigo color",
       theme: undefined,
@@ -12873,7 +12639,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.8",
       type: "color",
-      value: "#2f276b",
+      value: "#5538a7",
       cssVar: "--rw-color-purple-8",
       description: "A deep muted indigo color",
       theme: undefined,
@@ -12882,7 +12648,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.purple.9",
       type: "color",
-      value: "#140f2c",
+      value: "#140d27",
       cssVar: "--rw-color-purple-9",
       description: "A dark navy indigo color",
       theme: undefined,
@@ -12900,7 +12666,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.2",
       type: "color",
-      value: "#fffcfd",
+      value: "#fff1fa",
       cssVar: "--rw-color-pink-2",
       description: "A light rose pink color",
       theme: undefined,
@@ -12909,7 +12675,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.3",
       type: "color",
-      value: "#ffe5ef",
+      value: "#ffcdeb",
       cssVar: "--rw-color-pink-3",
       description: "A soft coral pink color",
       theme: undefined,
@@ -12918,7 +12684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.4",
       type: "color",
-      value: "#ffd4e4",
+      value: "#ffaade",
       cssVar: "--rw-color-pink-4",
       description: "A muted bright pink color",
       theme: undefined,
@@ -12927,7 +12693,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.5",
       type: "color",
-      value: "#ffc2da",
+      value: "#ff85d0",
       cssVar: "--rw-color-pink-5",
       description: "A medium hot pink color",
       theme: undefined,
@@ -12936,7 +12702,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.6",
       type: "color",
-      value: "#ffa7cb",
+      value: "#f976c6",
       cssVar: "--rw-color-pink-6",
       description: "A vivid magenta pink color",
       theme: undefined,
@@ -12945,7 +12711,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.7",
       type: "color",
-      value: "#ff8bbb",
+      value: "#dc50a6",
       cssVar: "--rw-color-pink-7",
       description: "A rich fuchsia pink color",
       theme: undefined,
@@ -12954,7 +12720,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.8",
       type: "color",
-      value: "#f875aa",
+      value: "#932b6b",
       cssVar: "--rw-color-pink-8",
       description: "A deep berry pink color",
       theme: undefined,
@@ -12963,7 +12729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.pink.9",
       type: "color",
-      value: "#cc437c",
+      value: "#1c0815",
       cssVar: "--rw-color-pink-9",
       description: "A dark plum pink color",
       theme: undefined,
@@ -13062,7 +12828,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success",
       type: "color",
-      value: "#0c8652",
+      value: "#2de498",
       cssVar: "--rw-color-foreground-success",
       description: "The success foreground color for the dark theme",
       theme: undefined,
@@ -13080,7 +12846,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info",
       type: "color",
-      value: "#00b5dc",
+      value: "#64cff3",
       cssVar: "--rw-color-foreground-info",
       description: "The info foreground color for the dark theme",
       theme: undefined,
@@ -13089,7 +12855,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery",
       type: "color",
-      value: "#6867d9",
+      value: "#bba2ff",
       cssVar: "--rw-color-foreground-discovery",
       description: "The discovery foreground color for the dark theme",
       theme: undefined,
@@ -13539,7 +13305,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#002819",
+      value: "#006a46",
       cssVar: "--rw-color-foreground-success-hover",
       description: "The success foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -13548,7 +13314,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#29b273",
+      value: "#73ffc1",
       cssVar: "--rw-color-foreground-success-active",
       description: "The success foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -13557,7 +13323,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inactive",
       type: "color",
-      value: "#000000",
+      value: "#002716",
       cssVar: "--rw-color-foreground-success-inactive",
       description: "The success foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -13566,7 +13332,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-disabled",
       type: "color",
-      value: "#a4a4a4",
+      value: "#7ed4a9",
       cssVar: "--rw-color-foreground-success-disabled",
       description: "The success foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -13611,7 +13377,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#007595",
+      value: "#158eb3",
       cssVar: "--rw-color-foreground-info-hover",
       description: "The info foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -13620,7 +13386,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#64e2ff",
+      value: "#b2ebff",
       cssVar: "--rw-color-foreground-info-active",
       description: "The info foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -13629,7 +13395,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inactive",
       type: "color",
-      value: "#003b52",
+      value: "#00313e",
       cssVar: "--rw-color-foreground-info-inactive",
       description: "The info foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -13638,7 +13404,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-disabled",
       type: "color",
-      value: "#6fccea",
+      value: "#91cbdf",
       cssVar: "--rw-color-foreground-info-disabled",
       description: "The info foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -13647,7 +13413,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#3832a7",
+      value: "#7347dc",
       cssVar: "--rw-color-foreground-discovery-hover",
       description: "The discovery foreground color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -13656,7 +13422,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#9091f1",
+      value: "#e8dfff",
       cssVar: "--rw-color-foreground-discovery-active",
       description: "The discovery foreground color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -13665,7 +13431,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inactive",
       type: "color",
-      value: "#1a1166",
+      value: "#3f1295",
       cssVar: "--rw-color-foreground-discovery-inactive",
       description: "The discovery foreground color for the dark theme (inactive, 40% darker)",
       theme: undefined,
@@ -13674,7 +13440,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-disabled",
       type: "color",
-      value: "#a4a4a4",
+      value: "#ab9be5",
       cssVar: "--rw-color-foreground-discovery-disabled",
       description: "The discovery foreground color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -14052,7 +13818,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#68d99c",
+      value: "#defff1",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14070,7 +13836,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#deffff",
+      value: "#f5ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14079,7 +13845,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#d2d3ff",
+      value: "#ffffff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14124,34 +13890,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating",
       type: "color",
-      value: "#000000",
+      value: "#08080a",
       cssVar: "--rw-color-background-floating",
       description: "The floating background color for the dark theme",
       theme: undefined,
       typography: false
     },
     {
-      path: "color.background.high",
-      type: "color",
-      value: "#0c0c0c",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#1b1b1b",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the dark theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.background.highest",
       type: "color",
-      value: "#535353",
+      value: "#2f2f2f",
       cssVar: "--rw-color-background-highest",
       description: "The highest level of elevation background color for the dark theme",
       theme: undefined,
@@ -14205,7 +13953,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success",
       type: "color",
-      value: "#000f0c",
+      value: "#010705",
       cssVar: "--rw-color-background-success",
       description: "The success subtle background color for the dark theme",
       theme: undefined,
@@ -14223,7 +13971,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info",
       type: "color",
-      value: "#000000",
+      value: "#061217",
       cssVar: "--rw-color-background-info",
       description: "The info subtle background color for the dark theme",
       theme: undefined,
@@ -14232,7 +13980,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery",
       type: "color",
-      value: "#140f2c",
+      value: "#140d27",
       cssVar: "--rw-color-background-discovery",
       description: "The discovery subtle background color for the dark theme",
       theme: undefined,
@@ -14322,7 +14070,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#000000",
+      value: "#040506",
       cssVar: "--rw-color-background-elevated-active",
       description: "The elevated background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14358,7 +14106,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#050505",
+      value: "#0f1013",
       cssVar: "--rw-color-background-floating-active",
       description: "The floating background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14376,88 +14124,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#00000099",
+      value: "#060708",
       cssVar: "--rw-color-background-floating-disabled",
-      description: "The floating background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#010101",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#151515",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#000000",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#0c0c0c99",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the dark theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#0e0e0e",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the dark theme (hover, 10% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#252525",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the dark theme (active, 8% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#010101",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the dark theme (inactive, 20% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#1b1b1b99",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the dark theme (disabled, 60% opacity)",
+      description: "The floating background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#3f3f3f",
+      value: "#1f1f1f",
       cssVar: "--rw-color-background-highest-hover",
       description: "The highest level of elevation background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -14466,7 +14142,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#636363",
+      value: "#3c3c3c",
       cssVar: "--rw-color-background-highest-active",
       description: "The highest level of elevation background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14475,7 +14151,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-inactive",
       type: "color",
-      value: "#2c2c2c",
+      value: "#111111",
       cssVar: "--rw-color-background-highest-inactive",
       description: "The highest level of elevation background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -14484,7 +14160,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-disabled",
       type: "color",
-      value: "#53535399",
+      value: "#2f2f2f99",
       cssVar: "--rw-color-background-highest-disabled",
       description: "The highest level of elevation background color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -14682,7 +14358,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#05261d",
+      value: "#051910",
       cssVar: "--rw-color-background-success-active",
       description: "The success subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14700,7 +14376,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-disabled",
       type: "color",
-      value: "#0f221c",
+      value: "#09140f",
       cssVar: "--rw-color-background-success-disabled",
       description: "The success subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -14745,7 +14421,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#000000",
+      value: "#000202",
       cssVar: "--rw-color-background-info-hover",
       description: "The info subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -14754,7 +14430,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#000000",
+      value: "#0b1f26",
       cssVar: "--rw-color-background-info-active",
       description: "The info subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14772,7 +14448,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-disabled",
       type: "color",
-      value: "#000000",
+      value: "#0c1519",
       cssVar: "--rw-color-background-info-disabled",
       description: "The info subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -14781,7 +14457,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#0c081b",
+      value: "#0b0617",
       cssVar: "--rw-color-background-discovery-hover",
       description: "The discovery subtle background color for the dark theme (hover, 10% darker)",
       theme: undefined,
@@ -14790,7 +14466,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#1b1539",
+      value: "#1b1334",
       cssVar: "--rw-color-background-discovery-active",
       description: "The discovery subtle background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -14799,7 +14475,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-inactive",
       type: "color",
-      value: "#04020a",
+      value: "#020105",
       cssVar: "--rw-color-background-discovery-inactive",
       description: "The discovery subtle background color for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -14808,7 +14484,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-disabled",
       type: "color",
-      value: "#110f1f",
+      value: "#100d1b",
       cssVar: "--rw-color-background-discovery-disabled",
       description: "The discovery subtle background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -14817,7 +14493,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base",
       type: "color",
-      value: "#1b1b1b",
+      value: "#535353",
       cssVar: "--rw-color-border-base",
       description: "Hairline-strong border against ink cards",
       theme: undefined,
@@ -14862,7 +14538,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success",
       type: "color",
-      value: "#0c8652",
+      value: "#2de498",
       cssVar: "--rw-color-border-success",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -14880,7 +14556,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info",
       type: "color",
-      value: "#00b5dc",
+      value: "#64cff3",
       cssVar: "--rw-color-border-info",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -14889,7 +14565,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery",
       type: "color",
-      value: "#6867d9",
+      value: "#bba2ff",
       cssVar: "--rw-color-border-discovery",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -14943,7 +14619,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle",
       type: "color",
-      value: "#033828",
+      value: "#11734a",
       cssVar: "--rw-color-border-success-subtle",
       description: "The success border color for the dark theme",
       theme: undefined,
@@ -14961,7 +14637,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle",
       type: "color",
-      value: "#000c13",
+      value: "#25728c",
       cssVar: "--rw-color-border-info-subtle",
       description: "The info border color for the dark theme",
       theme: undefined,
@@ -14970,7 +14646,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle",
       type: "color",
-      value: "#2f276b",
+      value: "#5538a7",
       cssVar: "--rw-color-border-discovery-subtle",
       description: "The discovery border color for the dark theme",
       theme: undefined,
@@ -14979,7 +14655,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-hover",
       type: "color",
-      value: "#353535",
+      value: "#7c7c7c",
       cssVar: "--rw-color-border-base-hover",
       description: "Hairline-strong border against ink cards (hover, 20% brighter)",
       theme: undefined,
@@ -14988,7 +14664,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-active",
       type: "color",
-      value: "#858585",
+      value: "#f6f6f6",
       cssVar: "--rw-color-border-base-active",
       description: "Hairline-strong border against ink cards (active, 75% brighter)",
       theme: undefined,
@@ -14997,7 +14673,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.base-disabled",
       type: "color",
-      value: "#1b1b1b99",
+      value: "#53535399",
       cssVar: "--rw-color-border-base-disabled",
       description: "Hairline-strong border against ink cards (disabled, 60% opacity)",
       theme: undefined,
@@ -15114,7 +14790,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#002819",
+      value: "#006a46",
       cssVar: "--rw-color-border-success-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15123,7 +14799,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#29b273",
+      value: "#73ffc1",
       cssVar: "--rw-color-border-success-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15132,7 +14808,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-disabled",
       type: "color",
-      value: "#3f8963",
+      value: "#7ed4a9",
       cssVar: "--rw-color-border-success-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15168,7 +14844,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#007595",
+      value: "#158eb3",
       cssVar: "--rw-color-border-info-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15177,7 +14853,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#64e2ff",
+      value: "#b2ebff",
       cssVar: "--rw-color-border-info-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15186,7 +14862,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-disabled",
       type: "color",
-      value: "#6fccea",
+      value: "#91cbdf",
       cssVar: "--rw-color-border-info-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15195,7 +14871,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#3832a7",
+      value: "#7347dc",
       cssVar: "--rw-color-border-discovery-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15204,7 +14880,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#9091f1",
+      value: "#e8dfff",
       cssVar: "--rw-color-border-discovery-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15213,7 +14889,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-disabled",
       type: "color",
-      value: "#6669b6",
+      value: "#ab9be5",
       cssVar: "--rw-color-border-discovery-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15357,7 +15033,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#000000",
+      value: "#001a11",
       cssVar: "--rw-color-border-success-subtle-hover",
       description: "The success border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15366,7 +15042,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#125d43",
+      value: "#299c67",
       cssVar: "--rw-color-border-success-subtle-active",
       description: "The success border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15375,7 +15051,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-disabled",
       type: "color",
-      value: "#1f4636",
+      value: "#387658",
       cssVar: "--rw-color-border-success-subtle-disabled",
       description: "The success border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15411,7 +15087,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#000000",
+      value: "#063b4b",
       cssVar: "--rw-color-border-info-subtle-hover",
       description: "The info border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15420,7 +15096,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#032437",
+      value: "#3b92b1",
       cssVar: "--rw-color-border-info-subtle-active",
       description: "The info border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15429,7 +15105,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-disabled",
       type: "color",
-      value: "#09161e",
+      value: "#417082",
       cssVar: "--rw-color-border-info-subtle-disabled",
       description: "The info border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15438,7 +15114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#181140",
+      value: "#331b72",
       cssVar: "--rw-color-border-discovery-subtle-hover",
       description: "The discovery border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15447,7 +15123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#3f3786",
+      value: "#6d50c3",
       cssVar: "--rw-color-border-discovery-subtle-active",
       description: "The discovery border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15456,7 +15132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-disabled",
       type: "color",
-      value: "#2e2c54",
+      value: "#524385",
       cssVar: "--rw-color-border-discovery-subtle-disabled",
       description: "The discovery border color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
@@ -15465,7 +15141,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background",
       type: "color",
-      value: "#000000",
+      value: "#08080a",
       cssVar: "--rw-color-overlay-background",
       description: "The overlay background color for the dark theme",
       theme: undefined,
@@ -15474,7 +15150,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border",
       type: "color",
-      value: "#1b1b1b",
+      value: "#535353",
       cssVar: "--rw-color-overlay-border",
       description: "The overlay border color for the dark theme",
       theme: undefined,
@@ -15501,7 +15177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#050505",
+      value: "#0f1013",
       cssVar: "--rw-color-overlay-background-active",
       description: "The overlay background color for the dark theme (active, 8% brighter)",
       theme: undefined,
@@ -15519,16 +15195,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#00000099",
+      value: "#060708",
       cssVar: "--rw-color-overlay-background-disabled",
-      description: "The overlay background color for the dark theme (disabled, 60% opacity)",
+      description: "The overlay background color for the dark theme (disabled, 60% saturation)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#010101",
+      value: "#2c2c2c",
       cssVar: "--rw-color-overlay-border-hover",
       description: "The overlay border color for the dark theme (hover, 20% darker)",
       theme: undefined,
@@ -15537,7 +15213,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#2b2b2b",
+      value: "#6d6d6d",
       cssVar: "--rw-color-overlay-border-active",
       description: "The overlay border color for the dark theme (active, 13% brighter)",
       theme: undefined,
@@ -15546,7 +15222,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-disabled",
       type: "color",
-      value: "#1b1b1b99",
+      value: "#53535399",
       cssVar: "--rw-color-overlay-border-disabled",
       description: "The overlay border color for the dark theme (disabled, 60% opacity)",
       theme: undefined,
@@ -15717,7 +15393,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.emphasis",
       type: "color",
-      value: "#2ca96a",
+      value: "#39eca1",
       cssVar: "--rw-color-data-green-emphasis",
       description: "The green data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -15726,7 +15402,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.green.subtle",
       type: "color",
-      value: "#033828",
+      value: "#11734a",
       cssVar: "--rw-color-data-green-subtle",
       description: "The green data visualization subtle color for the dark theme",
       theme: undefined,
@@ -15735,7 +15411,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.emphasis",
       type: "color",
-      value: "#16eaff",
+      value: "#73d7fa",
       cssVar: "--rw-color-data-sky-emphasis",
       description: "The sky blue data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -15744,7 +15420,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.sky.subtle",
       type: "color",
-      value: "#000000",
+      value: "#061217",
       cssVar: "--rw-color-data-sky-subtle",
       description: "The sky blue data visualization subtle color for the dark theme",
       theme: undefined,
@@ -15771,7 +15447,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.emphasis",
       type: "color",
-      value: "#8a90e2",
+      value: "#cdbbff",
       cssVar: "--rw-color-data-purple-emphasis",
       description: "The purple data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -15780,7 +15456,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.purple.subtle",
       type: "color",
-      value: "#140f2c",
+      value: "#140d27",
       cssVar: "--rw-color-data-purple-subtle",
       description: "The purple data visualization subtle color for the dark theme",
       theme: undefined,
@@ -15789,7 +15465,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.emphasis",
       type: "color",
-      value: "#ffc2da",
+      value: "#ff85d0",
       cssVar: "--rw-color-data-pink-emphasis",
       description: "The pink data visualization emphasis color for the dark theme",
       theme: undefined,
@@ -15798,7 +15474,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.data.pink.subtle",
       type: "color",
-      value: "#cc437c",
+      value: "#1c0815",
       cssVar: "--rw-color-data-pink-subtle",
       description: "The pink data visualization subtle color for the dark theme",
       theme: undefined,
@@ -17580,7 +17256,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success",
       type: "shadow",
-      value: "0px 0px 0px 3px #268e6220",
+      value: "0px 0px 0px 3px #45c79120",
       cssVar: "--rw-ring-success",
       description: "The success ring variant",
       theme: undefined,
@@ -17589,7 +17265,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #268e6220",
+      value: "0px 0px 0px 1px #45c79120",
       cssVar: "--rw-ring-success-subtle",
       description: "The success subtle ring variant",
       theme: undefined,
@@ -17598,7 +17274,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #45c79120",
       cssVar: "--rw-ring-success-offset",
       description: "The success ring variant with a 3px offset",
       theme: undefined,
@@ -17607,7 +17283,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.success-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #268e6220",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #45c79120",
       cssVar: "--rw-ring-success-subtle-offset",
       description: "The success subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17616,7 +17292,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #00bee720",
+      value: "0px 0px 0px 3px #64bbd820",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -17625,7 +17301,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #00bee720",
+      value: "0px 0px 0px 1px #64bbd820",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -17634,7 +17310,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #64bbd820",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -17643,7 +17319,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #00bee720",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #64bbd820",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -17652,7 +17328,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery",
       type: "shadow",
-      value: "0px 0px 0px 3px #6c6bc120",
+      value: "0px 0px 0px 3px #9d7ff020",
       cssVar: "--rw-ring-discovery",
       description: "The discovery ring variant",
       theme: undefined,
@@ -17661,7 +17337,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #6c6bc120",
+      value: "0px 0px 0px 1px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle",
       description: "The discovery subtle ring variant",
       theme: undefined,
@@ -17670,7 +17346,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 6px #9d7ff020",
       cssVar: "--rw-ring-discovery-offset",
       description: "The discovery ring variant with a 3px offset",
       theme: undefined,
@@ -17679,7 +17355,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.discovery-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #6c6bc120",
+      value: "0px 0px 0px 3px var(--color-background-elevated), 0px 0px 0px 4px #9d7ff020",
       cssVar: "--rw-ring-discovery-subtle-offset",
       description: "The discovery subtle ring variant with a 3px offset",
       theme: undefined,
@@ -18005,27 +17681,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.4",
       type: "color",
-      value: "#f6f6f6",
+      value: "#fafafa",
       cssVar: "--rw-color-surface-4",
       description: "The fourth level surface of the palette - emphasized gray for the highest elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.5",
-      type: "color",
-      value: "#f9f9f9",
-      cssVar: "--rw-color-surface-5",
-      description: "The fifth level surface of the palette - deepest gray for maximum elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#fafafa",
-      cssVar: "--rw-color-surface-6",
-      description: "he sixth level surface of the palette - deepest charcoal for highest elevation",
       theme: undefined,
       typography: false
     },
@@ -20066,27 +19724,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating",
       type: "color",
-      value: "#f6f6f6",
+      value: "#fafafa",
       cssVar: "--rw-color-background-floating",
       description: "The floating background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high",
-      type: "color",
-      value: "#f9f9f9",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#fafafa",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the light theme",
       theme: undefined,
       typography: false
     },
@@ -20309,7 +19949,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#dcdcdc",
+      value: "#e0e0e0",
       cssVar: "--rw-color-background-floating-active",
       description: "The floating background color for the light theme (active, 8% darker)",
       theme: undefined,
@@ -20327,81 +19967,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#f6f6f699",
+      value: "#fafafa99",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#dfdfdf",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#f9f9f999",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#e0e0e0",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#fafafa99",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the light theme (disabled, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -21452,7 +21020,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background",
       type: "color",
-      value: "#f6f6f6",
+      value: "#fafafa",
       cssVar: "--rw-color-overlay-background",
       description: "The overlay background color for the light theme",
       theme: undefined,
@@ -21488,7 +21056,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#dcdcdc",
+      value: "#e0e0e0",
       cssVar: "--rw-color-overlay-background-active",
       description: "The overlay background color for the light theme (active, 8% darker)",
       theme: undefined,
@@ -21506,7 +21074,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#f6f6f699",
+      value: "#fafafa99",
       cssVar: "--rw-color-overlay-background-disabled",
       description: "The overlay background color for the light theme (disabled, 60% opacity)",
       theme: undefined,
@@ -23992,27 +23560,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.surface.4",
       type: "color",
-      value: "#d2d2d2",
+      value: "#d5d5d5",
       cssVar: "--rw-color-surface-4",
       description: "The fourth level surface of the palette - emphasized gray for the highest elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.5",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--rw-color-surface-5",
-      description: "The fifth level surface of the palette - deepest gray for maximum elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--rw-color-surface-6",
-      description: "he sixth level surface of the palette - deepest charcoal for highest elevation",
       theme: undefined,
       typography: false
     },
@@ -26053,27 +25603,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating",
       type: "color",
-      value: "#d2d2d2",
+      value: "#d5d5d5",
       cssVar: "--rw-color-background-floating",
       description: "The floating background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#d5d5d5",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the light theme",
       theme: undefined,
       typography: false
     },
@@ -26296,7 +25828,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#c0c0c0",
+      value: "#c3c3c3",
       cssVar: "--rw-color-background-floating-active",
       description: "The floating background color for the light theme (active, 8% darker)",
       theme: undefined,
@@ -26314,81 +25846,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-disabled",
       type: "color",
-      value: "#d2d2d299",
+      value: "#d5d5d599",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#c2c2c2",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#d5d5d599",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#c3c3c3",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#d9d9d9",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#d5d5d599",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the light theme (disabled, 60% opacity)",
       theme: undefined,
       typography: false
     },
@@ -27439,7 +26899,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background",
       type: "color",
-      value: "#d2d2d2",
+      value: "#d5d5d5",
       cssVar: "--rw-color-overlay-background",
       description: "The overlay background color for the light theme",
       theme: undefined,
@@ -27475,7 +26935,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#c0c0c0",
+      value: "#c3c3c3",
       cssVar: "--rw-color-overlay-background-active",
       description: "The overlay background color for the light theme (active, 8% darker)",
       theme: undefined,
@@ -27493,7 +26953,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-disabled",
       type: "color",
-      value: "#d2d2d299",
+      value: "#d5d5d599",
       cssVar: "--rw-color-overlay-background-disabled",
       description: "The overlay background color for the light theme (disabled, 60% opacity)",
       theme: undefined,
@@ -29986,24 +29446,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.surface.5",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-surface-5",
-      description: "The fifth level surface of the palette - deepest gray for maximum elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.surface.6",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-surface-6",
-      description: "he sixth level surface of the palette - deepest charcoal for highest elevation",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.grey.1",
       type: "color",
       value: "#ffffff",
@@ -32047,24 +31489,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
-      path: "color.background.high",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high",
-      description: "A high level of elevation background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher",
-      description: "The higher level of elevation background color for the light theme",
-      theme: undefined,
-      typography: false
-    },
-    {
       path: "color.background.highest",
       type: "color",
       value: "#ffffff",
@@ -32304,78 +31728,6 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "#ffffff99",
       cssVar: "--rw-color-background-floating-disabled",
       description: "The floating background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high-hover",
-      description: "A high level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high-active",
-      description: "A high level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-high-inactive",
-      description: "A high level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.high-disabled",
-      type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-background-high-disabled",
-      description: "A high level of elevation background color for the light theme (disabled, 60% opacity)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-hover",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher-hover",
-      description: "The higher level of elevation background color for the light theme (hover, 10% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-active",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher-active",
-      description: "The higher level of elevation background color for the light theme (active, 8% darker)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-inactive",
-      type: "color",
-      value: "#ffffff",
-      cssVar: "--rw-color-background-higher-inactive",
-      description: "The higher level of elevation background color for the light theme (inactive, 20% brighter)",
-      theme: undefined,
-      typography: false
-    },
-    {
-      path: "color.background.higher-disabled",
-      type: "color",
-      value: "#ffffff99",
-      cssVar: "--rw-color-background-higher-disabled",
-      description: "The higher level of elevation background color for the light theme (disabled, 60% opacity)",
       theme: undefined,
       typography: false
     },

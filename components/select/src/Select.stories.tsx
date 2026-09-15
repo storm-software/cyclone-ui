@@ -29,7 +29,7 @@ const meta: Meta<typeof Select> = {
     <Form name="formName" defaultValues={{ selectName: defaultValue }}>
       <Field name="selectName" {...props} variant={variant}>
         <Field.Label>Label Text</Field.Label>
-        <Select variant={variant}>
+        <Select variant={variant} size={props.size}>
           <Select.TextBox>
             <Select.TextBox.Value placeholder="email@example.com" />
           </Select.TextBox>
@@ -98,6 +98,10 @@ const options = [
   { name: "Orange", value: "Orange" },
   { name: "Grape", value: "Grape" },
   { name: "Jackfruit", value: "Jackfruit" },
+  {
+    name: "Yellow dragon fruit from northern Ecuador",
+    value: "Yellow dragon fruit"
+  },
   { name: "Durian", value: "Durian" }
 ];
 
@@ -126,6 +130,27 @@ export const Disabled: Story = {
 export const DefaultValue: Story = {
   args: {
     defaultValue: "Starfruit"
+  }
+};
+
+export const Small: Story = {
+  args: {
+    size: "$6xl",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    size: "$12xl",
+    defaultValue: "Blackberry"
+  }
+};
+
+export const LongValue: Story = {
+  args: {
+    size: "$9xl",
+    defaultValue: "Yellow dragon fruit"
   }
 };
 

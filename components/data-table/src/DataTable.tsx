@@ -476,10 +476,19 @@ export function DataTable<TData extends RowData>({
             {headerGroups.map(headerGroup => {
               return (
                 <Table.Row key={headerGroup.id} header={true}>
-                  {headerGroup.headers.map(header => (
+                  {headerGroup.headers.map((header, index) => (
                     <Table.HeaderCell
                       key={header.id}
                       position="relative"
+                      edgePadding={
+                        index === 0 && index === headerGroup.headers.length - 1
+                          ? "both"
+                          : index === 0
+                            ? "start"
+                            : index === headerGroup.headers.length - 1
+                              ? "end"
+                              : undefined
+                      }
                       style={
                         resizable
                           ? ({ width: header.getSize() } as any)
@@ -523,7 +532,8 @@ export function DataTable<TData extends RowData>({
                           <View
                             position="absolute"
                             top="$xl"
-                            right={-1}
+                            left="50%"
+                            marginLeft={-1}
                             bottom="$xl"
                             borderWidth={0}
                             borderRightWidth={2}
@@ -587,7 +597,7 @@ export function DataTable<TData extends RowData>({
               </Table.Row>
             )}
           </Table.Body>
-          {pageCount > 1 && (
+          {pageSize && (
             <Table.Footer>
               <Table.Row header={true}>
                 <Table.Cell
@@ -931,7 +941,8 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 circular={true}
                 noPadding={true}
                 bordered={false}
-                color="$foreground">
+                color="$foreground"
+                padding="$xs">
                 <Button.Icon>
                   <Filter size="$4xl" />
                 </Button.Icon>
@@ -1115,8 +1126,8 @@ export function DataTablePagination<TData extends RowData>({
               justifyContent="space-between"
               alignItems="center"
               gap="$xl">
-              <LabelText size="$sm">Total:</LabelText>
-              <LabelText size="$sm">
+              <LabelText size="$xs">Total:</LabelText>
+              <LabelText size="$xs">
                 {`${totalCount} ${totalCount === 1 ? "row" : "rows"}${selectedCount > 0 ? ` (${selectedCount} Selected)` : ""}`}
               </LabelText>
             </XStack>
@@ -1125,8 +1136,8 @@ export function DataTablePagination<TData extends RowData>({
                 justifyContent="space-between"
                 alignItems="center"
                 gap="$xl">
-                <LabelText size="$sm">Filtering:</LabelText>
-                <LabelText size="$sm">
+                <LabelText size="$xs">Filtering:</LabelText>
+                <LabelText size="$xs">
                   {`${totalCount - unfilteredCount} ${totalCount - unfilteredCount === 1 ? "row" : "rows"}`}
                 </LabelText>
               </XStack>
@@ -1135,16 +1146,18 @@ export function DataTablePagination<TData extends RowData>({
         </XStack>
       </View>
 
-      <Pagination
-        hideText={true}
-        pageIndex={pageIndex}
-        pageCount={pageCount}
-        setPageIndex={setPageIndex}
-        onNext={nextPage}
-        onPrevious={previousPage}
-        onFirst={firstPage}
-        onLast={lastPage}
-      />
+      {pageCount > 1 && (
+        <Pagination
+          hideText={true}
+          pageIndex={pageIndex}
+          pageCount={pageCount}
+          setPageIndex={setPageIndex}
+          onNext={nextPage}
+          onPrevious={previousPage}
+          onFirst={firstPage}
+          onLast={lastPage}
+        />
+      )}
     </XStack>
   );
 }

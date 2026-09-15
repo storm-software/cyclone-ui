@@ -20,11 +20,12 @@ import { Button } from "@cyclone-ui/button";
 import { Input } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
 import { Popover } from "@cyclone-ui/popover";
+import { SearchInputField } from "@cyclone-ui/search-input-field";
+import type { CallbackContext, FieldAtoms } from "@cyclone-ui/state/form";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { MaskitoOptions } from "@maskito/core";
 import { maskitoPhoneOptionsGenerator } from "@maskito/phone";
 import { View, createStyledContext, withStaticProperties } from "@tamagui/core";
-import { Search } from "@tamagui/lucide-icons-2";
 import { SizableText } from "@tamagui/text";
 import type { CountryCode } from "libphonenumber-js";
 import {
@@ -35,6 +36,10 @@ import {
 import metadata from "libphonenumber-js/min/metadata";
 import type { JSX } from "react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useWindowDimensions } from "react-native";
+
+const COUNTRY_POPOVER_WIDTH = 520;
+const COUNTRY_NAME_MIN_VIEWPORT_WIDTH = Math.ceil(COUNTRY_POPOVER_WIDTH / 0.9);
 
 const regionNames =
   typeof Intl.DisplayNames === "function"
@@ -191,37 +196,119 @@ const PhoneNumberInputFieldGroup =
 interface CountryListItemProps {
   country: CountryOption;
   onSelect: (country: CountryOption) => void;
+  showCountryName: boolean;
 }
 
 const CountryListItem = memo(
-  ({ country, onSelect }: CountryListItemProps): JSX.Element => {
+  ({
+    country,
+    onSelect,
+    showCountryName
+  }: CountryListItemProps): JSX.Element => {
     const handlePress = useCallback(
       (): void => onSelect(country),
       [country, onSelect]
     );
 
     return (
-      <Button
-        variant="ghost"
-        bordered={false}
-        width="100%"
-        justifyContent="flex-start"
-        aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
-        accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
-        onPress={handlePress}>
-        <SizableText aria-hidden={true} minWidth="$4xl" fontSize="$xl">
-          {country.flag}
-        </SizableText>
-        <Button.Text>{`${country.code}  +${country.callingCode}`}</Button.Text>
-      </Button>
+      <View position="relative" paddingVertical="$xl">
+        <Button
+          variant="ghost"
+          bordered={false}
+          animate={false}
+          width="100%"
+          height="auto"
+          minHeight="unset"
+          padding={0}
+          justifyContent="flex-start"
+          position="relative"
+          overflow="visible"
+          aria-label={`${country.name} (${country.code}) +${country.callingCode}`}
+          accessibilityLabel={`${country.name} (${country.code}) +${country.callingCode}`}
+          onPress={handlePress}>
+          <View
+            transition="200ms"
+            zIndex="$20"
+            cursor="inherit"
+            flexDirection="row"
+            alignItems="center"
+            minHeight="$5xl"
+            width="100%"
+            paddingHorizontal="$2xl"
+            paddingBottom="$xs"
+            gap="$2xl">
+            <SizableText
+              aria-hidden={true}
+              flexShrink={0}
+              minWidth="$4xl"
+              fontSize="$xl">
+              {country.flag}
+            </SizableText>
+            {showCountryName && (
+              <SizableText
+                flex={1}
+                minWidth={0}
+                color="$foregroundInactive"
+                fontFamily="$body"
+                fontSize="$md"
+                fontWeight="$light"
+                $group-button-hover={{ color: "$foregroundHover" }}
+                $group-button-focus={{ color: "$foregroundHover" }}>
+                {country.name}
+              </SizableText>
+            )}
+            <SizableText
+              flexShrink={0}
+              width="$16xl"
+              marginLeft="auto"
+              textAlign="left"
+              color="$foregroundInactive"
+              fontFamily="$body"
+              fontSize="$md"
+              fontWeight="$light"
+              $group-button-hover={{ color: "$foregroundHover" }}
+              $group-button-focus={{ color: "$foregroundHover" }}>
+              {`${country.code}  +${country.callingCode}`}
+            </SizableText>
+          </View>
+        </Button>
+        <View
+          zIndex="$20"
+          position="absolute"
+          bottom={0}
+          left="$2xl"
+          right="$2xl"
+          borderBottomWidth={1}
+          borderBottomColor="$borderSubtle"
+          pointerEvents="none"
+        />
+      </View>
     );
   }
 );
 
+interface CountrySearchResetProps {
+  open: boolean;
+}
+
+const CountrySearchReset = ({ open }: CountrySearchResetProps): null => {
+  const { change } = useFieldActions<string>();
+
+  useEffect(() => {
+    if (!open) {
+      void change("");
+    }
+  }, [change, open]);
+
+  return null;
+};
+
 const CountryCodeSelector = (): JSX.Element => {
   const field = FieldApi.use();
+  const { width: viewportWidth } = useWindowDimensions();
   const disabled: boolean = field.disabled.get();
   const size: string = field.size.get();
+  const countrySearchFieldName = `${field.name.get()}__countrySearch`;
 
   const { change } = useFieldActions();
 
@@ -232,6 +319,7 @@ const CountryCodeSelector = (): JSX.Element => {
 
   const [open, setOpen] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
+  const showCountryName = viewportWidth >= COUNTRY_NAME_MIN_VIEWPORT_WIDTH;
   const normalizedSearch: string = search.trim().toLocaleLowerCase();
 
   const countries = useMemo(
@@ -246,9 +334,12 @@ const CountryCodeSelector = (): JSX.Element => {
     [normalizedSearch]
   );
 
-  const handleSearchChange = useCallback((event: CustomEvent<string>): void => {
-    setSearch(event.detail);
-  }, []);
+  const handleSearchChange = useCallback(
+    ({ get, atoms }: CallbackContext<FieldAtoms<string>>): void => {
+      setSearch(get(atoms.value) ?? "");
+    },
+    []
+  );
   const handleOpenChange = useCallback((nextOpen: boolean): void => {
     setOpen(nextOpen);
     if (!nextOpen) {
@@ -293,28 +384,33 @@ const CountryCodeSelector = (): JSX.Element => {
         </InputField.Control.Trigger>
       </Popover.Trigger>
 
-      <Popover.Content width="$37xl" maxWidth="90vw" hasArrow={false}>
-        <View gap="$xl" width="100%">
-          <Input size="$9xl" onChange={handleSearchChange}>
-            <Input.TextBox>
-              <Input.TextBox.Value
+      <Popover.Content
+        width={COUNTRY_POPOVER_WIDTH}
+        maxWidth="90vw"
+        padding="$3xl"
+        hasArrow={false}>
+        <View gap="$3xl" width="100%">
+          <SearchInputField
+            name={countrySearchFieldName}
+            clearable={false}
+            onChange={handleSearchChange}>
+            <CountrySearchReset open={open} />
+            <SearchInputField.Control>
+              <SearchInputField.Control.TextBox
                 aria-label="Search countries"
                 placeholder="Search countries..."
-                value={search}
               />
-              <View paddingRight="$xl" pointerEvents="none">
-                <Search size="$xl" color="$foregroundSecondary" />
-              </View>
-            </Input.TextBox>
-          </Input>
+            </SearchInputField.Control>
+          </SearchInputField>
 
-          <Popover.Content.ScrollView maxHeight="$32xl">
-            <View gap="$xxs" width="100%">
+          <Popover.Content.ScrollView maxHeight="$32xl" paddingRight="$3xl">
+            <View width="100%">
               {countries.map(country => (
                 <CountryListItem
                   key={country.code}
                   country={country}
                   onSelect={handleSelect}
+                  showCountryName={showCountryName}
                 />
               ))}
             </View>

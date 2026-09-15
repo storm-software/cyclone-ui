@@ -20,6 +20,7 @@
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",
     "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/search-input-field": "workspace:*",
     "@cyclone-ui/state": "workspace:*",
     "@maskito/core": "catalog:",
     "@maskito/phone": "catalog:",

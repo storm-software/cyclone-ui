@@ -17,16 +17,62 @@
  ------------------------------------------------------------------- */
 
 import { InputField } from "@cyclone-ui/input-field";
-import { useFieldActions } from "@cyclone-ui/state/form";
+import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import { withStaticProperties } from "@tamagui/core";
-import { useCallback } from "react";
+import { Minus, Plus } from "@tamagui/lucide-icons-2";
+import { createContext, use, useCallback } from "react";
 
-const NumberInputFieldGroup = InputField.styleable(
-  ({ children, ...props }, forwardedRef) => {
+const NumberInputFieldContext = createContext({ increment: 1 });
+
+const NumberInputFieldGroup = InputField.styleable<{ increment?: number }>(
+  ({ children, increment = 1, ...props }, forwardedRef) => {
     return (
-      <InputField ref={forwardedRef} {...props}>
+      <NumberInputFieldContext value={{ increment }}>
+        <InputField ref={forwardedRef} {...props}>
+          {children}
+        </InputField>
+      </NumberInputFieldContext>
+    );
+  }
+);
+
+const NumberInputFieldControlTextBox = InputField.Control.TextBox.styleable(
+  ({ children, ...props }, forwardedRef) => {
+    const field = FieldApi.use();
+    const disabled = field.disabled.get();
+    const value = field.value.get();
+    const { increment } = use(NumberInputFieldContext);
+    const { change } = useFieldActions();
+    const updateValue = useCallback(
+      (direction: 1 | -1) => {
+        const numericValue = Number(value);
+        const currentValue = Number.isFinite(numericValue) ? numericValue : 0;
+
+        change(String(currentValue + direction * increment));
+      },
+      [change, increment, value]
+    );
+
+    return (
+      <InputField.Control.TextBox ref={forwardedRef} {...props}>
+        <InputField.Icon
+          position="start"
+          aria-label="Decrease value"
+          accessibilityLabel="Decrease value"
+          disabled={disabled}
+          onClick={() => updateValue(-1)}>
+          <Minus aria-hidden={true} />
+        </InputField.Icon>
         {children}
-      </InputField>
+        <InputField.Icon
+          position="end"
+          aria-label="Increase value"
+          accessibilityLabel="Increase value"
+          disabled={disabled}
+          onClick={() => updateValue(1)}>
+          <Plus aria-hidden={true} />
+        </InputField.Icon>
+      </InputField.Control.TextBox>
     );
   }
 );
@@ -55,7 +101,7 @@ export const NumberInputField = withStaticProperties(NumberInputFieldGroup, {
   Label: InputField.Label,
   Link: InputField.Link,
   Control: withStaticProperties(InputField.Control, {
-    TextBox: withStaticProperties(InputField.Control.TextBox, {
+    TextBox: withStaticProperties(NumberInputFieldControlTextBox, {
       Value: NumberInputFieldControlTextBoxValue
     }),
     Trigger: InputField.Control.Trigger

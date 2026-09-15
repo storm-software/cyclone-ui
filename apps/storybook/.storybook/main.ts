@@ -199,7 +199,10 @@ const config: StorybookConfig = {
     "../../../packages/themes/src/storybook/**/*.mdx",
     "../../../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
   ],
-  addons: [getAbsolutePath("@storybook/addon-docs")],
+  addons: [
+    getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-vitest")
+  ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {}

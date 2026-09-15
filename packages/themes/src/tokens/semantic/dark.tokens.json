@@ -186,22 +186,10 @@
         "$value": "{color.surface.3}",
         "$description": "The floating background color for the dark theme"
       },
-      "high": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.surface.4}",
-        "$description": "A high level of elevation background color for the dark theme"
-      },
-      "higher": {
-        "$type": "color",
-        "colorSpace": "display-p3",
-        "$value": "{color.surface.5}",
-        "$description": "The higher level of elevation background color for the dark theme"
-      },
       "highest": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.surface.6}",
+        "$value": "{color.surface.4}",
         "$description": "The highest level of elevation background color for the dark theme"
       },
       "base": {
@@ -273,7 +261,7 @@
       "base": {
         "$type": "color",
         "colorSpace": "display-p3",
-        "$value": "{color.grey.7}",
+        "$value": "{color.grey.5}",
         "$description": "Hairline-strong border against ink cards",
         "theme": "base"
       },

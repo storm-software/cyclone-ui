@@ -380,7 +380,7 @@ const FieldDetailsImpl = FieldDetails.styleable(
               ? "$foreground"
               : "$foregroundSecondary"
         }
-        group-field-hover={{
+        $group-field-hover={{
           color: disabled ? "$foregroundDisabled" : "$foregroundHover"
         }}>
         {children}
@@ -602,7 +602,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                               ? "$foregroundCaptionDisabled"
                               : "$foregroundCaption"
                           }
-                          group-field-hover={{
+                          $group-field-hover={{
                             color: disabled
                               ? "$foregroundCaptionDisabled"
                               : "$foregroundCaptionHover"

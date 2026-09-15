@@ -41,8 +41,14 @@ import { XStack, YStack } from "@tamagui/stacks";
 import type { ForwardedRef, PropsWithChildren } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DimensionValue } from "react-native";
+export type DatePickerMode = "single" | "range";
+
 export type DatePickerChangeEventHandler = (
   event: CustomEvent<Date | null>
+) => any;
+
+export type DatePickerDatesChangeEventHandler = (
+  event: CustomEvent<Date[]>
 ) => any;
 
 export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
@@ -50,6 +56,11 @@ export type DatePickerInputEventHandler = (event: CustomEvent<string>) => any;
 export type DateSeparator = "." | "/";
 
 export interface DatePickerExtraProps {
+  /**
+   * Determines whether one date or a start and end date can be selected.
+   */
+  mode?: DatePickerMode;
+
   /**
    * Separator used by the text input's date format.
    */
@@ -61,12 +72,22 @@ export interface DatePickerExtraProps {
   selectedDate?: Date | null;
 
   /**
+   * Dates shown and selected when `mode` is `range`.
+   */
+  selectedDates?: Date[];
+
+  /**
    * Callback that is called when the text input's text changes.
    *
    * @remarks
    * This is called after `onInput` and is useful for cases where you want to handle the input after it has been provided.
    */
   onChange?: DatePickerChangeEventHandler;
+
+  /**
+   * Callback that is called when the selected range changes.
+   */
+  onDatesChange?: DatePickerDatesChangeEventHandler;
 
   /**
    * Callback that is called when the user provides input to the text field.
@@ -81,6 +102,7 @@ export type DatePickerContextProps = Omit<
   InputContextProps,
   "onChange" | "onInput"
 > & {
+  mode: DatePickerMode;
   separator: DateSeparator;
 
   /**
@@ -101,6 +123,7 @@ export type DatePickerContextProps = Omit<
 };
 
 export const DatePickerContext = createStyledContext<DatePickerContextProps>({
+  mode: "single",
   separator: ".",
   size: "$true",
   circular: false,
@@ -113,6 +136,14 @@ export const DEFAULT_DATE_FORMAT = "MM.DD.YYYY";
 
 export const getDateFormat = (separator: DateSeparator = ".") =>
   `MM${separator}DD${separator}YYYY`;
+
+export const DATE_RANGE_SEPARATOR = " – ";
+
+export const getDateRangeFormat = (separator: DateSeparator = ".") => {
+  const dateFormat = getDateFormat(separator);
+
+  return `${dateFormat}${DATE_RANGE_SEPARATOR}${dateFormat}`;
+};
 
 const MONTH_NAMES = [
   "January",
@@ -131,6 +162,7 @@ const MONTH_NAMES = [
 
 const CALENDAR_WIDTH = "$38xl";
 const CALENDAR_CELL_SIZE = "$10xl";
+const EMPTY_DATES: Date[] = [];
 
 const getMonthIndex = (month?: string | null) => {
   if (!month) {
@@ -346,7 +378,7 @@ const DayPicker = () => {
                         ? "outlined"
                         : !day.inCurrentMonth
                           ? "ghost"
-                          : day.selected
+                          : day.selected || day.range === "in-range"
                             ? "inverse"
                             : "ghost"
                     }
@@ -728,7 +760,7 @@ const DatePickerTextBox = Input.TextBox.styleable(
 
 const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
   ({ children, placeholder, ...props }, forwardedRef) => {
-    const { separator } = DatePickerContext.useStyledContext();
+    const { mode, separator } = DatePickerContext.useStyledContext();
 
     return (
       <Input.TextBox.Value
@@ -737,7 +769,9 @@ const DatePickerTextBoxValue = Input.TextBox.Value.styleable(
           placeholder === undefined
             ? undefined
             : placeholder === DEFAULT_DATE_FORMAT
-              ? getDateFormat(separator)
+              ? mode === "range"
+                ? getDateRangeFormat(separator)
+                : getDateFormat(separator)
               : placeholder
         }
         nativePaddingInline={16}
@@ -759,65 +793,90 @@ const DatePickerTrigger = Field.Icon.styleable(
 );
 
 type DatePickerProviderProps = PropsWithChildren<
-  Partial<DatePickerContextProps> & Pick<DatePickerExtraProps, "selectedDate">
+  Partial<DatePickerContextProps> &
+    Pick<
+      DatePickerExtraProps,
+      "onDatesChange" | "selectedDate" | "selectedDates"
+    >
 >;
 
 const DatePickerProvider = ({
   children,
   onChange,
+  onDatesChange,
   onFocus,
   focused,
+  mode = "single",
   separator = ".",
   variant = "default",
   selectedDate = null,
+  selectedDates: controlledSelectedDates = EMPTY_DATES,
   ...props
 }: DatePickerProviderProps) => {
-  const [date, setDate] = useState<Date | null>(selectedDate);
+  const [dates, setDates] = useState<Date[]>(() =>
+    mode === "range"
+      ? controlledSelectedDates
+      : selectedDate
+        ? [selectedDate]
+        : []
+  );
   const [offsetDate, setOffsetDate] = useState<Date>(
-    () => selectedDate ?? new Date()
+    () =>
+      (mode === "range" ? controlledSelectedDates[0] : selectedDate) ??
+      new Date()
   );
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setDate(selectedDate);
+    setDates(
+      mode === "range"
+        ? controlledSelectedDates
+        : selectedDate
+          ? [selectedDate]
+          : []
+    );
 
-    if (selectedDate) {
-      setOffsetDate(selectedDate);
+    const firstDate =
+      mode === "range" ? controlledSelectedDates[0] : selectedDate;
+    if (firstDate) {
+      setOffsetDate(firstDate);
     }
-  }, [selectedDate]);
-
-  const selectedDates = useMemo(() => {
-    if (!date) {
-      return [];
-    }
-
-    return [date];
-  }, [date]);
+  }, [controlledSelectedDates, mode, selectedDate]);
 
   const handleChange = useCallback(
-    (dates: Date[] | null) => {
-      const value =
-        Array.isArray(dates) && dates.length > 0 && dates[0] ? dates[0] : null;
+    (nextDates: Date[]) => {
+      const value = mode === "range" ? nextDates : (nextDates[0] ?? null);
 
-      setDate(value);
-      onChange?.(
-        new CustomEvent("change", {
-          detail: value
-        })
-      );
+      setDates(nextDates);
+      if (mode === "range") {
+        onDatesChange?.(
+          new CustomEvent("change", {
+            detail: nextDates
+          })
+        );
+      } else {
+        onChange?.(
+          new CustomEvent("change", {
+            detail: value as Date | null
+          })
+        );
+      }
     },
-    [onChange]
+    [mode, onChange, onDatesChange]
   );
 
   return (
     <RehookifyDatePickerProvider
       config={{
-        selectedDates,
+        selectedDates: dates,
         onDatesChange: handleChange,
         offsetDate,
         onOffsetChange: setOffsetDate,
         calendar: {
           startDay: 0
+        },
+        dates: {
+          mode
         },
         locale: {
           locale: "en-US",
@@ -835,6 +894,7 @@ const DatePickerProvider = ({
         {...props}
         onChange={onChange}
         onFocus={onFocus}
+        mode={mode}
         separator={separator}
         variant={variant}
         focused={focused}>
@@ -864,13 +924,16 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
     {
       children,
       onChange,
+      onDatesChange,
       onInput,
       onFocus,
       onBlur,
       focused,
+      mode = "single",
       separator = ".",
       variant = "default",
       selectedDate,
+      selectedDates,
       ...props
     },
     forwardedRef
@@ -890,13 +953,16 @@ const DatePickerControlImpl = Input.styleable<DatePickerExtraProps>(
       <DatePickerProvider
         {...props}
         onChange={onChange}
+        onDatesChange={onDatesChange}
         onInput={onInput}
         onFocus={onFocus}
         onBlur={onBlur}
         focused={focused}
+        mode={mode}
         separator={separator}
         variant={variant}
-        selectedDate={selectedDate}>
+        selectedDate={selectedDate}
+        selectedDates={selectedDates}>
         <Popover
           keepChildrenMounted={true}
           open={!!focused}

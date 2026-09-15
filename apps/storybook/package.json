@@ -12,7 +12,6 @@
     "@storybook/addon-docs": "catalog:",
     "@storybook/react": "catalog:",
     "@storybook/react-vite": "catalog:",
-    "@storybook/test-runner": "catalog:",
     "@tamagui/animations-moti": "catalog:",
     "@tamagui/config": "catalog:",
     "@tamagui/core": "catalog:",
@@ -38,7 +37,10 @@
     "vite-plugin-react-native-web": "catalog:"
   },
   "devDependencies": {
+    "@storybook/addon-vitest": "catalog:",
     "@tamagui/vite-plugin": "catalog:",
+    "@vitest/browser": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react-swc": "catalog:",

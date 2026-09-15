@@ -51,6 +51,7 @@ const meta: Meta<typeof Table> = {
         alignHeaderCells={{ x: "start", y: "center" }}
         cellWidth="$20xl"
         cellHeight="$9xl"
+        sizing="content"
         {...rest}>
         <Table.Header>
           {headerGroups.map(headerGroup => {
@@ -115,12 +116,18 @@ const meta: Meta<typeof Table> = {
         </Table.Body>
         <Table.Footer>
           <Table.Row header={true}>
-            <SizableText
-              fontFamily="$heading-sm"
-              color="$foreground"
-              size="$6xl">
-              Table footer information is populated here
-            </SizableText>
+            {columns.map((_, index) => (
+              <Table.Cell key={index}>
+                {index === 0 && (
+                  <SizableText
+                    fontFamily="$heading-sm"
+                    color="$foreground"
+                    size="$6xl">
+                    Table footer information is populated here
+                  </SizableText>
+                )}
+              </Table.Cell>
+            ))}
           </Table.Row>
         </Table.Footer>
       </Table>
@@ -266,11 +273,6 @@ const StatusButton = ({ status }: { status: string }) => {
       paddingHorizontal="$xl">
       <Text
         color="$foreground"
-        $gtXs={{
-          fontSize: "$xs",
-          lineHeight: "$xs",
-          fontWeight: "$extralight"
-        }}
         fontSize="$xs"
         fontWeight="$extralight"
         lineHeight="$xs"

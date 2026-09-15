@@ -122,10 +122,8 @@ export const createNodesV2: CreateNodes<StorybookPluginOptions> = [
             normalizedOptions.port
           );
 
-          if (isStorybookTestRunnerInstalled()) {
-            targets[normalizedOptions.testStorybookTargetName] =
-              testTarget(projectRoot);
-          }
+          targets[normalizedOptions.testStorybookTargetName] =
+            testTarget(projectRoot);
 
           targets[normalizedOptions.staticStorybookTargetName] =
             serveStaticTarget(normalizedOptions);
@@ -250,12 +248,7 @@ function buildTarget(
       "typescript",
       "documentation",
       {
-        externalDependencies: [
-          "storybook",
-          isStorybookTestRunnerInstalled()
-            ? "@storybook/test-runner"
-            : undefined
-        ].filter(Boolean) as string[]
+        externalDependencies: ["storybook", "@storybook/addon-vitest", "vitest"]
       }
     ]
   };
@@ -293,11 +286,11 @@ function serveTarget(
 function testTarget(projectRoot: string) {
   const targetConfig: TargetConfiguration = {
     dependsOn: [{ target: "prepare" }],
-    command: "test-storybook",
+    command: "vitest --project=storybook",
     options: { cwd: projectRoot },
     inputs: [
       {
-        externalDependencies: ["storybook", "@storybook/test-runner"]
+        externalDependencies: ["storybook", "@storybook/addon-vitest", "vitest"]
       }
     ]
   };
@@ -341,13 +334,4 @@ function normalizeOptions(
   normalizedOptions.port ??= 4400;
 
   return normalizedOptions;
-}
-
-function isStorybookTestRunnerInstalled(): boolean {
-  try {
-    require.resolve("@storybook/test-runner");
-    return true;
-  } catch {
-    return false;
-  }
 }

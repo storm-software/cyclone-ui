@@ -17,14 +17,17 @@
  ------------------------------------------------------------------- */
 
 import {
+  DATE_RANGE_SEPARATOR,
   DatePicker,
   DEFAULT_DATE_FORMAT,
   getDateFormat,
+  getDateRangeFormat,
+  type DatePickerMode,
   type DateSeparator
 } from "@cyclone-ui/date-picker";
 import { Field, useFieldVariant } from "@cyclone-ui/field";
 import { FieldApi, useFieldActions, useFieldRef } from "@cyclone-ui/state/form";
-import type { MaskitoPostprocessor } from "@maskito/core";
+import type { MaskitoOptions, MaskitoPostprocessor } from "@maskito/core";
 import { maskitoDateOptionsGenerator } from "@maskito/kit";
 import { formatDate } from "@stryke/date/format";
 import { useComposedRefs, withStaticProperties } from "@tamagui/core";
@@ -41,7 +44,15 @@ import {
   useState
 } from "react";
 
-const DatePickerFieldSeparatorContext = createContext<DateSeparator>(".");
+interface DatePickerFieldConfig {
+  mode: DatePickerMode;
+  separator: DateSeparator;
+}
+
+const DatePickerFieldContext = createContext<DatePickerFieldConfig>({
+  mode: "single",
+  separator: "."
+});
 
 const toDate = (value: unknown) => {
   if (value == null || value === "") {
@@ -72,6 +83,32 @@ const parseInputDate = (value: string, separator: DateSeparator = ".") => {
     date.getDate() === day
     ? date
     : null;
+};
+
+const parseInputDateRange = (
+  value: unknown,
+  separator: DateSeparator = "."
+) => {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const [startValue, endValue, ...rest] = value.split(DATE_RANGE_SEPARATOR);
+  if (!startValue || rest.length > 0) {
+    return null;
+  }
+
+  const startDate = parseInputDate(startValue, separator);
+  if (!startDate) {
+    return null;
+  }
+
+  if (!endValue) {
+    return [startDate];
+  }
+
+  const endDate = parseInputDate(endValue, separator);
+  return endDate && endDate >= startDate ? [startDate, endDate] : null;
 };
 
 type DatePart = "month" | "day" | "year";
@@ -119,6 +156,14 @@ const rejectInvalidDate =
       ? initialElementState
       : elementState;
 
+const rejectInvalidDateRange =
+  (separator: DateSeparator): MaskitoPostprocessor =>
+  (elementState, initialElementState) =>
+    elementState.value.length === getDateRangeFormat(separator).length &&
+    !parseInputDateRange(elementState.value, separator)
+      ? initialElementState
+      : elementState;
+
 const DATE_MASK_OPTIONS_DOT = maskitoDateOptionsGenerator({
   mode: "mm/dd/yyyy",
   separator: "."
@@ -151,6 +196,30 @@ export const DATE_MASK_SLASH = {
 
 export const DATE_MASK = DATE_MASK_DOT;
 
+const createRangeMask = (separator: DateSeparator): MaskitoOptions => {
+  const digit = /\d/;
+  const dateMask = [
+    digit,
+    digit,
+    separator,
+    digit,
+    digit,
+    separator,
+    digit,
+    digit,
+    digit,
+    digit
+  ];
+
+  return {
+    mask: [...dateMask, ...DATE_RANGE_SEPARATOR, ...dateMask],
+    postprocessors: [rejectInvalidDateRange(separator)]
+  };
+};
+
+export const DATE_RANGE_MASK_DOT = createRangeMask(".");
+export const DATE_RANGE_MASK_SLASH = createRangeMask("/");
+
 export const format = (value: any, separator: DateSeparator = ".") => {
   const date = toDate(value);
   if (!date) {
@@ -158,6 +227,18 @@ export const format = (value: any, separator: DateSeparator = ".") => {
   }
 
   return formatDate(date, getDateFormat(separator));
+};
+
+export const formatRange = (value: any, separator: DateSeparator = ".") => {
+  if (!Array.isArray(value)) {
+    return "";
+  }
+
+  return value
+    .slice(0, 2)
+    .map(date => format(date, separator))
+    .filter(Boolean)
+    .join(DATE_RANGE_SEPARATOR);
 };
 
 export const parse = (value: any, separator: DateSeparator = ".") => {
@@ -171,33 +252,65 @@ export const parse = (value: any, separator: DateSeparator = ".") => {
   return toDate(value);
 };
 
-const DatePickerFieldGroup = Field.styleable<{ separator?: "." | "/" }>(
-  (props, forwardedRef) => {
-    const { children, separator = ".", ...rest } = props;
-
-    const handleFormat = useCallback(
-      (value: any) => format(value, separator),
-      [separator]
-    );
-    const handleParse = useCallback(
-      (value: any) => parse(value, separator),
-      [separator]
-    );
-
-    return (
-      <DatePickerFieldSeparatorContext.Provider value={separator}>
-        <Field
-          ref={forwardedRef}
-          {...rest}
-          format={handleFormat}
-          parse={handleParse}
-          mask={separator === "." ? DATE_MASK_DOT : DATE_MASK_SLASH}>
-          {children}
-        </Field>
-      </DatePickerFieldSeparatorContext.Provider>
-    );
+export const parseRange = (value: any, separator: DateSeparator = ".") => {
+  if (typeof value === "string") {
+    return parseInputDateRange(value, separator);
   }
-);
+
+  if (!Array.isArray(value)) {
+    return null;
+  }
+
+  const dates = value.slice(0, 2).map(toDate);
+  if (!dates.every(Boolean)) {
+    return null;
+  }
+
+  return dates.length === 2 && dates[1]! < dates[0]! ? null : dates;
+};
+
+const DatePickerFieldGroup = Field.styleable<{
+  mode?: DatePickerMode;
+  separator?: DateSeparator;
+}>((props, forwardedRef) => {
+  const { children, mode = "single", separator = ".", ...rest } = props;
+
+  const handleFormat = useCallback(
+    (value: any) =>
+      mode === "range"
+        ? formatRange(value, separator)
+        : format(value, separator),
+    [mode, separator]
+  );
+  const handleParse = useCallback(
+    (value: any) =>
+      mode === "range" ? parseRange(value, separator) : parse(value, separator),
+    [mode, separator]
+  );
+
+  const config = useMemo(() => ({ mode, separator }), [mode, separator]);
+
+  return (
+    <DatePickerFieldContext.Provider value={config}>
+      <Field
+        ref={forwardedRef}
+        {...rest}
+        format={handleFormat}
+        parse={handleParse}
+        mask={
+          mode === "range"
+            ? separator === "."
+              ? DATE_RANGE_MASK_DOT
+              : DATE_RANGE_MASK_SLASH
+            : separator === "."
+              ? DATE_MASK_DOT
+              : DATE_MASK_SLASH
+        }>
+        {children}
+      </Field>
+    </DatePickerFieldContext.Provider>
+  );
+});
 
 const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
   ({ children, onKeyDown, ...props }, forwardedRef) => {
@@ -207,18 +320,28 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
     const ref = useFieldRef(composedRef);
 
     const field = FieldApi.use();
-    const separator = useContext(DatePickerFieldSeparatorContext);
+    const { mode, separator } = useContext(DatePickerFieldContext);
     const name = field.name.get();
     const size = field.size.get();
     const disabled = field.disabled.get();
     const focused = field.focused.get();
     const formattedValue = field.formattedValue.get();
-    const variant = useFieldVariant(props.placeholder ?? DEFAULT_DATE_FORMAT);
+    const variant = useFieldVariant(
+      props.placeholder ??
+        (mode === "range" ? getDateRangeFormat(separator) : DEFAULT_DATE_FORMAT)
+    );
     const [inputValue, setInputValue] = useState(formattedValue);
     const selectionRef = useRef<{ end: number; start: number } | null>(null);
+    const selectedDates = useMemo(
+      () =>
+        mode === "range"
+          ? (parseInputDateRange(inputValue, separator) ?? [])
+          : [],
+      [inputValue, mode, separator]
+    );
     const selectedDate = useMemo(
-      () => parseInputDate(inputValue, separator),
-      [inputValue, separator]
+      () => (mode === "single" ? parseInputDate(inputValue, separator) : null),
+      [inputValue, mode, separator]
     );
 
     useEffect(() => {
@@ -242,7 +365,19 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         change?.(event.detail);
         blur?.();
       },
-      [change, blur, separator]
+      [blur, change, separator]
+    );
+
+    const handleDatesChange = useCallback(
+      (event: CustomEvent<Date[]>) => {
+        setInputValue(formatRange(event.detail, separator));
+        change?.(event.detail);
+
+        if (event.detail.length >= 2) {
+          blur?.();
+        }
+      },
+      [blur, change, separator]
     );
 
     const handleInput = useCallback(
@@ -250,11 +385,15 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         const value = event.detail;
         setInputValue(value);
 
-        if (value === "" || parseInputDate(value, separator)) {
+        const parsedValue =
+          mode === "range"
+            ? parseInputDateRange(value, separator)
+            : parseInputDate(value, separator);
+        if (value === "" || parsedValue) {
           change?.(value);
         }
       },
-      [change, separator]
+      [change, mode, separator]
     );
 
     const handleBlur = useCallback(() => {
@@ -274,7 +413,16 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         }
 
         const input = event.currentTarget as HTMLInputElement;
-        const date = parseInputDate(input.value, separator);
+        const dates =
+          mode === "range"
+            ? parseInputDateRange(input.value, separator)
+            : [parseInputDate(input.value, separator)];
+        const selectionStart = input.selectionStart ?? 0;
+        const dateIndex =
+          mode === "range" && selectionStart >= DEFAULT_DATE_FORMAT.length
+            ? 1
+            : 0;
+        const date = dates?.[dateIndex];
         if (!date) {
           return;
         }
@@ -287,13 +435,34 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
 
         const nextDate = stepDate(
           date,
-          getDatePart(input.selectionStart ?? 0),
+          getDatePart(
+            selectionStart -
+              (dateIndex === 1
+                ? DEFAULT_DATE_FORMAT.length + DATE_RANGE_SEPARATOR.length
+                : 0)
+          ),
           event.key === "ArrowUp" ? 1 : -1
         );
-        setInputValue(format(nextDate, separator));
-        change?.(nextDate);
+        if (mode === "range") {
+          const nextDates = [...(dates ?? [])];
+          nextDates[dateIndex] = nextDate;
+          if (
+            nextDates.length === 2 &&
+            nextDates[0] &&
+            nextDates[1] &&
+            nextDates[1] < nextDates[0]
+          ) {
+            return;
+          }
+
+          setInputValue(formatRange(nextDates, separator));
+          change?.(nextDates);
+        } else {
+          setInputValue(format(nextDate, separator));
+          change?.(nextDate);
+        }
       },
-      [change, onKeyDown, separator]
+      [change, mode, onKeyDown, separator]
     );
 
     return (
@@ -301,11 +470,14 @@ const DatePickerFieldControl = DatePicker.TextBox.Value.styleable(
         name={name}
         size={size}
         focused={focused}
+        mode={mode}
         separator={separator}
         variant={variant}
         disabled={disabled}
         selectedDate={selectedDate}
-        onChange={handleChange}
+        selectedDates={selectedDates}
+        onChange={mode === "single" ? handleChange : undefined}
+        onDatesChange={mode === "range" ? handleDatesChange : undefined}
         onInput={handleInput}
         onFocus={focus}
         onBlur={handleBlur}>

@@ -125,7 +125,7 @@ const AlertIconBackground = styled(View, {
 
   theme: "base",
   padding: "$xl",
-  backgroundColor: "$backgroundHigh",
+  backgroundColor: "$backgroundHighest",
   borderRadius: 1000_000_000
 });
 
@@ -154,7 +154,7 @@ const AlertIcon = ThemeableIcon.styleable(
 
         <YStack zIndex="$20" justifyContent="center" paddingLeft="$3xl">
           <Theme name={type ?? "base"}>
-            <AlertIconBackground backgroundColor="$backgroundHigh">
+            <AlertIconBackground backgroundColor="$backgroundHighest">
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}

@@ -20,8 +20,9 @@ import { Field } from "@cyclone-ui/field";
 import { Form } from "@cyclone-ui/form";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { formatDate } from "@stryke/date/format";
-import { useCallback } from "react";
-import { DatePicker } from "./DatePicker";
+import { Calendar } from "@tamagui/lucide-icons-2";
+import { useCallback, useState } from "react";
+import { DATE_RANGE_SEPARATOR, DatePicker } from "./DatePicker";
 
 const toDate = (value: unknown) => {
   if (value == null || value === "") {
@@ -103,6 +104,42 @@ export const Base: Story = {
 export const Underline: Story = {
   args: {
     variant: "underline"
+  }
+};
+
+export const Range: Story = {
+  render: props => {
+    const [dates, setDates] = useState<Date[]>([
+      new Date(2026, 0, 28),
+      new Date(2026, 1, 3)
+    ]);
+    const [focused, setFocused] = useState(false);
+    const value = dates
+      .map(date => formatDate(date, "MM.DD.YYYY"))
+      .join(DATE_RANGE_SEPARATOR);
+
+    return (
+      <DatePicker
+        {...props}
+        mode="range"
+        focused={focused}
+        selectedDates={dates}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        onDatesChange={event => setDates(event.detail)}>
+        <DatePicker.TextBox>
+          <DatePicker.TextBox.Value
+            value={value}
+            placeholder="MM.DD.YYYY"
+            readOnly={true}
+          />
+        </DatePicker.TextBox>
+        <DatePicker.Separator />
+        <DatePicker.Trigger>
+          <Calendar />
+        </DatePicker.Trigger>
+      </DatePicker>
+    );
   }
 };
 

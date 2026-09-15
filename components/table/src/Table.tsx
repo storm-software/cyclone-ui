@@ -24,6 +24,7 @@ import {
   withStaticProperties
 } from "@tamagui/core";
 import { ThemeableStack } from "@tamagui/stacks";
+import { Children, cloneElement, isValidElement } from "react";
 
 export interface AlignCells {
   y: "center" | "start" | "end";
@@ -111,6 +112,27 @@ const TableRow = styled(ThemeableStack, {
 const TableRowImpl = TableRow.styleable(
   ({ children, header = false, ...props }, forwardRef) => {
     const { sizing } = TableContext.useStyledContext();
+    const rowChildren = header
+      ? Children.toArray(children).map((child, index, childrenArray) => {
+          if (
+            !isValidElement<GetProps<typeof TableHeaderCell>>(child) ||
+            child.type !== TableHeaderCell
+          ) {
+            return child;
+          }
+
+          return cloneElement(child, {
+            edgePadding:
+              index === 0 && index === childrenArray.length - 1
+                ? "both"
+                : index === 0
+                  ? "start"
+                  : index === childrenArray.length - 1
+                    ? "end"
+                    : undefined
+          });
+        })
+      : children;
 
     return (
       <TableRow
@@ -134,7 +156,7 @@ const TableRowImpl = TableRow.styleable(
             }}
           />
         )}
-        {children}
+        {rowChildren}
       </TableRow>
     );
   },
@@ -217,7 +239,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   borderColor: "$border",
   justifyContent: "flex-start",
   paddingVertical: "$md",
-  paddingHorizontal: "$4xl",
+  paddingHorizontal: "$sm",
 
   variants: {
     cellWidth: {
@@ -240,8 +262,26 @@ const TableHeaderCell = styled(ThemeableStack, {
         "$platform-web": {
           display: "table-cell" as any,
           paddingVertical: "$md",
-          paddingHorizontal: "$4xl",
+          paddingHorizontal: "$2xl",
           width: "auto"
+        }
+      }
+    },
+
+    edgePadding: {
+      start: {
+        "$platform-web": {
+          paddingLeft: "$2xl"
+        }
+      },
+      end: {
+        "$platform-web": {
+          paddingRight: "$2xl"
+        }
+      },
+      both: {
+        "$platform-web": {
+          paddingHorizontal: "$2xl"
         }
       }
     }

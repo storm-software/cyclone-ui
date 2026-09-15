@@ -18,9 +18,7 @@
   --color-surface-1: #c4c4c4; /** The lowest level surface of the palette - soft neutral page canvas */
   --color-surface-2: #cacaca; /** The second level surface of the palette - neutral gray for inputs and cards */
   --color-surface-3: #cfcfcf; /** The third level surface of the palette - neutral gray for floating components */
-  --color-surface-4: #d2d2d2; /** The fourth level surface of the palette - emphasized gray for the highest elevation */
-  --color-surface-5: #d5d5d5; /** The fifth level surface of the palette - deepest gray for maximum elevation */
-  --color-surface-6: #d5d5d5; /** he sixth level surface of the palette - deepest charcoal for highest elevation */
+  --color-surface-4: #d5d5d5; /** The fourth level surface of the palette - emphasized gray for the highest elevation */
   --color-grey-1: #d2d2d2; /** A soft neutral white */
   --color-grey-2: #b2b2b2; /** A light neutral gray */
   --color-grey-3: #8e8e8e; /** A soft neutral gray */
@@ -247,9 +245,7 @@
   --color-background-lowest: #c4c4c4; /** The lowest background color for the light theme */
   --color-background-page: #cacaca; /** The page background color for the light theme */
   --color-background-elevated: #cfcfcf; /** The elevated background color for the light theme */
-  --color-background-floating: #d2d2d2; /** The floating background color for the light theme */
-  --color-background-high: #d5d5d5; /** A high level of elevation background color for the light theme */
-  --color-background-higher: #d5d5d5; /** The higher level of elevation background color for the light theme */
+  --color-background-floating: #d5d5d5; /** The floating background color for the light theme */
   --color-background-highest: #d9d9d9; /** The highest level of elevation background color for the light theme */
   --color-background-base: #414141; /** The primary background color for the light theme */
   --color-background-link: #6088bb; /** The link foreground color for the light theme */
@@ -274,17 +270,9 @@
   --color-background-elevated-inactive: #d9d9d9; /** The elevated background color for the light theme (inactive, 20% brighter) */
   --color-background-elevated-disabled: rgba(207, 207, 207, 0.6); /** The elevated background color for the light theme (disabled, 60% opacity) */
   --color-background-floating-hover: #d9d9d9; /** The floating background color for the light theme (hover, 10% brighter) */
-  --color-background-floating-active: #c0c0c0; /** The floating background color for the light theme (active, 8% darker) */
+  --color-background-floating-active: #c3c3c3; /** The floating background color for the light theme (active, 8% darker) */
   --color-background-floating-inactive: #d9d9d9; /** The floating background color for the light theme (inactive, 20% brighter) */
-  --color-background-floating-disabled: rgba(210, 210, 210, 0.6); /** The floating background color for the light theme (disabled, 60% opacity) */
-  --color-background-high-hover: #d9d9d9; /** A high level of elevation background color for the light theme (hover, 10% brighter) */
-  --color-background-high-active: #c2c2c2; /** A high level of elevation background color for the light theme (active, 8% darker) */
-  --color-background-high-inactive: #d9d9d9; /** A high level of elevation background color for the light theme (inactive, 20% brighter) */
-  --color-background-high-disabled: rgba(213, 213, 213, 0.6); /** A high level of elevation background color for the light theme (disabled, 60% opacity) */
-  --color-background-higher-hover: #d9d9d9; /** The higher level of elevation background color for the light theme (hover, 10% brighter) */
-  --color-background-higher-active: #c3c3c3; /** The higher level of elevation background color for the light theme (active, 8% darker) */
-  --color-background-higher-inactive: #d9d9d9; /** The higher level of elevation background color for the light theme (inactive, 20% brighter) */
-  --color-background-higher-disabled: rgba(213, 213, 213, 0.6); /** The higher level of elevation background color for the light theme (disabled, 60% opacity) */
+  --color-background-floating-disabled: rgba(213, 213, 213, 0.6); /** The floating background color for the light theme (disabled, 60% opacity) */
   --color-background-highest-hover: #d9d9d9; /** The highest level of elevation background color for the light theme (hover, 10% brighter) */
   --color-background-highest-active: #c6c6c6; /** The highest level of elevation background color for the light theme (active, 8% darker) */
   --color-background-highest-inactive: #d9d9d9; /** The highest level of elevation background color for the light theme (inactive, 20% brighter) */
@@ -401,13 +389,13 @@
   --color-border-discovery-subtle-hover: #8383b6; /** The discovery border color for the light theme (hover, 20% brighter) */
   --color-border-discovery-subtle-active: #63628d; /** The discovery border color for the light theme (active, 12% darker) */
   --color-border-discovery-subtle-disabled: #70728b; /** The discovery border color for the light theme (disabled, 60% saturation) */
-  --color-overlay-background: #d2d2d2; /** The overlay background color for the light theme */
+  --color-overlay-background: #d5d5d5; /** The overlay background color for the light theme */
   --color-overlay-border: #4a4a4a; /** The overlay border color for the light theme */
   --color-overlay-backdrop: rgba(55, 58, 61, 0.4); /** The overlay backdrop background color for the light theme */
   --color-overlay-background-hover: #d9d9d9; /** The overlay background color for the light theme (hover, 10% brighter) */
-  --color-overlay-background-active: #c0c0c0; /** The overlay background color for the light theme (active, 8% darker) */
+  --color-overlay-background-active: #c3c3c3; /** The overlay background color for the light theme (active, 8% darker) */
   --color-overlay-background-inactive: #d9d9d9; /** The overlay background color for the light theme (inactive, 20% brighter) */
-  --color-overlay-background-disabled: rgba(210, 210, 210, 0.6); /** The overlay background color for the light theme (disabled, 60% opacity) */
+  --color-overlay-background-disabled: rgba(213, 213, 213, 0.6); /** The overlay background color for the light theme (disabled, 60% opacity) */
   --color-overlay-border-hover: #565656; /** The overlay border color for the light theme (hover, 20% brighter) */
   --color-overlay-border-active: #434343; /** The overlay border color for the light theme (active, 12% darker) */
   --color-overlay-border-disabled: rgba(74, 74, 74, 0.6); /** The overlay border color for the light theme (disabled, 60% opacity) */

@@ -521,7 +521,7 @@ const ButtonFrame = styled(View, {
     animate: {
       true: {
         pressStyle: {
-          scale: 0.95
+          scale: 0.9
         }
       }
     }
@@ -1033,7 +1033,7 @@ const ButtonContainerImpl = ButtonFrame.styleable<ButtonProps>(
       render,
       href,
       download,
-      ghostOpacity = 0.4,
+      ghostOpacity = 0.75,
       ...props
     },
     forwardedRef

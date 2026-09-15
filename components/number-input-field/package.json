@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tamagui/core": "catalog:",
+    "@tamagui/lucide-icons-2": "catalog:",
     "@cyclone-ui/input-field": "workspace:*",
     "@cyclone-ui/state": "workspace:*"
   },

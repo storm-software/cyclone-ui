@@ -18,6 +18,9 @@
       "path": "../../packages/state"
     },
     {
+      "path": "../search-input-field"
+    },
+    {
       "path": "../popover"
     },
     {

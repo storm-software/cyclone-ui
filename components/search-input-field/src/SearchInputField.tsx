@@ -116,7 +116,7 @@ const styleableInputFieldTextBox = InputField.Control.TextBox
   .styleable as Styleable;
 
 interface SearchInputFieldControlTextBoxProps extends Partial<
-  Pick<InputValueProps, "placeholder">
+  Pick<InputValueProps, "aria-label" | "placeholder">
 > {
   children?: React.ReactNode;
   [key: string]: any;
@@ -125,7 +125,12 @@ interface SearchInputFieldControlTextBoxProps extends Partial<
 const SearchInputFieldControlTextBox =
   styleableInputFieldTextBox<SearchInputFieldControlTextBoxProps>(
     (
-      { children, placeholder = "Search...", ...props },
+      {
+        children,
+        "aria-label": ariaLabel,
+        placeholder = "Search...",
+        ...props
+      },
       forwardedRef: any
     ): JSX.Element => {
       const field = FieldApi.use();
@@ -232,6 +237,7 @@ const SearchInputFieldControlTextBox =
                     ? `${listBoxId}-option-${activeIndex}`
                     : undefined
                 }
+                aria-label={ariaLabel}
                 placeholder={placeholder}
                 onInput={handleInput}
                 onKeyDown={handleKeyDown as InputValueProps["onKeyDown"]}
