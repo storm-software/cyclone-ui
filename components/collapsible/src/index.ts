@@ -16,18 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./BackgroundNoise";
-export * from "./Binary";
-export * from "./Check";
-export * from "./CheckCircle";
-export * from "./CheckerBoard";
-export * from "./Diagonal";
-export * from "./DiscoveryCircle";
-export * from "./ErrorCircle";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
-export * from "./StormLogoIcon";
-export * from "./StormLogoText";
+export * from "./Collapsible";

@@ -17,11 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { Link } from "@cyclone-ui/link";
+import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps } from "@tamagui/core";
 import { styled, Text, View, withStaticProperties } from "@tamagui/core";
 import { createContext, use, useId, useState } from "react";
-import { Image } from "react-native";
-import noiseImage from "./assets/noise.png";
 import { FooterTerrain } from "./FooterTerrain";
 
 interface FooterLinkHoverContextValue {
@@ -283,7 +282,7 @@ const FooterBackgroundLogoImpl = FooterBackgroundLogo.styleable(
   { staticConfig: { componentName: "FooterBackgroundLogo" } }
 );
 
-const FooterNoise = styled(Image, {
+const FooterNoise = styled(View, {
   name: "FooterNoise",
 
   position: "absolute",
@@ -291,7 +290,7 @@ const FooterNoise = styled(Image, {
   width: "100%",
   height: "100%",
   zIndex: "$30",
-  opacity: 0.0175,
+  opacity: 0.025,
   pointerEvents: "none"
 });
 
@@ -372,13 +371,9 @@ const FooterFrameImpl = FooterFrame.styleable<FooterProps>(
         </FooterLinkHoverContext.Provider>
         <FooterTerrain animate={animate} />
         {noise ? (
-          <FooterNoise
-            source={{ uri: noiseImage }}
-            resizeMode="repeat"
-            aria-hidden={true}
-            accessibilityElementsHidden={true}
-            importantForAccessibility="no-hide-descendants"
-          />
+          <FooterNoise>
+            <BackgroundNoise />
+          </FooterNoise>
         ) : null}
       </FooterFrame>
     );

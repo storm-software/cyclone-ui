@@ -4641,6 +4641,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -4934,6 +4988,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -5748,90 +5811,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -5840,7 +5885,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -5849,7 +5894,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -10484,6 +10529,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -10777,6 +10876,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -11591,90 +11699,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -11683,7 +11773,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -11692,7 +11782,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -16327,6 +16417,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -16620,6 +16764,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -17434,90 +17587,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -17526,7 +17661,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -17535,7 +17670,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -22206,6 +22341,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -22499,6 +22688,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -23313,90 +23511,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -23405,7 +23585,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -23414,7 +23594,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -28085,6 +28265,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -28378,6 +28612,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -29192,90 +29435,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -29284,7 +29509,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -29293,7 +29518,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,
@@ -33964,6 +34189,60 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
+      path: "font-size.10xl",
+      type: "dimension",
+      value: "10rem",
+      cssVar: "--rw-font-size-10xl",
+      description: "10X large font size (10rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.11xl",
+      type: "dimension",
+      value: "12rem",
+      cssVar: "--rw-font-size-11xl",
+      description: "11X large font size (12rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.12xl",
+      type: "dimension",
+      value: "14rem",
+      cssVar: "--rw-font-size-12xl",
+      description: "12X large font size (14rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.13xl",
+      type: "dimension",
+      value: "16rem",
+      cssVar: "--rw-font-size-13xl",
+      description: "13X large font size (16rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.14xl",
+      type: "dimension",
+      value: "18rem",
+      cssVar: "--rw-font-size-14xl",
+      description: "14X large font size (18rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "font-size.15xl",
+      type: "dimension",
+      value: "20rem",
+      cssVar: "--rw-font-size-15xl",
+      description: "15X large font size (20rem)",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "font-weight.thin",
       type: "fontWeight",
       value: "100",
@@ -34257,6 +34536,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "1",
       cssVar: "--rw-line-height-9xl",
       description: "Line height for text-9xl",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "line-height.10xl",
+      type: "number",
+      value: "1",
+      cssVar: "--rw-line-height-10xl",
+      description: "Line height for text-10xl",
       theme: undefined,
       typography: true
     },
@@ -35071,90 +35359,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: false
     },
     {
+      path: "typography.display-hero",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.10xl}\",\"lineHeight\":\"{line-height.10xl}\"}",
+      cssVar: "--rw-typography-display-hero",
+      description: "The display - hero typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.display-xl",
+      type: "typography",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.8xl}\"}",
+      cssVar: "--rw-typography-display-xl",
+      description: "The display - extra large typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.display-lg",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.6xl}\",\"lineHeight\":\"{line-height.6xl}\"}",
       cssVar: "--rw-typography-display-lg",
-      description: "The display large typography variant",
+      description: "The display - large typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-md",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
       cssVar: "--rw-typography-display-md",
-      description: "The display medium typography variant",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.display-sm",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
       cssVar: "--rw-typography-display-sm",
-      description: "The display small typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-2xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.4xl}\"}",
-      cssVar: "--rw-typography-heading-2xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.3xl}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-lg",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.2xl}\",\"lineHeight\":\"{line-height.2xl}\"}",
-      cssVar: "--rw-typography-heading-lg",
-      description: "The heading large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-md",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading medium typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-sm",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading small typography variant",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
     {
       path: "typography.eyebrow",
       type: "typography",
-      value: "{\"fontFamily\":\"Permanent Marker\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.xl}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
       theme: undefined,
       typography: true
     },
     {
+      path: "typography.title",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
+      cssVar: "--rw-typography-title",
+      description: "The heading small typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
       path: "typography.body",
       type: "typography",
-      value: "{\"fontFamily\":\"Inter\",\"fontWeight\":\"{font-weight.semibold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.light}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-body",
       description: "The body typography variant",
       theme: undefined,
@@ -35163,7 +35433,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.caption",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\",\"fontStyle\":\"italic\"}",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
       cssVar: "--rw-typography-caption",
       description: "The caption typography variant",
       theme: undefined,
@@ -35172,7 +35442,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.code",
       type: "typography",
-      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.md}\"}",
+      value: "{\"fontFamily\":\"Geist Mono\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.lg}\"}",
       cssVar: "--rw-typography-code",
       description: "The code typography variant",
       theme: undefined,

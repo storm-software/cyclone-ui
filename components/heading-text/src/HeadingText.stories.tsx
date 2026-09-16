@@ -75,12 +75,6 @@ export const Heading5: Story = {
   }
 };
 
-export const Heading6: Story = {
-  args: {
-    level: 6
-  }
-};
-
 export const Brand: Story = {
   args: {
     theme: "brand"

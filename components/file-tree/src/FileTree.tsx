@@ -28,6 +28,7 @@ import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { KeyboardEvent, ReactNode } from "react";
 import { useState } from "react";
+import { AnimatePresence } from "@tamagui/animate-presence";
 
 const FileTreeFrame = styled(YStack, {
   name: "FileTree",
@@ -52,8 +53,9 @@ const TreeNode = styled(XStack, {
   color: "$foregroundCaption",
 
   hoverStyle: { backgroundColor: "$backgroundHover" },
+
   focusVisibleStyle: {
-    outlineColor: "$borderFocus",
+    outlineColor: "$borderActive",
     outlineWidth: 2,
     outlineStyle: "solid"
   }
@@ -79,9 +81,11 @@ const TreeChildren = styled(YStack, {
 const defaultFileIcon = (
   <FileIcon aria-hidden color="$foregroundCaption" size="$2xl" />
 );
+
 const defaultFolderIcon = (
   <FolderIcon aria-hidden color="$foregroundCaption" size="$2xl" />
 );
+
 const defaultFolderOpenIcon = (
   <FolderOpenIcon aria-hidden color="$foreground" size="$2xl" />
 );
@@ -147,17 +151,22 @@ export const Folder = ({
         onPress={toggle}
         onKeyDown={onKeyDown}>
         <ChevronRight
+          transition="400ms"
           aria-hidden
           color={open ? "$foreground" : "$foregroundCaption"}
           size="$lg"
           rotate={open ? "90deg" : "0deg"}
         />
-        <XStack aria-hidden data-file-tree-folder-icon={open ? "open" : "closed"}>
-          {open ? openIcon ?? defaultFolderOpenIcon : icon}
+        <XStack
+          aria-hidden
+          data-file-tree-folder-icon={open ? "open" : "closed"}>
+          {open ? (openIcon ?? defaultFolderOpenIcon) : icon}
         </XStack>
         <TreeLabel>{name}</TreeLabel>
       </TreeNode>
-      {open ? <TreeChildren>{children}</TreeChildren> : null}
+      <AnimatePresence>
+        {open ? <TreeChildren>{children}</TreeChildren> : null}
+      </AnimatePresence>
     </YStack>
   );
 };

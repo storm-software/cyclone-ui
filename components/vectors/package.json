@@ -60,6 +60,10 @@
       "import": "./dist/Arrow.mjs",
       "require": "./dist/Arrow.cjs"
     },
+    "./BackgroundNoise": {
+      "import": "./dist/BackgroundNoise.mjs",
+      "require": "./dist/BackgroundNoise.cjs"
+    },
     "./Binary": {
       "import": "./dist/Binary.mjs",
       "require": "./dist/Binary.cjs"

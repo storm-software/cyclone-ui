@@ -517,6 +517,12 @@
   --font-size-7xl: 4.5rem; /** 7X large font size (4.5rem) */
   --font-size-8xl: 6rem; /** 8X large font size (6rem) */
   --font-size-9xl: 8rem; /** 9X large font size (8rem) */
+  --font-size-10xl: 10rem; /** 10X large font size (10rem) */
+  --font-size-11xl: 12rem; /** 11X large font size (12rem) */
+  --font-size-12xl: 14rem; /** 12X large font size (14rem) */
+  --font-size-13xl: 16rem; /** 13X large font size (16rem) */
+  --font-size-14xl: 18rem; /** 14X large font size (18rem) */
+  --font-size-15xl: 20rem; /** 15X large font size (20rem) */
   --font-weight-thin: 100; /** Thin font weight (100) */
   --font-weight-extralight: 200; /** Extra light font weight (200) */
   --font-weight-light: 300; /** Light font weight (300) */
@@ -550,6 +556,7 @@
   --line-height-7xl: 1; /** Line height for text-7xl */
   --line-height-8xl: 1; /** Line height for text-8xl */
   --line-height-9xl: 1; /** Line height for text-9xl */
+  --line-height-10xl: 1; /** Line height for text-10xl */
   --border-radius-none: 0rem; /** No radius */
   --border-radius-xs: 0.125rem; /** Extra small radius (0.125rem) */
   --border-radius-sm: 0.25rem; /** Small radius (0.25rem) */
@@ -640,16 +647,14 @@
   --ring-negative-subtle: 0px 0px 0px 1px #ff040420; /** The negative subtle ring variant */
   --ring-negative-offset: 0px 0px 0px 3px #3f4043, 0px 0px 0px 6px #ff040420; /** The negative ring variant with a 3px offset */
   --ring-negative-subtle-offset: 0px 0px 0px 3px #3f4043, 0px 0px 0px 4px #ff040420; /** The negative subtle ring variant with a 3px offset */
-  --typography-display-lg: 400 3.75rem/1 'Permanent Marker'; /** The display large typography variant */
-  --typography-display-md: 400 2.25rem/1.111111 'Permanent Marker'; /** The display medium typography variant */
-  --typography-display-sm: 400 1.875rem/1.2 'Permanent Marker'; /** The display small typography variant */
-  --typography-heading-2xl: 700 2.25rem/1.111111 'Space Grotesk'; /** The heading extra large typography variant */
-  --typography-heading-xl: 700 1.875rem/1.2 'Space Grotesk'; /** The heading extra large typography variant */
-  --typography-heading-lg: 700 1.5rem/1.333333 'Space Grotesk'; /** The heading large typography variant */
-  --typography-heading-md: 600 1.25rem/1.4 'Space Grotesk'; /** The heading medium typography variant */
-  --typography-heading-sm: 600 1.125rem/1.555556 'Space Grotesk'; /** The heading small typography variant */
-  --typography-eyebrow: 400 1.25rem/1.4 'Permanent Marker'; /** The eyebrow typography variant */
-  --typography-body: 600 1rem/1.5 Inter; /** The body typography variant */
-  --typography-caption: italic 500 1rem/1.5 'Space Grotesk'; /** The caption typography variant */
-  --typography-code: 400 1rem/1.5 'Geist Mono'; /** The code typography variant */
+  --typography-display-hero: 500 10rem/1 'Space Grotesk'; /** The display - hero typography variant */
+  --typography-display-xl: 400 6rem/1 'Space Grotesk'; /** The display - extra large typography variant */
+  --typography-display-lg: 500 3.75rem/1 'Space Grotesk'; /** The display - large typography variant */
+  --typography-display-md: 600 2.25rem/1.111111 'Space Grotesk'; /** The display - medium typography variant */
+  --typography-display-sm: 500 1.875rem/1.2 'Space Grotesk'; /** The display - small typography variant */
+  --typography-eyebrow: 700 1.25rem/1.4 'Geist Mono'; /** The eyebrow typography variant */
+  --typography-title: 400 1.125rem/1.555556 Manrope; /** The heading small typography variant */
+  --typography-body: 300 1.125rem/1.555556 Manrope; /** The body typography variant */
+  --typography-caption: 500 1rem/1.5 Manrope; /** The caption typography variant */
+  --typography-code: 400 1.125rem/1.555556 'Geist Mono'; /** The code typography variant */
 }

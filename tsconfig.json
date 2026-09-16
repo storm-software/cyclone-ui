@@ -118,6 +118,9 @@
       "path": "./components/accordion"
     },
     {
+      "path": "./components/collapsible"
+    },
+    {
       "path": "./components/body-text"
     },
     {

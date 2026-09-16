@@ -18,7 +18,12 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { HeadingXLText } from "@cyclone-ui/heading-text";
-import { ScrollView } from "@cyclone-ui/scroll-view";
+import {
+  SCROLL_VIEW_CLASS_NAME,
+  SCROLL_VIEW_STYLES,
+  ScrollView
+} from "@cyclone-ui/scroll-view";
+import { isWeb } from "@tamagui/constants";
 import type { GetProps } from "@tamagui/core";
 import { styled, Theme } from "@tamagui/core";
 import {
@@ -162,6 +167,17 @@ const SheetSheetHandle = styled(TamaguiSheet.Handle, {
   name: "SheetHandle",
 
   backgroundColor: "$border"
+});
+
+const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
+  name: "SheetScrollView",
+
+  scrollEnabled: true,
+  marginRight: "$xl",
+
+  // Pass this web-only CSS property through React Native Web rather than
+  // treating it as a Tamagui style prop.
+  style: { scrollbarGutter: "stable" } as any
 });
 
 const SheetDialogHandle = styled(XStack, {
@@ -315,13 +331,22 @@ const SheetHandle: FC<SheetHandleProps> = props => {
   );
 };
 
-const SheetScrollView: FC<SheetScrollViewProps> = ({ children, ...props }) => {
+const SheetScrollView: FC<SheetScrollViewProps> = ({
+  children,
+  className,
+  ...props
+}) => {
   const { direction } = useSheetContext();
 
   return direction === "bottom" ? (
-    <TamaguiSheet.ScrollView {...props}>{children}</TamaguiSheet.ScrollView>
+    <SheetSheetScrollView
+      {...props}
+      className={`${SCROLL_VIEW_CLASS_NAME}${className ? ` ${className}` : ""}`}>
+      {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
+      {children}
+    </SheetSheetScrollView>
   ) : (
-    <ScrollView flex={1} {...(props as any)}>
+    <ScrollView flex={1} className={className} {...(props as any)}>
       {children}
     </ScrollView>
   );

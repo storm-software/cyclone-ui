@@ -27,9 +27,10 @@ import type {
 } from "@tamagui/accordion";
 import { Accordion as TamaguiAccordion } from "@tamagui/accordion";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { createStyledContext, styled, Text } from "@tamagui/core";
+import { createStyledContext, styled, Text, View } from "@tamagui/core";
 import { YGroup } from "@tamagui/group";
 import { withStaticProperties } from "@tamagui/helpers";
+import { ChevronDown } from "@tamagui/lucide-icons-2";
 import { XStack } from "@tamagui/stacks";
 import type { Ref } from "react";
 import {
@@ -46,12 +47,17 @@ type BaseAccordionProps = AccordionSingleProps | AccordionMultipleProps;
 export type AccordionVariant =
   "default" | "surface" | "separated" | "bordered" | "ghost";
 
+export type AccordionIcon = "toggle" | "chevron";
+export type AccordionIconDirection = "left" | "right";
+
 export interface AccordionContextProps {
   open: string[];
   setOpen: (open: string[]) => void;
   variant: AccordionVariant;
   single: boolean;
   numbered: boolean;
+  icon: AccordionIcon;
+  iconDirection: AccordionIconDirection;
 }
 
 export const AccordionContext = createStyledContext<AccordionContextProps>({
@@ -59,7 +65,9 @@ export const AccordionContext = createStyledContext<AccordionContextProps>({
   setOpen: (_open: string[]) => {},
   variant: "default",
   single: false,
-  numbered: false
+  numbered: false,
+  icon: "toggle",
+  iconDirection: "right"
 });
 
 const AccordionGroup = styled(YGroup, {
@@ -112,6 +120,8 @@ const AccordionFrameImpl = forwardRef<
     variant?: AccordionVariant;
     single?: boolean;
     numbered?: boolean;
+    icon?: AccordionIcon;
+    iconDirection?: AccordionIconDirection;
   }
 >(
   (
@@ -121,6 +131,8 @@ const AccordionFrameImpl = forwardRef<
       variant = "default",
       single = false,
       numbered = false,
+      icon = "toggle",
+      iconDirection = "right",
       onValueChange,
       ...props
     },
@@ -155,7 +167,9 @@ const AccordionFrameImpl = forwardRef<
         setOpen={setOpen}
         variant={variant}
         single={isSingle}
-        numbered={numbered}>
+        numbered={numbered}
+        icon={icon}
+        iconDirection={iconDirection}>
         <TamaguiAccordion
           ref={forwardedRef}
           type={isSingle ? "single" : "multiple"}
@@ -336,14 +350,15 @@ const AccordionItemHeader = styled(TamaguiAccordion.Trigger, {
 
 const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
   ({ children, ...props }, forwardedRef) => {
-    const { numbered } = AccordionContext.useStyledContext();
+    const { numbered, icon, iconDirection } =
+      AccordionContext.useStyledContext();
     const { index, open } = AccordionItemContext.useStyledContext();
 
     return (
       <AccordionItemHeader
         group={"accordion" as any}
         ref={forwardedRef}
-        flexDirection="row"
+        flexDirection={iconDirection === "left" ? "row-reverse" : "row"}
         justifyContent="space-between"
         alignItems="center"
         unstyled
@@ -358,16 +373,38 @@ const AccordionItemHeaderImpl = AccordionItemHeader.styleable(
         ) : (
           children
         )}
-        <AccordionToggle
-          isExpanded={open}
-          color="$foreground"
-          size="$6xl"
-          strokeWidth={2.5}
-          $group-accordion-hover={{
-            color: "$foregroundHover",
-            cursor: "pointer"
-          }}
-        />
+        {icon === "toggle" && (
+          <AccordionToggle
+            isExpanded={open}
+            color="$foreground"
+            size="$6xl"
+            strokeWidth={2.5}
+            $group-accordion-hover={{
+              color: "$foregroundHover",
+              cursor: "pointer"
+            }}
+          />
+        )}
+        {icon === "chevron" && (
+          <View
+            transition="200ms"
+            transformOrigin="center"
+            rotate={open ? "180deg" : "0deg"}
+            alignItems="center"
+            justifyContent="center"
+            pointerEvents="none">
+            <ChevronDown
+              aria-hidden={true}
+              color="$foreground"
+              size="$6xl"
+              strokeWidth={2.5}
+              $group-accordion-hover={{
+                color: "$foregroundHover",
+                cursor: "pointer"
+              }}
+            />
+          </View>
+        )}
       </AccordionItemHeader>
     );
   },

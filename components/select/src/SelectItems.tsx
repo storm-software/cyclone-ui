@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { getSized } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
 import { useIsomorphicLayoutEffect } from "@tamagui/constants";
@@ -32,6 +33,8 @@ import { getSelectContentSize, SelectContext } from "./utilities";
 
 const SELECT_VIEWPORT_PADDING = 10;
 const SELECT_VIEWPORT_POSITION_CLASS = "is_SelectViewportPositioned";
+const SELECT_NARROW_VIEWPORT_CLASS = "is_SelectViewportNarrow";
+const SELECT_NARROW_VIEWPORT_WIDTH = getSized("$20xl");
 
 const useSelectViewportPosition = () => {
   const [viewport, setViewport] = useState<HTMLElement | null>(null);
@@ -78,6 +81,15 @@ const useSelectViewportPosition = () => {
         outline: none !important;
         outline-color: transparent !important;
         outline-width: 0 !important;
+      }
+
+      .${SELECT_NARROW_VIEWPORT_CLASS} [data-select-item-unadorned] [data-select-item-group] {
+        justify-content: center !important;
+      }
+
+      .${SELECT_NARROW_VIEWPORT_CLASS} [data-select-item-unadorned] [data-select-item-text] {
+        flex: 0 1 auto !important;
+        text-align: center;
       }
     `;
     document.head.appendChild(style);
@@ -130,6 +142,10 @@ const useSelectViewportPosition = () => {
           "--select-viewport-left",
           `${viewportLeft - (offsetParentRect?.left ?? 0)}px`
         );
+        viewport.classList.toggle(
+          SELECT_NARROW_VIEWPORT_CLASS,
+          width < SELECT_NARROW_VIEWPORT_WIDTH
+        );
         viewport.classList.add(SELECT_VIEWPORT_POSITION_CLASS);
       });
     };
@@ -156,6 +172,7 @@ const useSelectViewportPosition = () => {
       }
 
       viewport.classList.remove(SELECT_VIEWPORT_POSITION_CLASS);
+      viewport.classList.remove(SELECT_NARROW_VIEWPORT_CLASS);
       viewport.style.removeProperty("--select-viewport-top");
       viewport.style.removeProperty("--select-viewport-height");
       viewport.style.removeProperty("--select-viewport-width");
@@ -437,6 +454,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
       <SelectItemFrame
         {...props}
         data-select-item
+        data-select-item-unadorned={!disabled && !isSelected ? true : undefined}
         group={"item" as any}
         ref={forwardedRef}
         value={String(value)}
@@ -446,30 +464,35 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
         selected={isSelected}
         disabled={disabled}>
         <SelectItemBackground size={size} disabled={disabled} />
-        <SelectItemGroup size={size} justifyContent="space-between">
-          <SelectItemTextFrame size={size}>
+        <SelectItemGroup
+          size={size}
+          data-select-item-group
+          justifyContent="space-between">
+          <SelectItemTextFrame size={size} data-select-item-text>
             <SelectItemValue size={size} selected={!!isSelected}>
               {children}
             </SelectItemValue>
           </SelectItemTextFrame>
-          <View width={indicatorWidth} justifyContent="center">
-            {disabled && (
-              <Lock
-                size={indicatorIconSize}
-                color="$foregroundDisabled"
-                strokeWidth={2}
-              />
-            )}
-            {isSelected && (
-              <View aria-hidden={true}>
-                <Check
+          {(disabled || isSelected) && (
+            <View width={indicatorWidth} justifyContent="center">
+              {disabled && (
+                <Lock
                   size={indicatorIconSize}
-                  color="$foregroundActive"
-                  strokeWidth={3}
+                  color="$foregroundDisabled"
+                  strokeWidth={2}
                 />
-              </View>
-            )}
-          </View>
+              )}
+              {isSelected && (
+                <View aria-hidden={true}>
+                  <Check
+                    size={indicatorIconSize}
+                    color="$foregroundActive"
+                    strokeWidth={3}
+                  />
+                </View>
+              )}
+            </View>
+          )}
         </SelectItemGroup>
         <SelectItemDivider size={size} data-select-item-divider>
           <SelectItemDividerLine />

@@ -16,6 +16,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/lucide-icons-2": "catalog:",
     "@tamagui/stacks": "catalog:",

@@ -1,12 +1,12 @@
 {
-  "name": "@cyclone-ui/accordion",
-  "version": "0.3.4",
+  "name": "@cyclone-ui/collapsible",
+  "version": "0.0.1",
   "type": "module",
-  "description": "A package containing the Accordion component used by Storm Software",
+  "description": "A package containing the Collapsible component used by Storm Software",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/accordion"
+    "directory": "components/collapsible"
   },
   "private": false,
   "peerDependencies": {
@@ -15,17 +15,10 @@
     "react-native": "catalog:"
   },
   "dependencies": {
-    "@stryke/type-checks": "catalog:",
-    "@stryke/types": "catalog:",
+    "@cyclone-ui/accordion": "workspace:*",
     "@tamagui/accordion": "catalog:",
-    "@tamagui/collapsible": "catalog:",
     "@tamagui/core": "catalog:",
-    "@tamagui/group": "catalog:",
-    "@tamagui/helpers": "catalog:",
-    "@tamagui/lucide-icons-2": "catalog:",
-    "@tamagui/stacks": "catalog:",
-    "@cyclone-ui/heading-text": "workspace:*",
-    "@cyclone-ui/vectors": "workspace:*"
+    "@tamagui/helpers": "catalog:"
   },
   "devDependencies": {
     "@cyclone-ui/body-text": "workspace:*",
@@ -47,9 +40,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./Accordion": {
-      "import": "./dist/Accordion.mjs",
-      "require": "./dist/Accordion.cjs"
+    "./Collapsible": {
+      "import": "./dist/Collapsible.mjs",
+      "require": "./dist/Collapsible.cjs"
     },
     "./*": "./*"
   }

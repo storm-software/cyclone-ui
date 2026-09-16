@@ -25,7 +25,6 @@ import {
   View,
   withStaticProperties
 } from "@tamagui/core";
-import {} from "@tamagui/list-item";
 import type { SelectScopedProps } from "@tamagui/select";
 import { useSelectContext, useSelectItemParentContext } from "@tamagui/select";
 import { SelectValue } from "./SelectValue";

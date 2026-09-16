@@ -26,48 +26,74 @@ const BaseHeadingText = styled(SizableText, {
   role: "heading",
 
   color: "$foreground",
-  fontFamily: "$heading-md"
+  fontFamily: "$display-md"
+});
+
+export const Heading1Text = styled(BaseHeadingText, {
+  name: "Heading1Text",
+  render: "h1",
+  fontFamily: "$display-hero"
+});
+
+export const Heading2Text = styled(BaseHeadingText, {
+  name: "Heading2Text",
+  render: "h2",
+  fontFamily: "$display-xl"
+});
+
+export const Heading3Text = styled(BaseHeadingText, {
+  name: "Heading3Text",
+  render: "h3",
+  fontFamily: "$display-lg"
+});
+
+export const Heading4Text = styled(BaseHeadingText, {
+  name: "Heading4Text",
+  render: "h4",
+  fontFamily: "$display-md"
+});
+
+export const Heading5Text = styled(BaseHeadingText, {
+  name: "Heading5Text",
+  render: "h5",
+  fontFamily: "$display-sm"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
-export const HeadingText = BaseHeadingText.styleable<{ level?: number }>(
+export const HeadingText = BaseHeadingText.styleable<{
+  level?: 1 | 2 | 3 | 4 | 5;
+}>(
   ({ children, level, ...props }, forwardedRef) => {
     if (level === 1) {
       return (
-        <Heading3XLText ref={forwardedRef} {...props}>
+        <Heading1Text ref={forwardedRef} {...props}>
           {children}
-        </Heading3XLText>
+        </Heading1Text>
       );
     } else if (level === 2) {
       return (
-        <Heading2XLText ref={forwardedRef} {...props}>
+        <Heading2Text ref={forwardedRef} {...props}>
           {children}
-        </Heading2XLText>
+        </Heading2Text>
       );
     } else if (level === 3) {
       return (
-        <HeadingXLText ref={forwardedRef} {...props}>
+        <Heading3Text ref={forwardedRef} {...props}>
           {children}
-        </HeadingXLText>
+        </Heading3Text>
       );
     } else if (level === 4) {
       return (
-        <HeadingLargeText ref={forwardedRef} {...props}>
+        <Heading4Text ref={forwardedRef} {...props}>
           {children}
-        </HeadingLargeText>
+        </Heading4Text>
       );
     } else if (level === 5) {
       return (
-        <HeadingMediumText ref={forwardedRef} {...props}>
+        <Heading5Text ref={forwardedRef} {...props}>
           {children}
-        </HeadingMediumText>
-      );
-    } else if (level === 6) {
-      return (
-        <HeadingSmallText ref={forwardedRef} {...props}>
-          {children}
-        </HeadingSmallText>
+        </Heading5Text>
       );
     }
 
@@ -79,39 +105,3 @@ export const HeadingText = BaseHeadingText.styleable<{ level?: number }>(
   },
   { staticConfig: { componentName: "HeadingText" } }
 );
-
-export const Heading3XLText = styled(BaseHeadingText, {
-  name: "Heading3XLText",
-  render: "h1",
-  fontFamily: "$heading-3xl"
-});
-
-export const Heading2XLText = styled(BaseHeadingText, {
-  name: "Heading2XLText",
-  render: "h2",
-  fontFamily: "$heading-2xl"
-});
-
-export const HeadingXLText = styled(BaseHeadingText, {
-  name: "HeadingXLText",
-  render: "h3",
-  fontFamily: "$heading-xl"
-});
-
-export const HeadingLargeText = styled(BaseHeadingText, {
-  name: "HeadingLargeText",
-  render: "h4",
-  fontFamily: "$heading-lg"
-});
-
-export const HeadingMediumText = styled(BaseHeadingText, {
-  name: "HeadingMediumText",
-  render: "h5",
-  fontFamily: "$heading-md"
-});
-
-export const HeadingSmallText = styled(BaseHeadingText, {
-  name: "HeadingSmallText",
-  render: "h6",
-  fontFamily: "$heading-sm"
-});

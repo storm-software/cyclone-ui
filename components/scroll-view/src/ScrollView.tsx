@@ -22,13 +22,15 @@ import { styled } from "@tamagui/core";
 import { fullscreenStyle } from "@tamagui/stacks";
 import { ScrollView as ScrollViewNative } from "react-native";
 
-const SCROLL_VIEW_STYLES = `
-.cyclone-scroll-view::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
-.cyclone-scroll-view::-webkit-scrollbar-track { background: transparent; }
-.cyclone-scroll-view:hover::-webkit-scrollbar, .cyclone-scroll-view:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--backgroundHighest) 25%, transparent); }
-.cyclone-scroll-view::-webkit-scrollbar-thumb { background: var(--foregroundHover); border-radius: ${100_000}px }
-.cyclone-scroll-view:hover::-webkit-scrollbar-thumb { background: var(--foreground); }
-.cyclone-scroll-view::-webkit-scrollbar-button { display: none; }
+export const SCROLL_VIEW_CLASS_NAME = "cyclone-scroll-view";
+
+export const SCROLL_VIEW_STYLES = `
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-track { background: transparent; }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar, .${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-track { background: color-mix(in srgb, var(--backgroundLowest) 25%, transparent); }
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-thumb { background: var(--foregroundHover); border-radius: ${100_000}px }
+.${SCROLL_VIEW_CLASS_NAME}:hover::-webkit-scrollbar-thumb { background: var(--foreground); }
+.${SCROLL_VIEW_CLASS_NAME}::-webkit-scrollbar-button { display: none; }
 `;
 
 const ScrollViewFrame = styled(
@@ -59,7 +61,7 @@ export const ScrollView = ScrollViewFrame.styleable(
     <ScrollViewFrame
       {...props}
       ref={forwardedRef}
-      className={`cyclone-scroll-view${className ? ` ${className}` : ""}`}>
+      className={`${SCROLL_VIEW_CLASS_NAME}${className ? ` ${className}` : ""}`}>
       {isWeb ? <style>{SCROLL_VIEW_STYLES}</style> : null}
       {children}
     </ScrollViewFrame>

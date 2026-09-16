@@ -317,66 +317,56 @@ colors:
   data-pink-emphasis: "#db6a98"
   data-pink-subtle: "#fb9cc0"
 typography:
-  display-lg:
-    fontFamily: "Permanent Marker"
-    fontSize: "3.75rem"
+  display-hero:
+    fontFamily: "Space Grotesk"
+    fontSize: "10rem"
+    fontWeight: "500"
+    lineHeight: "1"
+  display-xl:
+    fontFamily: "Space Grotesk"
+    fontSize: "6rem"
     fontWeight: "400"
     lineHeight: "1"
+  display-lg:
+    fontFamily: "Space Grotesk"
+    fontSize: "3.75rem"
+    fontWeight: "500"
+    lineHeight: "1"
   display-md:
-    fontFamily: "Permanent Marker"
+    fontFamily: "Space Grotesk"
     fontSize: "2.25rem"
-    fontWeight: "400"
+    fontWeight: "600"
     lineHeight: "1.111111"
   display-sm:
-    fontFamily: "Permanent Marker"
-    fontSize: "1.875rem"
-    fontWeight: "400"
-    lineHeight: "1.2"
-  heading-2xl:
-    fontFamily: "Space Grotesk"
-    fontSize: "2.25rem"
-    fontWeight: "700"
-    lineHeight: "1.111111"
-  heading-xl:
     fontFamily: "Space Grotesk"
     fontSize: "1.875rem"
-    fontWeight: "700"
+    fontWeight: "500"
     lineHeight: "1.2"
-  heading-lg:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.5rem"
-    fontWeight: "700"
-    lineHeight: "1.333333"
-  heading-md:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.25rem"
-    fontWeight: "600"
-    lineHeight: "1.4"
-  heading-sm:
-    fontFamily: "Space Grotesk"
-    fontSize: "1.125rem"
-    fontWeight: "600"
-    lineHeight: "1.555556"
   eyebrow:
-    fontFamily: "Permanent Marker"
+    fontFamily: "Geist Mono"
     fontSize: "1.25rem"
-    fontWeight: "400"
+    fontWeight: "700"
     lineHeight: "1.4"
+  title:
+    fontFamily: Manrope
+    fontSize: "1.125rem"
+    fontWeight: "400"
+    lineHeight: "1.555556"
   body:
-    fontFamily: Inter
-    fontSize: "1rem"
-    fontWeight: "600"
-    lineHeight: "1.5"
+    fontFamily: Manrope
+    fontSize: "1.125rem"
+    fontWeight: "300"
+    lineHeight: "1.555556"
   caption:
-    fontFamily: "Space Grotesk"
+    fontFamily: Manrope
     fontSize: "1rem"
     fontWeight: "500"
     lineHeight: "1.5"
   code:
     fontFamily: "Geist Mono"
-    fontSize: "1rem"
+    fontSize: "1.125rem"
     fontWeight: "400"
-    lineHeight: "1.5"
+    lineHeight: "1.555556"
 spacing:
   none: "0px"
   xxs: "0.5px"
@@ -410,7 +400,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 313 color tokens, 12 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 313 color tokens, 10 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -730,18 +720,16 @@ Cyclone UI design tokens — 313 color tokens, 12 typography tokens, 28 spacing 
 
 ## Typography
 
-- **display-lg:** fontFamily: Permanent Marker, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1
-- **display-md:** fontFamily: Permanent Marker, fontSize: 2.25rem, fontWeight: 400, lineHeight: 1.111111
-- **display-sm:** fontFamily: Permanent Marker, fontSize: 1.875rem, fontWeight: 400, lineHeight: 1.2
-- **heading-2xl:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 700, lineHeight: 1.111111
-- **heading-xl:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 700, lineHeight: 1.2
-- **heading-lg:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.333333
-- **heading-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.4
-- **heading-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 600, lineHeight: 1.555556
-- **eyebrow:** fontFamily: Permanent Marker, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.4
-- **body:** fontFamily: Inter, fontSize: 1rem, fontWeight: 600, lineHeight: 1.5
-- **caption:** fontFamily: Space Grotesk, fontSize: 1rem, fontWeight: 500, lineHeight: 1.5
-- **code:** fontFamily: Geist Mono, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
+- **display-hero:** fontFamily: Space Grotesk, fontSize: 10rem, fontWeight: 500, lineHeight: 1
+- **display-xl:** fontFamily: Space Grotesk, fontSize: 6rem, fontWeight: 400, lineHeight: 1
+- **display-lg:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 500, lineHeight: 1
+- **display-md:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.111111
+- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 500, lineHeight: 1.2
+- **eyebrow:** fontFamily: Geist Mono, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
+- **title:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
+- **body:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 300, lineHeight: 1.555556
+- **caption:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 500, lineHeight: 1.5
+- **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
 
 ## Layout
 

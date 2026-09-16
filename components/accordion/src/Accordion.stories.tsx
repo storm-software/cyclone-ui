@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, within } from "storybook/test";
 import { Accordion } from "./Accordion";
 
 const meta = {
@@ -87,9 +88,32 @@ type Story = StoryObj<typeof meta> & {
   args: Parameters<typeof Accordion>[0];
 };
 
+type LayoutElement = {
+  getBoundingClientRect: () => { left: number; right: number };
+  querySelector: (selector: string) => LayoutElement | null;
+};
+
 export const Default: Story = {
   args: {
     children: "Some collapsed content"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Accordion Heading 1"
+    }) as unknown as LayoutElement;
+    const heading = canvas.getByText(
+      "Accordion Heading 1"
+    ) as unknown as LayoutElement;
+    const icon = header.querySelector("svg");
+
+    if (!icon) {
+      throw new Error("Expected the Accordion header icon to render");
+    }
+
+    await expect(icon.getBoundingClientRect().left).toBeGreaterThan(
+      heading.getBoundingClientRect().right
+    );
   }
 };
 
@@ -132,5 +156,62 @@ export const Numbered: Story = {
   args: {
     numbered: true,
     children: "Some collapsed content"
+  }
+};
+
+export const Chevron: Story = {
+  args: {
+    icon: "chevron",
+    children: "Some collapsed content"
+  }
+};
+
+export const IconLeft: Story = {
+  args: {
+    iconDirection: "left",
+    children: "Some collapsed content"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Accordion Heading 1"
+    }) as unknown as LayoutElement;
+    const heading = canvas.getByText(
+      "Accordion Heading 1"
+    ) as unknown as LayoutElement;
+    const icon = header.querySelector("svg");
+
+    if (!icon) {
+      throw new Error("Expected the Accordion header icon to render");
+    }
+
+    await expect(icon.getBoundingClientRect().right).toBeLessThan(
+      heading.getBoundingClientRect().left
+    );
+  }
+};
+
+export const IconRight: Story = {
+  args: {
+    iconDirection: "right",
+    children: "Some collapsed content"
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const header = canvas.getByRole("button", {
+      name: "Accordion Heading 1"
+    }) as unknown as LayoutElement;
+    const heading = canvas.getByText(
+      "Accordion Heading 1"
+    ) as unknown as LayoutElement;
+    const icon = header.querySelector("svg");
+
+    if (!icon) {
+      throw new Error("Expected the Accordion header icon to render");
+    }
+
+    await expect(icon.getBoundingClientRect().left).toBeGreaterThan(
+      heading.getBoundingClientRect().right
+    );
   }
 };

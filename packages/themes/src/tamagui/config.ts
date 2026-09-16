@@ -349,6 +349,12 @@ const tokens = createTokens({
     "7xl": px(72),
     "8xl": px(96),
     "9xl": px(128),
+    "10xl": px(160),
+    "11xl": px(192),
+    "12xl": px(224),
+    "13xl": px(256),
+    "14xl": px(288),
+    "15xl": px(320),
     lg: px(18),
     md: px(16),
     sm: px(14),
@@ -1195,24 +1201,24 @@ const themes = createThemes({
 });
 
 const bodyFont = createFont({
-  family: "Inter",
+  family: "Manrope",
   size: {
-    md: 16,
-    true: 16
+    lg: 18,
+    true: 18
   },
   lineHeight: {
-    md: 24,
-    true: 24
+    lg: 28,
+    true: 28
   },
   weight: {
-    md: "600",
-    semibold: "600",
-    true: "600"
+    lg: "300",
+    light: "300",
+    true: "300"
   }
 });
 
 const captionFont = createFont({
-  family: "Space Grotesk",
+  family: "Manrope",
   size: {
     md: 16,
     true: 16
@@ -1231,22 +1237,39 @@ const captionFont = createFont({
 const codeFont = createFont({
   family: "Geist Mono",
   size: {
-    md: 16,
-    true: 16
+    lg: 18,
+    true: 18
   },
   lineHeight: {
-    md: 24,
-    true: 24
+    lg: 28,
+    true: 28
   },
   weight: {
-    md: "400",
+    lg: "400",
     normal: "400",
     true: "400"
   }
 });
 
+const displayHeroFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    "10xl": 160,
+    true: 160
+  },
+  lineHeight: {
+    "10xl": 160,
+    true: 160
+  },
+  weight: {
+    "10xl": "500",
+    medium: "500",
+    true: "500"
+  }
+});
+
 const displayLgFont = createFont({
-  family: "Permanent Marker",
+  family: "Space Grotesk",
   size: {
     "6xl": 60,
     true: 60
@@ -1256,14 +1279,14 @@ const displayLgFont = createFont({
     true: 60
   },
   weight: {
-    "6xl": "400",
-    normal: "400",
-    true: "400"
+    "6xl": "500",
+    medium: "500",
+    true: "500"
   }
 });
 
 const displayMdFont = createFont({
-  family: "Permanent Marker",
+  family: "Space Grotesk",
   size: {
     "4xl": 36,
     true: 36
@@ -1273,14 +1296,14 @@ const displayMdFont = createFont({
     true: 40
   },
   weight: {
-    "4xl": "400",
-    normal: "400",
-    true: "400"
+    "4xl": "600",
+    semibold: "600",
+    true: "600"
   }
 });
 
 const displaySmFont = createFont({
-  family: "Permanent Marker",
+  family: "Space Grotesk",
   size: {
     "3xl": 30,
     true: 30
@@ -1290,14 +1313,31 @@ const displaySmFont = createFont({
     true: 36
   },
   weight: {
-    "3xl": "400",
+    "3xl": "500",
+    medium: "500",
+    true: "500"
+  }
+});
+
+const displayXlFont = createFont({
+  family: "Space Grotesk",
+  size: {
+    "8xl": 96,
+    true: 96
+  },
+  lineHeight: {
+    "8xl": 96,
+    true: 96
+  },
+  weight: {
+    "8xl": "400",
     normal: "400",
     true: "400"
   }
 });
 
 const eyebrowFont = createFont({
-  family: "Permanent Marker",
+  family: "Geist Mono",
   size: {
     true: 20,
     xl: 20
@@ -1307,65 +1347,14 @@ const eyebrowFont = createFont({
     xl: 28
   },
   weight: {
-    normal: "400",
-    true: "400",
-    xl: "400"
-  }
-});
-
-const heading2xlFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    "4xl": 36,
-    true: 36
-  },
-  lineHeight: {
-    "4xl": 40,
-    true: 40
-  },
-  weight: {
-    "4xl": "700",
     bold: "700",
-    true: "700"
+    true: "700",
+    xl: "700"
   }
 });
 
-const headingLgFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    "2xl": 24,
-    true: 24
-  },
-  lineHeight: {
-    "2xl": 32,
-    true: 32
-  },
-  weight: {
-    "2xl": "700",
-    bold: "700",
-    true: "700"
-  }
-});
-
-const headingMdFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    true: 20,
-    xl: 20
-  },
-  lineHeight: {
-    true: 28,
-    xl: 28
-  },
-  weight: {
-    semibold: "600",
-    true: "600",
-    xl: "600"
-  }
-});
-
-const headingSmFont = createFont({
-  family: "Space Grotesk",
+const titleFont = createFont({
+  family: "Manrope",
   size: {
     lg: 18,
     true: 18
@@ -1375,26 +1364,9 @@ const headingSmFont = createFont({
     true: 28
   },
   weight: {
-    lg: "600",
-    semibold: "600",
-    true: "600"
-  }
-});
-
-const headingXlFont = createFont({
-  family: "Space Grotesk",
-  size: {
-    "3xl": 30,
-    true: 30
-  },
-  lineHeight: {
-    "3xl": 36,
-    true: 36
-  },
-  weight: {
-    "3xl": "700",
-    bold: "700",
-    true: "700"
+    lg: "400",
+    normal: "400",
+    true: "400"
   }
 });
 
@@ -1550,15 +1522,13 @@ export const config = createTamagui({
      body: bodyFont,
     caption: captionFont,
     code: codeFont,
+    "display-hero": displayHeroFont,
     "display-lg": displayLgFont,
     "display-md": displayMdFont,
     "display-sm": displaySmFont,
+    "display-xl": displayXlFont,
     eyebrow: eyebrowFont,
-    "heading-2xl": heading2xlFont,
-    "heading-lg": headingLgFont,
-    "heading-md": headingMdFont,
-    "heading-sm": headingSmFont,
-    "heading-xl": headingXlFont
+    title: titleFont
    },
   defaultFont: "Space Grotesk"
 , ...userConfig 

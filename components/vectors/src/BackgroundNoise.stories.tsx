@@ -16,18 +16,20 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./AccordionToggle";
-export * from "./AlertCircle";
-export * from "./Arrow";
-export * from "./BackgroundNoise";
-export * from "./Binary";
-export * from "./Check";
-export * from "./CheckCircle";
-export * from "./CheckerBoard";
-export * from "./Diagonal";
-export * from "./DiscoveryCircle";
-export * from "./ErrorCircle";
-export * from "./InfoCircle";
-export * from "./PdfIcon";
-export * from "./StormLogoIcon";
-export * from "./StormLogoText";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { BackgroundNoise } from "./BackgroundNoise";
+
+const meta: Meta<typeof BackgroundNoise> = {
+  title: "Vectors/BackgroundNoise",
+  component: BackgroundNoise,
+  tags: ["autodocs"],
+  render: (args: any) => <BackgroundNoise {...args} height="200" width="600" />
+} satisfies Meta<typeof BackgroundNoise>;
+
+export default meta;
+
+type Story = StoryObj<typeof BackgroundNoise>;
+
+export const Base: Story = {
+  args: {}
+};
