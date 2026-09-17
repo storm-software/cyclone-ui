@@ -97,7 +97,7 @@ export const Anchor = AnchorFrame.styleable<AnchorExtraProps>(
         <AnchorIcon
           aria-hidden={true}
           transition="200ms"
-          color="$darkGrey4"
+          color="$darkNeutral4"
           strokeWidth={2.3}
           height="90%"
           maxHeight="$6xl"

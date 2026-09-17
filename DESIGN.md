@@ -6,149 +6,142 @@ colors:
   transparent: "#ffffff00"
   black: "#0c0c0d"
   white: "#ffffff"
-  brand-1: "#b1e4e0"
-  brand-2: "#8cd8d1"
-  brand-3: "#68cbc3"
-  brand-4: "#43bfb4"
-  brand-5: "#1fb2a6"
-  brand-6: "#179389"
-  brand-7: "#10736b"
-  brand-8: "#0a514c"
-  brand-9: "#052f2c"
-  foreground-body: "#949494"
-  foreground-eyebrow: "#525252"
-  foreground-caption: "#737373"
-  foreground-link: "#468ae2"
+  foreground-body: "#9f9f9f"
+  foreground-eyebrow: "#484848"
+  foreground-caption: "#616161"
+  foreground-link: "#4689ff"
   foreground-required: "#dc2626"
-  foreground-base: "#f5f5f5"
-  foreground-brand: "#10736b"
-  foreground-danger: "#cf222e"
-  foreground-negative: "#d6301b"
-  foreground-warning: "#d49400"
-  foreground-success: "#00a469"
-  foreground-positive: "#79b136"
-  foreground-info: "#00b8e6"
-  foreground-discovery: "#7f7ee4"
-  foreground-base-inverse: "#181818"
-  foreground-brand-inverse: "#f5f5f5"
-  foreground-danger-inverse: "#f5f5f5"
-  foreground-negative-inverse: "#f5f5f5"
-  foreground-warning-inverse: "#181818"
-  foreground-success-inverse: "#f5f5f5"
-  foreground-positive-inverse: "#f5f5f5"
-  foreground-info-inverse: "#f5f5f5"
-  foreground-discovery-inverse: "#f5f5f5"
-  foreground-body-hover: "#bdbdbd"
-  foreground-body-active: "#7b7b7b"
-  foreground-body-inactive: "#e9e9e9"
-  foreground-body-disabled: "#94949499"
-  foreground-eyebrow-hover: "#6b6b6b"
-  foreground-eyebrow-active: "#434343"
-  foreground-eyebrow-inactive: "#848484"
-  foreground-eyebrow-disabled: "#52525299"
-  foreground-caption-hover: "#949494"
-  foreground-caption-active: "#5f5f5f"
-  foreground-caption-inactive: "#b6b6b6"
-  foreground-caption-disabled: "#73737399"
-  foreground-link-hover: "#6db2ff"
-  foreground-link-active: "#2d72c7"
-  foreground-link-inactive: "#95dcff"
-  foreground-link-disabled: "#363636"
+  foreground-base: "#f1f1f1"
+  foreground-brand: "#166855"
+  foreground-danger: "#cf2d56"
+  foreground-negative: "#dc2626"
+  foreground-warning: "#d29527"
+  foreground-success: "#00af6f"
+  foreground-positive: "#81b33a"
+  foreground-info: "#47c5ea"
+  foreground-discovery: "#866cd1"
+  foreground-base-inverse: "#1a1c1f"
+  foreground-brand-inverse: "#f1f1f1"
+  foreground-danger-inverse: "#f1f1f1"
+  foreground-negative-inverse: "#f1f1f1"
+  foreground-warning-inverse: "#1a1c1f"
+  foreground-success-inverse: "#f1f1f1"
+  foreground-positive-inverse: "#f1f1f1"
+  foreground-info-inverse: "#f1f1f1"
+  foreground-discovery-inverse: "#f1f1f1"
+  foreground-body-hover: "#cbcbcb"
+  foreground-body-active: "#848484"
+  foreground-body-inactive: "#f9f9f9"
+  foreground-body-disabled: "#9f9f9f99"
+  foreground-eyebrow-hover: "#5e5e5e"
+  foreground-eyebrow-active: "#3b3b3b"
+  foreground-eyebrow-inactive: "#757575"
+  foreground-eyebrow-disabled: "#48484899"
+  foreground-caption-hover: "#7d7d7d"
+  foreground-caption-active: "#505050"
+  foreground-caption-inactive: "#9b9b9b"
+  foreground-caption-disabled: "#61616199"
+  foreground-link-hover: "#6db3ff"
+  foreground-link-active: "#2d6fe3"
+  foreground-link-inactive: "#96deff"
+  foreground-link-disabled: "#3a3a3a"
   foreground-required-hover: "#ff554b"
   foreground-required-active: "#c20006"
   foreground-required-inactive: "#ff7d6f"
   foreground-required-disabled: "#ba574e"
-  foreground-base-hover: "#b6b6b6"
-  foreground-base-active: "#202020"
+  foreground-base-hover: "#b3b3b3"
+  foreground-base-active: "#1f1f1f"
   foreground-base-inactive: "#ffffff"
   foreground-base-disabled: "#ffffff99"
-  foreground-brand-hover: "#3a9188"
-  foreground-brand-active: "#006159"
-  foreground-brand-inactive: "#5bb0a7"
-  foreground-brand-disabled: "#9c9c9c"
-  foreground-danger-hover: "#f74f4f"
-  foreground-danger-active: "#b60018"
-  foreground-danger-inactive: "#ff7571"
+  foreground-brand-hover: "#38836f"
+  foreground-brand-active: "#005745"
+  foreground-brand-inactive: "#55a08b"
+  foreground-brand-disabled: "#999999"
+  foreground-danger-hover: "#f85777"
+  foreground-danger-active: "#b60342"
+  foreground-danger-inactive: "#ff7c99"
   foreground-danger-disabled: "#acacac"
-  foreground-negative-hover: "#ff5b43"
-  foreground-negative-active: "#bc0500"
-  foreground-negative-inactive: "#ff8167"
-  foreground-negative-disabled: "#262626"
-  foreground-warning-hover: "#ffc24f"
-  foreground-warning-active: "#b77800"
-  foreground-warning-inactive: "#fff181"
+  foreground-negative-hover: "#ff554b"
+  foreground-negative-active: "#c20006"
+  foreground-negative-inactive: "#ff7d6f"
+  foreground-negative-disabled: "#252525"
+  foreground-warning-hover: "#ffc25d"
+  foreground-warning-active: "#b57a00"
+  foreground-warning-inactive: "#fff28e"
   foreground-warning-disabled: "#1e1e1e"
-  foreground-success-hover: "#4bcd8f"
-  foreground-success-active: "#008b52"
-  foreground-success-inactive: "#79f7b7"
+  foreground-success-hover: "#50da97"
+  foreground-success-active: "#009557"
+  foreground-success-inactive: "#81ffc1"
   foreground-success-disabled: "#191919"
-  foreground-positive-hover: "#a4de66"
-  foreground-positive-active: "#5f950b"
-  foreground-positive-inactive: "#d0ff95"
+  foreground-positive-hover: "#ade16b"
+  foreground-positive-active: "#679712"
+  foreground-positive-inactive: "#daff99"
   foreground-positive-disabled: "#3e3e3e"
-  foreground-info-hover: "#5ae8ff"
-  foreground-info-active: "#009bc8"
-  foreground-info-inactive: "#8affff"
+  foreground-info-hover: "#80f8ff"
+  foreground-info-active: "#16a6ca"
+  foreground-info-inactive: "#9affff"
   foreground-info-disabled: "#1b1b1b"
-  foreground-discovery-hover: "#a5a6ff"
-  foreground-discovery-active: "#6865c9"
-  foreground-discovery-inactive: "#cdd0ff"
+  foreground-discovery-hover: "#aa91fa"
+  foreground-discovery-active: "#7055b8"
+  foreground-discovery-inactive: "#d0b8ff"
   foreground-discovery-disabled: "#1d1d1d"
-  foreground-base-inverse-hover: "#0f0f0f"
-  foreground-base-inverse-active: "#000000"
-  foreground-base-inverse-inactive: "#2c2c2c"
+  foreground-base-inverse-hover: "#101215"
+  foreground-base-inverse-active: "#000101"
+  foreground-base-inverse-inactive: "#303235"
   foreground-base-inverse-disabled: "#999999"
   foreground-brand-inverse-hover: "#ffffff"
-  foreground-brand-inverse-active: "#cdcdcd"
+  foreground-brand-inverse-active: "#cacaca"
   foreground-brand-inverse-inactive: "#ffffff"
-  foreground-brand-inverse-disabled: "#9c9c9c"
+  foreground-brand-inverse-disabled: "#f1f1f199"
   foreground-danger-inverse-hover: "#ffffff"
-  foreground-danger-inverse-active: "#cdcdcd"
+  foreground-danger-inverse-active: "#cacaca"
   foreground-danger-inverse-inactive: "#ffffff"
   foreground-danger-inverse-disabled: "#acacac"
   foreground-negative-inverse-hover: "#ffffff"
-  foreground-negative-inverse-active: "#cdcdcd"
+  foreground-negative-inverse-active: "#cacaca"
   foreground-negative-inverse-inactive: "#ffffff"
-  foreground-negative-inverse-disabled: "#262626"
-  foreground-warning-inverse-hover: "#222222"
-  foreground-warning-inverse-active: "#121212"
-  foreground-warning-inverse-inactive: "#2c2c2c"
+  foreground-negative-inverse-disabled: "#252525"
+  foreground-warning-inverse-hover: "#25272a"
+  foreground-warning-inverse-active: "#141618"
+  foreground-warning-inverse-inactive: "#303235"
   foreground-warning-inverse-disabled: "#1e1e1e"
   foreground-success-inverse-hover: "#ffffff"
-  foreground-success-inverse-active: "#cdcdcd"
+  foreground-success-inverse-active: "#cacaca"
   foreground-success-inverse-inactive: "#ffffff"
   foreground-success-inverse-disabled: "#191919"
   foreground-positive-inverse-hover: "#ffffff"
-  foreground-positive-inverse-active: "#cdcdcd"
+  foreground-positive-inverse-active: "#cacaca"
   foreground-positive-inverse-inactive: "#ffffff"
   foreground-positive-inverse-disabled: "#3e3e3e"
   foreground-info-inverse-hover: "#ffffff"
-  foreground-info-inverse-active: "#cdcdcd"
+  foreground-info-inverse-active: "#cacaca"
   foreground-info-inverse-inactive: "#ffffff"
   foreground-info-inverse-disabled: "#1b1b1b"
   foreground-discovery-inverse-hover: "#ffffff"
-  foreground-discovery-inverse-active: "#cdcdcd"
+  foreground-discovery-inverse-active: "#cacaca"
   foreground-discovery-inverse-inactive: "#ffffff"
   foreground-discovery-inverse-disabled: "#1d1d1d"
   foreground-base-ghost-hover: "#ffffff"
-  foreground-brand-ghost-hover: "#b0fffb"
-  foreground-danger-ghost-hover: "#ffc2b8"
-  foreground-negative-ghost-hover: "#ffc5a7"
-  foreground-warning-ghost-hover: "#fff484"
-  foreground-success-ghost-hover: "#a0ffdb"
-  foreground-positive-ghost-hover: "#d9ff9c"
-  foreground-info-ghost-hover: "#8dffff"
-  foreground-discovery-ghost-hover: "#f2f5ff"
+  foreground-brand-ghost-hover: "#a2edd6"
+  foreground-danger-ghost-hover: "#ffc2db"
+  foreground-negative-ghost-hover: "#ffc2af"
+  foreground-warning-ghost-hover: "#fff38f"
+  foreground-success-ghost-hover: "#9affd8"
+  foreground-positive-ghost-hover: "#deff9d"
+  foreground-info-ghost-hover: "#9fffff"
+  foreground-discovery-ghost-hover: "#ffebff"
+  foreground-base-inverse-ghost-hover: "#292b2f"
+  foreground-warning-inverse-ghost-hover: "#4f5155"
   background-lowest: "#e1e1e1"
   background-page: "#eaeaea"
   background-elevated: "#f1f1f1"
   background-floating: "#fafafa"
   background-highest: "#ffffff"
-  background-base: "#262626"
-  background-link: "#468ae2"
-  background-brand: "#0a514c"
+  background-base: "#242528"
+  background-link: "#4689ff"
+  background-brand: "#0c3c31"
   background-danger: "#9a1c0f"
-  background-negative: "#d23516"
+  background-negative: "#cd3a13"
   background-warning: "#8f6300"
   background-success: "#007a4d"
   background-positive: "#61a92c"
@@ -174,26 +167,26 @@ colors:
   background-highest-active: "#e4e4e4"
   background-highest-inactive: "#ffffff"
   background-highest-disabled: "#ffffff99"
-  background-base-hover: "#292929"
-  background-base-active: "#2b2b2b"
-  background-base-inactive: "#333333"
-  background-base-disabled: "#26262699"
-  background-link-hover: "#599ef8"
-  background-link-active: "#367ad1"
-  background-link-inactive: "#6db2ff"
-  background-link-disabled: "#658cc0"
-  background-brand-hover: "#1b5c57"
-  background-brand-active: "#004844"
-  background-brand-inactive: "#286762"
-  background-brand-disabled: "#2c4d4a"
+  background-base-hover: "#27282b"
+  background-base-active: "#292a2d"
+  background-base-inactive: "#313235"
+  background-base-disabled: "#242527"
+  background-link-hover: "#5a9eff"
+  background-link-active: "#3678ed"
+  background-link-inactive: "#6db3ff"
+  background-link-disabled: "#668ed3"
+  background-brand-hover: "#174539"
+  background-brand-active: "#03352b"
+  background-brand-inactive: "#204d42"
+  background-brand-disabled: "#213932"
   background-danger-hover: "#a92d1f"
   background-danger-active: "#8e0900"
   background-danger-inactive: "#b93c2d"
   background-danger-disabled: "#813c32"
-  background-negative-hover: "#e64a2d"
-  background-negative-active: "#c22200"
-  background-negative-inactive: "#fb5e40"
-  background-negative-disabled: "#b25a48"
+  background-negative-hover: "#e14e2a"
+  background-negative-active: "#bd2900"
+  background-negative-inactive: "#f5613e"
+  background-negative-disabled: "#ae5b47"
   background-warning-hover: "#a0731e"
   background-warning-active: "#825700"
   background-warning-inactive: "#b08332"
@@ -214,63 +207,63 @@ colors:
   background-discovery-active: "#5655a1"
   background-discovery-inactive: "#8081d2"
   background-discovery-disabled: "#656795"
-  border-base: "#333333"
-  border-brand: "#10736b"
-  border-danger: "#cf222e"
-  border-negative: "#d6301b"
-  border-warning: "#d49400"
-  border-success: "#00a469"
-  border-positive: "#79b136"
-  border-info: "#00b8e6"
-  border-discovery: "#7f7ee4"
-  border-base-subtle: "#262626"
-  border-brand-subtle: "#0a514c"
+  border-base: "#3a3a3a"
+  border-brand: "#166855"
+  border-danger: "#cf2d56"
+  border-negative: "#dc2626"
+  border-warning: "#d29527"
+  border-success: "#00af6f"
+  border-positive: "#81b33a"
+  border-info: "#47c5ea"
+  border-discovery: "#866cd1"
+  border-base-subtle: "#242528"
+  border-brand-subtle: "#0c3c31"
   border-danger-subtle: "#9a1c0f"
-  border-negative-subtle: "#d23516"
+  border-negative-subtle: "#cd3a13"
   border-warning-subtle: "#8f6300"
   border-success-subtle: "#007a4d"
   border-positive-subtle: "#61a92c"
   border-info-subtle: "#007496"
   border-discovery-subtle: "#6261af"
-  border-base-hover: "#232323"
+  border-base-hover: "#282828"
   border-base-active: "#020202"
-  border-base-disabled: "#33333399"
-  border-brand-hover: "#3a9188"
-  border-brand-active: "#006159"
-  border-brand-disabled: "#406d68"
-  border-danger-hover: "#f74f4f"
-  border-danger-active: "#b60018"
-  border-danger-disabled: "#af514d"
-  border-negative-hover: "#ff5b43"
-  border-negative-active: "#bc0500"
-  border-negative-disabled: "#b5594a"
-  border-warning-hover: "#ffc24f"
-  border-warning-active: "#b77800"
-  border-warning-disabled: "#c19b60"
-  border-success-hover: "#4bcd8f"
-  border-success-active: "#008b52"
-  border-success-disabled: "#589b77"
-  border-positive-hover: "#a4de66"
-  border-positive-active: "#5f950b"
-  border-positive-disabled: "#88aa69"
-  border-info-hover: "#5ae8ff"
-  border-info-active: "#009bc8"
-  border-info-disabled: "#6ab2cd"
-  border-discovery-hover: "#a5a6ff"
-  border-discovery-active: "#6865c9"
-  border-discovery-disabled: "#8386c2"
-  border-base-subtle-hover: "#191919"
-  border-base-subtle-active: "#010101"
-  border-base-subtle-disabled: "#26262699"
-  border-brand-subtle-hover: "#286762"
-  border-brand-subtle-active: "#00443f"
-  border-brand-subtle-disabled: "#2c4d4a"
+  border-base-disabled: "#3a3a3a99"
+  border-brand-hover: "#38836f"
+  border-brand-active: "#005745"
+  border-brand-disabled: "#3b6357"
+  border-danger-hover: "#f85777"
+  border-danger-active: "#b60342"
+  border-danger-disabled: "#b05663"
+  border-negative-hover: "#ff554b"
+  border-negative-active: "#c20006"
+  border-negative-disabled: "#ba574e"
+  border-warning-hover: "#ffc25d"
+  border-warning-active: "#b57a00"
+  border-warning-disabled: "#c09c66"
+  border-success-hover: "#50da97"
+  border-success-active: "#009557"
+  border-success-disabled: "#5fa57e"
+  border-positive-hover: "#ade16b"
+  border-positive-active: "#679712"
+  border-positive-disabled: "#8ead6c"
+  border-info-hover: "#80f8ff"
+  border-info-active: "#16a6ca"
+  border-info-disabled: "#7fbfd5"
+  border-discovery-hover: "#aa91fa"
+  border-discovery-active: "#7055b8"
+  border-discovery-disabled: "#8376b2"
+  border-base-subtle-hover: "#18191b"
+  border-base-subtle-active: "#010102"
+  border-base-subtle-disabled: "#242527"
+  border-brand-subtle-hover: "#204d42"
+  border-brand-subtle-active: "#003227"
+  border-brand-subtle-disabled: "#213932"
   border-danger-subtle-hover: "#b93c2d"
   border-danger-subtle-active: "#870000"
   border-danger-subtle-disabled: "#813c32"
-  border-negative-subtle-hover: "#fb5e40"
-  border-negative-subtle-active: "#b91300"
-  border-negative-subtle-disabled: "#b25a48"
+  border-negative-subtle-hover: "#f5613e"
+  border-negative-subtle-active: "#b41d00"
+  border-negative-subtle-disabled: "#ae5b47"
   border-warning-subtle-hover: "#b08332"
   border-warning-subtle-active: "#7b5000"
   border-warning-subtle-disabled: "#82683f"
@@ -287,34 +280,34 @@ colors:
   border-discovery-subtle-active: "#504e9a"
   border-discovery-subtle-disabled: "#656795"
   overlay-background: "#fafafa"
-  overlay-border: "#333333"
+  overlay-border: "#3a3a3a"
   overlay-backdrop: "#1a1c1f66"
   overlay-background-hover: "#ffffff"
   overlay-background-active: "#e0e0e0"
   overlay-background-inactive: "#ffffff"
   overlay-background-disabled: "#fafafa99"
-  overlay-border-hover: "#444444"
-  overlay-border-active: "#292929"
-  overlay-border-disabled: "#33333399"
-  data-grey-emphasis: "#525252"
-  data-grey-subtle: "#f5f5f5"
+  overlay-border-hover: "#4c4c4c"
+  overlay-border-active: "#2f2f2f"
+  overlay-border-disabled: "#3a3a3a99"
+  data-neutral-emphasis: "#484848"
+  data-neutral-subtle: "#f1f1f1"
   data-brand-emphasis: "#b1e4e0"
-  data-brand-subtle: "#8cd8d1"
-  data-red-emphasis: "#d3344a"
+  data-brand-subtle: "#b1e4e0"
+  data-red-emphasis: "#cf2d56"
   data-red-subtle: "#e791bb"
   data-orange-emphasis: "#de743a"
   data-orange-subtle: "#faa276"
-  data-yellow-emphasis: "#c08600"
+  data-yellow-emphasis: "#ca8b00"
   data-yellow-subtle: "#e2b259"
-  data-green-emphasis: "#00a469"
+  data-green-emphasis: "#00af6f"
   data-green-subtle: "#67cc9a"
-  data-sky-emphasis: "#009ecb"
+  data-sky-emphasis: "#00a6d6"
   data-sky-subtle: "#47c5ea"
-  data-blue-emphasis: "#4c90e8"
+  data-blue-emphasis: "#4f99f9"
   data-blue-subtle: "#83baff"
-  data-purple-emphasis: "#8584eb"
+  data-purple-emphasis: "#8d8cfb"
   data-purple-subtle: "#aeb1ff"
-  data-pink-emphasis: "#db6a98"
+  data-pink-emphasis: "#e96fa2"
   data-pink-subtle: "#fb9cc0"
 typography:
   display-hero:
@@ -324,39 +317,39 @@ typography:
     lineHeight: "1"
   display-xl:
     fontFamily: "Space Grotesk"
-    fontSize: "6rem"
+    fontSize: "3.75rem"
     fontWeight: "400"
     lineHeight: "1"
   display-lg:
     fontFamily: "Space Grotesk"
-    fontSize: "3.75rem"
-    fontWeight: "500"
-    lineHeight: "1"
-  display-md:
-    fontFamily: "Space Grotesk"
-    fontSize: "2.25rem"
-    fontWeight: "600"
-    lineHeight: "1.111111"
-  display-sm:
-    fontFamily: "Space Grotesk"
     fontSize: "1.875rem"
     fontWeight: "500"
     lineHeight: "1.2"
+  display-md:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.25rem"
+    fontWeight: "600"
+    lineHeight: "1.4"
+  display-sm:
+    fontFamily: "Space Grotesk"
+    fontSize: "1.125rem"
+    fontWeight: "500"
+    lineHeight: "1.555556"
   eyebrow:
     fontFamily: "Geist Mono"
     fontSize: "1.25rem"
-    fontWeight: "700"
+    fontWeight: "400"
     lineHeight: "1.4"
   title:
     fontFamily: Manrope
-    fontSize: "1.125rem"
+    fontSize: "1rem"
     fontWeight: "400"
-    lineHeight: "1.555556"
+    lineHeight: "1.5"
   body:
     fontFamily: Manrope
-    fontSize: "1.125rem"
-    fontWeight: "300"
-    lineHeight: "1.555556"
+    fontSize: "1rem"
+    fontWeight: "400"
+    lineHeight: "1.5"
   caption:
     fontFamily: Manrope
     fontSize: "1rem"
@@ -400,156 +393,149 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 313 color tokens, 10 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 306 color tokens, 10 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
 - **Transparent (#ffffff00):** A transparent color
-- **Black (#0c0c0d):** A near black color
+- **Black (#0c0c0d):** A almost black color
 - **White (#ffffff):** A completely white color
-- **Brand 1 (#b1e4e0):** The Storm Software brand teal color
-- **Brand 2 (#8cd8d1):** The Storm Software brand teal color
-- **Brand 3 (#68cbc3):** The Storm Software brand teal color
-- **Brand 4 (#43bfb4):** The Storm Software brand teal color
-- **Brand 5 (#1fb2a6):** The Storm Software brand teal color
-- **Brand 6 (#179389):** The Storm Software brand teal color
-- **Brand 7 (#10736b):** The Storm Software brand teal color
-- **Brand 8 (#0a514c):** The Storm Software brand teal color
-- **Brand 9 (#052f2c):** The Storm Software brand teal color
-- **Foreground Body (#949494):** The body foreground color for the light theme
-- **Foreground Eyebrow (#525252):** The eyebrow foreground color for the light theme
-- **Foreground Caption (#737373):** The caption foreground color for the light theme
-- **Foreground Link (#468ae2):** The link foreground color for the light theme
+- **Foreground Body (#9f9f9f):** The body foreground color for the light theme
+- **Foreground Eyebrow (#484848):** The eyebrow foreground color for the light theme
+- **Foreground Caption (#616161):** The caption foreground color for the light theme
+- **Foreground Link (#4689ff):** The link foreground color for the light theme
 - **Foreground Required (#dc2626):** A required foreground color for the light theme
-- **Foreground Base (#f5f5f5):** The primary foreground color for the light theme
-- **Foreground Brand (#10736b):** The brand foreground color for the light theme
-- **Foreground Danger (#cf222e):** The danger foreground color for the light theme
-- **Foreground Negative (#d6301b):** The negative foreground color for the light theme
-- **Foreground Warning (#d49400):** The warning foreground color for the light theme
-- **Foreground Success (#00a469):** The success foreground color for the light theme
-- **Foreground Positive (#79b136):** The positive foreground color for the light theme
-- **Foreground Info (#00b8e6):** The info foreground color for the light theme
-- **Foreground Discovery (#7f7ee4):** The discovery foreground color for the light theme
-- **Foreground Base Inverse (#181818):** The primary foreground color for the light theme
-- **Foreground Brand Inverse (#f5f5f5):** The brand foreground color for the light theme
-- **Foreground Danger Inverse (#f5f5f5):** The danger foreground color for the light theme
-- **Foreground Negative Inverse (#f5f5f5):** The negative foreground color for the light theme
-- **Foreground Warning Inverse (#181818):** The warning foreground color for the light theme
-- **Foreground Success Inverse (#f5f5f5):** The success foreground color for the light theme
-- **Foreground Positive Inverse (#f5f5f5):** The positive foreground color for the light theme
-- **Foreground Info Inverse (#f5f5f5):** The info foreground color for the light theme
-- **Foreground Discovery Inverse (#f5f5f5):** The discovery foreground color for the light theme
-- **Foreground Body Hover (#bdbdbd):** The body foreground color for the light theme (hover, 20% brighter)
-- **Foreground Body Active (#7b7b7b):** The body foreground color for the light theme (active, 12% darker)
-- **Foreground Body Inactive (#e9e9e9):** The body foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Body Disabled (#94949499):** The body foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Eyebrow Hover (#6b6b6b):** The eyebrow foreground color for the light theme (hover, 20% brighter)
-- **Foreground Eyebrow Active (#434343):** The eyebrow foreground color for the light theme (active, 12% darker)
-- **Foreground Eyebrow Inactive (#848484):** The eyebrow foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Eyebrow Disabled (#52525299):** The eyebrow foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Caption Hover (#949494):** The caption foreground color for the light theme (hover, 20% brighter)
-- **Foreground Caption Active (#5f5f5f):** The caption foreground color for the light theme (active, 12% darker)
-- **Foreground Caption Inactive (#b6b6b6):** The caption foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Caption Disabled (#73737399):** The caption foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Link Hover (#6db2ff):** The link foreground color for the light theme (hover, 20% brighter)
-- **Foreground Link Active (#2d72c7):** The link foreground color for the light theme (active, 12% darker)
-- **Foreground Link Inactive (#95dcff):** The link foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Link Disabled (#363636):** The link foreground color for the light theme (disabled, 60% saturation)
+- **Foreground Base (#f1f1f1):** The primary foreground color for the light theme
+- **Foreground Brand (#166855):** The brand foreground color for the light theme
+- **Foreground Danger (#cf2d56):** The danger foreground color for the light theme
+- **Foreground Negative (#dc2626):** The negative foreground color for the light theme
+- **Foreground Warning (#d29527):** The warning foreground color for the light theme
+- **Foreground Success (#00af6f):** The success foreground color for the light theme
+- **Foreground Positive (#81b33a):** The positive foreground color for the light theme
+- **Foreground Info (#47c5ea):** The info foreground color for the light theme
+- **Foreground Discovery (#866cd1):** The discovery foreground color for the light theme
+- **Foreground Base Inverse (#1a1c1f):** The primary foreground color for the light theme
+- **Foreground Brand Inverse (#f1f1f1):** The brand foreground color for the light theme
+- **Foreground Danger Inverse (#f1f1f1):** The danger foreground color for the light theme
+- **Foreground Negative Inverse (#f1f1f1):** The negative foreground color for the light theme
+- **Foreground Warning Inverse (#1a1c1f):** The warning foreground color for the light theme
+- **Foreground Success Inverse (#f1f1f1):** The success foreground color for the light theme
+- **Foreground Positive Inverse (#f1f1f1):** The positive foreground color for the light theme
+- **Foreground Info Inverse (#f1f1f1):** The info foreground color for the light theme
+- **Foreground Discovery Inverse (#f1f1f1):** The discovery foreground color for the light theme
+- **Foreground Body Hover (#cbcbcb):** The body foreground color for the light theme (hover, 20% brighter)
+- **Foreground Body Active (#848484):** The body foreground color for the light theme (active, 12% darker)
+- **Foreground Body Inactive (#f9f9f9):** The body foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Body Disabled (#9f9f9f99):** The body foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Eyebrow Hover (#5e5e5e):** The eyebrow foreground color for the light theme (hover, 20% brighter)
+- **Foreground Eyebrow Active (#3b3b3b):** The eyebrow foreground color for the light theme (active, 12% darker)
+- **Foreground Eyebrow Inactive (#757575):** The eyebrow foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Eyebrow Disabled (#48484899):** The eyebrow foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Caption Hover (#7d7d7d):** The caption foreground color for the light theme (hover, 20% brighter)
+- **Foreground Caption Active (#505050):** The caption foreground color for the light theme (active, 12% darker)
+- **Foreground Caption Inactive (#9b9b9b):** The caption foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Caption Disabled (#61616199):** The caption foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Link Hover (#6db3ff):** The link foreground color for the light theme (hover, 20% brighter)
+- **Foreground Link Active (#2d6fe3):** The link foreground color for the light theme (active, 12% darker)
+- **Foreground Link Inactive (#96deff):** The link foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Link Disabled (#3a3a3a):** The link foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Required Hover (#ff554b):** A required foreground color for the light theme (hover, 20% brighter)
 - **Foreground Required Active (#c20006):** A required foreground color for the light theme (active, 12% darker)
 - **Foreground Required Inactive (#ff7d6f):** A required foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Required Disabled (#ba574e):** A required foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Base Hover (#b6b6b6):** The primary foreground color for the light theme (hover, 20% darker)
-- **Foreground Base Active (#202020):** The primary foreground color for the light theme (active, 75% darker)
+- **Foreground Base Hover (#b3b3b3):** The primary foreground color for the light theme (hover, 20% darker)
+- **Foreground Base Active (#1f1f1f):** The primary foreground color for the light theme (active, 75% darker)
 - **Foreground Base Inactive (#ffffff):** The primary foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Base Disabled (#ffffff99):** The primary foreground color for the light theme (disabled, 75% brighter, 60% opacity)
-- **Foreground Brand Hover (#3a9188):** The brand foreground color for the light theme (hover, 20% brighter)
-- **Foreground Brand Active (#006159):** The brand foreground color for the light theme (active, 12% darker)
-- **Foreground Brand Inactive (#5bb0a7):** The brand foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Brand Disabled (#9c9c9c):** The brand foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Danger Hover (#f74f4f):** The danger foreground color for the light theme (hover, 20% brighter)
-- **Foreground Danger Active (#b60018):** The danger foreground color for the light theme (active, 12% darker)
-- **Foreground Danger Inactive (#ff7571):** The danger foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Brand Hover (#38836f):** The brand foreground color for the light theme (hover, 20% brighter)
+- **Foreground Brand Active (#005745):** The brand foreground color for the light theme (active, 12% darker)
+- **Foreground Brand Inactive (#55a08b):** The brand foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Brand Disabled (#999999):** The brand foreground color for the light theme (disabled, 60% saturation)
+- **Foreground Danger Hover (#f85777):** The danger foreground color for the light theme (hover, 20% brighter)
+- **Foreground Danger Active (#b60342):** The danger foreground color for the light theme (active, 12% darker)
+- **Foreground Danger Inactive (#ff7c99):** The danger foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Danger Disabled (#acacac):** The danger foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Negative Hover (#ff5b43):** The negative foreground color for the light theme (hover, 20% brighter)
-- **Foreground Negative Active (#bc0500):** The negative foreground color for the light theme (active, 12% darker)
-- **Foreground Negative Inactive (#ff8167):** The negative foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Negative Disabled (#262626):** The negative foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Warning Hover (#ffc24f):** The warning foreground color for the light theme (hover, 20% brighter)
-- **Foreground Warning Active (#b77800):** The warning foreground color for the light theme (active, 12% darker)
-- **Foreground Warning Inactive (#fff181):** The warning foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Negative Hover (#ff554b):** The negative foreground color for the light theme (hover, 20% brighter)
+- **Foreground Negative Active (#c20006):** The negative foreground color for the light theme (active, 12% darker)
+- **Foreground Negative Inactive (#ff7d6f):** The negative foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Negative Disabled (#252525):** The negative foreground color for the light theme (disabled, 60% saturation)
+- **Foreground Warning Hover (#ffc25d):** The warning foreground color for the light theme (hover, 20% brighter)
+- **Foreground Warning Active (#b57a00):** The warning foreground color for the light theme (active, 12% darker)
+- **Foreground Warning Inactive (#fff28e):** The warning foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Warning Disabled (#1e1e1e):** The warning foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Success Hover (#4bcd8f):** The success foreground color for the light theme (hover, 20% brighter)
-- **Foreground Success Active (#008b52):** The success foreground color for the light theme (active, 12% darker)
-- **Foreground Success Inactive (#79f7b7):** The success foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Success Hover (#50da97):** The success foreground color for the light theme (hover, 20% brighter)
+- **Foreground Success Active (#009557):** The success foreground color for the light theme (active, 12% darker)
+- **Foreground Success Inactive (#81ffc1):** The success foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Success Disabled (#191919):** The success foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Positive Hover (#a4de66):** The positive foreground color for the light theme (hover, 20% brighter)
-- **Foreground Positive Active (#5f950b):** The positive foreground color for the light theme (active, 12% darker)
-- **Foreground Positive Inactive (#d0ff95):** The positive foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Positive Hover (#ade16b):** The positive foreground color for the light theme (hover, 20% brighter)
+- **Foreground Positive Active (#679712):** The positive foreground color for the light theme (active, 12% darker)
+- **Foreground Positive Inactive (#daff99):** The positive foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Positive Disabled (#3e3e3e):** The positive foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Info Hover (#5ae8ff):** The info foreground color for the light theme (hover, 20% brighter)
-- **Foreground Info Active (#009bc8):** The info foreground color for the light theme (active, 12% darker)
-- **Foreground Info Inactive (#8affff):** The info foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Info Hover (#80f8ff):** The info foreground color for the light theme (hover, 20% brighter)
+- **Foreground Info Active (#16a6ca):** The info foreground color for the light theme (active, 12% darker)
+- **Foreground Info Inactive (#9affff):** The info foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Info Disabled (#1b1b1b):** The info foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Discovery Hover (#a5a6ff):** The discovery foreground color for the light theme (hover, 20% brighter)
-- **Foreground Discovery Active (#6865c9):** The discovery foreground color for the light theme (active, 12% darker)
-- **Foreground Discovery Inactive (#cdd0ff):** The discovery foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Discovery Hover (#aa91fa):** The discovery foreground color for the light theme (hover, 20% brighter)
+- **Foreground Discovery Active (#7055b8):** The discovery foreground color for the light theme (active, 12% darker)
+- **Foreground Discovery Inactive (#d0b8ff):** The discovery foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Discovery Disabled (#1d1d1d):** The discovery foreground color for the light theme (disabled, 60% saturation)
-- **Foreground Base Inverse Hover (#0f0f0f):** The primary foreground color for the light theme (hover, 20% darker)
-- **Foreground Base Inverse Active (#000000):** The primary foreground color for the light theme (active, 75% darker)
-- **Foreground Base Inverse Inactive (#2c2c2c):** The primary foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Base Inverse Disabled (#999999):** The primary foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Base Inverse Hover (#101215):** The primary foreground color for the light theme (hover, 20% darker)
+- **Foreground Base Inverse Active (#000101):** The primary foreground color for the light theme (active, 75% darker)
+- **Foreground Base Inverse Inactive (#303235):** The primary foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Base Inverse Disabled (#999999):** The primary foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Brand Inverse Hover (#ffffff):** The brand foreground color for the light theme (hover, 20% brighter)
-- **Foreground Brand Inverse Active (#cdcdcd):** The brand foreground color for the light theme (active, 12% darker)
+- **Foreground Brand Inverse Active (#cacaca):** The brand foreground color for the light theme (active, 12% darker)
 - **Foreground Brand Inverse Inactive (#ffffff):** The brand foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Brand Inverse Disabled (#9c9c9c):** The brand foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Brand Inverse Disabled (#f1f1f199):** The brand foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Danger Inverse Hover (#ffffff):** The danger foreground color for the light theme (hover, 20% brighter)
-- **Foreground Danger Inverse Active (#cdcdcd):** The danger foreground color for the light theme (active, 12% darker)
+- **Foreground Danger Inverse Active (#cacaca):** The danger foreground color for the light theme (active, 12% darker)
 - **Foreground Danger Inverse Inactive (#ffffff):** The danger foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Danger Inverse Disabled (#acacac):** The danger foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Negative Inverse Hover (#ffffff):** The negative foreground color for the light theme (hover, 20% brighter)
-- **Foreground Negative Inverse Active (#cdcdcd):** The negative foreground color for the light theme (active, 12% darker)
+- **Foreground Negative Inverse Active (#cacaca):** The negative foreground color for the light theme (active, 12% darker)
 - **Foreground Negative Inverse Inactive (#ffffff):** The negative foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Negative Inverse Disabled (#262626):** The negative foreground color for the light theme (disabled, 60% opacity)
-- **Foreground Warning Inverse Hover (#222222):** The warning foreground color for the light theme (hover, 20% brighter)
-- **Foreground Warning Inverse Active (#121212):** The warning foreground color for the light theme (active, 12% darker)
-- **Foreground Warning Inverse Inactive (#2c2c2c):** The warning foreground color for the light theme (inactive, 40% brighter)
-- **Foreground Warning Inverse Disabled (#1e1e1e):** The warning foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Negative Inverse Disabled (#252525):** The negative foreground color for the light theme (disabled, 60% opacity)
+- **Foreground Warning Inverse Hover (#25272a):** The warning foreground color for the light theme (hover, 20% brighter)
+- **Foreground Warning Inverse Active (#141618):** The warning foreground color for the light theme (active, 12% darker)
+- **Foreground Warning Inverse Inactive (#303235):** The warning foreground color for the light theme (inactive, 40% brighter)
+- **Foreground Warning Inverse Disabled (#1e1e1e):** The warning foreground color for the light theme (disabled, 60% saturation)
 - **Foreground Success Inverse Hover (#ffffff):** The success foreground color for the light theme (hover, 20% brighter)
-- **Foreground Success Inverse Active (#cdcdcd):** The success foreground color for the light theme (active, 12% darker)
+- **Foreground Success Inverse Active (#cacaca):** The success foreground color for the light theme (active, 12% darker)
 - **Foreground Success Inverse Inactive (#ffffff):** The success foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Success Inverse Disabled (#191919):** The success foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Positive Inverse Hover (#ffffff):** The positive foreground color for the light theme (hover, 20% brighter)
-- **Foreground Positive Inverse Active (#cdcdcd):** The positive foreground color for the light theme (active, 12% darker)
+- **Foreground Positive Inverse Active (#cacaca):** The positive foreground color for the light theme (active, 12% darker)
 - **Foreground Positive Inverse Inactive (#ffffff):** The positive foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Positive Inverse Disabled (#3e3e3e):** The positive foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Info Inverse Hover (#ffffff):** The info foreground color for the light theme (hover, 20% brighter)
-- **Foreground Info Inverse Active (#cdcdcd):** The info foreground color for the light theme (active, 12% darker)
+- **Foreground Info Inverse Active (#cacaca):** The info foreground color for the light theme (active, 12% darker)
 - **Foreground Info Inverse Inactive (#ffffff):** The info foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Info Inverse Disabled (#1b1b1b):** The info foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Discovery Inverse Hover (#ffffff):** The discovery foreground color for the light theme (hover, 20% brighter)
-- **Foreground Discovery Inverse Active (#cdcdcd):** The discovery foreground color for the light theme (active, 12% darker)
+- **Foreground Discovery Inverse Active (#cacaca):** The discovery foreground color for the light theme (active, 12% darker)
 - **Foreground Discovery Inverse Inactive (#ffffff):** The discovery foreground color for the light theme (inactive, 40% brighter)
 - **Foreground Discovery Inverse Disabled (#1d1d1d):** The discovery foreground color for the light theme (disabled, 60% opacity)
 - **Foreground Base Ghost Hover (#ffffff):** The primary foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Brand Ghost Hover (#b0fffb):** The brand foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Danger Ghost Hover (#ffc2b8):** The danger foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Negative Ghost Hover (#ffc5a7):** The negative foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Warning Ghost Hover (#fff484):** The warning foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Success Ghost Hover (#a0ffdb):** The success foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Positive Ghost Hover (#d9ff9c):** The positive foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Info Ghost Hover (#8dffff):** The info foreground color for the light theme (ghost hover, 60% brighter than hover)
-- **Foreground Discovery Ghost Hover (#f2f5ff):** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Brand Ghost Hover (#a2edd6):** The brand foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Danger Ghost Hover (#ffc2db):** The danger foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Negative Ghost Hover (#ffc2af):** The negative foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Warning Ghost Hover (#fff38f):** The warning foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Success Ghost Hover (#9affd8):** The success foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Positive Ghost Hover (#deff9d):** The positive foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Info Ghost Hover (#9fffff):** The info foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Discovery Ghost Hover (#ffebff):** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Base Inverse Ghost Hover (#292b2f):** The primary foreground color for the light theme (ghost hover, 60% brighter than hover)
+- **Foreground Warning Inverse Ghost Hover (#4f5155):** The warning foreground color for the light theme (ghost hover, 60% brighter than hover)
 - **Background Lowest (#e1e1e1):** The lowest background color for the light theme
 - **Background Page (#eaeaea):** The page background color for the light theme
 - **Background Elevated (#f1f1f1):** The elevated background color for the light theme
 - **Background Floating (#fafafa):** The floating background color for the light theme
 - **Background Highest (#ffffff):** The highest level of elevation background color for the light theme
-- **Background Base (#262626):** The primary background color for the light theme
-- **Background Link (#468ae2):** The link foreground color for the light theme
-- **Background Brand (#0a514c):** The brand background color for the light theme
+- **Background Base (#242528):** The primary background color for the light theme
+- **Background Link (#4689ff):** The link foreground color for the light theme
+- **Background Brand (#0c3c31):** The brand background color for the light theme
 - **Background Danger (#9a1c0f):** The danger background color for the light theme
-- **Background Negative (#d23516):** The negative background color for the light theme
+- **Background Negative (#cd3a13):** The negative background color for the light theme
 - **Background Warning (#8f6300):** The warning background color for the light theme
 - **Background Success (#007a4d):** The success background color for the light theme
 - **Background Positive (#61a92c):** The positive background color for the light theme
@@ -575,26 +561,26 @@ Cyclone UI design tokens — 313 color tokens, 10 typography tokens, 28 spacing 
 - **Background Highest Active (#e4e4e4):** The highest level of elevation background color for the light theme (active, 8% darker)
 - **Background Highest Inactive (#ffffff):** The highest level of elevation background color for the light theme (inactive, 20% brighter)
 - **Background Highest Disabled (#ffffff99):** The highest level of elevation background color for the light theme (disabled, 60% opacity)
-- **Background Base Hover (#292929):** The primary background color for the light theme (hover, 5% brighter)
-- **Background Base Active (#2b2b2b):** The primary background color for the light theme (active, 8% brighter)
-- **Background Base Inactive (#333333):** The primary background color for the light theme (inactive, 20% brighter)
-- **Background Base Disabled (#26262699):** The primary background color for the light theme (disabled, 60% opacity)
-- **Background Link Hover (#599ef8):** The link foreground color for the light theme (hover, 10% brighter)
-- **Background Link Active (#367ad1):** The link foreground color for the light theme (active, 8% darker)
-- **Background Link Inactive (#6db2ff):** The link foreground color for the light theme (inactive, 20% brighter)
-- **Background Link Disabled (#658cc0):** The link foreground color for the light theme (disabled, 60% saturation)
-- **Background Brand Hover (#1b5c57):** The brand background color for the light theme (hover, 10% brighter)
-- **Background Brand Active (#004844):** The brand background color for the light theme (active, 8% darker)
-- **Background Brand Inactive (#286762):** The brand background color for the light theme (inactive, 20% brighter)
-- **Background Brand Disabled (#2c4d4a):** The brand background color for the light theme (disabled, 60% saturation)
+- **Background Base Hover (#27282b):** The primary background color for the light theme (hover, 5% brighter)
+- **Background Base Active (#292a2d):** The primary background color for the light theme (active, 8% brighter)
+- **Background Base Inactive (#313235):** The primary background color for the light theme (inactive, 20% brighter)
+- **Background Base Disabled (#242527):** The primary background color for the light theme (disabled, 60% saturation)
+- **Background Link Hover (#5a9eff):** The link foreground color for the light theme (hover, 10% brighter)
+- **Background Link Active (#3678ed):** The link foreground color for the light theme (active, 8% darker)
+- **Background Link Inactive (#6db3ff):** The link foreground color for the light theme (inactive, 20% brighter)
+- **Background Link Disabled (#668ed3):** The link foreground color for the light theme (disabled, 60% saturation)
+- **Background Brand Hover (#174539):** The brand background color for the light theme (hover, 10% brighter)
+- **Background Brand Active (#03352b):** The brand background color for the light theme (active, 8% darker)
+- **Background Brand Inactive (#204d42):** The brand background color for the light theme (inactive, 20% brighter)
+- **Background Brand Disabled (#213932):** The brand background color for the light theme (disabled, 60% saturation)
 - **Background Danger Hover (#a92d1f):** The danger background color for the light theme (hover, 10% brighter)
 - **Background Danger Active (#8e0900):** The danger background color for the light theme (active, 8% darker)
 - **Background Danger Inactive (#b93c2d):** The danger background color for the light theme (inactive, 20% brighter)
 - **Background Danger Disabled (#813c32):** The danger background color for the light theme (disabled, 60% saturation)
-- **Background Negative Hover (#e64a2d):** The negative background color for the light theme (hover, 10% brighter)
-- **Background Negative Active (#c22200):** The negative background color for the light theme (active, 8% darker)
-- **Background Negative Inactive (#fb5e40):** The negative background color for the light theme (inactive, 20% brighter)
-- **Background Negative Disabled (#b25a48):** The negative background color for the light theme (disabled, 60% saturation)
+- **Background Negative Hover (#e14e2a):** The negative background color for the light theme (hover, 10% brighter)
+- **Background Negative Active (#bd2900):** The negative background color for the light theme (active, 8% darker)
+- **Background Negative Inactive (#f5613e):** The negative background color for the light theme (inactive, 20% brighter)
+- **Background Negative Disabled (#ae5b47):** The negative background color for the light theme (disabled, 60% saturation)
 - **Background Warning Hover (#a0731e):** The warning background color for the light theme (hover, 10% brighter)
 - **Background Warning Active (#825700):** The warning background color for the light theme (active, 8% darker)
 - **Background Warning Inactive (#b08332):** The warning background color for the light theme (inactive, 20% brighter)
@@ -615,63 +601,63 @@ Cyclone UI design tokens — 313 color tokens, 10 typography tokens, 28 spacing 
 - **Background Discovery Active (#5655a1):** The discovery background color for the light theme (active, 8% darker)
 - **Background Discovery Inactive (#8081d2):** The discovery background color for the light theme (inactive, 20% brighter)
 - **Background Discovery Disabled (#656795):** The discovery background color for the light theme (disabled, 60% saturation)
-- **Border Base (#333333):** The primary border color for the light theme
-- **Border Brand (#10736b):** The brand border color for the light theme
-- **Border Danger (#cf222e):** The danger border color for the light theme
-- **Border Negative (#d6301b):** The negative border color for the light theme
-- **Border Warning (#d49400):** The warning border color for the light theme
-- **Border Success (#00a469):** The success border color for the light theme
-- **Border Positive (#79b136):** The positive border color for the light theme
-- **Border Info (#00b8e6):** The info border color for the light theme
-- **Border Discovery (#7f7ee4):** The discovery border color for the light theme
-- **Border Base Subtle (#262626):** The primary subtle border color for the light theme
-- **Border Brand Subtle (#0a514c):** The brand border color for the light theme
+- **Border Base (#3a3a3a):** The primary border color for the light theme
+- **Border Brand (#166855):** The brand border color for the light theme
+- **Border Danger (#cf2d56):** The danger border color for the light theme
+- **Border Negative (#dc2626):** The negative border color for the light theme
+- **Border Warning (#d29527):** The warning border color for the light theme
+- **Border Success (#00af6f):** The success border color for the light theme
+- **Border Positive (#81b33a):** The positive border color for the light theme
+- **Border Info (#47c5ea):** The info border color for the light theme
+- **Border Discovery (#866cd1):** The discovery border color for the light theme
+- **Border Base Subtle (#242528):** The primary subtle border color for the light theme
+- **Border Brand Subtle (#0c3c31):** The brand border color for the light theme
 - **Border Danger Subtle (#9a1c0f):** The danger border color for the light theme
-- **Border Negative Subtle (#d23516):** The negative border color for the light theme
+- **Border Negative Subtle (#cd3a13):** The negative border color for the light theme
 - **Border Warning Subtle (#8f6300):** The warning border color for the light theme
 - **Border Success Subtle (#007a4d):** The success border color for the light theme
 - **Border Positive Subtle (#61a92c):** The positive border color for the light theme
 - **Border Info Subtle (#007496):** The info border color for the light theme
 - **Border Discovery Subtle (#6261af):** The discovery border color for the light theme
-- **Border Base Hover (#232323):** The primary border color for the light theme (hover, 20% darker)
+- **Border Base Hover (#282828):** The primary border color for the light theme (hover, 20% darker)
 - **Border Base Active (#020202):** The primary border color for the light theme (active, 75% darker)
-- **Border Base Disabled (#33333399):** The primary border color for the light theme (disabled, 60% opacity)
-- **Border Brand Hover (#3a9188):** The brand border color for the light theme (hover, 20% brighter)
-- **Border Brand Active (#006159):** The brand border color for the light theme (active, 12% darker)
-- **Border Brand Disabled (#406d68):** The brand border color for the light theme (disabled, 60% saturation)
-- **Border Danger Hover (#f74f4f):** The danger border color for the light theme (hover, 20% brighter)
-- **Border Danger Active (#b60018):** The danger border color for the light theme (active, 12% darker)
-- **Border Danger Disabled (#af514d):** The danger border color for the light theme (disabled, 60% saturation)
-- **Border Negative Hover (#ff5b43):** The negative border color for the light theme (hover, 20% brighter)
-- **Border Negative Active (#bc0500):** The negative border color for the light theme (active, 12% darker)
-- **Border Negative Disabled (#b5594a):** The negative border color for the light theme (disabled, 60% saturation)
-- **Border Warning Hover (#ffc24f):** The warning border color for the light theme (hover, 20% brighter)
-- **Border Warning Active (#b77800):** The warning border color for the light theme (active, 12% darker)
-- **Border Warning Disabled (#c19b60):** The warning border color for the light theme (disabled, 60% saturation)
-- **Border Success Hover (#4bcd8f):** The success border color for the light theme (hover, 20% brighter)
-- **Border Success Active (#008b52):** The success border color for the light theme (active, 12% darker)
-- **Border Success Disabled (#589b77):** The success border color for the light theme (disabled, 60% saturation)
-- **Border Positive Hover (#a4de66):** The positive border color for the light theme (hover, 20% brighter)
-- **Border Positive Active (#5f950b):** The positive border color for the light theme (active, 12% darker)
-- **Border Positive Disabled (#88aa69):** The positive border color for the light theme (disabled, 60% saturation)
-- **Border Info Hover (#5ae8ff):** The info border color for the light theme (hover, 20% brighter)
-- **Border Info Active (#009bc8):** The info border color for the light theme (active, 12% darker)
-- **Border Info Disabled (#6ab2cd):** The info border color for the light theme (disabled, 60% saturation)
-- **Border Discovery Hover (#a5a6ff):** The discovery border color for the light theme (hover, 20% brighter)
-- **Border Discovery Active (#6865c9):** The discovery border color for the light theme (active, 12% darker)
-- **Border Discovery Disabled (#8386c2):** The discovery border color for the light theme (disabled, 60% saturation)
-- **Border Base Subtle Hover (#191919):** The primary subtle border color for the light theme (hover, 20% darker)
-- **Border Base Subtle Active (#010101):** The primary subtle border color for the light theme (active, 75% darker)
-- **Border Base Subtle Disabled (#26262699):** The primary subtle border color for the light theme (disabled, 60% opacity)
-- **Border Brand Subtle Hover (#286762):** The brand border color for the light theme (hover, 20% brighter)
-- **Border Brand Subtle Active (#00443f):** The brand border color for the light theme (active, 12% darker)
-- **Border Brand Subtle Disabled (#2c4d4a):** The brand border color for the light theme (disabled, 60% saturation)
+- **Border Base Disabled (#3a3a3a99):** The primary border color for the light theme (disabled, 60% opacity)
+- **Border Brand Hover (#38836f):** The brand border color for the light theme (hover, 20% brighter)
+- **Border Brand Active (#005745):** The brand border color for the light theme (active, 12% darker)
+- **Border Brand Disabled (#3b6357):** The brand border color for the light theme (disabled, 60% saturation)
+- **Border Danger Hover (#f85777):** The danger border color for the light theme (hover, 20% brighter)
+- **Border Danger Active (#b60342):** The danger border color for the light theme (active, 12% darker)
+- **Border Danger Disabled (#b05663):** The danger border color for the light theme (disabled, 60% saturation)
+- **Border Negative Hover (#ff554b):** The negative border color for the light theme (hover, 20% brighter)
+- **Border Negative Active (#c20006):** The negative border color for the light theme (active, 12% darker)
+- **Border Negative Disabled (#ba574e):** The negative border color for the light theme (disabled, 60% saturation)
+- **Border Warning Hover (#ffc25d):** The warning border color for the light theme (hover, 20% brighter)
+- **Border Warning Active (#b57a00):** The warning border color for the light theme (active, 12% darker)
+- **Border Warning Disabled (#c09c66):** The warning border color for the light theme (disabled, 60% saturation)
+- **Border Success Hover (#50da97):** The success border color for the light theme (hover, 20% brighter)
+- **Border Success Active (#009557):** The success border color for the light theme (active, 12% darker)
+- **Border Success Disabled (#5fa57e):** The success border color for the light theme (disabled, 60% saturation)
+- **Border Positive Hover (#ade16b):** The positive border color for the light theme (hover, 20% brighter)
+- **Border Positive Active (#679712):** The positive border color for the light theme (active, 12% darker)
+- **Border Positive Disabled (#8ead6c):** The positive border color for the light theme (disabled, 60% saturation)
+- **Border Info Hover (#80f8ff):** The info border color for the light theme (hover, 20% brighter)
+- **Border Info Active (#16a6ca):** The info border color for the light theme (active, 12% darker)
+- **Border Info Disabled (#7fbfd5):** The info border color for the light theme (disabled, 60% saturation)
+- **Border Discovery Hover (#aa91fa):** The discovery border color for the light theme (hover, 20% brighter)
+- **Border Discovery Active (#7055b8):** The discovery border color for the light theme (active, 12% darker)
+- **Border Discovery Disabled (#8376b2):** The discovery border color for the light theme (disabled, 60% saturation)
+- **Border Base Subtle Hover (#18191b):** The primary subtle border color for the light theme (hover, 20% darker)
+- **Border Base Subtle Active (#010102):** The primary subtle border color for the light theme (active, 75% darker)
+- **Border Base Subtle Disabled (#242527):** The primary subtle border color for the light theme (disabled, 60% saturation)
+- **Border Brand Subtle Hover (#204d42):** The brand border color for the light theme (hover, 20% brighter)
+- **Border Brand Subtle Active (#003227):** The brand border color for the light theme (active, 12% darker)
+- **Border Brand Subtle Disabled (#213932):** The brand border color for the light theme (disabled, 60% saturation)
 - **Border Danger Subtle Hover (#b93c2d):** The danger border color for the light theme (hover, 20% brighter)
 - **Border Danger Subtle Active (#870000):** The danger border color for the light theme (active, 12% darker)
 - **Border Danger Subtle Disabled (#813c32):** The danger border color for the light theme (disabled, 60% saturation)
-- **Border Negative Subtle Hover (#fb5e40):** The negative border color for the light theme (hover, 20% brighter)
-- **Border Negative Subtle Active (#b91300):** The negative border color for the light theme (active, 12% darker)
-- **Border Negative Subtle Disabled (#b25a48):** The negative border color for the light theme (disabled, 60% saturation)
+- **Border Negative Subtle Hover (#f5613e):** The negative border color for the light theme (hover, 20% brighter)
+- **Border Negative Subtle Active (#b41d00):** The negative border color for the light theme (active, 12% darker)
+- **Border Negative Subtle Disabled (#ae5b47):** The negative border color for the light theme (disabled, 60% saturation)
 - **Border Warning Subtle Hover (#b08332):** The warning border color for the light theme (hover, 20% brighter)
 - **Border Warning Subtle Active (#7b5000):** The warning border color for the light theme (active, 12% darker)
 - **Border Warning Subtle Disabled (#82683f):** The warning border color for the light theme (disabled, 60% saturation)
@@ -688,46 +674,46 @@ Cyclone UI design tokens — 313 color tokens, 10 typography tokens, 28 spacing 
 - **Border Discovery Subtle Active (#504e9a):** The discovery border color for the light theme (active, 12% darker)
 - **Border Discovery Subtle Disabled (#656795):** The discovery border color for the light theme (disabled, 60% saturation)
 - **Overlay Background (#fafafa):** The overlay background color for the light theme
-- **Overlay Border (#333333):** The overlay border color for the light theme
+- **Overlay Border (#3a3a3a):** The overlay border color for the light theme
 - **Overlay Backdrop (#1a1c1f66):** The overlay backdrop background color for the light theme
 - **Overlay Background Hover (#ffffff):** The overlay background color for the light theme (hover, 10% brighter)
 - **Overlay Background Active (#e0e0e0):** The overlay background color for the light theme (active, 8% darker)
 - **Overlay Background Inactive (#ffffff):** The overlay background color for the light theme (inactive, 20% brighter)
 - **Overlay Background Disabled (#fafafa99):** The overlay background color for the light theme (disabled, 60% opacity)
-- **Overlay Border Hover (#444444):** The overlay border color for the light theme (hover, 20% brighter)
-- **Overlay Border Active (#292929):** The overlay border color for the light theme (active, 12% darker)
-- **Overlay Border Disabled (#33333399):** The overlay border color for the light theme (disabled, 60% opacity)
-- **Data Grey Emphasis (#525252):** The grey data visualization emphasis color for the light theme
-- **Data Grey Subtle (#f5f5f5):** The grey data visualization subtle color for the light theme
+- **Overlay Border Hover (#4c4c4c):** The overlay border color for the light theme (hover, 20% brighter)
+- **Overlay Border Active (#2f2f2f):** The overlay border color for the light theme (active, 12% darker)
+- **Overlay Border Disabled (#3a3a3a99):** The overlay border color for the light theme (disabled, 60% opacity)
+- **Data Neutral Emphasis (#484848):** The neutral data visualization emphasis color for the light theme
+- **Data Neutral Subtle (#f1f1f1):** The neutral data visualization subtle color for the light theme
 - **Data Brand Emphasis (#b1e4e0):** The brand data visualization emphasis color for the light theme
-- **Data Brand Subtle (#8cd8d1):** The brand data visualization subtle color for the light theme
-- **Data Red Emphasis (#d3344a):** The red data visualization emphasis color for the light theme
+- **Data Brand Subtle (#b1e4e0):** The brand data visualization subtle color for the light theme
+- **Data Red Emphasis (#cf2d56):** The red data visualization emphasis color for the light theme
 - **Data Red Subtle (#e791bb):** The red data visualization subtle color for the light theme
 - **Data Orange Emphasis (#de743a):** The orange data visualization emphasis color for the light theme
 - **Data Orange Subtle (#faa276):** The orange data visualization subtle color for the light theme
-- **Data Yellow Emphasis (#c08600):** The yellow data visualization emphasis color for the light theme
+- **Data Yellow Emphasis (#ca8b00):** The yellow data visualization emphasis color for the light theme
 - **Data Yellow Subtle (#e2b259):** The yellow data visualization subtle color for the light theme
-- **Data Green Emphasis (#00a469):** The green data visualization emphasis color for the light theme
+- **Data Green Emphasis (#00af6f):** The green data visualization emphasis color for the light theme
 - **Data Green Subtle (#67cc9a):** The green data visualization subtle color for the light theme
-- **Data Sky Emphasis (#009ecb):** The sky blue data visualization emphasis color for the light theme
+- **Data Sky Emphasis (#00a6d6):** The sky blue data visualization emphasis color for the light theme
 - **Data Sky Subtle (#47c5ea):** The sky blue data visualization subtle color for the light theme
-- **Data Blue Emphasis (#4c90e8):** The blue data visualization emphasis color for the light theme
+- **Data Blue Emphasis (#4f99f9):** The blue data visualization emphasis color for the light theme
 - **Data Blue Subtle (#83baff):** The blue data visualization subtle color for the light theme
-- **Data Purple Emphasis (#8584eb):** The purple data visualization emphasis color for the light theme
+- **Data Purple Emphasis (#8d8cfb):** The purple data visualization emphasis color for the light theme
 - **Data Purple Subtle (#aeb1ff):** The purple data visualization subtle color for the light theme
-- **Data Pink Emphasis (#db6a98):** The pink data visualization emphasis color for the light theme
+- **Data Pink Emphasis (#e96fa2):** The pink data visualization emphasis color for the light theme
 - **Data Pink Subtle (#fb9cc0):** The pink data visualization subtle color for the light theme
 
 ## Typography
 
 - **display-hero:** fontFamily: Space Grotesk, fontSize: 10rem, fontWeight: 500, lineHeight: 1
-- **display-xl:** fontFamily: Space Grotesk, fontSize: 6rem, fontWeight: 400, lineHeight: 1
-- **display-lg:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 500, lineHeight: 1
-- **display-md:** fontFamily: Space Grotesk, fontSize: 2.25rem, fontWeight: 600, lineHeight: 1.111111
-- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 500, lineHeight: 1.2
-- **eyebrow:** fontFamily: Geist Mono, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.4
-- **title:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
-- **body:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 300, lineHeight: 1.555556
+- **display-xl:** fontFamily: Space Grotesk, fontSize: 3.75rem, fontWeight: 400, lineHeight: 1
+- **display-lg:** fontFamily: Space Grotesk, fontSize: 1.875rem, fontWeight: 500, lineHeight: 1.2
+- **display-md:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 600, lineHeight: 1.4
+- **display-sm:** fontFamily: Space Grotesk, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.555556
+- **eyebrow:** fontFamily: Geist Mono, fontSize: 1.25rem, fontWeight: 400, lineHeight: 1.4
+- **title:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
+- **body:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.5
 - **caption:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 500, lineHeight: 1.5
 - **code:** fontFamily: Geist Mono, fontSize: 1.125rem, fontWeight: 400, lineHeight: 1.555556
 

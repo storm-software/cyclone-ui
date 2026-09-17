@@ -20,12 +20,15 @@ const COLOR_VARIANTS = {
             "1": "#ff9b9b",
             "2": "#ff7575",
             "3": "#ff4f4f",
-            "4": "#ff2a2a",
-            "5": "#ff0404",
-            "6": "#d20000",
-            "7": "#a60000",
-            "8": "#790000",
-            "9": "#4d0000"
+            "4": "#e3518e",
+            "5": "#ff2a2a",
+            "6": "#ff0404",
+            "7": "#dc2626",
+            "8": "#cd3a13",
+            "9": "#d20000",
+            "10": "#a60000",
+            "11": "#790000",
+            "12": "#4d0000"
       }}
     />
           <ColorItem
@@ -35,27 +38,51 @@ const COLOR_VARIANTS = {
             "1": "#c8e7a3",
             "2": "#b4de81",
             "3": "#9fd55e",
-            "4": "#8bcc3c",
-            "5": "#76c319",
-            "6": "#62a412",
-            "7": "#4d830c",
-            "8": "#386107",
-            "9": "#243e04"
+            "4": "#c2c261",
+            "5": "#8bcc3c",
+            "6": "#76c319",
+            "7": "#81b33a",
+            "8": "#61a92c",
+            "9": "#62a412",
+            "10": "#4d830c",
+            "11": "#386107",
+            "12": "#243e04"
       }}
     />
           <ColorItem
       title={"color.blue"}
       subtitle={"A pale periwinkle blue color"}
       colors={{
-            "1": "#82afff",
-            "2": "#76a8ff",
-            "3": "#6aa0ff",
-            "4": "#5e98ff",
-            "5": "#5291ff",
-            "6": "#4689ff",
-            "7": "#3a82ff",
-            "8": "#2e7aff",
-            "9": "#1d70f2"
+            "1": "#83baff",
+            "2": "#82afff",
+            "3": "#76a8ff",
+            "4": "#6aa0ff",
+            "5": "#5e98ff",
+            "6": "#4f99f9",
+            "7": "#5291ff",
+            "8": "#4689ff",
+            "9": "#3a82ff",
+            "10": "#2e7aff",
+            "11": "#1d70f2",
+            "12": "#3669ac"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#baf6e8",
+            "2": "#9bf1de",
+            "3": "#b1e4e0",
+            "4": "#7bedd3",
+            "5": "#5be8c9",
+            "6": "#3be4be",
+            "7": "#2dbc9c",
+            "8": "#1fb2a6",
+            "9": "#219279",
+            "10": "#166855",
+            "11": "#0c3c31",
+            "12": "#052f2c"
       }}
     />
           <ColorItem
@@ -66,26 +93,34 @@ const COLOR_VARIANTS = {
             "2": "#9ce4c6",
             "3": "#81ddb6",
             "4": "#66d5a7",
-            "5": "#4bce97",
-            "6": "#45c791",
-            "7": "#3aae7d",
-            "8": "#29815c",
-            "9": "#14412e"
+            "5": "#67cc9a",
+            "6": "#4bce97",
+            "7": "#45c791",
+            "8": "#3aae7d",
+            "9": "#00af6f",
+            "10": "#29815c",
+            "11": "#007a4d",
+            "12": "#14412e"
       }}
     />
           <ColorItem
-      title={"color.grey"}
+      title={"color.neutral"}
       subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
             "1": "#fafafa",
-            "2": "#dcdcdc",
-            "3": "#bebebe",
-            "4": "#9f9f9f",
-            "5": "#616161",
-            "6": "#484848",
-            "7": "#3a3a3a",
-            "8": "#2e2e2e",
-            "9": "#1a1c1f"
+            "2": "#f1f1f1",
+            "3": "#eaeaea",
+            "4": "#e1e1e1",
+            "5": "#dcdcdc",
+            "6": "#bebebe",
+            "7": "#9f9f9f",
+            "8": "#616161",
+            "9": "#484848",
+            "10": "#3a3a3a",
+            "11": "#2b2c30",
+            "12": "#242528",
+            "13": "#1f1f21",
+            "14": "#1a1c1f"
       }}
     />
           <ColorItem
@@ -95,12 +130,15 @@ const COLOR_VARIANTS = {
             "1": "#ffc5a8",
             "2": "#fcb998",
             "3": "#fcab83",
-            "4": "#f69f73",
-            "5": "#f9935f",
-            "6": "#f3874e",
-            "7": "#ec7a3b",
-            "8": "#de743a",
-            "9": "#b45b2b"
+            "4": "#faa276",
+            "5": "#f69f73",
+            "6": "#f9935f",
+            "7": "#f3874e",
+            "8": "#ec7a3b",
+            "9": "#e97737",
+            "10": "#de743a",
+            "11": "#b45b2b",
+            "12": "#a25226"
       }}
     />
           <ColorItem
@@ -109,13 +147,16 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#f5c7e4",
             "2": "#f2b3da",
-            "3": "#ee9ecf",
-            "4": "#eb89c5",
-            "5": "#e774bb",
-            "6": "#df6db3",
-            "7": "#c25c9b",
-            "8": "#904272",
-            "9": "#482039"
+            "3": "#fb9cc0",
+            "4": "#ee9ecf",
+            "5": "#eb89c5",
+            "6": "#e774bb",
+            "7": "#e96fa2",
+            "8": "#df6db3",
+            "9": "#c25c9b",
+            "10": "#a34e71",
+            "11": "#904272",
+            "12": "#482039"
       }}
     />
           <ColorItem
@@ -124,28 +165,34 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#dbcffd",
             "2": "#cdbdfc",
-            "3": "#c0abfb",
-            "4": "#b299fa",
-            "5": "#a587f9",
-            "6": "#9d7ff0",
-            "7": "#866cd1",
-            "8": "#624e9b",
-            "9": "#30264d"
+            "3": "#aeb1ff",
+            "4": "#c0abfb",
+            "5": "#b299fa",
+            "6": "#a587f9",
+            "7": "#8d8cfb",
+            "8": "#9d7ff0",
+            "9": "#866cd1",
+            "10": "#6261af",
+            "11": "#624e9b",
+            "12": "#30264d"
       }}
     />
           <ColorItem
       title={"color.red"}
-      subtitle={"A pale raspberry error color"}
+      subtitle={"A pale warm coral red color"}
       colors={{
-            "1": "#fb5879",
-            "2": "#f75576",
-            "3": "#cf2d56",
-            "4": "#b92647",
-            "5": "#a21f39",
-            "6": "#8a192d",
-            "7": "#731421",
-            "8": "#5a0f17",
-            "9": "#3c050a"
+            "1": "#e791bb",
+            "2": "#fb5879",
+            "3": "#f75576",
+            "4": "#d74765",
+            "5": "#cf2d56",
+            "6": "#b92647",
+            "7": "#a21f39",
+            "8": "#9a1c0f",
+            "9": "#8a192d",
+            "10": "#731421",
+            "11": "#5a0f17",
+            "12": "#3c050a"
       }}
     />
           <ColorItem
@@ -157,20 +204,13 @@ const COLOR_VARIANTS = {
             "3": "#97d4e9",
             "4": "#81cbe5",
             "5": "#6bc2e0",
-            "6": "#64bbd8",
-            "7": "#55a2bc",
-            "8": "#3d788c",
-            "9": "#1d3b46"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - neutral near-black page canvas"}
-      colors={{
-            "1": "#1f1f21",
-            "2": "#242528",
-            "3": "#2b2c30",
-            "4": "#484848"
+            "6": "#47c5ea",
+            "7": "#64bbd8",
+            "8": "#55a2bc",
+            "9": "#00a6d6",
+            "10": "#3d788c",
+            "11": "#007496",
+            "12": "#1d3b46"
       }}
     />
           <ColorItem
@@ -182,10 +222,13 @@ const COLOR_VARIANTS = {
             "3": "#ffc35c",
             "4": "#ffbb47",
             "5": "#ffb433",
-            "6": "#d29527",
-            "7": "#a6761c",
-            "8": "#795713",
-            "9": "#4d370b"
+            "6": "#e2b259",
+            "7": "#d29527",
+            "8": "#ca8b00",
+            "9": "#a6761c",
+            "10": "#8f6300",
+            "11": "#795713",
+            "12": "#4d370b"
       }}
     />
         </ColorPalette>
@@ -472,26 +515,11 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#baf6e8",
-            "2": "#9bf1de",
-            "3": "#7bedd3",
-            "4": "#5be8c9",
-            "5": "#3be4be",
-            "6": "#2dbc9c",
-            "7": "#219279",
-            "8": "#166855",
-            "9": "#0c3c31"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the dark theme"}
+      subtitle={"The neutral data visualization emphasis color for the dark theme"}
       colors={{
-            "grey.emphasis": "#fafafa",
-            "grey.subtle": "#1a1c1f",
+            "neutral.emphasis": "#fafafa",
+            "neutral.subtle": "#1a1c1f",
             "brand.emphasis": "#baf6e8",
             "brand.subtle": "#9bf1de",
             "red.emphasis": "#a21f39",
@@ -589,12 +617,15 @@ const COLOR_VARIANTS = {
             "1": "#de8d8d",
             "2": "#d87979",
             "3": "#d26464",
-            "4": "#cc5050",
-            "5": "#c63c3c",
-            "6": "#ad3232",
-            "7": "#952b2b",
-            "8": "#7d2424",
-            "9": "#651d1d"
+            "4": "#bd678b",
+            "5": "#cc5050",
+            "6": "#c63c3c",
+            "7": "#b34e4e",
+            "8": "#aa563f",
+            "9": "#ad3232",
+            "10": "#952b2b",
+            "11": "#7d2424",
+            "12": "#651d1d"
       }}
     />
           <ColorItem
@@ -604,27 +635,51 @@ const COLOR_VARIANTS = {
             "1": "#b2ca97",
             "2": "#a4bf83",
             "3": "#95b56e",
-            "4": "#87ab5b",
-            "5": "#78a442",
-            "6": "#6a9339",
-            "7": "#5c8130",
-            "8": "#4e6e27",
-            "9": "#405b20"
+            "4": "#a8a870",
+            "5": "#87ab5b",
+            "6": "#78a442",
+            "7": "#7f9b57",
+            "8": "#6b954c",
+            "9": "#6a9339",
+            "10": "#5c8130",
+            "11": "#4e6e27",
+            "12": "#405b20"
       }}
     />
           <ColorItem
       title={"color.blue"}
       subtitle={"A pale periwinkle blue color"}
       colors={{
-            "1": "#80a0da",
-            "2": "#799cd8",
-            "3": "#7397d6",
-            "4": "#6c92d4",
-            "5": "#668dd3",
-            "6": "#5f88d1",
-            "7": "#5984cf",
-            "8": "#527fcd",
-            "9": "#4978c1"
+            "1": "#80a8da",
+            "2": "#80a0da",
+            "3": "#799cd8",
+            "4": "#7397d6",
+            "5": "#6c92d4",
+            "6": "#6592cd",
+            "7": "#668dd3",
+            "8": "#5f88d1",
+            "9": "#5984cf",
+            "10": "#527fcd",
+            "11": "#4978c1",
+            "12": "#547197"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#a2d9cc",
+            "2": "#90d1c3",
+            "3": "#a0c8c5",
+            "4": "#7ecab9",
+            "5": "#6cc2af",
+            "6": "#5abba5",
+            "7": "#4fa08e",
+            "8": "#449a93",
+            "9": "#428878",
+            "10": "#357062",
+            "11": "#28574c",
+            "12": "#1f524e"
       }}
     />
           <ColorItem
@@ -635,26 +690,34 @@ const COLOR_VARIANTS = {
             "2": "#93c7b1",
             "3": "#83bfa5",
             "4": "#73b69a",
-            "5": "#63ae8f",
-            "6": "#60a88a",
-            "7": "#57987d",
-            "8": "#467e66",
-            "9": "#305847"
+            "5": "#74b092",
+            "6": "#63ae8f",
+            "7": "#60a88a",
+            "8": "#57987d",
+            "9": "#2d9a72",
+            "10": "#467e66",
+            "11": "#247d5d",
+            "12": "#305847"
       }}
     />
           <ColorItem
-      title={"color.grey"}
+      title={"color.neutral"}
       subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
             "1": "#d5d5d5",
-            "2": "#c0c0c0",
-            "3": "#ababab",
-            "4": "#969696",
-            "5": "#6a6a6a",
-            "6": "#595959",
-            "7": "#4f4f4f",
-            "8": "#464646",
-            "9": "#373a3d"
+            "2": "#cfcfcf",
+            "3": "#cacaca",
+            "4": "#c4c4c4",
+            "5": "#c0c0c0",
+            "6": "#ababab",
+            "7": "#969696",
+            "8": "#6a6a6a",
+            "9": "#595959",
+            "10": "#4f4f4f",
+            "11": "#444548",
+            "12": "#3f4043",
+            "13": "#3c3c3e",
+            "14": "#373a3d"
       }}
     />
           <ColorItem
@@ -664,12 +727,15 @@ const COLOR_VARIANTS = {
             "1": "#e0ae95",
             "2": "#dba68d",
             "3": "#d89e81",
-            "4": "#d09679",
-            "5": "#d08f6d",
-            "6": "#c98764",
-            "7": "#c17f5a",
-            "8": "#b77b5a",
-            "9": "#9c694d"
+            "4": "#d4987a",
+            "5": "#d09679",
+            "6": "#d08f6d",
+            "7": "#c98764",
+            "8": "#c17f5a",
+            "9": "#be7d58",
+            "10": "#b77b5a",
+            "11": "#9c694d",
+            "12": "#916247"
       }}
     />
           <ColorItem
@@ -678,13 +744,16 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#d9aac8",
             "2": "#d59fc0",
-            "3": "#cf93b8",
-            "4": "#ca87b0",
-            "5": "#c57ba8",
-            "6": "#be77a3",
-            "7": "#a86d91",
-            "8": "#875975",
-            "9": "#5a3b4f"
+            "3": "#da8fac",
+            "4": "#cf93b8",
+            "5": "#ca87b0",
+            "6": "#c57ba8",
+            "7": "#c67898",
+            "8": "#be77a3",
+            "9": "#a86d91",
+            "10": "#926376",
+            "11": "#875975",
+            "12": "#5a3b4f"
       }}
     />
           <ColorItem
@@ -693,28 +762,34 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#baabe3",
             "2": "#b1a1e0",
-            "3": "#aa97dc",
-            "4": "#a18ed9",
-            "5": "#9984d6",
-            "6": "#9580cd",
-            "7": "#8677b4",
-            "8": "#6d628e",
-            "9": "#47405d"
+            "3": "#989ae1",
+            "4": "#aa97dc",
+            "5": "#a18ed9",
+            "6": "#9984d6",
+            "7": "#8786d8",
+            "8": "#9580cd",
+            "9": "#8677b4",
+            "10": "#70709b",
+            "11": "#6d628e",
+            "12": "#47405d"
       }}
     />
           <ColorItem
       title={"color.red"}
-      subtitle={"A pale raspberry error color"}
+      subtitle={"A pale warm coral red color"}
       colors={{
-            "1": "#d0697e",
-            "2": "#cd687d",
-            "3": "#ab5268",
-            "4": "#9e4a5d",
-            "5": "#914252",
-            "6": "#843b48",
-            "7": "#77343d",
-            "8": "#682e34",
-            "9": "#592126"
+            "1": "#c88ca9",
+            "2": "#d0697e",
+            "3": "#cd687d",
+            "4": "#b46172",
+            "5": "#ab5268",
+            "6": "#9e4a5d",
+            "7": "#914252",
+            "8": "#8d3e35",
+            "9": "#843b48",
+            "10": "#77343d",
+            "11": "#682e34",
+            "12": "#592126"
       }}
     />
           <ColorItem
@@ -726,20 +801,13 @@ const COLOR_VARIANTS = {
             "3": "#8fbbca",
             "4": "#82b3c5",
             "5": "#76acbe",
-            "6": "#72a6b8",
-            "7": "#6994a3",
-            "8": "#557884",
-            "9": "#38515a"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - neutral near-black page canvas"}
-      colors={{
-            "1": "#3c3c3e",
-            "2": "#3f4043",
-            "3": "#444548",
-            "4": "#595959"
+            "6": "#61abc1",
+            "7": "#72a6b8",
+            "8": "#6994a3",
+            "9": "#3393af",
+            "10": "#557884",
+            "11": "#29768d",
+            "12": "#38515a"
       }}
     />
           <ColorItem
@@ -751,10 +819,13 @@ const COLOR_VARIANTS = {
             "3": "#d4ae6b",
             "4": "#d1a760",
             "5": "#cea155",
-            "6": "#ad8b4e",
-            "7": "#947741",
-            "8": "#7a6334",
-            "9": "#624f29"
+            "6": "#bea16b",
+            "7": "#ad8b4e",
+            "8": "#a98331",
+            "9": "#947741",
+            "10": "#896b28",
+            "11": "#7a6334",
+            "12": "#624f29"
       }}
     />
         </ColorPalette>
@@ -1041,26 +1112,11 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#a2d9cc",
-            "2": "#90d1c3",
-            "3": "#7ecab9",
-            "4": "#6cc2af",
-            "5": "#5abba5",
-            "6": "#4fa08e",
-            "7": "#428878",
-            "8": "#357062",
-            "9": "#28574c"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the dark theme"}
+      subtitle={"The neutral data visualization emphasis color for the dark theme"}
       colors={{
-            "grey.emphasis": "#d5d5d5",
-            "grey.subtle": "#373a3d",
+            "neutral.emphasis": "#d5d5d5",
+            "neutral.subtle": "#373a3d",
             "brand.emphasis": "#a2d9cc",
             "brand.subtle": "#90d1c3",
             "red.emphasis": "#914252",
@@ -1158,12 +1214,15 @@ const COLOR_VARIANTS = {
             "1": "#ffe1e1",
             "2": "#ffaaaa",
             "3": "#ff7373",
-            "4": "#ff3d3d",
-            "5": "#ff0606",
-            "6": "#be0000",
-            "7": "#7e0000",
-            "8": "#3d0000",
-            "9": "#000000"
+            "4": "#ff4d97",
+            "5": "#ff3d3d",
+            "6": "#ff0606",
+            "7": "#ff0404",
+            "8": "#d22c00",
+            "9": "#be0000",
+            "10": "#7e0000",
+            "11": "#3d0000",
+            "12": "#000000"
       }}
     />
           <ColorItem
@@ -1173,27 +1232,51 @@ const COLOR_VARIANTS = {
             "1": "#e6fbce",
             "2": "#caf694",
             "3": "#acf15a",
-            "4": "#90ec20",
-            "5": "#70cc00",
-            "6": "#529500",
-            "7": "#335d00",
-            "8": "#142400",
-            "9": "#000000"
+            "4": "#dbdb58",
+            "5": "#90ec20",
+            "6": "#70cc00",
+            "7": "#81c71e",
+            "8": "#55b30f",
+            "9": "#529500",
+            "10": "#335d00",
+            "11": "#142400",
+            "12": "#000000"
       }}
     />
           <ColorItem
       title={"color.blue"}
       subtitle={"A pale periwinkle blue color"}
       colors={{
-            "1": "#bdd4ff",
-            "2": "#abcaff",
-            "3": "#9abeff",
-            "4": "#88b3ff",
-            "5": "#77a8ff",
-            "6": "#659dff",
-            "7": "#5493ff",
-            "8": "#4387ff",
-            "9": "#1772ff"
+            "1": "#bedbff",
+            "2": "#bdd4ff",
+            "3": "#abcaff",
+            "4": "#9abeff",
+            "5": "#88b3ff",
+            "6": "#6aabff",
+            "7": "#77a8ff",
+            "8": "#659dff",
+            "9": "#5493ff",
+            "10": "#4387ff",
+            "11": "#1772ff",
+            "12": "#1a60bb"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#ffffff",
+            "2": "#ccfff4",
+            "3": "#dff9f7",
+            "4": "#98ffe8",
+            "5": "#63ffdd",
+            "6": "#2effd0",
+            "7": "#0ed2a6",
+            "8": "#00bcad",
+            "9": "#078a6d",
+            "10": "#024233",
+            "11": "#000000",
+            "12": "#000000"
       }}
     />
           <ColorItem
@@ -1204,26 +1287,34 @@ const COLOR_VARIANTS = {
             "2": "#c1f9e2",
             "3": "#94f5cc",
             "4": "#66f0b7",
-            "5": "#39eca1",
-            "6": "#2de498",
-            "7": "#1ebf7b",
-            "8": "#11734a",
-            "9": "#010705"
+            "5": "#64e6a6",
+            "6": "#39eca1",
+            "7": "#2de498",
+            "8": "#1ebf7b",
+            "9": "#008b58",
+            "10": "#11734a",
+            "11": "#003e27",
+            "12": "#010705"
       }}
     />
           <ColorItem
-      title={"color.grey"}
+      title={"color.neutral"}
       subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
             "1": "#ffffff",
             "2": "#ffffff",
-            "3": "#dadada",
-            "4": "#adadad",
-            "5": "#535353",
-            "6": "#2f2f2f",
-            "7": "#1b1b1b",
-            "8": "#090909",
-            "9": "#000000"
+            "3": "#ffffff",
+            "4": "#ffffff",
+            "5": "#ffffff",
+            "6": "#dadada",
+            "7": "#adadad",
+            "8": "#535353",
+            "9": "#2f2f2f",
+            "10": "#1b1b1b",
+            "11": "#08080a",
+            "12": "#000000",
+            "13": "#000000",
+            "14": "#000000"
       }}
     />
           <ColorItem
@@ -1233,12 +1324,15 @@ const COLOR_VARIANTS = {
             "1": "#fff7f4",
             "2": "#ffe5d8",
             "3": "#ffd1ba",
-            "4": "#ffbc9a",
-            "5": "#ffac81",
-            "6": "#ff9760",
-            "7": "#ff803a",
-            "8": "#ff7224",
-            "9": "#c44d0d"
+            "4": "#ffc2a4",
+            "5": "#ffbc9a",
+            "6": "#ffac81",
+            "7": "#ff9760",
+            "8": "#ff803a",
+            "9": "#ff7a30",
+            "10": "#ff7224",
+            "11": "#c44d0d",
+            "12": "#a5410a"
       }}
     />
           <ColorItem
@@ -1247,13 +1341,16 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#ffffff",
             "2": "#fff1fa",
-            "3": "#ffcdeb",
-            "4": "#ffaade",
-            "5": "#ff85d0",
-            "6": "#f976c6",
-            "7": "#dc50a6",
-            "8": "#932b6b",
-            "9": "#1c0815"
+            "3": "#ffdcea",
+            "4": "#ffcdeb",
+            "5": "#ffaade",
+            "6": "#ff85d0",
+            "7": "#ff81b6",
+            "8": "#f976c6",
+            "9": "#dc50a6",
+            "10": "#b3386a",
+            "11": "#932b6b",
+            "12": "#1c0815"
       }}
     />
           <ColorItem
@@ -1262,28 +1359,34 @@ const COLOR_VARIANTS = {
       colors={{
             "1": "#ffffff",
             "2": "#ffffff",
-            "3": "#f6f2ff",
-            "4": "#e1d7ff",
-            "5": "#cdbbff",
-            "6": "#bba2ff",
-            "7": "#8e6eeb",
-            "8": "#5538a7",
-            "9": "#140d27"
+            "3": "#fcfcff",
+            "4": "#f6f2ff",
+            "5": "#e1d7ff",
+            "6": "#cdbbff",
+            "7": "#c6c5ff",
+            "8": "#bba2ff",
+            "9": "#8e6eeb",
+            "10": "#5553c5",
+            "11": "#5538a7",
+            "12": "#140d27"
       }}
     />
           <ColorItem
       title={"color.red"}
-      subtitle={"A pale raspberry error color"}
+      subtitle={"A pale warm coral red color"}
       colors={{
-            "1": "#ff7a95",
-            "2": "#ff708d",
-            "3": "#f00a45",
-            "4": "#ca0632",
-            "5": "#a20322",
-            "6": "#790116",
-            "7": "#51000b",
-            "8": "#260004",
-            "9": "#000000"
+            "1": "#fcb3d6",
+            "2": "#ff7a95",
+            "3": "#ff708d",
+            "4": "#f6365e",
+            "5": "#f00a45",
+            "6": "#ca0632",
+            "7": "#a20322",
+            "8": "#820c00",
+            "9": "#790116",
+            "10": "#51000b",
+            "11": "#260004",
+            "12": "#000000"
       }}
     />
           <ColorItem
@@ -1295,20 +1398,13 @@ const COLOR_VARIANTS = {
             "3": "#bdecfd",
             "4": "#99e2fc",
             "5": "#73d7fa",
-            "6": "#64cff3",
-            "7": "#44b1d5",
-            "8": "#25728c",
-            "9": "#061217"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - neutral near-black page canvas"}
-      colors={{
-            "1": "#000000",
-            "2": "#000000",
-            "3": "#08080a",
-            "4": "#2f2f2f"
+            "6": "#48d6ff",
+            "7": "#64cff3",
+            "8": "#44b1d5",
+            "9": "#0098c4",
+            "10": "#25728c",
+            "11": "#004f67",
+            "12": "#061217"
       }}
     />
           <ColorItem
@@ -1320,10 +1416,13 @@ const COLOR_VARIANTS = {
             "3": "#ffd285",
             "4": "#ffc767",
             "5": "#ffbc4a",
-            "6": "#f39e03",
-            "7": "#a76d00",
-            "8": "#583b00",
-            "9": "#0d0900"
+            "6": "#ffc457",
+            "7": "#f39e03",
+            "8": "#b27b00",
+            "9": "#a76d00",
+            "10": "#5d4000",
+            "11": "#583b00",
+            "12": "#0d0900"
       }}
     />
         </ColorPalette>
@@ -1610,26 +1709,11 @@ const COLOR_VARIANTS = {
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#ffffff",
-            "2": "#ccfff4",
-            "3": "#98ffe8",
-            "4": "#63ffdd",
-            "5": "#2effd0",
-            "6": "#0ed2a6",
-            "7": "#078a6d",
-            "8": "#024233",
-            "9": "#000000"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the dark theme"}
+      subtitle={"The neutral data visualization emphasis color for the dark theme"}
       colors={{
-            "grey.emphasis": "#ffffff",
-            "grey.subtle": "#000000",
+            "neutral.emphasis": "#ffffff",
+            "neutral.subtle": "#000000",
             "brand.emphasis": "#ffffff",
             "brand.subtle": "#ccfff4",
             "red.emphasis": "#a20322",
@@ -1724,30 +1808,36 @@ const COLOR_VARIANTS = {
       title={"color.apple"}
       subtitle={"A light apple negative color"}
       colors={{
-            "1": "#e3518e",
-            "2": "#e14777",
-            "3": "#e03c5e",
-            "4": "#de3143",
-            "5": "#dc2626",
-            "6": "#d92b20",
-            "7": "#d6301b",
-            "8": "#d23516",
-            "9": "#cd3a13"
+            "1": "#ff9b9b",
+            "2": "#ff7575",
+            "3": "#ff4f4f",
+            "4": "#e3518e",
+            "5": "#ff2a2a",
+            "6": "#ff0404",
+            "7": "#dc2626",
+            "8": "#cd3a13",
+            "9": "#d20000",
+            "10": "#a60000",
+            "11": "#790000",
+            "12": "#4d0000"
       }}
     />
           <ColorItem
       title={"color.avocado"}
       subtitle={"A light yellow-green positive color"}
       colors={{
-            "1": "#c2c261",
-            "2": "#b4be58",
-            "3": "#a4bb4e",
-            "4": "#93b744",
-            "5": "#81b33a",
-            "6": "#79b136",
-            "7": "#71ae33",
-            "8": "#69ac2f",
-            "9": "#61a92c"
+            "1": "#c8e7a3",
+            "2": "#b4de81",
+            "3": "#9fd55e",
+            "4": "#c2c261",
+            "5": "#8bcc3c",
+            "6": "#76c319",
+            "7": "#81b33a",
+            "8": "#61a92c",
+            "9": "#62a412",
+            "10": "#4d830c",
+            "11": "#386107",
+            "12": "#243e04"
       }}
     />
           <ColorItem
@@ -1755,89 +1845,127 @@ const COLOR_VARIANTS = {
       subtitle={"A pale periwinkle blue color"}
       colors={{
             "1": "#83baff",
-            "2": "#7bb7ff",
-            "3": "#68acff",
-            "4": "#59a2ff",
-            "5": "#4f99f9",
-            "6": "#4c90e8",
-            "7": "#468ae2",
-            "8": "#3f7ecf",
-            "9": "#3669ac"
+            "2": "#82afff",
+            "3": "#76a8ff",
+            "4": "#6aa0ff",
+            "5": "#5e98ff",
+            "6": "#4f99f9",
+            "7": "#5291ff",
+            "8": "#4689ff",
+            "9": "#3a82ff",
+            "10": "#2e7aff",
+            "11": "#1d70f2",
+            "12": "#3669ac"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#baf6e8",
+            "2": "#9bf1de",
+            "3": "#b1e4e0",
+            "4": "#7bedd3",
+            "5": "#5be8c9",
+            "6": "#3be4be",
+            "7": "#2dbc9c",
+            "8": "#1fb2a6",
+            "9": "#219279",
+            "10": "#166855",
+            "11": "#0c3c31",
+            "12": "#052f2c"
       }}
     />
           <ColorItem
       title={"color.green"}
-      subtitle={"A pale mint green color"}
+      subtitle={"A pale green success color"}
       colors={{
-            "1": "#67cc9a",
-            "2": "#57c791",
-            "3": "#2fc183",
-            "4": "#00b575",
-            "5": "#00af6f",
-            "6": "#00a469",
-            "7": "#009d63",
-            "8": "#008f5a",
-            "9": "#007a4d"
+            "1": "#b7ebd5",
+            "2": "#9ce4c6",
+            "3": "#81ddb6",
+            "4": "#66d5a7",
+            "5": "#67cc9a",
+            "6": "#4bce97",
+            "7": "#45c791",
+            "8": "#3aae7d",
+            "9": "#00af6f",
+            "10": "#29815c",
+            "11": "#007a4d",
+            "12": "#14412e"
       }}
     />
           <ColorItem
-      title={"color.grey"}
-      subtitle={"A soft neutral white"}
+      title={"color.neutral"}
+      subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
-            "1": "#f5f5f5",
-            "2": "#c7c7c7",
-            "3": "#949494",
-            "4": "#737373",
-            "5": "#525252",
-            "6": "#3f3f3f",
-            "7": "#333333",
-            "8": "#262626",
-            "9": "#181818"
+            "1": "#fafafa",
+            "2": "#f1f1f1",
+            "3": "#eaeaea",
+            "4": "#e1e1e1",
+            "5": "#dcdcdc",
+            "6": "#bebebe",
+            "7": "#9f9f9f",
+            "8": "#616161",
+            "9": "#484848",
+            "10": "#3a3a3a",
+            "11": "#2b2c30",
+            "12": "#242528",
+            "13": "#1f1f21",
+            "14": "#1a1c1f"
       }}
     />
           <ColorItem
       title={"color.orange"}
       subtitle={"A pale peach orange color"}
       colors={{
-            "1": "#faa276",
-            "2": "#fb9c6c",
-            "3": "#fa8d54",
-            "4": "#f38042",
-            "5": "#e97737",
-            "6": "#de743a",
-            "7": "#d36b2f",
-            "8": "#c2612b",
-            "9": "#a25226"
+            "1": "#ffc5a8",
+            "2": "#fcb998",
+            "3": "#fcab83",
+            "4": "#faa276",
+            "5": "#f69f73",
+            "6": "#f9935f",
+            "7": "#f3874e",
+            "8": "#ec7a3b",
+            "9": "#e97737",
+            "10": "#de743a",
+            "11": "#b45b2b",
+            "12": "#a25226"
       }}
     />
           <ColorItem
       title={"color.pink"}
       subtitle={"A pale blush pink color"}
       colors={{
-            "1": "#fb9cc0",
-            "2": "#f993ba",
-            "3": "#f782b1",
-            "4": "#f075a8",
-            "5": "#e96fa2",
-            "6": "#db6a98",
-            "7": "#d1608f",
-            "8": "#c25b86",
-            "9": "#a34e71"
+            "1": "#f5c7e4",
+            "2": "#f2b3da",
+            "3": "#fb9cc0",
+            "4": "#ee9ecf",
+            "5": "#eb89c5",
+            "6": "#e774bb",
+            "7": "#e96fa2",
+            "8": "#df6db3",
+            "9": "#c25c9b",
+            "10": "#a34e71",
+            "11": "#904272",
+            "12": "#482039"
       }}
     />
           <ColorItem
       title={"color.purple"}
       subtitle={"A pale lavender purple color"}
       colors={{
-            "1": "#aeb1ff",
-            "2": "#a7a9ff",
-            "3": "#a0a0ff",
-            "4": "#9695ff",
-            "5": "#8d8cfb",
-            "6": "#8584eb",
-            "7": "#7f7ee4",
-            "8": "#7473d1",
-            "9": "#6261af"
+            "1": "#dbcffd",
+            "2": "#cdbdfc",
+            "3": "#aeb1ff",
+            "4": "#c0abfb",
+            "5": "#b299fa",
+            "6": "#a587f9",
+            "7": "#8d8cfb",
+            "8": "#9d7ff0",
+            "9": "#866cd1",
+            "10": "#6261af",
+            "11": "#624e9b",
+            "12": "#30264d"
       }}
     />
           <ColorItem
@@ -1845,54 +1973,53 @@ const COLOR_VARIANTS = {
       subtitle={"A pale warm coral red color"}
       colors={{
             "1": "#e791bb",
-            "2": "#e37ea8",
-            "3": "#df6c94",
-            "4": "#db597d",
-            "5": "#d74765",
-            "6": "#d3344a",
-            "7": "#cf222e",
-            "8": "#b51a17",
-            "9": "#9a1c0f"
+            "2": "#fb5879",
+            "3": "#f75576",
+            "4": "#d74765",
+            "5": "#cf2d56",
+            "6": "#b92647",
+            "7": "#a21f39",
+            "8": "#9a1c0f",
+            "9": "#8a192d",
+            "10": "#731421",
+            "11": "#5a0f17",
+            "12": "#3c050a"
       }}
     />
           <ColorItem
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#47c5ea",
-            "2": "#2ec3eb",
-            "3": "#00b8e6",
-            "4": "#00afe0",
-            "5": "#00a6d6",
-            "6": "#009ecb",
-            "7": "#0095c2",
-            "8": "#008bb4",
-            "9": "#007496"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - soft neutral page canvas"}
-      colors={{
-            "1": "#e1e1e1",
-            "2": "#eaeaea",
-            "3": "#f1f1f1",
-            "4": "#fafafa"
+            "1": "#c4e7f3",
+            "2": "#aeddee",
+            "3": "#97d4e9",
+            "4": "#81cbe5",
+            "5": "#6bc2e0",
+            "6": "#47c5ea",
+            "7": "#64bbd8",
+            "8": "#55a2bc",
+            "9": "#00a6d6",
+            "10": "#3d788c",
+            "11": "#007496",
+            "12": "#1d3b46"
       }}
     />
           <ColorItem
       title={"color.yellow"}
       subtitle={"A pale wheat gold color"}
       colors={{
-            "1": "#e2b259",
-            "2": "#deab47",
-            "3": "#db9f10",
-            "4": "#d49400",
-            "5": "#ca8b00",
-            "6": "#c08600",
-            "7": "#b77d00",
-            "8": "#a77200",
-            "9": "#8f6300"
+            "1": "#ffd285",
+            "2": "#ffcb70",
+            "3": "#ffc35c",
+            "4": "#ffbb47",
+            "5": "#ffb433",
+            "6": "#e2b259",
+            "7": "#d29527",
+            "8": "#ca8b00",
+            "9": "#a6761c",
+            "10": "#8f6300",
+            "11": "#795713",
+            "12": "#4d370b"
       }}
     />
         </ColorPalette>
@@ -1904,31 +2031,31 @@ const COLOR_VARIANTS = {
       title={"color.background"}
       subtitle={"The primary background color for the light theme"}
       colors={{
-            "base": "#262626",
-            "brand": "#0a514c",
+            "base": "#242528",
+            "brand": "#0c3c31",
             "danger": "#9a1c0f",
-            "negative": "#d23516",
+            "negative": "#cd3a13",
             "warning": "#8f6300",
             "success": "#007a4d",
             "positive": "#61a92c",
             "info": "#007496",
             "discovery": "#6261af",
-            "base-hover": "#292929",
-            "base-active": "#2b2b2b",
-            "base-inactive": "#333333",
-            "base-disabled": "#26262699",
-            "brand-hover": "#1b5c57",
-            "brand-active": "#004844",
-            "brand-inactive": "#286762",
-            "brand-disabled": "#2c4d4a",
+            "base-hover": "#27282b",
+            "base-active": "#292a2d",
+            "base-inactive": "#313235",
+            "base-disabled": "#242527",
+            "brand-hover": "#174539",
+            "brand-active": "#03352b",
+            "brand-inactive": "#204d42",
+            "brand-disabled": "#213932",
             "danger-hover": "#a92d1f",
             "danger-active": "#8e0900",
             "danger-inactive": "#b93c2d",
             "danger-disabled": "#813c32",
-            "negative-hover": "#e64a2d",
-            "negative-active": "#c22200",
-            "negative-inactive": "#fb5e40",
-            "negative-disabled": "#b25a48",
+            "negative-hover": "#e14e2a",
+            "negative-active": "#bd2900",
+            "negative-inactive": "#f5613e",
+            "negative-disabled": "#ae5b47",
             "warning-hover": "#a0731e",
             "warning-active": "#825700",
             "warning-inactive": "#b08332",
@@ -1955,63 +2082,63 @@ const COLOR_VARIANTS = {
       title={"color.border"}
       subtitle={"The primary border color for the light theme"}
       colors={{
-            "base": "#333333",
-            "brand": "#10736b",
-            "danger": "#cf222e",
-            "negative": "#d6301b",
-            "warning": "#d49400",
-            "success": "#00a469",
-            "positive": "#79b136",
-            "info": "#00b8e6",
-            "discovery": "#7f7ee4",
-            "base-subtle": "#262626",
-            "brand-subtle": "#0a514c",
+            "base": "#3a3a3a",
+            "brand": "#166855",
+            "danger": "#cf2d56",
+            "negative": "#dc2626",
+            "warning": "#d29527",
+            "success": "#00af6f",
+            "positive": "#81b33a",
+            "info": "#47c5ea",
+            "discovery": "#866cd1",
+            "base-subtle": "#242528",
+            "brand-subtle": "#0c3c31",
             "danger-subtle": "#9a1c0f",
-            "negative-subtle": "#d23516",
+            "negative-subtle": "#cd3a13",
             "warning-subtle": "#8f6300",
             "success-subtle": "#007a4d",
             "positive-subtle": "#61a92c",
             "info-subtle": "#007496",
             "discovery-subtle": "#6261af",
-            "base-hover": "#232323",
+            "base-hover": "#282828",
             "base-active": "#020202",
-            "base-disabled": "#33333399",
-            "brand-hover": "#3a9188",
-            "brand-active": "#006159",
-            "brand-disabled": "#406d68",
-            "danger-hover": "#f74f4f",
-            "danger-active": "#b60018",
-            "danger-disabled": "#af514d",
-            "negative-hover": "#ff5b43",
-            "negative-active": "#bc0500",
-            "negative-disabled": "#b5594a",
-            "warning-hover": "#ffc24f",
-            "warning-active": "#b77800",
-            "warning-disabled": "#c19b60",
-            "success-hover": "#4bcd8f",
-            "success-active": "#008b52",
-            "success-disabled": "#589b77",
-            "positive-hover": "#a4de66",
-            "positive-active": "#5f950b",
-            "positive-disabled": "#88aa69",
-            "info-hover": "#5ae8ff",
-            "info-active": "#009bc8",
-            "info-disabled": "#6ab2cd",
-            "discovery-hover": "#a5a6ff",
-            "discovery-active": "#6865c9",
-            "discovery-disabled": "#8386c2",
-            "base-subtle-hover": "#191919",
-            "base-subtle-active": "#010101",
-            "base-subtle-disabled": "#26262699",
-            "brand-subtle-hover": "#286762",
-            "brand-subtle-active": "#00443f",
-            "brand-subtle-disabled": "#2c4d4a",
+            "base-disabled": "#3a3a3a99",
+            "brand-hover": "#38836f",
+            "brand-active": "#005745",
+            "brand-disabled": "#3b6357",
+            "danger-hover": "#f85777",
+            "danger-active": "#b60342",
+            "danger-disabled": "#b05663",
+            "negative-hover": "#ff554b",
+            "negative-active": "#c20006",
+            "negative-disabled": "#ba574e",
+            "warning-hover": "#ffc25d",
+            "warning-active": "#b57a00",
+            "warning-disabled": "#c09c66",
+            "success-hover": "#50da97",
+            "success-active": "#009557",
+            "success-disabled": "#5fa57e",
+            "positive-hover": "#ade16b",
+            "positive-active": "#679712",
+            "positive-disabled": "#8ead6c",
+            "info-hover": "#80f8ff",
+            "info-active": "#16a6ca",
+            "info-disabled": "#7fbfd5",
+            "discovery-hover": "#aa91fa",
+            "discovery-active": "#7055b8",
+            "discovery-disabled": "#8376b2",
+            "base-subtle-hover": "#18191b",
+            "base-subtle-active": "#010102",
+            "base-subtle-disabled": "#242527",
+            "brand-subtle-hover": "#204d42",
+            "brand-subtle-active": "#003227",
+            "brand-subtle-disabled": "#213932",
             "danger-subtle-hover": "#b93c2d",
             "danger-subtle-active": "#870000",
             "danger-subtle-disabled": "#813c32",
-            "negative-subtle-hover": "#fb5e40",
-            "negative-subtle-active": "#b91300",
-            "negative-subtle-disabled": "#b25a48",
+            "negative-subtle-hover": "#f5613e",
+            "negative-subtle-active": "#b41d00",
+            "negative-subtle-disabled": "#ae5b47",
             "warning-subtle-hover": "#b08332",
             "warning-subtle-active": "#7b5000",
             "warning-subtle-disabled": "#82683f",
@@ -2033,105 +2160,107 @@ const COLOR_VARIANTS = {
       title={"color.foreground"}
       subtitle={"The primary foreground color for the light theme"}
       colors={{
-            "base": "#f5f5f5",
-            "brand": "#10736b",
-            "danger": "#cf222e",
-            "negative": "#d6301b",
-            "warning": "#d49400",
-            "success": "#00a469",
-            "positive": "#79b136",
-            "info": "#00b8e6",
-            "discovery": "#7f7ee4",
-            "base-inverse": "#181818",
-            "brand-inverse": "#f5f5f5",
-            "danger-inverse": "#f5f5f5",
-            "negative-inverse": "#f5f5f5",
-            "warning-inverse": "#181818",
-            "success-inverse": "#f5f5f5",
-            "positive-inverse": "#f5f5f5",
-            "info-inverse": "#f5f5f5",
-            "discovery-inverse": "#f5f5f5",
-            "base-hover": "#b6b6b6",
-            "base-active": "#202020",
+            "base": "#f1f1f1",
+            "brand": "#166855",
+            "danger": "#cf2d56",
+            "negative": "#dc2626",
+            "warning": "#d29527",
+            "success": "#00af6f",
+            "positive": "#81b33a",
+            "info": "#47c5ea",
+            "discovery": "#866cd1",
+            "base-inverse": "#1a1c1f",
+            "brand-inverse": "#f1f1f1",
+            "danger-inverse": "#f1f1f1",
+            "negative-inverse": "#f1f1f1",
+            "warning-inverse": "#1a1c1f",
+            "success-inverse": "#f1f1f1",
+            "positive-inverse": "#f1f1f1",
+            "info-inverse": "#f1f1f1",
+            "discovery-inverse": "#f1f1f1",
+            "base-hover": "#b3b3b3",
+            "base-active": "#1f1f1f",
             "base-inactive": "#ffffff",
             "base-disabled": "#ffffff99",
-            "brand-hover": "#3a9188",
-            "brand-active": "#006159",
-            "brand-inactive": "#5bb0a7",
-            "brand-disabled": "#9c9c9c",
-            "danger-hover": "#f74f4f",
-            "danger-active": "#b60018",
-            "danger-inactive": "#ff7571",
+            "brand-hover": "#38836f",
+            "brand-active": "#005745",
+            "brand-inactive": "#55a08b",
+            "brand-disabled": "#999999",
+            "danger-hover": "#f85777",
+            "danger-active": "#b60342",
+            "danger-inactive": "#ff7c99",
             "danger-disabled": "#acacac",
-            "negative-hover": "#ff5b43",
-            "negative-active": "#bc0500",
-            "negative-inactive": "#ff8167",
-            "negative-disabled": "#262626",
-            "warning-hover": "#ffc24f",
-            "warning-active": "#b77800",
-            "warning-inactive": "#fff181",
+            "negative-hover": "#ff554b",
+            "negative-active": "#c20006",
+            "negative-inactive": "#ff7d6f",
+            "negative-disabled": "#252525",
+            "warning-hover": "#ffc25d",
+            "warning-active": "#b57a00",
+            "warning-inactive": "#fff28e",
             "warning-disabled": "#1e1e1e",
-            "success-hover": "#4bcd8f",
-            "success-active": "#008b52",
-            "success-inactive": "#79f7b7",
+            "success-hover": "#50da97",
+            "success-active": "#009557",
+            "success-inactive": "#81ffc1",
             "success-disabled": "#191919",
-            "positive-hover": "#a4de66",
-            "positive-active": "#5f950b",
-            "positive-inactive": "#d0ff95",
+            "positive-hover": "#ade16b",
+            "positive-active": "#679712",
+            "positive-inactive": "#daff99",
             "positive-disabled": "#3e3e3e",
-            "info-hover": "#5ae8ff",
-            "info-active": "#009bc8",
-            "info-inactive": "#8affff",
+            "info-hover": "#80f8ff",
+            "info-active": "#16a6ca",
+            "info-inactive": "#9affff",
             "info-disabled": "#1b1b1b",
-            "discovery-hover": "#a5a6ff",
-            "discovery-active": "#6865c9",
-            "discovery-inactive": "#cdd0ff",
+            "discovery-hover": "#aa91fa",
+            "discovery-active": "#7055b8",
+            "discovery-inactive": "#d0b8ff",
             "discovery-disabled": "#1d1d1d",
-            "base-inverse-hover": "#0f0f0f",
-            "base-inverse-active": "#000000",
-            "base-inverse-inactive": "#2c2c2c",
+            "base-inverse-hover": "#101215",
+            "base-inverse-active": "#000101",
+            "base-inverse-inactive": "#303235",
             "base-inverse-disabled": "#999999",
             "brand-inverse-hover": "#ffffff",
-            "brand-inverse-active": "#cdcdcd",
+            "brand-inverse-active": "#cacaca",
             "brand-inverse-inactive": "#ffffff",
-            "brand-inverse-disabled": "#9c9c9c",
+            "brand-inverse-disabled": "#f1f1f199",
             "danger-inverse-hover": "#ffffff",
-            "danger-inverse-active": "#cdcdcd",
+            "danger-inverse-active": "#cacaca",
             "danger-inverse-inactive": "#ffffff",
             "danger-inverse-disabled": "#acacac",
             "negative-inverse-hover": "#ffffff",
-            "negative-inverse-active": "#cdcdcd",
+            "negative-inverse-active": "#cacaca",
             "negative-inverse-inactive": "#ffffff",
-            "negative-inverse-disabled": "#262626",
-            "warning-inverse-hover": "#222222",
-            "warning-inverse-active": "#121212",
-            "warning-inverse-inactive": "#2c2c2c",
+            "negative-inverse-disabled": "#252525",
+            "warning-inverse-hover": "#25272a",
+            "warning-inverse-active": "#141618",
+            "warning-inverse-inactive": "#303235",
             "warning-inverse-disabled": "#1e1e1e",
             "success-inverse-hover": "#ffffff",
-            "success-inverse-active": "#cdcdcd",
+            "success-inverse-active": "#cacaca",
             "success-inverse-inactive": "#ffffff",
             "success-inverse-disabled": "#191919",
             "positive-inverse-hover": "#ffffff",
-            "positive-inverse-active": "#cdcdcd",
+            "positive-inverse-active": "#cacaca",
             "positive-inverse-inactive": "#ffffff",
             "positive-inverse-disabled": "#3e3e3e",
             "info-inverse-hover": "#ffffff",
-            "info-inverse-active": "#cdcdcd",
+            "info-inverse-active": "#cacaca",
             "info-inverse-inactive": "#ffffff",
             "info-inverse-disabled": "#1b1b1b",
             "discovery-inverse-hover": "#ffffff",
-            "discovery-inverse-active": "#cdcdcd",
+            "discovery-inverse-active": "#cacaca",
             "discovery-inverse-inactive": "#ffffff",
             "discovery-inverse-disabled": "#1d1d1d",
             "base-ghost-hover": "#ffffff",
-            "brand-ghost-hover": "#b0fffb",
-            "danger-ghost-hover": "#ffc2b8",
-            "negative-ghost-hover": "#ffc5a7",
-            "warning-ghost-hover": "#fff484",
-            "success-ghost-hover": "#a0ffdb",
-            "positive-ghost-hover": "#d9ff9c",
-            "info-ghost-hover": "#8dffff",
-            "discovery-ghost-hover": "#f2f5ff"
+            "brand-ghost-hover": "#a2edd6",
+            "danger-ghost-hover": "#ffc2db",
+            "negative-ghost-hover": "#ffc2af",
+            "warning-ghost-hover": "#fff38f",
+            "success-ghost-hover": "#9affd8",
+            "positive-ghost-hover": "#deff9d",
+            "info-ghost-hover": "#9fffff",
+            "discovery-ghost-hover": "#ffebff",
+            "base-inverse-ghost-hover": "#292b2f",
+            "warning-inverse-ghost-hover": "#4f5155"
       }}
     />
         </ColorPalette>
@@ -2148,7 +2277,7 @@ const COLOR_VARIANTS = {
             "elevated": "#f1f1f1",
             "floating": "#fafafa",
             "highest": "#ffffff",
-            "link": "#468ae2",
+            "link": "#4689ff",
             "lowest-hover": "#ffffff",
             "lowest-active": "#c9c9c9",
             "lowest-inactive": "#ffffff",
@@ -2169,57 +2298,42 @@ const COLOR_VARIANTS = {
             "highest-active": "#e4e4e4",
             "highest-inactive": "#ffffff",
             "highest-disabled": "#ffffff99",
-            "link-hover": "#599ef8",
-            "link-active": "#367ad1",
-            "link-inactive": "#6db2ff",
-            "link-disabled": "#658cc0"
+            "link-hover": "#5a9eff",
+            "link-active": "#3678ed",
+            "link-inactive": "#6db3ff",
+            "link-disabled": "#668ed3"
       }}
     />
           <ColorItem
       title={"color.black"}
-      subtitle={"A near black color"}
+      subtitle={"A almost black color"}
       colors={{
             "black": "#0c0c0d"
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#b1e4e0",
-            "2": "#8cd8d1",
-            "3": "#68cbc3",
-            "4": "#43bfb4",
-            "5": "#1fb2a6",
-            "6": "#179389",
-            "7": "#10736b",
-            "8": "#0a514c",
-            "9": "#052f2c"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the light theme"}
+      subtitle={"The neutral data visualization emphasis color for the light theme"}
       colors={{
-            "grey.emphasis": "#525252",
-            "grey.subtle": "#f5f5f5",
+            "neutral.emphasis": "#484848",
+            "neutral.subtle": "#f1f1f1",
             "brand.emphasis": "#b1e4e0",
-            "brand.subtle": "#8cd8d1",
-            "red.emphasis": "#d3344a",
+            "brand.subtle": "#b1e4e0",
+            "red.emphasis": "#cf2d56",
             "red.subtle": "#e791bb",
             "orange.emphasis": "#de743a",
             "orange.subtle": "#faa276",
-            "yellow.emphasis": "#c08600",
+            "yellow.emphasis": "#ca8b00",
             "yellow.subtle": "#e2b259",
-            "green.emphasis": "#00a469",
+            "green.emphasis": "#00af6f",
             "green.subtle": "#67cc9a",
-            "sky.emphasis": "#009ecb",
+            "sky.emphasis": "#00a6d6",
             "sky.subtle": "#47c5ea",
-            "blue.emphasis": "#4c90e8",
+            "blue.emphasis": "#4f99f9",
             "blue.subtle": "#83baff",
-            "purple.emphasis": "#8584eb",
+            "purple.emphasis": "#8d8cfb",
             "purple.subtle": "#aeb1ff",
-            "pink.emphasis": "#db6a98",
+            "pink.emphasis": "#e96fa2",
             "pink.subtle": "#fb9cc0"
       }}
     />
@@ -2227,27 +2341,27 @@ const COLOR_VARIANTS = {
       title={"color.foreground"}
       subtitle={"The body foreground color for the light theme"}
       colors={{
-            "body": "#949494",
-            "eyebrow": "#525252",
-            "caption": "#737373",
-            "link": "#468ae2",
+            "body": "#9f9f9f",
+            "eyebrow": "#484848",
+            "caption": "#616161",
+            "link": "#4689ff",
             "required": "#dc2626",
-            "body-hover": "#bdbdbd",
-            "body-active": "#7b7b7b",
-            "body-inactive": "#e9e9e9",
-            "body-disabled": "#94949499",
-            "eyebrow-hover": "#6b6b6b",
-            "eyebrow-active": "#434343",
-            "eyebrow-inactive": "#848484",
-            "eyebrow-disabled": "#52525299",
-            "caption-hover": "#949494",
-            "caption-active": "#5f5f5f",
-            "caption-inactive": "#b6b6b6",
-            "caption-disabled": "#73737399",
-            "link-hover": "#6db2ff",
-            "link-active": "#2d72c7",
-            "link-inactive": "#95dcff",
-            "link-disabled": "#363636",
+            "body-hover": "#cbcbcb",
+            "body-active": "#848484",
+            "body-inactive": "#f9f9f9",
+            "body-disabled": "#9f9f9f99",
+            "eyebrow-hover": "#5e5e5e",
+            "eyebrow-active": "#3b3b3b",
+            "eyebrow-inactive": "#757575",
+            "eyebrow-disabled": "#48484899",
+            "caption-hover": "#7d7d7d",
+            "caption-active": "#505050",
+            "caption-inactive": "#9b9b9b",
+            "caption-disabled": "#61616199",
+            "link-hover": "#6db3ff",
+            "link-active": "#2d6fe3",
+            "link-inactive": "#96deff",
+            "link-disabled": "#3a3a3a",
             "required-hover": "#ff554b",
             "required-active": "#c20006",
             "required-inactive": "#ff7d6f",
@@ -2259,15 +2373,15 @@ const COLOR_VARIANTS = {
       subtitle={"The overlay background color for the light theme"}
       colors={{
             "background": "#fafafa",
-            "border": "#333333",
+            "border": "#3a3a3a",
             "backdrop": "#1a1c1f66",
             "background-hover": "#ffffff",
             "background-active": "#e0e0e0",
             "background-inactive": "#ffffff",
             "background-disabled": "#fafafa99",
-            "border-hover": "#444444",
-            "border-active": "#292929",
-            "border-disabled": "#33333399"
+            "border-hover": "#4c4c4c",
+            "border-active": "#2f2f2f",
+            "border-disabled": "#3a3a3a99"
       }}
     />
           <ColorItem
@@ -2297,30 +2411,36 @@ const COLOR_VARIANTS = {
       title={"color.apple"}
       subtitle={"A light apple negative color"}
       colors={{
-            "1": "#bd678b",
-            "2": "#bb617d",
-            "3": "#b85b6e",
-            "4": "#b6555f",
-            "5": "#b34e4e",
-            "6": "#b1504a",
-            "7": "#af5246",
-            "8": "#ad5442",
-            "9": "#aa563f"
+            "1": "#de8d8d",
+            "2": "#d87979",
+            "3": "#d26464",
+            "4": "#bd678b",
+            "5": "#cc5050",
+            "6": "#c63c3c",
+            "7": "#b34e4e",
+            "8": "#aa563f",
+            "9": "#ad3232",
+            "10": "#952b2b",
+            "11": "#7d2424",
+            "12": "#651d1d"
       }}
     />
           <ColorItem
       title={"color.avocado"}
       subtitle={"A light yellow-green positive color"}
       colors={{
-            "1": "#a8a870",
-            "2": "#9fa46b",
-            "3": "#95a165",
-            "4": "#8a9e5e",
-            "5": "#7f9b57",
-            "6": "#7a9a54",
-            "7": "#759852",
-            "8": "#70974f",
-            "9": "#6b954c"
+            "1": "#b2ca97",
+            "2": "#a4bf83",
+            "3": "#95b56e",
+            "4": "#a8a870",
+            "5": "#87ab5b",
+            "6": "#78a442",
+            "7": "#7f9b57",
+            "8": "#6b954c",
+            "9": "#6a9339",
+            "10": "#5c8130",
+            "11": "#4e6e27",
+            "12": "#405b20"
       }}
     />
           <ColorItem
@@ -2328,89 +2448,127 @@ const COLOR_VARIANTS = {
       subtitle={"A pale periwinkle blue color"}
       colors={{
             "1": "#80a8da",
-            "2": "#7ca6d9",
-            "3": "#729fd6",
-            "4": "#6a98d4",
-            "5": "#6592cd",
-            "6": "#648cc0",
-            "7": "#6088bb",
-            "8": "#5c80ad",
-            "9": "#547197"
+            "2": "#80a0da",
+            "3": "#799cd8",
+            "4": "#7397d6",
+            "5": "#6c92d4",
+            "6": "#6592cd",
+            "7": "#668dd3",
+            "8": "#5f88d1",
+            "9": "#5984cf",
+            "10": "#527fcd",
+            "11": "#4978c1",
+            "12": "#547197"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#a2d9cc",
+            "2": "#90d1c3",
+            "3": "#a0c8c5",
+            "4": "#7ecab9",
+            "5": "#6cc2af",
+            "6": "#5abba5",
+            "7": "#4fa08e",
+            "8": "#449a93",
+            "9": "#428878",
+            "10": "#357062",
+            "11": "#28574c",
+            "12": "#1f524e"
       }}
     />
           <ColorItem
       title={"color.green"}
-      subtitle={"A pale mint green color"}
+      subtitle={"A pale green success color"}
       colors={{
-            "1": "#74b092",
-            "2": "#6aaa8b",
-            "3": "#51a380",
-            "4": "#2e9d76",
-            "5": "#2d9a72",
-            "6": "#2b946e",
-            "7": "#2a906b",
-            "8": "#288965",
-            "9": "#247d5d"
+            "1": "#a3cebc",
+            "2": "#93c7b1",
+            "3": "#83bfa5",
+            "4": "#73b69a",
+            "5": "#74b092",
+            "6": "#63ae8f",
+            "7": "#60a88a",
+            "8": "#57987d",
+            "9": "#2d9a72",
+            "10": "#467e66",
+            "11": "#247d5d",
+            "12": "#305847"
       }}
     />
           <ColorItem
-      title={"color.grey"}
-      subtitle={"A soft neutral white"}
+      title={"color.neutral"}
+      subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
-            "1": "#d2d2d2",
-            "2": "#b2b2b2",
-            "3": "#8e8e8e",
-            "4": "#777777",
-            "5": "#606060",
-            "6": "#525252",
-            "7": "#4a4a4a",
-            "8": "#414141",
-            "9": "#373737"
+            "1": "#d5d5d5",
+            "2": "#cfcfcf",
+            "3": "#cacaca",
+            "4": "#c4c4c4",
+            "5": "#c0c0c0",
+            "6": "#ababab",
+            "7": "#969696",
+            "8": "#6a6a6a",
+            "9": "#595959",
+            "10": "#4f4f4f",
+            "11": "#444548",
+            "12": "#3f4043",
+            "13": "#3c3c3e",
+            "14": "#373a3d"
       }}
     />
           <ColorItem
       title={"color.orange"}
       subtitle={"A pale peach orange color"}
       colors={{
-            "1": "#d4987a",
-            "2": "#d39474",
-            "3": "#cf8b67",
-            "4": "#c7835e",
-            "5": "#be7d58",
-            "6": "#b77b5a",
-            "7": "#ae7453",
-            "8": "#a46d4f",
-            "9": "#916247"
+            "1": "#e0ae95",
+            "2": "#dba68d",
+            "3": "#d89e81",
+            "4": "#d4987a",
+            "5": "#d09679",
+            "6": "#d08f6d",
+            "7": "#c98764",
+            "8": "#c17f5a",
+            "9": "#be7d58",
+            "10": "#b77b5a",
+            "11": "#9c694d",
+            "12": "#916247"
       }}
     />
           <ColorItem
       title={"color.pink"}
       subtitle={"A pale blush pink color"}
       colors={{
-            "1": "#da8fac",
-            "2": "#d78aa8",
-            "3": "#d381a2",
-            "4": "#cc7b9c",
-            "5": "#c67898",
-            "6": "#bb7592",
-            "7": "#b2708b",
-            "8": "#a76d85",
-            "9": "#926376"
+            "1": "#d9aac8",
+            "2": "#d59fc0",
+            "3": "#da8fac",
+            "4": "#cf93b8",
+            "5": "#ca87b0",
+            "6": "#c57ba8",
+            "7": "#c67898",
+            "8": "#be77a3",
+            "9": "#a86d91",
+            "10": "#926376",
+            "11": "#875975",
+            "12": "#5a3b4f"
       }}
     />
           <ColorItem
       title={"color.purple"}
       subtitle={"A pale lavender purple color"}
       colors={{
-            "1": "#989ae1",
-            "2": "#9496e0",
-            "3": "#9090df",
-            "4": "#8b8add",
-            "5": "#8786d8",
-            "6": "#8484ca",
-            "7": "#8181c4",
-            "8": "#7c7bb4",
-            "9": "#70709b"
+            "1": "#baabe3",
+            "2": "#b1a1e0",
+            "3": "#989ae1",
+            "4": "#aa97dc",
+            "5": "#a18ed9",
+            "6": "#9984d6",
+            "7": "#8786d8",
+            "8": "#9580cd",
+            "9": "#8677b4",
+            "10": "#70709b",
+            "11": "#6d628e",
+            "12": "#47405d"
       }}
     />
           <ColorItem
@@ -2418,54 +2576,53 @@ const COLOR_VARIANTS = {
       subtitle={"A pale warm coral red color"}
       colors={{
             "1": "#c88ca9",
-            "2": "#c3819c",
-            "3": "#be768f",
-            "4": "#b96b81",
-            "5": "#b46172",
-            "6": "#ae5662",
-            "7": "#ab4a51",
-            "8": "#9c413f",
-            "9": "#8d3e35"
+            "2": "#d0697e",
+            "3": "#cd687d",
+            "4": "#b46172",
+            "5": "#ab5268",
+            "6": "#9e4a5d",
+            "7": "#914252",
+            "8": "#8d3e35",
+            "9": "#843b48",
+            "10": "#77343d",
+            "11": "#682e34",
+            "12": "#592126"
       }}
     />
           <ColorItem
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#61abc1",
-            "2": "#53a8be",
-            "3": "#359eb8",
-            "4": "#3499b5",
-            "5": "#3393af",
-            "6": "#318fa9",
-            "7": "#3089a5",
-            "8": "#2e849d",
-            "9": "#29768d"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - soft neutral page canvas"}
-      colors={{
-            "1": "#c4c4c4",
-            "2": "#cacaca",
-            "3": "#cfcfcf",
-            "4": "#d5d5d5"
+            "1": "#a9cbd7",
+            "2": "#9cc3d1",
+            "3": "#8fbbca",
+            "4": "#82b3c5",
+            "5": "#76acbe",
+            "6": "#61abc1",
+            "7": "#72a6b8",
+            "8": "#6994a3",
+            "9": "#3393af",
+            "10": "#557884",
+            "11": "#29768d",
+            "12": "#38515a"
       }}
     />
           <ColorItem
       title={"color.yellow"}
       subtitle={"A pale wheat gold color"}
       colors={{
-            "1": "#bea16b",
-            "2": "#b99b61",
-            "3": "#b2903f",
-            "4": "#ae8933",
-            "5": "#a98331",
-            "6": "#a3802f",
-            "7": "#9f7b2e",
-            "8": "#96742c",
-            "9": "#896b28"
+            "1": "#dbba82",
+            "2": "#d7b476",
+            "3": "#d4ae6b",
+            "4": "#d1a760",
+            "5": "#cea155",
+            "6": "#bea16b",
+            "7": "#ad8b4e",
+            "8": "#a98331",
+            "9": "#947741",
+            "10": "#896b28",
+            "11": "#7a6334",
+            "12": "#624f29"
       }}
     />
         </ColorPalette>
@@ -2477,31 +2634,31 @@ const COLOR_VARIANTS = {
       title={"color.background"}
       subtitle={"The primary background color for the light theme"}
       colors={{
-            "base": "#414141",
-            "brand": "#286460",
+            "base": "#3f4043",
+            "brand": "#28574c",
             "danger": "#8d3e35",
-            "negative": "#ad5442",
+            "negative": "#aa563f",
             "warning": "#896b28",
             "success": "#247d5d",
             "positive": "#6b954c",
             "info": "#29768d",
             "discovery": "#70709b",
-            "base-hover": "#434343",
-            "base-active": "#444444",
-            "base-inactive": "#4a4a4a",
-            "base-disabled": "#41414199",
-            "brand-hover": "#386864",
-            "brand-active": "#1d625e",
-            "brand-inactive": "#436e6a",
-            "brand-disabled": "#455d5a",
+            "base-hover": "#414245",
+            "base-active": "#434346",
+            "base-inactive": "#48494c",
+            "base-disabled": "#3f4042",
+            "brand-hover": "#335a50",
+            "brand-active": "#1d564b",
+            "brand-inactive": "#3b5e55",
+            "brand-disabled": "#3c504a",
             "danger-hover": "#954c43",
             "danger-active": "#882e28",
             "danger-inactive": "#9f584f",
             "danger-disabled": "#7d534c",
-            "negative-hover": "#bb6352",
-            "negative-active": "#a54430",
-            "negative-inactive": "#cd6e5c",
-            "negative-disabled": "#9b6a60",
+            "negative-hover": "#b76551",
+            "negative-active": "#a2482f",
+            "negative-inactive": "#c8705c",
+            "negative-disabled": "#996a5f",
             "warning-hover": "#907541",
             "warning-active": "#826326",
             "warning-inactive": "#998051",
@@ -2528,63 +2685,63 @@ const COLOR_VARIANTS = {
       title={"color.border"}
       subtitle={"The primary border color for the light theme"}
       colors={{
-            "base": "#4a4a4a",
-            "brand": "#317771",
-            "danger": "#ab4a51",
-            "negative": "#af5246",
-            "warning": "#ae8933",
-            "success": "#2b946e",
-            "positive": "#7a9a54",
-            "info": "#359eb8",
-            "discovery": "#8181c4",
-            "base-subtle": "#414141",
-            "brand-subtle": "#286460",
+            "base": "#4f4f4f",
+            "brand": "#357062",
+            "danger": "#ab5268",
+            "negative": "#b34e4e",
+            "warning": "#ad8b4e",
+            "success": "#2d9a72",
+            "positive": "#7f9b57",
+            "info": "#61abc1",
+            "discovery": "#8677b4",
+            "base-subtle": "#3f4043",
+            "brand-subtle": "#28574c",
             "danger-subtle": "#8d3e35",
-            "negative-subtle": "#ad5442",
+            "negative-subtle": "#aa563f",
             "warning-subtle": "#896b28",
             "success-subtle": "#247d5d",
             "positive-subtle": "#6b954c",
             "info-subtle": "#29768d",
             "discovery-subtle": "#70709b",
-            "base-hover": "#3f3f3f",
+            "base-hover": "#424242",
             "base-active": "#282828",
-            "base-disabled": "#4a4a4a99",
-            "brand-hover": "#548782",
-            "brand-active": "#207069",
-            "brand-disabled": "#55716e",
-            "danger-hover": "#cc6565",
-            "danger-active": "#9e2e3d",
-            "danger-disabled": "#996663",
-            "negative-hover": "#d06c5e",
-            "negative-active": "#a1322f",
-            "negative-disabled": "#9d6a62",
-            "warning-hover": "#d2ac64",
-            "warning-active": "#9f782e",
-            "warning-disabled": "#a7916f",
-            "success-hover": "#63ad8a",
-            "success-active": "#27875f",
-            "success-disabled": "#698e7a",
-            "positive-hover": "#99bc73",
-            "positive-active": "#688b32",
-            "positive-disabled": "#869974",
-            "info-hover": "#6ac5d4",
-            "info-active": "#318da8",
-            "info-disabled": "#76a1b1",
-            "discovery-hover": "#9394e0",
-            "discovery-active": "#7473ad",
-            "discovery-disabled": "#8587ab",
-            "base-subtle-hover": "#383838",
-            "base-subtle-active": "#272727",
-            "base-subtle-disabled": "#41414199",
-            "brand-subtle-hover": "#436e6a",
-            "brand-subtle-active": "#1c605b",
-            "brand-subtle-disabled": "#455d5a",
+            "base-disabled": "#4f4f4f99",
+            "brand-hover": "#517f72",
+            "brand-active": "#1f6a5b",
+            "brand-disabled": "#516b63",
+            "danger-hover": "#ce697d",
+            "danger-active": "#9e3057",
+            "danger-disabled": "#9b6970",
+            "negative-hover": "#d16862",
+            "negative-active": "#a53033",
+            "negative-disabled": "#a16a65",
+            "warning-hover": "#d4ad6c",
+            "warning-active": "#9d792e",
+            "warning-disabled": "#a79273",
+            "success-hover": "#66b790",
+            "success-active": "#298c63",
+            "success-disabled": "#6e957f",
+            "positive-hover": "#9fbf76",
+            "positive-active": "#6d8c37",
+            "positive-disabled": "#899b76",
+            "info-hover": "#7fd5da",
+            "info-active": "#4194a8",
+            "info-disabled": "#82abb8",
+            "discovery-hover": "#9c89d8",
+            "discovery-active": "#7869a0",
+            "discovery-disabled": "#847c9f",
+            "base-subtle-hover": "#36373a",
+            "base-subtle-active": "#20202f",
+            "base-subtle-disabled": "#3f4042",
+            "brand-subtle-hover": "#3b5e55",
+            "brand-subtle-active": "#195649",
+            "brand-subtle-disabled": "#3c504a",
             "danger-subtle-hover": "#9f584f",
             "danger-subtle-active": "#852626",
             "danger-subtle-disabled": "#7d534c",
-            "negative-subtle-hover": "#cd6e5c",
-            "negative-subtle-active": "#a03a2e",
-            "negative-subtle-disabled": "#9b6a60",
+            "negative-subtle-hover": "#c8705c",
+            "negative-subtle-active": "#9d402e",
+            "negative-subtle-disabled": "#996a5f",
             "warning-subtle-hover": "#998051",
             "warning-subtle-active": "#7e5f25",
             "warning-subtle-disabled": "#7e6e56",
@@ -2606,105 +2763,107 @@ const COLOR_VARIANTS = {
       title={"color.foreground"}
       subtitle={"The primary foreground color for the light theme"}
       colors={{
-            "base": "#d2d2d2",
-            "brand": "#317771",
-            "danger": "#ab4a51",
-            "negative": "#af5246",
-            "warning": "#ae8933",
-            "success": "#2b946e",
-            "positive": "#7a9a54",
-            "info": "#359eb8",
-            "discovery": "#8181c4",
-            "base-inverse": "#373737",
-            "brand-inverse": "#d2d2d2",
-            "danger-inverse": "#d2d2d2",
-            "negative-inverse": "#d2d2d2",
-            "warning-inverse": "#373737",
-            "success-inverse": "#d2d2d2",
-            "positive-inverse": "#d2d2d2",
-            "info-inverse": "#d2d2d2",
-            "discovery-inverse": "#d2d2d2",
-            "base-hover": "#a6a6a6",
-            "base-active": "#3d3d3d",
+            "base": "#cfcfcf",
+            "brand": "#357062",
+            "danger": "#ab5268",
+            "negative": "#b34e4e",
+            "warning": "#ad8b4e",
+            "success": "#2d9a72",
+            "positive": "#7f9b57",
+            "info": "#61abc1",
+            "discovery": "#8677b4",
+            "base-inverse": "#373a3d",
+            "brand-inverse": "#cfcfcf",
+            "danger-inverse": "#cfcfcf",
+            "negative-inverse": "#cfcfcf",
+            "warning-inverse": "#373a3d",
+            "success-inverse": "#cfcfcf",
+            "positive-inverse": "#cfcfcf",
+            "info-inverse": "#cfcfcf",
+            "discovery-inverse": "#cfcfcf",
+            "base-hover": "#a4a4a4",
+            "base-active": "#3c3c3c",
             "base-inactive": "#d9d9d9",
             "base-disabled": "#d9d9d999",
-            "brand-hover": "#548782",
-            "brand-active": "#207069",
-            "brand-inactive": "#6c9b96",
-            "brand-disabled": "#939393",
-            "danger-hover": "#cc6565",
-            "danger-active": "#9e2e3d",
-            "danger-inactive": "#d77977",
+            "brand-hover": "#517f72",
+            "brand-active": "#1f6a5b",
+            "brand-inactive": "#679185",
+            "brand-disabled": "#919191",
+            "danger-hover": "#ce697d",
+            "danger-active": "#9e3057",
+            "danger-inactive": "#d97d91",
             "danger-disabled": "#9f9f9f",
-            "negative-hover": "#d06c5e",
-            "negative-active": "#a1322f",
-            "negative-inactive": "#d68271",
-            "negative-disabled": "#414141",
-            "warning-hover": "#d2ac64",
-            "warning-active": "#9f782e",
-            "warning-inactive": "#dad07f",
+            "negative-hover": "#d16862",
+            "negative-active": "#a53033",
+            "negative-inactive": "#d77f76",
+            "negative-disabled": "#404040",
+            "warning-hover": "#d4ad6c",
+            "warning-active": "#9d792e",
+            "warning-inactive": "#dcd286",
             "warning-disabled": "#3b3b3b",
-            "success-hover": "#63ad8a",
-            "success-active": "#27875f",
-            "success-inactive": "#7cd2a6",
+            "success-hover": "#66b790",
+            "success-active": "#298c63",
+            "success-inactive": "#7fdaad",
             "success-disabled": "#383838",
-            "positive-hover": "#99bc73",
-            "positive-active": "#688b32",
-            "positive-inactive": "#b8dd8a",
+            "positive-hover": "#9fbf76",
+            "positive-active": "#6d8c37",
+            "positive-inactive": "#c0de8c",
             "positive-disabled": "#525252",
-            "info-hover": "#6ac5d4",
-            "info-active": "#318da8",
-            "info-inactive": "#84dbdb",
+            "info-hover": "#7fd5da",
+            "info-active": "#4194a8",
+            "info-inactive": "#8ddede",
             "info-disabled": "#393939",
-            "discovery-hover": "#9394e0",
-            "discovery-active": "#7473ad",
-            "discovery-inactive": "#a9ace6",
+            "discovery-hover": "#9c89d8",
+            "discovery-active": "#7869a0",
+            "discovery-inactive": "#b59de3",
             "discovery-disabled": "#3b3b3b",
-            "base-inverse-hover": "#313131",
-            "base-inverse-active": "#262626",
-            "base-inverse-inactive": "#454545",
+            "base-inverse-hover": "#2f3237",
+            "base-inverse-active": "#113c3c",
+            "base-inverse-inactive": "#48494c",
             "base-inverse-disabled": "#919191",
             "brand-inverse-hover": "#d9d9d9",
-            "brand-inverse-active": "#b6b6b6",
+            "brand-inverse-active": "#b4b4b4",
             "brand-inverse-inactive": "#d9d9d9",
-            "brand-inverse-disabled": "#939393",
+            "brand-inverse-disabled": "#cfcfcf99",
             "danger-inverse-hover": "#d9d9d9",
-            "danger-inverse-active": "#b6b6b6",
+            "danger-inverse-active": "#b4b4b4",
             "danger-inverse-inactive": "#d9d9d9",
             "danger-inverse-disabled": "#9f9f9f",
             "negative-inverse-hover": "#d9d9d9",
-            "negative-inverse-active": "#b6b6b6",
+            "negative-inverse-active": "#b4b4b4",
             "negative-inverse-inactive": "#d9d9d9",
-            "negative-inverse-disabled": "#414141",
-            "warning-inverse-hover": "#3e3e3e",
-            "warning-inverse-active": "#333333",
-            "warning-inverse-inactive": "#454545",
+            "negative-inverse-disabled": "#404040",
+            "warning-inverse-hover": "#404144",
+            "warning-inverse-active": "#333638",
+            "warning-inverse-inactive": "#48494c",
             "warning-inverse-disabled": "#3b3b3b",
             "success-inverse-hover": "#d9d9d9",
-            "success-inverse-active": "#b6b6b6",
+            "success-inverse-active": "#b4b4b4",
             "success-inverse-inactive": "#d9d9d9",
             "success-inverse-disabled": "#383838",
             "positive-inverse-hover": "#d9d9d9",
-            "positive-inverse-active": "#b6b6b6",
+            "positive-inverse-active": "#b4b4b4",
             "positive-inverse-inactive": "#d9d9d9",
             "positive-inverse-disabled": "#525252",
             "info-inverse-hover": "#d9d9d9",
-            "info-inverse-active": "#b6b6b6",
+            "info-inverse-active": "#b4b4b4",
             "info-inverse-inactive": "#d9d9d9",
             "info-inverse-disabled": "#393939",
             "discovery-inverse-hover": "#d9d9d9",
-            "discovery-inverse-active": "#b6b6b6",
+            "discovery-inverse-active": "#b4b4b4",
             "discovery-inverse-inactive": "#d9d9d9",
             "discovery-inverse-disabled": "#3b3b3b",
             "base-ghost-hover": "#d9d9d9",
-            "brand-ghost-hover": "#99e1de",
-            "danger-ghost-hover": "#e3a79d",
-            "negative-ghost-hover": "#e0ae94",
-            "warning-ghost-hover": "#dad281",
-            "success-ghost-hover": "#90dfc1",
-            "positive-ghost-hover": "#bfde8e",
-            "info-ghost-hover": "#86dcdc",
-            "discovery-ghost-hover": "#bdc8ec"
+            "brand-ghost-hover": "#95cfbd",
+            "danger-ghost-hover": "#e4a3bd",
+            "negative-ghost-hover": "#e1aa98",
+            "warning-ghost-hover": "#dcd387",
+            "success-ghost-hover": "#8ddebf",
+            "positive-ghost-hover": "#c3de8f",
+            "info-ghost-hover": "#90dfdf",
+            "discovery-ghost-hover": "#ebb9eb",
+            "base-inverse-ghost-hover": "#424448",
+            "warning-inverse-ghost-hover": "#5e5f62"
       }}
     />
         </ColorPalette>
@@ -2721,7 +2880,7 @@ const COLOR_VARIANTS = {
             "elevated": "#cfcfcf",
             "floating": "#d5d5d5",
             "highest": "#d9d9d9",
-            "link": "#6088bb",
+            "link": "#5f88d1",
             "lowest-hover": "#d9d9d9",
             "lowest-active": "#b3b3b3",
             "lowest-inactive": "#d9d9d9",
@@ -2742,57 +2901,42 @@ const COLOR_VARIANTS = {
             "highest-active": "#c6c6c6",
             "highest-inactive": "#d9d9d9",
             "highest-disabled": "#d9d9d999",
-            "link-hover": "#6a96ce",
-            "link-active": "#577dad",
-            "link-inactive": "#75a3d7",
-            "link-disabled": "#7289a7"
+            "link-hover": "#6a96d4",
+            "link-active": "#577dc1",
+            "link-inactive": "#75a4d7",
+            "link-disabled": "#738bb4"
       }}
     />
           <ColorItem
       title={"color.black"}
-      subtitle={"A near black color"}
+      subtitle={"A almost black color"}
       colors={{
             "black": "#2e2e30"
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#a0c8c5",
-            "2": "#8abcb7",
-            "3": "#74afaa",
-            "4": "#5ea39d",
-            "5": "#449a93",
-            "6": "#3b8983",
-            "7": "#317771",
-            "8": "#286460",
-            "9": "#1f524e"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the light theme"}
+      subtitle={"The neutral data visualization emphasis color for the light theme"}
       colors={{
-            "grey.emphasis": "#606060",
-            "grey.subtle": "#d2d2d2",
+            "neutral.emphasis": "#595959",
+            "neutral.subtle": "#cfcfcf",
             "brand.emphasis": "#a0c8c5",
-            "brand.subtle": "#8abcb7",
-            "red.emphasis": "#ae5662",
+            "brand.subtle": "#a0c8c5",
+            "red.emphasis": "#ab5268",
             "red.subtle": "#c88ca9",
             "orange.emphasis": "#b77b5a",
             "orange.subtle": "#d4987a",
-            "yellow.emphasis": "#a3802f",
+            "yellow.emphasis": "#a98331",
             "yellow.subtle": "#bea16b",
-            "green.emphasis": "#2b946e",
+            "green.emphasis": "#2d9a72",
             "green.subtle": "#74b092",
-            "sky.emphasis": "#318fa9",
+            "sky.emphasis": "#3393af",
             "sky.subtle": "#61abc1",
-            "blue.emphasis": "#648cc0",
+            "blue.emphasis": "#6592cd",
             "blue.subtle": "#80a8da",
-            "purple.emphasis": "#8484ca",
+            "purple.emphasis": "#8786d8",
             "purple.subtle": "#989ae1",
-            "pink.emphasis": "#bb7592",
+            "pink.emphasis": "#c67898",
             "pink.subtle": "#da8fac"
       }}
     />
@@ -2800,27 +2944,27 @@ const COLOR_VARIANTS = {
       title={"color.foreground"}
       subtitle={"The body foreground color for the light theme"}
       colors={{
-            "body": "#8e8e8e",
-            "eyebrow": "#606060",
-            "caption": "#777777",
-            "link": "#6088bb",
+            "body": "#969696",
+            "eyebrow": "#595959",
+            "caption": "#6a6a6a",
+            "link": "#5f88d1",
             "required": "#b34e4e",
-            "body-hover": "#ababab",
-            "body-active": "#7c7c7c",
-            "body-inactive": "#c9c9c9",
-            "body-disabled": "#8e8e8e99",
-            "eyebrow-hover": "#717171",
-            "eyebrow-active": "#555555",
-            "eyebrow-inactive": "#838383",
-            "eyebrow-disabled": "#60606099",
-            "caption-hover": "#8e8e8e",
-            "caption-active": "#696969",
-            "caption-inactive": "#a6a6a6",
-            "caption-disabled": "#77777799",
-            "link-hover": "#75a3d7",
-            "link-active": "#5177a7",
-            "link-inactive": "#8ac2dd",
-            "link-disabled": "#4c4c4c",
+            "body-hover": "#b4b4b4",
+            "body-active": "#838383",
+            "body-inactive": "#d5d5d5",
+            "body-disabled": "#96969699",
+            "eyebrow-hover": "#686868",
+            "eyebrow-active": "#505050",
+            "eyebrow-inactive": "#787878",
+            "eyebrow-disabled": "#59595999",
+            "caption-hover": "#7e7e7e",
+            "caption-active": "#5e5e5e",
+            "caption-inactive": "#939393",
+            "caption-disabled": "#6a6a6a99",
+            "link-hover": "#75a4d7",
+            "link-active": "#5277b9",
+            "link-inactive": "#8bc3dd",
+            "link-disabled": "#4f4f4f",
             "required-hover": "#d16862",
             "required-active": "#a53033",
             "required-inactive": "#d77f76",
@@ -2832,15 +2976,15 @@ const COLOR_VARIANTS = {
       subtitle={"The overlay background color for the light theme"}
       colors={{
             "background": "#d5d5d5",
-            "border": "#4a4a4a",
+            "border": "#4f4f4f",
             "backdrop": "#373a3d66",
             "background-hover": "#d9d9d9",
             "background-active": "#c3c3c3",
             "background-inactive": "#d9d9d9",
             "background-disabled": "#d5d5d599",
-            "border-hover": "#565656",
-            "border-active": "#434343",
-            "border-disabled": "#4a4a4a99"
+            "border-hover": "#5b5b5b",
+            "border-active": "#474747",
+            "border-disabled": "#4f4f4f99"
       }}
     />
           <ColorItem
@@ -2870,30 +3014,36 @@ const COLOR_VARIANTS = {
       title={"color.apple"}
       subtitle={"A light apple negative color"}
       colors={{
-            "1": "#ff4d97",
-            "2": "#ff3b78",
-            "3": "#ff2a56",
-            "4": "#ff172f",
-            "5": "#ff0404",
-            "6": "#f60f00",
-            "7": "#eb1a00",
-            "8": "#de2500",
-            "9": "#d22c00"
+            "1": "#ffe1e1",
+            "2": "#ffaaaa",
+            "3": "#ff7373",
+            "4": "#ff4d97",
+            "5": "#ff3d3d",
+            "6": "#ff0606",
+            "7": "#ff0404",
+            "8": "#d22c00",
+            "9": "#be0000",
+            "10": "#7e0000",
+            "11": "#3d0000",
+            "12": "#000000"
       }}
     />
           <ColorItem
       title={"color.avocado"}
       subtitle={"A light yellow-green positive color"}
       colors={{
-            "1": "#dbdb58",
-            "2": "#cad749",
-            "3": "#b4d539",
-            "4": "#9cd029",
-            "5": "#81c71e",
-            "6": "#76c319",
-            "7": "#6abd16",
-            "8": "#5fb912",
-            "9": "#55b30f"
+            "1": "#e6fbce",
+            "2": "#caf694",
+            "3": "#acf15a",
+            "4": "#dbdb58",
+            "5": "#90ec20",
+            "6": "#70cc00",
+            "7": "#81c71e",
+            "8": "#55b30f",
+            "9": "#529500",
+            "10": "#335d00",
+            "11": "#142400",
+            "12": "#000000"
       }}
     />
           <ColorItem
@@ -2901,89 +3051,127 @@ const COLOR_VARIANTS = {
       subtitle={"A pale periwinkle blue color"}
       colors={{
             "1": "#bedbff",
-            "2": "#b2d5ff",
-            "3": "#97c6ff",
-            "4": "#81b8ff",
-            "5": "#6aabff",
-            "6": "#4d9bff",
-            "7": "#3b91ff",
-            "8": "#267eef",
-            "9": "#1a60bb"
+            "2": "#bdd4ff",
+            "3": "#abcaff",
+            "4": "#9abeff",
+            "5": "#88b3ff",
+            "6": "#6aabff",
+            "7": "#77a8ff",
+            "8": "#659dff",
+            "9": "#5493ff",
+            "10": "#4387ff",
+            "11": "#1772ff",
+            "12": "#1a60bb"
+      }}
+    />
+          <ColorItem
+      title={"color.brand"}
+      subtitle={"The Storm Software brand teal color"}
+      colors={{
+            "1": "#ffffff",
+            "2": "#ccfff4",
+            "3": "#dff9f7",
+            "4": "#98ffe8",
+            "5": "#63ffdd",
+            "6": "#2effd0",
+            "7": "#0ed2a6",
+            "8": "#00bcad",
+            "9": "#078a6d",
+            "10": "#024233",
+            "11": "#000000",
+            "12": "#000000"
       }}
     />
           <ColorItem
       title={"color.green"}
-      subtitle={"A pale mint green color"}
+      subtitle={"A pale green success color"}
       colors={{
-            "1": "#64e6a6",
-            "2": "#4ae299",
-            "3": "#0fda84",
-            "4": "#00945f",
-            "5": "#008b58",
-            "6": "#007b4f",
-            "7": "#007147",
-            "8": "#005d3a",
-            "9": "#003e27"
+            "1": "#eefdf7",
+            "2": "#c1f9e2",
+            "3": "#94f5cc",
+            "4": "#66f0b7",
+            "5": "#64e6a6",
+            "6": "#39eca1",
+            "7": "#2de498",
+            "8": "#1ebf7b",
+            "9": "#008b58",
+            "10": "#11734a",
+            "11": "#003e27",
+            "12": "#010705"
       }}
     />
           <ColorItem
-      title={"color.grey"}
-      subtitle={"A soft neutral white"}
+      title={"color.neutral"}
+      subtitle={"A soft neutral white for primary text on dark surfaces"}
       colors={{
             "1": "#ffffff",
-            "2": "#e7e7e7",
-            "3": "#9d9d9d",
-            "4": "#6d6d6d",
-            "5": "#3e3e3e",
-            "6": "#222222",
-            "7": "#111111",
-            "8": "#000000",
-            "9": "#000000"
+            "2": "#ffffff",
+            "3": "#ffffff",
+            "4": "#ffffff",
+            "5": "#ffffff",
+            "6": "#dadada",
+            "7": "#adadad",
+            "8": "#535353",
+            "9": "#2f2f2f",
+            "10": "#1b1b1b",
+            "11": "#08080a",
+            "12": "#000000",
+            "13": "#000000",
+            "14": "#000000"
       }}
     />
           <ColorItem
       title={"color.orange"}
       subtitle={"A pale peach orange color"}
       colors={{
-            "1": "#ffc2a4",
-            "2": "#ffba97",
-            "3": "#ffa373",
-            "4": "#ff8c4e",
-            "5": "#ff7a30",
-            "6": "#ff7224",
-            "7": "#f6620d",
-            "8": "#db550a",
-            "9": "#a5410a"
+            "1": "#fff7f4",
+            "2": "#ffe5d8",
+            "3": "#ffd1ba",
+            "4": "#ffc2a4",
+            "5": "#ffbc9a",
+            "6": "#ffac81",
+            "7": "#ff9760",
+            "8": "#ff803a",
+            "9": "#ff7a30",
+            "10": "#ff7224",
+            "11": "#c44d0d",
+            "12": "#a5410a"
       }}
     />
           <ColorItem
       title={"color.pink"}
       subtitle={"A pale blush pink color"}
       colors={{
-            "1": "#ffdcea",
-            "2": "#ffcce0",
-            "3": "#ffb1d0",
-            "4": "#ff94c0",
-            "5": "#ff81b6",
-            "6": "#f56fa6",
-            "7": "#ec5b98",
-            "8": "#dc4f8a",
-            "9": "#b3386a"
+            "1": "#ffffff",
+            "2": "#fff1fa",
+            "3": "#ffdcea",
+            "4": "#ffcdeb",
+            "5": "#ffaade",
+            "6": "#ff85d0",
+            "7": "#ff81b6",
+            "8": "#f976c6",
+            "9": "#dc50a6",
+            "10": "#b3386a",
+            "11": "#932b6b",
+            "12": "#1c0815"
       }}
     />
           <ColorItem
       title={"color.purple"}
       subtitle={"A pale lavender purple color"}
       colors={{
-            "1": "#fcfcff",
-            "2": "#f2f2ff",
-            "3": "#e8e8ff",
-            "4": "#d8d8ff",
-            "5": "#c6c5ff",
-            "6": "#a3a2ff",
-            "7": "#9493fb",
-            "8": "#7a79ea",
-            "9": "#5553c5"
+            "1": "#ffffff",
+            "2": "#ffffff",
+            "3": "#fcfcff",
+            "4": "#f6f2ff",
+            "5": "#e1d7ff",
+            "6": "#cdbbff",
+            "7": "#c6c5ff",
+            "8": "#bba2ff",
+            "9": "#8e6eeb",
+            "10": "#5553c5",
+            "11": "#5538a7",
+            "12": "#140d27"
       }}
     />
           <ColorItem
@@ -2991,54 +3179,53 @@ const COLOR_VARIANTS = {
       subtitle={"A pale warm coral red color"}
       colors={{
             "1": "#fcb3d6",
-            "2": "#fa93be",
-            "3": "#f974a2",
-            "4": "#f85481",
-            "5": "#f6365e",
-            "6": "#f51534",
-            "7": "#eb0010",
-            "8": "#b50300",
-            "9": "#820c00"
+            "2": "#ff7a95",
+            "3": "#ff708d",
+            "4": "#f6365e",
+            "5": "#f00a45",
+            "6": "#ca0632",
+            "7": "#a20322",
+            "8": "#820c00",
+            "9": "#790116",
+            "10": "#51000b",
+            "11": "#260004",
+            "12": "#000000"
       }}
     />
           <ColorItem
       title={"color.sky"}
       subtitle={"A pale sky blue color"}
       colors={{
-            "1": "#48d6ff",
-            "2": "#26d1ff",
-            "3": "#00afdb",
-            "4": "#00a4d2",
-            "5": "#0098c4",
-            "6": "#008cb4",
-            "7": "#0080a7",
-            "8": "#007192",
-            "9": "#004f67"
-      }}
-    />
-          <ColorItem
-      title={"color.surface"}
-      subtitle={"The lowest level surface of the palette - soft neutral page canvas"}
-      colors={{
             "1": "#ffffff",
-            "2": "#ffffff",
-            "3": "#ffffff",
-            "4": "#ffffff"
+            "2": "#e5f7fe",
+            "3": "#bdecfd",
+            "4": "#99e2fc",
+            "5": "#73d7fa",
+            "6": "#48d6ff",
+            "7": "#64cff3",
+            "8": "#44b1d5",
+            "9": "#0098c4",
+            "10": "#25728c",
+            "11": "#004f67",
+            "12": "#061217"
       }}
     />
           <ColorItem
       title={"color.yellow"}
       subtitle={"A pale wheat gold color"}
       colors={{
-            "1": "#ffc457",
-            "2": "#febb38",
-            "3": "#e29f00",
-            "4": "#c18600",
-            "5": "#b27b00",
-            "6": "#a47200",
-            "7": "#976700",
-            "8": "#7f5700",
-            "9": "#5d4000"
+            "1": "#ffe8c1",
+            "2": "#ffdda2",
+            "3": "#ffd285",
+            "4": "#ffc767",
+            "5": "#ffbc4a",
+            "6": "#ffc457",
+            "7": "#f39e03",
+            "8": "#b27b00",
+            "9": "#a76d00",
+            "10": "#5d4000",
+            "11": "#583b00",
+            "12": "#0d0900"
       }}
     />
         </ColorPalette>
@@ -3051,30 +3238,30 @@ const COLOR_VARIANTS = {
       subtitle={"The primary background color for the light theme"}
       colors={{
             "base": "#000000",
-            "brand": "#001110",
+            "brand": "#000000",
             "danger": "#820c00",
-            "negative": "#de2500",
+            "negative": "#d22c00",
             "warning": "#5d4000",
             "success": "#003e27",
             "positive": "#55b30f",
             "info": "#004f67",
             "discovery": "#5553c5",
             "base-hover": "#020202",
-            "base-active": "#050505",
-            "base-inactive": "#111111",
-            "base-disabled": "#00000099",
-            "brand-hover": "#063430",
+            "base-active": "#040506",
+            "base-inactive": "#0f1012",
+            "base-disabled": "#000000",
+            "brand-hover": "#03100d",
             "brand-active": "#000000",
-            "brand-inactive": "#104c47",
-            "brand-disabled": "#122b29",
+            "brand-inactive": "#09231c",
+            "brand-disabled": "#050b09",
             "danger-hover": "#ae1302",
             "danger-active": "#5b0600",
             "danger-inactive": "#cd220e",
             "danger-disabled": "#77251a",
-            "negative-hover": "#ff401d",
-            "negative-active": "#a71d00",
-            "negative-inactive": "#ff7257",
-            "negative-disabled": "#c9492f",
+            "negative-hover": "#ff4011",
+            "negative-active": "#9f2300",
+            "negative-inactive": "#ff6e4b",
+            "negative-disabled": "#c34b2e",
             "warning-hover": "#9f6802",
             "warning-active": "#4a3100",
             "warning-inactive": "#c08315",
@@ -3101,63 +3288,63 @@ const COLOR_VARIANTS = {
       title={"color.border"}
       subtitle={"The primary border color for the light theme"}
       colors={{
-            "base": "#111111",
-            "brand": "#004b45",
-            "danger": "#eb0010",
-            "negative": "#eb1a00",
-            "warning": "#c18600",
-            "success": "#007b4f",
-            "positive": "#76c319",
-            "info": "#00afdb",
-            "discovery": "#9493fb",
+            "base": "#1b1b1b",
+            "brand": "#024233",
+            "danger": "#f00a45",
+            "negative": "#ff0404",
+            "warning": "#f39e03",
+            "success": "#008b58",
+            "positive": "#81c71e",
+            "info": "#48d6ff",
+            "discovery": "#8e6eeb",
             "base-subtle": "#000000",
-            "brand-subtle": "#001110",
+            "brand-subtle": "#000000",
             "danger-subtle": "#820c00",
-            "negative-subtle": "#de2500",
+            "negative-subtle": "#d22c00",
             "warning-subtle": "#5d4000",
             "success-subtle": "#003e27",
             "positive-subtle": "#55b30f",
             "info-subtle": "#004f67",
             "discovery-subtle": "#5553c5",
-            "base-hover": "#000000",
+            "base-hover": "#010101",
             "base-active": "#000000",
-            "base-disabled": "#11111199",
-            "brand-hover": "#219287",
-            "brand-active": "#001a18",
-            "brand-disabled": "#295f59",
-            "danger-hover": "#ff6767",
-            "danger-active": "#950014",
-            "danger-disabled": "#c53b35",
-            "negative-hover": "#ff7561",
-            "negative-active": "#9e0400",
-            "negative-disabled": "#ce4731",
-            "warning-hover": "#ffce73",
-            "warning-active": "#976300",
-            "warning-disabled": "#daa656",
-            "success-hover": "#39eb96",
-            "success-active": "#005733",
-            "success-disabled": "#45a973",
-            "positive-hover": "#b4f96a",
-            "positive-active": "#477500",
-            "positive-disabled": "#8cbe5e",
-            "info-hover": "#83eeff",
-            "info-active": "#0088af",
-            "info-disabled": "#69c5e7",
-            "discovery-hover": "#efefff",
-            "discovery-active": "#6460e3",
-            "discovery-disabled": "#8b8fd9",
+            "base-disabled": "#1b1b1b99",
+            "brand-hover": "#207c64",
+            "brand-active": "#000b09",
+            "brand-disabled": "#235042",
+            "danger-hover": "#ff7490",
+            "danger-active": "#9a0036",
+            "danger-disabled": "#c74256",
+            "negative-hover": "#ff756d",
+            "negative-active": "#a70005",
+            "negative-disabled": "#d44538",
+            "warning-hover": "#ffd287",
+            "warning-active": "#946400",
+            "warning-disabled": "#d9a85f",
+            "success-hover": "#45f8a1",
+            "success-active": "#00653b",
+            "success-disabled": "#4eb87d",
+            "positive-hover": "#bffb74",
+            "positive-active": "#538200",
+            "positive-disabled": "#95c163",
+            "info-hover": "#bafbff",
+            "info-active": "#00a8d2",
+            "info-disabled": "#8dd5ed",
+            "discovery-hover": "#d7cbff",
+            "discovery-active": "#6943d1",
+            "discovery-disabled": "#8573c7",
             "base-subtle-hover": "#000000",
             "base-subtle-active": "#000000",
-            "base-subtle-disabled": "#00000099",
-            "brand-subtle-hover": "#104c47",
+            "base-subtle-disabled": "#000000",
+            "brand-subtle-hover": "#09231c",
             "brand-subtle-active": "#000000",
-            "brand-subtle-disabled": "#122b29",
+            "brand-subtle-disabled": "#050b09",
             "danger-subtle-hover": "#cd220e",
             "danger-subtle-active": "#510000",
             "danger-subtle-disabled": "#77251a",
-            "negative-subtle-hover": "#ff7257",
-            "negative-subtle-active": "#9a1000",
-            "negative-subtle-disabled": "#c9492f",
+            "negative-subtle-hover": "#ff6e4b",
+            "negative-subtle-active": "#921800",
+            "negative-subtle-disabled": "#c34b2e",
             "warning-subtle-hover": "#c08315",
             "warning-subtle-active": "#402900",
             "warning-subtle-disabled": "#7d5c28",
@@ -3180,14 +3367,14 @@ const COLOR_VARIANTS = {
       subtitle={"The primary foreground color for the light theme"}
       colors={{
             "base": "#ffffff",
-            "brand": "#004b45",
-            "danger": "#eb0010",
-            "negative": "#eb1a00",
-            "warning": "#c18600",
-            "success": "#007b4f",
-            "positive": "#76c319",
-            "info": "#00afdb",
-            "discovery": "#9493fb",
+            "brand": "#024233",
+            "danger": "#f00a45",
+            "negative": "#ff0404",
+            "warning": "#f39e03",
+            "success": "#008b58",
+            "positive": "#81c71e",
+            "info": "#48d6ff",
+            "discovery": "#8e6eeb",
             "base-inverse": "#000000",
             "brand-inverse": "#ffffff",
             "danger-inverse": "#ffffff",
@@ -3197,87 +3384,89 @@ const COLOR_VARIANTS = {
             "positive-inverse": "#ffffff",
             "info-inverse": "#ffffff",
             "discovery-inverse": "#ffffff",
-            "base-hover": "#cfcfcf",
+            "base-hover": "#cacaca",
             "base-active": "#000000",
             "base-inactive": "#ffffff",
             "base-disabled": "#ffffff99",
-            "brand-hover": "#219287",
-            "brand-active": "#001a18",
-            "brand-inactive": "#4ac6b9",
-            "brand-disabled": "#a9a9a9",
-            "danger-hover": "#ff6767",
-            "danger-active": "#950014",
-            "danger-inactive": "#ffa6a4",
+            "brand-hover": "#207c64",
+            "brand-active": "#000b09",
+            "brand-inactive": "#41b091",
+            "brand-disabled": "#a4a4a4",
+            "danger-hover": "#ff7490",
+            "danger-active": "#9a0036",
+            "danger-inactive": "#ffb4c4",
             "danger-disabled": "#c0c0c0",
-            "negative-hover": "#ff7561",
-            "negative-active": "#9e0400",
-            "negative-inactive": "#ffa795",
+            "negative-hover": "#ff756d",
+            "negative-active": "#a70005",
+            "negative-inactive": "#ffaaa1",
             "negative-disabled": "#000000",
-            "warning-hover": "#ffce73",
-            "warning-active": "#976300",
-            "warning-inactive": "#fff7bb",
+            "warning-hover": "#ffd287",
+            "warning-active": "#946400",
+            "warning-inactive": "#fff9ce",
             "warning-disabled": "#000000",
-            "success-hover": "#39eb96",
-            "success-active": "#005733",
-            "success-inactive": "#a4ffd1",
+            "success-hover": "#45f8a1",
+            "success-active": "#00653b",
+            "success-inactive": "#bbffde",
             "success-disabled": "#000000",
-            "positive-hover": "#b4f96a",
-            "positive-active": "#477500",
-            "positive-inactive": "#eeffd8",
+            "positive-hover": "#bffb74",
+            "positive-active": "#538200",
+            "positive-inactive": "#f3ffde",
             "positive-disabled": "#212121",
-            "info-hover": "#83eeff",
-            "info-active": "#0088af",
-            "info-inactive": "#c8ffff",
+            "info-hover": "#bafbff",
+            "info-active": "#00a8d2",
+            "info-inactive": "#dfffff",
             "info-disabled": "#000000",
-            "discovery-hover": "#efefff",
-            "discovery-active": "#6460e3",
+            "discovery-hover": "#d7cbff",
+            "discovery-active": "#6943d1",
             "discovery-inactive": "#ffffff",
             "discovery-disabled": "#000000",
             "base-inverse-hover": "#000000",
             "base-inverse-active": "#000000",
-            "base-inverse-inactive": "#060606",
+            "base-inverse-inactive": "#0e0f12",
             "base-inverse-disabled": "#a4a4a4",
             "brand-inverse-hover": "#ffffff",
-            "brand-inverse-active": "#f0f0f0",
+            "brand-inverse-active": "#ececec",
             "brand-inverse-inactive": "#ffffff",
-            "brand-inverse-disabled": "#a9a9a9",
+            "brand-inverse-disabled": "#ffffff99",
             "danger-inverse-hover": "#ffffff",
-            "danger-inverse-active": "#f0f0f0",
+            "danger-inverse-active": "#ececec",
             "danger-inverse-inactive": "#ffffff",
             "danger-inverse-disabled": "#c0c0c0",
             "negative-inverse-hover": "#ffffff",
-            "negative-inverse-active": "#f0f0f0",
+            "negative-inverse-active": "#ececec",
             "negative-inverse-inactive": "#ffffff",
             "negative-inverse-disabled": "#000000",
             "warning-inverse-hover": "#000000",
             "warning-inverse-active": "#000000",
-            "warning-inverse-inactive": "#060606",
+            "warning-inverse-inactive": "#0e0f12",
             "warning-inverse-disabled": "#000000",
             "success-inverse-hover": "#ffffff",
-            "success-inverse-active": "#f0f0f0",
+            "success-inverse-active": "#ececec",
             "success-inverse-inactive": "#ffffff",
             "success-inverse-disabled": "#000000",
             "positive-inverse-hover": "#ffffff",
-            "positive-inverse-active": "#f0f0f0",
+            "positive-inverse-active": "#ececec",
             "positive-inverse-inactive": "#ffffff",
             "positive-inverse-disabled": "#212121",
             "info-inverse-hover": "#ffffff",
-            "info-inverse-active": "#f0f0f0",
+            "info-inverse-active": "#ececec",
             "info-inverse-inactive": "#ffffff",
             "info-inverse-disabled": "#000000",
             "discovery-inverse-hover": "#ffffff",
-            "discovery-inverse-active": "#f0f0f0",
+            "discovery-inverse-active": "#ececec",
             "discovery-inverse-inactive": "#ffffff",
             "discovery-inverse-disabled": "#000000",
             "base-ghost-hover": "#ffffff",
-            "brand-ghost-hover": "#ffffff",
+            "brand-ghost-hover": "#d2fef0",
             "danger-ghost-hover": "#ffffff",
-            "negative-ghost-hover": "#fff7f2",
-            "warning-ghost-hover": "#fff9bf",
-            "success-ghost-hover": "#e8fff6",
-            "positive-ghost-hover": "#f4ffe2",
-            "info-ghost-hover": "#ccffff",
-            "discovery-ghost-hover": "#ffffff"
+            "negative-ghost-hover": "#fffefe",
+            "warning-ghost-hover": "#fffacf",
+            "success-ghost-hover": "#dffff3",
+            "positive-ghost-hover": "#f6ffe4",
+            "info-ghost-hover": "#e7ffff",
+            "discovery-ghost-hover": "#ffffff",
+            "base-inverse-ghost-hover": "#060607",
+            "warning-inverse-ghost-hover": "#373b44"
       }}
     />
         </ColorPalette>
@@ -3294,7 +3483,7 @@ const COLOR_VARIANTS = {
             "elevated": "#ffffff",
             "floating": "#ffffff",
             "highest": "#ffffff",
-            "link": "#3b91ff",
+            "link": "#659dff",
             "lowest-hover": "#ffffff",
             "lowest-active": "#eaeaea",
             "lowest-inactive": "#ffffff",
@@ -3315,57 +3504,42 @@ const COLOR_VARIANTS = {
             "highest-active": "#ffffff",
             "highest-inactive": "#ffffff",
             "highest-disabled": "#ffffff99",
-            "link-hover": "#77b2ff",
-            "link-active": "#1878f2",
-            "link-inactive": "#9eccff",
-            "link-disabled": "#5d92d9"
+            "link-hover": "#83b6ff",
+            "link-active": "#347dff",
+            "link-inactive": "#9ecdff",
+            "link-disabled": "#6597ee"
       }}
     />
           <ColorItem
       title={"color.black"}
-      subtitle={"A near black color"}
+      subtitle={"A almost black color"}
       colors={{
             "black": "#000000"
       }}
     />
           <ColorItem
-      title={"color.brand"}
-      subtitle={"The Storm Software brand teal color"}
-      colors={{
-            "1": "#dff9f7",
-            "2": "#a2f0e8",
-            "3": "#66e5db",
-            "4": "#28dbcb",
-            "5": "#00bcad",
-            "6": "#008479",
-            "7": "#004b45",
-            "8": "#001110",
-            "9": "#000000"
-      }}
-    />
-          <ColorItem
       title={"color.data"}
-      subtitle={"The grey data visualization emphasis color for the light theme"}
+      subtitle={"The neutral data visualization emphasis color for the light theme"}
       colors={{
-            "grey.emphasis": "#3e3e3e",
-            "grey.subtle": "#ffffff",
+            "neutral.emphasis": "#2f2f2f",
+            "neutral.subtle": "#ffffff",
             "brand.emphasis": "#dff9f7",
-            "brand.subtle": "#a2f0e8",
-            "red.emphasis": "#f51534",
+            "brand.subtle": "#dff9f7",
+            "red.emphasis": "#f00a45",
             "red.subtle": "#fcb3d6",
             "orange.emphasis": "#ff7224",
             "orange.subtle": "#ffc2a4",
-            "yellow.emphasis": "#a47200",
+            "yellow.emphasis": "#b27b00",
             "yellow.subtle": "#ffc457",
-            "green.emphasis": "#007b4f",
+            "green.emphasis": "#008b58",
             "green.subtle": "#64e6a6",
-            "sky.emphasis": "#008cb4",
+            "sky.emphasis": "#0098c4",
             "sky.subtle": "#48d6ff",
-            "blue.emphasis": "#4d9bff",
+            "blue.emphasis": "#6aabff",
             "blue.subtle": "#bedbff",
-            "purple.emphasis": "#a3a2ff",
+            "purple.emphasis": "#c6c5ff",
             "purple.subtle": "#fcfcff",
-            "pink.emphasis": "#f56fa6",
+            "pink.emphasis": "#ff81b6",
             "pink.subtle": "#ffdcea"
       }}
     />
@@ -3373,27 +3547,27 @@ const COLOR_VARIANTS = {
       title={"color.foreground"}
       subtitle={"The body foreground color for the light theme"}
       colors={{
-            "body": "#9d9d9d",
-            "eyebrow": "#3e3e3e",
-            "caption": "#6d6d6d",
-            "link": "#3b91ff",
+            "body": "#adadad",
+            "eyebrow": "#2f2f2f",
+            "caption": "#535353",
+            "link": "#659dff",
             "required": "#ff0404",
-            "body-hover": "#d9d9d9",
-            "body-active": "#797979",
+            "body-hover": "#ededed",
+            "body-active": "#868686",
             "body-inactive": "#ffffff",
-            "body-disabled": "#9d9d9d99",
-            "eyebrow-hover": "#626262",
-            "eyebrow-active": "#282828",
-            "eyebrow-inactive": "#868686",
-            "eyebrow-disabled": "#3e3e3e99",
-            "caption-hover": "#9d9d9d",
-            "caption-active": "#505050",
-            "caption-inactive": "#cfcfcf",
-            "caption-disabled": "#6d6d6d99",
-            "link-hover": "#9eccff",
-            "link-active": "#0c6ce3",
-            "link-inactive": "#d8f2ff",
-            "link-disabled": "#151515",
+            "body-disabled": "#adadad99",
+            "eyebrow-hover": "#4f4f4f",
+            "eyebrow-active": "#1c1c1c",
+            "eyebrow-inactive": "#707070",
+            "eyebrow-disabled": "#2f2f2f99",
+            "caption-hover": "#7c7c7c",
+            "caption-active": "#3b3b3b",
+            "caption-inactive": "#a7a7a7",
+            "caption-disabled": "#53535399",
+            "link-hover": "#9ecdff",
+            "link-active": "#196cff",
+            "link-inactive": "#daf3ff",
+            "link-disabled": "#1b1b1b",
             "required-hover": "#ff756d",
             "required-active": "#a70005",
             "required-inactive": "#ffaaa1",
@@ -3405,15 +3579,15 @@ const COLOR_VARIANTS = {
       subtitle={"The overlay background color for the light theme"}
       colors={{
             "background": "#ffffff",
-            "border": "#111111",
+            "border": "#1b1b1b",
             "backdrop": "#00000066",
             "background-hover": "#ffffff",
             "background-active": "#ffffff",
             "background-inactive": "#ffffff",
             "background-disabled": "#ffffff99",
-            "border-hover": "#292929",
-            "border-active": "#020202",
-            "border-disabled": "#11111199"
+            "border-hover": "#353535",
+            "border-active": "#0b0b0b",
+            "border-disabled": "#1b1b1b99"
       }}
     />
           <ColorItem
