@@ -9,29 +9,29 @@ catalog:
   "@expo/cli": 54.0.25
   "@maskito/core": ^3.11.1
   "@maskito/react": ^3.11.1
-  "@powerlines/nx": ^0.13.252
-  "@powerlines/tsconfig": ^0.4.256
-  "@powerlines/tsdoc": ^0.2.204
-  "@powerlines/plugin-tsdown": ^0.1.613
-  "@powerlines/plugin-tamagui": ^0.1.664
-  "@powerlines/plugin-env": ^0.16.421
-  "@razorwind/color-variants": ^0.0.42
+  "@powerlines/nx": ^0.13.253
+  "@powerlines/tsconfig": ^0.4.257
+  "@powerlines/tsdoc": ^0.2.205
+  "@powerlines/plugin-tsdown": ^0.1.614
+  "@powerlines/plugin-tamagui": ^0.1.665
+  "@powerlines/plugin-env": ^0.16.422
+  "@razorwind/color-variants": ^0.0.45
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
   "@react-navigation/native": ~6.1.18
   "@react-navigation/stack": ^6.4.1
   "@rehookify/datepicker": ^6.6.8
-  "@shell-shock/core": ^0.17.25
-  "@shell-shock/eslint-plugin": ^0.0.89
-  "@shell-shock/nx": ^0.0.98
-  "@shell-shock/preset-cli": ^0.9.37
-  "@storm-software/eslint-plugin-pnpm": ^0.0.99
+  "@shell-shock/core": ^0.17.26
+  "@shell-shock/eslint-plugin": ^0.0.90
+  "@shell-shock/nx": ^0.0.99
+  "@shell-shock/preset-cli": ^0.9.38
+  "@storm-software/eslint-plugin-pnpm": ^0.0.104
   "@storybook/addon-docs": ^10.6.0
   "@storybook/addon-vitest": ^10.6.0
   "@storybook/react": ^10.6.0
   "@storybook/react-vite": ^10.6.0
-  "@stryke/date": ^0.0.26
+  "@stryke/date": ^0.0.27
   "@tamagui/accordion": ^2.7.7
   "@tamagui/adapt": ^2.7.7
   "@tamagui/alert-dialog": ^2.7.7
@@ -98,38 +98,38 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.65
-  "@razorwind/css": ^0.0.48
-  "@razorwind/design-md": ^0.0.62
-  "@razorwind/nx": ^0.0.61
-  "@razorwind/storybook": ^0.0.63
-  "@razorwind/style-dictionary": ^0.0.51
-  "@razorwind/shadcn": ^0.0.61
-  "@razorwind/tamagui": ^0.0.64
-  "@storm-software/cloudflare-tools": ^0.71.284
-  "@storm-software/config": ^1.138.72
-  "@storm-software/config-tools": ^1.190.136
-  "@storm-software/cspell": ^0.46.203
-  "@storm-software/eslint-config-react": ^0.0.93
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.99
-  "@storm-software/git-tools": ^2.131.144
-  "@storm-software/linting-tools": ^1.134.66
-  "@storm-software/markdownlint": ^0.30.291
-  "@storm-software/pnpm-tools": ^0.7.150
-  "@storm-software/prettier": ^0.59.189
-  "@storm-software/tsconfig": ^0.48.202
-  "@storm-software/untyped": ^0.24.278
-  "@storm-software/workspace-tools": ^1.297.5
-  "@stryke/async": ^0.1.42
-  "@stryke/env": ^0.20.133
-  "@stryke/helpers": ^0.10.54
-  "@stryke/hooks": ^0.4.131
-  "@stryke/json": ^0.15.38
-  "@stryke/path": ^0.29.41
-  "@stryke/string-format": ^0.17.56
-  "@stryke/type-checks": ^0.6.47
-  "@stryke/types": ^0.12.42
-  "@stryke/unique-id": ^0.3.127
+  "@razorwind/core": ^0.0.68
+  "@razorwind/css": ^0.0.51
+  "@razorwind/design-md": ^0.0.65
+  "@razorwind/nx": ^0.0.64
+  "@razorwind/storybook": ^0.0.66
+  "@razorwind/style-dictionary": ^0.0.54
+  "@razorwind/shadcn": ^0.0.63
+  "@razorwind/tamagui": ^0.0.67
+  "@storm-software/cloudflare-tools": ^0.71.289
+  "@storm-software/config": ^1.138.77
+  "@storm-software/config-tools": ^1.190.141
+  "@storm-software/cspell": ^0.46.208
+  "@storm-software/eslint-config-react": ^0.0.98
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.104
+  "@storm-software/git-tools": ^2.131.149
+  "@storm-software/linting-tools": ^1.134.71
+  "@storm-software/markdownlint": ^0.30.296
+  "@storm-software/pnpm-tools": ^0.7.155
+  "@storm-software/prettier": ^0.59.194
+  "@storm-software/tsconfig": ^0.48.207
+  "@storm-software/untyped": ^0.24.283
+  "@storm-software/workspace-tools": ^1.297.10
+  "@stryke/async": ^0.1.43
+  "@stryke/env": ^0.20.134
+  "@stryke/helpers": ^0.10.55
+  "@stryke/hooks": ^0.4.132
+  "@stryke/json": ^0.15.39
+  "@stryke/path": ^0.29.42
+  "@stryke/string-format": ^0.17.57
+  "@stryke/type-checks": ^0.6.48
+  "@stryke/types": ^0.12.43
+  "@stryke/unique-id": ^0.3.128
   "@swc-node/register": 1.11.1
   "@swc/core": 1.15.41
   "@swc/helpers": 0.5.23
@@ -167,8 +167,8 @@ catalog:
   maska: ^3.2.1
   nx: 23.1.1
   optics-ts: ^2.4.1
-  powerlines: ^0.47.212
-  prettier: ^3.9.6
+  powerlines: ^0.47.213
+  prettier: ^3.9.7
   jsonc-eslint-parser: ^2.4.2
   raf: ^3.4.1
   react: ^19.3.0
@@ -196,7 +196,7 @@ catalog:
   wrangler: ^3.114.17
   zod: ^3.25.76
   zx: ^8.8.5
-  "@storm-software/tsdoc": ^0.13.288
+  "@storm-software/tsdoc": ^0.13.293
   sembear: ^0.7.0
   parse-github-url: ^1.0.4
   playwright: ^1.63.0
@@ -205,6 +205,9 @@ catalog:
   "@tamagui/dismissable": ^2.7.7
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
+  "@razorwind/shiki": ^0.0.42
+  "@razorwind/llms": ^0.0.2
+  "@razorwind/docgen": ^0.0.64
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true
@@ -214,8 +217,9 @@ minimumReleaseAgeExclude:
   - "@storm-software/*"
   - "@stryke/*"
   - "@powerlines/*"
+  - "@razorwind/*"
   - powerlines
-useNodeVersion: 26.3.0
+nodeVersion: 26.3.0
 allowBuilds:
   "@parcel/watcher": true
   "@swc/core": true

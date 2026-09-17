@@ -9,6 +9,8 @@ tsconfig.tsbuildinfo
 .env.local
 __generated__
 
+graphify-out
+
 # dependencies
 node_modules
 

@@ -73,7 +73,7 @@ $Program, $Arguments = $Command.Split(" ", 2)
 $QuotedArgs = ($Arguments -split ' ' | ForEach-Object { "'" + ($_ -replace "'", "''") + "'" }) -join ' '
 __cycloneUI_debug "QuotedArgs: $QuotedArgs"
 
-$RequestComp = "& /nix/store/7mvx7hp88zp010gwajvbgga8jq9p8hiy-nodejs-slim-26.7.0/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete '--' $QuotedArgs"
+$RequestComp = "& /nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete '--' $QuotedArgs"
 __cycloneUI_debug "RequestComp: $RequestComp"
 
 # we cannot use $WordToComplete because it

@@ -40,7 +40,7 @@ __cyclone_ui_debug "args: $args"
 __cyclone_ui_debug "last arg: $lastArg"
 
 # Build the completion request command
-set -l requestComp "/nix/store/7mvx7hp88zp010gwajvbgga8jq9p8hiy-nodejs-slim-26.7.0/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete -- (string join ' ' -- (string escape -- $args[2..-1])) $lastArg"
+set -l requestComp "/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete -- (string join ' ' -- (string escape -- $args[2..-1])) $lastArg"
 
 __cyclone_ui_debug "Calling $requestComp"
 set -l results (eval $requestComp 2> /dev/null)

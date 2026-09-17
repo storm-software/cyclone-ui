@@ -1187,7 +1187,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias SHELL_SHOCK_BUILD_ID
-   * @defaultValue "72406c71-0914-433e-83f4-58612e3e9787"
+   * @defaultValue "3ed6f88f-a900-437f-9c45-e86c46c8921a"
    */
   CYCLONE_UI_BUILD_ID: string;
 
@@ -1196,7 +1196,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias SHELL_SHOCK_BUILD_TIMESTAMP
-   * @defaultValue "2026-09-17T06:33:20.177Z"
+   * @defaultValue "2026-09-17T21:01:24.100Z"
    */
   CYCLONE_UI_BUILD_TIMESTAMP: string;
 
@@ -1214,7 +1214,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias SHELL_SHOCK_RELEASE_ID
-   * @defaultValue "406c7109-1493-4ec3-b458-612e3e97870a"
+   * @defaultValue "d6f88fa9-0003-4fdc-85e8-6c46c8921af4"
    */
   CYCLONE_UI_RELEASE_ID: string;
 
@@ -2321,7 +2321,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_ID
    * @alias CYCLONE_UI_BUILD_ID
-   * @defaultValue "72406c71-0914-433e-83f4-58612e3e9787"
+   * @defaultValue "3ed6f88f-a900-437f-9c45-e86c46c8921a"
    */
   SHELL_SHOCK_BUILD_ID: string;
 
@@ -2330,7 +2330,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias BUILD_TIMESTAMP
    * @alias CYCLONE_UI_BUILD_TIMESTAMP
-   * @defaultValue "2026-09-17T06:33:20.177Z"
+   * @defaultValue "2026-09-17T21:01:24.100Z"
    */
   SHELL_SHOCK_BUILD_TIMESTAMP: string;
 
@@ -2348,7 +2348,7 @@ export interface Env extends UnprefixedEnv {
    *
    * @alias RELEASE_ID
    * @alias CYCLONE_UI_RELEASE_ID
-   * @defaultValue "406c7109-1493-4ec3-b458-612e3e97870a"
+   * @defaultValue "d6f88fa9-0003-4fdc-85e8-6c46c8921af4"
    */
   SHELL_SHOCK_RELEASE_ID: string;
 
@@ -3718,7 +3718,7 @@ export function parseSafe(
           envValue["BUILD_ID"];
         const buildIdPath = envPath + ".BUILD_ID";
         if (buildIdValue === undefined || buildIdValue === "") {
-          buildIdProperty = "72406c71-0914-433e-83f4-58612e3e9787";
+          buildIdProperty = "3ed6f88f-a900-437f-9c45-e86c46c8921a";
         } else {
           if (typeof buildIdValue === "string") {
             buildIdProperty = buildIdValue;
@@ -3737,7 +3737,7 @@ export function parseSafe(
         }
         envSchema["BUILD_ID"] = buildIdProperty;
       } else {
-        envSchema["BUILD_ID"] = "72406c71-0914-433e-83f4-58612e3e9787";
+        envSchema["BUILD_ID"] = "3ed6f88f-a900-437f-9c45-e86c46c8921a";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_TIMESTAMP"] ||
@@ -3751,7 +3751,7 @@ export function parseSafe(
           envValue["BUILD_TIMESTAMP"];
         const buildTimestampPath = envPath + ".BUILD_TIMESTAMP";
         if (buildTimestampValue === undefined || buildTimestampValue === "") {
-          buildTimestampProperty = "2026-09-17T06:33:20.177Z";
+          buildTimestampProperty = "2026-09-17T21:01:24.100Z";
         } else {
           if (typeof buildTimestampValue === "string") {
             buildTimestampProperty = buildTimestampValue;
@@ -3770,7 +3770,7 @@ export function parseSafe(
         }
         envSchema["BUILD_TIMESTAMP"] = buildTimestampProperty;
       } else {
-        envSchema["BUILD_TIMESTAMP"] = "2026-09-17T06:33:20.177Z";
+        envSchema["BUILD_TIMESTAMP"] = "2026-09-17T21:01:24.100Z";
       }
       if (
         (envValue["CYCLONE_UI_BUILD_CHECKSUM"] ||
@@ -3817,7 +3817,7 @@ export function parseSafe(
           envValue["RELEASE_ID"];
         const releaseIdPath = envPath + ".RELEASE_ID";
         if (releaseIdValue === undefined || releaseIdValue === "") {
-          releaseIdProperty = "406c7109-1493-4ec3-b458-612e3e97870a";
+          releaseIdProperty = "d6f88fa9-0003-4fdc-85e8-6c46c8921af4";
         } else {
           if (typeof releaseIdValue === "string") {
             releaseIdProperty = releaseIdValue;
@@ -3836,7 +3836,7 @@ export function parseSafe(
         }
         envSchema["RELEASE_ID"] = releaseIdProperty;
       } else {
-        envSchema["RELEASE_ID"] = "406c7109-1493-4ec3-b458-612e3e97870a";
+        envSchema["RELEASE_ID"] = "d6f88fa9-0003-4fdc-85e8-6c46c8921af4";
       }
       if (
         (envValue["CYCLONE_UI_RELEASE_TAG"] ||
@@ -7212,7 +7212,7 @@ export function parseSafe(
           envValue["DEVENV_RUNTIME"];
         const devenvRuntimePath = envPath + ".DEVENV_RUNTIME";
         if (devenvRuntimeValue === undefined || devenvRuntimeValue === "") {
-          devenvRuntimeProperty = "/run/user/1001/devenv-34e56cb";
+          devenvRuntimeProperty = "/run/user/1001/devenv-ed47efd";
         } else {
           if (typeof devenvRuntimeValue === "string") {
             devenvRuntimeProperty = devenvRuntimeValue;
@@ -7231,7 +7231,7 @@ export function parseSafe(
         }
         envSchema["DEVENV_RUNTIME"] = devenvRuntimeProperty;
       } else {
-        envSchema["DEVENV_RUNTIME"] = "/run/user/1001/devenv-34e56cb";
+        envSchema["DEVENV_RUNTIME"] = "/run/user/1001/devenv-ed47efd";
       }
       if (
         (envValue["CYCLONE_UI_PATHEXT"] ||
@@ -7278,7 +7278,7 @@ export function parseSafe(
         const pathPath = envPath + ".PATH";
         if (pathValue === undefined || pathValue === "") {
           pathProperty =
-            "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/bin:node_modules/.bin:/nix/store/90nk33c4fkyg4x4dfk5cykqiryf2nlqq-bash-interactive-5.3p15/bin:/nix/store/nqm1r6hl03k0yjdm73kxxj96c3wy7krw-typescript-5.9.3/bin:/nix/store/ich604d7gnsl3blwzjvga2jn2i3rgl3a-typescript-language-server-5.3.0/bin:/nix/store/xak3vlg9n70d4x09m9b07rqzs185gh9s-statix-0.5.8-unstable-2026-07-17/bin:/nix/store/xl8kkkb3v8lmnrb3hpvpb45amnx1xzhl-deadnix-1.3.2/bin:/nix/store/l1wzm51gb79ppc064x0609514zm05w74-vulnix/bin:/nix/store/8jp6cpbvla6jwsl0p421va09bni0jglc-nixd-2.9.2/bin:/nix/store/nfdfl8kf8kd2na67krwmbvd51y0ylnir-cachix-1.11.1-bin/bin:/nix/store/qlkiqm46l3r14df50cj48ljxfhp4qsl8-nodejs-slim-26.7.0-dev/bin:/nix/store/7mvx7hp88zp010gwajvbgga8jq9p8hiy-nodejs-slim-26.7.0/bin:/nix/store/hwr6hw6fybmdd5ad07lv9gd08yxfi2ci-pnpm-11.21.0/bin:/nix/store/rah911vgcsjksgbhxyq2ml9jzvgpi8sw-bootstrap/bin:/nix/store/w78ar658w8nns3f6b3zgb64p77l6vssp-build/bin:/nix/store/p8j7gq2frwzfqsixsch4cyfh14ld19di-build-dev/bin:/nix/store/pyb2crwirbgwn878addd04xv5hblmlhp-clean/bin:/nix/store/3djw5a0xrzc9i2c2y6mg4a0va5icyd0r-docs/bin:/nix/store/xvnw4jdznw28sy83xaxrwplkyvy5mfms-format/bin:/nix/store/5s5d1jif01l69lp4czhwchrg95dn39cj-lint/bin:/nix/store/p02m49slvrlafg9ipl8x2p46sd0h81qy-nuke/bin:/nix/store/lw3nhv0fy07f87ixyyvk8shfmx95cakp-release/bin:/nix/store/603fdmhld044j8z5rnbk2c1smkya8yqb-test/bin:/nix/store/fq1y6y3pmw0376jkmzdms8w90pn29gnx-test-ci/bin:/nix/store/nsbpk7wx79wg3gnn9dcf2ysy1w5grj45-update-storm/bin:/nix/store/nxjq9lhr0q6x8bjlvrih0bdh4d9dz5zj-gnupg-2.4.9/bin:/nix/store/3201q0mbb20iqjw22wccjmcbq0q55ccg-git-crypt-0.8.0/bin:/nix/store/jhq3qjh1pix0rz8012k822bn12ykvrhm-zizmor-1.29.0/bin:/nix/store/wsxw0aw4f4rx02sbq734g7vqmdm28q4g-taplo-0.10.0/bin:/nix/store/j4ldqh2achvl4zhvap4kchn8nb9frz85-typos-1.49.0/bin:/nix/store/k2hwcha2p1fy0v0py34vq3jyvwqk339p-rustfmt-1.97.1/bin:/nix/store/5274jcnvnkh1mnwvw8ayv3h8i0g2xab9-nixfmt-1.4.0/bin:/nix/store/65sb034qkzwihrha263004qm9s748m9m-nixpkgs-fmt-1.3.0/bin:/nix/store/w248amhmvb3r0l9id2isyg97cr9w1gx9-python3.14-yamllint-1.37.1/bin:/nix/store/3n4qphl9s728sz8frmpqqrv9b1m87g68-python3-3.14.7/bin:/nix/store/g8zsw7c5n0ksi9xl4297hx49kc2vbj8n-ls-lint-2.3.1/bin:/nix/store/0v0raqk1qw5g2a21km4xa1hwhaq4s976-pkg-config-wrapper-0.29.2/bin:/nix/store/iyinjjn7gv8c77w9qgicfmz4mc4dwq5j-patchelf-0.15.2/bin:/nix/store/3d1c302vw7kc8a5vknhmn34c0pd7zm6m-gcc-wrapper-15.3.0/bin:/nix/store/7sh9061yj9yl20ndc00rqw4d0bd80m1j-gcc-15.3.0/bin:/nix/store/c2fgns4y4c4xjvc6pq024abmxyy4dl28-glibc-2.42-67-bin/bin:/nix/store/97d5ygrvqj55f4nx1x34wfdcc7qn11c0-coreutils-9.11/bin:/nix/store/j5rd8xm5zqgzcb0l19942ms7r96q0hip-binutils-wrapper-2.46/bin:/nix/store/8lkj89binl0xhraqxb8bwmv0q4p3pnlr-binutils-2.46/bin:/nix/store/ibg16grw5is7i7ilnflc5xmj6fwksqkl-findutils-4.11.0/bin:/nix/store/z4i4dnz72g21r3kh8rvjhmi2mpg60vmp-diffutils-3.12/bin:/nix/store/rxd8p6g4k4s0sx4q1szmzvp9rsmhmfys-gnused-4.10/bin:/nix/store/4dgym2zhac9vy0vrih4gsplh0wpfl13m-gnugrep-3.12/bin:/nix/store/ny5hzk3l36pldfsjkh56ia7y55xr23vd-gawk-5.4.1/bin:/nix/store/1lvpa59092swv6mg5hgb0iz8n84z7ksm-gnutar-1.35/bin:/nix/store/5hfc0j56yc4xynq7m4xzi5c9qd2i156f-gzip-1.14/bin:/nix/store/j327d6d2y2a6bc90556jd4wn8n2zb4cf-bzip2-1.0.8-bin/bin:/nix/store/whkpgw1564fpbicxrk77dyv36ygjn9sx-gnumake-4.4.1/bin:/nix/store/byi2zpy2bgcf3dr6y0l8m50rmjj8z7q1-bash-5.3p15/bin:/nix/store/m9r9szj3pajhrphi775ll57jzggcw52k-patch-2.8/bin:/nix/store/wmigyr20bmik4kjqfzm4isql6q5lw8ih-xz-5.8.3-bin/bin:/nix/store/36cxvi2s369aw85pp7fyzq2dqv459d7c-file-5.48/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
+            "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:node_modules/.bin:/nix/store/fq36i63v358zxc1s14in0r3bmwgxvsyy-bootstrap/bin:/nix/store/8mins7nnh17hyqwabw69wi4ckwllddkp-build/bin:/nix/store/s58zshchvg58lnyhmzvsb8lzl7cp7640-build-dev/bin:/nix/store/db91clmza06zk2mxii24jjbr18n91k8n-clean/bin:/nix/store/b75wkvcpq67z0g5j49p4q7zmb76npgzm-docs/bin:/nix/store/m5mb9pjlqyjhwxb1g2mfj7wgxfyyj8gr-format/bin:/nix/store/0463iqahjvrhih81qcm0h1lsiqqmnzf1-graphify-build/bin:/nix/store/pjlwvplvxjflqbzwffis62mnmcikk59r-graphify-query/bin:/nix/store/jprgvsan03ms50nsharfd58nb5ih131s-lint/bin:/nix/store/gq3zjkaciij77rg7k7hdanmg7xlg4mi3-nuke/bin:/nix/store/cix7ny6m9c7njjdavqhlygliagcshdfv-release/bin:/nix/store/vg18s9h9jzq09w19gdcf6m17zk97py7l-test/bin:/nix/store/9n80wciamx9i69q4wla500l7jf52iwia-test-ci/bin:/nix/store/1i3wvdwbv9yfzpwjfjwyyljhgb3qjabr-update-storm/bin:/nix/store/2ndah67h0z5m31v2wkdmg2md4380ggr5-bash-interactive-5.3p15/bin:/nix/store/8sn9azppydd6yax68013401q20ja7x9l-typescript-7.0.2/bin:/nix/store/nshn9c3q086sfcp31fa1v5hkiczd7ilw-typescript-language-server-5.3.0/bin:/nix/store/cljg9zj541vjf2nh7y4cmv99y2jlxd8l-nodejs-slim-26.8.2-dev/bin:/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin:/nix/store/igcspl7ysgfxzhxwz548ajwfkfh51hfw-pnpm-11.25.0/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/gpc5h0d71izbwdqxvvxcmwdfr7f2zflx-uv-0.12.11/bin:/nix/store/0prm77nf3lpljd30wbvh7c3alv2glqc7-gnupg-2.4.9/bin:/nix/store/z3zlcdwf1ds46j2ixx01gg59j76ai57a-git-crypt-0.8.0/bin:/nix/store/m7a1nfhky8yfx4q06i6cqklfa86dichh-zizmor-1.30.1/bin:/nix/store/l67wwwpf7g1kr41d15js2rssld50ka6c-taplo-0.10.0/bin:/nix/store/mkbgr4kpllq6wqzy8mcnrcy2qy2wcqx3-typos-1.50.1/bin:/nix/store/jpcqlbhkwxwvq507mq0hkacpxbxcdwjj-rustfmt-1.98.1/bin:/nix/store/nsj69kqd45ij8fblnhspwwhhp3sk5cwf-nixfmt-1.5.0/bin:/nix/store/3ncxp29pkym7n38rldcjq9nyz1ankf2w-nixpkgs-fmt-1.3.0/bin:/nix/store/6jc63n11h604wlml5y59fgrkzzpsc7nb-python3.14-yamllint-1.37.1/bin:/nix/store/d64q19q1xjdwfhqx6czvrjgrhq0n3lcc-python3-3.14.7/bin:/nix/store/p15645hkjzi7jgp5hwk139lcjwb6jxg1-ls-lint-2.3.1/bin:/nix/store/29d1c5xk6w3rwl7yvdfwl90whslv5h54-pkg-config-wrapper-0.29.2/bin:/nix/store/h9wq5kdv1jc9hxmwgn9vh9bwsigmnsj6-patchelf-0.15.2/bin:/nix/store/z4c6k0mrlkwl3s4w9ysxc8vq1wylm3ms-gcc-wrapper-15.3.0/bin:/nix/store/8sjgd7q3mdks1rb7rbcv0sallhvrhai5-gcc-15.3.0/bin:/nix/store/fdpy1l72q9gvq8d9snrdq67gm0j5s1dg-glibc-2.42-84-bin/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/0fdc105g1896ganr8916rsjxhvr9qv5b-binutils-wrapper-2.46/bin:/nix/store/31gnwsgag5qa14hfblqi5hyn71pyx7py-binutils-2.46/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/i9wgqa0l88aprvpwfaq5hkfa6pklhlv0-findutils-4.11.0/bin:/nix/store/b8xvzgd52jby5dfpi0pf46nisy6wma5d-diffutils-3.12/bin:/nix/store/qf2wzyq4irhgyhnq3s2hz0ldjq3w8a3x-gnused-4.10/bin:/nix/store/xmvbzzxm5snla5a2cyfhm7hjy9bifx7n-gnugrep-3.12/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/41l3h8s1lr518n03bsrzv5vsf37bhnb9-gnutar-1.35/bin:/nix/store/l5sll8nxk70p73l5yqbsjy4mh0c3g0v5-gzip-1.14/bin:/nix/store/j3yz0ag9j442229n8harpmp9aa5qyvhn-bzip2-1.0.8-bin/bin:/nix/store/c011mk580m964s1zxjccvdax3fcmppnl-gnumake-4.4.1/bin:/nix/store/svx59425zxp552p2b8gm11qj5r09b56i-bash-5.3p15/bin:/nix/store/81zqbas7qc02yfdj7142fdcqhxgd3cgz-patch-2.8/bin:/nix/store/518dig8gpvqyac6pkksyjjfzvi9zn8vq-xz-5.8.3-bin/bin:/nix/store/fv9yl55hkskpc2cj9c0sdyq91car9kgl-file-5.48/bin:/nix/store/jm2s5mkl4ybfnw240xbnqyb6ha1731cb-devenv-2.3.1/bin:/nix/store/5nhdc8igh84h7damfihd38z0q71gxzan-cachix-1.12.1-bin/bin:/nix/store/y0z37nw09blshv9saqq7lsf9rjahqx58-nixd-2.9.2/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
         } else {
           if (typeof pathValue === "string") {
             pathProperty = pathValue;
@@ -7295,7 +7295,7 @@ export function parseSafe(
         envSchema["PATH"] = pathProperty;
       } else {
         envSchema["PATH"] =
-          "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/bin:node_modules/.bin:/nix/store/90nk33c4fkyg4x4dfk5cykqiryf2nlqq-bash-interactive-5.3p15/bin:/nix/store/nqm1r6hl03k0yjdm73kxxj96c3wy7krw-typescript-5.9.3/bin:/nix/store/ich604d7gnsl3blwzjvga2jn2i3rgl3a-typescript-language-server-5.3.0/bin:/nix/store/xak3vlg9n70d4x09m9b07rqzs185gh9s-statix-0.5.8-unstable-2026-07-17/bin:/nix/store/xl8kkkb3v8lmnrb3hpvpb45amnx1xzhl-deadnix-1.3.2/bin:/nix/store/l1wzm51gb79ppc064x0609514zm05w74-vulnix/bin:/nix/store/8jp6cpbvla6jwsl0p421va09bni0jglc-nixd-2.9.2/bin:/nix/store/nfdfl8kf8kd2na67krwmbvd51y0ylnir-cachix-1.11.1-bin/bin:/nix/store/qlkiqm46l3r14df50cj48ljxfhp4qsl8-nodejs-slim-26.7.0-dev/bin:/nix/store/7mvx7hp88zp010gwajvbgga8jq9p8hiy-nodejs-slim-26.7.0/bin:/nix/store/hwr6hw6fybmdd5ad07lv9gd08yxfi2ci-pnpm-11.21.0/bin:/nix/store/rah911vgcsjksgbhxyq2ml9jzvgpi8sw-bootstrap/bin:/nix/store/w78ar658w8nns3f6b3zgb64p77l6vssp-build/bin:/nix/store/p8j7gq2frwzfqsixsch4cyfh14ld19di-build-dev/bin:/nix/store/pyb2crwirbgwn878addd04xv5hblmlhp-clean/bin:/nix/store/3djw5a0xrzc9i2c2y6mg4a0va5icyd0r-docs/bin:/nix/store/xvnw4jdznw28sy83xaxrwplkyvy5mfms-format/bin:/nix/store/5s5d1jif01l69lp4czhwchrg95dn39cj-lint/bin:/nix/store/p02m49slvrlafg9ipl8x2p46sd0h81qy-nuke/bin:/nix/store/lw3nhv0fy07f87ixyyvk8shfmx95cakp-release/bin:/nix/store/603fdmhld044j8z5rnbk2c1smkya8yqb-test/bin:/nix/store/fq1y6y3pmw0376jkmzdms8w90pn29gnx-test-ci/bin:/nix/store/nsbpk7wx79wg3gnn9dcf2ysy1w5grj45-update-storm/bin:/nix/store/nxjq9lhr0q6x8bjlvrih0bdh4d9dz5zj-gnupg-2.4.9/bin:/nix/store/3201q0mbb20iqjw22wccjmcbq0q55ccg-git-crypt-0.8.0/bin:/nix/store/jhq3qjh1pix0rz8012k822bn12ykvrhm-zizmor-1.29.0/bin:/nix/store/wsxw0aw4f4rx02sbq734g7vqmdm28q4g-taplo-0.10.0/bin:/nix/store/j4ldqh2achvl4zhvap4kchn8nb9frz85-typos-1.49.0/bin:/nix/store/k2hwcha2p1fy0v0py34vq3jyvwqk339p-rustfmt-1.97.1/bin:/nix/store/5274jcnvnkh1mnwvw8ayv3h8i0g2xab9-nixfmt-1.4.0/bin:/nix/store/65sb034qkzwihrha263004qm9s748m9m-nixpkgs-fmt-1.3.0/bin:/nix/store/w248amhmvb3r0l9id2isyg97cr9w1gx9-python3.14-yamllint-1.37.1/bin:/nix/store/3n4qphl9s728sz8frmpqqrv9b1m87g68-python3-3.14.7/bin:/nix/store/g8zsw7c5n0ksi9xl4297hx49kc2vbj8n-ls-lint-2.3.1/bin:/nix/store/0v0raqk1qw5g2a21km4xa1hwhaq4s976-pkg-config-wrapper-0.29.2/bin:/nix/store/iyinjjn7gv8c77w9qgicfmz4mc4dwq5j-patchelf-0.15.2/bin:/nix/store/3d1c302vw7kc8a5vknhmn34c0pd7zm6m-gcc-wrapper-15.3.0/bin:/nix/store/7sh9061yj9yl20ndc00rqw4d0bd80m1j-gcc-15.3.0/bin:/nix/store/c2fgns4y4c4xjvc6pq024abmxyy4dl28-glibc-2.42-67-bin/bin:/nix/store/97d5ygrvqj55f4nx1x34wfdcc7qn11c0-coreutils-9.11/bin:/nix/store/j5rd8xm5zqgzcb0l19942ms7r96q0hip-binutils-wrapper-2.46/bin:/nix/store/8lkj89binl0xhraqxb8bwmv0q4p3pnlr-binutils-2.46/bin:/nix/store/ibg16grw5is7i7ilnflc5xmj6fwksqkl-findutils-4.11.0/bin:/nix/store/z4i4dnz72g21r3kh8rvjhmi2mpg60vmp-diffutils-3.12/bin:/nix/store/rxd8p6g4k4s0sx4q1szmzvp9rsmhmfys-gnused-4.10/bin:/nix/store/4dgym2zhac9vy0vrih4gsplh0wpfl13m-gnugrep-3.12/bin:/nix/store/ny5hzk3l36pldfsjkh56ia7y55xr23vd-gawk-5.4.1/bin:/nix/store/1lvpa59092swv6mg5hgb0iz8n84z7ksm-gnutar-1.35/bin:/nix/store/5hfc0j56yc4xynq7m4xzi5c9qd2i156f-gzip-1.14/bin:/nix/store/j327d6d2y2a6bc90556jd4wn8n2zb4cf-bzip2-1.0.8-bin/bin:/nix/store/whkpgw1564fpbicxrk77dyv36ygjn9sx-gnumake-4.4.1/bin:/nix/store/byi2zpy2bgcf3dr6y0l8m50rmjj8z7q1-bash-5.3p15/bin:/nix/store/m9r9szj3pajhrphi775ll57jzggcw52k-patch-2.8/bin:/nix/store/wmigyr20bmik4kjqfzm4isql6q5lw8ih-xz-5.8.3-bin/bin:/nix/store/36cxvi2s369aw85pp7fyzq2dqv459d7c-file-5.48/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
+          "/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:./node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/repos/cyclone-ui/node_modules/.bin:/home/development/.local/share/pnpm/store/v11/links/@/pnpm/11.1.2/d5d049f82626f807048f13466af21737098073e057ec189edfd512367b5366a6/node_modules/pnpm/dist/node-gyp-bin:/home/development/repos/cyclone-ui/node_modules/.bin:node_modules/.bin:/nix/store/fq36i63v358zxc1s14in0r3bmwgxvsyy-bootstrap/bin:/nix/store/8mins7nnh17hyqwabw69wi4ckwllddkp-build/bin:/nix/store/s58zshchvg58lnyhmzvsb8lzl7cp7640-build-dev/bin:/nix/store/db91clmza06zk2mxii24jjbr18n91k8n-clean/bin:/nix/store/b75wkvcpq67z0g5j49p4q7zmb76npgzm-docs/bin:/nix/store/m5mb9pjlqyjhwxb1g2mfj7wgxfyyj8gr-format/bin:/nix/store/0463iqahjvrhih81qcm0h1lsiqqmnzf1-graphify-build/bin:/nix/store/pjlwvplvxjflqbzwffis62mnmcikk59r-graphify-query/bin:/nix/store/jprgvsan03ms50nsharfd58nb5ih131s-lint/bin:/nix/store/gq3zjkaciij77rg7k7hdanmg7xlg4mi3-nuke/bin:/nix/store/cix7ny6m9c7njjdavqhlygliagcshdfv-release/bin:/nix/store/vg18s9h9jzq09w19gdcf6m17zk97py7l-test/bin:/nix/store/9n80wciamx9i69q4wla500l7jf52iwia-test-ci/bin:/nix/store/1i3wvdwbv9yfzpwjfjwyyljhgb3qjabr-update-storm/bin:/nix/store/2ndah67h0z5m31v2wkdmg2md4380ggr5-bash-interactive-5.3p15/bin:/nix/store/8sn9azppydd6yax68013401q20ja7x9l-typescript-7.0.2/bin:/nix/store/nshn9c3q086sfcp31fa1v5hkiczd7ilw-typescript-language-server-5.3.0/bin:/nix/store/cljg9zj541vjf2nh7y4cmv99y2jlxd8l-nodejs-slim-26.8.2-dev/bin:/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin:/nix/store/igcspl7ysgfxzhxwz548ajwfkfh51hfw-pnpm-11.25.0/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/gpc5h0d71izbwdqxvvxcmwdfr7f2zflx-uv-0.12.11/bin:/nix/store/0prm77nf3lpljd30wbvh7c3alv2glqc7-gnupg-2.4.9/bin:/nix/store/z3zlcdwf1ds46j2ixx01gg59j76ai57a-git-crypt-0.8.0/bin:/nix/store/m7a1nfhky8yfx4q06i6cqklfa86dichh-zizmor-1.30.1/bin:/nix/store/l67wwwpf7g1kr41d15js2rssld50ka6c-taplo-0.10.0/bin:/nix/store/mkbgr4kpllq6wqzy8mcnrcy2qy2wcqx3-typos-1.50.1/bin:/nix/store/jpcqlbhkwxwvq507mq0hkacpxbxcdwjj-rustfmt-1.98.1/bin:/nix/store/nsj69kqd45ij8fblnhspwwhhp3sk5cwf-nixfmt-1.5.0/bin:/nix/store/3ncxp29pkym7n38rldcjq9nyz1ankf2w-nixpkgs-fmt-1.3.0/bin:/nix/store/6jc63n11h604wlml5y59fgrkzzpsc7nb-python3.14-yamllint-1.37.1/bin:/nix/store/d64q19q1xjdwfhqx6czvrjgrhq0n3lcc-python3-3.14.7/bin:/nix/store/p15645hkjzi7jgp5hwk139lcjwb6jxg1-ls-lint-2.3.1/bin:/nix/store/29d1c5xk6w3rwl7yvdfwl90whslv5h54-pkg-config-wrapper-0.29.2/bin:/nix/store/h9wq5kdv1jc9hxmwgn9vh9bwsigmnsj6-patchelf-0.15.2/bin:/nix/store/z4c6k0mrlkwl3s4w9ysxc8vq1wylm3ms-gcc-wrapper-15.3.0/bin:/nix/store/8sjgd7q3mdks1rb7rbcv0sallhvrhai5-gcc-15.3.0/bin:/nix/store/fdpy1l72q9gvq8d9snrdq67gm0j5s1dg-glibc-2.42-84-bin/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/0fdc105g1896ganr8916rsjxhvr9qv5b-binutils-wrapper-2.46/bin:/nix/store/31gnwsgag5qa14hfblqi5hyn71pyx7py-binutils-2.46/bin:/nix/store/xjl7p8dvyk2j53kqf7f43kdj4ypbxz7g-coreutils-9.11/bin:/nix/store/i9wgqa0l88aprvpwfaq5hkfa6pklhlv0-findutils-4.11.0/bin:/nix/store/b8xvzgd52jby5dfpi0pf46nisy6wma5d-diffutils-3.12/bin:/nix/store/qf2wzyq4irhgyhnq3s2hz0ldjq3w8a3x-gnused-4.10/bin:/nix/store/xmvbzzxm5snla5a2cyfhm7hjy9bifx7n-gnugrep-3.12/bin:/nix/store/9zib1q94gka8i5q530364cvy25504qz5-gawk-5.4.1/bin:/nix/store/41l3h8s1lr518n03bsrzv5vsf37bhnb9-gnutar-1.35/bin:/nix/store/l5sll8nxk70p73l5yqbsjy4mh0c3g0v5-gzip-1.14/bin:/nix/store/j3yz0ag9j442229n8harpmp9aa5qyvhn-bzip2-1.0.8-bin/bin:/nix/store/c011mk580m964s1zxjccvdax3fcmppnl-gnumake-4.4.1/bin:/nix/store/svx59425zxp552p2b8gm11qj5r09b56i-bash-5.3p15/bin:/nix/store/81zqbas7qc02yfdj7142fdcqhxgd3cgz-patch-2.8/bin:/nix/store/518dig8gpvqyac6pkksyjjfzvi9zn8vq-xz-5.8.3-bin/bin:/nix/store/fv9yl55hkskpc2cj9c0sdyq91car9kgl-file-5.48/bin:/nix/store/jm2s5mkl4ybfnw240xbnqyb6ha1731cb-devenv-2.3.1/bin:/nix/store/5nhdc8igh84h7damfihd38z0q71gxzan-cachix-1.12.1-bin/bin:/nix/store/y0z37nw09blshv9saqq7lsf9rjahqx58-nixd-2.9.2/bin:/home/development/.config/carapace/bin:/home/development/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/home/development/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin";
       }
       if (
         (envValue["CYCLONE_UI_npm_config_user_agent"] ||
@@ -7313,7 +7313,7 @@ export function parseSafe(
           npmConfigUserAgentValue === ""
         ) {
           npmConfigUserAgentProperty =
-            "pnpm/11.1.2 npm/? node/v26.7.0 linux x64";
+            "pnpm/11.1.2 npm/? node/v26.8.2 linux x64";
         } else {
           if (typeof npmConfigUserAgentValue === "string") {
             npmConfigUserAgentProperty = npmConfigUserAgentValue;
@@ -7333,7 +7333,7 @@ export function parseSafe(
         envSchema["npm_config_user_agent"] = npmConfigUserAgentProperty;
       } else {
         envSchema["npm_config_user_agent"] =
-          "pnpm/11.1.2 npm/? node/v26.7.0 linux x64";
+          "pnpm/11.1.2 npm/? node/v26.8.2 linux x64";
       }
       if (
         (envValue["CYCLONE_UI_npm_config_fund"] ||

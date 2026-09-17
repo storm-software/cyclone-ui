@@ -753,13 +753,16 @@ function applySaturation(hex: string, factor: number): string {
 }
 
 /** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
-const OKLCH_LIGHTNESS_MIDPOINT = 0.5;
 const DARK_THEME_WHITE_LIGHTNESS_LIMIT = 0.85;
 const LIGHT_THEME_BLACK_LIGHTNESS_LIMIT = 0.15;
 const MINIMUM_DISABLED_LIGHTNESS_DELTA = 0.3;
 
 function isLightColor(hex: string): boolean {
-  return hexToOklch(hex).lightness >= OKLCH_LIGHTNESS_MIDPOINT;
+  return hexToOklch(hex).lightness >= 0.5;
+}
+
+function isDarkColor(hex: string): boolean {
+  return !isLightColor(hex);
 }
 
 function isWhiteColor(hex: string): boolean {

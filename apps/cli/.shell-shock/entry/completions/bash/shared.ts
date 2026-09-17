@@ -44,7 +44,7 @@ _get_comp_words_by_ref -n "=:" cur prev words cword
 local requestComp out directive
 
 # Build the command to get completions
-requestComp="/nix/store/7mvx7hp88zp010gwajvbgga8jq9p8hiy-nodejs-slim-26.7.0/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete -- \${words[@]:1}"
+requestComp="/nix/store/vhmrk3hh4nkaw62xmcl22961g64sn443-nodejs-slim-26.8.2/bin/node  /home/development/repos/cyclone-ui/node_modules/.pnpm/nx@23.1.1_@swc-node+register@1.11.1_@swc+core@1.15.41_@swc+helpers@0.5.23__@swc+types@0_862fbad2e60dbe279d0f415a99047bc4/node_modules/nx/dist/bin/run-executor.js complete -- \${words[@]:1}"
 
 # Add an empty parameter if the last parameter is complete
 if [[ -z "$cur" ]]; then

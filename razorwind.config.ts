@@ -18,10 +18,12 @@
 
 import colorVariants from "@razorwind/color-variants";
 import { defineConfig } from "@razorwind/core";
-import type { Tokens } from "@razorwind/core/schema";
 import css from "@razorwind/css/generate";
 import designMD from "@razorwind/design-md/generate";
+import docgen from "@razorwind/docgen/generate";
+import llms from "@razorwind/llms/generate";
 import shadcn from "@razorwind/shadcn/generate";
+import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
 import tamagui from "@razorwind/tamagui/generate";
 import tamaguiPreprocessor from "./tools/razorwind/src/tamagui-preprocessor";
@@ -48,12 +50,21 @@ export default defineConfig({
       outputPath: "packages/themes/src/tamagui/config.ts"
     }),
     designMD(),
+    llms({
+      outputPath: "docs/llms"
+    }),
+    shiki({
+      outputPath: "packages/themes/src/shiki"
+    }),
+    docgen({
+      outputPath: "docs/themes"
+    }),
     css({
       outputPath: "packages/themes/src/css/tokens.css"
     }),
     storybook({
       outputPath: "packages/themes/src/storybook",
-      mapTheme: (tokens: Tokens) => {
+      mapTheme: (tokens: any) => {
         return {
           dark: {
             base: "dark",

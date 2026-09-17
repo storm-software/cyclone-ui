@@ -88,8 +88,11 @@
     "@razorwind/core": "catalog:",
     "@razorwind/css": "catalog:",
     "@razorwind/design-md": "catalog:",
+    "@razorwind/docgen": "catalog:",
+    "@razorwind/llms": "catalog:",
     "@razorwind/nx": "catalog:",
     "@razorwind/shadcn": "catalog:",
+    "@razorwind/shiki": "catalog:",
     "@razorwind/storybook": "catalog:",
     "@razorwind/tamagui": "catalog:",
     "@react-native-community/cli": "catalog:",
@@ -167,7 +170,11 @@
       }
     ],
     "ci": {
-      "trackBranches": ["main", "next", "experimental"]
+      "trackBranches": [
+        "main",
+        "next",
+        "experimental"
+      ]
     }
   },
   "licenses": [

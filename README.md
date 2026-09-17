@@ -1,8 +1,8 @@
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x640-dark.gif">
-  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x640-light.gif">
-<img src="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x640-dark.gif" width="100%" alt="Cyclone UI" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x427-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x427-light.gif">
+<img src="https://public.storm-cdn.com/cyclone-ui/media/banner-1280x427-dark.gif" width="100%" alt="Cyclone UI" />
 </picture>
 </div>
 <br />
