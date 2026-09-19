@@ -254,9 +254,6 @@
     },
     {
       "path": "./components/redacted-animation"
-    },
-    {
-      "path": "./components/display-text"
     }
   ],
   "files": []

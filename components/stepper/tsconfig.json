@@ -21,6 +21,9 @@
     },
     {
       "path": "../next-button"
+    },
+    {
+      "path": "../heading-text"
     }
   ]
 }

@@ -37,6 +37,7 @@
     "react-dropzone": "^14.4.1",
     "react-native-svg": "^15.15.5",
     "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/bytes-text": "workspace:*",
     "@cyclone-ui/label-text": "workspace:*",

@@ -1708,6 +1708,9 @@ importers:
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/themeable-icon':
         specifier: workspace:*
         version: link:../themeable-icon
@@ -1825,6 +1828,9 @@ importers:
 
   components/data-table:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
@@ -1837,6 +1843,9 @@ importers:
       '@cyclone-ui/form':
         specifier: workspace:*
         version: link:../form
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/label-text':
         specifier: workspace:*
         version: link:../label-text
@@ -1916,18 +1925,21 @@ importers:
 
   components/date-picker:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
       '@cyclone-ui/field':
         specifier: workspace:*
         version: link:../field
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/input':
         specifier: workspace:*
         version: link:../input
-      '@cyclone-ui/label-text':
-        specifier: workspace:*
-        version: link:../label-text
       '@cyclone-ui/popover':
         specifier: workspace:*
         version: link:../popover
@@ -2148,28 +2160,6 @@ importers:
         specifier: 'catalog:'
         version: 0.87.1(@babel/core@8.0.5)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
 
-  components/display-text:
-    dependencies:
-      '@tamagui/core':
-        specifier: 'catalog:'
-        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      '@tamagui/text':
-        specifier: 'catalog:'
-        version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-    devDependencies:
-      '@storybook/react-vite':
-        specifier: 'catalog:'
-        version: 10.6.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rollup@4.63.3)(storybook@10.6.0(@types/react@19.3.0)(prettier@3.9.8)(react@19.3.0))(typescript@6.0.3)(vite@8.3.0(@types/node@26.6.1)(esbuild@0.28.2)(jiti@2.7.0)(less@4.5.1)(sass-embedded@1.104.1)(sass@1.104.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))
-      react:
-        specifier: 'catalog:'
-        version: 19.3.0
-      react-dom:
-        specifier: 'catalog:'
-        version: 19.3.0(react@19.3.0)
-      react-native:
-        specifier: 'catalog:'
-        version: 0.87.1(@babel/core@8.0.5)(@react-native-community/cli@18.0.1(typescript@6.0.3))(@types/react@19.3.0)(react@19.3.0)
-
   components/drawer:
     dependencies:
       '@cyclone-ui/body-text':
@@ -2310,6 +2300,9 @@ importers:
       '@cyclone-ui/bytes-text':
         specifier: workspace:*
         version: link:../bytes-text
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/label-text':
         specifier: workspace:*
         version: link:../label-text
@@ -2472,6 +2465,12 @@ importers:
 
   components/footer:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/link':
         specifier: workspace:*
         version: link:../link
@@ -2809,6 +2808,9 @@ importers:
 
   components/navigation-header:
     dependencies:
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/link':
         specifier: workspace:*
         version: link:../link
@@ -3026,6 +3028,9 @@ importers:
 
   components/password-input-field:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/field':
         specifier: workspace:*
         version: link:../field
@@ -3109,6 +3114,9 @@ importers:
 
   components/phone-number-input-field:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
@@ -3345,6 +3353,9 @@ importers:
       '@cyclone-ui/field':
         specifier: workspace:*
         version: link:../field
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/radio-group':
         specifier: workspace:*
         version: link:../radio-group
@@ -3391,6 +3402,9 @@ importers:
 
   components/redacted-animation:
     dependencies:
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3484,6 +3498,9 @@ importers:
 
   components/select:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@cyclone-ui/button':
         specifier: workspace:*
         version: link:../button
@@ -3680,6 +3697,9 @@ importers:
 
   components/stepper:
     dependencies:
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@cyclone-ui/next-button':
         specifier: workspace:*
         version: link:../next-button
@@ -3845,6 +3865,9 @@ importers:
 
   components/table:
     dependencies:
+      '@cyclone-ui/heading-text':
+        specifier: workspace:*
+        version: link:../heading-text
       '@tamagui/animate-presence':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -3900,6 +3923,9 @@ importers:
 
   components/table-of-contents:
     dependencies:
+      '@cyclone-ui/body-text':
+        specifier: workspace:*
+        version: link:../body-text
       '@tamagui/core':
         specifier: 'catalog:'
         version: 2.7.7(react-dom@19.3.0(react@19.3.0))(react@19.3.0)

@@ -15,10 +15,13 @@
   },
   "references": [
     {
+      "path": "../../packages/state"
+    },
+    {
       "path": "../radio-group"
     },
     {
-      "path": "../../packages/state"
+      "path": "../heading-text"
     },
     {
       "path": "../field"

@@ -18,6 +18,12 @@
     },
     {
       "path": "../link"
+    },
+    {
+      "path": "../heading-text"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

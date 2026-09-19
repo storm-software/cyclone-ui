@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { HeadingText } from "@cyclone-ui/heading-text";
 import type { NextButtonProps } from "@cyclone-ui/next-button";
 import { NextButton } from "@cyclone-ui/next-button";
 import type { PreviousButtonProps } from "@cyclone-ui/previous-button";
@@ -316,14 +317,13 @@ export const StepperHeaderItem = TamaguiTabs.Tab.styleable<{ index?: number }>(
             </SizableText>
           )}
 
-          <SizableText
+          <HeadingText
             transition="200ms"
-            fontFamily="$heading"
             color={
               state.currentStep === value ? "$foreground" : "$borderSubtle"
             }>
             {children}
-          </SizableText>
+          </HeadingText>
         </XStack>
       </YStack>
     );

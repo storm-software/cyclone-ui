@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
 import { Check } from "@cyclone-ui/vectors";
 import type { TamaguiElement } from "@tamagui/core";
@@ -147,7 +148,7 @@ const CodeBlockHeaderHeading = styled(BodyText, {
   minWidth: 0,
   paddingVertical: 0,
   color: "$foregroundCaption",
-  fontFamily: "$heading-sm",
+  variant: "lg",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis"
@@ -488,16 +489,15 @@ export const CodeBlockTabsTrigger = forwardRef<
     hoverStyle={{
       backgroundColor: "$backgroundPageHover"
     }}>
-    <BodyText
+    <HeadingSmallText
       color="$foregroundCaption"
-      fontFamily="$heading-sm"
       fontSize="$lg"
       fontWeight="$semibold"
       lineHeight="$lg"
       textAlign="center"
       whiteSpace="nowrap">
       {children}
-    </BodyText>
+    </HeadingSmallText>
   </TamaguiTabs.Tab>
 ));
 

@@ -21,13 +21,16 @@
       "path": "../../packages/helpers"
     },
     {
+      "path": "../field"
+    },
+    {
       "path": "../button"
     },
     {
-      "path": "../form"
+      "path": "../body-text"
     },
     {
-      "path": "../field"
+      "path": "../form"
     }
   ],
   "files": [],

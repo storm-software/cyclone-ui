@@ -35,6 +35,9 @@
       "path": "../label-text"
     },
     {
+      "path": "../heading-text"
+    },
+    {
       "path": "../form"
     },
     {
@@ -45,6 +48,9 @@
     },
     {
       "path": "../button"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

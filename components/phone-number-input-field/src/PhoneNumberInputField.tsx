@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Input } from "@cyclone-ui/input";
 import { InputField } from "@cyclone-ui/input-field";
@@ -237,39 +238,40 @@ const CountryListItem = memo(
             paddingHorizontal="$2xl"
             paddingBottom="$xs"
             gap="$2xl">
-            <SizableText
+            <BodyText
+              render="span"
               aria-hidden={true}
               flexShrink={0}
               minWidth="$4xl"
               fontSize="$xl">
               {country.flag}
-            </SizableText>
+            </BodyText>
             {showCountryName && (
-              <SizableText
+              <BodyText
+                render="span"
                 flex={1}
                 minWidth={0}
                 color="$foregroundInactive"
-                fontFamily="$body"
                 fontSize="$md"
                 fontWeight="$light"
                 $group-button-hover={{ color: "$foregroundHover" }}
                 $group-button-focus={{ color: "$foregroundHover" }}>
                 {country.name}
-              </SizableText>
+              </BodyText>
             )}
-            <SizableText
+            <BodyText
+              render="span"
               flexShrink={0}
               width="$16xl"
               marginLeft="auto"
               textAlign="left"
               color="$foregroundInactive"
-              fontFamily="$body"
               fontSize="$md"
               fontWeight="$light"
               $group-button-hover={{ color: "$foregroundHover" }}
               $group-button-focus={{ color: "$foregroundHover" }}>
               {`${country.code}  +${country.callingCode}`}
-            </SizableText>
+            </BodyText>
           </View>
         </Button>
         <View

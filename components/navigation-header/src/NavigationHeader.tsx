@@ -16,9 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
+import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import type { GetProps, TamaguiElement } from "@tamagui/core";
-import { styled, Text, View, withStaticProperties } from "@tamagui/core";
+import { styled, View, withStaticProperties } from "@tamagui/core";
 import { ChevronDown, Menu, X } from "@tamagui/lucide-icons-2";
 import type { KeyboardEvent, ReactElement, ReactNode } from "react";
 import {
@@ -297,14 +299,11 @@ const NavigationHeaderDropdownGroup = styled(View, {
   gap: "$lg"
 });
 
-const NavigationHeaderDropdownGroupLabel = styled(Text, {
+const NavigationHeaderDropdownGroupLabel = styled(BodyText, {
   name: "NavigationHeaderDropdownGroupLabel",
 
   marginBottom: "$xl",
-  color: "$foregroundBody",
-  fontFamily: "$body",
-  fontSize: 14,
-  lineHeight: 20
+  color: "$foregroundBody"
 });
 
 const NavigationHeaderDropdownLink = styled(Link, {
@@ -339,7 +338,6 @@ const NavigationHeaderDropdownLink = styled(Link, {
       true: {
         minHeight: "$11xl",
         paddingHorizontal: 0,
-        fontFamily: "$heading-xl",
         fontSize: 30,
         lineHeight: 36,
         fontWeight: "$normal",
@@ -918,7 +916,13 @@ const NavigationHeaderRoot =
                               child.onPress?.(event);
                               setOpenItemIndex(null);
                             }}>
-                            {child.label}
+                            {child.featured ? (
+                              <HeadingExtraLargeText>
+                                {child.label}
+                              </HeadingExtraLargeText>
+                            ) : (
+                              child.label
+                            )}
                           </NavigationHeaderDropdownLink>
                         );
                       })}

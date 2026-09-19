@@ -16,6 +16,8 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/link": "workspace:*",
     "@cyclone-ui/vectors": "workspace:*",
     "@tamagui/core": "catalog:",

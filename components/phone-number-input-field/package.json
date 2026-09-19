@@ -16,6 +16,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
     "@cyclone-ui/input-field": "workspace:*",

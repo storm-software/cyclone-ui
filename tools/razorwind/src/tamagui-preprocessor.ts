@@ -446,6 +446,16 @@ const COLOR_STATE_ACTIVE: ColorStateVariant = {
   brightness: 1.15
 };
 
+const THEME_COLOR_STATE_HOVER: ColorStateVariant = {
+  name: "hover",
+  brightness: 1.225
+};
+
+const THEME_COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.1125
+};
+
 const COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
   brightness: 0.8
@@ -478,8 +488,8 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
       COLOR_STATE_DISABLED
     ],
     theme: [
-      COLOR_STATE_HOVER,
-      COLOR_STATE_ACTIVE,
+      THEME_COLOR_STATE_HOVER,
+      THEME_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
@@ -492,15 +502,19 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
       COLOR_STATE_DISABLED
     ],
     theme: [
-      COLOR_STATE_HOVER,
-      COLOR_STATE_ACTIVE,
+      THEME_COLOR_STATE_HOVER,
+      THEME_COLOR_STATE_ACTIVE,
       COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
   border: {
     base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_DISABLED],
-    theme: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_DISABLED]
+    theme: [
+      THEME_COLOR_STATE_HOVER,
+      THEME_COLOR_STATE_ACTIVE,
+      COLOR_STATE_DISABLED
+    ]
   }
 };
 
@@ -509,7 +523,7 @@ const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
   "foreground-link": {
     base: [COLOR_STATE_HOVER],
-    theme: [COLOR_STATE_HOVER]
+    theme: [THEME_COLOR_STATE_HOVER]
   }
 };
 

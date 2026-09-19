@@ -547,9 +547,7 @@ const ButtonTextFrame = styled(BodyText, {
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "$body-lg",
-  fontWeight: "$true",
-  fontSize: "$true",
+  variant: "md",
 
   hoverStyle: {
     color: "$foreground"

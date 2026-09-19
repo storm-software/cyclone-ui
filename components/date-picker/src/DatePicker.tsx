@@ -16,11 +16,15 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Field } from "@cyclone-ui/field";
+import {
+  HeadingExtraLargeText,
+  HeadingMediumText
+} from "@cyclone-ui/heading-text";
 import type { InputContextProps } from "@cyclone-ui/input";
 import { Input } from "@cyclone-ui/input";
-import { LabelText } from "@cyclone-ui/label-text";
 import { Popover } from "@cyclone-ui/popover";
 import type { DPDay, DPPropGetter } from "@rehookify/datepicker";
 import {
@@ -352,9 +356,13 @@ const DayPicker = () => {
               width={CALENDAR_CELL_SIZE}
               alignItems="center"
               justifyContent="center">
-              <LabelText textAlign="center" size="$sm" color="$foregroundBody">
+              <BodyText
+                variant="lg"
+                textAlign="center"
+                size="$sm"
+                color="$foregroundBody">
                 {day}
-              </LabelText>
+              </BodyText>
             </View>
           ))}
         </XStack>
@@ -438,13 +446,13 @@ function YearRangeSlider() {
         minWidth={0}
         flexDirection="column"
         alignItems="center">
-        <LabelText
+        <HeadingMediumText
           color="$foreground"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
           {`${years[0]?.year} - ${years[years.length - 1]?.year}`}
-        </LabelText>
+        </HeadingMediumText>
       </View>
       <Button
         variant="ghost"
@@ -493,7 +501,8 @@ function YearSlider() {
         </Button.Icon>
       </Button>
       <View flexGrow={1} flexShrink={1} flexBasis={0} minWidth={0}>
-        <LabelText
+        <BodyText
+          variant="lg"
           onPress={() => setHeader("year")}
           userSelect="text"
           tabIndex={0}
@@ -505,7 +514,7 @@ function YearSlider() {
             color: "$foregroundHover"
           }}>
           {year}
-        </LabelText>
+        </BodyText>
       </View>
       <Button
         variant="ghost"
@@ -567,32 +576,31 @@ const CalendarHeader = () => {
         flexShrink={1}
         flexBasis={0}
         minWidth={0}>
-        <LabelText
+        <BodyText
+          variant="lg"
           transition="200ms"
           onPress={() => setHeader("year")}
           userSelect="auto"
           tabIndex={0}
           cursor="pointer"
           color="$foreground"
-          fontFamily="$heading-md"
           hoverStyle={{
             color: "$foregroundHover"
           }}>
           {year}
-        </LabelText>
-        <LabelText
+        </BodyText>
+        <HeadingExtraLargeText
           transition="200ms"
           onPress={() => setHeader("month")}
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
           color="$foreground"
-          fontFamily="$heading-xl"
           hoverStyle={{
             color: "$foregroundHover"
           }}>
           {month}
-        </LabelText>
+        </HeadingExtraLargeText>
       </YStack>
       <Button
         variant="ghost"

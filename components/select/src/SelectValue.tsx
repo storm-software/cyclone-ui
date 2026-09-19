@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type { SizeTokens } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { Select as TamaguiSelect } from "@tamagui/select";
@@ -29,7 +30,6 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   unstyled: true,
   cursor: "pointer",
   color: "$foreground",
-  fontFamily: "$body",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
@@ -118,7 +118,7 @@ export const SelectValue = SelectValueFrame.styleable<{
           variant={variant}
           disabled={disabled}
           placeholding={!!placeholder && !disabled}>
-          {children}
+          <BodyText render="span">{children}</BodyText>
         </SelectValueFrame>
       </View>
     );

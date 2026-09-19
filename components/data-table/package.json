@@ -1,21 +1,44 @@
 {
   "name": "@cyclone-ui/data-table",
   "version": "0.6.4",
-  "type": "module",
+  "private": false,
   "description": "A repository containing the core front-end components used by Storm Software across many platforms",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
     "directory": "components/data-table"
   },
-  "private": false,
-  "files": ["dist"],
-  "peerDependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
+  "sideEffects": ["*.css"],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./DataTable": {
+      "import": "./dist/DataTable.mjs",
+      "require": "./dist/DataTable.cjs"
+    },
+    "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "files": ["dist"],
   "dependencies": {
+    "@cyclone-ui/body-text": "workspace:*",
+    "@cyclone-ui/button": "workspace:*",
+    "@cyclone-ui/checkbox": "workspace:*",
+    "@cyclone-ui/checkbox-field": "workspace:*",
+    "@cyclone-ui/form": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
+    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/pagination": "workspace:*",
+    "@cyclone-ui/popover": "workspace:*",
+    "@cyclone-ui/search-input-field": "workspace:*",
+    "@cyclone-ui/select-field": "workspace:*",
+    "@cyclone-ui/state": "workspace:*",
+    "@cyclone-ui/table": "workspace:*",
     "@stryke/helpers": "catalog:",
     "@stryke/string-format": "catalog:",
     "@stryke/type-checks": "catalog:",
@@ -28,18 +51,7 @@
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tanstack/react-table": "^8.21.3",
-    "@tanstack/table-core": "^8.21.3",
-    "@cyclone-ui/button": "workspace:*",
-    "@cyclone-ui/checkbox": "workspace:*",
-    "@cyclone-ui/checkbox-field": "workspace:*",
-    "@cyclone-ui/form": "workspace:*",
-    "@cyclone-ui/label-text": "workspace:*",
-    "@cyclone-ui/pagination": "workspace:*",
-    "@cyclone-ui/popover": "workspace:*",
-    "@cyclone-ui/search-input-field": "workspace:*",
-    "@cyclone-ui/select-field": "workspace:*",
-    "@cyclone-ui/state": "workspace:*",
-    "@cyclone-ui/table": "workspace:*"
+    "@tanstack/table-core": "^8.21.3"
   },
   "devDependencies": {
     "@storybook/react-vite": "catalog:",
@@ -48,23 +60,13 @@
     "react-dom": "catalog:",
     "react-native": "catalog:"
   },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": ["*.css"],
-  "module:jsx": "dist/jsx",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./DataTable": {
-      "import": "./dist/DataTable.mjs",
-      "require": "./dist/DataTable.cjs"
-    },
-    "./*": "./*"
-  }
+  "module:jsx": "dist/jsx"
 }

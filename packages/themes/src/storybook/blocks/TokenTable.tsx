@@ -1565,18 +1565,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#757575",
+      value: "#868686",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the dark theme (hover, 30% darker)",
+      description: "The body foreground color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#989898",
+      value: "#a2a2a2",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the dark theme (active, 15% darker)",
+      description: "The body foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -1601,18 +1601,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#818181",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the dark theme (hover, 30% brighter)",
+      description: "The eyebrow foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#767676",
+      value: "#717171",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the dark theme (active, 15% brighter)",
+      description: "The eyebrow foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1637,18 +1637,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#e2e2e2",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 30% brighter)",
+      description: "The caption foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#c0c0c0",
+      value: "#b8b8b8",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the dark theme (active, 15% brighter)",
+      description: "The caption foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1673,18 +1673,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#8fd3ff",
+      value: "#80c2ff",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the dark theme (hover, 30% brighter)",
+      description: "The link foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#70b1ff",
+      value: "#69a9ff",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the dark theme (active, 15% brighter)",
+      description: "The link foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1709,18 +1709,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#ff6b57",
+      value: "#ff5946",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the dark theme (hover, 30% brighter)",
+      description: "A required foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#ff4535",
+      value: "#ff3a2c",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the dark theme (active, 15% brighter)",
+      description: "A required foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1781,18 +1781,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#82ffe0",
+      value: "#6ff1cf",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the dark theme (hover, 30% brighter)",
+      description: "The brand foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#5bdfbe",
+      value: "#50d6b5",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the dark theme (active, 15% brighter)",
+      description: "The brand foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1817,18 +1817,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#ff6a87",
+      value: "#fd5b7b",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the dark theme (hover, 30% brighter)",
+      description: "The danger foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#ee4d6e",
+      value: "#e64568",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the dark theme (active, 15% brighter)",
+      description: "The danger foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1853,18 +1853,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#ff6b57",
+      value: "#ff5946",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the dark theme (hover, 30% brighter)",
+      description: "The negative foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#ff4535",
+      value: "#ff3a2c",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the dark theme (active, 15% brighter)",
+      description: "The negative foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1889,18 +1889,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#ffda76",
+      value: "#ffc863",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the dark theme (hover, 30% brighter)",
+      description: "The warning foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#f6b751",
+      value: "#edae47",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the dark theme (active, 15% brighter)",
+      description: "The warning foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1925,18 +1925,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#96ffd8",
+      value: "#82ffc6",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the dark theme (hover, 30% brighter)",
+      description: "The success foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#6fecb4",
+      value: "#65e3ab",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the dark theme (active, 15% brighter)",
+      description: "The success foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1961,18 +1961,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#bcff76",
+      value: "#aafb62",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the dark theme (hover, 30% brighter)",
+      description: "The positive foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#99e84d",
+      value: "#90df43",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the dark theme (active, 15% brighter)",
+      description: "The positive foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -1997,18 +1997,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#aeffff",
+      value: "#9bf2ff",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the dark theme (hover, 30% brighter)",
+      description: "The info foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#89e0fd",
+      value: "#7fd6f4",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the dark theme (active, 15% brighter)",
+      description: "The info foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2033,18 +2033,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#dcc0ff",
+      value: "#ccafff",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the dark theme (hover, 30% brighter)",
+      description: "The discovery foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#bc9fff",
+      value: "#b497ff",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the dark theme (active, 15% brighter)",
+      description: "The discovery foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2114,9 +2114,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the dark theme (active, 15% darker)",
+      description: "The brand foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2150,9 +2150,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the dark theme (active, 15% darker)",
+      description: "The danger foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2186,9 +2186,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the dark theme (active, 15% darker)",
+      description: "The negative foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2222,9 +2222,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "Ink text on warning surfaces (active, 15% darker)",
+      description: "Ink text on warning surfaces (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2258,9 +2258,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the dark theme (active, 15% darker)",
+      description: "The success foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2294,9 +2294,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the dark theme (active, 15% darker)",
+      description: "The positive foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2330,9 +2330,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the dark theme (active, 15% darker)",
+      description: "The info foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2366,9 +2366,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the dark theme (active, 15% darker)",
+      description: "The discovery foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -2402,7 +2402,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#9efffb",
+      value: "#9bfff8",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2411,7 +2411,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#ffc8e0",
+      value: "#ffc2db",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2420,7 +2420,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ffccb3",
+      value: "#ffc4aa",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2429,7 +2429,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#fffc97",
+      value: "#fff691",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2438,7 +2438,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#affff1",
+      value: "#a0ffe3",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2447,7 +2447,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#d4ff8f",
+      value: "#c9ff83",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2456,7 +2456,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#bfffff",
+      value: "#b9ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2465,7 +2465,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#fff0ff",
+      value: "#ffeeff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -2609,18 +2609,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#161617",
+      value: "#141415",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the dark theme (hover, 30% brighter)",
+      description: "The lowest background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#111112",
+      value: "#101011",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the dark theme (active, 15% brighter)",
+      description: "The lowest background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2645,18 +2645,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#313133",
+      value: "#2c2c2e",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the dark theme (hover, 30% brighter)",
+      description: "The page background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#28282a",
+      value: "#252527",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the dark theme (active, 15% brighter)",
+      description: "The page background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2681,18 +2681,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#38393c",
+      value: "#333437",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the dark theme (hover, 30% brighter)",
+      description: "The elevated background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#2e2f32",
+      value: "#2b2c2f",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the dark theme (active, 15% brighter)",
+      description: "The elevated background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2717,18 +2717,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#414347",
+      value: "#3c3d41",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the dark theme (hover, 30% brighter)",
+      description: "The floating background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#36373b",
+      value: "#333438",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the dark theme (active, 15% brighter)",
+      description: "The floating background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2753,18 +2753,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#696969",
+      value: "#616161",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the dark theme (hover, 30% brighter)",
+      description: "The highest level of elevation background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#585858",
+      value: "#545454",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the dark theme (active, 15% brighter)",
+      description: "The highest level of elevation background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2825,18 +2825,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#29564a",
+      value: "#224f44",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The brand subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#1b493d",
+      value: "#18463a",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand subtle background color for the dark theme (active, 15% brighter)",
+      description: "The brand subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2861,18 +2861,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#50191a",
+      value: "#4b1416",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The danger subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#460f12",
+      value: "#440c10",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger subtle background color for the dark theme (active, 15% brighter)",
+      description: "The danger subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2897,18 +2897,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#9d2e24",
+      value: "#94251c",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The negative subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#8b1b13",
+      value: "#86160e",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative subtle background color for the dark theme (active, 15% brighter)",
+      description: "The negative subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2933,18 +2933,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#6b542b",
+      value: "#634c23",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#5c451b",
+      value: "#584218",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning subtle background color for the dark theme (active, 15% brighter)",
+      description: "The warning subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -2969,18 +2969,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#315d48",
+      value: "#2a5642",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The success subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#234f3b",
+      value: "#1f4b38",
       cssVar: "--rw-color-background-success-active",
-      description: "The success subtle background color for the dark theme (active, 15% brighter)",
+      description: "The success subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3005,18 +3005,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#3e5923",
+      value: "#37521c",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The positive subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#314b14",
+      value: "#2d4811",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive subtle background color for the dark theme (active, 15% brighter)",
+      description: "The positive subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3041,18 +3041,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#385662",
+      value: "#314f5b",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The info subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#2a4854",
+      value: "#274550",
       cssVar: "--rw-color-background-info-active",
-      description: "The info subtle background color for the dark theme (active, 15% brighter)",
+      description: "The info subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3077,18 +3077,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#473d67",
+      value: "#413760",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The discovery subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#3b325a",
+      value: "#382f57",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery subtle background color for the dark theme (active, 15% brighter)",
+      description: "The discovery subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3302,18 +3302,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#82ffe0",
+      value: "#6ff1cf",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#5bdfbe",
+      value: "#50d6b5",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3329,18 +3329,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#ff6a87",
+      value: "#fd5b7b",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#ee4d6e",
+      value: "#e64568",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3356,18 +3356,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#ff6b57",
+      value: "#ff5946",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#ff4535",
+      value: "#ff3a2c",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3383,18 +3383,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#ffda76",
+      value: "#ffc863",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#f6b751",
+      value: "#edae47",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3410,18 +3410,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#96ffd8",
+      value: "#82ffc6",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#6fecb4",
+      value: "#65e3ab",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3437,18 +3437,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#bcff76",
+      value: "#aafb62",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the dark theme (hover, 30% brighter)",
+      description: "The positive border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#99e84d",
+      value: "#90df43",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the dark theme (active, 15% brighter)",
+      description: "The positive border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3464,18 +3464,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#aeffff",
+      value: "#9bf2ff",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#89e0fd",
+      value: "#7fd6f4",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3491,18 +3491,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#dcc0ff",
+      value: "#ccafff",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#bc9fff",
+      value: "#b497ff",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3545,18 +3545,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#47927d",
+      value: "#3c8773",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#307c69",
+      value: "#2a7764",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3572,18 +3572,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#772b2e",
+      value: "#702428",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#681e22",
+      value: "#651a20",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3599,18 +3599,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#9d2e24",
+      value: "#94251c",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#8b1b13",
+      value: "#86160e",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3626,18 +3626,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#e0ae5c",
+      value: "#d19f4d",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#c3913e",
+      value: "#bc8a36",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3653,18 +3653,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#5fb38b",
+      value: "#52a67f",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#459a73",
+      value: "#3e946d",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3680,18 +3680,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#769252",
+      value: "#8aa665",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the dark theme (hover, 30% darker)",
+      description: "The positive border color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#9ebc7a",
+      value: "#a8c684",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the dark theme (active, 15% darker)",
+      description: "The positive border color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -3707,18 +3707,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#6ea9bf",
+      value: "#629db2",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#5590a5",
+      value: "#4f8a9f",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3734,18 +3734,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#8b79ca",
+      value: "#816ebe",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#7663b2",
+      value: "#715eac",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3788,18 +3788,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#414347",
+      value: "#3c3d41",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the dark theme (hover, 30% brighter)",
+      description: "The overlay background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#36373b",
+      value: "#333438",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the dark theme (active, 15% brighter)",
+      description: "The overlay background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -3824,18 +3824,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#818181",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the dark theme (hover, 30% brighter)",
+      description: "The overlay border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#767676",
+      value: "#717171",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the dark theme (active, 15% brighter)",
+      description: "The overlay border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -6128,27 +6128,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -6162,20 +6153,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -6198,10 +6189,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -7777,18 +7768,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#787878",
+      value: "#848484",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the dark theme (hover, 30% darker)",
+      description: "The body foreground color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#919191",
+      value: "#989898",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the dark theme (active, 15% darker)",
+      description: "The body foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -7813,18 +7804,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#888888",
+      value: "#818181",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the dark theme (hover, 30% brighter)",
+      description: "The eyebrow foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#797979",
+      value: "#757575",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the dark theme (active, 15% brighter)",
+      description: "The eyebrow foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7849,18 +7840,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#c4c4c4",
+      value: "#b9b9b9",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 30% brighter)",
+      description: "The caption foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#adadad",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the dark theme (active, 15% brighter)",
+      description: "The caption foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7885,18 +7876,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#87bbdc",
+      value: "#7faeda",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the dark theme (hover, 30% brighter)",
+      description: "The link foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#76a2d7",
+      value: "#729dd6",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the dark theme (active, 15% brighter)",
+      description: "The link foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7921,18 +7912,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#d37569",
+      value: "#d16b5f",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the dark theme (hover, 30% brighter)",
+      description: "A required foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#ce6056",
+      value: "#cd5951",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the dark theme (active, 15% brighter)",
+      description: "A required foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -7993,18 +7984,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#80dac4",
+      value: "#77ccb6",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the dark theme (hover, 30% brighter)",
+      description: "The brand foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#6dbca8",
+      value: "#66b4a1",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the dark theme (active, 15% brighter)",
+      description: "The brand foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8029,18 +8020,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#d67386",
+      value: "#d26b7f",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the dark theme (hover, 30% brighter)",
+      description: "The danger foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#c56478",
+      value: "#be6074",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the dark theme (active, 15% brighter)",
+      description: "The danger foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8065,18 +8056,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#d37569",
+      value: "#d16b5f",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the dark theme (hover, 30% brighter)",
+      description: "The negative foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#ce6056",
+      value: "#cd5951",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the dark theme (active, 15% brighter)",
+      description: "The negative foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8101,18 +8092,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#d8bf79",
+      value: "#d5b16f",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the dark theme (hover, 30% brighter)",
+      description: "The warning foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#cba566",
+      value: "#c39e61",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the dark theme (active, 15% brighter)",
+      description: "The warning foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8137,18 +8128,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#8bddbf",
+      value: "#80dab1",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the dark theme (hover, 30% brighter)",
+      description: "The success foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#78c8a4",
+      value: "#72c09d",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the dark theme (active, 15% brighter)",
+      description: "The success foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8173,18 +8164,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#aad879",
+      value: "#9dd26f",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the dark theme (hover, 30% brighter)",
+      description: "The positive foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#92c064",
+      value: "#8bb95f",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the dark theme (active, 15% brighter)",
+      description: "The positive foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8209,18 +8200,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#98e1e1",
+      value: "#8dd4de",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the dark theme (hover, 30% brighter)",
+      description: "The info foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#84c4d9",
+      value: "#80bcd0",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the dark theme (active, 15% brighter)",
+      description: "The info foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8245,18 +8236,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#bfa2e4",
+      value: "#b398e1",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the dark theme (hover, 30% brighter)",
+      description: "The discovery foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#a890df",
+      value: "#a28bdd",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the dark theme (active, 15% brighter)",
+      description: "The discovery foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8326,9 +8317,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the dark theme (active, 15% darker)",
+      description: "The brand foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8362,9 +8353,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the dark theme (active, 15% darker)",
+      description: "The danger foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8398,9 +8389,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the dark theme (active, 15% darker)",
+      description: "The negative foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8434,9 +8425,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "Ink text on warning surfaces (active, 15% darker)",
+      description: "Ink text on warning surfaces (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8470,9 +8461,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the dark theme (active, 15% darker)",
+      description: "The success foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8506,9 +8497,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the dark theme (active, 15% darker)",
+      description: "The positive foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8542,9 +8533,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the dark theme (active, 15% darker)",
+      description: "The info foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8578,9 +8569,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the dark theme (active, 15% darker)",
+      description: "The discovery foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -8614,7 +8605,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#8fdfdb",
+      value: "#8dded8",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8623,7 +8614,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#e5a6c1",
+      value: "#e4a3bd",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8632,7 +8623,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#e2b29a",
+      value: "#e0ac96",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8641,7 +8632,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#dddb8b",
+      value: "#dcd688",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8650,7 +8641,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#98e1d4",
+      value: "#90dfc8",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8659,7 +8650,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#bbdc87",
+      value: "#b3da80",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8668,7 +8659,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#a1e4e4",
+      value: "#9ee3e3",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8677,7 +8668,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#ebbceb",
+      value: "#ebbaeb",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -8821,18 +8812,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#353537",
+      value: "#343435",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the dark theme (hover, 30% brighter)",
+      description: "The lowest background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#323233",
+      value: "#313133",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the dark theme (active, 15% brighter)",
+      description: "The lowest background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8857,18 +8848,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#48484a",
+      value: "#454547",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the dark theme (hover, 30% brighter)",
+      description: "The page background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#424244",
+      value: "#404042",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the dark theme (active, 15% brighter)",
+      description: "The page background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8893,18 +8884,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#4d4e50",
+      value: "#4a4b4d",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the dark theme (hover, 30% brighter)",
+      description: "The elevated background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#464749",
+      value: "#444547",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the dark theme (active, 15% brighter)",
+      description: "The elevated background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8929,18 +8920,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#545558",
+      value: "#505154",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the dark theme (hover, 30% brighter)",
+      description: "The floating background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#4c4d50",
+      value: "#4a4b4e",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the dark theme (active, 15% brighter)",
+      description: "The floating background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -8965,18 +8956,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#707070",
+      value: "#6a6a6a",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the dark theme (hover, 30% brighter)",
+      description: "The highest level of elevation background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#646464",
+      value: "#616161",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the dark theme (active, 15% brighter)",
+      description: "The highest level of elevation background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9037,18 +9028,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#43635a",
+      value: "#3d5f57",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The brand subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#375c52",
+      value: "#345a50",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand subtle background color for the dark theme (active, 15% brighter)",
+      description: "The brand subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9073,18 +9064,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#613536",
+      value: "#5e3132",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The danger subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#5c2c2e",
+      value: "#5c292c",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger subtle background color for the dark theme (active, 15% brighter)",
+      description: "The danger subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9109,18 +9100,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#8e4b45",
+      value: "#89443e",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The negative subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#853c36",
+      value: "#823732",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative subtle background color for the dark theme (active, 15% brighter)",
+      description: "The negative subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9145,18 +9136,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#706145",
+      value: "#6c5b3f",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#685738",
+      value: "#665535",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning subtle background color for the dark theme (active, 15% brighter)",
+      description: "The warning subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9181,18 +9172,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#496759",
+      value: "#436354",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The success subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#3e5f50",
+      value: "#3a5d4e",
       cssVar: "--rw-color-background-success-active",
-      description: "The success subtle background color for the dark theme (active, 15% brighter)",
+      description: "The success subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9217,18 +9208,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#52653e",
+      value: "#4d6138",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The positive subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#495e31",
+      value: "#465d2e",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive subtle background color for the dark theme (active, 15% brighter)",
+      description: "The positive subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9253,18 +9244,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#4e626a",
+      value: "#495d66",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The info subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#435961",
+      value: "#41575f",
       cssVar: "--rw-color-background-info-active",
-      description: "The info subtle background color for the dark theme (active, 15% brighter)",
+      description: "The info subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9289,18 +9280,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#59526d",
+      value: "#544d69",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The discovery subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#504a65",
+      value: "#4d4763",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery subtle background color for the dark theme (active, 15% brighter)",
+      description: "The discovery subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9514,18 +9505,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#80dac4",
+      value: "#77ccb6",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#6dbca8",
+      value: "#66b4a1",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9541,18 +9532,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#d67386",
+      value: "#d26b7f",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#c56478",
+      value: "#be6074",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9568,18 +9559,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#d37569",
+      value: "#d16b5f",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#ce6056",
+      value: "#cd5951",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9595,18 +9586,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#d8bf79",
+      value: "#d5b16f",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#cba566",
+      value: "#c39e61",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9622,18 +9613,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#8bddbf",
+      value: "#80dab1",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#78c8a4",
+      value: "#72c09d",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9649,18 +9640,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#aad879",
+      value: "#9dd26f",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the dark theme (hover, 30% brighter)",
+      description: "The positive border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#92c064",
+      value: "#8bb95f",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the dark theme (active, 15% brighter)",
+      description: "The positive border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9676,18 +9667,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#98e1e1",
+      value: "#8dd4de",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#84c4d9",
+      value: "#80bcd0",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9703,18 +9694,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#bfa2e4",
+      value: "#b398e1",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#a890df",
+      value: "#a28bdd",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9757,18 +9748,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#5c887c",
+      value: "#548175",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#4b7a6e",
+      value: "#46776b",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9784,18 +9775,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#774648",
+      value: "#734143",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#6f3b3e",
+      value: "#6e383c",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9811,18 +9802,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#8e4b45",
+      value: "#89443e",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#853c36",
+      value: "#823732",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9838,18 +9829,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#bd9e6d",
+      value: "#b09465",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#a5895c",
+      value: "#a08456",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9865,18 +9856,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#6e9e87",
+      value: "#66947f",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#5c8d76",
+      value: "#578972",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9892,18 +9883,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#788864",
+      value: "#869672",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the dark theme (hover, 30% darker)",
+      description: "The positive border color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#95a67f",
+      value: "#9cae85",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the dark theme (active, 15% darker)",
+      description: "The positive border color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -9919,18 +9910,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#789aa7",
+      value: "#70929d",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#688894",
+      value: "#638490",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -9946,18 +9937,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#8a7fb0",
+      value: "#8378a7",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#7c719e",
+      value: "#786e99",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10000,18 +9991,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#545558",
+      value: "#505154",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the dark theme (hover, 30% brighter)",
+      description: "The overlay background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#4c4d50",
+      value: "#4a4b4e",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the dark theme (active, 15% brighter)",
+      description: "The overlay background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -10036,18 +10027,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#888888",
+      value: "#818181",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the dark theme (hover, 30% brighter)",
+      description: "The overlay border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#797979",
+      value: "#757575",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the dark theme (active, 15% brighter)",
+      description: "The overlay border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -12340,27 +12331,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -12374,20 +12356,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -12410,10 +12392,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -13989,18 +13971,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#707070",
+      value: "#898989",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the dark theme (hover, 30% darker)",
+      description: "The body foreground color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#a3a3a3",
+      value: "#b2b2b2",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the dark theme (active, 15% darker)",
+      description: "The body foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14025,18 +14007,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#929292",
+      value: "#828282",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the dark theme (hover, 30% brighter)",
+      description: "The eyebrow foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#727272",
+      value: "#6a6a6a",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the dark theme (active, 15% brighter)",
+      description: "The eyebrow foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14061,18 +14043,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#f6f6f6",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 30% brighter)",
+      description: "The caption foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#dddddd",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the dark theme (active, 15% brighter)",
+      description: "The caption foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14097,18 +14079,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#cfecff",
+      value: "#badeff",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the dark theme (hover, 30% brighter)",
+      description: "The link foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#a2ccff",
+      value: "#98c4ff",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the dark theme (active, 15% brighter)",
+      description: "The link foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14133,18 +14115,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#ff8d7e",
+      value: "#ff7565",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the dark theme (hover, 30% brighter)",
+      description: "A required foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#ff5b4d",
+      value: "#ff4c40",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the dark theme (active, 15% brighter)",
+      description: "A required foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14205,18 +14187,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#bdffef",
+      value: "#8dffe1",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the dark theme (hover, 30% brighter)",
+      description: "The brand foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#59fcd3",
+      value: "#44f4c8",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the dark theme (active, 15% brighter)",
+      description: "The brand foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14241,18 +14223,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#ff9aad",
+      value: "#ff819a",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the dark theme (hover, 30% brighter)",
+      description: "The danger foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#ff5779",
+      value: "#ff4069",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the dark theme (active, 15% brighter)",
+      description: "The danger foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14277,18 +14259,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#ff8d7e",
+      value: "#ff7565",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the dark theme (hover, 30% brighter)",
+      description: "The negative foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#ff5b4d",
+      value: "#ff4c40",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the dark theme (active, 15% brighter)",
+      description: "The negative foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14313,18 +14295,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#ffe8ab",
+      value: "#ffd890",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the dark theme (hover, 30% brighter)",
+      description: "The warning foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#ffc568",
+      value: "#ffbb4d",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the dark theme (active, 15% brighter)",
+      description: "The warning foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14349,18 +14331,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#dafff1",
+      value: "#bdffe1",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the dark theme (hover, 30% brighter)",
+      description: "The success foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#85ffc9",
+      value: "#6bfebd",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the dark theme (active, 15% brighter)",
+      description: "The success foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14385,18 +14367,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#d6ffab",
+      value: "#c0ff88",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the dark theme (hover, 30% brighter)",
+      description: "The positive foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#a5ff4e",
+      value: "#98ff33",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the dark theme (active, 15% brighter)",
+      description: "The positive foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14421,18 +14403,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#fcffff",
+      value: "#e1fbff",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the dark theme (hover, 30% brighter)",
+      description: "The info foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#c4f0ff",
+      value: "#a8e9ff",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the dark theme (active, 15% brighter)",
+      description: "The info foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14457,18 +14439,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#fefeff",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the dark theme (hover, 30% brighter)",
+      description: "The discovery foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#eee7ff",
+      value: "#e5dbff",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the dark theme (active, 15% brighter)",
+      description: "The discovery foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -14538,9 +14520,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the dark theme (active, 15% darker)",
+      description: "The brand foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14574,9 +14556,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the dark theme (active, 15% darker)",
+      description: "The danger foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14610,9 +14592,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the dark theme (active, 15% darker)",
+      description: "The negative foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14646,9 +14628,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "Ink text on warning surfaces (active, 15% darker)",
+      description: "Ink text on warning surfaces (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14682,9 +14664,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the dark theme (active, 15% darker)",
+      description: "The success foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14718,9 +14700,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the dark theme (active, 15% darker)",
+      description: "The positive foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14754,9 +14736,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the dark theme (active, 15% darker)",
+      description: "The info foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14790,9 +14772,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the dark theme (active, 15% darker)",
+      description: "The discovery foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -14826,7 +14808,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#e5fffe",
+      value: "#e1fffd",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14844,7 +14826,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#fff9f6",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14853,7 +14835,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#fffedb",
+      value: "#fffbd2",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14862,7 +14844,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#feffff",
+      value: "#e8fff8",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -14871,7 +14853,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#edffcf",
+      value: "#e3ffbe",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -15035,7 +15017,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the dark theme (hover, 30% brighter)",
+      description: "The lowest background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15044,7 +15026,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the dark theme (active, 15% brighter)",
+      description: "The lowest background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15069,18 +15051,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#0e0e10",
+      value: "#070709",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the dark theme (hover, 30% brighter)",
+      description: "The page background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#020202",
+      value: "#000000",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the dark theme (active, 15% brighter)",
+      description: "The page background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15105,18 +15087,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#18191d",
+      value: "#121215",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the dark theme (hover, 30% brighter)",
+      description: "The elevated background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#0b0c0e",
+      value: "#070709",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the dark theme (active, 15% brighter)",
+      description: "The elevated background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15141,18 +15123,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#25282e",
+      value: "#1e1f25",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the dark theme (hover, 30% brighter)",
+      description: "The floating background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#16171b",
+      value: "#121316",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the dark theme (active, 15% brighter)",
+      description: "The floating background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15177,18 +15159,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#5f5f5f",
+      value: "#535353",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the dark theme (hover, 30% brighter)",
+      description: "The highest level of elevation background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#464646",
+      value: "#404040",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the dark theme (active, 15% brighter)",
+      description: "The highest level of elevation background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15249,18 +15231,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#10352b",
+      value: "#0a2720",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The brand subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#051914",
+      value: "#03120e",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand subtle background color for the dark theme (active, 15% brighter)",
+      description: "The brand subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15285,18 +15267,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#210505",
+      value: "#150203",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The danger subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#080001",
+      value: "#010000",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger subtle background color for the dark theme (active, 15% brighter)",
+      description: "The danger subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15321,18 +15303,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#9d1509",
+      value: "#8a0c02",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The negative subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#720800",
+      value: "#640700",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative subtle background color for the dark theme (active, 15% brighter)",
+      description: "The negative subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15357,18 +15339,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#543c13",
+      value: "#43300c",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#342406",
+      value: "#2b1e04",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning subtle background color for the dark theme (active, 15% brighter)",
+      description: "The warning subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15393,18 +15375,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#18432f",
+      value: "#113625",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The success subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#0b281b",
+      value: "#081f15",
       cssVar: "--rw-color-background-success-active",
-      description: "The success subtle background color for the dark theme (active, 15% brighter)",
+      description: "The success subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15429,18 +15411,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#21350c",
+      value: "#162606",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The positive subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#0c1502",
+      value: "#070d01",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive subtle background color for the dark theme (active, 15% brighter)",
+      description: "The positive subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15465,18 +15447,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#20404d",
+      value: "#183540",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The info subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#112933",
+      value: "#0e242c",
       cssVar: "--rw-color-background-info-active",
-      description: "The info subtle background color for the dark theme (active, 15% brighter)",
+      description: "The info subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15501,18 +15483,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#312556",
+      value: "#291e4a",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The discovery subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#22193f",
+      value: "#1e163a",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery subtle background color for the dark theme (active, 15% brighter)",
+      description: "The discovery subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15726,18 +15708,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#bdffef",
+      value: "#8dffe1",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#59fcd3",
+      value: "#44f4c8",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15753,18 +15735,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#ff9aad",
+      value: "#ff819a",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#ff5779",
+      value: "#ff4069",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15780,18 +15762,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#ff8d7e",
+      value: "#ff7565",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#ff5b4d",
+      value: "#ff4c40",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15807,18 +15789,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#ffe8ab",
+      value: "#ffd890",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#ffc568",
+      value: "#ffbb4d",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15834,18 +15816,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#dafff1",
+      value: "#bdffe1",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#85ffc9",
+      value: "#6bfebd",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15861,18 +15843,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#d6ffab",
+      value: "#c0ff88",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the dark theme (hover, 30% brighter)",
+      description: "The positive border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#a5ff4e",
+      value: "#98ff33",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the dark theme (active, 15% brighter)",
+      description: "The positive border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15888,18 +15870,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#fcffff",
+      value: "#e1fbff",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#c4f0ff",
+      value: "#a8e9ff",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15915,18 +15897,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#fefeff",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#eee7ff",
+      value: "#e5dbff",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15969,18 +15951,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#30987b",
+      value: "#24846a",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#186f59",
+      value: "#126550",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -15996,18 +15978,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#651316",
+      value: "#570d11",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#47080c",
+      value: "#40050a",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16023,18 +16005,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#9d1509",
+      value: "#8a0c02",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#720800",
+      value: "#640700",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16050,18 +16032,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#fcbf5b",
+      value: "#efac3d",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#e19921",
+      value: "#d48e18",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16077,18 +16059,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#51ca90",
+      value: "#3cb97f",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#2da36d",
+      value: "#269864",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16104,18 +16086,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#729a3e",
+      value: "#8fb957",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the dark theme (hover, 30% darker)",
+      description: "The positive border color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#abd37c",
+      value: "#b9de8e",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the dark theme (active, 15% darker)",
+      description: "The positive border color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -16131,18 +16113,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#6bbad7",
+      value: "#55aac8",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#4098b8",
+      value: "#398fad",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16158,18 +16140,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#957fe2",
+      value: "#846bd6",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#7257c8",
+      value: "#6a4ec1",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16212,18 +16194,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#25282e",
+      value: "#1e1f25",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the dark theme (hover, 30% brighter)",
+      description: "The overlay background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#16171b",
+      value: "#121316",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the dark theme (active, 15% brighter)",
+      description: "The overlay background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -16248,18 +16230,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#929292",
+      value: "#828282",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the dark theme (hover, 30% brighter)",
+      description: "The overlay border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#727272",
+      value: "#6a6a6a",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the dark theme (active, 15% brighter)",
+      description: "The overlay border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -18552,27 +18534,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -18586,20 +18559,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -18622,10 +18595,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -20201,18 +20174,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#757575",
+      value: "#868686",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the dark theme (hover, 30% darker)",
+      description: "The body foreground color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#989898",
+      value: "#a2a2a2",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the dark theme (active, 15% darker)",
+      description: "The body foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20237,18 +20210,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#818181",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the dark theme (hover, 30% brighter)",
+      description: "The eyebrow foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#767676",
+      value: "#717171",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the dark theme (active, 15% brighter)",
+      description: "The eyebrow foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20273,18 +20246,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#e2e2e2",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the dark theme (hover, 30% brighter)",
+      description: "The caption foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#c0c0c0",
+      value: "#b8b8b8",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the dark theme (active, 15% brighter)",
+      description: "The caption foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20309,18 +20282,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#cbcbcb",
+      value: "#bcbcbc",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the dark theme (hover, 30% brighter)",
+      description: "The link foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#a7a7a7",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the dark theme (active, 15% brighter)",
+      description: "The link foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20345,18 +20318,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#9a9a9a",
+      value: "#929292",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the dark theme (hover, 30% brighter)",
+      description: "A required foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#8b8b8b",
+      value: "#888888",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the dark theme (active, 15% brighter)",
+      description: "A required foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20417,18 +20390,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#e9e9e9",
+      value: "#dbdbdb",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the dark theme (hover, 30% brighter)",
+      description: "The brand foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#c1c1c1",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the dark theme (active, 15% brighter)",
+      description: "The brand foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20453,18 +20426,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#9c9c9c",
+      value: "#949494",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the dark theme (hover, 30% brighter)",
+      description: "The danger foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#888888",
+      value: "#818181",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the dark theme (active, 15% brighter)",
+      description: "The danger foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20489,18 +20462,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#9a9a9a",
+      value: "#929292",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the dark theme (hover, 30% brighter)",
+      description: "The negative foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#8b8b8b",
+      value: "#888888",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the dark theme (active, 15% brighter)",
+      description: "The negative foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20525,18 +20498,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#dedede",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the dark theme (hover, 30% brighter)",
+      description: "The warning foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#b9b9b9",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the dark theme (active, 15% brighter)",
+      description: "The warning foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20561,18 +20534,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#ebebeb",
+      value: "#e8e8e8",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the dark theme (hover, 30% brighter)",
+      description: "The success foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#d5d5d5",
+      value: "#cccccc",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the dark theme (active, 15% brighter)",
+      description: "The success foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20597,18 +20570,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#ececec",
+      value: "#e5e5e5",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the dark theme (hover, 30% brighter)",
+      description: "The positive foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#d3d3d3",
+      value: "#cacaca",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the dark theme (active, 15% brighter)",
+      description: "The positive foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20633,18 +20606,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#f1f1f1",
+      value: "#e4e4e4",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the dark theme (hover, 30% brighter)",
+      description: "The info foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#d4d4d4",
+      value: "#cacaca",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the dark theme (active, 15% brighter)",
+      description: "The info foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20669,18 +20642,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#cccccc",
+      value: "#bdbdbd",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the dark theme (hover, 30% brighter)",
+      description: "The discovery foreground color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#afafaf",
+      value: "#a8a8a8",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the dark theme (active, 15% brighter)",
+      description: "The discovery foreground color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -20750,9 +20723,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the dark theme (active, 15% darker)",
+      description: "The brand foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20786,9 +20759,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the dark theme (active, 15% darker)",
+      description: "The danger foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20822,9 +20795,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the dark theme (active, 15% darker)",
+      description: "The negative foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20858,9 +20831,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "Ink text on warning surfaces (active, 15% darker)",
+      description: "Ink text on warning surfaces (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20894,9 +20867,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the dark theme (active, 15% darker)",
+      description: "The success foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20930,9 +20903,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the dark theme (active, 15% darker)",
+      description: "The positive foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -20966,9 +20939,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the dark theme (active, 15% darker)",
+      description: "The info foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -21002,9 +20975,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the dark theme (active, 15% darker)",
+      description: "The discovery foreground color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -21047,7 +21020,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#d7d7d7",
+      value: "#d3d3d3",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21056,7 +21029,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#d7d7d7",
+      value: "#d1d1d1",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21065,7 +21038,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#f7f7f7",
+      value: "#f3f3f3",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21074,7 +21047,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#f0f0f0",
+      value: "#ededed",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21083,7 +21056,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#f0f0f0",
+      value: "#eeeeee",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21092,7 +21065,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#f3f3f3",
+      value: "#f2f2f2",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21101,7 +21074,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#f4f4f4",
+      value: "#f3f3f3",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the dark theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -21245,18 +21218,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#161616",
+      value: "#141414",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the dark theme (hover, 30% brighter)",
+      description: "The lowest background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#111111",
+      value: "#101010",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the dark theme (active, 15% brighter)",
+      description: "The lowest background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21281,18 +21254,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#313131",
+      value: "#2c2c2c",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the dark theme (hover, 30% brighter)",
+      description: "The page background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#282828",
+      value: "#252525",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the dark theme (active, 15% brighter)",
+      description: "The page background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21317,18 +21290,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#393939",
+      value: "#343434",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the dark theme (hover, 30% brighter)",
+      description: "The elevated background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#2f2f2f",
+      value: "#2c2c2c",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the dark theme (active, 15% brighter)",
+      description: "The elevated background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21353,18 +21326,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#434343",
+      value: "#3d3d3d",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the dark theme (hover, 30% brighter)",
+      description: "The floating background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#373737",
+      value: "#343434",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the dark theme (active, 15% brighter)",
+      description: "The floating background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21389,18 +21362,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#696969",
+      value: "#616161",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the dark theme (hover, 30% brighter)",
+      description: "The highest level of elevation background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#585858",
+      value: "#545454",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the dark theme (active, 15% brighter)",
+      description: "The highest level of elevation background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21461,18 +21434,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#4e4e4e",
+      value: "#474747",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The brand subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#414141",
+      value: "#3e3e3e",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand subtle background color for the dark theme (active, 15% brighter)",
+      description: "The brand subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21497,18 +21470,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#2c2c2c",
+      value: "#272727",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The danger subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#232323",
+      value: "#212121",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger subtle background color for the dark theme (active, 15% brighter)",
+      description: "The danger subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21533,18 +21506,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#565656",
+      value: "#4e4e4e",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The negative subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#474747",
+      value: "#434343",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative subtle background color for the dark theme (active, 15% brighter)",
+      description: "The negative subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21569,18 +21542,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#575757",
+      value: "#505050",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The warning subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#494949",
+      value: "#454545",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning subtle background color for the dark theme (active, 15% brighter)",
+      description: "The warning subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21605,18 +21578,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#545454",
+      value: "#4e4e4e",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The success subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#474747",
+      value: "#434343",
       cssVar: "--rw-color-background-success-active",
-      description: "The success subtle background color for the dark theme (active, 15% brighter)",
+      description: "The success subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21641,18 +21614,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#515151",
+      value: "#4a4a4a",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The positive subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#444444",
+      value: "#414141",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive subtle background color for the dark theme (active, 15% brighter)",
+      description: "The positive subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21677,18 +21650,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#525252",
+      value: "#4b4b4b",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The info subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#444444",
+      value: "#414141",
       cssVar: "--rw-color-background-info-active",
-      description: "The info subtle background color for the dark theme (active, 15% brighter)",
+      description: "The info subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21713,18 +21686,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#434343",
+      value: "#3d3d3d",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery subtle background color for the dark theme (hover, 30% brighter)",
+      description: "The discovery subtle background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#383838",
+      value: "#353535",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery subtle background color for the dark theme (active, 15% brighter)",
+      description: "The discovery subtle background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21938,18 +21911,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#e9e9e9",
+      value: "#dbdbdb",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#c1c1c1",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21965,18 +21938,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#9c9c9c",
+      value: "#949494",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#888888",
+      value: "#818181",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -21992,18 +21965,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#9a9a9a",
+      value: "#929292",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#8b8b8b",
+      value: "#888888",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22019,18 +21992,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#dedede",
+      value: "#d1d1d1",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#b9b9b9",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22046,18 +22019,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#ebebeb",
+      value: "#e8e8e8",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#d5d5d5",
+      value: "#cccccc",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22073,18 +22046,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#ececec",
+      value: "#e5e5e5",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the dark theme (hover, 30% brighter)",
+      description: "The positive border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#d3d3d3",
+      value: "#cacaca",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the dark theme (active, 15% brighter)",
+      description: "The positive border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22100,18 +22073,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#f1f1f1",
+      value: "#e4e4e4",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#d4d4d4",
+      value: "#cacaca",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22127,18 +22100,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#cccccc",
+      value: "#bdbdbd",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#afafaf",
+      value: "#a8a8a8",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22181,18 +22154,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#858585",
+      value: "#7a7a7a",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the dark theme (hover, 30% brighter)",
+      description: "The brand border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#707070",
+      value: "#6b6b6b",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the dark theme (active, 15% brighter)",
+      description: "The brand border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22208,18 +22181,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#444444",
+      value: "#3e3e3e",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the dark theme (hover, 30% brighter)",
+      description: "The danger border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#383838",
+      value: "#353535",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the dark theme (active, 15% brighter)",
+      description: "The danger border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22235,18 +22208,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#565656",
+      value: "#4e4e4e",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the dark theme (hover, 30% brighter)",
+      description: "The negative border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#474747",
+      value: "#434343",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the dark theme (active, 15% brighter)",
+      description: "The negative border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22262,18 +22235,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#b6b6b6",
+      value: "#a7a7a7",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the dark theme (hover, 30% brighter)",
+      description: "The warning border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#9a9a9a",
+      value: "#939393",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the dark theme (active, 15% brighter)",
+      description: "The warning border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22289,18 +22262,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#a3a3a3",
+      value: "#969696",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the dark theme (hover, 30% brighter)",
+      description: "The success border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#8a8a8a",
+      value: "#858585",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the dark theme (active, 15% brighter)",
+      description: "The success border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22316,18 +22289,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#898989",
+      value: "#9d9d9d",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the dark theme (hover, 30% darker)",
+      description: "The positive border color for the dark theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#b2b2b2",
+      value: "#bcbcbc",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the dark theme (active, 15% darker)",
+      description: "The positive border color for the dark theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -22343,18 +22316,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#a1a1a1",
+      value: "#959595",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the dark theme (hover, 30% brighter)",
+      description: "The info border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#888888",
+      value: "#828282",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the dark theme (active, 15% brighter)",
+      description: "The info border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22370,18 +22343,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#858585",
+      value: "#7a7a7a",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the dark theme (hover, 30% brighter)",
+      description: "The discovery border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#6f6f6f",
+      value: "#6a6a6a",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the dark theme (active, 15% brighter)",
+      description: "The discovery border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22424,18 +22397,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#434343",
+      value: "#3d3d3d",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the dark theme (hover, 30% brighter)",
+      description: "The overlay background color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#373737",
+      value: "#343434",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the dark theme (active, 15% brighter)",
+      description: "The overlay background color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -22460,18 +22433,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#818181",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the dark theme (hover, 30% brighter)",
+      description: "The overlay border color for the dark theme (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#767676",
+      value: "#717171",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the dark theme (active, 15% brighter)",
+      description: "The overlay border color for the dark theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -24764,27 +24737,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -24798,20 +24762,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -24834,10 +24798,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -26413,18 +26377,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#616161",
+      value: "#707070",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 30% darker)",
+      description: "The body foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#7f7f7f",
+      value: "#878787",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the light theme (active, 15% darker)",
+      description: "The body foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26449,18 +26413,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#292929",
+      value: "#313131",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the light theme (hover, 30% darker)",
+      description: "The eyebrow foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#383838",
+      value: "#3c3c3c",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the light theme (active, 15% darker)",
+      description: "The eyebrow foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26485,18 +26449,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#393939",
+      value: "#434343",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the light theme (hover, 30% darker)",
+      description: "The caption foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#4d4d4d",
+      value: "#525252",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the light theme (active, 15% darker)",
+      description: "The caption foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26521,18 +26485,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#044bbc",
+      value: "#185bcd",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#286add",
+      value: "#3072e6",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26557,18 +26521,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#9d0000",
+      value: "#ad0000",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the light theme (hover, 30% darker)",
+      description: "A required foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#bd0000",
+      value: "#c4000b",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the light theme (active, 15% darker)",
+      description: "A required foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26629,18 +26593,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#004130",
+      value: "#004a39",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the light theme (hover, 30% darker)",
+      description: "The brand foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#005442",
+      value: "#005947",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26665,18 +26629,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#930028",
+      value: "#a20033",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the light theme (hover, 30% darker)",
+      description: "The danger foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#b1003f",
+      value: "#b80944",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26701,18 +26665,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#9d0000",
+      value: "#ad0000",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the light theme (hover, 30% darker)",
+      description: "The negative foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#bd0000",
+      value: "#c4000b",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26737,18 +26701,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#8d5400",
+      value: "#9e6400",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the light theme (hover, 30% darker)",
+      description: "The warning foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#af7400",
+      value: "#b87c00",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the light theme (active, 15% darker)",
+      description: "The warning foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26773,18 +26737,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#007136",
+      value: "#008044",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the light theme (hover, 30% darker)",
+      description: "The success foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#009052",
+      value: "#009759",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26809,18 +26773,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#447100",
+      value: "#538100",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the light theme (hover, 30% darker)",
+      description: "The positive foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#629203",
+      value: "#699a18",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26845,18 +26809,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#007c9f",
+      value: "#008eb1",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the light theme (hover, 30% darker)",
+      description: "The info foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#00a0c4",
+      value: "#1da9cd",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26881,18 +26845,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#543696",
+      value: "#6043a4",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the light theme (hover, 30% darker)",
+      description: "The discovery foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#6c51b3",
+      value: "#7358ba",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26962,9 +26926,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -26998,9 +26962,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27034,9 +26998,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27070,9 +27034,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#222326",
+      value: "#202124",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "The warning foreground color for the light theme (active, 15% brighter)",
+      description: "The warning foreground color for the light theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -27106,9 +27070,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27142,9 +27106,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27178,9 +27142,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27214,9 +27178,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27250,7 +27214,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#427966",
+      value: "#4c8975",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27259,7 +27223,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#eb636e",
+      value: "#ff6e80",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27268,7 +27232,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#fa6a59",
+      value: "#ff7562",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27277,7 +27241,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#efaf6d",
+      value: "#ffcb7e",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27286,7 +27250,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#71cb8a",
+      value: "#80e5a2",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27295,7 +27259,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#9cce6e",
+      value: "#b6ea7e",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27304,7 +27268,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#85e4ff",
+      value: "#98ffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27313,7 +27277,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#9c83ea",
+      value: "#b298ff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -27475,18 +27439,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#8b8b8b",
+      value: "#a0a0a0",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the light theme (hover, 30% darker)",
+      description: "The lowest background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#b5b5b5",
+      value: "#c0c0c0",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the light theme (active, 15% darker)",
+      description: "The lowest background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27511,18 +27475,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#919191",
+      value: "#a6a6a6",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the light theme (hover, 30% darker)",
+      description: "The page background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#bcbcbc",
+      value: "#c8c8c8",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the light theme (active, 15% darker)",
+      description: "The page background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27547,18 +27511,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#959595",
+      value: "#ababab",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the light theme (hover, 30% darker)",
+      description: "The elevated background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the light theme (active, 15% darker)",
+      description: "The elevated background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27583,18 +27547,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#9b9b9b",
+      value: "#b2b2b2",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the light theme (hover, 30% darker)",
+      description: "The floating background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the light theme (active, 15% darker)",
+      description: "The floating background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27619,18 +27583,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#9e9e9e",
+      value: "#b6b6b6",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the light theme (hover, 30% darker)",
+      description: "The highest level of elevation background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#cecece",
+      value: "#dadada",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the light theme (active, 15% darker)",
+      description: "The highest level of elevation background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27691,18 +27655,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.link-hover",
       type: "color",
-      value: "#044bbc",
+      value: "#185bcd",
       cssVar: "--rw-color-background-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.link-active",
       type: "color",
-      value: "#286add",
+      value: "#3072e6",
       cssVar: "--rw-color-background-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27727,18 +27691,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#00231a",
+      value: "#00291f",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 30% darker)",
+      description: "The brand background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#003025",
+      value: "#003328",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand background color for the light theme (active, 15% darker)",
+      description: "The brand background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27763,18 +27727,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#6d0000",
+      value: "#780000",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 30% darker)",
+      description: "The danger background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#830000",
+      value: "#890000",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger background color for the light theme (active, 15% darker)",
+      description: "The danger background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27799,18 +27763,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#920000",
+      value: "#a00000",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the light theme (hover, 30% darker)",
+      description: "The negative background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#af1500",
+      value: "#b72000",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative background color for the light theme (active, 15% darker)",
+      description: "The negative background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27835,18 +27799,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#5f3600",
+      value: "#6b4100",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the light theme (hover, 30% darker)",
+      description: "The warning background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#774c00",
+      value: "#7d5200",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning background color for the light theme (active, 15% darker)",
+      description: "The warning background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27871,18 +27835,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#004d24",
+      value: "#00582e",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the light theme (hover, 30% darker)",
+      description: "The success background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#006338",
+      value: "#00693d",
       cssVar: "--rw-color-background-success-active",
-      description: "The success background color for the light theme (active, 15% darker)",
+      description: "The success background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27907,18 +27871,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#256c00",
+      value: "#347b00",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the light theme (hover, 30% darker)",
+      description: "The positive background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#438a00",
+      value: "#4b9200",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive background color for the light theme (active, 15% darker)",
+      description: "The positive background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27943,18 +27907,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#004767",
+      value: "#005272",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the light theme (hover, 30% darker)",
+      description: "The info background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#005d7e",
+      value: "#006384",
       cssVar: "--rw-color-background-info-active",
-      description: "The info background color for the light theme (active, 15% darker)",
+      description: "The info background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -27979,18 +27943,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#39337d",
+      value: "#423f89",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the light theme (hover, 30% darker)",
+      description: "The discovery background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#4d4a96",
+      value: "#52509c",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery background color for the light theme (active, 15% darker)",
+      description: "The discovery background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28204,18 +28168,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#004130",
+      value: "#004a39",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#005442",
+      value: "#005947",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28231,18 +28195,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#930028",
+      value: "#a20033",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#b1003f",
+      value: "#b80944",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28258,18 +28222,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#9d0000",
+      value: "#ad0000",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#bd0000",
+      value: "#c4000b",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28285,18 +28249,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#8d5400",
+      value: "#9e6400",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#af7400",
+      value: "#b87c00",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28312,18 +28276,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#007136",
+      value: "#008044",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#009052",
+      value: "#009759",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28339,18 +28303,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#447100",
+      value: "#538100",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#629203",
+      value: "#699a18",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28366,18 +28330,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#007c9f",
+      value: "#008eb1",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#00a0c4",
+      value: "#1da9cd",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28393,18 +28357,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#543696",
+      value: "#6043a4",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#6c51b3",
+      value: "#7358ba",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28447,18 +28411,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#00231a",
+      value: "#00291f",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#003025",
+      value: "#003328",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28474,18 +28438,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#6d0000",
+      value: "#780000",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#830000",
+      value: "#890000",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28501,18 +28465,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#920000",
+      value: "#a00000",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#af1500",
+      value: "#b72000",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28528,18 +28492,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#5f3600",
+      value: "#6b4100",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#774c00",
+      value: "#7d5200",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28555,18 +28519,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#004d24",
+      value: "#00582e",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#006338",
+      value: "#00693d",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28582,18 +28546,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#256c00",
+      value: "#347b00",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#438a00",
+      value: "#4b9200",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28609,18 +28573,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#004767",
+      value: "#005272",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#005d7e",
+      value: "#006384",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28636,18 +28600,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#39337d",
+      value: "#423f89",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#4d4a96",
+      value: "#52509c",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28690,18 +28654,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#9b9b9b",
+      value: "#b2b2b2",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the light theme (hover, 30% darker)",
+      description: "The overlay background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the light theme (active, 15% darker)",
+      description: "The overlay background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -28726,18 +28690,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#202020",
+      value: "#262626",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the light theme (hover, 30% darker)",
+      description: "The overlay border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#2d2d2d",
+      value: "#303030",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the light theme (active, 15% darker)",
+      description: "The overlay border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -31030,27 +30994,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -31064,20 +31019,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -31100,10 +31055,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -32679,18 +32634,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#6a6a6a",
+      value: "#757575",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 30% darker)",
+      description: "The body foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#7f7f7f",
+      value: "#858585",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the light theme (active, 15% darker)",
+      description: "The body foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32715,18 +32670,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#434343",
+      value: "#494949",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the light theme (hover, 30% darker)",
+      description: "The eyebrow foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#4d4d4d",
+      value: "#505050",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the light theme (active, 15% darker)",
+      description: "The eyebrow foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32751,18 +32706,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#4e4e4e",
+      value: "#555555",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the light theme (hover, 30% darker)",
+      description: "The caption foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#5c5c5c",
+      value: "#606060",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the light theme (active, 15% darker)",
+      description: "The caption foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32787,18 +32742,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#325da1",
+      value: "#4369aa",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#4f74b4",
+      value: "#5479bb",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32823,18 +32778,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#902a2a",
+      value: "#992c2c",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the light theme (hover, 30% darker)",
+      description: "A required foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#a22f2f",
+      value: "#a63037",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the light theme (active, 15% darker)",
+      description: "A required foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32895,18 +32850,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#1b5f4d",
+      value: "#1d6353",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the light theme (hover, 30% darker)",
+      description: "The brand foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#1e6959",
+      value: "#1f6c5c",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32931,18 +32886,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#8b2843",
+      value: "#932b4c",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the light theme (hover, 30% darker)",
+      description: "The danger foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#9b2d54",
+      value: "#9f3559",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -32967,18 +32922,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#902a2a",
+      value: "#992c2c",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the light theme (hover, 30% darker)",
+      description: "The negative foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#a22f2f",
+      value: "#a63037",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33003,18 +32958,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#886127",
+      value: "#916b2a",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the light theme (hover, 30% darker)",
+      description: "The warning foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#9a752d",
+      value: "#9f7a2e",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the light theme (active, 15% darker)",
+      description: "The warning foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33039,18 +32994,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#23794c",
+      value: "#258156",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the light theme (hover, 30% darker)",
+      description: "The success foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#28895f",
+      value: "#298d64",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33075,18 +33030,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#577923",
+      value: "#618126",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the light theme (hover, 30% darker)",
+      description: "The positive foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#6a8a2b",
+      value: "#6e8d3c",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33111,18 +33066,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#2a7b92",
+      value: "#2d869b",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the light theme (hover, 30% darker)",
+      description: "The info foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#3090a6",
+      value: "#4696aa",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33147,18 +33102,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#63518a",
+      value: "#6c5c93",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the light theme (hover, 30% darker)",
+      description: "The discovery foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#75669c",
+      value: "#7a6ba2",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33228,9 +33183,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33264,9 +33219,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33300,9 +33255,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33336,9 +33291,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#3e3e41",
+      value: "#3c3d40",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "The warning foreground color for the light theme (active, 15% brighter)",
+      description: "The warning foreground color for the light theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -33372,9 +33327,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33408,9 +33363,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33444,9 +33399,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33480,9 +33435,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33516,7 +33471,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#57786d",
+      value: "#5f8377",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33525,7 +33480,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#c67178",
+      value: "#d77581",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33534,7 +33489,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#d0756a",
+      value: "#d57b6f",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33543,7 +33498,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#caa176",
+      value: "#d9b47e",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33552,7 +33507,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#7ab089",
+      value: "#82c598",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33561,7 +33516,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#94b278",
+      value: "#a6c880",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33570,7 +33525,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#82c7db",
+      value: "#8cdede",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33579,7 +33534,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#9483c9",
+      value: "#a08cde",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -33741,18 +33696,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#888888",
+      value: "#969696",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the light theme (hover, 30% darker)",
+      description: "The lowest background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#a5a5a5",
+      value: "#adadad",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the light theme (active, 15% darker)",
+      description: "The lowest background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33777,18 +33732,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#8c8c8c",
+      value: "#9a9a9a",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the light theme (hover, 30% darker)",
+      description: "The page background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#aaaaaa",
+      value: "#b2b2b2",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the light theme (active, 15% darker)",
+      description: "The page background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33813,18 +33768,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#8f8f8f",
+      value: "#9e9e9e",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the light theme (hover, 30% darker)",
+      description: "The elevated background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#aeaeae",
+      value: "#b6b6b6",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the light theme (active, 15% darker)",
+      description: "The elevated background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33849,18 +33804,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#939393",
+      value: "#a3a3a3",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the light theme (hover, 30% darker)",
+      description: "The floating background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the light theme (active, 15% darker)",
+      description: "The floating background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33885,18 +33840,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#959595",
+      value: "#a6a6a6",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the light theme (hover, 30% darker)",
+      description: "The highest level of elevation background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#b6b6b6",
+      value: "#bfbfbf",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the light theme (active, 15% darker)",
+      description: "The highest level of elevation background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33957,18 +33912,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.link-hover",
       type: "color",
-      value: "#325da1",
+      value: "#4369aa",
       cssVar: "--rw-color-background-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.link-active",
       type: "color",
-      value: "#4f74b4",
+      value: "#5479bb",
       cssVar: "--rw-color-background-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -33993,18 +33948,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#174e40",
+      value: "#185243",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 30% darker)",
+      description: "The brand background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#195547",
+      value: "#19574a",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand background color for the light theme (active, 15% darker)",
+      description: "The brand background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34029,18 +33984,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#762222",
+      value: "#7c2424",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 30% darker)",
+      description: "The danger background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#822626",
+      value: "#862727",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger background color for the light theme (active, 15% darker)",
+      description: "The danger background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34065,18 +34020,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#8a2828",
+      value: "#922a2a",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the light theme (hover, 30% darker)",
+      description: "The negative background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#9a3a2d",
+      value: "#9f422e",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative background color for the light theme (active, 15% darker)",
+      description: "The negative background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34101,18 +34056,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#6f4d20",
+      value: "#755522",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the light theme (hover, 30% darker)",
+      description: "The warning background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#7c5c24",
+      value: "#7f6025",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning background color for the light theme (active, 15% darker)",
+      description: "The warning background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34137,18 +34092,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#1d653f",
+      value: "#1f6b47",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the light theme (hover, 30% darker)",
+      description: "The success background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#21714e",
+      value: "#227452",
       cssVar: "--rw-color-background-success-active",
-      description: "The success background color for the light theme (active, 15% darker)",
+      description: "The success background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34173,18 +34128,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#3f7622",
+      value: "#4a7e25",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the light theme (hover, 30% darker)",
+      description: "The positive background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#558627",
+      value: "#5b8a28",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive background color for the light theme (active, 15% darker)",
+      description: "The positive background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34209,18 +34164,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#215a73",
+      value: "#236179",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the light theme (hover, 30% darker)",
+      description: "The info background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#256880",
+      value: "#266c83",
       cssVar: "--rw-color-background-info-active",
-      description: "The info background color for the light theme (active, 15% darker)",
+      description: "The info background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34245,18 +34200,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#514d7b",
+      value: "#585682",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the light theme (hover, 30% darker)",
+      description: "The discovery background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#615f8a",
+      value: "#65638e",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery background color for the light theme (active, 15% darker)",
+      description: "The discovery background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34470,18 +34425,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#1b5f4d",
+      value: "#1d6353",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#1e6959",
+      value: "#1f6c5c",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34497,18 +34452,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#8b2843",
+      value: "#932b4c",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#9b2d54",
+      value: "#9f3559",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34524,18 +34479,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#902a2a",
+      value: "#992c2c",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#a22f2f",
+      value: "#a63037",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34551,18 +34506,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#886127",
+      value: "#916b2a",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#9a752d",
+      value: "#9f7a2e",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34578,18 +34533,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#23794c",
+      value: "#258156",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#28895f",
+      value: "#298d64",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34605,18 +34560,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#577923",
+      value: "#618126",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#6a8a2b",
+      value: "#6e8d3c",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34632,18 +34587,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#2a7b92",
+      value: "#2d869b",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#3090a6",
+      value: "#4696aa",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34659,18 +34614,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#63518a",
+      value: "#6c5c93",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#75669c",
+      value: "#7a6ba2",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34713,18 +34668,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#174e40",
+      value: "#185243",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#195547",
+      value: "#19574a",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34740,18 +34695,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#762222",
+      value: "#7c2424",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#822626",
+      value: "#862727",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34767,18 +34722,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#8a2828",
+      value: "#922a2a",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#9a3a2d",
+      value: "#9f422e",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34794,18 +34749,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#6f4d20",
+      value: "#755522",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#7c5c24",
+      value: "#7f6025",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34821,18 +34776,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#1d653f",
+      value: "#1f6b47",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#21714e",
+      value: "#227452",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34848,18 +34803,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#3f7622",
+      value: "#4a7e25",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#558627",
+      value: "#5b8a28",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34875,18 +34830,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#215a73",
+      value: "#236179",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#256880",
+      value: "#266c83",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34902,18 +34857,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#514d7b",
+      value: "#585682",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#615f8a",
+      value: "#65638e",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34956,18 +34911,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#939393",
+      value: "#a3a3a3",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the light theme (hover, 30% darker)",
+      description: "The overlay background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#b3b3b3",
+      value: "#bbbbbb",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the light theme (active, 15% darker)",
+      description: "The overlay background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -34992,18 +34947,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#3d3d3d",
+      value: "#414141",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the light theme (hover, 30% darker)",
+      description: "The overlay border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#464646",
+      value: "#484848",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the light theme (active, 15% darker)",
+      description: "The overlay border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -37296,27 +37251,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -37330,20 +37276,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -37366,10 +37312,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -38945,18 +38891,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#535353",
+      value: "#696969",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 30% darker)",
+      description: "The body foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#7f7f7f",
+      value: "#8a8a8a",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the light theme (active, 15% darker)",
+      description: "The body foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -38981,18 +38927,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#020202",
+      value: "#0e0e0e",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the light theme (hover, 30% darker)",
+      description: "The eyebrow foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#181818",
+      value: "#1e1e1e",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the light theme (active, 15% darker)",
+      description: "The eyebrow foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39017,18 +38963,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#191919",
+      value: "#282828",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the light theme (hover, 30% darker)",
+      description: "The caption foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#363636",
+      value: "#3e3e3e",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the light theme (active, 15% darker)",
+      description: "The caption foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39053,18 +38999,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#003fa4",
+      value: "#0050d9",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#0963ff",
+      value: "#2172ff",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39089,18 +39035,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#710000",
+      value: "#880000",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the light theme (hover, 30% darker)",
+      description: "A required foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#9f0000",
+      value: "#a9000a",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the light theme (active, 15% darker)",
+      description: "A required foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39163,16 +39109,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the light theme (hover, 30% darker)",
+      description: "The brand foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#000706",
+      value: "#000e0b",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39197,18 +39143,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#62001b",
+      value: "#780026",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the light theme (hover, 30% darker)",
+      description: "The danger foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#8e0033",
+      value: "#a50038",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39233,18 +39179,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#710000",
+      value: "#880000",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the light theme (hover, 30% darker)",
+      description: "The negative foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#9f0000",
+      value: "#a9000a",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39269,18 +39215,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#5a3500",
+      value: "#724800",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the light theme (hover, 30% darker)",
+      description: "The warning foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#8b5c00",
+      value: "#986600",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the light theme (active, 15% darker)",
+      description: "The warning foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39305,18 +39251,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#003117",
+      value: "#004726",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the light theme (hover, 30% darker)",
+      description: "The success foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#005e36",
+      value: "#00683d",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39341,18 +39287,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#1e3100",
+      value: "#2f4800",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the light theme (hover, 30% darker)",
+      description: "The positive foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#436500",
+      value: "#598f00",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39377,18 +39323,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#005a74",
+      value: "#00728e",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the light theme (hover, 30% darker)",
+      description: "The info foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#008aa9",
+      value: "#00b3e1",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39413,18 +39359,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#431c99",
+      value: "#532ab2",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the light theme (hover, 30% darker)",
+      description: "The discovery foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#633bcb",
+      value: "#6e48d3",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39494,9 +39440,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39530,9 +39476,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39566,9 +39512,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39604,7 +39550,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "The warning foreground color for the light theme (active, 15% brighter)",
+      description: "The warning foreground color for the light theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -39638,9 +39584,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39674,9 +39620,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39710,9 +39656,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39746,9 +39692,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -39782,7 +39728,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#2b7159",
+      value: "#378b70",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39791,7 +39737,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#ff737e",
+      value: "#ffa0ab",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39800,7 +39746,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#ff887a",
+      value: "#ff9c8e",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39809,7 +39755,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#ffc487",
+      value: "#ffe2b7",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39818,7 +39764,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#73e493",
+      value: "#97fcb9",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39827,7 +39773,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#a9e870",
+      value: "#ceff98",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39836,7 +39782,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#c1f1ff",
+      value: "#dcffff",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -39845,7 +39791,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#b79fff",
+      value: "#e5dcff",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -40007,18 +39953,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#909090",
+      value: "#afafaf",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the light theme (hover, 30% darker)",
+      description: "The lowest background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#cdcdcd",
+      value: "#dddddd",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the light theme (active, 15% darker)",
+      description: "The lowest background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40043,18 +39989,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#999999",
+      value: "#b7b7b7",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the light theme (hover, 30% darker)",
+      description: "The page background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#d7d7d7",
+      value: "#e9e9e9",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the light theme (active, 15% darker)",
+      description: "The page background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40079,18 +40025,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#9f9f9f",
+      value: "#bfbfbf",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the light theme (hover, 30% darker)",
+      description: "The elevated background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#e0e0e0",
+      value: "#f1f1f1",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the light theme (active, 15% darker)",
+      description: "The elevated background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40115,18 +40061,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#a7a7a7",
+      value: "#c9c9c9",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the light theme (hover, 30% darker)",
+      description: "The floating background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the light theme (active, 15% darker)",
+      description: "The floating background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40151,18 +40097,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#acacac",
+      value: "#cfcfcf",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the light theme (hover, 30% darker)",
+      description: "The highest level of elevation background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#f1f1f1",
+      value: "#ffffff",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the light theme (active, 15% darker)",
+      description: "The highest level of elevation background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40223,18 +40169,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.link-hover",
       type: "color",
-      value: "#003fa4",
+      value: "#0050d9",
       cssVar: "--rw-color-background-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.link-active",
       type: "color",
-      value: "#0963ff",
+      value: "#2172ff",
       cssVar: "--rw-color-background-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40261,7 +40207,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 30% darker)",
+      description: "The brand background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
@@ -40270,7 +40216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand background color for the light theme (active, 15% darker)",
+      description: "The brand background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40295,18 +40241,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#2b0000",
+      value: "#3b0000",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 30% darker)",
+      description: "The danger background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#4b0000",
+      value: "#540000",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger background color for the light theme (active, 15% darker)",
+      description: "The danger background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40331,18 +40277,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#610000",
+      value: "#750000",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the light theme (hover, 30% darker)",
+      description: "The negative background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#8b1100",
+      value: "#971a00",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative background color for the light theme (active, 15% darker)",
+      description: "The negative background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40367,18 +40313,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#170d00",
+      value: "#281900",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the light theme (hover, 30% darker)",
+      description: "The warning background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#3a2500",
+      value: "#432c00",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning background color for the light theme (active, 15% darker)",
+      description: "The warning background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40403,18 +40349,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#000000",
+      value: "#000d07",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the light theme (hover, 30% darker)",
+      description: "The success background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#001d10",
+      value: "#002616",
       cssVar: "--rw-color-background-success-active",
-      description: "The success background color for the light theme (active, 15% darker)",
+      description: "The success background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40439,18 +40385,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#0e2a00",
+      value: "#1b4000",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the light theme (hover, 30% darker)",
+      description: "The positive background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#295500",
+      value: "#326100",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive background color for the light theme (active, 15% darker)",
+      description: "The positive background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40475,18 +40421,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#001823",
+      value: "#002433",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the light theme (hover, 30% darker)",
+      description: "The info background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#003244",
+      value: "#00394d",
       cssVar: "--rw-color-background-info-active",
-      description: "The info background color for the light theme (active, 15% darker)",
+      description: "The info background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40511,18 +40457,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#221b72",
+      value: "#2b2788",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the light theme (hover, 30% darker)",
+      description: "The discovery background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#38349e",
+      value: "#3d3ba9",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery background color for the light theme (active, 15% darker)",
+      description: "The discovery background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40738,16 +40684,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#000706",
+      value: "#000e0b",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40763,18 +40709,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#62001b",
+      value: "#780026",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#8e0033",
+      value: "#a50038",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40790,18 +40736,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#710000",
+      value: "#880000",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#9f0000",
+      value: "#a9000a",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40817,18 +40763,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#5a3500",
+      value: "#724800",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#8b5c00",
+      value: "#986600",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40844,18 +40790,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#003117",
+      value: "#004726",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#005e36",
+      value: "#00683d",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40871,18 +40817,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#1e3100",
+      value: "#2f4800",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#436500",
+      value: "#598f00",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40898,18 +40844,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#005a74",
+      value: "#00728e",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#008aa9",
+      value: "#00b3e1",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40925,18 +40871,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#431c99",
+      value: "#532ab2",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#633bcb",
+      value: "#6e48d3",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -40981,7 +40927,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
@@ -40990,7 +40936,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41006,18 +40952,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#2b0000",
+      value: "#3b0000",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#4b0000",
+      value: "#540000",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41033,18 +40979,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#610000",
+      value: "#750000",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#8b1100",
+      value: "#971a00",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41060,18 +41006,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#170d00",
+      value: "#281900",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#3a2500",
+      value: "#432c00",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41087,18 +41033,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#000000",
+      value: "#000d07",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#001d10",
+      value: "#002616",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41114,18 +41060,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#0e2a00",
+      value: "#1b4000",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#295500",
+      value: "#326100",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41141,18 +41087,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#001823",
+      value: "#002433",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#003244",
+      value: "#00394d",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41168,18 +41114,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#221b72",
+      value: "#2b2788",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#38349e",
+      value: "#3d3ba9",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41222,18 +41168,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#a7a7a7",
+      value: "#c9c9c9",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the light theme (hover, 30% darker)",
+      description: "The overlay background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#eaeaea",
+      value: "#fbfbfb",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the light theme (active, 15% darker)",
+      description: "The overlay background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -41260,16 +41206,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the light theme (hover, 30% darker)",
+      description: "The overlay border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#080808",
+      value: "#0c0c0c",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the light theme (active, 15% darker)",
+      description: "The overlay border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -43562,27 +43508,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -43596,20 +43533,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -43632,10 +43569,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true
@@ -45211,18 +45148,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.body-hover",
       type: "color",
-      value: "#616161",
+      value: "#707070",
       cssVar: "--rw-color-foreground-body-hover",
-      description: "The body foreground color for the light theme (hover, 30% darker)",
+      description: "The body foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.body-active",
       type: "color",
-      value: "#7f7f7f",
+      value: "#878787",
       cssVar: "--rw-color-foreground-body-active",
-      description: "The body foreground color for the light theme (active, 15% darker)",
+      description: "The body foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45247,18 +45184,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.eyebrow-hover",
       type: "color",
-      value: "#292929",
+      value: "#313131",
       cssVar: "--rw-color-foreground-eyebrow-hover",
-      description: "The eyebrow foreground color for the light theme (hover, 30% darker)",
+      description: "The eyebrow foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.eyebrow-active",
       type: "color",
-      value: "#383838",
+      value: "#3c3c3c",
       cssVar: "--rw-color-foreground-eyebrow-active",
-      description: "The eyebrow foreground color for the light theme (active, 15% darker)",
+      description: "The eyebrow foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45283,18 +45220,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.caption-hover",
       type: "color",
-      value: "#393939",
+      value: "#434343",
       cssVar: "--rw-color-foreground-caption-hover",
-      description: "The caption foreground color for the light theme (hover, 30% darker)",
+      description: "The caption foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.caption-active",
       type: "color",
-      value: "#4d4d4d",
+      value: "#525252",
       cssVar: "--rw-color-foreground-caption-active",
-      description: "The caption foreground color for the light theme (active, 15% darker)",
+      description: "The caption foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45319,18 +45256,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.link-hover",
       type: "color",
-      value: "#535353",
+      value: "#626262",
       cssVar: "--rw-color-foreground-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.link-active",
       type: "color",
-      value: "#6f6f6f",
+      value: "#777777",
       cssVar: "--rw-color-foreground-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45355,18 +45292,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.required-hover",
       type: "color",
-      value: "#4c4c4c",
+      value: "#545454",
       cssVar: "--rw-color-foreground-required-hover",
-      description: "A required foreground color for the light theme (hover, 30% darker)",
+      description: "A required foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.required-active",
       type: "color",
-      value: "#5c5c5c",
+      value: "#606060",
       cssVar: "--rw-color-foreground-required-active",
-      description: "A required foreground color for the light theme (active, 15% darker)",
+      description: "A required foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45427,18 +45364,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-hover",
       type: "color",
-      value: "#383838",
+      value: "#404040",
       cssVar: "--rw-color-foreground-brand-hover",
-      description: "The brand foreground color for the light theme (hover, 30% darker)",
+      description: "The brand foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.brand-active",
       type: "color",
-      value: "#494949",
+      value: "#4e4e4e",
       cssVar: "--rw-color-foreground-brand-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45463,18 +45400,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-hover",
       type: "color",
-      value: "#474747",
+      value: "#505050",
       cssVar: "--rw-color-foreground-danger-hover",
-      description: "The danger foreground color for the light theme (hover, 30% darker)",
+      description: "The danger foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.danger-active",
       type: "color",
-      value: "#585858",
+      value: "#5c5c5c",
       cssVar: "--rw-color-foreground-danger-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45499,18 +45436,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-hover",
       type: "color",
-      value: "#4c4c4c",
+      value: "#545454",
       cssVar: "--rw-color-foreground-negative-hover",
-      description: "The negative foreground color for the light theme (hover, 30% darker)",
+      description: "The negative foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.negative-active",
       type: "color",
-      value: "#5c5c5c",
+      value: "#606060",
       cssVar: "--rw-color-foreground-negative-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45535,18 +45472,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-hover",
       type: "color",
-      value: "#616161",
+      value: "#717171",
       cssVar: "--rw-color-foreground-warning-hover",
-      description: "The warning foreground color for the light theme (hover, 30% darker)",
+      description: "The warning foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.warning-active",
       type: "color",
-      value: "#808080",
+      value: "#888888",
       cssVar: "--rw-color-foreground-warning-active",
-      description: "The warning foreground color for the light theme (active, 15% darker)",
+      description: "The warning foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45571,18 +45508,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-hover",
       type: "color",
-      value: "#616161",
+      value: "#6f6f6f",
       cssVar: "--rw-color-foreground-success-hover",
-      description: "The success foreground color for the light theme (hover, 30% darker)",
+      description: "The success foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.success-active",
       type: "color",
-      value: "#7d7d7d",
+      value: "#838383",
       cssVar: "--rw-color-foreground-success-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45607,18 +45544,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-hover",
       type: "color",
-      value: "#656565",
+      value: "#747474",
       cssVar: "--rw-color-foreground-positive-hover",
-      description: "The positive foreground color for the light theme (hover, 30% darker)",
+      description: "The positive foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.positive-active",
       type: "color",
-      value: "#848484",
+      value: "#8c8c8c",
       cssVar: "--rw-color-foreground-positive-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45643,18 +45580,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-hover",
       type: "color",
-      value: "#727272",
+      value: "#838383",
       cssVar: "--rw-color-foreground-info-hover",
-      description: "The info foreground color for the light theme (hover, 30% darker)",
+      description: "The info foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.info-active",
       type: "color",
-      value: "#939393",
+      value: "#9c9c9c",
       cssVar: "--rw-color-foreground-info-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45679,18 +45616,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-hover",
       type: "color",
-      value: "#494949",
+      value: "#555555",
       cssVar: "--rw-color-foreground-discovery-hover",
-      description: "The discovery foreground color for the light theme (hover, 30% darker)",
+      description: "The discovery foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.foreground.discovery-active",
       type: "color",
-      value: "#626262",
+      value: "#696969",
       cssVar: "--rw-color-foreground-discovery-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45760,9 +45697,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-brand-inverse-active",
-      description: "The brand foreground color for the light theme (active, 15% darker)",
+      description: "The brand foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45796,9 +45733,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-danger-inverse-active",
-      description: "The danger foreground color for the light theme (active, 15% darker)",
+      description: "The danger foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45832,9 +45769,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-negative-inverse-active",
-      description: "The negative foreground color for the light theme (active, 15% darker)",
+      description: "The negative foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45868,9 +45805,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-inverse-active",
       type: "color",
-      value: "#232323",
+      value: "#212121",
       cssVar: "--rw-color-foreground-warning-inverse-active",
-      description: "The warning foreground color for the light theme (active, 15% brighter)",
+      description: "The warning foreground color for the light theme (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
@@ -45904,9 +45841,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-success-inverse-active",
-      description: "The success foreground color for the light theme (active, 15% darker)",
+      description: "The success foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45940,9 +45877,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-positive-inverse-active",
-      description: "The positive foreground color for the light theme (active, 15% darker)",
+      description: "The positive foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -45976,9 +45913,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-info-inverse-active",
-      description: "The info foreground color for the light theme (active, 15% darker)",
+      description: "The info foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46012,9 +45949,9 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-inverse-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-foreground-discovery-inverse-active",
-      description: "The discovery foreground color for the light theme (active, 15% darker)",
+      description: "The discovery foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46048,7 +45985,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.brand-ghost-hover",
       type: "color",
-      value: "#6f6f6f",
+      value: "#7e7e7e",
       cssVar: "--rw-color-foreground-brand-ghost-hover",
       description: "The brand foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46057,7 +45994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.danger-ghost-hover",
       type: "color",
-      value: "#909090",
+      value: "#9e9e9e",
       cssVar: "--rw-color-foreground-danger-ghost-hover",
       description: "The danger foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46066,7 +46003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.negative-ghost-hover",
       type: "color",
-      value: "#989898",
+      value: "#9f9f9f",
       cssVar: "--rw-color-foreground-negative-ghost-hover",
       description: "The negative foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46075,7 +46012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.warning-ghost-hover",
       type: "color",
-      value: "#bcbcbc",
+      value: "#d3d3d3",
       cssVar: "--rw-color-foreground-warning-ghost-hover",
       description: "The warning foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46084,7 +46021,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.success-ghost-hover",
       type: "color",
-      value: "#b8b8b8",
+      value: "#d0d0d0",
       cssVar: "--rw-color-foreground-success-ghost-hover",
       description: "The success foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46093,7 +46030,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.positive-ghost-hover",
       type: "color",
-      value: "#bfbfbf",
+      value: "#dadada",
       cssVar: "--rw-color-foreground-positive-ghost-hover",
       description: "The positive foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46102,7 +46039,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.info-ghost-hover",
       type: "color",
-      value: "#d7d7d7",
+      value: "#eeeeee",
       cssVar: "--rw-color-foreground-info-ghost-hover",
       description: "The info foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46111,7 +46048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.foreground.discovery-ghost-hover",
       type: "color",
-      value: "#939393",
+      value: "#a8a8a8",
       cssVar: "--rw-color-foreground-discovery-ghost-hover",
       description: "The discovery foreground color for the light theme (ghost hover, 60% brighter than hover)",
       theme: undefined,
@@ -46273,18 +46210,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.lowest-hover",
       type: "color",
-      value: "#8b8b8b",
+      value: "#a0a0a0",
       cssVar: "--rw-color-background-lowest-hover",
-      description: "The lowest background color for the light theme (hover, 30% darker)",
+      description: "The lowest background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.lowest-active",
       type: "color",
-      value: "#b5b5b5",
+      value: "#c0c0c0",
       cssVar: "--rw-color-background-lowest-active",
-      description: "The lowest background color for the light theme (active, 15% darker)",
+      description: "The lowest background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46309,18 +46246,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.page-hover",
       type: "color",
-      value: "#919191",
+      value: "#a6a6a6",
       cssVar: "--rw-color-background-page-hover",
-      description: "The page background color for the light theme (hover, 30% darker)",
+      description: "The page background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.page-active",
       type: "color",
-      value: "#bcbcbc",
+      value: "#c8c8c8",
       cssVar: "--rw-color-background-page-active",
-      description: "The page background color for the light theme (active, 15% darker)",
+      description: "The page background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46345,18 +46282,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.elevated-hover",
       type: "color",
-      value: "#959595",
+      value: "#ababab",
       cssVar: "--rw-color-background-elevated-hover",
-      description: "The elevated background color for the light theme (hover, 30% darker)",
+      description: "The elevated background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.elevated-active",
       type: "color",
-      value: "#c2c2c2",
+      value: "#cecece",
       cssVar: "--rw-color-background-elevated-active",
-      description: "The elevated background color for the light theme (active, 15% darker)",
+      description: "The elevated background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46381,18 +46318,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.floating-hover",
       type: "color",
-      value: "#9b9b9b",
+      value: "#b2b2b2",
       cssVar: "--rw-color-background-floating-hover",
-      description: "The floating background color for the light theme (hover, 30% darker)",
+      description: "The floating background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.floating-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-background-floating-active",
-      description: "The floating background color for the light theme (active, 15% darker)",
+      description: "The floating background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46417,18 +46354,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.highest-hover",
       type: "color",
-      value: "#9e9e9e",
+      value: "#b6b6b6",
       cssVar: "--rw-color-background-highest-hover",
-      description: "The highest level of elevation background color for the light theme (hover, 30% darker)",
+      description: "The highest level of elevation background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.highest-active",
       type: "color",
-      value: "#cecece",
+      value: "#dadada",
       cssVar: "--rw-color-background-highest-active",
-      description: "The highest level of elevation background color for the light theme (active, 15% darker)",
+      description: "The highest level of elevation background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46489,18 +46426,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.link-hover",
       type: "color",
-      value: "#535353",
+      value: "#626262",
       cssVar: "--rw-color-background-link-hover",
-      description: "The link foreground color for the light theme (hover, 30% darker)",
+      description: "The link foreground color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.link-active",
       type: "color",
-      value: "#6f6f6f",
+      value: "#777777",
       cssVar: "--rw-color-background-link-active",
-      description: "The link foreground color for the light theme (active, 15% darker)",
+      description: "The link foreground color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46525,18 +46462,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.brand-hover",
       type: "color",
-      value: "#1e1e1e",
+      value: "#232323",
       cssVar: "--rw-color-background-brand-hover",
-      description: "The brand background color for the light theme (hover, 30% darker)",
+      description: "The brand background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.brand-active",
       type: "color",
-      value: "#292929",
+      value: "#2c2c2c",
       cssVar: "--rw-color-background-brand-active",
-      description: "The brand background color for the light theme (active, 15% darker)",
+      description: "The brand background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46561,18 +46498,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.danger-hover",
       type: "color",
-      value: "#333333",
+      value: "#383838",
       cssVar: "--rw-color-background-danger-hover",
-      description: "The danger background color for the light theme (hover, 30% darker)",
+      description: "The danger background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.danger-active",
       type: "color",
-      value: "#3e3e3e",
+      value: "#414141",
       cssVar: "--rw-color-background-danger-active",
-      description: "The danger background color for the light theme (active, 15% darker)",
+      description: "The danger background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46597,18 +46534,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.negative-hover",
       type: "color",
-      value: "#464646",
+      value: "#4d4d4d",
       cssVar: "--rw-color-background-negative-hover",
-      description: "The negative background color for the light theme (hover, 30% darker)",
+      description: "The negative background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.negative-active",
       type: "color",
-      value: "#585858",
+      value: "#5e5e5e",
       cssVar: "--rw-color-background-negative-active",
-      description: "The negative background color for the light theme (active, 15% darker)",
+      description: "The negative background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46633,18 +46570,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.warning-hover",
       type: "color",
-      value: "#404040",
+      value: "#4a4a4a",
       cssVar: "--rw-color-background-warning-hover",
-      description: "The warning background color for the light theme (hover, 30% darker)",
+      description: "The warning background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.warning-active",
       type: "color",
-      value: "#555555",
+      value: "#5b5b5b",
       cssVar: "--rw-color-background-warning-active",
-      description: "The warning background color for the light theme (active, 15% darker)",
+      description: "The warning background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46669,18 +46606,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.success-hover",
       type: "color",
-      value: "#424242",
+      value: "#4c4c4c",
       cssVar: "--rw-color-background-success-hover",
-      description: "The success background color for the light theme (hover, 30% darker)",
+      description: "The success background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.success-active",
       type: "color",
-      value: "#565656",
+      value: "#5b5b5b",
       cssVar: "--rw-color-background-success-active",
-      description: "The success background color for the light theme (active, 15% darker)",
+      description: "The success background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46705,18 +46642,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.positive-hover",
       type: "color",
-      value: "#5e5e5e",
+      value: "#6c6c6c",
       cssVar: "--rw-color-background-positive-hover",
-      description: "The positive background color for the light theme (hover, 30% darker)",
+      description: "The positive background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.positive-active",
       type: "color",
-      value: "#7a7a7a",
+      value: "#818181",
       cssVar: "--rw-color-background-positive-active",
-      description: "The positive background color for the light theme (active, 15% darker)",
+      description: "The positive background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46741,18 +46678,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.info-hover",
       type: "color",
-      value: "#424242",
+      value: "#4c4c4c",
       cssVar: "--rw-color-background-info-hover",
-      description: "The info background color for the light theme (hover, 30% darker)",
+      description: "The info background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.info-active",
       type: "color",
-      value: "#565656",
+      value: "#5c5c5c",
       cssVar: "--rw-color-background-info-active",
-      description: "The info background color for the light theme (active, 15% darker)",
+      description: "The info background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -46777,18 +46714,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.background.discovery-hover",
       type: "color",
-      value: "#3d3d3d",
+      value: "#484848",
       cssVar: "--rw-color-background-discovery-hover",
-      description: "The discovery background color for the light theme (hover, 30% darker)",
+      description: "The discovery background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.background.discovery-active",
       type: "color",
-      value: "#535353",
+      value: "#595959",
       cssVar: "--rw-color-background-discovery-active",
-      description: "The discovery background color for the light theme (active, 15% darker)",
+      description: "The discovery background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47002,18 +46939,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-hover",
       type: "color",
-      value: "#383838",
+      value: "#404040",
       cssVar: "--rw-color-border-brand-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-active",
       type: "color",
-      value: "#494949",
+      value: "#4e4e4e",
       cssVar: "--rw-color-border-brand-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47029,18 +46966,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-hover",
       type: "color",
-      value: "#474747",
+      value: "#505050",
       cssVar: "--rw-color-border-danger-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-active",
       type: "color",
-      value: "#585858",
+      value: "#5c5c5c",
       cssVar: "--rw-color-border-danger-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47056,18 +46993,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-hover",
       type: "color",
-      value: "#4c4c4c",
+      value: "#545454",
       cssVar: "--rw-color-border-negative-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-active",
       type: "color",
-      value: "#5c5c5c",
+      value: "#606060",
       cssVar: "--rw-color-border-negative-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47083,18 +47020,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-hover",
       type: "color",
-      value: "#616161",
+      value: "#717171",
       cssVar: "--rw-color-border-warning-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-active",
       type: "color",
-      value: "#808080",
+      value: "#888888",
       cssVar: "--rw-color-border-warning-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47110,18 +47047,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-hover",
       type: "color",
-      value: "#616161",
+      value: "#6f6f6f",
       cssVar: "--rw-color-border-success-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-active",
       type: "color",
-      value: "#7d7d7d",
+      value: "#838383",
       cssVar: "--rw-color-border-success-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47137,18 +47074,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-hover",
       type: "color",
-      value: "#656565",
+      value: "#747474",
       cssVar: "--rw-color-border-positive-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-active",
       type: "color",
-      value: "#848484",
+      value: "#8c8c8c",
       cssVar: "--rw-color-border-positive-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47164,18 +47101,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-hover",
       type: "color",
-      value: "#727272",
+      value: "#838383",
       cssVar: "--rw-color-border-info-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-active",
       type: "color",
-      value: "#939393",
+      value: "#9c9c9c",
       cssVar: "--rw-color-border-info-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47191,18 +47128,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-hover",
       type: "color",
-      value: "#494949",
+      value: "#555555",
       cssVar: "--rw-color-border-discovery-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-active",
       type: "color",
-      value: "#626262",
+      value: "#696969",
       cssVar: "--rw-color-border-discovery-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47245,18 +47182,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.brand-subtle-hover",
       type: "color",
-      value: "#1e1e1e",
+      value: "#232323",
       cssVar: "--rw-color-border-brand-subtle-hover",
-      description: "The brand border color for the light theme (hover, 30% darker)",
+      description: "The brand border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.brand-subtle-active",
       type: "color",
-      value: "#292929",
+      value: "#2c2c2c",
       cssVar: "--rw-color-border-brand-subtle-active",
-      description: "The brand border color for the light theme (active, 15% darker)",
+      description: "The brand border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47272,18 +47209,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.danger-subtle-hover",
       type: "color",
-      value: "#333333",
+      value: "#383838",
       cssVar: "--rw-color-border-danger-subtle-hover",
-      description: "The danger border color for the light theme (hover, 30% darker)",
+      description: "The danger border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.danger-subtle-active",
       type: "color",
-      value: "#3e3e3e",
+      value: "#414141",
       cssVar: "--rw-color-border-danger-subtle-active",
-      description: "The danger border color for the light theme (active, 15% darker)",
+      description: "The danger border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47299,18 +47236,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.negative-subtle-hover",
       type: "color",
-      value: "#464646",
+      value: "#4d4d4d",
       cssVar: "--rw-color-border-negative-subtle-hover",
-      description: "The negative border color for the light theme (hover, 30% darker)",
+      description: "The negative border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.negative-subtle-active",
       type: "color",
-      value: "#585858",
+      value: "#5e5e5e",
       cssVar: "--rw-color-border-negative-subtle-active",
-      description: "The negative border color for the light theme (active, 15% darker)",
+      description: "The negative border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47326,18 +47263,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.warning-subtle-hover",
       type: "color",
-      value: "#404040",
+      value: "#4a4a4a",
       cssVar: "--rw-color-border-warning-subtle-hover",
-      description: "The warning border color for the light theme (hover, 30% darker)",
+      description: "The warning border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.warning-subtle-active",
       type: "color",
-      value: "#555555",
+      value: "#5b5b5b",
       cssVar: "--rw-color-border-warning-subtle-active",
-      description: "The warning border color for the light theme (active, 15% darker)",
+      description: "The warning border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47353,18 +47290,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.success-subtle-hover",
       type: "color",
-      value: "#424242",
+      value: "#4c4c4c",
       cssVar: "--rw-color-border-success-subtle-hover",
-      description: "The success border color for the light theme (hover, 30% darker)",
+      description: "The success border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.success-subtle-active",
       type: "color",
-      value: "#565656",
+      value: "#5b5b5b",
       cssVar: "--rw-color-border-success-subtle-active",
-      description: "The success border color for the light theme (active, 15% darker)",
+      description: "The success border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47380,18 +47317,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.positive-subtle-hover",
       type: "color",
-      value: "#5e5e5e",
+      value: "#6c6c6c",
       cssVar: "--rw-color-border-positive-subtle-hover",
-      description: "The positive border color for the light theme (hover, 30% darker)",
+      description: "The positive border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.positive-subtle-active",
       type: "color",
-      value: "#7a7a7a",
+      value: "#818181",
       cssVar: "--rw-color-border-positive-subtle-active",
-      description: "The positive border color for the light theme (active, 15% darker)",
+      description: "The positive border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47407,18 +47344,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.info-subtle-hover",
       type: "color",
-      value: "#424242",
+      value: "#4c4c4c",
       cssVar: "--rw-color-border-info-subtle-hover",
-      description: "The info border color for the light theme (hover, 30% darker)",
+      description: "The info border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.info-subtle-active",
       type: "color",
-      value: "#565656",
+      value: "#5c5c5c",
       cssVar: "--rw-color-border-info-subtle-active",
-      description: "The info border color for the light theme (active, 15% darker)",
+      description: "The info border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47434,18 +47371,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.border.discovery-subtle-hover",
       type: "color",
-      value: "#3d3d3d",
+      value: "#484848",
       cssVar: "--rw-color-border-discovery-subtle-hover",
-      description: "The discovery border color for the light theme (hover, 30% darker)",
+      description: "The discovery border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.border.discovery-subtle-active",
       type: "color",
-      value: "#535353",
+      value: "#595959",
       cssVar: "--rw-color-border-discovery-subtle-active",
-      description: "The discovery border color for the light theme (active, 15% darker)",
+      description: "The discovery border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47488,18 +47425,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.background-hover",
       type: "color",
-      value: "#9b9b9b",
+      value: "#b2b2b2",
       cssVar: "--rw-color-overlay-background-hover",
-      description: "The overlay background color for the light theme (hover, 30% darker)",
+      description: "The overlay background color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.background-active",
       type: "color",
-      value: "#c9c9c9",
+      value: "#d5d5d5",
       cssVar: "--rw-color-overlay-background-active",
-      description: "The overlay background color for the light theme (active, 15% darker)",
+      description: "The overlay background color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -47524,18 +47461,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.overlay.border-hover",
       type: "color",
-      value: "#202020",
+      value: "#262626",
       cssVar: "--rw-color-overlay-border-hover",
-      description: "The overlay border color for the light theme (hover, 30% darker)",
+      description: "The overlay border color for the light theme (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.overlay.border-active",
       type: "color",
-      value: "#2d2d2d",
+      value: "#303030",
       cssVar: "--rw-color-overlay-border-active",
-      description: "The overlay border color for the light theme (active, 15% darker)",
+      description: "The overlay border color for the light theme (active, 11% darker)",
       theme: undefined,
       typography: false
     },
@@ -49828,27 +49765,18 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "typography.display-hero",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.8xl}\",\"lineHeight\":\"{line-height.normal}\"}",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-display-hero",
       description: "The display - hero typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.display",
+      path: "typography.display-xl",
       type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.5xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-display",
+      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.normal}\",\"fontSize\":\"{font-size.4xl}\",\"lineHeight\":\"{line-height.snug}\"}",
+      cssVar: "--rw-typography-display-xl",
       description: "The display - extra large typography variant",
-      theme: undefined,
-      typography: true
-    },
-    {
-      path: "typography.heading-xl",
-      type: "typography",
-      value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.3xl}\",\"lineHeight\":\"{line-height.tight}\"}",
-      cssVar: "--rw-typography-heading-xl",
-      description: "The heading - extra large typography variant",
       theme: undefined,
       typography: true
     },
@@ -49862,20 +49790,20 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.heading-md",
+      path: "typography.display-md",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.xl}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-md",
-      description: "The heading - medium typography variant",
+      cssVar: "--rw-typography-display-md",
+      description: "The display - medium typography variant",
       theme: undefined,
       typography: true
     },
     {
-      path: "typography.heading-sm",
+      path: "typography.display-sm",
       type: "typography",
       value: "{\"fontFamily\":\"Space Grotesk\",\"fontWeight\":\"{font-weight.bold}\",\"fontSize\":\"{font-size.lg}\",\"lineHeight\":\"{line-height.snug}\"}",
-      cssVar: "--rw-typography-heading-sm",
-      description: "The heading - small typography variant",
+      cssVar: "--rw-typography-display-sm",
+      description: "The display - small typography variant",
       theme: undefined,
       typography: true
     },
@@ -49898,10 +49826,10 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       typography: true
     },
     {
-      path: "typography.body",
+      path: "typography.body-md",
       type: "typography",
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.medium}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
-      cssVar: "--rw-typography-body",
+      cssVar: "--rw-typography-body-md",
       description: "The body typography variant",
       theme: undefined,
       typography: true

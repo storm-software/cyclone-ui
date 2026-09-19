@@ -41,8 +41,9 @@
     "@tamagui/web": "catalog:",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/input": "workspace:*",
-    "@cyclone-ui/label-text": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/popover": "workspace:*"
   },
   "devDependencies": {

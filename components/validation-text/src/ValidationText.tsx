@@ -26,8 +26,6 @@ import { XStack, YStack } from "@tamagui/stacks";
 const ValidationBodyText = styled(BodyText, {
   transition: "400ms",
 
-  fontFamily: "$body",
-
   enterStyle: {
     opacity: 0,
     y: 10

@@ -175,60 +175,60 @@
   --color-foreground-positive-inverse: #cfcfcf; /** The positive foreground color for the light theme */
   --color-foreground-info-inverse: #cfcfcf; /** The info foreground color for the light theme */
   --color-foreground-discovery-inverse: #cfcfcf; /** The discovery foreground color for the light theme */
-  --color-foreground-body-hover: #6a6a6a; /** The body foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-body-active: #7f7f7f; /** The body foreground color for the light theme (active, 15% darker) */
+  --color-foreground-body-hover: #757575; /** The body foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-body-active: #858585; /** The body foreground color for the light theme (active, 11% darker) */
   --color-foreground-body-inactive: #b4b4b4; /** The body foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-body-disabled: rgba(150, 150, 150, 0.4); /** The body foreground color for the light theme (disabled, 40% opacity) */
-  --color-foreground-eyebrow-hover: #434343; /** The eyebrow foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-eyebrow-active: #4d4d4d; /** The eyebrow foreground color for the light theme (active, 15% darker) */
+  --color-foreground-eyebrow-hover: #494949; /** The eyebrow foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-eyebrow-active: #505050; /** The eyebrow foreground color for the light theme (active, 11% darker) */
   --color-foreground-eyebrow-inactive: #686868; /** The eyebrow foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-eyebrow-disabled: rgba(89, 89, 89, 0.4); /** The eyebrow foreground color for the light theme (disabled, 40% opacity) */
-  --color-foreground-caption-hover: #4e4e4e; /** The caption foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-caption-active: #5c5c5c; /** The caption foreground color for the light theme (active, 15% darker) */
+  --color-foreground-caption-hover: #555555; /** The caption foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-caption-active: #606060; /** The caption foreground color for the light theme (active, 11% darker) */
   --color-foreground-caption-inactive: #7e7e7e; /** The caption foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-caption-disabled: rgba(106, 106, 106, 0.4); /** The caption foreground color for the light theme (disabled, 40% opacity) */
-  --color-foreground-link-hover: #325da1; /** The link foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-link-active: #4f74b4; /** The link foreground color for the light theme (active, 15% darker) */
+  --color-foreground-link-hover: #4369aa; /** The link foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-link-active: #5479bb; /** The link foreground color for the light theme (active, 11% darker) */
   --color-foreground-link-inactive: #75a4d7; /** The link foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-link-disabled: #4f4f4f; /** The link foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-required-hover: #902a2a; /** A required foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-required-active: #a22f2f; /** A required foreground color for the light theme (active, 15% darker) */
+  --color-foreground-required-hover: #992c2c; /** A required foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-required-active: #a63037; /** A required foreground color for the light theme (active, 11% darker) */
   --color-foreground-required-inactive: #d16862; /** A required foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-required-disabled: #aa605b; /** A required foreground color for the light theme (disabled, 80% saturation) */
   --color-foreground-base-hover: #8f8f8f; /** The primary foreground color for the light theme (hover, 30% darker) */
   --color-foreground-base-active: #aeaeae; /** The primary foreground color for the light theme (active, 15% darker) */
   --color-foreground-base-inactive: #d9d9d9; /** The primary foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-base-disabled: rgba(217, 217, 217, 0.4); /** The primary foreground color for the light theme (disabled, 75% brighter, 40% opacity) */
-  --color-foreground-brand-hover: #1b5f4d; /** The brand foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-brand-active: #1e6959; /** The brand foreground color for the light theme (active, 15% darker) */
+  --color-foreground-brand-hover: #1d6353; /** The brand foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-brand-active: #1f6c5c; /** The brand foreground color for the light theme (active, 11% darker) */
   --color-foreground-brand-inactive: #517f72; /** The brand foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-brand-disabled: #919191; /** The brand foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-danger-hover: #8b2843; /** The danger foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-danger-active: #9b2d54; /** The danger foreground color for the light theme (active, 15% darker) */
+  --color-foreground-danger-hover: #932b4c; /** The danger foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-danger-active: #9f3559; /** The danger foreground color for the light theme (active, 11% darker) */
   --color-foreground-danger-inactive: #ce697d; /** The danger foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-danger-disabled: #9f9f9f; /** The danger foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-negative-hover: #902a2a; /** The negative foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-negative-active: #a22f2f; /** The negative foreground color for the light theme (active, 15% darker) */
+  --color-foreground-negative-hover: #992c2c; /** The negative foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-negative-active: #a63037; /** The negative foreground color for the light theme (active, 11% darker) */
   --color-foreground-negative-inactive: #d16862; /** The negative foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-negative-disabled: #404040; /** The negative foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-warning-hover: #886127; /** The warning foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-warning-active: #9a752d; /** The warning foreground color for the light theme (active, 15% darker) */
+  --color-foreground-warning-hover: #916b2a; /** The warning foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-warning-active: #9f7a2e; /** The warning foreground color for the light theme (active, 11% darker) */
   --color-foreground-warning-inactive: #d4ad6c; /** The warning foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-warning-disabled: #3b3b3b; /** The warning foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-success-hover: #23794c; /** The success foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-success-active: #28895f; /** The success foreground color for the light theme (active, 15% darker) */
+  --color-foreground-success-hover: #258156; /** The success foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-success-active: #298d64; /** The success foreground color for the light theme (active, 11% darker) */
   --color-foreground-success-inactive: #66b790; /** The success foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-success-disabled: #383838; /** The success foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-positive-hover: #577923; /** The positive foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-positive-active: #6a8a2b; /** The positive foreground color for the light theme (active, 15% darker) */
+  --color-foreground-positive-hover: #618126; /** The positive foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-positive-active: #6e8d3c; /** The positive foreground color for the light theme (active, 11% darker) */
   --color-foreground-positive-inactive: #9fbf76; /** The positive foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-positive-disabled: #525252; /** The positive foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-info-hover: #2a7b92; /** The info foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-info-active: #3090a6; /** The info foreground color for the light theme (active, 15% darker) */
+  --color-foreground-info-hover: #2d869b; /** The info foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-info-active: #4696aa; /** The info foreground color for the light theme (active, 11% darker) */
   --color-foreground-info-inactive: #7fd5da; /** The info foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-info-disabled: #393939; /** The info foreground color for the light theme (disabled, 80% saturation) */
-  --color-foreground-discovery-hover: #63518a; /** The discovery foreground color for the light theme (hover, 30% darker) */
-  --color-foreground-discovery-active: #75669c; /** The discovery foreground color for the light theme (active, 15% darker) */
+  --color-foreground-discovery-hover: #6c5c93; /** The discovery foreground color for the light theme (hover, 23% darker) */
+  --color-foreground-discovery-active: #7a6ba2; /** The discovery foreground color for the light theme (active, 11% darker) */
   --color-foreground-discovery-inactive: #9c89d8; /** The discovery foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-discovery-disabled: #3b3b3b; /** The discovery foreground color for the light theme (disabled, 80% saturation) */
   --color-foreground-base-inverse-hover: #57595b; /** The primary foreground color for the light theme (hover, 80% brighter) */
@@ -236,46 +236,46 @@
   --color-foreground-base-inverse-inactive: #303136; /** The primary foreground color for the light theme (inactive, 20% darker) */
   --color-foreground-base-inverse-disabled: #919191; /** The primary foreground color for the light theme (disabled, 80% saturation) */
   --color-foreground-brand-inverse-hover: #343434; /** The brand foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-brand-inverse-active: #aeaeae; /** The brand foreground color for the light theme (active, 15% darker) */
+  --color-foreground-brand-inverse-active: #b6b6b6; /** The brand foreground color for the light theme (active, 11% darker) */
   --color-foreground-brand-inverse-inactive: #d9d9d9; /** The brand foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-brand-inverse-disabled: rgba(207, 207, 207, 0.4); /** The brand foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-danger-inverse-hover: #343434; /** The danger foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-danger-inverse-active: #aeaeae; /** The danger foreground color for the light theme (active, 15% darker) */
+  --color-foreground-danger-inverse-active: #b6b6b6; /** The danger foreground color for the light theme (active, 11% darker) */
   --color-foreground-danger-inverse-inactive: #d9d9d9; /** The danger foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-danger-inverse-disabled: #9f9f9f; /** The danger foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-negative-inverse-hover: #343434; /** The negative foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-negative-inverse-active: #aeaeae; /** The negative foreground color for the light theme (active, 15% darker) */
+  --color-foreground-negative-inverse-active: #b6b6b6; /** The negative foreground color for the light theme (active, 11% darker) */
   --color-foreground-negative-inverse-inactive: #d9d9d9; /** The negative foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-negative-inverse-disabled: #404040; /** The negative foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-warning-inverse-hover: #57595b; /** The warning foreground color for the light theme (hover, 80% brighter) */
-  --color-foreground-warning-inverse-active: #3e3e41; /** The warning foreground color for the light theme (active, 15% brighter) */
+  --color-foreground-warning-inverse-active: #3c3d40; /** The warning foreground color for the light theme (active, 11% brighter) */
   --color-foreground-warning-inverse-inactive: #303136; /** The warning foreground color for the light theme (inactive, 20% darker) */
   --color-foreground-warning-inverse-disabled: #3b3b3b; /** The warning foreground color for the light theme (disabled, 80% saturation) */
   --color-foreground-success-inverse-hover: #343434; /** The success foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-success-inverse-active: #aeaeae; /** The success foreground color for the light theme (active, 15% darker) */
+  --color-foreground-success-inverse-active: #b6b6b6; /** The success foreground color for the light theme (active, 11% darker) */
   --color-foreground-success-inverse-inactive: #d9d9d9; /** The success foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-success-inverse-disabled: #383838; /** The success foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-positive-inverse-hover: #343434; /** The positive foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-positive-inverse-active: #aeaeae; /** The positive foreground color for the light theme (active, 15% darker) */
+  --color-foreground-positive-inverse-active: #b6b6b6; /** The positive foreground color for the light theme (active, 11% darker) */
   --color-foreground-positive-inverse-inactive: #d9d9d9; /** The positive foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-positive-inverse-disabled: #525252; /** The positive foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-info-inverse-hover: #343434; /** The info foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-info-inverse-active: #aeaeae; /** The info foreground color for the light theme (active, 15% darker) */
+  --color-foreground-info-inverse-active: #b6b6b6; /** The info foreground color for the light theme (active, 11% darker) */
   --color-foreground-info-inverse-inactive: #d9d9d9; /** The info foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-info-inverse-disabled: #393939; /** The info foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-discovery-inverse-hover: #343434; /** The discovery foreground color for the light theme (hover, 80% darker) */
-  --color-foreground-discovery-inverse-active: #aeaeae; /** The discovery foreground color for the light theme (active, 15% darker) */
+  --color-foreground-discovery-inverse-active: #b6b6b6; /** The discovery foreground color for the light theme (active, 11% darker) */
   --color-foreground-discovery-inverse-inactive: #d9d9d9; /** The discovery foreground color for the light theme (inactive, 20% brighter) */
   --color-foreground-discovery-inverse-disabled: #3b3b3b; /** The discovery foreground color for the light theme (disabled, 40% opacity) */
   --color-foreground-base-ghost-hover: #d9d9d9; /** The primary foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-brand-ghost-hover: #57786d; /** The brand foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-danger-ghost-hover: #c67178; /** The danger foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-negative-ghost-hover: #d0756a; /** The negative foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-warning-ghost-hover: #caa176; /** The warning foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-success-ghost-hover: #7ab089; /** The success foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-positive-ghost-hover: #94b278; /** The positive foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-info-ghost-hover: #82c7db; /** The info foreground color for the light theme (ghost hover, 60% brighter than hover) */
-  --color-foreground-discovery-ghost-hover: #9483c9; /** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-brand-ghost-hover: #5f8377; /** The brand foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-danger-ghost-hover: #d77581; /** The danger foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-negative-ghost-hover: #d57b6f; /** The negative foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-warning-ghost-hover: #d9b47e; /** The warning foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-success-ghost-hover: #82c598; /** The success foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-positive-ghost-hover: #a6c880; /** The positive foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-info-ghost-hover: #8cdede; /** The info foreground color for the light theme (ghost hover, 60% brighter than hover) */
+  --color-foreground-discovery-ghost-hover: #a08cde; /** The discovery foreground color for the light theme (ghost hover, 60% brighter than hover) */
   --color-foreground-base-inverse-ghost-hover: #87898b; /** The primary foreground color for the light theme (ghost hover, 60% brighter than hover) */
   --color-foreground-warning-inverse-ghost-hover: #87898b; /** The warning foreground color for the light theme (ghost hover, 60% brighter than hover) */
   --color-background-lowest: #c4c4c4; /** The lowest background color for the light theme */
@@ -293,64 +293,64 @@
   --color-background-positive: #6b954c; /** The positive background color for the light theme */
   --color-background-info: #29768d; /** The info background color for the light theme */
   --color-background-discovery: #70709b; /** The discovery background color for the light theme */
-  --color-background-lowest-hover: #888888; /** The lowest background color for the light theme (hover, 30% darker) */
-  --color-background-lowest-active: #a5a5a5; /** The lowest background color for the light theme (active, 15% darker) */
+  --color-background-lowest-hover: #969696; /** The lowest background color for the light theme (hover, 23% darker) */
+  --color-background-lowest-active: #adadad; /** The lowest background color for the light theme (active, 11% darker) */
   --color-background-lowest-inactive: #d9d9d9; /** The lowest background color for the light theme (inactive, 20% brighter) */
   --color-background-lowest-disabled: rgba(196, 196, 196, 0.4); /** The lowest background color for the light theme (disabled, 40% opacity) */
-  --color-background-page-hover: #8c8c8c; /** The page background color for the light theme (hover, 30% darker) */
-  --color-background-page-active: #aaaaaa; /** The page background color for the light theme (active, 15% darker) */
+  --color-background-page-hover: #9a9a9a; /** The page background color for the light theme (hover, 23% darker) */
+  --color-background-page-active: #b2b2b2; /** The page background color for the light theme (active, 11% darker) */
   --color-background-page-inactive: #d9d9d9; /** The page background color for the light theme (inactive, 20% brighter) */
   --color-background-page-disabled: rgba(202, 202, 202, 0.4); /** The page background color for the light theme (disabled, 40% opacity) */
-  --color-background-elevated-hover: #8f8f8f; /** The elevated background color for the light theme (hover, 30% darker) */
-  --color-background-elevated-active: #aeaeae; /** The elevated background color for the light theme (active, 15% darker) */
+  --color-background-elevated-hover: #9e9e9e; /** The elevated background color for the light theme (hover, 23% darker) */
+  --color-background-elevated-active: #b6b6b6; /** The elevated background color for the light theme (active, 11% darker) */
   --color-background-elevated-inactive: #d9d9d9; /** The elevated background color for the light theme (inactive, 20% brighter) */
   --color-background-elevated-disabled: rgba(207, 207, 207, 0.4); /** The elevated background color for the light theme (disabled, 40% opacity) */
-  --color-background-floating-hover: #939393; /** The floating background color for the light theme (hover, 30% darker) */
-  --color-background-floating-active: #b3b3b3; /** The floating background color for the light theme (active, 15% darker) */
+  --color-background-floating-hover: #a3a3a3; /** The floating background color for the light theme (hover, 23% darker) */
+  --color-background-floating-active: #bbbbbb; /** The floating background color for the light theme (active, 11% darker) */
   --color-background-floating-inactive: #d9d9d9; /** The floating background color for the light theme (inactive, 20% brighter) */
   --color-background-floating-disabled: rgba(213, 213, 213, 0.4); /** The floating background color for the light theme (disabled, 40% opacity) */
-  --color-background-highest-hover: #959595; /** The highest level of elevation background color for the light theme (hover, 30% darker) */
-  --color-background-highest-active: #b6b6b6; /** The highest level of elevation background color for the light theme (active, 15% darker) */
+  --color-background-highest-hover: #a6a6a6; /** The highest level of elevation background color for the light theme (hover, 23% darker) */
+  --color-background-highest-active: #bfbfbf; /** The highest level of elevation background color for the light theme (active, 11% darker) */
   --color-background-highest-inactive: #d9d9d9; /** The highest level of elevation background color for the light theme (inactive, 20% brighter) */
   --color-background-highest-disabled: rgba(217, 217, 217, 0.4); /** The highest level of elevation background color for the light theme (disabled, 40% opacity) */
   --color-background-base-hover: #323336; /** The primary background color for the light theme (hover, 30% darker) */
   --color-background-base-active: #393a3c; /** The primary background color for the light theme (active, 15% darker) */
   --color-background-base-inactive: #48494c; /** The primary background color for the light theme (inactive, 20% brighter) */
   --color-background-base-disabled: #3f4042; /** The primary background color for the light theme (disabled, 80% saturation) */
-  --color-background-link-hover: #325da1; /** The link foreground color for the light theme (hover, 30% darker) */
-  --color-background-link-active: #4f74b4; /** The link foreground color for the light theme (active, 15% darker) */
+  --color-background-link-hover: #4369aa; /** The link foreground color for the light theme (hover, 23% darker) */
+  --color-background-link-active: #5479bb; /** The link foreground color for the light theme (active, 11% darker) */
   --color-background-link-inactive: #75a4d7; /** The link foreground color for the light theme (inactive, 20% brighter) */
   --color-background-link-disabled: #6a8ac3; /** The link foreground color for the light theme (disabled, 80% saturation) */
-  --color-background-brand-hover: #174e40; /** The brand background color for the light theme (hover, 30% darker) */
-  --color-background-brand-active: #195547; /** The brand background color for the light theme (active, 15% darker) */
+  --color-background-brand-hover: #185243; /** The brand background color for the light theme (hover, 23% darker) */
+  --color-background-brand-active: #19574a; /** The brand background color for the light theme (active, 11% darker) */
   --color-background-brand-inactive: #3b5e55; /** The brand background color for the light theme (inactive, 20% brighter) */
   --color-background-brand-disabled: #34524a; /** The brand background color for the light theme (disabled, 80% saturation) */
-  --color-background-danger-hover: #762222; /** The danger background color for the light theme (hover, 30% darker) */
-  --color-background-danger-active: #822626; /** The danger background color for the light theme (active, 15% darker) */
+  --color-background-danger-hover: #7c2424; /** The danger background color for the light theme (hover, 23% darker) */
+  --color-background-danger-active: #862727; /** The danger background color for the light theme (active, 11% darker) */
   --color-background-danger-inactive: #9f584f; /** The danger background color for the light theme (inactive, 20% brighter) */
   --color-background-danger-disabled: #854b44; /** The danger background color for the light theme (disabled, 80% saturation) */
-  --color-background-negative-hover: #8a2828; /** The negative background color for the light theme (hover, 30% darker) */
-  --color-background-negative-active: #9a3a2d; /** The negative background color for the light theme (active, 15% darker) */
+  --color-background-negative-hover: #922a2a; /** The negative background color for the light theme (hover, 23% darker) */
+  --color-background-negative-active: #9f422e; /** The negative background color for the light theme (active, 11% darker) */
   --color-background-negative-inactive: #c8705c; /** The negative background color for the light theme (inactive, 20% brighter) */
   --color-background-negative-disabled: #a16253; /** The negative background color for the light theme (disabled, 80% saturation) */
-  --color-background-warning-hover: #6f4d20; /** The warning background color for the light theme (hover, 30% darker) */
-  --color-background-warning-active: #7c5c24; /** The warning background color for the light theme (active, 15% darker) */
+  --color-background-warning-hover: #755522; /** The warning background color for the light theme (hover, 23% darker) */
+  --color-background-warning-active: #7f6025; /** The warning background color for the light theme (active, 11% darker) */
   --color-background-warning-inactive: #998051; /** The warning background color for the light theme (inactive, 20% brighter) */
   --color-background-warning-disabled: #826d47; /** The warning background color for the light theme (disabled, 80% saturation) */
-  --color-background-success-hover: #1d653f; /** The success background color for the light theme (hover, 30% darker) */
-  --color-background-success-active: #21714e; /** The success background color for the light theme (active, 15% darker) */
+  --color-background-success-hover: #1f6b47; /** The success background color for the light theme (hover, 23% darker) */
+  --color-background-success-active: #227452; /** The success background color for the light theme (active, 11% darker) */
   --color-background-success-inactive: #528c70; /** The success background color for the light theme (inactive, 20% brighter) */
   --color-background-success-disabled: #477760; /** The success background color for the light theme (disabled, 80% saturation) */
-  --color-background-positive-hover: #3f7622; /** The positive background color for the light theme (hover, 30% darker) */
-  --color-background-positive-active: #558627; /** The positive background color for the light theme (active, 15% darker) */
+  --color-background-positive-hover: #4a7e25; /** The positive background color for the light theme (hover, 23% darker) */
+  --color-background-positive-active: #5b8a28; /** The positive background color for the light theme (active, 11% darker) */
   --color-background-positive-inactive: #88b46d; /** The positive background color for the light theme (inactive, 20% brighter) */
   --color-background-positive-disabled: #749360; /** The positive background color for the light theme (disabled, 80% saturation) */
-  --color-background-info-hover: #215a73; /** The info background color for the light theme (hover, 30% darker) */
-  --color-background-info-active: #256880; /** The info background color for the light theme (active, 15% darker) */
+  --color-background-info-hover: #236179; /** The info background color for the light theme (hover, 23% darker) */
+  --color-background-info-active: #266c83; /** The info background color for the light theme (active, 11% darker) */
   --color-background-info-inactive: #558a9d; /** The info background color for the light theme (inactive, 20% brighter) */
   --color-background-info-disabled: #4a7485; /** The info background color for the light theme (disabled, 80% saturation) */
-  --color-background-discovery-hover: #514d7b; /** The discovery background color for the light theme (hover, 30% darker) */
-  --color-background-discovery-active: #615f8a; /** The discovery background color for the light theme (active, 15% darker) */
+  --color-background-discovery-hover: #585682; /** The discovery background color for the light theme (hover, 23% darker) */
+  --color-background-discovery-active: #65638e; /** The discovery background color for the light theme (active, 11% darker) */
   --color-background-discovery-inactive: #8383b6; /** The discovery background color for the light theme (inactive, 20% brighter) */
   --color-background-discovery-disabled: #707193; /** The discovery background color for the light theme (disabled, 80% saturation) */
   --color-border-base: #4f4f4f; /** The primary border color for the light theme */
@@ -374,66 +374,66 @@
   --color-border-base-hover: #3d3d3d; /** The primary border color for the light theme (hover, 30% darker) */
   --color-border-base-active: #464646; /** The primary border color for the light theme (active, 15% darker) */
   --color-border-base-disabled: rgba(79, 79, 79, 0.4); /** The primary border color for the light theme (disabled, 40% opacity) */
-  --color-border-brand-hover: #1b5f4d; /** The brand border color for the light theme (hover, 30% darker) */
-  --color-border-brand-active: #1e6959; /** The brand border color for the light theme (active, 15% darker) */
+  --color-border-brand-hover: #1d6353; /** The brand border color for the light theme (hover, 23% darker) */
+  --color-border-brand-active: #1f6c5c; /** The brand border color for the light theme (active, 11% darker) */
   --color-border-brand-disabled: #476c62; /** The brand border color for the light theme (disabled, 80% saturation) */
-  --color-border-danger-hover: #8b2843; /** The danger border color for the light theme (hover, 30% darker) */
-  --color-border-danger-active: #9b2d54; /** The danger border color for the light theme (active, 15% darker) */
+  --color-border-danger-hover: #932b4c; /** The danger border color for the light theme (hover, 23% darker) */
+  --color-border-danger-active: #9f3559; /** The danger border color for the light theme (active, 11% darker) */
   --color-border-danger-disabled: #a4606d; /** The danger border color for the light theme (disabled, 80% saturation) */
-  --color-border-negative-hover: #902a2a; /** The negative border color for the light theme (hover, 30% darker) */
-  --color-border-negative-active: #a22f2f; /** The negative border color for the light theme (active, 15% darker) */
+  --color-border-negative-hover: #992c2c; /** The negative border color for the light theme (hover, 23% darker) */
+  --color-border-negative-active: #a63037; /** The negative border color for the light theme (active, 11% darker) */
   --color-border-negative-disabled: #aa605b; /** The negative border color for the light theme (disabled, 80% saturation) */
-  --color-border-warning-hover: #886127; /** The warning border color for the light theme (hover, 30% darker) */
-  --color-border-warning-active: #9a752d; /** The warning border color for the light theme (active, 15% darker) */
+  --color-border-warning-hover: #916b2a; /** The warning border color for the light theme (hover, 23% darker) */
+  --color-border-warning-active: #9f7a2e; /** The warning border color for the light theme (active, 11% darker) */
   --color-border-warning-disabled: #ab8f64; /** The warning border color for the light theme (disabled, 80% saturation) */
-  --color-border-success-hover: #23794c; /** The success border color for the light theme (hover, 30% darker) */
-  --color-border-success-active: #28895f; /** The success border color for the light theme (active, 15% darker) */
+  --color-border-success-hover: #258156; /** The success border color for the light theme (hover, 23% darker) */
+  --color-border-success-active: #298d64; /** The success border color for the light theme (active, 11% darker) */
   --color-border-success-disabled: #5c9679; /** The success border color for the light theme (disabled, 80% saturation) */
-  --color-border-positive-hover: #577923; /** The positive border color for the light theme (hover, 30% darker) */
-  --color-border-positive-active: #6a8a2b; /** The positive border color for the light theme (active, 15% darker) */
+  --color-border-positive-hover: #618126; /** The positive border color for the light theme (hover, 23% darker) */
+  --color-border-positive-active: #6e8d3c; /** The positive border color for the light theme (active, 11% darker) */
   --color-border-positive-disabled: #859b69; /** The positive border color for the light theme (disabled, 80% saturation) */
-  --color-border-info-hover: #2a7b92; /** The info border color for the light theme (hover, 30% darker) */
-  --color-border-info-active: #3090a6; /** The info border color for the light theme (active, 15% darker) */
+  --color-border-info-hover: #2d869b; /** The info border color for the light theme (hover, 23% darker) */
+  --color-border-info-active: #4696aa; /** The info border color for the light theme (active, 11% darker) */
   --color-border-info-disabled: #74abbd; /** The info border color for the light theme (disabled, 80% saturation) */
-  --color-border-discovery-hover: #63518a; /** The discovery border color for the light theme (hover, 30% darker) */
-  --color-border-discovery-active: #75669c; /** The discovery border color for the light theme (active, 15% darker) */
+  --color-border-discovery-hover: #6c5c93; /** The discovery border color for the light theme (hover, 23% darker) */
+  --color-border-discovery-active: #7a6ba2; /** The discovery border color for the light theme (active, 11% darker) */
   --color-border-discovery-disabled: #857aaa; /** The discovery border color for the light theme (disabled, 80% saturation) */
   --color-border-base-subtle-hover: #323336; /** The primary subtle border color for the light theme (hover, 30% darker) */
   --color-border-base-subtle-active: #393a3c; /** The primary subtle border color for the light theme (active, 15% darker) */
   --color-border-base-subtle-disabled: #3f4042; /** The primary subtle border color for the light theme (disabled, 80% saturation) */
-  --color-border-brand-subtle-hover: #174e40; /** The brand border color for the light theme (hover, 30% darker) */
-  --color-border-brand-subtle-active: #195547; /** The brand border color for the light theme (active, 15% darker) */
+  --color-border-brand-subtle-hover: #185243; /** The brand border color for the light theme (hover, 23% darker) */
+  --color-border-brand-subtle-active: #19574a; /** The brand border color for the light theme (active, 11% darker) */
   --color-border-brand-subtle-disabled: #34524a; /** The brand border color for the light theme (disabled, 80% saturation) */
-  --color-border-danger-subtle-hover: #762222; /** The danger border color for the light theme (hover, 30% darker) */
-  --color-border-danger-subtle-active: #822626; /** The danger border color for the light theme (active, 15% darker) */
+  --color-border-danger-subtle-hover: #7c2424; /** The danger border color for the light theme (hover, 23% darker) */
+  --color-border-danger-subtle-active: #862727; /** The danger border color for the light theme (active, 11% darker) */
   --color-border-danger-subtle-disabled: #854b44; /** The danger border color for the light theme (disabled, 80% saturation) */
-  --color-border-negative-subtle-hover: #8a2828; /** The negative border color for the light theme (hover, 30% darker) */
-  --color-border-negative-subtle-active: #9a3a2d; /** The negative border color for the light theme (active, 15% darker) */
+  --color-border-negative-subtle-hover: #922a2a; /** The negative border color for the light theme (hover, 23% darker) */
+  --color-border-negative-subtle-active: #9f422e; /** The negative border color for the light theme (active, 11% darker) */
   --color-border-negative-subtle-disabled: #a16253; /** The negative border color for the light theme (disabled, 80% saturation) */
-  --color-border-warning-subtle-hover: #6f4d20; /** The warning border color for the light theme (hover, 30% darker) */
-  --color-border-warning-subtle-active: #7c5c24; /** The warning border color for the light theme (active, 15% darker) */
+  --color-border-warning-subtle-hover: #755522; /** The warning border color for the light theme (hover, 23% darker) */
+  --color-border-warning-subtle-active: #7f6025; /** The warning border color for the light theme (active, 11% darker) */
   --color-border-warning-subtle-disabled: #826d47; /** The warning border color for the light theme (disabled, 80% saturation) */
-  --color-border-success-subtle-hover: #1d653f; /** The success border color for the light theme (hover, 30% darker) */
-  --color-border-success-subtle-active: #21714e; /** The success border color for the light theme (active, 15% darker) */
+  --color-border-success-subtle-hover: #1f6b47; /** The success border color for the light theme (hover, 23% darker) */
+  --color-border-success-subtle-active: #227452; /** The success border color for the light theme (active, 11% darker) */
   --color-border-success-subtle-disabled: #477760; /** The success border color for the light theme (disabled, 80% saturation) */
-  --color-border-positive-subtle-hover: #3f7622; /** The positive border color for the light theme (hover, 30% darker) */
-  --color-border-positive-subtle-active: #558627; /** The positive border color for the light theme (active, 15% darker) */
+  --color-border-positive-subtle-hover: #4a7e25; /** The positive border color for the light theme (hover, 23% darker) */
+  --color-border-positive-subtle-active: #5b8a28; /** The positive border color for the light theme (active, 11% darker) */
   --color-border-positive-subtle-disabled: #749360; /** The positive border color for the light theme (disabled, 80% saturation) */
-  --color-border-info-subtle-hover: #215a73; /** The info border color for the light theme (hover, 30% darker) */
-  --color-border-info-subtle-active: #256880; /** The info border color for the light theme (active, 15% darker) */
+  --color-border-info-subtle-hover: #236179; /** The info border color for the light theme (hover, 23% darker) */
+  --color-border-info-subtle-active: #266c83; /** The info border color for the light theme (active, 11% darker) */
   --color-border-info-subtle-disabled: #4a7485; /** The info border color for the light theme (disabled, 80% saturation) */
-  --color-border-discovery-subtle-hover: #514d7b; /** The discovery border color for the light theme (hover, 30% darker) */
-  --color-border-discovery-subtle-active: #615f8a; /** The discovery border color for the light theme (active, 15% darker) */
+  --color-border-discovery-subtle-hover: #585682; /** The discovery border color for the light theme (hover, 23% darker) */
+  --color-border-discovery-subtle-active: #65638e; /** The discovery border color for the light theme (active, 11% darker) */
   --color-border-discovery-subtle-disabled: #707193; /** The discovery border color for the light theme (disabled, 80% saturation) */
   --color-overlay-background: #d5d5d5; /** The overlay background color for the light theme */
   --color-overlay-border: #4f4f4f; /** The overlay border color for the light theme */
   --color-overlay-backdrop: rgba(55, 58, 61, 0.4); /** The overlay backdrop background color for the light theme */
-  --color-overlay-background-hover: #939393; /** The overlay background color for the light theme (hover, 30% darker) */
-  --color-overlay-background-active: #b3b3b3; /** The overlay background color for the light theme (active, 15% darker) */
+  --color-overlay-background-hover: #a3a3a3; /** The overlay background color for the light theme (hover, 23% darker) */
+  --color-overlay-background-active: #bbbbbb; /** The overlay background color for the light theme (active, 11% darker) */
   --color-overlay-background-inactive: #d9d9d9; /** The overlay background color for the light theme (inactive, 20% brighter) */
   --color-overlay-background-disabled: rgba(213, 213, 213, 0.4); /** The overlay background color for the light theme (disabled, 40% opacity) */
-  --color-overlay-border-hover: #3d3d3d; /** The overlay border color for the light theme (hover, 30% darker) */
-  --color-overlay-border-active: #464646; /** The overlay border color for the light theme (active, 15% darker) */
+  --color-overlay-border-hover: #414141; /** The overlay border color for the light theme (hover, 23% darker) */
+  --color-overlay-border-active: #484848; /** The overlay border color for the light theme (active, 11% darker) */
   --color-overlay-border-disabled: rgba(79, 79, 79, 0.4); /** The overlay border color for the light theme (disabled, 40% opacity) */
   --color-shadow-resting-xsmall: 0px 1px 0px 0px #0000000d; /** The xsmall resting shadow for the light theme */
   --color-shadow-resting-small: 0px 1px 2px 0px #0000000d; /** The small resting shadow for the light theme */
@@ -688,15 +688,14 @@
   --ring-negative-subtle: 0px 0px 0px 1px #dc262620; /** The negative subtle ring variant */
   --ring-negative-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 6px #dc262620; /** The negative ring variant with a 3px offset */
   --ring-negative-subtle-offset: 0px 0px 0px 3px #cfcfcf, 0px 0px 0px 4px #dc262620; /** The negative subtle ring variant with a 3px offset */
-  --typography-display-hero: 500 8rem/1.1475 'Space Grotesk'; /** The display - hero typography variant */
-  --typography-display: 400 3.75rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
-  --typography-heading-xl: 500 2.25rem/0.95625 'Space Grotesk'; /** The heading - extra large typography variant */
+  --typography-display-hero: 500 3.75rem/1.1475 'Space Grotesk'; /** The display - hero typography variant */
+  --typography-display-xl: 400 3rem/1.051875 'Space Grotesk'; /** The display - extra large typography variant */
   --typography-heading-lg: 500 1.875rem/0.95625 'Space Grotesk'; /** The heading - large typography variant */
-  --typography-heading-md: 700 1.5rem/1.051875 'Space Grotesk'; /** The heading - medium typography variant */
-  --typography-heading-sm: 700 1.25rem/1.051875 'Space Grotesk'; /** The heading - small typography variant */
+  --typography-display-md: 700 1.5rem/1.051875 'Space Grotesk'; /** The display - medium typography variant */
+  --typography-display-sm: 700 1.25rem/1.051875 'Space Grotesk'; /** The display - small typography variant */
   --typography-eyebrow: 800 1.125rem/1.1475 Manrope; /** The eyebrow typography variant */
   --typography-body-lg: 700 1.25rem/1.1475 Manrope; /** The body large typography variant */
-  --typography-body: 500 1.125rem/1.1475 Manrope; /** The body typography variant */
+  --typography-body-md: 500 1.125rem/1.1475 Manrope; /** The body typography variant */
   --typography-body-sm: 400 1rem/1.1475 Manrope; /** The body small typography variant */
   --typography-code: 400 1.125rem/1.1475 'Geist Mono'; /** The code typography variant */
 }

@@ -19,6 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { BytesText } from "@cyclone-ui/bytes-text";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Link } from "@cyclone-ui/link";
 import type { ClientFileResult } from "@cyclone-ui/state";
@@ -390,7 +391,6 @@ const FilePickerViewLink = ({
   if (uri) {
     return (
       <Link
-        fontFamily="$heading-sm"
         fontSize="$xl"
         fontWeight="$true"
         width="100%"
@@ -398,20 +398,19 @@ const FilePickerViewLink = ({
         {...props}
         href={uri}
         target="_blank">
-        {children}
+        <HeadingSmallText>{children}</HeadingSmallText>
       </Link>
     );
   }
 
   return (
     <LabelText
-      fontFamily="$heading-sm"
       fontSize="$xl"
       color="$foregroundInverse"
       width="100%"
       textAlign="center"
       {...props}>
-      {children}
+      <HeadingSmallText color="$foregroundInverse">{children}</HeadingSmallText>
     </LabelText>
   );
 };

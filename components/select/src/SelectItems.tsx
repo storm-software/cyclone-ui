@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { getSized } from "@cyclone-ui/helpers";
 import type { SelectOption } from "@stryke/types/form";
 import { Adapt } from "@tamagui/adapt";
@@ -27,7 +28,6 @@ import { Check, ChevronDown, ChevronUp, Lock } from "@tamagui/lucide-icons-2";
 import { Select as TamaguiSelect } from "@tamagui/select";
 import { Sheet } from "@tamagui/sheet";
 import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import { useCallback, useState } from "react";
 import { getSelectContentSize, SelectContext } from "./utilities";
 
@@ -410,15 +410,14 @@ const SelectItemTextFrame = styled(TamaguiSelect.ItemText, {
   }
 });
 
-const SelectItemValue = styled(SizableText, {
+const SelectItemValue = styled(BodyText, {
   name: "SelectItems",
+  render: "span",
   context: SelectContext,
 
   transition: "200ms",
   cursor: "inherit",
   color: "currentColor",
-  fontFamily: "$body",
-
   variants: {
     size: {
       "...size": (val: SizeTokens | number) => {

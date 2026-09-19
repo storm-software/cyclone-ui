@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
+import { HeadingHeroText, HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import { StormLogoText } from "@cyclone-ui/vectors";
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -69,37 +71,37 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
         <Text color="$foreground" fontFamily="$display-lg">
           Build what matters
         </Text>
-        <Text color="$foregroundBody" fontFamily="$body" maxWidth={640}>
+        <BodyText color="$foregroundBody" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
-        </Text>
+        </BodyText>
       </StorySection>
       <StorySection>
-        <Text color="$foreground" fontFamily="$heading-2xl">
+        <HeadingHeroText color="$foreground">
           Research and discovery
-        </Text>
-        <Text color="$foregroundBody" fontFamily="$body" maxWidth={640}>
+        </HeadingHeroText>
+        <BodyText color="$foregroundBody" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
-        </Text>
+        </BodyText>
       </StorySection>
       <StorySection>
-        <Text color="$foreground" fontFamily="$heading-2xl">
+        <HeadingHeroText color="$foreground">
           Products for every team
-        </Text>
-        <Text color="$foregroundBody" fontFamily="$body" maxWidth={640}>
+        </HeadingHeroText>
+        <BodyText color="$foregroundBody" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
-        </Text>
+        </BodyText>
       </StorySection>
       <StorySection>
-        <Text color="$foreground" fontFamily="$heading-2xl">
+        <HeadingHeroText color="$foreground">
           A long-term perspective
-        </Text>
-        <Text color="$foregroundBody" fontFamily="$body" maxWidth={640}>
+        </HeadingHeroText>
+        <BodyText color="$foregroundBody" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
-        </Text>
+        </BodyText>
       </StorySection>
     </StoryContent>
     {children}
@@ -116,7 +118,6 @@ const StoryAction = styled(Link, {
   textTransform: "uppercase",
   letterSpacing: 1.5,
   borderRadius: "$4xl",
-  fontFamily: "$heading-sm",
   textDecorationLine: "none",
 
   hoverStyle: {
@@ -150,9 +151,9 @@ const StoryBrand = () => (
         fill="$foreground"
       />
     </View>
-    <Text color="$foreground" fontFamily="$heading-sm" fontSize="$md">
+    <HeadingSmallText color="$foreground" fontSize="$md">
       Cyclone UI
-    </Text>
+    </HeadingSmallText>
   </View>
 );
 
@@ -186,7 +187,7 @@ const storyAction = (
     group={false}
     href="https://stormsoftware.com/contact"
     underline="none">
-    Let’s start a project →
+    <HeadingSmallText>Let’s start a project →</HeadingSmallText>
   </StoryAction>
 );
 

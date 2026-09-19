@@ -16,10 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "@tamagui/avatar";
 import { Text, View } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
 import {
   createColumnHelper,
   flexRender,
@@ -67,17 +67,14 @@ const meta: Meta<typeof Table> = {
                       : {
                           flexShrink: 3
                         })}>
-                    <SizableText
-                      fontFamily="$heading-sm"
-                      color="$foreground"
-                      size="$6xl">
+                    <HeadingSmallText color="$foreground" size="$6xl">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
                             header.getContext()
                           )}
-                    </SizableText>
+                    </HeadingSmallText>
                   </Table.HeaderCell>
                 ))}
               </Table.Row>
@@ -119,12 +116,9 @@ const meta: Meta<typeof Table> = {
             {columns.map((_, index) => (
               <Table.Cell key={index}>
                 {index === 0 && (
-                  <SizableText
-                    fontFamily="$heading-sm"
-                    color="$foreground"
-                    size="$6xl">
+                  <HeadingSmallText color="$foreground" size="$6xl">
                     Table footer information is populated here
-                  </SizableText>
+                  </HeadingSmallText>
                 )}
               </Table.Cell>
             ))}

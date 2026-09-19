@@ -34,6 +34,7 @@
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/button": "workspace:*",
     "@cyclone-ui/field": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",

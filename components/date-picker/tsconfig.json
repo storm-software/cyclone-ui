@@ -18,10 +18,13 @@
       "path": "../popover"
     },
     {
-      "path": "../label-text"
+      "path": "../body-text"
     },
     {
       "path": "../input"
+    },
+    {
+      "path": "../heading-text"
     },
     {
       "path": "../button"

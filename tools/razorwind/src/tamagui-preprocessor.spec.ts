@@ -82,7 +82,7 @@ describe("tamaguiPreprocessor", () => {
     );
   });
 
-  it("uses requested hover, active, and inactive colors for backgrounds", () => {
+  it("reduces non-base hover and active brightness increases to 75%", () => {
     const result = tamaguiPreprocessor({
       semantic: {
         background: {
@@ -100,7 +100,7 @@ describe("tamaguiPreprocessor", () => {
       }
     }) as unknown as {
       semantic: {
-        background: Record<string, { $value: string }>;
+        background: Record<string, { $description: string; $value: string }>;
         foreground: Record<string, { $value: string }>;
         border: Record<string, { $value: string }>;
       };
@@ -109,8 +109,10 @@ describe("tamaguiPreprocessor", () => {
     expect({
       baseBackgroundHover: result.semantic.background["base-hover"]!.$value,
       baseBackgroundActive: result.semantic.background["base-active"]!.$value,
-      themeBackgroundHover: result.semantic.background["brand-hover"]!.$value,
-      themeBackgroundActive: result.semantic.background["brand-active"]!.$value,
+      themeBackgroundHover:
+        result.semantic.background["brand-hover"]!.$description,
+      themeBackgroundActive:
+        result.semantic.background["brand-active"]!.$description,
       baseBackgroundInactive:
         result.semantic.background["base-inactive"]!.$value,
       themeBackgroundInactive:
@@ -118,8 +120,8 @@ describe("tamaguiPreprocessor", () => {
     }).toEqual({
       baseBackgroundHover: "#4c4c4c",
       baseBackgroundActive: "#3f3f3f",
-      themeBackgroundHover: "#4c4c4c",
-      themeBackgroundActive: "#3f3f3f",
+      themeBackgroundHover: "hover state at 23% brighter",
+      themeBackgroundActive: "active state at 11% brighter",
       baseBackgroundInactive: "#232323",
       themeBackgroundInactive: "#232323"
     });

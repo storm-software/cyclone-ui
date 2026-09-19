@@ -16,10 +16,12 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { Link } from "@cyclone-ui/link";
 import { BackgroundNoise } from "@cyclone-ui/vectors";
 import type { GetProps } from "@tamagui/core";
-import { styled, Text, View, withStaticProperties } from "@tamagui/core";
+import { styled, View, withStaticProperties } from "@tamagui/core";
 import { createContext, use, useId, useState } from "react";
 import { FooterTerrain } from "./FooterTerrain";
 
@@ -97,25 +99,24 @@ const FooterIntroduction = styled(View, {
   }
 });
 
-const FooterStatement = styled(Text, {
+const FooterStatement = styled(HeadingSmallText, {
   name: "FooterStatement",
   render: "h2",
 
   margin: 0,
   color: "$foreground",
-  fontFamily: "$heading-sm",
   textTransform: "uppercase",
   letterSpacing: 2
 });
 
-const FooterDescription = styled(Text, {
+const FooterDescription = styled(BodyText, {
   name: "FooterDescription",
   render: "p",
 
   maxWidth: 560,
   margin: 0,
   color: "$foreground",
-  fontFamily: "$body",
+  variant: "md",
   opacity: 0.85
 });
 
@@ -171,13 +172,12 @@ const FooterSectionFrame = styled(View, {
   }
 });
 
-const FooterSectionTitle = styled(Text, {
+const FooterSectionTitle = styled(HeadingSmallText, {
   name: "FooterSectionTitle",
   render: "h3",
 
   margin: 0,
   color: "$foreground",
-  fontFamily: "$heading-sm",
   textTransform: "uppercase",
   letterSpacing: 2
 });
@@ -194,8 +194,6 @@ const FooterLink = styled(Link, {
 
   width: "fit-content",
   color: "$foreground",
-  fontFamily: "$body",
-  fontSize: "$md",
   opacity: 0.85,
   textDecorationLine: "none",
 
@@ -241,11 +239,11 @@ const FooterBrand = styled(View, {
   gap: "$5xl"
 });
 
-const FooterCopyright = styled(Text, {
+const FooterCopyright = styled(BodyText, {
   name: "FooterCopyright",
+  render: "span",
 
   color: "$foreground",
-  fontFamily: "$body-sm",
   fontSize: "$xs",
   opacity: 0.85
 });

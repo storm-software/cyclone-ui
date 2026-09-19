@@ -16,11 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type { GetProps } from "@tamagui/core";
 import { styled, View } from "@tamagui/core";
 import { List } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { Platform } from "react-native";
@@ -115,9 +115,9 @@ const TableOfContentsHeading = styled(XStack, {
   minHeight: "$7xl"
 });
 
-const TableOfContentsHeadingText = styled(SizableText, {
+const TableOfContentsHeadingText = styled(BodyText, {
+  render: "span",
   color: "$foregroundCaption",
-  fontFamily: "$body",
   fontSize: "$lg",
   fontWeight: "$md"
 });
@@ -172,10 +172,10 @@ const TableOfContentsLink = TableOfContentsLinkFrame.styleable<{
   />
 ));
 
-const TableOfContentsLinkText = styled(SizableText, {
+const TableOfContentsLinkText = styled(BodyText, {
+  render: "span",
   transition: "color 160ms ease-out",
   color: "$foregroundInactive",
-  fontFamily: "$body",
   fontSize: "$lg",
   fontWeight: "$normal",
 

@@ -195,7 +195,6 @@ const FieldValidationText = styled(ValidationText, {
   name: "FieldDetails",
 
   fontStyle: "italic",
-  fontFamily: "$body-sm",
 
   variants: {
     size: {
@@ -212,7 +211,8 @@ const FieldValidationText = styled(ValidationText, {
 
   defaultVariants: {
     size: "$true",
-    disabled: false
+    disabled: false,
+    variant: "sm"
   }
 });
 

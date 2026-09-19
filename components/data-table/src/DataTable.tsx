@@ -16,10 +16,12 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Checkbox } from "@cyclone-ui/checkbox";
 import { CheckboxField } from "@cyclone-ui/checkbox-field";
 import { Form } from "@cyclone-ui/form";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { LabelText } from "@cyclone-ui/label-text";
 import { Pagination } from "@cyclone-ui/pagination";
 import { Popover } from "@cyclone-ui/popover";
@@ -41,7 +43,6 @@ import {
 } from "@tamagui/core";
 import { ArrowDownAZ, ArrowUpZA, Filter } from "@tamagui/lucide-icons-2";
 import { XStack, YStack } from "@tamagui/stacks";
-import { SizableText } from "@tamagui/text";
 import type {
   CellContext,
   ColumnDef,
@@ -646,13 +647,12 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   const value = props.value ? props.value : props.renderValue();
 
   return (
-    <SizableText
+    <BodyText
       transition="200ms"
-      fontFamily="$body"
       color="$foreground"
       $group-row-hover={{ color: "$foregroundHover" }}>
       {value}
-    </SizableText>
+    </BodyText>
   );
 };
 
@@ -705,7 +705,7 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
 
   return (
     <View width="max-content" minWidth="100%" maxWidth="100%">
-      <SizableText
+      <HeadingSmallText
         aria-hidden={true}
         height={0}
         overflow="hidden"
@@ -713,10 +713,9 @@ const DataTableHeaderFilterFields = <_TData extends RowData, _TValue = any>({
         pointerEvents="none"
         paddingRight="$9xl"
         maxWidth="100%"
-        whiteSpace="pre"
-        fontFamily="$heading-sm">
+        whiteSpace="pre">
         {intrinsicFilterLabels}
-      </SizableText>
+      </HeadingSmallText>
 
       <YStack gap="$4xl">
         <SearchInputField
@@ -890,38 +889,35 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       alignItems="center"
       paddingRight="$3xl">
       <XStack gap="$xl" onPress={handleSorting} flexShrink={0} cursor="pointer">
-        <SizableText
+        <HeadingSmallText
           transition="200ms"
-          fontFamily="$heading-sm"
           color="$foreground"
           size="$6xl"
           $group-header-hover={{ color: "$foregroundHover" }}>
           {titleCase(id)}
-        </SizableText>
+        </HeadingSmallText>
         {isSorted && !desc && (
           <XStack gap="$xxs" alignItems="center">
             <ArrowDownAZ size="$4xl" color="$foreground" />
-            <SizableText
+            <HeadingSmallText
               transition="200ms"
-              fontFamily="$heading-sm"
               fontWeight="$semibold"
               color="$foreground"
               size="$xs">
               {sortIndex + 1}
-            </SizableText>
+            </HeadingSmallText>
           </XStack>
         )}
         {isSorted && desc && (
           <XStack gap="$xxs" alignItems="center">
             <ArrowUpZA size="$4xl" color="$foreground" />
-            <SizableText
+            <HeadingSmallText
               transition="200ms"
-              fontFamily="$heading-sm"
               fontWeight="$semibold"
               color="$foreground"
               size="$xs">
               {sortIndex + 1}
-            </SizableText>
+            </HeadingSmallText>
           </XStack>
         )}
       </XStack>

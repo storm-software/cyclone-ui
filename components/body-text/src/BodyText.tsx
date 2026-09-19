@@ -25,7 +25,7 @@ export const BodyText = styled(SizableText, {
   render: "p",
 
   color: "$foregroundBody",
-  fontFamily: "$body",
+  fontFamily: "$body-md",
 
   variants: {
     variant: {
@@ -33,7 +33,7 @@ export const BodyText = styled(SizableText, {
         fontFamily: "$body-sm"
       },
       md: {
-        fontFamily: "$body"
+        fontFamily: "$body-md"
       },
       lg: {
         fontFamily: "$body-lg"

@@ -16,6 +16,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
     "@tamagui/animate-presence": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/helpers": "catalog:",

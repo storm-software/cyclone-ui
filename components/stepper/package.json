@@ -16,6 +16,7 @@
     "react-native": "catalog:"
   },
   "dependencies": {
+    "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/next-button": "workspace:*",
     "@cyclone-ui/previous-button": "workspace:*",
     "@tamagui/animate-presence": "catalog:",

@@ -18,6 +18,7 @@
 
 import { BodyText } from "@cyclone-ui/body-text";
 import { Field } from "@cyclone-ui/field";
+import { HeadingSmallText } from "@cyclone-ui/heading-text";
 import { RadioGroup, RadioGroupContext } from "@cyclone-ui/radio-group";
 import { FieldApi, useFieldActions } from "@cyclone-ui/state/form";
 import type { SelectOption } from "@stryke/types/form";
@@ -46,7 +47,6 @@ const RadioGroupItemValue = styled(Label, {
   transition: "200ms",
   cursor: "pointer",
   color: "$foregroundBase",
-  fontFamily: "$heading-sm",
   fontSize: "$lg",
   fontWeight: "$normal",
   lineHeight: "$true",
@@ -155,7 +155,7 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
           disabled={disabled}
           selected={selected}
           $group-item-hover={{ color: "$foregroundBaseHover" }}>
-          {name}
+          <HeadingSmallText>{name}</HeadingSmallText>
         </RadioGroupItemValue>
         {description && (
           <RadioGroupItemDetails

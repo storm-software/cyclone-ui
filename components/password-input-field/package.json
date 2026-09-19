@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@cyclone-ui/field": "workspace:*",
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/visually-hidden": "workspace:*",
     "@tamagui/core": "catalog:",
     "@tamagui/stacks": "catalog:",

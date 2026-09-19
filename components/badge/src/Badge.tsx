@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type {
   ColorTokens,
   FontSizeTokens,
@@ -27,7 +28,6 @@ import { getFontSize } from "@tamagui/font-size";
 import { getFontSized } from "@tamagui/get-font-sized";
 import { withStaticProperties } from "@tamagui/helpers";
 import { useGetThemedIcon } from "@tamagui/helpers-tamagui";
-import { SizableText } from "@tamagui/text";
 
 const BadgeContext = createStyledContext({
   size: "$true" as SizeTokens,
@@ -99,13 +99,11 @@ const BadgeFrame = styled(View, {
   }
 });
 
-const BadgeText = styled(SizableText, {
+const BadgeText = styled(BodyText, {
   name: BADGE_NAME,
   context: BadgeContext,
   color: "$foregroundInverse",
-  fontFamily: "$heading-sm",
-  fontWeight: "$bold",
-  size: "$true",
+  variant: "lg",
 
   variants: {
     outlined: {
