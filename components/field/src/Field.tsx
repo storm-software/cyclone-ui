@@ -195,7 +195,7 @@ const FieldValidationText = styled(ValidationText, {
   name: "FieldDetails",
 
   fontStyle: "italic",
-  fontFamily: "$caption",
+  fontFamily: "$body-sm",
 
   variants: {
     size: {
@@ -323,10 +323,6 @@ const FieldDetails = styled(BodyText, {
   },
 
   variants: {
-    size: {
-      "...size": getFieldDetailsFontSize
-    },
-
     disabled: {
       true: {
         color: "$foregroundDisabled",
@@ -340,7 +336,6 @@ const FieldDetails = styled(BodyText, {
   } as const,
 
   defaultVariants: {
-    size: "$true",
     disabled: false
   }
 });
@@ -392,7 +387,6 @@ const FieldDetailsImpl = FieldDetails.styleable(
 
 const FieldLabelText = styled(LabelText, {
   name: "FieldLabel",
-  render: "label",
 
   transition: "200ms",
   cursor: "pointer",
@@ -442,8 +436,6 @@ const FieldLabelPositioner = styled(View, {
 const FieldOptionalLabelText = styled(FieldLabelText, {
   transition: "200ms",
   color: "$foregroundCaption",
-  fontWeight: "$light",
-  fontSize: "$sm",
   marginLeft: "$lg",
 
   variants: {
@@ -568,8 +560,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                 <FieldLabelText
                   {...props}
                   disabled={disabled}
-                  fontFamily={floating ? "$caption" : "$heading-sm"}
-                  size={floating ? "$sm" : undefined}
+                  floating={floating}
                   color={disabled ? "$foregroundDisabled" : "$foreground"}>
                   {children}
                 </FieldLabelText>
@@ -595,8 +586,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                         <FieldOptionalLabelText
                           {...props}
                           disabled={disabled}
-                          fontFamily="$caption"
-                          size="$sm"
+                          size="sm"
                           color={
                             disabled
                               ? "$foregroundCaptionDisabled"

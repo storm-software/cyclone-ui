@@ -19,7 +19,7 @@
 import { BodyText } from "@cyclone-ui/body-text";
 import { Button } from "@cyclone-ui/button";
 import { Container } from "@cyclone-ui/container";
-import { HeadingExtraLargeText } from "@cyclone-ui/heading-text";
+import { HeadingMediumText } from "@cyclone-ui/heading-text";
 import type { GetProps } from "@tamagui/core";
 import { createStyledContext, styled, Theme } from "@tamagui/core";
 import type {
@@ -51,7 +51,7 @@ export const DialogContext = createStyledContext<DialogContextProps>({
   overlay: true
 });
 
-const DialogHeading = styled(HeadingExtraLargeText, {
+const DialogHeading = styled(HeadingMediumText, {
   name: "DialogHeading",
   context: DialogContext,
 

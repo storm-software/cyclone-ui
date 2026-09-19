@@ -157,6 +157,11 @@ async function main(): Promise<any | { error: string | Error }> {
       const handleSearch = await import("./search").then(m => m.handler);
       return handleSearch(args);
     } else if (
+      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+    ) {
+      const handleView = await import("./view").then(m => m.handler);
+      return handleView(args);
+    } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
     ) {
       const handleInfo = await import("./info").then(m => m.handler);
@@ -173,11 +178,6 @@ async function main(): Promise<any | { error: string | Error }> {
     ) {
       const handleInit = await import("./init").then(m => m.handler);
       return handleInit(args);
-    } else if (
-      command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
-    ) {
-      const handleView = await import("./view").then(m => m.handler);
-      return handleView(args);
     } else if (
       command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
     ) {
@@ -220,11 +220,11 @@ async function main(): Promise<any | { error: string | Error }> {
       const suggestions = findSuggestions(command, [
         "search",
         "list",
+        "view",
         "info",
         "docs",
         "init",
         "create",
-        "view",
         "diff",
         "build",
         "add",
@@ -253,6 +253,12 @@ async function main(): Promise<any | { error: string | Error }> {
           icon: "⌕"
         },
         {
+          value: ["view"],
+          label: "View Registry Components",
+          description: `(cyclone-ui view)`,
+          icon: "◉"
+        },
+        {
           value: ["info"],
           label: "Project Information",
           description: `(cyclone-ui info)`,
@@ -269,12 +275,6 @@ async function main(): Promise<any | { error: string | Error }> {
           label: "Initialize",
           description: `(cyclone-ui init)`,
           icon: "🌀"
-        },
-        {
-          value: ["view"],
-          label: "View Registry Components",
-          description: `(cyclone-ui view)`,
-          icon: "◉"
         },
         {
           value: ["diff"],
@@ -401,6 +401,11 @@ async function main(): Promise<any | { error: string | Error }> {
         const handleSearch = await import("./search").then(m => m.handler);
         return handleSearch(args);
       } else if (
+        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
+      ) {
+        const handleView = await import("./view").then(m => m.handler);
+        return handleView(args);
+      } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "info"
       ) {
         const handleInfo = await import("./info").then(m => m.handler);
@@ -418,11 +423,6 @@ async function main(): Promise<any | { error: string | Error }> {
       ) {
         const handleInit = await import("./init").then(m => m.handler);
         return handleInit(args);
-      } else if (
-        command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "view"
-      ) {
-        const handleView = await import("./view").then(m => m.handler);
-        return handleView(args);
       } else if (
         command.toLowerCase().replaceAll("-", "").replaceAll("_", "") === "diff"
       ) {
@@ -466,11 +466,11 @@ async function main(): Promise<any | { error: string | Error }> {
         const suggestions = findSuggestions(command, [
           "search",
           "list",
+          "view",
           "info",
           "docs",
           "init",
           "create",
-          "view",
           "diff",
           "build",
           "add",

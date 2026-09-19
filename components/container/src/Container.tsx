@@ -51,7 +51,7 @@ const ContainerFrame = styled(View, {
     outline: "none",
     outlineWidth: 0,
     outlineColor: "transparent",
-    boxShadow: "$ringOffset"
+    boxShadow: "$ring"
   },
 
   variants: {

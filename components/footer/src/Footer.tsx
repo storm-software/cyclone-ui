@@ -245,7 +245,7 @@ const FooterCopyright = styled(Text, {
   name: "FooterCopyright",
 
   color: "$foreground",
-  fontFamily: "$caption",
+  fontFamily: "$body-sm",
   fontSize: "$xs",
   opacity: 0.85
 });

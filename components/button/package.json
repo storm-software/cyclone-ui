@@ -6,7 +6,7 @@
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/cyclone-ui.git",
-    "directory": "components/message"
+    "directory": "components/button"
   },
   "private": false,
   "files": ["dist"],
@@ -26,6 +26,7 @@
     "@tamagui/stacks": "catalog:",
     "@tamagui/text": "catalog:",
     "@tamagui/web": "catalog:",
+    "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/helpers": "workspace:*",
     "@cyclone-ui/themeable-icon": "workspace:*"
   },

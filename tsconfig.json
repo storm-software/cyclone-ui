@@ -112,9 +112,6 @@
       "path": "./components/pagination"
     },
     {
-      "path": "./components/title-text"
-    },
-    {
       "path": "./components/accordion"
     },
     {
@@ -257,6 +254,9 @@
     },
     {
       "path": "./components/redacted-animation"
+    },
+    {
+      "path": "./components/display-text"
     }
   ],
   "files": []

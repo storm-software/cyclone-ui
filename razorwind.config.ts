@@ -18,11 +18,13 @@
 
 import colorVariants from "@razorwind/color-variants";
 import { defineConfig } from "@razorwind/core";
+import type { Tokens } from "@razorwind/core/schema";
 import css from "@razorwind/css/generate";
 import designMD from "@razorwind/design-md/generate";
 import docgen from "@razorwind/docgen/generate";
 import llms from "@razorwind/llms/generate";
 import shadcn from "@razorwind/shadcn/generate";
+import type { ShikiTheme } from "@razorwind/shiki/generate";
 import shiki from "@razorwind/shiki/generate";
 import storybook from "@razorwind/storybook/generate";
 import tamagui from "@razorwind/tamagui/generate";
@@ -50,14 +52,129 @@ export default defineConfig({
       outputPath: "packages/themes/src/tamagui/config.ts"
     }),
     designMD(),
-    llms({
-      outputPath: "docs/llms"
-    }),
     shiki({
-      outputPath: "packages/themes/src/shiki"
+      outputPath: "packages/themes/src/shiki",
+      mapTheme: (tokens: Tokens) => {
+        const tokenValue = (token: unknown, fallback: string) => {
+          if (
+            typeof token === "object" &&
+            token !== null &&
+            "$value" in token &&
+            typeof token.$value === "string"
+          ) {
+            return token.$value;
+          }
+
+          return fallback;
+        };
+
+        const tokenGroup = (token: unknown): Record<string, unknown> =>
+          typeof token === "object" && token !== null
+            ? (token as Record<string, unknown>)
+            : {};
+
+        const mapTheme = (theme: "dark" | "light"): ShikiTheme => {
+          const color = tokenGroup(tokenGroup(tokens?.[theme]).color);
+          const foreground = tokenGroup(color.foreground);
+          const background = tokenGroup(color.background);
+          const border = tokenGroup(color.border);
+
+          const base = tokenValue(foreground?.base, "#000000");
+          const body = tokenValue(foreground?.body, base);
+          const caption = tokenValue(foreground?.caption, body);
+          const eyebrow = tokenValue(foreground?.eyebrow, caption);
+          const link = tokenValue(foreground?.link, body);
+          const brand = tokenValue(foreground?.brand, link);
+          const danger = tokenValue(foreground?.danger, brand);
+          const warning = tokenValue(foreground?.warning, brand);
+          const success = tokenValue(foreground?.success, brand);
+          const info = tokenValue(foreground?.info, brand);
+          const discovery = tokenValue(foreground?.discovery, brand);
+          const required = tokenValue(foreground?.required, danger);
+          const page = tokenValue(background?.page, "#ffffff");
+          const subtle = tokenValue(background?.base, page);
+          const selection = tokenValue(background?.brand, subtle);
+          const borderColor = tokenValue(border?.base, eyebrow);
+
+          return {
+            name: `cyclone-${theme}`,
+            displayName: `Cyclone ${theme === "dark" ? "Dark" : "Light"}`,
+            type: theme,
+            bg: page,
+            fg: base,
+            colors: {
+              "editor.background": page,
+              "editor.foreground": base,
+              "editorCursor.foreground": link,
+              "editor.selectionBackground": selection,
+              "editor.inactiveSelectionBackground": subtle,
+              "editorLineNumber.foreground": caption,
+              "editorLineNumber.activeForeground": body,
+              "editorIndentGuide.background1": borderColor,
+              "editorIndentGuide.activeBackground1": eyebrow,
+              "editorWhitespace.foreground": caption
+            },
+            settings: [
+              {
+                scope: ["comment", "punctuation.definition.comment"],
+                settings: { foreground: caption, fontStyle: "italic" }
+              },
+              {
+                scope: ["string", "constant.other.symbol"],
+                settings: { foreground: success }
+              },
+              {
+                scope: ["constant", "constant.numeric", "constant.language"],
+                settings: { foreground: warning }
+              },
+              {
+                scope: ["keyword", "storage", "storage.type"],
+                settings: { foreground: danger }
+              },
+              {
+                scope: ["entity.name.function", "support.function"],
+                settings: { foreground: brand }
+              },
+              {
+                scope: [
+                  "entity.name.type",
+                  "entity.other.inherited-class",
+                  "support.type"
+                ],
+                settings: { foreground: discovery }
+              },
+              {
+                scope: ["entity.name.tag", "meta.tag"],
+                settings: { foreground: danger }
+              },
+              {
+                scope: ["entity.other.attribute-name", "support.constant"],
+                settings: { foreground: info }
+              },
+              {
+                scope: ["variable", "identifier"],
+                settings: { foreground: body }
+              },
+              {
+                scope: ["punctuation", "meta.brace"],
+                settings: { foreground: eyebrow }
+              },
+              {
+                scope: ["invalid", "invalid.illegal"],
+                settings: { foreground: required }
+              }
+            ]
+          };
+        };
+
+        return [mapTheme("dark"), mapTheme("light")];
+      }
     }),
     docgen({
       outputPath: "docs/themes"
+    }),
+    llms({
+      outputPath: "docs/llms"
     }),
     css({
       outputPath: "packages/themes/src/css/tokens.css"

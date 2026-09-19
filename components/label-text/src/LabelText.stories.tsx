@@ -45,6 +45,18 @@ export const Base: Story = {
   args: {}
 };
 
+export const Floating: Story = {
+  args: {
+    floating: true
+  }
+};
+
+export const NotFloating: Story = {
+  args: {
+    floating: false
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

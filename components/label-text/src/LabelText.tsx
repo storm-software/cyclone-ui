@@ -16,16 +16,29 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
-import { SizableText } from "@tamagui/text";
 
-export const LabelText = styled(SizableText, {
+export const LabelText = styled(BodyText, {
   name: "LabelText",
-  render: "p",
+  render: "label",
 
+  transition: "400ms",
   color: "$foreground",
-  fontFamily: "$heading-sm"
+  variant: "lg",
+
+  variants: {
+    floating: {
+      true: {
+        variant: "sm"
+      }
+    }
+  },
+
+  defaultVariants: {
+    floating: false
+  }
 });
 
 export type LabelTextProps = GetProps<typeof LabelText>;

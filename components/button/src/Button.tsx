@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { BodyText } from "@cyclone-ui/body-text";
 import { getButtonSized, getSized } from "@cyclone-ui/helpers";
 import type { ThemeableIconProps } from "@cyclone-ui/themeable-icon";
 import { ThemeableIcon } from "@cyclone-ui/themeable-icon";
@@ -29,13 +30,7 @@ import type {
   Variable,
   VariantSpreadExtras
 } from "@tamagui/core";
-import {
-  Text,
-  View,
-  createStyledContext,
-  styled,
-  useThemeName
-} from "@tamagui/core";
+import { View, createStyledContext, styled, useThemeName } from "@tamagui/core";
 import { withStaticProperties } from "@tamagui/helpers";
 import { ThemeableStack } from "@tamagui/stacks";
 import type { TextContextStyles, TextParentStyles } from "@tamagui/text";
@@ -294,7 +289,7 @@ const ButtonFrame = styled(View, {
   render: "button",
   role: "button",
   userSelect: "none",
-  transition: "200ms",
+  transition: "400ms",
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
@@ -540,19 +535,19 @@ const ButtonFrame = styled(View, {
   }
 });
 
-const ButtonTextFrame = styled(Text, {
+const ButtonTextFrame = styled(BodyText, {
   name: "ButtonText",
   context: ButtonContext,
 
   render: "span",
-  transition: "200ms",
+  transition: "400ms",
   userSelect: "none",
   borderRadius: 0,
   cursor: "pointer",
   textAlign: "center",
   textTransform: "capitalize",
   whiteSpace: "nowrap",
-  fontFamily: "$heading-sm",
+  fontFamily: "$body-lg",
   fontWeight: "$true",
   fontSize: "$true",
 
@@ -863,7 +858,7 @@ const ButtonHoverBackground = styled(ThemeableStack, {
   name: "Button",
   context: ButtonContext,
 
-  transition: "200ms",
+  transition: "500ms",
   zIndex: "$10",
   position: "absolute",
   borderColor: "$border",

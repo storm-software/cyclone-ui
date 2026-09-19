@@ -26,70 +26,58 @@ const BaseHeadingText = styled(SizableText, {
   role: "heading",
 
   color: "$foreground",
-  fontFamily: "$display-md"
-});
-
-export const HeadingHeroText = styled(BaseHeadingText, {
-  name: "HeadingHeroText",
-  render: "h1",
-  fontFamily: "$display-hero"
+  fontFamily: "$heading-md"
 });
 
 export const HeadingExtraLargeText = styled(BaseHeadingText, {
   name: "HeadingExtraLargeText",
   render: "h2",
-  fontFamily: "$display-xl"
+  fontFamily: "$heading-xl"
 });
 
 export const HeadingLargeText = styled(BaseHeadingText, {
   name: "HeadingLargeText",
   render: "h3",
-  fontFamily: "$display-lg"
+  fontFamily: "$heading-lg"
 });
 
 export const HeadingMediumText = styled(BaseHeadingText, {
   name: "HeadingMediumText",
   render: "h4",
-  fontFamily: "$display-md"
+  fontFamily: "$heading-md"
 });
 
 export const HeadingSmallText = styled(BaseHeadingText, {
   name: "HeadingSmallText",
   render: "h5",
-  fontFamily: "$display-sm"
+  fontFamily: "$heading-sm"
 });
 
 export type HeadingTextProps = GetProps<typeof BaseHeadingText>;
 
 export const HeadingText = BaseHeadingText.styleable<{
-  level?: 1 | 2 | 3 | 4 | 5 | "hero" | "xl" | "lg" | "md" | "sm";
+  level?: 1 | 2 | 3 | 4 | "sm" | "md" | "lg" | "xl";
 }>(
   ({ children, level, ...props }, forwardedRef) => {
-    if (level === 1 || level === "hero") {
-      return (
-        <HeadingHeroText ref={forwardedRef} {...props}>
-          {children}
-        </HeadingHeroText>
-      );
-    } else if (level === 2 || level === "xl") {
+    if (level === 1 || level === "xl") {
       return (
         <HeadingExtraLargeText ref={forwardedRef} {...props}>
           {children}
         </HeadingExtraLargeText>
       );
-    } else if (level === 3 || level === "lg") {
+    } else if (level === 2 || level === "lg") {
       return (
         <HeadingLargeText ref={forwardedRef} {...props}>
           {children}
         </HeadingLargeText>
       );
-    } else if (level === 4 || level === "md") {
+    } else if (level === 3 || level === "md") {
       return (
         <HeadingMediumText ref={forwardedRef} {...props}>
           {children}
         </HeadingMediumText>
       );
-    } else if (level === 5 || level === "sm") {
+    } else if (level === 4 || level === "sm") {
       return (
         <HeadingSmallText ref={forwardedRef} {...props}>
           {children}

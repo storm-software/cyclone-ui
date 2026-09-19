@@ -51,7 +51,7 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
-  it("darkens only the base theme foreground disabled token", () => {
+  it("applies the shared state direction to the base foreground disabled token", () => {
     const result = tamaguiPreprocessor({
       semantic: {
         foreground: {
@@ -74,15 +74,15 @@ describe("tamaguiPreprocessor", () => {
     };
 
     expect(result.semantic.foreground["base-disabled"]).toMatchObject({
-      $description: "disabled state at 15% darker, 60% opacity",
-      $value: "#c5c5c599"
+      $description: "disabled state at 75% brighter, 60% opacity",
+      $value: "#ffffff99"
     });
     expect(result.semantic.foreground["brand-disabled"]!.$value).toBe(
       "#f5f5f599"
     );
   });
 
-  it("uses reduced-strength hover, active, and inactive colors for backgrounds", () => {
+  it("uses requested hover, active, and inactive colors for backgrounds", () => {
     const result = tamaguiPreprocessor({
       semantic: {
         background: {
@@ -116,10 +116,10 @@ describe("tamaguiPreprocessor", () => {
       themeBackgroundInactive:
         result.semantic.background["brand-inactive"]!.$value
     }).toEqual({
-      baseBackgroundHover: "#373737",
-      baseBackgroundActive: "#3a3a3a",
-      themeBackgroundHover: "#3b3b3b",
-      themeBackgroundActive: "#3a3a3a",
+      baseBackgroundHover: "#4c4c4c",
+      baseBackgroundActive: "#3f3f3f",
+      themeBackgroundHover: "#4c4c4c",
+      themeBackgroundActive: "#3f3f3f",
       baseBackgroundInactive: "#232323",
       themeBackgroundInactive: "#232323"
     });
@@ -144,7 +144,7 @@ describe("tamaguiPreprocessor", () => {
     });
   });
 
-  it("darkens the dark theme base background when active", () => {
+  it("brightens a dark theme base background when active", () => {
     const result = tamaguiPreprocessor({
       dark: {
         semantic: {
@@ -156,7 +156,7 @@ describe("tamaguiPreprocessor", () => {
     }) as any;
 
     expect(result.dark.semantic.background["base-active"].$value).toBe(
-      "#2d2d2d"
+      "#3f3f3f"
     );
   });
 
@@ -192,11 +192,11 @@ describe("tamaguiPreprocessor", () => {
 
     for (const name of ["base", "brand"]) {
       expect(dark.color.foreground[`${name}-active`]).toMatchObject({
-        $description: expect.stringContaining("active, 75% brighter"),
-        $value: "#757575"
+        $description: expect.stringContaining("active, 15% brighter"),
+        $value: "#3f3f3f"
       });
       expect(light.color.foreground[`${name}-active`]).toMatchObject({
-        $description: expect.stringContaining("active, 75% darker")
+        $description: expect.stringContaining("active, 15% darker")
       });
       expect(
         Number.parseInt(
@@ -207,7 +207,7 @@ describe("tamaguiPreprocessor", () => {
     }
   });
 
-  it("keeps active foreground colors theme-directed at lightness extremes", () => {
+  it("uses white and black extremes for active foreground direction", () => {
     const result = tamaguiPreprocessor({
       dark: {
         color: {
@@ -238,13 +238,13 @@ describe("tamaguiPreprocessor", () => {
       light: { color: { foreground: Record<string, { $value: string }> } };
     };
 
-    expect(result.dark.color.foreground["base-active"]!.$value).toBe("#ffffff");
+    expect(result.dark.color.foreground["base-active"]!.$value).toBe("#c9c9c9");
     expect(result.light.color.foreground["base-active"]!.$value).toBe(
-      "#202020"
+      "#c5c5c5"
     );
   });
 
-  it("adds inactive foreground variants that are 40% darker", () => {
+  it("adds inactive foreground variants with a 20% inverse shift", () => {
     const result = tamaguiPreprocessor({
       semantic: {
         foreground: {
@@ -259,13 +259,18 @@ describe("tamaguiPreprocessor", () => {
     };
 
     expect(result.semantic.foreground["light-inactive"]).toMatchObject({
-      $description: "inactive state at 40% darker",
-      $value: "#7b7b7b"
+      $description: "inactive state at 20% brighter",
+      $value: "#ffffff"
     });
     expect(result.semantic.foreground["dark-inactive"]).toMatchObject({
-      $description: "inactive state at 40% darker",
-      $value: "#141414"
+      $description: "inactive state at 20% darker"
     });
+    expect(
+      Number.parseInt(
+        result.semantic.foreground["dark-inactive"]!.$value.slice(1, 3),
+        16
+      )
+    ).toBeLessThan(0x33);
   });
 
   it("directs state brightness from the dark or light parent theme", () => {
@@ -306,10 +311,10 @@ describe("tamaguiPreprocessor", () => {
       inactive: dark["base-inactive"]!.$description,
       disabled: dark["base-disabled"]!.$description
     }).toEqual({
-      hover: "hover state at 20% brighter",
-      active: "active state at 75% brighter",
-      inactive: "inactive state at 40% darker",
-      disabled: "disabled state at 50% darker, 60% opacity"
+      hover: "hover state at 30% brighter",
+      active: "active state at 15% brighter",
+      inactive: "inactive state at 20% darker",
+      disabled: "disabled state at 75% darker, 60% opacity"
     });
     expect(channel(dark["base-hover"]!.$value)).toBeGreaterThan(0x77);
     expect(channel(dark["base-active"]!.$value)).toBeGreaterThan(0x77);
@@ -323,15 +328,101 @@ describe("tamaguiPreprocessor", () => {
       inactive: light["base-inactive"]!.$description,
       disabled: light["base-disabled"]!.$description
     }).toEqual({
-      hover: "hover state at 20% darker",
-      active: "active state at 75% darker",
-      inactive: "inactive state at 40% brighter",
-      disabled: "disabled state at 50% brighter, 60% opacity"
+      hover: "hover state at 30% darker",
+      active: "active state at 15% darker",
+      inactive: "inactive state at 20% brighter",
+      disabled: "disabled state at 75% brighter, 60% opacity"
     });
     expect(channel(light["base-hover"]!.$value)).toBeLessThan(0x77);
     expect(channel(light["base-active"]!.$value)).toBeLessThan(0x77);
     expect(channel(light["base-inactive"]!.$value)).toBeGreaterThan(0x77);
     expect(channel(light["base-disabled"]!.$value)).toBeGreaterThan(0x77);
+  });
+
+  it("applies requested state deltas with dark and light-mode extreme classification", () => {
+    const token = (value: string) => ({
+      $type: "color",
+      $value: value,
+      theme: "base"
+    });
+    const result = tamaguiPreprocessor({
+      dark: {
+        semantic: {
+          foreground: {
+            dark: token("#333333"),
+            white: token("#f5f5f5")
+          }
+        }
+      },
+      light: {
+        semantic: {
+          foreground: {
+            black: token("#050505"),
+            light: token("#777777")
+          }
+        }
+      }
+    }) as unknown as {
+      dark: {
+        semantic: {
+          foreground: Record<string, { $description: string; $value: string }>;
+        };
+      };
+      light: {
+        semantic: {
+          foreground: Record<string, { $description: string; $value: string }>;
+        };
+      };
+    };
+    const channel = (value: string) => Number.parseInt(value.slice(1, 3), 16);
+
+    expect({
+      darkHover: result.dark.semantic.foreground["dark-hover"]!.$description,
+      darkActive: result.dark.semantic.foreground["dark-active"]!.$description,
+      darkInactive:
+        result.dark.semantic.foreground["dark-inactive"]!.$description,
+      whiteHover: result.dark.semantic.foreground["white-hover"]!.$description,
+      whiteActive:
+        result.dark.semantic.foreground["white-active"]!.$description,
+      whiteInactive:
+        result.dark.semantic.foreground["white-inactive"]!.$description,
+      blackHover: result.light.semantic.foreground["black-hover"]!.$description,
+      blackActive:
+        result.light.semantic.foreground["black-active"]!.$description,
+      blackInactive:
+        result.light.semantic.foreground["black-inactive"]!.$description,
+      lightHover: result.light.semantic.foreground["light-hover"]!.$description,
+      lightActive:
+        result.light.semantic.foreground["light-active"]!.$description,
+      lightInactive:
+        result.light.semantic.foreground["light-inactive"]!.$description
+    }).toEqual({
+      darkHover: "hover state at 30% brighter",
+      darkActive: "active state at 15% brighter",
+      darkInactive: "inactive state at 20% darker",
+      whiteHover: "hover state at 30% darker",
+      whiteActive: "active state at 15% darker",
+      whiteInactive: "inactive state at 20% brighter",
+      blackHover: "hover state at 30% brighter",
+      blackActive: "active state at 15% brighter",
+      blackInactive: "inactive state at 20% darker",
+      lightHover: "hover state at 30% darker",
+      lightActive: "active state at 15% darker",
+      lightInactive: "inactive state at 20% brighter"
+    });
+
+    expect(
+      channel(result.dark.semantic.foreground["dark-hover"]!.$value)
+    ).toBeGreaterThan(channel("#333333"));
+    expect(
+      channel(result.dark.semantic.foreground["white-hover"]!.$value)
+    ).toBeLessThan(channel("#f5f5f5"));
+    expect(
+      channel(result.light.semantic.foreground["black-hover"]!.$value)
+    ).toBeGreaterThan(channel("#050505"));
+    expect(
+      channel(result.light.semantic.foreground["light-hover"]!.$value)
+    ).toBeLessThan(channel("#777777"));
   });
 
   it("uses source-directed brightness near the parent theme extremes", () => {
@@ -432,10 +523,39 @@ describe("tamaguiPreprocessor", () => {
     expect(result).toMatchObject({
       semantic: {
         "foreground-link-hover": {
-          $description: "hover state at 40% brighter",
-          $value: "#6ea3d9"
+          $description: "hover state at 30% brighter",
+          $value: "#5f93c9"
         }
       }
+    });
+  });
+
+  it("uses a 60% brighter hover for inverse foreground tokens", () => {
+    const result = tamaguiPreprocessor({
+      semantic: {
+        foreground: {
+          "brand-inverse": {
+            $type: "color",
+            $value: "#336699",
+            theme: "brand"
+          }
+        }
+      }
+    }) as unknown as {
+      semantic: {
+        foreground: Record<string, { $description: string; $value: string }>;
+      };
+    };
+
+    expect(result.semantic.foreground["brand-inverse-hover"]).toMatchObject({
+      $description: "hover state at 60% brighter",
+      $value: "#8dc2fb"
+    });
+    expect(
+      result.semantic.foreground["brand-inverse-ghost-hover"]
+    ).toMatchObject({
+      $description: "ghost hover state at 60% brighter than hover",
+      $value: "#cdffff"
     });
   });
 
@@ -473,7 +593,7 @@ describe("tamaguiPreprocessor", () => {
       };
     };
 
-    expect(result.semantic.foreground["brand-hover"]!.$value).toBe("#595959");
+    expect(result.semantic.foreground["brand-hover"]!.$value).toBe("#646464");
     expect(result.semantic.foreground["brand-ghost-hover"]).toMatchObject({
       $description: "ghost hover state at 20% brighter than hover",
       $value: "#737373",
@@ -484,8 +604,8 @@ describe("tamaguiPreprocessor", () => {
         result.semantic.foreground["brand-inverse-ghost-hover"]!.$value,
       hover: result.semantic.foreground["brand-inverse-hover"]!.$value
     }).toEqual({
-      ghostHover: "#74a9e0",
-      hover: "#5084b9"
+      ghostHover: "#cdffff",
+      hover: "#8dc2fb"
     });
     expect(result.semantic.foreground).not.toHaveProperty("body-ghost-hover");
     expect(result.semantic.foreground).not.toHaveProperty(

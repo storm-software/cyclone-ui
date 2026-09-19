@@ -15,6 +15,9 @@
   "references": [
     {
       "path": "../../packages/helpers"
+    },
+    {
+      "path": "../body-text"
     }
   ],
   "files": [],

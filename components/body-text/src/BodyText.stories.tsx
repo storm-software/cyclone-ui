@@ -45,6 +45,24 @@ export const Base: Story = {
   args: {}
 };
 
+export const Small: Story = {
+  args: {
+    variant: "sm"
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    variant: "md"
+  }
+};
+
+export const Large: Story = {
+  args: {
+    variant: "lg"
+  }
+};
+
 export const Brand: Story = {
   args: {
     theme: "brand"

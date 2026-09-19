@@ -1,0 +1,120 @@
+# Cyclone UI (Light Monochromatic)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Light High Contrast)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Light Dimmed)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Light)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Dark Monochromatic)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Dark High Contrast)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Dark Dimmed)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.
+# Cyclone UI (Dark)
+
+> 🌀 A repository containing [Tamagui](https://github.com/tamagui/tamagui) based design components used by Storm Software. Like [shadcn/ui](https://github.com/shadcn-ui/ui), the components are copied into other repositories via the Cyclone CLI.
+
+## Design System Reference
+
+- [Design Tokens](llms-tokens.txt): Approved design tokens, values, themes, and usage descriptions.
+- [Components](llms-components.txt): Available components, dependencies, files, and usage examples.
+- [Icons](llms-icons.txt): Available icon names, aliases, metadata, and asset variants.
+- [Fonts](llms-fonts.txt): Approved font families, roles, sources, weights, and files.
+
+## Project Resources
+
+- [Homepage](https://cyclone-ui.com): Design system website.
+- [Repository](https://github.com/storm-software/cyclone-ui.git): Source repository.

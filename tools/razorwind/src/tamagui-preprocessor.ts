@@ -397,13 +397,10 @@ interface ColorStateVariant {
   /** Multiplier applied to OKLCH chroma for non-greyscale colors. */
   saturation?: number;
   /**
-   * Magnitude of the OKLCH lightness shift (e.g. 1.1 = 10%). Parent light
-   * and dark themes direct the shift for non-extreme colors; other colors
-   * adapt to the source lightness.
+   * Multiplier applied to OKLCH lightness (e.g. 1.1 = 10%). State direction
+   * is determined by the source color and its parent theme.
    */
   brightness?: number;
-  /** Reduce lightness when no parent-theme direction applies. */
-  brightnessDirection?: "darker";
 }
 
 type ParentTheme = "dark" | "light";
@@ -434,47 +431,30 @@ function parentThemeFromDictionary(
   return parentThemeFromDescription(dictionary.color.$description);
 }
 
-interface ThemedColorStateVariant {
-  base: ColorStateVariant;
-  theme: ColorStateVariant;
-}
-
-const FOREGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
-  base: { name: "hover", brightness: 1.2 },
-  theme: { name: "hover", brightness: 0.8 }
+const COLOR_STATE_HOVER: ColorStateVariant = {
+  name: "hover",
+  brightness: 1.3
 };
 
-const FOREGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 1.75 },
-  theme: { name: "active", brightness: 1.125 }
+const FOREGROUND_INVERSE_HOVER: ColorStateVariant = {
+  name: "hover",
+  brightness: 1.8
 };
 
-const FOREGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
+const COLOR_STATE_ACTIVE: ColorStateVariant = {
+  name: "active",
+  brightness: 1.15
+};
+
+const COLOR_STATE_INACTIVE: ColorStateVariant = {
   name: "inactive",
-  brightness: 0.6,
-  brightnessDirection: "darker"
-};
-
-const BACKGROUND_COLOR_STATE_HOVER: ThemedColorStateVariant = {
-  base: { name: "hover", brightness: 0.95 },
-  theme: { name: "hover", brightness: 0.9 }
-};
-
-const BACKGROUND_COLOR_STATE_ACTIVE: ThemedColorStateVariant = {
-  base: { name: "active", brightness: 0.92 },
-  theme: { name: "active", brightness: 1.08 }
-};
-
-const BACKGROUND_COLOR_STATE_INACTIVE: ColorStateVariant = {
-  name: "inactive",
-  brightness: 0.8,
-  brightnessDirection: "darker"
+  brightness: 0.8
 };
 
 const COLOR_STATE_DISABLED: ColorStateVariant = {
   name: "disabled",
-  opacity: 0.6,
-  saturation: 0.6
+  opacity: 0.4,
+  saturation: 0.8
 };
 
 const BASE_FOREGROUND_DISABLED: ColorStateVariant = {
@@ -492,43 +472,35 @@ interface ThemeColorStateVariants {
 const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
   background: {
     base: [
-      BACKGROUND_COLOR_STATE_HOVER.base,
-      BACKGROUND_COLOR_STATE_ACTIVE.base,
-      BACKGROUND_COLOR_STATE_INACTIVE,
+      COLOR_STATE_HOVER,
+      COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ],
     theme: [
-      BACKGROUND_COLOR_STATE_HOVER.theme,
-      BACKGROUND_COLOR_STATE_ACTIVE.theme,
-      BACKGROUND_COLOR_STATE_INACTIVE,
+      COLOR_STATE_HOVER,
+      COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
   foreground: {
     base: [
-      FOREGROUND_COLOR_STATE_HOVER.base,
-      FOREGROUND_COLOR_STATE_ACTIVE.base,
-      FOREGROUND_COLOR_STATE_INACTIVE,
+      COLOR_STATE_HOVER,
+      COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ],
     theme: [
-      FOREGROUND_COLOR_STATE_HOVER.theme,
-      FOREGROUND_COLOR_STATE_ACTIVE.theme,
-      FOREGROUND_COLOR_STATE_INACTIVE,
+      COLOR_STATE_HOVER,
+      COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE,
       COLOR_STATE_DISABLED
     ]
   },
   border: {
-    base: [
-      FOREGROUND_COLOR_STATE_HOVER.base,
-      FOREGROUND_COLOR_STATE_ACTIVE.base,
-      COLOR_STATE_DISABLED
-    ],
-    theme: [
-      FOREGROUND_COLOR_STATE_HOVER.theme,
-      FOREGROUND_COLOR_STATE_ACTIVE.theme,
-      COLOR_STATE_DISABLED
-    ]
+    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_DISABLED],
+    theme: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_DISABLED]
   }
 };
 
@@ -536,8 +508,8 @@ const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
 const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
   "foreground-link": {
-    base: [FOREGROUND_COLOR_STATE_HOVER.base],
-    theme: [FOREGROUND_COLOR_STATE_HOVER.theme]
+    base: [COLOR_STATE_HOVER],
+    theme: [COLOR_STATE_HOVER]
   }
 };
 
@@ -752,17 +724,22 @@ function applySaturation(hex: string, factor: number): string {
   return oklchToHex(lightness, chroma * clamp01(factor), hue, alpha);
 }
 
-/** Perceptual midpoint in OKLCH lightness (`0` black → `1` white). */
-const DARK_THEME_WHITE_LIGHTNESS_LIMIT = 0.85;
-const LIGHT_THEME_BLACK_LIGHTNESS_LIMIT = 0.15;
 const MINIMUM_DISABLED_LIGHTNESS_DELTA = 0.3;
 
-function isLightColor(hex: string): boolean {
+function isLightColor(hex: string, parentTheme?: ParentTheme): boolean {
+  if (parentTheme === "dark") {
+    return isWhiteColor(hex);
+  }
+
+  if (parentTheme === "light") {
+    return !isBlackColor(hex);
+  }
+
   return hexToOklch(hex).lightness >= 0.5;
 }
 
-function isDarkColor(hex: string): boolean {
-  return !isLightColor(hex);
+function isDarkColor(hex: string, parentTheme?: ParentTheme): boolean {
+  return !isLightColor(hex, parentTheme);
 }
 
 function isWhiteColor(hex: string): boolean {
@@ -773,36 +750,13 @@ function isBlackColor(hex: string): boolean {
   return hexToOklch(hex).lightness <= 0.25;
 }
 
-/** Resolve a lightness multiplier from the source color. */
-function directedBrightnessFactor(hex: string, factor: number): number {
-  const amount = Math.abs(factor - 1);
-
-  return isLightColor(hex) ? 1 - amount : 1 + amount;
-}
-
-function themeDirectedBrightnessFactor(
+/** Resolve a state multiplier from the source color and parent theme. */
+function directedBrightnessFactor(
   hex: string,
   factor: number,
-  variant: ColorStateVariant,
   parentTheme?: ParentTheme
-): number | undefined {
-  const lightness = hexToOklch(hex).lightness;
-
-  if (
-    parentTheme === "dark" &&
-    (variant.name === "active" || lightness < DARK_THEME_WHITE_LIGHTNESS_LIMIT)
-  ) {
-    return factor;
-  }
-
-  if (
-    parentTheme === "light" &&
-    (variant.name === "active" || lightness > LIGHT_THEME_BLACK_LIGHTNESS_LIMIT)
-  ) {
-    return 2 - factor;
-  }
-
-  return undefined;
+): number {
+  return isDarkColor(hex, parentTheme) ? factor : 2 - factor;
 }
 
 function stateBrightnessFactor(
@@ -814,19 +768,7 @@ function stateBrightnessFactor(
     return 1;
   }
 
-  const themeDirectedFactor = themeDirectedBrightnessFactor(
-    hex,
-    variant.brightness,
-    variant,
-    parentTheme
-  );
-  if (themeDirectedFactor !== undefined) {
-    return themeDirectedFactor;
-  }
-
-  return variant.brightnessDirection === "darker"
-    ? 1 - Math.abs(variant.brightness - 1)
-    : directedBrightnessFactor(hex, variant.brightness);
+  return directedBrightnessFactor(hex, variant.brightness, parentTheme);
 }
 
 function applyStateTransform(
@@ -1018,11 +960,15 @@ function addColorStateTokens(
 
       const stateVariant =
         isForegroundGroup &&
-        name === "base" &&
-        token.theme === "base" &&
-        variant.name === "disabled"
-          ? BASE_FOREGROUND_DISABLED
-          : variant;
+        name.endsWith("-inverse") &&
+        variant.name === "hover"
+          ? FOREGROUND_INVERSE_HOVER
+          : isForegroundGroup &&
+              name === "base" &&
+              token.theme === "base" &&
+              variant.name === "disabled"
+            ? BASE_FOREGROUND_DISABLED
+            : variant;
 
       result[variantKey] = createStateToken(
         token,

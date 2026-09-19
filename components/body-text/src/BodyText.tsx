@@ -25,7 +25,25 @@ export const BodyText = styled(SizableText, {
   render: "p",
 
   color: "$foregroundBody",
-  fontFamily: "$body"
+  fontFamily: "$body",
+
+  variants: {
+    variant: {
+      sm: {
+        fontFamily: "$body-sm"
+      },
+      md: {
+        fontFamily: "$body"
+      },
+      lg: {
+        fontFamily: "$body-lg"
+      }
+    }
+  } as const,
+
+  defaultVariants: {
+    variant: "md"
+  }
 });
 
 export type BodyTextProps = GetProps<typeof BodyText>;
