@@ -2,36 +2,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Extension",
-      "type": "extensionHost",
-      "request": "launch",
-      "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/node_modules/@acidic/language"
-      ]
-    },
-    {
-      "name": "Run CodeGen",
-      "type": "extensionHost",
-      "request": "launch",
-      "args": [
-        "--extensionDevelopmentPath=${workspaceFolder}/node_modules/acidic"
-      ]
-    },
-    {
-      "name": "Attach",
-      "port": 9229,
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    },
-    {
-      "name": "Attach to Language Server",
+      "name": "Monorepo - Generate Tokens",
       "type": "node",
-      "port": 6009,
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/node_modules/@acidic/language/**/*.js"]
+      "request": "launch",
+      "program": "/nix/store/yry427vnf882yg7n3gj128ahrnvn7p0d-pnpm-11.15.0/bin/pnpm",
+      "args": [
+        "nx",
+        "run",
+        "monorepo:generate-tokens:development",
+        "--outputStyle=dynamic-legacy",
+        "--skipNxCache"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
     }
   ]
 }

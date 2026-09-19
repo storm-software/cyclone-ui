@@ -15,7 +15,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.614
   "@powerlines/plugin-tamagui": ^0.1.665
   "@powerlines/plugin-env": ^0.16.422
-  "@razorwind/color-variants": ^0.0.49
+  "@razorwind/color-variants": ^0.0.50
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -105,7 +105,7 @@ catalog:
   "@razorwind/storybook": ^0.0.70
   "@razorwind/style-dictionary": ^0.0.58
   "@razorwind/shadcn": ^0.0.68
-  "@razorwind/tamagui": ^0.0.71
+  "@razorwind/tamagui": ^0.0.72
   "@storm-software/cloudflare-tools": ^0.71.290
   "@storm-software/config": ^1.138.78
   "@storm-software/config-tools": ^1.190.142
@@ -201,7 +201,7 @@ catalog:
   parse-github-url: ^1.0.4
   playwright: ^1.63.0
   "@tamagui/theme-builder": ^2.7.7
-  style-dictionary: ^5.5.3
+  style-dictionary: ^5.5.4
   "@tamagui/dismissable": ^2.7.7
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31

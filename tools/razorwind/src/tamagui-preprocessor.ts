@@ -412,7 +412,7 @@ function parentThemeFromDescription(
     return undefined;
   }
 
-  const theme = /\b(dark|light)\s+theme\b/i.exec(description)?.[1];
+  const theme = /\b(dark|light)[\s-]+theme\b/i.exec(description)?.[1];
 
   return theme?.toLowerCase() === "dark"
     ? "dark"
@@ -434,11 +434,6 @@ function parentThemeFromDictionary(
 const COLOR_STATE_HOVER: ColorStateVariant = {
   name: "hover",
   brightness: 1.3
-};
-
-const FOREGROUND_INVERSE_HOVER: ColorStateVariant = {
-  name: "hover",
-  brightness: 1.8
 };
 
 const COLOR_STATE_ACTIVE: ColorStateVariant = {
@@ -467,20 +462,28 @@ const COLOR_STATE_DISABLED: ColorStateVariant = {
   saturation: 0.8
 };
 
-const BASE_FOREGROUND_DISABLED: ColorStateVariant = {
-  ...COLOR_STATE_DISABLED,
-  brightness: 0.25
-};
-
-const FOREGROUND_GHOST_HOVER_BRIGHTNESS = 1.6;
-
 interface ThemeColorStateVariants {
   base: readonly ColorStateVariant[];
   theme: readonly ColorStateVariant[];
 }
 
+const ACCENT_COLOR_STATE_VARIANTS: ThemeColorStateVariants = {
+  base: [
+    COLOR_STATE_HOVER,
+    COLOR_STATE_ACTIVE,
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ],
+  theme: [
+    THEME_COLOR_STATE_HOVER,
+    THEME_COLOR_STATE_ACTIVE,
+    COLOR_STATE_INACTIVE,
+    COLOR_STATE_DISABLED
+  ]
+};
+
 const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
-  background: {
+  surface: {
     base: [
       COLOR_STATE_HOVER,
       COLOR_STATE_ACTIVE,
@@ -494,41 +497,39 @@ const COLOR_STATE_VARIANTS: Record<string, ThemeColorStateVariants> = {
       COLOR_STATE_DISABLED
     ]
   },
-  foreground: {
-    base: [
-      COLOR_STATE_HOVER,
-      COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE,
-      COLOR_STATE_DISABLED
-    ],
-    theme: [
-      THEME_COLOR_STATE_HOVER,
-      THEME_COLOR_STATE_ACTIVE,
-      COLOR_STATE_INACTIVE,
-      COLOR_STATE_DISABLED
-    ]
-  },
-  border: {
-    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_DISABLED],
-    theme: [
-      THEME_COLOR_STATE_HOVER,
-      THEME_COLOR_STATE_ACTIVE,
-      COLOR_STATE_DISABLED
-    ]
-  }
+  accent: ACCENT_COLOR_STATE_VARIANTS,
+  "on-accent": ACCENT_COLOR_STATE_VARIANTS,
+  muted: ACCENT_COLOR_STATE_VARIANTS,
+  "on-muted": ACCENT_COLOR_STATE_VARIANTS
 };
 
 const COLOR_STATE_GROUP_KEYS = new Set(Object.keys(COLOR_STATE_VARIANTS));
 
 const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
-  "foreground-link": {
-    base: [COLOR_STATE_HOVER],
-    theme: [THEME_COLOR_STATE_HOVER]
+  link: {
+    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE],
+    theme: [
+      THEME_COLOR_STATE_HOVER,
+      THEME_COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE
+    ]
+  },
+  hairline: {
+    base: [COLOR_STATE_HOVER, COLOR_STATE_ACTIVE, COLOR_STATE_INACTIVE],
+    theme: [
+      THEME_COLOR_STATE_HOVER,
+      THEME_COLOR_STATE_ACTIVE,
+      COLOR_STATE_INACTIVE
+    ]
   }
 };
 
 const BASE_RING_OPACITY = 0.075;
 const THEME_RING_OPACITY = 0.125;
+const MINIMUM_MUTED_CONTRAST_RATIO = 4.5;
+const MINIMUM_INVERSE_CONTRAST_RATIO = 2.5;
+const MUTED_COLOR_LIGHTNESS_STEP = 0.01;
+const MAX_MUTED_COLOR_ADJUSTMENTS = 100;
 
 function isStateVariantKey(key: string): boolean {
   return (
@@ -582,23 +583,6 @@ function resolveColorHex(
   }
 
   return resolveColorHex(token.$value, tree, seen);
-}
-
-function resolveColor(
-  value: unknown,
-  tree: unknown,
-  seen: Set<string> = new Set()
-): string | undefined {
-  const hex = resolveColorHex(value, tree, seen);
-  if (!hex) {
-    return hex;
-  }
-
-  return isWhiteColor(hex)
-    ? DEFAULT_LIGHT_COLOR
-    : isBlackColor(hex)
-      ? DEFAULT_DARK_COLOR
-      : hex;
 }
 
 function applyOpacity(hex: string, opacity: number): string {
@@ -738,7 +722,79 @@ function applySaturation(hex: string, factor: number): string {
   return oklchToHex(lightness, chroma * clamp01(factor), hue, alpha);
 }
 
-const MINIMUM_DISABLED_LIGHTNESS_DELTA = 0.3;
+function relativeLuminance(hex: string): number {
+  const expanded = expandHex(hex).toLowerCase();
+  const channel = (offset: number) => {
+    const value = Number.parseInt(expanded.slice(offset, offset + 2), 16) / 255;
+
+    return value <= 0.040_45 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  };
+
+  return 0.2126 * channel(1) + 0.7152 * channel(3) + 0.0722 * channel(5);
+}
+
+function contrastRatio(first: string, second: string): number {
+  const firstLuminance = relativeLuminance(first);
+  const secondLuminance = relativeLuminance(second);
+  const lighter = Math.max(firstLuminance, secondLuminance);
+  const darker = Math.min(firstLuminance, secondLuminance);
+
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function createOnAccentColor(hex: string): "#FAFAFA" | "#151518" {
+  const whiteContrast = contrastRatio(hex, "#FAFAFA");
+  if (whiteContrast >= MINIMUM_INVERSE_CONTRAST_RATIO) {
+    return "#FAFAFA";
+  }
+
+  const blackContrast = contrastRatio(hex, "#151518");
+  if (blackContrast * 0.5 > whiteContrast) {
+    return "#151518";
+  }
+
+  return "#FAFAFA";
+}
+
+function createMutedColor(
+  hex: string,
+  parentTheme: ParentTheme
+): { muted: string; onMuted?: string } {
+  const { lightness, chroma, hue, alpha } = hexToOklch(hex);
+  const mutedDirection = parentTheme === "light" ? 1 : -1;
+  const onMutedDirection = -mutedDirection;
+  let mutedLightness = lightness;
+  let onMutedLightness = lightness;
+  let muted = hex;
+  let onMuted = hex;
+
+  for (let index = 0; index < MAX_MUTED_COLOR_ADJUSTMENTS; index += 1) {
+    mutedLightness = clamp01(
+      mutedLightness + mutedDirection * MUTED_COLOR_LIGHTNESS_STEP
+    );
+    muted = oklchToHex(mutedLightness, chroma, hue, alpha);
+    if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
+      return onMuted === hex ? { muted } : { muted, onMuted };
+    }
+
+    onMutedLightness = clamp01(
+      onMutedLightness + onMutedDirection * MUTED_COLOR_LIGHTNESS_STEP
+    );
+    onMuted = oklchToHex(onMutedLightness, chroma, hue, alpha);
+    if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
+      return { muted, onMuted };
+    }
+
+    if (
+      (mutedLightness === 0 || mutedLightness === 1) &&
+      (onMutedLightness === 0 || onMutedLightness === 1)
+    ) {
+      break;
+    }
+  }
+
+  throw new Error(`Unable to generate an accessible muted pair for ${hex}`);
+}
 
 function isLightColor(hex: string, parentTheme?: ParentTheme): boolean {
   if (parentTheme === "dark") {
@@ -855,79 +911,11 @@ function createStateToken(
   };
 }
 
-const DEFAULT_DARK_COLOR = "#555555";
-const DEFAULT_LIGHT_COLOR = "#999999";
-
-function updateColorToken(isLightColor: boolean) {
-  return isLightColor ? DEFAULT_DARK_COLOR : DEFAULT_LIGHT_COLOR;
-}
-
-function ensureDisabledForegroundContrast(
-  group: Record<string, unknown>,
-  tree: unknown
-): void {
-  const backgrounds = group.background;
-  const foregrounds = group.foreground;
-  if (!isPlainObject(backgrounds) || !isPlainObject(foregrounds)) {
-    return;
-  }
-
-  for (const [name, foreground] of Object.entries(foregrounds)) {
-    if (!name.endsWith("-disabled") || !isTokenNode(foreground)) {
-      continue;
-    }
-
-    const background =
-      backgrounds[name.replace("-inverse-disabled", "-disabled")];
-    if (!isTokenNode(background)) {
-      continue;
-    }
-
-    const backgroundHex = resolveColor(background.$value, tree);
-    const foregroundHex = resolveColor(foreground.$value, tree);
-    if (!backgroundHex || !foregroundHex) {
-      continue;
-    }
-
-    const backgroundLightness = hexToOklch(backgroundHex).lightness;
-    const foregroundLightness = hexToOklch(foregroundHex).lightness;
-    if (
-      Math.abs(backgroundLightness - foregroundLightness) >=
-      MINIMUM_DISABLED_LIGHTNESS_DELTA
-    ) {
-      continue;
-    }
-
-    const lightBackground = isLightColor(backgroundHex);
-    let replacementHex = updateColorToken(lightBackground);
-    const replacementLightness = hexToOklch(replacementHex).lightness;
-
-    if (
-      Math.abs(backgroundLightness - replacementLightness) <
-      MINIMUM_DISABLED_LIGHTNESS_DELTA
-    ) {
-      const targetLightness = clamp01(
-        backgroundLightness +
-          (lightBackground
-            ? -MINIMUM_DISABLED_LIGHTNESS_DELTA
-            : MINIMUM_DISABLED_LIGHTNESS_DELTA)
-      );
-      replacementHex = applyBrightness(
-        replacementHex,
-        targetLightness / replacementLightness
-      );
-    }
-
-    foreground.$value = replacementHex;
-  }
-}
-
 function addColorStateTokens(
   group: Record<string, unknown>,
   tree: unknown,
   variants: readonly ColorStateVariant[] | ThemeColorStateVariants,
   onlyKey?: string,
-  isForegroundGroup = false,
   parentTheme?: ParentTheme
 ): Record<string, unknown> {
   const result = { ...group } as Record<string, any>;
@@ -955,39 +943,21 @@ function addColorStateTokens(
 
     const tokenVariants =
       "base" in variants
-        ? variants[
-            token.theme === "base" || (!isForegroundGroup && name === "base")
-              ? "base"
-              : "theme"
-          ]
+        ? variants[token.theme === "base" || name === "base" ? "base" : "theme"]
         : variants;
     const tokenParentTheme =
       parentThemeFromDescription(token.$description) ?? parentTheme;
 
-    for (const variant of tokenVariants.filter(
-      variant => variant.name !== "hover" || name !== "foreground-inverse"
-    )) {
+    for (const variant of tokenVariants) {
       const variantKey = `${name}-${variant.name}`;
       if (variantKey in result) {
         continue;
       }
 
-      const stateVariant =
-        isForegroundGroup &&
-        name.endsWith("-inverse") &&
-        variant.name === "hover"
-          ? FOREGROUND_INVERSE_HOVER
-          : isForegroundGroup &&
-              name === "base" &&
-              token.theme === "base" &&
-              variant.name === "disabled"
-            ? BASE_FOREGROUND_DISABLED
-            : variant;
-
       result[variantKey] = createStateToken(
         token,
         hex,
-        stateVariant,
+        variant,
         tokenParentTheme
       );
     }
@@ -996,54 +966,129 @@ function addColorStateTokens(
   return result;
 }
 
-function addForegroundGhostHoverTokens(
-  group: Record<string, unknown>,
-  tree: unknown,
-  onlyKey?: string
-): Record<string, unknown> {
-  const result = { ...group };
-  const names = onlyKey ? [onlyKey] : Object.keys(group);
-  const brightnessPercent = Math.round(
-    (FOREGROUND_GHOST_HOVER_BRIGHTNESS - 1) * 100
-  );
+function accentThemeName(token: Record<string, unknown>): string | undefined {
+  return typeof token.theme === "string"
+    ? token.theme
+    : typeof token.$theme === "string"
+      ? token.$theme
+      : undefined;
+}
 
-  for (const name of names) {
-    const source = group[name];
-    const isInverse = name.endsWith("-inverse");
-    // The theme metadata makes `<name>-ghost-hover` flatten to the shared
-    // `foregroundGhostHover` or `foregroundInverseGhostHover` key in that
-    // child theme. Unthemed foregrounds retain their existing state surface.
+function colorGroup(
+  group: Record<string, unknown>,
+  key: string
+): Record<string, unknown> {
+  const value = group[key];
+
+  if (!isPlainObject(value) || isTokenNode(value)) {
+    return {};
+  }
+
+  return { ...(value as Record<string, unknown>) };
+}
+
+function addMissingAccentCompanionTokens(
+  color: Record<string, unknown>,
+  tree: unknown,
+  parentTheme?: ParentTheme
+): Record<string, unknown> {
+  const accent = colorGroup(color, "accent");
+  if (Object.keys(accent).length === 0) {
+    return color;
+  }
+
+  const onAccent = colorGroup(color, "on-accent");
+  const muted = colorGroup(color, "muted");
+  const onMuted = colorGroup(color, "on-muted");
+  let changed = false;
+
+  for (const [name, token] of Object.entries(accent)) {
     if (
+      !isTokenNode(token) ||
       name.startsWith("$") ||
-      isStateVariantKey(name) ||
-      !isTokenNode(source) ||
-      (!onlyKey && !("theme" in source) && !("$theme" in source))
+      isStateVariantKey(name)
     ) {
       continue;
     }
 
-    const hover = group[`${name}-hover`];
-    const ghostHoverKey = `${name}-ghost-hover`;
-    if (!isTokenNode(hover) || ghostHoverKey in result) {
+    if (accentThemeName(token) !== name) {
       continue;
     }
 
-    const hoverHex = resolveColorHex(hover.$value, tree);
-    if (!hoverHex) {
+    const type = resolveType(token);
+    const hex = resolveColorHex(token.$value, tree);
+    if ((type && type !== "color") || !hex) {
       continue;
     }
 
-    if (isInverse && isGreyscale(hoverHex)) {
+    if (!(name in onAccent)) {
+      onAccent[name] = {
+        ...token,
+        $type: "color",
+        $value: createOnAccentColor(hex)
+      };
+      changed = true;
+    }
+
+    if (!parentTheme) {
       continue;
     }
 
-    result[ghostHoverKey] = {
-      ...hover,
-      $value: applyBrightness(hoverHex, FOREGROUND_GHOST_HOVER_BRIGHTNESS),
-      $description:
-        typeof source.$description === "string"
-          ? `${source.$description} (ghost hover, ${brightnessPercent}% brighter than hover)`
-          : `ghost hover state at ${brightnessPercent}% brighter than hover`
+    let generatedOnMuted: unknown = token.$value;
+    if (!(name in muted)) {
+      const generated = createMutedColor(hex, parentTheme);
+      generatedOnMuted = generated.onMuted ?? token.$value;
+      muted[name] = {
+        ...token,
+        $type: "color",
+        $value: generated.muted,
+        $description: `Generated ${name} muted background for the ${parentTheme} theme`
+      };
+      changed = true;
+    }
+
+    if (!(name in onMuted)) {
+      onMuted[name] = {
+        ...token,
+        $type: "color",
+        $value: generatedOnMuted,
+        $description: `Generated ${name} foreground on muted backgrounds`
+      };
+      changed = true;
+    }
+  }
+
+  return changed
+    ? {
+        ...color,
+        "on-accent": onAccent,
+        muted,
+        "on-muted": onMuted
+      }
+    : color;
+}
+
+function addAccentCompanionStateVariants(
+  color: Record<string, unknown>,
+  tree: unknown,
+  parentTheme?: ParentTheme
+): Record<string, unknown> {
+  let result = color;
+  for (const groupKey of ["on-accent", "muted", "on-muted"]) {
+    const group = result[groupKey];
+    if (!isPlainObject(group) || isTokenNode(group)) {
+      continue;
+    }
+
+    result = {
+      ...result,
+      [groupKey]: addColorStateTokens(
+        group,
+        tree,
+        COLOR_STATE_VARIANTS[groupKey]!,
+        undefined,
+        parentTheme
+      )
     };
   }
 
@@ -1084,18 +1129,13 @@ function injectColorStateVariants(
   }
 
   if (key && COLOR_STATE_GROUP_KEYS.has(key)) {
-    const withStateTokens = addColorStateTokens(
+    return addColorStateTokens(
       result,
       tree,
       COLOR_STATE_VARIANTS[key]!,
       undefined,
-      key === "foreground",
       parentTheme
     );
-
-    return key === "foreground"
-      ? addForegroundGhostHoverTokens(withStateTokens, tree)
-      : withStateTokens;
   }
 
   let withLoneTokens = result;
@@ -1106,17 +1146,8 @@ function injectColorStateVariants(
         tree,
         COLOR_STATE_VARIANTS[groupKey]!,
         groupKey,
-        groupKey === "foreground",
         parentTheme
       );
-
-      if (groupKey === "foreground") {
-        withLoneTokens = addForegroundGhostHoverTokens(
-          withLoneTokens,
-          tree,
-          groupKey
-        );
-      }
     }
   }
 
@@ -1129,13 +1160,18 @@ function injectColorStateVariants(
         tree,
         variants,
         tokenKey,
-        false,
         parentTheme
       );
     }
   }
 
-  ensureDisabledForegroundContrast(withLoneTokens, tree);
+  if (key === "color") {
+    return addAccentCompanionStateVariants(
+      addMissingAccentCompanionTokens(withLoneTokens, tree, parentTheme),
+      tree,
+      parentTheme
+    );
+  }
 
   return withLoneTokens;
 }
@@ -1143,13 +1179,10 @@ function injectColorStateVariants(
 /**
  * Style Dictionary preprocessor: rewrite color `$value`s (and nested shadow
  * colors) to hex so generators emit `#rrggbb` / `#rrggbbaa` instead of
- * `oklch()`. For background, foreground, and border colors, also emit state
- * variants whose brightness direction follows their light or dark parent
- * theme for non-extreme colors, plus
- * `-disabled` variants (60% saturation for colored sources, or 60% opacity
- * for greyscale sources). Themed foregrounds also receive link and body
- * variants that use their own colors when colored and the shared foreground
- * role colors when greyscale.
+ * `oklch()`. State variants are limited to surface and accent color groups,
+ * plus the standalone link and hairline colors. Surface and accent colors
+ * receive hover, active, inactive, and disabled variants; link and hairline
+ * colors receive hover, active, and inactive variants.
  */
 export function tamaguiPreprocessor(
   dictionary: PreprocessedTokens

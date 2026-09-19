@@ -7,7 +7,7 @@
         "punctuation.definition.comment"
       ],
       "settings": {
-        "foreground": "#000000",
+        "foreground": "#222222",
         "fontStyle": "italic"
       }
     },
@@ -17,7 +17,7 @@
         "constant.other.symbol"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -27,7 +27,7 @@
         "constant.language"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -37,7 +37,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -46,7 +46,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -56,7 +56,7 @@
         "support.type"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -65,7 +65,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -74,7 +74,7 @@
         "support.constant"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -83,7 +83,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -92,7 +92,7 @@
         "meta.brace"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     },
     {
@@ -101,24 +101,24 @@
         "invalid.illegal"
       ],
       "settings": {
-        "foreground": "#000000"
+        "foreground": "#222222"
       }
     }
   ],
   "displayName": "Cyclone Dark",
   "type": "dark",
-  "fg": "#000000",
-  "bg": "#ffffff",
+  "fg": "#222222",
+  "bg": "#222222",
   "colors": {
-    "editor.background": "#ffffff",
-    "editor.foreground": "#000000",
-    "editorCursor.foreground": "#000000",
-    "editor.selectionBackground": "#ffffff",
-    "editor.inactiveSelectionBackground": "#ffffff",
-    "editorLineNumber.foreground": "#000000",
-    "editorLineNumber.activeForeground": "#000000",
-    "editorIndentGuide.background1": "#000000",
-    "editorIndentGuide.activeBackground1": "#000000",
-    "editorWhitespace.foreground": "#000000"
+    "editor.background": "#222222",
+    "editor.foreground": "#222222",
+    "editorCursor.foreground": "#222222",
+    "editor.selectionBackground": "#222222",
+    "editor.inactiveSelectionBackground": "#222222",
+    "editorLineNumber.foreground": "#222222",
+    "editorLineNumber.activeForeground": "#222222",
+    "editorIndentGuide.background1": "#222222",
+    "editorIndentGuide.activeBackground1": "#222222",
+    "editorWhitespace.foreground": "#222222"
   }
 }

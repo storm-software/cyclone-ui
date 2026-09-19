@@ -46,8 +46,8 @@ export const shorthands = {
 } as const;
 
 const selectionStyles = (theme: AppTheme) => ({
-  backgroundColor: theme.foreground,
-  color: theme.foregroundInverse
+  backgroundColor: theme.accent,
+  color: theme.onAccent
 });
 
 export default {

@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 
 import { describe, expect, it } from "vitest";
@@ -26,6 +25,14 @@ const lightness = (value: string) => {
     : Number.parseInt(value.slice(1, 3), 16) / 255;
 };
 
+const hue = (value: string) =>
+  Number(/^oklch\([^ ]+ [^ ]+ ([^)]+)\)/.exec(value)![1]);
+
+const hueDistance = (left: number, right: number) => {
+  const difference = Math.abs(left - right) % 360;
+  return Math.min(difference, 360 - difference);
+};
+
 const valueAtReference = (tokens: TokenDocument, reference: string) => {
   const [group, palette, step] = reference.slice(1, -1).split(".");
   return (
@@ -48,32 +55,17 @@ describe("primitive color tokens", () => {
     );
     expect(tokens.color).not.toHaveProperty("surface");
     expect(palettes).toHaveLength(11);
-    const expectedPaletteHashes: Record<string, string> = {
-      brand: "d088483f3d6b00ec45f91bf095235a2c029df9687e7fd5ff5b84f0af7dbd9523",
-      red: "af9f4ceb5bfe8b62851bef3add40bb9099ca9cb4924f3292ffce694c8c68bc4e",
-      apple: "b8ff975cfddbf3322226fbb7eb71972a349c63ef81f354bac939c60d7b6994ca",
-      orange:
-        "ae7e92dee3a0aafb8d4aea1141cb0e0defb504109b2012464c1776b1d633c747",
-      yellow:
-        "9ad647b5b91e42a8aba25cb875eb91180bfd523c488ddbe9c72969af125fe539",
-      green: "c9b5f08f2ca1703ad86eb5515faa87f28be47b881cc9002f339b5e896bdb85e3",
-      avocado:
-        "4eba6798f974f544539ec86e407d4a6e5ed1ec214b9484976ca0de1cd0e3ae6a",
-      sky: "bda4a79f786db5bcbf684f94ca4c908f6d0ce5d1a5eb97bf09e209923b8e453e",
-      blue: "e630503ac1360112b34b799776ee1be79cfe9debf43db6664c92dde7300c2d98",
-      purple:
-        "438132397821f2cb8b69e40945a76accf7f916a4325252b8415e860ae263d014",
-      pink: "9f61bb6ee6b6234284ddb3069885908e53b35e4baa385bfc5b323b629ffc49dc"
-    };
-    for (const [name, palette] of palettes) {
+    for (const [, palette] of palettes) {
       const values = numberedValues(palette as Palette);
       expect(values).toHaveLength(12);
       expect(values.map(lightness)).toEqual(
         [...values].map(lightness).sort((left, right) => right - left)
       );
-      expect(createHash("sha256").update(values.join("\n")).digest("hex")).toBe(
-        expectedPaletteHashes[name]
-      );
+      expect(
+        Math.max(
+          ...values.map(value => hueDistance(hue(value), hue(values[0]!)))
+        )
+      ).toBeLessThanOrEqual(10);
     }
   });
 

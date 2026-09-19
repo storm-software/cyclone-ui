@@ -18,7 +18,7 @@
 
 import colorVariants from "@razorwind/color-variants";
 import { defineConfig } from "@razorwind/core";
-import type { Tokens } from "@razorwind/core/schema";
+import type { Schema } from "@razorwind/core/schema";
 import css from "@razorwind/css/generate";
 import designMD from "@razorwind/design-md/generate";
 import docgen from "@razorwind/docgen/generate";
@@ -54,7 +54,7 @@ export default defineConfig({
     designMD(),
     shiki({
       outputPath: "packages/themes/src/shiki",
-      mapTheme: (tokens: Tokens) => {
+      mapTheme: (spec: Schema) => {
         const tokenValue = (token: unknown, fallback: string) => {
           if (
             typeof token === "object" &&
@@ -74,27 +74,32 @@ export default defineConfig({
             : {};
 
         const mapTheme = (theme: "dark" | "light"): ShikiTheme => {
-          const color = tokenGroup(tokenGroup(tokens?.[theme]).color);
-          const foreground = tokenGroup(color.foreground);
-          const background = tokenGroup(color.background);
-          const border = tokenGroup(color.border);
+          const color = tokenGroup(tokenGroup(spec.tokens).color);
+          const ink = tokenGroup(color.ink);
+          const surface = tokenGroup(color.surface);
+          const accent = tokenGroup(color.accent);
+          const muted = tokenGroup(color.muted);
 
-          const base = tokenValue(foreground?.base, "#000000");
-          const body = tokenValue(foreground?.body, base);
-          const caption = tokenValue(foreground?.caption, body);
-          const eyebrow = tokenValue(foreground?.eyebrow, caption);
-          const link = tokenValue(foreground?.link, body);
-          const brand = tokenValue(foreground?.brand, link);
-          const danger = tokenValue(foreground?.danger, brand);
-          const warning = tokenValue(foreground?.warning, brand);
-          const success = tokenValue(foreground?.success, brand);
-          const info = tokenValue(foreground?.info, brand);
-          const discovery = tokenValue(foreground?.discovery, brand);
-          const required = tokenValue(foreground?.required, danger);
-          const page = tokenValue(background?.page, "#ffffff");
-          const subtle = tokenValue(background?.base, page);
-          const selection = tokenValue(background?.brand, subtle);
-          const borderColor = tokenValue(border?.base, eyebrow);
+          const base = tokenValue(
+            ink.emphasis,
+            theme === "dark" ? "#222222" : "#fafafa"
+          );
+          const body = tokenValue(ink.body, base);
+          const subtleInk = tokenValue(ink.subtle, body);
+          const link = tokenValue(color.link, body);
+          const brand = tokenValue(accent.brand, link);
+          const danger = tokenValue(accent.danger, brand);
+          const warning = tokenValue(accent.warning, brand);
+          const success = tokenValue(accent.success, brand);
+          const info = tokenValue(accent.info, brand);
+          const discovery = tokenValue(accent.discovery, brand);
+          const page = tokenValue(
+            surface.canvas,
+            theme === "dark" ? "#222222" : "#fafafa"
+          );
+          const sunken = tokenValue(surface.sunken, page);
+          const selection = tokenValue(muted.brand, sunken);
+          const hairline = tokenValue(color.hairline, subtleInk);
 
           return {
             name: `cyclone-${theme}`,
@@ -107,17 +112,17 @@ export default defineConfig({
               "editor.foreground": base,
               "editorCursor.foreground": link,
               "editor.selectionBackground": selection,
-              "editor.inactiveSelectionBackground": subtle,
-              "editorLineNumber.foreground": caption,
+              "editor.inactiveSelectionBackground": sunken,
+              "editorLineNumber.foreground": subtleInk,
               "editorLineNumber.activeForeground": body,
-              "editorIndentGuide.background1": borderColor,
-              "editorIndentGuide.activeBackground1": eyebrow,
-              "editorWhitespace.foreground": caption
+              "editorIndentGuide.background1": hairline,
+              "editorIndentGuide.activeBackground1": subtleInk,
+              "editorWhitespace.foreground": subtleInk
             },
             settings: [
               {
                 scope: ["comment", "punctuation.definition.comment"],
-                settings: { foreground: caption, fontStyle: "italic" }
+                settings: { foreground: subtleInk, fontStyle: "italic" }
               },
               {
                 scope: ["string", "constant.other.symbol"],
@@ -129,7 +134,7 @@ export default defineConfig({
               },
               {
                 scope: ["keyword", "storage", "storage.type"],
-                settings: { foreground: danger }
+                settings: { foreground: brand }
               },
               {
                 scope: ["entity.name.function", "support.function"],
@@ -145,7 +150,7 @@ export default defineConfig({
               },
               {
                 scope: ["entity.name.tag", "meta.tag"],
-                settings: { foreground: danger }
+                settings: { foreground: brand }
               },
               {
                 scope: ["entity.other.attribute-name", "support.constant"],
@@ -157,17 +162,19 @@ export default defineConfig({
               },
               {
                 scope: ["punctuation", "meta.brace"],
-                settings: { foreground: eyebrow }
+                settings: { foreground: subtleInk }
               },
               {
                 scope: ["invalid", "invalid.illegal"],
-                settings: { foreground: required }
+                settings: { foreground: danger }
               }
             ]
           };
         };
 
-        return [mapTheme("dark"), mapTheme("light")];
+        return spec.theme
+          ? mapTheme(spec.theme as "dark" | "light")
+          : [mapTheme("dark"), mapTheme("light")];
       }
     }),
     docgen({

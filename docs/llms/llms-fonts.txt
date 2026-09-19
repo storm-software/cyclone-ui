@@ -1,8 +1,3 @@
-# Cyclone UI (Light Monochromatic) Fonts
-
-Use only documented font families and roles when selecting typography.
-
-No documented fonts were found.
 # Cyclone UI (Light High Contrast) Fonts
 
 Use only documented font families and roles when selecting typography.
@@ -14,11 +9,6 @@ Use only documented font families and roles when selecting typography.
 
 No documented fonts were found.
 # Cyclone UI (Light) Fonts
-
-Use only documented font families and roles when selecting typography.
-
-No documented fonts were found.
-# Cyclone UI (Dark Monochromatic) Fonts
 
 Use only documented font families and roles when selecting typography.
 
