@@ -75,7 +75,7 @@ export const ValidationText = ValidationBodyText.styleable<{
         .filter(message => message.message)
         .map(message => (
           <XStack key={message.message} gap="$md" alignItems="center">
-            <ThemeableIcon color="$foreground">
+            <ThemeableIcon color="$accent">
               <Dot />
             </ThemeableIcon>
             <ValidationBodyText {...props} theme={theme}>

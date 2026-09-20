@@ -268,8 +268,8 @@ const TabsRovingIndicator = styled(YStack, {
         return {
           backgroundColor:
             config.props.variant === "underline"
-              ? "$foreground"
-              : "$backgroundElevated"
+              ? "$accent"
+              : "$surfaceElevated"
         };
       }
     },
@@ -314,7 +314,7 @@ const TabsRovingIndicator = styled(YStack, {
       floating: {
         borderRadius: "$button",
         borderWidth: 1,
-        borderColor: "$border",
+        borderColor: "$accent",
         alignItems: "center",
         justifyContent: "center"
       },
@@ -418,18 +418,18 @@ const TabsHeaderList = styled(YStack, {
     variant: {
       underline: {
         borderColor: "transparent",
-        borderBottomColor: "$backgroundLowest",
+        borderBottomColor: "$surfaceSunken",
         borderBottomWidth: "$lg",
         borderRadius: 0
       },
       floating: {
-        backgroundColor: "$backgroundLowest",
+        backgroundColor: "$surfaceSunken",
         borderRadius: "$container",
-        borderColor: "$border",
+        borderColor: "$accent",
         borderWidth: 1
       },
       tabbed: {
-        backgroundColor: "$backgroundPage",
+        backgroundColor: "$surfaceCanvas",
         borderWidth: 0,
         padding: 0
       }
@@ -537,11 +537,11 @@ const TabsHeaderItemHeading = styled(HeadingSmallText, {
 
     selected: {
       true: {
-        color: "$foregroundActive",
+        color: "$accentActive",
         fontWeight: "$bold"
       },
       false: {
-        color: "$foregroundInactive",
+        color: "$accentInactive",
         fontWeight: "$normal"
       }
     }
@@ -585,8 +585,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
       tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
         config.props.orientation === "horizontal"
           ? {
-              backgroundColor: "$backgroundPage",
-              borderColor: "$border",
+              backgroundColor: "$surfaceCanvas",
+              borderColor: "$accent",
               borderWidth: 1,
               borderTopLeftRadius: "$container",
               borderTopRightRadius: "$container",
@@ -596,8 +596,8 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
               zIndex: 2
             }
           : {
-              backgroundColor: "$backgroundPage",
-              borderColor: "$border",
+              backgroundColor: "$surfaceCanvas",
+              borderColor: "$accent",
               borderWidth: 1,
               borderTopLeftRadius: "$container",
               borderBottomLeftRadius: "$container",
@@ -617,19 +617,19 @@ const TabsHeaderItem = styled(TamaguiTabs.Tab, {
         if (!selected) {
           return {
             hoverStyle: {
-              backgroundColor: "$backgroundPageHover"
+              backgroundColor: "$surfaceCanvasHover"
             }
           };
         }
 
         return config.props.orientation === "horizontal"
           ? {
-              backgroundColor: "$backgroundElevated",
-              borderBottomColor: "$backgroundElevated"
+              backgroundColor: "$surfaceElevated",
+              borderBottomColor: "$surfaceElevated"
             }
           : {
-              backgroundColor: "$backgroundElevated",
-              borderRightColor: "$backgroundElevated"
+              backgroundColor: "$surfaceElevated",
+              borderRightColor: "$surfaceElevated"
             };
       }
     }
@@ -674,7 +674,7 @@ const TabsHeaderItemImpl = TabsHeaderItem.styleable(
           size={size}
           selected={currentTab === value}
           $group-hover={{
-            color: "$foregroundHover"
+            color: "$accentHover"
           }}>
           {children}
         </TabsHeaderItemHeading>
@@ -706,15 +706,15 @@ const TabsContentList = styled(View, {
       tabbed: (_val: string, config: VariantSpreadExtras<any>) =>
         config.props.orientation === "horizontal"
           ? {
-              backgroundColor: "$backgroundElevated",
-              borderColor: "$border",
+              backgroundColor: "$surfaceElevated",
+              borderColor: "$accent",
               borderWidth: 1,
               borderBottomLeftRadius: "$container",
               borderBottomRightRadius: "$container"
             }
           : {
-              backgroundColor: "$backgroundElevated",
-              borderColor: "$border",
+              backgroundColor: "$surfaceElevated",
+              borderColor: "$accent",
               borderWidth: 1,
               borderTopRightRadius: "$container",
               borderBottomRightRadius: "$container"

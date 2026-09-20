@@ -75,119 +75,119 @@ const LinkTextFrame = styled(SizableText, {
 
     variant: {
       base: {
-        color: "$foregroundLink",
-        textDecorationColor: "$foregroundLink",
+        color: "$link",
+        textDecorationColor: "$link",
 
         hoverStyle: {
-          color: "$foregroundLinkHover",
-          textDecorationColor: "$foregroundLinkHover"
+          color: "$linkHover",
+          textDecorationColor: "$linkHover"
         },
 
         pressStyle: {
-          color: "$foregroundLinkActive",
-          textDecorationColor: "$foregroundLinkActive"
+          color: "$linkActive",
+          textDecorationColor: "$linkActive"
         },
 
         focusStyle: {
-          color: "$foregroundLinkActive",
-          textDecorationColor: "$foregroundLinkActive"
+          color: "$linkActive",
+          textDecorationColor: "$linkActive"
         }
       },
       baseInverse: {
-        color: "$foreground",
-        textDecorationColor: "$foreground",
+        color: "$accent",
+        textDecorationColor: "$accent",
 
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundHover"
+          color: "$accentHover",
+          textDecorationColor: "$accentHover"
         },
 
         pressStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         },
 
         focusStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         }
       },
 
       mixed: {
-        color: "$foreground",
-        textDecorationColor: "$foregroundLink",
+        color: "$accent",
+        textDecorationColor: "$link",
 
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundLinkHover"
+          color: "$accentHover",
+          textDecorationColor: "$linkHover"
         },
 
         pressStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundLinkActive"
+          color: "$accentActive",
+          textDecorationColor: "$linkActive"
         },
 
         focusStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundLinkActive"
+          color: "$accentActive",
+          textDecorationColor: "$linkActive"
         }
       },
       mixedInverse: {
-        color: "$foregroundLink",
-        textDecorationColor: "$foreground",
+        color: "$link",
+        textDecorationColor: "$accent",
 
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundHover"
+          color: "$accentHover",
+          textDecorationColor: "$accentHover"
         },
 
         pressStyle: {
-          color: "$foregroundLinkActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$linkActive",
+          textDecorationColor: "$accentActive"
         },
 
         focusStyle: {
-          color: "$foregroundLinkActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$linkActive",
+          textDecorationColor: "$accentActive"
         }
       },
 
       themed: {
-        color: "$foreground",
-        textDecorationColor: "$foreground",
+        color: "$accent",
+        textDecorationColor: "$accent",
 
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundHover"
+          color: "$accentHover",
+          textDecorationColor: "$accentHover"
         },
 
         pressStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         },
 
         focusStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         }
       },
       themedInverse: {
-        color: "$foreground",
-        textDecorationColor: "$foreground",
+        color: "$accent",
+        textDecorationColor: "$accent",
 
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundHover"
+          color: "$accentHover",
+          textDecorationColor: "$accentHover"
         },
 
         pressStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         },
 
         focusStyle: {
-          color: "$foregroundActive",
-          textDecorationColor: "$foregroundActive"
+          color: "$accentActive",
+          textDecorationColor: "$accentActive"
         }
       }
     },
@@ -195,8 +195,8 @@ const LinkTextFrame = styled(SizableText, {
     inverse: {
       true: {
         hoverStyle: {
-          color: "$foregroundHover",
-          textDecorationColor: "$foregroundHover"
+          color: "$accentHover",
+          textDecorationColor: "$accentHover"
         }
       }
     },
@@ -204,10 +204,10 @@ const LinkTextFrame = styled(SizableText, {
     disabled: {
       true: {
         cursor: "default",
-        color: "$foregroundLinkDisabled",
+        color: "$linkInactive",
 
         hoverStyle: {
-          color: "$foregroundLinkDisabled"
+          color: "$linkInactive"
         }
       }
     }

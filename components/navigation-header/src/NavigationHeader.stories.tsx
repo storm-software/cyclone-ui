@@ -26,7 +26,7 @@ import { NavigationHeader } from "./NavigationHeader";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$backgroundSubtle"
+  backgroundColor: "$muted"
 });
 
 const StoryContent = styled(View, {
@@ -47,15 +47,15 @@ const StorySection = styled(View, {
   padding: "$7xl",
   justifyContent: "center",
   gap: "$xl",
-  backgroundColor: "$backgroundPage",
+  backgroundColor: "$surfaceCanvas",
   borderRadius: "$lg",
   borderWidth: 1,
-  borderColor: "$borderSubtle",
+  borderColor: "$hairline",
 
   variants: {
     light: {
       true: {
-        backgroundColor: "$foreground"
+        backgroundColor: "$accent"
       }
     }
   }
@@ -66,37 +66,37 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
     {children}
     <StoryContent>
       <StorySection id="hero">
-        <SizableText color="$foreground" fontSize="$10xl" fontWeight="$bold">
+        <SizableText color="$accent" fontSize="$10xl" fontWeight="$bold">
           Build what matters
         </SizableText>
-        <SizableText color="$foregroundBody" fontSize="$lg" maxWidth={640}>
+        <SizableText color="$inkBody" fontSize="$lg" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </SizableText>
       </StorySection>
       <StorySection id="research" light={true}>
-        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
           Research and discovery
         </SizableText>
-        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </SizableText>
       </StorySection>
       <StorySection id="products">
-        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
           Products for every team
         </SizableText>
-        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </SizableText>
       </StorySection>
       <StorySection id="company">
-        <SizableText color="$foreground" fontSize="$7xl" fontWeight="$bold">
+        <SizableText color="$accent" fontSize="$7xl" fontWeight="$bold">
           A long-term perspective
         </SizableText>
-        <SizableText color="$foregroundBody" fontSize="$md" maxWidth={640}>
+        <SizableText color="$inkBody" fontSize="$md" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </SizableText>
@@ -112,11 +112,11 @@ const StoryLogo = () => (
       height="$8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="$foreground"
+      backgroundColor="$accent"
       borderRadius="$full">
-      <Zap size={16} color="$background" fill="$background" />
+      <Zap size={16} color="$muted" fill="$muted" />
     </View>
-    <SizableText color="$foreground" fontWeight="$bold" fontSize="$md">
+    <SizableText color="$accent" fontWeight="$bold" fontSize="$md">
       Storm
     </SizableText>
   </View>

@@ -63,7 +63,7 @@ const Icon = ({
   pointing = "right",
   ...props
 }: ArrowProps) => {
-  const color = useCurrentColor((props.color || "$foregroundInverse") as any);
+  const color = useCurrentColor((props.color || "$onAccent") as any);
 
   const motionPosition = useMotionValue(1);
   const playback = animate(motionPosition, 24, {

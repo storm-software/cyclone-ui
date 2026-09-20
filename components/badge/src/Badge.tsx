@@ -42,7 +42,7 @@ const BadgeFrame = styled(View, {
   flexDirection: "row",
   context: BadgeContext,
   width: "fit-content",
-  backgroundColor: "$foreground",
+  backgroundColor: "$accent",
   boxShadow: "none",
   borderRadius: "$button",
   paddingHorizontal: "$3xl",
@@ -59,7 +59,7 @@ const BadgeFrame = styled(View, {
     outlined: {
       true: {
         backgroundColor: "transparent",
-        borderColor: "$border",
+        borderColor: "$accent",
         borderWidth: 2
       }
     },
@@ -83,8 +83,8 @@ const BadgeFrame = styled(View, {
         role: "button",
 
         hoverStyle: {
-          backgroundColor: "$backgroundHover",
-          borderColor: "$borderHover"
+          backgroundColor: "$mutedHover",
+          borderColor: "$accentHover"
         },
 
         focusVisibleStyle: {
@@ -102,20 +102,20 @@ const BadgeFrame = styled(View, {
 const BadgeText = styled(BodyText, {
   name: BADGE_NAME,
   context: BadgeContext,
-  color: "$foregroundInverse",
+  color: "$onAccent",
   variant: "lg",
 
   variants: {
     outlined: {
       true: {
-        color: "$foreground"
+        color: "$accent"
       }
     },
 
     pressable: {
       true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
         hoverStyle: {
-          color: props.outlined ? "$foregroundHover" : "$foregroundInverseHover"
+          color: props.outlined ? "$accentHover" : "$onAccentHover"
         }
       }),
       false: {}
@@ -189,21 +189,21 @@ const ButtonComp = styled(View, {
   role: "button",
 
   borderRadius: 1000_000_000,
-  backgroundColor: "$foreground",
+  backgroundColor: "$accent",
   justifyContent: "center",
   alignItems: "center",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHover",
-    borderColor: "$borderHover"
+    backgroundColor: "$mutedHover",
+    borderColor: "$accentHover"
   },
 
   pressStyle: {
-    backgroundColor: "$backgroundFloating"
+    backgroundColor: "$surfaceFloating"
   },
 
   focusStyle: {
-    backgroundColor: "$backgroundElevated"
+    backgroundColor: "$surfaceElevated"
   },
 
   variants: {

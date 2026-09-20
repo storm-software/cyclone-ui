@@ -112,9 +112,9 @@ const InputFieldControlTextBox = Input.TextBox.styleable(
           {clearable && formattedValue && (
             <Field.ThemeIcon position="end" onClick={handleClear}>
               <X
-                color={disabled ? "$borderDisabled" : "$border"}
+                color={disabled ? "$accentDisabled" : "$accent"}
                 $group-field-hover={{
-                  color: disabled ? "$borderDisabled" : "$borderHover"
+                  color: disabled ? "$accentDisabled" : "$accentHover"
                 }}
               />
             </Field.ThemeIcon>

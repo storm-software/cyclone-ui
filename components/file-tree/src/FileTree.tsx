@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { AnimatePresence } from "@tamagui/animate-presence";
 import type { GetProps } from "@tamagui/core";
 import { styled } from "@tamagui/core";
 import {
@@ -28,7 +29,6 @@ import { XStack, YStack } from "@tamagui/stacks";
 import { SizableText } from "@tamagui/text";
 import type { KeyboardEvent, ReactNode } from "react";
 import { useState } from "react";
-import { AnimatePresence } from "@tamagui/animate-presence";
 
 const FileTreeFrame = styled(YStack, {
   name: "FileTree",
@@ -37,9 +37,9 @@ const FileTreeFrame = styled(YStack, {
   gap: "$lg",
   padding: "$5xl",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   borderRadius: "$container",
-  backgroundColor: "$backgroundElevated"
+  backgroundColor: "$surfaceElevated"
 });
 
 const TreeNode = styled(XStack, {
@@ -50,12 +50,12 @@ const TreeNode = styled(XStack, {
   paddingHorizontal: "$lg",
   paddingVertical: "$xs",
   borderRadius: "$sm",
-  color: "$foregroundCaption",
+  color: "$inkSubtle",
 
-  hoverStyle: { backgroundColor: "$backgroundHover" },
+  hoverStyle: { backgroundColor: "$mutedHover" },
 
   focusVisibleStyle: {
-    outlineColor: "$borderActive",
+    outlineColor: "$accentActive",
     outlineWidth: 2,
     outlineStyle: "solid"
   }
@@ -63,7 +63,7 @@ const TreeNode = styled(XStack, {
 
 const TreeLabel = styled(SizableText, {
   name: "FileTreeLabel",
-  color: "$foreground",
+  color: "$accent",
   fontFamily: "$code",
   size: "$true"
 });
@@ -74,20 +74,18 @@ const TreeChildren = styled(YStack, {
   marginLeft: "$2xl",
   paddingLeft: "$2xl",
   borderLeftWidth: 1,
-  borderLeftColor: "$border",
+  borderLeftColor: "$accent",
   gap: "$lg"
 });
 
-const defaultFileIcon = (
-  <FileIcon aria-hidden color="$foregroundCaption" size="$2xl" />
-);
+const defaultFileIcon = <FileIcon aria-hidden color="$inkSubtle" size="$2xl" />;
 
 const defaultFolderIcon = (
-  <FolderIcon aria-hidden color="$foregroundCaption" size="$2xl" />
+  <FolderIcon aria-hidden color="$inkSubtle" size="$2xl" />
 );
 
 const defaultFolderOpenIcon = (
-  <FolderOpenIcon aria-hidden color="$foreground" size="$2xl" />
+  <FolderOpenIcon aria-hidden color="$accent" size="$2xl" />
 );
 
 export type FileTreeProps = GetProps<typeof FileTreeFrame>;
@@ -153,7 +151,7 @@ export const Folder = ({
         <ChevronRight
           transition="400ms"
           aria-hidden
-          color={open ? "$foreground" : "$foregroundCaption"}
+          color={open ? "$accent" : "$inkSubtle"}
           size="$lg"
           rotate={open ? "90deg" : "0deg"}
         />

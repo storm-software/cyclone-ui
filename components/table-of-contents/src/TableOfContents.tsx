@@ -117,7 +117,7 @@ const TableOfContentsHeading = styled(XStack, {
 
 const TableOfContentsHeadingText = styled(BodyText, {
   render: "span",
-  color: "$foregroundCaption",
+  color: "$inkSubtle",
   fontSize: "$lg",
   fontWeight: "$md"
 });
@@ -175,18 +175,18 @@ const TableOfContentsLink = TableOfContentsLinkFrame.styleable<{
 const TableOfContentsLinkText = styled(BodyText, {
   render: "span",
   transition: "color 160ms ease-out",
-  color: "$foregroundInactive",
+  color: "$accentInactive",
   fontSize: "$lg",
   fontWeight: "$normal",
 
   "$group-tableOfContentsItem-hover": {
-    color: "$foregroundHover"
+    color: "$accentHover"
   },
 
   variants: {
     active: {
       true: {
-        color: "$foreground"
+        color: "$accent"
       }
     },
     reducedMotion: {
@@ -391,7 +391,7 @@ function TableOfContentsRail({
         left={RAIL_LEFT}
         width={2}
         height={height}
-        backgroundColor="$borderSubtle"
+        backgroundColor="$hairline"
       />
     );
   }
@@ -564,7 +564,7 @@ export const TableOfContents =
           <TableOfContentsHeading>
             <List
               aria-hidden={true}
-              color="$foregroundCaption"
+              color="$inkSubtle"
               size="$5xl"
               strokeWidth={2.2}
             />

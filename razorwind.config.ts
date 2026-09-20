@@ -189,73 +189,69 @@ export default defineConfig({
     storybook({
       outputPath: "packages/themes/src/storybook",
       mapTheme: (tokens: any) => {
-        return {
-          dark: {
-            base: "dark",
-            colorPrimary: tokens?.dark?.color?.foreground?.base?.$value,
-            colorSecondary: tokens?.dark?.color?.background?.base?.$value,
-
-            textColor: tokens?.dark?.color?.foreground?.base?.$value,
-            textInverseColor: tokens?.dark?.color?.foreground?.inverse?.$value,
-
-            appBg: tokens?.dark?.color?.background?.page?.$value,
-            appContentBg: tokens?.dark?.color?.background?.page?.$value,
-            appPreviewBg: tokens?.dark?.color?.background?.page?.$value,
-            appBorderColor: tokens?.dark?.color?.border?.base?.$value,
-            appBorderRadius: tokens?.dark?.radius?.md?.$value,
-
-            barTextColor: tokens?.dark?.color?.foreground?.base?.$value,
-            barSelectedColor: tokens?.dark?.color?.foreground?.brand?.$value,
-            barBg: tokens?.dark?.color?.background?.floating?.$value,
-            barHoverColor: tokens?.dark?.color?.background?.base?.$value,
-
-            buttonBg: tokens?.dark?.color?.background?.elevated?.$value,
-            buttonBorder: tokens?.dark?.color?.border?.base?.$value,
-
-            inputBg: tokens?.dark?.color?.background?.elevated?.$value,
-            inputBorder: tokens?.dark?.color?.border?.base?.$value,
-            inputTextColor: tokens?.dark?.color?.foreground?.base?.$value,
-            inputBorderRadius: tokens?.dark?.radius?.md?.$value,
-
-            booleanBg: tokens?.dark?.color?.background?.elevated?.$value,
-            booleanSelectedBg: tokens?.dark?.color?.background?.base?.$value,
-
-            brandImage:
-              "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg"
-          },
-          light: {
-            base: "light",
-            colorPrimary: tokens?.light?.color?.foreground?.base?.$value,
-            colorSecondary: tokens?.light?.color?.background?.base?.$value,
-
-            textColor: tokens?.light?.color?.foreground?.base?.$value,
-            textInverseColor: tokens?.light?.color?.foreground?.inverse?.$value,
-
-            appBg: tokens?.light?.color?.background?.page?.$value,
-            appContentBg: tokens?.light?.color?.background?.page?.$value,
-            appPreviewBg: tokens?.light?.color?.background?.page?.$value,
-            appBorderColor: tokens?.light?.color?.border?.base?.$value,
-            appBorderRadius: tokens?.light?.radius?.md?.$value,
-
-            barTextColor: tokens?.light?.color?.foreground?.base?.$value,
-            barSelectedColor: tokens?.light?.color?.foreground?.brand?.$value,
-            barBg: tokens?.light?.color?.background?.floating?.$value,
-            barHoverColor: tokens?.light?.color?.background?.base?.$value,
-
-            buttonBg: tokens?.light?.color?.background?.elevated?.$value,
-            buttonBorder: tokens?.light?.color?.border?.base?.$value,
-
-            inputBg: tokens?.light?.color?.background?.elevated?.$value,
-            inputBorder: tokens?.light?.color?.border?.base?.$value,
-            inputTextColor: tokens?.light?.color?.foreground?.base?.$value,
-            inputBorderRadius: tokens?.light?.radius?.md?.$value,
-
-            booleanBg: tokens?.light?.color?.background?.elevated?.$value,
-            booleanSelectedBg: tokens?.light?.color?.background?.base?.$value,
-
-            brandImage:
-              "https://public.storm-cdn.com/cyclone-ui/assets/light-logo.svg"
+        const tokenValue = (token: unknown) => {
+          if (
+            typeof token === "object" &&
+            token !== null &&
+            "$value" in token
+          ) {
+            return token.$value;
           }
+
+          return undefined;
+        };
+
+        const mapTheme = (theme: "dark" | "light", brandImage: string) => {
+          const color = tokens?.[theme]?.color ?? {};
+          const ink = color.ink ?? {};
+          const surface = color.surface ?? {};
+          const accent = color.accent ?? {};
+          const muted = color.muted ?? {};
+          const onAccent = color["on-accent"] ?? {};
+
+          return {
+            base: theme,
+            colorPrimary: tokenValue(accent.brand),
+            colorSecondary: tokenValue(muted.base),
+
+            textColor: tokenValue(ink.emphasis),
+            textInverseColor: tokenValue(onAccent.base),
+
+            appBg: tokenValue(surface.canvas),
+            appContentBg: tokenValue(surface.elevated),
+            appPreviewBg: tokenValue(surface.canvas),
+            appBorderColor: tokenValue(color.hairline),
+            appBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
+
+            barTextColor: tokenValue(ink.body),
+            barSelectedColor: tokenValue(accent.brand),
+            barBg: tokenValue(surface.floating),
+            barHoverColor: tokenValue(muted.base),
+
+            buttonBg: tokenValue(surface.elevated),
+            buttonBorder: tokenValue(color.hairline),
+
+            inputBg: tokenValue(surface.elevated),
+            inputBorder: tokenValue(color.hairline),
+            inputTextColor: tokenValue(ink.body),
+            inputBorderRadius: tokenValue(tokens?.[theme]?.radius?.md),
+
+            booleanBg: tokenValue(surface.elevated),
+            booleanSelectedBg: tokenValue(muted.base),
+
+            brandImage
+          };
+        };
+
+        return {
+          dark: mapTheme(
+            "dark",
+            "https://public.storm-cdn.com/cyclone-ui/assets/dark-logo.svg"
+          ),
+          light: mapTheme(
+            "light",
+            "https://public.storm-cdn.com/cyclone-ui/assets/light-logo.svg"
+          )
         };
       }
     })

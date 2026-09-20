@@ -268,16 +268,16 @@ const SearchInputFieldControlTextBox =
                       paddingHorizontal="$2xl"
                       borderWidth={1}
                       borderColor={
-                        index === activeIndex ? "$border" : "transparent"
+                        index === activeIndex ? "$accent" : "transparent"
                       }
                       borderRadius="$button"
                       backgroundColor={
                         index === activeIndex
-                          ? "$backgroundFloatingActive"
+                          ? "$surfaceFloatingActive"
                           : "transparent"
                       }
                       hoverStyle={{
-                        backgroundColor: "$backgroundFloatingHover"
+                        backgroundColor: "$surfaceFloatingHover"
                       }}
                       alignItems="center"
                       justifyContent="center"

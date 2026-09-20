@@ -32,7 +32,7 @@ type BaseThemeableGradientProps = {
 
 export const ThemeableGradient = themeable(
   ({
-    color = "$foreground",
+    color = "$accent",
     variant = ColorScientificPalette.SURROUNDING,
     ...props
   }: BaseThemeableGradientProps) => {

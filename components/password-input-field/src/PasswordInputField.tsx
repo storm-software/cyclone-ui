@@ -81,11 +81,11 @@ const PasswordStrengthSegment = styled(View, {
   height: "$sm",
   flex: 1,
   borderRadius: 100_000,
-  backgroundColor: "$backgroundElevated"
+  backgroundColor: "$surfaceElevated"
 });
 
 const PasswordStrengthLabel = styled(BodyText, {
-  color: "$foregroundSecondary",
+  color: "$inkBody",
   textAlign: "right",
   marginRight: "$md"
 });
@@ -115,7 +115,7 @@ const PasswordInputFieldStrength = PasswordStrengthFrame.styleable(
             return (
               <Theme key={index} name={active ? activeTheme : "base"}>
                 <PasswordStrengthSegment
-                  backgroundColor={active ? "$border" : "$backgroundElevated"}
+                  backgroundColor={active ? "$accent" : "$surfaceElevated"}
                 />
               </Theme>
             );

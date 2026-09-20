@@ -29,10 +29,10 @@ const CheckboxGroupFrame = styled(View, {
   transition: "200ms",
   justifyContent: "space-between",
   alignContent: "center",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   boxShadow: "none",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   outlineStyle: "none",
   tabIndex: 0,
 
@@ -41,17 +41,17 @@ const CheckboxGroupFrame = styled(View, {
   borderRadius: "$control",
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$accentHover"
   },
 
   focusStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   variants: {
@@ -83,7 +83,7 @@ const CheckboxGroupFrame = styled(View, {
 
     focused: {
       true: {
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       }
     },
 
@@ -91,18 +91,18 @@ const CheckboxGroupFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -158,14 +158,14 @@ const BaseCheckbox = styled(TamaguiCheckbox, {
 const CheckboxIcon = styled(Check, {
   name: "CheckboxIndicator",
 
-  color: "$foreground",
+  color: "$accent",
   strokeWidth: 3
 });
 
 const MinusIcon = styled(Minus, {
   name: "CheckboxIndicator",
 
-  color: "$foreground",
+  color: "$accent",
   width: "92%",
   height: "100%",
   strokeWidth: 6
@@ -191,7 +191,7 @@ export const Checkbox = BaseCheckbox.styleable<{
         disabled={disabled}
         size={size}
         $group-field-hover={{
-          borderColor: "$borderHover"
+          borderColor: "$accentHover"
         }}>
         <BaseCheckbox
           ref={forwardedRef}
@@ -221,7 +221,7 @@ export const Checkbox = BaseCheckbox.styleable<{
                   y: -10,
                   opacity: 0.5
                 }}>
-                <MinusIcon color="$foreground" />
+                <MinusIcon color="$accent" />
               </View>
             ) : (
               <CheckboxIcon />

@@ -29,7 +29,7 @@ import { Footer } from "./Footer";
 
 const StoryCanvas = styled(View, {
   minHeight: "100vh",
-  backgroundColor: "$backgroundSubtle"
+  backgroundColor: "$muted"
 });
 
 const StoryContent = styled(View, {
@@ -50,15 +50,15 @@ const StorySection = styled(View, {
   padding: "$7xl",
   justifyContent: "center",
   gap: "$xl",
-  backgroundColor: "$backgroundPage",
+  backgroundColor: "$surfaceCanvas",
   borderRadius: "$lg",
   borderWidth: 1,
-  borderColor: "$borderSubtle",
+  borderColor: "$hairline",
 
   variants: {
     light: {
       true: {
-        backgroundColor: "$foreground"
+        backgroundColor: "$accent"
       }
     }
   }
@@ -68,37 +68,37 @@ const StoryPage = ({ children }: { children: ReactNode }) => (
   <StoryCanvas>
     <StoryContent>
       <StorySection>
-        <Text color="$foreground" fontFamily="$display-lg">
+        <Text color="$accent" fontFamily="$display-lg">
           Build what matters
         </Text>
-        <BodyText color="$foregroundBody" maxWidth={640}>
+        <BodyText color="$inkBody" maxWidth={640}>
           Explore ideas, tools, and practical guidance for creating useful
           products with a thoughtful approach.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$foreground">
+        <HeadingHeroText color="$accent">
           Research and discovery
         </HeadingHeroText>
-        <BodyText color="$foregroundBody" maxWidth={640}>
+        <BodyText color="$inkBody" maxWidth={640}>
           Learn from new perspectives and turn early questions into clear
           directions through careful research and experimentation.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$foreground">
+        <HeadingHeroText color="$accent">
           Products for every team
         </HeadingHeroText>
-        <BodyText color="$foregroundBody" maxWidth={640}>
+        <BodyText color="$inkBody" maxWidth={640}>
           Flexible tools help teams move from a first sketch to a finished
           experience while keeping the important details in view.
         </BodyText>
       </StorySection>
       <StorySection>
-        <HeadingHeroText color="$foreground">
+        <HeadingHeroText color="$accent">
           A long-term perspective
         </HeadingHeroText>
-        <BodyText color="$foregroundBody" maxWidth={640}>
+        <BodyText color="$inkBody" maxWidth={640}>
           We share what we learn, listen to the people who use our work, and
           keep improving the systems that support them.
         </BodyText>
@@ -142,16 +142,11 @@ const StoryBrand = () => (
       height="$8xl"
       alignItems="center"
       justifyContent="center"
-      backgroundColor="$background"
+      backgroundColor="$muted"
       borderRadius="$full">
-      <Zap
-        aria-hidden={true}
-        size={16}
-        color="$foreground"
-        fill="$foreground"
-      />
+      <Zap aria-hidden={true} size={16} color="$accent" fill="$accent" />
     </View>
-    <HeadingSmallText color="$foreground" fontSize="$md">
+    <HeadingSmallText color="$accent" fontSize="$md">
       Cyclone UI
     </HeadingSmallText>
   </View>

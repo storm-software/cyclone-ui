@@ -251,11 +251,11 @@ const CountryListItem = memo(
                 render="span"
                 flex={1}
                 minWidth={0}
-                color="$foregroundInactive"
+                color="$accentInactive"
                 fontSize="$md"
                 fontWeight="$light"
-                $group-button-hover={{ color: "$foregroundHover" }}
-                $group-button-focus={{ color: "$foregroundHover" }}>
+                $group-button-hover={{ color: "$accentHover" }}
+                $group-button-focus={{ color: "$accentHover" }}>
                 {country.name}
               </BodyText>
             )}
@@ -265,11 +265,11 @@ const CountryListItem = memo(
               width="$16xl"
               marginLeft="auto"
               textAlign="left"
-              color="$foregroundInactive"
+              color="$accentInactive"
               fontSize="$md"
               fontWeight="$light"
-              $group-button-hover={{ color: "$foregroundHover" }}
-              $group-button-focus={{ color: "$foregroundHover" }}>
+              $group-button-hover={{ color: "$accentHover" }}
+              $group-button-focus={{ color: "$accentHover" }}>
               {`${country.code}  +${country.callingCode}`}
             </BodyText>
           </View>
@@ -281,7 +281,7 @@ const CountryListItem = memo(
           left="$2xl"
           right="$2xl"
           borderBottomWidth={1}
-          borderBottomColor="$borderSubtle"
+          borderBottomColor="$hairline"
           pointerEvents="none"
         />
       </View>

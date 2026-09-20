@@ -57,63 +57,63 @@ const ContainerFrame = styled(View, {
   variants: {
     variant: {
       primary: {
-        backgroundColor: "$foreground",
+        backgroundColor: "$accent",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       secondary: {
-        backgroundColor: "$background",
+        backgroundColor: "$muted",
         borderWidth: 1,
-        borderColor: "$borderSubtle"
+        borderColor: "$hairline"
       },
 
       tertiary: {
-        backgroundColor: "$backgroundElevated",
+        backgroundColor: "$surfaceElevated",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       lowest: {
-        backgroundColor: "$backgroundLowest",
+        backgroundColor: "$surfaceSunken",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       page: {
-        backgroundColor: "$backgroundPage",
+        backgroundColor: "$surfaceCanvas",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       elevated: {
-        backgroundColor: "$backgroundElevated",
+        backgroundColor: "$surfaceElevated",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       floating: {
-        backgroundColor: "$backgroundFloating",
+        backgroundColor: "$surfaceFloating",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       highest: {
-        backgroundColor: "$backgroundHighest",
+        backgroundColor: "$surfaceOverlay",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       outlined: {
         backgroundColor: "transparent",
         borderWidth: 3,
-        borderColor: "$border"
+        borderColor: "$accent"
       },
 
       glass: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderColor: "$border"
+        borderColor: "$accent"
       }
     },
 
@@ -178,7 +178,7 @@ const ContainerGlassBackground = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(35px)",
   filter: "blur(35px)",
-  colors: ["$backgroundElevated", "$foreground"],
+  colors: ["$surfaceElevated", "$accent"],
   start: { x: 0.1, y: 0.5 },
   end: { x: 0.9, y: 0.5 }
 });

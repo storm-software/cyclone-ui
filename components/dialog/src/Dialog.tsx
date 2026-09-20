@@ -55,7 +55,7 @@ const DialogHeading = styled(HeadingMediumText, {
   name: "DialogHeading",
   context: DialogContext,
 
-  color: "$foreground"
+  color: "$accent"
 });
 
 const DialogHeadingImpl = DialogHeading.styleable(
@@ -76,7 +76,7 @@ const DialogHeadingImpl = DialogHeading.styleable(
 const DialogBody = styled(BodyText, {
   name: "DialogBody",
 
-  color: "$foregroundBody"
+  color: "$inkBody"
 });
 
 const DialogBodyImpl = DialogBody.styleable(
@@ -146,7 +146,7 @@ const DialogOverlayFrame = styled(LinearGradient, {
   opacity: 0.6,
   backdropFilter: "blur(2px)",
   filter: "blur(2px)",
-  colors: ["$foreground", "transparent"],
+  colors: ["$accent", "transparent"],
   locations: [0.0, 1.0],
   start: [0, 0],
   end: [1, 1],

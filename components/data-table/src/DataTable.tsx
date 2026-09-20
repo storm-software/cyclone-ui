@@ -542,7 +542,7 @@ export function DataTable<TData extends RowData>({
                             borderRightColor={
                               header.column.getIsResizing() ||
                               hoveredResizer === header.id
-                                ? "$borderActive"
+                                ? "$accentActive"
                                 : "transparent"
                             }
                           />
@@ -561,7 +561,7 @@ export function DataTable<TData extends RowData>({
                   key={row.id}
                   aria-selected={row.getIsSelected()}
                   backgroundColor={
-                    row.getIsSelected() ? "$backgroundActive" : undefined
+                    row.getIsSelected() ? "$mutedActive" : undefined
                   }>
                   {row.getVisibleCells().map(cell => (
                     <Table.Cell
@@ -649,8 +649,8 @@ export const DataTableCell = <TData extends RowData, TValue = any>(
   return (
     <BodyText
       transition="200ms"
-      color="$foreground"
-      $group-row-hover={{ color: "$foregroundHover" }}>
+      color="$accent"
+      $group-row-hover={{ color: "$accentHover" }}>
       {value}
     </BodyText>
   );
@@ -891,18 +891,18 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
       <XStack gap="$xl" onPress={handleSorting} flexShrink={0} cursor="pointer">
         <HeadingSmallText
           transition="200ms"
-          color="$foreground"
+          color="$accent"
           size="$6xl"
-          $group-header-hover={{ color: "$foregroundHover" }}>
+          $group-header-hover={{ color: "$accentHover" }}>
           {titleCase(id)}
         </HeadingSmallText>
         {isSorted && !desc && (
           <XStack gap="$xxs" alignItems="center">
-            <ArrowDownAZ size="$4xl" color="$foreground" />
+            <ArrowDownAZ size="$4xl" color="$accent" />
             <HeadingSmallText
               transition="200ms"
               fontWeight="$semibold"
-              color="$foreground"
+              color="$accent"
               size="$xs">
               {sortIndex + 1}
             </HeadingSmallText>
@@ -910,11 +910,11 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
         )}
         {isSorted && desc && (
           <XStack gap="$xxs" alignItems="center">
-            <ArrowUpZA size="$4xl" color="$foreground" />
+            <ArrowUpZA size="$4xl" color="$accent" />
             <HeadingSmallText
               transition="200ms"
               fontWeight="$semibold"
-              color="$foreground"
+              color="$accent"
               size="$xs">
               {sortIndex + 1}
             </HeadingSmallText>
@@ -937,7 +937,7 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
                 circular={true}
                 noPadding={true}
                 bordered={false}
-                color="$foreground"
+                color="$accent"
                 padding="$xs">
                 <Button.Icon>
                   <Filter size="$4xl" />

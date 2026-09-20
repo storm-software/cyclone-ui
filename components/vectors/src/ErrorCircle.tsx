@@ -29,7 +29,7 @@ export type ErrorCircleProps = IconProps & {
 };
 
 const Icon = ({ isComplete = true, size = 24, ...props }: ErrorCircleProps) => {
-  const color = useCurrentColor((props.color || "$foreground") as any);
+  const color = useCurrentColor((props.color || "$accent") as any);
 
   const diameter = 24;
   const strokeWidth = 2;

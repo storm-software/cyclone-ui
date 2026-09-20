@@ -75,8 +75,8 @@ export const AlternatePattern: Story = {
 
 export const ThemeTokens: Story = {
   args: {
-    topColor: "$backgroundPage",
-    bottomColor: "$backgroundElevated"
+    topColor: "$surfaceCanvas",
+    bottomColor: "$surfaceElevated"
   }
 };
 

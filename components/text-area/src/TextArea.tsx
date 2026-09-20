@@ -34,29 +34,29 @@ const TextAreaFrame = styled(InputValue, {
   height: "auto",
   minHeight: "$20xl",
   paddingVertical: "$xl",
-  backgroundColor: "$backgroundElevated",
-  color: "$foreground",
+  backgroundColor: "$surfaceElevated",
+  color: "$accent",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   borderRadius: "$control",
   boxShadow: "none",
   outlineWidth: 0,
   outlineColor: "transparent",
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$accentHover"
   },
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   variants: {
     focused: {
       true: {
         boxShadow: "$ringOffset",
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       }
     },
 
@@ -68,16 +68,16 @@ const TextAreaFrame = styled(InputValue, {
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$border",
+        borderColor: "$accent",
         borderRadius: 0,
         boxShadow: "none",
 
         hoverStyle: {
-          borderColor: "$borderHover"
+          borderColor: "$accentHover"
         },
 
         focusVisibleStyle: {
-          borderColor: "$border",
+          borderColor: "$accent",
           boxShadow: "none"
         }
       }
@@ -85,14 +85,14 @@ const TextAreaFrame = styled(InputValue, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -122,7 +122,7 @@ export const TextArea = TextAreaFrame.styleable(
       render: _render,
       focused: focusedProp,
       disabled = false,
-      placeholderTextColor = "$foregroundInverseDisabled",
+      placeholderTextColor = "$onAccentDisabled",
       onBlur,
       onFocus,
       variant = "default",
@@ -158,7 +158,7 @@ export const TextArea = TextAreaFrame.styleable(
         variant={variant}
         disabled={disabled}
         $group-field-hover={{
-          borderColor: disabled ? "$borderDisabled" : "$borderHover"
+          borderColor: disabled ? "$accentDisabled" : "$accentHover"
         }}
         onFocus={handleFocus}
         onBlur={handleBlur}

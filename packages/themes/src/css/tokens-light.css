@@ -214,41 +214,41 @@
   --color-muted-brand-active: #8eacdf; /** Muted brand accent background for low-emphasis states. (active, 11% darker) */
   --color-muted-brand-inactive: #e0ffff; /** Muted brand accent background for low-emphasis states. (inactive, 20% brighter) */
   --color-muted-brand-disabled: #b1caf4; /** Muted brand accent background for low-emphasis states. (disabled, 80% saturation) */
-  --color-muted-danger: #d56479; /** Generated danger muted background for the light theme */
-  --color-muted-negative: #d56479; /** Generated negative muted background for the light theme */
-  --color-muted-warning: #b08c52; /** Generated warning muted background for the light theme */
-  --color-muted-success: #5ea48a; /** Generated success muted background for the light theme */
-  --color-muted-positive: #5ea48a; /** Generated positive muted background for the light theme */
-  --color-muted-info: #5790f3; /** Generated info muted background for the light theme */
-  --color-muted-discovery: #8f7bd3; /** Generated discovery muted background for the light theme */
-  --color-muted-danger-hover: #a43750; /** Generated danger muted background for the light theme (hover, 23% darker) */
-  --color-muted-danger-active: #bc4e64; /** Generated danger muted background for the light theme (active, 11% darker) */
-  --color-muted-danger-inactive: #ff8ca0; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-danger-disabled: #c96e7d; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-negative-hover: #a43750; /** Generated negative muted background for the light theme (hover, 23% darker) */
-  --color-muted-negative-active: #bc4e64; /** Generated negative muted background for the light theme (active, 11% darker) */
-  --color-muted-negative-inactive: #ff8ca0; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-negative-disabled: #c96e7d; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-warning-hover: #826025; /** Generated warning muted background for the light theme (hover, 23% darker) */
-  --color-muted-warning-active: #99763c; /** Generated warning muted background for the light theme (active, 11% darker) */
-  --color-muted-warning-inactive: #dbb57a; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-warning-disabled: #aa8e61; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-success-hover: #2f775e; /** Generated success muted background for the light theme (hover, 23% darker) */
-  --color-muted-success-active: #478d74; /** Generated success muted background for the light theme (active, 11% darker) */
-  --color-muted-success-inactive: #88ceb3; /** Generated success muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-success-disabled: #6ba18c; /** Generated success muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-positive-hover: #2f775e; /** Generated positive muted background for the light theme (hover, 23% darker) */
-  --color-muted-positive-active: #478d74; /** Generated positive muted background for the light theme (active, 11% darker) */
-  --color-muted-positive-inactive: #88ceb3; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-positive-disabled: #6ba18c; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-info-hover: #2c62c0; /** Generated info muted background for the light theme (hover, 23% darker) */
-  --color-muted-info-active: #4179da; /** Generated info muted background for the light theme (active, 11% darker) */
-  --color-muted-info-inactive: #7fbbff; /** Generated info muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-info-disabled: #6492e0; /** Generated info muted background for the light theme (disabled, 80% saturation) */
-  --color-muted-discovery-hover: #6650a4; /** Generated discovery muted background for the light theme (hover, 23% darker) */
-  --color-muted-discovery-active: #7a65bb; /** Generated discovery muted background for the light theme (active, 11% darker) */
-  --color-muted-discovery-inactive: #b6a3fe; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
-  --color-muted-discovery-disabled: #8e7fc5; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-danger: #e37085; /** Generated danger muted background for the light theme */
+  --color-muted-negative: #e37085; /** Generated negative muted background for the light theme */
+  --color-muted-warning: #bd985e; /** Generated warning muted background for the light theme */
+  --color-muted-success: #6ab196; /** Generated success muted background for the light theme */
+  --color-muted-positive: #6ab196; /** Generated positive muted background for the light theme */
+  --color-muted-info: #659dff; /** Generated info muted background for the light theme */
+  --color-muted-discovery: #9e8ae4; /** Generated discovery muted background for the light theme */
+  --color-muted-danger-hover: #ae4158; /** Generated danger muted background for the light theme (hover, 23% darker) */
+  --color-muted-danger-active: #c8586e; /** Generated danger muted background for the light theme (active, 11% darker) */
+  --color-muted-danger-inactive: #ff9baf; /** Generated danger muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-danger-disabled: #d67a89; /** Generated danger muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-negative-hover: #ae4158; /** Generated negative muted background for the light theme (hover, 23% darker) */
+  --color-muted-negative-active: #c8586e; /** Generated negative muted background for the light theme (active, 11% darker) */
+  --color-muted-negative-inactive: #ff9baf; /** Generated negative muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-negative-disabled: #d67a89; /** Generated negative muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-warning-hover: #8c692e; /** Generated warning muted background for the light theme (hover, 23% darker) */
+  --color-muted-warning-active: #a48046; /** Generated warning muted background for the light theme (active, 11% darker) */
+  --color-muted-warning-inactive: #ebc489; /** Generated warning muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-warning-disabled: #b79a6d; /** Generated warning muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-success-hover: #388067; /** Generated success muted background for the light theme (hover, 23% darker) */
+  --color-muted-success-active: #51987e; /** Generated success muted background for the light theme (active, 11% darker) */
+  --color-muted-success-inactive: #96dfc2; /** Generated success muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-success-disabled: #77ae98; /** Generated success muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-positive-hover: #388067; /** Generated positive muted background for the light theme (hover, 23% darker) */
+  --color-muted-positive-active: #51987e; /** Generated positive muted background for the light theme (active, 11% darker) */
+  --color-muted-positive-inactive: #96dfc2; /** Generated positive muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-positive-disabled: #77ae98; /** Generated positive muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-info-hover: #376cc9; /** Generated info muted background for the light theme (hover, 23% darker) */
+  --color-muted-info-active: #4e84e4; /** Generated info muted background for the light theme (active, 11% darker) */
+  --color-muted-info-inactive: #90cbff; /** Generated info muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-info-disabled: #729fec; /** Generated info muted background for the light theme (disabled, 80% saturation) */
+  --color-muted-discovery-hover: #715bb1; /** Generated discovery muted background for the light theme (hover, 23% darker) */
+  --color-muted-discovery-active: #8772ca; /** Generated discovery muted background for the light theme (active, 11% darker) */
+  --color-muted-discovery-inactive: #c9b5ff; /** Generated discovery muted background for the light theme (inactive, 20% brighter) */
+  --color-muted-discovery-disabled: #9d8ed6; /** Generated discovery muted background for the light theme (disabled, 80% saturation) */
   --color-overlay-background: #ffffff; /** Surface color for floating overlays. */
   --color-overlay-border: #bebebe; /** Border color that defines floating overlays. */
   --color-overlay-backdrop: rgba(26, 28, 31, 0.4); /** Backdrop color that separates overlays from page content. */
@@ -286,13 +286,13 @@
   --color-hairline-inactive: #f2f2f2; /** Subtle color for hairline borders and separators. (inactive, 20% brighter) */
   --color-on-muted-base: #151518; /** Generated base foreground on muted backgrounds */
   --color-on-muted-brand: #2055b3; /** Generated brand foreground on muted backgrounds */
-  --color-on-muted-danger: #49000b; /** Generated danger foreground on muted backgrounds */
-  --color-on-muted-negative: #49000b; /** Generated negative foreground on muted backgrounds */
-  --color-on-muted-warning: #432300; /** Generated warning foreground on muted backgrounds */
-  --color-on-muted-success: #003622; /** Generated success foreground on muted backgrounds */
-  --color-on-muted-positive: #003622; /** Generated positive foreground on muted backgrounds */
-  --color-on-muted-info: #001d79; /** Generated info foreground on muted backgrounds */
-  --color-on-muted-discovery: #2a095b; /** Generated discovery foreground on muted backgrounds */
+  --color-on-muted-danger: #2f000c; /** Generated danger foreground on muted backgrounds */
+  --color-on-muted-negative: #2f000c; /** Generated negative foreground on muted backgrounds */
+  --color-on-muted-warning: #2d1c00; /** Generated warning foreground on muted backgrounds */
+  --color-on-muted-success: #002b1e; /** Generated success foreground on muted backgrounds */
+  --color-on-muted-positive: #002b1e; /** Generated positive foreground on muted backgrounds */
+  --color-on-muted-info: #001c54; /** Generated info foreground on muted backgrounds */
+  --color-on-muted-discovery: #20004c; /** Generated discovery foreground on muted backgrounds */
   --color-on-muted-base-hover: #232326; /** Generated base foreground on muted backgrounds (hover, 30% brighter) */
   --color-on-muted-base-active: #1c1c1f; /** Generated base foreground on muted backgrounds (active, 15% brighter) */
   --color-on-muted-base-inactive: #0c0c0f; /** Generated base foreground on muted backgrounds (inactive, 20% darker) */
@@ -301,34 +301,34 @@
   --color-on-muted-brand-active: #0f45a2; /** Generated brand foreground on muted backgrounds (active, 11% darker) */
   --color-on-muted-brand-inactive: #3b72d3; /** Generated brand foreground on muted backgrounds (inactive, 20% brighter) */
   --color-on-muted-brand-disabled: #2f58a2; /** Generated brand foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-danger-hover: #380001; /** Generated danger foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-danger-active: #400005; /** Generated danger foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-danger-inactive: #591117; /** Generated danger foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-danger-disabled: #430c11; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-negative-hover: #380001; /** Generated negative foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-negative-active: #400005; /** Generated negative foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-negative-inactive: #591117; /** Generated negative foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-negative-disabled: #430c11; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-warning-hover: #311300; /** Generated warning foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-warning-active: #3a1b00; /** Generated warning foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-warning-inactive: #533210; /** Generated warning foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-warning-disabled: #3f250c; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-success-hover: #002512; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-success-active: #002d1a; /** Generated success foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-success-inactive: #144631; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-success-disabled: #0f3424; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-positive-hover: #002512; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-positive-active: #002d1a; /** Generated positive foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-positive-inactive: #144631; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-positive-disabled: #0f3424; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-info-hover: #000164; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-info-active: #00116f; /** Generated info foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-info-inactive: #0b308c; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-info-disabled: #08246a; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
-  --color-on-muted-discovery-hover: #1d004a; /** Generated discovery foreground on muted backgrounds (hover, 23% darker) */
-  --color-on-muted-discovery-active: #240052; /** Generated discovery foreground on muted backgrounds (active, 11% darker) */
-  --color-on-muted-discovery-inactive: #361b6b; /** Generated discovery foreground on muted backgrounds (inactive, 20% brighter) */
-  --color-on-muted-discovery-disabled: #281450; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-danger-hover: #3b0916; /** Generated danger foreground on muted backgrounds (hover, 23% brighter) */
+  --color-on-muted-danger-active: #350411; /** Generated danger foreground on muted backgrounds (active, 11% brighter) */
+  --color-on-muted-danger-inactive: #240005; /** Generated danger foreground on muted backgrounds (inactive, 20% darker) */
+  --color-on-muted-danger-disabled: #2b050e; /** Generated danger foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-negative-hover: #3b0916; /** Generated negative foreground on muted backgrounds (hover, 23% brighter) */
+  --color-on-muted-negative-active: #350411; /** Generated negative foreground on muted backgrounds (active, 11% brighter) */
+  --color-on-muted-negative-inactive: #240005; /** Generated negative foreground on muted backgrounds (inactive, 20% darker) */
+  --color-on-muted-negative-disabled: #2b050e; /** Generated negative foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-warning-hover: #3b290c; /** Generated warning foreground on muted backgrounds (hover, 23% brighter) */
+  --color-on-muted-warning-active: #342305; /** Generated warning foreground on muted backgrounds (active, 11% brighter) */
+  --color-on-muted-warning-inactive: #211100; /** Generated warning foreground on muted backgrounds (inactive, 20% darker) */
+  --color-on-muted-warning-disabled: #2a1d07; /** Generated warning foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-success-hover: #001d11; /** Generated success foreground on muted backgrounds (hover, 23% darker) */
+  --color-on-muted-success-active: #002417; /** Generated success foreground on muted backgrounds (active, 11% darker) */
+  --color-on-muted-success-inactive: #0f382a; /** Generated success foreground on muted backgrounds (inactive, 20% brighter) */
+  --color-on-muted-success-disabled: #0b2a1f; /** Generated success foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-positive-hover: #001d11; /** Generated positive foreground on muted backgrounds (hover, 23% darker) */
+  --color-on-muted-positive-active: #002417; /** Generated positive foreground on muted backgrounds (active, 11% darker) */
+  --color-on-muted-positive-inactive: #0f382a; /** Generated positive foreground on muted backgrounds (inactive, 20% brighter) */
+  --color-on-muted-positive-disabled: #0b2a1f; /** Generated positive foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-info-hover: #000c44; /** Generated info foreground on muted backgrounds (hover, 23% darker) */
+  --color-on-muted-info-active: #00144c; /** Generated info foreground on muted backgrounds (active, 11% darker) */
+  --color-on-muted-info-inactive: #0a2a63; /** Generated info foreground on muted backgrounds (inactive, 20% brighter) */
+  --color-on-muted-info-disabled: #071f4a; /** Generated info foreground on muted backgrounds (disabled, 80% saturation) */
+  --color-on-muted-discovery-hover: #2b105a; /** Generated discovery foreground on muted backgrounds (hover, 23% brighter) */
+  --color-on-muted-discovery-active: #250753; /** Generated discovery foreground on muted backgrounds (active, 11% brighter) */
+  --color-on-muted-discovery-inactive: #17003f; /** Generated discovery foreground on muted backgrounds (inactive, 20% darker) */
+  --color-on-muted-discovery-disabled: #1e0a42; /** Generated discovery foreground on muted backgrounds (disabled, 80% saturation) */
   --size-none: 0px; /** No size */
   --size-xxs: 2px; /** A 2px xxs size step */
   --size-xs: 4px; /** A 4px xs size step */
@@ -560,6 +560,7 @@
   --typography-display-md: 700 1.5rem/1.051875 'Space Grotesk'; /** The display - medium typography variant */
   --typography-display-sm: 700 1.25rem/1.051875 'Space Grotesk'; /** The display - small typography variant */
   --typography-eyebrow: 800 1.125rem/1.1475 Manrope; /** The eyebrow typography variant */
+  --typography-button: 900 1.125rem/1.1475 Manrope; /** The button typography variant */
   --typography-body-lg: 700 1.25rem/1.1475 Manrope; /** The body large typography variant */
   --typography-body-md: 500 1.125rem/1.1475 Manrope; /** The body typography variant */
   --typography-body-sm: 400 1rem/1.1475 Manrope; /** The body small typography variant */

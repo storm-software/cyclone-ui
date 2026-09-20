@@ -1,5 +1,5 @@
 {
-  "name": "cyclone-dark",
+  "name": "cyclone-lightHighContrast",
   "settings": [
     {
       "scope": [
@@ -17,7 +17,7 @@
         "constant.other.symbol"
       ],
       "settings": {
-        "foreground": "{color.green.4}"
+        "foreground": "{color.green.7}"
       }
     },
     {
@@ -27,7 +27,7 @@
         "constant.language"
       ],
       "settings": {
-        "foreground": "{color.yellow.4}"
+        "foreground": "{color.yellow.9}"
       }
     },
     {
@@ -37,7 +37,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "{color.blue.7}"
       }
     },
     {
@@ -46,7 +46,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "{color.blue.7}"
       }
     },
     {
@@ -56,7 +56,7 @@
         "support.type"
       ],
       "settings": {
-        "foreground": "{color.purple.4}"
+        "foreground": "{color.purple.7}"
       }
     },
     {
@@ -65,7 +65,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "{color.blue.7}"
       }
     },
     {
@@ -74,7 +74,7 @@
         "support.constant"
       ],
       "settings": {
-        "foreground": "{color.blue.4}"
+        "foreground": "{color.blue.7}"
       }
     },
     {
@@ -83,7 +83,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "{color.neutral.6}"
+        "foreground": "{color.neutral.9}"
       }
     },
     {
@@ -101,23 +101,23 @@
         "invalid.illegal"
       ],
       "settings": {
-        "foreground": "{color.red.5}"
+        "foreground": "{color.red.7}"
       }
     }
   ],
-  "displayName": "Cyclone Dark",
-  "type": "dark",
-  "fg": "{color.neutral.2}",
-  "bg": "{color.neutral.14}",
+  "displayName": "Cyclone Light",
+  "type": "lightHighContrast",
+  "fg": "{color.neutral.11}",
+  "bg": "{color.neutral.3}",
   "colors": {
-    "editor.background": "{color.neutral.14}",
-    "editor.foreground": "{color.neutral.2}",
-    "editorCursor.foreground": "{color.blue.5}",
-    "editor.selectionBackground": "#007e5e",
-    "editor.inactiveSelectionBackground": "{color.black}",
+    "editor.background": "{color.neutral.3}",
+    "editor.foreground": "{color.neutral.11}",
+    "editorCursor.foreground": "{color.blue.7}",
+    "editor.selectionBackground": "{color.blue.1}",
+    "editor.inactiveSelectionBackground": "{color.neutral.4}",
     "editorLineNumber.foreground": "{color.neutral.8}",
-    "editorLineNumber.activeForeground": "{color.neutral.6}",
-    "editorIndentGuide.background1": "{color.neutral.8}",
+    "editorLineNumber.activeForeground": "{color.neutral.9}",
+    "editorIndentGuide.background1": "{color.neutral.6}",
     "editorIndentGuide.activeBackground1": "{color.neutral.8}",
     "editorWhitespace.foreground": "{color.neutral.8}"
   }

@@ -60,7 +60,7 @@ export const CircularProgress = TamaguiProgress.styleable<{
   size?: CircularProgressSizeProp;
 }>(
   (
-    { color = "$foreground", size = "sm", value = 0, max = 100, ...props },
+    { color = "$accent", size = "sm", value = 0, max = 100, ...props },
     forwardRef
   ) => {
     const resolvedSize = Object.prototype.hasOwnProperty.call(

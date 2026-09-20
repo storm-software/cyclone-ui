@@ -15,7 +15,7 @@ catalog:
   "@powerlines/plugin-tsdown": ^0.1.614
   "@powerlines/plugin-tamagui": ^0.1.665
   "@powerlines/plugin-env": ^0.16.422
-  "@razorwind/color-variants": ^0.0.50
+  "@razorwind/color-variants": ^0.0.51
   "@react-native-community/cli": 18.0.1
   "@react-native-community/cli-platform-android": 18.0.1
   "@react-native-community/cli-platform-ios": 18.0.1
@@ -98,14 +98,14 @@ catalog:
   "@nx/storybook": 23.1.1
   "@nx/vite": 23.1.1
   "@nx/vitest": 23.1.1
-  "@razorwind/core": ^0.0.72
-  "@razorwind/css": ^0.0.55
-  "@razorwind/design-md": ^0.0.69
-  "@razorwind/nx": ^0.0.68
-  "@razorwind/storybook": ^0.0.70
-  "@razorwind/style-dictionary": ^0.0.58
-  "@razorwind/shadcn": ^0.0.68
-  "@razorwind/tamagui": ^0.0.72
+  "@razorwind/core": ^0.0.73
+  "@razorwind/css": ^0.0.56
+  "@razorwind/design-md": ^0.0.70
+  "@razorwind/nx": ^0.0.69
+  "@razorwind/storybook": ^0.0.71
+  "@razorwind/style-dictionary": ^0.0.59
+  "@razorwind/shadcn": ^0.0.69
+  "@razorwind/tamagui": ^0.0.73
   "@storm-software/cloudflare-tools": ^0.71.290
   "@storm-software/config": ^1.138.78
   "@storm-software/config-tools": ^1.190.142
@@ -148,7 +148,7 @@ catalog:
   bunshi: ^2.2.0
   chroma-js: ^2.6.0
   esbuild: ^0.24.2
-  eslint: ^10.10.0
+  eslint: ^10.11.0
   eslint-flat-config-utils: ^2.1.4
   expo: 54.0.35
   expo-av: ^13.10.6
@@ -205,9 +205,9 @@ catalog:
   "@tamagui/dismissable": ^2.7.7
   "@maskito/phone": 3.11.1
   libphonenumber-js: 1.12.31
-  "@razorwind/shiki": ^0.0.46
-  "@razorwind/llms": ^0.0.7
-  "@razorwind/docgen": ^0.0.68
+  "@razorwind/shiki": ^0.0.47
+  "@razorwind/llms": ^0.0.8
+  "@razorwind/docgen": ^0.0.69
 cleanupUnusedCatalogs: true
 catalogMode: strict
 linkWorkspacePackages: true

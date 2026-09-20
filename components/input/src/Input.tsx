@@ -44,7 +44,7 @@ export const ControlUnderline = styled(View, {
   bottom: 0,
   width: 0,
   height: "$xxs",
-  backgroundColor: "$borderActive",
+  backgroundColor: "$accentActive",
   pointerEvents: "none",
 
   variants: {
@@ -57,7 +57,7 @@ export const ControlUnderline = styled(View, {
     disabled: {
       true: {
         width: 0,
-        backgroundColor: "$borderDisabled"
+        backgroundColor: "$accentDisabled"
       }
     }
   } as const,
@@ -76,9 +76,9 @@ const InputGroup = styled(XGroup, {
   position: "relative",
   justifyContent: "space-between",
   alignItems: "center",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   outlineWidth: 0,
   outlineColor: "transparent",
   boxShadow: "none",
@@ -92,14 +92,14 @@ const InputGroup = styled(XGroup, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   variants: {
     focused: {
       true: (_val: boolean, { props }: VariantSpreadExtras<any>) => ({
         boxShadow: props.variant === "underline" ? "none" : "$ringOffset",
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       })
     },
 
@@ -109,16 +109,16 @@ const InputGroup = styled(XGroup, {
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$border",
+        borderColor: "$accent",
         borderRadius: 0,
         boxShadow: "none",
 
         hoverStyle: {
-          borderColor: "$borderHover"
+          borderColor: "$accentHover"
         },
 
         focusVisibleStyle: {
-          borderColor: "$border",
+          borderColor: "$accent",
           boxShadow: "none"
         }
       }
@@ -135,18 +135,18 @@ const InputGroup = styled(XGroup, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     },
@@ -224,7 +224,7 @@ const InputGroupImpl = InputGroup.styleable<Partial<InputContextProps>>(
           onBlur={handleBlur}
           transition="200ms"
           $group-field-hover={{
-            borderColor: "$borderHover"
+            borderColor: "$accentHover"
           }}>
           {children}
           {variant === "underline" && (
@@ -251,7 +251,7 @@ const InputSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "$border",
+  borderColor: "$accent",
   width: 0,
   flexShrink: 0,
   height: "60%",
@@ -260,7 +260,7 @@ const InputSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       }
     },
 
@@ -274,18 +274,18 @@ const InputSeparator = styled(View, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -308,10 +308,10 @@ const InputSeparatorImpl = InputSeparator.styleable(
           ref={forwardedRef}
           $group-field-hover={{
             borderColor: disabled
-              ? "$borderDisabled"
+              ? "$accentDisabled"
               : focused
-                ? "$borderActive"
-                : "$borderHover"
+                ? "$accentActive"
+                : "$accentHover"
           }}
           {...props}
         />
@@ -359,7 +359,7 @@ const InputValueImpl = InputValue.styleable(
           onInput={props.onInput ?? contextOnInput}
           value={value}
           enterKeyHint={enterKeyHint}
-          placeholderTextColor="$foregroundInverseDisabled">
+          placeholderTextColor="$onAccentDisabled">
           {children}
         </InputValue>
       </View>
@@ -399,7 +399,7 @@ const InputTrigger = Button.styleable<{
             variant="link"
             borderRadius={circular ? 100_000 : "$button"}
             noPadding={true}
-            color="$foregroundInverse"
+            color="$onAccent"
             {...props}
             width={props.width ?? adjustedTrigger}
             minWidth={props.minWidth ?? props.width ?? adjustedTrigger}

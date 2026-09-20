@@ -29,7 +29,7 @@ export type StormLogoIconProps = IconProps & {
 
 const ThemedIcon = ({ color: colorProp, ...rest }: IconProps) => {
   const theme = useTheme();
-  const explicitColor = useCurrentColor((colorProp ?? "$foreground") as any);
+  const explicitColor = useCurrentColor((colorProp ?? "$accent") as any);
   const color = colorProp
     ? explicitColor
     : (theme.foreground?.get() ?? theme.color?.get());

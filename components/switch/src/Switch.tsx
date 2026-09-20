@@ -59,23 +59,23 @@ const SwitchFrame = styled(View, {
 
   transition: "200ms",
   borderRadius: 100_000,
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   boxShadow: "none",
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$accentHover"
   },
 
   focusStyle: {
-    borderColor: "$borderActive",
+    borderColor: "$accentActive",
     boxShadow: "$ringOffset"
   },
 
   focusVisibleStyle: {
-    borderColor: "$borderActive",
+    borderColor: "$accentActive",
     boxShadow: "$ringOffset"
   },
 
@@ -97,18 +97,18 @@ const SwitchFrame = styled(View, {
       true: {
         userSelect: "none",
         cursor: "not-allowed",
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -125,7 +125,7 @@ const SwitchThumb = styled(View, {
 
   theme: "base",
   transition: "200ms",
-  backgroundColor: "$backgroundFloating",
+  backgroundColor: "$surfaceFloating",
   borderRadius: 100_000,
   borderWidth: 0,
   justifyContent: "center",
@@ -134,7 +134,7 @@ const SwitchThumb = styled(View, {
   variants: {
     checked: {
       true: {
-        backgroundColor: "$backgroundFloating"
+        backgroundColor: "$surfaceFloating"
       }
     },
 
@@ -225,7 +225,7 @@ const SwitchIcon = SwitchIconFrame.styleable<{
         flexGrow={0}
         flexShrink={1}
         $group-field-hover={{
-          borderColor: "$borderHover"
+          borderColor: "$hairlineHover"
         }}>
         <ThemeableIcon
           {...props}
@@ -235,13 +235,11 @@ const SwitchIcon = SwitchIconFrame.styleable<{
           color={
             (color ||
               (disabled
-                ? "$foregroundInverseDisabled"
-                : "$foregroundInverse")) as ThemeableIconProps["color"]
+                ? "$onAccentDisabled"
+                : "$onAccent")) as ThemeableIconProps["color"]
           }
           $group-switch-hover={{
-            color: disabled
-              ? "$foregroundInverseDisabled"
-              : "$foregroundInverseHover"
+            color: disabled ? "$onAccentDisabled" : "$onAccentHover"
           }}>
           {children}
         </ThemeableIcon>
@@ -279,7 +277,7 @@ const BaseSwitchImpl = BaseSwitch.styleable<{ focused?: boolean }>(
         <BaseSwitch
           ref={forwardedRef}
           activeStyle={{
-            backgroundColor: "$background"
+            backgroundColor: "$muted"
           }}
           {...props}
           id={name}

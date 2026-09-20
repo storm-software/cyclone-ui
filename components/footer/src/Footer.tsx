@@ -40,9 +40,9 @@ const FooterFrame = styled(View, {
   position: "relative",
   width: "100%",
   overflow: "hidden",
-  backgroundColor: "$background",
+  backgroundColor: "$muted",
   borderTopWidth: 1,
-  borderTopColor: "$borderSubtle"
+  borderTopColor: "$hairline"
 });
 
 const FooterContainer = styled(View, {
@@ -104,7 +104,7 @@ const FooterStatement = styled(HeadingSmallText, {
   render: "h2",
 
   margin: 0,
-  color: "$foreground",
+  color: "$accent",
   textTransform: "uppercase",
   letterSpacing: 2
 });
@@ -115,7 +115,7 @@ const FooterDescription = styled(BodyText, {
 
   maxWidth: 560,
   margin: 0,
-  color: "$foreground",
+  color: "$accent",
   variant: "md",
   opacity: 0.85
 });
@@ -177,7 +177,7 @@ const FooterSectionTitle = styled(HeadingSmallText, {
   render: "h3",
 
   margin: 0,
-  color: "$foreground",
+  color: "$accent",
   textTransform: "uppercase",
   letterSpacing: 2
 });
@@ -193,20 +193,20 @@ const FooterLink = styled(Link, {
   name: "FooterLink",
 
   width: "fit-content",
-  color: "$foreground",
+  color: "$accent",
   opacity: 0.85,
   textDecorationLine: "none",
 
   hoverStyle: {
     x: 3,
-    color: "$foregroundActive",
+    color: "$accentActive",
     opacity: 1
   },
 
   focusVisibleStyle: {
-    color: "$foregroundActive",
+    color: "$accentActive",
     opacity: 1,
-    outlineColor: "$foreground",
+    outlineColor: "$accent",
     outlineOffset: 3,
     outlineStyle: "solid",
     outlineWidth: 2
@@ -243,7 +243,7 @@ const FooterCopyright = styled(BodyText, {
   name: "FooterCopyright",
   render: "span",
 
-  color: "$foreground",
+  color: "$accent",
   fontSize: "$xs",
   opacity: 0.85
 });
@@ -329,11 +329,7 @@ const FooterLinkImpl = FooterLink.styleable(
         underline="none"
         {...props}
         color={
-          hovered
-            ? active
-              ? "$foregroundActive"
-              : "$foregroundInactive"
-            : undefined
+          hovered ? (active ? "$accentActive" : "$accentInactive") : undefined
         }
         onMouseEnter={(event: any) => {
           onMouseEnter?.(event);

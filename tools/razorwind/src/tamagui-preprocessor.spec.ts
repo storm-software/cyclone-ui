@@ -25,6 +25,37 @@ const contrastRatio = (first: string, second: string): number => {
   return (lighter + 0.05) / (darker + 0.05);
 };
 
+const oklchHue = (hex: string): number => {
+  const linearChannel = (offset: number) => {
+    const value = Number.parseInt(hex.slice(offset, offset + 2), 16) / 255;
+
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  };
+  const red = linearChannel(1);
+  const green = linearChannel(3);
+  const blue = linearChannel(5);
+  const l = Math.cbrt(
+    0.412_221_470_8 * red + 0.536_332_536_3 * green + 0.051_445_992_9 * blue
+  );
+  const m = Math.cbrt(
+    0.211_903_498_2 * red + 0.680_699_545_1 * green + 0.107_396_956_6 * blue
+  );
+  const s = Math.cbrt(
+    0.088_302_461_9 * red + 0.281_718_837_6 * green + 0.629_978_700_5 * blue
+  );
+  const a = 1.977_998_495_1 * l - 2.428_592_205 * m + 0.450_593_709_9 * s;
+  const b = 0.025_904_037_1 * l + 0.782_771_766_2 * m - 0.808_675_766 * s;
+  const hue = (Math.atan2(b, a) * 180) / Math.PI;
+
+  return hue < 0 ? hue + 360 : hue;
+};
+
+const hueDistance = (first: number, second: number): number => {
+  const difference = Math.abs(first - second) % 360;
+
+  return Math.min(difference, 360 - difference);
+};
+
 describe("tamaguiPreprocessor", () => {
   it("adds a white on-accent token for an accent theme with greater white contrast", () => {
     const result = tamaguiPreprocessor({
@@ -187,6 +218,35 @@ describe("tamaguiPreprocessor", () => {
     expect(lightContrast).toBeLessThan(5);
     expect(darkContrast).toBeGreaterThanOrEqual(4.5);
     expect(darkContrast).toBeLessThan(5);
+  });
+
+  it("preserves the accent hue when generated colors require gamut mapping", () => {
+    const accent = "#ff0000";
+    const result = tamaguiPreprocessor({
+      light: {
+        color: {
+          $description: "The light theme colors",
+          accent: { danger: colorToken(accent, "danger") }
+        }
+      },
+      dark: {
+        color: {
+          $description: "The dark theme colors",
+          accent: { danger: colorToken(accent, "danger") }
+        }
+      }
+    }) as any;
+    const accentHue = oklchHue(accent);
+    const generated = [
+      result.light.color.muted.danger.$value,
+      result.light.color["on-muted"].danger.$value,
+      result.dark.color.muted.danger.$value,
+      result.dark.color["on-muted"].danger.$value
+    ];
+
+    for (const color of generated) {
+      expect(hueDistance(oklchHue(color), accentHue)).toBeLessThanOrEqual(1);
+    }
   });
 
   it("resolves accent references before adjusting the generated pair", () => {

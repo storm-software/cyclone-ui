@@ -273,9 +273,7 @@ export const StepperHeaderItem = TamaguiTabs.Tab.styleable<{ index?: number }>(
           <Circle
             height={75}
             width={3}
-            backgroundColor={
-              index <= currentIndex ? "$foreground" : "$borderSubtle"
-            }
+            backgroundColor={index <= currentIndex ? "$accent" : "$hairline"}
             elevation="$5xl"
             marginLeft="$7xl"
           />
@@ -289,39 +287,33 @@ export const StepperHeaderItem = TamaguiTabs.Tab.styleable<{ index?: number }>(
             padding="$3xl"
             borderRadius={1000_000_000}
             borderWidth="$md"
-            borderColor={isPastOrCurrent ? "$foreground" : "$borderSubtle"}
+            borderColor={isPastOrCurrent ? "$accent" : "$hairline"}
             {...rest}
             value={value}
             onInteraction={handleOnInteraction}>
             {index < currentIndex && (
-              <CheckCircle transition="200ms" color="$foreground" size="$4xl" />
+              <CheckCircle transition="200ms" color="$accent" size="$4xl" />
             )}
             {index === currentIndex && (
-              <Edit3 transition="200ms" color="$foreground" size="$4xl" />
+              <Edit3 transition="200ms" color="$accent" size="$4xl" />
             )}
             {isVisitedFutureStep && (
-              <CheckCircle
-                transition="200ms"
-                color="$borderSubtle"
-                size="$4xl"
-              />
+              <CheckCircle transition="200ms" color="$hairline" size="$4xl" />
             )}
             {index > currentIndex && !isVisitedFutureStep && (
-              <Lock transition="200ms" color="$borderSubtle" size="$4xl" />
+              <Lock transition="200ms" color="$hairline" size="$4xl" />
             )}
           </TamaguiTabs.Tab>
 
           {numbered && (
-            <SizableText color="$foregroundBody" fontFamily="$code">
+            <SizableText color="$inkBody" fontFamily="$code">
               {String(itemIndex + 1).padStart(2, "0")}
             </SizableText>
           )}
 
           <HeadingText
             transition="200ms"
-            color={
-              state.currentStep === value ? "$foreground" : "$borderSubtle"
-            }>
+            color={state.currentStep === value ? "$accent" : "$hairline"}>
             {children}
           </HeadingText>
         </XStack>
@@ -418,7 +410,7 @@ export const Stepper = withStaticProperties(StepperFrame, {
 
 const StepperRovingIndicator = styled(YStack, {
   position: "absolute",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   opacity: 1,
   transition: "200ms",
   borderRadius: 1000_000_000,
@@ -434,17 +426,17 @@ const StepperRovingIndicator = styled(YStack, {
   variants: {
     active: {
       true: {
-        backgroundColor: "$foreground",
+        backgroundColor: "$accent",
         opacity: 1,
-        color: "$foreground"
+        color: "$accent"
       }
     },
 
     intent: {
       true: {
-        backgroundColor: "$backgroundElevated",
+        backgroundColor: "$surfaceElevated",
         opacity: 1,
-        color: "$foregroundBody"
+        color: "$inkBody"
       }
     }
   },

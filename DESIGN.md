@@ -137,41 +137,41 @@ colors:
   muted-brand-active: "#8eacdf"
   muted-brand-inactive: "#e0ffff"
   muted-brand-disabled: "#b1caf4"
-  muted-danger: "#d56479"
-  muted-negative: "#d56479"
-  muted-warning: "#b08c52"
-  muted-success: "#5ea48a"
-  muted-positive: "#5ea48a"
-  muted-info: "#5790f3"
-  muted-discovery: "#8f7bd3"
-  muted-danger-hover: "#a43750"
-  muted-danger-active: "#bc4e64"
-  muted-danger-inactive: "#ff8ca0"
-  muted-danger-disabled: "#c96e7d"
-  muted-negative-hover: "#a43750"
-  muted-negative-active: "#bc4e64"
-  muted-negative-inactive: "#ff8ca0"
-  muted-negative-disabled: "#c96e7d"
-  muted-warning-hover: "#826025"
-  muted-warning-active: "#99763c"
-  muted-warning-inactive: "#dbb57a"
-  muted-warning-disabled: "#aa8e61"
-  muted-success-hover: "#2f775e"
-  muted-success-active: "#478d74"
-  muted-success-inactive: "#88ceb3"
-  muted-success-disabled: "#6ba18c"
-  muted-positive-hover: "#2f775e"
-  muted-positive-active: "#478d74"
-  muted-positive-inactive: "#88ceb3"
-  muted-positive-disabled: "#6ba18c"
-  muted-info-hover: "#2c62c0"
-  muted-info-active: "#4179da"
-  muted-info-inactive: "#7fbbff"
-  muted-info-disabled: "#6492e0"
-  muted-discovery-hover: "#6650a4"
-  muted-discovery-active: "#7a65bb"
-  muted-discovery-inactive: "#b6a3fe"
-  muted-discovery-disabled: "#8e7fc5"
+  muted-danger: "#e37085"
+  muted-negative: "#e37085"
+  muted-warning: "#bd985e"
+  muted-success: "#6ab196"
+  muted-positive: "#6ab196"
+  muted-info: "#659dff"
+  muted-discovery: "#9e8ae4"
+  muted-danger-hover: "#ae4158"
+  muted-danger-active: "#c8586e"
+  muted-danger-inactive: "#ff9baf"
+  muted-danger-disabled: "#d67a89"
+  muted-negative-hover: "#ae4158"
+  muted-negative-active: "#c8586e"
+  muted-negative-inactive: "#ff9baf"
+  muted-negative-disabled: "#d67a89"
+  muted-warning-hover: "#8c692e"
+  muted-warning-active: "#a48046"
+  muted-warning-inactive: "#ebc489"
+  muted-warning-disabled: "#b79a6d"
+  muted-success-hover: "#388067"
+  muted-success-active: "#51987e"
+  muted-success-inactive: "#96dfc2"
+  muted-success-disabled: "#77ae98"
+  muted-positive-hover: "#388067"
+  muted-positive-active: "#51987e"
+  muted-positive-inactive: "#96dfc2"
+  muted-positive-disabled: "#77ae98"
+  muted-info-hover: "#376cc9"
+  muted-info-active: "#4e84e4"
+  muted-info-inactive: "#90cbff"
+  muted-info-disabled: "#729fec"
+  muted-discovery-hover: "#715bb1"
+  muted-discovery-active: "#8772ca"
+  muted-discovery-inactive: "#c9b5ff"
+  muted-discovery-disabled: "#9d8ed6"
   overlay-background: "#ffffff"
   overlay-border: "#bebebe"
   overlay-backdrop: "#1a1c1f66"
@@ -201,13 +201,13 @@ colors:
   hairline-inactive: "#f2f2f2"
   on-muted-base: "#151518"
   on-muted-brand: "#2055b3"
-  on-muted-danger: "#49000b"
-  on-muted-negative: "#49000b"
-  on-muted-warning: "#432300"
-  on-muted-success: "#003622"
-  on-muted-positive: "#003622"
-  on-muted-info: "#001d79"
-  on-muted-discovery: "#2a095b"
+  on-muted-danger: "#2f000c"
+  on-muted-negative: "#2f000c"
+  on-muted-warning: "#2d1c00"
+  on-muted-success: "#002b1e"
+  on-muted-positive: "#002b1e"
+  on-muted-info: "#001c54"
+  on-muted-discovery: "#20004c"
   on-muted-base-hover: "#232326"
   on-muted-base-active: "#1c1c1f"
   on-muted-base-inactive: "#0c0c0f"
@@ -216,34 +216,34 @@ colors:
   on-muted-brand-active: "#0f45a2"
   on-muted-brand-inactive: "#3b72d3"
   on-muted-brand-disabled: "#2f58a2"
-  on-muted-danger-hover: "#380001"
-  on-muted-danger-active: "#400005"
-  on-muted-danger-inactive: "#591117"
-  on-muted-danger-disabled: "#430c11"
-  on-muted-negative-hover: "#380001"
-  on-muted-negative-active: "#400005"
-  on-muted-negative-inactive: "#591117"
-  on-muted-negative-disabled: "#430c11"
-  on-muted-warning-hover: "#311300"
-  on-muted-warning-active: "#3a1b00"
-  on-muted-warning-inactive: "#533210"
-  on-muted-warning-disabled: "#3f250c"
-  on-muted-success-hover: "#002512"
-  on-muted-success-active: "#002d1a"
-  on-muted-success-inactive: "#144631"
-  on-muted-success-disabled: "#0f3424"
-  on-muted-positive-hover: "#002512"
-  on-muted-positive-active: "#002d1a"
-  on-muted-positive-inactive: "#144631"
-  on-muted-positive-disabled: "#0f3424"
-  on-muted-info-hover: "#000164"
-  on-muted-info-active: "#00116f"
-  on-muted-info-inactive: "#0b308c"
-  on-muted-info-disabled: "#08246a"
-  on-muted-discovery-hover: "#1d004a"
-  on-muted-discovery-active: "#240052"
-  on-muted-discovery-inactive: "#361b6b"
-  on-muted-discovery-disabled: "#281450"
+  on-muted-danger-hover: "#3b0916"
+  on-muted-danger-active: "#350411"
+  on-muted-danger-inactive: "#240005"
+  on-muted-danger-disabled: "#2b050e"
+  on-muted-negative-hover: "#3b0916"
+  on-muted-negative-active: "#350411"
+  on-muted-negative-inactive: "#240005"
+  on-muted-negative-disabled: "#2b050e"
+  on-muted-warning-hover: "#3b290c"
+  on-muted-warning-active: "#342305"
+  on-muted-warning-inactive: "#211100"
+  on-muted-warning-disabled: "#2a1d07"
+  on-muted-success-hover: "#001d11"
+  on-muted-success-active: "#002417"
+  on-muted-success-inactive: "#0f382a"
+  on-muted-success-disabled: "#0b2a1f"
+  on-muted-positive-hover: "#001d11"
+  on-muted-positive-active: "#002417"
+  on-muted-positive-inactive: "#0f382a"
+  on-muted-positive-disabled: "#0b2a1f"
+  on-muted-info-hover: "#000c44"
+  on-muted-info-active: "#00144c"
+  on-muted-info-inactive: "#0a2a63"
+  on-muted-info-disabled: "#071f4a"
+  on-muted-discovery-hover: "#2b105a"
+  on-muted-discovery-active: "#250753"
+  on-muted-discovery-inactive: "#17003f"
+  on-muted-discovery-disabled: "#1e0a42"
 typography:
   display-hero:
     fontFamily: "Space Grotesk"
@@ -274,6 +274,11 @@ typography:
     fontFamily: Manrope
     fontSize: "1.125rem"
     fontWeight: "800"
+    lineHeight: "1.1475"
+  button:
+    fontFamily: Manrope
+    fontSize: "1.125rem"
+    fontWeight: "900"
     lineHeight: "1.1475"
   body-lg:
     fontFamily: Manrope
@@ -328,7 +333,7 @@ spacing:
 
 ## Overview
 
-Cyclone UI design tokens — 241 color tokens, 10 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
+Cyclone UI design tokens — 241 color tokens, 11 typography tokens, 28 spacing tokens. The YAML front matter above is the normative source; the prose below explains how to apply it.
 
 ## Colors
 
@@ -466,41 +471,41 @@ Cyclone UI design tokens — 241 color tokens, 10 typography tokens, 28 spacing 
 - **Muted Brand Active (#8eacdf):** Muted brand accent background for low-emphasis states. (active, 11% darker)
 - **Muted Brand Inactive (#e0ffff):** Muted brand accent background for low-emphasis states. (inactive, 20% brighter)
 - **Muted Brand Disabled (#b1caf4):** Muted brand accent background for low-emphasis states. (disabled, 80% saturation)
-- **Muted Danger (#d56479):** Generated danger muted background for the light theme
-- **Muted Negative (#d56479):** Generated negative muted background for the light theme
-- **Muted Warning (#b08c52):** Generated warning muted background for the light theme
-- **Muted Success (#5ea48a):** Generated success muted background for the light theme
-- **Muted Positive (#5ea48a):** Generated positive muted background for the light theme
-- **Muted Info (#5790f3):** Generated info muted background for the light theme
-- **Muted Discovery (#8f7bd3):** Generated discovery muted background for the light theme
-- **Muted Danger Hover (#a43750):** Generated danger muted background for the light theme (hover, 23% darker)
-- **Muted Danger Active (#bc4e64):** Generated danger muted background for the light theme (active, 11% darker)
-- **Muted Danger Inactive (#ff8ca0):** Generated danger muted background for the light theme (inactive, 20% brighter)
-- **Muted Danger Disabled (#c96e7d):** Generated danger muted background for the light theme (disabled, 80% saturation)
-- **Muted Negative Hover (#a43750):** Generated negative muted background for the light theme (hover, 23% darker)
-- **Muted Negative Active (#bc4e64):** Generated negative muted background for the light theme (active, 11% darker)
-- **Muted Negative Inactive (#ff8ca0):** Generated negative muted background for the light theme (inactive, 20% brighter)
-- **Muted Negative Disabled (#c96e7d):** Generated negative muted background for the light theme (disabled, 80% saturation)
-- **Muted Warning Hover (#826025):** Generated warning muted background for the light theme (hover, 23% darker)
-- **Muted Warning Active (#99763c):** Generated warning muted background for the light theme (active, 11% darker)
-- **Muted Warning Inactive (#dbb57a):** Generated warning muted background for the light theme (inactive, 20% brighter)
-- **Muted Warning Disabled (#aa8e61):** Generated warning muted background for the light theme (disabled, 80% saturation)
-- **Muted Success Hover (#2f775e):** Generated success muted background for the light theme (hover, 23% darker)
-- **Muted Success Active (#478d74):** Generated success muted background for the light theme (active, 11% darker)
-- **Muted Success Inactive (#88ceb3):** Generated success muted background for the light theme (inactive, 20% brighter)
-- **Muted Success Disabled (#6ba18c):** Generated success muted background for the light theme (disabled, 80% saturation)
-- **Muted Positive Hover (#2f775e):** Generated positive muted background for the light theme (hover, 23% darker)
-- **Muted Positive Active (#478d74):** Generated positive muted background for the light theme (active, 11% darker)
-- **Muted Positive Inactive (#88ceb3):** Generated positive muted background for the light theme (inactive, 20% brighter)
-- **Muted Positive Disabled (#6ba18c):** Generated positive muted background for the light theme (disabled, 80% saturation)
-- **Muted Info Hover (#2c62c0):** Generated info muted background for the light theme (hover, 23% darker)
-- **Muted Info Active (#4179da):** Generated info muted background for the light theme (active, 11% darker)
-- **Muted Info Inactive (#7fbbff):** Generated info muted background for the light theme (inactive, 20% brighter)
-- **Muted Info Disabled (#6492e0):** Generated info muted background for the light theme (disabled, 80% saturation)
-- **Muted Discovery Hover (#6650a4):** Generated discovery muted background for the light theme (hover, 23% darker)
-- **Muted Discovery Active (#7a65bb):** Generated discovery muted background for the light theme (active, 11% darker)
-- **Muted Discovery Inactive (#b6a3fe):** Generated discovery muted background for the light theme (inactive, 20% brighter)
-- **Muted Discovery Disabled (#8e7fc5):** Generated discovery muted background for the light theme (disabled, 80% saturation)
+- **Muted Danger (#e37085):** Generated danger muted background for the light theme
+- **Muted Negative (#e37085):** Generated negative muted background for the light theme
+- **Muted Warning (#bd985e):** Generated warning muted background for the light theme
+- **Muted Success (#6ab196):** Generated success muted background for the light theme
+- **Muted Positive (#6ab196):** Generated positive muted background for the light theme
+- **Muted Info (#659dff):** Generated info muted background for the light theme
+- **Muted Discovery (#9e8ae4):** Generated discovery muted background for the light theme
+- **Muted Danger Hover (#ae4158):** Generated danger muted background for the light theme (hover, 23% darker)
+- **Muted Danger Active (#c8586e):** Generated danger muted background for the light theme (active, 11% darker)
+- **Muted Danger Inactive (#ff9baf):** Generated danger muted background for the light theme (inactive, 20% brighter)
+- **Muted Danger Disabled (#d67a89):** Generated danger muted background for the light theme (disabled, 80% saturation)
+- **Muted Negative Hover (#ae4158):** Generated negative muted background for the light theme (hover, 23% darker)
+- **Muted Negative Active (#c8586e):** Generated negative muted background for the light theme (active, 11% darker)
+- **Muted Negative Inactive (#ff9baf):** Generated negative muted background for the light theme (inactive, 20% brighter)
+- **Muted Negative Disabled (#d67a89):** Generated negative muted background for the light theme (disabled, 80% saturation)
+- **Muted Warning Hover (#8c692e):** Generated warning muted background for the light theme (hover, 23% darker)
+- **Muted Warning Active (#a48046):** Generated warning muted background for the light theme (active, 11% darker)
+- **Muted Warning Inactive (#ebc489):** Generated warning muted background for the light theme (inactive, 20% brighter)
+- **Muted Warning Disabled (#b79a6d):** Generated warning muted background for the light theme (disabled, 80% saturation)
+- **Muted Success Hover (#388067):** Generated success muted background for the light theme (hover, 23% darker)
+- **Muted Success Active (#51987e):** Generated success muted background for the light theme (active, 11% darker)
+- **Muted Success Inactive (#96dfc2):** Generated success muted background for the light theme (inactive, 20% brighter)
+- **Muted Success Disabled (#77ae98):** Generated success muted background for the light theme (disabled, 80% saturation)
+- **Muted Positive Hover (#388067):** Generated positive muted background for the light theme (hover, 23% darker)
+- **Muted Positive Active (#51987e):** Generated positive muted background for the light theme (active, 11% darker)
+- **Muted Positive Inactive (#96dfc2):** Generated positive muted background for the light theme (inactive, 20% brighter)
+- **Muted Positive Disabled (#77ae98):** Generated positive muted background for the light theme (disabled, 80% saturation)
+- **Muted Info Hover (#376cc9):** Generated info muted background for the light theme (hover, 23% darker)
+- **Muted Info Active (#4e84e4):** Generated info muted background for the light theme (active, 11% darker)
+- **Muted Info Inactive (#90cbff):** Generated info muted background for the light theme (inactive, 20% brighter)
+- **Muted Info Disabled (#729fec):** Generated info muted background for the light theme (disabled, 80% saturation)
+- **Muted Discovery Hover (#715bb1):** Generated discovery muted background for the light theme (hover, 23% darker)
+- **Muted Discovery Active (#8772ca):** Generated discovery muted background for the light theme (active, 11% darker)
+- **Muted Discovery Inactive (#c9b5ff):** Generated discovery muted background for the light theme (inactive, 20% brighter)
+- **Muted Discovery Disabled (#9d8ed6):** Generated discovery muted background for the light theme (disabled, 80% saturation)
 - **Overlay Background (#ffffff):** Surface color for floating overlays.
 - **Overlay Border (#bebebe):** Border color that defines floating overlays.
 - **Overlay Backdrop (#1a1c1f66):** Backdrop color that separates overlays from page content.
@@ -530,13 +535,13 @@ Cyclone UI design tokens — 241 color tokens, 10 typography tokens, 28 spacing 
 - **Hairline Inactive (#f2f2f2):** Subtle color for hairline borders and separators. (inactive, 20% brighter)
 - **On Muted Base (#151518):** Generated base foreground on muted backgrounds
 - **On Muted Brand (#2055b3):** Generated brand foreground on muted backgrounds
-- **On Muted Danger (#49000b):** Generated danger foreground on muted backgrounds
-- **On Muted Negative (#49000b):** Generated negative foreground on muted backgrounds
-- **On Muted Warning (#432300):** Generated warning foreground on muted backgrounds
-- **On Muted Success (#003622):** Generated success foreground on muted backgrounds
-- **On Muted Positive (#003622):** Generated positive foreground on muted backgrounds
-- **On Muted Info (#001d79):** Generated info foreground on muted backgrounds
-- **On Muted Discovery (#2a095b):** Generated discovery foreground on muted backgrounds
+- **On Muted Danger (#2f000c):** Generated danger foreground on muted backgrounds
+- **On Muted Negative (#2f000c):** Generated negative foreground on muted backgrounds
+- **On Muted Warning (#2d1c00):** Generated warning foreground on muted backgrounds
+- **On Muted Success (#002b1e):** Generated success foreground on muted backgrounds
+- **On Muted Positive (#002b1e):** Generated positive foreground on muted backgrounds
+- **On Muted Info (#001c54):** Generated info foreground on muted backgrounds
+- **On Muted Discovery (#20004c):** Generated discovery foreground on muted backgrounds
 - **On Muted Base Hover (#232326):** Generated base foreground on muted backgrounds (hover, 30% brighter)
 - **On Muted Base Active (#1c1c1f):** Generated base foreground on muted backgrounds (active, 15% brighter)
 - **On Muted Base Inactive (#0c0c0f):** Generated base foreground on muted backgrounds (inactive, 20% darker)
@@ -545,34 +550,34 @@ Cyclone UI design tokens — 241 color tokens, 10 typography tokens, 28 spacing 
 - **On Muted Brand Active (#0f45a2):** Generated brand foreground on muted backgrounds (active, 11% darker)
 - **On Muted Brand Inactive (#3b72d3):** Generated brand foreground on muted backgrounds (inactive, 20% brighter)
 - **On Muted Brand Disabled (#2f58a2):** Generated brand foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Danger Hover (#380001):** Generated danger foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Danger Active (#400005):** Generated danger foreground on muted backgrounds (active, 11% darker)
-- **On Muted Danger Inactive (#591117):** Generated danger foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Danger Disabled (#430c11):** Generated danger foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Negative Hover (#380001):** Generated negative foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Negative Active (#400005):** Generated negative foreground on muted backgrounds (active, 11% darker)
-- **On Muted Negative Inactive (#591117):** Generated negative foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Negative Disabled (#430c11):** Generated negative foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Warning Hover (#311300):** Generated warning foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Warning Active (#3a1b00):** Generated warning foreground on muted backgrounds (active, 11% darker)
-- **On Muted Warning Inactive (#533210):** Generated warning foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Warning Disabled (#3f250c):** Generated warning foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Success Hover (#002512):** Generated success foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Success Active (#002d1a):** Generated success foreground on muted backgrounds (active, 11% darker)
-- **On Muted Success Inactive (#144631):** Generated success foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Success Disabled (#0f3424):** Generated success foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Positive Hover (#002512):** Generated positive foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Positive Active (#002d1a):** Generated positive foreground on muted backgrounds (active, 11% darker)
-- **On Muted Positive Inactive (#144631):** Generated positive foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Positive Disabled (#0f3424):** Generated positive foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Info Hover (#000164):** Generated info foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Info Active (#00116f):** Generated info foreground on muted backgrounds (active, 11% darker)
-- **On Muted Info Inactive (#0b308c):** Generated info foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Info Disabled (#08246a):** Generated info foreground on muted backgrounds (disabled, 80% saturation)
-- **On Muted Discovery Hover (#1d004a):** Generated discovery foreground on muted backgrounds (hover, 23% darker)
-- **On Muted Discovery Active (#240052):** Generated discovery foreground on muted backgrounds (active, 11% darker)
-- **On Muted Discovery Inactive (#361b6b):** Generated discovery foreground on muted backgrounds (inactive, 20% brighter)
-- **On Muted Discovery Disabled (#281450):** Generated discovery foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Danger Hover (#3b0916):** Generated danger foreground on muted backgrounds (hover, 23% brighter)
+- **On Muted Danger Active (#350411):** Generated danger foreground on muted backgrounds (active, 11% brighter)
+- **On Muted Danger Inactive (#240005):** Generated danger foreground on muted backgrounds (inactive, 20% darker)
+- **On Muted Danger Disabled (#2b050e):** Generated danger foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Negative Hover (#3b0916):** Generated negative foreground on muted backgrounds (hover, 23% brighter)
+- **On Muted Negative Active (#350411):** Generated negative foreground on muted backgrounds (active, 11% brighter)
+- **On Muted Negative Inactive (#240005):** Generated negative foreground on muted backgrounds (inactive, 20% darker)
+- **On Muted Negative Disabled (#2b050e):** Generated negative foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Warning Hover (#3b290c):** Generated warning foreground on muted backgrounds (hover, 23% brighter)
+- **On Muted Warning Active (#342305):** Generated warning foreground on muted backgrounds (active, 11% brighter)
+- **On Muted Warning Inactive (#211100):** Generated warning foreground on muted backgrounds (inactive, 20% darker)
+- **On Muted Warning Disabled (#2a1d07):** Generated warning foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Success Hover (#001d11):** Generated success foreground on muted backgrounds (hover, 23% darker)
+- **On Muted Success Active (#002417):** Generated success foreground on muted backgrounds (active, 11% darker)
+- **On Muted Success Inactive (#0f382a):** Generated success foreground on muted backgrounds (inactive, 20% brighter)
+- **On Muted Success Disabled (#0b2a1f):** Generated success foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Positive Hover (#001d11):** Generated positive foreground on muted backgrounds (hover, 23% darker)
+- **On Muted Positive Active (#002417):** Generated positive foreground on muted backgrounds (active, 11% darker)
+- **On Muted Positive Inactive (#0f382a):** Generated positive foreground on muted backgrounds (inactive, 20% brighter)
+- **On Muted Positive Disabled (#0b2a1f):** Generated positive foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Info Hover (#000c44):** Generated info foreground on muted backgrounds (hover, 23% darker)
+- **On Muted Info Active (#00144c):** Generated info foreground on muted backgrounds (active, 11% darker)
+- **On Muted Info Inactive (#0a2a63):** Generated info foreground on muted backgrounds (inactive, 20% brighter)
+- **On Muted Info Disabled (#071f4a):** Generated info foreground on muted backgrounds (disabled, 80% saturation)
+- **On Muted Discovery Hover (#2b105a):** Generated discovery foreground on muted backgrounds (hover, 23% brighter)
+- **On Muted Discovery Active (#250753):** Generated discovery foreground on muted backgrounds (active, 11% brighter)
+- **On Muted Discovery Inactive (#17003f):** Generated discovery foreground on muted backgrounds (inactive, 20% darker)
+- **On Muted Discovery Disabled (#1e0a42):** Generated discovery foreground on muted backgrounds (disabled, 80% saturation)
 
 ## Typography
 
@@ -582,6 +587,7 @@ Cyclone UI design tokens — 241 color tokens, 10 typography tokens, 28 spacing 
 - **display-md:** fontFamily: Space Grotesk, fontSize: 1.5rem, fontWeight: 700, lineHeight: 1.051875
 - **display-sm:** fontFamily: Space Grotesk, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.051875
 - **eyebrow:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 800, lineHeight: 1.1475
+- **button:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 900, lineHeight: 1.1475
 - **body-lg:** fontFamily: Manrope, fontSize: 1.25rem, fontWeight: 700, lineHeight: 1.1475
 - **body-md:** fontFamily: Manrope, fontSize: 1.125rem, fontWeight: 500, lineHeight: 1.1475
 - **body-sm:** fontFamily: Manrope, fontSize: 1rem, fontWeight: 400, lineHeight: 1.1475

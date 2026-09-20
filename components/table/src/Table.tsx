@@ -56,7 +56,7 @@ const TableContext = createStyledContext<TableContextProps>({
   sizing: "fixed",
   alignHeaderCells: { x: "start", y: "center" },
   alignCells: { x: "center", y: "center" },
-  borderColor: "$border"
+  borderColor: "$accent"
 });
 
 export const TABLE_NAME = "Table";
@@ -70,7 +70,7 @@ const TableRow = styled(ThemeableStack, {
 
   flexDirection: "row",
   borderWidth: 0,
-  borderColor: "$border",
+  borderColor: "$accent",
   borderStyle: "solid",
   justifyContent: "flex-start",
   position: "relative",
@@ -84,7 +84,7 @@ const TableRow = styled(ThemeableStack, {
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   variants: {
@@ -98,7 +98,7 @@ const TableRow = styled(ThemeableStack, {
           display: "table-row" as any
         },
         hoverStyle: {
-          backgroundColor: "$backgroundPageHover"
+          backgroundColor: "$surfaceCanvasHover"
         }
       }
     }
@@ -147,7 +147,7 @@ const TableRowImpl = TableRow.styleable(
             pointerEvents="none"
             transition="200ms"
             opacity={0}
-            backgroundColor="$backgroundPageHover"
+            backgroundColor="$surfaceCanvasHover"
             $group-row-hover={{
               opacity: header ? 0 : 1
             }}
@@ -176,13 +176,13 @@ const TableCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   justifyContent: "flex-start",
   paddingHorizontal: "$xl",
   boxShadow: "none",
 
   focusVisibleStyle: {
-    borderColor: "$borderActive",
+    borderColor: "$accentActive",
     boxShadow: "$ringOffset"
   },
 
@@ -236,7 +236,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   flexShrink: 1,
   borderWidth: 0,
   borderBottomWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   justifyContent: "flex-start",
   paddingVertical: "$md",
   paddingHorizontal: "$sm",
@@ -320,7 +320,7 @@ const TableHeader = styled(ThemeableStack, {
   borderTopLeftRadius: "$container",
   borderTopRightRadius: "$container",
   overflow: "hidden",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
 
   variants: {
     sizing: {
@@ -364,7 +364,7 @@ const TableFooter = styled(ThemeableStack, {
   borderBottomLeftRadius: "$container",
   borderBottomRightRadius: "$container",
   overflow: "hidden",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
 
   variants: {
     sizing: {
@@ -403,7 +403,7 @@ const TableFrame = styled(ThemeableStack, {
   render: "table",
 
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   borderRadius: "$container",
   borderStyle: "solid",
   maxWidth: "100%",

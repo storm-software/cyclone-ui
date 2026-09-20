@@ -71,8 +71,8 @@ const resolveColor = (
 export const GlitchSeparator = View.styleable<GlitchSeparatorProps>(
   (
     {
-      topColor = "$backgroundPage",
-      bottomColor = "$background",
+      topColor = "$surfaceCanvas",
+      bottomColor = "$muted",
       animate,
       animated,
       seed = DEFAULT_SEED,

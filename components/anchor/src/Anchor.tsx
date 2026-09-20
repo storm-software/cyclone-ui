@@ -102,7 +102,7 @@ export const Anchor = AnchorFrame.styleable<AnchorExtraProps>(
           height="90%"
           maxHeight="$6xl"
           $group-anchorIcon-hover={{
-            color: "$foreground"
+            color: "$accent"
           }}
         />
       </Permalink>

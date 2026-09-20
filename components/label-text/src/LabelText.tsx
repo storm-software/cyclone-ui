@@ -25,7 +25,7 @@ export const LabelText = styled(BodyText, {
   render: "label",
 
   transition: "400ms",
-  color: "$foreground",
+  color: "$accent",
   variant: "lg",
 
   variants: {

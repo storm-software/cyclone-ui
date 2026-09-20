@@ -746,7 +746,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#dcdcdc",
+      value: "#bebebe",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -1079,7 +1079,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info",
       type: "color",
-      value: "#2e7aff",
+      value: "#4d8eff",
       cssVar: "--rw-color-accent-info",
       description: "Informational accent for guidance and neutral status.",
       theme: undefined,
@@ -1349,7 +1349,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-hover",
       type: "color",
-      value: "#59a7ff",
+      value: "#7abeff",
       cssVar: "--rw-color-accent-info-hover",
       description: "Informational accent for guidance and neutral status. (hover, 23% brighter)",
       theme: undefined,
@@ -1358,7 +1358,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-active",
       type: "color",
-      value: "#4490ff",
+      value: "#63a6ff",
       cssVar: "--rw-color-accent-info-active",
       description: "Informational accent for guidance and neutral status. (active, 11% brighter)",
       theme: undefined,
@@ -1367,7 +1367,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-inactive",
       type: "color",
-      value: "#0052d4",
+      value: "#2564d1",
       cssVar: "--rw-color-accent-info-inactive",
       description: "Informational accent for guidance and neutral status. (inactive, 20% darker)",
       theme: undefined,
@@ -1376,7 +1376,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#447fe7",
+      value: "#5d91ea",
       cssVar: "--rw-color-accent-info-disabled",
       description: "Informational accent for guidance and neutral status. (disabled, 80% saturation)",
       theme: undefined,
@@ -1502,7 +1502,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success",
       type: "color",
-      value: "#151518",
+      value: "#FAFAFA",
       cssVar: "--rw-color-on-accent-success",
       description: "Success accent for confirmed states.",
       theme: undefined,
@@ -1511,7 +1511,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive",
       type: "color",
-      value: "#151518",
+      value: "#FAFAFA",
       cssVar: "--rw-color-on-accent-positive",
       description: "Positive accent for favorable states.",
       theme: undefined,
@@ -1682,72 +1682,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-hover",
       type: "color",
-      value: "#1f1f22",
+      value: "#b2b2b2",
       cssVar: "--rw-color-on-accent-success-hover",
-      description: "Success accent for confirmed states. (hover, 23% brighter)",
+      description: "Success accent for confirmed states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-active",
       type: "color",
-      value: "#1a1a1d",
+      value: "#d5d5d5",
       cssVar: "--rw-color-on-accent-success-active",
-      description: "Success accent for confirmed states. (active, 11% brighter)",
+      description: "Success accent for confirmed states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-inactive",
       type: "color",
-      value: "#0c0c0f",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-success-inactive",
-      description: "Success accent for confirmed states. (inactive, 20% darker)",
+      description: "Success accent for confirmed states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#151517",
+      value: "#fafafa66",
       cssVar: "--rw-color-on-accent-success-disabled",
-      description: "Success accent for confirmed states. (disabled, 80% saturation)",
+      description: "Success accent for confirmed states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-hover",
       type: "color",
-      value: "#1f1f22",
+      value: "#b2b2b2",
       cssVar: "--rw-color-on-accent-positive-hover",
-      description: "Positive accent for favorable states. (hover, 23% brighter)",
+      description: "Positive accent for favorable states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-active",
       type: "color",
-      value: "#1a1a1d",
+      value: "#d5d5d5",
       cssVar: "--rw-color-on-accent-positive-active",
-      description: "Positive accent for favorable states. (active, 11% brighter)",
+      description: "Positive accent for favorable states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-inactive",
       type: "color",
-      value: "#0c0c0f",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-positive-inactive",
-      description: "Positive accent for favorable states. (inactive, 20% darker)",
+      description: "Positive accent for favorable states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#151517",
+      value: "#fafafa66",
       cssVar: "--rw-color-on-accent-positive-disabled",
-      description: "Positive accent for favorable states. (disabled, 80% saturation)",
+      description: "Positive accent for favorable states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
@@ -1916,7 +1916,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#7e0019",
+      value: "#6b0023",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the dark theme",
       theme: undefined,
@@ -1925,7 +1925,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#7e0019",
+      value: "#6b0023",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the dark theme",
       theme: undefined,
@@ -1934,7 +1934,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#9e5800",
+      value: "#845800",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the dark theme",
       theme: undefined,
@@ -1943,7 +1943,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#007948",
+      value: "#00714c",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the dark theme",
       theme: undefined,
@@ -1952,7 +1952,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#007948",
+      value: "#00714c",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the dark theme",
       theme: undefined,
@@ -1961,7 +1961,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#0038ba",
+      value: "#0146b0",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the dark theme",
       theme: undefined,
@@ -1970,7 +1970,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#593b98",
+      value: "#51328f",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the dark theme",
       theme: undefined,
@@ -1979,7 +1979,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#9a2730",
+      value: "#842036",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -1988,7 +1988,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#8c1724",
+      value: "#77122c",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -1997,7 +1997,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#650004",
+      value: "#550013",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2006,7 +2006,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#741c23",
+      value: "#621727",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2015,7 +2015,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#9a2730",
+      value: "#842036",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2024,7 +2024,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#8c1724",
+      value: "#77122c",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2033,7 +2033,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#650004",
+      value: "#550013",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2042,7 +2042,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#741c23",
+      value: "#621727",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2051,7 +2051,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#c57c36",
+      value: "#a77931",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2060,7 +2060,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#b16a21",
+      value: "#95681d",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2069,7 +2069,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#7c3900",
+      value: "#663c00",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2078,7 +2078,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#955d29",
+      value: "#7e5b25",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2087,7 +2087,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#3a9c68",
+      value: "#36926b",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2096,7 +2096,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#248a58",
+      value: "#21815b",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2105,7 +2105,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#005b2d",
+      value: "#005532",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2114,7 +2114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#2c754e",
+      value: "#296e50",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2123,7 +2123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#3a9c68",
+      value: "#36926b",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2132,7 +2132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#248a58",
+      value: "#21815b",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2141,7 +2141,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#005b2d",
+      value: "#005532",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2150,7 +2150,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#2c754e",
+      value: "#296e50",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2159,7 +2159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#1d57da",
+      value: "#2564d1",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2168,7 +2168,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#0f48ca",
+      value: "#1555c0",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2177,7 +2177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#00169e",
+      value: "#002a94",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2186,7 +2186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#1541a4",
+      value: "#1b4b9d",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2195,7 +2195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#7458b8",
+      value: "#6a4dac",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -2204,7 +2204,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#664aa8",
+      value: "#5d409e",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -2213,7 +2213,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#42207c",
+      value: "#3c1875",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -2222,7 +2222,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#57428a",
+      value: "#4f3982",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -2564,7 +2564,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger",
       type: "color",
-      value: "#ff7e9a",
+      value: "#ff96a3",
       cssVar: "--rw-color-on-muted-danger",
       description: "Generated danger foreground on muted backgrounds",
       theme: undefined,
@@ -2573,7 +2573,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative",
       type: "color",
-      value: "#ff7e9a",
+      value: "#ff96a3",
       cssVar: "--rw-color-on-muted-negative",
       description: "Generated negative foreground on muted backgrounds",
       theme: undefined,
@@ -2582,7 +2582,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning",
       type: "color",
-      value: "#ffef77",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-warning",
       description: "Generated warning foreground on muted backgrounds",
       theme: undefined,
@@ -2591,7 +2591,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success",
       type: "color",
-      value: "#9bffdd",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-success",
       description: "Generated success foreground on muted backgrounds",
       theme: undefined,
@@ -2600,7 +2600,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive",
       type: "color",
-      value: "#9bffdd",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-positive",
       description: "Generated positive foreground on muted backgrounds",
       theme: undefined,
@@ -2609,7 +2609,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#6dbcff",
+      value: "#c7dcff",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -2618,7 +2618,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery",
       type: "color",
-      value: "#cdb3ff",
+      value: "#d3c7ff",
       cssVar: "--rw-color-on-muted-discovery",
       description: "Generated discovery foreground on muted backgrounds",
       theme: undefined,
@@ -2699,34 +2699,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-hover",
       type: "color",
-      value: "#ffb4cf",
+      value: "#c2606e",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-active",
       type: "color",
-      value: "#ff99b4",
+      value: "#e07a88",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#ca4f6d",
+      value: "#ffc9d5",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#f18a9e",
+      value: "#f39ea7",
       cssVar: "--rw-color-on-muted-danger-disabled",
       description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -2735,34 +2735,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-hover",
       type: "color",
-      value: "#ffb4cf",
+      value: "#c2606e",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-active",
       type: "color",
-      value: "#ff99b4",
+      value: "#e07a88",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#ca4f6d",
+      value: "#ffc9d5",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#f18a9e",
+      value: "#f39ea7",
       cssVar: "--rw-color-on-muted-negative-disabled",
       description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -2771,7 +2771,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-hover",
       type: "color",
-      value: "#baaa27",
+      value: "#b6b6b6",
       cssVar: "--rw-color-on-muted-warning-hover",
       description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -2780,7 +2780,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-active",
       type: "color",
-      value: "#dccc52",
+      value: "#dadada",
       cssVar: "--rw-color-on-muted-warning-active",
       description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -2789,7 +2789,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#ffff8b",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-warning-inactive",
       description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -2798,16 +2798,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#fbef93",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.success-hover",
       type: "color",
-      value: "#55ba9b",
+      value: "#b6b6b6",
       cssVar: "--rw-color-on-muted-success-hover",
       description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -2816,7 +2816,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-active",
       type: "color",
-      value: "#78dcbb",
+      value: "#dadada",
       cssVar: "--rw-color-on-muted-success-active",
       description: "Generated success foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -2825,7 +2825,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-inactive",
       type: "color",
-      value: "#b3fff4",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-success-inactive",
       description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -2834,16 +2834,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#adfbdf",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.positive-hover",
       type: "color",
-      value: "#55ba9b",
+      value: "#b6b6b6",
       cssVar: "--rw-color-on-muted-positive-hover",
       description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -2852,7 +2852,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-active",
       type: "color",
-      value: "#78dcbb",
+      value: "#dadada",
       cssVar: "--rw-color-on-muted-positive-active",
       description: "Generated positive foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -2861,7 +2861,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-inactive",
       type: "color",
-      value: "#b3fff4",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-positive-inactive",
       description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -2870,16 +2870,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#adfbdf",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#3585c5",
+      value: "#899cbd",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -2888,7 +2888,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#51a0e2",
+      value: "#a7bcde",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -2897,7 +2897,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#9fefff",
+      value: "#ebffff",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -2906,7 +2906,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#7ebbf1",
+      value: "#cbdcf8",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -2915,7 +2915,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#947ac2",
+      value: "#968bbf",
       cssVar: "--rw-color-on-muted-discovery-hover",
       description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -2924,7 +2924,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#b096e0",
+      value: "#b4a8df",
       cssVar: "--rw-color-on-muted-discovery-active",
       description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -2933,7 +2933,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-inactive",
       type: "color",
-      value: "#ffe8ff",
+      value: "#fff6ff",
       cssVar: "--rw-color-on-muted-discovery-inactive",
       description: "Generated discovery foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -2942,7 +2942,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#cbb7f3",
+      value: "#d2c9f6",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -4832,7 +4832,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #2e7aff20",
+      value: "0px 0px 0px 3px #4d8eff20",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -4841,7 +4841,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2e7aff20",
+      value: "0px 0px 0px 1px #4d8eff20",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -4850,7 +4850,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff20",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -4859,7 +4859,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff20",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -5024,6 +5024,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },
@@ -5797,7 +5806,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#c0c0c0",
+      value: "#ababab",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -6130,7 +6139,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info",
       type: "color",
-      value: "#527fcd",
+      value: "#638cd2",
       cssVar: "--rw-color-accent-info",
       description: "Informational accent for guidance and neutral status.",
       theme: undefined,
@@ -6400,7 +6409,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-hover",
       type: "color",
-      value: "#6a9bd4",
+      value: "#7cabd9",
       cssVar: "--rw-color-accent-info-hover",
       description: "Informational accent for guidance and neutral status. (hover, 23% brighter)",
       theme: undefined,
@@ -6409,7 +6418,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-active",
       type: "color",
-      value: "#5e8dd0",
+      value: "#6f9bd5",
       cssVar: "--rw-color-accent-info-active",
       description: "Informational accent for guidance and neutral status. (active, 11% brighter)",
       theme: undefined,
@@ -6418,7 +6427,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-inactive",
       type: "color",
-      value: "#3362ae",
+      value: "#4d70ac",
       cssVar: "--rw-color-accent-info-inactive",
       description: "Informational accent for guidance and neutral status. (inactive, 20% darker)",
       theme: undefined,
@@ -6427,7 +6436,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#5f82bf",
+      value: "#6d8dc4",
       cssVar: "--rw-color-accent-info-disabled",
       description: "Informational accent for guidance and neutral status. (disabled, 80% saturation)",
       theme: undefined,
@@ -6553,7 +6562,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success",
       type: "color",
-      value: "#343438",
+      value: "#d5d5d5",
       cssVar: "--rw-color-on-accent-success",
       description: "Success accent for confirmed states.",
       theme: undefined,
@@ -6562,7 +6571,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive",
       type: "color",
-      value: "#343438",
+      value: "#d5d5d5",
       cssVar: "--rw-color-on-accent-positive",
       description: "Positive accent for favorable states.",
       theme: undefined,
@@ -6733,72 +6742,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-hover",
       type: "color",
-      value: "#3b3b3f",
+      value: "#a3a3a3",
       cssVar: "--rw-color-on-accent-success-hover",
-      description: "Success accent for confirmed states. (hover, 23% brighter)",
+      description: "Success accent for confirmed states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-active",
       type: "color",
-      value: "#38383b",
+      value: "#bbbbbb",
       cssVar: "--rw-color-on-accent-success-active",
-      description: "Success accent for confirmed states. (active, 11% brighter)",
+      description: "Success accent for confirmed states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-inactive",
       type: "color",
-      value: "#2d2d33",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-accent-success-inactive",
-      description: "Success accent for confirmed states. (inactive, 20% darker)",
+      description: "Success accent for confirmed states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#343437",
+      value: "#d5d5d566",
       cssVar: "--rw-color-on-accent-success-disabled",
-      description: "Success accent for confirmed states. (disabled, 80% saturation)",
+      description: "Success accent for confirmed states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-hover",
       type: "color",
-      value: "#3b3b3f",
+      value: "#a3a3a3",
       cssVar: "--rw-color-on-accent-positive-hover",
-      description: "Positive accent for favorable states. (hover, 23% brighter)",
+      description: "Positive accent for favorable states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-active",
       type: "color",
-      value: "#38383b",
+      value: "#bbbbbb",
       cssVar: "--rw-color-on-accent-positive-active",
-      description: "Positive accent for favorable states. (active, 11% brighter)",
+      description: "Positive accent for favorable states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-inactive",
       type: "color",
-      value: "#2d2d33",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-accent-positive-inactive",
-      description: "Positive accent for favorable states. (inactive, 20% darker)",
+      description: "Positive accent for favorable states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#343437",
+      value: "#d5d5d566",
       cssVar: "--rw-color-on-accent-positive-disabled",
-      description: "Positive accent for favorable states. (disabled, 80% saturation)",
+      description: "Positive accent for favorable states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
@@ -6967,7 +6976,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#802537",
+      value: "#75223d",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the dark theme",
       theme: undefined,
@@ -6976,7 +6985,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#802537",
+      value: "#75223d",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the dark theme",
       theme: undefined,
@@ -6985,7 +6994,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#91632a",
+      value: "#836426",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the dark theme",
       theme: undefined,
@@ -6994,7 +7003,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#247d59",
+      value: "#23795d",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the dark theme",
       theme: undefined,
@@ -7003,7 +7012,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#247d59",
+      value: "#23795d",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the dark theme",
       theme: undefined,
@@ -7012,7 +7021,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#2f51a0",
+      value: "#2e599b",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the dark theme",
       theme: undefined,
@@ -7021,7 +7030,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#66558b",
+      value: "#604e86",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the dark theme",
       theme: undefined,
@@ -7030,7 +7039,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#8c474d",
+      value: "#80404e",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7039,7 +7048,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#853a42",
+      value: "#793345",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7048,7 +7057,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#722124",
+      value: "#691f2f",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7057,7 +7066,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#763b40",
+      value: "#6c3541",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7066,7 +7075,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#8c474d",
+      value: "#80404e",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7075,7 +7084,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#853a42",
+      value: "#793345",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7084,7 +7093,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#722124",
+      value: "#691f2f",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7093,7 +7102,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#763b40",
+      value: "#6c3541",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7102,7 +7111,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#a67d57",
+      value: "#947950",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7111,7 +7120,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#9a7046",
+      value: "#8a6e3f",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7120,7 +7129,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#7f4e25",
+      value: "#735121",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7129,7 +7138,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#896848",
+      value: "#7c6543",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7138,7 +7147,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#558e6f",
+      value: "#518870",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7147,7 +7156,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#438364",
+      value: "#407e65",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7156,7 +7165,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#206d46",
+      value: "#1f694b",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7165,7 +7174,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#47765d",
+      value: "#44725e",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7174,7 +7183,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#558e6f",
+      value: "#518870",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7183,7 +7192,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#438364",
+      value: "#407e65",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7192,7 +7201,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#206d46",
+      value: "#1f694b",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7201,7 +7210,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#47765d",
+      value: "#44725e",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7210,7 +7219,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#4868b1",
+      value: "#4d70ac",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7219,7 +7228,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#3c5da8",
+      value: "#3f64a3",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7228,7 +7237,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#2a3891",
+      value: "#29458c",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7237,7 +7246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#3b5693",
+      value: "#3f5c8f",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7246,7 +7255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#7a6aa0",
+      value: "#736398",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -7255,7 +7264,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#706195",
+      value: "#6a598f",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -7264,7 +7273,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#553f7b",
+      value: "#503877",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -7273,7 +7282,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#655883",
+      value: "#5f517e",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -7615,7 +7624,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger",
       type: "color",
-      value: "#d97e92",
+      value: "#dd8b95",
       cssVar: "--rw-color-on-muted-danger",
       description: "Generated danger foreground on muted backgrounds",
       theme: undefined,
@@ -7624,7 +7633,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative",
       type: "color",
-      value: "#d97e92",
+      value: "#dd8b95",
       cssVar: "--rw-color-on-muted-negative",
       description: "Generated negative foreground on muted backgrounds",
       theme: undefined,
@@ -7633,7 +7642,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning",
       type: "color",
-      value: "#d8cd7a",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-warning",
       description: "Generated warning foreground on muted backgrounds",
       theme: undefined,
@@ -7642,7 +7651,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success",
       type: "color",
-      value: "#8ddec3",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-success",
       description: "Generated success foreground on muted backgrounds",
       theme: undefined,
@@ -7651,7 +7660,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive",
       type: "color",
-      value: "#8ddec3",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-positive",
       description: "Generated positive foreground on muted backgrounds",
       theme: undefined,
@@ -7660,7 +7669,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#75aad7",
+      value: "#a5bde5",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -7669,7 +7678,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery",
       type: "color",
-      value: "#b39ae2",
+      value: "#b3a5e5",
       cssVar: "--rw-color-on-muted-discovery",
       description: "Generated discovery foreground on muted backgrounds",
       theme: undefined,
@@ -7750,34 +7759,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-hover",
       type: "color",
-      value: "#e29bb5",
+      value: "#a87078",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-active",
       type: "color",
-      value: "#de8ca2",
+      value: "#c07f88",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#ac6677",
+      value: "#e5a6b4",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#cf8795",
+      value: "#d39299",
       cssVar: "--rw-color-on-muted-danger-disabled",
       description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -7786,34 +7795,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-hover",
       type: "color",
-      value: "#e29bb5",
+      value: "#a87078",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-active",
       type: "color",
-      value: "#de8ca2",
+      value: "#c07f88",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#ac6677",
+      value: "#e5a6b4",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#cf8795",
+      value: "#d39299",
       cssVar: "--rw-color-on-muted-negative-disabled",
       description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -7822,7 +7831,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-hover",
       type: "color",
-      value: "#9f964b",
+      value: "#a6a6a6",
       cssVar: "--rw-color-on-muted-warning-hover",
       description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -7831,7 +7840,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-active",
       type: "color",
-      value: "#b8af67",
+      value: "#bfbfbf",
       cssVar: "--rw-color-on-muted-warning-active",
       description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -7840,7 +7849,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#dcdc85",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-warning-inactive",
       description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -7849,16 +7858,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#d9d08a",
+      value: "#d9d9d966",
       cssVar: "--rw-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.success-hover",
       type: "color",
-      value: "#69a190",
+      value: "#a6a6a6",
       cssVar: "--rw-color-on-muted-success-hover",
       description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -7867,7 +7876,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-active",
       type: "color",
-      value: "#7ebda8",
+      value: "#bfbfbf",
       cssVar: "--rw-color-on-muted-success-active",
       description: "Generated success foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -7876,7 +7885,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-inactive",
       type: "color",
-      value: "#9ae2d7",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-success-inactive",
       description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -7885,16 +7894,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#99ddc4",
+      value: "#d9d9d966",
       cssVar: "--rw-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.positive-hover",
       type: "color",
-      value: "#69a190",
+      value: "#a6a6a6",
       cssVar: "--rw-color-on-muted-positive-hover",
       description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -7903,7 +7912,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-active",
       type: "color",
-      value: "#7ebda8",
+      value: "#bfbfbf",
       cssVar: "--rw-color-on-muted-positive-active",
       description: "Generated positive foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -7912,7 +7921,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-inactive",
       type: "color",
-      value: "#9ae2d7",
+      value: "#d9d9d9",
       cssVar: "--rw-color-on-muted-positive-inactive",
       description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -7921,16 +7930,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#99ddc4",
+      value: "#d9d9d966",
       cssVar: "--rw-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#5682a6",
+      value: "#8894a8",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -7939,7 +7948,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#6796bd",
+      value: "#9aaac3",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -7948,7 +7957,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#90d1df",
+      value: "#b9ebeb",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -7957,7 +7966,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#80a9ce",
+      value: "#abbedd",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -7966,7 +7975,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#8f7fab",
+      value: "#908aaa",
       cssVar: "--rw-color-on-muted-discovery-hover",
       description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -7975,7 +7984,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#a28fc3",
+      value: "#a49bc3",
       cssVar: "--rw-color-on-muted-discovery-active",
       description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -7984,7 +7993,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-inactive",
       type: "color",
-      value: "#eab7ea",
+      value: "#ecbfec",
       cssVar: "--rw-color-on-muted-discovery-inactive",
       description: "Generated discovery foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -7993,7 +8002,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#b2a1d6",
+      value: "#b4abda",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -9883,7 +9892,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #2e7aff20",
+      value: "0px 0px 0px 3px #4d8eff20",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -9892,7 +9901,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2e7aff20",
+      value: "0px 0px 0px 1px #4d8eff20",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -9901,7 +9910,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff20",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -9910,7 +9919,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff20",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -10075,6 +10084,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },
@@ -10848,7 +10866,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.ink.body",
       type: "color",
-      value: "#ffffff",
+      value: "#dadada",
       cssVar: "--rw-color-ink-body",
       description: "Default text and icon color for standard content.",
       theme: undefined,
@@ -11181,7 +11199,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info",
       type: "color",
-      value: "#4387ff",
+      value: "#70a4ff",
       cssVar: "--rw-color-accent-info",
       description: "Informational accent for guidance and neutral status.",
       theme: undefined,
@@ -11451,7 +11469,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-hover",
       type: "color",
-      value: "#81bcff",
+      value: "#b1d9ff",
       cssVar: "--rw-color-accent-info-hover",
       description: "Informational accent for guidance and neutral status. (hover, 23% brighter)",
       theme: undefined,
@@ -11460,7 +11478,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-active",
       type: "color",
-      value: "#63a2ff",
+      value: "#90bfff",
       cssVar: "--rw-color-accent-info-active",
       description: "Informational accent for guidance and neutral status. (active, 11% brighter)",
       theme: undefined,
@@ -11469,7 +11487,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-inactive",
       type: "color",
-      value: "#004bc1",
+      value: "#0159f1",
       cssVar: "--rw-color-accent-info-inactive",
       description: "Informational accent for guidance and neutral status. (inactive, 20% darker)",
       theme: undefined,
@@ -11478,7 +11496,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.accent.info-disabled",
       type: "color",
-      value: "#4085ff",
+      value: "#68a0ff",
       cssVar: "--rw-color-accent-info-disabled",
       description: "Informational accent for guidance and neutral status. (disabled, 80% saturation)",
       theme: undefined,
@@ -11604,7 +11622,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success",
       type: "color",
-      value: "#000000",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-success",
       description: "Success accent for confirmed states.",
       theme: undefined,
@@ -11613,7 +11631,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.positive",
       type: "color",
-      value: "#000000",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-positive",
       description: "Positive accent for favorable states.",
       theme: undefined,
@@ -11784,72 +11802,72 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-accent.success-hover",
       type: "color",
-      value: "#000000",
+      value: "#c9c9c9",
       cssVar: "--rw-color-on-accent-success-hover",
-      description: "Success accent for confirmed states. (hover, 23% brighter)",
+      description: "Success accent for confirmed states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-active",
       type: "color",
-      value: "#000000",
+      value: "#fbfbfb",
       cssVar: "--rw-color-on-accent-success-active",
-      description: "Success accent for confirmed states. (active, 11% brighter)",
+      description: "Success accent for confirmed states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-inactive",
       type: "color",
-      value: "#000000",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-success-inactive",
-      description: "Success accent for confirmed states. (inactive, 20% darker)",
+      description: "Success accent for confirmed states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.success-disabled",
       type: "color",
-      value: "#000000",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-accent-success-disabled",
-      description: "Success accent for confirmed states. (disabled, 80% saturation)",
+      description: "Success accent for confirmed states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-hover",
       type: "color",
-      value: "#000000",
+      value: "#c9c9c9",
       cssVar: "--rw-color-on-accent-positive-hover",
-      description: "Positive accent for favorable states. (hover, 23% brighter)",
+      description: "Positive accent for favorable states. (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-active",
       type: "color",
-      value: "#000000",
+      value: "#fbfbfb",
       cssVar: "--rw-color-on-accent-positive-active",
-      description: "Positive accent for favorable states. (active, 11% brighter)",
+      description: "Positive accent for favorable states. (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-inactive",
       type: "color",
-      value: "#000000",
+      value: "#ffffff",
       cssVar: "--rw-color-on-accent-positive-inactive",
-      description: "Positive accent for favorable states. (inactive, 20% darker)",
+      description: "Positive accent for favorable states. (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-accent.positive-disabled",
       type: "color",
-      value: "#000000",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-accent-positive-disabled",
-      description: "Positive accent for favorable states. (disabled, 80% saturation)",
+      description: "Positive accent for favorable states. (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
@@ -12018,7 +12036,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#44000d",
+      value: "#28000d",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the dark theme",
       theme: undefined,
@@ -12027,7 +12045,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#44000d",
+      value: "#28000d",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the dark theme",
       theme: undefined,
@@ -12036,7 +12054,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#724000",
+      value: "#4d3300",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the dark theme",
       theme: undefined,
@@ -12045,7 +12063,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#003d24",
+      value: "#003121",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the dark theme",
       theme: undefined,
@@ -12054,7 +12072,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#003d24",
+      value: "#003121",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the dark theme",
       theme: undefined,
@@ -12063,7 +12081,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#002f9b",
+      value: "#00388e",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the dark theme",
       theme: undefined,
@@ -12072,7 +12090,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#4a229d",
+      value: "#3f198c",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the dark theme",
       theme: undefined,
@@ -12081,7 +12099,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#990c17",
+      value: "#73081f",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12090,7 +12108,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#7a000e",
+      value: "#540016",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12099,7 +12117,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#200001",
+      value: "#080002",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12108,7 +12126,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#58060c",
+      value: "#39030f",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12117,7 +12135,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#990c17",
+      value: "#73081f",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12126,7 +12144,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#7a000e",
+      value: "#540016",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12135,7 +12153,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#200001",
+      value: "#080002",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12144,7 +12162,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#58060c",
+      value: "#39030f",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12153,7 +12171,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#e37a17",
+      value: "#b17415",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12162,7 +12180,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#bb6002",
+      value: "#8c5903",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12171,7 +12189,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#411e00",
+      value: "#211300",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12180,7 +12198,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#924e0f",
+      value: "#6d470d",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12189,7 +12207,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#20a35e",
+      value: "#1d9261",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12198,7 +12216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#0b7f46",
+      value: "#096f47",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12207,7 +12225,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#001109",
+      value: "#000805",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12216,7 +12234,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#146339",
+      value: "#115739",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12225,7 +12243,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#20a35e",
+      value: "#1d9261",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12234,7 +12252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#0b7f46",
+      value: "#096f47",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12243,7 +12261,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#001109",
+      value: "#000805",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12252,7 +12270,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#146339",
+      value: "#115739",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12261,7 +12279,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#004bf3",
+      value: "#0159f1",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12270,7 +12288,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#003dc8",
+      value: "#0049c2",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12279,7 +12297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#001072",
+      value: "#001c64",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12288,7 +12306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#002f9a",
+      value: "#003898",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12297,7 +12315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#6f47d0",
+      value: "#6036c1",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the dark theme (hover, 23% brighter)",
       theme: undefined,
@@ -12306,7 +12324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#5b32ba",
+      value: "#4f27a8",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the dark theme (active, 11% brighter)",
       theme: undefined,
@@ -12315,7 +12333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#2b0967",
+      value: "#230357",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the dark theme (inactive, 20% darker)",
       theme: undefined,
@@ -12324,7 +12342,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#472b8a",
+      value: "#3c217b",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the dark theme (disabled, 80% saturation)",
       theme: undefined,
@@ -12666,7 +12684,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger",
       type: "color",
-      value: "#ffb7c6",
+      value: "#ffdade",
       cssVar: "--rw-color-on-muted-danger",
       description: "Generated danger foreground on muted backgrounds",
       theme: undefined,
@@ -12675,7 +12693,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative",
       type: "color",
-      value: "#ffb7c6",
+      value: "#ffdade",
       cssVar: "--rw-color-on-muted-negative",
       description: "Generated negative foreground on muted backgrounds",
       theme: undefined,
@@ -12684,7 +12702,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning",
       type: "color",
-      value: "#fff5ad",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-warning",
       description: "Generated warning foreground on muted backgrounds",
       theme: undefined,
@@ -12693,7 +12711,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success",
       type: "color",
-      value: "#e1fff5",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-success",
       description: "Generated success foreground on muted backgrounds",
       theme: undefined,
@@ -12702,7 +12720,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive",
       type: "color",
-      value: "#e1fff5",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-positive",
       description: "Generated positive foreground on muted backgrounds",
       theme: undefined,
@@ -12711,7 +12729,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#9ed3ff",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -12801,34 +12819,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#db5669",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-active",
       type: "color",
-      value: "#ffdee7",
+      value: "#f88b9a",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#e73e67",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#ffb4c2",
+      value: "#ffd4d8",
       cssVar: "--rw-color-on-muted-danger-disabled",
       description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -12837,34 +12855,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-hover",
       type: "color",
-      value: "#ffffff",
+      value: "#db5669",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-active",
       type: "color",
-      value: "#ffdee7",
+      value: "#f88b9a",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#e73e67",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#ffb4c2",
+      value: "#ffd4d8",
       cssVar: "--rw-color-on-muted-negative-disabled",
       description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -12873,7 +12891,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-hover",
       type: "color",
-      value: "#ccb707",
+      value: "#cfcfcf",
       cssVar: "--rw-color-on-muted-warning-hover",
       description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -12882,7 +12900,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-active",
       type: "color",
-      value: "#fae549",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-warning-active",
       description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -12891,7 +12909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#ffffca",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-warning-inactive",
       description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -12900,16 +12918,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#fffacf",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-warning-disabled",
-      description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated warning foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.success-hover",
       type: "color",
-      value: "#43d3a7",
+      value: "#cfcfcf",
       cssVar: "--rw-color-on-muted-success-hover",
       description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -12918,7 +12936,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-active",
       type: "color",
-      value: "#86f5d0",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-success-active",
       description: "Generated success foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -12936,16 +12954,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#f5fffb",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-success-disabled",
-      description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated success foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.positive-hover",
       type: "color",
-      value: "#43d3a7",
+      value: "#cfcfcf",
       cssVar: "--rw-color-on-muted-positive-hover",
       description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -12954,7 +12972,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-active",
       type: "color",
-      value: "#86f5d0",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-positive-active",
       description: "Generated positive foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -12972,16 +12990,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#f5fffb",
+      value: "#ffffff66",
       cssVar: "--rw-color-on-muted-positive-disabled",
-      description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
+      description: "Generated positive foreground on muted backgrounds (disabled, 40% opacity)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#1587e2",
+      value: "#92aad4",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -12990,7 +13008,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#4badff",
+      value: "#cddcf5",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -12999,7 +13017,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#e7fbff",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -13008,7 +13026,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#a2d4ff",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -13017,7 +13035,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#9f7eda",
+      value: "#a396d6",
       cssVar: "--rw-color-on-muted-discovery-hover",
       description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -13026,7 +13044,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#ccb5f6",
+      value: "#d7cff6",
       cssVar: "--rw-color-on-muted-discovery-active",
       description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -13044,7 +13062,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#faf8ff",
+      value: "#ffffff",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -14934,7 +14952,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info",
       type: "shadow",
-      value: "0px 0px 0px 3px #2e7aff20",
+      value: "0px 0px 0px 3px #4d8eff20",
       cssVar: "--rw-ring-info",
       description: "The info ring variant",
       theme: undefined,
@@ -14943,7 +14961,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle",
       type: "shadow",
-      value: "0px 0px 0px 1px #2e7aff20",
+      value: "0px 0px 0px 1px #4d8eff20",
       cssVar: "--rw-ring-info-subtle",
       description: "The info subtle ring variant",
       theme: undefined,
@@ -14952,7 +14970,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 6px #4d8eff20",
       cssVar: "--rw-ring-info-offset",
       description: "The info ring variant with a 3px offset",
       theme: undefined,
@@ -14961,7 +14979,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "ring.info-subtle-offset",
       type: "shadow",
-      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #2e7aff20",
+      value: "0px 0px 0px 3px var(--color-surface-elevated), 0px 0px 0px 4px #4d8eff20",
       cssVar: "--rw-ring-info-subtle-offset",
       description: "The info subtle ring variant with a 3px offset",
       theme: undefined,
@@ -15126,6 +15144,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },
@@ -17069,7 +17096,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#d56479",
+      value: "#e37085",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the light theme",
       theme: undefined,
@@ -17078,7 +17105,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#d56479",
+      value: "#e37085",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the light theme",
       theme: undefined,
@@ -17087,7 +17114,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#b08c52",
+      value: "#bd985e",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the light theme",
       theme: undefined,
@@ -17096,7 +17123,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#5ea48a",
+      value: "#6ab196",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the light theme",
       theme: undefined,
@@ -17105,7 +17132,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#5ea48a",
+      value: "#6ab196",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the light theme",
       theme: undefined,
@@ -17114,7 +17141,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#5790f3",
+      value: "#659dff",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the light theme",
       theme: undefined,
@@ -17123,7 +17150,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#8f7bd3",
+      value: "#9e8ae4",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the light theme",
       theme: undefined,
@@ -17132,7 +17159,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#a43750",
+      value: "#ae4158",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17141,7 +17168,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#bc4e64",
+      value: "#c8586e",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17150,7 +17177,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#ff8ca0",
+      value: "#ff9baf",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17159,7 +17186,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#c96e7d",
+      value: "#d67a89",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17168,7 +17195,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#a43750",
+      value: "#ae4158",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17177,7 +17204,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#bc4e64",
+      value: "#c8586e",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17186,7 +17213,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#ff8ca0",
+      value: "#ff9baf",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17195,7 +17222,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#c96e7d",
+      value: "#d67a89",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17204,7 +17231,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#826025",
+      value: "#8c692e",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17213,7 +17240,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#99763c",
+      value: "#a48046",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17222,7 +17249,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#dbb57a",
+      value: "#ebc489",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17231,7 +17258,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#aa8e61",
+      value: "#b79a6d",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17240,7 +17267,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#2f775e",
+      value: "#388067",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17249,7 +17276,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#478d74",
+      value: "#51987e",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17258,7 +17285,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#88ceb3",
+      value: "#96dfc2",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17267,7 +17294,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#6ba18c",
+      value: "#77ae98",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17276,7 +17303,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#2f775e",
+      value: "#388067",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17285,7 +17312,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#478d74",
+      value: "#51987e",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17294,7 +17321,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#88ceb3",
+      value: "#96dfc2",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17303,7 +17330,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#6ba18c",
+      value: "#77ae98",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17312,7 +17339,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#2c62c0",
+      value: "#376cc9",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17321,7 +17348,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#4179da",
+      value: "#4e84e4",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17330,7 +17357,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#7fbbff",
+      value: "#90cbff",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17339,7 +17366,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#6492e0",
+      value: "#729fec",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17348,7 +17375,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#6650a4",
+      value: "#715bb1",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -17357,7 +17384,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#7a65bb",
+      value: "#8772ca",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -17366,7 +17393,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#b6a3fe",
+      value: "#c9b5ff",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -17375,7 +17402,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#8e7fc5",
+      value: "#9d8ed6",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -17717,7 +17744,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger",
       type: "color",
-      value: "#49000b",
+      value: "#2f000c",
       cssVar: "--rw-color-on-muted-danger",
       description: "Generated danger foreground on muted backgrounds",
       theme: undefined,
@@ -17726,7 +17753,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative",
       type: "color",
-      value: "#49000b",
+      value: "#2f000c",
       cssVar: "--rw-color-on-muted-negative",
       description: "Generated negative foreground on muted backgrounds",
       theme: undefined,
@@ -17735,7 +17762,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning",
       type: "color",
-      value: "#432300",
+      value: "#2d1c00",
       cssVar: "--rw-color-on-muted-warning",
       description: "Generated warning foreground on muted backgrounds",
       theme: undefined,
@@ -17744,7 +17771,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success",
       type: "color",
-      value: "#003622",
+      value: "#002b1e",
       cssVar: "--rw-color-on-muted-success",
       description: "Generated success foreground on muted backgrounds",
       theme: undefined,
@@ -17753,7 +17780,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive",
       type: "color",
-      value: "#003622",
+      value: "#002b1e",
       cssVar: "--rw-color-on-muted-positive",
       description: "Generated positive foreground on muted backgrounds",
       theme: undefined,
@@ -17762,7 +17789,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#001d79",
+      value: "#001c54",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -17771,7 +17798,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery",
       type: "color",
-      value: "#2a095b",
+      value: "#20004c",
       cssVar: "--rw-color-on-muted-discovery",
       description: "Generated discovery foreground on muted backgrounds",
       theme: undefined,
@@ -17852,34 +17879,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-hover",
       type: "color",
-      value: "#380001",
+      value: "#3b0916",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-active",
       type: "color",
-      value: "#400005",
+      value: "#350411",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#591117",
+      value: "#240005",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#430c11",
+      value: "#2b050e",
       cssVar: "--rw-color-on-muted-danger-disabled",
       description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -17888,34 +17915,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-hover",
       type: "color",
-      value: "#380001",
+      value: "#3b0916",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-active",
       type: "color",
-      value: "#400005",
+      value: "#350411",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#591117",
+      value: "#240005",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#430c11",
+      value: "#2b050e",
       cssVar: "--rw-color-on-muted-negative-disabled",
       description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -17924,34 +17951,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-hover",
       type: "color",
-      value: "#311300",
+      value: "#3b290c",
       cssVar: "--rw-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-active",
       type: "color",
-      value: "#3a1b00",
+      value: "#342305",
       cssVar: "--rw-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated warning foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#533210",
+      value: "#211100",
       cssVar: "--rw-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#3f250c",
+      value: "#2a1d07",
       cssVar: "--rw-color-on-muted-warning-disabled",
       description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -17960,7 +17987,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-hover",
       type: "color",
-      value: "#002512",
+      value: "#001d11",
       cssVar: "--rw-color-on-muted-success-hover",
       description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -17969,7 +17996,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-active",
       type: "color",
-      value: "#002d1a",
+      value: "#002417",
       cssVar: "--rw-color-on-muted-success-active",
       description: "Generated success foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -17978,7 +18005,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-inactive",
       type: "color",
-      value: "#144631",
+      value: "#0f382a",
       cssVar: "--rw-color-on-muted-success-inactive",
       description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -17987,7 +18014,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#0f3424",
+      value: "#0b2a1f",
       cssVar: "--rw-color-on-muted-success-disabled",
       description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -17996,7 +18023,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-hover",
       type: "color",
-      value: "#002512",
+      value: "#001d11",
       cssVar: "--rw-color-on-muted-positive-hover",
       description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -18005,7 +18032,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-active",
       type: "color",
-      value: "#002d1a",
+      value: "#002417",
       cssVar: "--rw-color-on-muted-positive-active",
       description: "Generated positive foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -18014,7 +18041,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-inactive",
       type: "color",
-      value: "#144631",
+      value: "#0f382a",
       cssVar: "--rw-color-on-muted-positive-inactive",
       description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -18023,7 +18050,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#0f3424",
+      value: "#0b2a1f",
       cssVar: "--rw-color-on-muted-positive-disabled",
       description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -18032,7 +18059,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#000164",
+      value: "#000c44",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -18041,7 +18068,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#00116f",
+      value: "#00144c",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -18050,7 +18077,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#0b308c",
+      value: "#0a2a63",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -18059,7 +18086,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#08246a",
+      value: "#071f4a",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -18068,34 +18095,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#1d004a",
+      value: "#2b105a",
       cssVar: "--rw-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#240052",
+      value: "#250753",
       cssVar: "--rw-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated discovery foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-inactive",
       type: "color",
-      value: "#361b6b",
+      value: "#17003f",
       cssVar: "--rw-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#281450",
+      value: "#1e0a42",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -20177,6 +20204,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },
@@ -22120,7 +22156,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#b6727f",
+      value: "#c17986",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the light theme",
       theme: undefined,
@@ -22129,7 +22165,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#b6727f",
+      value: "#c17986",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the light theme",
       theme: undefined,
@@ -22138,7 +22174,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#9a8767",
+      value: "#a48f6e",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the light theme",
       theme: undefined,
@@ -22147,7 +22183,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#6d9486",
+      value: "#759e8e",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the light theme",
       theme: undefined,
@@ -22156,7 +22192,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#6d9486",
+      value: "#759e8e",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the light theme",
       theme: undefined,
@@ -22165,7 +22201,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#698dca",
+      value: "#7095d6",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the light theme",
       theme: undefined,
@@ -22174,7 +22210,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#8c80b7",
+      value: "#9588c5",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the light theme",
       theme: undefined,
@@ -22183,7 +22219,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#925362",
+      value: "#985b68",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22192,7 +22228,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#a26571",
+      value: "#ab6b78",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22201,7 +22237,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#dc8594",
+      value: "#de8d9e",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22210,7 +22246,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#ae7881",
+      value: "#b97f88",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22219,7 +22255,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#925362",
+      value: "#985b68",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22228,7 +22264,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#a26571",
+      value: "#ab6b78",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22237,7 +22273,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#dc8594",
+      value: "#de8d9e",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22246,7 +22282,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#ae7881",
+      value: "#b97f88",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22255,7 +22291,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#7e6943",
+      value: "#846f4b",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22264,7 +22300,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#8c7756",
+      value: "#937e5e",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22273,7 +22309,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#bca47f",
+      value: "#caaf87",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22282,7 +22318,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#98886f",
+      value: "#a29177",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22291,7 +22327,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#497767",
+      value: "#517d6d",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22300,7 +22336,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#5c8576",
+      value: "#648c7d",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22309,7 +22345,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#88b4a3",
+      value: "#90c2ae",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22318,7 +22354,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#759387",
+      value: "#7d9d90",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22327,7 +22363,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#497767",
+      value: "#517d6d",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22336,7 +22372,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#5c8576",
+      value: "#648c7d",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22345,7 +22381,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#88b4a3",
+      value: "#90c2ae",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22354,7 +22390,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#759387",
+      value: "#7d9d90",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22363,7 +22399,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#4f6ea3",
+      value: "#5875a8",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22372,7 +22408,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#5e7eb5",
+      value: "#6585be",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22381,7 +22417,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#7ea9da",
+      value: "#87b5dc",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22390,7 +22426,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#728ebe",
+      value: "#7996c8",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22399,7 +22435,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#716493",
+      value: "#786c9c",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -22408,7 +22444,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#7e72a4",
+      value: "#877aaf",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -22417,7 +22453,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#a292de",
+      value: "#af9ce2",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -22426,7 +22462,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#8b82ad",
+      value: "#958bbb",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -22768,7 +22804,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger",
       type: "color",
-      value: "#631d27",
+      value: "#551928",
       cssVar: "--rw-color-on-muted-danger",
       description: "Generated danger foreground on muted backgrounds",
       theme: undefined,
@@ -22777,7 +22813,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative",
       type: "color",
-      value: "#631d27",
+      value: "#551928",
       cssVar: "--rw-color-on-muted-negative",
       description: "Generated negative foreground on muted backgrounds",
       theme: undefined,
@@ -22786,7 +22822,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning",
       type: "color",
-      value: "#603f1c",
+      value: "#543d18",
       cssVar: "--rw-color-on-muted-warning",
       description: "Generated warning foreground on muted backgrounds",
       theme: undefined,
@@ -22795,7 +22831,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success",
       type: "color",
-      value: "#1a5941",
+      value: "#185341",
       cssVar: "--rw-color-on-muted-success",
       description: "Generated success foreground on muted backgrounds",
       theme: undefined,
@@ -22804,7 +22840,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive",
       type: "color",
-      value: "#1a5941",
+      value: "#185341",
       cssVar: "--rw-color-on-muted-positive",
       description: "Generated positive foreground on muted backgrounds",
       theme: undefined,
@@ -22813,7 +22849,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#243a7d",
+      value: "#1e3769",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -22822,7 +22858,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery",
       type: "color",
-      value: "#43286a",
+      value: "#3b1d65",
       cssVar: "--rw-color-on-muted-discovery",
       description: "Generated discovery foreground on muted backgrounds",
       theme: undefined,
@@ -22903,34 +22939,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.danger-hover",
       type: "color",
-      value: "#5a1a1b",
+      value: "#572532",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-active",
       type: "color",
-      value: "#5e1b21",
+      value: "#561f2d",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#672f34",
+      value: "#4f171f",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-disabled",
       type: "color",
-      value: "#5b292d",
+      value: "#4f1f2a",
       cssVar: "--rw-color-on-muted-danger-disabled",
       description: "Generated danger foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -22939,34 +22975,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.negative-hover",
       type: "color",
-      value: "#5a1a1b",
+      value: "#572532",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-active",
       type: "color",
-      value: "#5e1b21",
+      value: "#561f2d",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#672f34",
+      value: "#4f171f",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-disabled",
       type: "color",
-      value: "#5b292d",
+      value: "#4f1f2a",
       cssVar: "--rw-color-on-muted-negative-disabled",
       description: "Generated negative foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -22975,34 +23011,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.warning-hover",
       type: "color",
-      value: "#563119",
+      value: "#564428",
       cssVar: "--rw-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-active",
       type: "color",
-      value: "#5b381a",
+      value: "#554220",
       cssVar: "--rw-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated warning foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#64492e",
+      value: "#4d3316",
       cssVar: "--rw-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-disabled",
       type: "color",
-      value: "#594028",
+      value: "#4d3d22",
       cssVar: "--rw-color-on-muted-warning-disabled",
       description: "Generated warning foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -23011,7 +23047,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-hover",
       type: "color",
-      value: "#174f32",
+      value: "#164b35",
       cssVar: "--rw-color-on-muted-success-hover",
       description: "Generated success foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -23020,7 +23056,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-active",
       type: "color",
-      value: "#18543b",
+      value: "#174f3b",
       cssVar: "--rw-color-on-muted-success-active",
       description: "Generated success foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -23029,7 +23065,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-inactive",
       type: "color",
-      value: "#305b49",
+      value: "#2b5345",
       cssVar: "--rw-color-on-muted-success-inactive",
       description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -23038,7 +23074,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-disabled",
       type: "color",
-      value: "#2b5040",
+      value: "#274b3e",
       cssVar: "--rw-color-on-muted-success-disabled",
       description: "Generated success foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -23047,7 +23083,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-hover",
       type: "color",
-      value: "#174f32",
+      value: "#164b35",
       cssVar: "--rw-color-on-muted-positive-hover",
       description: "Generated positive foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -23056,7 +23092,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-active",
       type: "color",
-      value: "#18543b",
+      value: "#174f3b",
       cssVar: "--rw-color-on-muted-positive-active",
       description: "Generated positive foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -23065,7 +23101,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-inactive",
       type: "color",
-      value: "#305b49",
+      value: "#2b5345",
       cssVar: "--rw-color-on-muted-positive-inactive",
       description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -23074,7 +23110,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-disabled",
       type: "color",
-      value: "#2b5040",
+      value: "#274b3e",
       cssVar: "--rw-color-on-muted-positive-disabled",
       description: "Generated positive foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -23083,7 +23119,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#212272",
+      value: "#1c2860",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -23092,7 +23128,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#233078",
+      value: "#1d3065",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -23101,7 +23137,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#304986",
+      value: "#2a436f",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -23110,7 +23146,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#293e73",
+      value: "#243a61",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -23119,34 +23155,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#391d63",
+      value: "#442e68",
       cssVar: "--rw-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#3e1e68",
+      value: "#3f2566",
       cssVar: "--rw-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated discovery foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-inactive",
       type: "color",
-      value: "#4c3971",
+      value: "#331b5d",
       cssVar: "--rw-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#413161",
+      value: "#39275b",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -25228,6 +25264,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },
@@ -27171,7 +27216,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger",
       type: "color",
-      value: "#f0637d",
+      value: "#fc7d94",
       cssVar: "--rw-color-muted-danger",
       description: "Generated danger muted background for the light theme",
       theme: undefined,
@@ -27180,7 +27225,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative",
       type: "color",
-      value: "#f0637d",
+      value: "#fc7d94",
       cssVar: "--rw-color-muted-negative",
       description: "Generated negative muted background for the light theme",
       theme: undefined,
@@ -27189,7 +27234,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning",
       type: "color",
-      value: "#c7923c",
+      value: "#d6a252",
       cssVar: "--rw-color-muted-warning",
       description: "Generated warning muted background for the light theme",
       theme: undefined,
@@ -27198,7 +27243,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success",
       type: "color",
-      value: "#4cb78f",
+      value: "#61c6a0",
       cssVar: "--rw-color-muted-success",
       description: "Generated success muted background for the light theme",
       theme: undefined,
@@ -27207,7 +27252,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive",
       type: "color",
-      value: "#4cb78f",
+      value: "#61c6a0",
       cssVar: "--rw-color-muted-positive",
       description: "Generated positive muted background for the light theme",
       theme: undefined,
@@ -27216,7 +27261,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info",
       type: "color",
-      value: "#6da2ff",
+      value: "#92baff",
       cssVar: "--rw-color-muted-info",
       description: "Generated info muted background for the light theme",
       theme: undefined,
@@ -27225,7 +27270,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery",
       type: "color",
-      value: "#9d86ec",
+      value: "#b9a6fa",
       cssVar: "--rw-color-muted-discovery",
       description: "Generated discovery muted background for the light theme",
       theme: undefined,
@@ -27234,7 +27279,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-hover",
       type: "color",
-      value: "#af1c3e",
+      value: "#c12747",
       cssVar: "--rw-color-muted-danger-hover",
       description: "Generated danger muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27243,7 +27288,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-active",
       type: "color",
-      value: "#d63958",
+      value: "#e34c69",
       cssVar: "--rw-color-muted-danger-active",
       description: "Generated danger muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27252,7 +27297,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-inactive",
       type: "color",
-      value: "#ffcbd4",
+      value: "#ffe1e7",
       cssVar: "--rw-color-muted-danger-inactive",
       description: "Generated danger muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27261,7 +27306,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.danger-disabled",
       type: "color",
-      value: "#e26e81",
+      value: "#ef8697",
       cssVar: "--rw-color-muted-danger-disabled",
       description: "Generated danger muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27270,7 +27315,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-hover",
       type: "color",
-      value: "#af1c3e",
+      value: "#c12747",
       cssVar: "--rw-color-muted-negative-hover",
       description: "Generated negative muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27279,7 +27324,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-active",
       type: "color",
-      value: "#d63958",
+      value: "#e34c69",
       cssVar: "--rw-color-muted-negative-active",
       description: "Generated negative muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27288,7 +27333,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-inactive",
       type: "color",
-      value: "#ffcbd4",
+      value: "#ffe1e7",
       cssVar: "--rw-color-muted-negative-inactive",
       description: "Generated negative muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27297,7 +27342,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.negative-disabled",
       type: "color",
-      value: "#e26e81",
+      value: "#ef8697",
       cssVar: "--rw-color-muted-negative-disabled",
       description: "Generated negative muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27306,7 +27351,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-hover",
       type: "color",
-      value: "#734d0d",
+      value: "#865c15",
       cssVar: "--rw-color-muted-warning-hover",
       description: "Generated warning muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27315,7 +27360,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-active",
       type: "color",
-      value: "#9f7023",
+      value: "#b3802e",
       cssVar: "--rw-color-muted-warning-active",
       description: "Generated warning muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27324,7 +27369,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-inactive",
       type: "color",
-      value: "#f4c988",
+      value: "#ffddaa",
       cssVar: "--rw-color-muted-warning-inactive",
       description: "Generated warning muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27333,7 +27378,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.warning-disabled",
       type: "color",
-      value: "#be9552",
+      value: "#cda567",
       cssVar: "--rw-color-muted-warning-disabled",
       description: "Generated warning muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27342,7 +27387,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-hover",
       type: "color",
-      value: "#17674b",
+      value: "#207859",
       cssVar: "--rw-color-muted-success-hover",
       description: "Generated success muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27351,7 +27396,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-active",
       type: "color",
-      value: "#31906e",
+      value: "#3ca37d",
       cssVar: "--rw-color-muted-success-active",
       description: "Generated success muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27360,7 +27405,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-inactive",
       type: "color",
-      value: "#97e6c8",
+      value: "#b5f5dc",
       cssVar: "--rw-color-muted-success-inactive",
       description: "Generated success muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27369,7 +27414,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.success-disabled",
       type: "color",
-      value: "#5fb292",
+      value: "#74c2a3",
       cssVar: "--rw-color-muted-success-disabled",
       description: "Generated success muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27378,7 +27423,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-hover",
       type: "color",
-      value: "#17674b",
+      value: "#207859",
       cssVar: "--rw-color-muted-positive-hover",
       description: "Generated positive muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27387,7 +27432,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-active",
       type: "color",
-      value: "#31906e",
+      value: "#3ca37d",
       cssVar: "--rw-color-muted-positive-active",
       description: "Generated positive muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27396,7 +27441,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-inactive",
       type: "color",
-      value: "#97e6c8",
+      value: "#b5f5dc",
       cssVar: "--rw-color-muted-positive-inactive",
       description: "Generated positive muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27405,7 +27450,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.positive-disabled",
       type: "color",
-      value: "#5fb292",
+      value: "#74c2a3",
       cssVar: "--rw-color-muted-positive-disabled",
       description: "Generated positive muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27414,7 +27459,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-hover",
       type: "color",
-      value: "#0c56d8",
+      value: "#1864e9",
       cssVar: "--rw-color-muted-info-hover",
       description: "Generated info muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27423,7 +27468,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-active",
       type: "color",
-      value: "#2d78fb",
+      value: "#4a8bff",
       cssVar: "--rw-color-muted-info-active",
       description: "Generated info muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27432,7 +27477,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-inactive",
       type: "color",
-      value: "#b8d9ff",
+      value: "#d1e9ff",
       cssVar: "--rw-color-muted-info-inactive",
       description: "Generated info muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27441,7 +27486,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.info-disabled",
       type: "color",
-      value: "#689ffb",
+      value: "#8ab5ff",
       cssVar: "--rw-color-muted-info-disabled",
       description: "Generated info muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27450,7 +27495,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-hover",
       type: "color",
-      value: "#5a3ab5",
+      value: "#6a4ac7",
       cssVar: "--rw-color-muted-discovery-hover",
       description: "Generated discovery muted background for the light theme (hover, 23% darker)",
       theme: undefined,
@@ -27459,7 +27504,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-active",
       type: "color",
-      value: "#795cd3",
+      value: "#8f75e3",
       cssVar: "--rw-color-muted-discovery-active",
       description: "Generated discovery muted background for the light theme (active, 11% darker)",
       theme: undefined,
@@ -27468,7 +27513,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-inactive",
       type: "color",
-      value: "#efebff",
+      value: "#ffffff",
       cssVar: "--rw-color-muted-discovery-inactive",
       description: "Generated discovery muted background for the light theme (inactive, 20% brighter)",
       theme: undefined,
@@ -27477,7 +27522,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.muted.discovery-disabled",
       type: "color",
-      value: "#9986dd",
+      value: "#b3a4ee",
       cssVar: "--rw-color-muted-discovery-disabled",
       description: "Generated discovery muted background for the light theme (disabled, 80% saturation)",
       theme: undefined,
@@ -27864,7 +27909,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info",
       type: "color",
-      value: "#000f3d",
+      value: "#000207",
       cssVar: "--rw-color-on-muted-info",
       description: "Generated info foreground on muted backgrounds",
       theme: undefined,
@@ -27873,7 +27918,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery",
       type: "color",
-      value: "#0c001e",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-discovery",
       description: "Generated discovery foreground on muted backgrounds",
       theme: undefined,
@@ -27956,7 +28001,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-danger-hover",
-      description: "Generated danger foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated danger foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -27965,16 +28010,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-danger-active",
-      description: "Generated danger foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated danger foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.danger-inactive",
       type: "color",
-      value: "#260104",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-danger-inactive",
-      description: "Generated danger foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated danger foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -27992,7 +28037,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-negative-hover",
-      description: "Generated negative foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated negative foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -28001,16 +28046,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-negative-active",
-      description: "Generated negative foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated negative foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.negative-inactive",
       type: "color",
-      value: "#260104",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-negative-inactive",
-      description: "Generated negative foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated negative foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -28028,7 +28073,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-warning-hover",
-      description: "Generated warning foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated warning foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
@@ -28037,16 +28082,16 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       type: "color",
       value: "#000000",
       cssVar: "--rw-color-on-muted-warning-active",
-      description: "Generated warning foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated warning foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.warning-inactive",
       type: "color",
-      value: "#1c0f01",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-warning-inactive",
-      description: "Generated warning foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated warning foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
@@ -28080,7 +28125,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.success-inactive",
       type: "color",
-      value: "#020e09",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-success-inactive",
       description: "Generated success foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -28116,7 +28161,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.positive-inactive",
       type: "color",
-      value: "#020e09",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-positive-inactive",
       description: "Generated positive foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -28134,7 +28179,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-hover",
       type: "color",
-      value: "#00001e",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-info-hover",
       description: "Generated info foreground on muted backgrounds (hover, 23% darker)",
       theme: undefined,
@@ -28143,7 +28188,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-active",
       type: "color",
-      value: "#00072e",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-info-active",
       description: "Generated info foreground on muted backgrounds (active, 11% darker)",
       theme: undefined,
@@ -28152,7 +28197,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-inactive",
       type: "color",
-      value: "#001e68",
+      value: "#00102b",
       cssVar: "--rw-color-on-muted-info-inactive",
       description: "Generated info foreground on muted backgrounds (inactive, 20% brighter)",
       theme: undefined,
@@ -28161,7 +28206,7 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.info-disabled",
       type: "color",
-      value: "#000e33",
+      value: "#000103",
       cssVar: "--rw-color-on-muted-info-disabled",
       description: "Generated info foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -28170,34 +28215,34 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
     {
       path: "color.on-muted.discovery-hover",
       type: "color",
-      value: "#000000",
+      value: "#0e0027",
       cssVar: "--rw-color-on-muted-discovery-hover",
-      description: "Generated discovery foreground on muted backgrounds (hover, 23% darker)",
+      description: "Generated discovery foreground on muted backgrounds (hover, 23% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-active",
       type: "color",
-      value: "#020004",
+      value: "#060010",
       cssVar: "--rw-color-on-muted-discovery-active",
-      description: "Generated discovery foreground on muted backgrounds (active, 11% darker)",
+      description: "Generated discovery foreground on muted backgrounds (active, 11% brighter)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-inactive",
       type: "color",
-      value: "#1d064a",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-discovery-inactive",
-      description: "Generated discovery foreground on muted backgrounds (inactive, 20% brighter)",
+      description: "Generated discovery foreground on muted backgrounds (inactive, 20% darker)",
       theme: undefined,
       typography: false
     },
     {
       path: "color.on-muted.discovery-disabled",
       type: "color",
-      value: "#0b021c",
+      value: "#000000",
       cssVar: "--rw-color-on-muted-discovery-disabled",
       description: "Generated discovery foreground on muted backgrounds (disabled, 80% saturation)",
       theme: undefined,
@@ -30279,6 +30324,15 @@ const TOKEN_VARIANTS: Record<string, TokenTableRow[]> = {
       value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.extrabold}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
       cssVar: "--rw-typography-eyebrow",
       description: "The eyebrow typography variant",
+      theme: undefined,
+      typography: true
+    },
+    {
+      path: "typography.button",
+      type: "typography",
+      value: "{\"fontFamily\":\"Manrope\",\"fontWeight\":\"{font-weight.black}\",\"fontSize\":\"{font-size.md}\",\"lineHeight\":\"{line-height.normal}\"}",
+      cssVar: "--rw-typography-button",
+      description: "The button typography variant",
       theme: undefined,
       typography: true
     },

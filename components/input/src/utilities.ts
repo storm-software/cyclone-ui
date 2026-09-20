@@ -48,8 +48,8 @@ export const baseInputStyle: BaseInputStyle = [
     cursor: "pointer",
     height: "100%",
     flex: 1,
-    color: "$foreground",
-    placeholderTextColor: "$foregroundDisabled",
+    color: "$accent",
+    placeholderTextColor: "$accentDisabled",
     selectionColor: "$color6",
     fontFamily: "$body-md",
     alignItems: "center",
@@ -63,18 +63,18 @@ export const baseInputStyle: BaseInputStyle = [
     minWidth: 0,
 
     hoverStyle: {
-      color: "$foregroundHover"
+      color: "$accentHover"
     },
 
     variants: {
       disabled: {
         true: {
           cursor: "not-allowed",
-          color: "$foregroundDisabled",
-          placeholderTextColor: "$foregroundDisabled",
+          color: "$accentDisabled",
+          placeholderTextColor: "$accentDisabled",
 
           hoverStyle: {
-            color: "$foregroundDisabled"
+            color: "$accentDisabled"
           }
         }
       },

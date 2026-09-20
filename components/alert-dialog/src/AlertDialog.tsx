@@ -50,7 +50,7 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           display="block"
           width="100%"
           height="55%"
-          backgroundColor="$foreground"
+          backgroundColor="$accent"
           zIndex="$10"
         />
 
@@ -58,13 +58,13 @@ const AlertDialogIcon = ThemeableIcon.styleable(
           <Theme name={theme}>
             <View
               padding={padding}
-              backgroundColor="$backgroundFloating"
+              backgroundColor="$surfaceFloating"
               borderRadius={1000_000_000}>
               <ThemeableIcon
                 ref={forwardedRef}
                 {...props}
                 theme={theme}
-                color="$foreground"
+                color="$accent"
                 size="$14xl">
                 {children || getIconByTheme({ theme }) || <AlertCircle />}
               </ThemeableIcon>
@@ -136,11 +136,7 @@ const AlertDialogHeading = Dialog.Heading.styleable(
 const AlertDialogBody = Dialog.Body.styleable(
   ({ children, ...props }, forwardedRef) => {
     return (
-      <Dialog.Body
-        ref={forwardedRef}
-        color="$foregroundBody"
-        size="$14xl"
-        {...props}>
+      <Dialog.Body ref={forwardedRef} color="$inkBody" size="$14xl" {...props}>
         {children}
       </Dialog.Body>
     );

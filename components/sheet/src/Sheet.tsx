@@ -99,7 +99,7 @@ const useSheetContext = () => {
 };
 
 const sheetFrameStyles = {
-  backgroundColor: "$backgroundFloating",
+  backgroundColor: "$surfaceFloating",
   borderWidth: 0,
   borderColor: "transparent",
   flexDirection: "column" as const,
@@ -166,7 +166,7 @@ const SheetSheetOverlay = styled(TamaguiSheet.Overlay, {
 const SheetSheetHandle = styled(TamaguiSheet.Handle, {
   name: "SheetHandle",
 
-  backgroundColor: "$border"
+  backgroundColor: "$hairline"
 });
 
 const SheetSheetScrollView = styled(TamaguiSheet.ScrollView, {
@@ -184,7 +184,7 @@ const SheetDialogHandle = styled(XStack, {
   name: "SheetDialogHandle",
 
   position: "absolute",
-  backgroundColor: "$border",
+  backgroundColor: "$hairline",
   borderRadius: 100,
   cursor: "grab",
   opacity: 0.5,
@@ -357,14 +357,14 @@ const SheetHeading: typeof HeadingExtraLargeText = styled(
   {
     name: "SheetHeading",
 
-    color: "$foreground"
+    color: "$accent"
   }
 );
 
 const SheetBody: typeof BodyText = styled(BodyText, {
   name: "SheetBody",
 
-  color: "$foregroundBody",
+  color: "$inkBody",
   flexGrow: 1
 });
 

@@ -32,7 +32,7 @@ const FeDistantLight =
   (ReactNativeSvg as any).FeDistantLight ?? "feDistantLight";
 
 const Icon = (props: IconProps) => {
-  const color = useCurrentColor((props.color || "$foregroundInverse") as any);
+  const color = useCurrentColor((props.color || "$onAccent") as any);
 
   return (
     <Svg
@@ -66,7 +66,7 @@ const Icon = (props: IconProps) => {
             surfaceScale="15"
             specularConstant="0.75"
             specularExponent="20"
-            lightingColor={color || "$background"}
+            lightingColor={color || "$muted"}
             x="0%"
             y="0%"
             width="100%"
@@ -81,7 +81,7 @@ const Icon = (props: IconProps) => {
       <Rect
         width="700"
         height="700"
-        fill={color || "$background"}
+        fill={color || "$muted"}
         filter="url(#noise-filter)"></Rect>
     </Svg>
   );

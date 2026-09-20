@@ -67,22 +67,22 @@ const CardFrame = styled(Container, {
   transition: "200ms",
   overflow: "hidden",
   borderRadius: "$card",
-  borderColor: "$border",
+  borderColor: "$accent",
   cursor: "pointer",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   position: "relative",
 
   hoverStyle: {
-    backgroundColor: "$backgroundElevatedHover",
-    borderColor: "$borderHover"
+    backgroundColor: "$surfaceElevatedHover",
+    borderColor: "$accentHover"
   },
 
   pressStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$accentHover"
   },
 
   focusVisibleStyle: {
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   }
 });
 
@@ -175,7 +175,7 @@ const CardFrameImpl = CardFrame.styleable<{
             size={size}>
             {dataColor && <CardDataBorder style={{ borderColor: dataColor }} />}
             <CardBackgroundGradient
-              colors={["transparent", color ?? "$foreground"]}
+              colors={["transparent", color ?? "$accent"]}
             />
             <CardContent size={size}>{children}</CardContent>
           </CardFrame>
@@ -229,7 +229,7 @@ const CardIcon = ({ children, ...props }: ThemeableIconProps) => {
     <ThemeableIcon
       theme={theme}
       size="$13xl"
-      color={dataColor ?? "$foreground"}
+      color={dataColor ?? "$accent"}
       zIndex="$20"
       {...props}>
       {icon}
@@ -243,7 +243,7 @@ const CardHeading = styled(HeadingLargeText, {
 
   zIndex: "$20",
   verticalAlign: "middle",
-  color: "$foreground"
+  color: "$accent"
 });
 
 const CardHeadingImpl = CardHeading.styleable(
@@ -252,10 +252,7 @@ const CardHeadingImpl = CardHeading.styleable(
     const dataColor = useContext(CardDataColorContext);
 
     return (
-      <CardHeading
-        ref={forwardedRef}
-        color={dataColor ?? "$foreground"}
-        {...rest}>
+      <CardHeading ref={forwardedRef} color={dataColor ?? "$accent"} {...rest}>
         {children}
       </CardHeading>
     );
@@ -270,7 +267,7 @@ const CardEyebrow = styled(EyebrowText, {
   context: CardContext,
 
   zIndex: "$20",
-  color: "$background"
+  color: "$muted"
 });
 
 const CardEyebrowImpl = CardEyebrow.styleable(
@@ -326,7 +323,7 @@ const CardLinkArrowRight = styled(ArrowRight, {
   context: CardContext,
 
   zIndex: "$30",
-  color: "$foreground",
+  color: "$accent",
   marginTop: "$xs"
 });
 
@@ -344,8 +341,8 @@ const CardLinkImpl = Link.styleable(
           inverse={inverse}
           zIndex="$30"
           $group-card-hover={{
-            color: "$foregroundHover",
-            textDecorationColor: "$foregroundHover"
+            color: "$accentHover",
+            textDecorationColor: "$accentHover"
           }}>
           {children}
         </Link>
@@ -358,7 +355,7 @@ const CardLinkImpl = Link.styleable(
           <CardLinkArrowRight
             size="$7xl"
             $group-card-hover={{
-              color: "$foregroundHover"
+              color: "$accentHover"
             }}
           />
         </View>

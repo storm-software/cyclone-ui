@@ -112,7 +112,7 @@ const NavigationHeaderFrame = styled(View, {
   right: 0,
   zIndex: "$40",
   width: "100%",
-  backgroundColor: "$backgroundPage"
+  backgroundColor: "$surfaceCanvas"
 });
 
 const NavigationHeaderBar = styled(View, {
@@ -183,8 +183,8 @@ const NavigationHeaderItemFrame = styled(View, {
   variants: {
     active: {
       true: {
-        color: "$foreground",
-        borderBottomColor: "$foreground"
+        color: "$accent",
+        borderBottomColor: "$accent"
       }
     },
     mobile: {
@@ -207,19 +207,19 @@ const NavigationHeaderItemLink = styled(Link, {
   alignItems: "center",
   justifyContent: "center",
   display: "flex",
-  color: "$foregroundBody",
+  color: "$inkBody",
   fontSize: "$sm",
   fontWeight: "$medium",
   textDecorationLine: "none",
 
   hoverStyle: {
-    color: "$foreground",
+    color: "$accent",
     textDecorationLine: "none"
   },
 
   focusVisibleStyle: {
-    color: "$foreground",
-    outlineColor: "$foreground",
+    color: "$accent",
+    outlineColor: "$accent",
     outlineOffset: -4,
     outlineStyle: "solid",
     outlineWidth: 2
@@ -228,7 +228,7 @@ const NavigationHeaderItemLink = styled(Link, {
   variants: {
     active: {
       true: {
-        color: "$foreground"
+        color: "$accent"
       }
     },
     mobile: {
@@ -251,16 +251,16 @@ const NavigationHeaderDropdown = styled(View, {
   right: 0,
   zIndex: "$50",
   overflow: "hidden",
-  backgroundColor: "$backgroundPage",
+  backgroundColor: "$surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "$borderSubtle",
+  borderBottomColor: "$hairline",
 
   variants: {
     open: {
       true: {
         pointerEvents: "auto",
         clipPath: "inset(0 0 0 0)",
-        borderBottomColor: "$borderSubtle"
+        borderBottomColor: "$hairline"
       },
       false: {
         pointerEvents: "none",
@@ -303,7 +303,7 @@ const NavigationHeaderDropdownGroupLabel = styled(BodyText, {
   name: "NavigationHeaderDropdownGroupLabel",
 
   marginBottom: "$xl",
-  color: "$foregroundBody"
+  color: "$inkBody"
 });
 
 const NavigationHeaderDropdownLink = styled(Link, {
@@ -314,20 +314,20 @@ const NavigationHeaderDropdownLink = styled(Link, {
   alignItems: "flex-start",
   justifyContent: "flex-start",
   display: "flex",
-  color: "$foregroundBody",
+  color: "$inkBody",
   fontSize: "$sm",
   fontWeight: "$medium",
   textDecorationLine: "none",
   borderRadius: "$md",
 
   hoverStyle: {
-    color: "$foreground",
+    color: "$accent",
     textDecorationLine: "none"
   },
 
   focusVisibleStyle: {
-    color: "$foreground",
-    outlineColor: "$foreground",
+    color: "$accent",
+    outlineColor: "$accent",
     outlineOffset: -2,
     outlineStyle: "solid",
     outlineWidth: 2
@@ -396,11 +396,11 @@ const NavigationHeaderMenuButton = styled(View, {
   borderRadius: "$full",
 
   hoverStyle: {
-    backgroundColor: "$backgroundHover"
+    backgroundColor: "$mutedHover"
   },
 
   pressStyle: {
-    backgroundColor: "$backgroundActive"
+    backgroundColor: "$mutedActive"
   },
 
   focusVisibleStyle: {
@@ -419,9 +419,9 @@ const NavigationHeaderMobilePanel = styled(View, {
   maxHeight: "calc(100vh - 52px)",
   paddingVertical: "$2xl",
   overflowY: "auto",
-  backgroundColor: "$backgroundPage",
+  backgroundColor: "$surfaceCanvas",
   borderBottomWidth: 1,
-  borderBottomColor: "$borderSubtle",
+  borderBottomColor: "$hairline",
   boxShadow: "$md",
 
   variants: {
@@ -471,7 +471,7 @@ const NavigationHeaderMobileActions = styled(View, {
   flexDirection: "column",
   gap: "$2xl",
   borderTopWidth: 1,
-  borderTopColor: "$borderSubtle"
+  borderTopColor: "$hairline"
 });
 
 interface NavigationHeaderChildItem {
@@ -766,8 +766,8 @@ const NavigationHeaderRoot =
                   hoveredItemIndex === null
                     ? undefined
                     : hoveredItemIndex === index
-                      ? "$foregroundActive"
-                      : "$foregroundInactive";
+                      ? "$accentActive"
+                      : "$accentInactive";
                 const dropdownId = `${mobileNavigationId}-submenu-${index}`;
 
                 return (
@@ -776,7 +776,7 @@ const NavigationHeaderRoot =
                     active={active}
                     borderBottomColor={
                       active
-                        ? (navigationItemColor ?? "$foreground")
+                        ? (navigationItemColor ?? "$accent")
                         : "$transparent"
                     }
                     position="relative"
@@ -889,8 +889,8 @@ const NavigationHeaderRoot =
                         const color = hovered
                           ? hoveredDropdownItem.groupIndex === groupIndex &&
                             hoveredDropdownItem.childIndex === childIndex
-                            ? "$foregroundActive"
-                            : "$foregroundInactive"
+                            ? "$accentActive"
+                            : "$accentInactive"
                           : undefined;
 
                         return (

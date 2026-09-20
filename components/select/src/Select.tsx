@@ -48,9 +48,9 @@ const SelectGroup = styled(XGroup, {
   justifyContent: "space-between",
   alignItems: "center",
   cursor: "pointer",
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   outlineStyle: "none",
   boxShadow: "none",
   gap: "$none",
@@ -61,19 +61,19 @@ const SelectGroup = styled(XGroup, {
   minWidth: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover"
+    borderColor: "$accentHover"
   },
 
   focusVisibleStyle: {
     boxShadow: "$ringOffset",
-    borderColor: "$borderActive"
+    borderColor: "$accentActive"
   },
 
   variants: {
     focused: {
       true: {
         boxShadow: "$ringOffset",
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       }
     },
 
@@ -83,16 +83,16 @@ const SelectGroup = styled(XGroup, {
       underline: {
         borderWidth: 0,
         borderBottomWidth: 1,
-        borderColor: "$border",
+        borderColor: "$accent",
         borderRadius: 0,
         boxShadow: "none",
 
         hoverStyle: {
-          borderColor: "$borderHover"
+          borderColor: "$accentHover"
         },
 
         focusVisibleStyle: {
-          borderColor: "$border",
+          borderColor: "$accent",
           boxShadow: "none"
         }
       }
@@ -105,21 +105,21 @@ const SelectGroup = styled(XGroup, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled",
+          borderColor: "$accentDisabled",
           outlineStyle: "none"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled",
+          borderColor: "$accentDisabled",
           outlineStyle: "none"
         }
       }
@@ -146,7 +146,7 @@ const SelectSeparator = styled(View, {
   borderRightWidth: 0,
   borderTopWidth: 0,
   borderBottomWidth: 0,
-  borderColor: "$border",
+  borderColor: "$accent",
   width: 0,
   flexShrink: 0,
   height: "60%",
@@ -155,7 +155,7 @@ const SelectSeparator = styled(View, {
   variants: {
     focused: {
       true: {
-        borderColor: "$borderActive"
+        borderColor: "$accentActive"
       }
     },
 
@@ -169,18 +169,18 @@ const SelectSeparator = styled(View, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -237,7 +237,7 @@ const BaseSelect = styled(TamaguiSelect, {
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$foregroundInverseDisabled",
+        color: "$onAccentDisabled",
         backgroundColor: "transparent"
       }
     }
@@ -285,10 +285,10 @@ const SelectTextBoxImpl = SelectTextBox.styleable<Partial<SelectContextProps>>(
               disabled={disabled}
               $group-field-hover={{
                 borderColor: disabled
-                  ? "$borderDisabled"
+                  ? "$accentDisabled"
                   : focused
-                    ? "$borderActive"
-                    : "$borderHover"
+                    ? "$accentActive"
+                    : "$accentHover"
               }}
             />
           </XGroup.Item>

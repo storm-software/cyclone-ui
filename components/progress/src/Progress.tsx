@@ -23,7 +23,7 @@ export const Progress = TamaguiProgress.styleable<{
   color?: ColorTokens | ThemeTokens;
 }>(
   (
-    { color = "$foreground", size = "$10xl", value = 0, max = 100, ...props },
+    { color = "$accent", size = "$10xl", value = 0, max = 100, ...props },
     forwardRef
   ) => {
     return (
@@ -32,7 +32,7 @@ export const Progress = TamaguiProgress.styleable<{
         size={size}
         value={value}
         max={max}
-        backgroundColor="$backgroundLowest"
+        backgroundColor="$surfaceSunken"
         {...props}>
         <TamaguiProgress.Indicator
           transition="bouncy"

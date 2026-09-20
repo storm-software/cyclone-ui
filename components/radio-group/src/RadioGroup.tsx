@@ -87,20 +87,20 @@ const RadioGroupItem = styled(TamaguiRadioGroup.Item, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled"
+          borderColor: "$accentDisabled"
         }
       }
     }
@@ -119,7 +119,7 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   transition: "200ms",
   cursor: "pointer",
   borderRadius: 100_000,
-  backgroundColor: "$foreground",
+  backgroundColor: "$accent",
   height: "65%",
   width: "65%",
 
@@ -136,21 +136,21 @@ const RadioGroupItemIndicator = styled(TamaguiRadioGroup.Indicator, {
   variants: {
     disabled: {
       true: {
-        placeholderColor: "$foregroundDisabled",
-        backgroundColor: "$foregroundDisabled",
+        placeholderColor: "$accentDisabled",
+        backgroundColor: "$accentDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          backgroundColor: "$foregroundDisabled"
+          backgroundColor: "$accentDisabled"
         },
 
         focusStyle: {
-          backgroundColor: "$foregroundDisabled"
+          backgroundColor: "$accentDisabled"
         },
 
         pressStyle: {
-          backgroundColor: "$foregroundDisabled"
+          backgroundColor: "$accentDisabled"
         }
       }
     }
@@ -171,7 +171,7 @@ const RadioGroupItemContainerFrame = styled(XStack, {
   boxShadow: "none",
   borderRadius: "$control",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   paddingHorizontal: "$3xl",
   paddingVertical: "$2xl",
   alignItems: "center",
@@ -213,23 +213,23 @@ const RadioGroupItemContainerFrame = styled(XStack, {
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
+        borderColor: "$accentDisabled",
         boxShadow: "none",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          borderColor: "$borderDisabled",
+          borderColor: "$accentDisabled",
           boxShadow: "none"
         },
 
         focusStyle: {
-          borderColor: "$borderDisabled",
+          borderColor: "$accentDisabled",
           boxShadow: "none"
         },
 
         pressStyle: {
-          borderColor: "$borderDisabled",
+          borderColor: "$accentDisabled",
           boxShadow: "none"
         }
       }
@@ -267,7 +267,7 @@ const RadioGroupItemContainer = RadioGroupItemContainerFrame.styleable<
             value={String(value)}
             disabled={disabled}
             $group-hover={{
-              borderColor: disabled ? "$borderDisabled" : "$borderHover"
+              borderColor: disabled ? "$accentDisabled" : "$accentHover"
             }}>
             {selected && <RadioGroupItemIndicator />}
           </RadioGroupItem>

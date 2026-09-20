@@ -46,7 +46,7 @@ const RadioGroupItemValue = styled(Label, {
 
   transition: "200ms",
   cursor: "pointer",
-  color: "$foregroundBase",
+  color: "$inkEmphasis",
   fontSize: "$lg",
   fontWeight: "$normal",
   lineHeight: "$true",
@@ -62,21 +62,21 @@ const RadioGroupItemValue = styled(Label, {
 
     disabled: {
       true: {
-        color: "$foregroundDisabled",
-        backgroundColor: "$backgroundElevatedDisabled",
+        color: "$accentDisabled",
+        backgroundColor: "$surfaceElevatedDisabled",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         }
       }
     }
@@ -94,27 +94,27 @@ const RadioGroupItemDetails = styled(BodyText, {
 
   transition: "200ms",
   cursor: "pointer",
-  color: "$foregroundBody",
+  color: "$inkBody",
   fontSize: "$md",
 
   variants: {
     disabled: {
       true: {
-        color: "$foregroundDisabled",
+        color: "$accentDisabled",
         backgroundColor: "transparent",
         userSelect: "none",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         }
       }
     }
@@ -142,26 +142,24 @@ const RadioGroupItem = (props: { itemAtom: Atom<SelectOption> }) => {
       group={"item" as any}
       onPress={handlePress}
       cursor="pointer"
-      backgroundColor={
-        selected ? "$backgroundElevatedActive" : "$backgroundElevated"
-      }
-      borderColor={selected ? "$borderHover" : "$border"}
+      backgroundColor={selected ? "$surfaceElevatedActive" : "$surfaceElevated"}
+      borderColor={selected ? "$accentHover" : "$accent"}
       borderWidth={1}
       borderRadius="$control"
-      hoverStyle={{ backgroundColor: "$backgroundElevatedHover" }}>
+      hoverStyle={{ backgroundColor: "$surfaceElevatedHover" }}>
       <YStack gap="$md" justifyContent="flex-start" flex={1}>
         <RadioGroupItemValue
           htmlFor={String(value)}
           disabled={disabled}
           selected={selected}
-          $group-item-hover={{ color: "$foregroundBaseHover" }}>
+          $group-item-hover={{ color: "$inkEmphasis" }}>
           <HeadingSmallText>{name}</HeadingSmallText>
         </RadioGroupItemValue>
         {description && (
           <RadioGroupItemDetails
             disabled={disabled}
             display="flex"
-            $group-item-hover={{ color: "$foregroundBaseHover" }}>
+            $group-item-hover={{ color: "$inkEmphasis" }}>
             {description}
           </RadioGroupItemDetails>
         )}

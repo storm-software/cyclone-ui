@@ -52,7 +52,7 @@ const CalloutBackgroundLowGradient = styled(LinearGradient, {
   overflow: "hidden",
   opacity: 1,
   zIndex: "$0",
-  colors: ["transparent", "$foreground"],
+  colors: ["transparent", "$accent"],
   start: [1.0, 1.0],
   end: [0, 0]
 });
@@ -66,7 +66,7 @@ const CalloutBackgroundHighGradient = styled(LinearGradient, {
   overflow: "hidden",
   opacity: 0.6,
   zIndex: "$10",
-  colors: ["transparent", "$background"],
+  colors: ["transparent", "$muted"],
   start: [0, 1.0],
   end: [0, 1.0]
 });
@@ -116,7 +116,7 @@ const CalloutFrameImpl = Container.styleable<CalloutContextProps>(
           <CalloutBackgroundHighGradient theme={theme} />
           <CalloutBackgroundDiagonal theme={theme}>
             <Diagonal
-              color="$foreground"
+              color="$accent"
               height="100%"
               opacity={0.05}
               width="100%"
@@ -151,7 +151,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
   }
 
   return (
-    <ThemeableIcon theme={theme} {...props} size="$13xl" color="$background">
+    <ThemeableIcon theme={theme} {...props} size="$13xl" color="$muted">
       {icon}
     </ThemeableIcon>
   );
@@ -160,7 +160,7 @@ const CalloutIcon = ({ children, ...props }: ThemeableIconProps) => {
 const CalloutHeading = styled(HeadingMediumText, {
   name: "CalloutHeading",
 
-  color: "$foreground",
+  color: "$accent",
   zIndex: "$20"
 });
 
@@ -182,7 +182,7 @@ const CalloutHeadingImpl = CalloutHeading.styleable(
 const CalloutEyebrow = styled(EyebrowText, {
   name: "CalloutEyebrow",
 
-  color: "$background",
+  color: "$muted",
   zIndex: "$20"
 });
 
@@ -202,7 +202,7 @@ const CalloutEyebrowImpl = CalloutEyebrow.styleable(
 const CalloutBody = styled(BodyText, {
   name: "CalloutBody",
 
-  color: "$foreground",
+  color: "$accent",
   zIndex: "$20",
   paddingVertical: 0
 });

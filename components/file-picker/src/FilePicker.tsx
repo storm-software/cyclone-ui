@@ -99,36 +99,36 @@ const FilePickerGroupFrame = styled(View, {
   borderStyle: "dashed",
   borderWidth: 2,
   borderRadius: "$container",
-  borderColor: "$border",
-  backgroundColor: "$backgroundElevated",
+  borderColor: "$accent",
+  backgroundColor: "$surfaceElevated",
   tabIndex: 0,
 
   hoverStyle: {
-    borderColor: "$borderHover",
-    backgroundColor: "$backgroundElevatedHover"
+    borderColor: "$accentHover",
+    backgroundColor: "$surfaceElevatedHover"
   },
 
   variants: {
     active: {
       true: {
-        borderColor: "$borderSubtle",
-        backgroundColor: "$backgroundElevatedActive",
+        borderColor: "$hairline",
+        backgroundColor: "$surfaceElevatedActive",
 
         hoverStyle: {
-          borderColor: "$borderSubtleHover",
-          backgroundColor: "$backgroundElevatedHover"
+          borderColor: "$hairlineHover",
+          backgroundColor: "$surfaceElevatedHover"
         }
       }
     },
 
     disabled: {
       true: {
-        borderColor: "$borderDisabled",
-        backgroundColor: "$backgroundElevatedDisabled",
+        borderColor: "$accentDisabled",
+        backgroundColor: "$surfaceElevatedDisabled",
 
         hoverStyle: {
-          borderColor: "$borderDisabled",
-          backgroundColor: "$backgroundElevatedDisabled"
+          borderColor: "$accentDisabled",
+          backgroundColor: "$surfaceElevatedDisabled"
         }
       },
       false: {
@@ -294,18 +294,14 @@ const FilePickerTrigger = YStack.styleable(
           <Upload
             size="$9xl"
             color={
-              disabled
-                ? "$borderDisabled"
-                : active
-                  ? "$borderSubtle"
-                  : "$border"
+              disabled ? "$accentDisabled" : active ? "$hairline" : "$accent"
             }
             $group-file-picker-hover={{
               color: disabled
-                ? "$borderDisabled"
+                ? "$accentDisabled"
                 : active
-                  ? "$borderSubtleHover"
-                  : "$borderHover"
+                  ? "$hairlineHover"
+                  : "$accentHover"
             }}
             transition="100ms"
             opacity={1}
@@ -344,11 +340,11 @@ const FilePickerTriggerButton = Button.styleable(
         }}
         {...props}>
         <Button.Text
-          color="$foregroundLink"
-          textDecorationColor="$foregroundLink"
+          color="$link"
+          textDecorationColor="$link"
           $group-link-hover={{
-            color: "$foregroundLinkHover",
-            textDecorationColor: "$foregroundLinkHover"
+            color: "$linkHover",
+            textDecorationColor: "$linkHover"
           }}>
           {children ||
             (max > 1
@@ -406,11 +402,11 @@ const FilePickerViewLink = ({
   return (
     <LabelText
       fontSize="$xl"
-      color="$foregroundInverse"
+      color="$onAccent"
       width="100%"
       textAlign="center"
       {...props}>
-      <HeadingSmallText color="$foregroundInverse">{children}</HeadingSmallText>
+      <HeadingSmallText color="$onAccent">{children}</HeadingSmallText>
     </LabelText>
   );
 };
@@ -444,7 +440,7 @@ const FilePickerFile = ({
       overflow="hidden"
       position="relative"
       borderRadius="$card"
-      borderColor="$border"
+      borderColor="$accent"
       borderWidth={1}
       boxShadow="none"
       enterStyle={{
@@ -456,7 +452,7 @@ const FilePickerFile = ({
         scale: 0.5
       }}
       hoverStyle={{
-        borderColor: "$borderHover",
+        borderColor: "$accentHover",
         boxShadow: "$ringOffset"
       }}
       onClick={event => event.stopPropagation()}
@@ -499,7 +495,7 @@ const FilePickerFile = ({
             size="$13xl"
             padding="$xl"
             circular={true}>
-            <Button.Icon $group-button-hover={{ color: "$foregroundHover" }}>
+            <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
               <Download />
             </Button.Icon>
           </Button>
@@ -525,7 +521,7 @@ const FilePickerFile = ({
             size="$13xl"
             padding="$xl"
             circular={true}>
-            <Button.Icon $group-button-hover={{ color: "$foregroundHover" }}>
+            <Button.Icon $group-button-hover={{ color: "$accentHover" }}>
               <Trash2 />
             </Button.Icon>
           </Button>
@@ -555,7 +551,7 @@ const FilePickerFile = ({
           <XStack gap="$lg" justifyContent="center" alignItems="center">
             <BytesText zIndex="$30">{size}</BytesText>
 
-            {lastModified && <Dot size="$6xl" color="$foregroundBody" />}
+            {lastModified && <Dot size="$6xl" color="$inkBody" />}
 
             {lastModified && (
               <BodyText zIndex="$30">
@@ -563,7 +559,7 @@ const FilePickerFile = ({
               </BodyText>
             )}
 
-            {mimeType && <Dot size="$6xl" color="$foregroundBody" />}
+            {mimeType && <Dot size="$6xl" color="$inkBody" />}
 
             {mimeType && <BodyText zIndex="$30">{mimeType}</BodyText>}
           </XStack>
@@ -574,7 +570,7 @@ const FilePickerFile = ({
         transition="200ms"
         fullscreen={true}
         zIndex="$10"
-        colors={["transparent", "$backgroundPage"]}
+        colors={["transparent", "$surfaceCanvas"]}
         locations={[0, 1.1]}
         start={[0, 0]}
         end={[1, 1]}

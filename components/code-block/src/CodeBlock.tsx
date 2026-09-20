@@ -116,9 +116,9 @@ const CodeBlockFrame = styled(View, {
   marginVertical: "$4xl",
   overflow: "hidden",
   borderWidth: 1,
-  borderColor: "$border",
+  borderColor: "$accent",
   borderRadius: "$container",
-  backgroundColor: "$backgroundElevated"
+  backgroundColor: "$surfaceElevated"
 });
 
 const CodeBlockHeader = styled(XStack, {
@@ -147,7 +147,7 @@ const CodeBlockHeaderHeading = styled(BodyText, {
   flex: 1,
   minWidth: 0,
   paddingVertical: 0,
-  color: "$foregroundCaption",
+  color: "$inkSubtle",
   variant: "lg",
   whiteSpace: "nowrap",
   overflow: "hidden",
@@ -162,8 +162,8 @@ const CodeBlockViewport = styled(View, {
   paddingVertical: "$3xl",
   overflow: "unset",
   borderRadius: "$container",
-  backgroundColor: "$backgroundFloating",
-  borderColor: "$border",
+  backgroundColor: "$surfaceFloating",
+  borderColor: "$accent",
   borderWidth: 1,
   borderStyle: "solid"
 });
@@ -175,7 +175,7 @@ const CodeBlockPre = styled(Text, {
   width: "max-content",
   margin: 0,
   padding: 0,
-  backgroundColor: "$backgroundFloating",
+  backgroundColor: "$surfaceFloating",
   fontFamily: "inherit",
   fontSize: "inherit",
   lineHeight: "inherit",
@@ -284,7 +284,7 @@ export const CodeBlockCopyButton = ({
       variant="ghost"
       ghostOpacity={0.75}
       size="$8xl"
-      color={copied ? "$foreground" : "$foregroundCaption"}
+      color={copied ? "$accent" : "$inkSubtle"}
       circular={true}
       bordered={false}
       flexGrow={0}
@@ -358,7 +358,7 @@ const CodeBlockImpl = CodeBlockFrame.styleable<CodeBlockProps>(
                 dangerouslySetInnerHTML={{ __html: icon }}
               />
             ) : (
-              <ThemeableIcon size="$xl" color="$foregroundCaption">
+              <ThemeableIcon size="$xl" color="$inkSubtle">
                 {icon}
               </ThemeableIcon>
             )}
@@ -434,9 +434,9 @@ export const CodeBlockTabs = forwardRef<TamaguiElement, CodeBlockTabsProps>(
       marginVertical="$4xl"
       overflow="hidden"
       borderWidth={1}
-      borderColor="$border"
+      borderColor="$accent"
       borderRadius="$container"
-      backgroundColor="$backgroundElevated"
+      backgroundColor="$surfaceElevated"
       padding="$xl"
       {...props}
       className={`cyclone-code-block-tabs${className ? ` ${className}` : ""}`}>
@@ -478,19 +478,19 @@ export const CodeBlockTabsTrigger = forwardRef<
     position="relative"
     zIndex={2}
     borderWidth={1}
-    borderColor="$border"
-    borderBottomColor="$border"
+    borderColor="$accent"
+    borderBottomColor="$accent"
     borderTopLeftRadius="$container"
     borderTopRightRadius="$container"
     borderBottomLeftRadius={0}
     borderBottomRightRadius={0}
-    backgroundColor="$backgroundPage"
+    backgroundColor="$surfaceCanvas"
     cursor="pointer"
     hoverStyle={{
-      backgroundColor: "$backgroundPageHover"
+      backgroundColor: "$surfaceCanvasHover"
     }}>
     <HeadingSmallText
-      color="$foregroundCaption"
+      color="$inkSubtle"
       fontSize="$lg"
       fontWeight="$semibold"
       lineHeight="$lg"
@@ -513,11 +513,11 @@ export const CodeBlockTab = forwardRef<TamaguiElement, CodeBlockTabProps>(
       marginTop={-1}
       borderWidth={1}
       borderTopWidth={1}
-      borderColor="$border"
+      borderColor="$accent"
       borderBottomLeftRadius="$container"
       borderBottomRightRadius="$container"
       overflow="hidden"
-      backgroundColor="$backgroundElevated"
+      backgroundColor="$surfaceElevated"
       outlineStyle="none"
       className={`cyclone-code-block-tabs-content${
         className ? ` ${className}` : ""

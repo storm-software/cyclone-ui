@@ -195,7 +195,7 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   transition: "200ms",
   cursor: "pointer",
   backgroundColor: "transparent",
-  color: "$foregroundInactive",
+  color: "$accentInactive",
   position: "relative",
   width: "max-content",
   minWidth: "100%",
@@ -203,15 +203,15 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
   borderRadius: "$button",
 
   focusStyle: {
-    color: "$foreground"
+    color: "$accent"
   },
 
   hoverStyle: {
-    color: "$foreground"
+    color: "$accent"
   },
 
   focusVisibleStyle: {
-    color: "$foreground",
+    color: "$accent",
     borderWidth: 0,
     outlineStyle: "none",
     outline: "none",
@@ -234,28 +234,28 @@ const SelectItemFrame = styled(TamaguiSelect.Item, {
 
     selected: {
       true: {
-        color: "$foregroundActive"
+        color: "$accentActive"
       },
       false: {
-        color: "$foregroundInactive"
+        color: "$accentInactive"
       }
     },
 
     disabled: {
       true: {
         cursor: "not-allowed",
-        color: "$foregroundDisabled",
+        color: "$accentDisabled",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         focusVisibleStyle: {
-          color: "$foregroundDisabled",
+          color: "$accentDisabled",
           borderWidth: 0,
           outlineStyle: "none",
           outlineWidth: 0
@@ -284,11 +284,11 @@ const SelectItemBackground = styled(View, {
   pointerEvents: "none",
 
   "$group-item-hover": {
-    backgroundColor: "$backgroundHighestHover"
+    backgroundColor: "$surfaceOverlayHover"
   },
 
   "$group-item-focus": {
-    backgroundColor: "$backgroundHighestHover"
+    backgroundColor: "$surfaceOverlayHover"
   },
 
   variants: {
@@ -349,7 +349,7 @@ const SelectItemDividerLine = styled(View, {
   context: SelectContext,
 
   borderBottomWidth: 1,
-  borderBottomColor: "$borderSubtle",
+  borderBottomColor: "$hairline",
   pointerEvents: "none"
 });
 
@@ -477,7 +477,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
               {disabled && (
                 <Lock
                   size={indicatorIconSize}
-                  color="$foregroundDisabled"
+                  color="$accentDisabled"
                   strokeWidth={2}
                 />
               )}
@@ -485,7 +485,7 @@ export const SelectItem = SelectItemFrame.styleable<Omit<SelectOption, "name">>(
                 <View aria-hidden={true}>
                   <Check
                     size={indicatorIconSize}
-                    color="$foregroundActive"
+                    color="$accentActive"
                     strokeWidth={3}
                   />
                 </View>
@@ -551,13 +551,13 @@ const SelectItemsGroup = View.styleable(
               position="relative"
               height={scrollButtonHeight}>
               <YStack zIndex="$10">
-                <ChevronUp size={scrollIconSize} color="$foreground" />
+                <ChevronUp size={scrollIconSize} color="$accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}
                 end={[0, 1]}
                 fullscreen={true}
-                colors={["$backgroundFloating", "transparent"]}
+                colors={["$surfaceFloating", "transparent"]}
                 borderRadius="$popover"
                 marginTop={gradientMargin}
               />
@@ -569,7 +569,7 @@ const SelectItemsGroup = View.styleable(
               animateOnly={["transform", "scale", "opacity"]}
               enterStyle={{ opacity: 0.5, scale: 0.9, y: -10 }}
               exitStyle={{ opacity: 0.7, scale: 0.95, y: 10 }}
-              backgroundColor="$backgroundFloating"
+              backgroundColor="$surfaceFloating"
               width="max-content"
               minWidth="$12xl"
               maxWidth={`calc(100vw - ${SELECT_VIEWPORT_PADDING * 2}px)`}
@@ -593,13 +593,13 @@ const SelectItemsGroup = View.styleable(
               width="100%"
               height={scrollButtonHeight}>
               <YStack zIndex="$10">
-                <ChevronDown size={scrollIconSize} color="$foreground" />
+                <ChevronDown size={scrollIconSize} color="$accent" />
               </YStack>
               <LinearGradient
                 start={[0, 0]}
                 end={[0, 1]}
                 fullscreen={true}
-                colors={["transparent", "$backgroundFloating"]}
+                colors={["transparent", "$surfaceFloating"]}
                 borderRadius="$popover"
                 marginBottom={gradientMargin}
               />

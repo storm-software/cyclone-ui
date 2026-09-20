@@ -108,7 +108,7 @@ export const ThemeableIcon =
     ) => {
       const getThemedIcon = useGetThemedIcon({
         size: getSized(size),
-        color: disabled ? "$foregroundInverseDisabled" : (color as ColorProp)
+        color: disabled ? "$onAccentDisabled" : (color as ColorProp)
       });
 
       return (

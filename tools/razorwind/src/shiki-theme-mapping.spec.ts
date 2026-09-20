@@ -108,8 +108,10 @@ describe("Shiki theme mapping", () => {
     expect(shikiPlugin).toBeDefined();
 
     const themes = shikiPlugin!.mapTheme({
-      dark: semanticColors("dark"),
-      light: semanticColors("light")
+      tokens: {
+        dark: semanticColors("dark"),
+        light: semanticColors("light")
+      }
     });
     const dark = themes.find(theme => theme.name === "cyclone-dark")!;
     const light = themes.find(theme => theme.name === "cyclone-light")!;

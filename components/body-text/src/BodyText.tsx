@@ -24,7 +24,7 @@ export const BodyText = styled(SizableText, {
   name: "BodyText",
   render: "p",
 
-  color: "$foregroundBody",
+  color: "$inkBody",
   fontFamily: "$body-md",
 
   variants: {

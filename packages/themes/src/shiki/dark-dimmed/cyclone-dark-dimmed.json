@@ -1,5 +1,5 @@
 {
-  "name": "cyclone-dark",
+  "name": "cyclone-darkDimmed",
   "settings": [
     {
       "scope": [
@@ -37,7 +37,7 @@
         "storage.type"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "#5abba5"
       }
     },
     {
@@ -46,7 +46,7 @@
         "support.function"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "#5abba5"
       }
     },
     {
@@ -65,7 +65,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "#3be4be"
+        "foreground": "#5abba5"
       }
     },
     {
@@ -105,15 +105,15 @@
       }
     }
   ],
-  "displayName": "Cyclone Dark",
-  "type": "dark",
+  "displayName": "Cyclone Light",
+  "type": "darkDimmed",
   "fg": "{color.neutral.2}",
   "bg": "{color.neutral.14}",
   "colors": {
     "editor.background": "{color.neutral.14}",
     "editor.foreground": "{color.neutral.2}",
     "editorCursor.foreground": "{color.blue.5}",
-    "editor.selectionBackground": "#007e5e",
+    "editor.selectionBackground": "#258069",
     "editor.inactiveSelectionBackground": "{color.black}",
     "editorLineNumber.foreground": "{color.neutral.8}",
     "editorLineNumber.activeForeground": "{color.neutral.6}",

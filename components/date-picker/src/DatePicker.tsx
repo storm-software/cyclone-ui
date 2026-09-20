@@ -360,7 +360,7 @@ const DayPicker = () => {
                 variant="lg"
                 textAlign="center"
                 size="$sm"
-                color="$foregroundBody">
+                color="$inkBody">
                 {day}
               </BodyText>
             </View>
@@ -391,7 +391,7 @@ const DayPicker = () => {
                             : "ghost"
                     }
                     ghostOpacity={0.75}
-                    borderColor={day.now ? "$border" : undefined}
+                    borderColor={day.now ? "$hairline" : undefined}
                     size={CALENDAR_CELL_SIZE}
                     width={CALENDAR_CELL_SIZE}
                     flexGrow={0}
@@ -447,7 +447,7 @@ function YearRangeSlider() {
         flexDirection="column"
         alignItems="center">
         <HeadingMediumText
-          color="$foreground"
+          color="$accent"
           textAlign="center"
           userSelect="auto"
           tabIndex={0}>
@@ -509,9 +509,9 @@ function YearSlider() {
           size="$6xl"
           textAlign="center"
           cursor="pointer"
-          color="$foreground"
+          color="$accent"
           hoverStyle={{
-            color: "$foregroundHover"
+            color: "$accentHover"
           }}>
           {year}
         </BodyText>
@@ -583,9 +583,9 @@ const CalendarHeader = () => {
           userSelect="auto"
           tabIndex={0}
           cursor="pointer"
-          color="$foreground"
+          color="$accent"
           hoverStyle={{
-            color: "$foregroundHover"
+            color: "$accentHover"
           }}>
           {year}
         </BodyText>
@@ -595,9 +595,9 @@ const CalendarHeader = () => {
           userSelect="auto"
           cursor="pointer"
           tabIndex={0}
-          color="$foreground"
+          color="$accent"
           hoverStyle={{
-            color: "$foregroundHover"
+            color: "$accentHover"
           }}>
           {month}
         </HeadingExtraLargeText>

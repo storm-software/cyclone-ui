@@ -80,7 +80,7 @@ const Redaction = styled(View, {
   bottom: 0,
   left: -1,
   zIndex: 1,
-  backgroundColor: "$foreground",
+  backgroundColor: "$accent",
   pointerEvents: "none",
   x: 0
 });

@@ -235,10 +235,10 @@ const FieldValidationTextImpl = FieldValidationText.styleable(
         disabled={disabled}
         color={
           disabled
-            ? "$foregroundDisabled"
+            ? "$accentDisabled"
             : theme !== "base"
-              ? "$foreground"
-              : "$foregroundSecondary"
+              ? "$accent"
+              : "$inkBody"
         }>
         {children}
       </FieldValidationText>
@@ -309,7 +309,7 @@ const FieldDetails = styled(BodyText, {
   name: "FieldDetails",
 
   transition: "200ms",
-  color: "$foreground",
+  color: "$accent",
   fontStyle: "italic",
 
   enterStyle: {
@@ -325,11 +325,11 @@ const FieldDetails = styled(BodyText, {
   variants: {
     disabled: {
       true: {
-        color: "$foregroundDisabled",
+        color: "$accentDisabled",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         }
       }
     }
@@ -370,13 +370,13 @@ const FieldDetailsImpl = FieldDetails.styleable(
         disabled={disabled}
         color={
           disabled
-            ? "$foregroundDisabled"
+            ? "$accentDisabled"
             : theme !== "base"
-              ? "$foreground"
-              : "$foregroundSecondary"
+              ? "$accent"
+              : "$inkBody"
         }
         $group-field-hover={{
-          color: disabled ? "$foregroundDisabled" : "$foregroundHover"
+          color: disabled ? "$accentDisabled" : "$accentHover"
         }}>
         {children}
       </FieldDetails>
@@ -395,11 +395,11 @@ const FieldLabelText = styled(LabelText, {
   variants: {
     disabled: {
       true: {
-        color: "$foregroundDisabled",
+        color: "$accentDisabled",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         }
       }
     }
@@ -435,17 +435,17 @@ const FieldLabelPositioner = styled(View, {
 
 const FieldOptionalLabelText = styled(FieldLabelText, {
   transition: "200ms",
-  color: "$foregroundCaption",
+  color: "$inkSubtle",
   marginLeft: "$lg",
 
   variants: {
     disabled: {
       true: {
-        color: "$foregroundCaptionDisabled",
+        color: "$inkSubtle",
         cursor: "not-allowed",
 
         hoverStyle: {
-          color: "$foregroundCaptionDisabled"
+          color: "$inkSubtle"
         }
       }
     }
@@ -492,7 +492,7 @@ const FieldLabelBorderMask = styled(View, {
   right: -2,
   height: 10,
   transform: [{ translateY: "-50%" }],
-  backgroundColor: "$backgroundElevated",
+  backgroundColor: "$surfaceElevated",
   pointerEvents: "none"
 });
 
@@ -561,7 +561,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                   {...props}
                   disabled={disabled}
                   floating={floating}
-                  color={disabled ? "$foregroundDisabled" : "$foreground"}>
+                  color={disabled ? "$accentDisabled" : "$accent"}>
                   {children}
                 </FieldLabelText>
               </Theme>
@@ -572,7 +572,7 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                       {hideAsterisk !== true && (
                         <View position="relative" alignSelf="stretch">
                           <Asterisk
-                            color="$foregroundRequired"
+                            color="$required"
                             size="$lg"
                             position="absolute"
                             top={2}
@@ -587,15 +587,9 @@ const FieldLabelTextImpl = FieldLabelText.styleable<{
                           {...props}
                           disabled={disabled}
                           size="sm"
-                          color={
-                            disabled
-                              ? "$foregroundCaptionDisabled"
-                              : "$foregroundCaption"
-                          }
+                          color={disabled ? "$inkSubtle" : "$inkSubtle"}
                           $group-field-hover={{
-                            color: disabled
-                              ? "$foregroundCaptionDisabled"
-                              : "$foregroundCaptionHover"
+                            color: disabled ? "$inkSubtle" : "$inkSubtle"
                           }}>
                           (Optional)
                         </FieldOptionalLabelText>
@@ -730,11 +724,11 @@ const FieldIconButtonImpl = Button.styleable<{
       [frameSize]
     );
     const iconColor = disabled
-      ? "$borderDisabled"
+      ? "$accentDisabled"
       : focused
-        ? "$borderActive"
-        : "$border";
-    const hoverIconColor = disabled ? "$borderDisabled" : "$borderHover";
+        ? "$accentActive"
+        : "$accent";
+    const hoverIconColor = disabled ? "$accentDisabled" : "$accentHover";
     const icon = isValidElement<{
       color?: string;
       "$group-field-hover"?: { color?: string };
@@ -765,13 +759,13 @@ const FieldIconButtonImpl = Button.styleable<{
               : { right: 0, borderRightWidth: 1 })}
             borderColor={
               disabled
-                ? "$borderDisabled"
+                ? "$accentDisabled"
                 : focused
-                  ? "$borderActive"
-                  : "$border"
+                  ? "$accentActive"
+                  : "$accent"
             }
             $group-field-hover={{
-              borderColor: disabled ? "$borderDisabled" : "$borderHover"
+              borderColor: disabled ? "$accentDisabled" : "$accentHover"
             }}
           />
         )}
@@ -833,15 +827,13 @@ const InnerFieldThemeIcon = FieldIconButtonImpl.styleable<{
           <Theme name="base">
             {messages && messages.length > 0 ? (
               <ValidationText
-                color="$foreground"
+                color="$accent"
                 messages={messages}
                 disabled={disabled}
                 theme="base"
               />
             ) : (
-              details || (
-                <ValidationText color="$foreground" disabled={disabled} />
-              )
+              details || <ValidationText color="$accent" disabled={disabled} />
             )}
           </Theme>
         </Tooltip.Content>
@@ -900,12 +892,12 @@ const FieldThemeIcon = InnerFieldThemeIcon.styleable(
           disabled,
           transition: "200ms",
           color: disabled
-            ? "$borderDisabled"
+            ? "$accentDisabled"
             : focused
-              ? "$borderActive"
-              : "$border",
+              ? "$accentActive"
+              : "$accent",
           "$group-field-hover": {
-            color: disabled ? "$borderDisabled" : "$borderHover"
+            color: disabled ? "$accentDisabled" : "$accentHover"
           }
         })}
       </InnerFieldThemeIcon>

@@ -29,14 +29,14 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
   transition: "200ms",
   unstyled: true,
   cursor: "pointer",
-  color: "$foreground",
+  color: "$accent",
   display: "flex",
   flexGrow: 1,
   alignItems: "center",
 
   hoverStyle: {
     backgroundColor: "transparent",
-    color: "$foregroundHover"
+    color: "$accentHover"
   },
 
   focusStyle: {
@@ -68,7 +68,7 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
 
     placeholding: {
       true: {
-        color: "$foregroundDisabled"
+        color: "$accentDisabled"
       }
     },
 
@@ -76,19 +76,19 @@ const SelectValueFrame = styled(TamaguiSelect.Value, {
       true: {
         cursor: "not-allowed",
         userSelect: "none",
-        color: "$foregroundDisabled",
-        placeholderColor: "$foregroundDisabled",
+        color: "$accentDisabled",
+        placeholderColor: "$accentDisabled",
 
         hoverStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         focusStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         },
 
         pressStyle: {
-          color: "$foregroundDisabled"
+          color: "$accentDisabled"
         }
       }
     }

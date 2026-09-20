@@ -35,7 +35,7 @@ const Icon = ({
   size = 24,
   ...props
 }: DiscoveryCircleProps) => {
-  const color = useCurrentColor((props.color || "$foreground") as any);
+  const color = useCurrentColor((props.color || "$accent") as any);
 
   const diameter = 24;
   const strokeWidth = 2;

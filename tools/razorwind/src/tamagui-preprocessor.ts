@@ -155,18 +155,12 @@ function colorValueToHex(value: unknown): string | undefined {
   return undefined;
 }
 
-/**
- * Convert OKLCH (L C H) to sRGB hex. Opaque colors are 6-digit; alpha \< 1
- * becomes 8-digit `#rrggbbaa`.
- *
- * @see https://bottosson.github.io/posts/oklab/
- */
-function oklchToHex(
+/** Convert OKLCH (L C H) to unclipped linear sRGB channels. */
+function oklchToLinearSrgb(
   lightness: number,
   chroma: number,
-  hue: number,
-  alpha?: number
-): string {
+  hue: number
+): { red: number; green: number; blue: number } {
   const hueRad = (hue * Math.PI) / 180;
   const a = chroma * Math.cos(hueRad);
   const b = chroma * Math.sin(hueRad);
@@ -179,12 +173,20 @@ function oklchToHex(
   const m3 = m_ ** 3;
   const s3 = s_ ** 3;
 
-  const red =
-    4.076_741_662_1 * l3 - 3.307_711_591_3 * m3 + 0.230_969_929_2 * s3;
-  const green =
-    -1.268_438_004_6 * l3 + 2.609_757_401_1 * m3 - 0.341_319_396_5 * s3;
-  const blue =
-    -0.004_196_086_3 * l3 - 0.703_418_614_7 * m3 + 1.707_614_701 * s3;
+  return {
+    red: 4.076_741_662_1 * l3 - 3.307_711_591_3 * m3 + 0.230_969_929_2 * s3,
+    green: -1.268_438_004_6 * l3 + 2.609_757_401_1 * m3 - 0.341_319_396_5 * s3,
+    blue: -0.004_196_086_3 * l3 - 0.703_418_614_7 * m3 + 1.707_614_701 * s3
+  };
+}
+
+function oklchToHex(
+  lightness: number,
+  chroma: number,
+  hue: number,
+  alpha?: number
+): string {
+  const { red, green, blue } = oklchToLinearSrgb(lightness, chroma, hue);
 
   const hex = `#${hexChannel(red)}${hexChannel(green)}${hexChannel(blue)}`;
   if (alpha === undefined || alpha >= 1) {
@@ -526,10 +528,11 @@ const COLOR_STATE_TOKEN_VARIANTS: Record<string, ThemeColorStateVariants> = {
 
 const BASE_RING_OPACITY = 0.075;
 const THEME_RING_OPACITY = 0.125;
-const MINIMUM_MUTED_CONTRAST_RATIO = 4.5;
-const MINIMUM_INVERSE_CONTRAST_RATIO = 2.5;
+const MINIMUM_MUTED_CONTRAST_RATIO = 6;
+const MINIMUM_INVERSE_CONTRAST_RATIO = 2;
 const MUTED_COLOR_LIGHTNESS_STEP = 0.01;
 const MAX_MUTED_COLOR_ADJUSTMENTS = 100;
+const MUTED_COLOR_GAMUT_SEARCH_ITERATIONS = 32;
 
 function isStateVariantKey(key: string): boolean {
   return (
@@ -710,6 +713,46 @@ function hexToOklch(hex: string): {
   return { lightness, chroma, hue, alpha };
 }
 
+function isInSrgbGamut({
+  red,
+  green,
+  blue
+}: {
+  red: number;
+  green: number;
+  blue: number;
+}): boolean {
+  return (
+    red >= 0 && red <= 1 && green >= 0 && green <= 1 && blue >= 0 && blue <= 1
+  );
+}
+
+function oklchToGamutMappedHex(
+  lightness: number,
+  chroma: number,
+  hue: number,
+  alpha?: number
+): string {
+  if (isInSrgbGamut(oklchToLinearSrgb(lightness, chroma, hue))) {
+    return oklchToHex(lightness, chroma, hue, alpha);
+  }
+
+  let minimumChroma = 0;
+  let maximumChroma = chroma;
+
+  // Find the highest in-gamut chroma while holding lightness and hue fixed.
+  for (let index = 0; index < MUTED_COLOR_GAMUT_SEARCH_ITERATIONS; index += 1) {
+    const candidateChroma = (minimumChroma + maximumChroma) / 2;
+    if (isInSrgbGamut(oklchToLinearSrgb(lightness, candidateChroma, hue))) {
+      minimumChroma = candidateChroma;
+    } else {
+      maximumChroma = candidateChroma;
+    }
+  }
+
+  return oklchToHex(lightness, minimumChroma, hue, alpha);
+}
+
 function applyBrightness(hex: string, factor: number): string {
   const { lightness, chroma, hue, alpha } = hexToOklch(hex);
 
@@ -772,7 +815,7 @@ function createMutedColor(
     mutedLightness = clamp01(
       mutedLightness + mutedDirection * MUTED_COLOR_LIGHTNESS_STEP
     );
-    muted = oklchToHex(mutedLightness, chroma, hue, alpha);
+    muted = oklchToGamutMappedHex(mutedLightness, chroma, hue, alpha);
     if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
       return onMuted === hex ? { muted } : { muted, onMuted };
     }
@@ -780,7 +823,7 @@ function createMutedColor(
     onMutedLightness = clamp01(
       onMutedLightness + onMutedDirection * MUTED_COLOR_LIGHTNESS_STEP
     );
-    onMuted = oklchToHex(onMutedLightness, chroma, hue, alpha);
+    onMuted = oklchToGamutMappedHex(onMutedLightness, chroma, hue, alpha);
     if (contrastRatio(muted, onMuted) >= MINIMUM_MUTED_CONTRAST_RATIO) {
       return { muted, onMuted };
     }

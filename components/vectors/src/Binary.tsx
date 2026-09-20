@@ -34,7 +34,7 @@ const Icon = ({
   strokeWidth = 1,
   ...props
 }: BinaryProps) => {
-  const color = useCurrentColor((props.color || "$foregroundInverse") as any);
+  const color = useCurrentColor((props.color || "$onAccent") as any);
 
   // Line
 
