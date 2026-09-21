@@ -7,7 +7,7 @@ const source = readFileSync(
 );
 
 describe("DataTable header filter", () => {
-  it("uses small token padding for its filter trigger", () => {
+  it("uses 3px padding for its filter trigger", () => {
     const filterTrigger = source.slice(
       source.indexOf("{column.getCanFilter() && ("),
       source.indexOf(
@@ -16,6 +16,31 @@ describe("DataTable header filter", () => {
       )
     );
 
-    expect(filterTrigger).toContain('padding="$sm"');
+    expect(filterTrigger).toContain("padding={3}");
+  });
+
+  it("sizes the filter trigger to keep its hover background 3px from the icon", () => {
+    const filterTrigger = source.slice(
+      source.indexOf("{column.getCanFilter() && ("),
+      source.indexOf(
+        "</Popover.Trigger>",
+        source.indexOf("{column.getCanFilter() && (")
+      )
+    );
+
+    expect(filterTrigger).toContain('size="$5xl"');
+  });
+});
+
+describe("DataTable pagination", () => {
+  it("clamps the initial page size to the available row count", () => {
+    const paginationInitialization = source.slice(
+      source.indexOf("const [pagination"),
+      source.indexOf("});", source.indexOf("const [pagination")) + 3
+    );
+
+    expect(paginationInitialization).toContain(
+      "Math.min(pageSize, data.length)"
+    );
   });
 });

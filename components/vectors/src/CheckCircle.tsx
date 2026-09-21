@@ -38,9 +38,8 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
   const motionCircle = useMotionValue(circumference);
   const playbackCircle = animate(motionCircle, 14, {
-    type: "spring",
-    duration: 0.75,
-    bounce: 0
+    ease: "linear",
+    duration: 0.25
   });
 
   const [strokeDashoffset, setStrokeDashoffset] = useState(circumference);
@@ -50,9 +49,8 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, 3, {
-    type: "spring",
-    duration: 0.25,
-    bounce: 0
+    ease: "linear",
+    duration: 0.25
   });
 
   const [line1, setLine1] = useState(0);
@@ -62,9 +60,8 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
   const motionLine2x = useMotionValue(12);
   const playbackLine2x = animate(motionLine2x, 22, {
-    type: "spring",
-    duration: 1,
-    bounce: 0
+    ease: "linear",
+    duration: 0.5
   });
 
   const [line2x, setLine2x] = useState(12);
@@ -74,9 +71,8 @@ const Icon = ({ isComplete = true, size = 24, ...props }: CheckCircleProps) => {
 
   const motionLine2y = useMotionValue(14);
   const playbackLine2y = animate(motionLine2y, 4, {
-    type: "spring",
-    duration: 1,
-    bounce: 0
+    ease: "linear",
+    duration: 0.5
   });
 
   const [line2y, setLine2y] = useState(14);

@@ -41,7 +41,7 @@ const Icon = ({
   const strokeWidth = 2;
   const lightBulbScaleReferenceSize = 62;
   const resolvedSize = getSized(size);
-  const isSmall = resolvedSize < getSized("$4xl");
+  const isSmall = resolvedSize < getSized("$6xl");
   const outerRadius = diameter / 2;
   const innerRadius = outerRadius - strokeWidth / 2;
   const circumference = 2 * Math.PI * innerRadius;
@@ -67,15 +67,12 @@ const Icon = ({
     }
 
     const playbackCircle = animate(motionCircle, 0, {
-      type: "spring",
-      duration: 0.75,
-      bounce: 0
+      ease: "linear",
+      duration: 0.75
     });
     const playbackLightBulb = animate(motionLightBulbScale, 1, {
-      type: "spring",
+      ease: "linear",
       duration: 0.5,
-      ease: "easeOut",
-      bounce: 0,
       delay: 0.5
     });
 

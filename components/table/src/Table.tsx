@@ -238,7 +238,7 @@ const TableHeaderCell = styled(ThemeableStack, {
   borderBottomWidth: 1,
   borderColor: "$hairline",
   justifyContent: "flex-start",
-  paddingVertical: "$md",
+  paddingVertical: "$xl",
   paddingHorizontal: "$sm",
 
   variants: {
@@ -261,7 +261,7 @@ const TableHeaderCell = styled(ThemeableStack, {
       content: {
         "$platform-web": {
           display: "table-cell" as any,
-          paddingVertical: "$md",
+          paddingVertical: "$xl",
           paddingHorizontal: "$2xl",
           width: "auto"
         }
@@ -271,12 +271,12 @@ const TableHeaderCell = styled(ThemeableStack, {
     edgePadding: {
       start: {
         "$platform-web": {
-          paddingLeft: "$2xl"
+          paddingLeft: "$4xl"
         }
       },
       end: {
         "$platform-web": {
-          paddingRight: "$2xl"
+          paddingRight: "$4xl"
         }
       },
       both: {

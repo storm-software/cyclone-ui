@@ -45,3 +45,9 @@ export const Base: Story = {
     size: "$13xl"
   }
 };
+
+export const Small: Story = {
+  args: {
+    size: "$5xl"
+  }
+};

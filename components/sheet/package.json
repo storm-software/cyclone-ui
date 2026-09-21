@@ -19,6 +19,7 @@
     "@cyclone-ui/body-text": "workspace:*",
     "@cyclone-ui/heading-text": "workspace:*",
     "@cyclone-ui/scroll-view": "workspace:*",
+    "@tamagui/constants": "catalog:",
     "@tamagui/core": "catalog:",
     "@tamagui/dialog": "catalog:",
     "@tamagui/helpers": "catalog:",

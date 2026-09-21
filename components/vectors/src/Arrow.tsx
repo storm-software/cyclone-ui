@@ -67,9 +67,8 @@ const Icon = ({
 
   const motionPosition = useMotionValue(1);
   const playback = animate(motionPosition, 24, {
-    type: "spring",
-    duration: 0.25,
-    bounce: 0
+    ease: "linear",
+    duration: 0.25
   });
 
   const [position, setPosition] = useState(1);
@@ -79,9 +78,8 @@ const Icon = ({
 
   const motionReverse = useMotionValue(24);
   const playbackReverse = animate(motionReverse, 1, {
-    type: "spring",
-    duration: 0.25,
-    bounce: 0
+    ease: "linear",
+    duration: 0.25
   });
 
   const [reverse, setReverse] = useState(24);

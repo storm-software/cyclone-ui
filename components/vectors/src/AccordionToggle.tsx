@@ -60,10 +60,8 @@ const Icon = ({
 
   const compressLengthPosition = useMotionValue(0);
   const compressLengthPlayback = animate(compressLengthPosition, 14, {
-    type: "spring",
-    duration: 0.25,
-    ease: "easeOut",
-    bounce: 0
+    duration: 0.1,
+    ease: "linear"
   });
 
   const [compressLength, setCompressLength] = useState(0);
@@ -73,10 +71,8 @@ const Icon = ({
 
   const compressOpacityPosition = useMotionValue(0);
   const compressOpacityPlayback = animate(compressOpacityPosition, 1, {
-    type: "spring",
     duration: 0.15,
-    ease: "easeOut",
-    bounce: 0
+    ease: "linear"
   });
 
   const [compressOpacity, setCompressOpacity] = useState(0);
@@ -86,10 +82,8 @@ const Icon = ({
 
   const expandLengthPosition = useMotionValue(14);
   const expandLengthPlayback = animate(expandLengthPosition, 1, {
-    type: "spring",
-    duration: 0.25,
-    ease: "easeOut",
-    bounce: 0
+    duration: 0.1,
+    ease: "linear"
   });
 
   const [expandLength, setExpandLength] = useState(14);
@@ -99,10 +93,8 @@ const Icon = ({
 
   const expandOpacityPosition = useMotionValue(1);
   const expandOpacityPlayback = animate(expandOpacityPosition, 0, {
-    type: "spring",
-    duration: 0.15,
-    ease: "easeOut",
-    bounce: 0
+    duration: 0.025,
+    ease: "linear"
   });
 
   const [expandOpacity, setExpandOpacity] = useState(1);

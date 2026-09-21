@@ -377,7 +377,10 @@ export function DataTable<TData extends RowData>({
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
-    pageSize: isNumber(pageSize) && pageSize > 0 ? pageSize : 100
+    pageSize:
+      isNumber(pageSize) && pageSize > 0
+        ? Math.min(pageSize, data.length)
+        : Math.min(100, data.length)
   });
   const tableRef = useContentSizedColumns(!resizable);
   const rowSelectionEnabled =
@@ -932,12 +935,14 @@ export const DataTableHeader = <TData extends RowData, TValue = any>({
           <Popover allowFlip={true}>
             <Popover.Trigger asChild={true}>
               <Button
-                variant="ghost"
                 theme="base"
+                variant="ghost"
+                ghostOpacity={0.4}
                 circular={true}
                 noPadding={true}
                 color="$accent"
-                padding="$none">
+                size="$6xl"
+                padding="$lg">
                 <Button.Icon>
                   <Filter size="$2xl" />
                 </Button.Icon>

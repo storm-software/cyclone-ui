@@ -65,20 +65,17 @@ const Icon = ({ isComplete = true, size = 24, ...props }: ErrorCircleProps) => {
     }
 
     const playbackCircle = animate(motionCircle, 0, {
-      type: "spring",
-      duration: 0.75,
-      bounce: 0
+      ease: "linear",
+      duration: 0.5
     });
     const playbackLine1 = animate(motionLine1, 8, {
-      type: "spring",
+      ease: "linear",
       duration: 0.25,
-      bounce: 0,
-      delay: 0
+      delay: 0.1
     });
     const playbackLine2 = animate(motionLine2, 8, {
-      type: "spring",
+      ease: "linear",
       duration: 0.25,
-      bounce: 0,
       delay: 0.25
     });
 

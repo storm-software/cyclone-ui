@@ -45,7 +45,7 @@ const Icon = ({
   const motionLine1 = useMotionValue(0);
   const playbackLine1 = animate(motionLine1, 6, {
     type: "spring",
-    duration: 0.25,
+    duration: 0.4,
     bounce: 0
   });
 
@@ -63,7 +63,7 @@ const Icon = ({
   const motionLine2x = useMotionValue(7);
   const playbackLine2x = animate(motionLine2x, 15, {
     type: "spring",
-    duration: 0.4,
+    duration: 0.8,
     bounce: 0
   });
 
@@ -75,7 +75,7 @@ const Icon = ({
   const motionLine2y = useMotionValue(15);
   const playbackLine2y = animate(motionLine2y, 3, {
     type: "spring",
-    duration: 0.4,
+    duration: 0.8,
     bounce: 0
   });
 
