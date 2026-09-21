@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - State
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.6) (09/21/2026)
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.5**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/state%400.0.3) (09/06/2026)
 
 ### Features

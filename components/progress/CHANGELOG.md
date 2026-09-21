@@ -2,6 +2,13 @@
 
 # Changelog for Cyclone UI - Progress
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.5) (09/21/2026)
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **table-of-contents:** Initial check-in of Table of Contents component ([88fee2a9](https://github.com/storm-software/cyclone-ui/commit/88fee2a9))
+
 ## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/progress%400.5.4) (09/13/2026)
 
 ### Features

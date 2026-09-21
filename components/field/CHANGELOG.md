@@ -2,6 +2,37 @@
 
 # Changelog for Cyclone UI - Field
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **form** to **v0.9.5**
+- Updated **helpers** to **v0.3.5**
+- Updated **label-text** to **v0.5.5**
+- Updated **link** to **v0.5.5**
+- Updated **spinner** to **v0.5.5**
+- Updated **state** to **v0.0.6**
+- Updated **themeable-icon** to **v0.6.5**
+- Updated **tooltip** to **v0.5.5**
+- Updated **validation-text** to **v0.5.5**
+
 ## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/field%400.5.4) (09/13/2026)
 
 ### Bug Fixes

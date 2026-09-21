@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Table
 
+## [0.4.5](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.5) (09/21/2026)
+
+### Bug Fixes
+
+- **data-table:** Improve table header display and vector animations ([462cbe63](https://github.com/storm-software/cyclone-ui/commit/462cbe63))
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.5**
+
 ## [0.4.3](https://github.com/storm-software/cyclone-ui/releases/tag/table%400.4.3) (09/11/2026)
 
 ### Bug Fixes

@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - Anchor
 
+## [0.0.4](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.4) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.5**
+
 ## [0.0.3](https://github.com/storm-software/cyclone-ui/releases/tag/anchor%400.0.3) (09/13/2026)
 
 ### Bug Fixes

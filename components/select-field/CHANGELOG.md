@@ -2,6 +2,25 @@
 
 # Changelog for Cyclone UI - Select Field
 
+## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/select-field%400.1.5) (09/21/2026)
+
+### Bug Fixes
+
+- **select-field:** show current values in normal fields ([8ee987a5](https://github.com/storm-software/cyclone-ui/commit/8ee987a5))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.5**
+- Updated **form** to **v0.9.5**
+- Updated **select** to **v0.6.5**
+- Updated **state** to **v0.0.6**
+
 ## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/select-field%400.1.4) (09/13/2026)
 
 ### Updated Dependencies

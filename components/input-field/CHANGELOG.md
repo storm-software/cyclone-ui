@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Input Field
 
+## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/input-field%400.1.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.5**
+- Updated **form** to **v0.9.5**
+- Updated **helpers** to **v0.3.5**
+- Updated **input** to **v0.6.5**
+- Updated **state** to **v0.0.6**
+
 ## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/input-field%400.1.4) (09/13/2026)
 
 ### Updated Dependencies

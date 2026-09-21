@@ -2,6 +2,12 @@
 
 # Changelog for Cyclone UI - Spinner
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.5) (09/21/2026)
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
 ## [0.5.2](https://github.com/storm-software/cyclone-ui/releases/tag/spinner%400.5.2) (09/06/2026)
 
 ### Features

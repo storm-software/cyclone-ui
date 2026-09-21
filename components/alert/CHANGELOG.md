@@ -2,6 +2,27 @@
 
 # Changelog for Cyclone UI - Alert
 
+## [0.4.5](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **table-of-contents:** Initial check-in of Table of Contents component ([88fee2a9](https://github.com/storm-software/cyclone-ui/commit/88fee2a9))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **container** to **v0.6.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **helpers** to **v0.3.5**
+- Updated **themeable-icon** to **v0.6.5**
+
 ## [0.4.4](https://github.com/storm-software/cyclone-ui/releases/tag/alert%400.4.4) (09/13/2026)
 
 ### Updated Dependencies

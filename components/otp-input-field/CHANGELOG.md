@@ -2,6 +2,21 @@
 
 # Changelog for Cyclone UI - OTP Input Field
 
+## [0.0.6](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.6) (09/21/2026)
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.5**
+- Updated **form** to **v0.9.5**
+- Updated **helpers** to **v0.3.5**
+- Updated **input** to **v0.6.5**
+- Updated **input-field** to **v0.1.5**
+- Updated **state** to **v0.0.6**
+
 ## [0.0.5](https://github.com/storm-software/cyclone-ui/releases/tag/otp-input-field%400.0.5) (09/13/2026)
 
 ### Updated Dependencies

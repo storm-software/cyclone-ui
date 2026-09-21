@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Label Text
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.5) (09/21/2026)
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **helpers** to **v0.3.5**
+
 ## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/label-text%400.5.4) (09/13/2026)
 
 ### Updated Dependencies

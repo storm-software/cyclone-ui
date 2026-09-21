@@ -1,6 +1,6 @@
 {
   "name": "@cyclone-ui/form",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "type": "module",
   "description": "A Next Button component meant to be shared in many other components",
   "repository": {

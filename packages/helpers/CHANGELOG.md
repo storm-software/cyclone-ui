@@ -2,6 +2,16 @@
 
 # Changelog for Cyclone UI - Helpers
 
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.5) (09/21/2026)
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **themes** to **v0.3.5**
+
 ## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/helpers%400.3.4) (09/13/2026)
 
 ### Updated Dependencies

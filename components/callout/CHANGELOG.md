@@ -2,6 +2,30 @@
 
 # Changelog for Cyclone UI - Callout
 
+## [0.4.5](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+
+### Features
+
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **container** to **v0.6.5**
+- Updated **eyebrow-text** to **v0.5.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **state** to **v0.0.6**
+- Updated **themeable-icon** to **v0.6.5**
+- Updated **vectors** to **v0.5.5**
+
 ## [0.4.4](https://github.com/storm-software/cyclone-ui/releases/tag/callout%400.4.4) (09/13/2026)
 
 ### Updated Dependencies

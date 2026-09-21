@@ -2,6 +2,26 @@
 
 # Changelog for Cyclone UI - Dialog
 
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **container** to **v0.6.5**
+- Updated **heading-text** to **v0.5.5**
+
 ## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/dialog%400.3.4) (09/13/2026)
 
 ### Features

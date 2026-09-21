@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Pagination
 
+## [0.8.5](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.5) (09/21/2026)
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **button** to **v0.6.5**
+- Updated **next-button** to **v0.5.5**
+- Updated **previous-button** to **v0.5.5**
+
 ## [0.8.4](https://github.com/storm-software/cyclone-ui/releases/tag/pagination%400.8.4) (09/13/2026)
 
 ### Updated Dependencies

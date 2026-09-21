@@ -2,6 +2,18 @@
 
 # Changelog for Cyclone UI - Breadcrumb
 
+## [0.4.6](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.6) (09/21/2026)
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.5**
+- Updated **label-text** to **v0.5.5**
+- Updated **link** to **v0.5.5**
+
 ## [0.4.5](https://github.com/storm-software/cyclone-ui/releases/tag/breadcrumb%400.4.5) (09/13/2026)
 
 ### Features

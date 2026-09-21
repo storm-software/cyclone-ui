@@ -2,6 +2,32 @@
 
 # Changelog for Cyclone UI - Select
 
+## [0.6.5](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+- **table-of-contents:** Initial check-in of Table of Contents component ([88fee2a9](https://github.com/storm-software/cyclone-ui/commit/88fee2a9))
+- **glitch-separator:** Initial check-in of glitch separator display component ([cf56b4cd](https://github.com/storm-software/cyclone-ui/commit/cf56b4cd))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **field** to **v0.5.5**
+- Updated **form** to **v0.9.5**
+- Updated **helpers** to **v0.3.5**
+- Updated **input** to **v0.6.5**
+
 ## [0.6.4](https://github.com/storm-software/cyclone-ui/releases/tag/select%400.6.4) (09/13/2026)
 
 ### Bug Fixes

@@ -2,6 +2,32 @@
 
 # Changelog for Cyclone UI - Themes
 
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.5) (09/21/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([bb588d13](https://github.com/storm-software/cyclone-ui/commit/bb588d13))
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **field:** Adjust display of label in fields ([9aa15776](https://github.com/storm-software/cyclone-ui/commit/9aa15776))
+- **field:** Update fields so that `floating` is the default variant ([33a72399](https://github.com/storm-software/cyclone-ui/commit/33a72399))
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **themes:** Simplify theme tokens to improve user experience ([9b53e050](https://github.com/storm-software/cyclone-ui/commit/9b53e050))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+- **vectors:** Added the StormLogoText and StormLogoIcon svg components ([51c800eb](https://github.com/storm-software/cyclone-ui/commit/51c800eb))
+
 ## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/themes%400.3.4) (09/13/2026)
 
 ### Bug Fixes

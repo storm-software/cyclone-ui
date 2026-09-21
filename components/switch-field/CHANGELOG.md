@@ -2,6 +2,19 @@
 
 # Changelog for Cyclone UI - Switch Field
 
+## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/switch-field%400.1.5) (09/21/2026)
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+
+### Updated Dependencies
+
+- Updated **field** to **v0.5.5**
+- Updated **form** to **v0.9.5**
+- Updated **state** to **v0.0.6**
+- Updated **switch** to **v0.5.5**
+
 ## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/switch-field%400.1.4) (09/13/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,20 @@
 
 # Changelog for Cyclone UI - Scroll View
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+
+### Features
+
+- **collapsible:** Added the `Collapsible` component package ([f903127c](https://github.com/storm-software/cyclone-ui/commit/f903127c))
+
+### Updated Dependencies
+
+- Updated **vectors** to **v0.5.5**
+
 ## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/scroll-view%400.5.4) (09/13/2026)
 
 ### Updated Dependencies

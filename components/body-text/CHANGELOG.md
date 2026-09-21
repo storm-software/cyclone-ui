@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Body Text
 
+## [0.5.5](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.5) (09/21/2026)
+
+### Bug Fixes
+
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **themes:** Update to use a merged color scheme tokens JSON ([0cbeaed2](https://github.com/storm-software/cyclone-ui/commit/0cbeaed2))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+- **display-text:** Added display text component and Razorwind plugins ([eb288dfa](https://github.com/storm-software/cyclone-ui/commit/eb288dfa))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.3.5**
+
 ## [0.5.4](https://github.com/storm-software/cyclone-ui/releases/tag/body-text%400.5.4) (09/13/2026)
 
 ### Updated Dependencies

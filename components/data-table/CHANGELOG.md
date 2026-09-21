@@ -2,6 +2,37 @@
 
 # Changelog for Cyclone UI - Data Table
 
+## [0.6.5](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.5) (09/21/2026)
+
+### Bug Fixes
+
+- **data-table:** Improve table header display and vector animations ([462cbe63](https://github.com/storm-software/cyclone-ui/commit/462cbe63))
+- **monorepo:** Stlying clean up and improved component props ([4eba5c0f](https://github.com/storm-software/cyclone-ui/commit/4eba5c0f))
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+- **select:** Clean up padding and sizing of select field ([c106a513](https://github.com/storm-software/cyclone-ui/commit/c106a513))
+
+### Features
+
+- **field:** Added `size` property to form field components ([380e416b](https://github.com/storm-software/cyclone-ui/commit/380e416b))
+- **accordion:** Added the `direction` property ([ba244763](https://github.com/storm-software/cyclone-ui/commit/ba244763))
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **checkbox** to **v0.5.5**
+- Updated **checkbox-field** to **v0.1.5**
+- Updated **form** to **v0.9.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **label-text** to **v0.5.5**
+- Updated **pagination** to **v0.8.5**
+- Updated **popover** to **v0.5.5**
+- Updated **search-input-field** to **v0.1.5**
+- Updated **select-field** to **v0.1.5**
+- Updated **state** to **v0.0.6**
+- Updated **table** to **v0.4.5**
+
 ## [0.6.4](https://github.com/storm-software/cyclone-ui/releases/tag/data-table%400.6.4) (09/13/2026)
 
 ### Bug Fixes

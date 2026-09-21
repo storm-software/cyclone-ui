@@ -2,6 +2,24 @@
 
 # Changelog for Cyclone UI - Drawer
 
+## [0.1.5](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.5) (09/21/2026)
+
+### Bug Fixes
+
+- **monorepo:** Clean up various component stlyings ([5941ff1a](https://github.com/storm-software/cyclone-ui/commit/5941ff1a))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **body-text** to **v0.5.5**
+- Updated **button** to **v0.6.5**
+- Updated **heading-text** to **v0.5.5**
+- Updated **scroll-view** to **v0.5.5**
+- Updated **sheet** to **v0.0.4**
+
 ## [0.1.4](https://github.com/storm-software/cyclone-ui/releases/tag/drawer%400.1.4) (09/13/2026)
 
 ### Updated Dependencies

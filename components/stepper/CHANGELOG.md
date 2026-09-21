@@ -2,6 +2,22 @@
 
 # Changelog for Cyclone UI - Stepper
 
+## [0.3.5](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.5) (09/21/2026)
+
+### Bug Fixes
+
+- **body-text:** Updates to workspace to use `BodyText` component ([af8e53c5](https://github.com/storm-software/cyclone-ui/commit/af8e53c5))
+
+### Features
+
+- **themes:** Update theme colors and apply them to components ([83c95718](https://github.com/storm-software/cyclone-ui/commit/83c95718))
+
+### Updated Dependencies
+
+- Updated **heading-text** to **v0.5.5**
+- Updated **next-button** to **v0.5.5**
+- Updated **previous-button** to **v0.5.5**
+
 ## [0.3.4](https://github.com/storm-software/cyclone-ui/releases/tag/stepper%400.3.4) (09/13/2026)
 
 ### Features
