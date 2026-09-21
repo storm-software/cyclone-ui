@@ -77,6 +77,9 @@ const SelectFieldControl = Select.styleable<
   const displayValue = formattedValue || String(value ?? initialValue ?? "");
   const variant = useFieldVariant(placeholder);
   const shouldShowPlaceholder = useFieldShouldShowPlaceholder(displayValue);
+  const valueContent =
+    displayValue || (shouldShowPlaceholder ? placeholder : undefined);
+  const isPlaceholding = !displayValue && shouldShowPlaceholder;
 
   const selectRef = useFieldRef();
   useLayoutEffect(() => {
@@ -101,9 +104,9 @@ const SelectFieldControl = Select.styleable<
         {children}
         <Select.TextBox.Value
           ref={selectRef}
-          placeholder={shouldShowPlaceholder ? placeholder : undefined}
-          placeholding={shouldShowPlaceholder}>
-          {shouldShowPlaceholder ? placeholder : displayValue}
+          placeholder={isPlaceholding ? placeholder : undefined}
+          placeholding={isPlaceholding}>
+          {valueContent}
         </Select.TextBox.Value>
 
         <Field.ThemeIcon position="end" render="span" role={undefined} />
